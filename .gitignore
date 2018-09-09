@@ -1,8 +1,11 @@
 
 apktool.bat
-apktool.jar
-services.jar
-services.jar.out/apktool.yml
 services.jar.out/build
 services.jar.out/dist
 services.jar.out/original
+framework.jar.out/build
+framework.jar.out/dist
+framework.jar.out/original
+framework.jar.out
+*.yml
+*.jar
