@@ -22,6 +22,22 @@
 
 
 # static fields
+.field public static mBlockPowerMenuKeyguard:Z
+
+.field public static mDoublePressHomeCustomApp:Ljava/lang/String;
+
+.field public static mLongPressHomeCustomApp:Ljava/lang/String;
+
+.field public static mDoublePressBackCustomApp:Ljava/lang/String;
+
+.field public static mLongPressBackCustomApp:Ljava/lang/String;
+
+.field public static mDoublePressRecentCustomApp:Ljava/lang/String;
+
+.field public static mLongPressRecentCustomApp:Ljava/lang/String;
+
+.field public static mLongPressFingerprintCustomApp:Ljava/lang/String;
+
 .field private static final ACTION_WIFI_DISPLAY_VIDEO:Ljava/lang/String; = "org.codeaurora.intent.action.WIFI_DISPLAY_VIDEO"
 
 .field static final ALTERNATE_CAR_MODE_NAV_SIZE:Z = false
@@ -6212,8 +6228,25 @@
     move-result v9
 
     if-eqz v9, :cond_14
+    
+    .line 1635
+    sget-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mBlockPowerMenuKeyguard:Z
+    
+    if-eqz v0, :cond_mw
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->isScreenOn()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_mw
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->keyguardOn()Z
 
-    .line 1667
+    move-result v0
+    
+    if-nez v0, :cond_12
+    
+    :cond_mw
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getFlags()I
 
     move-result v9
@@ -35098,38 +35131,6 @@
     .line 8474
     :cond_14
     :goto_2
-    iget v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
-
-    if-gez v3, :cond_16
-
-    .line 8478
-    iget-object v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x1120006
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_15
-
-    .line 8479
-    move v3, v5
-
-    goto :goto_3
-
-    :cond_15
-    move v3, v1
-
-    :goto_3
-    iput v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
-
-    .line 8481
-    :cond_16
     if-ne v2, v6, :cond_18
 
     iget v3, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
@@ -37984,8 +37985,14 @@
 
 .method public updateSettings()V
     .locals 14
-
-    .line 3003
+    
+    .line 2950
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setCustomApp()V
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->allowAllRotations()V
+    
+    invoke-virtual {p0}, Lcom/android/server/policy/PhoneWindowManager;->setBlockPowerMenuKeyguard()V
+    
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -38918,4 +38925,136 @@
 
     .line 9875
     return-void
+.end method
+
+.method public takeFullScreenshot()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeScreenshot(I)V
+
+    return-void
+.end method
+
+.method public takeCroppedScreenshot()V
+    .locals 1
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, v0}, Lcom/android/server/policy/PhoneWindowManager;->takeScreenshot(I)V
+
+    return-void
+.end method
+
+.method public setCustomApp()V
+	.locals 2
+	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+	const-string/jumbo v1, "tweaks_custom_home_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressHomeCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_home_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressHomeCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_back_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressBackCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_back_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressBackCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_recent_double_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mDoublePressRecentCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_recent_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressRecentCustomApp:Ljava/lang/String;
+    
+    const-string/jumbo v1, "tweaks_custom_fingerprint_long_app"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+    
+    sput-object v1, Lcom/android/server/policy/PhoneWindowManager;->mLongPressFingerprintCustomApp:Ljava/lang/String;
+   
+   return-void   
+.end method
+
+.method public allowAllRotations()V
+	.locals 3
+	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "tweaks_all_rotations"
+    
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    iput v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mAllowAllRotations:I
+    
+    return-void   
+.end method
+
+.method public setBlockPowerMenuKeyguard()V
+	.locals 3
+	
+	iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "tweaks_block_power_menu_keyguard"
+    
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+    
+    sput-boolean v0, Lcom/android/server/policy/PhoneWindowManager;->mBlockPowerMenuKeyguard:Z
+    
+    return-void   
 .end method
