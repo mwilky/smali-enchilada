@@ -1,0 +1,8 @@
+
+apktool.bat
+apktool.jar
+services.jar
+services.jar.out/apktool.yml
+services.jar.out/build
+services.jar.out/dist
+services.jar.out/original

@@ -1,0 +1,213 @@
+.class public Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;
+.super Ljava/lang/Object;
+.source "OnePlusBGController.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/am/OnePlusBGController;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "BGCAbnInfo"
+.end annotation
+
+
+# instance fields
+.field private mRecordList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/android/server/am/OnePlusBGController$UidmAh;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1636
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1637
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    .line 1638
+    return-void
+.end method
+
+
+# virtual methods
+.method public cleanUp()V
+    .locals 2
+
+    .line 1656
+    iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    monitor-enter v0
+
+    .line 1657
+    :try_start_0
+    iget-object v1, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->clear()V
+
+    .line 1658
+    monitor-exit v0
+
+    .line 1659
+    return-void
+
+    .line 1658
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public dump()V
+    .locals 3
+
+    .line 1649
+    iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    monitor-enter v0
+
+    .line 1650
+    const/4 v1, 0x0
+
+    .local v1, "i":I
+    :goto_0
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_0
+
+    .line 1651
+    iget-object v2, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/android/server/am/OnePlusBGController$UidmAh;
+
+    invoke-virtual {v2}, Lcom/android/server/am/OnePlusBGController$UidmAh;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/server/am/OnePlusBGController;->myLog(Ljava/lang/String;)V
+
+    .line 1650
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 1653
+    .end local v1    # "i":I
+    :cond_0
+    monitor-exit v0
+
+    .line 1654
+    return-void
+
+    .line 1653
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public getRecordList()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/android/server/am/OnePlusBGController$UidmAh;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1640
+    iget-object v0, p0, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public insert(Ljava/lang/String;IDDZ)V
+    .locals 11
+    .param p1, "pkgName"    # Ljava/lang/String;
+    .param p2, "uid"    # I
+    .param p3, "dayOfFgmAh"    # D
+    .param p5, "dayOfBgmAh"    # D
+    .param p7, "isForceStop"    # Z
+
+    move-object v1, p0
+
+    .line 1643
+    iget-object v2, v1, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    monitor-enter v2
+
+    .line 1644
+    :try_start_0
+    new-instance v0, Lcom/android/server/am/OnePlusBGController$UidmAh;
+
+    move-object v3, v0
+
+    move-object v4, p1
+
+    move v5, p2
+
+    move-wide v6, p3
+
+    move-wide/from16 v8, p5
+
+    move/from16 v10, p7
+
+    invoke-direct/range {v3 .. v10}, Lcom/android/server/am/OnePlusBGController$UidmAh;-><init>(Ljava/lang/String;IDDZ)V
+
+    .line 1645
+    .local v0, "onerecord":Lcom/android/server/am/OnePlusBGController$UidmAh;
+    iget-object v3, v1, Lcom/android/server/am/OnePlusBGController$BGCAbnInfo;->mRecordList:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 1646
+    .end local v0    # "onerecord":Lcom/android/server/am/OnePlusBGController$UidmAh;
+    monitor-exit v2
+
+    .line 1647
+    return-void
+
+    .line 1646
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
