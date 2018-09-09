@@ -47,7 +47,24 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 8
+    
+    const-string/jumbo v0, "tweaks_hide_keyboard_switcher"
 
+    invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+    
+    invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_mw
+    
+    iget-object v0, p0, Lcom/android/server/InputMethodManagerService$SettingsObserver;->this$0:Lcom/android/server/InputMethodManagerService;
+    
+    invoke-virtual {v0}, Lcom/android/server/InputMethodManagerService;->getKeyboardSwitcher()V
+    
+    :cond_mw
     const-string/jumbo v0, "show_ime_with_hard_keyboard"
 
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -288,6 +305,14 @@
     const-string v1, "accessibility_soft_keyboard_mode"
 
     invoke-static {v1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, p0, p1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
+    
+    const-string/jumbo v1, "tweaks_hide_keyboard_switcher"
+
+    invoke-static {v1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
