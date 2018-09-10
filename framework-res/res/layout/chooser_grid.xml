@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.internal.widget.ResolverDrawerLayout android:id="@id/contentPanel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxWidth="@dimen/resolver_max_width" android:maxCollapsedHeight="288.0dip" android:maxCollapsedHeightSmall="56.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#00000000" android:layout_width="fill_parent" android:layout_height="293.0px" android:elevation="8.0dip" android:layout_alwaysShow="true">
+        <RelativeLayout android:id="@id/zzz_anim_title_bar" android:layout_width="fill_parent" android:layout_height="293.0px" android:layout_alwaysShow="true">
+            <ImageView android:id="@id/zzz_anim_title_bar_background" android:background="?colorBackground" android:layout_width="fill_parent" android:layout_height="293.0px" android:layout_alignParentBottom="true" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="213.0px" android:layout_alignParentBottom="true">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="126.0px" android:layout_marginBottom="29.0px" android:layout_alignParentBottom="true">
+                    <ImageView android:id="@id/zzz_anim_title_bar_icon" android:layout_width="126.0px" android:layout_height="126.0px" android:src="@drawable/zzz_ic_aerr_close" android:scaleType="centerInside" android:layout_centerVertical="true" android:layout_marginStart="16.0px" android:layout_alignParentStart="true" />
+                    <TextView android:textSize="18.0sp" android:id="@id/zzz_anim_title_bar_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:layout_centerVertical="true" android:fontFamily="Slate-medium" android:layout_marginStart="165.0px" android:layout_marginEnd="47.0px" android:layout_alignParentStart="true" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <ImageView android:id="@id/zzz_anim_title_bar_divider" android:background="#ffaaaaaa" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/zzz_orig_title_bar" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:layout_marginBottom="0.0dip" android:layout_alignParentBottom="true" android:layout_alwaysShow="true">
+            <TextView android:textAppearance="?textAppearanceButton" android:textColor="?colorAccent" android:gravity="center_vertical" android:id="@id/profile_button" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="48.0dip" android:singleLine="true" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:layout_marginEnd="8.0dip" style="?borderlessButtonStyle" />
+            <ImageView android:id="@id/title_icon" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:scaleType="fitCenter" android:layout_below="@id/profile_button" android:layout_alignParentLeft="true" android:layout_marginEnd="16.0dip" />
+            <TextView android:textAppearance="?textAppearanceMedium" android:textSize="14.0sp" android:gravity="start|center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/zzz_op_cc_margin_text_bottom2" android:layout_alignParentBottom="true" android:textAllCaps="true" android:layout_marginStart="@dimen/zzz_op_cc_margin_left2" android:layout_marginEnd="@dimen/zzz_op_cc_margin_right2" android:layout_alignParentStart="true" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ListView android:scrollbarStyle="outsideOverlay" android:id="@id/resolver_list" android:background="?colorBackground" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/transparent" android:divider="@null" android:nestedScrollingEnabled="true" android:elevation="8.0dip" android:scrollIndicators="top" />
+    <TextView android:gravity="center" android:id="@id/empty" android:background="@color/white" android:padding="32.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/noApplications" android:layout_alwaysShow="true" />
+</com.android.internal.widget.ResolverDrawerLayout>

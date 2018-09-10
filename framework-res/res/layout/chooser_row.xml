@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/zzz_op_cc_margin_top2" android:paddingBottom="@dimen/zzz_op_cc_margin_bottom1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/zzz_op_cc_margin_left2" android:paddingEnd="@dimen/zzz_op_cc_margin_right2"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

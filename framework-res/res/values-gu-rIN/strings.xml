@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="global_action_screenshot">સ્ક્રીનશોટ</string>
+    <string name="tethered_notification_multi_device_message">%1$s કનેક્ટેડ ડિવાઈસો</string>
+    <string name="tethered_notification_no_device_message">કોઈ ડિવાઈસ કનેક્ટ કરવામાં આવી નથી</string>
+    <string name="tethered_notification_one_device_message">%1$s કનેક્ટેડ ડિવાઈસ</string>
+</resources>

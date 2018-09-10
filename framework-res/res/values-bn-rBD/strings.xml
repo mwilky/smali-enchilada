@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="global_action_screenshot">স্ক্রিনশট</string>
+    <string name="tethered_notification_multi_device_message">%1$s টি ডিভাইস সংযুক্ত</string>
+    <string name="tethered_notification_no_device_message">কোনো সংযুক্ত ডিভাইস নেই</string>
+    <string name="tethered_notification_one_device_message">%1$s টি ডিভাইস সংযুক্ত</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="global_action_screenshot">स्क्रीनशॉट</string>
+    <string name="tethered_notification_multi_device_message">%1$sजोडलेली साधने</string>
+    <string name="tethered_notification_no_device_message">जोडलेले साधन नाही</string>
+    <string name="tethered_notification_one_device_message">%1$sजोडलेले साधन</string>
+</resources>

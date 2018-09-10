@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_tether_apndata">
+        <item>Rogers LTE Tethering,ltedata.apn,,,,,,,,,302,720,,DUN</item>
+        <item>[ApnSettingV3]chatr Tethering,chatrisp.apn,,,,,,,,,302,720,,DUN,,,true,0,,,,,,,imsi,302720x94</item>
+        <item>[ApnSettingV3]Tbaytel Tethering,ltedata.apn,,,,,,,,,302,720,,DUN,IPV4V6,IP,true,0,,,,,,,gid,BA</item>
+        <item>[ApnSettingV3]Cityfone Tethering,ltedata.apn,,,,,,,,,302,720,,DUN,IPV4V6,IP,true,0,,,,,,,spn,CITYFONE</item>
+    </string-array>
+    <string-array name="wfcSpnFormats">
+        <item>%s</item>
+        <item>%s Wi-Fi</item>
+    </string-array>
+</resources>

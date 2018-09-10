@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/aerr_restart" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:text="@string/aerr_restart" android:drawablePadding="@dimen/zzz_op_cc_margin_text_left4" android:drawableStart="@drawable/zzz_ic_aerr_refresh" style="@style/aerr_list_item" />
+    <Button android:id="@id/aerr_app_info" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:text="@string/app_info" android:drawablePadding="@dimen/zzz_op_cc_margin_text_left4" android:drawableStart="@drawable/ic_info_outline_24" style="@style/aerr_list_item" />
+    <Button android:id="@id/aerr_close" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:text="@string/aerr_close_app" android:drawablePadding="@dimen/zzz_op_cc_margin_text_left4" android:drawableStart="@drawable/zzz_ic_aerr_close" style="@style/aerr_list_item" />
+    <Button android:id="@id/aerr_report" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:text="@string/aerr_report" android:drawablePadding="@dimen/zzz_op_cc_margin_text_left4" android:drawableStart="@drawable/ic_feedback" style="@style/aerr_list_item" />
+    <Button android:id="@id/aerr_mute" android:layout_width="fill_parent" android:layout_height="@dimen/zzz_op_cc_list_item_height_one_line1" android:text="@string/aerr_mute" android:drawablePadding="@dimen/zzz_op_cc_margin_text_left4" android:drawableStart="@drawable/ic_eject_24dp" style="@style/aerr_list_item" />
+</LinearLayout>

@@ -9,3 +9,7 @@ framework.jar.out/original
 framework.jar.out
 *.yml
 *.jar
+*.apk
+*/build
+*/dist
+*/original
