@@ -6988,11 +6988,6 @@
 
     .line 1172
     :cond_30
-    iget v3, v0, Lcom/android/server/policy/OemPhoneWindowManager;->mDoubleTapOnHomeBehavior:I
-
-    if-eqz v3, :cond_32
-
-    .line 1173
     invoke-direct/range {p0 .. p0}, Lcom/android/server/policy/OemPhoneWindowManager;->ignoreKeyCustomization()Z
 
     move-result v3
