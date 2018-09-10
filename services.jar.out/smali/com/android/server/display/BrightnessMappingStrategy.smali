@@ -12,6 +12,8 @@
 .end annotation
 
 # static fields
+.field private static mAlternativeBrightness:Z
+
 .field private static final DEBUG:Z = false
 
 .field private static final LUX_GRAD_SMOOTHING:F = 0.25f
@@ -35,6 +37,8 @@
     move-result-object v0
 
     sput-object v0, Lcom/android/server/display/BrightnessMappingStrategy;->PLOG:Lcom/android/server/display/utils/Plog;
+    
+    invoke-static {}, Lcom/android/server/display/BrightnessMappingStrategy;->getBrightnessTweak()V
 
     return-void
 .end method
@@ -108,11 +112,7 @@
     .locals 12
     .param p0, "resources"    # Landroid/content/res/Resources;
 
-    .line 54
-    invoke-virtual {p0}, Lcom/android/server/display/BrightnessMappingStrategy;->getBrightnessTweak()Z
-    
-    move-result v11
-    
+    .line 54    
     const v0, 0x1070011
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getIntArray(I)[I
@@ -167,6 +167,8 @@
 
     .line 66
     .local v5, "nitsRange":[F
+    sget-boolean v11, Lcom/android/server/display/BrightnessMappingStrategy;->mAlternativeBrightness:Z
+    
     if-eqz v11, :cond_stock
     
     const v6, 0x107007a
@@ -1292,6 +1294,22 @@
     return-void
 .end method
 
+.method private static getBrightnessTweak()V
+	.locals 2
+
+    const-string v0, "tweaks.alternative.brightness"
+
+    const v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+    
+    sput-boolean v1, Lcom/android/server/display/BrightnessMappingStrategy;->mAlternativeBrightness:Z
+    
+    return-void
+.end method
+
 
 # virtual methods
 .method public abstract addUserDataPoint(FF)V
@@ -1328,18 +1346,4 @@
 .end method
 
 .method public abstract setBrightnessConfiguration(Landroid/hardware/display/BrightnessConfiguration;)Z
-.end method
-
-.method getBrightnessTweak()Z
-	.locals 2
-
-	const-string v0, "tweaks.alternative.brightness"
-
-    const v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-    
-    return v1
 .end method
