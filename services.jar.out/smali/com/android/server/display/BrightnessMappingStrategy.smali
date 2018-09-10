@@ -11,9 +11,6 @@
     }
 .end annotation
 
-# instance fields
-.field mContext:Landroid/content/Context;
-
 # static fields
 .field private static final DEBUG:Z = false
 
