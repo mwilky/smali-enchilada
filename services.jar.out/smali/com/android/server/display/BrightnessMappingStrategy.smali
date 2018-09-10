@@ -11,6 +11,8 @@
     }
 .end annotation
 
+# instance fields
+.field mContext:Landroid/content/Context;
 
 # static fields
 .field private static final DEBUG:Z = false
@@ -106,10 +108,14 @@
 .end method
 
 .method public static create(Landroid/content/res/Resources;)Lcom/android/server/display/BrightnessMappingStrategy;
-    .locals 11
+    .locals 12
     .param p0, "resources"    # Landroid/content/res/Resources;
 
     .line 54
+    invoke-virtual {p0}, Lcom/android/server/display/BrightnessMappingStrategy;->getBrightnessTweak()Z
+    
+    move-result v11
+    
     const v0, 0x1070011
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getIntArray(I)[I
@@ -164,8 +170,16 @@
 
     .line 66
     .local v5, "nitsRange":[F
+    if-eqz v11, :cond_stock
+    
+    const v6, 0x107007a
+    
+    goto :goto_skip
+    
+    :cond_stock
     const v6, 0x107003f
-
+    
+	:goto_skip
     invoke-virtual {p0, v6}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v6
@@ -1317,4 +1331,18 @@
 .end method
 
 .method public abstract setBrightnessConfiguration(Landroid/hardware/display/BrightnessConfiguration;)Z
+.end method
+
+.method getBrightnessTweak()Z
+	.locals 2
+
+	const-string v0, "tweaks.alternative.brightness"
+
+    const v1, 0x0
+
+    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+    
+    return v1
 .end method
