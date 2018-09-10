@@ -334,7 +334,7 @@
         <item>500</item>
         <item>600</item>
     </integer-array>
-	 <integer-array name="config_screenBrightnessBacklight">
+    <integer-array name="config_screenBrightnessBacklight">
         <item>2</item>
         <item>4</item>
         <item>6</item>
