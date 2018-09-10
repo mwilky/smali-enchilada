@@ -10,6 +10,7 @@ framework.jar.out
 *.yml
 *.jar
 *.apk
+*.orig
 */build
 */dist
 */original
