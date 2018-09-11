@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/search_bar_container" android:background="@color/suggestion_condition_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.CardView android:id="@id/search_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/search_bar_margin" app:cardBackgroundColor="?android:colorBackground" app:cardCornerRadius="@dimen/search_bar_corner_radius" app:cardElevation="2.0dip">
+            <Toolbar android:theme="?android:actionBarTheme" android:id="@id/search_action_bar" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="@dimen/search_bar_height" android:navigationIcon="@drawable/op_ic_search">
+                <TextView android:textColor="@color/oneplus_settings_text_color_secondary" android:id="@id/search_action_bar_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_menu" style="@style/TextAppearance.SearchBar" />
+            </Toolbar>
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+    <FrameLayout android:id="@id/main_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

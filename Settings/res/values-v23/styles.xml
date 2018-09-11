@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.TextAppearance.AppCompat.Widget.ActionBar.Menu" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Menu" />
+    <style name="Base.TextAppearance.AppCompat.Widget.Button.Inverse" parent="@android:style/TextAppearance.Material.Widget.Button.Inverse" />
+    <style name="Base.Theme.AppCompat" parent="@style/Base.V23.Theme.AppCompat" />
+    <style name="Base.Theme.AppCompat.Light" parent="@style/Base.V23.Theme.AppCompat.Light" />
+    <style name="Base.Widget.AppCompat.Button.Borderless.Colored" parent="@android:style/Widget.Material.Button.Borderless.Colored" />
+    <style name="Base.Widget.AppCompat.Button.Colored" parent="@android:style/Widget.Material.Button.Colored" />
+    <style name="Base.Widget.AppCompat.RatingBar.Indicator" parent="@android:style/Widget.Material.RatingBar.Indicator" />
+    <style name="Base.Widget.AppCompat.RatingBar.Small" parent="@android:style/Widget.Material.RatingBar.Small" />
+    <style name="Base.Widget.AppCompat.Spinner.Underlined" parent="@android:style/Widget.Material.Spinner.Underlined" />
+    <style name="CardView" parent="@style/Base.CardView">
+        <item name="cardBackgroundColor">?android:colorBackgroundFloating</item>
+    </style>
+    <style name="Oneplus.Widget.Material.Light.TimePicker" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">?onePlusPrimaryColor</item>
+        <item name="android:numbersTextColor">@color/op_timepicker_text_inverse_when_activated_material_light</item>
+        <item name="android:numbersBackgroundColor">@color/timepicker_numbers_background_color_light</item>
+        <item name="android:numbersSelectorColor">?opPickerColorActivated</item>
+        <item name="android:amPmTextColor">@color/timepicker_ampmlabel_text_color_light</item>
+        <item name="android:numbersInnerTextColor">@color/op_timepicker_text_inverse_when_activated_material_light</item>
+        <item name="headerTextColor">@color/op_primary_text_secondary_when_activated_material_inverse</item>
+        <item name="internalLayout">@layout/op_time_picker_material</item>
+        <item name="legacyLayout">@layout/op_time_picker_legacy_material</item>
+        <item name="numbersInnerTextColor">@color/op_timepicker_text_inverse_when_activated_material_light</item>
+        <item name="numbersTextColor">@color/op_timepicker_text_inverse_when_activated_material_light</item>
+    </style>
+    <style name="SetupWizardAccessibilityTheme" parent="@style/Theme.SettingsBase">
+        <item name="android:colorPrimary">@color/material_grey_100</item>
+        <item name="android:colorAccent">@color/material_blue_700</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:titleTextColor">@color/material_blue_700</item>
+        <item name="preferenceTheme">@style/PreferenceTheme</item>
+        <item name="switchBarTheme">@style/ThemeOverlay.SwitchBar.Settings</item>
+    </style>
+    <style name="SuwThemeGlifV2" parent="@style/SuwThemeGlif">
+        <item name="android:colorBackground">@color/suw_glif_background_color_dark</item>
+        <item name="android:editTextStyle">@style/SuwEditText</item>
+        <item name="android:alertDialogTheme">@style/SuwAlertDialogTheme</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="suwBackgroundBaseColor">?android:colorBackground</item>
+        <item name="suwBackgroundPatterned">false</item>
+        <item name="suwDividerInsetEnd">?suwMarginSides</item>
+        <item name="suwDividerInsetStart">?suwMarginSides</item>
+        <item name="suwDividerInsetStartNoIcon">?suwMarginSides</item>
+        <item name="suwEditTextBackgroundColor">@color/suw_glif_edit_text_bg_light_color</item>
+        <item name="suwGlifHeaderGravity">center_horizontal</item>
+        <item name="suwScrollIndicators">bottom|top</item>
+    </style>
+    <style name="SuwThemeGlifV2.Light" parent="@style/SuwThemeGlif.Light">
+        <item name="android:colorBackground">@color/suw_glif_background_color_light</item>
+        <item name="android:editTextStyle">@style/SuwEditText</item>
+        <item name="android:alertDialogTheme">@style/SuwAlertDialogTheme.Light</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="suwBackgroundBaseColor">?android:colorBackground</item>
+        <item name="suwBackgroundPatterned">false</item>
+        <item name="suwDividerInsetEnd">?suwMarginSides</item>
+        <item name="suwDividerInsetStart">?suwMarginSides</item>
+        <item name="suwDividerInsetStartNoIcon">?suwMarginSides</item>
+        <item name="suwEditTextBackgroundColor">@color/suw_glif_edit_text_bg_light_color</item>
+        <item name="suwGlifHeaderGravity">center_horizontal</item>
+        <item name="suwScrollIndicators">bottom|top</item>
+    </style>
+    <style name="Widget.SwitchBar.Switch" parent="@android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:minHeight">@dimen/min_tap_target_size</item>
+        <item name="android:thumbTint">@color/switchbar_switch_thumb_tint</item>
+        <item name="android:trackTint">@color/switchbar_switch_track_tint</item>
+    </style>
+    <style name="oneplus_contorl_text_style_base">
+        <item name="android:breakStrategy">simple</item>
+    </style>
+    <style name="oneplus_contorl_text_style_title_extended" parent="@style/Oneplus.TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/oneplus_contorl_text_size_extended</item>
+        <item name="android:fontFamily">@string/oneplus_contorl_font_family_title_extended</item>
+        <item name="android:breakStrategy">simple</item>
+    </style>
+    <style name="Base.V23.Theme.AppCompat" parent="@style/Base.V22.Theme.AppCompat">
+        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
+        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
+        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
+    </style>
+    <style name="Base.V23.Theme.AppCompat.Light" parent="@style/Base.V22.Theme.AppCompat.Light">
+        <item name="actionBarItemBackground">?android:actionBarItemBackground</item>
+        <item name="actionMenuTextAppearance">?android:actionMenuTextAppearance</item>
+        <item name="actionMenuTextColor">?android:actionMenuTextColor</item>
+        <item name="controlBackground">@drawable/abc_control_background_material</item>
+        <item name="ratingBarStyleIndicator">?android:ratingBarStyleIndicator</item>
+        <item name="ratingBarStyleSmall">?android:ratingBarStyleSmall</item>
+    </style>
+</resources>

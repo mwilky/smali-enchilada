@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/oneplus_gesture_of_answer_call_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
+    <SwitchPreference android:title="@string/oneplus_gesture_of_answer_call_title" android:key="gesture_answercall_switch" />
+    <com.oneplus.settings.ui.OPGestureAnswerCallInStructionsCategory android:key="key_gesture_answer_call_instructions" />
+</PreferenceScreen>

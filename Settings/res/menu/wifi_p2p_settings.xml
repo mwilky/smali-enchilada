@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/op_ic_menu_moreoverflow_material" android:id="@id/menu_share" android:showAsAction="always">
+        <menu>
+            <item android:id="@id/action_search" android:title="@string/wifi_p2p_menu_searching" android:showAsAction="never" />
+            <item android:id="@id/action_rename" android:title="@string/wifi_p2p_menu_rename" android:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

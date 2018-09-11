@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="oneplus_applock_wrong_pattern_warning">
+        <item quantity="other">আপনার এখনও %1$dটি সুযোগ আছে</item>
+        <item quantity="one">আপনার এখনও %1$dটি সুযোগ আছে</item>
+    </plurals>
+    <plurals name="oneplus_lockpattern_too_many_failed_confirmation_attempts_footer">
+        <item quantity="other">%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন।</item>
+        <item quantity="one">%d সেকেন্ডের মধ্যে আবার চেষ্টা করুন।</item>
+    </plurals>
+</resources>

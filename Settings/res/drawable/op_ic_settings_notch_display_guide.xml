@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:tint="@color/oneplus_contorl_icon_color_active_default" android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <path android:fillColor="#ffffffff" android:pathData="M16.5,1H7C5.9,1,5,1.9,5,3v17.5c0,1.1,0.9,2,2,2h9.5c1.1,0,2-0.9,2-2V3C18.5,1.9,17.6,1,16.5,1z M7.5,2.5H16c0.6,0,1,0.4,1,1v13.2c0,0.6-0.4,1-1,1H7.5c-0.6,0-1-0.4-1-1V3.5C6.5,2.9,6.9,2.5,7.5,2.5z M9,20 c0-0.4,0.3-0.8,0.8-0.9h3.9c0.5,0.1,0.8,0.5,0.8,0.9s-0.3,0.8-0.8,0.9H9.8C9.3,20.8,9,20.4,9,20z" />
+    </group>
+    <path android:fillColor="#ff000000" android:pathData="M16.5,1H7C5.9,1,5,1.9,5,3v17.5c0,1.1,0.9,2,2,2h9.5c1.1,0,2-0.9,2-2V3C18.5,1.9,17.6,1,16.5,1z M13.7,20.9H9.8 C9.3,20.8,9,20.4,9,20c0-0.4,0.3-0.8,0.8-0.9h3.9c0.5,0.1,0.8,0.5,0.8,0.9S14.2,20.8,13.7,20.9z M17,16.8c0,0.6-0.4,1-1,1H7.5 c-0.6,0-1-0.4-1-1V3.5c0-0.6,0.4-1,1-1H9v0h0c0,0,0,0,0,0h0c0,0.4,0.4,0.8,0.8,0.8h3.8c0.4,0,0.8-0.4,0.8-0.8h0c0,0,0,0,0,0h0v0H16 c0.6,0,1,0.4,1,1V16.8z" />
+</vector>

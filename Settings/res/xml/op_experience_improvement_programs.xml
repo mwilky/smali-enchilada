@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/oneplus_experience_improvement_programs" settings:keywords="@string/oneplus_search_keyword_experience_improvement_programs"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
+    <com.android.settings.widget.MasterSwitchPreference android:icon="@drawable/op_ic_settings_oneplus_notifications" android:title="@string/oneplus_receive_notifications" android:key="receive_notifications" android:summary="@string/oneplus_receive_notifications_summary" />
+    <com.android.settings.widget.MasterSwitchPreference android:icon="@drawable/op_ic_settings_user_experience_program" android:title="@string/user_experience" android:key="user_experience" android:summary="@string/user_experience_description" />
+    <com.android.settings.widget.MasterSwitchPreference android:icon="@drawable/op_ic_settings_system_stabiliy_program" android:title="@string/oneplus_system_stability_title" android:key="system_stability" android:summary="@string/oneplus_system_stability_summary" />
+</PreferenceScreen>

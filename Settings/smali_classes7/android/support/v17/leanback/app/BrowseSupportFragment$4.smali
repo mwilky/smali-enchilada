@@ -1,0 +1,318 @@
+.class Landroid/support/v17/leanback/app/BrowseSupportFragment$4;
+.super Ljava/lang/Object;
+.source "BrowseSupportFragment.java"
+
+# interfaces
+.implements Landroid/support/v17/leanback/widget/BrowseFrameLayout$OnFocusSearchListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/support/v17/leanback/app/BrowseSupportFragment;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+
+# direct methods
+.method constructor <init>(Landroid/support/v17/leanback/app/BrowseSupportFragment;)V
+    .locals 0
+    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    .line 1066
+    iput-object p1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onFocusSearch(Landroid/view/View;I)Landroid/view/View;
+    .locals 5
+    .param p1, "focused"    # Landroid/view/View;
+    .param p2, "direction"    # I
+
+    .line 1070
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mCanShowHeaders:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->isInHeadersTransition()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 1071
+    return-object p1
+
+    .line 1075
+    :cond_0
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getTitleView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getTitleView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eq p1, v0, :cond_1
+
+    const/16 v0, 0x21
+
+    if-ne p2, v0, :cond_1
+
+    .line 1077
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getTitleView()Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 1079
+    :cond_1
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getTitleView()Landroid/view/View;
+
+    move-result-object v0
+
+    const/16 v1, 0x82
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getTitleView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    if-ne p2, v1, :cond_3
+
+    .line 1081
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mCanShowHeaders:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mShowingHeaders:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mHeadersSupportFragment:Landroid/support/v17/leanback/app/HeadersSupportFragment;
+
+    .line 1082
+    invoke-virtual {v0}, Landroid/support/v17/leanback/app/HeadersSupportFragment;->getVerticalGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mMainFragment:Landroid/support/v4/app/Fragment;
+
+    invoke-virtual {v0}, Landroid/support/v4/app/Fragment;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    .line 1085
+    :cond_3
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v2, 0x0
+
+    :goto_1
+    move v0, v2
+
+    .line 1087
+    .local v0, "isRtl":Z
+    const/16 v2, 0x11
+
+    const/16 v3, 0x42
+
+    if-eqz v0, :cond_5
+
+    move v4, v3
+
+    goto :goto_2
+
+    :cond_5
+    move v4, v2
+
+    .line 1088
+    .local v4, "towardStart":I
+    :goto_2
+    if-eqz v0, :cond_6
+
+    goto :goto_3
+
+    :cond_6
+    move v2, v3
+
+    .line 1089
+    .local v2, "towardEnd":I
+    :goto_3
+    iget-object v3, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v3, v3, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mCanShowHeaders:Z
+
+    if-eqz v3, :cond_9
+
+    if-ne p2, v4, :cond_9
+
+    .line 1090
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->isVerticalScrolling()Z
+
+    move-result v1
+
+    if-nez v1, :cond_8
+
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mShowingHeaders:Z
+
+    if-nez v1, :cond_8
+
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->isHeadersDataReady()Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    goto :goto_4
+
+    .line 1093
+    :cond_7
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mHeadersSupportFragment:Landroid/support/v17/leanback/app/HeadersSupportFragment;
+
+    invoke-virtual {v1}, Landroid/support/v17/leanback/app/HeadersSupportFragment;->getVerticalGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 1091
+    :cond_8
+    :goto_4
+    return-object p1
+
+    .line 1094
+    :cond_9
+    if-ne p2, v2, :cond_c
+
+    .line 1095
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    invoke-virtual {v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->isVerticalScrolling()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    .line 1096
+    return-object p1
+
+    .line 1097
+    :cond_a
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mMainFragment:Landroid/support/v4/app/Fragment;
+
+    if-eqz v1, :cond_b
+
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mMainFragment:Landroid/support/v4/app/Fragment;
+
+    invoke-virtual {v1}, Landroid/support/v4/app/Fragment;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_b
+
+    .line 1098
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mMainFragment:Landroid/support/v4/app/Fragment;
+
+    invoke-virtual {v1}, Landroid/support/v4/app/Fragment;->getView()Landroid/view/View;
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 1100
+    :cond_b
+    return-object p1
+
+    .line 1101
+    :cond_c
+    if-ne p2, v1, :cond_d
+
+    iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
+
+    iget-boolean v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mShowingHeaders:Z
+
+    if-eqz v1, :cond_d
+
+    .line 1103
+    return-object p1
+
+    .line 1105
+    :cond_d
+    const/4 v1, 0x0
+
+    return-object v1
+.end method

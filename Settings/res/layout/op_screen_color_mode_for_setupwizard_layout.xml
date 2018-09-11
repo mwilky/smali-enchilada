@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:textColor="@android:color/white" android:id="@id/next_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top1" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom1" android:text="@string/fingerprint_enroll_button_next" android:layout_alignParentBottom="true" android:layout_marginEnd="@dimen/oneplus_contorl_layout_margin_right1" android:layout_alignParentEnd="true" android:backgroundTint="@color/oneplus_setupwizard_accent_color" />
+    <com.android.setupwizardlib.GlifLayout android:icon="@drawable/op_ic_screen_setupwizard" android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:suwHeaderText="@string/oneplus_screen_color_mode_title" />
+    <fragment android:name="com.oneplus.settings.better.OPSuwScreenColorMode" android:id="@id/fragment_screen_color_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_above="@id/next_button" android:layout_below="@id/setup_wizard_layout" />
+</RelativeLayout>

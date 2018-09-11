@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:tint="@color/oneplus_contorl_icon_color_active_default" android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <group android:translateX="2.0" android:translateY="2.0">
+            <path android:fillColor="#ff000000" android:pathData="M19.75,13.0000001 L19.75,19 C19.75,19.4142136 19.4142136,19.75 19,19.75 L1,19.75 C0.585786438,19.75 0.25,19.4142136 0.25,19 L0.25,13 L0.25,7 L0.25,1 C0.25,0.585786438 0.585786438,0.25 1,0.25 L19,0.25 C19.4142136,0.25 19.75,0.585786438 19.75,1 L19.75,7 L19.75,13 Z M18.25,12.25 L18.25,7.75 L1.75,7.75 L1.75,12.25 L18.25,12.25 Z M18.25,6.25 L18.25,1.75 L1.75,1.75 L1.75,6.25 L18.25,6.25 Z M3,4.75 L3,3.25 L5,3.25 L5,4.75 L3,4.75 Z M3,10.75 L3,9.25 L5,9.25 L5,10.75 L3,10.75 Z M1.75,18.25 L18.25,18.25 L18.25,13.75 L1.75,13.75 L1.75,18.25 Z M3,16.75 L3,15.25 L5,15.25 L5,16.75 L3,16.75 Z" android:strokeWidth="1.0" />
+        </group>
+    </group>
+</vector>

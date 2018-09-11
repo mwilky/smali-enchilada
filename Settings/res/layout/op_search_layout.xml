@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/id_header" android:background="@drawable/op_search_bar_bg" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_marginTop="18.0dip" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom2" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+        <ImageView android:id="@android:id/icon" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/op_ic_search" android:layout_marginEnd="10.0dip" />
+        <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_menu" style="@style/oneplus_contorl_text_style_subheading" />
+        <TextView android:id="@android:id/summary" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

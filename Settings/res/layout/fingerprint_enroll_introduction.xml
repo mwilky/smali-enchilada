@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.setupwizardlib.GlifLayout android:id="@id/setup_wizard_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:suwFooter="@layout/fingerprint_enroll_introduction_footer" style="?fingerprint_layout_theme"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwContentFrame">
+        <com.android.setupwizardlib.view.RichTextView android:textColor="@color/oneplus_settings_text_color_primary" android:id="@id/description_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top2" android:text="@string/security_settings_fingerprint_enroll_introduction_message" style="@style/oneplus_contorl_text_style_body1" />
+        <TextView android:textColor="@color/settings_accent_color" android:id="@id/functional_terms" android:paddingTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/oneplus_functional_terms" />
+        <com.android.setupwizardlib.view.RichTextView android:id="@id/error_text" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SuwDescription.Glif" />
+        <com.android.setupwizardlib.view.FillContentLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="36.0dip" android:src="@drawable/op_setup_fingerprint_guide" android:contentDescription="@null" style="@style/SuwContentIllustration" />
+        </com.android.setupwizardlib.view.FillContentLayout>
+        <com.airbnb.lottie.LottieAnimationView android:layout_gravity="center" android:visibility="gone" android:layout_width="450.0px" android:layout_height="638.0px" app:lottie_autoPlay="true" app:lottie_fileName="op_setup_fingerprint_guide.json" app:lottie_loop="false" />
+    </LinearLayout>
+</com.android.setupwizardlib.GlifLayout>

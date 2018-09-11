@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.AppCompat" parent="@style/Base.V22.Theme.AppCompat" />
+    <style name="Base.Theme.AppCompat.Light" parent="@style/Base.V22.Theme.AppCompat.Light" />
+    <style name="Oneplus.Widget.Material.NewSearchView.ActionBar" parent="@android:style/Widget.Material">
+        <item name="android:layout">@layout/op_search_view</item>
+        <item name="android:closeIcon">@drawable/ic_search_close_selector</item>
+        <item name="android:goIcon">@empty</item>
+        <item name="android:searchIcon">@drawable/op_ic_search_api_material</item>
+        <item name="android:voiceIcon">@empty</item>
+        <item name="android:commitIcon">@empty</item>
+        <item name="android:suggestionRowLayout">@layout/op_search_dropdown_item_icons_2line</item>
+        <item name="android:queryBackground">@empty</item>
+        <item name="android:submitBackground">@empty</item>
+        <item name="android:searchHintIcon">@empty</item>
+    </style>
+    <style name="Oneplus.Widget.Material.SearchView.ActionBar" parent="@android:style/Widget.Material.SearchView">
+        <item name="android:closeIcon">@drawable/ic_search_close_selector</item>
+        <item name="android:searchIcon">@drawable/op_ic_search_api_material</item>
+        <item name="android:queryBackground">@empty</item>
+        <item name="android:submitBackground">@empty</item>
+        <item name="android:searchHintIcon">@empty</item>
+    </style>
+    <style name="SuwAlertDialogTheme" parent="@android:style/Theme.DeviceDefault.Dialog.Alert" />
+    <style name="SuwAlertDialogTheme.Light" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert" />
+    <style name="SuwGlifButton.Primary" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:theme">@style/SuwGlifButton.Primary</item>
+        <item name="android:buttonStyle">@style/SuwGlifButton.Primary</item>
+        <item name="android:paddingLeft">@dimen/suw_glif_button_padding</item>
+        <item name="android:paddingRight">@dimen/suw_glif_button_padding</item>
+        <item name="android:textAllCaps">?suwButtonAllCaps</item>
+        <item name="android:fontFamily">?suwButtonFontFamily</item>
+        <item name="android:buttonCornerRadius">?suwButtonCornerRadius</item>
+        <item name="buttonStyle">@style/SuwGlifButton.Primary</item>
+        <item name="textAllCaps">?suwButtonAllCaps</item>
+    </style>
+    <style name="SuwGlifButton.Secondary" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:theme">@style/SuwGlifButton.Secondary</item>
+        <item name="android:buttonStyle">@style/SuwGlifButton.Secondary</item>
+        <item name="android:paddingLeft">@dimen/suw_glif_button_padding</item>
+        <item name="android:paddingRight">@dimen/suw_glif_button_padding</item>
+        <item name="android:minWidth">0.0dip</item>
+        <item name="android:textAllCaps">?suwButtonAllCaps</item>
+        <item name="android:fontFamily">?suwButtonFontFamily</item>
+        <item name="android:colorControlHighlight">@color/suw_flat_button_highlight</item>
+        <item name="android:buttonCornerRadius">?suwButtonCornerRadius</item>
+        <item name="buttonStyle">@style/SuwGlifButton.Secondary</item>
+        <item name="colorControlHighlight">@color/suw_flat_button_highlight</item>
+        <item name="textAllCaps">?suwButtonAllCaps</item>
+    </style>
+    <style name="Base.V22.Theme.AppCompat" parent="@style/Base.V21.Theme.AppCompat">
+        <item name="actionModeShareDrawable">?android:actionModeShareDrawable</item>
+        <item name="editTextBackground">?android:editTextBackground</item>
+    </style>
+    <style name="Base.V22.Theme.AppCompat.Light" parent="@style/Base.V21.Theme.AppCompat.Light">
+        <item name="actionModeShareDrawable">?android:actionModeShareDrawable</item>
+        <item name="editTextBackground">?android:editTextBackground</item>
+    </style>
+</resources>

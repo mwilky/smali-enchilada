@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/op_security_lock_settings_title" android:key="security_dashboard_page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" android:order="-20" />
+    <PreferenceCategory android:title="@string/security_status_title" android:key="security_status" android:order="-10" />
+    <PreferenceCategory android:key="dashboard_tile_placeholder" android:order="1" />
+    <PreferenceCategory android:title="@string/lock_settings_title" android:key="security_category" android:order="10">
+        <com.android.settings.widget.GearPreference android:title="@string/unlock_set_unlock_launch_picker_title" android:key="unlock_set_or_change" android:summary="@string/summary_placeholder" settings:keywords="@string/keywords_lockscreen" />
+        <Preference android:title="@string/lockscreen_settings_title" android:key="lockscreen_preferences" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.security.LockscreenDashboardFragment" />
+        <Preference android:title="@string/security_settings_fingerprint_preference_title" android:key="fingerprint_settings" android:summary="@string/summary_placeholder" settings:keywords="@string/keywords_fingerprint_settings" />
+        <Preference android:persistent="false" android:title="@string/oneplus_face_unlock_settings_title" android:key="oneplus_face_unlock" android:summary="@string/oneplus_face_unlock_settings_summary" android:fragment="com.oneplus.settings.faceunlock.OPFaceUnlockSettings" settings:keywords="@string/oneplus_search_keyword_face_unlock" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/lock_settings_profile_title" android:key="security_category_profile" android:order="20">
+        <com.android.settingslib.RestrictedSwitchPreference android:title="@string/lock_settings_profile_unification_title" android:key="unification" android:summary="@string/lock_settings_profile_unification_summary" settings:keywords="@string/keywords_unification" />
+        <com.android.settingslib.RestrictedPreference android:title="@string/unlock_set_unlock_launch_picker_title_profile" android:key="unlock_set_or_change_profile" android:summary="@string/unlock_set_unlock_mode_pattern" settings:keywords="@string/keywords_lockscreen" />
+        <SwitchPreference android:title="@string/lockpattern_settings_enable_visible_pattern_title_profile" android:key="visiblepattern_profile" android:summary="@string/summary_placeholder" settings:controller="com.android.settings.security.VisiblePatternProfilePreferenceController" />
+        <Preference android:title="@string/security_settings_fingerprint_preference_title" android:key="fingerprint_settings_profile" android:summary="@string/summary_placeholder" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/security_passwords_title" android:key="security_settings_misc_category" android:order="40">
+        <Preference android:title="@string/location_settings_title" android:key="location" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.location.LocationSettings" />
+        <SwitchPreference android:title="@string/show_password" android:key="show_password" android:summary="@string/show_password_summary" settings:controller="com.android.settings.security.ShowPasswordPreferenceController" settings:keywords="@string/oneplus_search_keyword_show_pwd" />
+    </PreferenceCategory>
+    <PreferenceCategory android:key="security_settings_device_admin_category" android:order="50">
+        <Preference android:title="@string/oneplus_emergency_rescue_settings" android:key="emergency_rescue_settings" android:summary="@string/oneplus_emergency_rescue_settings_summary" />
+        <Preference android:title="@string/manage_device_admin" android:key="manage_device_admin" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.DeviceAdminSettings" />
+        <Preference android:title="@string/enterprise_privacy_settings" android:key="enterprise_privacy" android:summary="@string/summary_placeholder" android:fragment="com.android.settings.enterprise.EnterprisePrivacySettings" />
+    </PreferenceCategory>
+    <Preference android:title="@string/sim_lock_settings_category" android:key="sim_lock_settings" android:order="60">
+        <intent android:targetPackage="com.android.settings" android:action="android.intent.action.MAIN" android:targetClass="com.android.settings.Settings$IccLockSettingsActivity" />
+    </Preference>
+    <Preference android:title="@string/encryption_and_credential_settings_title" android:key="encryption_and_credential" android:summary="@string/encryption_and_credential_settings_summary" android:order="70" android:fragment="com.android.settings.security.EncryptionAndCredential" />
+    <Preference android:title="@string/manage_trust_agents" android:key="manage_trust_agents" android:summary="@string/summary_placeholder" android:order="80" android:fragment="com.android.settings.security.trustagent.TrustAgentSettings" />
+    <Preference android:title="@string/screen_pinning_title" android:key="screen_pinning_settings" android:summary="@string/summary_placeholder" android:order="90" android:fragment="com.android.settings.security.ScreenPinningSettings" />
+    <Preference android:title="@string/reset_collect_diagnostics_title" android:key="reset_collect_diagnostics" android:summary="@string/reset_collect_diagnostics_summary" android:order="100" />
+</PreferenceScreen>

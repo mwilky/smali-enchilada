@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:tint="@color/oneplus_settings_dashboard_icon_network_color" android:height="@dimen/oneplus_dashboard_tile_iconinside_size" android:width="@dimen/oneplus_dashboard_tile_iconinside_size" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:translateX="1.0" android:translateY="4.0">
+        <path android:fillColor="#ff1a1a1c" android:pathData="M11 15.9L0 4.7C5.9 -1.4 15.5 -1.5 21.6 4.3 21.7 4.4 21.9 4.6 22 4.7L11 15.9Z" />
+    </group>
+</vector>

@@ -1,0 +1,57 @@
+.class Landroid/support/v17/leanback/app/SearchFragment$5;
+.super Ljava/lang/Object;
+.source "SearchFragment.java"
+
+# interfaces
+.implements Landroid/support/v17/leanback/widget/SearchBar$SearchBarPermissionListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroid/support/v17/leanback/app/SearchFragment;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x0
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Landroid/support/v17/leanback/app/SearchFragment;
+
+
+# direct methods
+.method constructor <init>(Landroid/support/v17/leanback/app/SearchFragment;)V
+    .locals 0
+    .param p1, "this$0"    # Landroid/support/v17/leanback/app/SearchFragment;
+
+    .line 237
+    iput-object p1, p0, Landroid/support/v17/leanback/app/SearchFragment$5;->this$0:Landroid/support/v17/leanback/app/SearchFragment;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public requestAudioPermission()V
+    .locals 3
+
+    .line 240
+    iget-object v0, p0, Landroid/support/v17/leanback/app/SearchFragment$5;->this$0:Landroid/support/v17/leanback/app/SearchFragment;
+
+    const-string v1, "android.permission.RECORD_AUDIO"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/support/v17/leanback/app/PermissionHelper;->requestPermissions(Landroid/app/Fragment;[Ljava/lang/String;I)V
+
+    .line 242
+    return-void
+.end method

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/oneplus_navigation_bar_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <com.oneplus.settings.ui.OPPreferenceHeaderMargin android:key="preference_divider_line" />
+    <Preference android:title="@string/oneplus_customization" android:key="customization" android:summary="@string/oneplus_customization_summary" android:fragment="com.oneplus.settings.navigationbargestures.OPButtonCustomSettings" />
+    <PreferenceCategory android:title="@string/oneplus_choose_navigation_bar" android:key="choose_navigation_bar" settings:allowDividerAbove="true">
+        <com.android.settings.ui.RadioButtonPreference android:persistent="false" android:title="@string/oneplus_fixed_navigation_bar" android:key="always_show_navigation_bar" android:summary="@string/oneplus_fixed_navigation_bar_title" />
+        <com.android.settings.ui.RadioButtonPreference android:persistent="false" android:title="@string/oneplus_back_home" android:key="back_home" android:summary="@string/oneplus_back_home_summary" />
+        <com.android.settings.ui.RadioButtonPreference android:persistent="false" android:title="@string/oneplus_gesture_navigation_bar_title" android:key="gesture_navigation_bar" android:summary="@string/oneplus_gesture_navigation_bar_summary" />
+    </PreferenceCategory>
+    <com.oneplus.settings.ui.OPPreferenceDivider android:key="preference_divider_line" />
+    <com.oneplus.settings.ui.OPPhoneControlWayCategory android:title="@string/oneplus_instrucitons" android:key="phone_control_way" />
+</PreferenceScreen>

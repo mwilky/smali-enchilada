@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/zen_mode_behavior_settings_title" android:key="zen_mode_behavior_settings_page"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:settings="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference android:title="@string/zen_mode_alarms" android:key="zen_mode_alarms" />
+    <SwitchPreference android:title="@string/zen_mode_media" android:key="zen_mode_media" />
+    <SwitchPreference android:title="@string/zen_mode_system" android:key="zen_mode_system" />
+    <SwitchPreference android:title="@string/zen_mode_reminders" android:key="zen_mode_reminders" />
+    <SwitchPreference android:title="@string/zen_mode_events" android:key="zen_mode_events" />
+    <ListPreference android:entries="@array/zen_mode_contacts_entries" android:title="@string/zen_mode_messages" android:key="zen_mode_messages" android:entryValues="@array/zen_mode_contacts_values" />
+    <ListPreference android:entries="@array/zen_mode_contacts_entries" android:title="@string/zen_mode_calls" android:key="zen_mode_calls" android:entryValues="@array/zen_mode_contacts_values" />
+    <SwitchPreference android:title="@string/zen_mode_repeat_callers" android:key="zen_mode_repeat_callers" />
+    <com.android.settingslib.widget.FooterPreference />
+</PreferenceScreen>

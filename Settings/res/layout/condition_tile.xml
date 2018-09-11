@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/content" android:background="@drawable/op_ic_condition_tile_background" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:minHeight="36.0dip" android:layout_marginStart="13.0dip" android:elevation="@dimen/oneplus_contorl_shadow_z1">
+        <ImageView android:id="@android:id/icon" android:layout_width="@dimen/suggestion_card_icon_size" android:layout_height="@dimen/suggestion_card_icon_size" android:tint="?android:colorAccent" android:layout_marginEnd="21.0dip" />
+        <TextView android:textColor="@color/oneplus_contorl_text_color_primary_default" android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/oneplus_contorl_text_style_subheading" />
+    </LinearLayout>
+    <TextView android:textColor="@color/oneplus_contorl_text_color_secondary_default" android:id="@android:id/summary" android:paddingTop="@dimen/oneplus_contorl_layout_margin_top1" android:paddingBottom="@dimen/oneplus_contorl_layout_margin_top1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:alpha="0.7" android:paddingStart="55.0dip" android:paddingEnd="?android:listPreferredItemPaddingEnd" style="@style/oneplus_contorl_text_style_body1" />
+    <android.support.v7.widget.ButtonBarLayout android:id="@id/buttonBar" android:paddingBottom="@dimen/oneplus_contorl_layout_margin_top1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="55.0dip" android:paddingEnd="?android:listPreferredItemPaddingEnd" style="?android:buttonBarStyle">
+        <Button android:textColor="?android:textColorPrimary" android:id="@id/first_action" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:alpha="0.8" android:textAlignment="viewStart" android:paddingStart="0.0dip" style="?android:buttonBarButtonStyle" />
+        <Button android:textColor="?android:textColorPrimary" android:id="@id/second_action" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:alpha="0.8" android:textAlignment="viewStart" style="?android:buttonBarButtonStyle" />
+    </android.support.v7.widget.ButtonBarLayout>
+    <include layout="@layout/horizontal_divider" />
+</LinearLayout>

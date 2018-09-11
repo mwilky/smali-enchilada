@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#fffafafa" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textColor="@android:color/white" android:id="@id/next_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top1" android:layout_marginBottom="@dimen/oneplus_contorl_layout_margin_bottom1" android:text="@string/fingerprint_enroll_button_next" android:layout_alignParentBottom="true" android:layout_marginEnd="@dimen/oneplus_contorl_layout_margin_right1" android:layout_alignParentEnd="true" android:backgroundTint="@color/oneplus_provision_accent_color" />
+    <LinearLayout android:orientation="vertical" android:id="@id/linearlayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:src="@drawable/op_ic_screen_provision" android:layout_marginStart="@dimen/oneplus_contorl_layout_margin_left2" />
+        <TextView android:textAppearance="@style/oneplus_contorl_text_style_headline" android:textColor="@color/oneplus_contorl_text_color_primary_light" android:id="@id/oos_headers_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/oneplus_screen_color_mode_title" android:layout_marginStart="@dimen/oneplus_contorl_layout_margin_left2" android:layout_marginEnd="@dimen/oneplus_contorl_layout_margin_right2" />
+    </LinearLayout>
+    <fragment android:name="com.oneplus.settings.better.OPSuwScreenColorMode" android:id="@id/fragment_screen_color_mode" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_above="@id/next_button" android:layout_below="@id/linearlayout" />
+</RelativeLayout>
