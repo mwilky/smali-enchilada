@@ -5909,4 +5909,11 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_1212">false</item>
     <string name="oneplus_quick_turn_on_assistant_app">Quick activate the assistant app</string>
     <string name="oneplus_quick_turn_on_assistant_app_summary">Hold the power button for 0.5s to activate the assistant app, and 3s for power off</string>
+    <string name="hardware_keys_action_kill">Kill foreground app</string>
+    <string name="hardware_keys_action_screenshot">Full screenshot</string>
+    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
+    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
+    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
+    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
+    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
 </resources>
