@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/aod_clock_inner_layout_margin" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_marginRight="@dimen/aod_clock_inner_layout_margin" android:text="@string/aod_clock_select_style_text" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/aod_clock_inner_layout_margin" android:layout_marginTop="@dimen/oneplus_contorl_layout_margin_top2" android:layout_marginRight="@dimen/aod_clock_inner_layout_margin">
+        <include android:id="@id/aod_clock_default" layout="@layout/aod_clock_thumbnail" />
+        <include android:id="@id/aod_clock_classic" android:layout_width="@dimen/aod_clock_preview_thumb_edge" android:layout_height="wrap_content" android:layout_marginLeft="24.0px" android:layout_marginRight="24.0px" layout="@layout/aod_clock_thumbnail" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/aod_clock_inner_layout_margin" android:layout_marginTop="16.0dip" android:layout_marginRight="@dimen/aod_clock_inner_layout_margin">
+        <include android:id="@id/aod_clock_analog" layout="@layout/aod_clock_thumbnail" />
+        <include android:id="@id/aod_clock_digital" android:layout_width="@dimen/aod_clock_preview_thumb_edge" android:layout_height="wrap_content" android:layout_marginLeft="24.0px" android:layout_marginRight="24.0px" layout="@layout/aod_clock_thumbnail" />
+    </LinearLayout>
+</LinearLayout>

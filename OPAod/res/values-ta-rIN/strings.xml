@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">அனலாக்</string>
+    <string name="aod_clock_classic">கிளாசிக்</string>
+    <string name="aod_clock_default">இயல்புநிலை</string>
+    <string name="aod_clock_digital">டிஜிட்டல்</string>
+    <string name="aod_clock_preview_action_bar_title">முன்னோட்டம்</string>
+    <string name="aod_clock_select_action_bar_title">கடிகாரம் பாணி</string>
+    <string name="aod_clock_select_style_text">கடிகாரம் பாணியை தேர்வுசெய்யவும்</string>
+    <string name="aod_clock_selected">தேர்வுசெய்யப்பட்டது</string>
+    <string name="cancel">ரத்துசெய்க</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">நீங்கள் அறிவிப்புகளைப் பெறும்போது திரையை விழிப்பூட்டவும்</string>
+    <string name="oneplus_aod_auto_wake_screen_title">புதிய அறிவிப்புகள்</string>
+    <string name="oneplus_aod_clock_style_title">கடிகாரம் பாணி</string>
+    <string name="oneplus_aod_display_mode_title">எப்போது காண்பிக்க வேண்டும்</string>
+    <string name="oneplus_aod_display_period_title">காட்சி காலஅளவு</string>
+    <string name="oneplus_aod_display_text_title">செய்தியைக் காட்டுக</string>
+    <string name="oneplus_aod_mode_always_on">எப்பொழுதும் ஆன்</string>
+    <string name="oneplus_aod_mode_lift_up">டிஸ்பிளேவை உயர்த்தவும்</string>
+    <string name="oneplus_aod_mode_shake_up">காண்பிக்க உங்கள் ஃபோனை இலேசாக நகர்த்தவும்</string>
+    <string name="oneplus_aod_mode_single_tap">காண்பிக்கத் தட்டவும்</string>
+    <string name="oneplus_aod_settings">ஆம்பியன்ட் காட்சி</string>
+    <string name="oneplus_aod_settings_what_to_show">என்ன காண்பிக்க வேண்டும்</string>
+    <string name="oneplus_aod_settings_when_to_show">எப்போது காண்பிக்க வேண்டும்</string>
+    <string name="oneplus_aod_title">கடிகாரத்தைக் காண்பி</string>
+    <string name="oneplus_display_time_end">இந்த நேரம் வரை</string>
+    <string name="oneplus_display_time_from">தொடக்க நேரம்</string>
+    <string name="oneplus_display_time_start">இந்த நேரத்திலிருந்து</string>
+    <string name="oneplus_display_time_to">முடிவு நேரம்</string>
+    <string name="owner_info_settings_edit_text_hint">எ.கா., Joe’s Android.</string>
+    <string name="owner_info_settings_summary">ஏதுமில்லை</string>
+    <string name="save">சேமி</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">தொந்தரவு செய்யாதீர்</string>
+    <string name="volume_ring">ரிங்</string>
+    <string name="volume_slient">சைலன்ட்</string>
+    <string name="volume_vibrate">அதிர்வுறு</string>
+</resources>

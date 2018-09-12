@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analog</string>
+    <string name="aod_clock_classic">Klasik</string>
+    <string name="aod_clock_default">Lalai</string>
+    <string name="aod_clock_digital">Digital</string>
+    <string name="aod_clock_preview_action_bar_title">Pratonton</string>
+    <string name="aod_clock_select_action_bar_title">Gaya jam</string>
+    <string name="aod_clock_select_style_text">Pilih gaya jam</string>
+    <string name="aod_clock_selected">DIPILIH</string>
+    <string name="cancel">Batal</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Bangunkan skrin apabila anda menerima pemberitahuan</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Pemberitahuan Baharu</string>
+    <string name="oneplus_aod_clock_style_title">Gaya jam</string>
+    <string name="oneplus_aod_display_mode_title">Bila untuk paparkan</string>
+    <string name="oneplus_aod_display_period_title">Tempoh paparan</string>
+    <string name="oneplus_aod_display_text_title">Paparkan mesej</string>
+    <string name="oneplus_aod_mode_always_on">Sentiasa hidup</string>
+    <string name="oneplus_aod_mode_lift_up">Angkat paparan</string>
+    <string name="oneplus_aod_mode_shake_up">Gerakan telefon anda sedikit untuk memaparkan</string>
+    <string name="oneplus_aod_mode_single_tap">Ketik untuk paparkan</string>
+    <string name="oneplus_aod_settings">Paparan sekitar</string>
+    <string name="oneplus_aod_settings_what_to_show">apa yang akan dipaparkan</string>
+    <string name="oneplus_aod_settings_when_to_show">bila untuk paparkan</string>
+    <string name="oneplus_aod_title">Paparkan jam</string>
+    <string name="oneplus_display_time_end">Hingga</string>
+    <string name="oneplus_display_time_from">Dari</string>
+    <string name="oneplus_display_time_start">Dari</string>
+    <string name="oneplus_display_time_to">hingga</string>
+    <string name="owner_info_settings_edit_text_hint">Contohnya, Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Tiada</string>
+    <string name="save">SIMPAN</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Jangan ganggu</string>
+    <string name="volume_ring">Dering</string>
+    <string name="volume_slient">Senyap</string>
+    <string name="volume_vibrate">Bergetar</string>
+</resources>

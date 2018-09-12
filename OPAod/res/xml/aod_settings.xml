@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/oneplus_aod_settings" android:key="main_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/oneplus_aod_settings_when_to_show" android:key="when_to_show" />
+    <SwitchPreference android:persistent="false" android:title="@string/oneplus_aod_mode_lift_up" android:key="aod_display_mode_switch" android:singleLineTitle="false" android:iconSpaceReserved="true" />
+    <SwitchPreference android:persistent="false" android:title="@string/oneplus_aod_mode_shake_up" android:key="aod_shake_up_switch" android:singleLineTitle="false" android:iconSpaceReserved="true" />
+    <SwitchPreference android:persistent="false" android:title="@string/oneplus_aod_mode_single_tap" android:key="aod_single_tap_switch" android:singleLineTitle="false" android:iconSpaceReserved="true" />
+    <ListPreference android:persistent="true" android:title="@string/oneplus_aod_display_mode_title" android:key="aod_display_mode" android:iconSpaceReserved="true" />
+    <Preference android:persistent="true" android:title="@string/oneplus_aod_display_period_title" android:key="aod_display_period" android:iconSpaceReserved="true" />
+    <Preference android:layout="@layout/preference_divider" android:title="divider" android:selectable="false" />
+    <PreferenceCategory android:title="@string/oneplus_aod_settings_what_to_show" android:key="when_to_show" />
+    <Preference android:persistent="true" android:title="@string/oneplus_aod_clock_style_title" android:key="aod_clock_style" android:iconSpaceReserved="true" />
+    <Preference android:persistent="true" android:title="@string/oneplus_aod_display_text_title" android:key="aod_display_text" android:summary="@string/owner_info_settings_summary" android:iconSpaceReserved="true" />
+    <SwitchPreference android:persistent="true" android:title="@string/oneplus_aod_auto_wake_screen_title" android:key="aod_auto_wake_screen" android:summary="@string/oneplus_aod_auto_wake_screen_summary" android:singleLineTitle="false" android:iconSpaceReserved="true" />
+</PreferenceScreen>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analóg</string>
+    <string name="aod_clock_classic">Klasszikus</string>
+    <string name="aod_clock_default">Alapértelmezett</string>
+    <string name="aod_clock_digital">Digitális</string>
+    <string name="aod_clock_preview_action_bar_title">Előnézet</string>
+    <string name="aod_clock_select_action_bar_title">Óra stílusa</string>
+    <string name="aod_clock_select_style_text">Óra stílusának kiválasztása</string>
+    <string name="aod_clock_selected">KIVÁLASZTVA</string>
+    <string name="cancel">Mégse</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Képernyő ébresztése értesítések fogadásakor</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Új értesítések</string>
+    <string name="oneplus_aod_clock_style_title">Óra stílusa</string>
+    <string name="oneplus_aod_display_mode_title">Megjelenítés időpontja</string>
+    <string name="oneplus_aod_display_period_title">Megjelenítés időszaka</string>
+    <string name="oneplus_aod_display_text_title">Üzenet megjelenítése</string>
+    <string name="oneplus_aod_mode_always_on">Mindig bekapcsolva</string>
+    <string name="oneplus_aod_mode_lift_up">Felemelési kijelző</string>
+    <string name="oneplus_aod_mode_shake_up">Mozgassa kicsit a telefonját a megjelenítéshez</string>
+    <string name="oneplus_aod_mode_single_tap">Érintés a megjelenítéshez</string>
+    <string name="oneplus_aod_settings">Környezeti kijelző</string>
+    <string name="oneplus_aod_settings_what_to_show">mit jelenítsen meg</string>
+    <string name="oneplus_aod_settings_when_to_show">megjelenítés időpontja</string>
+    <string name="oneplus_aod_title">Óra megjelenítése</string>
+    <string name="oneplus_display_time_end">Vége</string>
+    <string name="oneplus_display_time_from">Kezdete</string>
+    <string name="oneplus_display_time_start">Kezdete</string>
+    <string name="oneplus_display_time_to">vége</string>
+    <string name="owner_info_settings_edit_text_hint">Pl. Dóri Androidja</string>
+    <string name="owner_info_settings_summary">Nincs</string>
+    <string name="save">MENTÉS</string>
+    <string name="time_format_12_mode">ó:pp n</string>
+    <string name="volume_no_disturb">Ne zavarj</string>
+    <string name="volume_ring">Csengetés</string>
+    <string name="volume_slient">Néma</string>
+    <string name="volume_vibrate">Rezgés</string>
+</resources>

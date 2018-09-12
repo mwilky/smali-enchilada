@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analogico</string>
+    <string name="aod_clock_classic">Classico</string>
+    <string name="aod_clock_default">Predefinito</string>
+    <string name="aod_clock_digital">Digitale</string>
+    <string name="aod_clock_preview_action_bar_title">Anteprima</string>
+    <string name="aod_clock_select_action_bar_title">Stile orologio</string>
+    <string name="aod_clock_select_style_text">"Seleziona lo stile dell'orologio"</string>
+    <string name="aod_clock_selected">SELEZIONATO</string>
+    <string name="cancel">Annulla</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Schermo di attivazione alla ricezione di notifiche</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nuove notifiche</string>
+    <string name="oneplus_aod_clock_style_title">Stile orologio</string>
+    <string name="oneplus_aod_display_mode_title">Quando mostrare</string>
+    <string name="oneplus_aod_display_period_title">Intervallo di visualizzazione</string>
+    <string name="oneplus_aod_display_text_title">Mostra messaggio</string>
+    <string name="oneplus_aod_mode_always_on">Sempre attivo</string>
+    <string name="oneplus_aod_mode_lift_up">Solleva display</string>
+    <string name="oneplus_aod_mode_shake_up">Spostare il telefono leggermente per mostrare</string>
+    <string name="oneplus_aod_mode_single_tap">Toccare per visualizzare</string>
+    <string name="oneplus_aod_settings">Schermo Ambient</string>
+    <string name="oneplus_aod_settings_what_to_show">cosa mostrare</string>
+    <string name="oneplus_aod_settings_when_to_show">quando mostrare</string>
+    <string name="oneplus_aod_title">Mostra orologio</string>
+    <string name="oneplus_display_time_end">A</string>
+    <string name="oneplus_display_time_from">Da</string>
+    <string name="oneplus_display_time_start">Da</string>
+    <string name="oneplus_display_time_to">a</string>
+    <string name="owner_info_settings_edit_text_hint">Ad esempio, Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Nessuno</string>
+    <string name="save">SALVA</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Non disturbare</string>
+    <string name="volume_ring">Suoneria</string>
+    <string name="volume_slient">Silenzioso</string>
+    <string name="volume_vibrate">Vibrazione</string>
+</resources>

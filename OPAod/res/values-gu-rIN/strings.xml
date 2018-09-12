@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">એનાલૉગ</string>
+    <string name="aod_clock_classic">ક્લાસિક</string>
+    <string name="aod_clock_default">ડિફૉલ્ટ</string>
+    <string name="aod_clock_digital">ડિજિટલ</string>
+    <string name="aod_clock_preview_action_bar_title">પૂર્વાવલોકન</string>
+    <string name="aod_clock_select_action_bar_title">ઘડિયાળ શૈલી</string>
+    <string name="aod_clock_select_style_text">ઘડિયાળ શૈલી પસંદ કરો</string>
+    <string name="aod_clock_selected">પસંદ કરેલું</string>
+    <string name="cancel">રદ કરો</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">જ્યારે તમે સૂચનો મેળવો ત્યારે ડિસ્પ્લે સક્રિય થાય</string>
+    <string name="oneplus_aod_auto_wake_screen_title">નવી સૂચનાઓ</string>
+    <string name="oneplus_aod_clock_style_title">ઘડિયાળ શૈલી</string>
+    <string name="oneplus_aod_display_mode_title">ક્યારે બતાવવું</string>
+    <string name="oneplus_aod_display_period_title">અવધિ પ્રદર્શિત કરો</string>
+    <string name="oneplus_aod_display_text_title">સંદેશ પ્રદર્શિત કરો</string>
+    <string name="oneplus_aod_mode_always_on">હંમેશા ચાલુ</string>
+    <string name="oneplus_aod_mode_lift_up">લિફટ અપ ડિસ્પ્લે</string>
+    <string name="oneplus_aod_mode_shake_up">બતાવવા માટે તમારા ફોનને થોડો ફેરવો</string>
+    <string name="oneplus_aod_mode_single_tap">બતાવવા માટે ટૅપ કરો</string>
+    <string name="oneplus_aod_settings">એમ્બિયન્ટ પ્રદર્શન</string>
+    <string name="oneplus_aod_settings_what_to_show">શું બતાવવું</string>
+    <string name="oneplus_aod_settings_when_to_show">ક્યારે બતાવવું</string>
+    <string name="oneplus_aod_title">ઘડિયાળ બતાવો</string>
+    <string name="oneplus_display_time_end">સુધી</string>
+    <string name="oneplus_display_time_from">તરફથી</string>
+    <string name="oneplus_display_time_start">અહીંથી</string>
+    <string name="oneplus_display_time_to">પ્રતિ</string>
+    <string name="owner_info_settings_edit_text_hint">દા.ત., જૉ નું Android.</string>
+    <string name="owner_info_settings_summary">કોઈ નહીં</string>
+    <string name="save">સાચવો</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">ખલેલ પહોચાડશો નહીં</string>
+    <string name="volume_ring">રીંગ</string>
+    <string name="volume_slient">સાઈલેંટ</string>
+    <string name="volume_vibrate">વાઈબ્રેટ</string>
+</resources>

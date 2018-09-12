@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">אנלוגי</string>
+    <string name="aod_clock_classic">קלאסי</string>
+    <string name="aod_clock_default">ברירת מחדל</string>
+    <string name="aod_clock_digital">דיגיטלי</string>
+    <string name="aod_clock_preview_action_bar_title">תצוגה מקדימה</string>
+    <string name="aod_clock_select_action_bar_title">סגנון השעון</string>
+    <string name="aod_clock_select_style_text">בחר את סגנון השעון</string>
+    <string name="aod_clock_selected">נבחר</string>
+    <string name="cancel">ביטול</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">הפעל את המסך בעת קבלת התראות</string>
+    <string name="oneplus_aod_auto_wake_screen_title">התראות חדשות</string>
+    <string name="oneplus_aod_clock_style_title">סגנון השעון</string>
+    <string name="oneplus_aod_display_mode_title">מתי להציג</string>
+    <string name="oneplus_aod_display_period_title">משך התצוגה</string>
+    <string name="oneplus_aod_display_text_title">הצג הודעה</string>
+    <string name="oneplus_aod_mode_always_on">תמיד פועל</string>
+    <string name="oneplus_aod_mode_lift_up">הרם תצוגה</string>
+    <string name="oneplus_aod_mode_shake_up">לתצוגה הזז מעט את הטלפון שלך</string>
+    <string name="oneplus_aod_mode_single_tap">הקש לתצוגה</string>
+    <string name="oneplus_aod_settings">תצוגה סביבתית</string>
+    <string name="oneplus_aod_settings_what_to_show">מה להציג</string>
+    <string name="oneplus_aod_settings_when_to_show">מתי להציג</string>
+    <string name="oneplus_aod_title">הצג שעון</string>
+    <string name="oneplus_display_time_end">עד</string>
+    <string name="oneplus_display_time_from">מאת</string>
+    <string name="oneplus_display_time_start">החל מ-</string>
+    <string name="oneplus_display_time_to">אל</string>
+    <string name="owner_info_settings_edit_text_hint">למשל, Joe’s אנדרואיד.</string>
+    <string name="owner_info_settings_summary">ללא</string>
+    <string name="save">שמור</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">נא לא להפריע</string>
+    <string name="volume_ring">צלצול</string>
+    <string name="volume_slient">שקט</string>
+    <string name="volume_vibrate">רטט</string>
+</resources>

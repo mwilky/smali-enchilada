@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analógové</string>
+    <string name="aod_clock_classic">Klasika</string>
+    <string name="aod_clock_default">Predvolené</string>
+    <string name="aod_clock_digital">Digitálne</string>
+    <string name="aod_clock_preview_action_bar_title">Ukážka</string>
+    <string name="aod_clock_select_action_bar_title">Štýl hodín</string>
+    <string name="aod_clock_select_style_text">Vybrať štýl hodín</string>
+    <string name="aod_clock_selected">VYBRATÉ</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Prebudiť obrazovku, keď dostanete upozornenie</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nové oznámenia</string>
+    <string name="oneplus_aod_clock_style_title">Štýl hodín</string>
+    <string name="oneplus_aod_display_mode_title">Kedy zobraziť</string>
+    <string name="oneplus_aod_display_period_title">Doba zobrazenia</string>
+    <string name="oneplus_aod_display_text_title">Zobraziť správu</string>
+    <string name="oneplus_aod_mode_always_on">Vždy zapnuté</string>
+    <string name="oneplus_aod_mode_lift_up">Nadvihnite displej</string>
+    <string name="oneplus_aod_mode_shake_up">Pohnite trocha telefónom na zobrazenie</string>
+    <string name="oneplus_aod_mode_single_tap">Zobrazte ťuknutím</string>
+    <string name="oneplus_aod_settings">Ambient display</string>
+    <string name="oneplus_aod_settings_what_to_show">čo zobraziť</string>
+    <string name="oneplus_aod_settings_when_to_show">kedy zobraziť</string>
+    <string name="oneplus_aod_title">Zobraziť hodiny</string>
+    <string name="oneplus_display_time_end">Do</string>
+    <string name="oneplus_display_time_from">Od</string>
+    <string name="oneplus_display_time_start">Od</string>
+    <string name="oneplus_display_time_to">do</string>
+    <string name="owner_info_settings_edit_text_hint">Napr., Petrov Android.</string>
+    <string name="owner_info_settings_summary">Žiadne</string>
+    <string name="save">ULOŽIŤ</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Nerušiť</string>
+    <string name="volume_ring">Zvonenie</string>
+    <string name="volume_slient">Tichý</string>
+    <string name="volume_vibrate">Vibrovať</string>
+</resources>

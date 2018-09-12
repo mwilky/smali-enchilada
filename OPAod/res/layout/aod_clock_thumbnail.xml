@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/aod_clock" android:layout_width="@dimen/aod_clock_preview_thumb_edge" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/aod_clock_img" android:layout_width="@dimen/aod_clock_preview_thumb_edge" android:layout_height="@dimen/aod_clock_preview_thumb_edge" android:src="@drawable/aod_clock_default" />
+    <TextView android:textStyle="bold" android:textColor="@color/oneplus_contorl_text_color_primary_dark" android:gravity="center" android:id="@id/select_text" android:background="@color/oneplus_aod_clock_select_color" android:visibility="invisible" android:layout_width="@dimen/aod_clock_preview_thumb_edge" android:layout_height="@dimen/aod_clock_select_height" android:text="@string/aod_clock_selected" android:layout_alignBottom="@id/aod_clock_img" android:layout_centerHorizontal="true" android:textAlignment="center" style="@style/oneplus_contorl_text_style_button" />
+    <TextView android:id="@id/aod_clock_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="21.0px" android:text="@string/aod_clock_default" android:layout_below="@id/aod_clock_img" style="@style/oneplus_contorl_text_style_body1" />
+    <View android:id="@id/border" android:background="@drawable/border" android:layout_width="fill_parent" android:layout_height="@dimen/aod_clock_preview_thumb_edge" />
+</RelativeLayout>

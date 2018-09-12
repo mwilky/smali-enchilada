@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">ਐਨਾਲੌਗ</string>
+    <string name="aod_clock_classic">ਕਲਾਸਿਕ</string>
+    <string name="aod_clock_default">ਪੂਰਵ-ਨਿਰਧਾਰਤ</string>
+    <string name="aod_clock_digital">ਡਿਜੀਟਲ</string>
+    <string name="aod_clock_preview_action_bar_title">ਪੂਰਵ-ਝਲਕ ਦੇਖੋ</string>
+    <string name="aod_clock_select_action_bar_title">ਘੜੀ ਦੀ ਸ਼ੈਲੀ</string>
+    <string name="aod_clock_select_style_text">ਘੜੀ ਦੀ ਸ਼ੈਲੀ ਚੁਣੋ</string>
+    <string name="aod_clock_selected">ਚੁਣੀ ਗਈ</string>
+    <string name="cancel">ਰੱਦ ਕਰੋ</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">"ਸੂਚਨਾਵਾਂ ਪ੍ਰਾਪਤ ਹੋਣ 'ਤੇ ਸਕ੍ਰੀਨ ਦਾ ਕਿਰਿਆਸ਼ੀਲ ਹੋਣਾ"</string>
+    <string name="oneplus_aod_auto_wake_screen_title">ਨਵੀਆਂ ਸੂਚਨਾਵਾਂ</string>
+    <string name="oneplus_aod_clock_style_title">ਘੜੀ ਦੀ ਸ਼ੈਲੀ</string>
+    <string name="oneplus_aod_display_mode_title">ਕਦੋਂ ਦਿਖਾਈਏ</string>
+    <string name="oneplus_aod_display_period_title">ਡਿਸਪਲੇ ਮਿਆਦ</string>
+    <string name="oneplus_aod_display_text_title">ਸੁਨੇਹਾ ਦਿਖਾਓ</string>
+    <string name="oneplus_aod_mode_always_on">ਹਮੇਸ਼ਾ ਚਾਲੂ</string>
+    <string name="oneplus_aod_mode_lift_up">"ਚੁੱਕਣ 'ਤੇ ਡਿਸਪਲੇ"</string>
+    <string name="oneplus_aod_mode_shake_up">ਦਿਖਾਉਣ ਲਈ ਆਪਣੇ ਫ਼ੋਨ ਨੂੰ ਹਲਕਾ ਜਿਹਾ ਖਿਸਕਾਓ</string>
+    <string name="oneplus_aod_mode_single_tap">ਦਿਖਾਉਣ ਲਈ ਟੈਪ ਕਰੋ</string>
+    <string name="oneplus_aod_settings">ਐਂਬਿਐਂਟ ਡਿਸਪਲੇ</string>
+    <string name="oneplus_aod_settings_what_to_show">ਕੀ ਦਿਖਾਉਣਾ ਹੈ</string>
+    <string name="oneplus_aod_settings_when_to_show">ਕਦੋਂ ਦਿਖਾਉਣਾ ਹੈ</string>
+    <string name="oneplus_aod_title">ਘੜੀ ਦਿਖਾਓ</string>
+    <string name="oneplus_display_time_end">ਤੱਕ</string>
+    <string name="oneplus_display_time_from">ਤੋਂ</string>
+    <string name="oneplus_display_time_start">ਤੋਂ</string>
+    <string name="oneplus_display_time_to">ਤੱਕ</string>
+    <string name="owner_info_settings_edit_text_hint">ਜਿਵੇਂ ਕਿ ਜੋਏ ਦਾ Android।</string>
+    <string name="owner_info_settings_summary">ਕੋਈ ਨਹੀਂ</string>
+    <string name="save">ਸਹੇਜੋ</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ</string>
+    <string name="volume_ring">ਘੰਟੀ</string>
+    <string name="volume_slient">ਸ਼ਾਂਤ</string>
+    <string name="volume_vibrate">ਕੰਪਨ</string>
+</resources>

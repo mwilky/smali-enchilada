@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">അനലോഗ്</string>
+    <string name="aod_clock_classic">ക്ലാസ്സിക്</string>
+    <string name="aod_clock_default">ഡിഫോള്‍ട്ട്</string>
+    <string name="aod_clock_digital">ഡിജിറ്റൽ</string>
+    <string name="aod_clock_preview_action_bar_title">പ്രിവ്യു</string>
+    <string name="aod_clock_select_action_bar_title">ക്ലോക്ക് സ്റ്റൈല്‍</string>
+    <string name="aod_clock_select_style_text">ക്ലോക്ക് സ്റ്റൈല്‍ തിരഞ്ഞെടുക്കുക</string>
+    <string name="aod_clock_selected">തിരഞ്ഞെടുത്തു</string>
+    <string name="cancel">റദ്ദാക്കുക</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">നിങ്ങള്‍ക്ക് അറിയിപ്പുകള്‍ ലഭിക്കുമ്പോള്‍ സ്ക്രീന്‍ ഉണര്‍ത്തുക</string>
+    <string name="oneplus_aod_auto_wake_screen_title">പുതിയ അറിയിപ്പുകള്‍</string>
+    <string name="oneplus_aod_clock_style_title">ക്ലോക്ക് സ്റ്റൈല്‍</string>
+    <string name="oneplus_aod_display_mode_title">എപ്പോൾ കാണിക്കണം</string>
+    <string name="oneplus_aod_display_period_title">പ്രദർശന കാലയളവ്</string>
+    <string name="oneplus_aod_display_text_title">മെസേജ് പ്രദർശിപ്പിക്കുക</string>
+    <string name="oneplus_aod_mode_always_on">എല്ലായ്‍പ്പോഴും ഓണ്‍</string>
+    <string name="oneplus_aod_mode_lift_up">ലിഫ്റ്റ് അപ്പ് ഡിസ്പ്ലേ</string>
+    <string name="oneplus_aod_mode_shake_up">പ്രദർശിപ്പിക്കാനായി നിങ്ങളുടെ ഫോൺ ചെറുതായി നീക്കുക</string>
+    <string name="oneplus_aod_mode_single_tap">പ്രദർശിപ്പിക്കാനായി ടാപ്പ് ചെയ്യുക</string>
+    <string name="oneplus_aod_settings">ആംബിയന്‍റ് ഡിസ്‍പ്ലേ</string>
+    <string name="oneplus_aod_settings_what_to_show">എന്ത് പ്രദർശിപ്പിക്കണം</string>
+    <string name="oneplus_aod_settings_when_to_show">എപ്പോൾ പ്രദർശിപ്പിക്കണം</string>
+    <string name="oneplus_aod_title">ക്ലോക്ക് കാണിക്കുക</string>
+    <string name="oneplus_display_time_end">വരെ</string>
+    <string name="oneplus_display_time_from">ഇതു മുതല്‍</string>
+    <string name="oneplus_display_time_start">ആരംഭം</string>
+    <string name="oneplus_display_time_to">വരെ</string>
+    <string name="owner_info_settings_edit_text_hint">ഉദാ., ജോയുടെ’ Android.</string>
+    <string name="owner_info_settings_summary">ഒന്നുമില്ല</string>
+    <string name="save">സംരക്ഷിക്കുക</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">ശല്യപ്പെടുത്തരുത്</string>
+    <string name="volume_ring">റിംഗ്</string>
+    <string name="volume_slient">നിശബ്ദം</string>
+    <string name="volume_vibrate">വൈബ്രേറ്റ്</string>
+</resources>

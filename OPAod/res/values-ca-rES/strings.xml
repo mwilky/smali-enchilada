@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analògic</string>
+    <string name="aod_clock_classic">Clàssic</string>
+    <string name="aod_clock_default">Predeterminat</string>
+    <string name="aod_clock_digital">Digital</string>
+    <string name="aod_clock_preview_action_bar_title">Visualització prèvia</string>
+    <string name="aod_clock_select_action_bar_title">Estil de rellotge</string>
+    <string name="aod_clock_select_style_text">"Seleccioneu l'estil de rellotge"</string>
+    <string name="aod_clock_selected">SELECCIONAT</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">"La pantalla s'activa quan rebeu notificacions"</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Notificacions noves</string>
+    <string name="oneplus_aod_clock_style_title">Estil de rellotge</string>
+    <string name="oneplus_aod_display_mode_title">Quan es mostra</string>
+    <string name="oneplus_aod_display_period_title">Període de visualització</string>
+    <string name="oneplus_aod_display_text_title">Mostra el missatge</string>
+    <string name="oneplus_aod_mode_always_on">Sempre activat</string>
+    <string name="oneplus_aod_mode_lift_up">Activa la pantalla</string>
+    <string name="oneplus_aod_mode_shake_up">Moveu el telèfon lleugerament per mostrar</string>
+    <string name="oneplus_aod_mode_single_tap">Toqueu per mostrar</string>
+    <string name="oneplus_aod_settings">Pantalla ambient</string>
+    <string name="oneplus_aod_settings_what_to_show">què es mostra</string>
+    <string name="oneplus_aod_settings_when_to_show">quan es mostra</string>
+    <string name="oneplus_aod_title">Mostra el rellotge</string>
+    <string name="oneplus_display_time_end">Fins a les</string>
+    <string name="oneplus_display_time_from">Des de les</string>
+    <string name="oneplus_display_time_start">Des de les</string>
+    <string name="oneplus_display_time_to">fins a les</string>
+    <string name="owner_info_settings_edit_text_hint">Per exemple, Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Cap</string>
+    <string name="save">DESA</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">No molesteu</string>
+    <string name="volume_ring">So</string>
+    <string name="volume_slient">Silenci</string>
+    <string name="volume_vibrate">Vibració</string>
+</resources>

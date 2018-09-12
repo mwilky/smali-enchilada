@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">अॅनालॉग</string>
+    <string name="aod_clock_classic">क्लासिक</string>
+    <string name="aod_clock_default">डिफॉल्ट</string>
+    <string name="aod_clock_digital">डिजिटल</string>
+    <string name="aod_clock_preview_action_bar_title">प्रिव्ह्यू</string>
+    <string name="aod_clock_select_action_bar_title">घड्याळ्याची शैली</string>
+    <string name="aod_clock_select_style_text">घड्याळाची शैली निवडा</string>
+    <string name="aod_clock_selected">निवडली</string>
+    <string name="cancel">रद्द करा</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">आपल्याला सूचना मिळाल्यानंतर स्क्रीनला जागे करा</string>
+    <string name="oneplus_aod_auto_wake_screen_title">नवीन सूचना</string>
+    <string name="oneplus_aod_clock_style_title">घड्याळ्याची शैली</string>
+    <string name="oneplus_aod_display_mode_title">कधी दाखवायचे</string>
+    <string name="oneplus_aod_display_period_title">कालावधी दाखवा</string>
+    <string name="oneplus_aod_display_text_title">संदेश दाखवा</string>
+    <string name="oneplus_aod_mode_always_on">कायम चालू</string>
+    <string name="oneplus_aod_mode_lift_up">डिस्प्ले वर उचला</string>
+    <string name="oneplus_aod_mode_shake_up">दर्शवण्यासाठी आपला फोन थोडासा हलवा</string>
+    <string name="oneplus_aod_mode_single_tap">दर्शवण्यासाठी टॅप करा</string>
+    <string name="oneplus_aod_settings">सभोवतालचे दृश्य</string>
+    <string name="oneplus_aod_settings_what_to_show">काय दर्शवायचे</string>
+    <string name="oneplus_aod_settings_when_to_show">कधी दर्शवायचे</string>
+    <string name="oneplus_aod_title">घड्याळ दाखवा</string>
+    <string name="oneplus_display_time_end">प्रति</string>
+    <string name="oneplus_display_time_from">पासून</string>
+    <string name="oneplus_display_time_start">पासून</string>
+    <string name="oneplus_display_time_to">पर्यंत</string>
+    <string name="owner_info_settings_edit_text_hint">उदा., Joe’s अँड्रॉइड.</string>
+    <string name="owner_info_settings_summary">कोणतेही नाही</string>
+    <string name="save">जतन करा</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">व्यत्यय आणू नका</string>
+    <string name="volume_ring">रिंग</string>
+    <string name="volume_slient">सायलंट</string>
+    <string name="volume_vibrate">कंपन</string>
+</resources>

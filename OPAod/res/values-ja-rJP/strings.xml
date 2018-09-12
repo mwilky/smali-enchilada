@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">アナログ</string>
+    <string name="aod_clock_classic">クラシック</string>
+    <string name="aod_clock_default">既定</string>
+    <string name="aod_clock_digital">デジタル</string>
+    <string name="aod_clock_preview_action_bar_title">プレビュー</string>
+    <string name="aod_clock_select_action_bar_title">時計のスタイル</string>
+    <string name="aod_clock_select_style_text">時計のスタイルを選択してください</string>
+    <string name="aod_clock_selected">選択済み</string>
+    <string name="cancel">キャンセル</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">通知の受信時に画面を点灯させる</string>
+    <string name="oneplus_aod_auto_wake_screen_title">新規通知</string>
+    <string name="oneplus_aod_clock_style_title">時計のスタイル</string>
+    <string name="oneplus_aod_display_mode_title">表示するタイミング</string>
+    <string name="oneplus_aod_display_period_title">表示期間</string>
+    <string name="oneplus_aod_display_text_title">メッセージを表示</string>
+    <string name="oneplus_aod_mode_always_on">常にオン</string>
+    <string name="oneplus_aod_mode_lift_up">ディスプレイの持ち上げ</string>
+    <string name="oneplus_aod_mode_shake_up">携帯電話を少し移動して表示する</string>
+    <string name="oneplus_aod_mode_single_tap">タップして表示する</string>
+    <string name="oneplus_aod_settings">アンビエントディスプレイ</string>
+    <string name="oneplus_aod_settings_what_to_show">表示する内容</string>
+    <string name="oneplus_aod_settings_when_to_show">表示するタイミング</string>
+    <string name="oneplus_aod_title">時計を表示</string>
+    <string name="oneplus_display_time_end">終了時刻</string>
+    <string name="oneplus_display_time_from">開始時刻</string>
+    <string name="oneplus_display_time_start">開始時刻</string>
+    <string name="oneplus_display_time_to">終了時刻</string>
+    <string name="owner_info_settings_edit_text_hint">例: Joe’s Android。</string>
+    <string name="owner_info_settings_summary">なし</string>
+    <string name="save">保存</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">おやすみモード</string>
+    <string name="volume_ring">着信音</string>
+    <string name="volume_slient">サイレント</string>
+    <string name="volume_vibrate">バイブ</string>
+</resources>

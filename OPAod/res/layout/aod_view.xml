@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.oneplus.aod.AodMain android:orientation="vertical" android:id="@id/main_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/main_view_horizontal_margin" android:layout_marginRight="@dimen/main_view_horizontal_margin">
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/date_time_view" />
+        <View android:id="@id/battery_empty_view" android:layout_width="fill_parent" android:layout_height="@dimen/battery_empty_view_height" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/battery_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/battery_percentage" android:gravity="center" android:id="@id/percentage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <LinearLayout android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="@dimen/battery_icon_container_width" android:layout_height="fill_parent">
+                <com.oneplus.aod.battery.BatteryMeterView android:id="@id/battery" android:layout_width="@dimen/battery_icon_width" android:layout_height="@dimen/battery_icon_height" />
+                <com.oneplus.aod.battery.BatteryDashChargeView android:layout_gravity="center" android:id="@id/battery_dash_charge" android:visibility="gone" android:layout_width="@dimen/battery_dash_icon_width" android:layout_height="@dimen/battery_dash_icon_height" android:src="@drawable/ic_sys_dash_charging_state_0" android:scaleType="centerCrop" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:id="@id/notification_icon_empty_view" android:layout_width="fill_parent" android:layout_height="@dimen/notification_icon_empty_view_height" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/notification_icon_area_inner" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.oneplus.aod.IconMerger android:gravity="center" android:orientation="horizontal" android:id="@id/notificationIcons" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentStart="true" />
+            <TextView android:textAppearance="@style/notification_icon_more" android:id="@id/moreIcon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/status_bar_icon_padding" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/owner_view_text_size" android:textColor="@color/oneplus_contorl_text_color_primary_dark" android:ellipsize="end" android:id="@id/owner_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/owner_info_marginTop" android:singleLine="true" style="@style/oneplus_contorl_text_style_body1" />
+    </com.oneplus.aod.AodMain>
+    <com.oneplus.aod.SingleNotificationView android:gravity="center" android:id="@id/single_notification_view" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/notification_default" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/single_notification_horizontal_margin" android:layout_marginRight="@dimen/single_notification_horizontal_margin">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/single_notification_icon" android:layout_width="@dimen/single_notification_icon_width" android:layout_height="@dimen/single_notification_icon_height" android:scaleType="fitCenter" />
+                <TextView android:textAppearance="@style/single_notification_header" android:ellipsize="end" android:id="@id/single_notification_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sinlge_notification_header_marginLeft" android:layout_marginRight="@dimen/sinlge_notification_header_marginLeft" android:singleLine="true" />
+            </LinearLayout>
+            <TextView android:textAppearance="@style/single_notification_title" android:id="@id/single_notification_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/single_notification_title_margin_top" />
+            <TextView android:textAppearance="@style/single_notification_smallText" android:ellipsize="end" android:id="@id/single_notification_smallText" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/single_notification_text1_margin_top" android:maxLines="6" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:id="@id/notificaiton_custom" android:layout_width="fill_parent" android:layout_height="92.0dip" />
+    </com.oneplus.aod.SingleNotificationView>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/three_key_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/three_key_icon" android:layout_width="@dimen/three_key_icon_width" android:layout_height="@dimen/three_key_icon_height" android:scaleType="fitCenter" />
+        <TextView android:textAppearance="@style/three_key_text" android:gravity="center" android:id="@id/three_key_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/three_key_text_horizontal_margin" android:layout_marginTop="@dimen/three_key_text_marginTop" android:layout_marginRight="@dimen/three_key_text_horizontal_margin" />
+    </LinearLayout>
+    <com.oneplus.doze.ScrimView android:id="@id/aod_scrim" android:background="@android:color/background_dark" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

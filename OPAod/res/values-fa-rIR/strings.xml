@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">آنالوگ</string>
+    <string name="aod_clock_classic">کلاسیک</string>
+    <string name="aod_clock_default">پیش‌فرض</string>
+    <string name="aod_clock_digital">دیجیتال</string>
+    <string name="aod_clock_preview_action_bar_title">پیش‌نمایش</string>
+    <string name="aod_clock_select_action_bar_title">سبک ساعت</string>
+    <string name="aod_clock_select_style_text">سبک ساعت را انتخاب کنید</string>
+    <string name="aod_clock_selected">انتخاب شده</string>
+    <string name="cancel">لغو</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">هنگام دریافت اعلان‌ها، صفحه نمایش روشن شود</string>
+    <string name="oneplus_aod_auto_wake_screen_title">اعلان‌های جدید</string>
+    <string name="oneplus_aod_clock_style_title">سبک ساعت</string>
+    <string name="oneplus_aod_display_mode_title">زمان نمایش</string>
+    <string name="oneplus_aod_display_period_title">دوره نمایش</string>
+    <string name="oneplus_aod_display_text_title">پیام نمایشی</string>
+    <string name="oneplus_aod_mode_always_on">همیشه روشن</string>
+    <string name="oneplus_aod_mode_lift_up">بلند کردن صفحه نمایش</string>
+    <string name="oneplus_aod_mode_shake_up">برای نمایش، تلفن خود را کمی جابه‌جا کنید</string>
+    <string name="oneplus_aod_mode_single_tap">برای نمایش، ضربه بزنید</string>
+    <string name="oneplus_aod_settings">نمایشگر محیط</string>
+    <string name="oneplus_aod_settings_what_to_show">موضوع نمایش</string>
+    <string name="oneplus_aod_settings_when_to_show">زمان نمایش</string>
+    <string name="oneplus_aod_title">نمایش ساعت</string>
+    <string name="oneplus_display_time_end">تا</string>
+    <string name="oneplus_display_time_from">از</string>
+    <string name="oneplus_display_time_start">از</string>
+    <string name="oneplus_display_time_to">به</string>
+    <string name="owner_info_settings_edit_text_hint">به عنوان مثال، Android علی.</string>
+    <string name="owner_info_settings_summary">هیچ کدام</string>
+    <string name="save">ذخیره</string>
+    <string name="time_format_12_mode">h:mm ق.ظ</string>
+    <string name="volume_no_disturb">بدون مزاحمت</string>
+    <string name="volume_ring">زنگ</string>
+    <string name="volume_slient">بی‌صدا</string>
+    <string name="volume_vibrate">لرزش</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analoginen</string>
+    <string name="aod_clock_classic">Klassinen</string>
+    <string name="aod_clock_default">Oletus</string>
+    <string name="aod_clock_digital">Digitaalinen</string>
+    <string name="aod_clock_preview_action_bar_title">Esikatselu</string>
+    <string name="aod_clock_select_action_bar_title">Kellon tyyli</string>
+    <string name="aod_clock_select_style_text">Valitse kellon tyyli</string>
+    <string name="aod_clock_selected">VALITTU</string>
+    <string name="cancel">Peruuta</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Herätä näyttö, kun saat ilmoituksia</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Uudet ilmoitukset</string>
+    <string name="oneplus_aod_clock_style_title">Kellon tyyli</string>
+    <string name="oneplus_aod_display_mode_title">Koska näytetään</string>
+    <string name="oneplus_aod_display_period_title">Näyttöaika</string>
+    <string name="oneplus_aod_display_text_title">Näytön viesti</string>
+    <string name="oneplus_aod_mode_always_on">Aina päällä</string>
+    <string name="oneplus_aod_mode_lift_up">Nosta näyttö</string>
+    <string name="oneplus_aod_mode_shake_up">Siirrä puhelinta hieman näyttääksesi</string>
+    <string name="oneplus_aod_mode_single_tap">Napauta näyttääksesi</string>
+    <string name="oneplus_aod_settings">Tyyni näyttö</string>
+    <string name="oneplus_aod_settings_what_to_show">mitä näytetään</string>
+    <string name="oneplus_aod_settings_when_to_show">koska näytetään</string>
+    <string name="oneplus_aod_title">Näytä kello</string>
+    <string name="oneplus_display_time_end">Mihin</string>
+    <string name="oneplus_display_time_from">Mistä</string>
+    <string name="oneplus_display_time_start">Mistä</string>
+    <string name="oneplus_display_time_to">mihin</string>
+    <string name="owner_info_settings_edit_text_hint">Esimerkiksi Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Ei mitään</string>
+    <string name="save">TALLENNA</string>
+    <string name="time_format_12_mode">t:mm a</string>
+    <string name="volume_no_disturb">Ei saa häiritä</string>
+    <string name="volume_ring">Soittoääni</string>
+    <string name="volume_slient">Äänetön</string>
+    <string name="volume_vibrate">Värise</string>
+</resources>

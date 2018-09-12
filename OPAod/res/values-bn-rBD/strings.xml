@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">অ্যানালগ</string>
+    <string name="aod_clock_classic">ক্লাসিক</string>
+    <string name="aod_clock_default">ডিফল্ট</string>
+    <string name="aod_clock_digital">ডিজিটাল</string>
+    <string name="aod_clock_preview_action_bar_title">প্রিভিউ</string>
+    <string name="aod_clock_select_action_bar_title">ঘড়ির ধরন</string>
+    <string name="aod_clock_select_style_text">ঘড়ির ধরন নির্বাচন করুন</string>
+    <string name="aod_clock_selected">নির্বাচিত</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">যখন আপনি বিজ্ঞপ্তি পাবেন তখন স্ক্রীনকে জাগানো হোক</string>
+    <string name="oneplus_aod_auto_wake_screen_title">নতুন বিজ্ঞপ্তি</string>
+    <string name="oneplus_aod_clock_style_title">ঘড়ির ধরন</string>
+    <string name="oneplus_aod_display_mode_title">কখন দেখানো হবে</string>
+    <string name="oneplus_aod_display_period_title">দেখানোর সময়সীমা</string>
+    <string name="oneplus_aod_display_text_title">ডিসপ্লে বার্তা</string>
+    <string name="oneplus_aod_mode_always_on">সবসময় চালু</string>
+    <string name="oneplus_aod_mode_lift_up">ডিসপ্লে উপরের দিকে ওঠান</string>
+    <string name="oneplus_aod_mode_shake_up">দেখানোর জন্য আপনার ফোন সামান্য সরান</string>
+    <string name="oneplus_aod_mode_single_tap">দেখাতে ট্যাপ করুন</string>
+    <string name="oneplus_aod_settings">পারিপার্শ্বিক ডিসপ্লে</string>
+    <string name="oneplus_aod_settings_what_to_show">কী দেখানো হবে</string>
+    <string name="oneplus_aod_settings_when_to_show">কখন দেখানো হবে</string>
+    <string name="oneplus_aod_title">ঘড়ি দেখান</string>
+    <string name="oneplus_display_time_end">পর্যন্ত</string>
+    <string name="oneplus_display_time_from">থেকে</string>
+    <string name="oneplus_display_time_start">থেকে</string>
+    <string name="oneplus_display_time_to">পর্যন্ত</string>
+    <string name="owner_info_settings_edit_text_hint">যেমন রাহুলের অ্যান্ড্রয়েড।</string>
+    <string name="owner_info_settings_summary">কোনোটিই নয়</string>
+    <string name="save">সেভ করুন</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">বিরক্ত করবেন না</string>
+    <string name="volume_ring">রিং</string>
+    <string name="volume_slient">নিঃশব্দ</string>
+    <string name="volume_vibrate">কম্পন</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analog</string>
+    <string name="aod_clock_classic">Klasik</string>
+    <string name="aod_clock_default">Varsayılan</string>
+    <string name="aod_clock_digital">Dijital</string>
+    <string name="aod_clock_preview_action_bar_title">Önizleme</string>
+    <string name="aod_clock_select_action_bar_title">Saat stili</string>
+    <string name="aod_clock_select_style_text">Saat stilini seç</string>
+    <string name="aod_clock_selected">SEÇİLDİ</string>
+    <string name="cancel">İptal</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Yeni bir bildirim aldığınızda ekranı uyandırma</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Yeni Bildirimler</string>
+    <string name="oneplus_aod_clock_style_title">Saat stili</string>
+    <string name="oneplus_aod_display_mode_title">Gösterme zamanı</string>
+    <string name="oneplus_aod_display_period_title">Görüntüleme dönemi</string>
+    <string name="oneplus_aod_display_text_title">Mesajı göster</string>
+    <string name="oneplus_aod_mode_always_on">Her zaman açık</string>
+    <string name="oneplus_aod_mode_lift_up">Ekranı yukarı doğru kaydırma</string>
+    <string name="oneplus_aod_mode_shake_up">Göstermek için telefonunuzu biraz hareket ettirin</string>
+    <string name="oneplus_aod_mode_single_tap">Göstermek için dokunun</string>
+    <string name="oneplus_aod_settings">Ortam ekranı</string>
+    <string name="oneplus_aod_settings_what_to_show">gösterilecek öğe</string>
+    <string name="oneplus_aod_settings_when_to_show">gösterme zamanı</string>
+    <string name="oneplus_aod_title">Saati göster</string>
+    <string name="oneplus_display_time_end">Bitiş</string>
+    <string name="oneplus_display_time_from">Başlangıç</string>
+    <string name="oneplus_display_time_start">Başlangıç</string>
+    <string name="oneplus_display_time_to">bitiş</string>
+    <string name="owner_info_settings_edit_text_hint">Ör., Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Hiçbiri</string>
+    <string name="save">KAYDET</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Rahatsız etmeyin</string>
+    <string name="volume_ring">Zil sesi</string>
+    <string name="volume_slient">Sessiz</string>
+    <string name="volume_vibrate">Titreşim</string>
+</resources>

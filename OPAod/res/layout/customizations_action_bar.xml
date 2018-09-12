@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/custom_action_bar" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:id="@id/up" android:layout_width="@dimen/oneplus_contorl_appbar_size_standard" android:layout_height="fill_parent">
+        <ImageButton android:id="@id/back_button" android:background="@drawable/actionbar_button_ripple" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_arrow_back" android:scaleType="center" android:contentDescription="@null" />
+    </LinearLayout>
+    <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/aod_clock_preview_action_bar_title" android:maxLines="1" android:layout_toRightOf="@id/up" android:layout_marginStart="@dimen/oneplus_contorl_layout_margin_left2" />
+    <View android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0" />
+    <TextView android:textSize="18.0sp" android:textColor="@android:color/white" android:gravity="center_vertical" android:layout_gravity="right" android:id="@id/menu" android:background="@drawable/actionbar_button_ripple" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/oneplus_contorl_layout_margin_left2" android:layout_marginRight="@dimen/oneplus_contorl_layout_margin_right2" android:text="@string/save" android:maxLines="1" android:layout_alignParentRight="true" android:textAlignment="gravity" style="@style/oneplus_contorl_text_style_button" />
+</LinearLayout>

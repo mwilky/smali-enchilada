@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">అనలాగ్</string>
+    <string name="aod_clock_classic">క్లాసిక్</string>
+    <string name="aod_clock_default">డిఫాల్ట్</string>
+    <string name="aod_clock_digital">డిజిటల్</string>
+    <string name="aod_clock_preview_action_bar_title">ప్రివ్యూ</string>
+    <string name="aod_clock_select_action_bar_title">క్లాక్ స్టైల్</string>
+    <string name="aod_clock_select_style_text">క్లాక్ స్టైల్ ఎంచుకోండి</string>
+    <string name="aod_clock_selected">ఎంచుకోబడింది</string>
+    <string name="cancel">రద్దు చేయి</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">మీరు నోటిఫికేషన్ అందుకున్నప్పుడు స్క్రీన్‌ని వేకప్ చేస్తుంది</string>
+    <string name="oneplus_aod_auto_wake_screen_title">కొత్త నోటిఫికేషన్‌లు</string>
+    <string name="oneplus_aod_clock_style_title">క్లాక్ స్టైల్</string>
+    <string name="oneplus_aod_display_mode_title">ఎప్పుడు చూపాలి</string>
+    <string name="oneplus_aod_display_period_title">ప్రదర్శన వ్యవధి</string>
+    <string name="oneplus_aod_display_text_title">సందేశాన్నిప్రదర్శించు</string>
+    <string name="oneplus_aod_mode_always_on">ఎల్లప్పుడూ ఆన్</string>
+    <string name="oneplus_aod_mode_lift_up">డిస్‌ప్లేని పైకి ఎత్తండి</string>
+    <string name="oneplus_aod_mode_shake_up">చూపడానికి మీ ఫోన్‌ను కొద్దిగా కదపండి</string>
+    <string name="oneplus_aod_mode_single_tap">చూపడానికి ట్యాప్ చేయండి</string>
+    <string name="oneplus_aod_settings">పరిసర ప్రదర్శన</string>
+    <string name="oneplus_aod_settings_what_to_show">ఏమి చూపాలి</string>
+    <string name="oneplus_aod_settings_when_to_show">ఎప్పుడు చూపాలి</string>
+    <string name="oneplus_aod_title">గడియారం చూపు</string>
+    <string name="oneplus_display_time_end">వరకు</string>
+    <string name="oneplus_display_time_from">నుండి</string>
+    <string name="oneplus_display_time_start">నుండి</string>
+    <string name="oneplus_display_time_to">వరకు</string>
+    <string name="owner_info_settings_edit_text_hint">ఉదా, Joe’s Android.</string>
+    <string name="owner_info_settings_summary">ఏదీ కాదు</string>
+    <string name="save">సేవ్ చేయి</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">అంతరాయం కలిగించవద్దు</string>
+    <string name="volume_ring">రింగ్</string>
+    <string name="volume_slient">సైలెంట్</string>
+    <string name="volume_vibrate">కంపించు</string>
+</resources>

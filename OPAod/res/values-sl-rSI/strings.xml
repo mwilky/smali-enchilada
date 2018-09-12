@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analogni</string>
+    <string name="aod_clock_classic">Klasični</string>
+    <string name="aod_clock_default">Privzeti</string>
+    <string name="aod_clock_digital">Digitalni</string>
+    <string name="aod_clock_preview_action_bar_title">Predogled</string>
+    <string name="aod_clock_select_action_bar_title">V slogu ure</string>
+    <string name="aod_clock_select_style_text">Izberite slog ure</string>
+    <string name="aod_clock_selected">IZBRANO</string>
+    <string name="cancel">Prekliči</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Bujenje zaslona ob prejemu obvestil</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nova obvestila</string>
+    <string name="oneplus_aod_clock_style_title">V slogu ure</string>
+    <string name="oneplus_aod_display_mode_title">Čas prikaza</string>
+    <string name="oneplus_aod_display_period_title">Trajanje prikaza</string>
+    <string name="oneplus_aod_display_text_title">Prikaži sporočilo</string>
+    <string name="oneplus_aod_mode_always_on">Vedno prikazan</string>
+    <string name="oneplus_aod_mode_lift_up">Vklop zaslona ob premiku</string>
+    <string name="oneplus_aod_mode_shake_up">Za prikaz rahlo premaknite telefon</string>
+    <string name="oneplus_aod_mode_single_tap">Tapnite za prikaz</string>
+    <string name="oneplus_aod_settings">Ambientalna funkcija zaslona</string>
+    <string name="oneplus_aod_settings_what_to_show">vsebina prikaza</string>
+    <string name="oneplus_aod_settings_when_to_show">čas prikaza</string>
+    <string name="oneplus_aod_title">Prikaži uro</string>
+    <string name="oneplus_display_time_end">Do</string>
+    <string name="oneplus_display_time_from">Od</string>
+    <string name="oneplus_display_time_start">Od</string>
+    <string name="oneplus_display_time_to">do</string>
+    <string name="owner_info_settings_edit_text_hint">Npr., Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Brez</string>
+    <string name="save">SHRANI</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Ne moti</string>
+    <string name="volume_ring">Zvonjenje</string>
+    <string name="volume_slient">Tiho</string>
+    <string name="volume_vibrate">Vibriranje</string>
+</resources>

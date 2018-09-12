@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">แอนะล็อก</string>
+    <string name="aod_clock_classic">คลาสสิก</string>
+    <string name="aod_clock_default">ค่าเริ่มต้น</string>
+    <string name="aod_clock_digital">ดิจิทัล</string>
+    <string name="aod_clock_preview_action_bar_title">ตัวอย่าง</string>
+    <string name="aod_clock_select_action_bar_title">รูปแบบนาฬิกา</string>
+    <string name="aod_clock_select_style_text">เลือกรูปแบบนาฬิกา</string>
+    <string name="aod_clock_selected">เลือกแล้ว</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">ปลุกหน้าจอเมื่อได้รับการแจ้งเตือน</string>
+    <string name="oneplus_aod_auto_wake_screen_title">การแจ้งเตือนใหม่</string>
+    <string name="oneplus_aod_clock_style_title">รูปแบบนาฬิกา</string>
+    <string name="oneplus_aod_display_mode_title">เวลาที่จะแสดง</string>
+    <string name="oneplus_aod_display_period_title">ระยะเวลาแสดงผล</string>
+    <string name="oneplus_aod_display_text_title">แสดงข้อความ</string>
+    <string name="oneplus_aod_mode_always_on">เปิดอยู่เสมอ</string>
+    <string name="oneplus_aod_mode_lift_up">ปลุกหน้าจอ</string>
+    <string name="oneplus_aod_mode_shake_up">ขยับโทรศัพท์ของคุณเล็กน้อยเพื่อแสดง</string>
+    <string name="oneplus_aod_mode_single_tap">แตะเพื่อแสดง</string>
+    <string name="oneplus_aod_settings">การแสดงการแจ้งเตือนโดยไม่ต้องเปิดหน้าจอ</string>
+    <string name="oneplus_aod_settings_what_to_show">สิ่งที่จะแสดง</string>
+    <string name="oneplus_aod_settings_when_to_show">เวลาที่จะแสดง</string>
+    <string name="oneplus_aod_title">แสดงนาฬิกา</string>
+    <string name="oneplus_display_time_end">ถึง</string>
+    <string name="oneplus_display_time_from">ตั้งแต่</string>
+    <string name="oneplus_display_time_start">ตั้งแต่</string>
+    <string name="oneplus_display_time_to">ถึง</string>
+    <string name="owner_info_settings_edit_text_hint">เช่น Android ของโจ’</string>
+    <string name="owner_info_settings_summary">ไม่มี</string>
+    <string name="save">บันทึก</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">ห้ามรบกวน</string>
+    <string name="volume_ring">เสียงเข้า</string>
+    <string name="volume_slient">เงียบ</string>
+    <string name="volume_vibrate">สั่น</string>
+</resources>

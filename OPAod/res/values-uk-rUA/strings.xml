@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Аналоговий</string>
+    <string name="aod_clock_classic">Класичний</string>
+    <string name="aod_clock_default">За замовчуванням</string>
+    <string name="aod_clock_digital">Цифровий</string>
+    <string name="aod_clock_preview_action_bar_title">Попередній перегляд</string>
+    <string name="aod_clock_select_action_bar_title">Стиль годинника</string>
+    <string name="aod_clock_select_style_text">Виберіть стиль годинника</string>
+    <string name="aod_clock_selected">ВИБРАНО</string>
+    <string name="cancel">Скасувати</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Вмикати екран у разі отримання сповіщень</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Нові сповіщення</string>
+    <string name="oneplus_aod_clock_style_title">Стиль годинника</string>
+    <string name="oneplus_aod_display_mode_title">Коли показувати</string>
+    <string name="oneplus_aod_display_period_title">Період відображення</string>
+    <string name="oneplus_aod_display_text_title">Повідомлення коло годинника</string>
+    <string name="oneplus_aod_mode_always_on">Завжди ввімкнено</string>
+    <string name="oneplus_aod_mode_lift_up">Вмикати екран у разі піднімання пристрою</string>
+    <string name="oneplus_aod_mode_shake_up">Злегка перемістіть телефон, щоб показати вміст</string>
+    <string name="oneplus_aod_mode_single_tap">Торкніться, щоб показати вміст</string>
+    <string name="oneplus_aod_settings">Активація екрана</string>
+    <string name="oneplus_aod_settings_what_to_show">що показувати</string>
+    <string name="oneplus_aod_settings_when_to_show">коли показувати</string>
+    <string name="oneplus_aod_title">Показувати годинник</string>
+    <string name="oneplus_display_time_end">До</string>
+    <string name="oneplus_display_time_from">З</string>
+    <string name="oneplus_display_time_start">З</string>
+    <string name="oneplus_display_time_to">до</string>
+    <string name="owner_info_settings_edit_text_hint">Наприклад, Android Андрія.</string>
+    <string name="owner_info_settings_summary">Немає</string>
+    <string name="save">ЗБЕРЕГТИ</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Не турбувати</string>
+    <string name="volume_ring">Дзвінок</string>
+    <string name="volume_slient">Без звуку</string>
+    <string name="volume_vibrate">Вібрація</string>
+</resources>

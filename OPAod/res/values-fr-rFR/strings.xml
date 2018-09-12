@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analogique</string>
+    <string name="aod_clock_classic">Classique</string>
+    <string name="aod_clock_default">Par défaut</string>
+    <string name="aod_clock_digital">Numérique</string>
+    <string name="aod_clock_preview_action_bar_title">Aperçu</string>
+    <string name="aod_clock_select_action_bar_title">"Style d'horloge"</string>
+    <string name="aod_clock_select_style_text">"Sélectionnez le style de l'horloge"</string>
+    <string name="aod_clock_selected">SÉLECTIONNÉ</string>
+    <string name="cancel">Annuler</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">"Sort l'écran de sa veille quand vous recevez des notifications"</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nouvelles notifications</string>
+    <string name="oneplus_aod_clock_style_title">"Style d'horloge"</string>
+    <string name="oneplus_aod_display_mode_title">"Quand l'afficher"</string>
+    <string name="oneplus_aod_display_period_title">"Période d'affichage"</string>
+    <string name="oneplus_aod_display_text_title">Afficher un message</string>
+    <string name="oneplus_aod_mode_always_on">Toujours activé</string>
+    <string name="oneplus_aod_mode_lift_up">Activation soulevée</string>
+    <string name="oneplus_aod_mode_shake_up">Déplacez légèrement votre téléphone pour afficher</string>
+    <string name="oneplus_aod_mode_single_tap">Appuyer pour afficher</string>
+    <string name="oneplus_aod_settings">Affichage en mode Veille</string>
+    <string name="oneplus_aod_settings_what_to_show">quoi afficher</string>
+    <string name="oneplus_aod_settings_when_to_show">quand afficher</string>
+    <string name="oneplus_aod_title">"Afficher l'horloge"</string>
+    <string name="oneplus_display_time_end">À</string>
+    <string name="oneplus_display_time_from">De</string>
+    <string name="oneplus_display_time_start">De</string>
+    <string name="oneplus_display_time_to">à</string>
+    <string name="owner_info_settings_edit_text_hint">"P. ex., l'Android de Jean."</string>
+    <string name="owner_info_settings_summary">Aucun</string>
+    <string name="save">ENREGISTRER</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Ne pas déranger</string>
+    <string name="volume_ring">Sonnerie</string>
+    <string name="volume_slient">Silencieux</string>
+    <string name="volume_vibrate">Vibrations</string>
+</resources>

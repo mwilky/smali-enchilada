@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analogowy</string>
+    <string name="aod_clock_classic">Klasyka</string>
+    <string name="aod_clock_default">Domyślny</string>
+    <string name="aod_clock_digital">Cyfrowy</string>
+    <string name="aod_clock_preview_action_bar_title">Podgląd</string>
+    <string name="aod_clock_select_action_bar_title">Styl zegarka</string>
+    <string name="aod_clock_select_style_text">Wybierz styl zegarka</string>
+    <string name="aod_clock_selected">WYBRANE</string>
+    <string name="cancel">Anuluj</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Wybudzaj ekran po otrzymaniu powiadomień</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nowe powiadomienia</string>
+    <string name="oneplus_aod_clock_style_title">Styl zegarka</string>
+    <string name="oneplus_aod_display_mode_title">Kiedy pokazać</string>
+    <string name="oneplus_aod_display_period_title">Okres wyświetlania</string>
+    <string name="oneplus_aod_display_text_title">Wyświetlaj wiadomość</string>
+    <string name="oneplus_aod_mode_always_on">Zawsze wł.</string>
+    <string name="oneplus_aod_mode_lift_up">Wybudzaj wyświetlacz przy podniesieniu</string>
+    <string name="oneplus_aod_mode_shake_up">Przesuń nieco telefon, aby pokazać</string>
+    <string name="oneplus_aod_mode_single_tap">Dotknij, aby pokazać</string>
+    <string name="oneplus_aod_settings">Ambient display</string>
+    <string name="oneplus_aod_settings_what_to_show">co pokazać</string>
+    <string name="oneplus_aod_settings_when_to_show">kiedy pokazać</string>
+    <string name="oneplus_aod_title">Pokaż zegar</string>
+    <string name="oneplus_display_time_end">Do</string>
+    <string name="oneplus_display_time_from">Od</string>
+    <string name="oneplus_display_time_start">Od</string>
+    <string name="oneplus_display_time_to">do</string>
+    <string name="owner_info_settings_edit_text_hint">Np. Android Janka.</string>
+    <string name="owner_info_settings_summary">Brak</string>
+    <string name="save">ZAPISZ</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Nie przeszkadzać</string>
+    <string name="volume_ring">Dzwonek</string>
+    <string name="volume_slient">Cichy</string>
+    <string name="volume_vibrate">Wibracja</string>
+</resources>

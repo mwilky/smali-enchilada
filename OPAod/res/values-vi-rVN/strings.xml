@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analog</string>
+    <string name="aod_clock_classic">Cổ điển</string>
+    <string name="aod_clock_default">Mặc định</string>
+    <string name="aod_clock_digital">Kỹ thuật số</string>
+    <string name="aod_clock_preview_action_bar_title">Xem trước</string>
+    <string name="aod_clock_select_action_bar_title">Kiểu đồng hồ</string>
+    <string name="aod_clock_select_style_text">Chọn kiểu đồng hồ</string>
+    <string name="aod_clock_selected">ĐÃ CHỌN</string>
+    <string name="cancel">Hủy</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Đánh thức màn hình khi bạn nhận được thông báo.</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Thông báo Mới</string>
+    <string name="oneplus_aod_clock_style_title">Kiểu đồng hồ</string>
+    <string name="oneplus_aod_display_mode_title">Khi nào thì hiển thị</string>
+    <string name="oneplus_aod_display_period_title">Thời gian hiển thị</string>
+    <string name="oneplus_aod_display_text_title">Hiển thị tin nhắn</string>
+    <string name="oneplus_aod_mode_always_on">Luôn bật</string>
+    <string name="oneplus_aod_mode_lift_up">Nâng để bật màn hiển thị</string>
+    <string name="oneplus_aod_mode_shake_up">Di chuyển điện thoại của bạn một chút để hiển thị</string>
+    <string name="oneplus_aod_mode_single_tap">Nhấn để hiển thị</string>
+    <string name="oneplus_aod_settings">Hiển thị môi trường</string>
+    <string name="oneplus_aod_settings_what_to_show">hiển thị những gì</string>
+    <string name="oneplus_aod_settings_when_to_show">khi nào thì hiển thị</string>
+    <string name="oneplus_aod_title">Hiển thị đồng hồ</string>
+    <string name="oneplus_display_time_end">Đến</string>
+    <string name="oneplus_display_time_from">Từ</string>
+    <string name="oneplus_display_time_start">Từ</string>
+    <string name="oneplus_display_time_to">đến</string>
+    <string name="owner_info_settings_edit_text_hint">Ví dụ: Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Không có</string>
+    <string name="save">LƯU</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">Không làm phiền</string>
+    <string name="volume_ring">Chuông</string>
+    <string name="volume_slient">Im lặng</string>
+    <string name="volume_vibrate">Rung</string>
+</resources>

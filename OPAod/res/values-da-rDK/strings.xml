@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">Analog</string>
+    <string name="aod_clock_classic">Klassisk</string>
+    <string name="aod_clock_default">Standard</string>
+    <string name="aod_clock_digital">Digital</string>
+    <string name="aod_clock_preview_action_bar_title">Forhåndsvisning</string>
+    <string name="aod_clock_select_action_bar_title">Ur-type</string>
+    <string name="aod_clock_select_style_text">Vælg urtype</string>
+    <string name="aod_clock_selected">VALGT</string>
+    <string name="cancel">Annuller</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">Væk skærmen når du modtager notifikationer</string>
+    <string name="oneplus_aod_auto_wake_screen_title">Nye notifikationer</string>
+    <string name="oneplus_aod_clock_style_title">Ur-type</string>
+    <string name="oneplus_aod_display_mode_title">Hvornår der skal vises</string>
+    <string name="oneplus_aod_display_period_title">Visningsperiode</string>
+    <string name="oneplus_aod_display_text_title">Vis meddelelse</string>
+    <string name="oneplus_aod_mode_always_on">Altid aktiveret</string>
+    <string name="oneplus_aod_mode_lift_up">Løft enheden for at vække enhed</string>
+    <string name="oneplus_aod_mode_shake_up">Flyt din telefon lidt for at vise</string>
+    <string name="oneplus_aod_mode_single_tap">Tryk for at vise</string>
+    <string name="oneplus_aod_settings">Aktiv låseskærm</string>
+    <string name="oneplus_aod_settings_what_to_show">hvad der skal vises</string>
+    <string name="oneplus_aod_settings_when_to_show">hvornår der skal vises</string>
+    <string name="oneplus_aod_title">Vis ur</string>
+    <string name="oneplus_display_time_end">Til</string>
+    <string name="oneplus_display_time_from">Fra</string>
+    <string name="oneplus_display_time_start">Fra</string>
+    <string name="oneplus_display_time_to">til</string>
+    <string name="owner_info_settings_edit_text_hint">F.eks., Joe’s Android.</string>
+    <string name="owner_info_settings_summary">Ingen</string>
+    <string name="save">GEM</string>
+    <string name="time_format_12_mode">t:mm</string>
+    <string name="volume_no_disturb">Må ikke forstyrres</string>
+    <string name="volume_ring">Ring</string>
+    <string name="volume_slient">Lydløs</string>
+    <string name="volume_vibrate">Vibrer</string>
+</resources>

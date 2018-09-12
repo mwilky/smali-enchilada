@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oneplus.lib.preference.PreferenceScreen android:title="@string/oneplus_aod_settings" android:key="main_screen"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.oneplus.lib.widget.preference.OPPreference android:persistent="true" android:title="@string/oneplus_display_time_start" android:key="display_time_start" />
+    <com.oneplus.lib.widget.preference.OPPreference android:persistent="true" android:title="@string/oneplus_display_time_end" android:key="display_time_end" />
+</com.oneplus.lib.preference.PreferenceScreen>

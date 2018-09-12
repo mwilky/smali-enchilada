@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oneplus.aod.clock.OPAnalogClock android:id="@id/analog_clock_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/analog_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/analog_background" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/analog_min" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/analog_min" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/analog_hour" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/analog_hour" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/analog_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/analog_center" android:layout_centerInParent="true" />
+</com.oneplus.aod.clock.OPAnalogClock>

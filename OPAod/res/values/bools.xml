@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="abc_action_bar_embed_tabs">true</bool>
+    <bool name="abc_allow_stacked_button_bar">false</bool>
+    <bool name="abc_config_actionMenuItemAllCaps">true</bool>
+    <bool name="allow_stacked_button_bar">true</bool>
+    <bool name="config_closeDialogWhenTouchOutside">true</bool>
+    <bool name="config_materialPreferenceIconSpaceReserved">false</bool>
+    <bool name="config_showAmpm">false</bool>
+    <bool name="config_show_battery_charging_anim">true</bool>
+    <bool name="config_statusBarShowNumber">false</bool>
+    <bool name="doze_display_state_supported">false</bool>
+    <bool name="doze_pickup_performs_proximity_check">false</bool>
+    <bool name="doze_proximity_check_before_pulse">true</bool>
+    <bool name="doze_pulse_on_notifications">true</bool>
+    <bool name="doze_pulse_on_significant_motion">false</bool>
+    <bool name="op_abc_action_bar_embed_tabs">true</bool>
+    <bool name="op_abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+    <bool name="op_doze_display_state_supported">true</bool>
+    <bool name="preferences_prefer_dual_pane">false</bool>
+</resources>

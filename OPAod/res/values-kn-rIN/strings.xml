@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aod_clock_analog">ಅನಲಾಗ್</string>
+    <string name="aod_clock_classic">ಕ್ಲಾಸಿಕ್</string>
+    <string name="aod_clock_default">ಡೀಫಾಲ್ಟ್</string>
+    <string name="aod_clock_digital">ಡಿಜಿಟಲ್</string>
+    <string name="aod_clock_preview_action_bar_title">ಪೂರ್ವವೀಕ್ಷಣೆ</string>
+    <string name="aod_clock_select_action_bar_title">ಗಡಿಯಾರದ ಶೈಲಿ</string>
+    <string name="aod_clock_select_style_text">ಗಡಿಯಾರದ ಶೈಲಿ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="aod_clock_selected">ಆಯ್ಕೆಮಾಡಿದೆ</string>
+    <string name="cancel">ರದ್ದುಮಾಡಿ</string>
+    <string name="oneplus_aod_auto_wake_screen_summary">ನೀವು ಸೂಚನೆಗಳನ್ನು ಸ್ವೀಕರಿಸಿದಾಗ ಸ್ಕ್ರೀನ್ ಎಚ್ಚರಿಸಿ</string>
+    <string name="oneplus_aod_auto_wake_screen_title">ಹೊಸ ಸೂಚನೆಗಳು</string>
+    <string name="oneplus_aod_clock_style_title">ಗಡಿಯಾರದ ಶೈಲಿ</string>
+    <string name="oneplus_aod_display_mode_title">ಯಾವಾಗ ತೋರಿಸಬೇಕು</string>
+    <string name="oneplus_aod_display_period_title">ಪ್ರದರ್ಶನದ ಅವಧಿ</string>
+    <string name="oneplus_aod_display_text_title">ಪ್ರದರ್ಶನ ಸಂದೇಶ</string>
+    <string name="oneplus_aod_mode_always_on">ಯಾವಾಗಲೂ ಆನ್</string>
+    <string name="oneplus_aod_mode_lift_up">ಎತ್ತರಿಸಿದ ಪ್ರದರ್ಶಕ</string>
+    <string name="oneplus_aod_mode_shake_up">ತೋರಿಸಲು ನಿಮ್ಮ ಫೋನನ್ನು ಸ್ವಲ್ಪ ಸರಿಸಿ</string>
+    <string name="oneplus_aod_mode_single_tap">ತೋರಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="oneplus_aod_settings">ಅನುಕೂಲಕರ ಪ್ರದರ್ಶಕ</string>
+    <string name="oneplus_aod_settings_what_to_show">ಏನನ್ನು ತೋರಿಸಬೇಕು</string>
+    <string name="oneplus_aod_settings_when_to_show">ಯಾವಾಗ ತೋರಿಸಬೇಕು</string>
+    <string name="oneplus_aod_title">ಗಡಿಯಾರವನ್ನು ತೋರಿಸು</string>
+    <string name="oneplus_display_time_end">ಗೆ</string>
+    <string name="oneplus_display_time_from">ಇಂದ</string>
+    <string name="oneplus_display_time_start">ಇಂದ</string>
+    <string name="oneplus_display_time_to">ಗೆ</string>
+    <string name="owner_info_settings_edit_text_hint">ಉದಾ., Joe’s Android.</string>
+    <string name="owner_info_settings_summary">ಯಾವುದೂ ಇಲ್ಲ</string>
+    <string name="save">ಉಳಿಸಿ</string>
+    <string name="time_format_12_mode">h:mm a</string>
+    <string name="volume_no_disturb">ಅಡಚಣೆ ಮಾಡಬೇಡಿ</string>
+    <string name="volume_ring">ರಿಂಗ್</string>
+    <string name="volume_slient">ಸೈಲೆಂಟ್</string>
+    <string name="volume_vibrate">ವೈಬ್ರೇಟ್</string>
+</resources>
