@@ -3482,6 +3482,8 @@
     invoke-static {v0}, Lcom/oneplus/lib/util/ReflectUtil;->isFeatureSupported(Ljava/lang/String;)Z
 
     move-result v0
+    
+    const/4 v0, 0x1
 
     return v0
 .end method
