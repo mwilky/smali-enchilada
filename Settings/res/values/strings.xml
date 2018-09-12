@@ -3297,6 +3297,7 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_search_keyword_gesture_to_answer_call">answer</string>
     <string name="oneplus_search_keyword_hide_navkeys">hide the navigation bar</string>
     <string name="oneplus_search_keyword_home_key">home</string>
+    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
     <string name="oneplus_search_keyword_icon_manager">icon manager</string>
     <string name="oneplus_search_keyword_incoming_call_vibrate_mode">vibration</string>
     <string name="oneplus_search_keyword_input_keyboard">input,keyboard</string>
@@ -5910,4 +5911,10 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_cc9">false</item>
     <item type="string" name="APKTOOL_DUMMY_cca">false</item>
     <item type="string" name="APKTOOL_DUMMY_1215">false</item>
+    <string name="hardware_keys_action_kill">Kill foreground app</string>
+    <string name="hardware_keys_action_screenshot">Full screenshot</string>
+    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
+    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
+    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
+    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
 </resources>
