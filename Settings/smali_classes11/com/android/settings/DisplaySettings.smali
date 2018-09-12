@@ -3768,7 +3768,7 @@
     .line 372
     iget-object v3, p0, Lcom/android/settings/DisplaySettings;->mDozePreference:Landroid/support/v7/preference/Preference;
 
-    const v4, 0x7f120b70
+    const v4, 0x7f120b56
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
