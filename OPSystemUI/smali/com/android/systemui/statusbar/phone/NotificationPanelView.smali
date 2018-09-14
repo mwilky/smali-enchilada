@@ -2240,15 +2240,7 @@
 
 .method private isOpenQsEvent(Landroid/view/MotionEvent;)Z
     .locals 7
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v1
-
+    
     const/4 v2, 0x2
 
     const/4 v3, 0x0
@@ -2256,7 +2248,49 @@
     const/4 v4, 0x1
 
     const/4 v5, 0x5
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mSmartPulldown:I
 
+    if-eqz v0, :cond_stock
+    
+    const v1, 0x1
+    
+    if-eq v0, v1, :cond_clearnotif
+    
+    const v1, 0x2
+    
+    if-eq v0, v1, :cond_anynotif
+    
+    :cond_anynotif
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->hasActiveNotifications()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_6
+    
+    goto :goto_stock
+    
+    :cond_clearnotif
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->hasActiveClearableNotifications()Z
+    
+    move-result v0
+    
+    if-eqz v0, :cond_6
+    
+    :goto_stock
+    :cond_stock
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v1
+    
     if-ne v1, v5, :cond_0
 
     if-ne v0, v2, :cond_0

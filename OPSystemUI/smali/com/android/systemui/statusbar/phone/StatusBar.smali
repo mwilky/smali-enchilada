@@ -17155,6 +17155,12 @@
     .locals 21
 
     move-object/from16 v8, p0
+    
+    move-object/from16 v0, p0
+    
+    iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setSmartPulldown(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
