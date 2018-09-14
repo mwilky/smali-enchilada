@@ -38138,13 +38138,13 @@
 .method public setCustomApp()V
 	.locals 2
 	
-	  iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-	  const-string/jumbo v1, "tweaks_custom_home_double_app"
+    const-string/jumbo v1, "tweaks_custom_home_double_app"
 
     invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 

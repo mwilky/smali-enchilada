@@ -10425,7 +10425,7 @@
     .line 603
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_18
-    goto/16 :goto_a3
+    goto/16 :goto_9f
 
     .line 604
     :cond_1a
@@ -10453,7 +10453,7 @@
     .line 608
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_2d
-    goto/16 :goto_a3
+    goto/16 :goto_9f
 
     .line 609
     :cond_2f
@@ -10489,7 +10489,7 @@
     .line 615
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_47
-    goto :goto_a3
+    goto :goto_9f
 
     .line 616
     :cond_48
@@ -10517,7 +10517,7 @@
     .line 620
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_5b
-    goto :goto_a3
+    goto :goto_9f
 
     .line 622
     :cond_5c
@@ -10553,7 +10553,7 @@
     .line 628
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_75
-    goto :goto_a3
+    goto :goto_9f
 
     .line 629
     :cond_76
@@ -10581,16 +10581,11 @@
     .line 633
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
     :cond_89
-    goto :goto_a3
-
-    .line 634
-    :cond_8a
-    const/16 v0, 0x85
-
-    if-ne p1, v0, :cond_a3
+    goto :goto_9f
 
     .line 635
-    if-eqz p2, :cond_a3
+    :cond_8a
+    if-eqz p2, :cond_9f
 
     .line 636
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -10607,7 +10602,7 @@
 
     .line 637
     .restart local v0    # "launchIntentForPackage":Landroid/content/Intent;
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_9f
 
     .line 638
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -10616,7 +10611,7 @@
 
     .line 642
     .end local v0    # "launchIntentForPackage":Landroid/content/Intent;
-    :cond_a3
-    :goto_a3
+    :cond_9f
+    :goto_9f
     return-void
 .end method
