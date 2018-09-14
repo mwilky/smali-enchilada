@@ -14,7 +14,7 @@
 
 .field private static final custom_back_cover_fn:Ljava/lang/String; = "/sys/module/param_read_write/parameters/backcover_color"
 
-.field private static final custom_fn:Ljava/lang/String; = "/sys/module/param_read_write/parameters/cust_flag"
+.field private static final custom_fn:Ljava/lang/String; = "/system/priv-app/RiCE/cust_flag_theme"
 
 .field private static mParamReadRet:Z
 
@@ -544,7 +544,7 @@
     .local v1, "br":Ljava/io/BufferedReader;
     new-instance v4, Ljava/io/File;
 
-    const-string v5, "/sys/module/param_read_write/parameters/cust_flag"
+    const-string v5, "/system/priv-app/RiCE/cust_flag_theme"
 
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -590,7 +590,7 @@
     .local v6, "line":Ljava/lang/String;
     if-eqz v5, :cond_2
 
-    .line 54
+    .line 54    
     const/4 v5, -0x1
 
     invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
