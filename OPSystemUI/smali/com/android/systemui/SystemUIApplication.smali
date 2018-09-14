@@ -9,6 +9,8 @@
 # static fields
 .field private static final DEBUG:Z
 
+.field private static mGearContext:Landroid/content/Context;
+
 
 # instance fields
 .field private mBootCompleted:Z
@@ -499,6 +501,8 @@
     const v0, 0x7f120424
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/SystemUIApplication;->setTheme(I)V
+    
+    sput-object p0, Lcom/android/systemui/SystemUIApplication;->mGearContext:Landroid/content/Context;
 
     invoke-static {p0}, Lcom/android/systemui/SystemUIFactory;->createFromConfig(Landroid/content/Context;)V
 
@@ -604,6 +608,14 @@
     invoke-direct {p0, v0}, Lcom/android/systemui/SystemUIApplication;->startServicesIfNeeded([Ljava/lang/String;)V
 
     return-void
+.end method
+
+.method public static getContext()Landroid/content/Context;
+    .locals 1
+
+    sget-object v0, Lcom/android/systemui/SystemUIApplication;->mGearContext:Landroid/content/Context;
+
+    return-object v0
 .end method
 
 .method public startServicesIfNeeded()V
