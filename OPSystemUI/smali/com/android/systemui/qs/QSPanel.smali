@@ -1096,7 +1096,7 @@
     return-object v0
 .end method
 
-.method getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
+.method public getTileLayout()Lcom/android/systemui/qs/QSPanel$QSTileLayout;
     .locals 1
 
     .line 702

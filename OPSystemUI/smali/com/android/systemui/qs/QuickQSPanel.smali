@@ -11,6 +11,10 @@
 .end annotation
 
 
+# static fields
+.field public static mQuickQsNumber:I
+
+
 # instance fields
 .field private mDisabledByPolicy:Z
 
@@ -123,6 +127,8 @@
 
     .line 65
     invoke-super {p0, v1, v1, v1, v1}, Lcom/android/systemui/qs/QSPanel;->setPadding(IIII)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickQSPanel;->readRenovateMods()V
 
     .line 66
     return-void
@@ -143,7 +149,7 @@
 
     const-string v1, "sysui_qqs_count"
 
-    const/4 v2, 0x6
+    sget v2, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQsNumber:I
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/tuner/TunerService;->getValue(Ljava/lang/String;I)I
 
@@ -479,4 +485,24 @@
     xor-int/lit8 v0, v0, 0x1
 
     return v0
+.end method
+
+.method public readRenovateMods()V
+    .locals 1
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mQuickQsNumber:I
+    
+	sput v0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQsNumber:I
+	
+    return-void
+.end method
+
+.method public updateTiles()V
+    .locals 1
+    
+	sget v0, Lcom/android/systemui/qs/QuickQSPanel;->mQuickQsNumber:I
+	
+	invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickQSPanel;->setMaxTiles(I)V
+	
+    return-void
 .end method
