@@ -86,7 +86,7 @@
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .line 64
-    const v0, 0x7f0705f2
+    const v0, 0x7f0705f6
 
     invoke-static {p0, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

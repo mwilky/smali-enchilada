@@ -839,7 +839,7 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/pip/tv/PipControlButtonView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 152
-    const v0, 0x7f0a02fe
+    const v0, 0x7f0a02ff
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/pip/tv/PipControlsView;->findViewById(I)Landroid/view/View;
 

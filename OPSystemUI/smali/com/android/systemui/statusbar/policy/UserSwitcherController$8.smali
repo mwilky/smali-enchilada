@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 841
+    .line 848
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$8;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .locals 0
     .param p0, "rec$"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 848
+    .line 855
     invoke-static {p0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$300(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
 
     return-void
@@ -49,7 +49,7 @@
 .method public onKeyguardShowingChanged()V
     .locals 3
 
-    .line 847
+    .line 854
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$8;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$1200(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)Lcom/android/systemui/statusbar/policy/KeyguardMonitor;
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    .line 848
+    .line 855
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$8;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mHandler:Landroid/os/Handler;
@@ -77,13 +77,13 @@
 
     goto :goto_0
 
-    .line 850
+    .line 857
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$8;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$300(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
 
-    .line 852
+    .line 859
     :goto_0
     return-void
 .end method

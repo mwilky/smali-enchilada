@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 2328
+    .line 2357
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$13;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/hardware/fingerprint/IFingerprintClientActiveCallback$Stub;-><init>()V
@@ -37,7 +37,7 @@
     .locals 0
     .param p1, "isActive"    # Z
 
-    .line 2331
+    .line 2360
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .param p1, "isActive"    # Z
     .param p2, "pkg"    # Ljava/lang/String;
 
-    .line 2335
+    .line 2364
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2336
+    .line 2365
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$13;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, p2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->setOwnerString(Ljava/lang/String;)V
 
-    .line 2337
+    .line 2366
     :cond_1
     return-void
 .end method
@@ -105,7 +105,7 @@
     .param p3, "reservedCode"    # I
     .param p4, "reservedCode2"    # I
 
-    .line 2341
+    .line 2370
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
@@ -134,7 +134,26 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2342
+    .line 2372
     :cond_0
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$13;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$5000(Lcom/android/keyguard/KeyguardUpdateMonitor;)Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 2373
+    iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$13;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$5000(Lcom/android/keyguard/KeyguardUpdateMonitor;)Lcom/android/systemui/fingerprint/FingerprintDialogView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->onFingerprintEventCallback(II)V
+
+    .line 2376
+    :cond_1
     return-void
 .end method

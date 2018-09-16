@@ -1004,7 +1004,7 @@
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mFadeNotificationsOnDismiss:Z
 
     .line 453
-    const v1, 0x7f0706a9
+    const v1, 0x7f0706ad
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1013,7 +1013,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorWidth:I
 
     .line 454
-    const v1, 0x7f0706a8
+    const v1, 0x7f0706ac
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1022,7 +1022,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mSeparatorThickness:I
 
     .line 455
-    const v1, 0x7f0706a1
+    const v1, 0x7f0706a5
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -5551,7 +5551,7 @@
     iput v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mMinTopOverScrollToEscape:F
 
     .line 612
-    const v2, 0x7f070608
+    const v2, 0x7f07060c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -15005,7 +15005,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070608
+    const v1, 0x7f07060c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

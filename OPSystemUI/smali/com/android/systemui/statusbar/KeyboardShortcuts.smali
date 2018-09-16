@@ -1354,7 +1354,7 @@
 
     .line 578
     .local v2, "keyboardShortcutsView":Landroid/view/View;
-    const v3, 0x7f0a01c4
+    const v3, 0x7f0a01c5
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1370,7 +1370,7 @@
     .line 581
     iget-object v3, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts;->mDialogCloseListener:Landroid/content/DialogInterface$OnClickListener;
 
-    const v4, 0x7f1104e7
+    const v4, 0x7f1104e9
 
     invoke-virtual {v0, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -3063,7 +3063,7 @@
     if-eqz v10, :cond_2
 
     .line 632
-    const v10, 0x7f0a01c5
+    const v10, 0x7f0a01c6
 
     .line 633
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3101,7 +3101,7 @@
     .end local v11    # "group":Landroid/view/KeyboardShortcutGroup;
     .restart local v17    # "group":Landroid/view/KeyboardShortcutGroup;
     :goto_3
-    const v10, 0x7f0a01c7
+    const v10, 0x7f0a01c8
 
     .line 639
     invoke-virtual {v6, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3160,7 +3160,7 @@
     .end local v4    # "info":Landroid/view/KeyboardShortcutInfo;
     .restart local v18    # "info":Landroid/view/KeyboardShortcutInfo;
     :goto_4
-    const v4, 0x7f0a01c6
+    const v4, 0x7f0a01c7
 
     .line 649
     invoke-virtual {v6, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;

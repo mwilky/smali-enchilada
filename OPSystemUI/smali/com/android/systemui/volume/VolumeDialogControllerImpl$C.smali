@@ -85,7 +85,7 @@
     .locals 5
     .param p1, "showA11yStream"    # Ljava/lang/Boolean;
 
-    .line 962
+    .line 968
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -97,7 +97,7 @@
 
     move-result v0
 
-    .line 963
+    .line 969
     .local v0, "show":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
@@ -123,7 +123,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 964
+    .line 970
     .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -137,11 +137,11 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 970
+    .line 976
     .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_1
 
-    .line 971
+    .line 977
     :cond_1
     return-void
 .end method
@@ -149,7 +149,7 @@
 .method public onConfigurationChanged()V
     .locals 4
 
-    .line 898
+    .line 904
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
@@ -174,7 +174,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 899
+    .line 905
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -190,23 +190,23 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 905
+    .line 911
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 908
+    .line 914
     :cond_0
     goto :goto_1
 
-    .line 906
+    .line 912
     :catch_0
     move-exception v0
 
-    .line 907
+    .line 913
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 910
+    .line 916
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -216,7 +216,7 @@
     .locals 4
     .param p1, "deviceName"    # Ljava/lang/String;
 
-    .line 975
+    .line 981
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -240,7 +240,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 976
+    .line 982
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -254,11 +254,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 982
+    .line 988
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 983
+    .line 989
     :cond_0
     return-void
 .end method
@@ -318,7 +318,7 @@
     .locals 4
     .param p1, "layoutDirection"    # I
 
-    .line 880
+    .line 886
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
@@ -343,7 +343,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 881
+    .line 887
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -359,23 +359,23 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 887
+    .line 893
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 890
+    .line 896
     :cond_0
     goto :goto_1
 
-    .line 888
+    .line 894
     :catch_0
     move-exception v0
 
-    .line 889
+    .line 895
     .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 892
+    .line 898
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -385,7 +385,7 @@
     .locals 4
     .param p1, "phoneState"    # I
 
-    .line 987
+    .line 993
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -409,7 +409,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 988
+    .line 994
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -423,11 +423,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 994
+    .line 1000
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 995
+    .line 1001
     :cond_0
     return-void
 .end method
@@ -435,7 +435,7 @@
 .method public onScreenOff()V
     .locals 4
 
-    .line 938
+    .line 944
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -459,7 +459,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 939
+    .line 945
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -473,11 +473,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 945
+    .line 951
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 946
+    .line 952
     :cond_0
     return-void
 .end method
@@ -537,7 +537,7 @@
     .locals 4
     .param p1, "flags"    # I
 
-    .line 950
+    .line 956
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -561,7 +561,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 951
+    .line 957
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -575,11 +575,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 957
+    .line 963
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 958
+    .line 964
     :cond_0
     return-void
 .end method
@@ -587,7 +587,7 @@
 .method public onShowSilentHint()V
     .locals 4
 
-    .line 926
+    .line 932
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -611,7 +611,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 927
+    .line 933
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -625,11 +625,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 933
+    .line 939
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 934
+    .line 940
     :cond_0
     return-void
 .end method
@@ -637,7 +637,7 @@
 .method public onShowVibrateHint()V
     .locals 4
 
-    .line 914
+    .line 920
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -661,7 +661,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 915
+    .line 921
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -675,11 +675,11 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 921
+    .line 927
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 922
+    .line 928
     :cond_0
     return-void
 .end method
@@ -688,18 +688,19 @@
     .locals 7
     .param p1, "state"    # Lcom/android/systemui/plugins/VolumeDialogController$State;
 
-    .line 863
+    .line 865
+    :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 864
+    .line 866
     .local v0, "time":J
     invoke-virtual {p1}, Lcom/android/systemui/plugins/VolumeDialogController$State;->copy()Lcom/android/systemui/plugins/VolumeDialogController$State;
 
     move-result-object v2
 
-    .line 865
+    .line 867
     .local v2, "copy":Lcom/android/systemui/plugins/VolumeDialogController$State;
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->mCallbackMap:Ljava/util/HashMap;
 
@@ -724,7 +725,7 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 866
+    .line 868
     .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -738,15 +739,32 @@
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 872
+    .line 874
     .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;Landroid/os/Handler;>;"
     goto :goto_0
 
-    .line 873
+    .line 875
     :cond_0
     invoke-static {v0, v1, v2}, Lcom/android/systemui/volume/Events;->writeState(JLcom/android/systemui/plugins/VolumeDialogController$State;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 874
+    .line 878
+    .end local v0    # "time":J
+    .end local v2    # "copy":Lcom/android/systemui/plugins/VolumeDialogController$State;
+    goto :goto_1
+
+    .line 876
+    :catch_0
+    move-exception v0
+
+    .line 877
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    .line 880
+    .end local v0    # "e":Ljava/lang/Exception;
+    :goto_1
     return-void
 .end method
 

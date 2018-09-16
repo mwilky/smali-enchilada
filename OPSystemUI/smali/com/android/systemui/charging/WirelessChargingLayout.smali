@@ -60,7 +60,7 @@
     invoke-static {v3, v2, v0}, Lcom/android/systemui/charging/WirelessChargingLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 64
-    const v2, 0x7f0a0478
+    const v2, 0x7f0a0479
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/charging/WirelessChargingLayout;->findViewById(I)Landroid/view/View;
 
@@ -70,7 +70,7 @@
 
     .line 67
     .local v2, "mChargingView":Lcom/android/systemui/charging/WirelessChargingView;
-    const v4, 0x7f0a0476
+    const v4, 0x7f0a0477
 
     invoke-virtual {v0, v4}, Lcom/android/systemui/charging/WirelessChargingLayout;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
 
     move-result-object v5
 
-    const v12, 0x7f0706b1
+    const v12, 0x7f0706b5
 
     invoke-virtual {v5, v12}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -166,7 +166,7 @@
 
     move-result-object v12
 
-    const v13, 0x7f0706b0
+    const v13, 0x7f0706b4
 
     invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getFloat(I)F
 

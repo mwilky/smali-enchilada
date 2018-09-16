@@ -33,40 +33,40 @@
 
 .field public static final guidedactions_sub_list:I = 0x7f0a017b
 
-.field public static final icon:I = 0x7f0a0196
+.field public static final icon:I = 0x7f0a0197
 
-.field public static final info_field:I = 0x7f0a01ab
+.field public static final info_field:I = 0x7f0a01ac
 
-.field public static final lb_parallax_source:I = 0x7f0a01ff
+.field public static final lb_parallax_source:I = 0x7f0a0200
 
-.field public static final lb_row_container_header_dock:I = 0x7f0a0201
+.field public static final lb_row_container_header_dock:I = 0x7f0a0202
 
-.field public static final lb_search_bar_badge:I = 0x7f0a0203
+.field public static final lb_search_bar_badge:I = 0x7f0a0204
 
-.field public static final lb_search_bar_items:I = 0x7f0a0204
+.field public static final lb_search_bar_items:I = 0x7f0a0205
 
-.field public static final lb_search_bar_speech_orb:I = 0x7f0a0205
+.field public static final lb_search_bar_speech_orb:I = 0x7f0a0206
 
-.field public static final lb_search_text_editor:I = 0x7f0a0207
+.field public static final lb_search_text_editor:I = 0x7f0a0208
 
-.field public static final lb_slide_transition_value:I = 0x7f0a020b
+.field public static final lb_slide_transition_value:I = 0x7f0a020c
 
-.field public static final main_image:I = 0x7f0a0228
+.field public static final main_image:I = 0x7f0a0229
 
-.field public static final picker:I = 0x7f0a02f2
+.field public static final picker:I = 0x7f0a02f3
 
-.field public static final playback_progress:I = 0x7f0a0302
+.field public static final playback_progress:I = 0x7f0a0303
 
-.field public static final row_content:I = 0x7f0a0359
+.field public static final row_content:I = 0x7f0a035a
 
-.field public static final search_orb:I = 0x7f0a0392
+.field public static final search_orb:I = 0x7f0a0393
 
-.field public static final title:I = 0x7f0a0404
+.field public static final title:I = 0x7f0a0405
 
-.field public static final title_badge:I = 0x7f0a0406
+.field public static final title_badge:I = 0x7f0a0407
 
-.field public static final title_orb:I = 0x7f0a0408
+.field public static final title_orb:I = 0x7f0a0409
 
-.field public static final title_text:I = 0x7f0a040a
+.field public static final title_text:I = 0x7f0a040b
 
-.field public static final transitionPosition:I = 0x7f0a0424
+.field public static final transitionPosition:I = 0x7f0a0425

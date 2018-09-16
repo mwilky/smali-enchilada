@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 5982
+    .line 5939
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,12 +38,12 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 5985
+    .line 5942
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 5986
+    .line 5943
     .local v0, "action":Ljava/lang/String;
     const-string v1, "com.android.systemui.statusbar.banner_action_cancel"
 
@@ -61,7 +61,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 5987
+    .line 5944
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -69,20 +69,20 @@
 
     const-string v2, "notification"
 
-    .line 5988
+    .line 5945
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/app/NotificationManager;
 
-    .line 5989
+    .line 5946
     .local v1, "noMan":Landroid/app/NotificationManager;
     const/4 v2, 0x5
 
     invoke-virtual {v1, v2}, Landroid/app/NotificationManager;->cancel(I)V
 
-    .line 5992
+    .line 5949
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
@@ -97,7 +97,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 5994
+    .line 5951
     const-string v2, "com.android.systemui.statusbar.banner_action_setup"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -106,7 +106,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 5995
+    .line 5952
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     const/4 v3, 0x2
@@ -115,7 +115,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZ)V
 
-    .line 5997
+    .line 5954
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/StatusBar$20;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v2, v2, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
@@ -128,15 +128,15 @@
 
     const/high16 v4, 0x10000000
 
-    .line 5998
+    .line 5955
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 5997
+    .line 5954
     invoke-virtual {v2, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 6003
+    .line 5960
     .end local v1    # "noMan":Landroid/app/NotificationManager;
     :cond_1
     return-void

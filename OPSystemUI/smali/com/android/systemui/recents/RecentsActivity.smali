@@ -1307,7 +1307,7 @@
     if-nez v0, :cond_0
 
     .line 727
-    const v0, 0x7f0a01a3
+    const v0, 0x7f0a01a4
 
     invoke-static {p0, v0}, Lcom/android/systemui/shared/recents/utilities/Utilities;->findViewStubById(Landroid/app/Activity;I)Landroid/view/ViewStub;
 
@@ -1661,7 +1661,7 @@
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/RecentsActivity;->takeKeyEvents(Z)V
 
     .line 334
-    const v1, 0x7f0a033b
+    const v1, 0x7f0a033c
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/RecentsActivity;->findViewById(I)Landroid/view/View;
 

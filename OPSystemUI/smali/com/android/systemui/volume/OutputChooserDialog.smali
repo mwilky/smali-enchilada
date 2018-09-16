@@ -528,9 +528,7 @@
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
     .line 432
-    iget-object v2, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mBluetoothController:Lcom/android/systemui/statusbar/policy/BluetoothController;
-
-    invoke-interface {v2}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getDevices()Ljava/util/Collection;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/systemui/volume/OutputChooserDialog;->getDevices()Ljava/util/Collection;
 
     move-result-object v2
 
@@ -682,7 +680,7 @@
     .line 456
     iget-object v15, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1104ce
+    const v8, 0x7f1104d0
 
     new-array v11, v12, [Ljava/lang/Object;
 
@@ -710,7 +708,7 @@
     :cond_2
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104cd
+    const v11, 0x7f1104cf
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -803,7 +801,7 @@
     .line 476
     iget-object v8, v0, Lcom/android/systemui/volume/OutputChooserDialog;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1104cf
+    const v11, 0x7f1104d1
 
     invoke-virtual {v8, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1767,6 +1765,44 @@
     return-object v0
 .end method
 
+.method public getDevices()Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Collection<",
+            "Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;",
+            ">;"
+        }
+    .end annotation
+
+    .line 951
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mLocalBluetoothManager:Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
+
+    if-eqz v0, :cond_0
+
+    .line 952
+    iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog;->mLocalBluetoothManager:Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
+
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/LocalBluetoothManager;->getCachedDeviceManager()Lcom/android/settingslib/bluetooth/CachedBluetoothDeviceManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDeviceManager;->getCachedDevicesCopy()Ljava/util/Collection;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 953
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 951
+    :goto_0
+    return-object v0
+.end method
+
 .method public getIconColor()I
     .locals 1
 
@@ -1891,7 +1927,7 @@
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     .line 197
-    const v1, 0x7f0a02e0
+    const v1, 0x7f0a02e1
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->findViewById(I)Landroid/view/View;
 
@@ -1960,7 +1996,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104e9
+    const v2, 0x7f1104eb
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1975,7 +2011,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1104eb
+    const v2, 0x7f1104ed
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

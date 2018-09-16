@@ -421,7 +421,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 72
-    const v0, 0x7f0a0334
+    const v0, 0x7f0a0335
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -432,7 +432,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSPanel:Lcom/android/systemui/qs/QSPanel;
 
     .line 73
-    const v0, 0x7f0a0324
+    const v0, 0x7f0a0325
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -452,7 +452,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mHeader:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     .line 75
-    const v0, 0x7f0a0323
+    const v0, 0x7f0a0324
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -463,7 +463,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSCustomizer:Lcom/android/systemui/qs/customize/QSCustomizer;
 
     .line 76
-    const v0, 0x7f0a0328
+    const v0, 0x7f0a0329
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -472,7 +472,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mQSFooter:Landroid/view/View;
 
     .line 77
-    const v0, 0x7f0a0331
+    const v0, 0x7f0a0332
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -481,7 +481,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mBackground:Landroid/view/View;
 
     .line 78
-    const v0, 0x7f0a0335
+    const v0, 0x7f0a0336
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 
@@ -490,7 +490,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/QSContainerImpl;->mStatusBarBackground:Landroid/view/View;
 
     .line 79
-    const v0, 0x7f0a0333
+    const v0, 0x7f0a0334
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QSContainerImpl;->findViewById(I)Landroid/view/View;
 

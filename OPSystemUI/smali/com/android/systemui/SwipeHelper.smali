@@ -182,7 +182,7 @@
     iput v1, p0, Lcom/android/systemui/SwipeHelper;->mDensityScale:F
 
     .line 112
-    const v1, 0x7f07061c
+    const v1, 0x7f070620
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

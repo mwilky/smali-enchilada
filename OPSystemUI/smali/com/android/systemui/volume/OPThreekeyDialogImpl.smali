@@ -459,7 +459,7 @@
     .line 177
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03f9
+    const v1, 0x7f0a03fa
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -472,7 +472,7 @@
     .line 178
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03f8
+    const v1, 0x7f0a03f9
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -485,7 +485,7 @@
     .line 179
     iget-object v0, p0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mDialog:Landroid/app/Dialog;
 
-    const v1, 0x7f0a03fa
+    const v1, 0x7f0a03fb
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -730,7 +730,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "updateTheme change"
+    const-string/jumbo v5, "updateTheme change"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -840,7 +840,7 @@
     const v1, 0x7f0804d5
 
     .line 229
-    const v2, 0x7f11066e
+    const v2, 0x7f110670
 
     .line 230
     goto :goto_0
@@ -850,7 +850,7 @@
     const v1, 0x7f0804d8
 
     .line 225
-    const v2, 0x7f110683
+    const v2, 0x7f110685
 
     .line 226
     goto :goto_0
@@ -860,7 +860,7 @@
     const v1, 0x7f0804d7
 
     .line 221
-    const v2, 0x7f11066f
+    const v2, 0x7f110671
 
     .line 222
     nop
@@ -869,11 +869,11 @@
     :goto_0
     iget v8, v0, Lcom/android/systemui/volume/OPThreekeyDialogImpl;->mOrientationType:I
 
-    const v11, 0x7f07063c
+    const v11, 0x7f070640
 
-    const v12, 0x7f07063e
+    const v12, 0x7f070642
 
-    const v13, 0x7f070640
+    const v13, 0x7f070644
 
     const/4 v15, 0x3
 
@@ -881,7 +881,7 @@
 
     const/4 v10, 0x1
 
-    const v14, 0x7f07063a
+    const v14, 0x7f07063e
 
     packed-switch v8, :pswitch_data_1
 
@@ -899,7 +899,7 @@
     if-ne v8, v10, :cond_b
 
     .line 279
-    const v8, 0x7f07063f
+    const v8, 0x7f070643
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -978,7 +978,7 @@
     if-ne v8, v10, :cond_5
 
     .line 255
-    const v8, 0x7f07063f
+    const v8, 0x7f070643
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -993,7 +993,7 @@
     if-ne v8, v9, :cond_6
 
     .line 257
-    const v8, 0x7f07063d
+    const v8, 0x7f070641
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1008,7 +1008,7 @@
     if-ne v8, v15, :cond_7
 
     .line 259
-    const v8, 0x7f07063b
+    const v8, 0x7f07063f
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1091,7 +1091,7 @@
     if-ne v8, v9, :cond_c
 
     .line 282
-    const v8, 0x7f07063d
+    const v8, 0x7f070641
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1109,7 +1109,7 @@
     if-ne v8, v15, :cond_d
 
     .line 285
-    const v8, 0x7f07063b
+    const v8, 0x7f07063f
 
     invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1190,7 +1190,7 @@
 
     .line 310
     :cond_11
-    const v9, 0x7f0704cb
+    const v9, 0x7f0704cf
 
     invoke-virtual {v4, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1237,7 +1237,7 @@
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "updateThreekeyLayout mThreeKeystate:"
+    const-string/jumbo v12, "updateThreekeyLayout mThreeKeystate:"
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1254,6 +1254,8 @@
     .line 319
     :cond_12
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

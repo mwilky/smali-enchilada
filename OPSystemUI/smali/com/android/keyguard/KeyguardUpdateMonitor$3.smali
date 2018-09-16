@@ -35,7 +35,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 637
+    .line 654
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$3;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
     .param p1, "lhs"    # Landroid/telephony/SubscriptionInfo;
     .param p2, "rhs"    # Landroid/telephony/SubscriptionInfo;
 
-    .line 640
+    .line 657
     invoke-virtual {p1}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
     move-result v0
@@ -61,7 +61,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 641
+    .line 658
     invoke-virtual {p1}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v0
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 642
+    .line 659
     :cond_0
     invoke-virtual {p1}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
@@ -86,7 +86,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 640
+    .line 657
     :goto_0
     return v0
 .end method
@@ -94,7 +94,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 637
+    .line 654
     check-cast p1, Landroid/telephony/SubscriptionInfo;
 
     check-cast p2, Landroid/telephony/SubscriptionInfo;

@@ -30,7 +30,7 @@
     .locals 1
 
     .line 100
-    const v0, 0x7f0a0366
+    const v0, 0x7f0a0367
 
     return v0
 .end method
@@ -39,7 +39,7 @@
     .locals 1
 
     .line 95
-    const v0, 0x7f0a0367
+    const v0, 0x7f0a0368
 
     return v0
 .end method
@@ -48,7 +48,7 @@
     .locals 1
 
     .line 105
-    const v0, 0x7f0a0368
+    const v0, 0x7f0a0369
 
     return v0
 .end method

@@ -392,7 +392,7 @@
     <color name="edittext_normal_color_dark">#ff666666</color>
     <color name="error_color_material_dark">#ffff7043</color>
     <color name="error_color_material_light">#ffff5722</color>
-    <color name="face_unlock_button_color">#ff1d7fcb</color>
+    <color name="face_unlock_button_color">@color/oneplus_accent_color</color>
     <color name="face_unlock_notify_color">#ff000000</color>
     <color name="face_unlock_time_color">#ff666666</color>
     <color name="fake_shadow_end_color">#03000000</color>

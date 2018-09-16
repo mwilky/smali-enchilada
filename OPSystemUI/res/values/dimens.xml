@@ -428,7 +428,7 @@
     <item type="dimen" name="disabled_alpha_material_light">0.26</item>
     <dimen name="disappear_y_translation">-32.0dip</dimen>
     <dimen name="dismiss_all_button_height">147.0px</dimen>
-    <dimen name="dismiss_all_button_margin_bottom">47.0px</dimen>
+    <dimen name="dismiss_all_button_margin_bottom">104.0px</dimen>
     <dimen name="dismiss_all_button_width">147.0px</dimen>
     <dimen name="display_cutout_margin_consumption">0.0px</dimen>
     <dimen name="docked_divider_handle_height">2.0dip</dimen>
@@ -1218,6 +1218,10 @@
     <dimen name="op_progress_dialog_right_padding">0.0dip</dimen>
     <dimen name="op_qs_page_indicator_height">8.0dip</dimen>
     <dimen name="op_qs_page_indicator_width">16.0dip</dimen>
+    <dimen name="op_quick_launch_hint_size">34.0px</dimen>
+    <dimen name="op_quick_launch_icon_padding">30.0px</dimen>
+    <dimen name="op_quick_launch_icon_size">160.0px</dimen>
+    <dimen name="op_quick_launch_label_size">47.0px</dimen>
     <dimen name="op_reduce_padding_space2">-9.0dip</dimen>
     <dimen name="op_rounded_corner_content_padding">0.0dip</dimen>
     <dimen name="op_rounded_corner_content_padding_custom">0.0dip</dimen>
@@ -1242,7 +1246,7 @@
     <dimen name="op_volume_dialog_row_margin_bottom">47.0px</dimen>
     <dimen name="op_volume_dialog_row_padding_end">36.299988dip</dimen>
     <dimen name="op_volume_dialog_settings_container_height">157.0px</dimen>
-    <dimen name="op_volume_dialog_slider_height">470.0px</dimen>
+    <dimen name="op_volume_dialog_slider_height">422.0px</dimen>
     <dimen name="op_volume_dialog_slider_margin_bottom">5.0px</dimen>
     <dimen name="op_volume_dialog_slider_margin_top">5.0px</dimen>
     <dimen name="op_volume_dialog_slider_width">149.0px</dimen>

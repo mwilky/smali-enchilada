@@ -25,7 +25,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 479
+    .line 486
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -40,24 +40,24 @@
     .param p1, "state"    # I
     .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .line 484
+    .line 491
     iget v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->mCallState:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 486
+    .line 493
     :cond_0
     iput p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->mCallState:I
 
-    .line 487
+    .line 494
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$3;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     const/16 v1, -0x2710
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$400(Lcom/android/systemui/statusbar/policy/UserSwitcherController;I)V
 
-    .line 488
+    .line 495
     return-void
 .end method

@@ -28,12 +28,12 @@
     .locals 1
     .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 215
+    .line 233
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 216
+    .line 234
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
@@ -49,17 +49,17 @@
     .param p2, "keyCode"    # I
     .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 219
+    .line 237
     const/4 v0, 0x0
 
     const/4 v1, 0x4
 
     if-eq p2, v1, :cond_0
 
-    .line 220
+    .line 238
     return v0
 
-    .line 222
+    .line 240
     :cond_0
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -73,12 +73,12 @@
 
     if-nez v1, :cond_1
 
-    .line 223
+    .line 241
     iput-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
     goto :goto_0
 
-    .line 224
+    .line 242
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -86,12 +86,12 @@
 
     if-nez v1, :cond_2
 
-    .line 225
+    .line 243
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
     goto :goto_0
 
-    .line 226
+    .line 244
     :cond_2
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -103,10 +103,10 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 227
+    .line 245
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
-    .line 228
+    .line 246
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/Handler;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 230
+    .line 248
     :cond_3
     :goto_0
     return v2

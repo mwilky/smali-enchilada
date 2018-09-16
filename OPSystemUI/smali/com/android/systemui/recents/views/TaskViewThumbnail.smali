@@ -257,7 +257,7 @@
 
     .line 114
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x7f0705b5
+    const v1, 0x7f0705b9
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -276,7 +276,7 @@
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 117
-    const v1, 0x7f070590
+    const v1, 0x7f070594
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -1728,7 +1728,7 @@
     .line 295
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a045b
+    const v3, 0x7f0a045c
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1750,7 +1750,7 @@
     .line 305
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a045c
+    const v3, 0x7f0a045d
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1815,7 +1815,7 @@
     .line 313
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a045d
+    const v3, 0x7f0a045e
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1828,7 +1828,7 @@
     .line 320
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a03a5
+    const v3, 0x7f0a03a6
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1839,7 +1839,7 @@
     .line 321
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialog:Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;
 
-    const v3, 0x7f0a03a2
+    const v3, 0x7f0a03a3
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/volume/VolumeDialogImpl$CustomDialog;->findViewById(I)Landroid/view/View;
 
@@ -1852,7 +1852,7 @@
     .line 323
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a02e0
+    const v3, 0x7f0a02e1
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -1872,7 +1872,7 @@
     .line 325
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl;->mDialogView:Landroid/view/ViewGroup;
 
-    const v3, 0x7f0a0460
+    const v3, 0x7f0a0461
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -2109,7 +2109,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0a0461
+    const v2, 0x7f0a0462
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2181,7 +2181,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a0463
+    const v3, 0x7f0a0464
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2210,7 +2210,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0462
+    const v2, 0x7f0a0463
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3528,7 +3528,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f0704d5
+    const v7, 0x7f0704d9
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3550,7 +3550,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0704d4
+    const v8, 0x7f0704d8
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3577,7 +3577,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f0704d3
+    const v9, 0x7f0704d7
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3599,7 +3599,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f0704d6
+    const v10, 0x7f0704da
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -3750,7 +3750,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "updateVolumeRowH s="
+    const-string/jumbo v4, "updateVolumeRowH s="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4156,20 +4156,23 @@
 
     sget-object v6, Lcom/android/systemui/volume/VolumeDialogImpl;->TAG:Ljava/lang/String;
 
+    .line 1022
     .end local v6    # "max":I
     .local v18, "max":I
     move/from16 v19, v7
 
     new-instance v7, Ljava/lang/StringBuilder;
 
+    .line 1022
     .end local v7    # "min":I
     .local v19, "min":I
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
     move/from16 v20, v8
 
-    const-string v8, "updateVolumeRowH s="
+    const-string/jumbo v8, "updateVolumeRowH s="
 
+    .line 1022
     .end local v8    # "isSystemStream":Z
     .local v20, "isSystemStream":Z
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -4210,6 +4213,7 @@
 
     move/from16 v20, v8
 
+    .line 1028
     .end local v6    # "max":I
     .end local v7    # "min":I
     .end local v8    # "isSystemStream":Z
@@ -4396,6 +4400,7 @@
 
     new-instance v8, Ljava/lang/StringBuilder;
 
+    .line 1055
     .end local v8    # "iconRes":I
     .local v21, "iconRes":I
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -4404,6 +4409,7 @@
 
     const-string v9, " isRingSilent:"
 
+    .line 1055
     .end local v9    # "isAlarmStream":Z
     .local v22, "isAlarmStream":Z
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -4434,6 +4440,7 @@
 
     move/from16 v22, v9
 
+    .line 1058
     .end local v8    # "iconRes":I
     .end local v9    # "isAlarmStream":Z
     .restart local v21    # "iconRes":I
@@ -4453,6 +4460,7 @@
     .line 1061
     const v8, 0x7f0803f1
 
+    .line 1061
     .end local v21    # "iconRes":I
     .restart local v8    # "iconRes":I
     :goto_15
@@ -4470,6 +4478,7 @@
     :cond_2a
     move/from16 v8, v21
 
+    .line 1069
     .end local v21    # "iconRes":I
     .restart local v8    # "iconRes":I
     :goto_16
@@ -4565,7 +4574,7 @@
     if-eqz v6, :cond_3a
 
     .line 1083
-    const v9, 0x7f110678
+    const v9, 0x7f11067a
 
     if-eqz v5, :cond_35
 
@@ -4601,7 +4610,7 @@
     aput-object v6, v8, v16
 
     .line 1085
-    const v6, 0x7f110679
+    const v6, 0x7f11067b
 
     invoke-virtual {v7, v6, v8}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4612,6 +4621,7 @@
     .line 1123
     move/from16 v25, v10
 
+    .line 1123
     .end local v10    # "isMusicStream":Z
     .local v25, "isMusicStream":Z
     :goto_1a
@@ -4631,6 +4641,7 @@
 
     move/from16 v24, v8
 
+    .line 1089
     .end local v6    # "iconEnabled":Z
     .end local v8    # "iconRes":I
     .restart local v23    # "iconEnabled":Z
@@ -4656,13 +4667,13 @@
     if-eqz v8, :cond_32
 
     .line 1092
-    const v8, 0x7f11067b
+    const v8, 0x7f11067d
 
     goto :goto_1b
 
     .line 1093
     :cond_32
-    const v8, 0x7f11067a
+    const v8, 0x7f11067c
 
     :goto_1b
     move/from16 v25, v10
@@ -4697,6 +4708,7 @@
     :cond_33
     move/from16 v25, v10
 
+    .line 1096
     .end local v10    # "isMusicStream":Z
     .restart local v25    # "isMusicStream":Z
     invoke-static/range {p1 .. p1}, Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;->access$1400(Lcom/android/systemui/volume/VolumeDialogImpl$VolumeRow;)Landroid/widget/ImageButton;
@@ -4715,7 +4727,7 @@
 
     .line 1099
     :cond_34
-    const v9, 0x7f110677
+    const v9, 0x7f110679
 
     :goto_1c
     const/4 v8, 0x1
@@ -4754,6 +4766,7 @@
 
     move/from16 v25, v10
 
+    .line 1103
     .end local v6    # "iconEnabled":Z
     .end local v8    # "iconRes":I
     .end local v10    # "isMusicStream":Z
@@ -4809,7 +4822,7 @@
 
     .line 1114
     :cond_38
-    const v9, 0x7f110677
+    const v9, 0x7f110679
 
     :goto_1d
     const/4 v8, 0x1
@@ -4857,7 +4870,7 @@
     aput-object v10, v9, v16
 
     .line 1107
-    const v10, 0x7f110679
+    const v10, 0x7f11067b
 
     invoke-virtual {v7, v10, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -4883,6 +4896,7 @@
 
     const/4 v8, 0x1
 
+    .line 1119
     .end local v6    # "iconEnabled":Z
     .end local v8    # "iconRes":I
     .end local v10    # "isMusicStream":Z
@@ -4983,7 +4997,7 @@
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "updateVolumeRowSliderH zenMuted:"
+    const-string/jumbo v10, "updateVolumeRowSliderH zenMuted:"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5261,7 +5275,7 @@
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v15, "updateVolumeRowSliderH newProgress:"
+    const-string/jumbo v15, "updateVolumeRowSliderH newProgress:"
 
     invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5602,7 +5616,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f11066b
+    const v2, 0x7f11066d
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -45,7 +45,7 @@
     .local v0, "res":Landroid/content/res/Resources;
     const/4 v1, 0x1
 
-    const v2, 0x7f070609
+    const v2, 0x7f07060d
 
     invoke-virtual {v0, v2, v1, v1}, Landroid/content/res/Resources;->getFraction(III)F
 
@@ -318,7 +318,7 @@
     .line 46
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v1, 0x7f0a03ce
+    const v1, 0x7f0a03cf
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -329,7 +329,7 @@
     .line 47
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarTransitions;->mView:Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;
 
-    const v1, 0x7f0a03c8
+    const v1, 0x7f0a03c9
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 

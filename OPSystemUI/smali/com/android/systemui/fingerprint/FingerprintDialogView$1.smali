@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 139
+    .line 156
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 4
 
-    .line 142
+    .line 159
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$100(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/view/ViewGroup;
@@ -50,14 +50,14 @@
 
     move-result-object v0
 
-    .line 143
+    .line 160
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 144
+    .line 161
     const-wide/16 v1, 0xfa
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
@@ -66,7 +66,7 @@
 
     iget-object v3, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 145
+    .line 162
     invoke-static {v3}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/view/animation/Interpolator;
 
     move-result-object v3
@@ -75,15 +75,15 @@
 
     move-result-object v0
 
-    .line 146
+    .line 163
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 147
+    .line 164
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 148
+    .line 165
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$200(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/widget/LinearLayout;
@@ -94,21 +94,21 @@
 
     move-result-object v0
 
-    .line 149
+    .line 166
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 150
+    .line 167
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 151
+    .line 168
     invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$000(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/view/animation/Interpolator;
 
     move-result-object v1
@@ -117,14 +117,14 @@
 
     move-result-object v0
 
-    .line 152
+    .line 169
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 153
+    .line 170
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 154
+    .line 171
     return-void
 .end method

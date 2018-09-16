@@ -24,13 +24,13 @@
     .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
     .param p2, "context"    # Landroid/content/Context;
 
-    .line 1461
+    .line 1484
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 1462
+    .line 1485
     invoke-direct {p0, p2}, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;-><init>(Landroid/content/Context;)V
 
-    .line 1463
+    .line 1486
     return-void
 .end method
 
@@ -39,12 +39,12 @@
 .method public hasUserAuthenticatedSinceBoot()Z
     .locals 3
 
-    .line 1471
+    .line 1494
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v0
 
-    .line 1472
+    .line 1495
     .local v0, "userId":I
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->getStrongAuthForUser(I)I
 
@@ -68,12 +68,12 @@
 .method public isUnlockingWithFingerprintAllowed()Z
     .locals 2
 
-    .line 1466
+    .line 1489
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v0
 
-    .line 1467
+    .line 1490
     .local v0, "userId":I
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->isFingerprintAllowedForUser(I)Z
 
@@ -86,11 +86,11 @@
     .locals 1
     .param p1, "userId"    # I
 
-    .line 1478
+    .line 1501
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$StrongAuthTracker;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-static {v0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$4300(Lcom/android/keyguard/KeyguardUpdateMonitor;I)V
 
-    .line 1479
+    .line 1502
     return-void
 .end method

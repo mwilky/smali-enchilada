@@ -73,7 +73,7 @@
 
     .line 46
     .local v0, "ap":Lcom/android/internal/app/AlertController$AlertParams;
-    const v1, 0x7f11064a
+    const v1, 0x7f11064c
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/usb/UsbDebuggingSecondaryUserActivity;->getString(I)Ljava/lang/String;
 
@@ -82,7 +82,7 @@
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     .line 47
-    const v1, 0x7f110649
+    const v1, 0x7f11064b
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/usb/UsbDebuggingSecondaryUserActivity;->getString(I)Ljava/lang/String;
 

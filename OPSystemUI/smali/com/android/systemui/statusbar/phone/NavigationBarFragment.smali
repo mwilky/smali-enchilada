@@ -473,7 +473,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0a0276
+    const v5, 0x7f0a0277
 
     const-string v6, "NavigationBar"
 
@@ -1029,7 +1029,7 @@
     .line 973
     const v0, 0x7f0a006f
 
-    const v1, 0x7f0a018f
+    const v1, 0x7f0a0190
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onLongPressNavigationButtons(Landroid/view/View;II)Z
 
@@ -1050,7 +1050,7 @@
     .line 978
     const v0, 0x7f0a006f
 
-    const v1, 0x7f0a033a
+    const v1, 0x7f0a033b
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarFragment;->onLongPressNavigationButtons(Landroid/view/View;II)Z
 
@@ -1099,7 +1099,7 @@
 
     .line 1001
     .local v7, "inLockTaskMode":Z
-    const v8, 0x7f0a033a
+    const v8, 0x7f0a033b
 
     const/4 v9, 0x1
 

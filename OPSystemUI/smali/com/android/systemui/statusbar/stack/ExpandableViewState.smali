@@ -368,7 +368,7 @@
     .line 395
     move-object/from16 v2, p2
 
-    const v3, 0x7f0a0411
+    const v3, 0x7f0a0412
 
     invoke-static {v1, v3}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -378,7 +378,7 @@
 
     .line 396
     .local v4, "previousStartValue":Ljava/lang/Integer;
-    const v5, 0x7f0a0410
+    const v5, 0x7f0a0411
 
     invoke-static {v1, v5}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -405,7 +405,7 @@
 
     .line 401
     :cond_0
-    const v8, 0x7f0a0412
+    const v8, 0x7f0a0413
 
     invoke-static {v1, v8}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -479,7 +479,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0a0410
+    const v5, 0x7f0a0411
 
     invoke-virtual {v1, v5, v3}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
@@ -614,7 +614,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0a0410
+    const v8, 0x7f0a0411
 
     invoke-virtual {v1, v8, v3}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
@@ -634,7 +634,7 @@
     .line 333
     move-object/from16 v2, p2
 
-    const v3, 0x7f0a03a7
+    const v3, 0x7f0a03a8
 
     invoke-static {v1, v3}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -644,7 +644,7 @@
 
     .line 334
     .local v4, "previousStartValue":Ljava/lang/Float;
-    const v5, 0x7f0a03a6
+    const v5, 0x7f0a03a7
 
     invoke-static {v1, v5}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -673,7 +673,7 @@
 
     .line 339
     :cond_0
-    const v8, 0x7f0a03a8
+    const v8, 0x7f0a03a9
 
     invoke-static {v1, v8}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -747,7 +747,7 @@
 
     move-result-object v3
 
-    const v5, 0x7f0a03a6
+    const v5, 0x7f0a03a7
 
     invoke-virtual {v1, v5, v3}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
@@ -882,7 +882,7 @@
 
     move-result-object v3
 
-    const v8, 0x7f0a03a6
+    const v8, 0x7f0a03a7
 
     invoke-virtual {v1, v8, v3}, Lcom/android/systemui/statusbar/ExpandableView;->setTag(ILjava/lang/Object;)V
 
@@ -960,7 +960,7 @@
 
     .line 212
     :cond_2
-    const v1, 0x7f0a03a8
+    const v1, 0x7f0a03a9
 
     invoke-virtual {p0, p1, v1}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->abortAnimation(Landroid/view/View;I)V
 
@@ -981,7 +981,7 @@
 
     .line 219
     :cond_3
-    const v1, 0x7f0a0412
+    const v1, 0x7f0a0413
 
     invoke-virtual {p0, p1, v1}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->abortAnimation(Landroid/view/View;I)V
 
@@ -1239,7 +1239,7 @@
 
     .line 479
     :cond_0
-    const v1, 0x7f0a03a8
+    const v1, 0x7f0a03a9
 
     invoke-static {p1, v1}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 
@@ -1257,7 +1257,7 @@
 
     .line 483
     :cond_1
-    const v1, 0x7f0a0412
+    const v1, 0x7f0a0413
 
     invoke-static {p1, v1}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 

@@ -240,7 +240,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mLightBarController:Lcom/android/systemui/statusbar/phone/LightBarController;
 
     .line 167
-    const v1, 0x7f0a0442
+    const v1, 0x7f0a0443
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -251,7 +251,7 @@
     iput-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mUpperPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
     .line 168
-    const v1, 0x7f0a0223
+    const v1, 0x7f0a0224
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -264,7 +264,7 @@
     .line 169
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mUpperPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v3, 0x7f0a0441
+    const v3, 0x7f0a0442
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -277,7 +277,7 @@
     .line 170
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mLowerPages:Lcom/android/systemui/qs/customize/QSEditViewPager;
 
-    const v3, 0x7f0a0222
+    const v3, 0x7f0a0223
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -559,7 +559,7 @@
     .local v0, "tiles":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSCustomizer;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11051d
+    const v2, 0x7f11051f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -723,7 +723,7 @@
     .param p1, "shouldShow"    # Z
 
     .line 325
-    const v0, 0x7f0a0272
+    const v0, 0x7f0a0273
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1520,7 +1520,7 @@
     invoke-virtual {v9, v2}, Lcom/android/systemui/qs/customize/QSEditViewPager;->setBackgroundColor(I)V
 
     .line 275
-    const v9, 0x7f0a040d
+    const v9, 0x7f0a040e
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1529,7 +1529,7 @@
     invoke-virtual {v9, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 276
-    const v9, 0x7f0a0443
+    const v9, 0x7f0a0444
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 
@@ -1538,7 +1538,7 @@
     invoke-virtual {v9, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 277
-    const v9, 0x7f0a0224
+    const v9, 0x7f0a0225
 
     invoke-virtual {p0, v9}, Lcom/android/systemui/qs/customize/QSCustomizer;->findViewById(I)Landroid/view/View;
 

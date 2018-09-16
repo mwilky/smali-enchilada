@@ -26,16 +26,20 @@
 
 .field private mDataSet:[Ljava/lang/String;
 
+.field private mIconPadding:I
+
+.field private mIconSize:I
+
 .field private mViewIndex:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;[Ljava/lang/String;)V
-    .locals 1
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "dataSet"    # [Ljava/lang/String;
 
-    .line 56
+    .line 58
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
     .line 23
@@ -48,22 +52,67 @@
 
     iput v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mViewIndex:I
 
-    .line 57
-    iput-object p1, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
+    .line 27
+    iput v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconSize:I
 
-    .line 58
-    iput-object p2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mDataSet:[Ljava/lang/String;
+    .line 28
+    iput v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconPadding:I
 
     .line 59
+    iput-object p1, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
+
+    .line 60
+    iput-object p2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mDataSet:[Ljava/lang/String;
+
+    .line 62
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0704c6
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconSize:I
+
+    .line 65
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0704c5
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconPadding:I
+
+    .line 68
     return-void
 .end method
 
 
 # virtual methods
+.method public getIconPadding()I
+    .locals 1
+
+    .line 111
+    iget v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconPadding:I
+
+    return v0
+.end method
+
 .method public getItemCount()I
     .locals 1
 
-    .line 98
+    .line 107
     const/4 v0, 0x6
 
     return v0
@@ -85,7 +134,7 @@
     .param p1, "viewHolder"    # Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;
     .param p2, "position"    # I
 
-    .line 83
+    .line 92
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
 
@@ -101,7 +150,7 @@
 
     move-result-object v0
 
-    .line 84
+    .line 93
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     invoke-virtual {p1}, Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;->getView()Landroid/view/View;
 
@@ -109,26 +158,26 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 85
+    .line 94
     .local v1, "v":Landroid/widget/ImageView;
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 88
+    .line 97
     .end local v0    # "d":Landroid/graphics/drawable/Drawable;
     .end local v1    # "v":Landroid/widget/ImageView;
     goto :goto_0
 
-    .line 86
+    .line 95
     :catch_0
     move-exception v0
 
-    .line 87
+    .line 96
     .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {v0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
-    .line 90
+    .line 99
     .end local v0    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mContext:Landroid/content/Context;
@@ -145,18 +194,18 @@
 
     move-result-object v0
 
-    .line 91
+    .line 100
     .local v0, "intent":Landroid/content/Intent;
     invoke-virtual {p1, v0}, Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;->setIntent(Landroid/content/Intent;)V
 
-    .line 92
+    .line 101
     invoke-virtual {p1}, Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;->getView()Landroid/view/View;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 94
+    .line 103
     return-void
 .end method
 
@@ -172,11 +221,11 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;
-    .locals 3
+    .locals 4
     .param p1, "viewGroup"    # Landroid/view/ViewGroup;
     .param p2, "viewType"    # I
 
-    .line 67
+    .line 76
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -185,32 +234,36 @@
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 68
+    .line 77
     .local v0, "v":Landroid/widget/ImageView;
     const v1, 0x7f080206
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 69
+    .line 78
     new-instance v1, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
-    const/16 v2, 0xb4
+    iget v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconSize:I
 
-    invoke-direct {v1, v2, v2}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(II)V
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconSize:I
 
-    .line 70
+    invoke-direct {v1, v2, v3}, Landroid/support/v7/widget/RecyclerView$LayoutParams;-><init>(II)V
+
+    .line 79
     .local v1, "lp":Landroid/support/v7/widget/RecyclerView$LayoutParams;
-    const/16 v2, 0xa
+    iget v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconPadding:I
 
     iput v2, v1, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
 
-    .line 71
+    .line 80
+    iget v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mIconPadding:I
+
     iput v2, v1, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
 
-    .line 72
+    .line 81
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 73
+    .line 82
     iget v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mViewIndex:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -219,14 +272,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 74
+    .line 83
     iget v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mViewIndex:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/systemui/fingerprint/QLAdapter;->mViewIndex:I
 
-    .line 76
+    .line 85
     new-instance v2, Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;
 
     invoke-direct {v2, v0}, Lcom/android/systemui/fingerprint/QLAdapter$ViewHolder;-><init>(Landroid/view/View;)V

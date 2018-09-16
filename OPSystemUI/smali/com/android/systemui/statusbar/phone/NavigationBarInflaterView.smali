@@ -686,7 +686,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v1, 0x7f0a0275
+    const v1, 0x7f0a0276
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
@@ -1524,7 +1524,7 @@
     .line 178
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot0:Landroid/widget/FrameLayout;
 
-    const v2, 0x7f0a0350
+    const v2, 0x7f0a0351
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setId(I)V
 
@@ -1540,7 +1540,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704c6
+    const v2, 0x7f0704ca
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1556,7 +1556,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f0704c5
+    const v2, 0x7f0704c9
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1598,7 +1598,7 @@
     .line 189
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarInflaterView;->mRot90:Landroid/widget/FrameLayout;
 
-    const v4, 0x7f0a0351
+    const v4, 0x7f0a0352
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setId(I)V
 

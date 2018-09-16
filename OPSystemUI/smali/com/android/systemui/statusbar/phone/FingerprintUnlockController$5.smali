@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
-    .line 650
+    .line 670
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$5;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +39,13 @@
 .method public onScreenTurnedOn()V
     .locals 2
 
-    .line 653
+    .line 673
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$5;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->access$502(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;Z)Z
 
-    .line 654
+    .line 674
     return-void
 .end method

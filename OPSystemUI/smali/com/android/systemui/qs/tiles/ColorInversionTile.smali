@@ -130,7 +130,7 @@
     .line 88
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104fc
+    const v1, 0x7f1104fe
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -272,7 +272,7 @@
     .line 101
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/ColorInversionTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104fc
+    const v3, 0x7f1104fe
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

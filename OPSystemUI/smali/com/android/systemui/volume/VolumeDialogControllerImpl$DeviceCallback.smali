@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
-    .line 1229
+    .line 1235
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
@@ -37,7 +37,7 @@
     .locals 6
     .param p1, "addedDevices"    # [Landroid/media/AudioDeviceInfo;
 
-    .line 1231
+    .line 1237
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->access$3700(Lcom/android/systemui/volume/VolumeDialogControllerImpl;)Ljava/lang/Object;
@@ -46,7 +46,7 @@
 
     monitor-enter v0
 
-    .line 1232
+    .line 1238
     :try_start_0
     array-length v1, p1
 
@@ -57,7 +57,7 @@
 
     aget-object v3, p1, v2
 
-    .line 1233
+    .line 1239
     .local v3, "info":Landroid/media/AudioDeviceInfo;
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->isSink()Z
 
@@ -65,7 +65,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 1234
+    .line 1240
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
     move-result v4
@@ -74,7 +74,7 @@
 
     if-eq v4, v5, :cond_0
 
-    .line 1235
+    .line 1241
     invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
     move-result v4
@@ -83,7 +83,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 1236
+    .line 1242
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -93,7 +93,7 @@
 
     invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1237
+    .line 1243
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     iget-object v4, v4, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
@@ -108,21 +108,21 @@
 
     invoke-virtual {v4, v5}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onConnectedDeviceChanged(Ljava/lang/String;)V
 
-    .line 1232
+    .line 1238
     .end local v3    # "info":Landroid/media/AudioDeviceInfo;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1240
+    .line 1246
     :cond_2
     monitor-exit v0
 
-    .line 1241
+    .line 1247
     return-void
 
-    .line 1240
+    .line 1246
     :catchall_0
     move-exception v1
 
@@ -137,7 +137,7 @@
     .locals 5
     .param p1, "removedDevices"    # [Landroid/media/AudioDeviceInfo;
 
-    .line 1244
+    .line 1250
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->access$3700(Lcom/android/systemui/volume/VolumeDialogControllerImpl;)Ljava/lang/Object;
@@ -146,7 +146,7 @@
 
     monitor-enter v0
 
-    .line 1245
+    .line 1251
     :try_start_0
     array-length v1, p1
 
@@ -157,7 +157,7 @@
 
     aget-object v3, p1, v2
 
-    .line 1246
+    .line 1252
     .local v3, "info":Landroid/media/AudioDeviceInfo;
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -167,13 +167,13 @@
 
     invoke-interface {v4, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1245
+    .line 1251
     .end local v3    # "info":Landroid/media/AudioDeviceInfo;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1249
+    .line 1255
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -187,7 +187,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1250
+    .line 1256
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$DeviceCallback;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     iget-object v1, v1, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
@@ -196,14 +196,14 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onConnectedDeviceChanged(Ljava/lang/String;)V
 
-    .line 1252
+    .line 1258
     :cond_1
     monitor-exit v0
 
-    .line 1253
+    .line 1259
     return-void
 
-    .line 1252
+    .line 1258
     :catchall_0
     move-exception v1
 

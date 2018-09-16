@@ -317,7 +317,7 @@
 
     .line 199
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x7f070507
+    const v1, 0x7f07050b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -326,7 +326,7 @@
     iput v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler;->mExpandedShortestEdgeSize:I
 
     .line 201
-    const v1, 0x7f070508
+    const v1, 0x7f07050c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

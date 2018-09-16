@@ -229,7 +229,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mIconSize:I
 
     .line 105
-    const v1, 0x7f07060c
+    const v1, 0x7f070610
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -790,7 +790,7 @@
     .line 334
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v1, 0x7f0a019b
+    const v1, 0x7f0a019c
 
     invoke-virtual {p1, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->getTag(I)Ljava/lang/Object;
 
@@ -903,7 +903,7 @@
     .line 72
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;->mNotificationIconArea:Landroid/view/View;
 
-    const v2, 0x7f0a0288
+    const v2, 0x7f0a0289
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

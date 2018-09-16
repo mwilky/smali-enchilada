@@ -121,7 +121,7 @@
     .line 85
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WorkModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11052c
+    const v1, 0x7f11052e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -286,7 +286,7 @@
     :goto_1
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WorkModeTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f11052c
+    const v2, 0x7f11052e
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

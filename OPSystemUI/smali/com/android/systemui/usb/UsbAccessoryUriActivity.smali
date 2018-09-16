@@ -261,7 +261,7 @@
 
     .line 73
     :cond_3
-    const v4, 0x7f11060a
+    const v4, 0x7f11060c
 
     invoke-virtual {p0, v4}, Lcom/android/systemui/usb/UsbAccessoryUriActivity;->getString(I)Ljava/lang/String;
 
@@ -271,7 +271,7 @@
 
     .line 75
     :cond_4
-    const v4, 0x7f110644
+    const v4, 0x7f110646
 
     const/4 v5, 0x1
 

@@ -264,7 +264,7 @@
     .line 149
     iget-object v0, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessView:Landroid/view/View;
 
-    const v1, 0x7f0a03b2
+    const v1, 0x7f0a03b3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2420,7 +2420,7 @@
     .line 391
     iget-object v2, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessMirror:Landroid/view/View;
 
-    const v3, 0x7f0a03b2
+    const v3, 0x7f0a03b3
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2461,13 +2461,13 @@
 
     .line 354
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x7f070568
+    const v1, 0x7f07056c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
 
-    const v2, 0x7f070567
+    const v2, 0x7f07056b
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2558,7 +2558,7 @@
     .local v4, "background":I
     iget-object v5, p0, Lcom/android/systemui/qs/QSPanel;->mBrightnessView:Landroid/view/View;
 
-    const v6, 0x7f0a03b2
+    const v6, 0x7f0a03b3
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

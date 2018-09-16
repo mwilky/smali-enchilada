@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
-    .line 182
+    .line 181
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +39,12 @@
 .method public onCheckPasswordAndUnlock()V
     .locals 1
 
-    .line 190
+    .line 189
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;->doHapticKeyClick()V
 
-    .line 191
+    .line 190
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;->mPasswordEntry:Lcom/android/keyguard/PasswordTextViewForPin;
@@ -55,12 +55,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 192
+    .line 191
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;->verifyPasswordAndUnlock()V
 
-    .line 194
+    .line 193
     :cond_0
     return-void
 .end method
@@ -68,11 +68,11 @@
 .method public onUserActivity()V
     .locals 1
 
-    .line 185
+    .line 184
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;->onUserInput()V
 
-    .line 186
+    .line 185
     return-void
 .end method

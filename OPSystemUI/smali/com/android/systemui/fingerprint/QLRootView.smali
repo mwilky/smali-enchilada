@@ -8,6 +8,12 @@
 
 .field private TRACK_BAR_MIN_X:I
 
+.field private TRACK_INTERVAL:I
+
+.field private mHint:Landroid/widget/TextView;
+
+.field private mIsCancel:Z
+
 .field private mLabel:Landroid/widget/TextView;
 
 .field private mQLCancelView:Landroid/view/View;
@@ -24,18 +30,20 @@
 
 .field private mScrollerExpand:Z
 
+.field private mVelocityTracker:Landroid/view/VelocityTracker;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 39
+    .line 45
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/fingerprint/QLRootView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 40
+    .line 46
     return-void
 .end method
 
@@ -44,32 +52,131 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 43
+    .line 49
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 31
+    .line 33
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MIN_X:I
 
-    .line 32
+    .line 34
     iput v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
 
-    .line 34
+    .line 35
+    iput v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_INTERVAL:I
+
+    .line 37
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollProgress:F
 
-    .line 35
+    .line 38
     iput v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
 
-    .line 36
+    .line 39
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollerExpand:Z
 
-    .line 44
+    .line 40
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    .line 42
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 50
     iput-object p1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mContext:Landroid/content/Context;
 
-    .line 45
+    .line 51
+    return-void
+.end method
+
+.method private onEnterCancelView()V
+    .locals 2
+
+    .line 133
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    .line 134
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    .line 135
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    const v1, 0x66ffffff
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 136
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 137
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mHint:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 139
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/QLRecyclerView;->onEnterCancelView()V
+
+    .line 140
+    return-void
+.end method
+
+.method private onLeaveCancelView()V
+    .locals 2
+
+    .line 143
+    iget-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 144
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    .line 145
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 146
+    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 147
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mHint:Landroid/widget/TextView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 149
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/QLRecyclerView;->onLeaveCancelView()V
+
+    .line 150
     return-void
 .end method
 
@@ -78,7 +185,7 @@
 .method public bridge synthetic getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
     .locals 1
 
-    .line 23
+    .line 24
     invoke-virtual {p0}, Lcom/android/systemui/fingerprint/QLRootView;->getLayoutParams()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
@@ -89,7 +196,7 @@
 .method public getLayoutParams()Landroid/view/WindowManager$LayoutParams;
     .locals 7
 
-    .line 112
+    .line 154
     new-instance v6, Landroid/view/WindowManager$LayoutParams;
 
     const/4 v1, -0x1
@@ -106,7 +213,7 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 122
+    .line 164
     .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
@@ -114,62 +221,30 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 123
-    const-string v1, "QuickPayment"
+    .line 165
+    const-string v1, "QuickLaunch"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 124
+    .line 166
     const/16 v1, 0x31
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 125
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f070492
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    .line 126
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    const v2, 0x7f070493
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    add-int/lit16 v1, v1, -0xc8
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->y:I
-
-    .line 127
+    .line 167
     const v1, 0x3f4ccccd    # 0.8f
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 128
+    .line 168
     return-object v0
 .end method
 
 .method protected onFinishInflate()V
     .locals 2
 
-    .line 49
-    const v0, 0x7f0a019d
+    .line 55
+    const v0, 0x7f0a019e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +254,7 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
 
-    .line 50
+    .line 56
     const v0, 0x7f0a00a7
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
@@ -188,8 +263,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
 
-    .line 51
-    const v0, 0x7f0a041d
+    .line 57
+    const v0, 0x7f0a041e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -197,8 +272,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
 
-    .line 52
-    const v0, 0x7f0a041c
+    .line 58
+    const v0, 0x7f0a041d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -206,8 +281,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
 
-    .line 53
-    const v0, 0x7f0a01e3
+    .line 59
+    const v0, 0x7f0a01e4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
 
@@ -217,276 +292,374 @@
 
     iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
 
-    .line 54
+    .line 60
+    const v0, 0x7f0a018e
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mHint:Landroid/widget/TextView;
+
+    .line 61
     iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/QLRecyclerView;->setLabelView(Landroid/widget/TextView;)V
 
-    .line 55
+    .line 63
+    const/16 v0, 0x700
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/QLRootView;->setSystemUiVisibility(I)V
+
+    .line 66
     return-void
 .end method
 
 .method public onTouch(Landroid/view/MotionEvent;)V
-    .locals 9
+    .locals 8
     .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 59
+    .line 70
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    if-nez v0, :cond_0
+
+    .line 71
+    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 74
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_1
+
+    .line 76
+    :pswitch_0
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    .line 77
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    const/16 v1, 0x3e8
+
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
+
+    .line 78
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v0}, Landroid/view/VelocityTracker;->getXVelocity()F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    .line 79
+    .local v0, "velocity":F
+    const/high16 v1, 0x43480000    # 200.0f
+
+    .line 80
+    .local v1, "a":F
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    cmpl-float v3, v0, v1
+
+    if-lez v3, :cond_1
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_1
+    move v3, v1
+
+    :goto_0
+    div-float v3, v1, v3
+
+    invoke-virtual {v2, v3}, Lcom/android/systemui/fingerprint/QLRecyclerView;->setScrollSpeed(F)V
+
+    .line 81
+    goto :goto_1
+
+    .line 84
+    .end local v0    # "velocity":F
+    .end local v1    # "a":F
+    :pswitch_1
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
+
+    .line 85
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 86
+    nop
+
+    .line 91
+    :goto_1
     iget-object v0, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLocationOnScreen()[I
 
     move-result-object v0
 
-    .line 60
+    .line 92
     .local v0, "location":[I
     const/4 v1, 0x0
 
-    aget v2, v0, v1
+    aget v1, v0, v1
 
-    .line 61
-    .local v2, "paddingLeft":I
-    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
+    .line 93
+    .local v1, "paddingLeft":I
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackView:Landroid/view/View;
 
-    invoke-virtual {v3}, Landroid/view/View;->getRight()I
+    invoke-virtual {v2}, Landroid/view/View;->getRight()I
 
-    move-result v3
+    move-result v2
 
-    iget-object v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
 
-    invoke-virtual {v4}, Landroid/view/View;->getWidth()I
-
-    move-result v4
-
-    sub-int/2addr v3, v4
-
-    iput v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
-
-    .line 63
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+    sub-int/2addr v2, v3
 
-    invoke-virtual {v4}, Landroid/view/View;->getWidth()I
+    iput v2, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
 
-    move-result v4
+    .line 94
+    iget v2, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
 
-    const/4 v5, 0x2
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
 
-    div-int/2addr v4, v5
+    invoke-virtual {v3}, Lcom/android/systemui/fingerprint/QLRecyclerView;->getItemCount()I
 
-    int-to-float v4, v4
+    move-result v3
 
-    sub-float/2addr v3, v4
+    div-int/2addr v2, v3
 
-    int-to-float v4, v2
-
-    sub-float/2addr v3, v4
-
-    .line 65
-    .local v3, "x":F
-    iget v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MIN_X:I
-
-    int-to-float v4, v4
-
-    cmpg-float v4, v3, v4
-
-    if-gez v4, :cond_0
-
-    .line 66
-    iget v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MIN_X:I
-
-    int-to-float v3, v4
-
-    goto :goto_0
-
-    .line 67
-    :cond_0
-    iget v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
-
-    int-to-float v4, v4
-
-    cmpl-float v4, v3, v4
-
-    if-lez v4, :cond_1
-
-    .line 68
-    iget v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
-
-    int-to-float v3, v4
-
-    .line 71
-    :cond_1
-    :goto_0
-    const/4 v4, 0x0
-
-    .line 74
-    .local v4, "progress":F
-    iget v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
-
-    if-nez v6, :cond_2
-
-    const/16 v6, 0x32
-
-    iget v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
-
-    div-int/2addr v7, v5
-
-    add-int/2addr v6, v7
-
-    iput v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
-
-    .line 75
-    :cond_2
-    iget v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
-
-    int-to-float v6, v6
-
-    sub-float v6, v3, v6
-
-    iget v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
-
-    iget v8, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
-
-    sub-int/2addr v7, v8
-
-    int-to-float v7, v7
-
-    div-float/2addr v6, v7
-
-    .line 78
-    .end local v4    # "progress":F
-    .local v6, "progress":F
-    const/4 v4, 0x0
-
-    cmpg-float v4, v6, v4
-
-    if-gez v4, :cond_3
-
-    .line 79
-    float-to-int v4, v3
-
-    iput v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mScrollStartX:I
-
-    .line 80
-    const/4 v6, 0x0
-
-    .line 83
-    :cond_3
-    const/4 v4, 0x0
-
-    .line 85
-    .local v4, "isCancel":Z
-    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
-
-    if-eqz v7, :cond_5
-
-    .line 86
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v7
-
-    iget-object v8, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
-
-    invoke-virtual {v8}, Landroid/view/View;->getTop()I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    cmpl-float v7, v7, v8
-
-    if-lez v7, :cond_4
-
-    .line 87
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
-
-    const v7, 0x66ffffff
-
-    invoke-virtual {v1, v7}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 88
-    const/4 v4, 0x1
-
-    .line 89
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
-
-    const/16 v7, 0x8
-
-    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto :goto_1
-
-    .line 91
-    :cond_4
-    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
-
-    invoke-virtual {v7, v1}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 92
-    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mLabel:Landroid/widget/TextView;
-
-    invoke-virtual {v7, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    iput v2, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_INTERVAL:I
 
     .line 96
-    :cond_5
-    :goto_1
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    if-eqz v1, :cond_6
+    move-result v2
 
-    .line 97
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+    iget-object v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setX(F)V
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
-    .line 100
-    :cond_6
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+    move-result v3
 
-    if-eqz v1, :cond_8
+    const/4 v4, 0x2
 
-    .line 101
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+    div-int/2addr v3, v4
 
-    invoke-virtual {v1, v4}, Lcom/android/systemui/fingerprint/QLRecyclerView;->setIsCancel(Z)V
+    int-to-float v3, v3
 
-    .line 102
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    sub-float/2addr v2, v3
 
-    move-result v1
+    int-to-float v3, v1
 
-    if-ne v1, v5, :cond_7
+    sub-float/2addr v2, v3
 
-    .line 103
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+    .line 98
+    .local v2, "x":F
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MIN_X:I
 
-    invoke-virtual {v1, v6}, Lcom/android/systemui/fingerprint/QLRecyclerView;->onScrollProress(F)V
+    int-to-float v3, v3
+
+    cmpg-float v3, v2, v3
+
+    if-gez v3, :cond_2
+
+    .line 99
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MIN_X:I
+
+    int-to-float v2, v3
 
     goto :goto_2
 
+    .line 100
+    :cond_2
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
+
+    int-to-float v3, v3
+
+    cmpl-float v3, v2, v3
+
+    if-lez v3, :cond_3
+
+    .line 101
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_BAR_MAX_X:I
+
+    int-to-float v2, v3
+
     .line 104
+    :cond_3
+    :goto_2
+    iget v3, p0, Lcom/android/systemui/fingerprint/QLRootView;->TRACK_INTERVAL:I
+
+    int-to-float v3, v3
+
+    div-float v3, v2, v3
+
+    .line 106
+    .local v3, "progress":F
+    const/4 v5, 0x0
+
+    .line 108
+    .local v5, "isCancel":Z
+    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    if-eqz v6, :cond_5
+
+    .line 109
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    cmpl-float v6, v6, v7
+
+    if-lez v6, :cond_4
+
+    .line 110
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    cmpl-float v6, v6, v7
+
+    if-lez v6, :cond_4
+
+    .line 111
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v6
+
+    iget-object v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLCancelView:Landroid/view/View;
+
+    invoke-virtual {v7}, Landroid/view/View;->getRight()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    cmpg-float v6, v6, v7
+
+    if-gez v6, :cond_4
+
+    .line 112
+    invoke-direct {p0}, Lcom/android/systemui/fingerprint/QLRootView;->onEnterCancelView()V
+
+    goto :goto_3
+
+    .line 114
+    :cond_4
+    invoke-direct {p0}, Lcom/android/systemui/fingerprint/QLRootView;->onLeaveCancelView()V
+
+    .line 118
+    :cond_5
+    :goto_3
+    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+
+    if-eqz v6, :cond_6
+
+    .line 119
+    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLTrackBar:Landroid/view/View;
+
+    invoke-virtual {v6, v2}, Landroid/view/View;->setX(F)V
+
+    .line 122
+    :cond_6
+    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    if-eqz v6, :cond_8
+
+    .line 123
+    iget-object v6, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    iget-boolean v7, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
+
+    invoke-virtual {v6, v7}, Lcom/android/systemui/fingerprint/QLRecyclerView;->setIsCancel(Z)V
+
+    .line 124
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v6
+
+    if-ne v6, v4, :cond_7
+
+    .line 125
+    iget-object v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+
+    invoke-virtual {v4, v3}, Lcom/android/systemui/fingerprint/QLRecyclerView;->onScrollProress(F)V
+
+    goto :goto_4
+
+    .line 126
     :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v1
+    move-result v4
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    if-ne v1, v5, :cond_8
+    if-ne v4, v6, :cond_8
+
+    iget-boolean v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mIsCancel:Z
 
     if-nez v4, :cond_8
 
-    .line 105
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
+    .line 127
+    iget-object v4, p0, Lcom/android/systemui/fingerprint/QLRootView;->mQLRecyclerView:Lcom/android/systemui/fingerprint/QLRecyclerView;
 
-    invoke-virtual {v1}, Lcom/android/systemui/fingerprint/QLRecyclerView;->launch()V
+    invoke-virtual {v4}, Lcom/android/systemui/fingerprint/QLRecyclerView;->launch()V
 
-    .line 108
+    .line 130
     :cond_8
-    :goto_2
+    :goto_4
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

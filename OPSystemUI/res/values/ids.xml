@@ -340,6 +340,7 @@
     <item type="id" name="highlight_hint_notification_text">false</item>
     <item type="id" name="highlight_hint_view_container">false</item>
     <item type="id" name="highlighthintview">false</item>
+    <item type="id" name="hint">false</item>
     <item type="id" name="hint_image">false</item>
     <item type="id" name="home">false</item>
     <item type="id" name="hour">false</item>

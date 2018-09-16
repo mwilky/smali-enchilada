@@ -120,7 +120,7 @@
 
     .line 331
     .local v0, "block":Landroid/view/View;
-    const v1, 0x7f0a01b8
+    const v1, 0x7f0a01b9
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -130,7 +130,7 @@
 
     .line 332
     .local v1, "keep":Landroid/widget/TextView;
-    const v2, 0x7f0a023d
+    const v2, 0x7f0a023e
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -138,7 +138,7 @@
 
     .line 334
     .local v2, "minimize":Landroid/view/View;
-    const v3, 0x7f0a043b
+    const v3, 0x7f0a043c
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
     .line 223
     .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_0
-    const v1, 0x7f0a02f9
+    const v1, 0x7f0a02fa
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -390,7 +390,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 224
-    const v1, 0x7f0a02fa
+    const v1, 0x7f0a02fb
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -460,7 +460,7 @@
 
     .line 237
     .local v2, "groupNameView":Landroid/widget/TextView;
-    const v3, 0x7f0a02f8
+    const v3, 0x7f0a02f9
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -496,7 +496,7 @@
 
     .line 248
     :goto_1
-    const v6, 0x7f0a01a7
+    const v6, 0x7f0a01a8
 
     invoke-virtual {p0, v6}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 
@@ -974,7 +974,7 @@
 
     .line 373
     :cond_0
-    const v0, 0x7f0a0320
+    const v0, 0x7f0a0321
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/NotificationInfo;->findViewById(I)Landroid/view/View;
 

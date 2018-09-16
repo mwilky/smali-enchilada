@@ -200,7 +200,7 @@
     .line 820
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a020c
+    const v1, 0x7f0a020d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -212,7 +212,7 @@
     .local v0, "topLeft":Landroid/widget/ImageView;
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0345
+    const v3, 0x7f0a0346
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -516,7 +516,7 @@
     if-eqz v1, :cond_1
 
     .line 387
-    const v2, 0x7f0a01ce
+    const v2, 0x7f0a01cf
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -539,7 +539,7 @@
 
     new-instance v4, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;
 
-    const v5, 0x7f0a03c9
+    const v5, 0x7f0a03ca
 
     invoke-direct {v4, p1, v5}, Lcom/android/systemui/ScreenDecorations$TunablePaddingTagListener;-><init>(II)V
 
@@ -630,7 +630,7 @@
     .line 280
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v1, 0x7f0a020c
+    const v1, 0x7f0a020d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -640,7 +640,7 @@
     .local v0, "topLeft":Landroid/view/View;
     iget-object v2, p0, Lcom/android/systemui/ScreenDecorations;->mOverlay:Landroid/view/View;
 
-    const v3, 0x7f0a0345
+    const v3, 0x7f0a0346
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1083,7 +1083,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705be
+    const v1, 0x7f0705c2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1098,7 +1098,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705c0
+    const v1, 0x7f0705c4
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1113,7 +1113,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705bf
+    const v1, 0x7f0705c3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1161,7 +1161,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705bd
+    const v1, 0x7f0705c1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

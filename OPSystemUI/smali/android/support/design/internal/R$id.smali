@@ -19,12 +19,12 @@
 
 .field public static final design_menu_item_text:I = 0x7f0a00fb
 
-.field public static final icon:I = 0x7f0a0196
+.field public static final icon:I = 0x7f0a0197
 
-.field public static final largeLabel:I = 0x7f0a01e9
+.field public static final largeLabel:I = 0x7f0a01ea
 
-.field public static final smallLabel:I = 0x7f0a03b5
+.field public static final smallLabel:I = 0x7f0a03b6
 
-.field public static final snackbar_action:I = 0x7f0a03b7
+.field public static final snackbar_action:I = 0x7f0a03b8
 
-.field public static final snackbar_text:I = 0x7f0a03b8
+.field public static final snackbar_text:I = 0x7f0a03b9

@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/android/settingslib/wifi/WifiTracker;)V
     .locals 0
 
-    .line 894
+    .line 901
     iput-object p1, p0, Lcom/android/settingslib/wifi/WifiTracker$WifiTrackerNetworkCallback;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/android/settingslib/wifi/WifiTracker;
     .param p2, "x1"    # Lcom/android/settingslib/wifi/WifiTracker$1;
 
-    .line 894
+    .line 901
     invoke-direct {p0, p1}, Lcom/android/settingslib/wifi/WifiTracker$WifiTrackerNetworkCallback;-><init>(Lcom/android/settingslib/wifi/WifiTracker;)V
 
     return-void
@@ -48,7 +48,7 @@
     .param p1, "network"    # Landroid/net/Network;
     .param p2, "nc"    # Landroid/net/NetworkCapabilities;
 
-    .line 896
+    .line 903
     iget-object v0, p0, Lcom/android/settingslib/wifi/WifiTracker$WifiTrackerNetworkCallback;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v0}, Lcom/android/settingslib/wifi/WifiTracker;->access$400(Lcom/android/settingslib/wifi/WifiTracker;)Landroid/net/wifi/WifiManager;
@@ -65,14 +65,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 903
+    .line 910
     iget-object v0, p0, Lcom/android/settingslib/wifi/WifiTracker$WifiTrackerNetworkCallback;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$800(Lcom/android/settingslib/wifi/WifiTracker;Landroid/net/NetworkInfo;)V
 
-    .line 905
+    .line 912
     :cond_0
     return-void
 .end method

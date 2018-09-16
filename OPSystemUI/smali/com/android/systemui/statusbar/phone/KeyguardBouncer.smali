@@ -544,7 +544,7 @@
     .line 426
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mKeyguardView:Lcom/android/keyguard/KeyguardHostView;
 
-    const v2, 0x7f0a01d3
+    const v2, 0x7f0a01d4
 
     invoke-virtual {v1, v2}, Lcom/android/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -686,7 +686,7 @@
     .line 446
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer;->mRoot:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a01cf
+    const v1, 0x7f0a01d0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -739,7 +739,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070608
+    const v1, 0x7f07060c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

@@ -1,9 +1,6 @@
 .class Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;
-.super Ljava/lang/Object;
+.super Landroid/database/ContentObserver;
 .source "FingerprintDialogImpl.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -22,119 +19,81 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
+.method constructor <init>(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Landroid/os/Handler;)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 439
+    .line 463
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onChange(Z)V
     .locals 4
+    .param p1, "selfChange"    # Z
 
-    .line 442
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2300(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    .line 443
-    :cond_0
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2100(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/QLRootView;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 444
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2102(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
-
-    .line 445
+    .line 466
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     iget-object v1, v1, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    const v2, 0x7f0d0179
+    const-string v2, "ql_enable"
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result-object v1
+    move-result v1
 
-    check-cast v1, Lcom/android/systemui/fingerprint/QLRootView;
+    const/4 v2, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2202(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Lcom/android/systemui/fingerprint/QLRootView;)Lcom/android/systemui/fingerprint/QLRootView;
+    if-ne v1, v2, :cond_0
 
-    .line 446
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+    goto :goto_0
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/QLRootView;
+    :cond_0
+    move v2, v3
 
-    move-result-object v0
+    :goto_0
+    invoke-static {v0, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2402(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)Z
 
-    const/16 v1, 0x700
+    .line 468
+    const-string v0, "FingerprintDialogImpl"
 
-    invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/QLRootView;->setSystemUiVisibility(I)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 449
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$1800(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Landroid/view/WindowManager;
+    const-string v2, "ql_enable "
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
-
-    invoke-static {v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/QLRootView;
-
-    move-result-object v1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Lcom/android/systemui/fingerprint/QLRootView;
+    invoke-static {v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$2400(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)Z
 
-    move-result-object v2
+    move-result v2
 
-    invoke-virtual {v2}, Lcom/android/systemui/fingerprint/QLRootView;->getLayoutParams()Landroid/view/WindowManager$LayoutParams;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v1
 
-    .line 451
-    :cond_1
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 469
     return-void
 .end method

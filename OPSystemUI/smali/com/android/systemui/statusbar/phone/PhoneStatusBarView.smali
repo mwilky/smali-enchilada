@@ -1188,7 +1188,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mCutoutSpace:Landroid/view/View;
 
     .line 142
-    const v0, 0x7f0a03c8
+    const v0, 0x7f0a03c9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1197,7 +1197,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mSystemIcons:Landroid/view/View;
 
     .line 143
-    const v0, 0x7f0a0293
+    const v0, 0x7f0a0294
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1206,7 +1206,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mNotifications:Landroid/view/View;
 
     .line 144
-    const v0, 0x7f0a03cc
+    const v0, 0x7f0a03cd
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1215,7 +1215,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mStatusBarContentLeft:Landroid/view/View;
 
     .line 145
-    const v0, 0x7f0a03cb
+    const v0, 0x7f0a03cc
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -1846,7 +1846,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070608
+    const v2, 0x7f07060c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1913,7 +1913,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "updateTopPackage pkg:"
+    const-string/jumbo v3, "updateTopPackage pkg:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

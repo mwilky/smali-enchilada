@@ -67,7 +67,7 @@
     .locals 4
 
     .line 52
-    const v0, 0x7f0a0275
+    const v0, 0x7f0a0276
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->mNavButtons:Landroid/view/View;
 
     .line 53
-    const v0, 0x7f0a021d
+    const v0, 0x7f0a021e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -85,7 +85,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->mLockScreenButtons:Landroid/view/View;
 
     .line 55
-    const v0, 0x7f0a02a3
+    const v0, 0x7f0a02a4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
 
     .line 59
     :cond_0
-    const v0, 0x7f0a03c8
+    const v0, 0x7f0a03c9
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/car/CarNavigationBarView;->findViewById(I)Landroid/view/View;
 

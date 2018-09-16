@@ -478,7 +478,7 @@
     .line 220
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CellularTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104cb
+    const v1, 0x7f1104cd
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

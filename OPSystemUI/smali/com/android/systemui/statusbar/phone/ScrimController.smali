@@ -275,7 +275,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0705ce
+    const v2, 0x7f0705d2
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getFloat(I)F
 
@@ -909,7 +909,7 @@
     .param p1, "scrim"    # Landroid/view/View;
 
     .line 722
-    const v0, 0x7f0a037e
+    const v0, 0x7f0a037f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1038,7 +1038,7 @@
     .param p3, "animation"    # Landroid/animation/ValueAnimator;
 
     .line 631
-    const v0, 0x7f0a0380
+    const v0, 0x7f0a0381
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1185,7 +1185,7 @@
 
     .line 395
     :cond_0
-    const v0, 0x7f0a037e
+    const v0, 0x7f0a037f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1201,7 +1201,7 @@
 
     .line 397
     .local v1, "alpha":F
-    const v2, 0x7f0a037f
+    const v2, 0x7f0a0380
 
     invoke-virtual {p1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1215,7 +1215,7 @@
 
     .line 398
     .local v3, "previousEndValue":F
-    const v4, 0x7f0a0380
+    const v4, 0x7f0a0381
 
     invoke-virtual {p1, v4}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -1410,7 +1410,7 @@
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 661
-    const v2, 0x7f0a0380
+    const v2, 0x7f0a0381
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -1419,7 +1419,7 @@
     invoke-virtual {p1, v2, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 662
-    const v2, 0x7f0a037f
+    const v2, 0x7f0a0380
 
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/ScrimController;->getCurrentScrimAlpha(Landroid/view/View;)F
 
@@ -1432,7 +1432,7 @@
     invoke-virtual {p1, v2, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 664
-    const v2, 0x7f0a037e
+    const v2, 0x7f0a037f
 
     invoke-virtual {p1, v2, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -1461,7 +1461,7 @@
 
     .line 737
     .local v0, "currentAlpha":F
-    const v1, 0x7f0a037e
+    const v1, 0x7f0a037f
 
     invoke-static {p1, v1}, Lcom/android/systemui/statusbar/stack/ViewState;->getChildTag(Landroid/view/View;I)Ljava/lang/Object;
 

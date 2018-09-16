@@ -148,7 +148,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 58
-    const v0, 0x7f0a026f
+    const v0, 0x7f0a0270
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 
@@ -161,7 +161,7 @@
     .line 59
     iget-object v0, p0, Lcom/android/systemui/qs/car/CarQSFooter;->mMultiUserSwitch:Lcom/android/systemui/statusbar/phone/MultiUserSwitch;
 
-    const v1, 0x7f0a026e
+    const v1, 0x7f0a026f
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->findViewById(I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
     iput-object v0, p0, Lcom/android/systemui/qs/car/CarQSFooter;->mMultiUserAvatar:Landroid/widget/ImageView;
 
     .line 60
-    const v0, 0x7f0a044d
+    const v0, 0x7f0a044e
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 
@@ -203,7 +203,7 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/MultiUserSwitch;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 77
-    const v0, 0x7f0a03a3
+    const v0, 0x7f0a03a4
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/car/CarQSFooter;->findViewById(I)Landroid/view/View;
 

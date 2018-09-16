@@ -225,7 +225,7 @@
     .line 422
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v1, 0x7f1106b2
+    const v1, 0x7f1106b4
 
     invoke-virtual {v0, v3, v1}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
@@ -241,7 +241,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/WifiTile$WifiDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v4, 0x7f110525
+    const v4, 0x7f110527
 
     invoke-virtual {v0, v3, v4}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
@@ -496,7 +496,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f110526
+    const v1, 0x7f110528
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

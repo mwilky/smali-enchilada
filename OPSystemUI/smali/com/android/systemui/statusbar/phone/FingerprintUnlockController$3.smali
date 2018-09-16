@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
-    .line 612
+    .line 632
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$3;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 2
 
-    .line 615
+    .line 635
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$3;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->access$200(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setForceDozeBrightness(Z)V
 
-    .line 616
+    .line 636
     return-void
 .end method

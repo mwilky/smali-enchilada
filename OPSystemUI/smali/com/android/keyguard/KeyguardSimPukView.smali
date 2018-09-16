@@ -797,7 +797,7 @@
     .locals 1
 
     .line 323
-    const v0, 0x7f0a0321
+    const v0, 0x7f0a0322
 
     return v0
 .end method
@@ -895,7 +895,7 @@
 
     .line 333
     :cond_0
-    const v0, 0x7f0a01db
+    const v0, 0x7f0a01dc
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSimPukView;->findViewById(I)Landroid/view/View;
 

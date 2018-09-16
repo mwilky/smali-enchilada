@@ -296,7 +296,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070569
+    const v1, 0x7f07056d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -502,7 +502,7 @@
     invoke-super {p0}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onFinishInflate()V
 
     .line 123
-    const v0, 0x7f0a019c
+    const v0, 0x7f0a019d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->findViewById(I)Landroid/view/View;
 
@@ -511,7 +511,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->mIconPlaceholder:Landroid/view/View;
 
     .line 124
-    const v0, 0x7f0a03eb
+    const v0, 0x7f0a03ec
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->findViewById(I)Landroid/view/View;
 

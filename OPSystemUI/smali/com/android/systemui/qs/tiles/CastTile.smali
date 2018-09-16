@@ -270,7 +270,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c2
+    const v1, 0x7f1104c4
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -468,7 +468,7 @@
     .line 144
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c3
+    const v1, 0x7f1104c5
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -611,7 +611,7 @@
     .line 149
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104c3
+    const v1, 0x7f1104c5
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -743,7 +743,7 @@
     .line 165
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/CastTile;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1104cf
+    const v3, 0x7f1104d1
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

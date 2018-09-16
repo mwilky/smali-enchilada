@@ -106,7 +106,7 @@
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 82
-    const v1, 0x7f0a0196
+    const v1, 0x7f0a0197
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/pip/tv/PipControlButtonView;->findViewById(I)Landroid/view/View;
 

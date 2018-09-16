@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    .line 363
+    .line 368
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$3;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 4
 
-    .line 366
+    .line 371
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$3;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -54,6 +54,6 @@
 
     invoke-virtual {v0, v1, v2, v1, v3}, Lcom/android/systemui/statusbar/phone/StatusBar;->animateCollapsePanels(IZZF)V
 
-    .line 368
+    .line 373
     return-void
 .end method

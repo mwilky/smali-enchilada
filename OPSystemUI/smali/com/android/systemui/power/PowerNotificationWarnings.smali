@@ -1739,12 +1739,12 @@
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setIconAttribute(I)V
 
     .line 510
-    const v1, 0x7f1105f5
+    const v1, 0x7f1105f7
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setTitle(I)V
 
     .line 511
-    const v1, 0x7f1105f3
+    const v1, 0x7f1105f5
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/SystemUIDialog;->setMessage(I)V
 
@@ -2491,7 +2491,7 @@
     iget-object v2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     .line 526
-    const v3, 0x7f1105f5
+    const v3, 0x7f1105f7
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2504,7 +2504,7 @@
     iget-object v2, p0, Lcom/android/systemui/power/PowerNotificationWarnings;->mContext:Landroid/content/Context;
 
     .line 527
-    const v3, 0x7f1105f4
+    const v3, 0x7f1105f6
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

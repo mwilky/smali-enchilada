@@ -619,7 +619,7 @@
     .param p0, "child"    # Landroid/view/View;
 
     .line 331
-    const v0, 0x7f0a03cf
+    const v0, 0x7f0a03d0
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -699,7 +699,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704ec
+    const v1, 0x7f0704f0
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -712,7 +712,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0704eb
+    const v1, 0x7f0704ef
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1231,7 +1231,7 @@
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/phone/StatusIconContainer$StatusIconState;->justAdded:Z
 
     .line 215
-    const v1, 0x7f0a03cf
+    const v1, 0x7f0a03d0
 
     invoke-virtual {p1, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -1247,7 +1247,7 @@
     invoke-super {p0, p1}, Lcom/android/keyguard/AlphaOptimizedLinearLayout;->onViewRemoved(Landroid/view/View;)V
 
     .line 221
-    const v0, 0x7f0a03cf
+    const v0, 0x7f0a03d0
 
     const/4 v1, 0x0
 

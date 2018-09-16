@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
-    .line 486
+    .line 496
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView$1;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView$1;->val$mode:Lcom/android/internal/view/FloatingActionMode;
@@ -43,12 +43,12 @@
 .method public onPreDraw()Z
     .locals 1
 
-    .line 489
+    .line 499
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView$1;->val$mode:Lcom/android/internal/view/FloatingActionMode;
 
     invoke-virtual {v0}, Lcom/android/internal/view/FloatingActionMode;->updateViewLocationInWindow()V
 
-    .line 490
+    .line 500
     const/4 v0, 0x1
 
     return v0

@@ -171,7 +171,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a01e3
+    const v2, 0x7f0a01e4
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/Button;->setTag(ILjava/lang/Object;)V
 

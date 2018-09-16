@@ -17,14 +17,14 @@
 # static fields
 .field public static final divider:I = 0x7f0a0113
 
-.field public static final icon_frame:I = 0x7f0a0198
+.field public static final icon_frame:I = 0x7f0a0199
 
-.field public static final last_updated:I = 0x7f0a01ea
+.field public static final last_updated:I = 0x7f0a01eb
 
-.field public static final remote_input_progress:I = 0x7f0a033f
+.field public static final remote_input_progress:I = 0x7f0a0340
 
-.field public static final remote_input_send:I = 0x7f0a0340
+.field public static final remote_input_send:I = 0x7f0a0341
 
-.field public static final text_see_more:I = 0x7f0a03f3
+.field public static final text_see_more:I = 0x7f0a03f4
 
-.field public static final text_see_more_count:I = 0x7f0a03f4
+.field public static final text_see_more_count:I = 0x7f0a03f5

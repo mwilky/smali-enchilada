@@ -3,6 +3,12 @@
 .source "FingerprintUnlockController.java"
 
 
+# static fields
+.field private static FP_FAILED_ATTEMPTS_TO_WAKEUP:I
+
+.field private static FP_FAILED_ATTEMPTS_TO_WAKEUP_IN_DOZE:I
+
+
 # instance fields
 .field private mApplySpeedUpPolicy:Z
 
@@ -50,6 +56,22 @@
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 136
+    const/4 v0, 0x3
+
+    sput v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->FP_FAILED_ATTEMPTS_TO_WAKEUP:I
+
+    .line 138
+    const/4 v0, 0x1
+
+    sput v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->FP_FAILED_ATTEMPTS_TO_WAKEUP_IN_DOZE:I
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/phone/DozeScrimController;Lcom/android/systemui/keyguard/KeyguardViewMediator;Lcom/android/systemui/statusbar/phone/ScrimController;Lcom/android/systemui/statusbar/phone/StatusBar;Lcom/android/systemui/statusbar/phone/UnlockMethodCache;)V
     .locals 2
     .param p1, "context"    # Landroid/content/Context;
@@ -59,7 +81,7 @@
     .param p5, "statusBar"    # Lcom/android/systemui/statusbar/phone/StatusBar;
     .param p6, "unlockMethodCache"    # Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    .line 148
+    .line 150
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
 
     .line 112
@@ -74,39 +96,39 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
-    .line 139
+    .line 141
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
-    .line 140
+    .line 142
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mApplySpeedUpPolicy:Z
 
-    .line 168
+    .line 170
     new-instance v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$1;-><init>(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mReleaseFingerprintWakeLockRunnable:Ljava/lang/Runnable;
 
-    .line 639
+    .line 659
     new-instance v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$4;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$4;-><init>(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakefulnessObserver:Lcom/android/systemui/keyguard/WakefulnessLifecycle$Observer;
 
-    .line 649
+    .line 669
     new-instance v0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$5;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$5;-><init>(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mScreenObserver:Lcom/android/systemui/keyguard/ScreenLifecycle$Observer;
 
-    .line 149
+    .line 151
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
 
-    .line 150
+    .line 152
     const-class v0, Landroid/os/PowerManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -117,19 +139,19 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 151
+    .line 153
     invoke-static {p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 152
+    .line 154
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0, p0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 153
+    .line 155
     const-class v0, Lcom/android/systemui/keyguard/WakefulnessLifecycle;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -142,7 +164,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/keyguard/WakefulnessLifecycle;->addObserver(Ljava/lang/Object;)V
 
-    .line 154
+    .line 156
     const-class v0, Lcom/android/systemui/keyguard/ScreenLifecycle;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -155,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/keyguard/ScreenLifecycle;->addObserver(Ljava/lang/Object;)V
 
-    .line 155
+    .line 157
     const-class v0, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -166,22 +188,22 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    .line 156
+    .line 158
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mDozeScrimController:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
-    .line 157
+    .line 159
     iput-object p3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 158
+    .line 160
     iput-object p4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mScrimController:Lcom/android/systemui/statusbar/phone/ScrimController;
 
-    .line 159
+    .line 161
     iput-object p5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 160
+    .line 162
     iput-object p6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUnlockMethodCache:Lcom/android/systemui/statusbar/phone/UnlockMethodCache;
 
-    .line 161
+    .line 163
     return-void
 .end method
 
@@ -249,14 +271,14 @@
 .method private calculateMode()I
     .locals 6
 
-    .line 532
+    .line 552
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockingWithFingerprintAllowed()Z
 
     move-result v0
 
-    .line 533
+    .line 553
     .local v0, "unlockingAllowed":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -264,7 +286,7 @@
 
     move-result v1
 
-    .line 537
+    .line 557
     .local v1, "deviceDreaming":Z
     const-string v2, "FingerprintController"
 
@@ -304,7 +326,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 539
+    .line 559
     iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
     const/4 v3, 0x3
@@ -317,7 +339,7 @@
 
     if-nez v1, :cond_7
 
-    .line 540
+    .line 560
     :cond_0
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
@@ -330,7 +352,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
-    .line 542
+    .line 562
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
 
     move-result v2
@@ -347,18 +369,18 @@
 
     goto :goto_0
 
-    .line 561
+    .line 581
     :cond_2
     if-eqz v0, :cond_3
 
     if-eqz v1, :cond_3
 
-    .line 562
+    .line 582
     const/4 v2, 0x7
 
     return v2
 
-    .line 564
+    .line 584
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
@@ -368,7 +390,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 565
+    .line 585
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isBouncerShowing()Z
@@ -379,21 +401,21 @@
 
     if-eqz v0, :cond_4
 
-    .line 566
+    .line 586
     const/4 v2, 0x6
 
     return v2
 
-    .line 567
+    .line 587
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 568
+    .line 588
     const/4 v2, 0x5
 
     return v2
 
-    .line 569
+    .line 589
     :cond_5
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
@@ -403,16 +425,16 @@
 
     if-nez v2, :cond_6
 
-    .line 570
+    .line 590
     return v3
 
-    .line 573
+    .line 593
     :cond_6
     const/4 v2, 0x0
 
     return v2
 
-    .line 547
+    .line 567
     :cond_7
     :goto_0
     const-string v2, "FingerprintController"
@@ -445,7 +467,7 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 549
+    .line 569
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isShowing()Z
@@ -454,12 +476,12 @@
 
     if-nez v2, :cond_8
 
-    .line 550
+    .line 570
     const/4 v2, 0x4
 
     return v2
 
-    .line 555
+    .line 575
     :cond_8
     if-nez v0, :cond_a
 
@@ -473,11 +495,11 @@
 
     goto :goto_1
 
-    .line 558
+    .line 578
     :cond_9
     return v3
 
-    .line 556
+    .line 576
     :cond_a
     :goto_1
     const/4 v2, 0x1
@@ -490,10 +512,10 @@
     .param p1, "alpha"    # I
     .param p2, "reset"    # Z
 
-    .line 726
+    .line 746
     if-eqz p2, :cond_0
 
-    .line 727
+    .line 747
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     sget v1, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_IGNORE:I
@@ -502,7 +524,7 @@
 
     goto :goto_0
 
-    .line 729
+    .line 749
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -510,7 +532,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->changePanelAlpha(II)V
 
-    .line 731
+    .line 751
     :goto_0
     return-void
 .end method
@@ -518,22 +540,22 @@
 .method private cleanup()V
     .locals 1
 
-    .line 603
+    .line 623
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->releaseFingerprintWakeLock()V
 
-    .line 605
+    .line 625
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
-    .line 607
+    .line 627
     return-void
 .end method
 
 .method private isLauncherOnTop()Z
     .locals 6
 
-    .line 740
+    .line 760
     const/4 v0, 0x0
 
     :try_start_0
@@ -561,7 +583,7 @@
 
     move-result v1
 
-    .line 741
+    .line 761
     .local v1, "activityType":I
     const-string v3, "FingerprintController"
 
@@ -583,24 +605,24 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 742
+    .line 762
     const/4 v3, 0x2
 
     if-ne v1, v3, :cond_0
 
-    .line 743
+    .line 763
     return v2
 
-    .line 747
+    .line 767
     .end local v1    # "activityType":I
     :cond_0
     goto :goto_0
 
-    .line 745
+    .line 765
     :catch_0
     move-exception v1
 
-    .line 746
+    .line 766
     .local v1, "e":Ljava/lang/Exception;
     const-string v2, "FingerprintController"
 
@@ -624,17 +646,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 749
+    .line 769
     .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     return v0
 .end method
 
 .method private onFingerprintUnlockCancel(I)V
-    .locals 6
+    .locals 7
     .param p1, "cancelReason"    # I
 
-    .line 220
+    .line 222
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -647,255 +669,334 @@
 
     move-result v0
 
-    .line 223
-    .local v0, "skip":Z
-    const-string v1, "FingerprintController"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onFingerprintUnlockCancel: Reason:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, ", OffUnlock:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", attemps:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    .line 224
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFingerprintFailedUnlockAttempts()I
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, ", Authenticating:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isFingerprintAuthenticating()Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", prevent:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/systemui/plugin/LSState;->getPreventModeCtrl()Lcom/android/systemui/plugin/PreventModeCtrl;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/android/systemui/plugin/PreventModeCtrl;->isPreventModeActive()Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", skip:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", ScreenOn:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isScreenOn()Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", interactive:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
-
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
-
-    move-result v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 223
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 226
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isFingerprintAuthenticating()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_3
+    .local v0, "skip":Z
+    sget v1, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->FP_FAILED_ATTEMPTS_TO_WAKEUP:I
 
     .line 227
-    const/4 v1, 0x1
+    .local v1, "wakeUpThreshold":I
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
-    invoke-direct {p0, v1, v2}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 228
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
 
     .line 229
-    if-nez p1, :cond_2
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    invoke-virtual {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockWithFacelockPossible()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     .line 230
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFingerprintFailedUnlockAttempts()I
+    sget v1, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->FP_FAILED_ATTEMPTS_TO_WAKEUP_IN_DOZE:I
 
-    move-result v3
+    .line 236
+    :cond_0
+    const-string v2, "FingerprintController"
 
-    const/4 v4, 0x3
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    if-lt v3, v4, :cond_2
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 232
-    if-nez v0, :cond_1
+    const-string v4, "onFingerprintUnlockCancel: Reason:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, ", OffUnlock:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", attemps:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    .line 237
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFingerprintFailedUnlockAttempts()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, ", Authenticating:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isFingerprintAuthenticating()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", prevent:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/plugin/LSState;->getPreventModeCtrl()Lcom/android/systemui/plugin/PreventModeCtrl;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/plugin/PreventModeCtrl;->isPreventModeActive()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", skip:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", ScreenOn:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isScreenOn()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", interactive:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", bouncer:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isBouncerShowing()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v4, ", threshold:"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/android/systemui/plugin/LSState;->getPreventModeCtrl()Lcom/android/systemui/plugin/PreventModeCtrl;
+    .line 236
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result-object v3
+    .line 239
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isFingerprintAuthenticating()Z
 
-    invoke-virtual {v3}, Lcom/android/systemui/plugin/PreventModeCtrl;->isPreventModeActive()Z
+    move-result v2
 
-    move-result v3
+    const/4 v3, 0x0
 
-    if-nez v3, :cond_1
+    if-eqz v2, :cond_5
 
-    .line 234
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    .line 240
+    const/4 v2, 0x1
 
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isScreenOn()Z
+    invoke-direct {p0, v2, v3}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
-    move-result v3
+    .line 242
+    if-nez p1, :cond_4
 
-    if-eqz v3, :cond_0
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+    .line 243
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getFingerprintFailedUnlockAttempts()I
 
-    invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
+    move-result v4
 
-    move-result v3
+    if-lt v4, v1, :cond_4
 
-    if-nez v3, :cond_0
+    .line 245
+    if-nez v0, :cond_2
 
-    .line 235
-    iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
+    invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/plugin/LSState;->getPreventModeCtrl()Lcom/android/systemui/plugin/PreventModeCtrl;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/plugin/PreventModeCtrl;->isPreventModeActive()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    .line 247
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isScreenOn()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
+
+    invoke-virtual {v4}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    .line 248
+    iput-boolean v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
 
     goto :goto_0
 
-    .line 238
-    :cond_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
-
-    const v3, 0x3f8ccccd    # 1.1f
-
-    invoke-virtual {v1, v3}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->animateCollapsePanels(F)V
-
-    .line 243
+    .line 251
     :cond_1
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    const v4, 0x3f8ccccd    # 1.1f
+
+    invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->animateCollapsePanels(F)V
+
+    .line 256
+    :cond_2
     :goto_0
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const-string v5, "com.android.systemui:FailedAttempts"
+    const-string v6, "com.android.systemui:FailedAttempts"
 
-    invoke-virtual {v1, v3, v4, v5}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
+    invoke-virtual {v2, v4, v5, v6}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    .line 245
-    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
+    .line 258
+    invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
-    if-eqz v1, :cond_3
+    move-result v2
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    if-nez v2, :cond_3
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
+    .line 259
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
-    move-result-object v1
+    if-eqz v2, :cond_5
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->tryToStartFaceLockAfterScreenOn()V
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->tryToStartFaceLockAfterScreenOn()V
 
     goto :goto_1
 
-    .line 248
-    :cond_2
-    iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
+    .line 262
+    :cond_3
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-    if-eqz v1, :cond_3
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->isBouncerShowing()Z
 
-    .line 249
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    .line 263
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->tryToStartFaceLockAfterScreenOn()V
+
+    goto :goto_1
+
+    .line 268
+    :cond_4
+    iget-boolean v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
+
+    if-eqz v2, :cond_5
+
+    .line 269
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    const/16 v5, 0xb
+    const/16 v6, 0xb
 
-    invoke-virtual {v1, v3, v4, v5, v2}, Landroid/os/PowerManager;->goToSleep(JII)V
+    invoke-virtual {v2, v4, v5, v6, v3}, Landroid/os/PowerManager;->goToSleep(JII)V
 
-    .line 251
-    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
+    .line 271
+    iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->getFacelockController()Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->onPreStartedGoingToSleep()V
+    invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->onPreStartedGoingToSleep()V
 
-    .line 256
+    .line 276
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/android/systemui/plugin/LSState;->onFingerprintStartedGoingToSleep()V
+    invoke-virtual {v2}, Lcom/android/systemui/plugin/LSState;->onFingerprintStartedGoingToSleep()V
 
-    .line 260
-    :cond_3
+    .line 280
+    :cond_5
     :goto_1
-    invoke-direct {p0, v2}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(Z)V
+    const/4 v2, 0x4
 
-    .line 261
+    invoke-direct {p0, v3, v2}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
+
+    .line 281
     return-void
 .end method
 
 .method private onFingerprintUnlockStart()V
     .locals 8
 
-    .line 191
+    .line 193
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
     move-result-object v0
@@ -904,7 +1005,7 @@
 
     move-result v0
 
-    .line 192
+    .line 194
     .local v0, "screenOn":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mDozeScrimController:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -912,7 +1013,7 @@
 
     move-result v1
 
-    .line 193
+    .line 195
     .local v1, "pulsing":Z
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
@@ -920,7 +1021,7 @@
 
     move-result v2
 
-    .line 194
+    .line 196
     .local v2, "isShowingLiveWallpaper":Z
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -928,7 +1029,7 @@
 
     move-result v3
 
-    .line 196
+    .line 198
     .local v3, "dream":Z
     const-string v4, "FingerprintController"
 
@@ -960,14 +1061,14 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
+    .line 200
     const/4 v4, 0x0
 
     if-nez v0, :cond_1
 
     if-nez v2, :cond_1
 
-    .line 200
+    .line 202
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-virtual {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
@@ -976,10 +1077,10 @@
 
     if-eqz v5, :cond_0
 
-    .line 201
+    .line 203
     invoke-direct {p0, v4, v4}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
-    .line 204
+    .line 206
     :cond_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
@@ -991,20 +1092,20 @@
 
     invoke-virtual {v4, v5, v6, v7}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    .line 206
+    .line 208
     const/4 v4, 0x1
 
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
     goto :goto_0
 
-    .line 207
+    .line 209
     :cond_1
     if-eqz v0, :cond_2
 
     if-eqz v3, :cond_2
 
-    .line 208
+    .line 210
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-virtual {v5}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->isShowingAndNotOccluded()Z
@@ -1013,13 +1114,13 @@
 
     if-eqz v5, :cond_2
 
-    .line 210
+    .line 212
     if-nez v2, :cond_2
 
-    .line 211
+    .line 213
     invoke-direct {p0, v4, v4}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
-    .line 216
+    .line 218
     :cond_2
     :goto_0
     return-void
@@ -1028,14 +1129,14 @@
 .method private pulsingOrAod()Z
     .locals 2
 
-    .line 326
+    .line 346
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mScrimController:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/ScrimController;->getState()Lcom/android/systemui/statusbar/phone/ScrimState;
 
     move-result-object v0
 
-    .line 327
+    .line 347
     .local v0, "scrimState":Lcom/android/systemui/statusbar/phone/ScrimState;
     sget-object v1, Lcom/android/systemui/statusbar/phone/ScrimState;->AOD:Lcom/android/systemui/statusbar/phone/ScrimState;
 
@@ -1063,45 +1164,46 @@
 .method private releaseFingerprintWakeLock()V
     .locals 2
 
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v0, :cond_0
 
-    .line 180
+    .line 182
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mReleaseFingerprintWakeLockRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 182
+    .line 184
     const-string v0, "FingerprintController"
 
     const-string v1, "releasing fp wakelock"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
+    .line 186
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 185
+    .line 187
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 187
+    .line 189
     :cond_0
     return-void
 .end method
 
-.method private setFingerprintState(Z)V
+.method private setFingerprintState(ZI)V
     .locals 3
     .param p1, "authenticating"    # Z
+    .param p2, "result"    # I
 
-    .line 715
+    .line 735
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
     if-eq v0, p1, :cond_0
@@ -1118,33 +1220,39 @@
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ", result: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 716
+    .line 736
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
-    .line 717
+    .line 737
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
     sget v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FINGERPRINT:I
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZI)V
+    invoke-virtual {v0, v1, v2, p2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZII)V
 
-    .line 718
+    .line 738
     return-void
 .end method
 
 .method private showBouncer()V
     .locals 3
 
-    .line 483
+    .line 503
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->calculateMode()I
 
     move-result v0
@@ -1155,12 +1263,12 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 484
+    .line 504
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->showBouncer(Z)V
 
-    .line 486
+    .line 506
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
@@ -1168,10 +1276,10 @@
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->animateCollapsePanels(F)V
 
-    .line 488
+    .line 508
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
 
-    .line 489
+    .line 509
     return-void
 .end method
 
@@ -1181,12 +1289,12 @@
     .locals 1
     .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 662
+    .line 682
     const-string v0, " FingerprintUnlockController:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 663
+    .line 683
     const-string v0, "   mMode="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1195,7 +1303,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 664
+    .line 684
     const-string v0, "   mWakeLock="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -1204,24 +1312,24 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 665
+    .line 685
     return-void
 .end method
 
 .method public finishKeyguardFadingAway()V
     .locals 0
 
-    .line 621
+    .line 641
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->resetMode()V
 
-    .line 622
+    .line 642
     return-void
 .end method
 
 .method public getMode()I
     .locals 1
 
-    .line 528
+    .line 548
     iget v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     return v0
@@ -1230,7 +1338,7 @@
 .method public hasPendingAuthentication()Z
     .locals 2
 
-    .line 522
+    .line 542
     iget v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
     const/4 v1, -0x1
@@ -1239,7 +1347,7 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 523
+    .line 543
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockingWithFingerprintAllowed()Z
 
     move-result v0
@@ -1248,7 +1356,7 @@
 
     iget v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
-    .line 524
+    .line 544
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v1
@@ -1262,7 +1370,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 522
+    .line 542
     :goto_0
     return v0
 .end method
@@ -1270,7 +1378,7 @@
 .method public isFingerprintAuthenticating()Z
     .locals 1
 
-    .line 721
+    .line 741
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
     return v0
@@ -1279,7 +1387,7 @@
 .method public isFingerprintUnlock()Z
     .locals 2
 
-    .line 680
+    .line 700
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isWakeAndUnlock()Z
 
     move-result v0
@@ -1310,7 +1418,7 @@
 .method public isWakeAndUnlock()Z
     .locals 3
 
-    .line 671
+    .line 691
     iget v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     const/4 v1, 0x1
@@ -1345,12 +1453,12 @@
     .locals 5
     .param p1, "acquireInfo"    # I
 
-    .line 268
+    .line 288
     const-string v0, "FingerprintUnlockController#onFingerprintAcquired"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 269
+    .line 289
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1381,17 +1489,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 270
+    .line 290
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->releaseFingerprintWakeLock()V
 
-    .line 274
+    .line 294
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 295
     invoke-static {}, Lcom/android/systemui/plugin/LSState;->getInstance()Lcom/android/systemui/plugin/LSState;
 
     move-result-object v0
@@ -1402,17 +1510,17 @@
 
     if-nez v0, :cond_0
 
-    .line 276
+    .line 296
     const-string v0, "FingerprintController"
 
     const-string v1, "don\'t deal with event if screen does not turne on"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 277
+    .line 297
     return-void
 
-    .line 283
+    .line 303
     :cond_0
     const/4 v0, 0x6
 
@@ -1420,7 +1528,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 284
+    .line 304
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isUnlockingWithFingerprintAllowed()Z
@@ -1429,14 +1537,14 @@
 
     if-nez v0, :cond_1
 
-    .line 285
+    .line 305
     const-string v0, "FingerprintController"
 
     const-string v1, "not allow unlock with fingerprint"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 286
+    .line 306
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1447,10 +1555,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    .line 287
+    .line 307
     return-void
 
-    .line 291
+    .line 311
     :cond_1
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
@@ -1458,7 +1566,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 292
+    .line 312
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-virtual {v0}, Landroid/os/PowerManager;->isInteractive()Z
@@ -1467,7 +1575,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 293
+    .line 313
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -1480,7 +1588,7 @@
 
     goto :goto_0
 
-    .line 295
+    .line 315
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
 
@@ -1492,18 +1600,18 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 299
+    .line 319
     :cond_3
     :goto_0
-    invoke-direct {p0, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(Z)V
+    invoke-direct {p0, v1, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
 
-    .line 300
+    .line 320
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintUnlockStart()V
 
-    .line 301
+    .line 321
     return-void
 
-    .line 306
+    .line 326
     :cond_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -1513,7 +1621,7 @@
 
     if-nez v0, :cond_6
 
-    .line 307
+    .line 327
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/util/LatencyTracker;->isEnabled(Landroid/content/Context;)Z
@@ -1522,7 +1630,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 308
+    .line 328
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/util/LatencyTracker;->getInstance(Landroid/content/Context;)Lcom/android/internal/util/LatencyTracker;
@@ -1533,7 +1641,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/LatencyTracker;->onActionStart(I)V
 
-    .line 311
+    .line 331
     :cond_5
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
@@ -1545,27 +1653,27 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 313
+    .line 333
     const-string v0, "acquiring wake-and-unlock"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 314
+    .line 334
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 315
+    .line 335
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 317
+    .line 337
     const-string v0, "FingerprintController"
 
     const-string v1, "fingerprint acquired, grabbing fp wakelock"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 319
+    .line 339
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mReleaseFingerprintWakeLockRunnable:Ljava/lang/Runnable;
@@ -1574,18 +1682,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 322
+    .line 342
     :cond_6
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 323
+    .line 343
     return-void
 .end method
 
 .method public onFingerprintAuthFailed()V
     .locals 3
 
-    .line 579
+    .line 599
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1634,7 +1742,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 583
+    .line 603
     const-string v0, "lock_unlock_failed"
 
     const-string v1, "finger"
@@ -1643,33 +1751,35 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 586
+    .line 606
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintUnlockCancel(I)V
 
-    .line 589
+    .line 609
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->cleanup()V
 
-    .line 590
+    .line 610
     return-void
 .end method
 
 .method public onFingerprintAuthenticated(I)V
-    .locals 1
+    .locals 2
     .param p1, "userId"    # I
 
-    .line 333
+    .line 353
     const-string v0, "FingerprintUnlockController#onFingerprintAuthenticated"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 336
+    .line 356
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(Z)V
+    const/4 v1, 0x2
 
-    .line 339
+    invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->setFingerprintState(ZI)V
+
+    .line 359
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isGoingToSleep()Z
@@ -1678,16 +1788,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 340
+    .line 360
     iput p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
-    .line 341
+    .line 361
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 342
+    .line 362
     return-void
 
-    .line 344
+    .line 364
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->calculateMode()I
 
@@ -1695,7 +1805,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->startWakeAndUnlock(I)V
 
-    .line 345
+    .line 365
     return-void
 .end method
 
@@ -1704,7 +1814,7 @@
     .param p1, "msgId"    # I
     .param p2, "errString"    # Ljava/lang/String;
 
-    .line 595
+    .line 615
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1723,15 +1833,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 596
+    .line 616
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintUnlockCancel(I)V
 
-    .line 599
+    .line 619
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->cleanup()V
 
-    .line 600
+    .line 620
     return-void
 .end method
 
@@ -1740,7 +1850,7 @@
     .param p1, "msgId"    # I
     .param p2, "helpString"    # Ljava/lang/String;
 
-    .line 686
+    .line 706
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1765,36 +1875,36 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 687
+    .line 707
     const/4 v0, -0x1
 
     if-eq p1, v0, :cond_0
 
-    .line 688
+    .line 708
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintUnlockCancel(I)V
 
-    .line 690
+    .line 710
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->cleanup()V
 
-    .line 691
+    .line 711
     return-void
 .end method
 
 .method public onFingerprintTimeout()V
     .locals 1
 
-    .line 695
+    .line 715
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintUnlockCancel(I)V
 
-    .line 696
+    .line 716
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->cleanup()V
 
-    .line 697
+    .line 717
     return-void
 .end method
 
@@ -1802,19 +1912,19 @@
     .locals 3
     .param p1, "why"    # I
 
-    .line 506
+    .line 526
     const-string v0, "FingerprintUnlockController#onFinishedGoingToSleep"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 507
+    .line 527
     iget v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 510
+    .line 530
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$2;
@@ -1823,14 +1933,14 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 517
+    .line 537
     :cond_0
     iput v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
-    .line 518
+    .line 538
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 519
+    .line 539
     return-void
 .end method
 
@@ -1838,14 +1948,14 @@
     .locals 3
     .param p1, "showing"    # Z
 
-    .line 701
+    .line 721
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 703
+    .line 723
     :cond_0
     const-string v0, "FingerprintController"
 
@@ -1873,27 +1983,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 705
+    .line 725
     if-eqz p1, :cond_1
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsFingerprintAuthenticating:Z
 
     if-eqz v0, :cond_1
 
-    .line 706
+    .line 726
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
     goto :goto_0
 
-    .line 709
+    .line 729
     :cond_1
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
-    .line 712
+    .line 732
     :goto_0
     return-void
 .end method
@@ -1901,12 +2011,12 @@
 .method public onScreenTurnedOn()V
     .locals 1
 
-    .line 494
+    .line 514
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
-    .line 495
+    .line 515
     return-void
 .end method
 
@@ -1914,32 +2024,32 @@
     .locals 1
     .param p1, "why"    # I
 
-    .line 500
+    .line 520
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->resetMode()V
 
-    .line 501
+    .line 521
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingAuthenticatedUserId:I
 
-    .line 502
+    .line 522
     return-void
 .end method
 
 .method public resetMode()V
     .locals 2
 
-    .line 627
+    .line 647
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    .line 628
+    .line 648
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setForceDozeBrightness(Z)V
 
-    .line 629
+    .line 649
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -1948,7 +2058,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 630
+    .line 650
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -1957,30 +2067,30 @@
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setWakeAndUnlocking(Z)V
 
-    .line 632
+    .line 652
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyFpAuthModeChanged()V
 
-    .line 635
+    .line 655
     const/4 v0, 0x1
 
     invoke-direct {p0, v0, v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->changePanelVisibilityByAlpha(IZ)V
 
-    .line 637
+    .line 657
     return-void
 .end method
 
 .method public resetSpeedUpPolicy()V
     .locals 1
 
-    .line 753
+    .line 773
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mApplySpeedUpPolicy:Z
 
-    .line 754
+    .line 774
     return-void
 .end method
 
@@ -1988,17 +2098,17 @@
     .locals 0
     .param p1, "statusBarKeyguardViewManager"    # Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-    .line 165
+    .line 167
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
-    .line 166
+    .line 168
     return-void
 .end method
 
 .method public shouldApplySpeedUpPolicy()Z
     .locals 1
 
-    .line 735
+    .line 755
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
     move-result v0
@@ -2033,7 +2143,7 @@
 .method public startKeyguardFadingAway()V
     .locals 4
 
-    .line 612
+    .line 632
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$3;
@@ -2044,7 +2154,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 618
+    .line 638
     return-void
 .end method
 
@@ -2052,7 +2162,7 @@
     .locals 10
     .param p1, "mode"    # I
 
-    .line 383
+    .line 403
     const-string v0, "FingerprintController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2075,23 +2185,23 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
+    .line 404
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
 
     move-result v0
 
-    .line 385
+    .line 405
     .local v0, "wasDeviceInteractive":Z
     iput p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
-    .line 386
+    .line 406
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mHasScreenTurnedOnSinceAuthenticating:Z
 
-    .line 387
+    .line 407
     iget v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     const/4 v3, 0x2
@@ -2106,12 +2216,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 392
+    .line 412
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v2, v4}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setForceDozeBrightness(Z)V
 
-    .line 396
+    .line 416
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
@@ -2121,13 +2231,13 @@
 
     xor-int/2addr v2, v4
 
-    .line 397
+    .line 417
     .local v2, "hasLockWallpaper":Z
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isLauncherOnTop()Z
 
     move-result v5
 
-    .line 398
+    .line 418
     .local v5, "isLauncherOnTop":Z
     const-string v6, "FingerprintController"
 
@@ -2153,20 +2263,20 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 401
+    .line 421
     if-nez v0, :cond_3
 
-    .line 403
+    .line 423
     const-string v6, "FingerprintController"
 
     const-string v7, "fp wakelock: Authenticated, waking up..."
 
     invoke-static {v6, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 426
     const-string v6, "android.policy:FINGERPRINT"
 
-    .line 407
+    .line 427
     .local v6, "wakeUpReason":Ljava/lang/String;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -2190,7 +2300,7 @@
 
     move-result-object v6
 
-    .line 408
+    .line 428
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -2213,7 +2323,7 @@
 
     move-result-object v6
 
-    .line 409
+    .line 429
     iget-object v7, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPowerManager:Landroid/os/PowerManager;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -2222,20 +2332,20 @@
 
     invoke-virtual {v7, v8, v9, v6}, Landroid/os/PowerManager;->wakeUp(JLjava/lang/String;)V
 
-    .line 412
+    .line 432
     .end local v6    # "wakeUpReason":Ljava/lang/String;
     :cond_3
     const-string v6, "release wake-and-unlock"
 
     invoke-static {v6}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 413
+    .line 433
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->releaseFingerprintWakeLock()V
 
-    .line 415
+    .line 435
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mIsScreenOffUnlock:Z
 
-    .line 418
+    .line 438
     const-string v6, "FingerprintController"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -2256,7 +2366,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
+    .line 439
     iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     const/4 v7, 0x5
@@ -2283,7 +2393,7 @@
 
     if-ne v6, v7, :cond_5
 
-    .line 421
+    .line 441
     :cond_4
     const-string v6, "lock_unlock_success"
 
@@ -2293,11 +2403,11 @@
 
     invoke-static {v6, v7, v8}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 425
+    .line 445
     :cond_5
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 426
+    .line 446
     iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     packed-switch v6, :pswitch_data_0
@@ -2305,24 +2415,24 @@
     :pswitch_0
     goto/16 :goto_4
 
-    .line 428
+    .line 448
     :pswitch_1
     const-string v3, "MODE_DISMISS"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 429
+    .line 449
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->notifyKeyguardAuthenticated(Z)V
 
-    .line 431
+    .line 451
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 432
+    .line 452
     goto/16 :goto_4
 
-    .line 435
+    .line 455
     :pswitch_2
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isCustomFingerprint()Z
 
@@ -2332,7 +2442,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 436
+    .line 456
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->shouldApplySpeedUpPolicy()Z
@@ -2341,89 +2451,89 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
 
-    .line 437
+    .line 457
     goto :goto_4
 
-    .line 441
+    .line 461
     :cond_6
     :pswitch_3
     const-string v1, "MODE_UNLOCK or MODE_SHOW_BOUNCER"
 
     invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 442
+    .line 462
     if-nez v0, :cond_7
 
-    .line 443
+    .line 463
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->notifyDeviceWakeUpRequested()V
 
-    .line 444
+    .line 464
     iput-boolean v4, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
 
     goto :goto_2
 
-    .line 446
+    .line 466
     :cond_7
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->showBouncer()V
 
-    .line 448
+    .line 468
     :goto_2
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 449
+    .line 469
     goto :goto_4
 
-    .line 454
+    .line 474
     :pswitch_4
     iget v6, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     if-ne v6, v3, :cond_8
 
-    .line 455
+    .line 475
     const-string v3, "MODE_WAKE_AND_UNLOCK_PULSING"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 456
+    .line 476
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v3, v1, v4}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateMediaMetaData(ZZ)V
 
     goto :goto_3
 
-    .line 458
+    .line 478
     :cond_8
     iget v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mMode:I
 
     if-ne v3, v4, :cond_9
 
-    .line 459
+    .line 479
     const-string v3, "MODE_WAKE_AND_UNLOCK"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     goto :goto_3
 
-    .line 461
+    .line 481
     :cond_9
     const-string v3, "MODE_WAKE_AND_UNLOCK_FROM_DREAM"
 
     invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    .line 462
+    .line 482
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v3}, Lcom/android/keyguard/KeyguardUpdateMonitor;->awakenFromDream()V
 
-    .line 465
+    .line 485
     :goto_3
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setStatusBarFocusable(Z)V
 
-    .line 467
+    .line 487
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->shouldApplySpeedUpPolicy()Z
@@ -2432,7 +2542,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
 
-    .line 469
+    .line 489
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -2441,7 +2551,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 470
+    .line 490
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -2450,23 +2560,23 @@
 
     invoke-virtual {v1, v4}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setWakeAndUnlocking(Z)V
 
-    .line 472
+    .line 492
     :cond_a
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 473
+    .line 493
     nop
 
-    .line 478
+    .line 498
     :goto_4
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyFpAuthModeChanged()V
 
-    .line 479
+    .line 499
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 480
+    .line 500
     return-void
 
     :pswitch_data_0
@@ -2485,14 +2595,14 @@
     .locals 4
     .param p1, "mode"    # I
 
-    .line 349
+    .line 369
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mUpdateMonitor:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->isDeviceInteractive()Z
 
     move-result v0
 
-    .line 350
+    .line 370
     .local v0, "wasDeviceInteractive":Z
     const-string v1, "FingerprintController"
 
@@ -2518,7 +2628,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 351
+    .line 371
     const/4 v1, 0x1
 
     if-eq p1, v1, :cond_1
@@ -2527,37 +2637,37 @@
 
     goto :goto_0
 
-    .line 353
+    .line 373
     :pswitch_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->notifyKeyguardAuthenticated(Z)V
 
-    .line 354
+    .line 374
     goto :goto_0
 
-    .line 356
+    .line 376
     :pswitch_1
     if-nez v0, :cond_0
 
-    .line 357
+    .line 377
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->notifyDeviceWakeUpRequested()V
 
-    .line 358
+    .line 378
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mPendingShowBouncer:Z
 
     goto :goto_0
 
-    .line 360
+    .line 380
     :cond_0
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->showBouncer()V
 
-    .line 362
+    .line 382
     goto :goto_0
 
-    .line 365
+    .line 385
     :cond_1
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBarWindowManager:Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
@@ -2565,7 +2675,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setStatusBarFocusable(Z)V
 
-    .line 367
+    .line 387
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->isLauncherOnTop()Z
@@ -2574,7 +2684,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->onWakeAndUnlocking(Z)V
 
-    .line 371
+    .line 391
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -2583,7 +2693,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 372
+    .line 392
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/phone/StatusBar;->getNavigationBarView()Lcom/android/systemui/statusbar/phone/NavigationBarView;
@@ -2592,17 +2702,17 @@
 
     invoke-virtual {v2, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setWakeAndUnlocking(Z)V
 
-    .line 374
+    .line 394
     :cond_2
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    .line 377
+    .line 397
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->mStatusBar:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->notifyFpAuthModeChanged()V
 
-    .line 378
+    .line 398
     return-void
 
     :pswitch_data_0

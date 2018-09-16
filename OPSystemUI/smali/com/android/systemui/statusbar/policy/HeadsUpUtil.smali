@@ -9,7 +9,7 @@
     .param p0, "view"    # Landroid/view/View;
 
     .line 44
-    const v0, 0x7f0a01b5
+    const v0, 0x7f0a01b6
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
@@ -58,7 +58,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const v1, 0x7f0a01b5
+    const v1, 0x7f0a01b6
 
     invoke-virtual {p0, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 

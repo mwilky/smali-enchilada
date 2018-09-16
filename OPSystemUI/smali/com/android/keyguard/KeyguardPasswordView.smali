@@ -778,7 +778,7 @@
     .locals 1
 
     .line 164
-    const v0, 0x7f0a02ef
+    const v0, 0x7f0a02f0
 
     return v0
 .end method
@@ -1092,7 +1092,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 381
-    const v0, 0x7f0a03df
+    const v0, 0x7f0a03e0
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPasswordView;->findViewById(I)Landroid/view/View;
 

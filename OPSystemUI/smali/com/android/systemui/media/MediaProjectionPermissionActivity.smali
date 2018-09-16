@@ -572,7 +572,7 @@
     .line 151
     iget-object v4, v1, Lcom/android/systemui/media/MediaProjectionPermissionActivity;->mDialog:Landroid/app/AlertDialog;
 
-    const v6, 0x7f0a033d
+    const v6, 0x7f0a033e
 
     invoke-virtual {v4, v6}, Landroid/app/AlertDialog;->findViewById(I)Landroid/view/View;
 

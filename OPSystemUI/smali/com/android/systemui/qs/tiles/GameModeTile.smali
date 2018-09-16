@@ -190,7 +190,7 @@
     .line 138
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/GameModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104f0
+    const v1, 0x7f1104f2
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -290,7 +290,7 @@
     .line 108
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/GameModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104f0
+    const v1, 0x7f1104f2
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -315,13 +315,13 @@
     if-eqz v1, :cond_1
 
     .line 111
-    const v1, 0x7f1104f2
+    const v1, 0x7f1104f4
 
     goto :goto_0
 
     .line 112
     :cond_1
-    const v1, 0x7f1104f1
+    const v1, 0x7f1104f3
 
     .line 110
     :goto_0

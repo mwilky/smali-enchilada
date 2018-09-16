@@ -216,7 +216,7 @@
     if-eqz v2, :cond_0
 
     .line 216
-    const v2, 0x7f070591
+    const v2, 0x7f070595
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -226,7 +226,7 @@
 
     .line 217
     :cond_0
-    const v2, 0x7f0705b5
+    const v2, 0x7f0705b9
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -236,7 +236,7 @@
     iput v2, p0, Lcom/android/systemui/recents/views/TaskViewHeader;->mCornerRadius:I
 
     .line 218
-    const v2, 0x7f0705b3
+    const v2, 0x7f0705b7
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1471,19 +1471,19 @@
 
     move-result-object v1
 
-    const v2, 0x7f0705b1
+    const v2, 0x7f0705b5
 
-    const v3, 0x7f0705b1
+    const v3, 0x7f0705b5
 
-    const v4, 0x7f0705b1
+    const v4, 0x7f0705b5
 
-    const v5, 0x7f0705b2
+    const v5, 0x7f0705b6
 
-    const v6, 0x7f0705b1
+    const v6, 0x7f0705b5
 
-    const v7, 0x7f0705b2
+    const v7, 0x7f0705b6
 
-    const v8, 0x7f070590
+    const v8, 0x7f070594
 
     invoke-static/range {v1 .. v8}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIIIIII)I
 
@@ -1495,19 +1495,19 @@
 
     move-result-object v2
 
-    const v3, 0x7f0705af
+    const v3, 0x7f0705b3
 
-    const v4, 0x7f0705af
+    const v4, 0x7f0705b3
 
-    const v5, 0x7f0705af
+    const v5, 0x7f0705b3
 
-    const v6, 0x7f0705b0
+    const v6, 0x7f0705b4
 
-    const v7, 0x7f0705af
+    const v7, 0x7f0705b3
 
-    const v8, 0x7f0705b0
+    const v8, 0x7f0705b4
 
-    const v9, 0x7f07058f
+    const v9, 0x7f070593
 
     invoke-static/range {v2 .. v9}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getDimensionForDevice(Landroid/content/Context;IIIIIII)I
 
@@ -1632,7 +1632,7 @@
 
     .line 252
     .local v0, "ssp":Lcom/android/systemui/recents/misc/SystemServicesProxy;
-    const v1, 0x7f0a0196
+    const v1, 0x7f0a0197
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->findViewById(I)Landroid/view/View;
 
@@ -1648,7 +1648,7 @@
     invoke-virtual {v1, p0}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 254
-    const v1, 0x7f0a0404
+    const v1, 0x7f0a0405
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/recents/views/TaskViewHeader;->findViewById(I)Landroid/view/View;
 

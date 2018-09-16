@@ -897,6 +897,22 @@
     return-object v0
 .end method
 
+.method public getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
+    .locals 1
+    .param p1, "device"    # Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
+
+    .line 140
+    invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl;->getCachedState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;->access$200(Lcom/android/systemui/statusbar/policy/BluetoothControllerImpl$ActuallyCachedState;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public isBluetoothConnected()Z
     .locals 2
 

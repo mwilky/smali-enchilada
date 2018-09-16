@@ -63,7 +63,7 @@
     .locals 1
 
     .line 48
-    const v0, 0x7f0a0283
+    const v0, 0x7f0a0284
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/EmptyShadeView;->findViewById(I)Landroid/view/View;
 

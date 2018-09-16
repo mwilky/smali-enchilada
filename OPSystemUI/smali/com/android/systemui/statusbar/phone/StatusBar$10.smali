@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 3152
+    .line 3109
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -38,19 +38,19 @@
     .locals 4
     .param p1, "selfChange"    # Z
 
-    .line 3155
+    .line 3112
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
 
-    .line 3156
+    .line 3113
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     const-string v1, "op_camera_notch_ignore"
 
-    .line 3155
+    .line 3112
     const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -69,7 +69,7 @@
     :goto_0
     move v0, v1
 
-    .line 3157
+    .line 3114
     .local v0, "ignore":Z
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -79,12 +79,12 @@
 
     if-eq v1, v0, :cond_2
 
-    .line 3158
+    .line 3115
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-static {v1, v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$902(Lcom/android/systemui/statusbar/phone/StatusBar;Z)Z
 
-    .line 3159
+    .line 3116
     sget-boolean v1, Lcom/android/systemui/statusbar/phone/StatusBar;->DEBUG_ONEPLUS:Z
 
     if-eqz v1, :cond_1
@@ -125,13 +125,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3160
+    .line 3117
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$10;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/StatusBar;->checkBarModes()V
 
-    .line 3162
+    .line 3119
     :cond_2
     return-void
 .end method

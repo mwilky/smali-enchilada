@@ -1154,7 +1154,7 @@
     .line 377
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1105bd
+    const v1, 0x7f1105bf
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3552,7 +3552,7 @@
     .line 516
     iget-object v11, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    const v14, 0x7f1104e4
+    const v14, 0x7f1104e6
 
     invoke-virtual {v11, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3663,7 +3663,7 @@
     .line 542
     iget-object v11, v0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarPolicy;->mContext:Landroid/content/Context;
 
-    const v14, 0x7f1104e4
+    const v14, 0x7f1104e6
 
     invoke-virtual {v11, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

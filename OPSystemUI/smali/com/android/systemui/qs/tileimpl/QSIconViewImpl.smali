@@ -69,7 +69,7 @@
 
     .line 59
     .local v0, "res":Landroid/content/res/Resources;
-    const v1, 0x7f070572
+    const v1, 0x7f070576
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -78,7 +78,7 @@
     iput v1, p0, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;->mIconSizePx:I
 
     .line 60
-    const v1, 0x7f070579
+    const v1, 0x7f07057d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -691,7 +691,7 @@
     .line 96
     .local v0, "icon":Lcom/android/systemui/plugins/qs/QSTile$Icon;
     :goto_0
-    const v1, 0x7f0a032c
+    const v1, 0x7f0a032d
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->getTag(I)Ljava/lang/Object;
 
@@ -701,7 +701,7 @@
 
     move-result v2
 
-    const v3, 0x7f0a032e
+    const v3, 0x7f0a032f
 
     if-eqz v2, :cond_1
 

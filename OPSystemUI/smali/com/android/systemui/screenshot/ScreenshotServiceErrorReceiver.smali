@@ -32,7 +32,7 @@
 
     .line 37
     .local v0, "nm":Landroid/app/NotificationManager;
-    const v1, 0x7f110577
+    const v1, 0x7f110579
 
     invoke-static {p1, v0, v1}, Lcom/android/systemui/screenshot/GlobalScreenshot;->notifyScreenshotError(Landroid/content/Context;Landroid/app/NotificationManager;I)V
 

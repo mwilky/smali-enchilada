@@ -40,7 +40,7 @@
     iput-object p2, p0, Lcom/android/systemui/statusbar/car/UserGridRecyclerView$UserAdapter$UserAdapterViewHolder;->mView:Landroid/view/View;
 
     .line 317
-    const v0, 0x7f0a044b
+    const v0, 0x7f0a044c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -51,7 +51,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/car/UserGridRecyclerView$UserAdapter$UserAdapterViewHolder;->mUserAvatarImageView:Landroid/widget/ImageView;
 
     .line 318
-    const v0, 0x7f0a044d
+    const v0, 0x7f0a044e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

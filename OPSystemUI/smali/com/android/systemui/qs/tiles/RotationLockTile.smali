@@ -284,7 +284,7 @@
     .line 83
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/RotationLockTile;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f110515
+    const v2, 0x7f110517
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

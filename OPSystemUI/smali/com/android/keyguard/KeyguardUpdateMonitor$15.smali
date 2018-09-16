@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 2672
+    .line 2726
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$15;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Lcom/android/systemui/recents/misc/SysUiTaskStackChangeListener;-><init>()V
@@ -36,7 +36,7 @@
 .method public onTaskStackChangedBackground()V
     .locals 5
 
-    .line 2676
+    .line 2730
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -50,14 +50,14 @@
 
     move-result-object v0
 
-    .line 2678
+    .line 2732
     .local v0, "info":Landroid/app/ActivityManager$StackInfo;
     if-nez v0, :cond_0
 
-    .line 2679
+    .line 2733
     return-void
 
-    .line 2681
+    .line 2735
     :cond_0
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$15;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -75,12 +75,12 @@
 
     iget-boolean v4, v0, Landroid/app/ActivityManager$StackInfo;->visible:Z
 
-    .line 2682
+    .line 2736
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v4
 
-    .line 2681
+    .line 2735
     invoke-virtual {v2, v3, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
@@ -89,15 +89,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2685
+    .line 2739
     .end local v0    # "info":Landroid/app/ActivityManager$StackInfo;
     goto :goto_0
 
-    .line 2683
+    .line 2737
     :catch_0
     move-exception v0
 
-    .line 2684
+    .line 2738
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "KeyguardUpdateMonitor"
 
@@ -105,7 +105,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2686
+    .line 2740
     .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void

@@ -73,7 +73,7 @@
     .line 137
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110508
+    const v1, 0x7f11050a
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -85,7 +85,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/NightDisplayTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f110507
+    const v1, 0x7f110509
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -108,7 +108,7 @@
 
     .line 150
     .local v0, "toggleTime":Ljava/time/LocalTime;
-    const v1, 0x7f110518
+    const v1, 0x7f11051a
 
     .local v1, "toggleTimeStringRes":I
     goto :goto_1
@@ -125,7 +125,7 @@
 
     .line 153
     .restart local v0    # "toggleTime":Ljava/time/LocalTime;
-    const v1, 0x7f110506
+    const v1, 0x7f110508
 
     .line 163
     .restart local v1    # "toggleTimeStringRes":I

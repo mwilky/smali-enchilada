@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/systemui/statusbar/phone/OPFacelockController;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/systemui/statusbar/phone/OPFacelockController;->updateKeyguardAlpha(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
+.field final synthetic val$alpha:I
+
 
 # direct methods
-.method constructor <init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
+.method constructor <init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;I)V
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    .line 886
+    .line 888
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    iput p2, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->val$alpha:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,19 +43,49 @@
 .method public run()V
     .locals 3
 
-    .line 889
+    .line 891
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;
 
     move-result-object v0
 
-    sget v1, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FACEUNLOCK:I
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->isShowingLiveWallpaper()Z
 
-    const/4 v2, 0x0
+    move-result v0
 
-    invoke-virtual {v0, v2, v1}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->notifyScreenOffAuthenticate(ZI)V
+    if-eqz v0, :cond_0
 
-    .line 890
+    .line 892
+    return-void
+
+    .line 895
+    :cond_0
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$2000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->val$alpha:I
+
+    sget v2, Lcom/android/systemui/keyguard/KeyguardViewMediator;->AUTHENTICATE_FACEUNLOCK:I
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->changePanelAlpha(II)V
+
+    .line 896
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$7;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
+
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$2100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->getViewRootImpl()Landroid/view/ViewRootImpl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewRootImpl;->setReportNextDraw()V
+
+    .line 897
     return-void
 .end method

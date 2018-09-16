@@ -82,7 +82,7 @@
     check-cast v4, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
 
     .line 73
-    const v0, 0x7f0a029f
+    const v0, 0x7f0a02a0
 
     invoke-virtual {p3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -93,7 +93,7 @@
     check-cast v5, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     .line 74
-    const v0, 0x7f0a0299
+    const v0, 0x7f0a029a
 
     invoke-virtual {p3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

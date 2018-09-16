@@ -174,7 +174,7 @@
     .line 89
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f1104fd
+    const v1, 0x7f1104ff
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -346,7 +346,7 @@
     iput-boolean v2, v1, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->isSlashed:Z
 
     .line 109
-    const v1, 0x7f1104fd
+    const v1, 0x7f1104ff
 
     if-eqz v0, :cond_2
 

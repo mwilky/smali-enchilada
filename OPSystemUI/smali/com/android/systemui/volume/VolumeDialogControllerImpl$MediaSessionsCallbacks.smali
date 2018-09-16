@@ -39,19 +39,19 @@
     .locals 1
     .param p1, "this$0"    # Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
-    .line 1138
+    .line 1144
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1139
+    .line 1145
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
-    .line 1141
+    .line 1147
     const/16 v0, 0x64
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mNextStream:I
@@ -63,7 +63,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;
 
-    .line 1138
+    .line 1144
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     return-object v0
@@ -74,7 +74,7 @@
     .param p1, "token"    # Landroid/media/session/MediaSession$Token;
     .param p2, "triggeringMethod"    # Ljava/lang/String;
 
-    .line 1219
+    .line 1225
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -83,7 +83,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1220
+    .line 1226
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     iget v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mNextStream:I
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1221
+    .line 1227
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -121,7 +121,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1222
+    .line 1228
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -132,10 +132,10 @@
 
     move-result-object v1
 
-    .line 1221
+    .line 1227
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1223
+    .line 1229
     :cond_0
     iget v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mNextStream:I
 
@@ -143,7 +143,7 @@
 
     iput v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mNextStream:I
 
-    .line 1225
+    .line 1231
     :cond_1
     return-void
 .end method
@@ -152,7 +152,7 @@
     .locals 4
     .param p1, "stream"    # I
 
-    .line 1210
+    .line 1216
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -176,7 +176,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 1211
+    .line 1217
     .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroid/media/session/MediaSession$Token;Ljava/lang/Integer;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1212
+    .line 1218
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -203,12 +203,12 @@
 
     return-object v0
 
-    .line 1214
+    .line 1220
     .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Landroid/media/session/MediaSession$Token;Ljava/lang/Integer;>;"
     :cond_0
     goto :goto_0
 
-    .line 1215
+    .line 1221
     :cond_1
     const/4 v0, 0x0
 
@@ -221,7 +221,7 @@
     .locals 3
     .param p1, "token"    # Landroid/media/session/MediaSession$Token;
 
-    .line 1187
+    .line 1193
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -230,7 +230,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1188
+    .line 1194
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -247,7 +247,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1189
+    .line 1195
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -258,14 +258,14 @@
 
     move-result-object v1
 
-    .line 1188
+    .line 1194
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1190
+    .line 1196
     :cond_0
     return-void
 
-    .line 1192
+    .line 1198
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
@@ -279,7 +279,7 @@
 
     move-result v0
 
-    .line 1193
+    .line 1199
     .local v0, "stream":I
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -291,7 +291,7 @@
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1194
+    .line 1200
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     invoke-static {v1}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->access$500(Lcom/android/systemui/volume/VolumeDialogControllerImpl;)Lcom/android/systemui/plugins/VolumeDialogController$State;
@@ -302,14 +302,14 @@
 
     if-ne v1, v0, :cond_2
 
-    .line 1195
+    .line 1201
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     const/4 v2, -0x1
 
     invoke-static {v1, v2}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->access$3500(Lcom/android/systemui/volume/VolumeDialogControllerImpl;I)Z
 
-    .line 1197
+    .line 1203
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -323,7 +323,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onStateChanged(Lcom/android/systemui/plugins/VolumeDialogController$State;)V
 
-    .line 1198
+    .line 1204
     return-void
 .end method
 
@@ -333,12 +333,12 @@
     .param p2, "name"    # Ljava/lang/String;
     .param p3, "pi"    # Landroid/media/session/MediaController$PlaybackInfo;
 
-    .line 1145
+    .line 1151
     const-string v0, "onRemoteUpdate"
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->addStream(Landroid/media/session/MediaSession$Token;Ljava/lang/String;)V
 
-    .line 1146
+    .line 1152
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -351,7 +351,7 @@
 
     move-result v0
 
-    .line 1147
+    .line 1153
     .local v0, "stream":I
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -378,7 +378,7 @@
     :cond_0
     move v1, v2
 
-    .line 1148
+    .line 1154
     .local v1, "changed":Z
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
@@ -387,21 +387,21 @@
 
     move-result-object v4
 
-    .line 1149
+    .line 1155
     .local v4, "ss":Lcom/android/systemui/plugins/VolumeDialogController$StreamState;
     iput-boolean v3, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->dynamic:Z
 
-    .line 1150
+    .line 1156
     iput v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->levelMin:I
 
-    .line 1151
+    .line 1157
     invoke-virtual {p3}, Landroid/media/session/MediaController$PlaybackInfo;->getMaxVolume()I
 
     move-result v2
 
     iput v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->levelMax:I
 
-    .line 1152
+    .line 1158
     iget v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->level:I
 
     invoke-virtual {p3}, Landroid/media/session/MediaController$PlaybackInfo;->getCurrentVolume()I
@@ -410,17 +410,17 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 1153
+    .line 1159
     invoke-virtual {p3}, Landroid/media/session/MediaController$PlaybackInfo;->getCurrentVolume()I
 
     move-result v2
 
     iput v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->level:I
 
-    .line 1154
+    .line 1160
     const/4 v1, 0x1
 
-    .line 1156
+    .line 1162
     :cond_1
     iget-object v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->remoteLabel:Ljava/lang/String;
 
@@ -430,22 +430,22 @@
 
     if-nez v2, :cond_2
 
-    .line 1157
+    .line 1163
     const/4 v2, -0x1
 
     iput v2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->name:I
 
-    .line 1158
+    .line 1164
     iput-object p2, v4, Lcom/android/systemui/plugins/VolumeDialogController$StreamState;->remoteLabel:Ljava/lang/String;
 
-    .line 1159
+    .line 1165
     const/4 v1, 0x1
 
-    .line 1161
+    .line 1167
     :cond_2
     if-eqz v1, :cond_4
 
-    .line 1162
+    .line 1168
     sget-boolean v2, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v2, :cond_3
@@ -486,7 +486,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1164
+    .line 1170
     :cond_3
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -500,7 +500,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onStateChanged(Lcom/android/systemui/plugins/VolumeDialogController$State;)V
 
-    .line 1166
+    .line 1172
     :cond_4
     return-void
 .end method
@@ -510,12 +510,12 @@
     .param p1, "token"    # Landroid/media/session/MediaSession$Token;
     .param p2, "flags"    # I
 
-    .line 1170
+    .line 1176
     const-string v0, "onRemoteVolumeChanged"
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->addStream(Landroid/media/session/MediaSession$Token;Ljava/lang/String;)V
 
-    .line 1171
+    .line 1177
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->mRemoteStreams:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -528,7 +528,7 @@
 
     move-result v0
 
-    .line 1172
+    .line 1178
     .local v0, "stream":I
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -536,7 +536,7 @@
 
     move-result v1
 
-    .line 1173
+    .line 1179
     .local v1, "showUI":Z
     iget-object v2, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -544,11 +544,11 @@
 
     move-result v2
 
-    .line 1174
+    .line 1180
     .local v2, "changed":Z
     if-eqz v1, :cond_0
 
-    .line 1175
+    .line 1181
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     const/4 v4, 0x3
@@ -559,11 +559,11 @@
 
     or-int/2addr v2, v3
 
-    .line 1177
+    .line 1183
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 1178
+    .line 1184
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     iget-object v3, v3, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
@@ -576,11 +576,11 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onStateChanged(Lcom/android/systemui/plugins/VolumeDialogController$State;)V
 
-    .line 1180
+    .line 1186
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 1181
+    .line 1187
     iget-object v3, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
     iget-object v3, v3, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->mCallbacks:Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
@@ -589,7 +589,7 @@
 
     invoke-virtual {v3, v4}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;->onShowRequested(I)V
 
-    .line 1183
+    .line 1189
     :cond_2
     return-void
 .end method
@@ -599,16 +599,16 @@
     .param p1, "stream"    # I
     .param p2, "level"    # I
 
-    .line 1201
+    .line 1207
     invoke-direct {p0, p1}, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->findToken(I)Landroid/media/session/MediaSession$Token;
 
     move-result-object v0
 
-    .line 1202
+    .line 1208
     .local v0, "t":Landroid/media/session/MediaSession$Token;
     if-nez v0, :cond_0
 
-    .line 1203
+    .line 1209
     invoke-static {}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->access$700()Ljava/lang/String;
 
     move-result-object v1
@@ -629,10 +629,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1204
+    .line 1210
     return-void
 
-    .line 1206
+    .line 1212
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$MediaSessionsCallbacks;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -642,6 +642,6 @@
 
     invoke-virtual {v1, v0, p2}, Lcom/android/systemui/volume/MediaSessions;->setVolume(Landroid/media/session/MediaSession$Token;I)V
 
-    .line 1207
+    .line 1213
     return-void
 .end method

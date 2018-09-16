@@ -495,7 +495,7 @@
     if-eqz v0, :cond_0
 
     .line 263
-    const v0, 0x7f070591
+    const v0, 0x7f070595
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -505,7 +505,7 @@
 
     .line 264
     :cond_0
-    const v0, 0x7f0705b5
+    const v0, 0x7f0705b9
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -515,7 +515,7 @@
     iput v0, p0, Lcom/android/systemui/recents/views/TaskStackView;->mTaskCornerRadiusPx:I
 
     .line 265
-    const v0, 0x7f070586
+    const v0, 0x7f07058a
 
     invoke-virtual {v4, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -7145,13 +7145,13 @@
     if-eqz p5, :cond_4
 
     .line 1425
-    const v3, 0x7f11053b
+    const v3, 0x7f11053d
 
     goto :goto_0
 
     .line 1426
     :cond_4
-    const v3, 0x7f11053c
+    const v3, 0x7f11053e
 
     :goto_0
     invoke-direct {v2, v3}, Lcom/android/systemui/recents/events/ui/AllTaskViewsDismissedEvent;-><init>(I)V
@@ -7244,7 +7244,7 @@
 
     new-instance v2, Lcom/android/systemui/recents/events/ui/AllTaskViewsDismissedEvent;
 
-    const v3, 0x7f11053c
+    const v3, 0x7f11053e
 
     invoke-direct {v2, v3}, Lcom/android/systemui/recents/events/ui/AllTaskViewsDismissedEvent;-><init>(I)V
 

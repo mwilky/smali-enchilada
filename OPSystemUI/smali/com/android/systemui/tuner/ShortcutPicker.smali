@@ -260,7 +260,7 @@
 
     .line 53
     .local v3, "otherApps":Landroid/support/v7/preference/PreferenceCategory;
-    const v4, 0x7f110638
+    const v4, 0x7f11063a
 
     invoke-virtual {v3, v4}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 

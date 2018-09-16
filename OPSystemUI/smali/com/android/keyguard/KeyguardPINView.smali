@@ -226,7 +226,7 @@
     .locals 1
 
     .line 83
-    const v0, 0x7f0a02f5
+    const v0, 0x7f0a02f6
 
     return v0
 .end method
@@ -309,7 +309,7 @@
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mContainer:Landroid/view/ViewGroup;
 
     .line 91
-    const v0, 0x7f0a0354
+    const v0, 0x7f0a0355
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -320,7 +320,7 @@
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow0:Landroid/view/ViewGroup;
 
     .line 92
-    const v0, 0x7f0a0355
+    const v0, 0x7f0a0356
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -331,7 +331,7 @@
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow1:Landroid/view/ViewGroup;
 
     .line 93
-    const v0, 0x7f0a0356
+    const v0, 0x7f0a0357
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -342,7 +342,7 @@
     iput-object v0, p0, Lcom/android/keyguard/KeyguardPINView;->mRow2:Landroid/view/ViewGroup;
 
     .line 94
-    const v0, 0x7f0a0357
+    const v0, 0x7f0a0358
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -368,7 +368,7 @@
     aput-object v3, v2, v4
 
     .line 102
-    const v5, 0x7f0a01d3
+    const v5, 0x7f0a01d4
 
     invoke-virtual {p0, v5}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -399,7 +399,7 @@
     new-array v2, v1, [Landroid/view/View;
 
     .line 110
-    const v7, 0x7f0a01ba
+    const v7, 0x7f0a01bb
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -407,7 +407,7 @@
 
     aput-object v7, v2, v4
 
-    const v7, 0x7f0a01bb
+    const v7, 0x7f0a01bc
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -416,7 +416,7 @@
     aput-object v7, v2, v6
 
     .line 111
-    const v7, 0x7f0a01bc
+    const v7, 0x7f0a01bd
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -429,7 +429,7 @@
     new-array v2, v1, [Landroid/view/View;
 
     .line 114
-    const v7, 0x7f0a01bd
+    const v7, 0x7f0a01be
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -437,7 +437,7 @@
 
     aput-object v7, v2, v4
 
-    const v7, 0x7f0a01be
+    const v7, 0x7f0a01bf
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -446,7 +446,7 @@
     aput-object v7, v2, v6
 
     .line 115
-    const v7, 0x7f0a01bf
+    const v7, 0x7f0a01c0
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -459,7 +459,7 @@
     new-array v2, v1, [Landroid/view/View;
 
     .line 118
-    const v7, 0x7f0a01c0
+    const v7, 0x7f0a01c1
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -467,7 +467,7 @@
 
     aput-object v7, v2, v4
 
-    const v7, 0x7f0a01c1
+    const v7, 0x7f0a01c2
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -476,7 +476,7 @@
     aput-object v7, v2, v6
 
     .line 119
-    const v7, 0x7f0a01c2
+    const v7, 0x7f0a01c3
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -499,7 +499,7 @@
 
     aput-object v7, v2, v4
 
-    const v7, 0x7f0a01b9
+    const v7, 0x7f0a01ba
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 
@@ -507,7 +507,7 @@
 
     aput-object v7, v2, v6
 
-    const v7, 0x7f0a01c3
+    const v7, 0x7f0a01c4
 
     invoke-virtual {p0, v7}, Lcom/android/keyguard/KeyguardPINView;->findViewById(I)Landroid/view/View;
 

@@ -68,7 +68,7 @@
     .locals 3
 
     .line 116
-    const v0, 0x7f0a03a2
+    const v0, 0x7f0a03a3
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 120
-    const v1, 0x7f0a02a8
+    const v1, 0x7f0a02a9
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -177,7 +177,7 @@
     .line 106
     .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_0
-    const v1, 0x7f0a02f9
+    const v1, 0x7f0a02fa
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 107
-    const v1, 0x7f0a02fa
+    const v1, 0x7f0a02fb
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 
@@ -208,7 +208,7 @@
     .locals 2
 
     .line 111
-    const v0, 0x7f0a0320
+    const v0, 0x7f0a0321
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/AppOpsInfo;->findViewById(I)Landroid/view/View;
 

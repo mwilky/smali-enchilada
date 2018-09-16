@@ -270,7 +270,7 @@
     .line 307
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v4, 0x7f0a0273
+    const v4, 0x7f0a0274
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
     :cond_2
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->mContentLayout:Landroid/view/ViewGroup;
 
-    const v6, 0x7f0a02a8
+    const v6, 0x7f0a02a9
 
     invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

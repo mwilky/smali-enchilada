@@ -3412,7 +3412,7 @@
     iput v2, p0, Lcom/android/systemui/statusbar/phone/PanelView;->mHintDistance:F
 
     .line 256
-    const v2, 0x7f070671
+    const v2, 0x7f070675
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

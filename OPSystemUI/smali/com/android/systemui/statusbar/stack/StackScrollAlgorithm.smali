@@ -1208,7 +1208,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/stack/StackScrollAlgorithm;->mCollapsedSize:I
 
     .line 71
-    const v1, 0x7f070608
+    const v1, 0x7f07060c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -260,7 +260,7 @@
     .locals 4
 
     .line 120
-    const v0, 0x7f0a0242
+    const v0, 0x7f0a0243
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -271,7 +271,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileGroup:Landroid/widget/LinearLayout;
 
     .line 121
-    const v0, 0x7f0a0248
+    const v0, 0x7f0a0249
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
     iput-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
 
     .line 122
-    const v1, 0x7f0a024e
+    const v1, 0x7f0a024f
 
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +293,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
 
     .line 123
-    const v2, 0x7f0a0246
+    const v2, 0x7f0a0247
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -304,7 +304,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileRoaming:Landroid/widget/ImageView;
 
     .line 124
-    const v2, 0x7f0a0247
+    const v2, 0x7f0a0248
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -313,7 +313,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileRoamingSpace:Landroid/view/View;
 
     .line 125
-    const v2, 0x7f0a0243
+    const v2, 0x7f0a0244
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -324,7 +324,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mIn:Landroid/widget/ImageView;
 
     .line 126
-    const v2, 0x7f0a0245
+    const v2, 0x7f0a0246
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -335,7 +335,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mOut:Landroid/widget/ImageView;
 
     .line 127
-    const v2, 0x7f0a01ad
+    const v2, 0x7f0a01ae
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -365,7 +365,7 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->initDotView()V
 
     .line 136
-    const v2, 0x7f0a0249
+    const v2, 0x7f0a024a
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -376,7 +376,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataGroup:Landroid/view/ViewGroup;
 
     .line 137
-    const v2, 0x7f0a024d
+    const v2, 0x7f0a024e
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -431,7 +431,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
 
     .line 144
-    const v0, 0x7f0a024b
+    const v0, 0x7f0a024c
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -442,7 +442,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileSingleGroup:Landroid/view/ViewGroup;
 
     .line 145
-    const v0, 0x7f0a024c
+    const v0, 0x7f0a024d
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -453,7 +453,7 @@
     iput-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileStackedGroup:Landroid/view/ViewGroup;
 
     .line 147
-    const v0, 0x7f0a0244
+    const v0, 0x7f0a0245
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->findViewById(I)Landroid/view/View;
 
@@ -470,7 +470,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070615
+    const v1, 0x7f070619
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -485,7 +485,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070616
+    const v1, 0x7f07061a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -527,7 +527,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07060e
+    const v1, 0x7f070612
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -283,7 +283,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkContext:Landroid/view/ContextThemeWrapper;
 
     .line 184
-    const v2, 0x7f0a046f
+    const v2, 0x7f0a0470
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -294,7 +294,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiGroup:Landroid/widget/LinearLayout;
 
     .line 185
-    const v2, 0x7f0a0473
+    const v2, 0x7f0a0474
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -305,7 +305,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
 
     .line 189
-    const v2, 0x7f0a0471
+    const v2, 0x7f0a0472
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -316,7 +316,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
 
     .line 191
-    const v2, 0x7f0a0475
+    const v2, 0x7f0a0476
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -325,7 +325,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mSignalSpacer:Landroid/view/View;
 
     .line 192
-    const v2, 0x7f0a046d
+    const v2, 0x7f0a046e
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -334,7 +334,7 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mAirplaneSpacer:Landroid/view/View;
 
     .line 193
-    const v2, 0x7f0a01ad
+    const v2, 0x7f0a01ae
 
     invoke-virtual {p0, v2}, Lcom/android/systemui/statusbar/StatusBarWifiView;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07060e
+    const v1, 0x7f070612
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

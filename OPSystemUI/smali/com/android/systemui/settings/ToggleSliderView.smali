@@ -99,7 +99,7 @@
 
     .line 64
     .local v1, "a":Landroid/content/res/TypedArray;
-    const v3, 0x7f0a040b
+    const v3, 0x7f0a040c
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
     invoke-virtual {v3, v4}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 67
-    const v3, 0x7f0a03b2
+    const v3, 0x7f0a03b3
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 
@@ -135,7 +135,7 @@
     invoke-virtual {v3, v4}, Lcom/android/systemui/settings/ToggleSeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
     .line 70
-    const v3, 0x7f0a01e3
+    const v3, 0x7f0a01e4
 
     invoke-virtual {p0, v3}, Lcom/android/systemui/settings/ToggleSliderView;->findViewById(I)Landroid/view/View;
 

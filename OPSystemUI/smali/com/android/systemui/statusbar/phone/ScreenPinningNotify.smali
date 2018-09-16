@@ -96,13 +96,13 @@
     if-eqz p1, :cond_2
 
     .line 65
-    const v2, 0x7f11056b
+    const v2, 0x7f11056d
 
     goto :goto_0
 
     .line 66
     :cond_2
-    const v2, 0x7f11056c
+    const v2, 0x7f11056e
 
     .line 64
     :goto_0
@@ -123,7 +123,7 @@
     .locals 1
 
     .line 51
-    const v0, 0x7f110566
+    const v0, 0x7f110568
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/ScreenPinningNotify;->makeAllUserToastAndShow(I)Landroid/widget/Toast;
 
@@ -135,7 +135,7 @@
     .locals 1
 
     .line 46
-    const v0, 0x7f110569
+    const v0, 0x7f11056b
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/ScreenPinningNotify;->makeAllUserToastAndShow(I)Landroid/widget/Toast;
 

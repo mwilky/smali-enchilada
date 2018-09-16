@@ -224,7 +224,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0705fe
+    const v5, 0x7f070602
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -235,7 +235,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f0705fd
+    const v6, 0x7f070601
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -466,7 +466,7 @@
     .local v1, "typedValue":Landroid/util/TypedValue;
     const/4 v2, 0x1
 
-    const v3, 0x7f07060d
+    const v3, 0x7f070611
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
@@ -477,7 +477,7 @@
 
     .line 430
     .local v3, "iconScaleFactor":F
-    const v4, 0x7f0705fd
+    const v4, 0x7f070601
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -495,7 +495,7 @@
     goto :goto_0
 
     :cond_0
-    const v2, 0x7f0705fe
+    const v2, 0x7f070602
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

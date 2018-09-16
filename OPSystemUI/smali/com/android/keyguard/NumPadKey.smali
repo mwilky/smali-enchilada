@@ -208,7 +208,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 115
-    const v0, 0x7f0a01e2
+    const v0, 0x7f0a01e3
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/NumPadKey;->findViewById(I)Landroid/view/View;
 

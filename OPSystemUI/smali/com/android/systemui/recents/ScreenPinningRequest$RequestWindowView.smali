@@ -229,7 +229,7 @@
     .line 238
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v4, 0x7f0a037b
+    const v4, 0x7f0a037c
 
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
     .line 240
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v4, 0x7f0a0370
+    const v4, 0x7f0a0371
 
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -304,7 +304,7 @@
     :goto_4
     iget-object v4, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v5, 0x7f0a0377
+    const v5, 0x7f0a0378
 
     invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -320,7 +320,7 @@
     .line 258
     iget-boolean v4, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mShowCancel:Z
 
-    const v5, 0x7f0a0371
+    const v5, 0x7f0a0372
 
     const/4 v6, 0x4
 
@@ -409,11 +409,11 @@
 
     .line 273
     .local v5, "touchExplorationEnabled":Z
-    const v7, 0x7f0a0373
+    const v7, 0x7f0a0374
 
-    const v8, 0x7f0a0374
+    const v8, 0x7f0a0375
 
-    const v9, 0x7f0a037a
+    const v9, 0x7f0a037b
 
     if-eqz v3, :cond_b
 
@@ -448,13 +448,13 @@
     if-eqz v5, :cond_a
 
     .line 278
-    const v7, 0x7f110563
+    const v7, 0x7f110565
 
     goto :goto_7
 
     .line 279
     :cond_a
-    const v7, 0x7f110562
+    const v7, 0x7f110564
 
     .local v7, "descriptionStringResId":I
     :goto_7
@@ -493,13 +493,13 @@
     if-eqz v5, :cond_c
 
     .line 285
-    const v7, 0x7f110565
+    const v7, 0x7f110567
 
     goto :goto_8
 
     .line 286
     :cond_c
-    const v7, 0x7f110564
+    const v7, 0x7f110566
 
     .line 289
     .restart local v7    # "descriptionStringResId":I
@@ -553,7 +553,7 @@
     .local v11, "darkContext":Landroid/content/Context;
     iget-object v12, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v13, 0x7f0a036f
+    const v13, 0x7f0a0370
 
     invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -571,7 +571,7 @@
     .line 297
     iget-object v12, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v13, 0x7f0a0376
+    const v13, 0x7f0a0377
 
     invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -594,7 +594,7 @@
     :cond_d
     iget-object v8, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v9, 0x7f0a0372
+    const v9, 0x7f0a0373
 
     invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -617,7 +617,7 @@
     :cond_e
     iget-object v6, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v8, 0x7f0a036c
+    const v8, 0x7f0a036d
 
     invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -628,7 +628,7 @@
     .line 306
     iget-object v6, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->mLayout:Landroid/view/ViewGroup;
 
-    const v8, 0x7f0a036d
+    const v8, 0x7f0a036e
 
     invoke-virtual {v6, v8}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

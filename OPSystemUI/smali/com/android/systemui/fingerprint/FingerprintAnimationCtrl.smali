@@ -72,7 +72,7 @@
     iput v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mAnimationState:I
 
     .line 27
-    const v0, 0x7f0a02c5
+    const v0, 0x7f0a02c6
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -83,7 +83,7 @@
     iput-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mDownAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
     .line 28
-    const v0, 0x7f0a02c6
+    const v0, 0x7f0a02c7
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
     iput-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mSuccessAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
 
     .line 29
-    const v0, 0x7f0a02c7
+    const v0, 0x7f0a02c8
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -110,31 +110,6 @@
 
 
 # virtual methods
-.method public getAnimationDuration(I)I
-    .locals 1
-    .param p1, "type"    # I
-
-    .line 78
-    sget v0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->TYPE_ANIMATION_TOUCH_UP:I
-
-    if-ne p1, v0, :cond_0
-
-    .line 79
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mUpAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
-
-    invoke-virtual {v0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->getAnimationDuration()I
-
-    move-result v0
-
-    return v0
-
-    .line 81
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public playAnimation(I)V
     .locals 3
     .param p1, "type"    # I
@@ -278,17 +253,6 @@
     .locals 3
 
     .line 65
-    iget v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mAnimationState:I
-
-    sget v1, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->TYPE_NONE:I
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mOnGoingAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
-
-    if-eqz v0, :cond_0
-
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -303,11 +267,30 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    const-string v2, ", mOnGoingAnimationView = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mOnGoingAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 66
+    iget v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mAnimationState:I
+
+    sget v1, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->TYPE_NONE:I
+
+    if-eq v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mOnGoingAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;
+
+    if-eqz v0, :cond_0
 
     .line 67
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationCtrl;->mOnGoingAnimationView:Lcom/android/systemui/fingerprint/FingerprintAnimationView;

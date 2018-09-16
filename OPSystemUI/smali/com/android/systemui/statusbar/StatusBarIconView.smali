@@ -683,7 +683,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f07060d
+    const v4, 0x7f070611
 
     const/4 v5, 0x1
 
@@ -844,7 +844,7 @@
 
     .line 230
     .local v1, "res":Landroid/content/res/Resources;
-    const v2, 0x7f0704eb
+    const v2, 0x7f0704ef
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -853,7 +853,7 @@
     iput v2, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mStaticDotRadius:I
 
     .line 231
-    const v2, 0x7f07060e
+    const v2, 0x7f070612
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -862,7 +862,7 @@
     iput v2, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mStatusBarIconSize:I
 
     .line 232
-    const v2, 0x7f07060b
+    const v2, 0x7f07060f
 
     .line 233
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -872,7 +872,7 @@
     iput v2, p0, Lcom/android/systemui/statusbar/StatusBarIconView;->mStatusBarIconDrawingSizeDark:I
 
     .line 234
-    const v2, 0x7f07060a
+    const v2, 0x7f07060e
 
     .line 235
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2721,7 +2721,7 @@
 
     .line 299
     :cond_4
-    const v7, 0x7f0a019a
+    const v7, 0x7f0a019b
 
     invoke-virtual {p0, v7, v6}, Lcom/android/systemui/statusbar/StatusBarIconView;->setTag(ILjava/lang/Object;)V
 

@@ -160,7 +160,7 @@
     .line 92
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabelContainer:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a03fc
+    const v1, 0x7f0a03fd
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
     .line 93
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabelContainer:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a0344
+    const v1, 0x7f0a0345
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -186,7 +186,7 @@
     .line 94
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabelContainer:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0a043a
+    const v1, 0x7f0a043b
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -560,7 +560,7 @@
     .line 78
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileView;->mLabel:Landroid/widget/TextView;
 
-    const v1, 0x7f07057e
+    const v1, 0x7f070582
 
     invoke-static {v0, v1}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 

@@ -76,7 +76,7 @@
     .line 380
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->mItems:Lcom/android/systemui/qs/QSDetailItems;
 
-    const v2, 0x7f1104b3
+    const v2, 0x7f1104b5
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/qs/QSDetailItems;->setEmptyState(II)V
 
@@ -180,12 +180,18 @@
     .line 396
     iput-object v5, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
-    .line 397
-    invoke-virtual {v5}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
+    .line 399
+    iget-object v7, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
+
+    invoke-static {v7}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
+
+    move-result-object v7
+
+    invoke-interface {v7, v5}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
 
     move-result v7
 
-    .line 398
+    .line 401
     .local v7, "state":I
     const/4 v8, 0x2
 
@@ -193,23 +199,23 @@
 
     if-ne v7, v8, :cond_4
 
-    .line 399
+    .line 402
     const v8, 0x7f08032b
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
-    .line 400
+    .line 403
     invoke-virtual {v5}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getBatteryLevel()I
 
     move-result v8
 
-    .line 401
+    .line 404
     .local v8, "batteryLevel":I
     const/4 v10, -0x1
 
     if-eq v8, v10, :cond_3
 
-    .line 402
+    .line 405
     new-instance v10, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothBatteryTileIcon;
 
     iget-object v11, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
@@ -220,27 +226,27 @@
 
     iput-object v10, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->icon:Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
-    .line 403
+    .line 406
     iget-object v10, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v10}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$1000(Lcom/android/systemui/qs/tiles/BluetoothTile;)Landroid/content/Context;
 
     move-result-object v10
 
-    const v11, 0x7f1104ce
+    const v11, 0x7f1104d0
 
     new-array v12, v9, [Ljava/lang/Object;
 
     const/4 v13, 0x0
 
-    .line 405
+    .line 408
     invoke-static {v8}, Lcom/android/settingslib/Utils;->formatPercentage(I)Ljava/lang/String;
 
     move-result-object v14
 
     aput-object v14, v12, v13
 
-    .line 403
+    .line 406
     invoke-virtual {v10, v11, v12}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v10
@@ -249,7 +255,7 @@
 
     goto :goto_2
 
-    .line 407
+    .line 410
     :cond_3
     iget-object v10, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
@@ -257,7 +263,7 @@
 
     move-result-object v10
 
-    const v11, 0x7f1104cd
+    const v11, 0x7f1104cf
 
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -265,36 +271,36 @@
 
     iput-object v10, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/CharSequence;
 
-    .line 409
+    .line 412
     :goto_2
     iput-boolean v9, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->canDisconnect:Z
 
-    .line 410
+    .line 413
     invoke-virtual {v0, v2, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 411
+    .line 414
     add-int/lit8 v2, v2, 0x1
 
-    .line 412
+    .line 415
     .end local v8    # "batteryLevel":I
     goto :goto_3
 
     :cond_4
     if-ne v7, v9, :cond_5
 
-    .line 413
+    .line 416
     const v8, 0x7f08032c
 
     iput v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->iconResId:I
 
-    .line 414
+    .line 417
     iget-object v8, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v8}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$1200(Lcom/android/systemui/qs/tiles/BluetoothTile;)Landroid/content/Context;
 
     move-result-object v8
 
-    const v9, 0x7f1104cf
+    const v9, 0x7f1104d1
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -302,16 +308,16 @@
 
     iput-object v8, v6, Lcom/android/systemui/qs/QSDetailItems$Item;->line2:Ljava/lang/CharSequence;
 
-    .line 415
+    .line 418
     invoke-virtual {v0, v2, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_3
 
-    .line 417
+    .line 420
     :cond_5
     invoke-virtual {v0, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 419
+    .line 422
     :goto_3
     add-int/lit8 v3, v3, 0x1
 
@@ -319,17 +325,17 @@
 
     if-ne v3, v8, :cond_6
 
-    .line 420
+    .line 423
     goto :goto_4
 
-    .line 422
+    .line 425
     .end local v5    # "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     .end local v6    # "item":Lcom/android/systemui/qs/QSDetailItems$Item;
     .end local v7    # "state":I
     :cond_6
     goto/16 :goto_1
 
-    .line 424
+    .line 427
     .end local v2    # "connectedDevices":I
     .end local v3    # "count":I
     :cond_7
@@ -350,7 +356,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/systemui/qs/QSDetailItems;->setItems([Lcom/android/systemui/qs/QSDetailItems$Item;)V
 
-    .line 425
+    .line 428
     return-void
 .end method
 
@@ -433,7 +439,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1104b4
+    const v1, 0x7f1104b6
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -516,7 +522,7 @@
     .locals 2
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
-    .line 429
+    .line 432
     if-eqz p1, :cond_2
 
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
@@ -525,23 +531,29 @@
 
     goto :goto_0
 
-    .line 430
+    .line 433
     :cond_0
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    .line 431
+    .line 436
     .local v0, "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->getMaxConnectionState()I
+    iget-object v1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
+
+    invoke-static {v1}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
+
+    move-result-object v1
+
+    invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/BluetoothController;->getMaxConnectionState(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)I
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 433
+    .line 439
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
@@ -550,11 +562,11 @@
 
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/BluetoothController;->connect(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)V
 
-    .line 435
+    .line 441
     :cond_1
     return-void
 
-    .line 429
+    .line 432
     .end local v0    # "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     :cond_2
     :goto_0
@@ -565,7 +577,7 @@
     .locals 2
     .param p1, "item"    # Lcom/android/systemui/qs/QSDetailItems$Item;
 
-    .line 439
+    .line 445
     if-eqz p1, :cond_2
 
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
@@ -574,17 +586,17 @@
 
     goto :goto_0
 
-    .line 440
+    .line 446
     :cond_0
     iget-object v0, p1, Lcom/android/systemui/qs/QSDetailItems$Item;->tag:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
-    .line 441
+    .line 447
     .local v0, "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     if-eqz v0, :cond_1
 
-    .line 442
+    .line 448
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothDetailAdapter;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/BluetoothTile;->access$600(Lcom/android/systemui/qs/tiles/BluetoothTile;)Lcom/android/systemui/statusbar/policy/BluetoothController;
@@ -593,11 +605,11 @@
 
     invoke-interface {v1, v0}, Lcom/android/systemui/statusbar/policy/BluetoothController;->disconnect(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;)V
 
-    .line 444
+    .line 450
     :cond_1
     return-void
 
-    .line 439
+    .line 445
     .end local v0    # "device":Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
     :cond_2
     :goto_0

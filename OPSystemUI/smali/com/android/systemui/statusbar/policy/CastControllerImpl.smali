@@ -1079,7 +1079,7 @@
     .line 140
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/CastControllerImpl;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1104c4
+    const v5, 0x7f1104c6
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

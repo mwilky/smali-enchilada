@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 569
+    .line 576
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -38,7 +38,7 @@
     .locals 5
     .param p1, "selfChange"    # Z
 
-    .line 571
+    .line 578
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
@@ -71,7 +71,7 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$002(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Z)Z
 
-    .line 573
+    .line 580
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
@@ -98,13 +98,13 @@
     :goto_1
     invoke-static {v0, v2}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$1102(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Z)Z
 
-    .line 575
+    .line 582
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$6;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     const/16 v1, -0x2710
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$400(Lcom/android/systemui/statusbar/policy/UserSwitcherController;I)V
 
-    .line 576
+    .line 583
     return-void
 .end method

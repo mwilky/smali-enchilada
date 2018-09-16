@@ -6301,7 +6301,7 @@
 
     .line 1563
     :cond_0
-    const v0, 0x7f0a0291
+    const v0, 0x7f0a0292
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->findViewById(I)Landroid/view/View;
 
@@ -10863,7 +10863,7 @@
     .local v0, "expandedIcon":Lcom/android/systemui/statusbar/StatusBarIconView;
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0a019b
+    const v2, 0x7f0a019c
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->getTag(I)Ljava/lang/Object;
 

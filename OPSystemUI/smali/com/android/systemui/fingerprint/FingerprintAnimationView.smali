@@ -109,15 +109,6 @@
 
 
 # virtual methods
-.method public getAnimationDuration()I
-    .locals 1
-
-    .line 111
-    iget v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mAnimationDuration:I
-
-    return v0
-.end method
-
 .method public init(Landroid/content/Context;)V
     .locals 3
     .param p1, "context"    # Landroid/content/Context;
@@ -240,22 +231,22 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 92
-    const/4 v0, 0x4
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setVisibility(I)V
-
-    .line 93
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 93
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->mBackground:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
-    .line 96
+    .line 95
     :cond_0
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/fingerprint/FingerprintAnimationView;->setVisibility(I)V
+
+    .line 96
     return-void
 .end method
 

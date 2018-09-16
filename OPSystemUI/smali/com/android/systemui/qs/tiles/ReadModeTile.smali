@@ -144,7 +144,7 @@
     .line 113
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050c
+    const v1, 0x7f11050e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -265,7 +265,7 @@
     .line 83
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/ReadModeTile;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f11050c
+    const v1, 0x7f11050e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -290,13 +290,13 @@
     if-eqz v1, :cond_1
 
     .line 86
-    const v1, 0x7f11050e
+    const v1, 0x7f110510
 
     goto :goto_0
 
     .line 87
     :cond_1
-    const v1, 0x7f11050d
+    const v1, 0x7f11050f
 
     .line 85
     :goto_0

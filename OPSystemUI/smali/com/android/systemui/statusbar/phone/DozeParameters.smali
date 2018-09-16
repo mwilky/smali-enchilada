@@ -149,7 +149,7 @@
     .param p1, "propName"    # Ljava/lang/String;
     .param p2, "resId"    # I
 
-    .line 208
+    .line 210
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -195,7 +195,7 @@
     .param p1, "propName"    # Ljava/lang/String;
     .param p2, "resId"    # I
 
-    .line 212
+    .line 214
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -210,7 +210,7 @@
 
     move-result v0
 
-    .line 213
+    .line 215
     .local v0, "value":I
     const/4 v1, 0x0
 
@@ -228,7 +228,7 @@
     .param p1, "propName"    # Ljava/lang/String;
     .param p2, "resId"    # I
 
-    .line 217
+    .line 219
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -247,7 +247,7 @@
 .method public doubleTapReportsTouchCoordinates()Z
     .locals 2
 
-    .line 242
+    .line 244
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -273,35 +273,13 @@
 .end method
 
 .method public getDisplayNeedsBlanking()Z
-    .locals 2
+    .locals 1
 
-    .line 186
+    .line 187
     sget-boolean v0, Lcom/android/systemui/statusbar/phone/DozeParameters;->FORCE_NO_BLANKING:Z
 
-    if-nez v0, :cond_0
+    xor-int/lit8 v0, v0, 0x1
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x1120044
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
 .end method
 
@@ -343,7 +321,7 @@
     .locals 3
     .param p1, "subType"    # I
 
-    .line 221
+    .line 223
     const-string v0, "doze.pickup.proxcheck"
 
     const v1, 0x7f11024d
@@ -352,7 +330,7 @@
 
     move-result-object v0
 
-    .line 224
+    .line 226
     .local v0, "spec":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -360,7 +338,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 226
+    .line 228
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -375,7 +353,7 @@
 
     return v1
 
-    .line 229
+    .line 231
     :cond_0
     sget-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPickupSubtypePerformsProxMatcher:Lcom/android/systemui/statusbar/phone/DozeParameters$IntInOutMatcher;
 
@@ -385,14 +363,14 @@
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/phone/DozeParameters$IntInOutMatcher;->mSpec:Ljava/lang/String;
 
-    .line 230
+    .line 232
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 231
+    .line 233
     :cond_1
     new-instance v1, Lcom/android/systemui/statusbar/phone/DozeParameters$IntInOutMatcher;
 
@@ -400,7 +378,7 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPickupSubtypePerformsProxMatcher:Lcom/android/systemui/statusbar/phone/DozeParameters$IntInOutMatcher;
 
-    .line 234
+    .line 236
     :cond_2
     sget-object v1, Lcom/android/systemui/statusbar/phone/DozeParameters;->sPickupSubtypePerformsProxMatcher:Lcom/android/systemui/statusbar/phone/DozeParameters$IntInOutMatcher;
 
@@ -429,7 +407,7 @@
 .method public getPolicy()Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;
     .locals 1
 
-    .line 251
+    .line 253
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mAlwaysOnPolicy:Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;
 
     return-object v0
@@ -440,7 +418,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 204
+    .line 206
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mPowerManager:Landroid/os/PowerManager;
 
     return-object v0
@@ -494,7 +472,7 @@
 .method public getPulseVisibleDurationExtended()I
     .locals 2
 
-    .line 238
+    .line 240
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPulseVisibleDuration()I
 
     move-result v0
@@ -572,7 +550,7 @@
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "newValue"    # Ljava/lang/String;
 
-    .line 247
+    .line 249
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mAmbientDisplayConfiguration:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     const/4 v1, -0x2
@@ -583,7 +561,7 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mDozeAlwaysOn:Z
 
-    .line 248
+    .line 250
     return-void
 .end method
 
@@ -591,19 +569,19 @@
     .locals 2
     .param p1, "controlScreenOffAnimation"    # Z
 
-    .line 195
+    .line 197
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mControlScreenOffAnimation:Z
 
     if-ne v0, p1, :cond_0
 
-    .line 196
+    .line 198
     return-void
 
-    .line 198
+    .line 200
     :cond_0
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mControlScreenOffAnimation:Z
 
-    .line 199
+    .line 201
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/DozeParameters;->getPowerManager()Landroid/os/PowerManager;
 
     move-result-object v0
@@ -612,14 +590,14 @@
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager;->setDozeAfterScreenOff(Z)V
 
-    .line 200
+    .line 202
     return-void
 .end method
 
 .method public shouldControlScreenOff()Z
     .locals 1
 
-    .line 191
+    .line 193
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/DozeParameters;->mControlScreenOffAnimation:Z
 
     return v0

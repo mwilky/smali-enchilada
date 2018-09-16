@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
     .param p2, "x0"    # Landroid/content/Context;
 
-    .line 572
+    .line 582
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
     invoke-direct {p0, p2}, Landroid/view/Window;-><init>(Landroid/content/Context;)V
@@ -39,28 +39,28 @@
     .param p1, "view"    # Landroid/view/View;
     .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
-    .line 604
+    .line 614
     return-void
 .end method
 
 .method public alwaysReadCloseOnTouchAttr()V
     .locals 0
 
-    .line 588
+    .line 598
     return-void
 .end method
 
 .method public clearContentView()V
     .locals 0
 
-    .line 608
+    .line 618
     return-void
 .end method
 
 .method public closeAllPanels()V
     .locals 0
 
-    .line 656
+    .line 666
     return-void
 .end method
 
@@ -68,14 +68,14 @@
     .locals 0
     .param p1, "featureId"    # I
 
-    .line 634
+    .line 644
     return-void
 .end method
 
 .method public getCurrentFocus()Landroid/view/View;
     .locals 1
 
-    .line 612
+    .line 622
     const/4 v0, 0x0
 
     return-object v0
@@ -84,7 +84,7 @@
 .method public getDecorView()Landroid/view/View;
     .locals 1
 
-    .line 722
+    .line 732
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarWindowView$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
 
     return-object v0
@@ -93,7 +93,7 @@
 .method public getLayoutInflater()Landroid/view/LayoutInflater;
     .locals 1
 
-    .line 617
+    .line 627
     const/4 v0, 0x0
 
     return-object v0
@@ -102,7 +102,7 @@
 .method public getNavigationBarColor()I
     .locals 1
 
-    .line 776
+    .line 786
     const/4 v0, 0x0
 
     return v0
@@ -111,7 +111,7 @@
 .method public getStatusBarColor()I
     .locals 1
 
-    .line 767
+    .line 777
     const/4 v0, 0x0
 
     return v0
@@ -120,7 +120,7 @@
 .method public getVolumeControlStream()I
     .locals 1
 
-    .line 762
+    .line 772
     const/4 v0, 0x0
 
     return v0
@@ -130,14 +130,14 @@
     .locals 0
     .param p1, "featureId"    # I
 
-    .line 642
+    .line 652
     return-void
 .end method
 
 .method public isFloating()Z
     .locals 1
 
-    .line 583
+    .line 593
     const/4 v0, 0x0
 
     return v0
@@ -148,7 +148,7 @@
     .param p1, "keyCode"    # I
     .param p2, "event"    # Landroid/view/KeyEvent;
 
-    .line 753
+    .line 763
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +157,7 @@
 .method protected onActive()V
     .locals 0
 
-    .line 741
+    .line 751
     return-void
 .end method
 
@@ -165,14 +165,14 @@
     .locals 0
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
-    .line 665
+    .line 675
     return-void
 .end method
 
 .method public onMultiWindowModeChanged()V
     .locals 0
 
-    .line 793
+    .line 803
     return-void
 .end method
 
@@ -180,7 +180,7 @@
     .locals 0
     .param p1, "isInPictureInPictureMode"    # Z
 
-    .line 797
+    .line 807
     return-void
 .end method
 
@@ -189,14 +189,14 @@
     .param p1, "featureId"    # I
     .param p2, "event"    # Landroid/view/KeyEvent;
 
-    .line 630
+    .line 640
     return-void
 .end method
 
 .method public peekDecorView()Landroid/view/View;
     .locals 1
 
-    .line 727
+    .line 737
     const/4 v0, 0x0
 
     return-object v0
@@ -207,7 +207,7 @@
     .param p1, "id"    # I
     .param p2, "flags"    # I
 
-    .line 660
+    .line 670
     const/4 v0, 0x0
 
     return v0
@@ -219,7 +219,7 @@
     .param p2, "id"    # I
     .param p3, "flags"    # I
 
-    .line 651
+    .line 661
     const/4 v0, 0x0
 
     return v0
@@ -232,7 +232,7 @@
     .param p3, "event"    # Landroid/view/KeyEvent;
     .param p4, "flags"    # I
 
-    .line 646
+    .line 656
     const/4 v0, 0x0
 
     return v0
@@ -241,7 +241,7 @@
 .method public reportActivityRelaunched()V
     .locals 0
 
-    .line 801
+    .line 811
     return-void
 .end method
 
@@ -249,14 +249,14 @@
     .locals 0
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 737
+    .line 747
     return-void
 .end method
 
 .method public saveHierarchyState()Landroid/os/Bundle;
     .locals 1
 
-    .line 732
+    .line 742
     const/4 v0, 0x0
 
     return-object v0
@@ -266,7 +266,7 @@
     .locals 0
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 669
+    .line 679
     return-void
 .end method
 
@@ -275,7 +275,7 @@
     .param p1, "featureId"    # I
     .param p2, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 745
+    .line 755
     return-void
 .end method
 
@@ -284,7 +284,7 @@
     .param p1, "featureId"    # I
     .param p2, "value"    # I
 
-    .line 749
+    .line 759
     return-void
 .end method
 
@@ -292,7 +292,7 @@
     .locals 0
     .param p1, "layoutResID"    # I
 
-    .line 592
+    .line 602
     return-void
 .end method
 
@@ -300,7 +300,7 @@
     .locals 0
     .param p1, "view"    # Landroid/view/View;
 
-    .line 596
+    .line 606
     return-void
 .end method
 
@@ -309,7 +309,7 @@
     .param p1, "view"    # Landroid/view/View;
     .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
-    .line 600
+    .line 610
     return-void
 .end method
 
@@ -317,7 +317,7 @@
     .locals 0
     .param p1, "decorCaptionShade"    # I
 
-    .line 785
+    .line 795
     return-void
 .end method
 
@@ -326,7 +326,7 @@
     .param p1, "featureId"    # I
     .param p2, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 681
+    .line 691
     return-void
 .end method
 
@@ -335,7 +335,7 @@
     .param p1, "featureId"    # I
     .param p2, "alpha"    # I
 
-    .line 685
+    .line 695
     return-void
 .end method
 
@@ -344,7 +344,7 @@
     .param p1, "featureId"    # I
     .param p2, "resId"    # I
 
-    .line 673
+    .line 683
     return-void
 .end method
 
@@ -353,7 +353,7 @@
     .param p1, "featureId"    # I
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 677
+    .line 687
     return-void
 .end method
 
@@ -362,7 +362,7 @@
     .param p1, "featureId"    # I
     .param p2, "value"    # I
 
-    .line 689
+    .line 699
     return-void
 .end method
 
@@ -370,7 +370,7 @@
     .locals 0
     .param p1, "color"    # I
 
-    .line 781
+    .line 791
     return-void
 .end method
 
@@ -378,7 +378,7 @@
     .locals 0
     .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 789
+    .line 799
     return-void
 .end method
 
@@ -386,7 +386,7 @@
     .locals 0
     .param p1, "color"    # I
 
-    .line 772
+    .line 782
     return-void
 .end method
 
@@ -394,7 +394,7 @@
     .locals 0
     .param p1, "title"    # Ljava/lang/CharSequence;
 
-    .line 622
+    .line 632
     return-void
 .end method
 
@@ -402,7 +402,7 @@
     .locals 0
     .param p1, "textColor"    # I
 
-    .line 626
+    .line 636
     return-void
 .end method
 
@@ -410,7 +410,7 @@
     .locals 0
     .param p1, "streamType"    # I
 
-    .line 758
+    .line 768
     return-void
 .end method
 
@@ -418,7 +418,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 717
+    .line 727
     const/4 v0, 0x0
 
     return v0
@@ -428,7 +428,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 697
+    .line 707
     const/4 v0, 0x0
 
     return v0
@@ -438,7 +438,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 702
+    .line 712
     const/4 v0, 0x0
 
     return v0
@@ -448,7 +448,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 707
+    .line 717
     const/4 v0, 0x0
 
     return v0
@@ -458,7 +458,7 @@
     .locals 1
     .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 712
+    .line 722
     const/4 v0, 0x0
 
     return v0
@@ -468,7 +468,7 @@
     .locals 0
     .param p1, "callback"    # Landroid/view/InputQueue$Callback;
 
-    .line 579
+    .line 589
     return-void
 .end method
 
@@ -476,7 +476,7 @@
     .locals 0
     .param p1, "get"    # Z
 
-    .line 693
+    .line 703
     return-void
 .end method
 
@@ -484,7 +484,7 @@
     .locals 0
     .param p1, "callback"    # Landroid/view/SurfaceHolder$Callback2;
 
-    .line 575
+    .line 585
     return-void
 .end method
 
@@ -493,6 +493,6 @@
     .param p1, "featureId"    # I
     .param p2, "event"    # Landroid/view/KeyEvent;
 
-    .line 638
+    .line 648
     return-void
 .end method

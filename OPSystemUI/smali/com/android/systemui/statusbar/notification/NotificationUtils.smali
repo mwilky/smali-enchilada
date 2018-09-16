@@ -237,7 +237,7 @@
     .param p1, "colorUtil"    # Lcom/android/internal/util/NotificationColorUtil;
 
     .line 37
-    const v0, 0x7f0a019a
+    const v0, 0x7f0a019b
 
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->getTag(I)Ljava/lang/Object;
 

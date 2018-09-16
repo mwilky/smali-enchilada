@@ -1268,6 +1268,8 @@ You're also connected to a VPN, which can monitor your network activity."</strin
     <string name="qs_rearrange">Rearrange Quick Settings</string>
     <string name="qs_status_phone_muted">Phone muted</string>
     <string name="qs_status_phone_vibrate">Phone on vibrate</string>
+    <string name="quick_launch_exit">Exit</string>
+    <string name="quick_launch_exit_hint">Finger off the screen to exit</string>
     <string name="quick_settings">Quick Settings</string>
     <string name="quick_settings_bluetooth_detail_empty_text">No paired devices available</string>
     <string name="quick_settings_bluetooth_label">Bluetooth</string>
@@ -1860,5 +1862,5 @@ Credential storage might not enable"</string>
     <item type="string" name="APKTOOL_DUMMY_33a">false</item>
     <item type="string" name="APKTOOL_DUMMY_359">false</item>
     <item type="string" name="APKTOOL_DUMMY_3ab">false</item>
-    <item type="string" name="APKTOOL_DUMMY_5bf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_5c1">false</item>
 </resources>

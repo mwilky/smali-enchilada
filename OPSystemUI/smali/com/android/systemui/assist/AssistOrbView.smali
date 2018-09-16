@@ -986,7 +986,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 140
-    const v0, 0x7f0a0390
+    const v0, 0x7f0a0391
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/assist/AssistOrbView;->findViewById(I)Landroid/view/View;
 

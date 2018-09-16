@@ -662,7 +662,7 @@
     iput-object v0, p0, Lcom/android/keyguard/KeyguardAbsKeyInputView;->mSecurityMessageDisplay:Lcom/android/keyguard/SecurityMessageDisplay;
 
     .line 119
-    const v0, 0x7f0a01da
+    const v0, 0x7f0a01db
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 

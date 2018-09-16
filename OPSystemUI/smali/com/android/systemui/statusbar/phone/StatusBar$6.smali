@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 1825
+    .line 1815
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$6;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,18 +40,18 @@
     .locals 2
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 1829
+    .line 1819
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$6;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$700(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/widget/ImageButton;
+    invoke-static {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->access$700(Lcom/android/systemui/statusbar/phone/StatusBar;)Landroid/view/View;
 
     move-result-object v0
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1830
+    .line 1820
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 0
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 1832
+    .line 1822
     return-void
 .end method
 
@@ -67,6 +67,6 @@
     .locals 0
     .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 1826
+    .line 1816
     return-void
 .end method

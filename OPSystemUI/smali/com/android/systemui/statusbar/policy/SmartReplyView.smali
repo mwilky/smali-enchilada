@@ -130,7 +130,7 @@
     .line 106
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0705e5
+    const v1, 0x7f0705e9
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->getFontScaledHeight(Landroid/content/Context;I)I
 

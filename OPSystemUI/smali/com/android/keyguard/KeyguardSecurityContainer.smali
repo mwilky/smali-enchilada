@@ -407,19 +407,19 @@
 
     .line 592
     :pswitch_1
-    const v0, 0x7f0a01dd
+    const v0, 0x7f0a01de
 
     return v0
 
     .line 591
     :pswitch_2
-    const v0, 0x7f0a01dc
+    const v0, 0x7f0a01dd
 
     return v0
 
     .line 590
     :pswitch_3
-    const v0, 0x7f0a01d4
+    const v0, 0x7f0a01d5
 
     return v0
 
@@ -434,19 +434,19 @@
     if-eqz v0, :cond_0
 
     .line 584
-    const v0, 0x7f0a01d7
+    const v0, 0x7f0a01d8
 
     return v0
 
     .line 586
     :cond_0
-    const v0, 0x7f0a01d6
+    const v0, 0x7f0a01d7
 
     return v0
 
     .line 580
     :pswitch_5
-    const v0, 0x7f0a01d5
+    const v0, 0x7f0a01d6
 
     return v0
 
@@ -1708,7 +1708,7 @@
     .locals 2
 
     .line 198
-    const v0, 0x7f0a0455
+    const v0, 0x7f0a0456
 
     invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardSecurityContainer;->findViewById(I)Landroid/view/View;
 
@@ -2275,7 +2275,7 @@
     .line 719
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSecurityContainer;->mSecurityIcon:Landroid/view/View;
 
-    const v1, 0x7f0a0398
+    const v1, 0x7f0a0399
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

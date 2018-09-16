@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 379
+    .line 401
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 3
 
-    .line 384
+    .line 406
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$400(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Z
@@ -48,10 +48,10 @@
 
     if-nez v0, :cond_0
 
-    .line 385
+    .line 407
     return-void
 
-    .line 388
+    .line 410
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->setPressDimWindow(Z)V
 
-    .line 389
+    .line 411
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$500(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/view/WindowManager;
@@ -70,11 +70,11 @@
 
     invoke-interface {v0, v2}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 390
+    .line 412
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$3;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$402(Lcom/android/systemui/fingerprint/FingerprintDialogView;Z)Z
 
-    .line 391
+    .line 413
     return-void
 .end method

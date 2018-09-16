@@ -641,7 +641,7 @@
 
     .line 149
     .local v9, "offscreenYOffset":I
-    const v10, 0x7f0705ad
+    const v10, 0x7f0705b1
 
     invoke-virtual {v3, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -649,7 +649,7 @@
 
     .line 151
     .local v10, "taskViewAffiliateGroupEnterOffset":I
-    const v11, 0x7f0705ae
+    const v11, 0x7f0705b2
 
     invoke-virtual {v3, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2062,7 +2062,7 @@
 
     .line 395
     .local v1, "taskViewExitToAppDuration":I
-    const v2, 0x7f0705ad
+    const v2, 0x7f0705b1
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

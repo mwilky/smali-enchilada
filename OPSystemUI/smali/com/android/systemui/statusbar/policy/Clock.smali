@@ -1330,7 +1330,7 @@
     .locals 2
 
     .line 284
-    const v0, 0x7f070600
+    const v0, 0x7f070604
 
     invoke-static {p0, v0}, Lcom/android/systemui/FontSizeUtils;->updateFontSize(Landroid/widget/TextView;I)V
 
@@ -1342,7 +1342,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705ff
+    const v1, 0x7f070603
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

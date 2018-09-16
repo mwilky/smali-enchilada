@@ -23,13 +23,13 @@
     .locals 0
     .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 230
+    .line 235
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    .line 231
+    .line 236
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 232
+    .line 237
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .locals 3
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 236
+    .line 241
     invoke-static {}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$100()Z
 
     move-result v0
@@ -90,7 +90,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 243
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -98,7 +98,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 305
+    .line 310
     :pswitch_0
     const-string v0, "OPFacelockController"
 
@@ -108,16 +108,16 @@
 
     goto/16 :goto_2
 
-    .line 301
+    .line 306
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1300(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 302
+    .line 307
     goto/16 :goto_2
 
-    .line 293
+    .line 298
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -129,28 +129,28 @@
 
     return-void
 
-    .line 295
+    .line 300
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 296
+    .line 301
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     const/16 v2, 0x9
 
     invoke-static {v0, v2, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$500(Lcom/android/systemui/statusbar/phone/OPFacelockController;II)V
 
-    .line 297
+    .line 302
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 298
+    .line 303
     goto/16 :goto_2
 
-    .line 285
+    .line 290
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -162,37 +162,37 @@
 
     return-void
 
-    .line 287
+    .line 292
     :cond_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 288
+    .line 293
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     const/16 v2, 0x8
 
     invoke-static {v0, v2, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$500(Lcom/android/systemui/statusbar/phone/OPFacelockController;II)V
 
-    .line 289
+    .line 294
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 290
+    .line 295
     goto/16 :goto_2
 
-    .line 280
+    .line 285
     :pswitch_4
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1200(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 281
+    .line 286
     goto/16 :goto_2
 
-    .line 274
+    .line 279
     :pswitch_5
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -212,30 +212,30 @@
 
     goto :goto_0
 
-    .line 275
+    .line 280
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1100(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 276
+    .line 281
     goto/16 :goto_2
 
-    .line 274
+    .line 279
     :cond_4
     :goto_0
     return-void
 
-    .line 270
+    .line 275
     :pswitch_6
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1000(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 271
+    .line 276
     goto :goto_2
 
-    .line 262
+    .line 267
     :pswitch_7
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -247,28 +247,28 @@
 
     return-void
 
-    .line 264
+    .line 269
     :cond_5
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$900(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 265
+    .line 270
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     const/4 v2, 0x6
 
     invoke-static {v0, v2, v1}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$500(Lcom/android/systemui/statusbar/phone/OPFacelockController;II)V
 
-    .line 266
+    .line 271
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 267
+    .line 272
     goto :goto_2
 
-    .line 257
+    .line 262
     :pswitch_8
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -280,16 +280,16 @@
 
     return-void
 
-    .line 258
+    .line 263
     :cond_6
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$800(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 259
+    .line 264
     goto :goto_2
 
-    .line 251
+    .line 256
     :pswitch_9
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -309,21 +309,21 @@
 
     goto :goto_1
 
-    .line 253
+    .line 258
     :cond_7
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$700(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 254
+    .line 259
     goto :goto_2
 
-    .line 251
+    .line 256
     :cond_8
     :goto_1
     return-void
 
-    .line 245
+    .line 250
     :pswitch_a
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -335,7 +335,7 @@
 
     return-void
 
-    .line 246
+    .line 251
     :cond_9
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -345,15 +345,15 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$500(Lcom/android/systemui/statusbar/phone/OPFacelockController;II)V
 
-    .line 247
+    .line 252
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 248
+    .line 253
     goto :goto_2
 
-    .line 240
+    .line 245
     :pswitch_b
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
@@ -365,16 +365,16 @@
 
     return-void
 
-    .line 241
+    .line 246
     :cond_a
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$FacelockHandler;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$400(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
 
-    .line 242
+    .line 247
     nop
 
-    .line 308
+    .line 313
     :goto_2
     invoke-static {}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$100()Z
 
@@ -388,7 +388,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 309
+    .line 314
     :cond_b
     return-void
 

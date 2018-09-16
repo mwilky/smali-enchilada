@@ -323,7 +323,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mIconAppearTopPadding:I
 
     .line 118
-    const v1, 0x7f070608
+    const v1, 0x7f07060c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -332,7 +332,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mStatusBarHeight:I
 
     .line 119
-    const v1, 0x7f070613
+    const v1, 0x7f070617
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -350,7 +350,7 @@
     iput v1, p0, Lcom/android/systemui/statusbar/NotificationShelf;->mPaddingBetweenElements:I
 
     .line 121
-    const v1, 0x7f0705dd
+    const v1, 0x7f0705e1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -377,7 +377,7 @@
     invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/NotificationShelf;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 127
-    const v2, 0x7f0705de
+    const v2, 0x7f0705e2
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
@@ -392,7 +392,7 @@
     invoke-virtual {v3, v2, v4, v2, v4}, Lcom/android/systemui/statusbar/phone/NotificationIconContainer;->setPadding(IIII)V
 
     .line 129
-    const v3, 0x7f0705cf
+    const v3, 0x7f0705d3
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 

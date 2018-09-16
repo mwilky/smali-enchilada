@@ -3441,7 +3441,7 @@
     .line 414
     .local v4, "showingSun":Z
     :goto_3
-    const v11, 0x7f07061b
+    const v11, 0x7f07061f
 
     if-eqz v4, :cond_7
 
@@ -4314,7 +4314,7 @@
     .line 576
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v4, 0x7f0a02fc
+    const v4, 0x7f0a02fd
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4325,7 +4325,7 @@
     .line 577
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02fd
+    const v3, 0x7f0a02fe
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4336,7 +4336,7 @@
     .line 578
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fb
+    const v2, 0x7f0a02fc
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4398,7 +4398,7 @@
     .line 523
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fb
+    const v2, 0x7f0a02fc
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4409,7 +4409,7 @@
     .line 525
     iget-object v0, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v2, 0x7f0a02fc
+    const v2, 0x7f0a02fd
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4419,7 +4419,7 @@
     .local v0, "playImage":Landroid/view/View;
     iget-object v2, p0, Lcom/android/systemui/egg/MLand;->mSplash:Landroid/view/View;
 
-    const v3, 0x7f0a02fd
+    const v3, 0x7f0a02fe
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
