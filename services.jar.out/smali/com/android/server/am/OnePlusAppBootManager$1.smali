@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/OnePlusAppBootManager;
 
-    .line 2089
+    .line 2094
     iput-object p1, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,21 +38,21 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 2091
+    .line 2096
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
     if-nez v0, :cond_0
 
-    .line 2092
+    .line 2097
     return-void
 
-    .line 2095
+    .line 2100
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2096
+    .line 2101
     .local v0, "action":Ljava/lang/String;
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
@@ -74,7 +74,7 @@
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    .line 2098
+    .line 2103
     :cond_1
     const-string v1, "com.haha.action.test"
 
@@ -88,16 +88,16 @@
 
     const/4 v5, 0x1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_10
 
-    .line 2099
+    .line 2104
     const-string v1, "code"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2100
+    .line 2105
     .local v1, "code":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -115,7 +115,7 @@
 
     invoke-static {v6}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    .line 2101
+    .line 2106
     const-string/jumbo v6, "persist"
 
     invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -124,14 +124,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 2102
+    .line 2107
     iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v4, v2, v3}, Lcom/android/server/am/OnePlusAppBootManager;->access$300(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
     goto/16 :goto_1
 
-    .line 2103
+    .line 2108
     :cond_2
     const-string/jumbo v2, "prop_using_on"
 
@@ -141,10 +141,10 @@
 
     if-eqz v2, :cond_3
 
-    .line 2104
+    .line 2109
     sput-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
-    .line 2105
+    .line 2110
     const-string/jumbo v2, "persist.sys.appboot.using"
 
     const-string/jumbo v3, "true"
@@ -153,7 +153,7 @@
 
     goto/16 :goto_1
 
-    .line 2106
+    .line 2111
     :cond_3
     const-string/jumbo v2, "prop_using_off"
 
@@ -163,10 +163,10 @@
 
     if-eqz v2, :cond_4
 
-    .line 2107
+    .line 2112
     sput-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->IN_USING:Z
 
-    .line 2108
+    .line 2113
     const-string/jumbo v2, "persist.sys.appboot.using"
 
     const-string v3, "false"
@@ -175,7 +175,7 @@
 
     goto/16 :goto_1
 
-    .line 2109
+    .line 2114
     :cond_4
     const-string/jumbo v2, "prop_debug_on"
 
@@ -185,10 +185,10 @@
 
     if-eqz v2, :cond_5
 
-    .line 2110
+    .line 2115
     sput-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    .line 2111
+    .line 2116
     const-string/jumbo v2, "persist.sys.appboot.debug"
 
     const-string/jumbo v3, "true"
@@ -197,7 +197,7 @@
 
     goto/16 :goto_1
 
-    .line 2112
+    .line 2117
     :cond_5
     const-string/jumbo v2, "prop_debug_off"
 
@@ -207,10 +207,10 @@
 
     if-eqz v2, :cond_6
 
-    .line 2113
+    .line 2118
     sput-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
-    .line 2114
+    .line 2119
     const-string/jumbo v2, "persist.sys.appboot.debug"
 
     const-string v3, "false"
@@ -219,7 +219,7 @@
 
     goto/16 :goto_1
 
-    .line 2115
+    .line 2120
     :cond_6
     const-string/jumbo v2, "prop_blacklist_on"
 
@@ -229,10 +229,10 @@
 
     if-eqz v2, :cond_7
 
-    .line 2116
+    .line 2121
     sput-boolean v5, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    .line 2117
+    .line 2122
     const-string/jumbo v2, "persist.sys.appboot.blacklist"
 
     const-string/jumbo v3, "true"
@@ -241,7 +241,7 @@
 
     goto/16 :goto_1
 
-    .line 2118
+    .line 2123
     :cond_7
     const-string/jumbo v2, "prop_blacklist_off"
 
@@ -251,10 +251,10 @@
 
     if-eqz v2, :cond_8
 
-    .line 2119
+    .line 2124
     sput-boolean v4, Lcom/android/server/am/OnePlusAppBootManager;->BLACKLIST_ENABLE:Z
 
-    .line 2120
+    .line 2125
     const-string/jumbo v2, "persist.sys.appboot.blacklist"
 
     const-string v3, "false"
@@ -263,7 +263,7 @@
 
     goto/16 :goto_1
 
-    .line 2121
+    .line 2126
     :cond_8
     const-string v2, "dump"
 
@@ -273,19 +273,19 @@
 
     if-eqz v2, :cond_9
 
-    .line 2122
+    .line 2127
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$400(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    .line 2123
+    .line 2128
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$500(Lcom/android/server/am/OnePlusAppBootManager;)V
 
     goto/16 :goto_1
 
-    .line 2124
+    .line 2129
     :cond_9
     const-string v2, "dumplist"
 
@@ -295,14 +295,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 2125
+    .line 2130
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$600(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 2126
+    .line 2131
     :cond_a
     const-string v2, "dump_widget"
 
@@ -312,7 +312,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 2127
+    .line 2132
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$700(Lcom/android/server/am/OnePlusAppBootManager;)Ljava/util/HashSet;
@@ -321,7 +321,7 @@
 
     monitor-enter v2
 
-    .line 2128
+    .line 2133
     :try_start_0
     iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -346,7 +346,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 2129
+    .line 2134
     .local v4, "pkg":Ljava/lang/String;
     const-string v5, "OnePlusAppBootManager"
 
@@ -366,11 +366,11 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2130
+    .line 2135
     .end local v4    # "pkg":Ljava/lang/String;
     goto :goto_0
 
-    .line 2131
+    .line 2136
     :cond_b
     monitor-exit v2
 
@@ -385,7 +385,7 @@
 
     throw v3
 
-    .line 2132
+    .line 2137
     :cond_c
     const-string v2, "@"
 
@@ -393,9 +393,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_f
 
-    .line 2133
+    .line 2138
     const-string v2, "@huge@dump"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -404,14 +404,14 @@
 
     if-eqz v2, :cond_d
 
-    .line 2134
+    .line 2139
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$800(Lcom/android/server/am/OnePlusAppBootManager;)V
 
     goto :goto_1
 
-    .line 2135
+    .line 2140
     :cond_d
     const-string v2, "@huge@add@"
 
@@ -421,7 +421,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 2136
+    .line 2141
     const-string v2, "@huge@add@"
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -432,7 +432,7 @@
 
     move-result-object v2
 
-    .line 2137
+    .line 2142
     .local v2, "pkg":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -441,13 +441,45 @@
     invoke-static {v3, v2, v5, v4}, Lcom/android/server/am/OnePlusAppBootManager;->access$900(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;ZI)V
 
     .line 2143
+    .end local v2    # "pkg":Ljava/lang/String;
+    goto :goto_1
+
+    :cond_e
+    const-string v2, "@huge@start@"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f
+
+    .line 2144
+    const-string v2, "@huge@start@"
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 2145
+    .restart local v2    # "pkg":Ljava/lang/String;
+    iget-object v3, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
+
+    const/4 v5, 0x4
+
+    invoke-static {v3, v2, v4, v5}, Lcom/android/server/am/OnePlusAppBootManager;->access$900(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;ZI)V
+
+    .line 2148
     .end local v1    # "code":Ljava/lang/String;
     .end local v2    # "pkg":Ljava/lang/String;
-    :cond_e
+    :cond_f
     :goto_1
     goto :goto_2
 
-    :cond_f
+    :cond_10
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -456,12 +488,12 @@
 
     const/16 v6, 0x1f
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_12
 
-    .line 2144
+    .line 2149
     invoke-static {v4}, Lcom/android/server/am/OnePlusAppBootManager;->access$1002(Z)Z
 
-    .line 2146
+    .line 2151
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     iget-object v1, v1, Lcom/android/server/am/OnePlusAppBootManager;->mAppbootHandler:Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;
@@ -470,23 +502,23 @@
 
     move-result-object v1
 
-    .line 2147
+    .line 2152
     .local v1, "msg":Landroid/os/Message;
     iput v4, v1, Landroid/os/Message;->arg1:I
 
-    .line 2148
+    .line 2153
     iget-object v6, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     iget-object v6, v6, Lcom/android/server/am/OnePlusAppBootManager;->mAppbootHandler:Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;
 
     invoke-virtual {v6, v1}, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
-    .line 2151
+    .line 2156
     invoke-static {}, Lcom/android/server/am/OnePlusAppBootManager;->access$1100()Z
 
     move-result v6
 
-    if-eqz v6, :cond_10
+    if-eqz v6, :cond_11
 
     new-array v5, v5, [I
 
@@ -494,14 +526,14 @@
 
     aput v6, v5, v4
 
-    .line 2152
+    .line 2157
     invoke-static {v5}, Landroid/util/OpFeatures;->isSupport([I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_11
 
-    .line 2153
+    .line 2158
     iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     iget-object v4, v4, Lcom/android/server/am/OnePlusAppBootManager;->mAppbootHandler:Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;
@@ -510,29 +542,29 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->sendEmptyMessage(I)Z
 
-    .line 2156
-    :cond_10
+    .line 2161
+    :cond_11
     iget-object v4, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v4, v2, v3}, Lcom/android/server/am/OnePlusAppBootManager;->access$300(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
-    .line 2157
+    .line 2162
     .end local v1    # "msg":Landroid/os/Message;
     goto :goto_2
 
-    :cond_11
+    :cond_12
     const-string v1, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_13
 
-    .line 2158
+    .line 2163
     invoke-static {v5}, Lcom/android/server/am/OnePlusAppBootManager;->access$1002(Z)Z
 
-    .line 2160
+    .line 2165
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     iget-object v1, v1, Lcom/android/server/am/OnePlusAppBootManager;->mAppbootHandler:Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;
@@ -541,37 +573,37 @@
 
     move-result-object v1
 
-    .line 2161
+    .line 2166
     .restart local v1    # "msg":Landroid/os/Message;
     iput v5, v1, Landroid/os/Message;->arg1:I
 
-    .line 2162
+    .line 2167
     iget-object v2, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     iget-object v2, v2, Lcom/android/server/am/OnePlusAppBootManager;->mAppbootHandler:Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
 
-    .line 2163
+    .line 2168
     .end local v1    # "msg":Landroid/os/Message;
     goto :goto_2
 
-    :cond_12
+    :cond_13
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_14
 
-    .line 2164
+    .line 2169
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$1;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1200(Lcom/android/server/am/OnePlusAppBootManager;)Z
 
-    .line 2166
-    :cond_13
+    .line 2171
+    :cond_14
     :goto_2
     return-void
 .end method

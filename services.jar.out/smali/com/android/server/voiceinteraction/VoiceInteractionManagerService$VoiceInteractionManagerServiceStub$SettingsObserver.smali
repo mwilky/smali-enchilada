@@ -24,13 +24,13 @@
     .param p1, "this$1"    # Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 1189
+    .line 1195
     iput-object p1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
-    .line 1190
+    .line 1196
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1191
+    .line 1197
     iget-object v0, p1, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     iget-object v0, v0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->mContext:Landroid/content/Context;
@@ -39,7 +39,7 @@
 
     move-result-object v0
 
-    .line 1192
+    .line 1198
     .local v0, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v1, "voice_interaction_service"
 
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0, v1, v2, p0, v3}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1195
+    .line 1201
     return-void
 .end method
 
@@ -63,12 +63,12 @@
     .locals 3
     .param p1, "selfChange"    # Z
 
-    .line 1198
+    .line 1204
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
     monitor-enter v0
 
-    .line 1199
+    .line 1205
     :try_start_0
     iget-object v1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$SettingsObserver;->this$1:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
 
@@ -76,13 +76,13 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->switchImplementationIfNeededLocked(Z)V
 
-    .line 1200
+    .line 1206
     monitor-exit v0
 
-    .line 1201
+    .line 1207
     return-void
 
-    .line 1200
+    .line 1206
     :catchall_0
     move-exception v1
 

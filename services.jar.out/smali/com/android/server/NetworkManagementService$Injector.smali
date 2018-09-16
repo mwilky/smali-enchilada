@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/NetworkManagementService;
 
-    .line 2809
+    .line 2803
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method reset()V
     .locals 7
 
-    .line 2835
+    .line 2829
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0}, Lcom/android/server/NetworkManagementService;->access$2000(Lcom/android/server/NetworkManagementService;)Ljava/lang/Object;
@@ -48,20 +48,20 @@
 
     monitor-enter v0
 
-    .line 2836
+    .line 2830
     const/4 v1, 0x0
 
     :try_start_0
     invoke-virtual {p0, v1}, Lcom/android/server/NetworkManagementService$Injector;->setDataSaverMode(Z)V
 
-    .line 2837
+    .line 2831
     const/4 v2, 0x3
 
     new-array v2, v2, [I
 
     fill-array-data v2, :array_0
 
-    .line 2842
+    .line 2836
     .local v2, "chains":[I
     array-length v3, v2
 
@@ -72,11 +72,11 @@
 
     aget v5, v2, v4
 
-    .line 2843
+    .line 2837
     .local v5, "chain":I
     invoke-virtual {p0, v5, v1}, Lcom/android/server/NetworkManagementService$Injector;->setFirewallChainState(IZ)V
 
-    .line 2844
+    .line 2838
     iget-object v6, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v6, v5}, Lcom/android/server/NetworkManagementService;->access$2100(Lcom/android/server/NetworkManagementService;I)Landroid/util/SparseIntArray;
@@ -85,13 +85,13 @@
 
     invoke-virtual {v6}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 2842
+    .line 2836
     .end local v5    # "chain":I
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 2846
+    .line 2840
     :cond_0
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
@@ -101,7 +101,7 @@
 
     invoke-virtual {v1}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 2847
+    .line 2841
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v1}, Lcom/android/server/NetworkManagementService;->access$2200(Lcom/android/server/NetworkManagementService;)Landroid/util/SparseBooleanArray;
@@ -110,14 +110,14 @@
 
     invoke-virtual {v1}, Landroid/util/SparseBooleanArray;->clear()V
 
-    .line 2848
+    .line 2842
     .end local v2    # "chains":[I
     monitor-exit v0
 
-    .line 2849
+    .line 2843
     return-void
 
-    .line 2848
+    .line 2842
     :catchall_0
     move-exception v1
 
@@ -141,12 +141,12 @@
     .locals 1
     .param p1, "dataSaverMode"    # Z
 
-    .line 2811
+    .line 2805
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0, p1}, Lcom/android/server/NetworkManagementService;->access$1802(Lcom/android/server/NetworkManagementService;Z)Z
 
-    .line 2812
+    .line 2806
     return-void
 .end method
 
@@ -155,12 +155,12 @@
     .param p1, "chain"    # I
     .param p2, "state"    # Z
 
-    .line 2815
+    .line 2809
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/NetworkManagementService;->access$1900(Lcom/android/server/NetworkManagementService;IZ)V
 
-    .line 2816
+    .line 2810
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .param p2, "uid"    # I
     .param p3, "rule"    # I
 
-    .line 2819
+    .line 2813
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0}, Lcom/android/server/NetworkManagementService;->access$2000(Lcom/android/server/NetworkManagementService;)Ljava/lang/Object;
@@ -179,7 +179,7 @@
 
     monitor-enter v0
 
-    .line 2820
+    .line 2814
     :try_start_0
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
@@ -189,13 +189,13 @@
 
     invoke-virtual {v1, p2, p3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 2821
+    .line 2815
     monitor-exit v0
 
-    .line 2822
+    .line 2816
     return-void
 
-    .line 2821
+    .line 2815
     :catchall_0
     move-exception v1
 
@@ -212,7 +212,7 @@
     .param p2, "uid"    # I
     .param p3, "enable"    # Z
 
-    .line 2825
+    .line 2819
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0}, Lcom/android/server/NetworkManagementService;->access$2000(Lcom/android/server/NetworkManagementService;)Ljava/lang/Object;
@@ -221,10 +221,10 @@
 
     monitor-enter v0
 
-    .line 2826
+    .line 2820
     if-eqz p1, :cond_0
 
-    .line 2827
+    .line 2821
     :try_start_0
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
@@ -236,13 +236,13 @@
 
     goto :goto_0
 
-    .line 2831
+    .line 2825
     :catchall_0
     move-exception v1
 
     goto :goto_1
 
-    .line 2829
+    .line 2823
     :cond_0
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$Injector;->this$0:Lcom/android/server/NetworkManagementService;
 
@@ -252,14 +252,14 @@
 
     invoke-virtual {v1, p2, p3}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 2831
+    .line 2825
     :goto_0
     monitor-exit v0
 
-    .line 2832
+    .line 2826
     return-void
 
-    .line 2831
+    .line 2825
     :goto_1
     monitor-exit v0
     :try_end_0

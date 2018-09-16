@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 3306
+    .line 3327
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$19;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,21 +38,21 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 3309
+    .line 3330
     const-string v0, "NetworkPolicy"
 
     const-string/jumbo v1, "setDeviceIdleMode PolicyHandler "
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3310
+    .line 3331
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$19;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 3311
+    .line 3332
     :try_start_0
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800()Z
 
@@ -73,31 +73,31 @@
 
     if-eqz v1, :cond_1
 
-    .line 3312
+    .line 3333
     const-string v1, "NetworkPolicy"
 
     const-string v2, "Update mAllowFGNetworkAccess to false"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3313
+    .line 3334
     const/4 v1, 0x0
 
     sput-boolean v1, Lcom/android/server/net/NetworkPolicyManagerService;->mAllowFGNetworkAccess:Z
 
-    .line 3314
+    .line 3335
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$19;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 3316
+    .line 3337
     :cond_1
     monitor-exit v0
 
-    .line 3317
+    .line 3338
     return-void
 
-    .line 3316
+    .line 3337
     :catchall_0
     move-exception v1
 

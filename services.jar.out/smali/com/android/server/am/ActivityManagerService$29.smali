@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 20450
+    .line 20464
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .param p1, "lhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
     .param p2, "rhs"    # Lcom/android/server/am/ActivityManagerService$MemItem;
 
-    .line 20453
+    .line 20467
     iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
     iget-wide v2, p2, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
@@ -52,12 +52,12 @@
 
     if-gez v0, :cond_0
 
-    .line 20454
+    .line 20468
     const/4 v0, 0x1
 
     return v0
 
-    .line 20455
+    .line 20469
     :cond_0
     iget-wide v0, p1, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
@@ -67,12 +67,12 @@
 
     if-lez v0, :cond_1
 
-    .line 20456
+    .line 20470
     const/4 v0, -0x1
 
     return v0
 
-    .line 20458
+    .line 20472
     :cond_1
     const/4 v0, 0x0
 
@@ -82,7 +82,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 20450
+    .line 20464
     check-cast p1, Lcom/android/server/am/ActivityManagerService$MemItem;
 
     check-cast p2, Lcom/android/server/am/ActivityManagerService$MemItem;

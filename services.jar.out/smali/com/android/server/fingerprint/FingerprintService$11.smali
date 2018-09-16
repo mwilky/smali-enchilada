@@ -33,7 +33,7 @@
     .param p11, "owner"    # Ljava/lang/String;
     .param p12, "statusBarService"    # Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 1158
+    .line 1180
     move-object v12, p0
 
     move-object v13, p1
@@ -72,7 +72,7 @@
 .method public getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
     .locals 1
 
-    .line 1162
+    .line 1184
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$11;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
@@ -85,11 +85,11 @@
 .method public notifyUserActivity()V
     .locals 1
 
-    .line 1167
+    .line 1189
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$11;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$500(Lcom/android/server/fingerprint/FingerprintService;)V
+    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$600(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 1168
+    .line 1190
     return-void
 .end method

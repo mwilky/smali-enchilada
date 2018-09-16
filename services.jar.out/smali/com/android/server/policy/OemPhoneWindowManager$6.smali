@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 2019
+    .line 2020
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$6;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 4
 
-    .line 2023
+    .line 2024
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -47,12 +47,12 @@
 
     invoke-interface {v0}, Landroid/app/IActivityManager;->stopSystemLockTaskMode()V
 
-    .line 2025
+    .line 2026
     sget-boolean v0, Lcom/android/server/policy/OemPhoneWindowManager;->DEBUG_INPUT:Z
 
     if-eqz v0, :cond_0
 
-    .line 2026
+    .line 2027
     const-string v0, "OemPhoneWindowManager"
 
     const-string v1, " ++++++++++ leave lock task mode."
@@ -61,15 +61,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2030
+    .line 2031
     :cond_0
     goto :goto_0
 
-    .line 2028
+    .line 2029
     :catch_0
     move-exception v0
 
-    .line 2029
+    .line 2030
     .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "OemPhoneWindowManager"
 
@@ -89,7 +89,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2031
+    .line 2032
     .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void

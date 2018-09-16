@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/TelephonyRegistry;
 
-    .line 228
+    .line 229
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,18 +37,18 @@
     .locals 7
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 231
+    .line 232
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_2
 
-    .line 242
+    .line 243
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 243
+    .line 244
     .local v0, "newDefaultPhoneId":I
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -58,7 +58,7 @@
 
     move-result v1
 
-    .line 253
+    .line 254
     .local v1, "newDefaultSubId":I
     iget-object v2, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -68,7 +68,7 @@
 
     monitor-enter v2
 
-    .line 254
+    .line 255
     :try_start_0
     iget-object v3, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -93,7 +93,7 @@
 
     check-cast v4, Lcom/android/server/TelephonyRegistry$Record;
 
-    .line 255
+    .line 256
     .local v4, "r":Lcom/android/server/TelephonyRegistry$Record;
     iget v5, v4, Lcom/android/server/TelephonyRegistry$Record;->subId:I
 
@@ -101,33 +101,33 @@
 
     if-ne v5, v6, :cond_0
 
-    .line 256
+    .line 257
     iget-object v5, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v5, v4, v0}, Lcom/android/server/TelephonyRegistry;->access$200(Lcom/android/server/TelephonyRegistry;Lcom/android/server/TelephonyRegistry$Record;I)V
 
-    .line 258
+    .line 259
     .end local v4    # "r":Lcom/android/server/TelephonyRegistry$Record;
     :cond_0
     goto :goto_0
 
-    .line 259
+    .line 260
     :cond_1
     iget-object v3, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v3}, Lcom/android/server/TelephonyRegistry;->access$300(Lcom/android/server/TelephonyRegistry;)V
 
-    .line 260
+    .line 261
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 261
+    .line 262
     iget-object v2, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v2, v1}, Lcom/android/server/TelephonyRegistry;->access$402(Lcom/android/server/TelephonyRegistry;I)I
 
-    .line 262
+    .line 263
     iget-object v2, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-static {v2, v0}, Lcom/android/server/TelephonyRegistry;->access$502(Lcom/android/server/TelephonyRegistry;I)I
@@ -136,7 +136,7 @@
     .end local v1    # "newDefaultSubId":I
     goto :goto_2
 
-    .line 260
+    .line 261
     .restart local v0    # "newDefaultPhoneId":I
     .restart local v1    # "newDefaultSubId":I
     :catchall_0
@@ -149,7 +149,7 @@
 
     throw v3
 
-    .line 234
+    .line 235
     .end local v0    # "newDefaultPhoneId":I
     .end local v1    # "newDefaultSubId":I
     :pswitch_1
@@ -161,7 +161,7 @@
 
     move-result v0
 
-    .line 235
+    .line 236
     .local v0, "numPhones":I
     const/4 v1, 0x0
 
@@ -169,32 +169,32 @@
     :goto_1
     if-ge v1, v0, :cond_2
 
-    .line 236
+    .line 237
     iget-object v2, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     iget-object v3, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
-    .line 237
+    .line 238
     invoke-static {v3}, Lcom/android/server/TelephonyRegistry;->access$000(Lcom/android/server/TelephonyRegistry;)[Landroid/os/Bundle;
 
     move-result-object v3
 
     aget-object v3, v3, v1
 
-    .line 236
+    .line 237
     invoke-virtual {v2, v1, v3}, Lcom/android/server/TelephonyRegistry;->notifyCellLocationForSubscriber(ILandroid/os/Bundle;)V
 
-    .line 235
+    .line 236
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 239
+    .line 240
     .end local v1    # "sub":I
     :cond_2
     nop
 
-    .line 265
+    .line 266
     .end local v0    # "numPhones":I
     :goto_2
     return-void

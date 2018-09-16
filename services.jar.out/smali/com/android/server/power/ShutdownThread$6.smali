@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
 
-    .line 871
+    .line 872
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 4
     .param p1, "status"    # I
 
-    .line 874
+    .line 875
     const/16 v0, 0x64
 
     if-ltz p1, :cond_0
 
     if-ge p1, v0, :cond_0
 
-    .line 876
+    .line 877
     int-to-double v0, p1
 
     const-wide/high16 v2, 0x4054000000000000L    # 80.0
@@ -60,10 +60,10 @@
 
     double-to-int p1, v0
 
-    .line 877
+    .line 878
     add-int/lit8 p1, p1, 0x14
 
-    .line 878
+    .line 879
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1000(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
@@ -76,7 +76,7 @@
 
     move-result-object v0
 
-    .line 880
+    .line 881
     .local v0, "msg":Ljava/lang/CharSequence;
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$600()Lcom/android/server/power/ShutdownThread;
 
@@ -84,14 +84,14 @@
 
     invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->access$700(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
 
-    .line 881
+    .line 882
     .end local v0    # "msg":Ljava/lang/CharSequence;
     goto :goto_0
 
     :cond_0
     if-ne p1, v0, :cond_1
 
-    .line 882
+    .line 883
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$6;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1000(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
@@ -104,7 +104,7 @@
 
     move-result-object v0
 
-    .line 884
+    .line 885
     .restart local v0    # "msg":Ljava/lang/CharSequence;
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$600()Lcom/android/server/power/ShutdownThread;
 
@@ -112,7 +112,7 @@
 
     invoke-static {v1, p1, v0}, Lcom/android/server/power/ShutdownThread;->access$700(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
 
-    .line 888
+    .line 889
     .end local v0    # "msg":Ljava/lang/CharSequence;
     :cond_1
     :goto_0

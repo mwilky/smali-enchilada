@@ -43,7 +43,7 @@
     .line 188
     new-instance v0, Landroid/content/ClipData;
 
-    const-string v1, "host clipboard"
+    const-string/jumbo v1, "host clipboard"
 
     const-string/jumbo v2, "text/plain"
 

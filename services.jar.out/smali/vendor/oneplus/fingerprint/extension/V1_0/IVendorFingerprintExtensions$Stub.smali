@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 451
+    .line 480
     invoke-direct {p0}, Landroid/os/HwBinder;-><init>()V
 
     return-void
@@ -32,19 +32,19 @@
 .method public asBinder()Landroid/os/IHwBinder;
     .locals 0
 
-    .line 454
+    .line 483
     return-object p0
 .end method
 
 .method public final getDebugInfo()Landroid/hidl/base/V1_0/DebugInfo;
     .locals 3
 
-    .line 496
+    .line 525
     new-instance v0, Landroid/hidl/base/V1_0/DebugInfo;
 
     invoke-direct {v0}, Landroid/hidl/base/V1_0/DebugInfo;-><init>()V
 
-    .line 497
+    .line 526
     .local v0, "info":Landroid/hidl/base/V1_0/DebugInfo;
     invoke-static {}, Landroid/os/HidlSupport;->getPidIfSharable()I
 
@@ -52,17 +52,17 @@
 
     iput v1, v0, Landroid/hidl/base/V1_0/DebugInfo;->pid:I
 
-    .line 498
+    .line 527
     const-wide/16 v1, 0x0
 
     iput-wide v1, v0, Landroid/hidl/base/V1_0/DebugInfo;->ptr:J
 
-    .line 499
+    .line 528
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/hidl/base/V1_0/DebugInfo;->arch:I
 
-    .line 500
+    .line 529
     return-object v0
 .end method
 
@@ -76,7 +76,7 @@
         }
     .end annotation
 
-    .line 472
+    .line 501
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -113,38 +113,38 @@
 
     :array_0
     .array-data 1
-        -0x40t
-        0x46t
-        0x41t
-        -0x71t
-        -0xet
-        0x5t
-        -0x5dt
-        -0x46t
-        0x2at
-        0x44t
-        -0x53t
-        0x3t
-        -0x4at
-        -0x39t
-        -0x68t
-        -0x33t
-        -0x32t
-        0x7at
-        0x54t
-        -0x7ct
-        0x59t
-        -0x71t
-        0x2ft
-        -0x80t
-        0x7dt
-        0x79t
-        -0x7bt
+        0x6ct
+        0x3ft
+        -0x62t
         0x8t
-        0x57t
-        -0x1et
-        -0x57t
-        0x4bt
+        -0x6dt
+        -0x28t
+        -0x11t
+        -0x48t
+        -0x56t
+        -0x65t
+        -0x54t
+        0x4dt
+        -0x10t
+        -0x2bt
+        0x1et
+        0x64t
+        -0x4dt
+        0x23t
+        0x4et
+        -0x1t
+        0x29t
+        0x78t
+        -0x3et
+        0xet
+        -0x33t
+        -0x1t
+        0x36t
+        0xat
+        -0x4dt
+        -0x5et
+        0x59t
+        0x60t
     .end array-data
 
     :array_1
@@ -195,7 +195,7 @@
         }
     .end annotation
 
-    .line 459
+    .line 488
     new-instance v0, Ljava/util/ArrayList;
 
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
@@ -218,7 +218,7 @@
 .method public final interfaceDescriptor()Ljava/lang/String;
     .locals 1
 
-    .line 466
+    .line 495
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     return-object v0
@@ -229,7 +229,7 @@
     .param p1, "recipient"    # Landroid/os/IHwBinder$DeathRecipient;
     .param p2, "cookie"    # J
 
-    .line 485
+    .line 514
     const/4 v0, 0x1
 
     return v0
@@ -238,10 +238,10 @@
 .method public final notifySyspropsChanged()V
     .locals 0
 
-    .line 505
+    .line 534
     invoke-static {}, Landroid/os/HwBinder;->enableInstrumentation()V
 
-    .line 506
+    .line 535
     return-void
 .end method
 
@@ -257,7 +257,7 @@
         }
     .end annotation
 
-    .line 534
+    .line 563
     const/high16 v0, -0x80000000
 
     const/4 v1, 0x0
@@ -268,9 +268,9 @@
 
     sparse-switch p1, :sswitch_data_0
 
-    goto/16 :goto_e
+    goto/16 :goto_f
 
-    .line 799
+    .line 845
     :sswitch_0
     and-int/lit8 v3, p4, 0x1
 
@@ -280,21 +280,21 @@
 
     nop
 
-    .line 800
+    .line 846
     .local v1, "_hidl_is_oneway":Z
     :cond_0
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
-    .line 801
+    .line 847
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 802
+    .line 848
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 803
-    goto/16 :goto_e
+    .line 849
+    goto/16 :goto_f
 
-    .line 786
+    .line 832
     .end local v1    # "_hidl_is_oneway":Z
     :sswitch_1
     and-int/lit8 v3, p4, 0x1
@@ -305,33 +305,33 @@
 
     nop
 
-    .line 787
+    .line 833
     .restart local v1    # "_hidl_is_oneway":Z
     :cond_1
     if-eq v1, v2, :cond_2
 
-    .line 788
+    .line 834
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 789
+    .line 835
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 790
-    goto/16 :goto_e
+    .line 836
+    goto/16 :goto_f
 
-    .line 791
+    .line 837
     :cond_2
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 793
+    .line 839
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->notifySyspropsChanged()V
 
-    .line 794
-    goto/16 :goto_e
+    .line 840
+    goto/16 :goto_f
 
-    .line 770
+    .line 816
     .end local v1    # "_hidl_is_oneway":Z
     :sswitch_2
     and-int/lit8 v3, p4, 0x1
@@ -343,45 +343,45 @@
     :cond_3
     move v2, v1
 
-    .line 771
+    .line 817
     .local v2, "_hidl_is_oneway":Z
     :goto_0
     if-eqz v2, :cond_4
 
-    .line 772
+    .line 818
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 773
+    .line 819
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 774
-    goto/16 :goto_e
+    .line 820
+    goto/16 :goto_f
 
-    .line 775
+    .line 821
     :cond_4
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 777
+    .line 823
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getDebugInfo()Landroid/hidl/base/V1_0/DebugInfo;
 
     move-result-object v0
 
-    .line 778
+    .line 824
     .local v0, "_hidl_out_info":Landroid/hidl/base/V1_0/DebugInfo;
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 779
+    .line 825
     invoke-virtual {v0, p3}, Landroid/hidl/base/V1_0/DebugInfo;->writeToParcel(Landroid/os/HwParcel;)V
 
-    .line 780
+    .line 826
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 781
-    goto/16 :goto_e
+    .line 827
+    goto/16 :goto_f
 
-    .line 755
+    .line 801
     .end local v0    # "_hidl_out_info":Landroid/hidl/base/V1_0/DebugInfo;
     .end local v2    # "_hidl_is_oneway":Z
     :sswitch_3
@@ -394,39 +394,39 @@
     :cond_5
     move v2, v1
 
-    .line 756
+    .line 802
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_1
     if-eqz v2, :cond_6
 
-    .line 757
+    .line 803
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 758
+    .line 804
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 759
-    goto/16 :goto_e
+    .line 805
+    goto/16 :goto_f
 
-    .line 760
+    .line 806
     :cond_6
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 762
+    .line 808
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->ping()V
 
-    .line 763
+    .line 809
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 764
+    .line 810
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 765
-    goto/16 :goto_e
+    .line 811
+    goto/16 :goto_f
 
-    .line 745
+    .line 791
     .end local v2    # "_hidl_is_oneway":Z
     :sswitch_4
     and-int/lit8 v3, p4, 0x1
@@ -437,21 +437,21 @@
 
     nop
 
-    .line 746
+    .line 792
     .restart local v1    # "_hidl_is_oneway":Z
     :cond_7
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
-    .line 747
+    .line 793
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 748
+    .line 794
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 749
-    goto/16 :goto_e
+    .line 795
+    goto/16 :goto_f
 
-    .line 732
+    .line 778
     .end local v1    # "_hidl_is_oneway":Z
     :sswitch_5
     and-int/lit8 v3, p4, 0x1
@@ -462,33 +462,33 @@
 
     nop
 
-    .line 733
+    .line 779
     .restart local v1    # "_hidl_is_oneway":Z
     :cond_8
     if-eq v1, v2, :cond_9
 
-    .line 734
+    .line 780
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 735
+    .line 781
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 736
-    goto/16 :goto_e
+    .line 782
+    goto/16 :goto_f
 
-    .line 737
+    .line 783
     :cond_9
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 739
+    .line 785
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setHALInstrumentation()V
 
-    .line 740
-    goto/16 :goto_e
+    .line 786
+    goto/16 :goto_f
 
-    .line 699
+    .line 745
     .end local v1    # "_hidl_is_oneway":Z
     :sswitch_6
     and-int/lit8 v3, p4, 0x1
@@ -500,81 +500,81 @@
     :cond_a
     move v2, v1
 
-    .line 700
+    .line 746
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_2
     if-eqz v2, :cond_b
 
-    .line 701
+    .line 747
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 702
+    .line 748
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 703
-    goto/16 :goto_e
+    .line 749
+    goto/16 :goto_f
 
-    .line 704
+    .line 750
     :cond_b
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 706
+    .line 752
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getHashChain()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 707
+    .line 753
     .local v0, "_hidl_out_hashchain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[B>;"
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 709
+    .line 755
     new-instance v3, Landroid/os/HwBlob;
 
     const/16 v4, 0x10
 
     invoke-direct {v3, v4}, Landroid/os/HwBlob;-><init>(I)V
 
-    .line 711
+    .line 757
     .local v3, "_hidl_blob":Landroid/os/HwBlob;
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 712
+    .line 758
     .local v4, "_hidl_vec_size":I
     const-wide/16 v5, 0x8
 
     invoke-virtual {v3, v5, v6, v4}, Landroid/os/HwBlob;->putInt32(JI)V
 
-    .line 713
+    .line 759
     const-wide/16 v5, 0xc
 
     invoke-virtual {v3, v5, v6, v1}, Landroid/os/HwBlob;->putBool(JZ)V
 
-    .line 714
+    .line 760
     new-instance v5, Landroid/os/HwBlob;
 
     mul-int/lit8 v6, v4, 0x20
 
     invoke-direct {v5, v6}, Landroid/os/HwBlob;-><init>(I)V
 
-    .line 715
+    .line 761
     .local v5, "childBlob":Landroid/os/HwBlob;
     nop
 
-    .line 715
+    .line 761
     .local v1, "_hidl_index_0":I
     :goto_3
     if-ge v1, v4, :cond_c
 
-    .line 717
+    .line 763
     mul-int/lit8 v6, v1, 0x20
 
     int-to-long v6, v6
 
-    .line 718
+    .line 764
     .local v6, "_hidl_array_offset_1":J
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -584,35 +584,35 @@
 
     invoke-virtual {v5, v6, v7, v8}, Landroid/os/HwBlob;->putInt8Array(J[B)V
 
-    .line 719
+    .line 765
     nop
 
-    .line 715
+    .line 761
     .end local v6    # "_hidl_array_offset_1":J
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 722
+    .line 768
     .end local v1    # "_hidl_index_0":I
     :cond_c
     const-wide/16 v6, 0x0
 
     invoke-virtual {v3, v6, v7, v5}, Landroid/os/HwBlob;->putBlob(JLandroid/os/HwBlob;)V
 
-    .line 724
+    .line 770
     .end local v4    # "_hidl_vec_size":I
     .end local v5    # "childBlob":Landroid/os/HwBlob;
     invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeBuffer(Landroid/os/HwBlob;)V
 
-    .line 726
+    .line 772
     .end local v3    # "_hidl_blob":Landroid/os/HwBlob;
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 727
-    goto/16 :goto_e
+    .line 773
+    goto/16 :goto_f
 
-    .line 683
+    .line 729
     .end local v0    # "_hidl_out_hashchain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[B>;"
     .end local v2    # "_hidl_is_oneway":Z
     :sswitch_7
@@ -625,45 +625,45 @@
     :cond_d
     move v2, v1
 
-    .line 684
+    .line 730
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_4
     if-eqz v2, :cond_e
 
-    .line 685
+    .line 731
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 686
+    .line 732
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 687
-    goto/16 :goto_e
+    .line 733
+    goto/16 :goto_f
 
-    .line 688
+    .line 734
     :cond_e
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 690
+    .line 736
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->interfaceDescriptor()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 691
+    .line 737
     .local v0, "_hidl_out_descriptor":Ljava/lang/String;
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 692
+    .line 738
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeString(Ljava/lang/String;)V
 
-    .line 693
+    .line 739
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 694
-    goto/16 :goto_e
+    .line 740
+    goto/16 :goto_f
 
-    .line 669
+    .line 715
     .end local v0    # "_hidl_out_descriptor":Ljava/lang/String;
     .end local v2    # "_hidl_is_oneway":Z
     :sswitch_8
@@ -676,36 +676,36 @@
     :cond_f
     move v2, v1
 
-    .line 670
+    .line 716
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_5
     if-eqz v2, :cond_10
 
-    .line 671
+    .line 717
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 672
+    .line 718
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 673
-    goto/16 :goto_e
+    .line 719
+    goto/16 :goto_f
 
-    .line 674
+    .line 720
     :cond_10
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 676
+    .line 722
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 677
+    .line 723
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 678
-    goto/16 :goto_e
+    .line 724
+    goto/16 :goto_f
 
-    .line 653
+    .line 699
     .end local v2    # "_hidl_is_oneway":Z
     :sswitch_9
     and-int/lit8 v3, p4, 0x1
@@ -717,45 +717,45 @@
     :cond_11
     move v2, v1
 
-    .line 654
+    .line 700
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_6
     if-eqz v2, :cond_12
 
-    .line 655
+    .line 701
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 656
+    .line 702
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 657
-    goto/16 :goto_e
+    .line 703
+    goto/16 :goto_f
 
-    .line 658
+    .line 704
     :cond_12
     const-string v0, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 660
+    .line 706
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->interfaceChain()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 661
+    .line 707
     .local v0, "_hidl_out_descriptors":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 662
+    .line 708
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStringVector(Ljava/util/ArrayList;)V
 
-    .line 663
+    .line 709
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 664
-    goto/16 :goto_e
+    .line 710
+    goto/16 :goto_f
 
-    .line 637
+    .line 682
     .end local v0    # "_hidl_out_descriptors":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v2    # "_hidl_is_oneway":Z
     :pswitch_0
@@ -768,47 +768,54 @@
     :cond_13
     move v2, v1
 
-    .line 638
+    .line 683
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_7
     if-eqz v2, :cond_14
 
-    .line 639
+    .line 684
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 640
+    .line 685
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 641
-    goto/16 :goto_e
+    .line 686
+    goto/16 :goto_f
 
-    .line 642
+    .line 687
     :cond_14
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 644
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopAllEngTest()I
+    .line 689
+    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v0
 
-    .line 645
-    .local v0, "_hidl_out_debugErrno":I
+    .line 690
+    .local v0, "level":I
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setParam(I)I
+
+    move-result v3
+
+    .line 691
+    .local v3, "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 646
-    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+    .line 692
+    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 647
+    .line 693
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 648
-    goto/16 :goto_e
+    .line 694
+    goto/16 :goto_f
 
-    .line 620
-    .end local v0    # "_hidl_out_debugErrno":I
+    .line 666
+    .end local v0    # "level":I
     .end local v2    # "_hidl_is_oneway":Z
+    .end local v3    # "_hidl_out_debugErrno":I
     :pswitch_1
     and-int/lit8 v3, p4, 0x1
 
@@ -819,54 +826,47 @@
     :cond_15
     move v2, v1
 
-    .line 621
+    .line 667
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_8
     if-eqz v2, :cond_16
 
-    .line 622
+    .line 668
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 623
+    .line 669
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 624
-    goto/16 :goto_e
+    .line 670
+    goto/16 :goto_f
 
-    .line 625
+    .line 671
     :cond_16
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 627
-    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
+    .line 673
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopAllEngTest()I
 
     move-result v0
 
-    .line 628
-    .local v0, "cmdId":I
-    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopEngTest(I)I
-
-    move-result v3
-
-    .line 629
-    .local v3, "_hidl_out_debugErrno":I
+    .line 674
+    .local v0, "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 630
-    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
+    .line 675
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 631
+    .line 676
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 632
-    goto/16 :goto_e
+    .line 677
+    goto/16 :goto_f
 
-    .line 603
-    .end local v0    # "cmdId":I
+    .line 649
+    .end local v0    # "_hidl_out_debugErrno":I
     .end local v2    # "_hidl_is_oneway":Z
-    .end local v3    # "_hidl_out_debugErrno":I
     :pswitch_2
     and-int/lit8 v3, p4, 0x1
 
@@ -877,51 +877,51 @@
     :cond_17
     move v2, v1
 
-    .line 604
+    .line 650
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_9
     if-eqz v2, :cond_18
 
-    .line 605
+    .line 651
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 606
+    .line 652
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 607
-    goto/16 :goto_e
+    .line 653
+    goto/16 :goto_f
 
-    .line 608
+    .line 654
     :cond_18
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 610
+    .line 656
     invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v0
 
-    .line 611
-    .restart local v0    # "cmdId":I
-    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->startEngTest(I)I
+    .line 657
+    .local v0, "cmdId":I
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->stopEngTest(I)I
 
     move-result v3
 
-    .line 612
+    .line 658
     .restart local v3    # "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 613
+    .line 659
     invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 614
+    .line 660
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 615
-    goto/16 :goto_e
+    .line 661
+    goto/16 :goto_f
 
-    .line 586
+    .line 632
     .end local v0    # "cmdId":I
     .end local v2    # "_hidl_is_oneway":Z
     .end local v3    # "_hidl_out_debugErrno":I
@@ -935,56 +935,52 @@
     :cond_19
     move v2, v1
 
-    .line 587
+    .line 633
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_a
     if-eqz v2, :cond_1a
 
-    .line 588
+    .line 634
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 589
+    .line 635
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 590
-    goto/16 :goto_e
+    .line 636
+    goto/16 :goto_f
 
-    .line 591
+    .line 637
     :cond_1a
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 593
-    invoke-virtual {p2}, Landroid/os/HwParcel;->readStrongBinder()Landroid/os/IHwBinder;
+    .line 639
+    invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;->asInterface(Landroid/os/IHwBinder;)Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
-
-    move-result-object v0
-
-    .line 594
-    .local v0, "Callback":Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
-    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setEngCallback(Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;)I
+    .line 640
+    .restart local v0    # "cmdId":I
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->startEngTest(I)I
 
     move-result v3
 
-    .line 595
+    .line 641
     .restart local v3    # "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 596
+    .line 642
     invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 597
+    .line 643
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 598
-    goto/16 :goto_e
+    .line 644
+    goto/16 :goto_f
 
-    .line 570
-    .end local v0    # "Callback":Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
+    .line 615
+    .end local v0    # "cmdId":I
     .end local v2    # "_hidl_is_oneway":Z
     .end local v3    # "_hidl_out_debugErrno":I
     :pswitch_4
@@ -997,47 +993,58 @@
     :cond_1b
     move v2, v1
 
-    .line 571
+    .line 616
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_b
     if-eqz v2, :cond_1c
 
-    .line 572
+    .line 617
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 573
+    .line 618
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 574
-    goto :goto_e
+    .line 619
+    goto/16 :goto_f
 
-    .line 575
+    .line 620
     :cond_1c
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 577
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getEngTest()Ljava/util/ArrayList;
+    .line 622
+    invoke-virtual {p2}, Landroid/os/HwParcel;->readStrongBinder()Landroid/os/IHwBinder;
 
     move-result-object v0
 
-    .line 578
-    .local v0, "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
+    invoke-static {v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;->asInterface(Landroid/os/IHwBinder;)Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
+
+    move-result-object v0
+
+    .line 623
+    .local v0, "Callback":Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
+    invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->setEngCallback(Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;)I
+
+    move-result v3
+
+    .line 624
+    .restart local v3    # "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 579
-    invoke-static {p3, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;->writeVectorToParcel(Landroid/os/HwParcel;Ljava/util/ArrayList;)V
+    .line 625
+    invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 580
+    .line 626
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 581
-    goto :goto_e
+    .line 627
+    goto/16 :goto_f
 
-    .line 554
-    .end local v0    # "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
+    .line 599
+    .end local v0    # "Callback":Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensionsCallback;
     .end local v2    # "_hidl_is_oneway":Z
+    .end local v3    # "_hidl_out_debugErrno":I
     :pswitch_5
     and-int/lit8 v3, p4, 0x1
 
@@ -1048,46 +1055,46 @@
     :cond_1d
     move v2, v1
 
-    .line 555
+    .line 600
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_c
     if-eqz v2, :cond_1e
 
-    .line 556
+    .line 601
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 557
+    .line 602
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 558
-    goto :goto_e
+    .line 603
+    goto :goto_f
 
-    .line 559
+    .line 604
     :cond_1e
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 561
-    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getStatus()I
+    .line 606
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getEngTest()Ljava/util/ArrayList;
 
-    move-result v0
+    move-result-object v0
 
-    .line 562
-    .local v0, "_hidl_out_debugErrno":I
+    .line 607
+    .local v0, "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 563
-    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+    .line 608
+    invoke-static {p3, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;->writeVectorToParcel(Landroid/os/HwParcel;Ljava/util/ArrayList;)V
 
-    .line 564
+    .line 609
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 565
-    goto :goto_e
+    .line 610
+    goto :goto_f
 
-    .line 537
-    .end local v0    # "_hidl_out_debugErrno":I
+    .line 583
+    .end local v0    # "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
     .end local v2    # "_hidl_is_oneway":Z
     :pswitch_6
     and-int/lit8 v3, p4, 0x1
@@ -1099,62 +1106,112 @@
     :cond_1f
     move v2, v1
 
-    .line 538
+    .line 584
     .restart local v2    # "_hidl_is_oneway":Z
     :goto_d
     if-eqz v2, :cond_20
 
-    .line 539
+    .line 585
     invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 540
+    .line 586
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 541
-    goto :goto_e
+    .line 587
+    goto :goto_f
 
-    .line 542
+    .line 588
     :cond_20
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 544
+    .line 590
+    invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->getStatus()I
+
+    move-result v0
+
+    .line 591
+    .local v0, "_hidl_out_debugErrno":I
+    invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    .line 592
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeInt32(I)V
+
+    .line 593
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    .line 594
+    goto :goto_f
+
+    .line 566
+    .end local v0    # "_hidl_out_debugErrno":I
+    .end local v2    # "_hidl_is_oneway":Z
+    :pswitch_7
+    and-int/lit8 v3, p4, 0x1
+
+    if-eqz v3, :cond_21
+
+    goto :goto_e
+
+    :cond_21
+    move v2, v1
+
+    .line 567
+    .restart local v2    # "_hidl_is_oneway":Z
+    :goto_e
+    if-eqz v2, :cond_22
+
+    .line 568
+    invoke-virtual {p3, v0}, Landroid/os/HwParcel;->writeStatus(I)V
+
+    .line 569
+    invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
+
+    .line 570
+    goto :goto_f
+
+    .line 571
+    :cond_22
+    const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
+
+    invoke-virtual {p2, v0}, Landroid/os/HwParcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 573
     invoke-virtual {p2}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v0
 
-    .line 545
+    .line 574
     .local v0, "status":I
     invoke-virtual {p0, v0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->updateStatus(I)I
 
     move-result v3
 
-    .line 546
+    .line 575
     .restart local v3    # "_hidl_out_debugErrno":I
     invoke-virtual {p3, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 547
+    .line 576
     invoke-virtual {p3, v3}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 548
+    .line 577
     invoke-virtual {p3}, Landroid/os/HwParcel;->send()V
 
-    .line 549
+    .line 578
     nop
 
-    .line 808
+    .line 854
     .end local v0    # "status":I
     .end local v2    # "_hidl_is_oneway":Z
     .end local v3    # "_hidl_out_debugErrno":I
-    :cond_21
-    :goto_e
+    :cond_23
+    :goto_f
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_7
         :pswitch_6
         :pswitch_5
         :pswitch_4
@@ -1182,7 +1239,7 @@
 .method public final ping()V
     .locals 0
 
-    .line 490
+    .line 519
     return-void
 .end method
 
@@ -1190,7 +1247,7 @@
     .locals 1
     .param p1, "descriptor"    # Ljava/lang/String;
 
-    .line 516
+    .line 545
     const-string/jumbo v0, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1199,10 +1256,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 517
+    .line 546
     return-object p0
 
-    .line 519
+    .line 548
     :cond_0
     const/4 v0, 0x0
 
@@ -1218,24 +1275,24 @@
         }
     .end annotation
 
-    .line 523
+    .line 552
     invoke-virtual {p0, p1}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Stub;->registerService(Ljava/lang/String;)V
 
-    .line 524
+    .line 553
     return-void
 .end method
 
 .method public final setHALInstrumentation()V
     .locals 0
 
-    .line 481
+    .line 510
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 528
+    .line 557
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1261,7 +1318,7 @@
     .locals 1
     .param p1, "recipient"    # Landroid/os/IHwBinder$DeathRecipient;
 
-    .line 510
+    .line 539
     const/4 v0, 0x1
 
     return v0

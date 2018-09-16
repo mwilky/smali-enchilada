@@ -329,26 +329,26 @@
     .param p0, "manager"    # Lcom/android/server/am/IEmbryoManager;
     .param p1, "jsonArray"    # Lorg/json/JSONArray;
 
-    .line 405
+    .line 418
     if-nez p1, :cond_0
 
-    .line 406
+    .line 419
     const-string v0, "EmbryoManager"
 
     const-string v1, "[OnlineConfig] embryo jsonArray is null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 407
+    .line 420
     return-void
 
-    .line 410
+    .line 423
     :cond_0
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 410
+    .line 423
     .local v1, "index":I
     :goto_0
     :try_start_0
@@ -358,12 +358,12 @@
 
     if-ge v1, v2, :cond_11
 
-    .line 411
+    .line 424
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 412
+    .line 425
     .local v2, "json":Lorg/json/JSONObject;
     const-string/jumbo v3, "name"
 
@@ -371,7 +371,7 @@
 
     move-result-object v3
 
-    .line 413
+    .line 426
     .local v3, "name":Ljava/lang/String;
     const-string v4, "embryo_blacklist"
 
@@ -381,14 +381,14 @@
 
     if-eqz v4, :cond_3
 
-    .line 414
+    .line 427
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 415
+    .line 428
     .local v4, "blackAppListJsonArray":Lorg/json/JSONArray;
     new-instance v5, Ljava/util/ArrayList;
 
@@ -398,11 +398,11 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 416
+    .line 429
     .local v5, "blackList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     move v6, v0
 
-    .line 416
+    .line 429
     .local v6, "i":I
     :goto_1
     invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
@@ -411,19 +411,19 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 417
+    .line 430
     invoke-virtual {v4, v6}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v5, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 416
+    .line 429
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
-    .line 419
+    .line 432
     .end local v6    # "i":I
     :cond_1
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
@@ -432,16 +432,16 @@
 
     if-lez v6, :cond_2
 
-    .line 420
+    .line 433
     invoke-interface {p0, v5}, Lcom/android/server/am/IEmbryoManager;->setBlackList(Ljava/util/List;)V
 
-    .line 421
+    .line 434
     .end local v4    # "blackAppListJsonArray":Lorg/json/JSONArray;
     .end local v5    # "blackList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :cond_2
     goto/16 :goto_6
 
-    .line 422
+    .line 435
     :cond_3
     const-string v4, "embryo_enable"
 
@@ -453,14 +453,14 @@
 
     if-eqz v4, :cond_6
 
-    .line 423
+    .line 436
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 424
+    .line 437
     .local v4, "jasonArray":Lorg/json/JSONArray;
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -474,7 +474,7 @@
 
     move-result v6
 
-    .line 425
+    .line 438
     .local v6, "enable":Z
     const-string/jumbo v7, "persist.sys.embryo"
 
@@ -482,11 +482,11 @@
 
     move-result v5
 
-    .line 426
+    .line 439
     .local v5, "currStat":Z
     if-eq v6, v5, :cond_5
 
-    .line 427
+    .line 440
     const-string/jumbo v7, "persist.sys.embryo"
 
     if-eqz v6, :cond_4
@@ -501,7 +501,7 @@
     :goto_2
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 428
+    .line 441
     const-string v7, "EmbryoManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -520,19 +520,19 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 430
+    .line 443
     sget-object v7, Lcom/android/server/am/EmbryoManager;->sWrapperInstance:Lcom/android/server/am/EmbryoManager$EmbryoManagerWrapper;
 
     invoke-virtual {v7, v6, v5}, Lcom/android/server/am/EmbryoManager$EmbryoManagerWrapper;->hotSwitch(ZZ)V
 
-    .line 432
+    .line 445
     .end local v4    # "jasonArray":Lorg/json/JSONArray;
     .end local v5    # "currStat":Z
     .end local v6    # "enable":Z
     :cond_5
     goto/16 :goto_6
 
-    .line 433
+    .line 446
     :cond_6
     const-string v4, "embryo_inflate"
 
@@ -542,14 +542,14 @@
 
     if-eqz v4, :cond_9
 
-    .line 434
+    .line 447
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 435
+    .line 448
     .restart local v4    # "jasonArray":Lorg/json/JSONArray;
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -563,7 +563,7 @@
 
     move-result v6
 
-    .line 436
+    .line 449
     .restart local v6    # "enable":Z
     const-string/jumbo v7, "persist.sys.embryo.inflate"
 
@@ -571,11 +571,11 @@
 
     move-result v5
 
-    .line 437
+    .line 450
     .restart local v5    # "currStat":Z
     if-eq v6, v5, :cond_8
 
-    .line 438
+    .line 451
     const-string/jumbo v7, "persist.sys.embryo.inflate"
 
     if-eqz v6, :cond_7
@@ -590,7 +590,7 @@
     :goto_3
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 439
+    .line 452
     const-string v7, "EmbryoManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -609,14 +609,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 441
+    .line 454
     .end local v4    # "jasonArray":Lorg/json/JSONArray;
     .end local v5    # "currStat":Z
     .end local v6    # "enable":Z
     :cond_8
     goto/16 :goto_6
 
-    .line 442
+    .line 455
     :cond_9
     const-string v4, "embryo_support_optheme"
 
@@ -626,14 +626,14 @@
 
     if-eqz v4, :cond_c
 
-    .line 443
+    .line 456
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 444
+    .line 457
     .restart local v4    # "jasonArray":Lorg/json/JSONArray;
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -647,7 +647,7 @@
 
     move-result v6
 
-    .line 445
+    .line 458
     .restart local v6    # "enable":Z
     const-string/jumbo v7, "persist.sys.embryo.optheme"
 
@@ -655,11 +655,11 @@
 
     move-result v5
 
-    .line 446
+    .line 459
     .restart local v5    # "currStat":Z
     if-eq v6, v5, :cond_b
 
-    .line 447
+    .line 460
     const-string/jumbo v7, "persist.sys.embryo.optheme"
 
     if-eqz v6, :cond_a
@@ -674,7 +674,7 @@
     :goto_4
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 448
+    .line 461
     const-string v7, "EmbryoManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -693,14 +693,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 450
+    .line 463
     .end local v4    # "jasonArray":Lorg/json/JSONArray;
     .end local v5    # "currStat":Z
     .end local v6    # "enable":Z
     :cond_b
     goto/16 :goto_6
 
-    .line 451
+    .line 464
     :cond_c
     const-string v4, "embryo_rename"
 
@@ -710,14 +710,14 @@
 
     if-eqz v4, :cond_f
 
-    .line 452
+    .line 465
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 453
+    .line 466
     .restart local v4    # "jasonArray":Lorg/json/JSONArray;
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -731,7 +731,7 @@
 
     move-result v6
 
-    .line 454
+    .line 467
     .restart local v6    # "enable":Z
     const-string/jumbo v7, "persist.sys.embryo.rename"
 
@@ -739,11 +739,11 @@
 
     move-result v5
 
-    .line 455
+    .line 468
     .restart local v5    # "currStat":Z
     if-eq v6, v5, :cond_e
 
-    .line 456
+    .line 469
     const-string/jumbo v7, "persist.sys.embryo.rename"
 
     if-eqz v6, :cond_d
@@ -758,7 +758,7 @@
     :goto_5
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 457
+    .line 470
     const-string v7, "EmbryoManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -777,14 +777,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 459
+    .line 472
     .end local v4    # "jasonArray":Lorg/json/JSONArray;
     .end local v5    # "currStat":Z
     .end local v6    # "enable":Z
     :cond_e
     goto :goto_6
 
-    .line 460
+    .line 473
     :cond_f
     const-string v4, "embryo_limit_count"
 
@@ -794,14 +794,14 @@
 
     if-eqz v4, :cond_10
 
-    .line 461
+    .line 474
     const-string/jumbo v4, "value"
 
     invoke-virtual {v2, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v4
 
-    .line 462
+    .line 475
     .restart local v4    # "jasonArray":Lorg/json/JSONArray;
     invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
@@ -815,7 +815,7 @@
 
     move-result v5
 
-    .line 463
+    .line 476
     .local v5, "limitCount":I
     const-string/jumbo v6, "persist.sys.embryo.optheme"
 
@@ -825,11 +825,11 @@
 
     move-result v6
 
-    .line 464
+    .line 477
     .local v6, "currVal":I
     if-eq v5, v6, :cond_10
 
-    .line 465
+    .line 478
     const-string/jumbo v7, "persist.sys.embryo.limit"
 
     invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -838,7 +838,7 @@
 
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 466
+    .line 479
     const-string v7, "EmbryoManager"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -857,7 +857,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 410
+    .line 423
     .end local v2    # "json":Lorg/json/JSONObject;
     .end local v3    # "name":Ljava/lang/String;
     .end local v4    # "jasonArray":Lorg/json/JSONArray;
@@ -869,7 +869,7 @@
 
     goto/16 :goto_0
 
-    .line 470
+    .line 483
     .end local v1    # "index":I
     :cond_11
     const-string v0, "EmbryoManager"
@@ -880,14 +880,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 473
+    .line 486
     goto :goto_7
 
-    .line 471
+    .line 484
     :catch_0
     move-exception v0
 
-    .line 472
+    .line 485
     .local v0, "e":Ljava/lang/Exception;
     const-string v1, "EmbryoManager"
 
@@ -911,7 +911,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 474
+    .line 487
     .end local v0    # "e":Ljava/lang/Exception;
     :goto_7
     return-void
@@ -1081,7 +1081,7 @@
 .end method
 
 .method public checkBackgroundLevel(Ljava/util/List;)Z
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1097,83 +1097,118 @@
 
     .line 383
     .local v0, "bgProcCount":I
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    sub-int/2addr v1, v2
-
-    .local v1, "i":I
-    :goto_0
-    if-ltz v1, :cond_1
+    const/4 v1, 0x0
 
     .line 384
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .local v1, "positiveAdjProc":I
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result-object v3
+    move-result v2
 
-    check-cast v3, Lcom/android/server/am/ProcessRecord;
+    const/4 v3, 0x1
+
+    sub-int/2addr v2, v3
+
+    .local v2, "i":I
+    :goto_0
+    if-ltz v2, :cond_2
 
     .line 385
-    .local v3, "rec":Lcom/android/server/am/ProcessRecord;
-    iget-object v4, v3, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v4, :cond_0
+    move-result-object v4
 
-    iget v4, v3, Lcom/android/server/am/ProcessRecord;->setProcState:I
+    check-cast v4, Lcom/android/server/am/ProcessRecord;
 
-    const/16 v5, 0xf
+    .line 386
+    .local v4, "rec":Lcom/android/server/am/ProcessRecord;
+    iget-object v5, v4, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
 
-    if-lt v4, v5, :cond_0
+    if-eqz v5, :cond_0
 
-    .line 387
-    add-int/lit8 v0, v0, 0x1
+    iget v5, v4, Lcom/android/server/am/ProcessRecord;->setProcState:I
 
-    const/16 v4, 0xa
+    const/16 v6, 0xf
 
-    if-lt v0, v4, :cond_0
+    if-lt v5, v6, :cond_0
 
     .line 388
-    return v2
+    add-int/lit8 v0, v0, 0x1
 
-    .line 383
-    .end local v3    # "rec":Lcom/android/server/am/ProcessRecord;
+    const/16 v5, 0xa
+
+    if-lt v0, v5, :cond_0
+
+    .line 389
+    return v3
+
+    .line 392
     :cond_0
-    add-int/lit8 v1, v1, -0x1
+    iget-object v5, v4, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
+
+    if-eqz v5, :cond_1
+
+    iget v5, v4, Lcom/android/server/am/ProcessRecord;->setProcState:I
+
+    const/4 v6, 0x6
+
+    if-lt v5, v6, :cond_1
+
+    .line 394
+    add-int/lit8 v1, v1, 0x1
+
+    .line 384
+    .end local v4    # "rec":Lcom/android/server/am/ProcessRecord;
+    :cond_1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 391
-    .end local v1    # "i":I
-    :cond_1
-    const/4 v1, 0x0
+    .line 399
+    .end local v2    # "i":I
+    :cond_2
+    if-nez v1, :cond_3
 
-    return v1
+    .line 400
+    const-string v2, "EmbryoManager"
+
+    const-string v3, "clean embryo process"
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 401
+    iget-object v2, p0, Lcom/android/server/am/EmbryoManager;->mUterus:Lcom/android/server/am/Uterus;
+
+    invoke-virtual {v2}, Lcom/android/server/am/Uterus;->disableEmbryoTemporary()V
+
+    .line 404
+    :cond_3
+    const/4 v2, 0x0
+
+    return v2
 .end method
 
 .method public cleanup()V
     .locals 2
 
-    .line 399
+    .line 412
     iget-object v0, p0, Lcom/android/server/am/EmbryoManager;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager;->mDeviceIdleReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 400
+    .line 413
     iget-object v0, p0, Lcom/android/server/am/EmbryoManager;->mUterus:Lcom/android/server/am/Uterus;
 
     invoke-virtual {v0}, Lcom/android/server/am/Uterus;->cleanup()V
 
-    .line 401
+    .line 414
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/EmbryoManager;->mContext:Landroid/content/Context;
 
-    .line 402
+    .line 415
     return-void
 .end method
 
@@ -2168,10 +2203,10 @@
     .locals 0
     .param p1, "jsonArray"    # Lorg/json/JSONArray;
 
-    .line 395
+    .line 408
     invoke-static {p0, p1}, Lcom/android/server/am/EmbryoManager;->resolveConfigCommon(Lcom/android/server/am/IEmbryoManager;Lorg/json/JSONArray;)V
 
-    .line 396
+    .line 409
     return-void
 .end method
 

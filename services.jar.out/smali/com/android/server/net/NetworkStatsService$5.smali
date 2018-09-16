@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/net/NetworkStatsService;
 
-    .line 1014
+    .line 1025
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,12 +34,12 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 5
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1020
-    const-string v0, "android.intent.extra.user_handle"
+    .line 1031
+    const-string v0, "android.intent.extra.UID"
 
     const/4 v1, -0x1
 
@@ -47,13 +47,13 @@
 
     move-result v0
 
-    .line 1021
-    .local v0, "userId":I
+    .line 1032
+    .local v0, "uid":I
     if-ne v0, v1, :cond_0
 
     return-void
 
-    .line 1023
+    .line 1034
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
@@ -63,11 +63,11 @@
 
     monitor-enter v1
 
-    .line 1024
+    .line 1035
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1000(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1100(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v2
 
@@ -75,40 +75,48 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1026
+    .line 1037
     :try_start_1
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v2, v0}, Lcom/android/server/net/NetworkStatsService;->access$1200(Lcom/android/server/net/NetworkStatsService;I)V
+    const/4 v3, 0x1
+
+    new-array v3, v3, [I
+
+    const/4 v4, 0x0
+
+    aput v0, v3, v4
+
+    invoke-static {v2, v3}, Lcom/android/server/net/NetworkStatsService;->access$1200(Lcom/android/server/net/NetworkStatsService;[I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1028
+    .line 1039
     :try_start_2
     iget-object v2, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1000(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v2}, Lcom/android/server/net/NetworkStatsService;->access$1100(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1029
+    .line 1040
     nop
 
-    .line 1030
+    .line 1041
     monitor-exit v1
 
-    .line 1031
+    .line 1042
     return-void
 
-    .line 1028
+    .line 1039
     :catchall_0
     move-exception v2
 
     iget-object v3, p0, Lcom/android/server/net/NetworkStatsService$5;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v3}, Lcom/android/server/net/NetworkStatsService;->access$1000(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
+    invoke-static {v3}, Lcom/android/server/net/NetworkStatsService;->access$1100(Lcom/android/server/net/NetworkStatsService;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v3
 
@@ -116,7 +124,7 @@
 
     throw v2
 
-    .line 1030
+    .line 1041
     :catchall_1
     move-exception v2
 

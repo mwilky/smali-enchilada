@@ -2255,6 +2255,18 @@
     .local v0, "extraStream":Landroid/net/Uri;
     if-eqz v0, :cond_3
 
+    const-string/jumbo v1, "mms"
+
+    invoke-virtual {v0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
     .line 2967
     const-string v1, "android.intent.extra.STREAM"
 

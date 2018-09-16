@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/android/server/NetworkManagementService;)V
     .locals 0
 
-    .line 1903
+    .line 1900
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$NetdTetheringStatsProvider;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-direct {p0}, Landroid/net/ITetheringStatsProvider$Stub;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/android/server/NetworkManagementService;
     .param p2, "x1"    # Lcom/android/server/NetworkManagementService$1;
 
-    .line 1903
+    .line 1900
     invoke-direct {p0, p1}, Lcom/android/server/NetworkManagementService$NetdTetheringStatsProvider;-><init>(Lcom/android/server/NetworkManagementService;)V
 
     return-void
@@ -47,14 +47,14 @@
     .locals 10
     .param p1, "how"    # I
 
-    .line 1908
+    .line 1905
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     if-eq p1, v0, :cond_0
 
-    .line 1909
+    .line 1906
     new-instance v0, Landroid/net/NetworkStats;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -65,7 +65,7 @@
 
     return-object v0
 
-    .line 1914
+    .line 1911
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/server/NetworkManagementService$NetdTetheringStatsProvider;->this$0:Lcom/android/server/NetworkManagementService;
@@ -81,34 +81,34 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1917
+    .line 1914
     .local v2, "bundle":Landroid/os/PersistableBundle;
     nop
 
-    .line 1916
+    .line 1913
     nop
 
-    .line 1919
+    .line 1916
     new-instance v3, Landroid/net/NetworkStats;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
 
-    .line 1920
+    .line 1917
     invoke-virtual {v2}, Landroid/os/PersistableBundle;->size()I
 
     move-result v6
 
     invoke-direct {v3, v4, v5, v6}, Landroid/net/NetworkStats;-><init>(JI)V
 
-    .line 1921
+    .line 1918
     .local v3, "stats":Landroid/net/NetworkStats;
     new-instance v4, Landroid/net/NetworkStats$Entry;
 
     invoke-direct {v4}, Landroid/net/NetworkStats$Entry;-><init>()V
 
-    .line 1923
+    .line 1920
     .local v4, "entry":Landroid/net/NetworkStats$Entry;
     invoke-virtual {v2}, Landroid/os/PersistableBundle;->keySet()Ljava/util/Set;
 
@@ -131,72 +131,72 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 1924
+    .line 1921
     .local v6, "iface":Ljava/lang/String;
     invoke-virtual {v2, v6}, Landroid/os/PersistableBundle;->getLongArray(Ljava/lang/String;)[J
 
     move-result-object v7
 
-    .line 1926
+    .line 1923
     .local v7, "statsArray":[J
     :try_start_1
     iput-object v6, v4, Landroid/net/NetworkStats$Entry;->iface:Ljava/lang/String;
 
-    .line 1927
+    .line 1924
     const/4 v8, -0x5
 
     iput v8, v4, Landroid/net/NetworkStats$Entry;->uid:I
 
-    .line 1928
+    .line 1925
     iput v1, v4, Landroid/net/NetworkStats$Entry;->set:I
 
-    .line 1929
+    .line 1926
     iput v1, v4, Landroid/net/NetworkStats$Entry;->tag:I
 
-    .line 1930
+    .line 1927
     aget-wide v8, v7, v1
 
     iput-wide v8, v4, Landroid/net/NetworkStats$Entry;->rxBytes:J
 
-    .line 1931
+    .line 1928
     aget-wide v8, v7, v0
 
     iput-wide v8, v4, Landroid/net/NetworkStats$Entry;->rxPackets:J
 
-    .line 1932
+    .line 1929
     const/4 v8, 0x2
 
     aget-wide v8, v7, v8
 
     iput-wide v8, v4, Landroid/net/NetworkStats$Entry;->txBytes:J
 
-    .line 1933
+    .line 1930
     const/4 v8, 0x3
 
     aget-wide v8, v7, v8
 
     iput-wide v8, v4, Landroid/net/NetworkStats$Entry;->txPackets:J
 
-    .line 1934
+    .line 1931
     invoke-virtual {v3, v4}, Landroid/net/NetworkStats;->combineValues(Landroid/net/NetworkStats$Entry;)Landroid/net/NetworkStats;
     :try_end_1
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1937
+    .line 1934
     nop
 
-    .line 1938
+    .line 1935
     .end local v6    # "iface":Ljava/lang/String;
     .end local v7    # "statsArray":[J
     goto :goto_0
 
-    .line 1935
+    .line 1932
     .restart local v6    # "iface":Ljava/lang/String;
     .restart local v7    # "statsArray":[J
     :catch_0
     move-exception v0
 
-    .line 1936
+    .line 1933
     .local v0, "e":Ljava/lang/ArrayIndexOutOfBoundsException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -218,21 +218,21 @@
 
     throw v1
 
-    .line 1940
+    .line 1937
     .end local v0    # "e":Ljava/lang/ArrayIndexOutOfBoundsException;
     .end local v6    # "iface":Ljava/lang/String;
     .end local v7    # "statsArray":[J
     :cond_1
     return-object v3
 
-    .line 1915
+    .line 1912
     .end local v2    # "bundle":Landroid/os/PersistableBundle;
     .end local v3    # "stats":Landroid/net/NetworkStats;
     .end local v4    # "entry":Landroid/net/NetworkStats$Entry;
     :catch_1
     move-exception v0
 
-    .line 1916
+    .line 1913
     .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -248,6 +248,6 @@
     .param p1, "iface"    # Ljava/lang/String;
     .param p2, "quotaBytes"    # J
 
-    .line 1946
+    .line 1943
     return-void
 .end method

@@ -33,10 +33,10 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 3700
+    .line 3716
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3705
+    .line 3721
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -50,7 +50,7 @@
     .locals 0
     .param p1, "x0"    # Lcom/android/server/oneplus/display/ColorBalanceService$1;
 
-    .line 3700
+    .line 3716
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$ColorMatrixEvaluator;-><init>()V
 
     return-void
@@ -61,7 +61,7 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 3700
+    .line 3716
     check-cast p2, [F
 
     check-cast p3, [F
@@ -79,7 +79,7 @@
     .param p2, "startValue"    # [F
     .param p3, "endValue"    # [F
 
-    .line 3709
+    .line 3725
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -90,7 +90,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 3710
+    .line 3726
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$ColorMatrixEvaluator;->mResultMatrix:[F
 
     aget v2, p2, v0
@@ -103,12 +103,12 @@
 
     aput v2, v1, v0
 
-    .line 3709
+    .line 3725
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 3712
+    .line 3728
     .end local v0    # "i":I
     :cond_0
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$ColorMatrixEvaluator;->mResultMatrix:[F

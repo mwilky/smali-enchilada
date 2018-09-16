@@ -25,7 +25,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 5954
+    .line 5955
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$5;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$5;->val$async:Z
@@ -40,12 +40,12 @@
 .method public onPermissionChanged()V
     .locals 1
 
-    .line 5957
+    .line 5958
     iget-boolean v0, p0, Lcom/android/server/pm/PackageManagerService$5;->val$async:Z
 
     if-nez v0, :cond_0
 
-    .line 5958
+    .line 5959
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$5;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
@@ -54,13 +54,13 @@
 
     goto :goto_0
 
-    .line 5960
+    .line 5961
     :cond_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$5;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/pm/PackageManagerService;->scheduleWriteSettingsLocked()V
 
-    .line 5962
+    .line 5963
     :goto_0
     return-void
 .end method

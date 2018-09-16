@@ -44,33 +44,33 @@
     .param p7, "seinfo"    # Ljava/lang/String;
     .param p8, "targetSdkVersion"    # I
 
-    .line 16002
+    .line 16008
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16003
+    .line 16009
     iput p1, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->moveId:I
 
-    .line 16004
+    .line 16010
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->fromUuid:Ljava/lang/String;
 
-    .line 16005
+    .line 16011
     iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->toUuid:Ljava/lang/String;
 
-    .line 16006
+    .line 16012
     iput-object p4, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->packageName:Ljava/lang/String;
 
-    .line 16007
+    .line 16013
     iput-object p5, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->dataAppName:Ljava/lang/String;
 
-    .line 16008
+    .line 16014
     iput p6, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->appId:I
 
-    .line 16009
+    .line 16015
     iput-object p7, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->seinfo:Ljava/lang/String;
 
-    .line 16010
+    .line 16016
     iput p8, p0, Lcom/android/server/pm/PackageManagerService$MoveInfo;->targetSdkVersion:I
 
-    .line 16011
+    .line 16017
     return-void
 .end method

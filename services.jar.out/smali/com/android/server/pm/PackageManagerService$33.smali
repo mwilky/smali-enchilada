@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 24721
+    .line 24731
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$33;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$33;->val$packageName:Ljava/lang/String;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 6
 
-    .line 24723
+    .line 24733
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$33;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$33;->val$packageName:Ljava/lang/String;
@@ -56,6 +56,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/server/pm/PackageManagerService;->deletePackageX(Ljava/lang/String;JII)I
 
-    .line 24725
+    .line 24735
     return-void
 .end method

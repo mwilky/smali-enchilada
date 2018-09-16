@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
 
-    .line 666
+    .line 667
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$4;->this$0:Lcom/android/server/power/ShutdownThread;
 
     iput p2, p0, Lcom/android/server/power/ShutdownThread$4;->val$progress:I
@@ -47,7 +47,7 @@
 .method public run()V
     .locals 2
 
-    .line 669
+    .line 670
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$4;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$100(Lcom/android/server/power/ShutdownThread;)Landroid/app/ProgressDialog;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 671
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$4;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$100(Lcom/android/server/power/ShutdownThread;)Landroid/app/ProgressDialog;
@@ -67,12 +67,12 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setProgress(I)V
 
-    .line 671
+    .line 672
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$4;->val$message:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
 
-    .line 672
+    .line 673
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$4;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$100(Lcom/android/server/power/ShutdownThread;)Landroid/app/ProgressDialog;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 675
+    .line 676
     :cond_0
     return-void
 .end method

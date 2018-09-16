@@ -26,18 +26,18 @@
 .method constructor <init>()V
     .locals 2
 
-    .line 519
+    .line 536
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 520
+    .line 537
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->pss:J
 
-    .line 521
+    .line 538
     iput-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->uss:J
 
-    .line 522
+    .line 539
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->count:I
@@ -51,7 +51,7 @@
     .locals 4
     .param p1, "mi"    # Landroid/os/Debug$MemoryInfo;
 
-    .line 525
+    .line 542
     iget-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->pss:J
 
     invoke-virtual {p1}, Landroid/os/Debug$MemoryInfo;->getTotalPss()I
@@ -64,7 +64,7 @@
 
     iput-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->pss:J
 
-    .line 526
+    .line 543
     iget-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->uss:J
 
     invoke-virtual {p1}, Landroid/os/Debug$MemoryInfo;->getTotalUss()I
@@ -77,13 +77,13 @@
 
     iput-wide v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->uss:J
 
-    .line 527
+    .line 544
     iget v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->count:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/am/Uterus$EmbryoMemory;->count:I
 
-    .line 528
+    .line 545
     return-void
 .end method

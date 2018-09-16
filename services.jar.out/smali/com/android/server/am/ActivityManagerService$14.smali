@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 9436
+    .line 9443
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,14 +38,14 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 9439
+    .line 9446
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mConnectivityManager:Landroid/net/ConnectivityManager;
 
     if-eqz v0, :cond_1
 
-    .line 9440
+    .line 9447
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mConnectivityManager:Landroid/net/ConnectivityManager;
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    .line 9441
+    .line 9448
     .local v0, "netInfo":Landroid/net/NetworkInfo;
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -62,7 +62,7 @@
 
     monitor-enter v1
 
-    .line 9442
+    .line 9449
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -80,7 +80,7 @@
     :goto_0
     iput v3, v2, Lcom/android/server/am/ActivityManagerService;->mActiveNetType:I
 
-    .line 9443
+    .line 9450
     monitor-exit v1
 
     goto :goto_1
@@ -94,7 +94,7 @@
 
     throw v2
 
-    .line 9445
+    .line 9452
     .end local v0    # "netInfo":Landroid/net/NetworkInfo;
     :cond_1
     :goto_1
@@ -106,34 +106,34 @@
 
     move-result-object v0
 
-    .line 9446
+    .line 9453
     .local v0, "stack":Lcom/android/server/am/ActivityStack;
     if-eqz v0, :cond_2
 
-    .line 9447
+    .line 9454
     invoke-virtual {v0}, Lcom/android/server/am/ActivityStack;->topRunningActivityLocked()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v1
 
-    .line 9448
+    .line 9455
     .local v1, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v1, :cond_2
 
-    .line 9449
+    .line 9456
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "power"
 
-    .line 9450
+    .line 9457
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/PowerManager;
 
-    .line 9451
+    .line 9458
     .local v2, "powerManager":Landroid/os/PowerManager;
     if-eqz v2, :cond_2
 
@@ -143,7 +143,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 9452
+    .line 9459
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$14;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v4, 0x0
@@ -152,7 +152,7 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/server/am/ActivityManagerService;->networkOptsCheck(ILjava/lang/String;)V
 
-    .line 9455
+    .line 9462
     .end local v1    # "r":Lcom/android/server/am/ActivityRecord;
     .end local v2    # "powerManager":Landroid/os/PowerManager;
     :cond_2

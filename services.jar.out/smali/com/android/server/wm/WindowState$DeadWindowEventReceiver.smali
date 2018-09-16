@@ -23,10 +23,10 @@
     .locals 0
     .param p2, "inputChannel"    # Landroid/view/InputChannel;
 
-    .line 2325
+    .line 2338
     iput-object p1, p0, Lcom/android/server/wm/WindowState$DeadWindowEventReceiver;->this$0:Lcom/android/server/wm/WindowState;
 
-    .line 2326
+    .line 2339
     iget-object p1, p1, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object p1, p1, Lcom/android/server/wm/WindowManagerService;->mH:Lcom/android/server/wm/WindowManagerService$H;
@@ -37,7 +37,7 @@
 
     invoke-direct {p0, p2, p1}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 2327
+    .line 2340
     return-void
 .end method
 
@@ -48,11 +48,11 @@
     .param p1, "event"    # Landroid/view/InputEvent;
     .param p2, "displayId"    # I
 
-    .line 2330
+    .line 2343
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/wm/WindowState$DeadWindowEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 2331
+    .line 2344
     return-void
 .end method

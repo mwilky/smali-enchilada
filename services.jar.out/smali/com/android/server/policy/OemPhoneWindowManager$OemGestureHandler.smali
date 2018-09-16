@@ -40,13 +40,13 @@
     .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
     .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 1879
+    .line 1880
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 1880
+    .line 1881
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1881
+    .line 1882
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 5
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1885
+    .line 1886
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     :pswitch_0
     goto/16 :goto_2
 
-    .line 1934
+    .line 1935
     :pswitch_1
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
@@ -82,7 +82,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1935
+    .line 1936
     .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -92,24 +92,24 @@
 
     invoke-static {v1, v2}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2200(Lcom/android/server/policy/OemPhoneWindowManager;Lorg/json/JSONArray;)V
 
-    .line 1936
+    .line 1937
     goto/16 :goto_2
 
-    .line 1931
+    .line 1932
     .end local v0    # "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2000(Lcom/android/server/policy/OemPhoneWindowManager;)V
 
-    .line 1932
+    .line 1933
     goto/16 :goto_2
 
-    .line 1921
+    .line 1922
     :pswitch_3
     const/4 v0, 0x0
 
-    .line 1923
+    .line 1924
     .local v0, "appToken":Landroid/view/IApplicationToken;
     :try_start_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -118,22 +118,22 @@
 
     move-object v0, v1
 
-    .line 1924
+    .line 1925
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroid/view/IApplicationToken;->addNoHistory()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1927
+    .line 1928
     :cond_0
     goto :goto_0
 
-    .line 1925
+    .line 1926
     :catch_0
     move-exception v1
 
-    .line 1926
+    .line 1927
     .local v1, "ex":Ljava/lang/Exception;
     const-string v2, "OemPhoneWindowManager"
 
@@ -153,17 +153,17 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1928
+    .line 1929
     .end local v1    # "ex":Ljava/lang/Exception;
     :goto_0
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1900(Lcom/android/server/policy/OemPhoneWindowManager;)V
 
-    .line 1929
+    .line 1930
     goto/16 :goto_2
 
-    .line 1917
+    .line 1918
     .end local v0    # "appToken":Landroid/view/IApplicationToken;
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -184,10 +184,10 @@
     :goto_1
     invoke-static {v0, v3, v2, v1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1800(Lcom/android/server/policy/OemPhoneWindowManager;IZZ)V
 
-    .line 1918
+    .line 1919
     goto :goto_2
 
-    .line 1908
+    .line 1909
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/policy/PhoneWindowManager$ScreenshotRunnable;->setScreenshotType(I)V
 
-    .line 1909
+    .line 1910
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1700(Lcom/android/server/policy/OemPhoneWindowManager;)Lcom/android/server/policy/OemPhoneWindowManager$PolicyHandler;
@@ -208,10 +208,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/OemPhoneWindowManager$PolicyHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1910
+    .line 1911
     goto :goto_2
 
-    .line 1899
+    .line 1900
     :pswitch_6
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -221,7 +221,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1900
+    .line 1901
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1500(Lcom/android/server/policy/OemPhoneWindowManager;)Lcom/android/server/policy/OemThreePointersGesturesListener;
@@ -230,7 +230,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/OemThreePointersGesturesListener;->setScreenShotEnable(Z)V
 
-    .line 1901
+    .line 1902
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1600(Lcom/android/server/policy/OemPhoneWindowManager;)Z
@@ -239,7 +239,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1902
+    .line 1903
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
@@ -252,14 +252,14 @@
 
     invoke-interface {v0, v2}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->unregisterPointerEventListener(Landroid/view/WindowManagerPolicyConstants$PointerEventListener;)V
 
-    .line 1903
+    .line 1904
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0, v1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1602(Lcom/android/server/policy/OemPhoneWindowManager;Z)Z
 
     goto :goto_2
 
-    .line 1890
+    .line 1891
     :pswitch_7
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -269,7 +269,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1891
+    .line 1892
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1600(Lcom/android/server/policy/OemPhoneWindowManager;)Z
@@ -278,7 +278,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1892
+    .line 1893
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
@@ -291,12 +291,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;->registerPointerEventListener(Landroid/view/WindowManagerPolicyConstants$PointerEventListener;)V
 
-    .line 1893
+    .line 1894
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0, v2}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1602(Lcom/android/server/policy/OemPhoneWindowManager;Z)Z
 
-    .line 1895
+    .line 1896
     :cond_2
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$OemGestureHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -306,7 +306,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/server/policy/OemThreePointersGesturesListener;->setScreenShotEnable(Z)V
 
-    .line 1942
+    .line 1943
     :cond_3
     :goto_2
     return-void

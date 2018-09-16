@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/dreams/DreamController$DreamRecord;
 
-    .line 359
+    .line 369
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->this$1:Lcom/android/server/dreams/DreamController$DreamRecord;
 
     iput-object p2, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->val$service:Landroid/os/IBinder;
@@ -43,14 +43,14 @@
 .method public run()V
     .locals 2
 
-    .line 362
+    .line 372
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->this$1:Lcom/android/server/dreams/DreamController$DreamRecord;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/server/dreams/DreamController$DreamRecord;->mConnected:Z
 
-    .line 363
+    .line 373
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->this$1:Lcom/android/server/dreams/DreamController$DreamRecord;
 
     iget-object v0, v0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
@@ -69,7 +69,7 @@
 
     if-nez v0, :cond_0
 
-    .line 364
+    .line 374
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->this$1:Lcom/android/server/dreams/DreamController$DreamRecord;
 
     iget-object v0, v0, Lcom/android/server/dreams/DreamController$DreamRecord;->this$0:Lcom/android/server/dreams/DreamController;
@@ -84,13 +84,13 @@
 
     goto :goto_0
 
-    .line 367
+    .line 377
     :cond_0
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$DreamRecord$2;->this$1:Lcom/android/server/dreams/DreamController$DreamRecord;
 
     invoke-virtual {v0}, Lcom/android/server/dreams/DreamController$DreamRecord;->releaseWakeLockIfNeeded()V
 
-    .line 369
+    .line 379
     :goto_0
     return-void
 .end method

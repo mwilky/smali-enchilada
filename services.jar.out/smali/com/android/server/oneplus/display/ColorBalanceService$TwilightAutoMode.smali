@@ -50,14 +50,14 @@
 .method public constructor <init>(Lcom/android/server/oneplus/display/ColorBalanceService;)V
     .locals 1
 
-    .line 1541
+    .line 1557
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService;Lcom/android/server/oneplus/display/ColorBalanceService$1;)V
 
-    .line 1537
+    .line 1553
     const/4 p1, 0x0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -66,7 +66,7 @@
 
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mIsGetLocation:Ljava/lang/Boolean;
 
-    .line 1543
+    .line 1559
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .param p0, "x0"    # Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;
     .param p1, "x1"    # Ljava/lang/Boolean;
 
-    .line 1527
+    .line 1543
     invoke-direct {p0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateTwilightState(Ljava/lang/Boolean;)V
 
     return-void
@@ -88,89 +88,89 @@
 
     move-object/from16 v0, p0
 
-    .line 1556
+    .line 1572
     move-wide/from16 v2, p2
 
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v4
 
-    .line 1557
+    .line 1573
     .local v4, "noon":Ljava/util/Calendar;
     invoke-virtual {v4, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1558
+    .line 1574
     const/16 v5, 0xc
 
     const/16 v6, 0xb
 
     invoke-virtual {v4, v6, v5}, Ljava/util/Calendar;->set(II)V
 
-    .line 1559
+    .line 1575
     const/4 v6, 0x0
 
     invoke-virtual {v4, v5, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 1560
+    .line 1576
     const/16 v5, 0xd
 
     invoke-virtual {v4, v5, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 1561
+    .line 1577
     const/16 v5, 0xe
 
     invoke-virtual {v4, v5, v6}, Ljava/util/Calendar;->set(II)V
 
-    .line 1562
+    .line 1578
     const/4 v5, 0x0
 
-    .line 1563
+    .line 1579
     .local v5, "isDefaultLocation":Z
     const/4 v7, 0x0
 
-    .line 1564
+    .line 1580
     .local v7, "lon":I
     const/4 v8, 0x0
 
-    .line 1565
+    .line 1581
     .local v8, "lat":I
     const-wide/16 v9, 0x0
 
-    .line 1566
+    .line 1582
     .local v9, "dlon":D
     const-wide/16 v11, 0x0
 
-    .line 1567
+    .line 1583
     .local v11, "dlat":D
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v13
 
-    .line 1568
+    .line 1584
     .local v13, "isLastLocationUsed":Ljava/lang/Boolean;
     if-eqz p1, :cond_3
 
-    .line 1569
+    .line 1585
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v9
 
-    .line 1570
+    .line 1586
     invoke-virtual/range {p1 .. p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v11
 
-    .line 1571
+    .line 1587
     double-to-int v15, v9
 
     mul-int/lit8 v7, v15, 0x64
 
-    .line 1572
+    .line 1588
     double-to-int v15, v11
 
     mul-int/lit8 v8, v15, 0x64
 
-    .line 1573
+    .line 1589
     const/16 v15, 0x283c
 
     if-ne v7, v15, :cond_0
@@ -195,7 +195,7 @@
     :goto_0
     move v5, v15
 
-    .line 1575
+    .line 1591
     const-string v15, "ColorBalanceService"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -214,7 +214,7 @@
 
     invoke-static {v15, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1577
+    .line 1593
     :cond_3
     const/4 v6, -0x2
 
@@ -224,13 +224,13 @@
 
     goto :goto_1
 
-    .line 1592
+    .line 1608
     :cond_4
     move v14, v7
 
     goto :goto_2
 
-    .line 1578
+    .line 1594
     :cond_5
     :goto_1
     iget-object v14, v0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -253,7 +253,7 @@
 
     move-result v14
 
-    .line 1579
+    .line 1595
     .end local v7    # "lon":I
     .local v14, "lon":I
     iget-object v15, v0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -270,47 +270,47 @@
 
     const-string/jumbo v8, "twils-lat"
 
-    .line 1579
+    .line 1595
     .end local v8    # "lat":I
     .local v21, "lat":I
     invoke-static {v15, v8, v7, v6}, Landroid/provider/Settings$System;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v8
 
-    .line 1580
+    .line 1596
     .end local v21    # "lat":I
     .restart local v8    # "lat":I
     if-eqz v14, :cond_6
 
     if-eqz v8, :cond_6
 
-    .line 1581
+    .line 1597
     const-string v7, "ColorBalanceService"
 
     const-string/jumbo v15, "used SAVED"
 
     invoke-static {v7, v15}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1582
+    .line 1598
     int-to-double v6, v14
 
     const-wide v18, 0x408f400000000000L    # 1000.0
 
     div-double v9, v6, v18
 
-    .line 1583
+    .line 1599
     int-to-double v6, v8
 
     div-double v11, v6, v18
 
-    .line 1584
+    .line 1600
     const/4 v6, 0x1
 
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v13
 
-    .line 1592
+    .line 1608
     :cond_6
     :goto_2
     const-wide/32 v6, 0x3dcc500
@@ -323,7 +323,7 @@
 
     goto :goto_3
 
-    .line 1608
+    .line 1624
     :cond_7
     move/from16 v24, v8
 
@@ -333,7 +333,7 @@
 
     goto :goto_5
 
-    .line 1592
+    .line 1608
     :cond_8
     :goto_3
     invoke-virtual {v13}, Ljava/lang/Boolean;->booleanValue()Z
@@ -342,12 +342,12 @@
 
     if-nez v15, :cond_a
 
-    .line 1593
+    .line 1609
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v15
 
-    .line 1594
+    .line 1610
     .local v15, "moonMillis":J
     move-object/from16 v22, v13
 
@@ -355,58 +355,58 @@
 
     sub-long v13, v15, v20
 
-    .line 1595
+    .line 1611
     .end local v14    # "lon":I
     .local v13, "sunriseTimeMillis":J
     .local v22, "isLastLocationUsed":Ljava/lang/Boolean;
     .local v23, "lon":I
     add-long/2addr v6, v15
 
-    .line 1596
+    .line 1612
     .local v6, "sunriseTimeMillis2":J
     add-long v0, v15, v20
 
-    .line 1597
+    .line 1613
     .local v0, "sunsetTimeMillis":J
     cmp-long v17, v2, v13
 
     if-gez v17, :cond_9
 
-    .line 1598
+    .line 1614
     move/from16 v24, v8
 
     new-instance v8, Lcom/android/server/twilight/TwilightState;
 
-    .line 1598
+    .line 1614
     .end local v8    # "lat":I
     .local v24, "lat":I
     invoke-direct {v8, v13, v14, v0, v1}, Lcom/android/server/twilight/TwilightState;-><init>(JJ)V
 
-    .line 1598
+    .line 1614
     .local v8, "ts":Lcom/android/server/twilight/TwilightState;
     goto :goto_4
 
-    .line 1601
+    .line 1617
     .end local v24    # "lat":I
     .local v8, "lat":I
     :cond_9
     move/from16 v24, v8
 
-    .line 1601
+    .line 1617
     .end local v8    # "lat":I
     .restart local v24    # "lat":I
     new-instance v8, Lcom/android/server/twilight/TwilightState;
 
     invoke-direct {v8, v6, v7, v0, v1}, Lcom/android/server/twilight/TwilightState;-><init>(JJ)V
 
-    .line 1603
+    .line 1619
     .local v8, "ts":Lcom/android/server/twilight/TwilightState;
     :goto_4
     move-wide/from16 v25, v0
 
     const-string v0, "ColorBalanceService"
 
-    .line 1603
+    .line 1619
     .end local v0    # "sunsetTimeMillis":J
     .local v25, "sunsetTimeMillis":J
     new-instance v1, Ljava/lang/StringBuilder;
@@ -417,7 +417,7 @@
 
     const-string/jumbo v6, "isDefaultLocation:"
 
-    .line 1603
+    .line 1619
     .end local v6    # "sunriseTimeMillis2":J
     .local v27, "sunriseTimeMillis2":J
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -436,10 +436,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1604
+    .line 1620
     return-object v8
 
-    .line 1608
+    .line 1624
     .end local v15    # "moonMillis":J
     .end local v22    # "isLastLocationUsed":Ljava/lang/Boolean;
     .end local v23    # "lon":I
@@ -456,7 +456,7 @@
 
     move/from16 v23, v14
 
-    .line 1608
+    .line 1624
     .end local v8    # "lat":I
     .end local v13    # "isLastLocationUsed":Ljava/lang/Boolean;
     .end local v14    # "lon":I
@@ -466,7 +466,7 @@
     :goto_5
     const/4 v0, 0x0
 
-    .line 1609
+    .line 1625
     .local v0, "isTimeZoneError":Z
     const-wide v13, 0x408f400000000000L    # 1000.0
 
@@ -474,14 +474,14 @@
 
     double-to-int v1, v6
 
-    .line 1610
+    .line 1626
     .end local v23    # "lon":I
     .local v1, "lon":I
     mul-double v14, v11, v13
 
     double-to-int v6, v14
 
-    .line 1611
+    .line 1627
     .end local v24    # "lat":I
     .local v6, "lat":I
     move-object/from16 v7, p0
@@ -502,7 +502,7 @@
 
     invoke-static {v8, v13, v1, v14}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1612
+    .line 1628
     iget-object v8, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v8}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1600(Lcom/android/server/oneplus/display/ColorBalanceService;)Landroid/content/Context;
@@ -517,19 +517,19 @@
 
     invoke-static {v8, v13, v6, v14}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1613
+    .line 1629
     const-string v8, "ColorBalanceService"
 
     const-string v13, "Save loc!"
 
     invoke-static {v8, v13}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1614
+    .line 1630
     new-instance v8, Landroid/icu/impl/CalendarAstronomer;
 
     invoke-direct {v8, v9, v10, v11, v12}, Landroid/icu/impl/CalendarAstronomer;-><init>(DD)V
 
-    .line 1615
+    .line 1631
     .local v8, "ca":Landroid/icu/impl/CalendarAstronomer;
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -537,14 +537,14 @@
 
     invoke-virtual {v8, v13, v14}, Landroid/icu/impl/CalendarAstronomer;->setTime(J)V
 
-    .line 1616
+    .line 1632
     const/4 v13, 0x1
 
     invoke-virtual {v8, v13}, Landroid/icu/impl/CalendarAstronomer;->getSunRiseSet(Z)J
 
     move-result-wide v14
 
-    .line 1617
+    .line 1633
     .local v14, "sunriseTimeMillis":J
     move/from16 v29, v0
 
@@ -556,7 +556,7 @@
 
     move-result-wide v0
 
-    .line 1618
+    .line 1634
     .end local v1    # "lon":I
     .local v0, "sunsetTimeMillis":J
     .local v29, "isTimeZoneError":Z
@@ -565,7 +565,7 @@
 
     move-result-object v13
 
-    .line 1619
+    .line 1635
     .local v13, "csunrise":Ljava/util/Calendar;
     move/from16 v31, v5
 
@@ -573,20 +573,20 @@
 
     move-result-object v5
 
-    .line 1620
+    .line 1636
     .local v5, "csunset":Ljava/util/Calendar;
     .local v31, "isDefaultLocation":Z
     invoke-virtual {v13, v14, v15}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1621
+    .line 1637
     invoke-virtual {v5, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 1626
+    .line 1642
     move/from16 v32, v6
 
     const/4 v6, 0x5
 
-    .line 1626
+    .line 1642
     .end local v6    # "lat":I
     .local v32, "lat":I
     invoke-virtual {v13, v6}, Ljava/util/Calendar;->get(I)I
@@ -599,15 +599,15 @@
 
     move-result v9
 
-    .line 1626
+    .line 1642
     .end local v9    # "dlon":D
     .local v33, "dlon":D
     if-eq v7, v9, :cond_b
 
-    .line 1627
+    .line 1643
     const/4 v6, 0x1
 
-    .line 1628
+    .line 1644
     .end local v29    # "isTimeZoneError":Z
     .local v6, "isTimeZoneError":Z
     const-string v7, "ColorBalanceService"
@@ -616,7 +616,7 @@
 
     invoke-static {v7, v9}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1648
+    .line 1664
     .end local v6    # "isTimeZoneError":Z
     .restart local v29    # "isTimeZoneError":Z
     :goto_6
@@ -624,38 +624,38 @@
 
     goto :goto_7
 
-    .line 1630
+    .line 1646
     :cond_b
     cmp-long v7, v0, v2
 
     if-gez v7, :cond_c
 
-    .line 1631
+    .line 1647
     const/4 v7, 0x1
 
     invoke-virtual {v4, v6, v7}, Ljava/util/Calendar;->add(II)V
 
-    .line 1632
+    .line 1648
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v9
 
     invoke-virtual {v8, v9, v10}, Landroid/icu/impl/CalendarAstronomer;->setTime(J)V
 
-    .line 1633
+    .line 1649
     invoke-virtual {v8, v7}, Landroid/icu/impl/CalendarAstronomer;->getSunRiseSet(Z)J
 
     move-result-wide v14
 
-    .line 1634
+    .line 1650
     cmp-long v6, v14, v2
 
     if-gez v6, :cond_d
 
-    .line 1635
+    .line 1651
     const/4 v6, 0x1
 
-    .line 1636
+    .line 1652
     .end local v29    # "isTimeZoneError":Z
     .restart local v6    # "isTimeZoneError":Z
     const-string v7, "ColorBalanceService"
@@ -666,7 +666,7 @@
 
     goto :goto_6
 
-    .line 1638
+    .line 1654
     .end local v6    # "isTimeZoneError":Z
     .restart local v29    # "isTimeZoneError":Z
     :cond_c
@@ -674,34 +674,34 @@
 
     if-lez v7, :cond_d
 
-    .line 1639
+    .line 1655
     const/4 v7, -0x1
 
     invoke-virtual {v4, v6, v7}, Ljava/util/Calendar;->add(II)V
 
-    .line 1640
+    .line 1656
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v6
 
     invoke-virtual {v8, v6, v7}, Landroid/icu/impl/CalendarAstronomer;->setTime(J)V
 
-    .line 1641
+    .line 1657
     const/4 v6, 0x0
 
     invoke-virtual {v8, v6}, Landroid/icu/impl/CalendarAstronomer;->getSunRiseSet(Z)J
 
     move-result-wide v0
 
-    .line 1642
+    .line 1658
     cmp-long v6, v0, v2
 
     if-lez v6, :cond_d
 
-    .line 1643
+    .line 1659
     const/4 v6, 0x1
 
-    .line 1644
+    .line 1660
     .end local v29    # "isTimeZoneError":Z
     .restart local v6    # "isTimeZoneError":Z
     const-string v7, "ColorBalanceService"
@@ -712,7 +712,7 @@
 
     goto :goto_6
 
-    .line 1648
+    .line 1664
     .end local v6    # "isTimeZoneError":Z
     .restart local v29    # "isTimeZoneError":Z
     :cond_d
@@ -721,7 +721,7 @@
 
     invoke-direct {v6, v14, v15, v0, v1}, Lcom/android/server/twilight/TwilightState;-><init>(JJ)V
 
-    .line 1649
+    .line 1665
     .local v6, "ts":Lcom/android/server/twilight/TwilightState;
     const-string v7, "ColorBalanceService"
 
@@ -741,26 +741,26 @@
 
     invoke-static {v7, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1650
+    .line 1666
     if-eqz v29, :cond_f
 
-    .line 1651
+    .line 1667
     invoke-virtual {v4}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v9
 
-    .line 1652
+    .line 1668
     .local v9, "moonMillis":J
     sub-long v14, v9, v20
 
-    .line 1653
+    .line 1669
     move-wide/from16 v35, v0
 
     const-wide/32 v16, 0x3dcc500
 
     add-long v0, v9, v16
 
-    .line 1654
+    .line 1670
     .local v0, "sunriseTimeMillis2":J
     .local v35, "sunsetTimeMillis":J
     move-object/from16 v37, v4
@@ -769,7 +769,7 @@
 
     add-long v4, v9, v20
 
-    .line 1655
+    .line 1671
     .end local v5    # "csunset":Ljava/util/Calendar;
     .end local v35    # "sunsetTimeMillis":J
     .local v4, "sunsetTimeMillis":J
@@ -779,7 +779,7 @@
 
     if-gez v7, :cond_e
 
-    .line 1656
+    .line 1672
     new-instance v7, Lcom/android/server/twilight/TwilightState;
 
     invoke-direct {v7, v14, v15, v4, v5}, Lcom/android/server/twilight/TwilightState;-><init>(JJ)V
@@ -788,7 +788,7 @@
 
     goto :goto_8
 
-    .line 1659
+    .line 1675
     :cond_e
     new-instance v7, Lcom/android/server/twilight/TwilightState;
 
@@ -796,7 +796,7 @@
 
     move-object v6, v7
 
-    .line 1661
+    .line 1677
     :goto_8
     const-string v7, "ColorBalanceService"
 
@@ -804,7 +804,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 1661
+    .line 1677
     .end local v0    # "sunriseTimeMillis2":J
     .local v39, "sunriseTimeMillis2":J
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -825,7 +825,7 @@
     .end local v39    # "sunriseTimeMillis2":J
     goto :goto_9
 
-    .line 1663
+    .line 1679
     .end local v37    # "noon":Ljava/util/Calendar;
     .end local v38    # "csunset":Ljava/util/Calendar;
     .local v0, "sunsetTimeMillis":J
@@ -840,7 +840,7 @@
 
     move-wide/from16 v4, v35
 
-    .line 1663
+    .line 1679
     .end local v0    # "sunsetTimeMillis":J
     .end local v5    # "csunset":Ljava/util/Calendar;
     .local v4, "sunsetTimeMillis":J
@@ -853,7 +853,7 @@
 .method private updateActivated()V
     .locals 9
 
-    .line 1705
+    .line 1721
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1300(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Object;
@@ -862,13 +862,13 @@
 
     monitor-enter v0
 
-    .line 1706
+    .line 1722
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 1707
+    .line 1723
     .local v1, "currentTimeMillis":J
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastLocation:Landroid/location/Location;
 
@@ -876,7 +876,7 @@
 
     move-result-object v3
 
-    .line 1708
+    .line 1724
     .local v3, "state":Lcom/android/server/twilight/TwilightState;
     if-eqz v3, :cond_0
 
@@ -893,16 +893,16 @@
     :cond_0
     const/4 v4, 0x0
 
-    .line 1710
+    .line 1726
     .local v4, "isNight":Z
     :goto_0
     const/4 v5, 0x1
 
-    .line 1711
+    .line 1727
     .local v5, "setActivated":Z
     if-eqz v3, :cond_1
 
-    .line 1712
+    .line 1728
     const-string v6, "ColorBalanceService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -933,7 +933,7 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1714
+    .line 1730
     :cond_1
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
@@ -943,17 +943,17 @@
 
     invoke-virtual {v6, v4}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
-    .line 1715
+    .line 1731
     .end local v1    # "currentTimeMillis":J
     .end local v3    # "state":Lcom/android/server/twilight/TwilightState;
     .end local v4    # "isNight":Z
     .end local v5    # "setActivated":Z
     monitor-exit v0
 
-    .line 1716
+    .line 1732
     return-void
 
-    .line 1715
+    .line 1731
     :catchall_0
     move-exception v1
 
@@ -970,12 +970,12 @@
 
     move-object/from16 v7, p0
 
-    .line 1719
+    .line 1735
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v8
 
-    .line 1720
+    .line 1736
     .local v8, "currentTimeMillis":J
     iget-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
@@ -987,7 +987,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1721
+    .line 1737
     iget-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v1, "network"
@@ -998,7 +998,7 @@
 
     iput-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastLocation:Landroid/location/Location;
 
-    .line 1723
+    .line 1739
     :cond_0
     iget-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastLocation:Landroid/location/Location;
 
@@ -1006,7 +1006,7 @@
 
     move-result-object v10
 
-    .line 1724
+    .line 1740
     .local v10, "state":Lcom/android/server/twilight/TwilightState;
     const-string v0, "ColorBalanceService"
 
@@ -1044,7 +1044,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1726
+    .line 1742
     invoke-virtual/range {p1 .. p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -1067,11 +1067,11 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 1727
+    .line 1743
     :cond_1
     invoke-direct/range {p0 .. p0}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateActivated()V
 
-    .line 1729
+    .line 1745
     :cond_2
     invoke-virtual {v10}, Lcom/android/server/twilight/TwilightState;->isNight()Z
 
@@ -1083,50 +1083,50 @@
 
     iput-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mPreIsNightStatus:Ljava/lang/Boolean;
 
-    .line 1730
+    .line 1746
     iput-object v10, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastTwilightState:Lcom/android/server/twilight/TwilightState;
 
-    .line 1731
+    .line 1747
     if-eqz v10, :cond_7
 
-    .line 1732
+    .line 1748
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v11
 
-    .line 1733
+    .line 1749
     .local v11, "now":Ljava/util/Calendar;
     invoke-virtual {v11}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v12
 
-    .line 1734
+    .line 1750
     .local v12, "nowMillis":J
     invoke-virtual {v10}, Lcom/android/server/twilight/TwilightState;->sunriseTimeMillis()J
 
     move-result-wide v14
 
-    .line 1735
+    .line 1751
     .local v14, "sunriseMillis":J
     invoke-virtual {v10}, Lcom/android/server/twilight/TwilightState;->sunsetTimeMillis()J
 
     move-result-wide v16
 
-    .line 1737
+    .line 1753
     .local v16, "sunsetMillis":J
     cmp-long v0, v14, v16
 
     if-gez v0, :cond_4
 
-    .line 1738
+    .line 1754
     cmp-long v0, v12, v14
 
     if-gez v0, :cond_3
 
-    .line 1740
+    .line 1756
     move-wide v0, v14
 
-    .line 1741
+    .line 1757
     .local v0, "triggerAtMillis":J
     const-string v2, "ColorBalanceService"
 
@@ -1146,7 +1146,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1759
+    .line 1775
     .end local v0    # "triggerAtMillis":J
     .local v18, "triggerAtMillis":J
     :goto_0
@@ -1154,12 +1154,12 @@
 
     goto :goto_1
 
-    .line 1744
+    .line 1760
     .end local v18    # "triggerAtMillis":J
     :cond_3
     move-wide/from16 v0, v16
 
-    .line 1745
+    .line 1761
     .restart local v0    # "triggerAtMillis":J
     const-string v2, "ColorBalanceService"
 
@@ -1181,17 +1181,17 @@
 
     goto :goto_0
 
-    .line 1748
+    .line 1764
     .end local v0    # "triggerAtMillis":J
     :cond_4
     cmp-long v0, v12, v16
 
     if-gez v0, :cond_5
 
-    .line 1750
+    .line 1766
     move-wide/from16 v0, v16
 
-    .line 1751
+    .line 1767
     .restart local v0    # "triggerAtMillis":J
     const-string v2, "ColorBalanceService"
 
@@ -1213,12 +1213,12 @@
 
     goto :goto_0
 
-    .line 1754
+    .line 1770
     .end local v0    # "triggerAtMillis":J
     :cond_5
     move-wide v0, v14
 
-    .line 1755
+    .line 1771
     .restart local v0    # "triggerAtMillis":J
     const-string v2, "ColorBalanceService"
 
@@ -1240,7 +1240,7 @@
 
     goto :goto_0
 
-    .line 1759
+    .line 1775
     .end local v0    # "triggerAtMillis":J
     .restart local v18    # "triggerAtMillis":J
     :goto_1
@@ -1248,12 +1248,12 @@
 
     invoke-virtual {v0, v7}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 1760
+    .line 1776
     cmp-long v0, v18, v12
 
     if-gez v0, :cond_6
 
-    .line 1761
+    .line 1777
     const-string v0, "ColorBalanceService"
 
     const-string/jumbo v1, "time zone maybe error,triggerAtMillis < nowMillis!"
@@ -1262,7 +1262,7 @@
 
     goto :goto_2
 
-    .line 1763
+    .line 1779
     :cond_6
     iget-object v0, v7, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
@@ -1282,7 +1282,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->setExact(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 1765
+    .line 1781
     .end local v11    # "now":Ljava/util/Calendar;
     .end local v12    # "nowMillis":J
     .end local v14    # "sunriseMillis":J
@@ -1299,28 +1299,28 @@
     .locals 1
     .param p1, "activated"    # Z
 
-    .line 1807
+    .line 1823
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastActivatedTime:Ljava/util/Calendar;
 
-    .line 1808
+    .line 1824
     return-void
 .end method
 
 .method public onAlarm()V
     .locals 2
 
-    .line 1668
+    .line 1684
     const-string v0, "ColorBalanceService"
 
     const-string/jumbo v1, "onAlarm"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1669
+    .line 1685
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1329,7 +1329,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateTwilightState(Ljava/lang/Boolean;)V
 
-    .line 1671
+    .line 1687
     return-void
 .end method
 
@@ -1337,13 +1337,13 @@
     .locals 12
     .param p1, "location"    # Landroid/location/Location;
 
-    .line 1675
+    .line 1691
     if-eqz p1, :cond_5
 
-    .line 1676
+    .line 1692
     const/4 v0, 0x0
 
-    .line 1677
+    .line 1693
     .local v0, "isDefaultLocation":Z
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
@@ -1353,7 +1353,7 @@
 
     mul-int/lit8 v1, v1, 0x64
 
-    .line 1678
+    .line 1694
     .local v1, "lon":I
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
@@ -1363,7 +1363,7 @@
 
     mul-int/lit8 v2, v2, 0x64
 
-    .line 1680
+    .line 1696
     .local v2, "lat":I
     const/16 v3, 0x283c
 
@@ -1393,22 +1393,22 @@
     :goto_0
     move v0, v3
 
-    .line 1682
+    .line 1698
     if-eqz v0, :cond_3
 
-    .line 1683
+    .line 1699
     const-string v3, "ColorBalanceService"
 
     const-string v6, "#1 startListening"
 
     invoke-static {v3, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1684
+    .line 1700
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     invoke-virtual {v3, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 1685
+    .line 1701
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v7, "network"
@@ -1421,7 +1421,7 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 1686
+    .line 1702
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
@@ -1430,7 +1430,7 @@
 
     goto :goto_1
 
-    .line 1688
+    .line 1704
     :cond_3
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mIsGetLocation:Ljava/lang/Boolean;
 
@@ -1440,19 +1440,19 @@
 
     if-nez v3, :cond_4
 
-    .line 1689
+    .line 1705
     const-string v3, "ColorBalanceService"
 
     const-string v4, "#2 startListening"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1690
+    .line 1706
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     invoke-virtual {v3, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 1691
+    .line 1707
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v7, "network"
@@ -1465,14 +1465,14 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 1692
+    .line 1708
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mIsGetLocation:Ljava/lang/Boolean;
 
-    .line 1695
+    .line 1711
     :cond_4
     :goto_1
     const-string v3, "ColorBalanceService"
@@ -1485,7 +1485,7 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1696
+    .line 1712
     invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v6
@@ -1496,7 +1496,7 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1697
+    .line 1713
     invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
 
     move-result v6
@@ -1507,7 +1507,7 @@
 
     invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1698
+    .line 1714
     invoke-virtual {p1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v6
@@ -1518,20 +1518,20 @@
 
     move-result-object v4
 
-    .line 1695
+    .line 1711
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1699
+    .line 1715
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastLocation:Landroid/location/Location;
 
-    .line 1700
+    .line 1716
     invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
 
     invoke-direct {p0, v3}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateTwilightState(Ljava/lang/Boolean;)V
 
-    .line 1702
+    .line 1718
     .end local v0    # "isDefaultLocation":Z
     .end local v1    # "lon":I
     .end local v2    # "lat":I
@@ -1543,7 +1543,7 @@
     .locals 0
     .param p1, "provider"    # Ljava/lang/String;
 
-    .line 1554
+    .line 1570
     return-void
 .end method
 
@@ -1551,14 +1551,14 @@
     .locals 0
     .param p1, "provider"    # Ljava/lang/String;
 
-    .line 1550
+    .line 1566
     return-void
 .end method
 
 .method public onStart()V
     .locals 7
 
-    .line 1771
+    .line 1787
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1600(Lcom/android/server/oneplus/display/ColorBalanceService;)Landroid/content/Context;
@@ -1575,7 +1575,7 @@
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 1772
+    .line 1788
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1600(Lcom/android/server/oneplus/display/ColorBalanceService;)Landroid/content/Context;
@@ -1592,7 +1592,7 @@
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
-    .line 1773
+    .line 1789
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v2, "network"
@@ -1605,32 +1605,32 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 1774
+    .line 1790
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mTimeChangedReceiver:Landroid/content/BroadcastReceiver;
 
     if-nez v0, :cond_0
 
-    .line 1775
+    .line 1791
     new-instance v0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode$1;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;)V
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mTimeChangedReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1783
+    .line 1799
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.TIME_SET"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 1784
+    .line 1800
     .local v0, "intentFilter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.TIMEZONE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1785
+    .line 1801
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-virtual {v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
@@ -1641,7 +1641,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1787
+    .line 1803
     .end local v0    # "intentFilter":Landroid/content/IntentFilter;
     :cond_0
     const/4 v0, 0x0
@@ -1652,10 +1652,10 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateTwilightState(Ljava/lang/Boolean;)V
 
-    .line 1788
+    .line 1804
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->updateActivated()V
 
-    .line 1789
+    .line 1805
     return-void
 .end method
 
@@ -1665,29 +1665,29 @@
     .param p2, "status"    # I
     .param p3, "extras"    # Landroid/os/Bundle;
 
-    .line 1546
+    .line 1562
     return-void
 .end method
 
 .method public onStop()V
     .locals 2
 
-    .line 1794
+    .line 1810
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
     invoke-virtual {v0, p0}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 1795
+    .line 1811
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLocationManager:Landroid/location/LocationManager;
 
     invoke-virtual {v0, p0}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 1796
+    .line 1812
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->mLastActivatedTime:Ljava/util/Calendar;
 
-    .line 1797
+    .line 1813
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
@@ -1698,7 +1698,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1798
+    .line 1814
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1400(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
@@ -1719,14 +1719,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1799
+    .line 1815
     const-string v0, "ColorBalanceService"
 
     const-string v1, "TwilightAutoMode stop,disable night display mode!"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1800
+    .line 1816
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -1735,7 +1735,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1801
+    .line 1817
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -1746,7 +1746,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
-    .line 1803
+    .line 1819
     :cond_0
     return-void
 .end method

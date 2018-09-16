@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 10529
+    .line 10536
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .param p4, "owningUid"    # I
     .param p5, "exported"    # Z
 
-    .line 10533
+    .line 10540
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     move-object v1, p1
@@ -67,7 +67,7 @@
 .method public getAMSLock()Ljava/lang/Object;
     .locals 1
 
-    .line 10539
+    .line 10546
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0

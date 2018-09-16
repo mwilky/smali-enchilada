@@ -534,7 +534,7 @@
     .line 324
     :goto_1
     :try_start_2
-    const-string v1, "historical"
+    const-string/jumbo v1, "historical"
 
     iget-object v2, p0, Lcom/android/server/notification/NotificationUsageStats;->mSQLiteLog:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -568,6 +568,7 @@
 
     monitor-exit p0
 
+    .line 307
     .end local p0    # "this":Lcom/android/server/notification/NotificationUsageStats;
     throw p1
 .end method

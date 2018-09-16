@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
-    .line 1453
+    .line 1475
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$5;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iput p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$5;->val$userId:I
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 3
 
-    .line 1456
+    .line 1478
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$5;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -52,8 +52,8 @@
 
     const/4 v2, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->access$2500(Lcom/android/server/fingerprint/FingerprintService;ILjava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->access$2600(Lcom/android/server/fingerprint/FingerprintService;ILjava/lang/String;)V
 
-    .line 1457
+    .line 1479
     return-void
 .end method

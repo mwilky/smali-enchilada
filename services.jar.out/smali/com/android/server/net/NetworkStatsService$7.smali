@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkStatsService$7;
-.super Lcom/android/server/net/BaseNetworkObserver;
+.super Landroid/content/BroadcastReceiver;
 .source "NetworkStatsService.java"
 
 
@@ -23,81 +23,49 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/net/NetworkStatsService;
 
-    .line 1047
+    .line 1065
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$7;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-direct {p0}, Lcom/android/server/net/BaseNetworkObserver;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public limitReached(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 4
-    .param p1, "limitName"    # Ljava/lang/String;
-    .param p2, "iface"    # Ljava/lang/String;
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1051
+    .line 1069
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$7;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$300(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "android.permission.CONNECTIVITY_INTERNAL"
+    monitor-enter v0
 
-    const-string v2, "NetworkStats"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1053
-    const-string v0, "globalAlert"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 1056
-    const/4 v0, 0x1
-
-    .line 1057
-    .local v0, "flags":I
+    .line 1070
+    :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$7;->this$0:Lcom/android/server/net/NetworkStatsService;
 
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1500(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1400(Lcom/android/server/net/NetworkStatsService;)V
 
-    move-result-object v1
+    .line 1071
+    monitor-exit v0
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v3, v3, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 1060
-    iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$7;->this$0:Lcom/android/server/net/NetworkStatsService;
-
-    invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$1500(Lcom/android/server/net/NetworkStatsService;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
-
-    .line 1062
-    .end local v0    # "flags":I
-    :cond_0
+    .line 1072
     return-void
+
+    .line 1071
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

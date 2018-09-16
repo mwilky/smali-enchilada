@@ -28,15 +28,15 @@
     .locals 0
     .param p2, "binder"    # Landroid/os/IBinder;
 
-    .line 272
+    .line 273
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$TelephonyRegistryDeathRecipient;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 273
+    .line 274
     iput-object p2, p0, Lcom/android/server/TelephonyRegistry$TelephonyRegistryDeathRecipient;->binder:Landroid/os/IBinder;
 
-    .line 274
+    .line 275
     return-void
 .end method
 
@@ -45,13 +45,13 @@
 .method public binderDied()V
     .locals 2
 
-    .line 279
+    .line 280
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$TelephonyRegistryDeathRecipient;->this$0:Lcom/android/server/TelephonyRegistry;
 
     iget-object v1, p0, Lcom/android/server/TelephonyRegistry$TelephonyRegistryDeathRecipient;->binder:Landroid/os/IBinder;
 
     invoke-static {v0, v1}, Lcom/android/server/TelephonyRegistry;->access$600(Lcom/android/server/TelephonyRegistry;Landroid/os/IBinder;)V
 
-    .line 280
+    .line 281
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 7688
+    .line 7809
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 4
 
-    .line 7691
+    .line 7812
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
@@ -50,7 +50,7 @@
 
     monitor-enter v0
 
-    .line 7692
+    .line 7813
     :try_start_0
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -60,12 +60,12 @@
 
     if-nez v1, :cond_0
 
-    .line 7694
+    .line 7815
     monitor-exit v0
 
     return-void
 
-    .line 7696
+    .line 7817
     :cond_0
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
@@ -73,14 +73,14 @@
 
     move-result-wide v2
 
-    invoke-static {v1, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$3902(Lcom/android/server/policy/PhoneWindowManager;J)J
+    invoke-static {v1, v2, v3}, Lcom/android/server/policy/PhoneWindowManager;->access$4102(Lcom/android/server/policy/PhoneWindowManager;J)J
 
-    .line 7701
+    .line 7822
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget v1, v1, Lcom/android/server/policy/PhoneWindowManager;->mLastSystemUiFlags:I
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4000(I)Z
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4200(I)Z
 
     move-result v1
 
@@ -92,23 +92,23 @@
 
     if-nez v1, :cond_1
 
-    .line 7703
+    .line 7824
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$18;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4100(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4300(Lcom/android/server/policy/PhoneWindowManager;)Lcom/android/server/policy/BarController;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/server/policy/BarController;->showTransient()V
 
-    .line 7705
+    .line 7826
     :cond_1
     monitor-exit v0
 
-    .line 7706
+    .line 7827
     return-void
 
-    .line 7705
+    .line 7826
     :catchall_0
     move-exception v1
 

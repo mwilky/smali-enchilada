@@ -607,16 +607,16 @@
     .locals 6
     .param p0, "metricKey"    # Ljava/lang/String;
 
-    .line 653
+    .line 654
     sget-object v0, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 654
+    .line 655
     :try_start_0
     sget-object v1, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
-    .line 655
+    .line 656
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -641,13 +641,13 @@
 
     invoke-virtual {v1, p0, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 656
+    .line 657
     monitor-exit v0
 
-    .line 657
+    .line 658
     return-void
 
-    .line 656
+    .line 657
     :catchall_0
     move-exception v1
 
@@ -661,12 +661,12 @@
 .method private static metricShutdownStart()V
     .locals 5
 
-    .line 660
+    .line 661
     sget-object v0, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 661
+    .line 662
     :try_start_0
     sget-object v1, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
@@ -682,13 +682,13 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 662
+    .line 663
     monitor-exit v0
 
-    .line 663
+    .line 664
     return-void
 
-    .line 662
+    .line 663
     :catchall_0
     move-exception v1
 
@@ -703,12 +703,12 @@
     .locals 6
     .param p0, "metricKey"    # Ljava/lang/String;
 
-    .line 647
+    .line 648
     sget-object v0, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 648
+    .line 649
     :try_start_0
     sget-object v1, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
@@ -726,13 +726,13 @@
 
     invoke-virtual {v1, p0, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 649
+    .line 650
     monitor-exit v0
 
-    .line 650
+    .line 651
     return-void
 
-    .line 649
+    .line 650
     :catchall_0
     move-exception v1
 
@@ -746,7 +746,7 @@
 .method private static newTimingsLog()Landroid/util/TimingsTraceLog;
     .locals 4
 
-    .line 643
+    .line 644
     new-instance v0, Landroid/util/TimingsTraceLog;
 
     const-string v1, "ShutdownTiming"
@@ -850,7 +850,7 @@
     .param p1, "reboot"    # Z
     .param p2, "reason"    # Ljava/lang/String;
 
-    .line 761
+    .line 762
     const-string/jumbo v0, "vendor.peripheral.shutdown_critical_list"
 
     const-string v1, "ERROR"
@@ -859,7 +859,7 @@
 
     move-result-object v0
 
-    .line 765
+    .line 766
     .local v0, "subsysProp":Ljava/lang/String;
     const-string v1, "ERROR"
 
@@ -869,7 +869,7 @@
 
     if-nez v1, :cond_7
 
-    .line 766
+    .line 767
     const-string v1, "ShutdownThread"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -892,51 +892,51 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 767
+    .line 768
     const-string v1, "ShutdownThread"
 
     const-string v2, "Waiting for a maximum of 10000ms"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 769
+    .line 770
     const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 770
+    .line 771
     .local v1, "subsysList":[Ljava/lang/String;
     const/4 v2, 0x0
 
-    .line 771
+    .line 772
     .local v2, "wait_count":I
     const/4 v3, 0x1
 
-    .line 773
+    .line 774
     .local v3, "okToShutdown":Z
     array-length v4, v1
 
-    .line 775
+    .line 776
     .local v4, "subsysListLength":I
     :goto_0
     const/4 v3, 0x1
 
-    .line 776
+    .line 777
     const/4 v5, 0x0
 
     move v6, v3
 
     move v3, v5
 
-    .line 776
+    .line 777
     .local v3, "i":I
     .local v6, "okToShutdown":Z
     :goto_1
     if-ge v3, v4, :cond_1
 
-    .line 777
+    .line 778
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -959,12 +959,12 @@
 
     const-string v8, "ERROR"
 
-    .line 778
+    .line 779
     invoke-static {v7, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 783
+    .line 784
     .local v7, "subsysState":Ljava/lang/String;
     const-string v8, "ONLINE"
 
@@ -974,30 +974,30 @@
 
     if-eqz v8, :cond_0
 
-    .line 787
+    .line 788
     const/4 v6, 0x0
 
-    .line 776
+    .line 777
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 790
+    .line 791
     .end local v3    # "i":I
     .end local v7    # "subsysState":Ljava/lang/String;
     :cond_1
     if-nez v6, :cond_2
 
-    .line 791
+    .line 792
     const-wide/16 v7, 0x64
 
     invoke-static {v7, v8}, Landroid/os/SystemClock;->sleep(J)V
 
-    .line 792
+    .line 793
     add-int/lit8 v2, v2, 0x1
 
-    .line 794
+    .line 795
     :cond_2
     const/4 v3, 0x1
 
@@ -1009,33 +1009,33 @@
 
     goto :goto_2
 
-    .line 773
+    .line 774
     :cond_3
     move v3, v6
 
     goto :goto_0
 
-    .line 796
+    .line 797
     :cond_4
     :goto_2
     if-eq v6, v3, :cond_6
 
-    .line 797
+    .line 798
     nop
 
-    .line 797
+    .line 798
     .local v5, "i":I
     :goto_3
     move v3, v5
 
-    .line 797
+    .line 798
     .end local v5    # "i":I
     .restart local v3    # "i":I
     array-length v5, v1
 
     if-ge v3, v5, :cond_7
 
-    .line 798
+    .line 799
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1058,12 +1058,12 @@
 
     const-string v7, "ERROR"
 
-    .line 799
+    .line 800
     invoke-static {v5, v7}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 804
+    .line 805
     .local v5, "subsysState":Ljava/lang/String;
     const-string v7, "ONLINE"
 
@@ -1073,7 +1073,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 805
+    .line 806
     const-string v7, "ShutdownThread"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1098,7 +1098,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 797
+    .line 798
     :cond_5
     add-int/lit8 v3, v3, 0x1
 
@@ -1106,7 +1106,7 @@
 
     goto :goto_3
 
-    .line 810
+    .line 811
     .end local v3    # "i":I
     .end local v5    # "subsysState":Ljava/lang/String;
     :cond_6
@@ -1116,7 +1116,7 @@
 
     invoke-static {v3, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 813
+    .line 814
     .end local v1    # "subsysList":[Ljava/lang/String;
     .end local v2    # "wait_count":I
     .end local v4    # "subsysListLength":I
@@ -1124,7 +1124,7 @@
     :cond_7
     if-eqz p1, :cond_8
 
-    .line 814
+    .line 815
     const-string v1, "ShutdownThread"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1143,31 +1143,31 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 815
+    .line 816
     invoke-static {p2}, Lcom/android/server/power/PowerManagerService;->lowLevelReboot(Ljava/lang/String;)V
 
-    .line 816
+    .line 817
     const-string v1, "ShutdownThread"
 
     const-string v2, "Reboot failed, will attempt shutdown instead"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 817
+    .line 818
     const/4 p2, 0x0
 
     goto :goto_5
 
-    .line 818
+    .line 819
     :cond_8
     if-eqz p0, :cond_9
 
-    .line 820
+    .line 821
     new-instance v1, Landroid/os/SystemVibrator;
 
     invoke-direct {v1, p0}, Landroid/os/SystemVibrator;-><init>(Landroid/content/Context;)V
 
-    .line 822
+    .line 823
     .local v1, "vibrator":Landroid/os/Vibrator;
     const-wide/16 v2, 0x1f4
 
@@ -1178,14 +1178,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 826
+    .line 827
     goto :goto_4
 
-    .line 823
+    .line 824
     :catch_0
     move-exception v4
 
-    .line 825
+    .line 826
     .local v4, "e":Ljava/lang/Exception;
     const-string v5, "ShutdownThread"
 
@@ -1193,7 +1193,7 @@
 
     invoke-static {v5, v6, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 830
+    .line 831
     .end local v4    # "e":Ljava/lang/Exception;
     :goto_4
     :try_start_1
@@ -1201,14 +1201,14 @@
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 832
+    .line 833
     goto :goto_5
 
-    .line 831
+    .line 832
     :catch_1
     move-exception v2
 
-    .line 835
+    .line 836
     .end local v1    # "vibrator":Landroid/os/Vibrator;
     :cond_9
     :goto_5
@@ -1218,10 +1218,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 836
+    .line 837
     invoke-static {p2}, Lcom/android/server/power/PowerManagerService;->lowLevelShutdown(Ljava/lang/String;)V
 
-    .line 837
+    .line 838
     return-void
 .end method
 
@@ -1290,18 +1290,18 @@
     .param p0, "reboot"    # Z
     .param p1, "reason"    # Ljava/lang/String;
 
-    .line 840
+    .line 841
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 841
+    .line 842
     .local v0, "metricValue":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "reboot:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 842
+    .line 843
     if-eqz p0, :cond_0
 
     const-string/jumbo v1, "y"
@@ -1314,7 +1314,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 843
+    .line 844
     const-string v1, ","
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1325,25 +1325,25 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 844
+    .line 845
     sget-object v1, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v1
 
-    .line 845
+    .line 846
     .local v1, "metricsSize":I
     const/4 v2, 0x0
 
     move v3, v2
 
-    .line 845
+    .line 846
     .local v3, "i":I
     :goto_1
     if-ge v3, v1, :cond_2
 
-    .line 846
+    .line 847
     sget-object v4, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, v3}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
@@ -1352,7 +1352,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 847
+    .line 848
     .local v4, "name":Ljava/lang/String;
     sget-object v5, Lcom/android/server/power/ShutdownThread;->TRON_METRICS:Landroid/util/ArrayMap;
 
@@ -1366,7 +1366,7 @@
 
     move-result-wide v5
 
-    .line 848
+    .line 849
     .local v5, "value":J
     const-wide/16 v7, 0x0
 
@@ -1374,7 +1374,7 @@
 
     if-gez v7, :cond_1
 
-    .line 849
+    .line 850
     const-string v7, "ShutdownThread"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1393,10 +1393,10 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 850
+    .line 851
     goto :goto_2
 
-    .line 852
+    .line 853
     :cond_1
     const/16 v7, 0x2c
 
@@ -1410,7 +1410,7 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 845
+    .line 846
     .end local v4    # "name":Ljava/lang/String;
     .end local v5    # "value":J
     :goto_2
@@ -1418,7 +1418,7 @@
 
     goto :goto_1
 
-    .line 854
+    .line 855
     .end local v3    # "i":I
     :cond_2
     new-instance v3, Ljava/io/File;
@@ -1427,11 +1427,11 @@
 
     invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 855
+    .line 856
     .local v3, "tmp":Ljava/io/File;
     nop
 
-    .line 856
+    .line 857
     .local v2, "saved":Z
     :try_start_0
     new-instance v4, Ljava/io/FileOutputStream;
@@ -1440,11 +1440,11 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 856
+    .line 857
     .local v4, "fos":Ljava/io/FileOutputStream;
     const/4 v5, 0x0
 
-    .line 857
+    .line 858
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1461,27 +1461,27 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 858
+    .line 859
     const/4 v2, 0x1
 
-    .line 859
+    .line 860
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 861
+    .line 862
     .end local v4    # "fos":Ljava/io/FileOutputStream;
     goto :goto_5
 
-    .line 859
+    .line 860
     .restart local v4    # "fos":Ljava/io/FileOutputStream;
     :catchall_0
     move-exception v6
 
     goto :goto_3
 
-    .line 856
+    .line 857
     :catch_0
     move-exception v5
 
@@ -1490,7 +1490,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 859
+    .line 860
     :goto_3
     if-eqz v5, :cond_3
 
@@ -1518,12 +1518,12 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 859
+    .line 860
     .end local v4    # "fos":Ljava/io/FileOutputStream;
     :catch_2
     move-exception v4
 
-    .line 860
+    .line 861
     .local v4, "e":Ljava/io/IOException;
     const-string v5, "ShutdownThread"
 
@@ -1531,12 +1531,12 @@
 
     invoke-static {v5, v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 862
+    .line 863
     .end local v4    # "e":Ljava/io/IOException;
     :goto_5
     if-eqz v2, :cond_4
 
-    .line 863
+    .line 864
     new-instance v4, Ljava/io/File;
 
     const-string v5, "/data/system/shutdown-metrics.txt"
@@ -1545,7 +1545,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
-    .line 865
+    .line 866
     :cond_4
     return-void
 .end method
@@ -1555,7 +1555,7 @@
     .param p1, "progress"    # I
     .param p2, "message"    # Ljava/lang/CharSequence;
 
-    .line 666
+    .line 667
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/power/ShutdownThread$4;
@@ -1564,7 +1564,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 677
+    .line 678
     return-void
 .end method
 
@@ -2240,7 +2240,7 @@
     .locals 10
     .param p1, "timeout"    # I
 
-    .line 682
+    .line 683
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -2249,13 +2249,13 @@
 
     add-long/2addr v0, v2
 
-    .line 683
+    .line 684
     .local v0, "endTime":J
     const/4 v2, 0x1
 
     new-array v2, v2, [Z
 
-    .line 684
+    .line 685
     .local v2, "done":[Z
     new-instance v3, Lcom/android/server/power/ShutdownThread$5;
 
@@ -2271,11 +2271,11 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/android/server/power/ShutdownThread$5;-><init>(Lcom/android/server/power/ShutdownThread;JI[Z)V
 
-    .line 741
+    .line 742
     .local v3, "t":Ljava/lang/Thread;
     invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
-    .line 743
+    .line 744
     int-to-long v4, p1
 
     :try_start_0
@@ -2283,14 +2283,14 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 745
+    .line 746
     goto :goto_0
 
-    .line 744
+    .line 745
     :catch_0
     move-exception v4
 
-    .line 746
+    .line 747
     :goto_0
     const/4 v4, 0x0
 
@@ -2298,14 +2298,14 @@
 
     if-nez v4, :cond_0
 
-    .line 747
+    .line 748
     const-string v4, "ShutdownThread"
 
     const-string v5, "Timed out waiting for Radio shutdown."
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 749
+    .line 750
     :cond_0
     return-void
 .end method
@@ -2313,40 +2313,40 @@
 .method private uncrypt()V
     .locals 9
 
-    .line 868
+    .line 869
     const-string v0, "ShutdownThread"
 
     const-string v1, "Calling uncrypt and monitoring the progress..."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 870
+    .line 871
     new-instance v0, Lcom/android/server/power/ShutdownThread$6;
 
     invoke-direct {v0, p0}, Lcom/android/server/power/ShutdownThread$6;-><init>(Lcom/android/server/power/ShutdownThread;)V
 
-    .line 891
+    .line 892
     .local v0, "progressListener":Landroid/os/RecoverySystem$ProgressListener;
     const/4 v1, 0x1
 
     new-array v2, v1, [Z
 
-    .line 892
+    .line 893
     .local v2, "done":[Z
     const/4 v3, 0x0
 
     aput-boolean v3, v2, v3
 
-    .line 893
+    .line 894
     new-instance v4, Lcom/android/server/power/ShutdownThread$7;
 
     invoke-direct {v4, p0, v0, v2}, Lcom/android/server/power/ShutdownThread$7;-><init>(Lcom/android/server/power/ShutdownThread;Landroid/os/RecoverySystem$ProgressListener;[Z)V
 
-    .line 908
+    .line 909
     .local v4, "t":Ljava/lang/Thread;
     invoke-virtual {v4}, Ljava/lang/Thread;->start()V
 
-    .line 911
+    .line 912
     const-wide/32 v5, 0xdbba0
 
     :try_start_0
@@ -2354,30 +2354,30 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 913
+    .line 914
     goto :goto_0
 
-    .line 912
+    .line 913
     :catch_0
     move-exception v5
 
-    .line 914
+    .line 915
     :goto_0
     aget-boolean v5, v2, v3
 
     if-nez v5, :cond_0
 
-    .line 915
+    .line 916
     const-string v5, "ShutdownThread"
 
     const-string v6, "Timed out waiting for uncrypt."
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 916
+    .line 917
     const/16 v5, 0x64
 
-    .line 917
+    .line 918
     .local v5, "uncryptTimeoutError":I
     const-string/jumbo v6, "uncrypt_time: %d\nuncrypt_error: %d\n"
 
@@ -2387,7 +2387,7 @@
 
     const/16 v8, 0x384
 
-    .line 918
+    .line 919
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -2402,12 +2402,12 @@
 
     aput-object v3, v7, v1
 
-    .line 917
+    .line 918
     invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 920
+    .line 921
     .local v1, "timeoutMessage":Ljava/lang/String;
     :try_start_1
     sget-object v3, Landroid/os/RecoverySystem;->UNCRYPT_STATUS_FILE:Ljava/io/File;
@@ -2416,14 +2416,14 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 923
+    .line 924
     goto :goto_1
 
-    .line 921
+    .line 922
     :catch_1
     move-exception v3
 
-    .line 922
+    .line 923
     .local v3, "e":Ljava/io/IOException;
     const-string v6, "ShutdownThread"
 
@@ -2431,7 +2431,7 @@
 
     invoke-static {v6, v7, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 925
+    .line 926
     .end local v1    # "timeoutMessage":Ljava/lang/String;
     .end local v3    # "e":Ljava/io/IOException;
     .end local v5    # "uncryptTimeoutError":I
@@ -2985,6 +2985,13 @@
     if-eqz v6, :cond_e
 
     .line 632
+    const-string v6, "ShutdownThread"
+
+    const-string v8, "Call setUserComputeBrightnessConfiguration"
+
+    invoke-static {v6, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 633
     iget-object v6, v1, Lcom/android/server/power/ShutdownThread;->mContext:Landroid/content/Context;
 
     const-string v8, "display"
@@ -2995,16 +3002,16 @@
 
     check-cast v6, Landroid/hardware/display/DisplayManager;
 
-    .line 633
+    .line 634
     .local v6, "dm":Landroid/hardware/display/DisplayManager;
     if-eqz v6, :cond_d
 
-    .line 634
+    .line 635
     invoke-virtual {v6}, Landroid/hardware/display/DisplayManager;->setUserComputeBrightnessConfiguration()V
 
     goto :goto_6
 
-    .line 636
+    .line 637
     :cond_d
     const-string v8, "ShutdownThread"
 
@@ -3012,7 +3019,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 639
+    .line 640
     .end local v6    # "dm":Landroid/hardware/display/DisplayManager;
     :cond_e
     :goto_6
@@ -3024,7 +3031,7 @@
 
     invoke-static {v6, v8, v9}, Lcom/android/server/power/ShutdownThread;->rebootOrShutdown(Landroid/content/Context;ZLjava/lang/String;)V
 
-    .line 640
+    .line 641
     return-void
 
     .line 558

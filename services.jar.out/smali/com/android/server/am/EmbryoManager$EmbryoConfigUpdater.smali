@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/EmbryoManager;
 
-    .line 680
+    .line 693
     iput-object p1, p0, Lcom/android/server/am/EmbryoManager$EmbryoConfigUpdater;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
     .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 683
+    .line 696
     iget-object v0, p0, Lcom/android/server/am/EmbryoManager$EmbryoConfigUpdater;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-virtual {v0, p1}, Lcom/android/server/am/EmbryoManager;->resolveConfig(Lorg/json/JSONArray;)V
 
-    .line 684
+    .line 697
     return-void
 .end method

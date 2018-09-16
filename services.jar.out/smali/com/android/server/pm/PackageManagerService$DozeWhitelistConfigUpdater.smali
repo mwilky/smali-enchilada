@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 3824
+    .line 3825
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$DozeWhitelistConfigUpdater;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
     .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 3827
+    .line 3828
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$DozeWhitelistConfigUpdater;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/pm/PackageManagerService;->access$2000(Lcom/android/server/pm/PackageManagerService;Lorg/json/JSONArray;)V
 
-    .line 3828
+    .line 3829
     return-void
 .end method

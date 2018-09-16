@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 1517
+    .line 1518
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,10 +41,10 @@
     .param p1, "name"    # Landroid/content/ComponentName;
     .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 1520
+    .line 1521
     nop
 
-    .line 1521
+    .line 1522
     invoke-static {p2}, Landroid/os/Binder;->allowBlocking(Landroid/os/IBinder;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     move-result-object v0
 
-    .line 1522
+    .line 1523
     .local v0, "imcs":Lcom/android/internal/app/IMediaContainerService;
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -71,7 +71,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1523
+    .line 1524
     return-void
 .end method
 
@@ -79,6 +79,6 @@
     .locals 0
     .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 1527
+    .line 1528
     return-void
 .end method

@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
 
-    .line 24895
+    .line 24905
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageManagerNative$Stub;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/android/server/pm/PackageManagerService;
     .param p2, "x1"    # Lcom/android/server/pm/PackageManagerService$1;
 
-    .line 24895
+    .line 24905
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;-><init>(Lcom/android/server/pm/PackageManagerService;)V
 
     return-void
@@ -52,14 +52,14 @@
         }
     .end annotation
 
-    .line 24911
+    .line 24921
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/PackageManagerService;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 24912
+    .line 24922
     .local v0, "installerName":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -67,10 +67,10 @@
 
     if-nez v1, :cond_0
 
-    .line 24913
+    .line 24923
     return-object v0
 
-    .line 24916
+    .line 24926
     :cond_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -80,7 +80,7 @@
 
     move-result v1
 
-    .line 24917
+    .line 24927
     .local v1, "callingUser":I
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -90,7 +90,7 @@
 
     move-result-object v2
 
-    .line 24920
+    .line 24930
     .local v2, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-eqz v2, :cond_1
 
@@ -100,12 +100,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 24921
+    .line 24931
     const-string/jumbo v3, "preload"
 
     return-object v3
 
-    .line 24923
+    .line 24933
     :cond_1
     const-string v3, ""
 
@@ -121,14 +121,14 @@
         }
     .end annotation
 
-    .line 24898
+    .line 24908
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/PackageManagerService;->getNamesForUids([I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 24900
+    .line 24910
     .local v0, "results":[Ljava/lang/String;
     array-length v1, v0
 
@@ -138,23 +138,23 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 24901
+    .line 24911
     aget-object v2, v0, v1
 
     if-nez v2, :cond_0
 
-    .line 24902
+    .line 24912
     const-string v2, ""
 
     aput-object v2, v0, v1
 
-    .line 24900
+    .line 24910
     :cond_0
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 24905
+    .line 24915
     .end local v1    # "i":I
     :cond_1
     return-object v0
@@ -169,7 +169,7 @@
         }
     .end annotation
 
-    .line 24929
+    .line 24939
     :try_start_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -179,7 +179,7 @@
 
     move-result v0
 
-    .line 24930
+    .line 24940
     .local v0, "callingUser":I
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PackageManagerNative;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -189,11 +189,11 @@
 
     move-result-object v1
 
-    .line 24931
+    .line 24941
     .local v1, "pInfo":Landroid/content/pm/PackageInfo;
     if-eqz v1, :cond_0
 
-    .line 24932
+    .line 24942
     invoke-virtual {v1}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
 
     move-result-wide v2
@@ -202,17 +202,17 @@
 
     return-wide v2
 
-    .line 24935
+    .line 24945
     .end local v0    # "callingUser":I
     .end local v1    # "pInfo":Landroid/content/pm/PackageInfo;
     :cond_0
     goto :goto_0
 
-    .line 24934
+    .line 24944
     :catch_0
     move-exception v0
 
-    .line 24936
+    .line 24946
     :goto_0
     const-wide/16 v0, 0x0
 

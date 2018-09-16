@@ -8670,6 +8670,7 @@
     .local v0, "N":I
     const/4 v1, 0x0
 
+    .line 697
     .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_2
@@ -8715,7 +8716,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "host "
+    const-string/jumbo v5, "host "
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

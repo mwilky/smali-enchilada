@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 3082
+    .line 3091
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$12;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 3085
+    .line 3094
     const-string v0, "android.intent.action.ACTION_SHUTDOWN"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,14 +51,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 3086
+    .line 3095
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$12;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/server/policy/OemPhoneWindowManager;->mShuttingDown:Z
 
-    .line 3087
+    .line 3096
     const-string v0, "OemPhoneWindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -81,12 +81,12 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3088
+    .line 3097
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$12;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-virtual {v0, v1, v1}, Lcom/android/server/policy/OemPhoneWindowManager;->updateRotation(ZZ)V
 
-    .line 3090
+    .line 3099
     :cond_0
     return-void
 .end method

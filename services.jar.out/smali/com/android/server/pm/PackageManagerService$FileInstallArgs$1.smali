@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/pm/PackageManagerService$FileInstallArgs;
 
-    .line 16738
+    .line 16744
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$FileInstallArgs$1;->this$1:Lcom/android/server/pm/PackageManagerService$FileInstallArgs;
 
     invoke-direct {p0}, Lcom/android/internal/os/IParcelFileDescriptorFactory$Stub;-><init>()V
@@ -43,14 +43,14 @@
         }
     .end annotation
 
-    .line 16741
+    .line 16747
     invoke-static {p1}, Landroid/os/FileUtils;->isValidExtFilename(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 16745
+    .line 16751
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -62,7 +62,7 @@
 
     invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 16746
+    .line 16752
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    .line 16748
+    .line 16754
     .local v1, "fd":Ljava/io/FileDescriptor;
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -88,7 +88,7 @@
 
     invoke-static {v2, v3}, Landroid/system/Os;->chmod(Ljava/lang/String;I)V
 
-    .line 16749
+    .line 16755
     new-instance v2, Landroid/os/ParcelFileDescriptor;
 
     invoke-direct {v2, v1}, Landroid/os/ParcelFileDescriptor;-><init>(Ljava/io/FileDescriptor;)V
@@ -97,13 +97,13 @@
 
     return-object v2
 
-    .line 16750
+    .line 16756
     .end local v0    # "file":Ljava/io/File;
     .end local v1    # "fd":Ljava/io/FileDescriptor;
     :catch_0
     move-exception v0
 
-    .line 16751
+    .line 16757
     .local v0, "e":Landroid/system/ErrnoException;
     new-instance v1, Landroid/os/RemoteException;
 
@@ -129,7 +129,7 @@
 
     throw v1
 
-    .line 16742
+    .line 16748
     .end local v0    # "e":Landroid/system/ErrnoException;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;

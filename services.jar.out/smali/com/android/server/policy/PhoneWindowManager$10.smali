@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 2745
+    .line 2796
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;-><init>()V
@@ -37,14 +37,14 @@
     .locals 3
     .param p1, "transit"    # I
 
-    .line 2755
+    .line 2806
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const-wide/16 v1, 0x0
 
-    invoke-static {v0, p1, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3600(Lcom/android/server/policy/PhoneWindowManager;IJ)I
+    invoke-static {v0, p1, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;IJ)I
 
-    .line 2756
+    .line 2807
     return-void
 .end method
 
@@ -57,10 +57,10 @@
     .param p6, "statusBarAnimationStartTime"    # J
     .param p8, "statusBarAnimationDuration"    # J
 
-    .line 2750
+    .line 2801
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$10;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v0, p1, p4, p5}, Lcom/android/server/policy/PhoneWindowManager;->access$3600(Lcom/android/server/policy/PhoneWindowManager;IJ)I
+    invoke-static {v0, p1, p4, p5}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;IJ)I
 
     move-result v0
 

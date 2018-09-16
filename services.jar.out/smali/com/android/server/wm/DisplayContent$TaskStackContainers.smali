@@ -1881,7 +1881,7 @@
 
     move-result-object v0
 
-    const-string v2, "homeAnimationLayer"
+    const-string/jumbo v2, "homeAnimationLayer"
 
     .line 3775
     invoke-virtual {v0, v2}, Landroid/view/SurfaceControl$Builder;->setName(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;

@@ -23,13 +23,13 @@
     .locals 0
     .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 2422
+    .line 2427
     iput-object p1, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    .line 2423
+    .line 2428
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 2424
+    .line 2429
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .locals 2
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 2465
+    .line 2470
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -58,7 +58,7 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    .line 2466
+    .line 2471
     :cond_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 2478
+    .line 2483
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2400(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
-    .line 2479
+    .line 2484
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v0, :cond_1
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 2473
+    .line 2478
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -111,7 +111,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2500(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
 
-    .line 2474
+    .line 2479
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v0, :cond_1
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 2468
+    .line 2473
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -146,7 +146,7 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2400(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)Lcom/android/server/am/OnePlusAppBootManager$OnePlusAppBootInfo;
 
-    .line 2469
+    .line 2474
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v0, :cond_1
@@ -169,7 +169,7 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    .line 2485
+    .line 2490
     :cond_1
     :goto_0
     return-void
@@ -188,7 +188,7 @@
     .locals 3
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 2427
+    .line 2432
     sget-boolean v0, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -209,7 +209,7 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->myLog(Ljava/lang/String;)V
 
-    .line 2429
+    .line 2434
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -217,37 +217,37 @@
 
     packed-switch v0, :pswitch_data_1
 
-    .line 2459
+    .line 2464
     invoke-direct {p0, p1}, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->handlePkgMessage(Landroid/os/Message;)V
 
     goto/16 :goto_1
 
-    .line 2455
+    .line 2460
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2200(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    .line 2456
+    .line 2461
     goto :goto_1
 
-    .line 2450
+    .line 2455
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAppBootManager;->access$2200(Lcom/android/server/am/OnePlusAppBootManager;)V
 
-    .line 2451
+    .line 2456
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     const-wide/32 v1, 0x5265c00
 
     invoke-static {v0, v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2300(Lcom/android/server/am/OnePlusAppBootManager;J)V
 
-    .line 2452
+    .line 2457
     goto :goto_1
 
-    .line 2446
+    .line 2451
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -265,10 +265,10 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2100(Lcom/android/server/am/OnePlusAppBootManager;Z)V
 
-    .line 2447
+    .line 2452
     goto :goto_1
 
-    .line 2441
+    .line 2446
     :pswitch_3
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
@@ -284,7 +284,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 2442
+    .line 2447
     .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     iget-object v1, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
@@ -294,10 +294,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/am/OnePlusAppBootManager;->access$2000(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
 
-    .line 2443
+    .line 2448
     goto :goto_1
 
-    .line 2435
+    .line 2440
     .end local v0    # "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
@@ -310,13 +310,13 @@
 
     move-result v0
 
-    .line 2436
+    .line 2441
     .local v0, "ret":I
     sget-boolean v1, Lcom/android/server/am/OnePlusAppBootManager;->DEBUG:Z
 
     if-eqz v1, :cond_2
 
-    .line 2437
+    .line 2442
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -345,7 +345,7 @@
 
     goto :goto_1
 
-    .line 2431
+    .line 2436
     .end local v0    # "ret":I
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootProcessHander;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
@@ -356,10 +356,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->writeXml_appboot(Ljava/util/HashMap;)I
 
-    .line 2432
+    .line 2437
     nop
 
-    .line 2462
+    .line 2467
     :cond_2
     :goto_1
     return-void

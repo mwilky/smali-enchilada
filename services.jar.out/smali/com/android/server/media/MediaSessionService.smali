@@ -660,7 +660,7 @@
     .locals 1
     .param p1, "token"    # Landroid/media/SessionToken2;
 
-    .line 2303
+    .line 2310
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/media/MediaSessionService;->addSessionRecordLocked(Landroid/media/SessionToken2;Landroid/media/MediaController2;)Z
@@ -675,7 +675,7 @@
     .param p1, "token"    # Landroid/media/SessionToken2;
     .param p2, "controller"    # Landroid/media/MediaController2;
 
-    .line 2307
+    .line 2314
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mSessionRecords:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -692,18 +692,18 @@
 
     if-ne v0, p2, :cond_0
 
-    .line 2309
+    .line 2316
     const/4 v0, 0x0
 
     return v0
 
-    .line 2312
+    .line 2319
     :cond_0
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mSessionRecords:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2313
+    .line 2320
     const/4 v0, 0x1
 
     return v0
@@ -1807,7 +1807,7 @@
     .locals 3
     .param p1, "userId"    # I
 
-    .line 2273
+    .line 2280
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mHandler:Lcom/android/server/media/MediaSessionService$MessageHandler;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1822,7 +1822,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2274
+    .line 2281
     return-void
 .end method
 
@@ -1925,18 +1925,18 @@
     .locals 8
     .param p1, "userId"    # I
 
-    .line 2277
+    .line 2284
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2278
+    .line 2285
     :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2279
+    .line 2286
     .local v1, "tokens":Ljava/util/List;, "Ljava/util/List<Landroid/os/Bundle;>;"
     iget-object v2, p0, Lcom/android/server/media/MediaSessionService;->mSessionRecords:Ljava/util/Map;
 
@@ -1963,7 +1963,7 @@
 
     check-cast v3, Landroid/media/SessionToken2;
 
-    .line 2283
+    .line 2290
     .local v3, "token":Landroid/media/SessionToken2;
     invoke-virtual {v3}, Landroid/media/SessionToken2;->getUid()I
 
@@ -1977,7 +1977,7 @@
 
     if-ne v4, p1, :cond_1
 
-    .line 2285
+    .line 2292
     :cond_0
     invoke-virtual {v3}, Landroid/media/SessionToken2;->toBundle()Landroid/os/Bundle;
 
@@ -1985,12 +1985,12 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2287
+    .line 2294
     .end local v3    # "token":Landroid/media/SessionToken2;
     :cond_1
     goto :goto_0
 
-    .line 2289
+    .line 2296
     :cond_2
     iget-object v2, p0, Lcom/android/server/media/MediaSessionService;->mSessionTokensListeners:Ljava/util/List;
 
@@ -2011,7 +2011,7 @@
 
     check-cast v3, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;
 
-    .line 2291
+    .line 2298
     .local v3, "record":Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;
     invoke-static {v3}, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->access$6400(Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;)I
 
@@ -2027,7 +2027,7 @@
 
     if-ne v5, v4, :cond_4
 
-    .line 2293
+    .line 2300
     :cond_3
     :try_start_1
     invoke-static {v3}, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->access$4700(Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;)Landroid/media/ISessionTokensListener;
@@ -2039,14 +2039,14 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2296
+    .line 2303
     goto :goto_2
 
-    .line 2294
+    .line 2301
     :catch_0
     move-exception v5
 
-    .line 2295
+    .line 2302
     .local v5, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v6, "MediaSessionService"
@@ -2055,22 +2055,22 @@
 
     invoke-static {v6, v7, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2298
+    .line 2305
     .end local v3    # "record":Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;
     .end local v5    # "e":Landroid/os/RemoteException;
     :cond_4
     :goto_2
     goto :goto_1
 
-    .line 2299
+    .line 2306
     .end local v1    # "tokens":Ljava/util/List;, "Ljava/util/List<Landroid/os/Bundle;>;"
     :cond_5
     monitor-exit v0
 
-    .line 2300
+    .line 2307
     return-void
 
-    .line 2299
+    .line 2306
     :catchall_0
     move-exception v1
 
@@ -2369,7 +2369,7 @@
     .locals 1
     .param p1, "token"    # Landroid/media/SessionToken2;
 
-    .line 2317
+    .line 2324
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mSessionRecords:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -2378,18 +2378,18 @@
 
     if-nez v0, :cond_0
 
-    .line 2319
+    .line 2326
     const/4 v0, 0x0
 
     return v0
 
-    .line 2322
+    .line 2329
     :cond_0
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService;->mSessionRecords:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2323
+    .line 2330
     const/4 v0, 0x1
 
     return v0

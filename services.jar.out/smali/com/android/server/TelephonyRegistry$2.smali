@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/TelephonyRegistry;
 
-    .line 283
+    .line 284
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,12 +38,12 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 286
+    .line 287
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 288
+    .line 289
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
@@ -55,14 +55,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 289
+    .line 290
     const-string v1, "android.intent.extra.user_handle"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 291
+    .line 292
     .local v1, "userHandle":I
     iget-object v3, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 292
+    .line 293
     .end local v1    # "userHandle":I
     goto :goto_0
 
@@ -97,30 +97,30 @@
 
     if-eqz v1, :cond_2
 
-    .line 293
+    .line 294
     new-instance v1, Ljava/lang/Integer;
 
     const-string/jumbo v3, "subscription"
 
-    .line 295
+    .line 296
     invoke-static {}, Landroid/telephony/SubscriptionManager;->getDefaultSubscriptionId()I
 
     move-result v4
 
-    .line 293
+    .line 294
     invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
     invoke-direct {v1, v3}, Ljava/lang/Integer;-><init>(I)V
 
-    .line 296
+    .line 297
     .local v1, "newDefaultSubIdObj":Ljava/lang/Integer;
     const-string/jumbo v3, "slot"
 
     iget-object v4, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
-    .line 297
+    .line 298
     invoke-static {v4}, Lcom/android/server/TelephonyRegistry;->access$400(Lcom/android/server/TelephonyRegistry;)I
 
     move-result v4
@@ -129,12 +129,12 @@
 
     move-result v4
 
-    .line 296
+    .line 297
     invoke-virtual {p2, v3, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v3
 
-    .line 304
+    .line 305
     .local v3, "newDefaultPhoneId":I
     iget-object v4, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -162,14 +162,14 @@
 
     iget-object v4, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
-    .line 305
+    .line 306
     invoke-static {v4}, Lcom/android/server/TelephonyRegistry;->access$500(Lcom/android/server/TelephonyRegistry;)I
 
     move-result v4
 
     if-eq v3, v4, :cond_2
 
-    .line 306
+    .line 307
     :cond_1
     iget-object v4, p0, Lcom/android/server/TelephonyRegistry$2;->this$0:Lcom/android/server/TelephonyRegistry;
 
@@ -191,7 +191,7 @@
 
     invoke-virtual {v4, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 310
+    .line 311
     .end local v1    # "newDefaultSubIdObj":Ljava/lang/Integer;
     .end local v3    # "newDefaultPhoneId":I
     :cond_2

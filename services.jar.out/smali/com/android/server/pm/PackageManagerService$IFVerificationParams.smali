@@ -32,24 +32,24 @@
     .param p3, "_userId"    # I
     .param p4, "_verifierUid"    # I
 
-    .line 1197
+    .line 1198
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1198
+    .line 1199
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->pkg:Landroid/content/pm/PackageParser$Package;
 
-    .line 1199
-    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->replacing:Z
-
     .line 1200
-    iput p3, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->userId:I
+    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->replacing:Z
 
     .line 1201
-    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->replacing:Z
+    iput p3, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->userId:I
 
     .line 1202
-    iput p4, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->verifierUid:I
+    iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->replacing:Z
 
     .line 1203
+    iput p4, p0, Lcom/android/server/pm/PackageManagerService$IFVerificationParams;->verifierUid:I
+
+    .line 1204
     return-void
 .end method

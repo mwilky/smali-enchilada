@@ -23,17 +23,17 @@
     .locals 1
     .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 5201
+    .line 5227
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    .line 5202
+    .line 5228
     const/4 p1, 0x0
 
     const/4 v0, 0x1
 
     invoke-direct {p0, p2, p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 5203
+    .line 5229
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .locals 4
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 5207
+    .line 5233
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x7
@@ -54,13 +54,13 @@
 
     goto :goto_0
 
-    .line 5223
+    .line 5249
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    .line 5224
+    .line 5250
     .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -70,7 +70,7 @@
 
     if-nez v1, :cond_0
 
-    .line 5225
+    .line 5251
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iget-object v2, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
@@ -81,17 +81,17 @@
 
     const-string v3, "activity"
 
-    .line 5226
+    .line 5252
     invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/app/ActivityManager;
 
-    .line 5225
+    .line 5251
     invoke-static {v1, v2}, Lcom/android/server/power/PowerManagerService;->access$3202(Lcom/android/server/power/PowerManagerService;Landroid/app/ActivityManager;)Landroid/app/ActivityManager;
 
-    .line 5228
+    .line 5254
     :cond_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -103,47 +103,47 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/app/ActivityManager;->forceStopPackageAsUser(Ljava/lang/String;I)V
 
-    .line 5229
+    .line 5255
     goto :goto_0
 
-    .line 5218
+    .line 5244
     .end local v0    # "packageName":Ljava/lang/String;
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/power/PowerManagerService;->checkForLongWakeLocks()V
 
-    .line 5219
+    .line 5245
     goto :goto_0
 
-    .line 5215
+    .line 5241
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3100(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 5216
+    .line 5242
     goto :goto_0
 
-    .line 5212
+    .line 5238
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3000(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 5213
+    .line 5239
     goto :goto_0
 
-    .line 5209
+    .line 5235
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2900(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 5210
+    .line 5236
     goto :goto_0
 
-    .line 5231
+    .line 5257
     :cond_1
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
@@ -159,7 +159,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 5232
+    .line 5258
     .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -169,7 +169,7 @@
 
     invoke-static {v1, v2}, Lcom/android/server/power/PowerManagerService;->access$2200(Lcom/android/server/power/PowerManagerService;Lorg/json/JSONArray;)V
 
-    .line 5236
+    .line 5262
     .end local v0    # "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     :goto_0
     return-void

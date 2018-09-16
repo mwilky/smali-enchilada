@@ -26,7 +26,7 @@
     .param p1, "this$0"    # Lcom/android/server/oneplus/display/ColorBalanceService;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 420
+    .line 423
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     iput-object p3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->val$cr:Landroid/content/ContentResolver;
@@ -43,7 +43,7 @@
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 423
+    .line 426
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->val$cr:Landroid/content/ContentResolver;
 
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -58,19 +58,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 424
+    .line 427
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->val$cr:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 425
+    .line 428
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$802(Lcom/android/server/oneplus/display/ColorBalanceService;Landroid/database/ContentObserver;)Landroid/database/ContentObserver;
 
-    .line 427
+    .line 430
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$900(Lcom/android/server/oneplus/display/ColorBalanceService;)Z
@@ -79,12 +79,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 428
+    .line 431
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$2;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1000(Lcom/android/server/oneplus/display/ColorBalanceService;)V
 
-    .line 432
+    .line 435
     :cond_0
     return-void
 .end method

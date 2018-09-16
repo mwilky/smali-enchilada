@@ -29,7 +29,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
 
-    .line 684
+    .line 685
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$5;->this$0:Lcom/android/server/power/ShutdownThread;
 
     iput-wide p2, p0, Lcom/android/server/power/ShutdownThread$5;->val$endTime:J
@@ -48,16 +48,16 @@
 .method public run()V
     .locals 11
 
-    .line 686
+    .line 687
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$200()Landroid/util/TimingsTraceLog;
 
     move-result-object v0
 
-    .line 689
+    .line 690
     .local v0, "shutdownTimingsTraceLog":Landroid/util/TimingsTraceLog;
     const-string/jumbo v1, "phone"
 
-    .line 690
+    .line 691
     invoke-static {v1}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v1
@@ -66,7 +66,7 @@
 
     move-result-object v1
 
-    .line 693
+    .line 694
     .local v1, "phone":Lcom/android/internal/telephony/ITelephony;
     const/4 v2, 0x0
 
@@ -88,49 +88,49 @@
 
     goto :goto_1
 
-    .line 699
+    .line 700
     :catch_0
     move-exception v4
 
     goto :goto_2
 
-    .line 693
+    .line 694
     :cond_1
     :goto_0
     move v4, v3
 
-    .line 694
+    .line 695
     .local v4, "radioOff":Z
     :goto_1
     if-nez v4, :cond_2
 
-    .line 695
+    .line 696
     const-string v5, "ShutdownThread"
 
     const-string v6, "Turning off cellular radios..."
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 696
+    .line 697
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$300()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-static {v5}, Lcom/android/server/power/ShutdownThread;->access$400(Ljava/lang/String;)V
 
-    .line 697
+    .line 698
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->shutdownMobileRadios()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_3
 
-    .line 699
+    .line 700
     .end local v4    # "radioOff":Z
     :goto_2
     nop
 
-    .line 700
+    .line 701
     .local v4, "ex":Landroid/os/RemoteException;
     const-string v5, "ShutdownThread"
 
@@ -138,33 +138,33 @@
 
     invoke-static {v5, v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 701
+    .line 702
     nop
 
-    .line 701
+    .line 702
     .end local v4    # "ex":Landroid/os/RemoteException;
     move v4, v3
 
     goto :goto_4
 
-    .line 702
+    .line 703
     .local v4, "radioOff":Z
     :cond_2
     :goto_3
     nop
 
-    .line 701
+    .line 702
     :goto_4
     nop
 
-    .line 704
+    .line 705
     const-string v5, "ShutdownThread"
 
     const-string v6, "Waiting for Radio..."
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 706
+    .line 707
     iget-wide v5, p0, Lcom/android/server/power/ShutdownThread$5;->val$endTime:J
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -173,7 +173,7 @@
 
     sub-long/2addr v5, v7
 
-    .line 707
+    .line 708
     .local v5, "delay":J
     :goto_5
     const-wide/16 v7, 0x0
@@ -182,14 +182,14 @@
 
     if-lez v7, :cond_6
 
-    .line 708
+    .line 709
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$500()Z
 
     move-result v7
 
     if-eqz v7, :cond_3
 
-    .line 709
+    .line 710
     iget v7, p0, Lcom/android/server/power/ShutdownThread$5;->val$timeout:I
 
     int-to-long v7, v7
@@ -214,11 +214,11 @@
 
     double-to-int v7, v7
 
-    .line 711
+    .line 712
     .local v7, "status":I
     add-int/lit8 v7, v7, 0x6
 
-    .line 712
+    .line 713
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$600()Lcom/android/server/power/ShutdownThread;
 
     move-result-object v8
@@ -227,12 +227,12 @@
 
     invoke-static {v8, v7, v9}, Lcom/android/server/power/ShutdownThread;->access$700(Lcom/android/server/power/ShutdownThread;ILjava/lang/CharSequence;)V
 
-    .line 715
+    .line 716
     .end local v7    # "status":I
     :cond_3
     if-nez v4, :cond_4
 
-    .line 717
+    .line 718
     :try_start_1
     invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->needMobileRadioShutdown()Z
 
@@ -244,14 +244,14 @@
 
     move v4, v7
 
-    .line 721
+    .line 722
     goto :goto_6
 
-    .line 718
+    .line 719
     :catch_1
     move-exception v7
 
-    .line 719
+    .line 720
     .local v7, "ex":Landroid/os/RemoteException;
     const-string v8, "ShutdownThread"
 
@@ -259,32 +259,32 @@
 
     invoke-static {v8, v9, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 720
+    .line 721
     const/4 v4, 0x1
 
-    .line 722
+    .line 723
     .end local v7    # "ex":Landroid/os/RemoteException;
     :goto_6
     if-eqz v4, :cond_4
 
-    .line 723
+    .line 724
     const-string v7, "ShutdownThread"
 
     const-string v8, "Radio turned off."
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 724
+    .line 725
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$300()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-static {v7}, Lcom/android/server/power/ShutdownThread;->access$800(Ljava/lang/String;)V
 
-    .line 725
+    .line 726
     const-string v7, "ShutdownRadio"
 
-    .line 726
+    .line 727
     invoke-static {}, Lcom/android/server/power/ShutdownThread;->access$900()Landroid/util/ArrayMap;
 
     move-result-object v8
@@ -305,32 +305,32 @@
 
     invoke-virtual {v0, v7, v8, v9}, Landroid/util/TimingsTraceLog;->logDuration(Ljava/lang/String;J)V
 
-    .line 730
+    .line 731
     :cond_4
     if-eqz v4, :cond_5
 
-    .line 731
+    .line 732
     const-string v7, "ShutdownThread"
 
     const-string v8, "Radio shutdown complete."
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 732
+    .line 733
     iget-object v7, p0, Lcom/android/server/power/ShutdownThread$5;->val$done:[Z
 
     aput-boolean v3, v7, v2
 
-    .line 733
+    .line 734
     goto :goto_7
 
-    .line 735
+    .line 736
     :cond_5
     const-wide/16 v7, 0x64
 
     invoke-static {v7, v8}, Landroid/os/SystemClock;->sleep(J)V
 
-    .line 736
+    .line 737
     iget-wide v7, p0, Lcom/android/server/power/ShutdownThread$5;->val$endTime:J
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -341,7 +341,7 @@
 
     goto :goto_5
 
-    .line 738
+    .line 739
     :cond_6
     :goto_7
     return-void

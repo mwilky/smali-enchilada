@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
 
-    .line 5136
+    .line 5162
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$DreamReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/android/server/power/PowerManagerService;
     .param p2, "x1"    # Lcom/android/server/power/PowerManagerService$1;
 
-    .line 5136
+    .line 5162
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$DreamReceiver;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -48,7 +48,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 5139
+    .line 5165
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DreamReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$000(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
@@ -57,19 +57,19 @@
 
     monitor-enter v0
 
-    .line 5140
+    .line 5166
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DreamReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$2400(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 5141
+    .line 5167
     monitor-exit v0
 
-    .line 5142
+    .line 5168
     return-void
 
-    .line 5141
+    .line 5167
     :catchall_0
     move-exception v1
 

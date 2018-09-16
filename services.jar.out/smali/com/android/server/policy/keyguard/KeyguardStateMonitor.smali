@@ -71,7 +71,7 @@
     .line 53
     iput-boolean v0, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mFingerprintAuthenticating:Z
 
-    .line 181
+    .line 180
     iput-boolean v0, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mPocketModeActive:Z
 
     .line 64
@@ -356,7 +356,7 @@
 .method public isPocketModeActive()Z
     .locals 1
 
-    .line 184
+    .line 183
     iget-boolean v0, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mPocketModeActive:Z
 
     return v0
@@ -412,9 +412,12 @@
     return v0
 .end method
 
-.method public onFingerprintStateChange(Z)V
+.method public onFingerprintStateChange(ZIII)V
     .locals 3
     .param p1, "authenticating"    # Z
+    .param p2, "authType"    # I
+    .param p3, "result"    # I
+    .param p4, "reserved"    # I
 
     .line 169
     const-string v0, "KeyguardStateMonitor"
@@ -437,6 +440,18 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ", authType:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ", result:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -448,21 +463,19 @@
 
     if-eq v0, p1, :cond_0
 
-    if-nez p1, :cond_0
-
-    .line 173
+    .line 172
     iput-boolean p1, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mFingerprintAuthenticating:Z
 
-    .line 174
+    .line 173
     iget-object v0, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mCallback:Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;
 
-    invoke-interface {v0}, Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;->onKeyguardFingerprintChanged()V
+    invoke-interface {v0, p2, p3, p4}, Lcom/android/server/policy/keyguard/KeyguardStateMonitor$StateCallback;->onKeyguardFingerprintChanged(III)V
 
-    .line 176
+    .line 175
     :cond_0
     iput-boolean p1, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mFingerprintAuthenticating:Z
 
-    .line 177
+    .line 176
     return-void
 .end method
 
@@ -492,10 +505,10 @@
     .locals 0
     .param p1, "active"    # Z
 
-    .line 189
+    .line 188
     iput-boolean p1, p0, Lcom/android/server/policy/keyguard/KeyguardStateMonitor;->mPocketModeActive:Z
 
-    .line 190
+    .line 189
     return-void
 .end method
 

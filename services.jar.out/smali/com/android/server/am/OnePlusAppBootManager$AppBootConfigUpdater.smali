@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/OnePlusAppBootManager;
 
-    .line 2591
+    .line 2596
     iput-object p1, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootConfigUpdater;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
     .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 2594
+    .line 2599
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$AppBootConfigUpdater;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     invoke-static {v0, p1}, Lcom/android/server/am/OnePlusAppBootManager;->access$2000(Lcom/android/server/am/OnePlusAppBootManager;Lorg/json/JSONArray;)V
 
-    .line 2595
+    .line 2600
     return-void
 .end method

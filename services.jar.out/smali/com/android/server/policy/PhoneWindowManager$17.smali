@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 7667
+    .line 7788
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$17;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 7670
+    .line 7791
     const-string v0, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7675
+    .line 7796
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$17;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mSettingsObserver:Lcom/android/server/policy/PhoneWindowManager$SettingsObserver;
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager$SettingsObserver;->onChange(Z)V
 
-    .line 7680
+    .line 7801
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$17;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mWindowManagerFuncs:Lcom/android/server/policy/WindowManagerPolicy$WindowManagerFuncs;
@@ -71,18 +71,18 @@
 
     monitor-enter v0
 
-    .line 7681
+    .line 7802
     :try_start_0
     iget-object v2, p0, Lcom/android/server/policy/PhoneWindowManager$17;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput v1, v2, Lcom/android/server/policy/PhoneWindowManager;->mLastSystemUiFlags:I
 
-    .line 7682
+    .line 7803
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$17;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
-    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$3800(Lcom/android/server/policy/PhoneWindowManager;)I
+    invoke-static {v1}, Lcom/android/server/policy/PhoneWindowManager;->access$4000(Lcom/android/server/policy/PhoneWindowManager;)I
 
-    .line 7683
+    .line 7804
     monitor-exit v0
 
     goto :goto_0
@@ -96,7 +96,7 @@
 
     throw v1
 
-    .line 7685
+    .line 7806
     :cond_0
     :goto_0
     return-void

@@ -23,13 +23,13 @@
     .locals 0
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 5170
+    .line 5196
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    .line 5171
+    .line 5197
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 5172
+    .line 5198
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 5176
+    .line 5202
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$000(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
@@ -49,19 +49,19 @@
 
     monitor-enter v0
 
-    .line 5177
+    .line 5203
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$SettingsObserver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$2500(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 5178
+    .line 5204
     monitor-exit v0
 
-    .line 5179
+    .line 5205
     return-void
 
-    .line 5178
+    .line 5204
     :catchall_0
     move-exception v1
 

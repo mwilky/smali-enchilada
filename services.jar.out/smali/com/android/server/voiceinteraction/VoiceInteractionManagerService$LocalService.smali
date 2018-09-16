@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
-    .line 159
+    .line 165
     iput-object p1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$LocalService;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-direct {p0}, Landroid/service/voice/VoiceInteractionManagerInternal;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "callingActivity"    # Landroid/os/IBinder;
     .param p2, "options"    # Landroid/os/Bundle;
 
-    .line 165
+    .line 171
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$LocalService;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-static {v0}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->access$000(Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;)Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->startLocalVoiceInteraction(Landroid/os/IBinder;Landroid/os/Bundle;)V
 
-    .line 167
+    .line 173
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .locals 1
     .param p1, "callingActivity"    # Landroid/os/IBinder;
 
-    .line 179
+    .line 185
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$LocalService;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-static {v0}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->access$000(Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;)Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
@@ -64,14 +64,14 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->stopLocalVoiceInteraction(Landroid/os/IBinder;)V
 
-    .line 181
+    .line 187
     return-void
 .end method
 
 .method public supportsLocalVoiceInteraction()Z
     .locals 1
 
-    .line 171
+    .line 177
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$LocalService;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-static {v0}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->access$000(Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;)Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;

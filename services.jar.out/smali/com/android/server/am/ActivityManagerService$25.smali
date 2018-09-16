@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 17077
+    .line 17084
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$25;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
     .param p1, "uid"    # I
 
-    .line 17080
+    .line 17087
     const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 17081
+    .line 17088
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v2
@@ -68,15 +68,15 @@
 
     move-result-object v1
 
-    .line 17080
+    .line 17087
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 17082
+    .line 17089
     const/16 v0, 0x3e8
 
     if-ne p1, v0, :cond_0
 
-    .line 17083
+    .line 17090
     const-string v0, "ActivityManager"
 
     const-string v1, "Skipping kill (uid is SYSTEM)"
@@ -85,7 +85,7 @@
 
     goto :goto_0
 
-    .line 17085
+    .line 17092
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$25;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -101,7 +101,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/am/ActivityManagerService;->killUid(IILjava/lang/String;)V
 
-    .line 17088
+    .line 17095
     :goto_0
     return-void
 .end method

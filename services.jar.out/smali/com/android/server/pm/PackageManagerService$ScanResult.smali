@@ -45,19 +45,19 @@
         }
     .end annotation
 
-    .line 10624
+    .line 10625
     .local p3, "changedAbiCodePath":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10625
+    .line 10626
     iput-boolean p1, p0, Lcom/android/server/pm/PackageManagerService$ScanResult;->success:Z
 
-    .line 10626
+    .line 10627
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$ScanResult;->pkgSetting:Lcom/android/server/pm/PackageSetting;
 
-    .line 10627
+    .line 10628
     iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$ScanResult;->changedAbiCodePath:Ljava/util/List;
 
-    .line 10628
+    .line 10629
     return-void
 .end method

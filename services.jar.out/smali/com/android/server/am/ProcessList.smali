@@ -810,7 +810,7 @@
     if-lt p0, v0, :cond_3
 
     .line 327
-    const-string v2, "home "
+    const-string/jumbo v2, "home "
 
     invoke-static {v2, v1, p0, v0}, Lcom/android/server/am/ProcessList;->buildOomTag(Ljava/lang/String;Ljava/lang/String;II)Ljava/lang/String;
 

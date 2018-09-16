@@ -321,21 +321,15 @@
 
     .line 118
     .local v0, "nfcAdapter":Landroid/nfc/NfcAdapter;
+    if-eqz v0, :cond_1
+
     invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->isEnabled()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 119
-    sget-object v1, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
-
-    const-string v2, "[resetNfcService] nfc is disable,no need to reset"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 120
-    return-void
+    goto :goto_0
 
     .line 124
     :cond_0
@@ -368,6 +362,19 @@
     invoke-virtual {v0}, Landroid/nfc/NfcAdapter;->disable()Z
 
     .line 129
+    return-void
+
+    .line 119
+    .end local v1    # "filter":Landroid/content/IntentFilter;
+    :cond_1
+    :goto_0
+    sget-object v1, Lcom/android/server/OnePlusNfcService;->TAG:Ljava/lang/String;
+
+    const-string v2, "[resetNfcService] nfc is disable,no need to reset"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 120
     return-void
 .end method
 

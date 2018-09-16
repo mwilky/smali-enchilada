@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/android/server/audio/AudioService;)V
     .locals 0
 
-    .line 8221
+    .line 8219
     iput-object p1, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "x0"    # Lcom/android/server/audio/AudioService;
     .param p2, "x1"    # Lcom/android/server/audio/AudioService$1;
 
-    .line 8221
+    .line 8219
     invoke-direct {p0, p1}, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;-><init>(Lcom/android/server/audio/AudioService;)V
 
     return-void
@@ -50,7 +50,7 @@
     .locals 3
     .param p1, "status"    # I
 
-    .line 8223
+    .line 8221
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$12100(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 8224
+    .line 8222
     iget-object v0, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$12100(Lcom/android/server/audio/AudioService;)Landroid/hardware/hdmi/HdmiControlManager;
@@ -68,7 +68,7 @@
 
     monitor-enter v0
 
-    .line 8225
+    .line 8223
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -86,7 +86,7 @@
     :goto_0
     invoke-static {v1, v2}, Lcom/android/server/audio/AudioService;->access$12202(Lcom/android/server/audio/AudioService;Z)Z
 
-    .line 8227
+    .line 8225
     iget-object v1, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$12300(Lcom/android/server/audio/AudioService;)Z
@@ -103,7 +103,7 @@
 
     if-nez v1, :cond_1
 
-    .line 8228
+    .line 8226
     iget-object v1, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     iget v2, v1, Lcom/android/server/audio/AudioService;->mFixedVolumeDevices:I
@@ -112,13 +112,13 @@
 
     iput v2, v1, Lcom/android/server/audio/AudioService;->mFixedVolumeDevices:I
 
-    .line 8230
+    .line 8228
     :cond_1
     iget-object v1, p0, Lcom/android/server/audio/AudioService$MyDisplayStatusCallback;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-static {v1}, Lcom/android/server/audio/AudioService;->access$12400(Lcom/android/server/audio/AudioService;)V
 
-    .line 8231
+    .line 8229
     monitor-exit v0
 
     goto :goto_1
@@ -132,7 +132,7 @@
 
     throw v1
 
-    .line 8233
+    .line 8231
     :cond_2
     :goto_1
     return-void

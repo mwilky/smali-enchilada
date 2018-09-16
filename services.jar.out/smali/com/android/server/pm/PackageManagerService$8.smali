@@ -42,7 +42,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 14315
+    .line 14321
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$8;->val$userIds:[I
@@ -71,7 +71,7 @@
 .method public run()V
     .locals 21
 
-    .line 14319
+    .line 14325
     move-object/from16 v1, p0
 
     :try_start_0
@@ -79,24 +79,24 @@
 
     move-result-object v0
 
-    .line 14320
+    .line 14326
     .local v0, "am":Landroid/app/IActivityManager;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 14322
+    .line 14328
     :cond_0
     iget-object v2, v1, Lcom/android/server/pm/PackageManagerService$8;->val$userIds:[I
 
     if-nez v2, :cond_1
 
-    .line 14323
+    .line 14329
     invoke-interface {v0}, Landroid/app/IActivityManager;->getRunningUserIds()[I
 
     move-result-object v2
 
-    .line 14325
+    .line 14331
     .local v10, "resolvedUserIds":[I
     :goto_0
     move-object v10, v2
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 14327
+    .line 14333
     .restart local v10    # "resolvedUserIds":[I
     :goto_1
     iget-object v2, v1, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
@@ -132,7 +132,7 @@
 
     invoke-static/range {v2 .. v11}, Lcom/android/server/pm/PackageManagerService;->access$3800(Lcom/android/server/pm/PackageManagerService;Landroid/app/IActivityManager;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;ILjava/lang/String;Landroid/content/IIntentReceiver;[IZ)V
 
-    .line 14329
+    .line 14335
     iget-object v2, v1, Lcom/android/server/pm/PackageManagerService$8;->val$instantUserIds:[I
 
     if-eqz v2, :cond_2
@@ -145,7 +145,7 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 14330
+    .line 14336
     iget-object v11, v1, Lcom/android/server/pm/PackageManagerService$8;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v13, v1, Lcom/android/server/pm/PackageManagerService$8;->val$action:Ljava/lang/String;
@@ -178,17 +178,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 14334
+    .line 14340
     .end local v0    # "am":Landroid/app/IActivityManager;
     .end local v10    # "resolvedUserIds":[I
     :cond_2
     goto :goto_2
 
-    .line 14333
+    .line 14339
     :catch_0
     move-exception v0
 
-    .line 14335
+    .line 14341
     :goto_2
     return-void
 .end method

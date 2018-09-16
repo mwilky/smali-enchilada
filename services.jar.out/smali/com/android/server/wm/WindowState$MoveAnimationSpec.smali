@@ -37,26 +37,26 @@
     .param p4, "toX"    # I
     .param p5, "toY"    # I
 
-    .line 5113
+    .line 5130
     iput-object p1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5110
+    .line 5127
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mFrom:Landroid/graphics/Point;
 
-    .line 5111
+    .line 5128
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mTo:Landroid/graphics/Point;
 
-    .line 5114
+    .line 5131
     iget-object v0, p1, Lcom/android/server/wm/WindowState;->mContext:Landroid/content/Context;
 
     const v1, 0x10a00b6
@@ -65,11 +65,11 @@
 
     move-result-object v0
 
-    .line 5116
+    .line 5133
     .local v0, "anim":Landroid/view/animation/Animation;
     nop
 
-    .line 5117
+    .line 5134
     invoke-virtual {v0}, Landroid/view/animation/Animation;->computeDurationHint()J
 
     move-result-wide v1
@@ -88,24 +88,24 @@
 
     iput-wide v1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mDuration:J
 
-    .line 5118
+    .line 5135
     invoke-virtual {v0}, Landroid/view/animation/Animation;->getInterpolator()Landroid/view/animation/Interpolator;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 5119
+    .line 5136
     iget-object p1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mFrom:Landroid/graphics/Point;
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Point;->set(II)V
 
-    .line 5120
+    .line 5137
     iget-object p1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mTo:Landroid/graphics/Point;
 
     invoke-virtual {p1, p4, p5}, Landroid/graphics/Point;->set(II)V
 
-    .line 5121
+    .line 5138
     return-void
 .end method
 
@@ -118,7 +118,7 @@
     .param p5, "x4"    # I
     .param p6, "x5"    # Lcom/android/server/wm/WindowState$1;
 
-    .line 5106
+    .line 5123
     invoke-direct/range {p0 .. p5}, Lcom/android/server/wm/WindowState$MoveAnimationSpec;-><init>(Lcom/android/server/wm/WindowState;IIII)V
 
     return-void
@@ -132,7 +132,7 @@
     .param p2, "leash"    # Landroid/view/SurfaceControl;
     .param p3, "currentPlayTime"    # J
 
-    .line 5130
+    .line 5147
     long-to-float v0, p3
 
     invoke-virtual {p0}, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->getDuration()J
@@ -143,7 +143,7 @@
 
     div-float/2addr v0, v1
 
-    .line 5131
+    .line 5148
     .local v0, "fraction":F
     iget-object v1, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mInterpolator:Landroid/view/animation/Interpolator;
 
@@ -151,7 +151,7 @@
 
     move-result v1
 
-    .line 5132
+    .line 5149
     .local v1, "v":F
     iget-object v2, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mFrom:Landroid/graphics/Point;
 
@@ -199,7 +199,7 @@
 
     invoke-virtual {p1, p2, v2, v3}, Landroid/view/SurfaceControl$Transaction;->setPosition(Landroid/view/SurfaceControl;FF)Landroid/view/SurfaceControl$Transaction;
 
-    .line 5134
+    .line 5151
     return-void
 .end method
 
@@ -208,7 +208,7 @@
     .param p1, "pw"    # Ljava/io/PrintWriter;
     .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 5138
+    .line 5155
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "from="
@@ -219,7 +219,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 5139
+    .line 5156
     const-string v0, " to="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -228,7 +228,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 5140
+    .line 5157
     const-string v0, " duration="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -237,14 +237,14 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/io/PrintWriter;->println(J)V
 
-    .line 5141
+    .line 5158
     return-void
 .end method
 
 .method public getDuration()J
     .locals 2
 
-    .line 5125
+    .line 5142
     iget-wide v0, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mDuration:J
 
     return-wide v0
@@ -254,14 +254,14 @@
     .locals 7
     .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
 
-    .line 5145
+    .line 5162
     const-wide v0, 0x10b00000002L
 
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v2
 
-    .line 5146
+    .line 5163
     .local v2, "token":J
     iget-object v4, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mFrom:Landroid/graphics/Point;
 
@@ -269,21 +269,21 @@
 
     invoke-virtual {v4, p1, v5, v6}, Landroid/graphics/Point;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
 
-    .line 5147
+    .line 5164
     iget-object v4, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mTo:Landroid/graphics/Point;
 
     invoke-virtual {v4, p1, v0, v1}, Landroid/graphics/Point;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
 
-    .line 5148
+    .line 5165
     iget-wide v0, p0, Lcom/android/server/wm/WindowState$MoveAnimationSpec;->mDuration:J
 
     const-wide v4, 0x10300000003L
 
     invoke-virtual {p1, v4, v5, v0, v1}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 5149
+    .line 5166
     invoke-virtual {p1, v2, v3}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 5150
+    .line 5167
     return-void
 .end method

@@ -26,10 +26,10 @@
     .locals 1
     .param p1, "remote"    # Landroid/os/IHwBinder;
 
-    .line 128
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 138
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -38,7 +38,7 @@
 
     iput-object v0, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
 
-    .line 130
+    .line 139
     return-void
 .end method
 
@@ -47,7 +47,7 @@
 .method public asBinder()Landroid/os/IHwBinder;
     .locals 1
 
-    .line 134
+    .line 143
     iget-object v0, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
 
     return-object v0
@@ -57,7 +57,7 @@
     .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
-    .line 149
+    .line 158
     invoke-static {p0, p1}, Landroid/os/HidlSupport;->interfacesEqual(Landroid/os/IHwInterface;Ljava/lang/Object;)Z
 
     move-result v0
@@ -73,23 +73,23 @@
         }
     .end annotation
 
-    .line 412
+    .line 441
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 413
+    .line 442
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 415
+    .line 444
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 417
+    .line 446
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -100,33 +100,33 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 418
+    .line 447
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 419
+    .line 448
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 421
+    .line 450
     new-instance v2, Landroid/hidl/base/V1_0/DebugInfo;
 
     invoke-direct {v2}, Landroid/hidl/base/V1_0/DebugInfo;-><init>()V
 
-    .line 422
+    .line 451
     .local v2, "_hidl_out_info":Landroid/hidl/base/V1_0/DebugInfo;
     invoke-virtual {v2, v1}, Landroid/hidl/base/V1_0/DebugInfo;->readFromParcel(Landroid/os/HwParcel;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 423
+    .line 452
     nop
 
-    .line 425
+    .line 454
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 423
+    .line 452
     return-object v2
 
-    .line 425
+    .line 454
     .end local v2    # "_hidl_out_info":Landroid/hidl/base/V1_0/DebugInfo;
     :catchall_0
     move-exception v2
@@ -153,23 +153,23 @@
         }
     .end annotation
 
-    .line 200
+    .line 209
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 201
+    .line 210
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 203
+    .line 212
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 205
+    .line 214
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -180,30 +180,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 206
+    .line 215
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 207
+    .line 216
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 209
+    .line 218
     invoke-static {v1}, Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;->readVectorFromParcel(Landroid/os/HwParcel;)Ljava/util/ArrayList;
 
     move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 210
+    .line 219
     .local v2, "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
     nop
 
-    .line 212
+    .line 221
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 210
+    .line 219
     return-object v2
 
-    .line 212
+    .line 221
     .end local v2    # "_hidl_out_FpTests":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/oneplus/fingerprint/extension/V1_0/FpTest;>;"
     :catchall_0
     move-exception v2
@@ -229,23 +229,23 @@
         }
     .end annotation
 
-    .line 337
+    .line 366
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 338
+    .line 367
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 340
+    .line 369
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 342
+    .line 371
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -256,20 +256,20 @@
 
     invoke-interface {v2, v3, v0, v1, v10}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 343
+    .line 372
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 344
+    .line 373
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 346
+    .line 375
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     move-object v11, v2
 
-    .line 348
+    .line 377
     .local v11, "_hidl_out_hashchain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[B>;"
     const-wide/16 v2, 0x10
 
@@ -279,7 +279,7 @@
 
     move-object v12, v2
 
-    .line 350
+    .line 379
     .local v12, "_hidl_blob":Landroid/os/HwBlob;
     const-wide/16 v2, 0x8
 
@@ -289,13 +289,13 @@
 
     move v13, v2
 
-    .line 351
+    .line 380
     .local v13, "_hidl_vec_size":I
     mul-int/lit8 v2, v13, 0x20
 
     int-to-long v3, v2
 
-    .line 352
+    .line 381
     invoke-virtual {v12}, Landroid/os/HwBlob;->handle()J
 
     move-result-wide v5
@@ -304,18 +304,18 @@
 
     const/4 v9, 0x1
 
-    .line 351
+    .line 380
     move-object v2, v1
 
     invoke-virtual/range {v2 .. v9}, Landroid/os/HwParcel;->readEmbeddedBuffer(JJJZ)Landroid/os/HwBlob;
 
     move-result-object v2
 
-    .line 355
+    .line 384
     .local v2, "childBlob":Landroid/os/HwBlob;
     invoke-virtual {v11}, Ljava/util/ArrayList;->clear()V
 
-    .line 356
+    .line 385
     nop
 
     .local v10, "_hidl_index_0":I
@@ -326,31 +326,31 @@
     .local v3, "_hidl_index_0":I
     if-ge v3, v13, :cond_0
 
-    .line 357
+    .line 386
     const/16 v4, 0x20
 
     new-array v5, v4, [B
 
-    .line 359
+    .line 388
     .local v5, "_hidl_vec_element":[B
     mul-int/lit8 v6, v3, 0x20
 
     int-to-long v6, v6
 
-    .line 360
+    .line 389
     .local v6, "_hidl_array_offset_1":J
     invoke-virtual {v2, v6, v7, v5, v4}, Landroid/os/HwBlob;->copyToInt8Array(J[BI)V
 
-    .line 361
+    .line 390
     nop
 
-    .line 363
+    .line 392
     .end local v6    # "_hidl_array_offset_1":J
     invoke-virtual {v11, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 356
+    .line 385
     .end local v5    # "_hidl_vec_element":[B
     add-int/lit8 v10, v3, 0x1
 
@@ -358,7 +358,7 @@
     .restart local v10    # "_hidl_index_0":I
     goto :goto_0
 
-    .line 367
+    .line 396
     .end local v2    # "childBlob":Landroid/os/HwBlob;
     .end local v10    # "_hidl_index_0":I
     .end local v12    # "_hidl_blob":Landroid/os/HwBlob;
@@ -366,13 +366,13 @@
     :cond_0
     nop
 
-    .line 369
+    .line 398
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 367
+    .line 396
     return-object v11
 
-    .line 369
+    .line 398
     .end local v11    # "_hidl_out_hashchain":Ljava/util/ArrayList;, "Ljava/util/ArrayList<[B>;"
     :catchall_0
     move-exception v2
@@ -390,23 +390,23 @@
         }
     .end annotation
 
-    .line 181
+    .line 190
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 182
+    .line 191
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 184
+    .line 193
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 186
+    .line 195
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -417,30 +417,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 187
+    .line 196
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 188
+    .line 197
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 190
+    .line 199
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 191
+    .line 200
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 193
+    .line 202
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 191
+    .line 200
     return v2
 
-    .line 193
+    .line 202
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
@@ -453,7 +453,7 @@
 .method public final hashCode()I
     .locals 1
 
-    .line 154
+    .line 163
     invoke-virtual {p0}, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->asBinder()Landroid/os/IHwBinder;
 
     move-result-object v0
@@ -482,23 +482,23 @@
         }
     .end annotation
 
-    .line 299
+    .line 328
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 300
+    .line 329
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 302
+    .line 331
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 304
+    .line 333
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -509,30 +509,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 305
+    .line 334
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 306
+    .line 335
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 308
+    .line 337
     invoke-virtual {v1}, Landroid/os/HwParcel;->readStringVector()Ljava/util/ArrayList;
 
     move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 309
+    .line 338
     .local v2, "_hidl_out_descriptors":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     nop
 
-    .line 311
+    .line 340
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 309
+    .line 338
     return-object v2
 
-    .line 311
+    .line 340
     .end local v2    # "_hidl_out_descriptors":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     :catchall_0
     move-exception v2
@@ -550,23 +550,23 @@
         }
     .end annotation
 
-    .line 318
+    .line 347
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 319
+    .line 348
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 321
+    .line 350
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 323
+    .line 352
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -577,30 +577,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 324
+    .line 353
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 325
+    .line 354
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 327
+    .line 356
     invoke-virtual {v1}, Landroid/os/HwParcel;->readString()Ljava/lang/String;
 
     move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 328
+    .line 357
     .local v2, "_hidl_out_descriptor":Ljava/lang/String;
     nop
 
-    .line 330
+    .line 359
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 328
+    .line 357
     return-object v2
 
-    .line 330
+    .line 359
     .end local v2    # "_hidl_out_descriptor":Ljava/lang/String;
     :catchall_0
     move-exception v2
@@ -620,7 +620,7 @@
         }
     .end annotation
 
-    .line 391
+    .line 420
     iget-object v0, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/os/IHwBinder;->linkToDeath(Landroid/os/IHwBinder$DeathRecipient;J)Z
@@ -638,23 +638,23 @@
         }
     .end annotation
 
-    .line 432
+    .line 461
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 433
+    .line 462
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 435
+    .line 464
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 437
+    .line 466
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -665,21 +665,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 438
+    .line 467
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 440
+    .line 469
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 441
+    .line 470
     nop
 
-    .line 442
+    .line 471
     return-void
 
-    .line 440
+    .line 469
     :catchall_0
     move-exception v2
 
@@ -696,23 +696,23 @@
         }
     .end annotation
 
-    .line 396
+    .line 425
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 397
+    .line 426
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 399
+    .line 428
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 401
+    .line 430
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -723,24 +723,24 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 402
+    .line 431
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 403
+    .line 432
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 405
+    .line 434
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 406
+    .line 435
     nop
 
-    .line 407
+    .line 436
     return-void
 
-    .line 405
+    .line 434
     :catchall_0
     move-exception v2
 
@@ -758,18 +758,18 @@
         }
     .end annotation
 
-    .line 219
+    .line 228
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 220
+    .line 229
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 221
+    .line 230
     if-nez p1, :cond_0
 
     const/4 v1, 0x0
@@ -784,12 +784,12 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStrongBinder(Landroid/os/IHwBinder;)V
 
-    .line 223
+    .line 232
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 225
+    .line 234
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -800,30 +800,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 226
+    .line 235
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 227
+    .line 236
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 229
+    .line 238
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 230
+    .line 239
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 232
+    .line 241
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 230
+    .line 239
     return v2
 
-    .line 232
+    .line 241
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
@@ -841,23 +841,23 @@
         }
     .end annotation
 
-    .line 376
+    .line 405
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 377
+    .line 406
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string v1, "android.hidl.base@1.0::IBase"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 379
+    .line 408
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 381
+    .line 410
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -868,21 +868,93 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 382
+    .line 411
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 384
+    .line 413
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 385
+    .line 414
     nop
 
-    .line 386
+    .line 415
     return-void
 
-    .line 384
+    .line 413
+    :catchall_0
+    move-exception v2
+
+    invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
+
+    throw v2
+.end method
+
+.method public setParam(I)I
+    .locals 5
+    .param p1, "level"    # I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .line 307
+    new-instance v0, Landroid/os/HwParcel;
+
+    invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
+
+    .line 308
+    .local v0, "_hidl_request":Landroid/os/HwParcel;
+    const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
+
+    invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 309
+    invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
+
+    .line 311
+    new-instance v1, Landroid/os/HwParcel;
+
+    invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
+
+    .line 313
+    .local v1, "_hidl_reply":Landroid/os/HwParcel;
+    :try_start_0
+    iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
+
+    const/16 v3, 0x8
+
+    const/4 v4, 0x0
+
+    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
+
+    .line 314
+    invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
+
+    .line 315
+    invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
+
+    .line 317
+    invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
+
+    move-result v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 318
+    .local v2, "_hidl_out_debugErrno":I
+    nop
+
+    .line 320
+    invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
+
+    .line 318
+    return v2
+
+    .line 320
+    .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
 
@@ -900,26 +972,26 @@
         }
     .end annotation
 
-    .line 239
+    .line 248
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 240
+    .line 249
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 241
+    .line 250
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 243
+    .line 252
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 245
+    .line 254
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -930,30 +1002,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 246
+    .line 255
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 247
+    .line 256
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 249
+    .line 258
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 250
+    .line 259
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 252
+    .line 261
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 250
+    .line 259
     return v2
 
-    .line 252
+    .line 261
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
@@ -971,23 +1043,23 @@
         }
     .end annotation
 
-    .line 279
+    .line 288
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 280
+    .line 289
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 282
+    .line 291
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 284
+    .line 293
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -998,30 +1070,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 285
+    .line 294
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 286
+    .line 295
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 288
+    .line 297
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 289
+    .line 298
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 291
+    .line 300
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 289
+    .line 298
     return v2
 
-    .line 291
+    .line 300
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
@@ -1040,26 +1112,26 @@
         }
     .end annotation
 
-    .line 259
+    .line 268
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 260
+    .line 269
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 261
+    .line 270
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 263
+    .line 272
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 265
+    .line 274
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -1070,30 +1142,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 266
+    .line 275
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 267
+    .line 276
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 269
+    .line 278
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 270
+    .line 279
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 272
+    .line 281
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 270
+    .line 279
     return v2
 
-    .line 272
+    .line 281
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2
@@ -1106,7 +1178,7 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 140
+    .line 149
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1130,11 +1202,11 @@
 
     return-object v0
 
-    .line 141
+    .line 150
     :catch_0
     move-exception v0
 
-    .line 144
+    .line 153
     const-string v0, "[class or subclass of vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions]@Proxy"
 
     return-object v0
@@ -1149,7 +1221,7 @@
         }
     .end annotation
 
-    .line 447
+    .line 476
     iget-object v0, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
 
     invoke-interface {v0, p1}, Landroid/os/IHwBinder;->unlinkToDeath(Landroid/os/IHwBinder$DeathRecipient;)Z
@@ -1168,26 +1240,26 @@
         }
     .end annotation
 
-    .line 161
+    .line 170
     new-instance v0, Landroid/os/HwParcel;
 
     invoke-direct {v0}, Landroid/os/HwParcel;-><init>()V
 
-    .line 162
+    .line 171
     .local v0, "_hidl_request":Landroid/os/HwParcel;
     const-string/jumbo v1, "vendor.oneplus.fingerprint.extension@1.0::IVendorFingerprintExtensions"
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 163
+    .line 172
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 165
+    .line 174
     new-instance v1, Landroid/os/HwParcel;
 
     invoke-direct {v1}, Landroid/os/HwParcel;-><init>()V
 
-    .line 167
+    .line 176
     .local v1, "_hidl_reply":Landroid/os/HwParcel;
     :try_start_0
     iget-object v2, p0, Lvendor/oneplus/fingerprint/extension/V1_0/IVendorFingerprintExtensions$Proxy;->mRemote:Landroid/os/IHwBinder;
@@ -1198,30 +1270,30 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IHwBinder;->transact(ILandroid/os/HwParcel;Landroid/os/HwParcel;I)V
 
-    .line 168
+    .line 177
     invoke-virtual {v1}, Landroid/os/HwParcel;->verifySuccess()V
 
-    .line 169
+    .line 178
     invoke-virtual {v0}, Landroid/os/HwParcel;->releaseTemporaryStorage()V
 
-    .line 171
+    .line 180
     invoke-virtual {v1}, Landroid/os/HwParcel;->readInt32()I
 
     move-result v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 172
+    .line 181
     .local v2, "_hidl_out_debugErrno":I
     nop
 
-    .line 174
+    .line 183
     invoke-virtual {v1}, Landroid/os/HwParcel;->release()V
 
-    .line 172
+    .line 181
     return v2
 
-    .line 174
+    .line 183
     .end local v2    # "_hidl_out_debugErrno":I
     :catchall_0
     move-exception v2

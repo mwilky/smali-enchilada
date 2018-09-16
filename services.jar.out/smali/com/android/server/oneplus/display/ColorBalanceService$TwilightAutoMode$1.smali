@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;
 
-    .line 1775
+    .line 1791
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode$1;->this$1:Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1778
+    .line 1794
     const-string v0, "ColorBalanceService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,7 +57,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1779
+    .line 1795
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode$1;->this$1:Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;
 
     const/4 v1, 0x0
@@ -68,6 +68,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;->access$1800(Lcom/android/server/oneplus/display/ColorBalanceService$TwilightAutoMode;Ljava/lang/Boolean;)V
 
-    .line 1780
+    .line 1796
     return-void
 .end method

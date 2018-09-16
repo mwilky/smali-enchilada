@@ -35,46 +35,46 @@
 .method public constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 1
 
-    .line 24001
+    .line 24011
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23992
+    .line 24002
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 23993
+    .line 24003
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 24002
+    .line 24012
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mPackageName:Ljava/lang/String;
 
-    .line 24003
+    .line 24013
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
-    .line 24004
+    .line 24014
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mWeFroze:Z
 
-    .line 24005
+    .line 24015
     iget-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v0, "close"
 
     invoke-virtual {p1, v0}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 24006
+    .line 24016
     return-void
 .end method
 
@@ -84,35 +84,35 @@
     .param p3, "userId"    # I
     .param p4, "killReason"    # Ljava/lang/String;
 
-    .line 24008
+    .line 24018
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23992
+    .line 24002
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 23993
+    .line 24003
     invoke-static {}, Ldalvik/system/CloseGuard;->get()Ldalvik/system/CloseGuard;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
-    .line 24009
+    .line 24019
     iget-object v0, p1, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 24010
+    .line 24020
     :try_start_0
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mPackageName:Ljava/lang/String;
 
-    .line 24011
+    .line 24021
     iget-object v1, p1, Lcom/android/server/pm/PackageManagerService;->mFrozenPackages:Landroid/util/ArraySet;
 
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mPackageName:Ljava/lang/String;
@@ -123,7 +123,7 @@
 
     iput-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mWeFroze:Z
 
-    .line 24013
+    .line 24023
     iget-object v1, p1, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
 
     iget-object v1, v1, Lcom/android/server/pm/Settings;->mPackages:Landroid/util/ArrayMap;
@@ -136,18 +136,18 @@
 
     check-cast v1, Lcom/android/server/pm/PackageSetting;
 
-    .line 24014
+    .line 24024
     .local v1, "ps":Lcom/android/server/pm/PackageSetting;
     if-eqz v1, :cond_0
 
-    .line 24015
+    .line 24025
     iget-object v2, v1, Lcom/android/server/pm/PackageSetting;->name:Ljava/lang/String;
 
     iget v3, v1, Lcom/android/server/pm/PackageSetting;->appId:I
 
     invoke-static {p1, v2, v3, p3, p4}, Lcom/android/server/pm/PackageManagerService;->access$6900(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;IILjava/lang/String;)V
 
-    .line 24018
+    .line 24028
     :cond_0
     iget-object v2, p1, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
@@ -157,7 +157,7 @@
 
     check-cast v2, Landroid/content/pm/PackageParser$Package;
 
-    .line 24019
+    .line 24029
     .local v2, "p":Landroid/content/pm/PackageParser$Package;
     if-eqz v2, :cond_2
 
@@ -165,27 +165,27 @@
 
     if-eqz v3, :cond_2
 
-    .line 24020
+    .line 24030
     iget-object v3, v2, Landroid/content/pm/PackageParser$Package;->childPackages:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 24021
+    .line 24031
     .local v3, "N":I
     new-array v4, v3, [Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
     iput-object v4, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
-    .line 24022
+    .line 24032
     const/4 v4, 0x0
 
     .local v4, "i":I
     :goto_0
     if-ge v4, v3, :cond_1
 
-    .line 24023
+    .line 24033
     iget-object v5, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
     new-instance v6, Lcom/android/server/pm/PackageManagerService$PackageFreezer;
@@ -204,24 +204,24 @@
 
     aput-object v6, v5, v4
 
-    .line 24022
+    .line 24032
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 24026
+    .line 24036
     .end local v3    # "N":I
     .end local v4    # "i":I
     :cond_1
     goto :goto_1
 
-    .line 24027
+    .line 24037
     :cond_2
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
-    .line 24029
+    .line 24039
     .end local v1    # "ps":Lcom/android/server/pm/PackageSetting;
     .end local v2    # "p":Landroid/content/pm/PackageParser$Package;
     :goto_1
@@ -229,17 +229,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 24030
+    .line 24040
     iget-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     const-string v0, "close"
 
     invoke-virtual {p1, v0}, Ldalvik/system/CloseGuard;->open(Ljava/lang/String;)V
 
-    .line 24031
+    .line 24041
     return-void
 
-    .line 24029
+    .line 24039
     :catchall_0
     move-exception p1
 
@@ -256,12 +256,12 @@
 .method public close()V
     .locals 5
 
-    .line 24048
+    .line 24058
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->close()V
 
-    .line 24049
+    .line 24059
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mClosed:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
@@ -274,20 +274,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 24050
+    .line 24060
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 24051
+    .line 24061
     :try_start_0
     iget-boolean v1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mWeFroze:Z
 
     if-eqz v1, :cond_0
 
-    .line 24052
+    .line 24062
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v1, Lcom/android/server/pm/PackageManagerService;->mFrozenPackages:Landroid/util/ArraySet;
@@ -296,13 +296,13 @@
 
     invoke-virtual {v1, v3}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
-    .line 24055
+    .line 24065
     :cond_0
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
     if-eqz v1, :cond_1
 
-    .line 24056
+    .line 24066
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mChildren:[Lcom/android/server/pm/PackageManagerService$PackageFreezer;
 
     array-length v3, v1
@@ -312,17 +312,17 @@
 
     aget-object v4, v1, v2
 
-    .line 24057
+    .line 24067
     .local v4, "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
     invoke-virtual {v4}, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->close()V
 
-    .line 24056
+    .line 24066
     .end local v4    # "freezer":Lcom/android/server/pm/PackageManagerService$PackageFreezer;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 24060
+    .line 24070
     :cond_1
     monitor-exit v0
 
@@ -337,7 +337,7 @@
 
     throw v1
 
-    .line 24062
+    .line 24072
     :cond_2
     :goto_1
     return-void
@@ -351,33 +351,33 @@
         }
     .end annotation
 
-    .line 24036
+    .line 24046
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     if-eqz v0, :cond_0
 
-    .line 24037
+    .line 24047
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->mCloseGuard:Ldalvik/system/CloseGuard;
 
     invoke-virtual {v0}, Ldalvik/system/CloseGuard;->warnIfOpen()V
 
-    .line 24040
+    .line 24050
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/pm/PackageManagerService$PackageFreezer;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 24042
+    .line 24052
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 24043
+    .line 24053
     nop
 
-    .line 24044
+    .line 24054
     return-void
 
-    .line 24042
+    .line 24052
     :catchall_0
     move-exception v0
 

@@ -23,13 +23,13 @@
     .locals 0
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 2374
+    .line 2379
     iput-object p1, p0, Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
-    .line 2375
+    .line 2380
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2376
+    .line 2381
     return-void
 .end method
 
@@ -40,13 +40,13 @@
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 2380
+    .line 2385
     iget-object v0, p0, Lcom/android/server/am/OnePlusAppBootManager$SettingsObserver;->this$0:Lcom/android/server/am/OnePlusAppBootManager;
 
     const-string v1, "change"
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusAppBootManager;->access$1500(Lcom/android/server/am/OnePlusAppBootManager;Ljava/lang/String;)V
 
-    .line 2381
+    .line 2386
     return-void
 .end method

@@ -28,23 +28,23 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 788
+    .line 804
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 789
+    .line 805
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 790
+    .line 806
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->useTopWallpaperAsTarget:Z
 
-    .line 791
+    .line 807
     iput-object v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 792
+    .line 808
     iput-boolean v1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->resetTopWallpaper:Z
 
     return-void
@@ -54,7 +54,7 @@
     .locals 0
     .param p1, "x0"    # Lcom/android/server/wm/WallpaperController$1;
 
-    .line 788
+    .line 804
     invoke-direct {p0}, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;-><init>()V
 
     return-void
@@ -65,23 +65,23 @@
 .method reset()V
     .locals 1
 
-    .line 807
+    .line 823
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 808
+    .line 824
     iput-object v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 809
+    .line 825
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->useTopWallpaperAsTarget:Z
 
-    .line 810
+    .line 826
     iput-boolean v0, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->resetTopWallpaper:Z
 
-    .line 811
+    .line 827
     return-void
 .end method
 
@@ -89,10 +89,10 @@
     .locals 0
     .param p1, "win"    # Lcom/android/server/wm/WindowState;
 
-    .line 795
+    .line 811
     iput-object p1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->topWallpaper:Lcom/android/server/wm/WindowState;
 
-    .line 796
+    .line 812
     return-void
 .end method
 
@@ -100,10 +100,10 @@
     .locals 0
     .param p1, "topWallpaperAsTarget"    # Z
 
-    .line 803
+    .line 819
     iput-boolean p1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->useTopWallpaperAsTarget:Z
 
-    .line 804
+    .line 820
     return-void
 .end method
 
@@ -111,9 +111,9 @@
     .locals 0
     .param p1, "win"    # Lcom/android/server/wm/WindowState;
 
-    .line 799
+    .line 815
     iput-object p1, p0, Lcom/android/server/wm/WallpaperController$FindWallpaperTargetResult;->wallpaperTarget:Lcom/android/server/wm/WindowState;
 
-    .line 800
+    .line 816
     return-void
 .end method

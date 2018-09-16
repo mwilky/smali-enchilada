@@ -32,7 +32,7 @@
     .param p10, "restricted"    # Z
     .param p11, "owner"    # Ljava/lang/String;
 
-    .line 829
+    .line 843
     move-object v11, p0
 
     move-object v12, p1
@@ -69,7 +69,7 @@
 .method public getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
     .locals 1
 
-    .line 837
+    .line 851
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
@@ -82,11 +82,11 @@
 .method public notifyUserActivity()V
     .locals 1
 
-    .line 832
+    .line 846
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$7;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$500(Lcom/android/server/fingerprint/FingerprintService;)V
+    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$600(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 833
+    .line 847
     return-void
 .end method

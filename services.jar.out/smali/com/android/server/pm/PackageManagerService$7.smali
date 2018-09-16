@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 14303
+    .line 14309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,14 +43,14 @@
     .param p1, "p1"    # Landroid/content/pm/ProviderInfo;
     .param p2, "p2"    # Landroid/content/pm/ProviderInfo;
 
-    .line 14305
+    .line 14311
     iget v0, p1, Landroid/content/pm/ProviderInfo;->initOrder:I
 
-    .line 14306
+    .line 14312
     .local v0, "v1":I
     iget v1, p2, Landroid/content/pm/ProviderInfo;->initOrder:I
 
-    .line 14307
+    .line 14313
     .local v1, "v2":I
     if-le v0, v1, :cond_0
 
@@ -75,7 +75,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 14303
+    .line 14309
     check-cast p1, Landroid/content/pm/ProviderInfo;
 
     check-cast p2, Landroid/content/pm/ProviderInfo;

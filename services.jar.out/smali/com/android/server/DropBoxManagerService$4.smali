@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/DropBoxManagerService;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 248
+    .line 253
     iput-object p1, p0, Lcom/android/server/DropBoxManagerService$4;->this$0:Lcom/android/server/DropBoxManagerService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -38,7 +38,7 @@
     .locals 3
     .param p1, "selfChange"    # Z
 
-    .line 251
+    .line 256
     iget-object v0, p0, Lcom/android/server/DropBoxManagerService$4;->this$0:Lcom/android/server/DropBoxManagerService;
 
     invoke-static {v0}, Lcom/android/server/DropBoxManagerService;->access$300(Lcom/android/server/DropBoxManagerService;)Landroid/content/BroadcastReceiver;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/BroadcastReceiver;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 252
+    .line 257
     return-void
 .end method

@@ -26,7 +26,7 @@
     .param p3, "_token"    # Landroid/os/IBinder;
     .param p4, "_reason"    # Ljava/lang/String;
 
-    .line 10159
+    .line 10166
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/am/ActivityManagerService$ImportanceToken;-><init>(Lcom/android/server/am/ActivityManagerService;ILandroid/os/IBinder;Ljava/lang/String;)V
@@ -39,11 +39,11 @@
 .method public binderDied()V
     .locals 1
 
-    .line 10162
+    .line 10169
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$16;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityManagerService;->importanceTokenDied(Lcom/android/server/am/ActivityManagerService$ImportanceToken;)V
 
-    .line 10163
+    .line 10170
     return-void
 .end method

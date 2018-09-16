@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
-    .line 113
+    .line 119
     iput-object p1, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 4
     .param p1, "userId"    # I
 
-    .line 116
+    .line 122
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-static {v0}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->access$000(Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;)Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;->initForUser(I)V
 
-    .line 117
+    .line 123
     iget-object v0, p0, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$1;->this$0:Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;
 
     invoke-static {v0}, Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;->access$000(Lcom/android/server/voiceinteraction/VoiceInteractionManagerService;)Lcom/android/server/voiceinteraction/VoiceInteractionManagerService$VoiceInteractionManagerServiceStub;
@@ -60,11 +60,11 @@
 
     move-result-object v0
 
-    .line 118
+    .line 124
     .local v0, "interactor":Landroid/content/ComponentName;
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 125
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     return-object v1
 
-    .line 121
+    .line 127
     :cond_0
     const/4 v1, 0x0
 

@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/Uterus;
 
-    .line 779
+    .line 796
     iput-object p1, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-direct {p0}, Lcom/oneplus/embryo/IEmbryoController$Stub;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "pid"    # I
     .param p2, "complete"    # Z
 
-    .line 782
+    .line 799
     const-string v0, "Embryo_Uterus"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -63,10 +63,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 783
+    .line 800
     const/4 v0, 0x0
 
-    .line 784
+    .line 801
     .local v0, "newbie":Lcom/android/server/am/Embryo;
     iget-object v1, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
@@ -76,7 +76,7 @@
 
     monitor-enter v1
 
-    .line 785
+    .line 802
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
@@ -96,28 +96,28 @@
 
     move-object v0, v2
 
-    .line 786
+    .line 803
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 787
+    .line 804
     if-nez v0, :cond_0
 
-    .line 788
+    .line 805
     return-void
 
-    .line 790
+    .line 807
     :cond_0
     if-nez p2, :cond_1
 
-    .line 791
+    .line 808
     invoke-virtual {v0}, Lcom/android/server/am/Embryo;->destroy()V
 
-    .line 792
+    .line 809
     return-void
 
-    .line 795
+    .line 812
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
@@ -133,32 +133,32 @@
 
     move-result-object v2
 
-    .line 796
+    .line 813
     .local v2, "supervisor":Lcom/android/server/am/EmbryoSupervisor;
     if-nez v2, :cond_2
 
-    .line 797
+    .line 814
     return-void
 
-    .line 799
+    .line 816
     :cond_2
     monitor-enter v2
 
-    .line 800
+    .line 817
     :try_start_1
     invoke-virtual {v2, v0}, Lcom/android/server/am/EmbryoSupervisor;->attach(Lcom/android/server/am/Embryo;)V
 
-    .line 801
+    .line 818
     const/4 v1, 0x0
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/EmbryoSupervisor;->setWaitingForFork(Z)V
 
-    .line 802
+    .line 819
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 804
+    .line 821
     iget-object v1, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v1}, Lcom/android/server/am/Uterus;->access$600(Lcom/android/server/am/Uterus;)Ljava/util/List;
@@ -167,7 +167,7 @@
 
     monitor-enter v1
 
-    .line 805
+    .line 822
     :try_start_2
     iget-object v3, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
@@ -181,7 +181,7 @@
 
     if-nez v3, :cond_3
 
-    .line 806
+    .line 823
     iget-object v3, p0, Lcom/android/server/am/Uterus$5;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v3}, Lcom/android/server/am/Uterus;->access$600(Lcom/android/server/am/Uterus;)Ljava/util/List;
@@ -190,14 +190,14 @@
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 807
+    .line 824
     :cond_3
     monitor-exit v1
 
-    .line 808
+    .line 825
     return-void
 
-    .line 807
+    .line 824
     :catchall_0
     move-exception v3
 
@@ -207,7 +207,7 @@
 
     throw v3
 
-    .line 802
+    .line 819
     :catchall_1
     move-exception v1
 
@@ -218,7 +218,7 @@
 
     throw v1
 
-    .line 786
+    .line 803
     .end local v2    # "supervisor":Lcom/android/server/am/EmbryoSupervisor;
     :catchall_2
     move-exception v2

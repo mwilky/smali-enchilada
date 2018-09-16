@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 16612
+    .line 16619
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$22;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,20 +39,20 @@
 .method public binderDied()V
     .locals 1
 
-    .line 16615
+    .line 16622
     monitor-enter p0
 
-    .line 16616
+    .line 16623
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 16617
+    .line 16624
     monitor-exit p0
 
-    .line 16618
+    .line 16625
     return-void
 
-    .line 16617
+    .line 16624
     :catchall_0
     move-exception v0
 

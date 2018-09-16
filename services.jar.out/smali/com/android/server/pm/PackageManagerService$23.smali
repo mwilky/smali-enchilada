@@ -26,7 +26,7 @@
     .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 22298
+    .line 22308
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$23;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p3, p0, Lcom/android/server/pm/PackageManagerService$23;->val$resolver:Landroid/content/ContentResolver;
@@ -42,14 +42,14 @@
     .locals 4
     .param p1, "selfChange"    # Z
 
-    .line 22301
+    .line 22311
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$23;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$23;->val$resolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v2, "op_camera_notch_ignore"
 
-    .line 22302
+    .line 22312
     const/4 v3, 0x0
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -62,13 +62,13 @@
 
     goto :goto_0
 
-    .line 22301
+    .line 22311
     :cond_0
     move v2, v3
 
     :goto_0
     invoke-static {v0, v2}, Lcom/android/server/pm/PackageManagerService;->access$6602(Lcom/android/server/pm/PackageManagerService;Z)Z
 
-    .line 22303
+    .line 22313
     return-void
 .end method

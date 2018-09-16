@@ -680,6 +680,9 @@
     iput-object v7, v1, Lcom/android/server/InputMethodManagerService;->mImeSwitchPendingIntent:Landroid/app/PendingIntent;
 
     .line 1389
+    iput-boolean v0, v1, Lcom/android/server/InputMethodManagerService;->mShowOngoingImeSwitcherForPhones:Z
+
+    .line 1391
     iput-boolean v0, v1, Lcom/android/server/InputMethodManagerService;->mNotificationShown:Z
 
     .line 1392
@@ -808,10 +811,6 @@
     .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_1
-    move-object/from16 v0, p0
-    
-    invoke-virtual {v0}, Lcom/android/server/InputMethodManagerService;->getKeyboardSwitcher()V
-    
     return-void
 .end method
 
@@ -15260,6 +15259,17 @@
     invoke-direct {p0, v3, v5, v6}, Lcom/android/server/InputMethodManagerService;->updateSystemUiLocked(Landroid/os/IBinder;II)V
 
     .line 1531
+    iget-object v3, p0, Lcom/android/server/InputMethodManagerService;->mRes:Landroid/content/res/Resources;
+
+    const v5, 0x11200f8
+
+    invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/server/InputMethodManagerService;->mShowOngoingImeSwitcherForPhones:Z
+
+    .line 1533
     iget-boolean v3, p0, Lcom/android/server/InputMethodManagerService;->mShowOngoingImeSwitcherForPhones:Z
 
     if-eqz v3, :cond_1
@@ -16125,37 +16135,4 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     throw v1
-.end method
-
-.method public getKeyboardSwitcher()V
-    .locals 3
-
-    .prologue
-    iget-object v0, p0, Lcom/android/server/InputMethodManagerService;->mContext:Landroid/content/Context;
-    
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-    
-    const-string/jumbo v1, "tweaks_hide_keyboard_switcher"
-    
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-    
-    if-eqz v0, :cond_show
-    
-    const/4 v0, 0x0
-    
-    goto :goto_jump
-       
-    :cond_show
-    const/4 v0, 0x1
-
-    :goto_jump
-    iput-boolean v0, p0, Lcom/android/server/InputMethodManagerService;->mShowOngoingImeSwitcherForPhones:Z
-   
-    return-void
 .end method

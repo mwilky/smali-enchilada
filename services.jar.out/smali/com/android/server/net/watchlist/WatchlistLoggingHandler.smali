@@ -1248,7 +1248,7 @@
 
     .line 187
     .local v1, "bundle":Landroid/os/Bundle;
-    const-string v2, "host"
+    const-string/jumbo v2, "host"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1538,7 +1538,7 @@
 
     .line 109
     .local v0, "data":Landroid/os/Bundle;
-    const-string v1, "host"
+    const-string/jumbo v1, "host"
 
     .line 110
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -1578,8 +1578,6 @@
     .end local v0    # "data":Landroid/os/Bundle;
     :goto_0
     return-void
-
-    nop
 
     nop
 

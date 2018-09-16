@@ -346,6 +346,14 @@
     .end annotation
 .end method
 
+.method public abstract setParam(I)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract startEngTest(I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {

@@ -856,7 +856,7 @@
     goto :goto_4
 
     :cond_8
-    const-string v10, "host"
+    const-string/jumbo v10, "host"
 
     invoke-virtual {v11, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1601,7 +1601,7 @@
 
     :cond_1d
     :try_start_15
-    const-string v8, "host"
+    const-string/jumbo v8, "host"
 
     invoke-virtual {v5, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

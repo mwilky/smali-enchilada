@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
     .locals 0
 
-    .line 2425
+    .line 2426
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockModeReceiver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
     .param p1, "x0"    # Lcom/android/server/policy/OemPhoneWindowManager;
     .param p2, "x1"    # Lcom/android/server/policy/OemPhoneWindowManager$1;
 
-    .line 2425
+    .line 2426
     invoke-direct {p0, p1}, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockModeReceiver;-><init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
 
     return-void
@@ -48,7 +48,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 2428
+    .line 2429
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     move-result v0
 
-    .line 2429
+    .line 2430
     .local v0, "keyLockMode":I
     invoke-static {}, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->values()[Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
@@ -69,12 +69,12 @@
 
     sput-object v1, Lcom/android/server/policy/OemPhoneWindowManager;->mKeyLockMode:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 2431
+    .line 2432
     sget-boolean v1, Lcom/android/server/policy/OemPhoneWindowManager;->DEBUG_KEYLOCK:Z
 
     if-eqz v1, :cond_0
 
-    .line 2432
+    .line 2433
     const-string v1, "OemPhoneWindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -95,7 +95,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2435
+    .line 2436
     :cond_0
     sget-object v1, Lcom/android/server/policy/OemPhoneWindowManager$13;->$SwitchMap$com$android$server$policy$OemPhoneWindowManager$KeyLockMode:[I
 
@@ -115,7 +115,7 @@
 
     goto :goto_0
 
-    .line 2446
+    .line 2447
     :cond_1
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockModeReceiver;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -126,10 +126,10 @@
 
     invoke-virtual {v1}, Lcom/android/server/policy/OemPhoneWindowManager$SettingsObserver;->updateSettings()V
 
-    .line 2447
+    .line 2448
     nop
 
-    .line 2451
+    .line 2452
     :goto_0
     return-void
 

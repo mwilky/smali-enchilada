@@ -23,7 +23,7 @@
 # static fields
 .field private static final DEFAULT_TIMEOUT:J = 0xea60L
 
-.field private static final VDBG:Z = true
+.field private static final VDBG:Z = false
 
 .field private static final WARN_EXECUTE_DELAY_MS:J = 0x1f4L
 
@@ -102,7 +102,7 @@
 .end method
 
 .method constructor <init>(Lcom/android/server/INativeDaemonConnectorCallbacks;Ljava/lang/String;ILjava/lang/String;ILandroid/os/PowerManager$WakeLock;Landroid/os/Looper;)V
-    .locals 2
+    .locals 3
     .param p1, "callbacks"    # Lcom/android/server/INativeDaemonConnectorCallbacks;
     .param p2, "socket"    # Ljava/lang/String;
     .param p3, "responseQueueSize"    # I
@@ -115,7 +115,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/NativeDaemonConnector;->mDebug:Z
 
@@ -155,20 +155,20 @@
     .line 99
     iget-object v1, p0, Lcom/android/server/NativeDaemonConnector;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v1, v0}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
     .line 101
     :cond_0
     iput-object p7, p0, Lcom/android/server/NativeDaemonConnector;->mLooper:Landroid/os/Looper;
 
     .line 102
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const/4 v1, 0x0
+    invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object v0, p0, Lcom/android/server/NativeDaemonConnector;->mSequenceNumber:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object v1, p0, Lcom/android/server/NativeDaemonConnector;->mSequenceNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 103
     if-eqz p4, :cond_1
@@ -1987,7 +1987,7 @@
 
     throw v7
 
-    .line 510
+    .line 511
     .end local v17    # "rawBuilder":Ljava/lang/StringBuilder;
     .end local v18    # "logBuilder":Ljava/lang/StringBuilder;
     .restart local v7    # "rawBuilder":Ljava/lang/StringBuilder;
@@ -1997,33 +1997,12 @@
 
     move-object/from16 v18, v8
 
-    .line 510
+    .line 511
     .end local v7    # "rawBuilder":Ljava/lang/StringBuilder;
     .end local v8    # "logBuilder":Ljava/lang/StringBuilder;
     .restart local v17    # "rawBuilder":Ljava/lang/StringBuilder;
     .restart local v18    # "logBuilder":Ljava/lang/StringBuilder;
     :goto_1
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "RMV <- {"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v8, "}"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {v1, v7}, Lcom/android/server/NativeDaemonConnector;->log(Ljava/lang/String;)V
-
-    .line 511
     invoke-virtual {v6, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 512

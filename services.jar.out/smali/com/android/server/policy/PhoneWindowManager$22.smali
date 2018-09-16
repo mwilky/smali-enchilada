@@ -40,7 +40,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 9295
+    .line 9421
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$22;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput p2, p0, Lcom/android/server/policy/PhoneWindowManager$22;->val$vis:I
@@ -67,18 +67,18 @@
 .method public run()V
     .locals 9
 
-    .line 9298
+    .line 9424
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$22;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-virtual {v0}, Lcom/android/server/policy/PhoneWindowManager;->getStatusBarManagerInternal()Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     move-result-object v0
 
-    .line 9299
+    .line 9425
     .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_0
 
-    .line 9304
+    .line 9430
     iget v2, p0, Lcom/android/server/policy/PhoneWindowManager$22;->val$vis:I
 
     iget v3, p0, Lcom/android/server/policy/PhoneWindowManager$22;->val$fullscreenVisibility:I
@@ -93,22 +93,22 @@
 
     iget-object v1, p0, Lcom/android/server/policy/PhoneWindowManager$22;->val$win:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
-    .line 9307
+    .line 9433
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 9304
+    .line 9430
     move-object v1, v0
 
     invoke-interface/range {v1 .. v8}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setSystemUiVisibility(IIIILandroid/graphics/Rect;Landroid/graphics/Rect;Ljava/lang/String;)V
 
-    .line 9308
+    .line 9434
     iget-boolean v1, p0, Lcom/android/server/policy/PhoneWindowManager$22;->val$needsMenu:Z
 
     invoke-interface {v0, v1}, Lcom/android/server/statusbar/StatusBarManagerInternal;->topAppWindowChanged(Z)V
 
-    .line 9310
+    .line 9436
     :cond_0
     return-void
 .end method

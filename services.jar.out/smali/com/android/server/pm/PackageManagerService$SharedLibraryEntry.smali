@@ -35,20 +35,20 @@
 
     move-object v0, p0
 
-    .line 1065
+    .line 1066
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 1066
+    .line 1067
     move-object v1, p1
 
     iput-object v1, v0, Lcom/android/server/pm/PackageManagerService$SharedLibraryEntry;->path:Ljava/lang/String;
 
-    .line 1067
+    .line 1068
     move-object/from16 v2, p2
 
     iput-object v2, v0, Lcom/android/server/pm/PackageManagerService$SharedLibraryEntry;->apk:Ljava/lang/String;
 
-    .line 1068
+    .line 1069
     new-instance v10, Landroid/content/pm/SharedLibraryInfo;
 
     new-instance v8, Landroid/content/pm/VersionedPackage;
@@ -73,6 +73,6 @@
 
     iput-object v10, v0, Lcom/android/server/pm/PackageManagerService$SharedLibraryEntry;->info:Landroid/content/pm/SharedLibraryInfo;
 
-    .line 1070
+    .line 1071
     return-void
 .end method

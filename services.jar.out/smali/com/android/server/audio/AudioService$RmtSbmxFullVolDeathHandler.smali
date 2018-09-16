@@ -28,15 +28,15 @@
     .locals 2
     .param p2, "cb"    # Landroid/os/IBinder;
 
-    .line 2577
+    .line 2590
     iput-object p1, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2578
+    .line 2591
     iput-object p2, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->mICallback:Landroid/os/IBinder;
 
-    .line 2580
+    .line 2593
     const/4 p1, 0x0
 
     :try_start_0
@@ -44,14 +44,14 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2583
+    .line 2596
     goto :goto_0
 
-    .line 2581
+    .line 2594
     :catch_0
     move-exception p1
 
-    .line 2582
+    .line 2595
     .local p1, "e":Landroid/os/RemoteException;
     const-string v0, "AudioService"
 
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2584
+    .line 2597
     .end local p1    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
@@ -70,7 +70,7 @@
 .method public binderDied()V
     .locals 3
 
-    .line 2599
+    .line 2612
     const-string v0, "AudioService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -91,7 +91,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2600
+    .line 2613
     iget-object v0, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->this$0:Lcom/android/server/audio/AudioService;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->mICallback:Landroid/os/IBinder;
@@ -100,14 +100,14 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/audio/AudioService;->forceRemoteSubmixFullVolume(ZLandroid/os/IBinder;)V
 
-    .line 2601
+    .line 2614
     return-void
 .end method
 
 .method forget()V
     .locals 3
 
-    .line 2592
+    .line 2605
     :try_start_0
     iget-object v0, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->mICallback:Landroid/os/IBinder;
 
@@ -117,14 +117,14 @@
     :try_end_0
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2595
+    .line 2608
     goto :goto_0
 
-    .line 2593
+    .line 2606
     :catch_0
     move-exception v0
 
-    .line 2594
+    .line 2607
     .local v0, "e":Ljava/util/NoSuchElementException;
     const-string v1, "AudioService"
 
@@ -132,7 +132,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2596
+    .line 2609
     .end local v0    # "e":Ljava/util/NoSuchElementException;
     :goto_0
     return-void
@@ -142,7 +142,7 @@
     .locals 1
     .param p1, "cb"    # Landroid/os/IBinder;
 
-    .line 2587
+    .line 2600
     iget-object v0, p0, Lcom/android/server/audio/AudioService$RmtSbmxFullVolDeathHandler;->mICallback:Landroid/os/IBinder;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
