@@ -80,7 +80,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
-    const v0, 0x7f0a058c
+    const v0, 0x7f0a058e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +91,7 @@
     iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents;->mWordEditText:Landroid/widget/EditText;
 
     .line 64
-    const v0, 0x7f0a0589
+    const v0, 0x7f0a058b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -203,7 +203,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 84
-    const v0, 0x7f0a058c
+    const v0, 0x7f0a058e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
     iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents;->mWordEditText:Landroid/widget/EditText;
 
     .line 85
-    const v0, 0x7f0a0589
+    const v0, 0x7f0a058b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

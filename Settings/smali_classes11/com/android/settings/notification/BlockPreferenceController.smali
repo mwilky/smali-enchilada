@@ -315,7 +315,7 @@
 
     .line 68
     .local v0, "pref":Lcom/android/settings/applications/LayoutPreference;
-    const v1, 0x7f0a051f
+    const v1, 0x7f0a0521
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 

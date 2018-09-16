@@ -722,7 +722,7 @@
     .line 253
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment;->mPreferenceAlwaysOn:Lcom/android/settingslib/RestrictedSwitchPreference;
 
-    const v1, 0x7f12132c
+    const v1, 0x7f121330
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setSummary(I)V
 
@@ -744,7 +744,7 @@
     .line 259
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment;->mPreferenceAlwaysOn:Lcom/android/settingslib/RestrictedSwitchPreference;
 
-    const v1, 0x7f12132e
+    const v1, 0x7f121332
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setSummary(I)V
 
@@ -1185,7 +1185,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f121368
+    const v3, 0x7f12136c
 
     const/4 v4, 0x1
 

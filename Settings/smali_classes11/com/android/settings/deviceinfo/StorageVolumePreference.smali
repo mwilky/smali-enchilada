@@ -56,7 +56,7 @@
 
     iput v0, v1, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mUsedPercent:I
 
-    .line 148
+    .line 152
     new-instance v4, Lcom/android/settings/deviceinfo/StorageVolumePreference$1;
 
     invoke-direct {v4, v1}, Lcom/android/settings/deviceinfo/StorageVolumePreference$1;-><init>(Lcom/android/settings/deviceinfo/StorageVolumePreference;)V
@@ -83,7 +83,7 @@
     iput v4, v1, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mColor:I
 
     .line 63
-    const v5, 0x7f0d0257
+    const v5, 0x7f0d0258
 
     invoke-virtual {v1, v5}, Lcom/android/settings/deviceinfo/StorageVolumePreference;->setLayoutResource(I)V
 
@@ -296,7 +296,7 @@
 
     .line 103
     .local v15, "total":Ljava/lang/String;
-    const v11, 0x7f1210fa
+    const v11, 0x7f1210fe
 
     const/4 v12, 0x2
 
@@ -420,7 +420,7 @@
     if-eqz v0, :cond_6
 
     .line 124
-    const v0, 0x7f0d01f8
+    const v0, 0x7f0d01f9
 
     invoke-virtual {v1, v0}, Lcom/android/settings/deviceinfo/StorageVolumePreference;->setWidgetLayoutResource(I)V
 
@@ -446,7 +446,7 @@
     .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
     .line 130
-    const v0, 0x7f0a057a
+    const v0, 0x7f0a057c
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -458,25 +458,35 @@
     .local v0, "unmount":Landroid/widget/ImageView;
     if-eqz v0, :cond_0
 
-    .line 132
-    const-string v1, "#8a000000"
+    .line 134
+    invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageVolumePreference;->getContext()Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f06029f
+
+    .line 135
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v1
 
+    .line 134
     invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 133
+    .line 137
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mUnmountListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 136
+    .line 140
     :cond_0
     const v1, 0x102000d
 
@@ -486,7 +496,7 @@
 
     check-cast v1, Landroid/widget/ProgressBar;
 
-    .line 137
+    .line 141
     .local v1, "progress":Landroid/widget/ProgressBar;
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mVolume:Landroid/os/storage/VolumeInfo;
 
@@ -504,17 +514,17 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 138
+    .line 142
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 139
+    .line 143
     iget v2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mUsedPercent:I
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 140
+    .line 144
     iget v2, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference;->mColor:I
 
     invoke-static {v2}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -525,16 +535,16 @@
 
     goto :goto_0
 
-    .line 142
+    .line 146
     :cond_1
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 145
+    .line 149
     :goto_0
     invoke-super {p0, p1}, Landroid/support/v7/preference/Preference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    .line 146
+    .line 150
     return-void
 .end method

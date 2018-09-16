@@ -300,7 +300,7 @@
 
     iget-object v1, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120fcd
+    const v2, 0x7f120fd1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

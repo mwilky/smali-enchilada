@@ -681,7 +681,7 @@
 
     .line 138
     :goto_0
-    const v1, 0x7f121527
+    const v1, 0x7f12152b
 
     invoke-virtual {p0, v1}, Lcom/android/settings/bluetooth/BluetoothPermissionActivity;->getString(I)Ljava/lang/String;
 

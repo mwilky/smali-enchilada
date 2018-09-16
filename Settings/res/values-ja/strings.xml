@@ -2905,6 +2905,8 @@ T馬などの動物はいないようでした。荷物は小さな緑色の手�
     <string name="oneplus_quick_clipboard_summary">コピー機能を強化し、コピー内容に応じて次の操作をお勧めします。</string>
     <string name="oneplus_quick_gestures">ジェスチャー</string>
     <string name="oneplus_quick_gestures_title">クイックジェスチャー</string>
+    <string name="oneplus_quick_turn_on_assistant_app">アシスタントアプリをすばやくアクティブ化する</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">アシスタントアプリをアクティブ化するには電源ボタンを 0.5 秒押し続け、電源をオフにするには 3 秒押し続けます</string>
     <string name="oneplus_quick_turn_on_camera">カメラをすばやくオンにする</string>
     <string name="oneplus_quickpay">クイック支払</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">ホームボタンを長押しした際の動作を本当に「%1$s」から「クイック支払」に変更しますか？</string>

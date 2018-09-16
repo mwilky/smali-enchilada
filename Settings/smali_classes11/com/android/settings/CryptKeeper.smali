@@ -359,7 +359,7 @@
     .locals 2
 
     .line 229
-    const v0, 0x7f0a04de
+    const v0, 0x7f0a04e0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -405,7 +405,7 @@
 
     .line 694
     :cond_1
-    const v0, 0x7f0a04de
+    const v0, 0x7f0a04e0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -534,7 +534,7 @@
     .line 588
     .end local v0    # "pm":Landroid/os/PowerManager;
     :cond_0
-    const v0, 0x7f0a0412
+    const v0, 0x7f0a0414
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -690,7 +690,7 @@
 
     .line 246
     :cond_1
-    const v0, 0x7f0a04de
+    const v0, 0x7f0a04e0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1252,7 +1252,7 @@
     .locals 6
 
     .line 745
-    const v0, 0x7f0a03d5
+    const v0, 0x7f0a03d7
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1354,7 +1354,7 @@
     .line 770
     .end local v0    # "emergencyCall":Landroid/view/View;
     :cond_2
-    const v0, 0x7f0a0522
+    const v0, 0x7f0a0524
 
     invoke-virtual {p0, v0}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 
@@ -1770,9 +1770,9 @@
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 623
-    const v2, 0x7f0a04de
+    const v2, 0x7f0a04e0
 
-    const v3, 0x7f0a054f
+    const v3, 0x7f0a0551
 
     if-eqz p1, :cond_0
 
@@ -2135,7 +2135,7 @@
 
     .line 672
     :goto_2
-    const v5, 0x7f0a04de
+    const v5, 0x7f0a04e0
 
     invoke-virtual {p0, v5}, Lcom/android/settings/CryptKeeper;->findViewById(I)Landroid/view/View;
 

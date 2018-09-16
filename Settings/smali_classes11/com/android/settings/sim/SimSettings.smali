@@ -409,7 +409,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f121006
+    const v5, 0x7f12100a
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -533,7 +533,7 @@
     if-nez v1, :cond_3
 
     .line 188
-    const v6, 0x7f121049
+    const v6, 0x7f12104d
 
     invoke-virtual {v0, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -634,7 +634,7 @@
 
     .line 162
     .local v1, "sir":Landroid/telephony/SubscriptionInfo;
-    const v2, 0x7f12105f
+    const v2, 0x7f121063
 
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -675,7 +675,7 @@
     if-nez v1, :cond_3
 
     .line 169
-    const v4, 0x7f121049
+    const v4, 0x7f12104d
 
     invoke-virtual {v0, v4}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

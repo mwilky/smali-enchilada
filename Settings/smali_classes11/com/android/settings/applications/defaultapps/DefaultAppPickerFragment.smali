@@ -52,7 +52,7 @@
     if-eqz v0, :cond_1
 
     .line 83
-    const v0, 0x7f12117a
+    const v0, 0x7f12117e
 
     invoke-virtual {p1, v0}, Lcom/android/settings/widget/RadioButtonPreference;->setSummary(I)V
 

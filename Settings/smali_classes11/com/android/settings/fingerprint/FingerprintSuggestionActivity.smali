@@ -172,7 +172,7 @@
 
     .line 34
     .local v0, "cancelButton":Landroid/widget/Button;
-    const v1, 0x7f120f83
+    const v1, 0x7f120f87
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(I)V
 

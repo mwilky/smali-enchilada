@@ -2907,6 +2907,8 @@ Svep uppåt från botten av skärmen för att gå till startsidan."</string>
     <string name="oneplus_quick_clipboard_summary">Förbättra möjligheten att kopiera och rekommendera sedan nästa åtgärd enligt kopian</string>
     <string name="oneplus_quick_gestures">Gester</string>
     <string name="oneplus_quick_gestures_title">Snabbgester</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Snabbaktivera assistentappen</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Håll ned strömbrytaren i 0,5 sekunder för att aktivera assistentappen och 3 sekunder för att stänga av</string>
     <string name="oneplus_quick_turn_on_camera">Slå på kameran snabbt</string>
     <string name="oneplus_quickpay">Snabbetalning</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Vill du verkligen ändra långtrycksåtgärden på Hem-knappen från \"%1$s\" till \"Snabbetalning\"?</string>

@@ -65,7 +65,7 @@
     .param p2, "userRestriction"    # Ljava/lang/String;
 
     .line 56
-    const v0, 0x7f0d0222
+    const v0, 0x7f0d0223
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/RestrictedAppPreference;->setWidgetLayoutResource(I)V
 
@@ -193,7 +193,7 @@
     invoke-virtual {v0, p1}, Lcom/android/settingslib/RestrictedPreferenceHelper;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 65
-    const v0, 0x7f0a0449
+    const v0, 0x7f0a044b
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

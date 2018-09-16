@@ -500,7 +500,7 @@
 
     .line 144
     :cond_0
-    const v0, 0x7f121241
+    const v0, 0x7f121245
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -509,7 +509,7 @@
     .line 142
     :cond_1
     :goto_0
-    const v0, 0x7f121242
+    const v0, 0x7f121246
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -555,7 +555,7 @@
 
     .line 159
     :cond_3
-    const v0, 0x7f121243
+    const v0, 0x7f121247
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -563,7 +563,7 @@
 
     .line 153
     :cond_4
-    const v0, 0x7f121245
+    const v0, 0x7f121249
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -572,7 +572,7 @@
 
     .line 149
     :cond_5
-    const v0, 0x7f121244
+    const v0, 0x7f121248
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

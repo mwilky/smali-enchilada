@@ -70,7 +70,7 @@
     nop
 
     .line 458
-    const v2, 0x7f0a03bd
+    const v2, 0x7f0a03bf
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
     invoke-direct {v3, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 487
-    const v4, 0x7f1212f5
+    const v4, 0x7f1212f9
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

@@ -396,7 +396,7 @@
 
     .line 251
     .local v0, "contactType":I
-    const v1, 0x7f121582
+    const v1, 0x7f121586
 
     const/4 v2, -0x1
 
@@ -453,19 +453,19 @@
 
     .line 271
     :pswitch_0
-    const v1, 0x7f121583
+    const v1, 0x7f121587
 
     return v1
 
     .line 269
     :pswitch_1
-    const v1, 0x7f121581
+    const v1, 0x7f121585
 
     return v1
 
     .line 267
     :pswitch_2
-    const v1, 0x7f121580
+    const v1, 0x7f121584
 
     return v1
 

@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">Розширює функцію копіювання та пропонує подальшу дію з урахуванням типу скопійованих даних</string>
     <string name="oneplus_quick_gestures">Жести</string>
     <string name="oneplus_quick_gestures_title">Швидкі жести</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Швидка активація додатка-помічника</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Натиснути кнопку живлення та утримувати її протягом 0,5 секунди, щоб активувати додаток-помічник, і протягом 3 секунд, щоб вимкнути</string>
     <string name="oneplus_quick_turn_on_camera">Швидке ввімкнення камери</string>
     <string name="oneplus_quickpay">Швидка оплата</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Ви справді бажаєте змінити дію при утримування клавіші \"Додому\" з \"%1$s\" на \"Quick Pay\"?</string>

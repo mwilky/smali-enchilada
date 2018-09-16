@@ -2145,7 +2145,7 @@
     .param p7, "withTransition"    # Z
 
     .line 658
-    const v0, 0x7f120e62
+    const v0, 0x7f120e66
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -3126,12 +3126,12 @@
     if-eqz v12, :cond_7
 
     .line 314
-    const v12, 0x7f0d0241
+    const v12, 0x7f0d0242
 
     goto :goto_3
 
     :cond_7
-    const v12, 0x7f0d0242
+    const v12, 0x7f0d0243
 
     .line 313
     :goto_3
@@ -3197,7 +3197,7 @@
 
     .line 337
     :goto_4
-    const v12, 0x7f0a0475
+    const v12, 0x7f0a0477
 
     invoke-virtual {v1, v12}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -3276,7 +3276,7 @@
     .line 379
     .end local v11    # "color":I
     :cond_c
-    const v11, 0x7f0a051f
+    const v11, 0x7f0a0521
 
     invoke-virtual {v1, v11}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 
@@ -3342,7 +3342,7 @@
     invoke-virtual {v13, v15}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 398
-    const v15, 0x7f0a04be
+    const v15, 0x7f0a04c0
 
     invoke-virtual {v1, v15}, Lcom/android/settings/SettingsActivity;->findViewById(I)Landroid/view/View;
 

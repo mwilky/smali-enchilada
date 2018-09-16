@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/settings/OPOnlineConfigManager;
 
-    .line 99
+    .line 100
     iput-object p1, p0, Lcom/oneplus/settings/OPOnlineConfigManager$BackgroundConfigUpdater;->this$0:Lcom/oneplus/settings/OPOnlineConfigManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
     .param p1, "configJsonArray"    # Lorg/json/JSONArray;
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager$BackgroundConfigUpdater;->this$0:Lcom/oneplus/settings/OPOnlineConfigManager;
 
     invoke-static {v0, p1}, Lcom/oneplus/settings/OPOnlineConfigManager;->access$300(Lcom/oneplus/settings/OPOnlineConfigManager;Lorg/json/JSONArray;)V
 
-    .line 103
+    .line 104
     return-void
 .end method

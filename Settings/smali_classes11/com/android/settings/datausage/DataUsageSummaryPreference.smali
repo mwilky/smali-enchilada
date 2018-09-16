@@ -317,7 +317,7 @@
 
     .line 210
     .local v1, "launcher":Lcom/android/settings/core/SubSettingLauncher;
-    const v2, 0x7f1213da
+    const v2, 0x7f1213de
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -747,7 +747,7 @@
     nop
 
     .line 231
-    const v9, 0x7f0a0581
+    const v9, 0x7f0a0583
 
     invoke-virtual {v1, v9}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -1094,7 +1094,7 @@
     invoke-direct {p0, p1}, Lcom/android/settings/datausage/DataUsageSummaryPreference;->updateDataUsageLabels(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 166
-    const v1, 0x7f0a0583
+    const v1, 0x7f0a0585
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

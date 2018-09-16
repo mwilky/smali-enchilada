@@ -94,7 +94,7 @@
     if-nez v0, :cond_0
 
     .line 45
-    const v0, 0x7f12159b
+    const v0, 0x7f12159f
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -115,7 +115,7 @@
     if-eqz v0, :cond_1
 
     .line 47
-    const v0, 0x7f121598
+    const v0, 0x7f12159c
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 

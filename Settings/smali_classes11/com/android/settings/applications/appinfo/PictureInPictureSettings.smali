@@ -550,7 +550,7 @@
     invoke-super {p0, p1, p2}, Lcom/android/settings/notification/EmptyTextSettings;->onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
 
     .line 181
-    const v0, 0x7f120dc5
+    const v0, 0x7f120dc9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/appinfo/PictureInPictureSettings;->setEmptyText(I)V
 

@@ -111,7 +111,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/android/settings/localepicker/OPLocalePicker$1;-><init>(Lcom/android/settings/localepicker/OPLocalePicker;I)V
 
-    const v2, 0x7f120df8
+    const v2, 0x7f120dfc
 
     invoke-static {v0, v2, v1}, Lcom/android/settings/Utils;->buildGlobalChangeWarningDialog(Landroid/content/Context;ILjava/lang/Runnable;)Landroid/app/Dialog;
 

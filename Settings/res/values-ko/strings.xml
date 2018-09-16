@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">복사한 후 해당 복사에 따라 다음 작업을 권장하는 기능 개선</string>
     <string name="oneplus_quick_gestures">제스처</string>
     <string name="oneplus_quick_gestures_title">빠른 제스처</string>
+    <string name="oneplus_quick_turn_on_assistant_app">도우미 앱 빠른 활성화</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">도우미 앱을 활성화하려면 전원 버튼을 0.5초 동안 길게 누르고, 전원을 끄려면 3초 동안 길게 누릅니다</string>
     <string name="oneplus_quick_turn_on_camera">카메라를 빠르게 켜기</string>
     <string name="oneplus_quickpay">빠른 결제</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">\"%1$s\"에서 \"빠른 결제\"로 홈 버튼 길게 누르기 동작을 변경하시겠습니까?</string>

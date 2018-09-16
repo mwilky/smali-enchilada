@@ -220,7 +220,7 @@
 
     .line 169
     .local v2, "preference":Landroid/support/v7/preference/Preference;
-    const v3, 0x7f120e18
+    const v3, 0x7f120e1c
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 

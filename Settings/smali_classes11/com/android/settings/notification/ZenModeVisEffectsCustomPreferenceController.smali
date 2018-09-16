@@ -77,7 +77,7 @@
     move-result-object v0
 
     .line 89
-    const v1, 0x7f1215cd
+    const v1, 0x7f1215d1
 
     invoke-virtual {v0, v1}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 

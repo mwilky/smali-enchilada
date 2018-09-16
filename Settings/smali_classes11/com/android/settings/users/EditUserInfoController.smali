@@ -164,7 +164,7 @@
 
     .line 124
     .local v12, "info":Landroid/content/pm/UserInfo;
-    const v0, 0x7f0a0590
+    const v0, 0x7f0a0592
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -181,7 +181,7 @@
     invoke-virtual {v13, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 127
-    const v0, 0x7f0a0591
+    const v0, 0x7f0a0593
 
     invoke-virtual {v11, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
 
     invoke-direct {v0, v8}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120e46
+    const v1, 0x7f120e4a
 
     .line 141
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;

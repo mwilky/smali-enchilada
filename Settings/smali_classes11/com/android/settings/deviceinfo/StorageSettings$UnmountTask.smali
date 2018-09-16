@@ -142,7 +142,7 @@
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1210f7
+    const v4, 0x7f1210fb
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -190,7 +190,7 @@
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1210f6
+    const v4, 0x7f1210fa
 
     new-array v0, v0, [Ljava/lang/Object;
 

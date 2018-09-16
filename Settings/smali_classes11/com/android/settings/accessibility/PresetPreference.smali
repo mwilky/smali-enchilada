@@ -26,7 +26,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setDialogLayoutResource(I)V
 
     .line 38
-    const v0, 0x7f0d020f
+    const v0, 0x7f0d0210
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/PresetPreference;->setListItemLayoutResource(I)V
 
@@ -53,7 +53,7 @@
     .param p2, "index"    # I
 
     .line 52
-    const v0, 0x7f0a0401
+    const v0, 0x7f0a0403
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -61,7 +61,7 @@
 
     .line 53
     .local v0, "previewViewport":Landroid/view/View;
-    const v1, 0x7f0a03fd
+    const v1, 0x7f0a03ff
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
     if-eqz v4, :cond_0
 
     .line 63
-    const v5, 0x7f0a04f8
+    const v5, 0x7f0a04fa
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

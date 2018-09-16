@@ -247,7 +247,7 @@
     if-ne v1, v2, :cond_0
 
     .line 71
-    const v1, 0x7f120b36
+    const v1, 0x7f120b39
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 
@@ -266,7 +266,7 @@
     if-ne v1, v2, :cond_1
 
     .line 73
-    const v1, 0x7f120c24
+    const v1, 0x7f120c26
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/better/OPGameAndReadPickActivity;->getString(I)Ljava/lang/String;
 

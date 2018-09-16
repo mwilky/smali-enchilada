@@ -141,7 +141,7 @@
 
     .line 301
     .local v2, "holder":Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter$ViewHolder;
-    const v3, 0x7f0a054f
+    const v3, 0x7f0a0551
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
     iput-object v3, v2, Lcom/android/settings/sim/SimDialogActivity$SelectAccountListAdapter$ViewHolder;->title:Landroid/widget/TextView;
 
     .line 302
-    const v3, 0x7f0a04f8
+    const v3, 0x7f0a04fa
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

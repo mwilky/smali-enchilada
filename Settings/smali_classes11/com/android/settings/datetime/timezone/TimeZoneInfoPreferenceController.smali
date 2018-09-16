@@ -167,7 +167,7 @@
     .line 92
     iget-object v2, p0, Lcom/android/settings/datetime/timezone/TimeZoneInfoPreferenceController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1215f3
+    const v5, 0x7f1215f7
 
     new-array v4, v4, [Ljava/lang/Object;
 
@@ -240,7 +240,7 @@
     .line 105
     iget-object v7, p0, Lcom/android/settings/datetime/timezone/TimeZoneInfoPreferenceController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1215f9
+    const v8, 0x7f1215fd
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -252,7 +252,7 @@
     :cond_4
     iget-object v7, p0, Lcom/android/settings/datetime/timezone/TimeZoneInfoPreferenceController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1215fa
+    const v8, 0x7f1215fe
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -290,7 +290,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f1215f2
+    const v10, 0x7f1215f6
 
     const/4 v11, 0x3
 
@@ -374,7 +374,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1215f4
+    const v2, 0x7f1215f8
 
     const/4 v3, 0x2
 

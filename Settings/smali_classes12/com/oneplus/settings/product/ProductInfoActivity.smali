@@ -244,7 +244,7 @@
     iput-object v3, p0, Lcom/oneplus/settings/product/ProductInfoActivity;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     .line 60
-    const v3, 0x7f0a0543
+    const v3, 0x7f0a0545
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/product/ProductInfoActivity;->findViewById(I)Landroid/view/View;
 

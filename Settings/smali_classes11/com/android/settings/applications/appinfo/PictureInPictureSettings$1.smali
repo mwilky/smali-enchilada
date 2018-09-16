@@ -67,7 +67,7 @@
     move-result v6
 
     .line 168
-    const v1, 0x7f120dc4
+    const v1, 0x7f120dc8
 
     const/4 v5, -0x1
 

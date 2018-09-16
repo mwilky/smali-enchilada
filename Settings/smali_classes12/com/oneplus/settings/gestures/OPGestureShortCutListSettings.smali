@@ -267,7 +267,7 @@
     .locals 5
 
     .line 72
-    const v0, 0x7f0a0388
+    const v0, 0x7f0a0389
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/gestures/OPGestureShortCutListSettings;->findViewById(I)Landroid/view/View;
 

@@ -404,7 +404,7 @@
     .line 181
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothEnabler;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f12142c
+    const v2, 0x7f121430
 
     invoke-static {v1, v2, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

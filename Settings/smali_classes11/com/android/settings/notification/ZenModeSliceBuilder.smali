@@ -153,7 +153,7 @@
 
     .line 128
     .local v0, "contentUri":Landroid/net/Uri;
-    const v1, 0x7f1215bb
+    const v1, 0x7f1215bf
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -236,7 +236,7 @@
 
     .line 90
     .local v0, "isZenModeEnabled":Z
-    const v1, 0x7f1215bb
+    const v1, 0x7f1215bf
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

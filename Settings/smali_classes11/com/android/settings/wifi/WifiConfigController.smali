@@ -399,7 +399,7 @@
     .line 243
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1214df
+    const v8, 0x7f1214e3
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -410,7 +410,7 @@
     .line 244
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f121445
+    const v8, 0x7f121449
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -421,7 +421,7 @@
     .line 245
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1214e1
+    const v8, 0x7f1214e5
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -432,7 +432,7 @@
     .line 246
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1213ff
+    const v8, 0x7f121403
 
     .line 247
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -444,7 +444,7 @@
     .line 248
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f121400
+    const v8, 0x7f121404
 
     .line 249
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -487,7 +487,7 @@
     .line 254
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v8, 0x7f0a0426
+    const v8, 0x7f0a0428
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -505,7 +505,7 @@
     .line 256
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v8, 0x7f0a04aa
+    const v8, 0x7f0a04ac
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -594,7 +594,7 @@
     .line 265
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v8, 0x7f0a04a9
+    const v8, 0x7f0a04ab
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -620,25 +620,25 @@
     .line 268
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mAccessPoint:Lcom/android/settingslib/wifi/AccessPoint;
 
-    const v8, 0x7f121466
+    const v8, 0x7f12146a
 
-    const v10, 0x7f0a05b9
+    const v10, 0x7f0a05bb
 
-    const v11, 0x7f0a05b8
+    const v11, 0x7f0a05ba
 
     if-nez v7, :cond_2
 
     .line 269
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mConfigUi:Lcom/android/settings/wifi/WifiConfigUiBase;
 
-    const v12, 0x7f12139b
+    const v12, 0x7f12139f
 
     invoke-interface {v7, v12}, Lcom/android/settings/wifi/WifiConfigUiBase;->setTitle(I)V
 
     .line 271
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v12, 0x7f0a04d5
+    const v12, 0x7f0a04d7
 
     invoke-virtual {v7, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -656,7 +656,7 @@
     .line 273
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v12, 0x7f0a0484
+    const v12, 0x7f0a0486
 
     invoke-virtual {v7, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -674,7 +674,7 @@
     .line 275
     iget-object v7, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v12, 0x7f0a0570
+    const v12, 0x7f0a0572
 
     invoke-virtual {v7, v12}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -906,7 +906,7 @@
     if-eqz v9, :cond_7
 
     .line 316
-    const v9, 0x7f12142e
+    const v9, 0x7f121432
 
     iget-object v11, v8, Landroid/net/StaticIpConfiguration;->ipAddress:Landroid/net/LinkAddress;
 
@@ -1021,11 +1021,11 @@
     if-eqz v8, :cond_c
 
     .line 338
-    const v8, 0x7f120db4
+    const v8, 0x7f120db8
 
     iget-object v9, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f120db3
+    const v11, 0x7f120db7
 
     .line 339
     invoke-virtual {v9, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1102,7 +1102,7 @@
     .local v8, "advancedTogglebox":Landroid/widget/CheckBox;
     iget-object v9, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v10, 0x7f0a05b8
+    const v10, 0x7f0a05ba
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1141,7 +1141,7 @@
     .line 356
     iget-object v9, v0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v10, 0x7f0a05b7
+    const v10, 0x7f0a05b9
 
     invoke-virtual {v9, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1170,11 +1170,11 @@
     if-eqz v9, :cond_11
 
     .line 359
-    const v9, 0x7f1213c5
+    const v9, 0x7f1213c9
 
     iget-object v10, v0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v11, 0x7f1213c6
+    const v11, 0x7f1213ca
 
     .line 360
     invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1212,7 +1212,7 @@
     .line 366
     iget-object v2, v0, Lcom/android/settings/wifi/WifiConfigController;->mConfigUi:Lcom/android/settings/wifi/WifiConfigUiBase;
 
-    const v8, 0x7f121466
+    const v8, 0x7f12146a
 
     invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1226,7 +1226,7 @@
     :cond_12
     iget v8, v0, Lcom/android/settings/wifi/WifiConfigController;->mMode:I
 
-    const v9, 0x7f1213cf
+    const v9, 0x7f1213d3
 
     if-ne v8, v15, :cond_13
 
@@ -1329,7 +1329,7 @@
 
     .line 385
     .local v14, "summary":Ljava/lang/String;
-    const v2, 0x7f1214cb
+    const v2, 0x7f1214cf
 
     invoke-direct {v0, v7, v2, v14}, Lcom/android/settings/wifi/WifiConfigController;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -1342,7 +1342,7 @@
     if-eqz v10, :cond_18
 
     .line 389
-    const v2, 0x7f1214bd
+    const v2, 0x7f1214c1
 
     invoke-direct {v0, v7, v2, v10}, Lcom/android/settings/wifi/WifiConfigController;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -1367,7 +1367,7 @@
     if-eq v11, v9, :cond_19
 
     .line 394
-    const v11, 0x7f1214be
+    const v11, 0x7f1214c2
 
     const v12, 0x7f12082e
 
@@ -1427,7 +1427,7 @@
     if-ge v9, v12, :cond_1a
 
     .line 404
-    const v12, 0x7f1213b2
+    const v12, 0x7f1213b6
 
     invoke-virtual {v6, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1446,7 +1446,7 @@
     if-ge v9, v12, :cond_1b
 
     .line 407
-    const v12, 0x7f1213b3
+    const v12, 0x7f1213b7
 
     invoke-virtual {v6, v12}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1479,7 +1479,7 @@
     if-eqz v11, :cond_1c
 
     .line 412
-    const v12, 0x7f121413
+    const v12, 0x7f121417
 
     invoke-direct {v0, v7, v12, v11}, Lcom/android/settings/wifi/WifiConfigController;->addRow(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
@@ -1487,7 +1487,7 @@
     .end local v9    # "frequency":I
     .end local v11    # "band":Ljava/lang/String;
     :cond_1c
-    const v9, 0x7f121470
+    const v9, 0x7f121474
 
     iget-object v11, v0, Lcom/android/settings/wifi/WifiConfigController;->mAccessPoint:Lcom/android/settingslib/wifi/AccessPoint;
 
@@ -1544,7 +1544,7 @@
     :cond_1d
     iget-object v2, v0, Lcom/android/settings/wifi/WifiConfigController;->mConfigUi:Lcom/android/settings/wifi/WifiConfigUiBase;
 
-    const v9, 0x7f121410
+    const v9, 0x7f121414
 
     invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1576,7 +1576,7 @@
     :cond_1f
     iget-object v2, v0, Lcom/android/settings/wifi/WifiConfigController;->mConfigUi:Lcom/android/settings/wifi/WifiConfigUiBase;
 
-    const v7, 0x7f1213c2
+    const v7, 0x7f1213c6
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1625,7 +1625,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02d2
+    const v1, 0x7f0d02d3
 
     const/4 v2, 0x0
 
@@ -1646,7 +1646,7 @@
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(I)V
 
     .line 449
-    const v1, 0x7f0a0596
+    const v1, 0x7f0a0598
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1777,7 +1777,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f121383
+    const v3, 0x7f121387
 
     invoke-static {v0, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1831,7 +1831,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f121385
+    const v4, 0x7f121389
 
     invoke-static {v3, v4, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1856,7 +1856,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f121386
+    const v4, 0x7f12138a    # 1.9416874E38f
 
     invoke-static {v3, v4, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1882,7 +1882,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f121389
+    const v3, 0x7f12138d
 
     invoke-static {v0, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -1979,7 +1979,7 @@
     :cond_0
     iget-object v3, p0, Lcom/android/settings/wifi/WifiConfigController;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f121018
+    const v4, 0x7f12101c
 
     const/4 v5, 0x1
 
@@ -2183,7 +2183,7 @@
 
     .line 904
     .local v8, "e":Ljava/lang/NumberFormatException;
-    const v7, 0x7f120e55
+    const v7, 0x7f120e59
 
     .line 906
     .end local v8    # "e":Ljava/lang/NumberFormatException;
@@ -2613,7 +2613,7 @@
 
     .line 1534
     .local v0, "context":Landroid/content/Context;
-    const v1, 0x7f1214df
+    const v1, 0x7f1214e3
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2621,7 +2621,7 @@
 
     .line 1535
     .local v1, "unspecified":Ljava/lang/String;
-    const v2, 0x7f121378
+    const v2, 0x7f12137c
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2880,7 +2880,7 @@
     .line 1377
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a03d9
+    const v1, 0x7f0a03db
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2893,7 +2893,7 @@
     .line 1378
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a04b3
+    const v2, 0x7f0a04b5
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3114,7 +3114,7 @@
     .line 1235
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v3, 0x7f0a03d9
+    const v3, 0x7f0a03db
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3125,7 +3125,7 @@
     .line 1236
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v3, 0x7f0a04b3
+    const v3, 0x7f0a04b5
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3577,7 +3577,7 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f0a04dd
+    const v4, 0x7f0a04df
 
     if-ne v1, v3, :cond_6
 
@@ -3886,7 +3886,7 @@
     .line 1336
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v3, 0x7f0a03d9
+    const v3, 0x7f0a03db
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3897,7 +3897,7 @@
     .line 1337
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v3, 0x7f0a04b3
+    const v3, 0x7f0a04b5
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3945,7 +3945,7 @@
     .local v0, "config":Landroid/net/wifi/WifiConfiguration;
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a0427
+    const v2, 0x7f0a0429
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3985,11 +3985,11 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f0a0424
+    const v4, 0x7f0a0426
 
-    const v5, 0x7f0a0421
+    const v5, 0x7f0a0423
 
-    const v6, 0x7f0a0429
+    const v6, 0x7f0a042b
 
     const/16 v7, 0x8
 
@@ -4012,7 +4012,7 @@
     .line 1451
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a0422
+    const v2, 0x7f0a0424
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4030,7 +4030,7 @@
     .line 1453
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a0425
+    const v2, 0x7f0a0427
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4048,7 +4048,7 @@
     .line 1455
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a0420
+    const v2, 0x7f0a0422
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4141,7 +4141,7 @@
     .line 1472
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a0423
+    const v2, 0x7f0a0425
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4209,7 +4209,7 @@
     .line 1008
     iget v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mAccessPointSecurity:I
 
-    const v1, 0x7f0a0485
+    const v1, 0x7f0a0487
 
     const/16 v2, 0x8
 
@@ -4247,7 +4247,7 @@
     .line 1017
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a03d4
+    const v1, 0x7f0a03d6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4275,7 +4275,7 @@
     .line 1021
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a04b2
+    const v1, 0x7f0a04b4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4302,7 +4302,7 @@
     .line 1025
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mPasswordView:Landroid/widget/TextView;
 
-    const v1, 0x7f1214dd
+    const v1, 0x7f1214e1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHint(I)V
 
@@ -4310,7 +4310,7 @@
     :cond_1
     iget v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mAccessPointSecurity:I
 
-    const v1, 0x7f0a05ab
+    const v1, 0x7f0a05ad
 
     const/4 v7, 0x4
 
@@ -4340,7 +4340,7 @@
     .line 1034
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a05ac
+    const v1, 0x7f0a05ae
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4389,11 +4389,11 @@
     :goto_0
     iget v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mAccessPointSecurity:I
 
-    const v1, 0x7f0a04b3
+    const v1, 0x7f0a04b5
 
-    const v3, 0x7f0a03d9
+    const v3, 0x7f0a03db
 
-    const v4, 0x7f0a05a9
+    const v4, 0x7f0a05ab
 
     const/4 v8, 0x5
 
@@ -4459,7 +4459,7 @@
     .line 1051
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a05aa
+    const v1, 0x7f0a05ac
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4681,7 +4681,7 @@
     :cond_9
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v10, 0x7f0a03de
+    const v10, 0x7f0a03e0
 
     invoke-virtual {v0, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4735,7 +4735,7 @@
     .line 1096
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a0585
+    const v1, 0x7f0a0587
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4753,7 +4753,7 @@
     .line 1098
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a04b9
+    const v1, 0x7f0a04bb
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -5272,7 +5272,7 @@
 
     move-result v2
 
-    const v3, 0x7f121433
+    const v3, 0x7f121437
 
     if-eqz v2, :cond_1
 
@@ -5346,7 +5346,7 @@
     .line 949
     :cond_4
     :goto_0
-    const v1, 0x7f121434
+    const v1, 0x7f121438
 
     return v1
 
@@ -5373,7 +5373,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f121447
+    const v7, 0x7f12144b
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5469,7 +5469,7 @@
 
     .line 973
     .local v5, "gatewayAddr":Ljava/net/InetAddress;
-    const v6, 0x7f121432
+    const v6, 0x7f121436
 
     if-nez v5, :cond_6
 
@@ -5514,7 +5514,7 @@
 
     move-result v7
 
-    const v8, 0x7f121431
+    const v8, 0x7f121435
 
     if-eqz v7, :cond_8
 
@@ -5527,7 +5527,7 @@
 
     move-result-object v9
 
-    const v10, 0x7f1213fc
+    const v10, 0x7f121400
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -5647,7 +5647,7 @@
 
     .line 1743
     .local v0, "context":Landroid/content/Context;
-    const v1, 0x7f1214dd
+    const v1, 0x7f1214e1
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -7673,7 +7673,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04b2
+    const v1, 0x7f0a04b4
 
     if-ne v0, v1, :cond_2
 
@@ -7727,14 +7727,14 @@
 
     move-result v0
 
-    const v1, 0x7f0a05b9
+    const v1, 0x7f0a05bb
 
     if-ne v0, v1, :cond_4
 
     .line 1630
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a05b8
+    const v1, 0x7f0a05ba
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -7749,7 +7749,7 @@
 
     .line 1635
     .local v1, "toggleVisibility":I
-    const v2, 0x7f1213a2
+    const v2, 0x7f1213a6
 
     .local v2, "stringID":I
     goto :goto_1
@@ -7762,14 +7762,14 @@
 
     .line 1638
     .restart local v1    # "toggleVisibility":I
-    const v2, 0x7f1213a1
+    const v2, 0x7f1213a5
 
     .line 1640
     .restart local v2    # "stringID":I
     :goto_1
     iget-object v3, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v4, 0x7f0a05b7
+    const v4, 0x7f0a05b9
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -8111,7 +8111,7 @@
     .line 569
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v4, 0x7f0a04d6
+    const v4, 0x7f0a04d8
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -8271,7 +8271,7 @@
     .line 1693
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v1, 0x7f0a03d4
+    const v1, 0x7f0a03d6
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -8286,7 +8286,7 @@
     .line 1695
     iget-object v1, p0, Lcom/android/settings/wifi/WifiConfigController;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a04b2
+    const v2, 0x7f0a04b4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

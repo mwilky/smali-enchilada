@@ -45,7 +45,7 @@
     .locals 1
 
     .line 44
-    const v0, 0x7f0d0202
+    const v0, 0x7f0d0203
 
     return v0
 .end method
@@ -58,7 +58,7 @@
     invoke-super {p0, p1}, Lcom/android/settingslib/wifi/AccessPointPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 66
-    const v0, 0x7f0a04a0
+    const v0, 0x7f0a04a2
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -69,7 +69,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 69
-    const v1, 0x7f0a04a1
+    const v1, 0x7f0a04a3
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +121,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04a0
+    const v1, 0x7f0a04a2
 
     if-ne v0, v1, :cond_0
 
@@ -157,7 +157,7 @@
     if-eqz v0, :cond_0
 
     .line 53
-    const v0, 0x7f1214d5
+    const v0, 0x7f1214d9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/ConnectedAccessPointPreference;->setSummary(I)V
 

@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">تحسين القدرة على النسخ ثم التوصية بالإجراء التالي تبعًا للنسخة</string>
     <string name="oneplus_quick_gestures">الإيماءات</string>
     <string name="oneplus_quick_gestures_title">الإيماءات السريعة</string>
+    <string name="oneplus_quick_turn_on_assistant_app">تفعيل التطبيق المساعد سريعًا</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">المس مع الاستمرار زر الطاقة لمدة 0.5 ثانية لتنشيط التطبيق المساعد، ولمدة 3 ثوانٍ لإيقاف تشغيله</string>
     <string name="oneplus_quick_turn_on_camera">تشغيل الكاميرا بسرعة</string>
     <string name="oneplus_quickpay">دفع سريع</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">هل أنت متأكد من أنك تريد تغيير حركة الضغط المطول لزر الصفحة الرئيسية من \"%1$s\" إلى \"دفع سريع\"؟</string>

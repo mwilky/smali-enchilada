@@ -88,13 +88,13 @@
     if-eqz p2, :cond_1
 
     .line 82
-    const v1, 0x7f1210f4
+    const v1, 0x7f1210f8
 
     goto :goto_0
 
     .line 83
     :cond_1
-    const v1, 0x7f1210f5
+    const v1, 0x7f1210f9
 
     .line 81
     :goto_0
@@ -106,7 +106,7 @@
     .local v0, "storageType":Ljava/lang/CharSequence;
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppStoragePreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1210f1
+    const v2, 0x7f1210f5
 
     const/4 v3, 0x2
 

@@ -317,7 +317,7 @@
     .line 92
     .end local v0    # "clazz":Ljava/lang/String;
     :cond_3
-    const v0, 0x7f120f98
+    const v0, 0x7f120f9c
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

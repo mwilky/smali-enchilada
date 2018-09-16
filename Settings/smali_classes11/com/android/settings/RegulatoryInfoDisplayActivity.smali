@@ -218,7 +218,7 @@
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f120eb5
+    const v2, 0x7f120eb9
 
     .line 69
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -321,7 +321,7 @@
     .end local v6    # "ignored":Landroid/content/res/Resources$NotFoundException;
     :cond_4
     :goto_1
-    const v6, 0x7f120eb4
+    const v6, 0x7f120eb8
 
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -336,7 +336,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f0d021b
+    const v8, 0x7f0d021c
 
     const/4 v9, 0x0
 
@@ -346,7 +346,7 @@
 
     .line 101
     .local v7, "view":Landroid/view/View;
-    const v8, 0x7f0a043c
+    const v8, 0x7f0a043e
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

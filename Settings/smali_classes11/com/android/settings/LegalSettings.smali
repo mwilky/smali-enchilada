@@ -254,7 +254,7 @@
 
     .line 102
     .local v2, "mWallpaperAttributtonsPreference":Landroid/support/v7/preference/Preference;
-    const v3, 0x7f120cee
+    const v3, 0x7f120cf2
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -291,7 +291,7 @@
 
     .line 106
     .restart local v2    # "mWallpaperAttributtonsPreference":Landroid/support/v7/preference/Preference;
-    const v3, 0x7f120cef
+    const v3, 0x7f120cf3
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -317,7 +317,7 @@
 
     move-result v2
 
-    const v3, 0x7f120ced
+    const v3, 0x7f120cf1
 
     if-nez v2, :cond_5
 
@@ -337,7 +337,7 @@
     :cond_3
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120b89
+    const v4, 0x7f120b8d
 
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -351,7 +351,7 @@
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v4, 0x7f120b8a
+    const v4, 0x7f120b8e
 
     .line 113
     invoke-virtual {v0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
@@ -438,7 +438,7 @@
 
     .line 120
     .restart local v2    # "mWallpaperAttributtonsPreference":Landroid/support/v7/preference/Preference;
-    const v3, 0x7f120cf1
+    const v3, 0x7f120cf5
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -468,7 +468,7 @@
 
     .line 123
     .restart local v2    # "mWallpaperAttributtonsPreference":Landroid/support/v7/preference/Preference;
-    const v3, 0x7f120cf0
+    const v3, 0x7f120cf4
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

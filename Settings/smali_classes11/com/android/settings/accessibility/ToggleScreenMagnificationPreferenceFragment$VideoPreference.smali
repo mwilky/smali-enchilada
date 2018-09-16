@@ -120,7 +120,7 @@
     invoke-virtual {v8, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->setDividerAllowedBelow(Z)V
 
     .line 68
-    const v1, 0x7f0a0599
+    const v1, 0x7f0a059b
 
     invoke-virtual {v8, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     iput-object v1, v7, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;->mVideoBackgroundView:Landroid/widget/ImageView;
 
     .line 69
-    const v1, 0x7f0a0598
+    const v1, 0x7f0a059a
 
     invoke-virtual {v8, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

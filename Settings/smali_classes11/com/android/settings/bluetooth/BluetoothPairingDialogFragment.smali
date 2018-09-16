@@ -214,7 +214,7 @@
 
     .line 233
     .local v0, "view":Landroid/view/View;
-    const v1, 0x7f0a03e5
+    const v1, 0x7f0a03e7
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -244,7 +244,7 @@
 
     .line 236
     .local v3, "alphanumericPin":Landroid/widget/CheckBox;
-    const v4, 0x7f0a03e0
+    const v4, 0x7f0a03e2
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
     invoke-virtual {v4, v6}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
     .line 240
-    const v6, 0x7f0a053a
+    const v6, 0x7f0a053c
 
     invoke-virtual {v0, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +550,7 @@
 
     .line 325
     .local v0, "view":Landroid/view/View;
-    const v1, 0x7f0a03cf
+    const v1, 0x7f0a03d1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -560,7 +560,7 @@
 
     .line 326
     .local v1, "pairingViewCaption":Landroid/widget/TextView;
-    const v2, 0x7f0a03d1
+    const v2, 0x7f0a03d3
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -570,7 +570,7 @@
 
     .line 327
     .local v2, "pairingViewContent":Landroid/widget/TextView;
-    const v3, 0x7f0a03d0
+    const v3, 0x7f0a03d2
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -580,7 +580,7 @@
 
     .line 328
     .local v3, "messagePairing":Landroid/widget/TextView;
-    const v4, 0x7f0a03df
+    const v4, 0x7f0a03e1
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

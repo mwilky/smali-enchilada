@@ -526,7 +526,7 @@
 
     .line 108
     .local v4, "webActionCategory":Landroid/support/v7/preference/PreferenceCategory;
-    const v5, 0x7f121393
+    const v5, 0x7f121397
 
     invoke-virtual {v4, v5}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -547,14 +547,14 @@
     .line 113
     iget-object v5, p0, Lcom/android/settings/applications/ManageDomainUrls;->mWebAction:Landroid/support/v14/preference/SwitchPreference;
 
-    const v6, 0x7f121392
+    const v6, 0x7f121396
 
     invoke-virtual {v5, v6}, Landroid/support/v14/preference/SwitchPreference;->setTitle(I)V
 
     .line 114
     iget-object v5, p0, Lcom/android/settings/applications/ManageDomainUrls;->mWebAction:Landroid/support/v14/preference/SwitchPreference;
 
-    const v6, 0x7f121391
+    const v6, 0x7f121395
 
     invoke-virtual {v5, v6}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 

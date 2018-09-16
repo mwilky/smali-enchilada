@@ -938,7 +938,7 @@
     .line 185
     iget-object v0, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings;->switch_lockscreen:Landroid/support/v14/preference/SwitchPreference;
 
-    const v1, 0x7f120b16
+    const v1, 0x7f120b19
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 
@@ -1177,7 +1177,7 @@
     .local v1, "builder":Landroid/app/AlertDialog$Builder;
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    const v3, 0x7f120c17
+    const v3, 0x7f120c19
 
     const/4 v4, 0x1
 
@@ -1196,7 +1196,7 @@
     .line 404
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    const v3, 0x7f120ccc
+    const v3, 0x7f120cd0
 
     invoke-virtual {v2, v3}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -1211,7 +1211,7 @@
     .line 412
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings;->mActivity:Lcom/android/settings/SettingsActivity;
 
-    const v3, 0x7f120ccb
+    const v3, 0x7f120ccf
 
     invoke-virtual {v2, v3}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 

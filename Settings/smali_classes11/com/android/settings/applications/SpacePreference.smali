@@ -54,7 +54,7 @@
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     .line 47
-    const v0, 0x7f0d024e
+    const v0, 0x7f0d024f
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/SpacePreference;->setLayoutResource(I)V
 

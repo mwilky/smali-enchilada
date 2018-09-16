@@ -120,7 +120,7 @@
     .line 64
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeDurationPreferenceController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f12156f
+    const v3, 0x7f121573
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -135,7 +135,7 @@
     .line 66
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeDurationPreferenceController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f121570
+    const v3, 0x7f121574
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -192,7 +192,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f121571
+    const v5, 0x7f121575
 
     new-array v3, v3, [Ljava/lang/Object;
 

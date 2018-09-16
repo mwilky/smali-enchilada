@@ -22,10 +22,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 487
+    .line 494
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
-    .line 488
+    .line 495
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -42,7 +42,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/oneplus/settings/OPGestureSettings$OPGestureSearchIndexProvider;->mIsPrimary:Z
 
-    .line 489
+    .line 496
     return-void
 .end method
 
@@ -62,23 +62,23 @@
         }
     .end annotation
 
-    .line 525
+    .line 532
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 526
+    .line 533
     .local v0, "results":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-boolean v1, p0, Lcom/oneplus/settings/OPGestureSettings$OPGestureSearchIndexProvider;->mIsPrimary:Z
 
     if-nez v1, :cond_0
 
-    .line 527
+    .line 534
     invoke-static {}, Lcom/oneplus/settings/OPGestureSettings;->access$000()Ljava/util/List;
 
     move-result-object v0
 
-    .line 529
+    .line 536
     :cond_0
     iget-boolean v1, p0, Lcom/oneplus/settings/OPGestureSettings$OPGestureSearchIndexProvider;->mIsPrimary:Z
 
@@ -90,18 +90,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 530
+    .line 537
     :cond_1
     const-string v1, "open_light_device_key"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 531
+    .line 538
     const-string v1, "draw_o_start_camera_key"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 534
+    .line 541
     :cond_2
     iget-boolean v1, p0, Lcom/oneplus/settings/OPGestureSettings$OPGestureSearchIndexProvider;->mIsPrimary:Z
 
@@ -113,33 +113,33 @@
 
     if-nez v1, :cond_4
 
-    .line 535
+    .line 542
     :cond_3
     const-string v1, "oneplus_draw_o_start_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 536
+    .line 543
     const-string v1, "oneplus_draw_v_start_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 537
+    .line 544
     const-string v1, "oneplus_draw_s_start_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 538
+    .line 545
     const-string v1, "oneplus_draw_m_start_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 539
+    .line 546
     const-string v1, "oneplus_draw_w_start_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 542
+    .line 549
     :cond_4
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportGesturePullNotificationBar()Z
 
@@ -147,12 +147,12 @@
 
     if-nez v1, :cond_5
 
-    .line 543
+    .line 550
     const-string v1, "op_fingerprint_gesture_swipe_down_up"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 545
+    .line 552
     :cond_5
     return-object v0
 .end method
@@ -172,35 +172,35 @@
         }
     .end annotation
 
-    .line 494
+    .line 501
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 495
+    .line 502
     .local v0, "result":Ljava/util/List;, "Ljava/util/List<Landroid/provider/SearchIndexableResource;>;"
     iget-boolean v1, p0, Lcom/oneplus/settings/OPGestureSettings$OPGestureSearchIndexProvider;->mIsPrimary:Z
 
     if-nez v1, :cond_0
 
-    .line 496
+    .line 503
     return-object v0
 
-    .line 499
+    .line 506
     :cond_0
     new-instance v1, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 500
+    .line 507
     .local v1, "sir":Landroid/provider/SearchIndexableResource;
     const v2, 0x7f160082
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 501
+    .line 508
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 503
+    .line 510
     return-object v0
 .end method

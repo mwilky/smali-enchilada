@@ -50,7 +50,7 @@
 
     iget-object v0, v0, Lcom/android/settings/sim/SimPreferenceDialog;->mDialogLayout:Landroid/view/View;
 
-    const v1, 0x7f0a04ba
+    const v1, 0x7f0a04bc
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -235,7 +235,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPButtonPreference;->mLeftIcon:Landroid/widget/ImageView;
 
     .line 88
-    const v0, 0x7f0a044e
+    const v0, 0x7f0a0450
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

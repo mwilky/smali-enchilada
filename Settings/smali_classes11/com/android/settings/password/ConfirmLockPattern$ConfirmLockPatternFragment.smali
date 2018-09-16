@@ -1270,7 +1270,7 @@
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mLeftSpacerLandscape:Landroid/view/View;
 
     .line 125
-    const v3, 0x7f0a044d
+    const v3, 0x7f0a044f
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1279,7 +1279,7 @@
     iput-object v3, v0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mRightSpacerLandscape:Landroid/view/View;
 
     .line 129
-    const v3, 0x7f0a055a
+    const v3, 0x7f0a055c
 
     .line 130
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;

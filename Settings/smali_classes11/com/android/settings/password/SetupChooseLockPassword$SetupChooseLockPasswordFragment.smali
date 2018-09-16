@@ -64,11 +64,11 @@
 
     move-result v0
 
-    const v1, 0x7f0a046a
+    const v1, 0x7f0a046c
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a04be
+    const v1, 0x7f0a04c0
 
     if-eq v0, v1, :cond_0
 
@@ -254,7 +254,7 @@
     if-eqz v3, :cond_2
 
     .line 120
-    const v5, 0x7f0a046a
+    const v5, 0x7f0a046c
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

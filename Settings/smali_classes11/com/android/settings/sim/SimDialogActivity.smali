@@ -143,12 +143,12 @@
 
     .line 87
     .local v3, "alertDialogBuilder":Landroid/app/AlertDialog$Builder;
-    const v4, 0x7f121045
+    const v4, 0x7f121049
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 88
-    const v4, 0x7f121044
+    const v4, 0x7f121048
 
     const/4 v5, 0x1
 
@@ -171,7 +171,7 @@
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     .line 91
-    const v4, 0x7f121527
+    const v4, 0x7f12152b
 
     new-instance v5, Lcom/android/settings/sim/SimDialogActivity$1;
 
@@ -457,7 +457,7 @@
 
     move-result-object v5
 
-    const v1, 0x7f121006
+    const v1, 0x7f12100a
 
     invoke-virtual {v5, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -646,7 +646,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d0238
+    const v4, 0x7f0d0239
 
     move-object/from16 v0, v18
 
@@ -703,7 +703,7 @@
     .end local v2    # "builder":Landroid/app/AlertDialog$Builder;
     .restart local v19    # "builder":Landroid/app/AlertDialog$Builder;
     :pswitch_0
-    const v1, 0x7f121008
+    const v1, 0x7f12100c
 
     move-object/from16 v2, v19
 
@@ -722,7 +722,7 @@
 
     .end local v19    # "builder":Landroid/app/AlertDialog$Builder;
     .restart local v2    # "builder":Landroid/app/AlertDialog$Builder;
-    const v1, 0x7f120fac
+    const v1, 0x7f120fb0
 
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -737,7 +737,7 @@
 
     .end local v19    # "builder":Landroid/app/AlertDialog$Builder;
     .restart local v2    # "builder":Landroid/app/AlertDialog$Builder;
-    const v1, 0x7f120fad
+    const v1, 0x7f120fb1
 
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

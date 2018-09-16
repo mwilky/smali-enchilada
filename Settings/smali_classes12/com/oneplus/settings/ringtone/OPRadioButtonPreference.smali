@@ -65,7 +65,7 @@
     .locals 1
 
     .line 34
-    const v0, 0x7f0d0205
+    const v0, 0x7f0d0206
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ringtone/OPRadioButtonPreference;->setWidgetLayoutResource(I)V
 

@@ -46,7 +46,7 @@
     .local v0, "info":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/users/OwnerInfoSettings;->mView:Landroid/view/View;
 
-    const v2, 0x7f0a03c6
+    const v2, 0x7f0a03c8
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -239,7 +239,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d01d0
+    const v1, 0x7f0d01d1
 
     const/4 v2, 0x0
 
@@ -262,7 +262,7 @@
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 58
-    const v1, 0x7f120dad
+    const v1, 0x7f120db1
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -276,7 +276,7 @@
     move-result-object v0
 
     .line 60
-    const v1, 0x7f120f12
+    const v1, 0x7f120f16
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

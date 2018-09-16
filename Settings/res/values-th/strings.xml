@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">เสริมความสามารถในการคัดลอก จากนั้นก็แนะนำสิ่งที่ต้องทำต่อไปตามการคัดลอก</string>
     <string name="oneplus_quick_gestures">ท่าทาง</string>
     <string name="oneplus_quick_gestures_title">ท่าทางด่วน</string>
+    <string name="oneplus_quick_turn_on_assistant_app">เปิดใช้งานแอปผู้ช่วยอย่างรวดเร็ว</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">กดปุ่มเปิด/ปิดค้างไว้ 0.5 วินาทีเพื่อเปิดใช้งานแอปผู้ช่วย และกดค้างไว้ 3 วินาทีเพื่อปิด</string>
     <string name="oneplus_quick_turn_on_camera">เปิดกล้องอย่างรวดเร็ว</string>
     <string name="oneplus_quickpay">การชำระเงินด่วน</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">แน่ใจหรือไม่ว่าต้องการเปลี่ยนการกดค้างปุ่มหน้าหลักจาก \"%1$s\" ไปเป็น \"ชำระเงินด่วน\"?</string>

@@ -241,7 +241,7 @@
     .line 212
     iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f1214d8
+    const v2, 0x7f1214dc
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -315,7 +315,7 @@
     aput-object v4, v3, v5
 
     .line 199
-    const v4, 0x7f1214d9
+    const v4, 0x7f1214dd
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
     .line 187
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f121465
+    const v1, 0x7f121469
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -411,7 +411,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f1214db
+    const v1, 0x7f1214df
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -422,7 +422,7 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f121427
+    const v1, 0x7f12142b
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -436,7 +436,7 @@
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f1214dc
+    const v1, 0x7f1214e0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -447,7 +447,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f12140b
+    const v1, 0x7f12140f
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

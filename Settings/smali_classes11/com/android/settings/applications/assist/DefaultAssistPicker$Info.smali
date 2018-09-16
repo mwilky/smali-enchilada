@@ -25,18 +25,18 @@
     .locals 1
     .param p1, "component"    # Landroid/content/ComponentName;
 
-    .line 225
+    .line 248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 226
+    .line 249
     iput-object p1, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
-    .line 227
+    .line 250
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->voiceInteractionServiceInfo:Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 228
+    .line 251
     return-void
 .end method
 
@@ -45,16 +45,16 @@
     .param p1, "component"    # Landroid/content/ComponentName;
     .param p2, "voiceInteractionServiceInfo"    # Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 230
+    .line 253
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
+    .line 254
     iput-object p1, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
-    .line 232
+    .line 255
     iput-object p2, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->voiceInteractionServiceInfo:Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 233
+    .line 256
     return-void
 .end method
 
@@ -63,7 +63,7 @@
 .method public isVoiceInteractionService()Z
     .locals 1
 
-    .line 236
+    .line 259
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->voiceInteractionServiceInfo:Landroid/service/voice/VoiceInteractionServiceInfo;
 
     if-eqz v0, :cond_0

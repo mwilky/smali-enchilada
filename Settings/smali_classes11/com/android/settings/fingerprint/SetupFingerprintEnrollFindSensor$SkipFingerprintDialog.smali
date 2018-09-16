@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 123
+    .line 125
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 129
+    .line 131
     const/16 v0, 0x23d
 
     return v0
@@ -47,48 +47,48 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "button"    # I
 
-    .line 148
+    .line 150
     const/4 v0, -0x1
 
     if-eq p2, v0, :cond_0
 
     goto :goto_1
 
-    .line 150
+    .line 152
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor$SkipFingerprintDialog;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 151
+    .line 153
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_3
 
-    .line 153
+    .line 155
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 154
+    .line 156
     const/16 v1, 0xb
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setResult(I)V
 
-    .line 155
+    .line 157
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
     goto :goto_1
 
-    .line 158
+    .line 160
     :cond_1
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 160
+    .line 162
     .local v1, "intent":Landroid/content/Intent;
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
@@ -96,7 +96,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 161
+    .line 163
     new-instance v2, Landroid/content/ComponentName;
 
     const-string v3, "com.oneplus.provision"
@@ -108,7 +108,7 @@
     .local v2, "componentName":Landroid/content/ComponentName;
     goto :goto_0
 
-    .line 165
+    .line 167
     .end local v2    # "componentName":Landroid/content/ComponentName;
     :cond_2
     new-instance v2, Landroid/content/ComponentName;
@@ -119,15 +119,15 @@
 
     invoke-direct {v2, v3, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 169
+    .line 171
     .restart local v2    # "componentName":Landroid/content/ComponentName;
     :goto_0
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 170
+    .line 172
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 171
+    .line 173
     const v3, 0x7f01003f
 
     const v4, 0x7f010040
@@ -136,23 +136,23 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 175
+    .line 177
     .end local v1    # "intent":Landroid/content/Intent;
     .end local v2    # "componentName":Landroid/content/ComponentName;
     goto :goto_1
 
-    .line 172
+    .line 174
     :catch_0
     move-exception v1
 
-    .line 173
+    .line 175
     .local v1, "e":Landroid/content/ActivityNotFoundException;
     invoke-virtual {v1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    .line 174
+    .line 176
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 181
+    .line 183
     .end local v0    # "activity":Landroid/app/Activity;
     .end local v1    # "e":Landroid/content/ActivityNotFoundException;
     :cond_3
@@ -164,7 +164,7 @@
     .locals 1
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 134
+    .line 136
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor$SkipFingerprintDialog;->onCreateDialogBuilder()Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
@@ -181,7 +181,7 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 139
+    .line 141
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor$SkipFingerprintDialog;->getContext()Landroid/content/Context;
@@ -190,35 +190,35 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 140
-    const v1, 0x7f120fd6
+    .line 142
+    const v1, 0x7f120fda
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 141
-    const v1, 0x7f121052
+    .line 143
+    const v1, 0x7f121056
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 142
+    .line 144
     const v1, 0x7f1206ca
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 143
-    const v1, 0x7f120fd5
+    .line 145
+    const v1, 0x7f120fd9
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 139
+    .line 141
     return-object v0
 .end method
 
@@ -226,11 +226,11 @@
     .locals 1
     .param p1, "manager"    # Landroid/app/FragmentManager;
 
-    .line 184
+    .line 186
     const-string v0, "skip_dialog"
 
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/fingerprint/SetupFingerprintEnrollFindSensor$SkipFingerprintDialog;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 185
+    .line 187
     return-void
 .end method

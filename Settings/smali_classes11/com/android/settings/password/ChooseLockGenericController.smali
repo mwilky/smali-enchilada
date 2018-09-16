@@ -95,7 +95,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGenericController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12124b
+    const v1, 0x7f12124f
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -107,7 +107,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGenericController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12124f
+    const v1, 0x7f121253
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -119,7 +119,7 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGenericController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12124d
+    const v1, 0x7f121251
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -143,7 +143,7 @@
     :pswitch_4
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGenericController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f121247
+    const v1, 0x7f12124b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -155,7 +155,7 @@
     :pswitch_5
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGenericController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f121249
+    const v1, 0x7f12124d
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

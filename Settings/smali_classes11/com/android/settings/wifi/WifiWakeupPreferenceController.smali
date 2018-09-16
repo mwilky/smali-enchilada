@@ -213,7 +213,7 @@
     .local v0, "linkInfo":Lcom/android/settings/utils/AnnotationSpan$LinkInfo;
     iget-object v1, p0, Lcom/android/settings/wifi/WifiWakeupPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1214e6
+    const v2, 0x7f1214ea
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -464,7 +464,7 @@
 
     .line 115
     :cond_2
-    const v1, 0x7f1214e5
+    const v1, 0x7f1214e9
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

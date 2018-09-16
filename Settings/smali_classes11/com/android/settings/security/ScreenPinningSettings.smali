@@ -114,13 +114,13 @@
 
     .line 176
     :cond_0
-    const v1, 0x7f120f1c
+    const v1, 0x7f120f20
 
     return v1
 
     .line 171
     :cond_1
-    const v1, 0x7f120f1e
+    const v1, 0x7f120f22
 
     return v1
 
@@ -139,14 +139,14 @@
     if-eqz v1, :cond_3
 
     .line 179
-    const v1, 0x7f120f1d
+    const v1, 0x7f120f21
 
     return v1
 
     .line 182
     :cond_3
     :goto_0
-    const v1, 0x7f120f1b
+    const v1, 0x7f120f1f
 
     return v1
 .end method
@@ -190,7 +190,7 @@
 
     const/4 v2, 0x1
 
-    const v3, 0x7f120f1b
+    const v3, 0x7f120f1f
 
     if-eq v0, v3, :cond_0
 
@@ -384,7 +384,7 @@
 
     .line 70
     .local v0, "activity":Lcom/android/settings/SettingsActivity;
-    const v1, 0x7f120f1a
+    const v1, 0x7f120f1e
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SettingsActivity;->setTitle(I)V
 
@@ -580,7 +580,7 @@
     move-result-object v1
 
     .line 95
-    const v2, 0x7f0d022f
+    const v2, 0x7f0d0230
 
     const/4 v3, 0x0
 

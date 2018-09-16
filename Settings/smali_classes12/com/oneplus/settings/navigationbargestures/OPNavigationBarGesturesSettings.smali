@@ -748,7 +748,7 @@
     .line 76
     iget-object v0, p0, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    const v1, 0x7f120b1f
+    const v1, 0x7f120b22
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->getString(I)Ljava/lang/String;
 
@@ -992,15 +992,15 @@
 
     invoke-direct {p0, v0}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->setNavigationType(I)V
 
-    .line 198
-    :cond_2
-    :goto_1
+    .line 197
     invoke-direct {p0}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->removeRunningTask()V
 
-    .line 199
+    .line 198
     invoke-direct {p0}, Lcom/oneplus/settings/navigationbargestures/OPNavigationBarGesturesSettings;->killSomeProcess()V
 
     .line 200
+    :cond_2
+    :goto_1
     return-void
 .end method
 

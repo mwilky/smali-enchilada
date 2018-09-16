@@ -300,7 +300,7 @@
 
     .line 238
     :cond_1
-    const v0, 0x7f12121d
+    const v0, 0x7f121221
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -343,7 +343,7 @@
 
     .line 248
     :cond_1
-    const v0, 0x7f12121d
+    const v0, 0x7f121221
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -356,7 +356,7 @@
     .locals 1
 
     .line 114
-    const v0, 0x7f0a04a7
+    const v0, 0x7f0a04a9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -380,7 +380,7 @@
     .locals 1
 
     .line 118
-    const v0, 0x7f0a04ef
+    const v0, 0x7f0a04f1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -547,7 +547,7 @@
     .locals 6
 
     .line 140
-    const v0, 0x7f0a04ea
+    const v0, 0x7f0a04ec
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -568,7 +568,7 @@
     .line 142
     const/4 v2, 0x0
 
-    const v3, 0x7f0d0258
+    const v3, 0x7f0d0259
 
     invoke-virtual {v1, v3, v0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -581,7 +581,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 146
-    const v1, 0x7f0a04ee
+    const v1, 0x7f0a04f0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->requireViewById(I)Landroid/view/View;
 
@@ -590,7 +590,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 148
-    const v3, 0x7f121124
+    const v3, 0x7f121128
 
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardBase;->getText(I)Ljava/lang/CharSequence;
 
@@ -653,7 +653,7 @@
     .param p2, "args"    # [Ljava/lang/CharSequence;
 
     .line 134
-    const v0, 0x7f0a04eb
+    const v0, 0x7f0a04ed
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -690,7 +690,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->setContentView(I)V
 
     .line 93
-    const v0, 0x7f0a04e2
+    const v0, 0x7f0a04e4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -701,7 +701,7 @@
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardBase;->mBack:Landroid/widget/Button;
 
     .line 94
-    const v0, 0x7f0a04e7
+    const v0, 0x7f0a04e9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 
@@ -732,7 +732,7 @@
     invoke-virtual {v0, p1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
     .line 123
-    const v0, 0x7f0a04f0
+    const v0, 0x7f0a04f2
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->requireViewById(I)Landroid/view/View;
 

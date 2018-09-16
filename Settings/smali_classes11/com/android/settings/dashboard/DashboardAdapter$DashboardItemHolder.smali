@@ -66,7 +66,7 @@
     iput-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;->summary:Landroid/widget/TextView;
 
     .line 463
-    const v0, 0x7f0a03a4
+    const v0, 0x7f0a03a6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

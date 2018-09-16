@@ -314,7 +314,7 @@
 
     .line 191
     .local v0, "icon":Landroid/support/v4/graphics/drawable/IconCompat;
-    const v1, 0x7f1213be
+    const v1, 0x7f1213c2
 
     invoke-virtual {p2, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -571,9 +571,9 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f1213b6
+    const v4, 0x7f1213ba
 
-    const v5, 0x7f1213be
+    const v5, 0x7f1213c2
 
     const/4 v6, -0x1
 
@@ -681,7 +681,7 @@
 
     iget-object v7, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v8, 0x7f1213bd
+    const v8, 0x7f1213c1
 
     .line 152
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -740,7 +740,7 @@
 
     iget-object v4, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1213c1
+    const v5, 0x7f1213c5
 
     .line 161
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;

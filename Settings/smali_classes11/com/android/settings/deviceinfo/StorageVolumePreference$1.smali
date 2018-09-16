@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageVolumePreference;
 
-    .line 148
+    .line 152
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference$1;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 3
     .param p1, "v"    # Landroid/view/View;
 
-    .line 151
+    .line 155
     new-instance v0, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageVolumePreference$1;->this$0:Lcom/android/settings/deviceinfo/StorageVolumePreference;
@@ -63,6 +63,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 152
+    .line 156
     return-void
 .end method

@@ -25,7 +25,7 @@
     .locals 2
 
     .line 81
-    const v0, 0x7f120fcb
+    const v0, 0x7f120fcf
 
     const/4 v1, 0x1
 
@@ -148,7 +148,7 @@
     .line 67
     const-string v4, "android.intent.extra.TITLE"
 
-    const v5, 0x7f120fca
+    const v5, 0x7f120fce
 
     invoke-virtual {p0, v5}, Lcom/android/settings/ManualDisplayActivity;->getString(I)Ljava/lang/String;
 

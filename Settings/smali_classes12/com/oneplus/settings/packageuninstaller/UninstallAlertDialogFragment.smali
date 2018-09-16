@@ -171,7 +171,7 @@
     if-nez v8, :cond_0
 
     .line 50
-    const v8, 0x7f121205
+    const v8, 0x7f121209
 
     new-array v9, v7, [Ljava/lang/Object;
 
@@ -237,7 +237,7 @@
     if-eqz v6, :cond_2
 
     .line 61
-    const v6, 0x7f121218
+    const v6, 0x7f12121c
 
     invoke-virtual {p0, v6}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertDialogFragment;->getString(I)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     .line 63
     :cond_2
-    const v6, 0x7f121219
+    const v6, 0x7f12121d
 
     invoke-virtual {p0, v6}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertDialogFragment;->getString(I)Ljava/lang/String;
 
@@ -263,7 +263,7 @@
     :cond_3
     iget-boolean v9, v1, Lcom/oneplus/settings/packageuninstaller/UninstallerActivity$DialogInfo;->allUsers:Z
 
-    const v10, 0x7f120cd7
+    const v10, 0x7f120cdb
 
     if-eqz v9, :cond_4
 
@@ -337,7 +337,7 @@
     invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 74
-    const v10, 0x7f120cd8
+    const v10, 0x7f120cdc
 
     new-array v7, v7, [Ljava/lang/Object;
 
@@ -351,7 +351,7 @@
 
     .line 76
     :cond_5
-    const v10, 0x7f12120a
+    const v10, 0x7f12120e
 
     new-array v7, v7, [Ljava/lang/Object;
 
@@ -374,7 +374,7 @@
 
     .line 80
     :cond_6
-    const v6, 0x7f120cd9
+    const v6, 0x7f120cdd
 
     invoke-virtual {p0, v6}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertDialogFragment;->getString(I)Ljava/lang/String;
 

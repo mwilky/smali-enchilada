@@ -63,7 +63,7 @@
     .line 891
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f120d48
+    const v1, 0x7f120d4c
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -73,7 +73,7 @@
     .local v0, "summary":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120aec
+    const v2, 0x7f120aed
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -109,7 +109,7 @@
     .line 899
     iget-object v2, p0, Lcom/android/settings/notification/SoundSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f120ce2
+    const v4, 0x7f120ce6
 
     invoke-virtual {v2, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -9,12 +9,12 @@
 # static fields
 .field private static final INTENT_URI_DATA:Landroid/net/Uri;
 
-.field static final SECURITY_PATCH_LABEL_ID:I = 0x7f0a0486
+.field static final SECURITY_PATCH_LABEL_ID:I = 0x7f0a0488
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
 
-.field static final SECURITY_PATCH_VALUE_ID:I = 0x7f0a0487
+.field static final SECURITY_PATCH_VALUE_ID:I = 0x7f0a0489
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -95,14 +95,14 @@
     .line 83
     iget-object v0, p0, Lcom/android/settings/deviceinfo/firmwareversion/SecurityPatchLevelDialogController;->mDialog:Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;
 
-    const v1, 0x7f0a0486
+    const v1, 0x7f0a0488
 
     invoke-virtual {v0, v1, p0}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->registerClickListener(ILandroid/view/View$OnClickListener;)V
 
     .line 84
     iget-object v0, p0, Lcom/android/settings/deviceinfo/firmwareversion/SecurityPatchLevelDialogController;->mDialog:Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;
 
-    const v1, 0x7f0a0487
+    const v1, 0x7f0a0489
 
     invoke-virtual {v0, v1, p0}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->registerClickListener(ILandroid/view/View$OnClickListener;)V
 
@@ -122,14 +122,14 @@
 
     move-result v0
 
-    const v1, 0x7f0a0487
+    const v1, 0x7f0a0489
 
     if-eqz v0, :cond_0
 
     .line 74
     iget-object v0, p0, Lcom/android/settings/deviceinfo/firmwareversion/SecurityPatchLevelDialogController;->mDialog:Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;
 
-    const v2, 0x7f0a0486
+    const v2, 0x7f0a0488
 
     invoke-virtual {v0, v2}, Lcom/android/settings/deviceinfo/firmwareversion/FirmwareVersionDialogFragment;->removeSettingFromScreen(I)V
 
@@ -194,7 +194,7 @@
     .line 61
     const-string v1, "SecurityPatchCtrl"
 
-    const-string v2, "Stop click action on 2131362951: queryIntentActivities() returns empty"
+    const-string v2, "Stop click action on 2131362953: queryIntentActivities() returns empty"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

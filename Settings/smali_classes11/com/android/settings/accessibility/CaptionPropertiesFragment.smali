@@ -1363,7 +1363,7 @@
 
     .line 129
     .local v1, "content":Landroid/view/View;
-    const v2, 0x7f0a041d
+    const v2, 0x7f0a041f
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1669,7 +1669,7 @@
 
     .line 140
     .local v0, "enabled":Z
-    const v1, 0x7f0a03ff
+    const v1, 0x7f0a0401
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1695,7 +1695,7 @@
     invoke-virtual {v1, v2}, Lcom/android/internal/widget/SubtitleView;->setVisibility(I)V
 
     .line 143
-    const v1, 0x7f0a0402
+    const v1, 0x7f0a0404
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1704,7 +1704,7 @@
     iput-object v1, p0, Lcom/android/settings/accessibility/CaptionPropertiesFragment;->mPreviewWindow:Landroid/view/View;
 
     .line 144
-    const v1, 0x7f0a0401
+    const v1, 0x7f0a0403
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

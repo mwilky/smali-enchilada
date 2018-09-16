@@ -2905,6 +2905,8 @@
     <string name="oneplus_quick_clipboard_summary">قابلیت کپی را افزایش دهید و سپس اقدام بعدی را با توجه به کپی توصیه نمایید</string>
     <string name="oneplus_quick_gestures">فرمان‌های حرکتی</string>
     <string name="oneplus_quick_gestures_title">فرمان‌های حرکتی سریع</string>
+    <string name="oneplus_quick_turn_on_assistant_app">فعال‌سازی سریع برنامه دستیار</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">برای فعال‌سازی برنامه دستیار، دکمه روشن/خاموش را 0.5 ثانیه و برای خاموش کردن، 3 ثانیه نگه دارید</string>
     <string name="oneplus_quick_turn_on_camera">روشن کردن سریع دوربین</string>
     <string name="oneplus_quickpay">پرداخت سریع</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">آیا مطمئن هستید که می خواهد کارکرد فشار طولانی صفحه خانه %1$s را به \"پرداخت سریع\" تغییر دهید؟</string>

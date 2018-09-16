@@ -1139,7 +1139,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a05a7
+    const v1, 0x7f0a05a9
 
     if-eq v0, v1, :cond_0
 
@@ -1606,7 +1606,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f121361
+    const v1, 0x7f121365
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -1634,7 +1634,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f121351
+    const v1, 0x7f121355
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

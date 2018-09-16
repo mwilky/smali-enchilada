@@ -108,7 +108,7 @@
 
     .line 1158
     .local v2, "errMsgId":I
-    const v3, 0x7f120c8e
+    const v3, 0x7f120c90
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -131,7 +131,7 @@
     invoke-direct {v5, p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog$1;-><init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;I)V
 
     .line 1161
-    const v6, 0x7f120f76
+    const v6, 0x7f120f7a
 
     invoke-virtual {v3, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

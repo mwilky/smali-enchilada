@@ -124,7 +124,7 @@
     .param p0, "context"    # Landroid/content/Context;
 
     .line 125
-    const v0, 0x7f121492
+    const v0, 0x7f121496
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -232,7 +232,7 @@
 
     .line 91
     .local v1, "icon":Landroid/support/v4/graphics/drawable/IconCompat;
-    const v2, 0x7f121492
+    const v2, 0x7f121496
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     .line 166
     :pswitch_2
-    const v1, 0x7f121165
+    const v1, 0x7f121169
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

@@ -1051,7 +1051,7 @@
     if-nez v13, :cond_9
 
     .line 460
-    const v6, 0x7f12116b
+    const v6, 0x7f12116f
 
     invoke-virtual {v9, v6}, Lcom/android/settings/accounts/SyncStateSwitchPreference;->setSummary(I)V
 
@@ -1078,7 +1078,7 @@
     if-eqz v7, :cond_a
 
     .line 462
-    const v6, 0x7f121170
+    const v6, 0x7f121174
 
     invoke-virtual {v9, v6}, Lcom/android/settings/accounts/SyncStateSwitchPreference;->setSummary(I)V
 
@@ -1711,7 +1711,7 @@
     .param p1, "rootView"    # Landroid/view/View;
 
     .line 129
-    const v0, 0x7f0a0527
+    const v0, 0x7f0a0529
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1729,7 +1729,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 132
-    const v0, 0x7f0a058e
+    const v0, 0x7f0a0590
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1740,7 +1740,7 @@
     iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mUserId:Landroid/widget/TextView;
 
     .line 133
-    const v0, 0x7f0a041f
+    const v0, 0x7f0a0421
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1751,7 +1751,7 @@
     iput-object v0, p0, Lcom/android/settings/accounts/AccountSyncSettings;->mProviderId:Landroid/widget/TextView;
 
     .line 134
-    const v0, 0x7f0a041e
+    const v0, 0x7f0a0420
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2157,7 +2157,7 @@
     nop
 
     .line 216
-    const v0, 0x7f121173
+    const v0, 0x7f121177
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accounts/AccountSyncSettings;->getString(I)Ljava/lang/String;
 
@@ -2184,7 +2184,7 @@
     nop
 
     .line 219
-    const v2, 0x7f121172
+    const v2, 0x7f121176
 
     invoke-virtual {p0, v2}, Lcom/android/settings/accounts/AccountSyncSettings;->getString(I)Ljava/lang/String;
 
@@ -2237,7 +2237,7 @@
 
     .line 118
     .local v1, "view":Landroid/view/View;
-    const v2, 0x7f0a03f9
+    const v2, 0x7f0a03fb
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

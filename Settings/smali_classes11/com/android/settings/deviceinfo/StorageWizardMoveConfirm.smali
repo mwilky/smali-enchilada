@@ -87,7 +87,7 @@
 
     .line 54
     :cond_0
-    const v0, 0x7f0d025a
+    const v0, 0x7f0d025b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setContentView(I)V
 
@@ -180,7 +180,7 @@
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setIcon(I)V
 
     .line 72
-    const v3, 0x7f121129
+    const v3, 0x7f12112d
 
     const/4 v4, 0x1
 
@@ -191,7 +191,7 @@
     invoke-virtual {p0, v3, v5}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setHeaderText(I[Ljava/lang/CharSequence;)V
 
     .line 73
-    const v3, 0x7f121128
+    const v3, 0x7f12112c
 
     const/4 v5, 0x2
 
@@ -304,7 +304,7 @@
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 85
-    const v0, 0x7f12112d
+    const v0, 0x7f121131
 
     .line 86
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getText(I)Ljava/lang/CharSequence;

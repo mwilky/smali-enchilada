@@ -46,7 +46,7 @@
     iput-wide v0, p0, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreference;->mPercent:D
 
     .line 64
-    const v0, 0x7f0d0256
+    const v0, 0x7f0d0257
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreference;->setLayoutResource(I)V
 

@@ -230,7 +230,7 @@
     invoke-direct {p0}, Lcom/android/settings/core/InstrumentedFragment;-><init>()V
 
     .line 197
-    const v0, 0x7f0a04c8
+    const v0, 0x7f0a04ca
 
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mSortOrder:I
 
@@ -595,7 +595,7 @@
     :pswitch_4
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f1210e9
+    const v1, 0x7f1210ed
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -606,7 +606,7 @@
     :pswitch_5
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f1210e4
+    const v1, 0x7f1210e8
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -639,7 +639,7 @@
     :pswitch_8
     const-class v0, Lcom/android/settings/applications/appinfo/WriteSettingsDetails;
 
-    const v1, 0x7f121524
+    const v1, 0x7f121528
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -650,7 +650,7 @@
     :pswitch_9
     const-class v0, Lcom/android/settings/applications/appinfo/DrawOverlayDetails;
 
-    const v1, 0x7f120da9
+    const v1, 0x7f120dad
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -672,7 +672,7 @@
     :pswitch_b
     const-class v0, Lcom/android/settings/applications/UsageAccessDetails;
 
-    const v1, 0x7f121257
+    const v1, 0x7f12125b
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -683,7 +683,7 @@
     :pswitch_c
     const-class v0, Lcom/android/settings/applications/AppStorageSettings;
 
-    const v1, 0x7f1210eb
+    const v1, 0x7f1210ef
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/manageapplications/ManageApplications;->startAppInfoFragment(Ljava/lang/Class;I)V
 
@@ -740,7 +740,7 @@
     .local v0, "activity":Landroid/app/Activity;
     iget-object v1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mRootView:Landroid/view/View;
 
-    const v2, 0x7f0a03ea
+    const v2, 0x7f0a03ec
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1517,7 +1517,7 @@
 
     const/4 v7, -0x1
 
-    const v8, 0x7f0a04cb
+    const v8, 0x7f0a04cd
 
     const/4 v9, 0x0
 
@@ -1589,7 +1589,7 @@
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
     .line 288
-    const v4, 0x7f121257
+    const v4, 0x7f12125b
 
     goto/16 :goto_2
 
@@ -1640,7 +1640,7 @@
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
     .line 296
-    const v4, 0x7f121178
+    const v4, 0x7f12117c
 
     goto/16 :goto_2
 
@@ -1664,7 +1664,7 @@
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mListType:I
 
     .line 299
-    const v4, 0x7f12151e
+    const v4, 0x7f121522
 
     goto/16 :goto_2
 
@@ -1872,7 +1872,7 @@
     iput-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mNotificationBackend:Lcom/android/settings/notification/NotificationBackend;
 
     .line 325
-    const v0, 0x7f0a04ca
+    const v0, 0x7f0a04cc
 
     iput v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mSortOrder:I
 
@@ -2726,10 +2726,10 @@
         0x7f0a004d -> :sswitch_4
         0x7f0a0098 -> :sswitch_3
         0x7f0a022f -> :sswitch_2
-        0x7f0a0445 -> :sswitch_1
-        0x7f0a04b4 -> :sswitch_2
-        0x7f0a04c8 -> :sswitch_0
-        0x7f0a04cb -> :sswitch_0
+        0x7f0a0447 -> :sswitch_1
+        0x7f0a04b6 -> :sswitch_2
+        0x7f0a04ca -> :sswitch_0
+        0x7f0a04cd -> :sswitch_0
     .end sparse-switch
 .end method
 
@@ -2954,7 +2954,7 @@
     .line 724
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v2, 0x7f0a04c8
+    const v2, 0x7f0a04ca
 
     invoke-interface {v0, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -2985,7 +2985,7 @@
     .line 726
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v2, 0x7f0a04cb
+    const v2, 0x7f0a04cd
 
     invoke-interface {v0, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3012,7 +3012,7 @@
     .line 729
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v2, 0x7f0a04b4
+    const v2, 0x7f0a04b6
 
     invoke-interface {v0, v2}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3068,7 +3068,7 @@
     .line 734
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v3, 0x7f0a0445
+    const v3, 0x7f0a0447
 
     invoke-interface {v0, v3}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3091,7 +3091,7 @@
     .line 737
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v4, 0x7f0a04ca
+    const v4, 0x7f0a04cc
 
     invoke-interface {v0, v4}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -3102,7 +3102,7 @@
     .line 738
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications;->mOptionsMenu:Landroid/view/Menu;
 
-    const v4, 0x7f0a04c9
+    const v4, 0x7f0a04cb
 
     invoke-interface {v0, v4}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

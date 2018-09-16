@@ -108,7 +108,7 @@
     .param p2, "rootKey"    # Ljava/lang/String;
 
     .line 72
-    const v0, 0x7f0d02cd
+    const v0, 0x7f0d02ce
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiAPITest;->addPreferencesFromResource(I)V
 

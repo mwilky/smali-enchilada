@@ -2907,6 +2907,8 @@ Voit siirtyä aloitusnäyttöön milloin vain pyyhkäisemällä näytön alareun
     <string name="oneplus_quick_clipboard_summary">Paranna kopiointimahdollisuutta ja suosittele sitten seuraavaa toimenpidettä kopion mukaan</string>
     <string name="oneplus_quick_gestures">Eleet</string>
     <string name="oneplus_quick_gestures_title">Pikaeleet</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Pika-aktivoi apusovellus</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Pidä virtapainiketta painettuna 0,5 sekuntia aktivoidaksesi apusovellus ja 3 sekuntia sammuttaaksesi laitteen</string>
     <string name="oneplus_quick_turn_on_camera">Kytke kamera nopeasti päälle</string>
     <string name="oneplus_quickpay">Pikamaksu</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Haluatko varmasti muuttaa kotinäppäimen pitkän painalluksen toiminnon pikamaksuun (aiemmin %1$s)?</string>

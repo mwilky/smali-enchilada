@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 848
+    .line 882
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,9 +41,9 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "which"    # I
 
-    .line 852
+    .line 886
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 853
+    .line 887
     return-void
 .end method

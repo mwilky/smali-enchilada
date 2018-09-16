@@ -2907,6 +2907,8 @@ For at gå til startskærmbilledet, kan du stryge op fra skærmenkantens nederst
     <string name="oneplus_quick_clipboard_summary">Gør evnen til at kopiere bedre og anbefal derefter den næste handling ifølge kopien</string>
     <string name="oneplus_quick_gestures">Bevægelser</string>
     <string name="oneplus_quick_gestures_title">Hurtig gestus</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Lynaktivér assistentappen</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Hold tænd/sluk-knappen nede i 0,5 sekunder for at aktivere assistentappen og i 3 sekunder for at slukke</string>
     <string name="oneplus_quick_turn_on_camera">Aktivér hurtigt kamera</string>
     <string name="oneplus_quickpay">Hurtig betaling</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Er du sikker på, du vil ændre handlingen ved langt tryk på start-knappen fra \"%1$s\" til \"Hurtig betaling\"?</string>

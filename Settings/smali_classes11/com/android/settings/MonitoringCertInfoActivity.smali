@@ -254,7 +254,7 @@
     invoke-virtual {v6, v3}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
     .line 75
-    const v3, 0x7f121081
+    const v3, 0x7f121085
 
     invoke-virtual {v6, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 

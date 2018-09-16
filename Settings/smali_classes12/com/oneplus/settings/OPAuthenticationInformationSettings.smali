@@ -219,7 +219,7 @@
     :cond_4
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120b89
+    const v5, 0x7f120b8d
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;
 
@@ -233,7 +233,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120b8a
+    const v5, 0x7f120b8e
 
     .line 68
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;

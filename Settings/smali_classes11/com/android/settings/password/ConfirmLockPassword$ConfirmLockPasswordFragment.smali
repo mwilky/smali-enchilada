@@ -1148,7 +1148,7 @@
 
     .line 133
     .local v3, "view":Landroid/view/View;
-    const v7, 0x7f0a03d7
+    const v7, 0x7f0a03d9
 
     invoke-virtual {v3, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1194,7 +1194,7 @@
     if-nez v7, :cond_1
 
     .line 141
-    const v7, 0x7f0a0513
+    const v7, 0x7f0a0515
 
     invoke-virtual {v3, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

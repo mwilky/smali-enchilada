@@ -98,7 +98,7 @@
     .line 139
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f120eca
+    const v1, 0x7f120ece
 
     const/4 v2, 0x0
 
@@ -119,14 +119,14 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120ec7
+    const v1, 0x7f120ecb
 
     .line 143
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f120ec6
+    const v1, 0x7f120eca
 
     .line 144
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;

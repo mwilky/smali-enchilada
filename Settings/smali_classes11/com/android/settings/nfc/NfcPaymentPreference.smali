@@ -79,7 +79,7 @@
     iput-object v0, p0, Lcom/android/settings/nfc/NfcPaymentPreference;->mLayoutInflater:Landroid/view/LayoutInflater;
 
     .line 61
-    const v0, 0x7f0d0200
+    const v0, 0x7f0d0201
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/NfcPaymentPreference;->setWidgetLayoutResource(I)V
 
@@ -120,7 +120,7 @@
     invoke-super {p0, p1}, Lcom/android/settingslib/CustomDialogPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 70
-    const v0, 0x7f0a04a0
+    const v0, 0x7f0a04a2
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 187
+    .line 193
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -40,12 +40,12 @@
         }
     .end annotation
 
-    .line 198
+    .line 204
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 199
+    .line 205
     .local v0, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
 
@@ -53,12 +53,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 200
+    .line 206
     const-string v1, "op_fingerprint_long_press_camera_shot"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 202
+    .line 208
     :cond_0
     invoke-static {p1}, Lcom/oneplus/settings/utils/OPUtils;->isSurportBackFingerprint(Landroid/content/Context;)Z
 
@@ -66,25 +66,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 203
+    .line 209
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportGesturePullNotificationBar()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 204
+    .line 210
     const-string v1, "op_fingerprint_gesture_swipe_down_up"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 207
+    .line 213
     :cond_1
-    const-string v1, "quick_turn_on_voice_assistant"
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 208
     return-object v0
 .end method
 
@@ -103,18 +98,18 @@
         }
     .end annotation
 
-    .line 190
+    .line 196
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 192
+    .line 198
     .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f160074
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 193
+    .line 199
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

@@ -192,7 +192,7 @@
     iget-object v2, p0, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreferenceController;->mContext:Landroid/content/Context;
 
     .line 58
-    const v3, 0x7f1210ef
+    const v3, 0x7f1210f3
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -236,7 +236,7 @@
     aput-object v5, v3, v4
 
     .line 60
-    const v4, 0x7f1210fb
+    const v4, 0x7f1210ff
 
     invoke-virtual {v2, v4, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

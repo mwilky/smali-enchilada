@@ -140,13 +140,13 @@
     packed-switch v0, :pswitch_data_0
 
     .line 110
-    const v1, 0x7f120e08
+    const v1, 0x7f120e0c
 
     goto :goto_0
 
     .line 107
     :pswitch_0
-    const v1, 0x7f120e06
+    const v1, 0x7f120e0a
 
     .line 108
     .local v1, "summary":I
@@ -155,7 +155,7 @@
     .line 104
     .end local v1    # "summary":I
     :pswitch_1
-    const v1, 0x7f120e0a
+    const v1, 0x7f120e0e
 
     .line 105
     .restart local v1    # "summary":I

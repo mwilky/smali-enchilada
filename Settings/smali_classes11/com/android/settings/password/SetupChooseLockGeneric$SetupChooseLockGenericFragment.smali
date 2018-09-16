@@ -39,7 +39,7 @@
     if-eqz v0, :cond_0
 
     .line 119
-    const v0, 0x7f0d0245
+    const v0, 0x7f0d0246
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
@@ -47,7 +47,7 @@
 
     .line 121
     :cond_0
-    const v0, 0x7f0d0246
+    const v0, 0x7f0d0247
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SetupChooseLockGeneric$SetupChooseLockGenericFragment;->setHeaderView(I)V
 
@@ -432,7 +432,7 @@
     goto :goto_0
 
     :cond_0
-    const v1, 0x7f120fda
+    const v1, 0x7f120fde
 
     .line 106
     .local v1, "titleResource":I

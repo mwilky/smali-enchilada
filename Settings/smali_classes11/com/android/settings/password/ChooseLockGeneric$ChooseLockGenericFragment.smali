@@ -510,7 +510,7 @@
     if-eqz v1, :cond_1
 
     .line 943
-    const v2, 0x7f121231
+    const v2, 0x7f121235
 
     return v2
 
@@ -521,7 +521,7 @@
     if-nez v1, :cond_2
 
     .line 946
-    const v2, 0x7f121230
+    const v2, 0x7f121234
 
     return v2
 
@@ -530,13 +530,13 @@
     if-eqz v1, :cond_3
 
     .line 948
-    const v2, 0x7f121232
+    const v2, 0x7f121236
 
     return v2
 
     .line 950
     :cond_3
-    const v2, 0x7f12122f
+    const v2, 0x7f121233
 
     return v2
 
@@ -547,7 +547,7 @@
     if-eqz v1, :cond_5
 
     .line 932
-    const v2, 0x7f121225
+    const v2, 0x7f121229
 
     return v2
 
@@ -558,7 +558,7 @@
     if-nez v1, :cond_6
 
     .line 935
-    const v2, 0x7f121224
+    const v2, 0x7f121228
 
     return v2
 
@@ -567,13 +567,13 @@
     if-eqz v1, :cond_7
 
     .line 937
-    const v2, 0x7f121226
+    const v2, 0x7f12122a
 
     return v2
 
     .line 939
     :cond_7
-    const v2, 0x7f121223
+    const v2, 0x7f121227
 
     return v2
 
@@ -584,7 +584,7 @@
     if-eqz v1, :cond_9
 
     .line 919
-    const v2, 0x7f12122d
+    const v2, 0x7f121231
 
     return v2
 
@@ -595,7 +595,7 @@
     if-nez v1, :cond_a
 
     .line 921
-    const v2, 0x7f12122c
+    const v2, 0x7f121230
 
     return v2
 
@@ -604,13 +604,13 @@
     if-eqz v1, :cond_b
 
     .line 923
-    const v2, 0x7f12122e
+    const v2, 0x7f121232
 
     return v2
 
     .line 925
     :cond_b
-    const v2, 0x7f12122b
+    const v2, 0x7f12122f
 
     return v2
 
@@ -621,7 +621,7 @@
     if-eqz v1, :cond_d
 
     .line 907
-    const v2, 0x7f121229
+    const v2, 0x7f12122d
 
     return v2
 
@@ -632,7 +632,7 @@
     if-nez v1, :cond_e
 
     .line 910
-    const v2, 0x7f121228
+    const v2, 0x7f12122c
 
     return v2
 
@@ -641,13 +641,13 @@
     if-eqz v1, :cond_f
 
     .line 912
-    const v2, 0x7f12122a
+    const v2, 0x7f12122e
 
     return v2
 
     .line 914
     :cond_f
-    const v2, 0x7f121227
+    const v2, 0x7f12122b
 
     return v2
 .end method
@@ -674,13 +674,13 @@
     .local v0, "isProfile":Z
     if-eqz v0, :cond_0
 
-    const v1, 0x7f121235
+    const v1, 0x7f121239
 
     goto :goto_0
 
     .line 893
     :cond_0
-    const v1, 0x7f121234
+    const v1, 0x7f121238
 
     .line 892
     :goto_0
@@ -1467,7 +1467,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f120cbb
+    const v3, 0x7f120cbf
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1616,7 +1616,7 @@
     :cond_2
     sget-object v0, Lcom/android/settings/password/ScreenLockType;->PATTERN:Lcom/android/settings/password/ScreenLockType;
 
-    const v1, 0x7f120f6a
+    const v1, 0x7f120f6e
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->setPreferenceSummary(Lcom/android/settings/password/ScreenLockType;I)V
 
@@ -2089,7 +2089,7 @@
     invoke-virtual {v7, v4}, Lcom/android/settingslib/RestrictedPreference;->setDisabledByAdmin(Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
     .line 628
-    const v7, 0x7f121239
+    const v7, 0x7f12123d
 
     invoke-virtual {v11, v7}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -3153,7 +3153,7 @@
 
     const/16 v7, 0x64
 
-    const v8, 0x7f12123f
+    const v8, 0x7f121243
 
     .line 313
     invoke-virtual {p0, v8}, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->getString(I)Ljava/lang/String;

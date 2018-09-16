@@ -95,7 +95,7 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .line 45
-    const v0, 0x7f0d01ca
+    const v0, 0x7f0d01cb
 
     const/4 v1, 0x0
 
@@ -143,7 +143,7 @@
     iput-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;->mDeviceManagerButton:Landroid/widget/Button;
 
     .line 51
-    const v2, 0x7f0a0595
+    const v2, 0x7f0a0597
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -260,7 +260,7 @@
 
     .line 103
     .local v0, "root":Landroid/view/View;
-    const v1, 0x7f0a0419
+    const v1, 0x7f0a041b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -271,7 +271,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 104
-    const v1, 0x7f0a04e1
+    const v1, 0x7f0a04e3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -282,7 +282,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 105
-    const v1, 0x7f0a04e0
+    const v1, 0x7f0a04e2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
-    .line 206
+    .line 207
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .method private updateDialog()V
     .locals 2
 
-    .line 222
+    .line 223
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->getFragmentManager()Landroid/app/FragmentManager;
@@ -46,7 +46,7 @@
 
     const-class v1, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 223
+    .line 224
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -57,14 +57,14 @@
 
     check-cast v0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 224
+    .line 225
     .local v0, "renameDialog":Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
     if-eqz v0, :cond_0
 
-    .line 225
+    .line 226
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->enableDelete()V
 
-    .line 227
+    .line 228
     :cond_0
     return-void
 .end method
@@ -77,27 +77,27 @@
     .param p2, "errMsgId"    # I
     .param p3, "errString"    # Ljava/lang/CharSequence;
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 215
+    .line 216
     .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
-    .line 216
+    .line 217
     const/4 v1, 0x0
 
     invoke-static {v0, p3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    .line 218
+    .line 219
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->updateDialog()V
 
-    .line 219
+    .line 220
     return-void
 .end method
 
@@ -105,19 +105,19 @@
     .locals 4
     .param p1, "fingerprint"    # Landroid/hardware/fingerprint/Fingerprint;
 
-    .line 208
+    .line 209
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->access$000(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)Landroid/os/Handler;
 
     move-result-object v0
 
-    .line 209
+    .line 210
     invoke-virtual {p1}, Landroid/hardware/fingerprint/Fingerprint;->getFingerId()I
 
     move-result v1
 
-    .line 208
+    .line 209
     const/16 v2, 0x3e8
 
     const/4 v3, 0x0
@@ -126,12 +126,12 @@
 
     move-result-object v0
 
-    .line 209
+    .line 210
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 210
+    .line 211
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$2;->updateDialog()V
 
-    .line 211
+    .line 212
     return-void
 .end method

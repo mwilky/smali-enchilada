@@ -31,13 +31,13 @@
     .locals 0
     .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 1577
+    .line 1581
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
-    .line 1578
+    .line 1582
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1572
+    .line 1576
     const-string p1, "screen_brightness_mode"
 
     invoke-static {p1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -46,7 +46,7 @@
 
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_MODE_URI:Landroid/net/Uri;
 
-    .line 1573
+    .line 1577
     const-string p1, "screen_brightness"
 
     invoke-static {p1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -55,7 +55,7 @@
 
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_URI:Landroid/net/Uri;
 
-    .line 1574
+    .line 1578
     const-string p1, "screen_auto_brightness_adj"
 
     invoke-static {p1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -64,7 +64,7 @@
 
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_ADJ_URI:Landroid/net/Uri;
 
-    .line 1575
+    .line 1579
     const-string p1, "screen_off_timeout"
 
     invoke-static {p1}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -73,7 +73,7 @@
 
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->SCREEN_TIMEOUT_URI:Landroid/net/Uri;
 
-    .line 1579
+    .line 1583
     return-void
 .end method
 
@@ -83,12 +83,12 @@
     .locals 1
     .param p1, "selfChange"    # Z
 
-    .line 1583
+    .line 1587
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/settings/DisplaySettings$BrightnessObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 1584
+    .line 1588
     return-void
 .end method
 
@@ -97,13 +97,13 @@
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 1588
+    .line 1592
     if-eqz p1, :cond_0
 
-    .line 1589
+    .line 1593
     return-void
 
-    .line 1591
+    .line 1595
     :cond_0
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_MODE_URI:Landroid/net/Uri;
 
@@ -113,14 +113,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1592
+    .line 1596
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$600(Lcom/android/settings/DisplaySettings;)V
 
     goto :goto_1
 
-    .line 1593
+    .line 1597
     :cond_1
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_URI:Landroid/net/Uri;
 
@@ -140,7 +140,7 @@
 
     goto :goto_0
 
-    .line 1595
+    .line 1599
     :cond_2
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->SCREEN_TIMEOUT_URI:Landroid/net/Uri;
 
@@ -150,7 +150,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1596
+    .line 1600
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$100(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
@@ -169,7 +169,7 @@
 
     move-result v0
 
-    .line 1599
+    .line 1603
     .local v0, "currentTimeout":I
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/TimeoutListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 1601
+    .line 1605
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     int-to-long v2, v0
@@ -193,14 +193,14 @@
     .end local v0    # "currentTimeout":I
     goto :goto_1
 
-    .line 1594
+    .line 1598
     :cond_3
     :goto_0
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$700(Lcom/android/settings/DisplaySettings;)V
 
-    .line 1605
+    .line 1609
     :cond_4
     :goto_1
     return-void
@@ -209,7 +209,7 @@
 .method public startObserving()V
     .locals 4
 
-    .line 1608
+    .line 1612
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$100(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
@@ -220,11 +220,11 @@
 
     move-result-object v0
 
-    .line 1609
+    .line 1613
     .local v0, "cr":Landroid/content/ContentResolver;
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 1610
+    .line 1614
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_MODE_URI:Landroid/net/Uri;
 
     const/4 v2, -0x1
@@ -233,29 +233,29 @@
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1611
+    .line 1615
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1612
+    .line 1616
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->BRIGHTNESS_ADJ_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1613
+    .line 1617
     iget-object v1, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->SCREEN_TIMEOUT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v3, p0, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1614
+    .line 1618
     return-void
 .end method
 
 .method public stopObserving()V
     .locals 1
 
-    .line 1617
+    .line 1621
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$BrightnessObserver;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$100(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
@@ -266,10 +266,10 @@
 
     move-result-object v0
 
-    .line 1618
+    .line 1622
     .local v0, "cr":Landroid/content/ContentResolver;
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 1619
+    .line 1623
     return-void
 .end method

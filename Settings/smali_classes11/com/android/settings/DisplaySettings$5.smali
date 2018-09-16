@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1679
+    .line 1688
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .param p1, "activity"    # Landroid/app/Activity;
     .param p2, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 1683
+    .line 1692
     new-instance v0, Lcom/android/settings/DisplaySettings$SummaryProvider;
 
     const/4 v1, 0x0

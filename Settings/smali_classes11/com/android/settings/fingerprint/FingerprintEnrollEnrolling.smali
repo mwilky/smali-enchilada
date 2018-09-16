@@ -1677,7 +1677,7 @@
     if-ne v0, v3, :cond_0
 
     .line 861
-    const v0, 0x7f120f91
+    const v0, 0x7f120f95
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->setHeaderText(I)V
 
@@ -1695,7 +1695,7 @@
 
     .line 865
     :cond_0
-    const v0, 0x7f120f8e
+    const v0, 0x7f120f92
 
     const/4 v3, 0x1
 
@@ -2071,7 +2071,7 @@
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0a04be
+    const v1, 0x7f0a04c0
 
     if-eq v0, v1, :cond_0
 
@@ -2251,12 +2251,12 @@
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->setContentView(I)V
 
     .line 236
-    const v4, 0x7f120f8e
+    const v4, 0x7f120f92
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->setHeaderText(I)V
 
     .line 237
-    const v4, 0x7f0a04d9
+    const v4, 0x7f0a04db
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->findViewById(I)Landroid/view/View;
 
@@ -2267,7 +2267,7 @@
     iput-object v4, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->mStartMessage:Landroid/widget/TextView;
 
     .line 238
-    const v4, 0x7f0a0443
+    const v4, 0x7f0a0445
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->findViewById(I)Landroid/view/View;
 
@@ -2347,7 +2347,7 @@
 
     .line 252
     :cond_7
-    const v4, 0x7f0a04be
+    const v4, 0x7f0a04c0
 
     invoke-virtual {p0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->findViewById(I)Landroid/view/View;
 
@@ -2509,13 +2509,13 @@
     if-eq p1, v0, :cond_0
 
     .line 949
-    const v0, 0x7f120b01
+    const v0, 0x7f120b04
 
     goto :goto_0
 
     .line 941
     :cond_0
-    const v0, 0x7f120f7d
+    const v0, 0x7f120f81
 
     .line 942
     .local v0, "msgId":I
@@ -2590,7 +2590,7 @@
 
     move-result v0
 
-    const v2, 0x7f120b07
+    const v2, 0x7f120b0a
 
     const/16 v3, 0x44c
 
@@ -2611,7 +2611,7 @@
 
     .line 883
     :cond_0
-    const v0, 0x7f120c90
+    const v0, 0x7f120c92
 
     .line 884
     .local v0, "msgId":I
@@ -2679,7 +2679,7 @@
 
     .line 902
     :cond_3
-    const v0, 0x7f120c90
+    const v0, 0x7f120c92
 
     .line 903
     .restart local v0    # "msgId":I
@@ -2707,7 +2707,7 @@
 
     .line 914
     :cond_5
-    const v0, 0x7f120b06
+    const v0, 0x7f120b09
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->getText(I)Ljava/lang/CharSequence;
 
@@ -2721,7 +2721,7 @@
 
     .line 910
     :cond_6
-    const v0, 0x7f120b04
+    const v0, 0x7f120b07
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->getText(I)Ljava/lang/CharSequence;
 
@@ -2735,7 +2735,7 @@
 
     .line 906
     :cond_7
-    const v0, 0x7f120b05
+    const v0, 0x7f120b08
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->getText(I)Ljava/lang/CharSequence;
 

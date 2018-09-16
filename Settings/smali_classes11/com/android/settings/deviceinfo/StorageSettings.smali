@@ -795,7 +795,7 @@
     .local v5, "result":Landroid/text/format/Formatter$BytesResult;
     iget-object v7, v1, Lcom/android/settings/deviceinfo/StorageSettings;->mInternalSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v8, 0x7f1210ee
+    const v8, 0x7f1210f2
 
     invoke-virtual {v1, v8}, Lcom/android/settings/deviceinfo/StorageSettings;->getText(I)Ljava/lang/CharSequence;
 
@@ -822,7 +822,7 @@
     .line 220
     iget-object v7, v1, Lcom/android/settings/deviceinfo/StorageSettings;->mInternalSummary:Lcom/android/settings/deviceinfo/StorageSummaryPreference;
 
-    const v8, 0x7f1210fd
+    const v8, 0x7f121101
 
     new-array v9, v3, [Ljava/lang/Object;
 
@@ -944,7 +944,7 @@
 
     move-result-object v6
 
-    const v7, 0x7f1210eb
+    const v7, 0x7f1210ef
 
     .line 239
     invoke-virtual {v6, v7}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
@@ -1184,7 +1184,7 @@
     if-ne v4, v5, :cond_2
 
     .line 275
-    const v3, 0x7f1210c2
+    const v3, 0x7f1210c6
 
     invoke-virtual {v1}, Landroid/os/storage/VolumeInfo;->getDiskId()Ljava/lang/String;
 
@@ -1251,7 +1251,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f1210eb
+    const v5, 0x7f1210ef
 
     .line 286
     invoke-virtual {v4, v5}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
@@ -1374,7 +1374,7 @@
     if-eqz v1, :cond_7
 
     .line 311
-    const v1, 0x7f1210c4
+    const v1, 0x7f1210c8
 
     invoke-static {p0, v1, v0}, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;->show(Landroid/app/Fragment;ILjava/lang/String;)V
 
@@ -1413,7 +1413,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f1210d7
+    const v4, 0x7f1210db
 
     .line 320
     invoke-virtual {v3, v4}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;

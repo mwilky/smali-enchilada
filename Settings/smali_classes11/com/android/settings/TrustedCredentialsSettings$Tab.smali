@@ -57,13 +57,13 @@
 
     const/4 v2, 0x0
 
-    const v4, 0x7f1211db    # 1.9416E38f
+    const v4, 0x7f1211df
 
-    const v5, 0x7f0a0534
+    const v5, 0x7f0a0536
 
-    const v6, 0x7f0a0530
+    const v6, 0x7f0a0532
 
-    const v7, 0x7f0a052a
+    const v7, 0x7f0a052c
 
     const/4 v8, 0x1
 
@@ -82,13 +82,13 @@
 
     const/4 v12, 0x1
 
-    const v14, 0x7f1211dd
+    const v14, 0x7f1211e1
 
-    const v15, 0x7f0a0593
+    const v15, 0x7f0a0595
 
-    const v16, 0x7f0a0592
+    const v16, 0x7f0a0594
 
-    const v17, 0x7f0a0586
+    const v17, 0x7f0a0588
 
     const/16 v18, 0x0
 

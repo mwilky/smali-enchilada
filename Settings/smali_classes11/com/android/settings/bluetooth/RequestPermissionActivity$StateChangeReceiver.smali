@@ -26,12 +26,12 @@
 .method public constructor <init>(Lcom/android/settings/bluetooth/RequestPermissionActivity;)V
     .locals 3
 
-    .line 361
+    .line 366
     iput-object p1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 362
+    .line 367
     invoke-virtual {p1}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -48,14 +48,14 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 367
+    .line 372
     return-void
 .end method
 
 .method public static synthetic lambda$new$0(Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;)V
     .locals 1
 
-    .line 363
+    .line 368
     iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->isFinishing()Z
@@ -72,12 +72,12 @@
 
     if-nez v0, :cond_0
 
-    .line 364
+    .line 369
     iget-object v0, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v0}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->access$200(Lcom/android/settings/bluetooth/RequestPermissionActivity;)V
 
-    .line 366
+    .line 371
     :cond_0
     return-void
 .end method
@@ -89,13 +89,13 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 370
+    .line 375
     if-nez p2, :cond_0
 
-    .line 371
+    .line 376
     return-void
 
-    .line 373
+    .line 378
     :cond_0
     const-string v0, "android.bluetooth.adapter.extra.STATE"
 
@@ -105,7 +105,7 @@
 
     move-result v0
 
-    .line 375
+    .line 380
     .local v0, "currentState":I
     iget-object v1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
@@ -117,31 +117,31 @@
 
     goto :goto_0
 
-    .line 384
+    .line 389
     :pswitch_0
     const/16 v1, 0xa
 
     if-ne v0, v1, :cond_1
 
-    .line 385
+    .line 390
     iget-object v1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->access$100(Lcom/android/settings/bluetooth/RequestPermissionActivity;)V
 
     goto :goto_0
 
-    .line 378
+    .line 383
     :pswitch_1
     const/16 v1, 0xc
 
     if-ne v0, v1, :cond_1
 
-    .line 379
+    .line 384
     iget-object v1, p0, Lcom/android/settings/bluetooth/RequestPermissionActivity$StateChangeReceiver;->this$0:Lcom/android/settings/bluetooth/RequestPermissionActivity;
 
     invoke-static {v1}, Lcom/android/settings/bluetooth/RequestPermissionActivity;->access$100(Lcom/android/settings/bluetooth/RequestPermissionActivity;)V
 
-    .line 389
+    .line 394
     :cond_1
     :goto_0
     return-void

@@ -36,7 +36,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 819
+    .line 853
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mFp:Landroid/hardware/fingerprint/Fingerprint;
 
     return-object v0
@@ -56,7 +56,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextHadFocus:Ljava/lang/Boolean;
 
     return-object v0
@@ -66,7 +66,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextSelectionStart:I
 
     return v0
@@ -76,7 +76,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextSelectionEnd:I
 
     return v0
@@ -86,7 +86,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDeleteInProgress:Z
 
     return v0
@@ -96,7 +96,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     return-object v0
@@ -106,7 +106,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
 
     return-object v0
@@ -117,7 +117,7 @@
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
     .param p1, "x1"    # Landroid/widget/EditText;
 
-    .line 819
+    .line 853
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
 
     return-object p1
@@ -127,7 +127,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
     return-object v0
@@ -137,7 +137,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;
 
-    .line 819
+    .line 853
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mFingerName:Ljava/lang/String;
 
     return-object v0
@@ -148,17 +148,17 @@
 .method public enableDelete()V
     .locals 2
 
-    .line 943
+    .line 977
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDeleteInProgress:Z
 
-    .line 944
+    .line 978
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    .line 945
+    .line 979
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
     const/4 v1, -0x2
@@ -171,7 +171,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 947
+    .line 981
     :cond_0
     return-void
 .end method
@@ -179,7 +179,7 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 962
+    .line 996
     const/16 v0, 0x23a
 
     return v0
@@ -189,7 +189,7 @@
     .locals 3
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 836
+    .line 870
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -204,10 +204,10 @@
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mFp:Landroid/hardware/fingerprint/Fingerprint;
 
-    .line 837
+    .line 871
     if-eqz p1, :cond_0
 
-    .line 838
+    .line 872
     const-string v0, "fingerName"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -216,7 +216,7 @@
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mFingerName:Ljava/lang/String;
 
-    .line 839
+    .line 873
     const-string v0, "textHadFocus"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -229,7 +229,7 @@
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextHadFocus:Ljava/lang/Boolean;
 
-    .line 840
+    .line 874
     const-string v0, "startSelection"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -238,7 +238,7 @@
 
     iput v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextSelectionStart:I
 
-    .line 841
+    .line 875
     const-string v0, "endSelection"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -247,7 +247,7 @@
 
     iput v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextSelectionEnd:I
 
-    .line 843
+    .line 877
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -259,14 +259,14 @@
 
     const v1, 0x7f0d009f
 
-    .line 844
+    .line 878
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f120f75
+    const v1, 0x7f120f79
 
-    .line 846
+    .line 880
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
@@ -277,28 +277,28 @@
 
     invoke-direct {v2, p0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog$1;-><init>(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;)V
 
-    .line 847
+    .line 881
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f120f76
+    const v1, 0x7f120f7a
 
     const/4 v2, 0x0
 
-    .line 855
+    .line 889
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 885
+    .line 919
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 886
+    .line 920
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
     new-instance v1, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog$2;
@@ -307,7 +307,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 934
+    .line 968
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mTextHadFocus:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1
@@ -320,7 +320,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 936
+    .line 970
     :cond_1
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -332,7 +332,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 939
+    .line 973
     :cond_2
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mAlertDialog:Landroid/app/AlertDialog;
 
@@ -343,15 +343,15 @@
     .locals 2
     .param p1, "outState"    # Landroid/os/Bundle;
 
-    .line 951
+    .line 985
     invoke-super {p0, p1}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 952
+    .line 986
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
 
     if-eqz v0, :cond_0
 
-    .line 953
+    .line 987
     const-string v0, "fingerName"
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
@@ -366,7 +366,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 954
+    .line 988
     const-string v0, "textHadFocus"
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
@@ -377,7 +377,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 955
+    .line 989
     const-string v0, "startSelection"
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
@@ -388,7 +388,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 956
+    .line 990
     const-string v0, "endSelection"
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDialogTextField:Landroid/widget/EditText;
@@ -399,7 +399,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 958
+    .line 992
     :cond_0
     return-void
 .end method
@@ -408,9 +408,9 @@
     .locals 0
     .param p1, "deleteInProgress"    # Z
 
-    .line 831
+    .line 865
     iput-boolean p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$RenameDialog;->mDeleteInProgress:Z
 
-    .line 832
+    .line 866
     return-void
 .end method

@@ -222,7 +222,7 @@
 
     .line 80
     :cond_0
-    const v1, 0x7f121155
+    const v1, 0x7f121159
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

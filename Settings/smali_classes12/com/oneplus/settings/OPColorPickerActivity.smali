@@ -479,7 +479,7 @@
     .line 131
     const/4 v0, 0x0
 
-    const v1, 0x7f121439
+    const v1, 0x7f12143d
 
     invoke-interface {p1, v0, v0, v0, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
@@ -943,7 +943,7 @@
 
     .line 223
     .local v0, "editView":Landroid/view/View;
-    const v2, 0x7f0a03bd
+    const v2, 0x7f0a03bf
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1000,7 +1000,7 @@
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120d42
+    const v3, 0x7f120d46
 
     .line 256
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;

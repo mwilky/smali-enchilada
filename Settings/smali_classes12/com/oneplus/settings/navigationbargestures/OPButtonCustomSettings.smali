@@ -8,8 +8,6 @@
 
 
 # static fields
-.field private static final KEY_FINGEPRINT_LONG_PRESS:Ljava/lang/String; = "op_fingerprint_long_press_action"
-
 .field public static final GSM_PACKAGE:Ljava/lang/String; = "com.google.android.googlequicksearchbox"
 
 .field private static final KEY_BACK_DOUBLE_TAP:Ljava/lang/String; = "hardware_keys_back_double_tap"
@@ -38,8 +36,6 @@
 
 
 # instance fields
-.field private mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
 .field private mBackDoubleTapAction:Landroid/support/v7/preference/ListPreference;
 
 .field private mBackLongPressAction:Landroid/support/v7/preference/ListPreference;
@@ -355,26 +351,6 @@
 
     .line 187
     .local v1, "resolver":Landroid/content/ContentResolver;
-    const v2, 0x0
-
-    .line 327
-    .local v2, "defaultLongPressOnFingerprintBehavior":I
-    const-string/jumbo v3, "op_fingerprint_long_press_action"
-
-    .line 326
-    invoke-static {v1, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v2
-    
-	.local v2, "longPressOnFingerprintBehavior":I
-    const-string v4, "op_fingerprint_long_press_action"
-
-    invoke-direct {v0, v4, v2}, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->initActionList(Ljava/lang/String;I)Landroid/support/v7/preference/ListPreference;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-    
     invoke-virtual/range {p0 .. p0}, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -580,25 +556,6 @@
     if-nez v14, :cond_5
 
     .line 230
-    iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    const v15, 0x7f03006c
-
-    if-eqz v14, :cond_mw
-
-    .line 231
-    iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntries(I)V
-
-    .line 232
-    iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    const v15, 0x7f030070
-
-    invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntryValues(I)V
-    
-    :cond_mw
     iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mHomeLongPressAction:Landroid/support/v7/preference/ListPreference;
 
     const v15, 0x7f03006c
@@ -651,14 +608,14 @@
     .line 239
     iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mMenuLongPressAction:Landroid/support/v7/preference/ListPreference;
 
-    const v15, 0x7f0300e9
+    const v15, 0x7f03006c
 
     invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntries(I)V
 
     .line 240
     iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mMenuLongPressAction:Landroid/support/v7/preference/ListPreference;
 
-    const v15, 0x7f0300ea
+    const v15, 0x7f030070
 
     invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntryValues(I)V
 
@@ -671,14 +628,14 @@
     .line 243
     iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mMenuDoubleTapAction:Landroid/support/v7/preference/ListPreference;
 
-    const v15, 0x7f0300e9
+    const v15, 0x7f03006c
 
     invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntries(I)V
 
     .line 244
     iget-object v14, v0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mMenuDoubleTapAction:Landroid/support/v7/preference/ListPreference;
 
-    const v15, 0x7f0300ea
+    const v15, 0x7f030070
 
     invoke-virtual {v14, v15}, Landroid/support/v7/preference/ListPreference;->setEntryValues(I)V
 
@@ -1415,22 +1372,6 @@
 
     .line 340
     :cond_e
-    iget-object v1, p0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    if-ne p1, v1, :cond_f
-
-    .line 335
-    iget-object v1, p0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    const-string v2, "op_fingerprint_long_press_action"
-
-    invoke-direct {p0, v1, p2, v2}, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->handleChange(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 338
-    return v3
-
-    .line 340
-    :cond_f
     return v2
 .end method
 
@@ -1470,10 +1411,6 @@
     .line 80
     .local v0, "swapNavkeysEnabled":Z
     :goto_0
-    iget-object v4, p0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mFingerprintLongPressAction:Landroid/support/v7/preference/ListPreference;
-
-    invoke-virtual {v4, v1}, Landroid/support/v7/preference/ListPreference;->setEnabled(Z)V
-    
     iget-object v3, p0, Lcom/oneplus/settings/navigationbargestures/OPButtonCustomSettings;->mSwapNavkeys:Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v3, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V

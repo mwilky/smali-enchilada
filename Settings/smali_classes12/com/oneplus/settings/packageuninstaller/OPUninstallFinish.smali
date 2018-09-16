@@ -404,7 +404,7 @@
 
     const-string v12, "uninstall failure"
 
-    const v13, 0x7f121216
+    const v13, 0x7f12121a
 
     .line 78
     invoke-virtual {v2, v13}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -718,7 +718,7 @@
     invoke-direct {v1, v2, v13}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->addDeviceManagerButton(Landroid/content/Context;Landroid/app/Notification$Builder;)V
 
     .line 123
-    const v3, 0x7f121213
+    const v3, 0x7f121217
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -763,7 +763,7 @@
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 129
-    const v3, 0x7f121214
+    const v3, 0x7f121218
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1040,7 +1040,7 @@
     if-nez v12, :cond_c
 
     .line 167
-    const v3, 0x7f12120c
+    const v3, 0x7f121210
 
     .line 168
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1057,7 +1057,7 @@
     if-eqz v9, :cond_d
 
     .line 171
-    const v3, 0x7f121206
+    const v3, 0x7f12120a
 
     .line 172
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1071,7 +1071,7 @@
 
     .line 175
     :cond_d
-    const v3, 0x7f12120d
+    const v3, 0x7f121211
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1089,7 +1089,7 @@
     .end local v23    # "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     .end local v25    # "packageManager":Landroid/content/pm/IPackageManager;
     :goto_a
-    const v0, 0x7f121212
+    const v0, 0x7f121216
 
     const/4 v3, 0x1
 
@@ -1141,7 +1141,7 @@
     invoke-direct {v1, v2, v0}, Lcom/oneplus/settings/packageuninstaller/OPUninstallFinish;->notifyPackageRemoved(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 89
-    const v0, 0x7f121210
+    const v0, 0x7f121214
 
     const/4 v3, 0x1
 

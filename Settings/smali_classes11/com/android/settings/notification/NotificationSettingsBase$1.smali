@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/notification/NotificationSettingsBase;
 
-    .line 298
+    .line 302
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettingsBase$1;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iput-object p2, p0, Lcom/android/settings/notification/NotificationSettingsBase$1;->val$channel:Landroid/app/NotificationChannel;
@@ -45,7 +45,7 @@
     .param p1, "preference"    # Landroid/support/v7/preference/Preference;
     .param p2, "o"    # Ljava/lang/Object;
 
-    .line 302
+    .line 306
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -54,7 +54,7 @@
 
     move-result v0
 
-    .line 303
+    .line 307
     .local v0, "value":Z
     if-eqz v0, :cond_0
 
@@ -65,21 +65,21 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 304
+    .line 308
     .local v1, "importance":I
     :goto_0
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$1;->val$channel:Landroid/app/NotificationChannel;
 
     invoke-virtual {v2, v1}, Landroid/app/NotificationChannel;->setImportance(I)V
 
-    .line 305
+    .line 309
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$1;->val$channel:Landroid/app/NotificationChannel;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/app/NotificationChannel;->lockFields(I)V
 
-    .line 307
+    .line 311
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$1;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v2, v2, Lcom/android/settings/notification/NotificationSettingsBase;->mBackend:Lcom/android/settings/notification/NotificationBackend;
@@ -96,7 +96,7 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/settings/notification/NotificationBackend;->updateChannel(Ljava/lang/String;ILandroid/app/NotificationChannel;)V
 
-    .line 309
+    .line 313
     const/4 v2, 0x1
 
     return v2

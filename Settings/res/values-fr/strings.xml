@@ -2907,6 +2907,8 @@ Pour vous rendre à tout moment sur l'écran d'accueil, balayez vers le haut dep
     <string name="oneplus_quick_clipboard_summary">"Améliorez la capacité de copie, puis recommandez l'action suivante en fonction de la copie"</string>
     <string name="oneplus_quick_gestures">Gestes</string>
     <string name="oneplus_quick_gestures_title">Gestes rapides</string>
+    <string name="oneplus_quick_turn_on_assistant_app">"Activation rapide de l'application d'assistance"</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">"Maintenir enfoncé le bouton Marche/arrêt pendant 0,5 s pour activer l'application d'assistance, et pendant 3 s pour la désactiver"</string>
     <string name="oneplus_quick_turn_on_camera">"Activation rapide de l'appareil photo"</string>
     <string name="oneplus_quickpay">Paiement rapide</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">"Voulez-vous vraiment changer l'action pression longue sur le bouton Accueil de \"%1$s\" à \"Jeu rapide\" ?"</string>

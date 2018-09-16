@@ -61,7 +61,7 @@
     const-string v2, "sim_select_notification_channel"
 
     .line 148
-    const v3, 0x7f121048
+    const v3, 0x7f12104c
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -98,7 +98,7 @@
     move-result-object v2
 
     .line 155
-    const v3, 0x7f12103b
+    const v3, 0x7f12103f
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -109,7 +109,7 @@
     move-result-object v2
 
     .line 156
-    const v3, 0x7f12103a
+    const v3, 0x7f12103e
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

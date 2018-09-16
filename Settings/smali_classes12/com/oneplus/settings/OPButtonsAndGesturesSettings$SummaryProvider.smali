@@ -29,16 +29,16 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "loader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 216
+    .line 221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
+    .line 222
     iput-object p1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    .line 218
+    .line 223
     iput-object p2, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 219
+    .line 224
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .param p2, "x1"    # Lcom/android/settings/dashboard/SummaryLoader;
     .param p3, "x2"    # Lcom/oneplus/settings/OPButtonsAndGesturesSettings$1;
 
-    .line 212
+    .line 217
     invoke-direct {p0, p1, p2}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;-><init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
 
     return-void
@@ -57,7 +57,7 @@
 .method private updateSummary()V
     .locals 3
 
-    .line 229
+    .line 234
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mContext:Landroid/content/Context;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 230
+    .line 235
     return-void
 .end method
 
@@ -80,13 +80,13 @@
     .locals 0
     .param p1, "listening"    # Z
 
-    .line 223
+    .line 228
     if-eqz p1, :cond_0
 
-    .line 224
+    .line 229
     invoke-direct {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->updateSummary()V
 
-    .line 226
+    .line 231
     :cond_0
     return-void
 .end method

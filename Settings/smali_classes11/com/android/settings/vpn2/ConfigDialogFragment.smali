@@ -115,7 +115,7 @@
     .local v0, "e":Ljava/lang/IllegalStateException;
     iget-object v1, p0, Lcom/android/settings/vpn2/ConfigDialogFragment;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f12134f
+    const v2, 0x7f121353
 
     const/4 v3, 0x1
 
@@ -359,7 +359,7 @@
     .line 196
     iget-object v0, p0, Lcom/android/settings/vpn2/ConfigDialogFragment;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f121345
+    const v1, 0x7f121349
 
     const/4 v2, 0x1
 

@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;
 
-    .line 1048
+    .line 1082
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
     .param p1, "v"    # Landroid/view/View;
 
-    .line 1051
+    .line 1085
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->access$1800(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;)Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1052
+    .line 1086
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->access$1800(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;)Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;
@@ -60,7 +60,7 @@
 
     invoke-interface {v0, v1}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;->onDeleteClick(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;)V
 
-    .line 1054
+    .line 1088
     :cond_0
     return-void
 .end method

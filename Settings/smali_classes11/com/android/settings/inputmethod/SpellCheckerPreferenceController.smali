@@ -114,7 +114,7 @@
     if-nez v0, :cond_1
 
     .line 68
-    const v0, 0x7f121165
+    const v0, 0x7f121169
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -149,7 +149,7 @@
 
     .line 74
     :cond_2
-    const v1, 0x7f12107a
+    const v1, 0x7f12107e
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

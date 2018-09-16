@@ -24,7 +24,7 @@
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckerPreference;->mScis:[Landroid/view/textservice/SpellCheckerInfo;
 
     .line 48
-    const v0, 0x7f0d0200
+    const v0, 0x7f0d0201
 
     invoke-virtual {p0, v0}, Lcom/android/settings/inputmethod/SpellCheckerPreference;->setWidgetLayoutResource(I)V
 
@@ -177,7 +177,7 @@
     invoke-super {p0, p1}, Lcom/android/settings/CustomListPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 107
-    const v0, 0x7f0a04a0
+    const v0, 0x7f0a04a2
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

@@ -76,7 +76,7 @@
     if-eqz v0, :cond_0
 
     .line 37
-    const v0, 0x7f0d01bd
+    const v0, 0x7f0d01be
 
     invoke-virtual {p0, v0}, Lcom/android/settings/ui/OPSuwPreferenceDivider;->setLayoutResource(I)V
 

@@ -527,7 +527,7 @@
 
     .line 427
     .local v1, "serviceSummary":Ljava/lang/CharSequence;
-    const v2, 0x7f120dfb
+    const v2, 0x7f120dff
 
     const/4 v3, 0x2
 
@@ -645,7 +645,7 @@
     if-nez p2, :cond_1
 
     .line 897
-    const v1, 0x7f121166
+    const v1, 0x7f12116a
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -655,7 +655,7 @@
 
     .line 899
     :cond_1
-    const v1, 0x7f121165
+    const v1, 0x7f121169
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2078,12 +2078,12 @@
 
     if-eqz v0, :cond_1
 
-    const v2, 0x7f121166
+    const v2, 0x7f12116a
 
     goto :goto_0
 
     :cond_1
-    const v2, 0x7f121165
+    const v2, 0x7f121169
 
     :goto_0
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
@@ -3284,7 +3284,7 @@
     .line 739
     iget-object v2, p0, Lcom/android/settings/accessibility/AccessibilitySettings;->mToggleInversionPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    const v3, 0x7f121153
+    const v3, 0x7f121157
 
     invoke-virtual {v2, v3}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 

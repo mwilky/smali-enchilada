@@ -121,7 +121,7 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .line 54
-    const v0, 0x7f120d40
+    const v0, 0x7f120d44
 
     .line 55
     .local v0, "messageStringResId":I

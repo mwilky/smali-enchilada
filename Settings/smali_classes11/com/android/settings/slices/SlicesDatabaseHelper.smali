@@ -132,34 +132,43 @@
 .method private isBuildIndexed()Z
     .locals 3
 
-    .line 207
+    .line 208
     iget-object v0, p0, Lcom/android/settings/slices/SlicesDatabaseHelper;->mContext:Landroid/content/Context;
 
-    const-string v1, "slices_shared_prefs"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    .line 209
+    iget-object v0, p0, Lcom/android/settings/slices/SlicesDatabaseHelper;->mContext:Landroid/content/Context;
+
+    const-string v2, "slices_shared_prefs"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 209
+    .line 211
     invoke-virtual {p0}, Lcom/android/settings/slices/SlicesDatabaseHelper;->getBuildTag()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 207
+    .line 209
     return v0
+
+    .line 213
+    :cond_0
+    return v1
 .end method
 
 .method private isLocaleIndexed()Z
     .locals 3
 
-    .line 213
+    .line 219
     iget-object v0, p0, Lcom/android/settings/slices/SlicesDatabaseHelper;->mContext:Landroid/content/Context;
 
     const-string v1, "slices_shared_prefs"
@@ -170,7 +179,7 @@
 
     move-result-object v0
 
-    .line 215
+    .line 221
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -183,7 +192,7 @@
 
     move-result v0
 
-    .line 213
+    .line 219
     return v0
 .end method
 
@@ -272,7 +281,7 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 220
+    .line 226
     sget-object v0, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
     return-object v0

@@ -127,27 +127,27 @@
     .locals 3
     .param p1, "data"    # Landroid/content/Intent;
 
-    .line 278
+    .line 309
     if-nez p1, :cond_0
 
-    .line 279
+    .line 310
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
     move-object p1, v0
 
-    .line 281
+    .line 312
     :cond_0
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-direct {v0, p0}, Lcom/android/internal/widget/LockPatternUtils;-><init>(Landroid/content/Context;)V
 
-    .line 282
+    .line 313
     .local v0, "lockPatternUtils":Lcom/android/internal/widget/LockPatternUtils;
     const-string v1, ":settings:password_quality"
 
-    .line 284
+    .line 315
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v2
@@ -156,10 +156,10 @@
 
     move-result v2
 
-    .line 282
+    .line 313
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 285
+    .line 316
     return-object p1
 .end method
 
@@ -255,7 +255,7 @@
 .method private isKeyguardSecure()Z
     .locals 1
 
-    .line 374
+    .line 388
     const-class v0, Landroid/app/KeyguardManager;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -274,12 +274,12 @@
 .method private launchChooseLock()V
     .locals 5
 
-    .line 312
+    .line 343
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->getChooseLockIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 313
+    .line 344
     .local v0, "intent":Landroid/content/Intent;
     invoke-static {p0}, Lcom/android/settings/Utils;->getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
 
@@ -289,7 +289,7 @@
 
     move-result-wide v1
 
-    .line 314
+    .line 345
     .local v1, "challenge":J
     const-string v3, "minimum_quality"
 
@@ -297,68 +297,68 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 316
+    .line 347
     const-string v3, "hide_disabled_prefs"
 
     const/4 v4, 0x1
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 317
+    .line 348
     const-string v3, "has_challenge"
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 318
+    .line 349
     const-string v3, "challenge"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 319
+    .line 350
     const-string v3, "for_fingerprint"
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 320
+    .line 351
     iget v3, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mUserId:I
 
     const/16 v4, -0x2710
 
     if-eq v3, v4, :cond_0
 
-    .line 321
+    .line 352
     const-string v3, "android.intent.extra.USER_ID"
 
     iget v4, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mUserId:I
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 323
+    .line 354
     :cond_0
     const/4 v3, 0x7
 
     invoke-virtual {p0, v0, v3}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 324
+    .line 355
     return-void
 .end method
 
 .method private launchFaceUnlock()V
     .locals 3
 
-    .line 303
+    .line 334
     :try_start_0
     invoke-static {p0}, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;->getSetupFaceUnlockIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 304
+    .line 335
     .local v0, "intent":Landroid/content/Intent;
     const/4 v1, 0x4
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 305
+    .line 336
     const v1, 0x7f01003f
 
     const v2, 0x7f010040
@@ -367,15 +367,15 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 308
+    .line 339
     .end local v0    # "intent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 306
+    .line 337
     :catch_0
     move-exception v0
 
-    .line 309
+    .line 340
     :goto_0
     return-void
 .end method
@@ -507,7 +507,7 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 379
+    .line 393
     const/16 v0, 0xf9
 
     return v0
@@ -530,7 +530,7 @@
 
     .line 196
     .local v0, "description":Landroid/widget/TextView;
-    const v1, 0x7f120f88
+    const v1, 0x7f120f8c
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -541,17 +541,17 @@
 
     .line 201
     .local v1, "nextButton":Landroid/widget/Button;
-    const v2, 0x7f120af4
+    const v2, 0x7f120af7
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setHeaderText(I)V
 
     .line 202
-    const v2, 0x7f120af3
+    const v2, 0x7f120af6
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
     .line 204
-    const v2, 0x7f120af5
+    const v2, 0x7f120af8
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(I)V
 
@@ -569,7 +569,7 @@
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 210
-    const v3, 0x7f120f84
+    const v3, 0x7f120f88
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(I)V
 
@@ -634,14 +634,14 @@
 .method protected isSetupWizard()Z
     .locals 1
 
-    .line 385
+    .line 399
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
-    .locals 4
+    .locals 6
     .param p1, "requestCode"    # I
     .param p2, "resultCode"    # I
     .param p3, "data"    # Landroid/content/Intent;
@@ -652,19 +652,23 @@
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mFromSetup:Z
 
     .line 234
-    const/4 v1, 0x2
+    const v1, 0x7f010040
 
-    if-ne p1, v1, :cond_1
+    const v2, 0x7f01003f
+
+    const/4 v3, 0x2
+
+    if-ne p1, v3, :cond_1
 
     invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->isKeyguardSecure()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_1
+    if-eqz v4, :cond_1
 
-    iget-boolean v1, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
+    iget-boolean v4, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
 
-    if-nez v1, :cond_1
+    if-nez v4, :cond_1
 
     .line 235
     invoke-direct {p0, p3}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->getMetricIntent(Landroid/content/Intent;)Landroid/content/Intent;
@@ -676,7 +680,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_b
 
     .line 239
     :try_start_0
@@ -688,47 +692,43 @@
     .local v0, "intent":Landroid/content/Intent;
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_0
 
     .line 242
-    new-instance v1, Landroid/content/ComponentName;
+    new-instance v3, Landroid/content/ComponentName;
 
-    const-string v2, "com.oneplus.provision"
+    const-string v4, "com.oneplus.provision"
 
-    const-string v3, "com.oneplus.provision.UserSettingSuccess"
+    const-string v5, "com.oneplus.provision.UserSettingSuccess"
 
-    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .local v1, "componentName":Landroid/content/ComponentName;
+    .local v3, "componentName":Landroid/content/ComponentName;
     goto :goto_0
 
     .line 246
-    .end local v1    # "componentName":Landroid/content/ComponentName;
+    .end local v3    # "componentName":Landroid/content/ComponentName;
     :cond_0
-    new-instance v1, Landroid/content/ComponentName;
+    new-instance v3, Landroid/content/ComponentName;
 
-    const-string v2, "com.oneplus.provision"
+    const-string v4, "com.oneplus.provision"
 
-    const-string v3, "com.oneplus.provision.GesturesActivity"
+    const-string v5, "com.oneplus.provision.GesturesActivity"
 
-    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 250
-    .restart local v1    # "componentName":Landroid/content/ComponentName;
+    .restart local v3    # "componentName":Landroid/content/ComponentName;
     :goto_0
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     .line 251
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivity(Landroid/content/Intent;)V
 
     .line 252
-    const v2, 0x7f01003f
-
-    const v3, 0x7f010040
-
-    invoke-virtual {p0, v2, v3}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->overridePendingTransition(II)V
+    invoke-virtual {p0, v2, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->overridePendingTransition(II)V
 
     .line 253
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
@@ -736,7 +736,7 @@
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .end local v0    # "intent":Landroid/content/Intent;
-    .end local v1    # "componentName":Landroid/content/ComponentName;
+    .end local v3    # "componentName":Landroid/content/ComponentName;
     goto :goto_1
 
     .line 254
@@ -753,60 +753,186 @@
     .line 257
     .end local v0    # "e":Landroid/content/ActivityNotFoundException;
     :goto_1
-    goto :goto_2
+    goto/16 :goto_4
 
     .line 260
     :cond_1
-    const/4 v1, 0x4
+    const/4 v4, 0x4
 
-    if-ne p1, v1, :cond_4
+    const/16 v5, 0xb
+
+    if-ne p1, v4, :cond_4
 
     .line 262
-    const/16 v1, 0xb
-
     if-ne p2, v0, :cond_2
 
     .line 263
-    invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(I)V
+    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->onCancelButtonClick()V
+
+    goto/16 :goto_4
 
     .line 264
-    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
-
-    goto :goto_2
+    :cond_2
+    if-ne p2, v5, :cond_3
 
     .line 265
-    :cond_2
-    if-ne p2, v1, :cond_3
+    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->onCancelButtonClick()V
+
+    goto/16 :goto_4
 
     .line 266
-    invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(I)V
-
-    .line 267
-    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
-
-    goto :goto_2
-
-    .line 268
     :cond_3
-    goto :goto_2
+    goto/16 :goto_4
 
-    .line 271
+    .line 269
     :cond_4
-    const/4 v1, 0x7
+    const/4 v4, 0x7
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v4, :cond_5
 
     if-ne p2, v0, :cond_5
 
-    .line 272
+    .line 270
     invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->launchFaceUnlock()V
 
-    .line 274
+    goto :goto_4
+
+    .line 271
     :cond_5
+    const/4 v4, 0x6
+
+    if-ne p1, v4, :cond_b
+
+    if-eq p2, v3, :cond_6
+
+    if-eq p2, v5, :cond_6
+
+    if-eq p2, v0, :cond_6
+
+    const/4 v0, -0x1
+
+    if-ne p2, v0, :cond_b
+
+    .line 273
+    :cond_6
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    .line 274
+    invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->isKeyguardSecure()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    .line 277
+    iget-boolean v0, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_7
+
+    goto :goto_2
+
+    :cond_7
+    invoke-direct {p0, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->getMetricIntent(Landroid/content/Intent;)Landroid/content/Intent;
+
+    move-result-object v1
+
     :goto_2
+    invoke-virtual {p0, v3, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(ILandroid/content/Intent;)V
+
+    .line 278
+    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
+
+    goto :goto_4
+
+    .line 280
+    :cond_8
+    invoke-virtual {p0, v5}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(I)V
+
+    .line 281
+    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
+
+    goto :goto_4
+
+    .line 285
+    :cond_9
+    :try_start_1
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    .line 287
+    .local v0, "intent":Landroid/content/Intent;
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_a
+
+    .line 288
+    new-instance v3, Landroid/content/ComponentName;
+
+    const-string v4, "com.oneplus.provision"
+
+    const-string v5, "com.oneplus.provision.UserSettingSuccess"
+
+    invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .restart local v3    # "componentName":Landroid/content/ComponentName;
+    goto :goto_3
+
+    .line 292
+    .end local v3    # "componentName":Landroid/content/ComponentName;
+    :cond_a
+    new-instance v3, Landroid/content/ComponentName;
+
+    const-string v4, "com.oneplus.provision"
+
+    const-string v5, "com.oneplus.provision.GesturesActivity"
+
+    invoke-direct {v3, v4, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 296
+    .restart local v3    # "componentName":Landroid/content/ComponentName;
+    :goto_3
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    .line 297
+    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivity(Landroid/content/Intent;)V
+
+    .line 298
+    invoke-virtual {p0, v2, v1}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->overridePendingTransition(II)V
+    :try_end_1
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 302
+    .end local v0    # "intent":Landroid/content/Intent;
+    .end local v3    # "componentName":Landroid/content/ComponentName;
+    goto :goto_4
+
+    .line 299
+    :catch_1
+    move-exception v0
+
+    .line 300
+    .local v0, "e":Landroid/content/ActivityNotFoundException;
+    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+
+    .line 301
+    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
+
+    .line 305
+    .end local v0    # "e":Landroid/content/ActivityNotFoundException;
+    :cond_b
+    :goto_4
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 275
+    .line 306
     return-void
 .end method
 
@@ -835,102 +961,32 @@
 .method protected onCancelButtonClick()V
     .locals 4
 
-    .line 339
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 340
-    invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->isKeyguardSecure()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 343
-    const/4 v0, 0x2
-
-    iget-boolean v1, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mAlreadyHadLockScreenSetup:Z
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-direct {p0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->getMetricIntent(Landroid/content/Intent;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-virtual {p0, v0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(ILandroid/content/Intent;)V
-
-    .line 344
-    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
-
-    goto :goto_2
-
-    .line 346
-    :cond_1
-    const/16 v0, 0xb
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->setResult(I)V
-
-    .line 347
-    invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
-
-    goto :goto_2
-
-    .line 351
-    :cond_2
+    .line 373
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 353
+    .line 374
     .local v0, "intent":Landroid/content/Intent;
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    .line 354
     new-instance v1, Landroid/content/ComponentName;
 
-    const-string v2, "com.oneplus.provision"
+    const-string v2, "com.android.settings"
 
-    const-string v3, "com.oneplus.provision.UserSettingSuccess"
+    const-string v3, "com.android.settings.fingerprint.SetupFingerprintEnrollIntroduction"
 
     invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 377
     .local v1, "componentName":Landroid/content/ComponentName;
-    goto :goto_1
-
-    .line 358
-    .end local v1    # "componentName":Landroid/content/ComponentName;
-    :cond_3
-    new-instance v1, Landroid/content/ComponentName;
-
-    const-string v2, "com.oneplus.provision"
-
-    const-string v3, "com.oneplus.provision.GesturesActivity"
-
-    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 362
-    .restart local v1    # "componentName":Landroid/content/ComponentName;
-    :goto_1
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 363
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivity(Landroid/content/Intent;)V
+    .line 378
+    const/4 v2, 0x6
 
-    .line 364
+    invoke-virtual {p0, v0, v2}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 379
     const v2, 0x7f01003f
 
     const v3, 0x7f010040
@@ -939,25 +995,25 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 368
+    .line 383
     .end local v0    # "intent":Landroid/content/Intent;
     .end local v1    # "componentName":Landroid/content/ComponentName;
-    goto :goto_2
+    goto :goto_0
 
-    .line 365
+    .line 380
     :catch_0
     move-exception v0
 
-    .line 366
+    .line 381
     .local v0, "e":Landroid/content/ActivityNotFoundException;
     invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    .line 367
+    .line 382
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->finish()V
 
-    .line 371
+    .line 385
     .end local v0    # "e":Landroid/content/ActivityNotFoundException;
-    :goto_2
+    :goto_0
     return-void
 .end method
 
@@ -1005,17 +1061,17 @@
 .method protected onNextButtonClick()V
     .locals 1
 
-    .line 290
+    .line 321
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->mHasPassword:Z
 
     if-nez v0, :cond_0
 
-    .line 292
+    .line 323
     invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->launchChooseLock()V
 
     goto :goto_0
 
-    .line 295
+    .line 326
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->isFaceAdded()Z
 
@@ -1023,10 +1079,10 @@
 
     if-nez v0, :cond_1
 
-    .line 296
+    .line 327
     invoke-direct {p0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->launchFaceUnlock()V
 
-    .line 299
+    .line 330
     :cond_1
     :goto_0
     return-void

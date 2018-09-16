@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f120eb5
+    const v1, 0x7f120eb9
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
@@ -60,7 +60,7 @@
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->setContentView(I)V
 
     .line 27
-    const v0, 0x7f0a043d
+    const v0, 0x7f0a043f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -157,7 +157,7 @@
     :cond_3
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120b89
+    const v1, 0x7f120b8d
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     :cond_4
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v1, 0x7f120b8a
+    const v1, 0x7f120b8e
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPRegulatoryInfoDisplayActivity;->getString(I)Ljava/lang/String;
 

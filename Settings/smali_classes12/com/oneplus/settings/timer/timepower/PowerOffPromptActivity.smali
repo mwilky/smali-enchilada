@@ -471,7 +471,7 @@
     iput-object p0, v4, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
     .line 115
-    const v5, 0x7f121002
+    const v5, 0x7f121006
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;->getString(I)Ljava/lang/String;
 

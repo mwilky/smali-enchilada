@@ -362,7 +362,7 @@
     .local v4, "bytesField":Landroid/widget/EditText;
     iget-object v5, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
-    const v6, 0x7f0a04bd
+    const v6, 0x7f0a04bf
 
     invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -515,7 +515,7 @@
     iget-object v4, p0, Lcom/android/settings/datausage/BillingCycleSettings$BytesEditorFragment;->mView:Landroid/view/View;
 
     .line 257
-    const v5, 0x7f0a04bd
+    const v5, 0x7f0a04bf
 
     invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

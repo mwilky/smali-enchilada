@@ -108,7 +108,7 @@
     .locals 1
 
     .line 134
-    const v0, 0x7f120be1
+    const v0, 0x7f120be5
 
     return v0
 .end method
@@ -179,7 +179,7 @@
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setContentView(I)V
 
     .line 51
-    const v0, 0x7f120f82
+    const v0, 0x7f120f86
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFinish;->setHeaderText(I)V
 

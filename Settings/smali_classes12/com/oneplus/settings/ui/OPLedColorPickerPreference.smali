@@ -513,7 +513,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120d65
+    const v2, 0x7f120d69
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -843,7 +843,7 @@
     nop
 
     .line 132
-    const v0, 0x7f0a0483
+    const v0, 0x7f0a0485
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

@@ -94,7 +94,7 @@
     .locals 2
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
@@ -102,20 +102,20 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->CONFIG_NAME:Ljava/lang/String;
 
-    .line 40
-    const-string v0, "op_multiapp_white_list"
+    .line 41
+    const-string v0, "op_multiapp_white_list_p"
 
     iput-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->OP_MULTIAPP_WHITE_LIST:Ljava/lang/String;
 
-    .line 41
+    .line 42
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->MSG_GET_ONLINECONFIG:I
 
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mContext:Landroid/content/Context;
 
-    .line 45
+    .line 46
     new-instance v0, Landroid/os/HandlerThread;
 
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
@@ -124,12 +124,12 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 47
+    .line 48
     new-instance v0, Lcom/oneplus/settings/OPOnlineConfigManager$1;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mHandlerThread:Landroid/os/HandlerThread;
@@ -142,7 +142,7 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mHandler:Landroid/os/Handler;
 
-    .line 62
+    .line 63
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -153,7 +153,7 @@
 
     move-result-object v0
 
-    .line 63
+    .line 64
     .local v0, "whiteApps":[Ljava/lang/String;
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -161,7 +161,7 @@
 
     sput-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->localMultiAppWhiteList:Ljava/util/List;
 
-    .line 64
+    .line 65
     return-void
 .end method
 
@@ -209,36 +209,36 @@
     .locals 2
     .param p0, "context"    # Landroid/content/Context;
 
-    .line 81
+    .line 82
     sget-object v0, Lcom/oneplus/settings/OPOnlineConfigManager;->lock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 82
+    .line 83
     :try_start_0
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->onlineConfigManager:Lcom/oneplus/settings/OPOnlineConfigManager;
 
     if-nez v1, :cond_0
 
-    .line 83
+    .line 84
     new-instance v1, Lcom/oneplus/settings/OPOnlineConfigManager;
 
     invoke-direct {v1, p0}, Lcom/oneplus/settings/OPOnlineConfigManager;-><init>(Landroid/content/Context;)V
 
     sput-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->onlineConfigManager:Lcom/oneplus/settings/OPOnlineConfigManager;
 
-    .line 85
+    .line 86
     :cond_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 86
+    .line 87
     sget-object v0, Lcom/oneplus/settings/OPOnlineConfigManager;->onlineConfigManager:Lcom/oneplus/settings/OPOnlineConfigManager;
 
     return-object v0
 
-    .line 85
+    .line 86
     :catchall_0
     move-exception v1
 
@@ -261,12 +261,12 @@
         }
     .end annotation
 
-    .line 71
+    .line 72
     sget-object v0, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 72
+    .line 73
     :try_start_0
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
@@ -276,14 +276,14 @@
 
     if-nez v1, :cond_0
 
-    .line 73
+    .line 74
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
     monitor-exit v0
 
     return-object v1
 
-    .line 75
+    .line 76
     :cond_0
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->localMultiAppWhiteList:Ljava/util/List;
 
@@ -291,7 +291,7 @@
 
     return-object v1
 
-    .line 77
+    .line 78
     :catchall_0
     move-exception v1
 
@@ -306,10 +306,10 @@
     .locals 8
     .param p1, "jsonArray"    # Lorg/json/JSONArray;
 
-    .line 111
+    .line 112
     if-nez p1, :cond_2
 
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->OP_MULTIAPP_WHITE_LIST:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -318,13 +318,13 @@
 
     move-result-object v0
 
-    .line 113
+    .line 114
     .local v0, "oldJson":Ljava/lang/String;
     sget-boolean v1, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v1, :cond_0
 
-    .line 114
+    .line 115
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -343,11 +343,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
+    .line 117
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 118
+    .line 119
     :try_start_0
     new-instance v1, Lorg/json/JSONArray;
 
@@ -357,17 +357,17 @@
 
     move-object p1, v1
 
-    .line 122
+    .line 123
     .end local v0    # "oldJson":Ljava/lang/String;
     :goto_0
     goto :goto_1
 
-    .line 119
+    .line 120
     .restart local v0    # "oldJson":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 120
+    .line 121
     .local v1, "e":Lorg/json/JSONException;
     sget-object v2, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
@@ -391,13 +391,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
+    .line 122
     invoke-virtual {v1}, Lorg/json/JSONException;->printStackTrace()V
 
     .end local v1    # "e":Lorg/json/JSONException;
     goto :goto_0
 
-    .line 124
+    .line 125
     :cond_1
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
@@ -405,10 +405,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 125
+    .line 126
     return-void
 
-    .line 128
+    .line 129
     .end local v0    # "oldJson":Ljava/lang/String;
     :cond_2
     :goto_1
@@ -416,7 +416,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 129
+    .line 130
     sget-object v0, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -439,7 +439,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 132
+    .line 133
     :cond_3
     const/4 v0, 0x0
 
@@ -454,12 +454,12 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 133
+    .line 134
     invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 134
+    .line 135
     .local v2, "json":Lorg/json/JSONObject;
     const-string v3, "name"
 
@@ -475,14 +475,14 @@
 
     if-eqz v3, :cond_5
 
-    .line 135
+    .line 136
     const-string v3, "value"
 
     invoke-virtual {v2, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v3
 
-    .line 136
+    .line 137
     .local v3, "whiteNumberListJsonArray":Lorg/json/JSONArray;
     iget-object v4, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->OP_MULTIAPP_WHITE_LIST:Ljava/lang/String;
 
@@ -492,7 +492,7 @@
 
     invoke-static {v4, v5}, Lcom/oneplus/settings/utils/OPPrefUtil;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 137
+    .line 138
     sget-object v4, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
     monitor-enter v4
@@ -500,13 +500,13 @@
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 138
+    .line 139
     :try_start_2
     sget-object v5, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
     invoke-interface {v5}, Ljava/util/List;->clear()V
 
-    .line 139
+    .line 140
     move v5, v0
 
     .local v5, "i":I
@@ -517,24 +517,24 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 140
+    .line 141
     invoke-virtual {v3, v5}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 141
+    .line 142
     .local v6, "number":Ljava/lang/String;
     sget-object v7, Lcom/oneplus/settings/OPOnlineConfigManager;->multiAppWhiteList:Ljava/util/List;
 
     invoke-interface {v7, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 139
+    .line 140
     .end local v6    # "number":Ljava/lang/String;
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_3
 
-    .line 143
+    .line 144
     .end local v5    # "i":I
     :cond_4
     monitor-exit v4
@@ -554,7 +554,7 @@
     .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 132
+    .line 133
     .end local v2    # "json":Lorg/json/JSONObject;
     .end local v3    # "whiteNumberListJsonArray":Lorg/json/JSONArray;
     :cond_5
@@ -563,12 +563,12 @@
 
     goto :goto_2
 
-    .line 150
+    .line 151
     .end local v1    # "index":I
     :catch_1
     move-exception v0
 
-    .line 151
+    .line 152
     .local v0, "e":Ljava/lang/Exception;
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
@@ -595,11 +595,11 @@
     .end local v0    # "e":Ljava/lang/Exception;
     goto :goto_5
 
-    .line 148
+    .line 149
     :catch_2
     move-exception v0
 
-    .line 149
+    .line 150
     .local v0, "e":Lorg/json/JSONException;
     sget-object v1, Lcom/oneplus/settings/OPOnlineConfigManager;->TAG:Ljava/lang/String;
 
@@ -623,12 +623,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 152
+    .line 153
     .end local v0    # "e":Lorg/json/JSONException;
     :cond_6
     nop
 
-    .line 153
+    .line 154
     :goto_5
     return-void
 .end method
@@ -638,7 +638,7 @@
 .method public init()V
     .locals 5
 
-    .line 93
+    .line 94
     new-instance v0, Lcom/oneplus/config/ConfigObserver;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mContext:Landroid/content/Context;
@@ -655,18 +655,18 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mBackgroundConfigObserver:Lcom/oneplus/config/ConfigObserver;
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mBackgroundConfigObserver:Lcom/oneplus/config/ConfigObserver;
 
     invoke-virtual {v0}, Lcom/oneplus/config/ConfigObserver;->register()V
 
-    .line 95
+    .line 96
     iget-object v0, p0, Lcom/oneplus/settings/OPOnlineConfigManager;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 97
+    .line 98
     return-void
 .end method

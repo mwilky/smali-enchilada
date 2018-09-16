@@ -306,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d0212
+    const v2, 0x7f0d0213
 
     invoke-virtual {v1, v2, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -353,7 +353,7 @@
 
     .line 560
     .local v4, "icon":Landroid/graphics/drawable/Drawable;
-    const v5, 0x7f0a054f
+    const v5, 0x7f0a0551
 
     invoke-virtual {p2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -366,7 +366,7 @@
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 563
-    const v6, 0x7f0a04f5
+    const v6, 0x7f0a04f7
 
     invoke-virtual {p2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

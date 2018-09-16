@@ -398,7 +398,7 @@
     invoke-virtual {v3, v2}, Lcom/android/settings/widget/HotspotApBandSelectionPreference;->setEnabled(Z)V
 
     .line 91
-    const v2, 0x7f1213a7
+    const v2, 0x7f1213ab
 
     invoke-virtual {v3, v2}, Lcom/android/settings/widget/HotspotApBandSelectionPreference;->setSummary(I)V
 

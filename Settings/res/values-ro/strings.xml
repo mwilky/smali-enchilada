@@ -2907,6 +2907,8 @@ Pentru a accesa ecranul principal în orice moment, glosați cu degetul în sus 
     <string name="oneplus_quick_clipboard_summary">Îmbunătățiți capacitatea de a copia și apoi recomandați următoarea acțiune conform copiei</string>
     <string name="oneplus_quick_gestures">Gesturi</string>
     <string name="oneplus_quick_gestures_title">Gesturi rapide</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Activarea rapidă a aplicației Asistent</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Țineți apăsat butonul de pornire timp de 0,5 secunde pentru a activa aplicația Asistent și timp de 3 secunde pentru a o închide</string>
     <string name="oneplus_quick_turn_on_camera">Activați rapid camera foto</string>
     <string name="oneplus_quickpay">Plată rapidă</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Sigur doriți să schimbați acțiunea de apăsare lungă a butonului Home din \"%1$s\" la \"Quick Pay\"?</string>

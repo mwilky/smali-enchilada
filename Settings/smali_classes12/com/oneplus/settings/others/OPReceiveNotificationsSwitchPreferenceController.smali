@@ -96,7 +96,7 @@
     .locals 3
     .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 91
+    .line 90
     const-string v0, "receive_notifications"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -109,14 +109,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
+    .line 91
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.oem.intent.action.OP_LEGAL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 93
+    .line 92
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "op_legal_notices_type"
 
@@ -124,22 +124,22 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 94
+    .line 93
     const-string v1, "key_from_settings"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 95
+    .line 94
     iget-object v1, p0, Lcom/oneplus/settings/others/OPReceiveNotificationsSwitchPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 96
+    .line 95
     return v2
 
-    .line 98
+    .line 97
     .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v0, 0x0
@@ -231,29 +231,10 @@
 .end method
 
 .method public onSwitchToggled(Z)Z
-    .locals 3
+    .locals 2
     .param p1, "isChecked"    # Z
 
     .line 76
-    const-string v0, "guojing"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "isChecked  = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 77
     iget-object v0, p0, Lcom/oneplus/settings/others/OPReceiveNotificationsSwitchPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -262,13 +243,13 @@
 
     const-string v1, "oem_receive_notifications"
 
-    .line 79
+    .line 78
     nop
 
-    .line 77
+    .line 76
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 80
+    .line 79
     const-string v0, "push.noti"
 
     if-eqz p1, :cond_0
@@ -283,35 +264,35 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 81
+    .line 80
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "net.oneplus.push.action.SWITCH_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 82
+    .line 81
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "net.oneplus.push"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 83
+    .line 82
     const-string v1, "oem_receive_notifications"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 84
+    .line 83
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 85
+    .line 84
     iget-object v1, p0, Lcom/oneplus/settings/others/OPReceiveNotificationsSwitchPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 86
+    .line 85
     const/4 v1, 0x1
 
     return v1

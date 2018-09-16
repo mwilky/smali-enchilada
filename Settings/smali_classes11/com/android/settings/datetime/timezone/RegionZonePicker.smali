@@ -29,7 +29,7 @@
     .line 52
     const v0, 0x7f12050b
 
-    const v1, 0x7f120f65
+    const v1, 0x7f120f69
 
     const/4 v2, 0x1
 

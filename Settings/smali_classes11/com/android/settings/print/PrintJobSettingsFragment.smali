@@ -197,7 +197,7 @@
 
     if-eq v2, v3, :cond_4
 
-    const v6, 0x7f120e10
+    const v6, 0x7f120e14
 
     packed-switch v2, :pswitch_data_0
 
@@ -218,7 +218,7 @@
     .line 225
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e0e
+    const v6, 0x7f120e12
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -275,7 +275,7 @@
     .line 210
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e1f
+    const v6, 0x7f120e23
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -322,7 +322,7 @@
     :pswitch_2
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e11
+    const v6, 0x7f120e15
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -347,7 +347,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e12
+    const v6, 0x7f120e16
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -372,7 +372,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/settings/print/PrintJobSettingsFragment;->mPrintJobPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f120e15
+    const v6, 0x7f120e19
 
     const/4 v7, 0x2
 
@@ -644,7 +644,7 @@
     if-nez v1, :cond_1
 
     .line 132
-    const v1, 0x7f120e0f
+    const v1, 0x7f120e13
 
     .line 133
     invoke-virtual {p0, v1}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
@@ -672,7 +672,7 @@
     .line 138
     const/4 v1, 0x2
 
-    const v4, 0x7f120e20
+    const v4, 0x7f120e24
 
     .line 139
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintJobSettingsFragment;->getString(I)Ljava/lang/String;
@@ -767,7 +767,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f120e1d
+    const v2, 0x7f120e21
 
     invoke-virtual {v1, v2}, Landroid/app/ActionBar;->setTitle(I)V
 

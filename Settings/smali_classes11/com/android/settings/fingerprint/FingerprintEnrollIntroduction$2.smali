@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
-    .line 177
+    .line 225
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +39,13 @@
 .method public run()V
     .locals 2
 
-    .line 179
+    .line 227
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->access$002(Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;Z)Z
 
-    .line 180
+    .line 228
     return-void
 .end method

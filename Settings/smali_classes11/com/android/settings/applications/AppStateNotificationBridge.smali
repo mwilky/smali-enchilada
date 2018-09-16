@@ -515,7 +515,7 @@
 
     .line 215
     .local v0, "view":Landroid/view/ViewGroup;
-    const v1, 0x7f0a051e
+    const v1, 0x7f0a0520
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

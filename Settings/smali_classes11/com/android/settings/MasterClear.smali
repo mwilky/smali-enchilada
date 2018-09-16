@@ -923,7 +923,7 @@
     :goto_d
     iget-object v8, v1, Lcom/android/settings/MasterClear;->mContentView:Landroid/view/View;
 
-    const v10, 0x7f0a03c4
+    const v10, 0x7f0a03c6
 
     invoke-virtual {v8, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

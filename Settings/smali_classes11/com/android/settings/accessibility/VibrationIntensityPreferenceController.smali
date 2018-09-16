@@ -146,7 +146,7 @@
     if-nez p1, :cond_1
 
     .line 101
-    const v1, 0x7f121165
+    const v1, 0x7f121169
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -156,7 +156,7 @@
 
     .line 103
     :cond_1
-    const v1, 0x7f121166
+    const v1, 0x7f12116a
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

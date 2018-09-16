@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/DisplaySettings;
 
-    .line 1499
+    .line 1503
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
@@ -36,11 +36,11 @@
 .method public onChange()V
     .locals 1
 
-    .line 1502
+    .line 1506
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$4;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$500(Lcom/android/settings/DisplaySettings;)V
 
-    .line 1503
+    .line 1507
     return-void
 .end method

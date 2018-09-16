@@ -202,7 +202,7 @@
     if-eqz v4, :cond_2
 
     .line 134
-    const v5, 0x7f0a04f8
+    const v5, 0x7f0a04fa
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
     if-eqz p1, :cond_0
 
     .line 55
-    const v0, 0x7f0d01df
+    const v0, 0x7f0d01e0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/accessibility/ColorPreference;->setWidgetLayoutResource(I)V
 

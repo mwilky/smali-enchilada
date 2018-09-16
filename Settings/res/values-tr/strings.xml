@@ -2906,6 +2906,8 @@ Ekrana gitmek için, parmağınızı ekranın alt orta köşesinden yukarıya do
     <string name="oneplus_quick_clipboard_summary">Kopyalama işlevini genişletir ve kopyalanan verilere göre sonraki eylemi önerir</string>
     <string name="oneplus_quick_gestures">İşlem Kısayolları</string>
     <string name="oneplus_quick_gestures_title">Hızlı işlem kısayolları</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Yardımcı uygulamayı hızla etkinleştirin</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Güç düğmesini, yardımcı uygulamayı hızla etkinleştirmek için 0,5 sn. ve gücü kapatmak için 3 sn. basılı tutun</string>
     <string name="oneplus_quick_turn_on_camera">Kamerayı hızlı bir şekilde aç</string>
     <string name="oneplus_quickpay">Hızlı ödeme</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Ana Sayfa düğmesinin uzun basma işlevini \"%1$s\" yerine \"Hızlı Ödeme\" olarak değiştirmek istediğinizden emin misiniz?</string>

@@ -25,12 +25,12 @@
 
     move-result-object v0
 
-    const v1, 0x7f0d02bb
+    const v1, 0x7f0d02bc
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 38
-    const v0, 0x7f0a0580
+    const v0, 0x7f0a0582
 
     invoke-virtual {p0, v0}, Lcom/android/settings/graph/UsageView;->findViewById(I)Landroid/view/View;
 
@@ -524,12 +524,12 @@
     .param p2, "after"    # F
 
     .line 116
-    const v0, 0x7f0a04cc
+    const v0, 0x7f0a04ce
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 
     .line 117
-    const v0, 0x7f0a04cd
+    const v0, 0x7f0a04cf
 
     invoke-direct {p0, v0, p2}, Lcom/android/settings/graph/UsageView;->setWeight(IF)V
 

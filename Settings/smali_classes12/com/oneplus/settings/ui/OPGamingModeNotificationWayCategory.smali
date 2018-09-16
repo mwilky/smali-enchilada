@@ -149,7 +149,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
     .line 71
-    const v0, 0x7f0a04ff
+    const v0, 0x7f0a0501
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mSuspensionNoticeAnim:Lcom/airbnb/lottie/LottieAnimationView;
 
     .line 72
-    const v0, 0x7f0a05b0
+    const v0, 0x7f0a05b2
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -171,7 +171,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mWeakTextRemindingAnim:Lcom/airbnb/lottie/LottieAnimationView;
 
     .line 73
-    const v0, 0x7f0a04ab
+    const v0, 0x7f0a04ad
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -392,7 +392,7 @@
     .line 134
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120cf6
+    const v1, 0x7f120cfa
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -418,7 +418,7 @@
     .line 140
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120ca0
+    const v1, 0x7f120ca4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -449,7 +449,7 @@
     .line 127
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPGamingModeNotificationWayCategory;->mNoficationWaySummary:Landroid/widget/TextView;
 
-    const v1, 0x7f120cb9
+    const v1, 0x7f120cbd
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

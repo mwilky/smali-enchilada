@@ -184,7 +184,7 @@
     move-object v0, v2
 
     .line 80
-    const v2, 0x7f0a03d2
+    const v2, 0x7f0a03d4
 
     .line 81
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -196,7 +196,7 @@
     iput-object v2, v0, Lcom/oneplus/settings/gestures/OPGestureShortcutsAdapter$ItemViewHolder;->parent:Landroid/widget/RelativeLayout;
 
     .line 82
-    const v2, 0x7f0a056c
+    const v2, 0x7f0a056e
 
     .line 83
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -251,7 +251,7 @@
     iput-object v2, v0, Lcom/oneplus/settings/gestures/OPGestureShortcutsAdapter$ItemViewHolder;->groupDivider:Landroid/view/View;
 
     .line 91
-    const v2, 0x7f0a0431
+    const v2, 0x7f0a0433
 
     .line 92
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -295,7 +295,7 @@
     .line 99
     iget-object v5, v0, Lcom/oneplus/settings/gestures/OPGestureShortcutsAdapter$ItemViewHolder;->titleTv:Landroid/widget/TextView;
 
-    const v6, 0x7f120b4b
+    const v6, 0x7f120b4e
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(I)V
 

@@ -23,7 +23,7 @@
 
 
 # static fields
-.field private static final LAYOUT_RESOURCE:I = 0x7f0d02bf
+.field private static final LAYOUT_RESOURCE:I = 0x7f0d02c0
 
 
 # instance fields
@@ -111,7 +111,7 @@
 
     iget-object v1, p1, Lcom/android/settings/UserCredentialsSettings$ViewHolder;->itemView:Landroid/view/View;
 
-    const v2, 0x7f0d02bf
+    const v2, 0x7f0d02c0
 
     const/4 v3, 0x0
 
@@ -170,7 +170,7 @@
     .local v0, "inflater":Landroid/view/LayoutInflater;
     new-instance v1, Lcom/android/settings/UserCredentialsSettings$ViewHolder;
 
-    const v2, 0x7f0d02bf
+    const v2, 0x7f0d02c0
 
     const/4 v3, 0x0
 

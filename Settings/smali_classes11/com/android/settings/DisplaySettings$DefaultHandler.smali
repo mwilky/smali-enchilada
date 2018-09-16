@@ -34,19 +34,19 @@
     .param p1, "this$0"    # Lcom/android/settings/DisplaySettings;
     .param p2, "settings"    # Landroid/content/Context;
 
-    .line 278
+    .line 279
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 279
+    .line 280
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->mReference:Ljava/lang/ref/WeakReference;
 
-    .line 280
+    .line 281
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .locals 6
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 283
+    .line 284
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->mReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -65,14 +65,14 @@
 
     check-cast v0, Landroid/content/Context;
 
-    .line 284
+    .line 285
     .local v0, "service":Landroid/content/Context;
     if-nez v0, :cond_0
 
-    .line 285
+    .line 286
     return-void
 
-    .line 288
+    .line 289
     :cond_0
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -82,7 +82,7 @@
 
     goto/16 :goto_1
 
-    .line 300
+    .line 301
     :pswitch_0
     new-instance v1, Landroid/content/Intent;
 
@@ -90,30 +90,30 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 301
+    .line 302
     .local v1, "specialintent":Landroid/content/Intent;
     const-string v3, "com.oneplus.skin"
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 302
+    .line 303
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 303
+    .line 304
     const-string v2, "oem_theme_mode"
 
     iget v3, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 304
+    .line 305
     const-string v2, "special_theme"
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 305
+    .line 306
     sget-object v2, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->SW:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
     invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
@@ -126,7 +126,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 306
+    .line 307
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-virtual {v2}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -139,7 +139,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 307
+    .line 308
     const-string v2, "persist.sys.theme.accentcolor"
 
     const-string v3, "#FF2837"
@@ -156,7 +156,7 @@
 
     goto :goto_0
 
-    .line 308
+    .line 309
     :cond_1
     sget-object v2, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->AVG:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
@@ -170,7 +170,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 309
+    .line 310
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-virtual {v2}, Lcom/android/settings/DisplaySettings;->getContentResolver()Landroid/content/ContentResolver;
@@ -183,7 +183,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 310
+    .line 311
     const-string v2, "persist.sys.theme.accentcolor"
 
     const-string v3, "#FBC02D"
@@ -200,7 +200,7 @@
 
     goto :goto_0
 
-    .line 312
+    .line 313
     :cond_2
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->this$0:Lcom/android/settings/DisplaySettings;
 
@@ -214,7 +214,7 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 313
+    .line 314
     const-string v2, "persist.sys.theme.accentcolor"
 
     const-string v3, "#2196F3"
@@ -229,14 +229,14 @@
 
     invoke-static {v2, v3}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 315
+    .line 316
     :goto_0
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 316
+    .line 317
     goto :goto_1
 
-    .line 290
+    .line 291
     .end local v1    # "specialintent":Landroid/content/Intent;
     :pswitch_1
     new-instance v1, Landroid/content/Intent;
@@ -245,41 +245,41 @@
 
     invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 291
+    .line 292
     .local v1, "intent":Landroid/content/Intent;
     const-string v3, "com.oneplus.skin"
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 292
+    .line 293
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 293
+    .line 294
     const-string v2, "oem_theme_mode"
 
     iget v3, p1, Landroid/os/Message;->arg1:I
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 294
+    .line 295
     const-string v2, "special_theme"
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 295
+    .line 296
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$DefaultHandler;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v2}, Lcom/android/settings/DisplaySettings;->access$000(Lcom/android/settings/DisplaySettings;)V
 
-    .line 296
+    .line 297
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 297
+    .line 298
     nop
 
-    .line 321
+    .line 322
     .end local v1    # "intent":Landroid/content/Intent;
     :goto_1
     return-void

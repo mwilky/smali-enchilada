@@ -1071,11 +1071,11 @@
 
     .line 247
     .local v9, "timeString":Ljava/lang/CharSequence;
-    const v11, 0x7f120dd4
+    const v11, 0x7f120dd8
 
     .line 248
     .local v11, "resId":I
-    const v12, 0x7f120de1
+    const v12, 0x7f120de5
 
     new-array v13, v6, [Ljava/lang/Object;
 
@@ -1134,7 +1134,7 @@
 
     .line 256
     :cond_1
-    const v11, 0x7f120dd3
+    const v11, 0x7f120dd7
 
     new-array v10, v10, [Ljava/lang/Object;
 
@@ -1366,7 +1366,7 @@
     if-eqz v7, :cond_1
 
     .line 129
-    const v7, 0x7f120eb6
+    const v7, 0x7f120eba
 
     new-array v8, v3, [Ljava/lang/Object;
 

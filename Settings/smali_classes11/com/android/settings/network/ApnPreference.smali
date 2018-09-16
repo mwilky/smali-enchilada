@@ -213,7 +213,7 @@
     .end local v1    # "rb":Landroid/widget/RadioButton;
     :cond_2
     :goto_0
-    const v1, 0x7f0a0540
+    const v1, 0x7f0a0542
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -332,7 +332,7 @@
     .line 129
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0a0540
+    const v0, 0x7f0a0542
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 

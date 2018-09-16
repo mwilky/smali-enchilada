@@ -45,7 +45,7 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 25
-    const v0, 0x7f0d01c7
+    const v0, 0x7f0d01c8
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/timer/timepower/TimepowerPreference;->setLayoutResource(I)V
 
@@ -60,7 +60,7 @@
     .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
     .line 37
-    const v0, 0x7f0a054b
+    const v0, 0x7f0a054d
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -73,7 +73,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
     .line 40
-    const v1, 0x7f0a054c
+    const v1, 0x7f0a054e
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

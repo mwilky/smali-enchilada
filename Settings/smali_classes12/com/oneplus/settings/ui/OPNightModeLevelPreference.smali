@@ -93,7 +93,7 @@
     .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
     .line 51
-    const v0, 0x7f0a048e
+    const v0, 0x7f0a0490
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

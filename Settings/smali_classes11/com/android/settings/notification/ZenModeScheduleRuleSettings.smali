@@ -97,7 +97,7 @@
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 217
-    const v1, 0x7f1215ac
+    const v1, 0x7f1215b0
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -221,7 +221,7 @@
     .line 163
     iget-object v8, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mContext:Landroid/content/Context;
 
-    const v9, 0x7f121152
+    const v9, 0x7f121156
 
     invoke-virtual {v8, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -290,7 +290,7 @@
     :cond_4
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mDays:Landroid/support/v7/preference/Preference;
 
-    const v2, 0x7f1215ae
+    const v2, 0x7f1215b2
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -355,7 +355,7 @@
     :goto_0
     if-eqz v3, :cond_1
 
-    const v2, 0x7f121574
+    const v2, 0x7f121578
 
     nop
 
@@ -501,7 +501,7 @@
     .line 97
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mStart:Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
-    const v3, 0x7f1215c3
+    const v3, 0x7f1215c7
 
     invoke-virtual {v2, v3}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;->setTitle(I)V
 
@@ -551,7 +551,7 @@
     .line 119
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mEnd:Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
-    const v3, 0x7f121573
+    const v3, 0x7f121577
 
     invoke-virtual {v2, v3}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;->setTitle(I)V
 

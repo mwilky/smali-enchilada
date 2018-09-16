@@ -53,7 +53,7 @@
     if-eqz v1, :cond_0
 
     .line 44
-    const v2, 0x7f0d0250
+    const v2, 0x7f0d0251
 
     invoke-virtual {p0, v2}, Lcom/android/settings/utils/ProfileSettingsPreferenceFragment;->setPinnedHeaderView(I)Landroid/view/View;
 

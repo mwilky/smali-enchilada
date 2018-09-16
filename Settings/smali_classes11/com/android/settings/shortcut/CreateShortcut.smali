@@ -242,7 +242,7 @@
 
     iget v2, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v3, 0x7f0d024a
+    const v3, 0x7f0d024b
 
     .line 95
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;
@@ -378,7 +378,7 @@
 
     iget v7, v1, Landroid/content/pm/ActivityInfo;->icon:I
 
-    const v8, 0x7f0d0249
+    const v8, 0x7f0d024a
 
     .line 116
     invoke-virtual {p0}, Lcom/android/settings/shortcut/CreateShortcut;->getResources()Landroid/content/res/Resources;

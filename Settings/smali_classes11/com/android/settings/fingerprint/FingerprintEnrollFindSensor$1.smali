@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
-    .line 82
+    .line 101
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 3
     .param p1, "v"    # Landroid/view/View;
 
-    .line 87
+    .line 105
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.oem.intent.action.OP_LEGAL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 88
+    .line 106
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "op_legal_notices_type"
 
@@ -55,18 +55,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 89
+    .line 107
     const-string v1, "key_from_settings"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 90
+    .line 108
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->startActivity(Landroid/content/Intent;)V
 
-    .line 91
+    .line 109
     return-void
 .end method

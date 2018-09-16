@@ -12,7 +12,7 @@
     invoke-direct {p0, p1}, Landroid/support/v14/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
 
     .line 31
-    const v0, 0x7f0d01d6
+    const v0, 0x7f0d01d7
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/AppSwitchPreference;->setLayoutResource(I)V
 
@@ -30,7 +30,7 @@
     invoke-super {p0, p1}, Landroid/support/v14/preference/SwitchPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 38
-    const v0, 0x7f0a04fb
+    const v0, 0x7f0a04fd
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

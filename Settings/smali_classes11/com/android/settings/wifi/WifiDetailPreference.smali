@@ -17,7 +17,7 @@
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 37
-    const v0, 0x7f0d0209
+    const v0, 0x7f0d020a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiDetailPreference;->setWidgetLayoutResource(I)V
 
@@ -35,7 +35,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/preference/Preference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 49
-    const v0, 0x7f0a05b4
+    const v0, 0x7f0a05b6
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

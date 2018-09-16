@@ -34,7 +34,7 @@
     invoke-direct {p0, p1}, Lcom/android/settingslib/TwoTargetPreference;-><init>(Landroid/content/Context;)V
 
     .line 58
-    const v0, 0x7f0d01fc
+    const v0, 0x7f0d01fd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenCustomRadioButtonPreference;->setLayoutResource(I)V
 
@@ -51,7 +51,7 @@
     invoke-direct {p0, p1, p2}, Lcom/android/settingslib/TwoTargetPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 53
-    const v0, 0x7f0d01fc
+    const v0, 0x7f0d01fd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenCustomRadioButtonPreference;->setLayoutResource(I)V
 
@@ -69,7 +69,7 @@
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settingslib/TwoTargetPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 48
-    const v0, 0x7f0d01fc
+    const v0, 0x7f0d01fd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenCustomRadioButtonPreference;->setLayoutResource(I)V
 
@@ -88,7 +88,7 @@
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/settingslib/TwoTargetPreference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     .line 43
-    const v0, 0x7f0d01fc
+    const v0, 0x7f0d01fd
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/ZenCustomRadioButtonPreference;->setLayoutResource(I)V
 
@@ -111,7 +111,7 @@
     .locals 1
 
     .line 63
-    const v0, 0x7f0d0200
+    const v0, 0x7f0d0201
 
     return v0
 .end method
@@ -194,7 +194,7 @@
 
     .line 89
     .local v1, "gear":Landroid/view/View;
-    const v2, 0x7f0a056f
+    const v2, 0x7f0a0571
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

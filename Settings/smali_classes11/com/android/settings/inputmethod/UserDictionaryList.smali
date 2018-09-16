@@ -422,7 +422,7 @@
     if-eqz v2, :cond_1
 
     .line 180
-    const v2, 0x7f1212ce
+    const v2, 0x7f1212d2
 
     invoke-virtual {p0, v2}, Lcom/android/settings/inputmethod/UserDictionaryList;->getString(I)Ljava/lang/String;
 
@@ -501,7 +501,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1212d5
+    const v1, 0x7f1212d9
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 

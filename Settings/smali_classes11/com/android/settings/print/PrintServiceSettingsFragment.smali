@@ -379,7 +379,7 @@
 
     .line 208
     .local v2, "iconView":Landroid/widget/ImageView;
-    const v4, 0x7f120e24
+    const v4, 0x7f120e28
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -523,7 +523,7 @@
 
     .line 235
     .restart local v2    # "iconView":Landroid/widget/ImageView;
-    const v4, 0x7f120e1b
+    const v4, 0x7f120e1f
 
     invoke-virtual {p0, v4}, Lcom/android/settings/print/PrintServiceSettingsFragment;->getString(I)Ljava/lang/String;
 
@@ -780,7 +780,7 @@
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
     .line 397
-    const v0, 0x7f0a0403
+    const v0, 0x7f0a0405
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -809,7 +809,7 @@
 
     .line 404
     :goto_0
-    const v0, 0x7f0a0405
+    const v0, 0x7f0a0407
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -838,7 +838,7 @@
 
     .line 411
     :goto_1
-    const v0, 0x7f0a0404
+    const v0, 0x7f0a0406
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

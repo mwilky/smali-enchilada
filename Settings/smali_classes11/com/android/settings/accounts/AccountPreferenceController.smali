@@ -1084,7 +1084,7 @@
 
     .line 394
     .local v0, "preference":Lcom/android/settingslib/RestrictedPreference;
-    const v1, 0x7f120ebb
+    const v1, 0x7f120ebf
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedPreference;->setTitle(I)V
 
@@ -2590,7 +2590,7 @@
 
     .line 195
     .restart local v6    # "data":Lcom/android/settings/search/SearchIndexableRaw;
-    const v7, 0x7f120ebb
+    const v7, 0x7f120ebf
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

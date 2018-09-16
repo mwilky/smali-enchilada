@@ -68,7 +68,7 @@
     iput-object v0, p0, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->mAppIcon:Landroid/widget/ImageView;
 
     .line 60
-    const v0, 0x7f0a04fb
+    const v0, 0x7f0a04fd
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
     iput-boolean p2, p0, Lcom/android/settings/applications/manageapplications/ApplicationViewHolder;->mKeepStableHeight:Z
 
     .line 64
-    const v0, 0x7f0a051e
+    const v0, 0x7f0a0520
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -158,7 +158,7 @@
     .line 74
     const/4 v1, 0x0
 
-    const v2, 0x7f0d01d6
+    const v2, 0x7f0d01d7
 
     invoke-virtual {v0, v2, p0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -192,7 +192,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d0204
+    const v4, 0x7f0d0205
 
     .line 79
     const/4 v5, 0x1
@@ -208,7 +208,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d01fb
+    const v4, 0x7f0d01fc
 
     invoke-virtual {v3, v4, v0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

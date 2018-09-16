@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">కాపీ చేసే సామర్థ్యాన్ని పెంచుతుంది మరియు తరువాత కాపీకి అనుగుణంగా తరువాత చర్యను సిఫారసు చేస్తుంది</string>
     <string name="oneplus_quick_gestures">సంజ్ఞలు</string>
     <string name="oneplus_quick_gestures_title">త్వరిత సంజ్ఞలు</string>
+    <string name="oneplus_quick_turn_on_assistant_app">అసిస్టెంట్ అప్లికేషన్‌లను వేగంగా సక్రియం చేయండి</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">అసిస్టెంట్ అప్లికేషన్ యాక్టివేట్ చేయడానికి 0.5సెక్లనపాటు పవర్ బటన్ నొక్కి ఉంచండి మరియు పవర్ ఆఫ్ చేయడానికి 3సెకన్లపాటు నొక్కి ఉంచండి</string>
     <string name="oneplus_quick_turn_on_camera">వేగంగా కెమెరాను తెరవండి</string>
     <string name="oneplus_quickpay">క్విక్ ప్లే</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">‘‘క్విక్ ప్లే’’ కొరకు \"%1$s\" నుంచి హోమ్ బటన్ యొక్క లాంగ్ ప్రెస్ యాక్షన్‌ని మీరు ఖచ్చితంగా మార్చాలని అనుకుంటున్నారా?</string>

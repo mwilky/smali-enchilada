@@ -121,7 +121,7 @@
     .locals 1
 
     .line 56
-    const v0, 0x7f0d0204
+    const v0, 0x7f0d0205
 
     return v0
 .end method
@@ -185,7 +185,7 @@
 
     .line 81
     :cond_0
-    const v1, 0x7f0a051e
+    const v1, 0x7f0a0520
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

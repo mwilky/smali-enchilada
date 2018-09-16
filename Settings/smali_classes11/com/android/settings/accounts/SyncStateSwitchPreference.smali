@@ -155,7 +155,7 @@
     invoke-super {p0, p1}, Landroid/support/v14/preference/SwitchPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 75
-    const v0, 0x7f0a0525
+    const v0, 0x7f0a0527
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +165,7 @@
 
     .line 77
     .local v0, "syncActiveView":Lcom/android/settingslib/widget/AnimatedImageView;
-    const v1, 0x7f0a0526
+    const v1, 0x7f0a0528
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f121174
+    const v9, 0x7f121178
 
     new-array v3, v3, [Ljava/lang/Object;
 

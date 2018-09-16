@@ -526,6 +526,8 @@
     <string name="oneplus_quick_clipboard_summary">কপি করার ক্ষমতা উন্নত করুন এবং তারপর কপি অনুসারে পরবর্তী পদক্ষেপ সুপারিশ করুন</string>
     <string name="oneplus_quick_gestures">অঙ্গভঙ্গি</string>
     <string name="oneplus_quick_gestures_title">দ্রুত অঙ্গভঙ্গি</string>
+    <string name="oneplus_quick_turn_on_assistant_app">সহায়ক অ্যাপ দ্রুত সক্রিয় করুন</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">সহায়ক অ্যাপটিকে সক্রিয় করতে 0.5 সেকেন্ডের জন্য এবং পাওয়ার বন্ধ করতে 3 সেকেন্ডের জন্য পাওয়ার বোতামটি টিপে ধরুন</string>
     <string name="oneplus_quick_turn_on_camera">ক্যামেরা তাড়াতাড়ি চালু করুন</string>
     <string name="oneplus_quickpay">ক্যুইক পে</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">আপনি কি হোম বোতামের দীর্ঘক্ষণ ধরে রাখার কার্যটি \"%1$s\" থেকে \"ক্যুইক পে\" তে সরানোর বিষয়ে নিশ্চিত?</string>

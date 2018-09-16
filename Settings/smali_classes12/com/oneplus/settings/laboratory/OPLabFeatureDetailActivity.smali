@@ -250,7 +250,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     .line 72
-    const v0, 0x7f0a0398
+    const v0, 0x7f0a039a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -261,7 +261,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mDescriptionTitle:Landroid/widget/TextView;
 
     .line 73
-    const v0, 0x7f0a0397
+    const v0, 0x7f0a0399
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -272,7 +272,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mDescriptionSummary:Landroid/widget/TextView;
 
     .line 74
-    const v0, 0x7f0a0396
+    const v0, 0x7f0a0398
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -283,7 +283,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mCommuniryTitle:Landroid/widget/TextView;
 
     .line 75
-    const v0, 0x7f0a0395
+    const v0, 0x7f0a0397
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -294,7 +294,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mCommunirySummary:Landroid/widget/TextView;
 
     .line 76
-    const v0, 0x7f0a039e
+    const v0, 0x7f0a03a0
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -303,7 +303,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mActiviteFeatureToggle:Landroid/view/View;
 
     .line 77
-    const v0, 0x7f0a039d
+    const v0, 0x7f0a039f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
 
     .line 83
     :goto_2
-    const v0, 0x7f0a0399
+    const v0, 0x7f0a039b
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -442,7 +442,7 @@
 
     .line 92
     :goto_3
-    const v0, 0x7f0a0394
+    const v0, 0x7f0a0396
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -453,7 +453,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->mLikeImageButton:Landroid/widget/ImageButton;
 
     .line 93
-    const v0, 0x7f0a0393
+    const v0, 0x7f0a0395
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureDetailActivity;->findViewById(I)Landroid/view/View;
 
@@ -678,7 +678,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a039e
+    const v1, 0x7f0a03a0
 
     const/4 v2, 0x1
 
@@ -794,7 +794,7 @@
     return-void
 
     :pswitch_data_0
-    .packed-switch 0x7f0a0393
+    .packed-switch 0x7f0a0395
         :pswitch_1
         :pswitch_0
     .end packed-switch

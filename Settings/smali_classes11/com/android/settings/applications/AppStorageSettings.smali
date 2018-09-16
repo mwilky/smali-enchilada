@@ -865,7 +865,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/settings/applications/AppStorageSettings;->mButtonsPref:Lcom/android/settings/widget/ActionButtonPreference;
 
-    const v4, 0x7f120eb3
+    const v4, 0x7f120eb7
 
     invoke-virtual {v2, v4}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

@@ -1227,7 +1227,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f1211c0
+    const v6, 0x7f1211c4
 
     .line 523
     invoke-virtual {p0, v6}, Lcom/oneplus/settings/timer/timepower/TimepowerSettingsFragment;->getString(I)Ljava/lang/String;
@@ -1590,7 +1590,7 @@
     iput-object v0, v7, Lcom/oneplus/settings/timer/timepower/TimepowerSettingsFragment;->mTimePicker:Lcom/oneplus/lib/widget/TimePicker;
 
     .line 613
-    const v0, 0x7f1211ba
+    const v0, 0x7f1211be
 
     .line 614
     .local v0, "resId":I
@@ -1646,7 +1646,7 @@
     if-nez v13, :cond_2
 
     .line 623
-    const v0, 0x7f1211be
+    const v0, 0x7f1211c2
 
     .line 627
     .end local v0    # "resId":I
@@ -1664,7 +1664,7 @@
     if-ne v13, v14, :cond_1
 
     .line 625
-    const v0, 0x7f1211bc
+    const v0, 0x7f1211c0
 
     goto :goto_0
 

@@ -2907,6 +2907,8 @@ Pozostało prób:%d."</string>
     <string name="oneplus_quick_clipboard_summary">Poprawia możliwości kopiowania i poleca następne działanie z uwagi na kopię</string>
     <string name="oneplus_quick_gestures">Gesty</string>
     <string name="oneplus_quick_gestures_title">Szybkie gesty</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Szybko aktywuj aplikację asystującą</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Przytrzymaj przycisk zasilania przez 0,5 s, żeby włączyć aplikację asystującą, oraz 3 s, aby wyłączyć urządzenie</string>
     <string name="oneplus_quick_turn_on_camera">Szybkie włączanie aparatu</string>
     <string name="oneplus_quickpay">Szybka płatność</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Czy na pewno chcesz zmienić akcję po długim naciśnięciu przycisku Home z \"%1$s\" na \"Szybką płatność\"?</string>

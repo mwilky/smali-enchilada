@@ -112,7 +112,7 @@
     iput-object v0, p0, Lcom/android/settings/SetFullBackupPassword;->mBackupManager:Landroid/app/backup/IBackupManager;
 
     .line 88
-    const v0, 0x7f0d023d
+    const v0, 0x7f0d023e
 
     invoke-virtual {p0, v0}, Lcom/android/settings/SetFullBackupPassword;->setContentView(I)V
 

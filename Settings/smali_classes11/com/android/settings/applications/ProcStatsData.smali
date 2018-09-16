@@ -168,7 +168,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e3a
+    const v7, 0x7f120e3e
 
     .line 236
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -252,7 +252,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e38
+    const v7, 0x7f120e3c
 
     .line 243
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -322,7 +322,7 @@
 
     iget-object v4, v0, Lcom/android/settings/applications/ProcStatsData;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f120e37
+    const v7, 0x7f120e3b
 
     .line 259
     invoke-virtual {v4, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -693,7 +693,7 @@
 
     move-wide/from16 v27, v1
 
-    const v1, 0x7f120e3b
+    const v1, 0x7f120e3f
 
     .line 221
     .end local v1    # "zramMem":J

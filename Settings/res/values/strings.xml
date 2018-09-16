@@ -2881,6 +2881,7 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_disable_aosp_face_lock_message">Enabling OnePlus Face Unlock will disable trusted face of Smart Lock. Do you want to continue?</string>
     <string name="oneplus_disconnected">Disconnect</string>
     <string name="oneplus_display_dashboard_summary">Status bar, ambient display, wallpapers, theme</string>
+    <string name="oneplus_display_dashboard_summary_801">Status bar, ambient display, wallpapers, theme</string>
     <string name="oneplus_display_size_adaption">Fullscreen apps</string>
     <string name="oneplus_display_size_adaption_full_screen">Fullscreen mode</string>
     <string name="oneplus_display_size_adaption_original_size">Compatibility mode (16:9)</string>
@@ -2911,6 +2912,8 @@ Battery saver turns off automatically when your device is charging."</string>
     <string name="oneplus_earphone_mode">Earphone mode</string>
     <string name="oneplus_emergency_rescue_settings">Emergency rescue</string>
     <string name="oneplus_emergency_rescue_settings_summary">Automatically call for help by quickly pressing the power button</string>
+    <string name="oneplus_enroll_fingerprint_tips_summary" />
+    <string name="oneplus_enroll_fingerprint_tips_title">Fingerprint setup prompt</string>
     <string name="oneplus_enter_your_fingerprint">· Enroll your fingerprint</string>
     <string name="oneplus_experience_improvement_programs">Experience improvement programs</string>
     <string name="oneplus_face_auto_unlock_while_screen_on_sumary">Unlock your phone with your face as soon as the screen turns on without swiping first.</string>
@@ -3027,6 +3030,7 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_hide_navkeys_summary">Add a button to hide or show the navigation bar</string>
     <string name="oneplus_hide_notch_display_summary">All apps cannot use the notch area</string>
     <string name="oneplus_hide_notch_display_title">Hide the notch area</string>
+    <string name="oneplus_how_to_use_fingerprint_summary" />
     <string name="oneplus_hydrogen_version">H2OS version</string>
     <string name="oneplus_incoming_call_vibrate_intensity">Incoming call</string>
     <string name="oneplus_incoming_call_vibrate_mode">Incoming call vibration pattern</string>
@@ -3206,9 +3210,9 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_quick_gestures">Gestures</string>
     <string name="oneplus_quick_gestures_title">Quick gestures</string>
     <string name="oneplus_quick_startup">Quick startup</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Quick activate the assistant app</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Hold the power button for 0.5s to activate the assistant app, and 3s for power off</string>
     <string name="oneplus_quick_turn_on_camera">Quick turn on camera</string>
-    <string name="oneplus_quick_turn_on_voice_assistant">Quick turn on voice assistant</string>
-    <string name="oneplus_quick_turn_on_voice_assistant_summary">Press power button for 2 sec to open voice assistant</string>
     <string name="oneplus_quickpay">Quick pay</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Are you sure you want to change the long press action of the Home button from \"%1$s\" to \"Quick Pay\"?</string>
     <string name="oneplus_quickpay_entry_summary">Long press Home button to launch quick pay</string>
@@ -3297,7 +3301,6 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_search_keyword_gesture_to_answer_call">answer</string>
     <string name="oneplus_search_keyword_hide_navkeys">hide the navigation bar</string>
     <string name="oneplus_search_keyword_home_key">home</string>
-    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
     <string name="oneplus_search_keyword_icon_manager">icon manager</string>
     <string name="oneplus_search_keyword_incoming_call_vibrate_mode">vibration</string>
     <string name="oneplus_search_keyword_input_keyboard">input,keyboard</string>
@@ -3336,6 +3339,8 @@ The Speak Caller ID service uses Baidu’s text-to-speech technology. By using t
     <string name="oneplus_security_settings_fingerprint_toggle_category_title" />
     <string name="oneplus_security_settings_fingerprint_toggle_one_title" />
     <string name="oneplus_security_settings_fingerprint_toggle_two_title" />
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">\" Double tap to wake \" is enabled,\" Tap to show when screen is off \" will be disabled</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">\" Tap to show when screen is off \" is enabled,\" Double tap to wake \" will be disabled</string>
     <string name="oneplus_security_settings_summary_other">%1$s, %2$s, %3$s</string>
     <string name="oneplus_security_settings_summary_zh">%1$s、%2$s、%3$s</string>
     <string name="oneplus_set_none_password">Password Clearing, please wait...</string>
@@ -5899,22 +5904,14 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_a61">false</item>
     <item type="string" name="APKTOOL_DUMMY_a62">false</item>
     <item type="string" name="APKTOOL_DUMMY_ac0">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b79">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b7a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b7b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b99">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b9a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bdb">false</item>
-    <item type="string" name="APKTOOL_DUMMY_bdc">false</item>
-    <item type="string" name="APKTOOL_DUMMY_c11">false</item>
-    <item type="string" name="APKTOOL_DUMMY_c12">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cc9">false</item>
-    <item type="string" name="APKTOOL_DUMMY_cca">false</item>
-    <item type="string" name="APKTOOL_DUMMY_1215">false</item>
-    <string name="hardware_keys_action_kill">Kill foreground app</string>
-    <string name="hardware_keys_action_screenshot">Full screenshot</string>
-    <string name="hardware_keys_action_screenshot2">Croppable screenshot</string>
-    <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
-    <string name="hardware_keys_action_previous_app">Switch to previous app</string>
-    <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
+    <item type="string" name="APKTOOL_DUMMY_b7d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b7e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b7f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b9d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_b9e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_bdf">false</item>
+    <item type="string" name="APKTOOL_DUMMY_be0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_ccd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_cce">false</item>
+    <item type="string" name="APKTOOL_DUMMY_1219">false</item>
 </resources>

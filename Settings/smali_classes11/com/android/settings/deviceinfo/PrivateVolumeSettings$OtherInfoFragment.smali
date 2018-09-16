@@ -152,7 +152,7 @@
     nop
 
     .line 799
-    const v4, 0x7f1210ba
+    const v4, 0x7f1210be
 
     invoke-virtual {p0, v4}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;->getText(I)Ljava/lang/CharSequence;
 
@@ -178,7 +178,7 @@
 
     invoke-direct {v4, p0, v2}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment$1;-><init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;Landroid/content/Intent;)V
 
-    const v5, 0x7f1210d6
+    const v5, 0x7f1210da
 
     invoke-virtual {v3, v5, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

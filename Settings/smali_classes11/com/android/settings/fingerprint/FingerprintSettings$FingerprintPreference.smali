@@ -36,13 +36,13 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "onDeleteClickListener"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;
 
-    .line 1022
+    .line 1056
     invoke-direct {p0, p1}, Lcom/android/settingslib/TwoTargetPreference;-><init>(Landroid/content/Context;)V
 
-    .line 1023
+    .line 1057
     iput-object p2, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mOnDeleteClickListener:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;
 
-    .line 1024
+    .line 1058
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 1
     .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;
 
-    .line 1009
+    .line 1043
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mOnDeleteClickListener:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$OnDeleteClickListener;
 
     return-object v0
@@ -61,7 +61,7 @@
 .method public getFingerprint()Landroid/hardware/fingerprint/Fingerprint;
     .locals 1
 
-    .line 1035
+    .line 1069
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mFingerprint:Landroid/hardware/fingerprint/Fingerprint;
 
     return-object v0
@@ -70,8 +70,8 @@
 .method protected getSecondTargetResId()I
     .locals 1
 
-    .line 1040
-    const v0, 0x7f0d01ff
+    .line 1074
+    const v0, 0x7f0d0200
 
     return v0
 .end method
@@ -79,7 +79,7 @@
 .method public getView()Landroid/view/View;
     .locals 1
 
-    .line 1027
+    .line 1061
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mView:Landroid/view/View;
 
     return-object v0
@@ -89,15 +89,15 @@
     .locals 2
     .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
-    .line 1045
+    .line 1079
     invoke-super {p0, p1}, Lcom/android/settingslib/TwoTargetPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    .line 1046
+    .line 1080
     iget-object v0, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mView:Landroid/view/View;
 
-    .line 1047
+    .line 1081
     iget-object v0, p1, Landroid/support/v7/preference/PreferenceViewHolder;->itemView:Landroid/view/View;
 
     const v1, 0x7f0a0167
@@ -108,7 +108,7 @@
 
     iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mDeleteView:Landroid/view/View;
 
-    .line 1048
+    .line 1082
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mDeleteView:Landroid/view/View;
 
     new-instance v1, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference$1;
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1056
+    .line 1090
     return-void
 .end method
 
@@ -125,9 +125,9 @@
     .locals 0
     .param p1, "item"    # Landroid/hardware/fingerprint/Fingerprint;
 
-    .line 1031
+    .line 1065
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintPreference;->mFingerprint:Landroid/hardware/fingerprint/Fingerprint;
 
-    .line 1032
+    .line 1066
     return-void
 .end method

@@ -58,7 +58,7 @@
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPRadioButtonPreferenceV7;->setLayoutResource(I)V
 
     .line 34
-    const v0, 0x7f0d0205
+    const v0, 0x7f0d0206
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/ui/OPRadioButtonPreferenceV7;->setWidgetLayoutResource(I)V
 

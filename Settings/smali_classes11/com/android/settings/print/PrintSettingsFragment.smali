@@ -205,7 +205,7 @@
 
     .line 242
     .local v1, "preference":Landroid/support/v7/preference/Preference;
-    const v2, 0x7f120e18
+    const v2, 0x7f120e1c
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
@@ -520,7 +520,7 @@
 
     .line 140
     .local v3, "textView":Landroid/widget/TextView;
-    const v4, 0x7f120e1c
+    const v4, 0x7f120e20
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 

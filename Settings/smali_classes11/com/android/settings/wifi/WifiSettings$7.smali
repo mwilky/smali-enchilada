@@ -69,7 +69,7 @@
 
     .line 1184
     .local v2, "data":Lcom/android/settings/search/SearchIndexableRaw;
-    const v3, 0x7f121492
+    const v3, 0x7f121496
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

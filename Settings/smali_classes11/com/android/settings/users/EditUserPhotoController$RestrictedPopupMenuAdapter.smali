@@ -38,9 +38,9 @@
 
     .line 472
     .local p2, "items":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/users/EditUserPhotoController$RestrictedMenuItem;>;"
-    const v0, 0x7f0d0223
+    const v0, 0x7f0d0224
 
-    const v1, 0x7f0a053a
+    const v1, 0x7f0a053c
 
     invoke-direct {p0, p1, v0, v1, p2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;IILjava/util/List;)V
 
@@ -71,7 +71,7 @@
 
     .line 479
     .local v1, "item":Lcom/android/settings/users/EditUserPhotoController$RestrictedMenuItem;
-    const v2, 0x7f0a053a
+    const v2, 0x7f0a053c
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     .line 480
     .local v2, "text":Landroid/widget/TextView;
-    const v3, 0x7f0a0449
+    const v3, 0x7f0a044b
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

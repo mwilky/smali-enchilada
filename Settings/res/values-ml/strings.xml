@@ -2907,6 +2907,8 @@ Selection ട്രിഗ്ഗര്‍ ചെയ്യുക"</string>
     <string name="oneplus_quick_clipboard_summary">കോപ്പി ചെയ്യാനുള്ള കഴിവ് വിപുലീകരിക്കുകയും തുടര്‍ന്ന് കോപ്പി പ്രകാരം അടുത്ത പ്രവര്‍ത്തനം നിര്‍ദ്ദേശിക്കുകയും ചെയ്യുക</string>
     <string name="oneplus_quick_gestures">ആംഗ്യങ്ങള്‍</string>
     <string name="oneplus_quick_gestures_title">ക്വിക്ക് ക്യാപ്ചര്‍</string>
+    <string name="oneplus_quick_turn_on_assistant_app">അസിസ്റ്റൻ്റ് ആപ്പ് വേഗത്തിൽ സജീവമാക്കുക</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">അസിസ്റ്റൻ്റ് ആപ്പ് സജീവമാക്കാൻ പവർ ബട്ടൺ 0.5 സെക്കൻഡ് അമർത്തുക, ഓഫാക്കാൻ 3 സെക്കൻഡും</string>
     <string name="oneplus_quick_turn_on_camera">ക്യാമറ വേഗത്തിൽ ഓണാക്കുക</string>
     <string name="oneplus_quickpay">ക്വിക് പേ</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">%1$s ല്‍ നിന്ന് \"ക്വിക് പേ\" ക്ക് വേണ്ടി ഹോം ബട്ടണ്‍ ദീര്‍ഘസമയം അമര്‍ത്തിപ്പിടിക്കുന്ന നടപടി മാറ്റണമെന്ന് നിങ്ങള്‍ക്ക് തീര്‍ച്ചയാണോ?</string>

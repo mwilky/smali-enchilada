@@ -211,7 +211,7 @@
 
     .line 54
     .local v1, "pref":Lcom/android/settingslib/widget/FooterPreference;
-    const v2, 0x7f12127a
+    const v2, 0x7f12127e
 
     invoke-virtual {v1, v2}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

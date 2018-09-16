@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 234
+    .line 239
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .param p1, "activity"    # Landroid/app/Activity;
     .param p2, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 238
+    .line 243
     new-instance v0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;
 
     const/4 v1, 0x0

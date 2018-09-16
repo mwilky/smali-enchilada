@@ -40,7 +40,7 @@
     iput-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->mWifiManager:Landroid/net/wifi/WifiManager;
 
     .line 43
-    const v0, 0x7f0d02d0
+    const v0, 0x7f0d02d1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/WifiConfigInfo;->setContentView(I)V
 
@@ -127,7 +127,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/settings/wifi/WifiConfigInfo;->mConfigList:Landroid/widget/TextView;
 
-    const v1, 0x7f1214c5
+    const v1, 0x7f1214c9
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 

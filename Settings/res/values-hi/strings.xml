@@ -2907,6 +2907,8 @@
     <string name="oneplus_quick_clipboard_summary">कॉपी करने की क्षमता बढ़ाएँ और फिर कॉपी के अनुसार अगली कार्रवाई संस्तुत करें</string>
     <string name="oneplus_quick_gestures">इशारे</string>
     <string name="oneplus_quick_gestures_title">त्वरित जेस्चर</string>
+    <string name="oneplus_quick_turn_on_assistant_app">सहायक एप्लिकेशन को त्वरित रूप से सक्रिय करें</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">सहायक ऐप को सक्रिय करने के लिए पॉवर बटन को 0.5 सेकंड तक दबाकर रखें और पॉवर बंद करने के लिए 3 सेकंड तक दबाकर रखें</string>
     <string name="oneplus_quick_turn_on_camera">कैमरा जल्द ऑन करें</string>
     <string name="oneplus_quickpay">त्वरित भुगतान</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">क्या आप होम बटन के देर तक दबाए रखने को \"%1$s\" से \"Quick Pay\" में बदलने के लिए वाकई इच्छुक हैं?</string>

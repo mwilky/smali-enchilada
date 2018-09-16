@@ -158,7 +158,7 @@
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/VideoPreference;->setVisible(Z)V
 
     .line 79
-    const v4, 0x7f0d02c7
+    const v4, 0x7f0d02c8
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/VideoPreference;->setLayoutResource(I)V
 
@@ -381,7 +381,7 @@
 
     .line 107
     :cond_0
-    const v0, 0x7f0a059f
+    const v0, 0x7f0a05a1
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -391,7 +391,7 @@
 
     .line 108
     .local v0, "video":Landroid/view/TextureView;
-    const v1, 0x7f0a059c
+    const v1, 0x7f0a059e
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -401,7 +401,7 @@
 
     .line 109
     .local v1, "imageView":Landroid/widget/ImageView;
-    const v2, 0x7f0a059b
+    const v2, 0x7f0a059d
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -411,7 +411,7 @@
 
     .line 110
     .local v2, "playButton":Landroid/widget/ImageView;
-    const v3, 0x7f0a059a
+    const v3, 0x7f0a059c
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

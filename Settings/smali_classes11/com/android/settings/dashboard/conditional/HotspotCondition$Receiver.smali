@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 135
+    .line 142
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 138
+    .line 145
     const-string v0, "android.net.wifi.WIFI_AP_STATE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 146
     invoke-static {p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->get(Landroid/content/Context;)Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     move-result-object v0
@@ -57,10 +57,10 @@
 
     check-cast v0, Lcom/android/settings/dashboard/conditional/HotspotCondition;
 
-    .line 140
+    .line 147
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/HotspotCondition;->refreshState()V
 
-    .line 142
+    .line 149
     :cond_0
     return-void
 .end method

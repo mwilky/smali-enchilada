@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.180907172248.22ef84e">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:androidprv="http://schemas.android.com/apk/prv/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.system" coreApp="true" package="com.android.settings" platformBuildVersionCode="28" platformBuildVersionName="0.0.1.180913204545.71f7da6">
     <original-package android:name="com.android.settings"/>
     <protected-broadcast android:name="com.android.settings.POWER_OP_ON"/>
     <protected-broadcast android:name="com.android.settings.action.REQUEST_POWER_OFF"/>
@@ -1038,6 +1038,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:exported="true" android:name="com.android.settings.fingerprint.OPFingerprintEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/OnePlusPasswordTheme"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollFindSensor" android:screenOrientation="portrait"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollEnrolling" android:screenOrientation="portrait"/>
         <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFingerprintEnrollFinish" android:screenOrientation="portrait"/>
@@ -1047,7 +1048,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFaceUnlockEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light"/>
+        <activity android:exported="false" android:name="com.android.settings.fingerprint.SetupFaceUnlockEnrollIntroduction" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light">
+            <intent-filter>
+                <action android:name="com.oneplus.settings.FACEUNLOCK_SETUP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:exported="true" android:icon="@drawable/ic_suggestion_fingerprint" android:name="com.android.settings.fingerprint.FingerprintSuggestionActivity" android:permission="android.permission.MANAGE_FINGERPRINT" android:screenOrientation="portrait" android:theme="@style/GlifTheme.Light">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2197,6 +2203,18 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.oneplus.settings.better.OPGamingMode"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
+        </activity>
+        <activity android:label="@string/default_assist_title" android:name="com.android.settings.Settings$DefaultAssistPickerActivity" android:screenOrientation="portrait" android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="com.oneplus.intent.DefaultAssistPicker"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.android.settings.applications.assist.DefaultAssistPicker"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED" android:value="true"/>
         </activity>
         <activity android:label="@string/oneplus_multi_app" android:name="com.oneplus.settings.multiapp.OPMultiAppListSettings" android:screenOrientation="portrait" android:theme="@style/Oneplus.BaseActivity.Theme">

@@ -54,7 +54,7 @@
 
     .line 59
     .local v0, "pref":Lcom/android/settings/applications/LayoutPreference;
-    const v1, 0x7f0a051f
+    const v1, 0x7f0a0521
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
     .line 62
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    const v2, 0x7f1215ca
+    const v2, 0x7f1215ce
 
     invoke-virtual {v1, v2, v2}, Lcom/android/settings/widget/SwitchBar;->setSwitchBarText(II)V
 

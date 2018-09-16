@@ -122,7 +122,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a03f6
+    const v2, 0x7f0a03f8
 
     invoke-virtual {p1, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
@@ -411,7 +411,7 @@
     .line 177
     const/4 v0, 0x0
 
-    const v1, 0x7f0a03f6
+    const v1, 0x7f0a03f8
 
     if-nez p2, :cond_0
 
@@ -666,7 +666,7 @@
     :cond_0
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0a03f6
+    const v2, 0x7f0a03f8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 

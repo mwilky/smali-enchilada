@@ -140,7 +140,7 @@
     .locals 1
 
     .line 57
-    const v0, 0x7f0d02b3
+    const v0, 0x7f0d02b4
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/ActionButtonPreference;->setLayoutResource(I)V
 

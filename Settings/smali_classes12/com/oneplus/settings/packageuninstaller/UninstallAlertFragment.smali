@@ -193,7 +193,7 @@
     if-nez v7, :cond_0
 
     .line 54
-    const v7, 0x7f121205
+    const v7, 0x7f121209
 
     new-array v8, v6, [Ljava/lang/Object;
 
@@ -259,7 +259,7 @@
     if-eqz v5, :cond_2
 
     .line 65
-    const v5, 0x7f121218
+    const v5, 0x7f12121c
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertFragment;->getString(I)Ljava/lang/String;
 
@@ -271,7 +271,7 @@
 
     .line 67
     :cond_2
-    const v5, 0x7f121219
+    const v5, 0x7f12121d
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertFragment;->getString(I)Ljava/lang/String;
 
@@ -294,7 +294,7 @@
     if-nez v8, :cond_4
 
     .line 71
-    const v5, 0x7f121209
+    const v5, 0x7f12120d
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertFragment;->getString(I)Ljava/lang/String;
 
@@ -331,7 +331,7 @@
 
     .line 74
     .local v8, "userInfo":Landroid/content/pm/UserInfo;
-    const v9, 0x7f12120a
+    const v9, 0x7f12120e
 
     new-array v6, v6, [Ljava/lang/Object;
 
@@ -353,7 +353,7 @@
 
     .line 77
     :cond_5
-    const v5, 0x7f121208
+    const v5, 0x7f12120c
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAlertFragment;->getString(I)Ljava/lang/String;
 

@@ -262,7 +262,7 @@
 
     const/4 v3, -0x4
 
-    const v5, 0x7f121211
+    const v5, 0x7f121215
 
     if-eq v2, v3, :cond_b
 
@@ -308,7 +308,7 @@
 
     .line 145
     :cond_5
-    const v2, 0x7f12120f
+    const v2, 0x7f121213
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -488,7 +488,7 @@
     invoke-interface {v4, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
     .line 178
-    const v1, 0x7f121213
+    const v1, 0x7f121217
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -541,7 +541,7 @@
     invoke-interface {v7, v4}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
     .line 184
-    const v7, 0x7f121214
+    const v7, 0x7f121218
 
     .line 185
     invoke-virtual {p0, v7}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
@@ -712,7 +712,7 @@
     if-nez v7, :cond_f
 
     .line 219
-    const v1, 0x7f12120c
+    const v1, 0x7f121210
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -771,7 +771,7 @@
     if-eqz v1, :cond_11
 
     .line 226
-    const v1, 0x7f121206
+    const v1, 0x7f12120a
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -781,7 +781,7 @@
 
     .line 227
     :cond_11
-    const v1, 0x7f12120d
+    const v1, 0x7f121211
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -969,12 +969,12 @@
     :goto_1
     if-eqz v0, :cond_3
 
-    const v2, 0x7f12121a
+    const v2, 0x7f12121e
 
     goto :goto_2
 
     :cond_3
-    const v2, 0x7f12120b
+    const v2, 0x7f12120f
 
     :goto_2
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setTitle(I)V

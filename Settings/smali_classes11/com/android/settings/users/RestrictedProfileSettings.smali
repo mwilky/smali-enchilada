@@ -111,7 +111,7 @@
     .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .line 61
-    const v0, 0x7f0d02c4
+    const v0, 0x7f0d02c5
 
     invoke-virtual {p0, v0}, Lcom/android/settings/users/RestrictedProfileSettings;->setPinnedHeaderView(I)Landroid/view/View;
 
@@ -279,7 +279,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f120e46
+    const v5, 0x7f120e4a
 
     iget-object v7, p0, Lcom/android/settings/users/RestrictedProfileSettings;->mUser:Landroid/os/UserHandle;
 

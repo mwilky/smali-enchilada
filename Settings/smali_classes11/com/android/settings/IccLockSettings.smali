@@ -230,7 +230,7 @@
     .line 520
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f121526
+    const v1, 0x7f12152a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -274,7 +274,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f120dc8
+    const v1, 0x7f120dcc
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -329,7 +329,7 @@
     if-eqz v1, :cond_0
 
     .line 157
-    const v1, 0x7f12102f
+    const v1, 0x7f121033
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -339,7 +339,7 @@
 
     .line 158
     :cond_0
-    const v1, 0x7f12102e
+    const v1, 0x7f121032
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -423,7 +423,7 @@
 
     iget-object v3, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v4, 0x7f121040
+    const v4, 0x7f121044
 
     .line 484
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -448,7 +448,7 @@
 
     iget-object v3, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v4, 0x7f12103f
+    const v4, 0x7f121043
 
     .line 487
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -514,7 +514,7 @@
 
     iget-object v1, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f121011
+    const v2, 0x7f121015
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -642,7 +642,7 @@
     .local v0, "message":Ljava/lang/String;
     iget v1, p0, Lcom/android/settings/IccLockSettings;->mDialogState:I
 
-    const v2, 0x7f121010
+    const v2, 0x7f121014
 
     packed-switch v1, :pswitch_data_0
 
@@ -652,7 +652,7 @@
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f121046
+    const v3, 0x7f12104a
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -675,7 +675,7 @@
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f121029
+    const v3, 0x7f12102d
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -699,7 +699,7 @@
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f12102b
+    const v3, 0x7f12102f
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -723,7 +723,7 @@
     :pswitch_3
     iget-object v1, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v2, 0x7f12102c
+    const v2, 0x7f121030
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -739,7 +739,7 @@
     .line 379
     iget-object v2, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f121019
+    const v3, 0x7f12101d
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -751,7 +751,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f121012
+    const v3, 0x7f121016
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1280,7 +1280,7 @@
 
     .line 220
     .local v7, "view":Landroid/view/View;
-    const v9, 0x7f0a03f9
+    const v9, 0x7f0a03fb
 
     invoke-virtual {v7, v9}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1405,7 +1405,7 @@
 
     aput-object v6, v4, v16
 
-    const v6, 0x7f121018
+    const v6, 0x7f12101c
 
     invoke-virtual {v8, v6, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1595,7 +1595,7 @@
     .line 412
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v1, 0x7f121003
+    const v1, 0x7f121007
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1636,7 +1636,7 @@
     .line 435
     iget-object v0, p0, Lcom/android/settings/IccLockSettings;->mRes:Landroid/content/res/Resources;
 
-    const v3, 0x7f121042
+    const v3, 0x7f121046
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

@@ -323,7 +323,7 @@
     .end local v0    # "msg":Ljava/lang/String;
     .end local v7    # "formatString":Ljava/lang/String;
     :goto_1
-    const v0, 0x7f121527
+    const v0, 0x7f12152b
 
     invoke-virtual {p0, v0}, Lcom/android/settings/nfc/PaymentDefaultDialog;->getString(I)Ljava/lang/String;
 

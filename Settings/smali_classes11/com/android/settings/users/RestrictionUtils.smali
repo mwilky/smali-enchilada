@@ -31,7 +31,7 @@
 
     const/4 v2, 0x0
 
-    const v3, 0x7f120edd
+    const v3, 0x7f120ee1
 
     aput v3, v1, v2
 
@@ -40,7 +40,7 @@
     .line 47
     new-array v0, v0, [I
 
-    const v1, 0x7f120edc
+    const v1, 0x7f120ee0
 
     aput v1, v0, v2
 

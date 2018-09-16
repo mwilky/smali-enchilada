@@ -408,7 +408,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->mAms:Landroid/app/IActivityManager;
 
     .line 52
-    const v0, 0x7f0a03a8
+    const v0, 0x7f0a03aa
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 
@@ -422,7 +422,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 54
-    const v0, 0x7f0a0390
+    const v0, 0x7f0a0391
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 
@@ -436,7 +436,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 56
-    const v0, 0x7f0a03a6
+    const v0, 0x7f0a03a8
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 
@@ -447,7 +447,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->mShowNotchBtn:Landroid/widget/RadioButton;
 
     .line 57
-    const v0, 0x7f0a038e
+    const v0, 0x7f0a038f
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 
@@ -458,7 +458,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->mHideNotchBtn:Landroid/widget/RadioButton;
 
     .line 59
-    const v0, 0x7f0a03a7
+    const v0, 0x7f0a03a9
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 
@@ -469,7 +469,7 @@
     iput-object v0, p0, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->mShowNotch:Landroid/widget/ImageView;
 
     .line 60
-    const v0, 0x7f0a038f
+    const v0, 0x7f0a0390
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPNotchDisplayGuideActivity;->findViewById(I)Landroid/view/View;
 

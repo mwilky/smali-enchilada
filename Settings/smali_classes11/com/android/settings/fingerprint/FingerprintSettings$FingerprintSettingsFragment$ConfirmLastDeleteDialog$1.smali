@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$ConfirmLastDeleteDialog;
 
-    .line 997
+    .line 1031
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$ConfirmLastDeleteDialog$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$ConfirmLastDeleteDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,9 +41,9 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "which"    # I
 
-    .line 1000
+    .line 1034
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1001
+    .line 1035
     return-void
 .end method

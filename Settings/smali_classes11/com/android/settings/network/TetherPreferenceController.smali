@@ -232,7 +232,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v1, 0x7f121165
+    const v1, 0x7f121169
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -803,7 +803,7 @@
     .line 233
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f121165
+    const v6, 0x7f121169
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -818,7 +818,7 @@
     .line 236
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f121192
+    const v6, 0x7f121196
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -831,7 +831,7 @@
     .line 238
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f121191
+    const v6, 0x7f121195
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -841,7 +841,7 @@
     :cond_d
     iget-object v5, p0, Lcom/android/settings/network/TetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    const v6, 0x7f121190
+    const v6, 0x7f121194
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

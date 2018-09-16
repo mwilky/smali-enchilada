@@ -1146,7 +1146,7 @@
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureActivity;->setContentView(I)V
 
     .line 68
-    const v0, 0x7f0a039b
+    const v0, 0x7f0a039d
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/laboratory/OPLabFeatureActivity;->findViewById(I)Landroid/view/View;
 

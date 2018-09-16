@@ -56,7 +56,7 @@
     .local v0, "styledAttrs":Landroid/content/res/TypedArray;
     const/4 v1, 0x1
 
-    const v2, 0x7f121155
+    const v2, 0x7f121159
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
@@ -75,7 +75,7 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 58
-    const v3, 0x7f0a04dc
+    const v3, 0x7f0a04de
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
     invoke-virtual {v3, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 61
-    const v3, 0x7f0a04db
+    const v3, 0x7f0a04dd
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/TwoStateButtonPreference;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
 
     move-result v0
 
-    const v1, 0x7f0a04dc
+    const v1, 0x7f0a04de
 
     if-ne v0, v1, :cond_0
 

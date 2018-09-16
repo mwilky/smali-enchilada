@@ -526,6 +526,8 @@
     <string name="oneplus_quick_clipboard_summary">ਕਾਪੀ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਵਿੱਚ ਵਾਧਾ ਕਰੋ ਅਤੇ ਫਿਰ ਕਾਪੀ ਦੇ ਅਨੁਸਾਰ ਅਗਲੀ ਕਾਰਵਾਈ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕਰੋ</string>
     <string name="oneplus_quick_gestures">ਸੰਕੇਤ</string>
     <string name="oneplus_quick_gestures_title">ਤੁਰੰਤ ਜੈਸਚਰ</string>
+    <string name="oneplus_quick_turn_on_assistant_app">ਸਹਾਇਕ ਐਪ ਨੂੰ ਤੁਰੰਤ ਕਿਰਿਆਸ਼ੀਲ ਕਰੋ</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">ਸਹਾਇਕ ਐਪ ਨੂੰ ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਪਾਵਰ ਬਟਨ ਨੂੰ 0.5 ਸਕਿੰਟ ਲਈ ਅਤੇ ਪਾਵਰ ਬੰਦ ਕਰਨ ਲਈ 3 ਸਕਿੰਟ ਤੱਕ ਹੋਲਡ ਕਰੋ</string>
     <string name="oneplus_quick_turn_on_camera">ਤੇਜ਼ੀ ਨਾਲ ਕੈਮਰਾ ਚਾਲੂ ਕਰੋ</string>
     <string name="oneplus_quickpay">ਤਤਕਾਲ ਭੁਗਤਾਨ ਕਰੋ</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">"ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ 'ਤੇ ਹੋਮ ਬਟਨ ਨੂੰ ਲੰਬੇ ਸਮੇਂ ਤੱਕ ਦਬਾਉਣ ਨਾਲ ਹੋਣ ਵਾਲੀ ਕਾਰਵਾਈ ਨੂੰ ਬਦਲਕੇ \"%1$s\" ਤੋਂ \"ਤਤਕਾਲ ਭੁਗਤਾਨ\" ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>

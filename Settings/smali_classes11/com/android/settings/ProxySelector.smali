@@ -99,7 +99,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     .line 123
-    const v0, 0x7f0a03f5
+    const v0, 0x7f0a03f7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -271,31 +271,31 @@
 
     .line 199
     :pswitch_0
-    const v0, 0x7f120e53
+    const v0, 0x7f120e57
 
     return v0
 
     .line 197
     :pswitch_1
-    const v0, 0x7f120e55
+    const v0, 0x7f120e59
 
     return v0
 
     .line 195
     :pswitch_2
-    const v0, 0x7f120e52
+    const v0, 0x7f120e56
 
     return v0
 
     .line 193
     :pswitch_3
-    const v0, 0x7f120e54
+    const v0, 0x7f120e58
 
     return v0
 
     .line 191
     :pswitch_4
-    const v0, 0x7f120e51
+    const v0, 0x7f120e55
 
     return v0
 
@@ -491,14 +491,14 @@
 
     invoke-direct {v5, v6}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v6, 0x7f120e4f
+    const v6, 0x7f120e53
 
     .line 98
     invoke-virtual {v5, v6}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v5
 
-    const v6, 0x7f120e50
+    const v6, 0x7f120e54
 
     .line 99
     invoke-virtual {v5, v6, v0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
@@ -534,7 +534,7 @@
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .line 64
-    const v0, 0x7f0d0214
+    const v0, 0x7f0d0215
 
     const/4 v1, 0x0
 
@@ -708,7 +708,7 @@
 
     .line 178
     :cond_4
-    const v10, 0x7f120e5d
+    const v10, 0x7f120e61
 
     invoke-virtual {v0, v10}, Landroid/app/Activity;->setTitle(I)V
 

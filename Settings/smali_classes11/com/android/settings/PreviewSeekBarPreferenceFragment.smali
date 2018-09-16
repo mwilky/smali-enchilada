@@ -158,7 +158,7 @@
     aput-object v3, v2, v4
 
     .line 212
-    const v3, 0x7f120e0b
+    const v3, 0x7f120e0f
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -325,7 +325,7 @@
 
     .line 114
     .local v4, "max":I
-    const v6, 0x7f0a048d
+    const v6, 0x7f0a048f
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -348,7 +348,7 @@
     invoke-virtual {v6, v4}, Lcom/android/settings/widget/LabeledSeekBar;->setMax(I)V
 
     .line 118
-    const v6, 0x7f0a04c4
+    const v6, 0x7f0a04c6
 
     invoke-virtual {v2, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -462,7 +462,7 @@
     .line 154
     .end local v10    # "i":I
     :cond_2
-    const v10, 0x7f0a03fe
+    const v10, 0x7f0a0400
 
     invoke-virtual {v2, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -515,7 +515,7 @@
     invoke-virtual {v10, v11}, Landroid/support/v4/view/ViewPager;->addOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
     .line 161
-    const v10, 0x7f0a03cd
+    const v10, 0x7f0a03cf
 
     invoke-virtual {v2, v10}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

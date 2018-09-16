@@ -114,7 +114,7 @@
     .line 58
     const/4 v2, 0x0
 
-    const v3, 0x7f0d0252
+    const v3, 0x7f0d0253
 
     invoke-virtual {p1, v3, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     .line 62
     .local v5, "confirm":Landroid/widget/Button;
-    const v6, 0x7f1210cd
+    const v6, 0x7f1210d1
 
     invoke-virtual {p0, v6}, Lcom/android/settings/deviceinfo/PrivateVolumeFormat;->getText(I)Ljava/lang/CharSequence;
 

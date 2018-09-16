@@ -1059,7 +1059,7 @@
 
     iget-object v4, p0, Lcom/android/settings/dashboard/DashboardAdapter;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f121180
+    const v5, 0x7f121184
 
     .line 410
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1130,7 +1130,7 @@
 
     if-eq v0, v1, :cond_1
 
-    const v1, 0x7f0d0260
+    const v1, 0x7f0d0261
 
     if-eq v0, v1, :cond_0
 
@@ -1341,7 +1341,7 @@
 
     .line 200
     :cond_2
-    const v1, 0x7f0d0260
+    const v1, 0x7f0d0261
 
     if-ne p2, v1, :cond_3
 

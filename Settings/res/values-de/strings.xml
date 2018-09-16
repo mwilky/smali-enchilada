@@ -2907,6 +2907,8 @@ Von der Mitte des unteren Bildschirmrands nach oben wischen, um jederzeit zum St
     <string name="oneplus_quick_clipboard_summary">Verbesserte Kopierfunktion und Empfehlungen für die nächste Aktion anhand der Kopie</string>
     <string name="oneplus_quick_gestures">Gesten</string>
     <string name="oneplus_quick_gestures_title">Schnelle Gesten</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Die Assistenten-App schnell aktivieren</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Die Einschalt-/Ausschalttaste zum Aktivieren der Assistenten-App 0,5 Sekunden und zum Ausschalten 3 Sekunden lang gedrückt halten</string>
     <string name="oneplus_quick_turn_on_camera">Schnelles Einschalten der Kamera</string>
     <string name="oneplus_quickpay">Quick Pay</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Sind Sie sicher, dass Sie die Aktion langes Drücken der Home-Taste von \"%1$s\" auf \"Schnellzahlung\" ändern möchten?</string>

@@ -856,7 +856,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f1213b7
+    const v2, 0x7f1213bb
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -865,7 +865,7 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
-    const v2, 0x7f1213b8
+    const v2, 0x7f1213bc
 
     invoke-virtual {v0, v2}, Lcom/android/settings/SettingsActivity;->getString(I)Ljava/lang/String;
 
@@ -888,7 +888,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0a051f
+    const v3, 0x7f0a0521
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1127,7 +1127,7 @@
     .line 263
     const/4 v0, 0x0
 
-    const v1, 0x7f0d02ce
+    const v1, 0x7f0d02cf
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -1135,7 +1135,7 @@
 
     .line 266
     .local v1, "view":Landroid/view/View;
-    const v2, 0x7f0a03f9
+    const v2, 0x7f0a03fb
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

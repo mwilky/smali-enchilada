@@ -147,7 +147,7 @@
     if-nez v1, :cond_0
 
     .line 104
-    const v1, 0x7f0a046a
+    const v1, 0x7f0a046c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
     if-nez v1, :cond_1
 
     .line 111
-    const v1, 0x7f0a04be
+    const v1, 0x7f0a04c0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

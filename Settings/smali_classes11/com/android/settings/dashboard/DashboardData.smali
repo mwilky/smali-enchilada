@@ -285,7 +285,7 @@
     .line 202
     .local v6, "hasSuggestions":Z
     :goto_1
-    const v7, 0x7f0d0260
+    const v7, 0x7f0d0261
 
     invoke-direct {p0, v5, v7, v4, v6}, Lcom/android/settings/dashboard/DashboardData;->addToItemList(Ljava/lang/Object;IIZ)V
 

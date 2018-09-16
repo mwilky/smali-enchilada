@@ -23,6 +23,7 @@
         Lcom/android/settings/Settings$DisplaySizeAdaptionAppListActivity;,
         Lcom/android/settings/Settings$DomainsURLsAppListActivity;,
         Lcom/android/settings/Settings$AllApplicationsActivity;,
+        Lcom/android/settings/Settings$DefaultAssistPickerActivity;,
         Lcom/android/settings/Settings$OPDataSaverActivity;,
         Lcom/android/settings/Settings$OPProductInfoActivity;,
         Lcom/android/settings/Settings$OPPreInstalledAppListActivity;,

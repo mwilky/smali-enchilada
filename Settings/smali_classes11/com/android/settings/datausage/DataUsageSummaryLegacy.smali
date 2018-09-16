@@ -1072,7 +1072,7 @@
     :cond_a
     if-eqz v4, :cond_b
 
-    const v6, 0x7f1213d9
+    const v6, 0x7f1213dd
 
     goto :goto_3
 

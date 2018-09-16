@@ -613,7 +613,7 @@
 
     move-result v2
 
-    const v3, 0x7f121457
+    const v3, 0x7f12145b
 
     const/4 v4, 0x0
 

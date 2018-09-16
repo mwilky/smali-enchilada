@@ -2907,6 +2907,8 @@ Om op elk moment naar het Home-scherm te gaan, veeg omhoog vanaf de onderste cen
     <string name="oneplus_quick_clipboard_summary">Verbeter de mogelijkheid om te kopiëren en adviseer vervolgens de volgende actie in functie van de kopie</string>
     <string name="oneplus_quick_gestures">Bewegingen</string>
     <string name="oneplus_quick_gestures_title">Snelle gebaren</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Snel de assistent-app activeren</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Houd de aan-uitknop 0,5 s ingedrukt om de assistent-app te activeren en 3 s om deze uit te schakelen</string>
     <string name="oneplus_quick_turn_on_camera">Snel camera inschakelen</string>
     <string name="oneplus_quickpay">Quick pay</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Bent u zeker dat u de actie ingedrukt houden van de Home-knop van \"%1$s\" naar \"Quick Pay\" wilt wijzigen?</string>

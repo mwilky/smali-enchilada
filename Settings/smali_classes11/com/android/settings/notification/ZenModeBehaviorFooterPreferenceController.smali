@@ -86,7 +86,7 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f121543
+    const v4, 0x7f121547
 
     if-eqz v1, :cond_2
 
@@ -155,7 +155,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeBehaviorFooterPreferenceController;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f12158e
+    const v3, 0x7f121592
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -242,7 +242,7 @@
     :cond_4
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeBehaviorFooterPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1215c9
+    const v2, 0x7f1215cd
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

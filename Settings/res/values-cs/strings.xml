@@ -2907,6 +2907,8 @@ Pokud chcete kdykoliv přejít na úvodní obrazovku, potáhněte prstem nahoru 
     <string name="oneplus_quick_clipboard_summary">Rozšířit možnosti kopírování a poté doporučit další akci podle druhu kopírovaného obsahu</string>
     <string name="oneplus_quick_gestures">Gesta</string>
     <string name="oneplus_quick_gestures_title">Rychlá gesta</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Rychle aktivovat aplikaci asistenta</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Pro rychlou aktivaci aplikace asistenta podržte stlačené tlačítko napájení 0,5 s a pro její vypnutí 3 s</string>
     <string name="oneplus_quick_turn_on_camera">Rychle spusťte fotoaparát</string>
     <string name="oneplus_quickpay">Rychlá platba</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Opravdu chcete změnit akci při dlouhém stisku tlačítka Domů z \"%1$s\" na operaci \"Rychlá platba\"?</string>

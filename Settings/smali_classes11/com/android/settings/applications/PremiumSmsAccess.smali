@@ -83,7 +83,7 @@
 
     .line 125
     :cond_0
-    const v0, 0x7f120e03
+    const v0, 0x7f120e07
 
     invoke-virtual {p0, v0}, Lcom/android/settings/applications/PremiumSmsAccess;->setEmptyText(I)V
 
@@ -166,7 +166,7 @@
 
     .line 139
     .local v0, "footer":Lcom/android/settingslib/widget/FooterPreference;
-    const v1, 0x7f120e04
+    const v1, 0x7f120e08
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 

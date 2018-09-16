@@ -1182,7 +1182,7 @@
 
     .line 328
     :cond_0
-    const v1, 0x7f121155
+    const v1, 0x7f121159
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1190,7 +1190,7 @@
 
     .line 329
     .local v1, "placeHolder":Ljava/lang/CharSequence;
-    const v2, 0x7f121158
+    const v2, 0x7f12115c
 
     .line 330
     invoke-virtual {p0, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;

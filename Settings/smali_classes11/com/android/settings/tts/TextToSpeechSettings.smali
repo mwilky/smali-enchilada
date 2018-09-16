@@ -334,7 +334,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f1211e5
+    const v3, 0x7f1211e9
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -693,7 +693,7 @@
     .line 579
     :cond_2
     :goto_1
-    const v0, 0x7f1211e4
+    const v0, 0x7f1211e8
 
     invoke-virtual {p0, v0}, Lcom/android/settings/tts/TextToSpeechSettings;->getString(I)Ljava/lang/String;
 
@@ -1412,7 +1412,7 @@
     .line 552
     iget-object v0, p0, Lcom/android/settings/tts/TextToSpeechSettings;->mLocalePreference:Landroid/support/v7/preference/ListPreference;
 
-    const v1, 0x7f1211f4
+    const v1, 0x7f1211f8
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/ListPreference;->setSummary(I)V
 
@@ -1705,7 +1705,7 @@
 
     move-result-object v8
 
-    const v9, 0x7f1211f5
+    const v9, 0x7f1211f9
 
     invoke-virtual {v8, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -2261,7 +2261,7 @@
     check-cast v0, Lcom/android/settings/widget/ActionButtonPreference;
 
     .line 175
-    const v1, 0x7f1211f6
+    const v1, 0x7f1211fa
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/ActionButtonPreference;->setButton1Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 
@@ -2291,7 +2291,7 @@
     move-result-object v0
 
     .line 179
-    const v3, 0x7f1211f9
+    const v3, 0x7f1211fd
 
     invoke-virtual {v0, v3}, Lcom/android/settings/widget/ActionButtonPreference;->setButton2Text(I)Lcom/android/settings/widget/ActionButtonPreference;
 

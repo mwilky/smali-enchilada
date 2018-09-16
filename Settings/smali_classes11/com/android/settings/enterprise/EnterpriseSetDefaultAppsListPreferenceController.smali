@@ -816,7 +816,7 @@
 
     .line 132
     :cond_2
-    const v5, 0x7f120dbb
+    const v5, 0x7f120dbf
 
     invoke-virtual {v4, v5}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 

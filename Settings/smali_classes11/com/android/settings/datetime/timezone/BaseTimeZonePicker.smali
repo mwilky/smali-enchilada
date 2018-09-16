@@ -142,7 +142,7 @@
     invoke-virtual {p2, v0, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
     .line 127
-    const v0, 0x7f0a054d
+    const v0, 0x7f0a054f
 
     invoke-interface {p1, v0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -339,7 +339,7 @@
     .line 90
     const/4 v0, 0x0
 
-    const v1, 0x7f0d02a9
+    const v1, 0x7f0d02aa
 
     invoke-virtual {p1, v1, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -347,7 +347,7 @@
 
     .line 91
     .local v1, "view":Landroid/view/View;
-    const v2, 0x7f0a0438
+    const v2, 0x7f0a043a
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

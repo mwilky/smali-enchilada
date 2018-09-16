@@ -342,7 +342,7 @@
     if-nez v7, :cond_1
 
     .line 140
-    const v7, 0x7f121514
+    const v7, 0x7f121518
 
     invoke-virtual {v9, v7}, Landroid/support/v14/preference/SwitchPreference;->setSummary(I)V
 

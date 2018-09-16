@@ -948,7 +948,7 @@
     iput-object v2, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->mPasswordRequirements:[I
 
     .line 521
-    const v2, 0x7f0a03da
+    const v2, 0x7f0a03dc
 
     .line 522
     invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2562,7 +2562,7 @@
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->mLayout:Lcom/android/setupwizardlib/GlifLayout;
 
     .line 384
-    const v0, 0x7f0a03d6
+    const v0, 0x7f0a03d8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2577,7 +2577,7 @@
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOpticalInsets(Landroid/graphics/Insets;)V
 
     .line 387
-    const v1, 0x7f0a04be
+    const v1, 0x7f0a04c0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2768,7 +2768,7 @@
     invoke-virtual {v1, v4}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
     .line 418
-    const v1, 0x7f0a03d7
+    const v1, 0x7f0a03d9
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2919,7 +2919,7 @@
 
     const/16 v7, 0x3a
 
-    const v8, 0x7f12123f
+    const v8, 0x7f121243
 
     .line 445
     invoke-virtual {p0, v8}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->getString(I)Ljava/lang/String;

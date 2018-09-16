@@ -44,7 +44,7 @@
     invoke-direct {p0, p2}, Lcom/android/settings/widget/AppSwitchPreference;-><init>(Landroid/content/Context;)V
 
     .line 257
-    const v0, 0x7f0d0228
+    const v0, 0x7f0d0229
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->setWidgetLayoutResource(I)V
 
@@ -186,7 +186,7 @@
     if-eqz v0, :cond_1
 
     .line 313
-    const v0, 0x7f120ed5
+    const v0, 0x7f120ed9
 
     invoke-virtual {p0, v0}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->setSummary(I)V
 
@@ -328,7 +328,7 @@
     invoke-virtual {v3, p1}, Lcom/android/settingslib/RestrictedPreferenceHelper;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
     .line 350
-    const v3, 0x7f0a0449
+    const v3, 0x7f0a044b
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 

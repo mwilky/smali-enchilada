@@ -2907,6 +2907,8 @@ Risk tip: Το «Ξεκλείδωμα με το πρόσωπο» είναι λι
     <string name="oneplus_quick_clipboard_summary">Βελτιώνει τη δυνατότητα αντιγραφής και στη συνέχεια κάνει προτάσεις ανάλογα με την αντιγραφή</string>
     <string name="oneplus_quick_gestures">Χειρονομίες</string>
     <string name="oneplus_quick_gestures_title">Γρήγορες χειρονομίες</string>
+    <string name="oneplus_quick_turn_on_assistant_app">Γρήγορη ενεργοποίηση της εφαρμογής «Βοηθός»</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">Κρατήστε πιεσμένο το κουμπί λειτουργίας για 0,5 δευτ. για να ενεργοποιήσετε την εφαρμογή «Βοηθός» και 3 δευτ. για απενεργοποίηση</string>
     <string name="oneplus_quick_turn_on_camera">Γρήγορη ενεργοποίηση κάμερας</string>
     <string name="oneplus_quickpay">Γρήγορη πληρωμή</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Θέλετε σίγουρα να αλλάξετε την ενέργεια παρατεταμένου πατήματος πλήκτρου \"%1$s\" σε \"Γρήγορη πληρωμή\";</string>

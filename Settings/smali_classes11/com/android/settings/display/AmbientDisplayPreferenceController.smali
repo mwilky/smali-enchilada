@@ -130,7 +130,7 @@
     if-eqz v0, :cond_2
 
     .line 55
-    const v0, 0x7f121166
+    const v0, 0x7f12116a
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
@@ -138,7 +138,7 @@
 
     .line 57
     :cond_2
-    const v0, 0x7f121165
+    const v0, 0x7f121169
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 

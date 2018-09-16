@@ -205,7 +205,7 @@
     invoke-static {v1, v3, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 73
-    const v3, 0x7f121495
+    const v3, 0x7f121499
 
     .line 75
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -266,21 +266,21 @@
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 51
-    const v1, 0x7f121498
+    const v1, 0x7f12149c
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
     .line 52
-    const v1, 0x7f0d02d9
+    const v1, 0x7f0d02da
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
     .line 53
-    const v1, 0x7f121499
+    const v1, 0x7f12149d
 
     invoke-virtual {v0, v1, p0}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

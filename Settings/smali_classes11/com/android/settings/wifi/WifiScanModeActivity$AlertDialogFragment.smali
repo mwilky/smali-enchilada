@@ -114,7 +114,7 @@
     aput-object v2, v1, v3
 
     .line 134
-    const v2, 0x7f12146c
+    const v2, 0x7f121470
 
     invoke-virtual {p0, v2, v1}, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -129,7 +129,7 @@
     invoke-direct {v1, p0}, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment$2;-><init>(Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;)V
 
     .line 135
-    const v2, 0x7f121469
+    const v2, 0x7f12146d
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -140,7 +140,7 @@
     invoke-direct {v1, p0}, Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment$1;-><init>(Lcom/android/settings/wifi/WifiScanModeActivity$AlertDialogFragment;)V
 
     .line 142
-    const v2, 0x7f12146a
+    const v2, 0x7f12146e
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

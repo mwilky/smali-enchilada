@@ -473,7 +473,7 @@
     .line 204
     iget-object v1, v0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    const v2, 0x7f120eb1
+    const v2, 0x7f120eb5
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/PreferenceCategory;->setTitle(I)V
 
@@ -1767,7 +1767,7 @@
 
     iget-object v1, p0, Lcom/android/settings/notification/RecentNotifyingAppsPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120eb2
+    const v2, 0x7f120eb6
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

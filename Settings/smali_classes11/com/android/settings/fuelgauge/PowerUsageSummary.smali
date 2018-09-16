@@ -238,7 +238,7 @@
     .line 467
     .end local v1    # "label":Ljava/lang/CharSequence;
     :cond_0
-    const v1, 0x7f120deb
+    const v1, 0x7f120def
 
     const/4 v2, 0x2
 
@@ -868,7 +868,7 @@
     .line 397
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryLayoutPref:Lcom/android/settings/applications/LayoutPreference;
 
-    const v1, 0x7f0a04f9
+    const v1, 0x7f0a04fb
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1242,7 +1242,7 @@
     .local v1, "percentRemaining":Landroid/widget/TextView;
     iget-object v2, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryLayoutPref:Lcom/android/settings/applications/LayoutPreference;
 
-    const v3, 0x7f0a04f9
+    const v3, 0x7f0a04fb
 
     invoke-virtual {v2, v3}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -1254,7 +1254,7 @@
     .local v2, "summary1":Landroid/widget/TextView;
     iget-object v3, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryLayoutPref:Lcom/android/settings/applications/LayoutPreference;
 
-    const v4, 0x7f0a04fa
+    const v4, 0x7f0a04fc
 
     invoke-virtual {v3, v4}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 

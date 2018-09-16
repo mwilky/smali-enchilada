@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/DisplaySettings;
 
-    .line 1203
+    .line 1207
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$2;->this$0:Lcom/android/settings/DisplaySettings;
 
     iput-object p2, p0, Lcom/android/settings/DisplaySettings$2;->val$setting:Ljava/lang/String;
@@ -47,7 +47,7 @@
 .method public run()V
     .locals 4
 
-    .line 1205
+    .line 1209
     iget-object v0, p0, Lcom/android/settings/DisplaySettings$2;->this$0:Lcom/android/settings/DisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/DisplaySettings;->access$100(Lcom/android/settings/DisplaySettings;)Landroid/content/Context;
@@ -66,6 +66,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1207
+    .line 1211
     return-void
 .end method

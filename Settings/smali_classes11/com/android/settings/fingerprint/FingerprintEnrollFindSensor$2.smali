@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
-    .line 129
+    .line 153
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "errMsgId"    # I
     .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 144
+    .line 168
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$000(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;)Z
@@ -54,19 +54,19 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 145
+    .line 169
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$002(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;Z)Z
 
-    .line 146
+    .line 170
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$200(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;)V
 
-    .line 148
+    .line 172
     :cond_0
     return-void
 .end method
@@ -76,7 +76,7 @@
     .param p1, "helpMsgId"    # I
     .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 140
+    .line 164
     return-void
 .end method
 
@@ -85,14 +85,14 @@
     .param p1, "steps"    # I
     .param p2, "remaining"    # I
 
-    .line 132
+    .line 156
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$002(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;Z)Z
 
-    .line 133
+    .line 157
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$100(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
@@ -105,12 +105,12 @@
 
     if-nez v0, :cond_0
 
-    .line 134
+    .line 158
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;->access$200(Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;)V
 
-    .line 136
+    .line 160
     :cond_0
     return-void
 .end method

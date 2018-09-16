@@ -103,7 +103,7 @@
     .line 178
     iget-object v0, p0, Lcom/android/settings/security/LockUnificationPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f121240
+    const v1, 0x7f121244
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -453,7 +453,7 @@
     .line 167
     iget-object v0, p0, Lcom/android/settings/security/LockUnificationPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12123f
+    const v1, 0x7f121243
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -589,7 +589,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/settings/security/LockUnificationPreferenceController;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f12123f
+    const v1, 0x7f121243
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

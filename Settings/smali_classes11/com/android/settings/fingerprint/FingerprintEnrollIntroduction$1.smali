@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
-    .line 105
+    .line 126
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 3
     .param p1, "v"    # Landroid/view/View;
 
-    .line 109
+    .line 130
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.oem.intent.action.OP_LEGAL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 110
+    .line 131
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "op_legal_notices_type"
 
@@ -55,18 +55,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 111
+    .line 132
     const-string v1, "key_from_settings"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 112
+    .line 133
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->startActivity(Landroid/content/Intent;)V
 
-    .line 113
+    .line 134
     return-void
 .end method

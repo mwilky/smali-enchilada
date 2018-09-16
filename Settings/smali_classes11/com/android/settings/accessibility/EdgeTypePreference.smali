@@ -52,7 +52,7 @@
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setDialogLayoutResource(I)V
 
     .line 46
-    const v1, 0x7f0d020f
+    const v1, 0x7f0d0210
 
     invoke-virtual {p0, v1}, Lcom/android/settings/accessibility/EdgeTypePreference;->setListItemLayoutResource(I)V
 
@@ -68,7 +68,7 @@
     .param p2, "index"    # I
 
     .line 56
-    const v0, 0x7f0a03fd
+    const v0, 0x7f0a03ff
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -134,7 +134,7 @@
     if-eqz v3, :cond_0
 
     .line 70
-    const v4, 0x7f0a04f8
+    const v4, 0x7f0a04fa
 
     invoke-virtual {p1, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

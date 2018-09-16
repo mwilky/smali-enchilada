@@ -2596,6 +2596,7 @@
     <string name="oneplus_disable_aosp_face_lock_message">使用一加人臉解鎖需要禁用Smart Lock中的人臉解鎖功能，要禁用麽？</string>
     <string name="oneplus_disconnected">斷開</string>
     <string name="oneplus_display_dashboard_summary">狀態欄、主動顯示、桌布、主題</string>
+    <string name="oneplus_display_dashboard_summary_801">狀態欄、息屏顯示、桌布、主題</string>
     <string name="oneplus_display_size_adaption">全螢幕應用設置</string>
     <string name="oneplus_display_size_adaption_full_screen">全螢幕模式</string>
     <string name="oneplus_display_size_adaption_original_size">相容模式(16:9)</string>
@@ -2625,6 +2626,7 @@
     <string name="oneplus_earphone_mode">耳機模式</string>
     <string name="oneplus_emergency_rescue_settings">緊急救援</string>
     <string name="oneplus_emergency_rescue_settings_summary">連續按多次電源鍵快速進行呼救</string>
+    <string name="oneplus_enroll_fingerprint_tips_title">指紋錄入提示</string>
     <string name="oneplus_enter_your_fingerprint">· 錄入您的指紋</string>
     <string name="oneplus_experience_improvement_programs">體驗改進計劃</string>
     <string name="oneplus_face_auto_unlock_while_screen_on_sumary">喚醒螢幕後無需向上滑動，立刻使用人臉解鎖</string>
@@ -2904,9 +2906,9 @@
     <string name="oneplus_quick_gestures">快捷手勢</string>
     <string name="oneplus_quick_gestures_title">快捷手勢</string>
     <string name="oneplus_quick_startup">快速啟動</string>
+    <string name="oneplus_quick_turn_on_assistant_app">快速開啟小幫手應用程式</string>
+    <string name="oneplus_quick_turn_on_assistant_app_summary">長按電源鍵0.5秒開啟小幫手應用程式，長按3秒關機</string>
     <string name="oneplus_quick_turn_on_camera">快速開啟相機</string>
-    <string name="oneplus_quick_turn_on_voice_assistant">快速開啟語音助手</string>
-    <string name="oneplus_quick_turn_on_voice_assistant_summary">長按電源按鈕0.5秒即可開啟語音助手</string>
     <string name="oneplus_quickpay">快捷支付</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">將長按主頁鍵由 『%1$s』 改為 『快捷支付』，確定改變此操作嗎？</string>
     <string name="oneplus_quickpay_entry_summary">@string/oneplus_quickpay_unlock_swtch_summary</string>
@@ -3016,6 +3018,8 @@
     <string name="oneplus_security_lock_settings_title">安全和隱私</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">錄入失敗</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">此指紋已經存在，請嘗試使用其他手指錄入。</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">“雙擊喚醒螢幕”已開啟,“輕觸屏幕顯示”將被關閉</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">“輕觸屏幕顯示”已開啟,“雙擊喚醒螢幕”將被關閉</string>
     <string name="oneplus_set_none_password">正在清除密碼，請稍候...</string>
     <string name="oneplus_set_time">設定時間開啟</string>
     <string name="oneplus_setting_ringtone">設置鈴聲</string>
@@ -3070,7 +3074,7 @@
     <string name="oneplus_timer_shutdown_title">關機提醒</string>
     <string name="oneplus_timer_shuttingdown">正在關機</string>
     <string name="oneplus_to_select_assistant_app_dialog">請選擇您想要開啟的小幫手應用程式</string>
-    <string name="oneplus_tools_summary">遊戲模式、快捷支付、應用鎖、應用雙開</string>
+    <string name="oneplus_tools_summary">遊戲模式、應用鎖、應用雙開</string>
     <string name="oneplus_tools_summary_U30">遊戲模式、口袋模式、定時開關機</string>
     <string name="oneplus_tools_title">工具箱</string>
     <string name="oneplus_top_notification">置頂通知</string>

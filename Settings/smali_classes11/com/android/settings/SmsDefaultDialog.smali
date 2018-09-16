@@ -60,7 +60,7 @@
 
     .line 93
     .local v1, "p":Lcom/android/internal/app/AlertController$AlertParams;
-    const v3, 0x7f12105d
+    const v3, 0x7f121061
 
     invoke-virtual {p0, v3}, Lcom/android/settings/SmsDefaultDialog;->getString(I)Ljava/lang/String;
 
@@ -129,7 +129,7 @@
     if-eqz v3, :cond_2
 
     .line 111
-    const v6, 0x7f12105c
+    const v6, 0x7f121060
 
     const/4 v7, 0x2
 
@@ -162,7 +162,7 @@
 
     .line 115
     :cond_2
-    const v6, 0x7f12105e
+    const v6, 0x7f121062
 
     new-array v7, v4, [Ljava/lang/Object;
 
@@ -184,7 +184,7 @@
 
     .line 118
     :goto_0
-    const v2, 0x7f121527
+    const v2, 0x7f12152b
 
     invoke-virtual {p0, v2}, Lcom/android/settings/SmsDefaultDialog;->getString(I)Ljava/lang/String;
 

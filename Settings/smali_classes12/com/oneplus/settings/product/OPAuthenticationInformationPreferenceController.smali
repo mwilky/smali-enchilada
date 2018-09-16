@@ -82,7 +82,7 @@
 
     move-result v0
 
-    const v1, 0x7f120b8a
+    const v1, 0x7f120b8e
 
     if-nez v0, :cond_0
 

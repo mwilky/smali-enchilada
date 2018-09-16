@@ -826,7 +826,7 @@
 
     move-result-object v7
 
-    const v8, 0x7f121454
+    const v8, 0x7f121458
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -858,7 +858,7 @@
 
     move-result-object v0
 
-    const v7, 0x7f121453
+    const v7, 0x7f121457
 
     new-array v5, v5, [Ljava/lang/Object;
 
@@ -879,7 +879,7 @@
 
     invoke-direct {v4, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x7f121455
+    const v5, 0x7f121459
 
     .line 451
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -936,7 +936,7 @@
     if-ne p1, v0, :cond_4
 
     .line 458
-    const v0, 0x7f12144f
+    const v0, 0x7f121453
 
     .line 459
     .local v0, "stringId":I
@@ -980,7 +980,7 @@
 
     invoke-direct {v7, v8}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v8, 0x7f121450
+    const v8, 0x7f121454
 
     .line 464
     invoke-virtual {v7, v8}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -1153,7 +1153,7 @@
 
     invoke-direct {v0, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v4, 0x7f121458
+    const v4, 0x7f12145c    # 1.94173E38f
 
     .line 482
     invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -1212,7 +1212,7 @@
     if-ne p1, v0, :cond_8
 
     .line 489
-    const v0, 0x7f121451
+    const v0, 0x7f121455
 
     .line 491
     .local v0, "stringId":I
@@ -1331,7 +1331,7 @@
     :pswitch_1
     const-string v4, "com.oneplus.settings.OPDeviceName"
 
-    const v5, 0x7f120b87
+    const v5, 0x7f120b8b
 
     const/4 v6, -0x1
 
@@ -1744,7 +1744,7 @@
     if-eqz v2, :cond_1
 
     .line 369
-    const v2, 0x7f12145a
+    const v2, 0x7f12145e
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 
@@ -1752,7 +1752,7 @@
 
     .line 371
     :cond_1
-    const v2, 0x7f121459
+    const v2, 0x7f12145d
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setTitle(I)Landroid/view/MenuItem;
 

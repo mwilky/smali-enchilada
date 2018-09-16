@@ -70,7 +70,7 @@
     .line 279
     iget-object v1, p0, Lcom/oneplus/settings/OPColorPickerActivity$4;->this$0:Lcom/oneplus/settings/OPColorPickerActivity;
 
-    const v3, 0x7f120d43
+    const v3, 0x7f120d47
 
     invoke-static {v1, v3, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 

@@ -319,7 +319,7 @@
 
     .line 237
     :cond_0
-    const v0, 0x7f120eca
+    const v0, 0x7f120ece
 
     invoke-static {p1, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -508,7 +508,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120c37
+    const v4, 0x7f120c39
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -517,7 +517,7 @@
     invoke-virtual {v1, v3}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
     .line 285
-    const v1, 0x7f0d0220
+    const v1, 0x7f0d0221
 
     invoke-virtual {p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

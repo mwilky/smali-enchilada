@@ -191,7 +191,7 @@
 .method public getMetricsConstant()I
     .locals 1
 
-    .line 132
+    .line 139
     const/16 v0, 0x17e
 
     return v0
@@ -293,8 +293,9 @@
 
     goto :goto_0
 
-    .line 120
+    .line 122
     :cond_0
+    :try_start_0
     const-string v2, "connectivity"
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -303,26 +304,40 @@
 
     check-cast v2, Landroid/net/ConnectivityManager;
 
-    .line 122
+    .line 124
     .local v2, "cm":Landroid/net/ConnectivityManager;
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/net/ConnectivityManager;->stopTethering(I)V
 
-    .line 123
-    invoke-virtual {p0, v3}, Lcom/android/settings/dashboard/conditional/HotspotCondition;->setActive(Z)V
-
     .line 125
+    invoke-virtual {p0, v3}, Lcom/android/settings/dashboard/conditional/HotspotCondition;->setActive(Z)V
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 129
+    .end local v2    # "cm":Landroid/net/ConnectivityManager;
+    goto :goto_0
+
+    .line 126
+    :catch_0
+    move-exception v2
+
+    .line 128
+    .local v2, "e":Ljava/lang/SecurityException;
+    invoke-virtual {v2}, Ljava/lang/SecurityException;->printStackTrace()V
+
+    .line 132
     .end local v0    # "context":Landroid/content/Context;
     .end local v1    # "admin":Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
-    .end local v2    # "cm":Landroid/net/ConnectivityManager;
+    .end local v2    # "e":Ljava/lang/SecurityException;
     :goto_0
     nop
 
-    .line 128
+    .line 135
     return-void
 
-    .line 126
+    .line 133
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -378,7 +393,7 @@
     move-result-object v0
 
     .line 106
-    const v1, 0x7f121193
+    const v1, 0x7f121197
 
     invoke-virtual {v0, v1}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
