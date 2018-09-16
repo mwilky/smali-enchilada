@@ -5920,4 +5920,5 @@ Update settings to:
     <string name="hardware_keys_action_app">Launch custom app (select app in RiCE)</string>
     <string name="hardware_keys_action_previous_app">Switch to previous app</string>
     <string name="hardware_keys_action_default_double_recents">Nothing (Switch to previous app)</string>
+    <string name="oneplus_search_keyword_fingerprint_key">fingerprint</string>
 </resources>
