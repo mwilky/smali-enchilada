@@ -23,7 +23,7 @@
 
 .field private final mHandler:Landroid/os/Handler;
 
-.field protected mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
+.field public mHeaderQsPanel:Lcom/android/systemui/qs/QuickQSPanel;
 
 .field private mHeaderTextContainerAlphaAnimator:Lcom/android/systemui/qs/TouchAnimator;
 
