@@ -19957,6 +19957,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setSmartPulldown(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsTileLayout(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenStatusbarVisibility(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -25421,4 +25423,14 @@
 
     :cond_exit
     return-void
+.end method
+
+.method updateLockscreenStatusbarViews()V
+	.locals 1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mKeyguardStatusBar:Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;
+	
+	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    
+    return-void    
 .end method

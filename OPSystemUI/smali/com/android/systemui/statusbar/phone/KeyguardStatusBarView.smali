@@ -540,8 +540,10 @@
     return-void
 .end method
 
-.method private updateVisibilities()V
-    .locals 0
+.method public updateVisibilities()V
+    .locals 1
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setLockscreenStatusbarVisibility()V
 
     .line 205
     return-void
@@ -700,7 +702,7 @@
     iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryCharging:Z
 
     .line 417
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     .line 419
     :cond_0
@@ -1297,7 +1299,7 @@
 
     .line 442
     :cond_0
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     .line 443
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateLayoutConsideringCutout()Z
@@ -1386,12 +1388,30 @@
 
     .line 507
     :cond_0
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     .line 508
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateSystemIconsLayoutParams()V
 
     .line 510
     :goto_0
+    return-void
+.end method
+
+.method public setLockscreenStatusbarVisibility()V
+    .locals 2
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenStatusbar:Z
+    
+    if-nez v0, :cond_hidden
+
+	goto :goto_exit
+    
+    :cond_hidden
+    const v1, 0x8
+    
+    invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+	
+    :goto_exit
     return-void
 .end method
