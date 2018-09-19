@@ -2212,7 +2212,32 @@
     iget-object v5, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->setViewsVisibility()V
 
     :cond_7
+    return-void
+.end method
+
+.method public setViewsVisibility()V
+    .locals 4
+
+    .prologue    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
+    
+    iget-object v1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController;->mChargingInfo:Landroid/widget/TextView;
+    
+    if-nez v0, :cond_hide
+    
+    const v2, 0x0
+    
+    goto :goto_vis    
+    
+    :cond_hide
+    const v2, 0x8
+    
+    :goto_vis
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    
     return-void
 .end method
