@@ -17169,6 +17169,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockscreenStatusbarVisibility(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->scrambleKeypad(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->hideLockscreenViews(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -22021,5 +22023,40 @@
 	
 	invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
     
-    return-void    
+    return-void
 .end method
+
+.method updateNotificationBuilderColors()V
+	.locals 3
+
+	new-instance v0, Landroid/app/Notification$Builder;
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+
+    sget-object v2, Lcom/android/systemui/util/NotificationChannels;->GENERAL:Ljava/lang/String;
+
+    invoke-direct {v0, v1, v2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    
+    iget-object v1, v0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
+    
+    invoke-static {v1}, Landroid/app/Notification$Builder;->isExtendedTheming(Landroid/content/Context;)V
+    
+    invoke-static {v1}, Landroid/app/Notification$Builder;->getAccentColor(Landroid/content/Context;)V
+    
+    invoke-virtual {v0}, Landroid/app/Notification$Builder;->ensureColors()V
+    
+    invoke-static {v1}, Landroid/app/Notification$Builder;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+
+	return-void
+.end method
+
+.method updateLockscreenViews()V
+    .locals 2
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mNotificationPanel:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
+
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/NotificationPanelView;->updateLockscreenViews()V
+
+    return-void
+.end method
+>>>>>>> a5e6f3b4b... KeyguardStatusView: option to remove lockscreen clock, data and charging info
