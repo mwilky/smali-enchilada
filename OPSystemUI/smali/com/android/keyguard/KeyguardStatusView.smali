@@ -23,6 +23,8 @@
 
 .field private mClockView:Lcom/android/keyguard/clock/OPTextClock;
 
+.field private mClockContainer:Landroid/widget/RelativeLayout;
+
 .field private mDarkAmount:F
 
 .field private mHandler:Landroid/os/Handler;
@@ -1361,6 +1363,24 @@
     check-cast v0, Lcom/android/keyguard/clock/OPTextClock;
 
     iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
+    
+     const-string v0, "keyguard_clock_container"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/android/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/RelativeLayout;
+
+    iput-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
+    
+    invoke-virtual {p0}, Lcom/android/keyguard/KeyguardStatusView;->setViewsVisibility()V
 
     .line 183
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockView:Lcom/android/keyguard/clock/OPTextClock;
@@ -2204,5 +2224,28 @@
 
     .line 540
     :goto_3
+    return-void
+.end method
+
+.method public setViewsVisibility()V
+    .locals 4
+
+    .prologue    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenClock:Z
+    
+    iget-object v1, p0, Lcom/android/keyguard/KeyguardStatusView;->mClockContainer:Landroid/widget/RelativeLayout;
+    
+    if-nez v0, :cond_hide
+    
+    const v2, 0x0
+    
+    goto :goto_vis    
+    
+    :cond_hide
+    const v2, 0x8
+    
+    :goto_vis
+    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    
     return-void
 .end method
