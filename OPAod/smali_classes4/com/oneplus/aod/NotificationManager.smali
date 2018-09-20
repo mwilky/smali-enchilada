@@ -302,7 +302,7 @@
 
     move-result-object v1
 
-    const-string v2, "lock_screen_show_notifications"
+    const-string v2, "aod_show_notifications"
 
     .line 89
     invoke-static {v2}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -851,7 +851,7 @@
 
     move-result-object v0
 
-    const-string v1, "lock_screen_show_notifications"
+    const-string v1, "aod_screen_show_notifications"
 
     iget v2, p0, Lcom/oneplus/aod/NotificationManager;->mCurrentUserId:I
 
@@ -2045,7 +2045,7 @@
 .end method
 
 .method public userAllowsNotificationsInPublic(I)Z
-    .locals 4
+    .locals 5
     .param p1, "userHandle"    # I
 
     .line 445
@@ -2076,12 +2076,12 @@
 
     move-result-object v1
 
-    const-string v2, "lock_screen_show_notifications"
+    const-string v2, "aod_show_notifications"
 
     .line 450
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
+    invoke-static {v1, v2, v0, p1}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)I
 
     move-result v1
 
