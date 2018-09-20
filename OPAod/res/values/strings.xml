@@ -331,7 +331,7 @@ Selection"</string>
     <string name="oneplus_aod_mode_always_on">Always on</string>
     <string name="oneplus_aod_mode_lift_up">Lift up display</string>
     <string name="oneplus_aod_mode_shake_up">Move your phone slightly to show</string>
-    <string name="oneplus_aod_mode_single_tap">Tap to show when screen is off</string>
+    <string name="oneplus_aod_mode_single_tap">Tap the screen to show</string>
     <string name="oneplus_aod_settings">Ambient display</string>
     <string name="oneplus_aod_settings_what_to_show">what to show</string>
     <string name="oneplus_aod_settings_when_to_show">when to show</string>
@@ -359,6 +359,8 @@ Selection"</string>
     <string name="oneplus_screen_zoom_summary_minimum">Minimum</string>
     <string name="oneplus_screen_zoom_summary_small">Small</string>
     <string name="oneplus_screen_zoom_summary_very_large">Larger</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">is enabled,</string>
+    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">will be disabled</string>
     <string name="op_accessibility_quick_settings_page">Page %1$d of %2$d</string>
     <string name="op_appbar_scrolling_view_behavior">com.oneplus.lib.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="op_character_counter_pattern">%1$d / %2$d</string>
@@ -499,6 +501,7 @@ Selection"</string>
     <item type="string" name="timepicker_transition_end_radius_multiplier">1.3</item>
     <item type="string" name="timepicker_transition_mid_radius_multiplier">0.95</item>
     <string name="title_convert_fbe">Converting to file based encryption</string>
+    <string name="touchscreen_double_tap_to_wake_gesture_title">Double tap to wake</string>
     <string name="track_frame_time">Profile GPU rendering</string>
     <string name="transition_animation_scale_title">Transition animation scale</string>
     <string name="tts_default_lang_summary">Sets the language-specific voice for the spoken text</string>

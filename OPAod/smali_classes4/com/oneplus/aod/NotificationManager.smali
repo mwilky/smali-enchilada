@@ -597,17 +597,17 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "userId"    # I
 
-    .line 606
+    .line 608
     move-object v0, p1
 
-    .line 608
+    .line 610
     .local v0, "contextForUser":Landroid/content/Context;
     if-ltz p2, :cond_0
 
-    .line 612
+    .line 614
     nop
 
-    .line 613
+    .line 615
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -627,14 +627,14 @@
 
     move-object v0, v1
 
-    .line 618
+    .line 620
     goto :goto_0
 
-    .line 616
+    .line 618
     :catch_0
     move-exception v1
 
-    .line 620
+    .line 622
     :cond_0
     :goto_0
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -649,10 +649,10 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "statusBarNotification"    # Landroid/service/notification/StatusBarNotification;
 
-    .line 584
+    .line 586
     nop
 
-    .line 585
+    .line 587
     invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->getUser()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -661,20 +661,20 @@
 
     move-result v0
 
-    .line 584
+    .line 586
     invoke-direct {p0, p1, v0}, Lcom/oneplus/aod/NotificationManager;->getPackageManagerForUser(Landroid/content/Context;I)Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 586
+    .line 588
     .local v0, "packageManager":Landroid/content/pm/PackageManager;
     const/4 v1, 0x0
 
-    .line 589
+    .line 591
     .local v1, "isSystemNotification":Ljava/lang/Boolean;
     nop
 
-    .line 590
+    .line 592
     :try_start_0
     invoke-virtual {p2}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
 
@@ -682,21 +682,21 @@
 
     const/16 v3, 0x40
 
-    .line 589
+    .line 591
     invoke-virtual {v0, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v2
 
-    .line 592
+    .line 594
     .local v2, "packageInfo":Landroid/content/pm/PackageInfo;
     nop
 
-    .line 594
+    .line 596
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 593
+    .line 595
     invoke-static {v3, v0, v2}, Lcom/android/settingslib/Utils;->isSystemPackage(Landroid/content/res/Resources;Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
 
     move-result v3
@@ -709,15 +709,15 @@
 
     move-object v1, v3
 
-    .line 597
+    .line 599
     .end local v2    # "packageInfo":Landroid/content/pm/PackageInfo;
     goto :goto_0
 
-    .line 595
+    .line 597
     :catch_0
     move-exception v2
 
-    .line 596
+    .line 598
     .local v2, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v3, "NotificationManager"
 
@@ -725,7 +725,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 598
+    .line 600
     .end local v2    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_0
     return-object v1
@@ -1021,14 +1021,14 @@
     .line 157
     return-void
 
-    .line 161
+    .line 160
     :cond_0
-    invoke-direct {p0, v0}, Lcom/oneplus/aod/NotificationManager;->cacheIsSystemNotification(Lcom/oneplus/aod/NotificationData$Entry;)V
-
-    .line 163
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mNotificationData:Lcom/oneplus/aod/NotificationData;
 
     invoke-virtual {v1, v0, p2}, Lcom/oneplus/aod/NotificationData;->add(Lcom/oneplus/aod/NotificationData$Entry;Landroid/service/notification/NotificationListenerService$RankingMap;)V
+
+    .line 162
+    invoke-direct {p0, v0}, Lcom/oneplus/aod/NotificationManager;->cacheIsSystemNotification(Lcom/oneplus/aod/NotificationData$Entry;)V
 
     .line 164
     iget-object v1, p0, Lcom/oneplus/aod/NotificationManager;->mForegroundServiceController:Lcom/oneplus/aod/ForegroundServiceControllerImpl;

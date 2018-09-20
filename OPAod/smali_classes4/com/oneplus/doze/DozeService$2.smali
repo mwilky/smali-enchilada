@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/doze/DozeService;
 
-    .line 396
+    .line 407
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public onPulseFinished()V
     .locals 3
 
-    .line 407
+    .line 418
     const-string v0, "DozeService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 419
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
@@ -93,24 +93,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 409
+    .line 420
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$302(Lcom/oneplus/doze/DozeService;Z)Z
 
-    .line 411
+    .line 422
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$800(Lcom/oneplus/doze/DozeService;)V
 
-    .line 413
+    .line 424
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$900(Lcom/oneplus/doze/DozeService;)V
 
-    .line 415
+    .line 426
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
@@ -124,7 +124,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 416
+    .line 427
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
@@ -133,7 +133,7 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 418
+    .line 429
     :cond_1
     return-void
 .end method
@@ -141,7 +141,7 @@
 .method public onPulseStarted()V
     .locals 3
 
-    .line 399
+    .line 410
     const-string v0, "DozeService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -178,7 +178,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 400
+    .line 411
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$300(Lcom/oneplus/doze/DozeService;)Z
@@ -195,12 +195,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 401
+    .line 412
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$2;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$700(Lcom/oneplus/doze/DozeService;)V
 
-    .line 403
+    .line 414
     :cond_0
     return-void
 .end method

@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/doze/DozeService;
 
-    .line 537
+    .line 548
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 540
+    .line 551
     const-string v0, "com.oneplus.aod.doze.pulse"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 541
+    .line 552
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -62,14 +62,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 542
+    .line 553
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$1100(Lcom/oneplus/doze/DozeService;I)V
 
-    .line 544
+    .line 555
     :cond_0
     sget-object v0, Landroid/app/UiModeManager;->ACTION_ENTER_CAR_MODE:Ljava/lang/String;
 
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 545
+    .line 556
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -94,14 +94,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 546
+    .line 557
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$1202(Lcom/oneplus/doze/DozeService;Z)Z
 
-    .line 547
+    .line 558
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1200(Lcom/oneplus/doze/DozeService;)Z
@@ -118,12 +118,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 548
+    .line 559
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$3;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1300(Lcom/oneplus/doze/DozeService;)V
 
-    .line 551
+    .line 562
     :cond_1
     const-string v0, "android.intent.action.USER_SWITCHED"
 
@@ -133,6 +133,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 560
+    .line 571
     return-void
 .end method

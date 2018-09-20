@@ -125,9 +125,12 @@
 
     .line 572
     .local v0, "ent":Lcom/oneplus/aod/NotificationData$Entry;
+    if-eqz v0, :cond_0
+
+    .line 573
     iput-object p1, v0, Lcom/oneplus/aod/NotificationData$Entry;->mIsSystemNotification:Ljava/lang/Boolean;
 
-    .line 574
+    .line 576
     .end local v0    # "ent":Lcom/oneplus/aod/NotificationData$Entry;
     :cond_0
     return-void

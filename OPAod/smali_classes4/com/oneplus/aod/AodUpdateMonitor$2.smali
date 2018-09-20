@@ -23,7 +23,7 @@
     .locals 1
     .param p1, "this$0"    # Lcom/oneplus/aod/AodUpdateMonitor;
 
-    .line 191
+    .line 192
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$2;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     const/4 v0, 0x0

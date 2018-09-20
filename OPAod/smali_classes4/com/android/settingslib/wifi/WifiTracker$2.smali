@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/settingslib/wifi/WifiTracker;
 
-    .line 832
+    .line 839
     iput-object p1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,12 +38,12 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 835
+    .line 842
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 836
+    .line 843
     .local v0, "action":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
@@ -69,7 +69,7 @@
     :goto_0
     sput-boolean v1, Lcom/android/settingslib/wifi/WifiTracker;->sVerboseLogging:Z
 
-    .line 838
+    .line 845
     const-string v1, "android.net.wifi.WIFI_STATE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -78,24 +78,24 @@
 
     if-eqz v1, :cond_1
 
-    .line 839
+    .line 846
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     const-string v2, "wifi_state"
 
     const/4 v3, 0x4
 
-    .line 840
+    .line 847
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 839
+    .line 846
     invoke-static {v1, v2}, Lcom/android/settingslib/wifi/WifiTracker;->access$500(Lcom/android/settingslib/wifi/WifiTracker;I)V
 
     goto/16 :goto_2
 
-    .line 842
+    .line 849
     :cond_1
     const-string v1, "android.net.wifi.SCAN_RESULTS"
 
@@ -105,19 +105,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 843
+    .line 850
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v1, v2}, Lcom/android/settingslib/wifi/WifiTracker;->access$602(Lcom/android/settingslib/wifi/WifiTracker;Z)Z
 
-    .line 845
+    .line 852
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$700(Lcom/android/settingslib/wifi/WifiTracker;)V
 
     goto :goto_2
 
-    .line 846
+    .line 853
     :cond_2
     const-string v1, "android.net.wifi.CONFIGURED_NETWORKS_CHANGE"
 
@@ -129,7 +129,7 @@
 
     const-string v1, "android.net.wifi.LINK_CONFIGURATION_CHANGED"
 
-    .line 847
+    .line 854
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -138,7 +138,7 @@
 
     goto :goto_1
 
-    .line 849
+    .line 856
     :cond_3
     const-string v1, "android.net.wifi.STATE_CHANGE"
 
@@ -148,7 +148,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 852
+    .line 859
     const-string v1, "networkInfo"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -157,18 +157,18 @@
 
     check-cast v1, Landroid/net/NetworkInfo;
 
-    .line 853
+    .line 860
     .local v1, "info":Landroid/net/NetworkInfo;
     iget-object v2, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v2, v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$800(Lcom/android/settingslib/wifi/WifiTracker;Landroid/net/NetworkInfo;)V
 
-    .line 854
+    .line 861
     iget-object v2, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v2}, Lcom/android/settingslib/wifi/WifiTracker;->access$700(Lcom/android/settingslib/wifi/WifiTracker;)V
 
-    .line 855
+    .line 862
     .end local v1    # "info":Landroid/net/NetworkInfo;
     goto :goto_2
 
@@ -181,10 +181,10 @@
 
     if-eqz v1, :cond_5
 
-    .line 856
+    .line 863
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
-    .line 857
+    .line 864
     invoke-static {v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$900(Lcom/android/settingslib/wifi/WifiTracker;)Landroid/net/ConnectivityManager;
 
     move-result-object v1
@@ -203,17 +203,17 @@
 
     move-result-object v1
 
-    .line 858
+    .line 865
     .restart local v1    # "info":Landroid/net/NetworkInfo;
     iget-object v2, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v2, v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$800(Lcom/android/settingslib/wifi/WifiTracker;Landroid/net/NetworkInfo;)V
 
-    .line 859
+    .line 866
     .end local v1    # "info":Landroid/net/NetworkInfo;
     goto :goto_2
 
-    .line 861
+    .line 868
     :cond_5
     const-string v1, "android.intent.action.AUTH_PASSWORD_WRONG"
 
@@ -223,7 +223,7 @@
 
     if-eqz v1, :cond_7
 
-    .line 862
+    .line 869
     sget v1, Lcom/android/settingslib/R$string;->wifi_auth_password_wrong:I
 
     invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
@@ -234,14 +234,14 @@
 
     goto :goto_2
 
-    .line 848
+    .line 855
     :cond_6
     :goto_1
     iget-object v1, p0, Lcom/android/settingslib/wifi/WifiTracker$2;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v1}, Lcom/android/settingslib/wifi/WifiTracker;->access$700(Lcom/android/settingslib/wifi/WifiTracker;)V
 
-    .line 866
+    .line 873
     :cond_7
     :goto_2
     return-void

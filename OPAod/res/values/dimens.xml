@@ -561,7 +561,7 @@
     <item type="dimen" name="spinner_material_padding_left">@dimen/oneplus_contorl_margin_left2</item>
     <item type="dimen" name="spinner_material_padding_right">@dimen/oneplus_contorl_margin_right2</item>
     <dimen name="stat_sys_mobile_signal_circle_inset">0.9dip</dimen>
-    <item type="dimen" name="status_bar_height">@android:dimen/status_bar_height</item>
+    <item type="dimen" name="status_bar_height">@android:dimen/text_size_display_4_material</item>
     <dimen name="status_bar_icon_padding">60.0px</dimen>
     <item type="dimen" name="status_bar_icon_scale_factor">1.0</item>
     <dimen name="status_bar_icon_size">55.0px</dimen>

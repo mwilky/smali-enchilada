@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/aod/AodUpdateMonitor;
 
-    .line 706
+    .line 722
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,12 +38,12 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 709
+    .line 725
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 710
+    .line 726
     .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_INFO_CHANGED"
 
@@ -53,14 +53,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 711
+    .line 727
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3900(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
     goto :goto_0
 
-    .line 712
+    .line 728
     :cond_0
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -74,7 +74,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 713
+    .line 729
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$700(Lcom/oneplus/aod/AodUpdateMonitor;)I
@@ -85,7 +85,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 714
+    .line 730
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$900(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/DisplayViewManager;
@@ -94,19 +94,19 @@
 
     invoke-virtual {v1}, Lcom/oneplus/aod/DisplayViewManager;->resetMainViewPosition()V
 
-    .line 715
+    .line 731
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4000(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
-    .line 716
+    .line 732
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
-    .line 717
+    .line 733
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$800(Lcom/oneplus/aod/AodUpdateMonitor;)Z
@@ -115,7 +115,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 718
+    .line 734
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$3;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4100(Lcom/oneplus/aod/AodUpdateMonitor;)Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
@@ -124,7 +124,7 @@
 
     invoke-virtual {v1}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->fireDetectLight()V
 
-    .line 722
+    .line 738
     :cond_1
     :goto_0
     return-void

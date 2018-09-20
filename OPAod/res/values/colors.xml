@@ -795,7 +795,7 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6ffffff</color>
     <color name="transparent">#00000000</color>
-    <color name="usage_graph_dots">@android:color/tertiary_device_default_settings</color>
+    <color name="usage_graph_dots">@android:color/tooltip_background_dark</color>
     <color name="white">#ffffffff</color>
     <color name="yellow_100">#ffffeb91</color>
     <color name="yellow_200">#fff8dc5a</color>

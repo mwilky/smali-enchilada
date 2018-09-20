@@ -29,7 +29,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/doze/DozeService;
 
-    .line 356
+    .line 367
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
     iput-wide p2, p0, Lcom/oneplus/doze/DozeService$1;->val$start:J
@@ -51,7 +51,7 @@
     .locals 8
     .param p1, "result"    # I
 
-    .line 359
+    .line 370
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -63,14 +63,14 @@
     :cond_0
     move v1, v0
 
-    .line 360
+    .line 371
     .local v1, "isNear":Z
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 361
+    .line 372
     .local v2, "end":J
     iget-object v4, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
@@ -86,15 +86,15 @@
 
     invoke-static {v4, v1, v5, v6, v7}, Lcom/oneplus/doze/DozeLog;->traceProximityResult(Landroid/content/Context;ZJI)V
 
-    .line 362
+    .line 373
     iget-boolean v4, p0, Lcom/oneplus/doze/DozeService$1;->val$performedProxCheck:Z
 
     if-eqz v4, :cond_1
 
-    .line 364
+    .line 375
     return-void
 
-    .line 366
+    .line 377
     :cond_1
     const-string v4, "DozeService"
 
@@ -114,15 +114,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 368
+    .line 379
     if-eqz v1, :cond_2
 
-    .line 369
+    .line 380
     iget-object v4, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v4, v0}, Lcom/oneplus/doze/DozeService;->access$302(Lcom/oneplus/doze/DozeService;Z)Z
 
-    .line 370
+    .line 381
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$400(Lcom/oneplus/doze/DozeService;)Landroid/os/PowerManager$WakeLock;
@@ -131,7 +131,7 @@
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 372
+    .line 383
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$200(Lcom/oneplus/doze/DozeService;)Landroid/content/Context;
@@ -148,10 +148,10 @@
 
     invoke-virtual {v0}, Lcom/oneplus/aod/DisplayViewManager;->resetViewState()V
 
-    .line 373
+    .line 384
     return-void
 
-    .line 377
+    .line 388
     :cond_2
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$1;->this$0:Lcom/oneplus/doze/DozeService;
 
@@ -159,6 +159,6 @@
 
     invoke-static {v0, v4}, Lcom/oneplus/doze/DozeService;->access$500(Lcom/oneplus/doze/DozeService;I)V
 
-    .line 378
+    .line 389
     return-void
 .end method

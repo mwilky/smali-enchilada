@@ -30,7 +30,7 @@
 .method private constructor <init>(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;)V
     .locals 0
 
-    .line 523
+    .line 539
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,7 +43,7 @@
     .param p1, "x0"    # Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
     .param p2, "x1"    # Lcom/oneplus/aod/AodUpdateMonitor$1;
 
-    .line 523
+    .line 539
     invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;-><init>(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;)V
 
     return-void
@@ -55,14 +55,14 @@
     .locals 3
     .param p1, "msg"    # Landroid/os/Message;
 
-    .line 530
+    .line 546
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 538
+    .line 554
     :pswitch_0
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 535
+    .line 551
     :pswitch_1
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
@@ -82,10 +82,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->access$3700(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;Lcom/oneplus/doze/DozeHost$PulseCallback;I)V
 
-    .line 536
+    .line 552
     goto :goto_0
 
-    .line 532
+    .line 548
     :pswitch_2
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$H;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
@@ -95,10 +95,10 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->access$3600(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;Ljava/lang/Runnable;)V
 
-    .line 533
+    .line 549
     nop
 
-    .line 541
+    .line 557
     :goto_0
     return-void
 

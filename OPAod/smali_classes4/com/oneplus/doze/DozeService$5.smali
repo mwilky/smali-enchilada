@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/oneplus/doze/DozeService;
 
-    .line 579
+    .line 590
     iput-object p1, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public onAlwaysDisplayOn()V
     .locals 2
 
-    .line 607
+    .line 618
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -50,14 +50,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 608
+    .line 619
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     const/4 v1, 0x6
 
     invoke-static {v0, v1}, Lcom/oneplus/doze/DozeService;->access$1100(Lcom/oneplus/doze/DozeService;I)V
 
-    .line 609
+    .line 620
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 3
     .param p1, "enter"    # Z
 
-    .line 620
+    .line 631
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -88,7 +88,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 621
+    .line 632
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2000(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$PickupCheck;
@@ -97,7 +97,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 622
+    .line 633
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$2000(Lcom/oneplus/doze/DozeService;)Lcom/oneplus/doze/DozeService$PickupCheck;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, p1}, Lcom/oneplus/doze/DozeService$PickupCheck;->setListening(Z)V
 
-    .line 624
+    .line 635
     :cond_0
     return-void
 .end method
@@ -114,7 +114,7 @@
 .method public onNewNotifications()V
     .locals 3
 
-    .line 582
+    .line 593
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -143,7 +143,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 584
+    .line 595
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Z
@@ -160,16 +160,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 585
+    .line 596
     return-void
 
-    .line 587
+    .line 598
     :cond_0
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1600(Lcom/oneplus/doze/DozeService;)V
 
-    .line 588
+    .line 599
     return-void
 .end method
 
@@ -177,12 +177,12 @@
     .locals 3
     .param p1, "active"    # Z
 
-    .line 597
+    .line 608
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0, p1}, Lcom/oneplus/doze/DozeService;->access$1402(Lcom/oneplus/doze/DozeService;Z)Z
 
-    .line 598
+    .line 609
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -223,7 +223,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 599
+    .line 610
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1400(Lcom/oneplus/doze/DozeService;)Z
@@ -248,12 +248,12 @@
 
     if-nez v0, :cond_0
 
-    .line 600
+    .line 611
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1800(Lcom/oneplus/doze/DozeService;)V
 
-    .line 602
+    .line 613
     :cond_0
     return-void
 .end method
@@ -261,19 +261,19 @@
 .method public onThreeKeyChanged()V
     .locals 1
 
-    .line 592
+    .line 603
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1700(Lcom/oneplus/doze/DozeService;)V
 
-    .line 593
+    .line 604
     return-void
 .end method
 
 .method public onTriggerDetectLight()V
     .locals 2
 
-    .line 613
+    .line 624
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1000(Lcom/oneplus/doze/DozeService;)Ljava/lang/String;
@@ -284,11 +284,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 614
+    .line 625
     iget-object v0, p0, Lcom/oneplus/doze/DozeService$5;->this$0:Lcom/oneplus/doze/DozeService;
 
     invoke-static {v0}, Lcom/oneplus/doze/DozeService;->access$1900(Lcom/oneplus/doze/DozeService;)V
 
-    .line 615
+    .line 626
     return-void
 .end method

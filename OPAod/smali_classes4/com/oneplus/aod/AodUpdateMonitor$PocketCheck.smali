@@ -48,27 +48,27 @@
 .method private constructor <init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
     .locals 2
 
-    .line 781
+    .line 797
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 788
+    .line 804
     const-string p1, "AodUpdateMonitor.PocketCheck"
 
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mTag:Ljava/lang/String;
 
-    .line 791
+    .line 807
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mChanged:Z
 
-    .line 793
+    .line 809
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mRegisteredTime:J
 
-    .line 795
+    .line 811
     new-instance p1, Landroid/os/Handler;
 
     invoke-direct {p1}, Landroid/os/Handler;-><init>()V
@@ -83,7 +83,7 @@
     .param p1, "x0"    # Lcom/oneplus/aod/AodUpdateMonitor;
     .param p2, "x1"    # Lcom/oneplus/aod/AodUpdateMonitor$1;
 
-    .line 781
+    .line 797
     invoke-direct {p0, p1}, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;-><init>(Lcom/oneplus/aod/AodUpdateMonitor;)V
 
     return-void
@@ -93,7 +93,7 @@
     .locals 6
     .param p1, "result"    # I
 
-    .line 846
+    .line 862
     const-string v0, "AodUpdateMonitor.PocketCheck"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -124,12 +124,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 848
+    .line 864
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 850
+    .line 866
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
@@ -141,7 +141,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 851
+    .line 867
     .local v1, "isNear":Z
     :goto_0
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
@@ -152,17 +152,17 @@
 
     if-ne v2, p1, :cond_1
 
-    .line 852
+    .line 868
     const-string v0, "AodUpdateMonitor.PocketCheck"
 
     const-string v2, "state unchanged"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 853
+    .line 869
     return-void
 
-    .line 856
+    .line 872
     :cond_1
     const-string v2, "AodUpdateMonitor.PocketCheck"
 
@@ -194,15 +194,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 857
+    .line 873
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v2, p1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
-    .line 860
+    .line 876
     if-nez v1, :cond_2
 
-    .line 861
+    .line 877
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v2}, Lcom/oneplus/aod/AodUpdateMonitor;->access$800(Lcom/oneplus/aod/AodUpdateMonitor;)Z
@@ -211,14 +211,14 @@
 
     if-nez v2, :cond_3
 
-    .line 862
+    .line 878
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
     goto :goto_1
 
-    .line 864
+    .line 880
     :cond_2
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -242,12 +242,12 @@
 
     if-gez v2, :cond_3
 
-    .line 866
+    .line 882
     iget-object v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v2, v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$2900(Lcom/oneplus/aod/AodUpdateMonitor;Z)V
 
-    .line 868
+    .line 884
     :cond_3
     :goto_1
     return-void
@@ -260,7 +260,7 @@
     .param p1, "sensor"    # Landroid/hardware/Sensor;
     .param p2, "accuracy"    # I
 
-    .line 843
+    .line 859
     return-void
 .end method
 
@@ -268,12 +268,12 @@
     .locals 5
     .param p1, "event"    # Landroid/hardware/SensorEvent;
 
-    .line 825
+    .line 841
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mChanged:Z
 
-    .line 826
+    .line 842
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
 
     array-length v1, v1
@@ -282,19 +282,19 @@
 
     if-nez v1, :cond_0
 
-    .line 827
+    .line 843
     const-string v0, "AodUpdateMonitor.PocketCheck"
 
     const-string v1, "Event has no values!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 828
+    .line 844
     invoke-direct {p0, v2}, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->onPocketResult(I)V
 
     goto :goto_1
 
-    .line 830
+    .line 846
     :cond_0
     const-string v1, "AodUpdateMonitor.PocketCheck"
 
@@ -326,7 +326,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 831
+    .line 847
     iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
 
     aget v1, v1, v2
@@ -344,7 +344,7 @@
     :cond_1
     move v1, v2
 
-    .line 832
+    .line 848
     .local v1, "isNear":Z
     if-eqz v1, :cond_2
 
@@ -356,7 +356,7 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->onPocketResult(I)V
 
-    .line 834
+    .line 850
     .end local v1    # "isNear":Z
     :goto_1
     return-void
@@ -365,26 +365,26 @@
 .method public run()V
     .locals 1
 
-    .line 838
+    .line 854
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->onPocketResult(I)V
 
-    .line 839
+    .line 855
     return-void
 .end method
 
 .method public startListening()V
     .locals 8
 
-    .line 798
+    .line 814
     iget-boolean v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mRegistered:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 799
+    .line 815
     :cond_0
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
@@ -398,26 +398,26 @@
 
     move-result-object v0
 
-    .line 800
+    .line 816
     .local v0, "sensor":Landroid/hardware/Sensor;
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 801
+    .line 817
     const-string v2, "AodUpdateMonitor.PocketCheck"
 
     const-string v3, "No sensor found"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 802
+    .line 818
     invoke-direct {p0, v1}, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->onPocketResult(I)V
 
-    .line 803
+    .line 819
     return-void
 
-    .line 805
+    .line 821
     :cond_1
     const-string v2, "AodUpdateMonitor.PocketCheck"
 
@@ -425,17 +425,17 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 806
+    .line 822
     invoke-virtual {v0}, Landroid/hardware/Sensor;->getMaximumRange()F
 
     move-result v2
 
     iput v2, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mMaxRange:F
 
-    .line 807
+    .line 823
     iput-boolean v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mChanged:Z
 
-    .line 808
+    .line 824
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
@@ -454,52 +454,52 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;IILandroid/os/Handler;)Z
 
-    .line 810
+    .line 826
     iget-object v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v1, p0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 811
+    .line 827
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mRegistered:Z
 
-    .line 812
+    .line 828
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mRegisteredTime:J
 
-    .line 813
+    .line 829
     return-void
 .end method
 
 .method public stopListening()V
     .locals 2
 
-    .line 816
+    .line 832
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 817
+    .line 833
     const-string v0, "AodUpdateMonitor.PocketCheck"
 
     const-string v1, "stopListening"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 818
+    .line 834
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/aod/AodUpdateMonitor;->access$3102(Lcom/oneplus/aod/AodUpdateMonitor;I)I
 
-    .line 819
+    .line 835
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->this$0:Lcom/oneplus/aod/AodUpdateMonitor;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor;->access$4400(Lcom/oneplus/aod/AodUpdateMonitor;)Landroid/hardware/SensorManager;
@@ -508,9 +508,9 @@
 
     invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 820
+    .line 836
     iput-boolean v1, p0, Lcom/oneplus/aod/AodUpdateMonitor$PocketCheck;->mRegistered:Z
 
-    .line 821
+    .line 837
     return-void
 .end method

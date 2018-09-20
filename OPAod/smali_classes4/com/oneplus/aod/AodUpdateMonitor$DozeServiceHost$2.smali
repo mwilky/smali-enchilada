@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$1"    # Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
-    .line 493
+    .line 507
     iput-object p1, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$2;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +39,11 @@
 .method public run()V
     .locals 1
 
-    .line 496
+    .line 510
     iget-object v0, p0, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost$2;->this$1:Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;
 
     invoke-static {v0}, Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;->access$3500(Lcom/oneplus/aod/AodUpdateMonitor$DozeServiceHost;)V
 
-    .line 497
+    .line 511
     return-void
 .end method
