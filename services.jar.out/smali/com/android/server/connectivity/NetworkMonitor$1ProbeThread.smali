@@ -45,15 +45,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/connectivity/NetworkMonitor;ILandroid/net/ProxyInfo;Ljava/net/URL;Ljava/net/URL;Ljava/net/URL;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/NetworkMonitor;
-    .param p2, "type"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 1330
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
     iput-object p3, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$proxy:Landroid/net/ProxyInfo;
@@ -68,12 +65,10 @@
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 1324
     sget-object p3, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     iput-object p3, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    .line 1331
     const/4 p3, 0x0
 
     const/4 p4, 0x1
@@ -90,7 +85,6 @@
     :goto_0
     iput-boolean p5, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsHttps:Z
 
-    .line 1332
     const/4 p5, 0x2
 
     if-ne p2, p5, :cond_1
@@ -102,7 +96,6 @@
     :cond_1
     iput-boolean p3, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsChinaProbe:Z
 
-    .line 1333
     return-void
 .end method
 
@@ -111,7 +104,6 @@
 .method public result()Landroid/net/captiveportal/CaptivePortalProbeResult;
     .locals 1
 
-    .line 1336
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsChinaProbe:Z
 
     if-nez v0, :cond_0
@@ -124,12 +116,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1337
     sget-object v0, Landroid/net/captiveportal/CaptivePortalProbeResult;->FAILED:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     return-object v0
 
-    .line 1339
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
@@ -139,12 +129,10 @@
 .method public run()V
     .locals 4
 
-    .line 1344
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsHttps:Z
 
     if-eqz v0, :cond_0
 
-    .line 1345
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
     iget-object v1, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$proxy:Landroid/net/ProxyInfo;
@@ -153,7 +141,6 @@
 
     const/4 v3, 0x2
 
-    .line 1346
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/connectivity/NetworkMonitor;->access$4100(Lcom/android/server/connectivity/NetworkMonitor;Landroid/net/ProxyInfo;Ljava/net/URL;I)Landroid/net/captiveportal/CaptivePortalProbeResult;
 
     move-result-object v0
@@ -162,7 +149,6 @@
 
     goto :goto_0
 
-    .line 1347
     :cond_0
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsChinaProbe:Z
 
@@ -170,7 +156,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1348
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
     iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$proxy:Landroid/net/ProxyInfo;
@@ -185,7 +170,6 @@
 
     goto :goto_0
 
-    .line 1350
     :cond_1
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -199,7 +183,6 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    .line 1352
     :goto_0
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -235,7 +218,6 @@
 
     iget-object v2, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    .line 1353
     invoke-virtual {v2}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
     move-result v2
@@ -274,10 +256,8 @@
 
     move-result-object v1
 
-    .line 1352
     invoke-static {v0, v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$3600(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)V
 
-    .line 1354
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mIsHttps:Z
 
     if-eqz v0, :cond_2
@@ -297,7 +277,6 @@
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    .line 1355
     invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
     move-result v0
@@ -311,7 +290,6 @@
 
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->mResult:Landroid/net/captiveportal/CaptivePortalProbeResult;
 
-    .line 1356
     invoke-virtual {v0}, Landroid/net/captiveportal/CaptivePortalProbeResult;->isPortal()Z
 
     move-result v0
@@ -326,7 +304,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 1358
     :cond_4
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -342,7 +319,6 @@
 
     goto :goto_1
 
-    .line 1367
     :cond_5
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
 
@@ -368,7 +344,6 @@
 
     goto :goto_3
 
-    .line 1359
     :cond_6
     :goto_1
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
@@ -393,7 +368,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/connectivity/NetworkMonitor;->access$3600(Lcom/android/server/connectivity/NetworkMonitor;Ljava/lang/String;)V
 
-    .line 1361
     :goto_2
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
@@ -407,20 +381,17 @@
 
     if-lez v0, :cond_7
 
-    .line 1362
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     goto :goto_2
 
-    .line 1371
     :cond_7
     :goto_3
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$1ProbeThread;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1372
     return-void
 .end method

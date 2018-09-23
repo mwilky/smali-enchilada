@@ -27,25 +27,19 @@
 # direct methods
 .method public constructor <init>(Landroid/net/ip/IpClient;Landroid/net/ip/IpClient$Callback;)V
     .locals 0
-    .param p2, "callback"    # Landroid/net/ip/IpClient$Callback;
 
-    .line 237
     iput-object p1, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0}, Landroid/net/ip/IpClient$Callback;-><init>()V
 
-    .line 238
     iput-object p2, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
-    .line 239
     return-void
 .end method
 
 .method private log(Ljava/lang/String;)V
     .locals 3
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 242
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$000(Landroid/net/ip/IpClient;)Landroid/net/util/SharedLog;
@@ -68,7 +62,6 @@
 
     invoke-virtual {v0, v1}, Landroid/net/util/SharedLog;->log(Ljava/lang/String;)V
 
-    .line 243
     return-void
 .end method
 
@@ -76,14 +69,11 @@
 # virtual methods
 .method public installPacketFilter([B)V
     .locals 2
-    .param p1, "filter"    # [B
 
-    .line 287
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->installPacketFilter([B)V
 
-    .line 288
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -106,20 +96,16 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 289
     return-void
 .end method
 
 .method public onLinkPropertiesChange(Landroid/net/LinkProperties;)V
     .locals 2
-    .param p1, "newLp"    # Landroid/net/LinkProperties;
 
-    .line 272
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->onLinkPropertiesChange(Landroid/net/LinkProperties;)V
 
-    .line 273
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,20 +126,16 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 274
     return-void
 .end method
 
 .method public onNewDhcpResults(Landroid/net/DhcpResults;)V
     .locals 2
-    .param p1, "dhcpResults"    # Landroid/net/DhcpResults;
 
-    .line 257
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->onNewDhcpResults(Landroid/net/DhcpResults;)V
 
-    .line 258
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -174,54 +156,44 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 259
     return-void
 .end method
 
 .method public onPostDhcpAction()V
     .locals 1
 
-    .line 252
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient$Callback;->onPostDhcpAction()V
 
-    .line 253
     const-string/jumbo v0, "onPostDhcpAction()"
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 254
     return-void
 .end method
 
 .method public onPreDhcpAction()V
     .locals 1
 
-    .line 247
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient$Callback;->onPreDhcpAction()V
 
-    .line 248
     const-string/jumbo v0, "onPreDhcpAction()"
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 249
     return-void
 .end method
 
 .method public onProvisioningFailure(Landroid/net/LinkProperties;)V
     .locals 2
-    .param p1, "newLp"    # Landroid/net/LinkProperties;
 
-    .line 267
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->onProvisioningFailure(Landroid/net/LinkProperties;)V
 
-    .line 268
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -242,20 +214,16 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 269
     return-void
 .end method
 
 .method public onProvisioningSuccess(Landroid/net/LinkProperties;)V
     .locals 2
-    .param p1, "newLp"    # Landroid/net/LinkProperties;
 
-    .line 262
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->onProvisioningSuccess(Landroid/net/LinkProperties;)V
 
-    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -276,37 +244,30 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 264
     return-void
 .end method
 
 .method public onQuit()V
     .locals 1
 
-    .line 282
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient$Callback;->onQuit()V
 
-    .line 283
     const-string/jumbo v0, "onQuit()"
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 284
     return-void
 .end method
 
 .method public onReachabilityLost(Ljava/lang/String;)V
     .locals 2
-    .param p1, "logMsg"    # Ljava/lang/String;
 
-    .line 277
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->onReachabilityLost(Ljava/lang/String;)V
 
-    .line 278
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -327,20 +288,16 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 279
     return-void
 .end method
 
 .method public setFallbackMulticastFilter(Z)V
     .locals 2
-    .param p1, "enabled"    # Z
 
-    .line 297
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->setFallbackMulticastFilter(Z)V
 
-    .line 298
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -361,20 +318,16 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 299
     return-void
 .end method
 
 .method public setNeighborDiscoveryOffload(Z)V
     .locals 2
-    .param p1, "enable"    # Z
 
-    .line 302
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient$Callback;->setNeighborDiscoveryOffload(Z)V
 
-    .line 303
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -395,23 +348,19 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 304
     return-void
 .end method
 
 .method public startReadPacketFilter()V
     .locals 1
 
-    .line 292
     iget-object v0, p0, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->mCallback:Landroid/net/ip/IpClient$Callback;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient$Callback;->startReadPacketFilter()V
 
-    .line 293
     const-string/jumbo v0, "startReadPacketFilter()"
 
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$LoggingCallbackWrapper;->log(Ljava/lang/String;)V
 
-    .line 294
     return-void
 .end method

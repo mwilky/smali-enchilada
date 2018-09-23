@@ -29,9 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ThreadPriorityBooster;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/ThreadPriorityBooster;
 
-    .line 33
     iput-object p1, p0, Lcom/android/server/ThreadPriorityBooster$1;->this$0:Lcom/android/server/ThreadPriorityBooster;
 
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -44,7 +42,6 @@
 .method protected initialValue()Lcom/android/server/ThreadPriorityBooster$PriorityState;
     .locals 2
 
-    .line 35
     new-instance v0, Lcom/android/server/ThreadPriorityBooster$PriorityState;
 
     const/4 v1, 0x0
@@ -57,7 +54,6 @@
 .method protected bridge synthetic initialValue()Ljava/lang/Object;
     .locals 1
 
-    .line 33
     invoke-virtual {p0}, Lcom/android/server/ThreadPriorityBooster$1;->initialValue()Lcom/android/server/ThreadPriorityBooster$PriorityState;
 
     move-result-object v0

@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 21728
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/am/ProcessMemInfo;Lcom/android/server/am/ProcessMemInfo;)I
     .locals 6
-    .param p1, "lhs"    # Lcom/android/server/am/ProcessMemInfo;
-    .param p2, "rhs"    # Lcom/android/server/am/ProcessMemInfo;
 
-    .line 21730
     iget v0, p1, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
 
     iget v1, p2, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
@@ -61,7 +56,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 21731
     iget v0, p1, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
 
     iget v1, p2, Lcom/android/server/am/ProcessMemInfo;->oomAdj:I
@@ -75,7 +69,6 @@
     :cond_0
     return v2
 
-    .line 21733
     :cond_1
     iget-wide v0, p1, Lcom/android/server/am/ProcessMemInfo;->pss:J
 
@@ -85,7 +78,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 21734
     iget-wide v0, p1, Lcom/android/server/am/ProcessMemInfo;->pss:J
 
     iget-wide v4, p2, Lcom/android/server/am/ProcessMemInfo;->pss:J
@@ -102,7 +94,6 @@
     :goto_0
     return v2
 
-    .line 21736
     :cond_3
     const/4 v0, 0x0
 
@@ -112,7 +103,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 21728
     check-cast p1, Lcom/android/server/am/ProcessMemInfo;
 
     check-cast p2, Lcom/android/server/am/ProcessMemInfo;

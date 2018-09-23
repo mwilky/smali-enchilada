@@ -23,17 +23,9 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IZZJII)V
     .locals 9
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "level"    # I
-    .param p3, "locked"    # Z
-    .param p4, "stopped"    # Z
-    .param p5, "time"    # J
-    .param p7, "pid"    # I
-    .param p8, "uid"    # I
 
     move-object v8, p0
 
-    .line 4391
     move-object v0, v8
 
     move-object v1, p1
@@ -50,17 +42,14 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/oneplus/highpower/HighPowerApp;-><init>(Ljava/lang/String;IZZJI)V
 
-    .line 4392
     move/from16 v0, p7
 
     iput v0, v8, Lcom/android/server/am/OnePlusHighPowerDetector$ExtendHighPowerApp;->pid:I
 
-    .line 4393
     move/from16 v1, p8
 
     iput v1, v8, Lcom/android/server/am/OnePlusHighPowerDetector$ExtendHighPowerApp;->uid:I
 
-    .line 4394
     return-void
 .end method
 
@@ -69,11 +58,8 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 4397
     const-string v0, "ExtendHighPowerApp{"
 
-    .line 4398
-    .local v0, "ret":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -92,7 +78,6 @@
 
     move-result-object v0
 
-    .line 4399
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -111,7 +96,6 @@
 
     move-result-object v0
 
-    .line 4400
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -130,7 +114,6 @@
 
     move-result-object v0
 
-    .line 4401
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -149,7 +132,6 @@
 
     move-result-object v0
 
-    .line 4402
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -168,7 +150,6 @@
 
     move-result-object v0
 
-    .line 4403
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -183,6 +164,5 @@
 
     move-result-object v0
 
-    .line 4405
     return-object v0
 .end method

@@ -13,15 +13,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityStackSupervisor;)V
     .locals 0
-    .param p1, "activityStackSupervisor"    # Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Lcom/android/server/am/ActivityLaunchParamsModifier;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 35
     return-void
 .end method
 
@@ -29,23 +25,13 @@
 # virtual methods
 .method public onCalculate(Lcom/android/server/am/TaskRecord;Landroid/content/pm/ActivityInfo$WindowLayout;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;Landroid/app/ActivityOptions;Lcom/android/server/am/LaunchParamsController$LaunchParams;Lcom/android/server/am/LaunchParamsController$LaunchParams;)I
     .locals 3
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "layout"    # Landroid/content/pm/ActivityInfo$WindowLayout;
-    .param p3, "activity"    # Lcom/android/server/am/ActivityRecord;
-    .param p4, "source"    # Lcom/android/server/am/ActivityRecord;
-    .param p5, "options"    # Landroid/app/ActivityOptions;
-    .param p6, "currentParams"    # Lcom/android/server/am/LaunchParamsController$LaunchParams;
-    .param p7, "outParams"    # Lcom/android/server/am/LaunchParamsController$LaunchParams;
 
-    .line 42
     const/4 v0, 0x0
 
     if-nez p3, :cond_0
 
-    .line 43
     return v0
 
-    .line 47
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/ActivityLaunchParamsModifier;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -55,7 +41,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 48
     invoke-virtual {p3}, Lcom/android/server/am/ActivityRecord;->isResizeable()Z
 
     move-result v1
@@ -72,14 +57,11 @@
 
     goto :goto_1
 
-    .line 52
     :cond_1
     invoke-virtual {p5}, Landroid/app/ActivityOptions;->getLaunchBounds()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 55
-    .local v1, "bounds":Landroid/graphics/Rect;
     if-eqz v1, :cond_3
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
@@ -90,24 +72,19 @@
 
     goto :goto_0
 
-    .line 59
     :cond_2
     iget-object v0, p7, Lcom/android/server/am/LaunchParamsController$LaunchParams;->mBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 63
     const/4 v0, 0x1
 
     return v0
 
-    .line 56
     :cond_3
     :goto_0
     return v0
 
-    .line 49
-    .end local v1    # "bounds":Landroid/graphics/Rect;
     :cond_4
     :goto_1
     return v0

@@ -44,15 +44,9 @@
 # direct methods
 .method public constructor <init>(IBBI)V
     .locals 0
-    .param p1, "length"    # I
-    .param p2, "type"    # B
-    .param p3, "subtype"    # B
-    .param p4, "subClass"    # I
 
-    .line 50
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/usb/descriptors/UsbACInterface;-><init>(IBBI)V
 
-    .line 51
     return-void
 .end method
 
@@ -61,7 +55,6 @@
 .method public getControlSize()B
     .locals 1
 
-    .line 66
     iget-byte v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mControlSize:B
 
     return v0
@@ -70,7 +63,6 @@
 .method public getControls()[I
     .locals 1
 
-    .line 70
     iget-object v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mControls:[I
 
     return-object v0
@@ -79,7 +71,6 @@
 .method public getNumChannels()I
     .locals 1
 
-    .line 54
     iget v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mNumChannels:I
 
     return v0
@@ -88,7 +79,6 @@
 .method public getSourceID()B
     .locals 1
 
-    .line 62
     iget-byte v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mSourceID:B
 
     return v0
@@ -97,7 +87,6 @@
 .method public getUnitID()B
     .locals 1
 
-    .line 58
     iget-byte v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mUnitID:B
 
     return v0
@@ -106,7 +95,6 @@
 .method public getUnitName()B
     .locals 1
 
-    .line 74
     iget-byte v0, p0, Lcom/android/server/usb/descriptors/UsbACFeatureUnit;->mUnitName:B
 
     return v0

@@ -23,23 +23,17 @@
 # direct methods
 .method public constructor <init>(Landroid/service/autofill/SaveRequest;Lcom/android/server/autofill/RemoteFillService;)V
     .locals 1
-    .param p1, "request"    # Landroid/service/autofill/SaveRequest;
-    .param p2, "service"    # Lcom/android/server/autofill/RemoteFillService;
 
-    .line 636
     invoke-direct {p0, p2}, Lcom/android/server/autofill/RemoteFillService$PendingRequest;-><init>(Lcom/android/server/autofill/RemoteFillService;)V
 
-    .line 637
     iput-object p1, p0, Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest;->mRequest:Landroid/service/autofill/SaveRequest;
 
-    .line 639
     new-instance v0, Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest$1;-><init>(Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest;)V
 
     iput-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest;->mCallback:Landroid/service/autofill/ISaveCallback;
 
-    .line 662
     return-void
 .end method
 
@@ -48,7 +42,6 @@
 .method public isFinal()Z
     .locals 1
 
-    .line 685
     const/4 v0, 0x1
 
     return v0
@@ -56,30 +49,23 @@
 
 .method onTimeout(Lcom/android/server/autofill/RemoteFillService;)V
     .locals 1
-    .param p1, "remoteService"    # Lcom/android/server/autofill/RemoteFillService;
 
-    .line 666
     const/4 v0, 0x0
 
     invoke-static {p1, p0, v0}, Lcom/android/server/autofill/RemoteFillService;->access$1600(Lcom/android/server/autofill/RemoteFillService;Lcom/android/server/autofill/RemoteFillService$PendingRequest;Ljava/lang/CharSequence;)V
 
-    .line 667
     return-void
 .end method
 
 .method public run()V
     .locals 4
 
-    .line 671
     invoke-virtual {p0}, Lcom/android/server/autofill/RemoteFillService$PendingSaveRequest;->getService()Lcom/android/server/autofill/RemoteFillService;
 
     move-result-object v0
 
-    .line 672
-    .local v0, "remoteService":Lcom/android/server/autofill/RemoteFillService;
     if-eqz v0, :cond_0
 
-    .line 674
     :try_start_0
     invoke-static {v0}, Lcom/android/server/autofill/RemoteFillService;->access$400(Lcom/android/server/autofill/RemoteFillService;)Landroid/service/autofill/IAutoFillService;
 
@@ -93,28 +79,21 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 679
     goto :goto_0
 
-    .line 675
     :catch_0
     move-exception v1
 
-    .line 676
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "RemoteFillService"
 
     const-string v3, "Error calling on save request"
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 678
     const/4 v2, 0x0
 
     invoke-static {v0, p0, v2}, Lcom/android/server/autofill/RemoteFillService;->access$1600(Lcom/android/server/autofill/RemoteFillService;Lcom/android/server/autofill/RemoteFillService$PendingRequest;Ljava/lang/CharSequence;)V
 
-    .line 681
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     return-void

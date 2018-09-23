@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 348
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 351
     const-string v0, "StatsCompanionService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -42,7 +38,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 352
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -57,17 +52,14 @@
 
     move-result-object v1
 
-    .line 351
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 353
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$100()Ljava/lang/Object;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 354
     :try_start_0
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$200()Landroid/os/IStatsManager;
 
@@ -75,21 +67,18 @@
 
     if-nez v1, :cond_0
 
-    .line 355
     const-string v1, "StatsCompanionService"
 
     const-string v2, "Could not access statsd to inform it of anomaly alarm firing"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    .line 360
     :cond_0
     :try_start_1
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$200()Landroid/os/IStatsManager;
@@ -101,15 +90,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 363
     goto :goto_0
 
-    .line 361
     :catch_0
     move-exception v1
 
-    .line 362
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "StatsCompanionService"
 
@@ -117,15 +102,11 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 364
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 366
     return-void
 
-    .line 364
     :catchall_0
     move-exception v1
 

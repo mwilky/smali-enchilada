@@ -88,15 +88,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/AppStandbyController;Landroid/os/Handler;)V
     .locals 1
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 1797
     iput-object p1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
-    .line 1798
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1795
     new-instance p1, Landroid/util/KeyValueListParser;
 
     const/16 v0, 0x2c
@@ -105,7 +101,6 @@
 
     iput-object p1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 1799
     return-void
 .end method
 
@@ -113,31 +108,23 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 1811
     invoke-virtual {p0}, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->updateSettings()V
 
-    .line 1812
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-virtual {v0}, Lcom/android/server/usage/AppStandbyController;->postOneTimeCheckIdleStates()V
 
-    .line 1813
     return-void
 .end method
 
 .method parseLongArray(Ljava/lang/String;[J)[J
     .locals 5
-    .param p1, "values"    # Ljava/lang/String;
-    .param p2, "defaults"    # [J
 
-    .line 1903
     if-nez p1, :cond_0
 
     return-object p2
 
-    .line 1904
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
@@ -145,10 +132,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 1906
     return-object p2
 
-    .line 1908
     :cond_1
     const-string v0, "/"
 
@@ -156,8 +141,6 @@
 
     move-result-object v0
 
-    .line 1909
-    .local v0, "thresholds":[Ljava/lang/String;
     array-length v1, v0
 
     sget-object v2, Lcom/android/server/usage/AppStandbyController;->THRESHOLD_BUCKETS:[I
@@ -166,19 +149,14 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 1910
     sget-object v1, Lcom/android/server/usage/AppStandbyController;->THRESHOLD_BUCKETS:[I
 
     array-length v1, v1
 
     new-array v1, v1, [J
 
-    .line 1911
-    .local v1, "array":[J
     const/4 v2, 0x0
 
-    .line 1911
-    .local v2, "i":I
     :goto_0
     sget-object v3, Lcom/android/server/usage/AppStandbyController;->THRESHOLD_BUCKETS:[I
 
@@ -186,7 +164,6 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 1913
     :try_start_0
     aget-object v3, v0, v2
 
@@ -210,7 +187,6 @@
 
     goto :goto_1
 
-    .line 1916
     :cond_2
     aget-object v3, v0, v2
 
@@ -222,7 +198,6 @@
 
     goto :goto_2
 
-    .line 1914
     :cond_3
     :goto_1
     aget-object v3, v0, v2
@@ -240,31 +215,21 @@
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/time/format/DateTimeParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1920
     :goto_2
     nop
 
-    .line 1911
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1918
     :catch_0
     move-exception v3
 
-    .line 1919
-    .local v3, "e":Ljava/lang/RuntimeException;
     return-object p2
 
-    .line 1922
-    .end local v2    # "i":I
-    .end local v3    # "e":Ljava/lang/RuntimeException;
     :cond_4
     return-object v1
 
-    .line 1924
-    .end local v1    # "array":[J
     :cond_5
     return-object p2
 .end method
@@ -272,7 +237,6 @@
 .method registerObserver()V
     .locals 3
 
-    .line 1802
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-static {v0}, Lcom/android/server/usage/AppStandbyController;->access$800(Lcom/android/server/usage/AppStandbyController;)Landroid/content/Context;
@@ -283,8 +247,6 @@
 
     move-result-object v0
 
-    .line 1803
-    .local v0, "cr":Landroid/content/ContentResolver;
     const-string v1, "app_idle_constants"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -295,7 +257,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1804
     const-string v1, "app_standby_enabled"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -304,7 +265,6 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1805
     const-string v1, "adaptive_battery_management_enabled"
 
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -313,19 +273,16 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 1807
     return-void
 .end method
 
 .method updateSettings()V
     .locals 14
 
-    .line 1816
     sget-boolean v0, Lcom/android/server/usage/AppStandbyController;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 1817
     const-string v0, "AppStandbyController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -338,7 +295,6 @@
 
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
-    .line 1818
     invoke-static {v2}, Lcom/android/server/usage/AppStandbyController;->access$800(Lcom/android/server/usage/AppStandbyController;)Landroid/content/Context;
 
     move-result-object v2
@@ -359,10 +315,8 @@
 
     move-result-object v1
 
-    .line 1817
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1820
     const-string v0, "AppStandbyController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -375,7 +329,6 @@
 
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
-    .line 1821
     invoke-static {v2}, Lcom/android/server/usage/AppStandbyController;->access$800(Lcom/android/server/usage/AppStandbyController;)Landroid/content/Context;
 
     move-result-object v2
@@ -396,10 +349,8 @@
 
     move-result-object v1
 
-    .line 1820
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1823
     const-string v0, "AppStandbyController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -412,7 +363,6 @@
 
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
-    .line 1824
     invoke-static {v2}, Lcom/android/server/usage/AppStandbyController;->access$800(Lcom/android/server/usage/AppStandbyController;)Landroid/content/Context;
 
     move-result-object v2
@@ -423,7 +373,6 @@
 
     const-string v3, "app_idle_constants"
 
-    .line 1823
     invoke-static {v2, v3}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -436,7 +385,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1828
     :cond_0
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
@@ -450,7 +398,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/usage/AppStandbyController;->setAppIdleEnabled(Z)V
 
-    .line 1833
     :try_start_0
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
@@ -466,15 +413,11 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1837
     goto :goto_0
 
-    .line 1834
     :catch_0
     move-exception v0
 
-    .line 1835
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v1, "AppStandbyController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -497,8 +440,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1839
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
@@ -508,7 +449,6 @@
 
     monitor-enter v0
 
-    .line 1842
     :try_start_1
     iget-object v1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
@@ -524,7 +464,6 @@
 
     iput-wide v2, v1, Lcom/android/server/usage/AppStandbyController;->mAppIdleParoleIntervalMillis:J
 
-    .line 1846
     iget-object v1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
@@ -539,7 +478,6 @@
 
     iput-wide v2, v1, Lcom/android/server/usage/AppStandbyController;->mAppIdleParoleWindowMillis:J
 
-    .line 1849
     iget-object v1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
@@ -554,7 +492,6 @@
 
     iput-wide v2, v1, Lcom/android/server/usage/AppStandbyController;->mAppIdleParoleDurationMillis:J
 
-    .line 1852
     iget-object v1, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v2, "screen_thresholds"
@@ -565,8 +502,6 @@
 
     move-result-object v1
 
-    .line 1853
-    .local v1, "screenThresholdsValue":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     sget-object v8, Lcom/android/server/usage/AppStandbyController;->SCREEN_TIME_THRESHOLDS:[J
@@ -577,7 +512,6 @@
 
     iput-object v8, v2, Lcom/android/server/usage/AppStandbyController;->mAppStandbyScreenThresholds:[J
 
-    .line 1856
     iget-object v2, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v8, "elapsed_thresholds"
@@ -586,8 +520,6 @@
 
     move-result-object v2
 
-    .line 1858
-    .local v2, "elapsedThresholdsValue":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     sget-object v8, Lcom/android/server/usage/AppStandbyController;->ELAPSED_TIME_THRESHOLDS:[J
@@ -598,7 +530,6 @@
 
     iput-object v8, v3, Lcom/android/server/usage/AppStandbyController;->mAppStandbyElapsedThresholds:[J
 
-    .line 1860
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v8, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
@@ -621,7 +552,6 @@
 
     iput-wide v8, v3, Lcom/android/server/usage/AppStandbyController;->mCheckIdleIntervalMillis:J
 
-    .line 1862
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v8, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
@@ -630,21 +560,18 @@
 
     const-wide/32 v12, 0x36ee80
 
-    .line 1863
     invoke-virtual {v8, v9, v12, v13}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v8
 
     iput-wide v8, v3, Lcom/android/server/usage/AppStandbyController;->mStrongUsageTimeoutMillis:J
 
-    .line 1865
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v8, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v9, "notification_seen_duration"
 
-    .line 1866
     const-wide/32 v12, 0x2932e00
 
     invoke-virtual {v8, v9, v12, v13}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
@@ -653,127 +580,106 @@
 
     iput-wide v8, v3, Lcom/android/server/usage/AppStandbyController;->mNotificationSeenTimeoutMillis:J
 
-    .line 1868
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v8, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v9, "system_update_usage_duration"
 
-    .line 1869
     invoke-virtual {v8, v9, v4, v5}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mSystemUpdateUsageTimeoutMillis:J
 
-    .line 1871
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v5, "prediction_timeout"
 
-    .line 1872
     invoke-virtual {v4, v5, v12, v13}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mPredictionTimeoutMillis:J
 
-    .line 1874
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v5, "sync_adapter_duration"
 
-    .line 1875
     invoke-virtual {v4, v5, v6, v7}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mSyncAdapterTimeoutMillis:J
 
-    .line 1878
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v5, "exempted_sync_scheduled_nd_duration"
 
-    .line 1879
     invoke-virtual {v4, v5, v6, v7}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mExemptedSyncScheduledNonDozeTimeoutMillis:J
 
-    .line 1883
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v5, "exempted_sync_scheduled_d_duration"
 
-    .line 1884
     invoke-virtual {v4, v5, v10, v11}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mExemptedSyncScheduledDozeTimeoutMillis:J
 
-    .line 1888
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v5, "exempted_sync_start_duration"
 
-    .line 1889
     invoke-virtual {v4, v5, v6, v7}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mExemptedSyncStartTimeoutMillis:J
 
-    .line 1893
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v5, "system_interaction_duration"
 
-    .line 1894
     invoke-virtual {v4, v5, v6, v7}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mSystemInteractionTimeoutMillis:J
 
-    .line 1896
     iget-object v3, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     iget-object v4, p0, Lcom/android/server/usage/AppStandbyController$SettingsObserver;->mParser:Landroid/util/KeyValueListParser;
 
     const-string/jumbo v5, "stable_charging_threshold"
 
-    .line 1897
     invoke-virtual {v4, v5, v6, v7}, Landroid/util/KeyValueListParser;->getDurationMillis(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lcom/android/server/usage/AppStandbyController;->mStableChargingThresholdMillis:J
 
-    .line 1899
-    .end local v1    # "screenThresholdsValue":Ljava/lang/String;
-    .end local v2    # "elapsedThresholdsValue":Ljava/lang/String;
     monitor-exit v0
 
-    .line 1900
     return-void
 
-    .line 1899
     :catchall_0
     move-exception v1
 

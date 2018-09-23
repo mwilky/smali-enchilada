@@ -29,7 +29,6 @@
 .method private constructor <init>(Lcom/android/server/autofill/ui/FillUi;)V
     .locals 0
 
-    .line 836
     iput-object p1, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/autofill/ui/FillUi;Lcom/android/server/autofill/ui/FillUi$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/autofill/ui/FillUi;
-    .param p2, "x1"    # Lcom/android/server/autofill/ui/FillUi$1;
 
-    .line 836
     invoke-direct {p0, p1}, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;-><init>(Lcom/android/server/autofill/ui/FillUi;)V
 
     return-void
@@ -53,10 +49,8 @@
 .method public post()V
     .locals 3
 
-    .line 840
     invoke-virtual {p0}, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->remove()V
 
-    .line 841
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-static {v0}, Lcom/android/server/autofill/ui/FillUi;->access$1000(Lcom/android/server/autofill/ui/FillUi;)Landroid/widget/ListView;
@@ -67,14 +61,12 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/widget/ListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 842
     return-void
 .end method
 
 .method public remove()V
     .locals 1
 
-    .line 845
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-static {v0}, Lcom/android/server/autofill/ui/FillUi;->access$1000(Lcom/android/server/autofill/ui/FillUi;)Landroid/widget/ListView;
@@ -83,14 +75,12 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 846
     return-void
 .end method
 
 .method public run()V
     .locals 6
 
-    .line 850
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-static {v0}, Lcom/android/server/autofill/ui/FillUi;->access$1000(Lcom/android/server/autofill/ui/FillUi;)Landroid/widget/ListView;
@@ -105,11 +95,8 @@
 
     move-result v0
 
-    .line 852
-    .local v0, "count":I
     if-gtz v0, :cond_0
 
-    .line 853
     iget-object v1, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-static {v1}, Lcom/android/server/autofill/ui/FillUi;->access$1100(Lcom/android/server/autofill/ui/FillUi;)Landroid/content/Context;
@@ -122,11 +109,8 @@
 
     move-result-object v1
 
-    .local v1, "text":Ljava/lang/String;
     goto :goto_0
 
-    .line 855
-    .end local v1    # "text":Ljava/lang/String;
     :cond_0
     iget-object v1, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
@@ -146,20 +130,16 @@
 
     const/4 v4, 0x0
 
-    .line 856
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v3, v4
 
-    .line 855
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 858
-    .restart local v1    # "text":Ljava/lang/String;
     :goto_0
     iget-object v2, p0, Lcom/android/server/autofill/ui/FillUi$AnnounceFilterResult;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
@@ -169,6 +149,5 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/ListView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 859
     return-void
 .end method

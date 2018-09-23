@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "title"    # Ljava/lang/String;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 194
     iput-object p1, p0, Lcom/android/server/policy/ShortcutManager$ShortcutInfo;->title:Ljava/lang/String;
 
-    .line 195
     iput-object p2, p0, Lcom/android/server/policy/ShortcutManager$ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 196
     return-void
 .end method

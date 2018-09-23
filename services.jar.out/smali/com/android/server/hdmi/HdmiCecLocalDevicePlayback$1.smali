@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiCecLocalDevicePlayback;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiCecLocalDevicePlayback;
 
-    .line 211
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiCecLocalDevicePlayback$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDevicePlayback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public acquire()V
     .locals 0
 
-    .line 213
     return-void
 .end method
 
 .method public isHeld()Z
     .locals 1
 
-    .line 217
     const/4 v0, 0x0
 
     return v0
@@ -55,6 +51,5 @@
 .method public release()V
     .locals 0
 
-    .line 215
     return-void
 .end method

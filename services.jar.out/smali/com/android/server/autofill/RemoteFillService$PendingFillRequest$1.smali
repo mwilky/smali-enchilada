@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;Landroid/service/autofill/FillRequest;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
-    .line 532
     iput-object p1, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     iput-object p2, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->val$request:Landroid/service/autofill/FillRequest;
@@ -39,16 +37,13 @@
 # virtual methods
 .method public onCancellable(Landroid/os/ICancellationSignal;)V
     .locals 5
-    .param p1, "cancellation"    # Landroid/os/ICancellationSignal;
 
-    .line 535
     iget-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     iget-object v0, v0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 537
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
@@ -58,44 +53,34 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 538
     :try_start_1
     iget-object v2, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     invoke-static {v2, p1}, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;->access$1002(Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;Landroid/os/ICancellationSignal;)Landroid/os/ICancellationSignal;
 
-    .line 539
     iget-object v2, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     invoke-virtual {v2}, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;->isCancelledLocked()Z
 
     move-result v2
 
-    .line 540
-    .local v2, "cancelled":Z
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 541
     if-eqz v2, :cond_0
 
-    .line 543
     :try_start_2
     invoke-interface {p1}, Landroid/os/ICancellationSignal;->cancel()V
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 546
     goto :goto_0
 
-    .line 544
     :catch_0
     move-exception v1
 
-    .line 545
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_3
     const-string v3, "RemoteFillService"
 
@@ -103,19 +88,14 @@
 
     invoke-static {v3, v4, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 548
-    .end local v1    # "e":Landroid/os/RemoteException;
-    .end local v2    # "cancelled":Z
     :cond_0
     :goto_0
     monitor-exit v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 549
     return-void
 
-    .line 540
     :catchall_0
     move-exception v2
 
@@ -127,7 +107,6 @@
     :try_start_5
     throw v2
 
-    .line 548
     :catchall_1
     move-exception v1
 
@@ -140,10 +119,7 @@
 
 .method public onFailure(ILjava/lang/CharSequence;)V
     .locals 2
-    .param p1, "requestId"    # I
-    .param p2, "message"    # Ljava/lang/CharSequence;
 
-    .line 564
     iget-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     invoke-virtual {v0}, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;->finish()Z
@@ -154,7 +130,6 @@
 
     return-void
 
-    .line 566
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
@@ -162,25 +137,19 @@
 
     move-result-object v0
 
-    .line 567
-    .local v0, "remoteService":Lcom/android/server/autofill/RemoteFillService;
     if-eqz v0, :cond_1
 
-    .line 568
     iget-object v1, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     invoke-static {v0, v1, p2}, Lcom/android/server/autofill/RemoteFillService;->access$1200(Lcom/android/server/autofill/RemoteFillService;Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;Ljava/lang/CharSequence;)V
 
-    .line 571
     :cond_1
     return-void
 .end method
 
 .method public onSuccess(Landroid/service/autofill/FillResponse;)V
     .locals 3
-    .param p1, "response"    # Landroid/service/autofill/FillResponse;
 
-    .line 553
     iget-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     invoke-virtual {v0}, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;->finish()Z
@@ -191,7 +160,6 @@
 
     return-void
 
-    .line 555
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
@@ -199,24 +167,18 @@
 
     move-result-object v0
 
-    .line 556
-    .local v0, "remoteService":Lcom/android/server/autofill/RemoteFillService;
     if-eqz v0, :cond_1
 
-    .line 557
     iget-object v1, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->this$0:Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;
 
     iget-object v2, p0, Lcom/android/server/autofill/RemoteFillService$PendingFillRequest$1;->val$request:Landroid/service/autofill/FillRequest;
 
-    .line 558
     invoke-virtual {v2}, Landroid/service/autofill/FillRequest;->getFlags()I
 
     move-result v2
 
-    .line 557
     invoke-static {v0, v1, p1, v2}, Lcom/android/server/autofill/RemoteFillService;->access$1100(Lcom/android/server/autofill/RemoteFillService;Lcom/android/server/autofill/RemoteFillService$PendingFillRequest;Landroid/service/autofill/FillResponse;I)V
 
-    .line 560
     :cond_1
     return-void
 .end method

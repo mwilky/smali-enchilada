@@ -25,23 +25,15 @@
 # direct methods
 .method constructor <init>(III)V
     .locals 0
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "densityDpi"    # I
 
-    .line 516
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 517
     iput p1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mWidth:I
 
-    .line 518
     iput p2, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mHeight:I
 
-    .line 519
     iput p3, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mDensityDpi:I
 
-    .line 520
     return-void
 .end method
 
@@ -50,7 +42,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 524
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "{"
@@ -59,7 +50,6 @@
 
     const-string/jumbo v1, "width="
 
-    .line 525
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mWidth:I
@@ -68,7 +58,6 @@
 
     const-string v1, ", height="
 
-    .line 526
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mHeight:I
@@ -77,7 +66,6 @@
 
     const-string v1, ", densityDpi="
 
-    .line 527
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/display/OverlayDisplayAdapter$OverlayMode;->mDensityDpi:I
@@ -86,14 +74,11 @@
 
     const-string/jumbo v1, "}"
 
-    .line 528
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 529
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 524
     return-object v0
 .end method

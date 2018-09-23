@@ -26,10 +26,8 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 2132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2135
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$InstallParams;->userId:I
@@ -39,9 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$1;
 
-    .line 2132
     invoke-direct {p0}, Lcom/android/server/pm/PackageManagerShellCommand$InstallParams;-><init>()V
 
     return-void

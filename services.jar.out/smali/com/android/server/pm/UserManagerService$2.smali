@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/UserManagerService;Landroid/os/Bundle;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
-    .line 1682
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$2;->this$0:Lcom/android/server/pm/UserManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/UserManagerService$2;->val$effective:Landroid/os/Bundle;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 1686
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$2;->this$0:Lcom/android/server/pm/UserManagerService;
 
@@ -67,23 +64,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1689
     goto :goto_0
 
-    .line 1687
     :catch_0
     move-exception v0
 
-    .line 1688
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "UserManagerService"
 
     const-string v2, "Unable to notify AppOpsService of UserRestrictions"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1690
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

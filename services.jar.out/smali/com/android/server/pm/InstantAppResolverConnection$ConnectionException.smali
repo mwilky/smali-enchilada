@@ -29,14 +29,10 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "_failure"    # I
 
-    .line 299
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 300
     iput p1, p0, Lcom/android/server/pm/InstantAppResolverConnection$ConnectionException;->failure:I
 
-    .line 301
     return-void
 .end method

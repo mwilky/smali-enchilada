@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$6;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$6;
 
-    .line 2310
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$6$1;->this$1:Lcom/android/server/hdmi/HdmiControlService$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 2313
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$6$1;->this$1:Lcom/android/server/hdmi/HdmiControlService$6;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$6;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -54,7 +51,6 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/hdmi/HdmiCecController;->setOption(IZ)V
 
-    .line 2314
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$6$1;->this$1:Lcom/android/server/hdmi/HdmiControlService$6;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$6;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -67,13 +63,11 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/hdmi/HdmiMhlControllerStub;->setOption(II)V
 
-    .line 2315
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$6$1;->this$1:Lcom/android/server/hdmi/HdmiControlService$6;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$6;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->access$5800(Lcom/android/server/hdmi/HdmiControlService;)V
 
-    .line 2316
     return-void
 .end method

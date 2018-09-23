@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerShellCommand;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerShellCommand;
 
-    .line 310
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public handleOption(Ljava/lang/String;Landroid/os/ShellCommand;)Z
     .locals 4
-    .param p1, "opt"    # Ljava/lang/String;
-    .param p2, "cmd"    # Landroid/os/ShellCommand;
 
-    .line 313
     const-string v0, "-D"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -52,7 +47,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 314
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     const/4 v2, 0x2
@@ -61,7 +55,6 @@
 
     goto/16 :goto_0
 
-    .line 315
     :cond_0
     const-string v0, "-N"
 
@@ -71,7 +64,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 316
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     const/16 v2, 0x8
@@ -80,7 +72,6 @@
 
     goto/16 :goto_0
 
-    .line 317
     :cond_1
     const-string v0, "-W"
 
@@ -90,14 +81,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 318
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$102(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 319
     :cond_2
     const-string v0, "-P"
 
@@ -107,7 +96,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 320
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -118,14 +106,12 @@
 
     invoke-static {v0, v2}, Lcom/android/server/am/ActivityManagerShellCommand;->access$202(Lcom/android/server/am/ActivityManagerShellCommand;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 321
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$302(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 322
     :cond_3
     const-string v0, "--start-profiler"
 
@@ -137,7 +123,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 323
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -148,14 +133,12 @@
 
     invoke-static {v0, v3}, Lcom/android/server/am/ActivityManagerShellCommand;->access$202(Lcom/android/server/am/ActivityManagerShellCommand;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 324
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v2}, Lcom/android/server/am/ActivityManagerShellCommand;->access$302(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 325
     :cond_4
     const-string v0, "--sampling"
 
@@ -165,7 +148,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 326
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -182,7 +164,6 @@
 
     goto/16 :goto_0
 
-    .line 327
     :cond_5
     const-string v0, "--streaming"
 
@@ -192,14 +173,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 328
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$502(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 329
     :cond_6
     const-string v0, "--attach-agent"
 
@@ -209,7 +188,6 @@
 
     if-eqz v0, :cond_8
 
-    .line 330
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0}, Lcom/android/server/am/ActivityManagerShellCommand;->access$600(Lcom/android/server/am/ActivityManagerShellCommand;)Ljava/lang/String;
@@ -218,7 +196,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 331
     invoke-virtual {p2}, Landroid/os/ShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -227,10 +204,8 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 333
     return v2
 
-    .line 335
     :cond_7
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
@@ -242,14 +217,12 @@
 
     invoke-static {v0, v3}, Lcom/android/server/am/ActivityManagerShellCommand;->access$602(Lcom/android/server/am/ActivityManagerShellCommand;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 336
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v2}, Lcom/android/server/am/ActivityManagerShellCommand;->access$702(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 337
     :cond_8
     const-string v0, "--attach-agent-bind"
 
@@ -259,7 +232,6 @@
 
     if-eqz v0, :cond_a
 
-    .line 338
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0}, Lcom/android/server/am/ActivityManagerShellCommand;->access$600(Lcom/android/server/am/ActivityManagerShellCommand;)Ljava/lang/String;
@@ -268,7 +240,6 @@
 
     if-eqz v0, :cond_9
 
-    .line 339
     invoke-virtual {p2}, Landroid/os/ShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -277,10 +248,8 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 341
     return v2
 
-    .line 343
     :cond_9
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
@@ -292,14 +261,12 @@
 
     invoke-static {v0, v2}, Lcom/android/server/am/ActivityManagerShellCommand;->access$602(Lcom/android/server/am/ActivityManagerShellCommand;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 344
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$702(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 345
     :cond_a
     const-string v0, "-R"
 
@@ -309,7 +276,6 @@
 
     if-eqz v0, :cond_b
 
-    .line 346
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -326,7 +292,6 @@
 
     goto/16 :goto_0
 
-    .line 347
     :cond_b
     const-string v0, "-S"
 
@@ -336,14 +301,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 348
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$902(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto/16 :goto_0
 
-    .line 349
     :cond_c
     const-string v0, "--track-allocation"
 
@@ -353,7 +316,6 @@
 
     if-eqz v0, :cond_d
 
-    .line 350
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     const/4 v2, 0x4
@@ -362,7 +324,6 @@
 
     goto/16 :goto_0
 
-    .line 351
     :cond_d
     const-string v0, "--user"
 
@@ -372,7 +333,6 @@
 
     if-eqz v0, :cond_e
 
-    .line 352
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -389,7 +349,6 @@
 
     goto/16 :goto_0
 
-    .line 353
     :cond_e
     const-string v0, "--receiver-permission"
 
@@ -399,7 +358,6 @@
 
     if-eqz v0, :cond_f
 
-    .line 354
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -412,7 +370,6 @@
 
     goto/16 :goto_0
 
-    .line 355
     :cond_f
     const-string v0, "--display"
 
@@ -422,7 +379,6 @@
 
     if-eqz v0, :cond_10
 
-    .line 356
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -439,7 +395,6 @@
 
     goto :goto_0
 
-    .line 357
     :cond_10
     const-string v0, "--windowingMode"
 
@@ -449,7 +404,6 @@
 
     if-eqz v0, :cond_11
 
-    .line 358
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -466,7 +420,6 @@
 
     goto :goto_0
 
-    .line 359
     :cond_11
     const-string v0, "--activityType"
 
@@ -476,7 +429,6 @@
 
     if-eqz v0, :cond_12
 
-    .line 360
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -493,7 +445,6 @@
 
     goto :goto_0
 
-    .line 361
     :cond_12
     const-string v0, "--task"
 
@@ -503,7 +454,6 @@
 
     if-eqz v0, :cond_13
 
-    .line 362
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
@@ -520,7 +470,6 @@
 
     goto :goto_0
 
-    .line 363
     :cond_13
     const-string v0, "--task-overlay"
 
@@ -530,14 +479,12 @@
 
     if-eqz v0, :cond_14
 
-    .line 364
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$1602(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
     goto :goto_0
 
-    .line 365
     :cond_14
     const-string v0, "--lock-task"
 
@@ -547,16 +494,13 @@
 
     if-eqz v0, :cond_15
 
-    .line 366
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerShellCommand$1;->this$0:Lcom/android/server/am/ActivityManagerShellCommand;
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityManagerShellCommand;->access$1702(Lcom/android/server/am/ActivityManagerShellCommand;Z)Z
 
-    .line 370
     :goto_0
     return v1
 
-    .line 368
     :cond_15
     return v2
 .end method

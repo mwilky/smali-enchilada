@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/ColorDisplayService$CustomAutoMode;Lcom/android/server/display/ColorDisplayService;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/display/ColorDisplayService$CustomAutoMode;
 
-    .line 455
     iput-object p1, p0, Lcom/android/server/display/ColorDisplayService$CustomAutoMode$1;->this$1:Lcom/android/server/display/ColorDisplayService$CustomAutoMode;
 
     iput-object p2, p0, Lcom/android/server/display/ColorDisplayService$CustomAutoMode$1;->val$this$0:Lcom/android/server/display/ColorDisplayService;
@@ -39,14 +37,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 458
     iget-object v0, p0, Lcom/android/server/display/ColorDisplayService$CustomAutoMode$1;->this$1:Lcom/android/server/display/ColorDisplayService$CustomAutoMode;
 
     invoke-static {v0}, Lcom/android/server/display/ColorDisplayService$CustomAutoMode;->access$800(Lcom/android/server/display/ColorDisplayService$CustomAutoMode;)V
 
-    .line 459
     return-void
 .end method

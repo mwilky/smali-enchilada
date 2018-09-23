@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/Notifier;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/Notifier;
 
-    .line 763
     iput-object p1, p0, Lcom/android/server/power/Notifier$7;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 766
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -53,7 +48,6 @@
 
     aput-object v2, v0, v3
 
-    .line 767
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -80,16 +74,13 @@
 
     aput-object v1, v0, v2
 
-    .line 766
     const/16 v1, 0xaa6
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 768
     iget-object v0, p0, Lcom/android/server/power/Notifier$7;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->access$400(Lcom/android/server/power/Notifier;)V
 
-    .line 769
     return-void
 .end method

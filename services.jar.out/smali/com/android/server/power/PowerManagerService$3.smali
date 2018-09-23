@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/PowerManagerService;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/PowerManagerService;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 3383
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$3;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iput-object p3, p0, Lcom/android/server/power/PowerManagerService$3;->val$message:Ljava/lang/String;
@@ -41,7 +38,6 @@
 .method public run()V
     .locals 2
 
-    .line 3386
     new-instance v0, Ljava/lang/RuntimeException;
 
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$3;->val$message:Ljava/lang/String;

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCService$OIMCConfigUpdater;Lorg/json/JSONArray;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/server/OIMCService$OIMCConfigUpdater;
 
-    .line 244
     iput-object p1, p0, Lcom/oneplus/server/OIMCService$OIMCConfigUpdater$1;->this$1:Lcom/oneplus/server/OIMCService$OIMCConfigUpdater;
 
     iput-object p2, p0, Lcom/oneplus/server/OIMCService$OIMCConfigUpdater$1;->val$configJSONArray:Lorg/json/JSONArray;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 247
     iget-object v0, p0, Lcom/oneplus/server/OIMCService$OIMCConfigUpdater$1;->this$1:Lcom/oneplus/server/OIMCService$OIMCConfigUpdater;
 
     iget-object v0, v0, Lcom/oneplus/server/OIMCService$OIMCConfigUpdater;->this$0:Lcom/oneplus/server/OIMCService;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/server/TriggerManager;->parseOnlineConfig(Lorg/json/JSONArray;)V
 
-    .line 248
     return-void
 .end method

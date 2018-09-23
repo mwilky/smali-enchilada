@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/statusbar/StatusBarManagerService;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/statusbar/StatusBarManagerService;
 
-    .line 725
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$3;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     iput p2, p0, Lcom/android/server/statusbar/StatusBarManagerService$3;->val$net1:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 727
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$3;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$000(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/server/notification/NotificationDelegate;
@@ -54,6 +51,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/notification/NotificationDelegate;->onSetDisabled(I)V
 
-    .line 728
     return-void
 .end method

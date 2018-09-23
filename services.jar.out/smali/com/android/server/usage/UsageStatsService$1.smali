@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/UsageStatsService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
-    .line 147
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;-><init>()V
@@ -35,24 +33,15 @@
 # virtual methods
 .method public onAppIdleStateChanged(Ljava/lang/String;IZII)V
     .locals 3
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "idle"    # Z
-    .param p4, "bucket"    # I
-    .param p5, "reason"    # I
 
-    .line 151
     new-instance v0, Landroid/app/usage/UsageEvents$Event;
 
     invoke-direct {v0}, Landroid/app/usage/UsageEvents$Event;-><init>()V
 
-    .line 152
-    .local v0, "event":Landroid/app/usage/UsageEvents$Event;
     const/16 v1, 0xb
 
     iput v1, v0, Landroid/app/usage/UsageEvents$Event;->mEventType:I
 
-    .line 153
     shl-int/lit8 v1, p4, 0x10
 
     const v2, 0xffff
@@ -63,17 +52,14 @@
 
     iput v1, v0, Landroid/app/usage/UsageEvents$Event;->mBucketAndReason:I
 
-    .line 154
     iput-object p1, v0, Landroid/app/usage/UsageEvents$Event;->mPackage:Ljava/lang/String;
 
-    .line 156
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Landroid/app/usage/UsageEvents$Event;->mTimeStamp:J
 
-    .line 157
     iget-object v1, p0, Lcom/android/server/usage/UsageStatsService$1;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v1, v1, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -86,14 +72,11 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 158
     return-void
 .end method
 
 .method public onParoleStateChanged(Z)V
     .locals 0
-    .param p1, "isParoleOn"    # Z
 
-    .line 163
     return-void
 .end method

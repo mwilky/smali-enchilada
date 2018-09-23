@@ -21,7 +21,6 @@
 .method public calculateStatusBarTransitionStartTime()J
     .locals 2
 
-    .line 125
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
@@ -32,7 +31,6 @@
 .method public canSkipFirstFrame()Z
     .locals 1
 
-    .line 146
     const/4 v0, 0x0
 
     return v0
@@ -44,7 +42,6 @@
 .method public getBackgroundColor()I
     .locals 1
 
-    .line 118
     const/4 v0, 0x0
 
     return v0
@@ -53,7 +50,6 @@
 .method public getDetachWallpaper()Z
     .locals 1
 
-    .line 104
     const/4 v0, 0x0
 
     return v0
@@ -65,7 +61,6 @@
 .method public getShowWallpaper()Z
     .locals 1
 
-    .line 111
     const/4 v0, 0x0
 
     return v0
@@ -74,7 +69,6 @@
 .method public needsEarlyWakeup()Z
     .locals 1
 
-    .line 154
     const/4 v0, 0x0
 
     return v0
@@ -82,22 +76,15 @@
 
 .method public writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
     .locals 2
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "fieldId"    # J
 
-    .line 159
     invoke-virtual {p1, p2, p3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 160
-    .local v0, "token":J
     invoke-interface {p0, p1}, Lcom/android/server/wm/LocalAnimationAdapter$AnimationSpec;->writeToProtoInner(Landroid/util/proto/ProtoOutputStream;)V
 
-    .line 161
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 162
     return-void
 .end method
 

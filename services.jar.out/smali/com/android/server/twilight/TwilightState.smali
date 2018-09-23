@@ -12,19 +12,13 @@
 # direct methods
 .method public constructor <init>(JJ)V
     .locals 0
-    .param p1, "sunriseTimeMillis"    # J
-    .param p3, "sunsetTimeMillis"    # J
 
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
     iput-wide p1, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
-    .line 39
     iput-wide p3, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
-    .line 40
     return-void
 .end method
 
@@ -32,9 +26,7 @@
 # virtual methods
 .method public equals(Lcom/android/server/twilight/TwilightState;)Z
     .locals 4
-    .param p1, "other"    # Lcom/android/server/twilight/TwilightState;
 
-    .line 96
     if-eqz p1, :cond_0
 
     iget-wide v0, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
@@ -66,9 +58,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 92
     instance-of v0, p1, Lcom/android/server/twilight/TwilightState;
 
     if-eqz v0, :cond_0
@@ -97,7 +87,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 103
     iget-wide v0, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
     invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
@@ -118,13 +107,10 @@
 .method public isNight()Z
     .locals 7
 
-    .line 78
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 81
-    .local v0, "now":J
     iget-wide v2, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
     iget-wide v4, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
@@ -137,7 +123,6 @@
 
     if-gez v2, :cond_1
 
-    .line 83
     iget-wide v5, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
     cmp-long v2, v0, v5
@@ -157,7 +142,6 @@
     :cond_0
     return v3
 
-    .line 86
     :cond_1
     iget-wide v5, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
@@ -187,7 +171,6 @@
 .method public sunrise()Ljava/time/LocalDateTime;
     .locals 3
 
-    .line 54
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v0
@@ -196,8 +179,6 @@
 
     move-result-object v0
 
-    .line 55
-    .local v0, "zoneId":Ljava/time/ZoneId;
     iget-wide v1, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
     invoke-static {v1, v2}, Ljava/time/Instant;->ofEpochMilli(J)Ljava/time/Instant;
@@ -214,7 +195,6 @@
 .method public sunriseTimeMillis()J
     .locals 2
 
-    .line 47
     iget-wide v0, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
     return-wide v0
@@ -223,7 +203,6 @@
 .method public sunset()Ljava/time/LocalDateTime;
     .locals 3
 
-    .line 70
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v0
@@ -232,8 +211,6 @@
 
     move-result-object v0
 
-    .line 71
-    .local v0, "zoneId":Ljava/time/ZoneId;
     iget-wide v1, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
     invoke-static {v1, v2}, Ljava/time/Instant;->ofEpochMilli(J)Ljava/time/Instant;
@@ -250,7 +227,6 @@
 .method public sunsetTimeMillis()J
     .locals 2
 
-    .line 63
     iget-wide v0, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
     return-wide v0
@@ -259,7 +235,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 108
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,7 +247,6 @@
 
     iget-wide v2, p0, Lcom/android/server/twilight/TwilightState;->mSunriseTimeMillis:J
 
-    .line 109
     invoke-static {v1, v2, v3}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -287,7 +261,6 @@
 
     iget-wide v2, p0, Lcom/android/server/twilight/TwilightState;->mSunsetTimeMillis:J
 
-    .line 110
     invoke-static {v1, v2, v3}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -302,6 +275,5 @@
 
     move-result-object v0
 
-    .line 108
     return-object v0
 .end method

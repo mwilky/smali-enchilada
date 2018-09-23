@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AlarmManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/AlarmManagerService;
 
-    .line 806
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$FrequentBlackListConfigUpdater;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 1
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 810
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$FrequentBlackListConfigUpdater;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/AlarmManagerService;->access$400(Lcom/android/server/AlarmManagerService;Lorg/json/JSONArray;)V
 
-    .line 811
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/IpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ip/IpClient;
 
-    .line 1494
     iput-object p1, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -36,7 +34,6 @@
 .method public enter()V
     .locals 2
 
-    .line 1497
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$1800(Landroid/net/ip/IpClient;)Landroid/net/dhcp/DhcpClient;
@@ -45,7 +42,6 @@
 
     if-nez v0, :cond_0
 
-    .line 1499
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v1, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
@@ -56,16 +52,13 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ip/IpClient;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 1501
     :cond_0
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1505
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x2
@@ -80,14 +73,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1519
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient;->deferMessage(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 1510
     :cond_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
@@ -97,10 +88,8 @@
 
     invoke-virtual {v0}, Landroid/net/ip/InterfaceController;->clearIPv4Address()Z
 
-    .line 1511
     goto :goto_0
 
-    .line 1514
     :cond_1
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
@@ -108,7 +97,6 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1802(Landroid/net/ip/IpClient;Landroid/net/dhcp/DhcpClient;)Landroid/net/dhcp/DhcpClient;
 
-    .line 1515
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v1, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
@@ -119,14 +107,11 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ip/IpClient;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 1516
     goto :goto_0
 
-    .line 1507
     :cond_2
     nop
 
-    .line 1522
     :goto_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppingState;->this$0:Landroid/net/ip/IpClient;
 
@@ -142,7 +127,6 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/net/ip/IpClient$MessageHandlingLogger;->handled(Lcom/android/internal/util/State;Lcom/android/internal/util/IState;)V
 
-    .line 1523
     const/4 v0, 0x1
 
     return v0

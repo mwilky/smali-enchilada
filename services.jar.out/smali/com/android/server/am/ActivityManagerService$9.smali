@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 7762
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$9;->val$cur:Lcom/android/server/am/ActivityRecord;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 6
 
-    .line 7765
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v0
@@ -55,7 +52,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 7766
     new-instance v1, Lcom/android/server/am/LaunchWarningWindow;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -68,11 +64,8 @@
 
     invoke-direct {v1, v2, v3, v4}, Lcom/android/server/am/LaunchWarningWindow;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
 
-    .line 7767
-    .local v1, "d":Landroid/app/Dialog;
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 7768
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mUiHandler:Landroid/os/Handler;
@@ -85,18 +78,14 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 7777
-    .end local v1    # "d":Landroid/app/Dialog;
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 7778
     return-void
 
-    .line 7777
     :catchall_0
     move-exception v1
 

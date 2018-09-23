@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkManagementService;Lcom/android/server/NetworkManagementService$IdleTimerParams;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NetworkManagementService;
 
-    .line 1552
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$2;->this$0:Lcom/android/server/NetworkManagementService;
 
     iput-object p2, p0, Lcom/android/server/NetworkManagementService$2;->val$params:Lcom/android/server/NetworkManagementService$IdleTimerParams;
@@ -43,19 +41,16 @@
 .method public run()V
     .locals 7
 
-    .line 1554
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$2;->this$0:Lcom/android/server/NetworkManagementService;
 
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$2;->val$params:Lcom/android/server/NetworkManagementService$IdleTimerParams;
 
     iget v1, v1, Lcom/android/server/NetworkManagementService$IdleTimerParams;->type:I
 
-    .line 1556
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
     move-result-wide v3
 
-    .line 1554
     const/4 v2, 0x1
 
     const/4 v5, -0x1
@@ -64,6 +59,5 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/NetworkManagementService;->access$1100(Lcom/android/server/NetworkManagementService;IIJIZ)V
 
-    .line 1557
     return-void
 .end method

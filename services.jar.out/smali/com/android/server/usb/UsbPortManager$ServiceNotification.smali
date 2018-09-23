@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbPortManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usb/UsbPortManager;
 
-    .line 516
     iput-object p1, p0, Lcom/android/server/usb/UsbPortManager$ServiceNotification;->this$0:Lcom/android/server/usb/UsbPortManager;
 
     invoke-direct {p0}, Landroid/hidl/manager/V1_0/IServiceNotification$Stub;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onRegistration(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 3
-    .param p1, "fqName"    # Ljava/lang/String;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "preexisting"    # Z
 
-    .line 519
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -66,11 +60,9 @@
 
     invoke-static {v2, v1, v0}, Lcom/android/server/usb/UsbPortManager;->access$100(ILcom/android/internal/util/IndentingPrintWriter;Ljava/lang/String;)V
 
-    .line 520
     iget-object v0, p0, Lcom/android/server/usb/UsbPortManager$ServiceNotification;->this$0:Lcom/android/server/usb/UsbPortManager;
 
     invoke-static {v0, v1}, Lcom/android/server/usb/UsbPortManager;->access$500(Lcom/android/server/usb/UsbPortManager;Lcom/android/internal/util/IndentingPrintWriter;)V
 
-    .line 521
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 3371
     iput-object p1, p0, Lcom/android/server/LocationManagerService$9;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onPackageDisappeared(Ljava/lang/String;I)V
     .locals 5
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "reason"    # I
 
-    .line 3375
     iget-object v0, p0, Lcom/android/server/LocationManagerService$9;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$100(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
@@ -47,11 +42,8 @@
 
     monitor-enter v0
 
-    .line 3376
     const/4 v1, 0x0
 
-    .line 3378
-    .local v1, "deadReceivers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     :try_start_0
     iget-object v2, p0, Lcom/android/server/LocationManagerService$9;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -80,8 +72,6 @@
 
     check-cast v3, Lcom/android/server/LocationManagerService$Receiver;
 
-    .line 3379
-    .local v3, "receiver":Lcom/android/server/LocationManagerService$Receiver;
     iget-object v4, v3, Lcom/android/server/LocationManagerService$Receiver;->mIdentity:Lcom/android/server/LocationManagerService$Identity;
 
     iget-object v4, v4, Lcom/android/server/LocationManagerService$Identity;->mPackageName:Ljava/lang/String;
@@ -92,30 +82,23 @@
 
     if-eqz v4, :cond_1
 
-    .line 3380
     if-nez v1, :cond_0
 
-    .line 3381
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     move-object v1, v4
 
-    .line 3383
     :cond_0
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3385
-    .end local v3    # "receiver":Lcom/android/server/LocationManagerService$Receiver;
     :cond_1
     goto :goto_0
 
-    .line 3388
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 3389
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -133,25 +116,17 @@
 
     check-cast v3, Lcom/android/server/LocationManagerService$Receiver;
 
-    .line 3390
-    .restart local v3    # "receiver":Lcom/android/server/LocationManagerService$Receiver;
     iget-object v4, p0, Lcom/android/server/LocationManagerService$9;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v4, v3}, Lcom/android/server/LocationManagerService;->access$2000(Lcom/android/server/LocationManagerService;Lcom/android/server/LocationManagerService$Receiver;)V
 
-    .line 3391
-    .end local v3    # "receiver":Lcom/android/server/LocationManagerService$Receiver;
     goto :goto_1
 
-    .line 3393
-    .end local v1    # "deadReceivers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/LocationManagerService$Receiver;>;"
     :cond_3
     monitor-exit v0
 
-    .line 3394
     return-void
 
-    .line 3393
     :catchall_0
     move-exception v1
 

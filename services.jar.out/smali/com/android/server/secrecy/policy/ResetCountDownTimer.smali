@@ -43,17 +43,14 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 18
     const-string v0, "SecrecyService.ResetCountDownTimer"
 
     sput-object v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->TAG:Ljava/lang/String;
 
-    .line 30
     const-wide/32 v0, 0x15180
 
     sput-wide v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->DEFAULT_COUNTDOWN_TIME_FOR_MAC:J
 
-    .line 31
     const-wide/32 v0, 0x278d00
 
     sput-wide v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->DEFAULT_COUNTDOWN_TIME_FOR_ID:J
@@ -63,13 +60,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/secrecy/policy/PolicyManager;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "policyManager"    # Lcom/android/server/secrecy/policy/PolicyManager;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 22
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -94,23 +87,18 @@
 
     iput-object v0, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->ACTION_ALARM_INTENT:Ljava/lang/String;
 
-    .line 35
     iput-object p1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mContext:Landroid/content/Context;
 
-    .line 36
     iput-object p2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mPolicyManager:Lcom/android/server/secrecy/policy/PolicyManager;
 
-    .line 37
     invoke-direct {p0}, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->initAlarm()V
 
-    .line 38
     return-void
 .end method
 
 .method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
-    .line 17
     sget-object v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -119,29 +107,24 @@
 .method private initAlarm()V
     .locals 5
 
-    .line 42
     new-instance v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer$AlarmReceiver;
 
     invoke-direct {v0, p0, p0}, Lcom/android/server/secrecy/policy/ResetCountDownTimer$AlarmReceiver;-><init>(Lcom/android/server/secrecy/policy/ResetCountDownTimer;Lcom/android/server/secrecy/policy/ResetCountDownTimer;)V
 
     iput-object v0, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmReceiver:Lcom/android/server/secrecy/policy/ResetCountDownTimer$AlarmReceiver;
 
-    .line 43
     new-instance v0, Landroid/content/IntentFilter;
 
     iget-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->ACTION_ALARM_INTENT:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 44
-    .local v0, "filter":Landroid/content/IntentFilter;
     iget-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmReceiver:Lcom/android/server/secrecy/policy/ResetCountDownTimer$AlarmReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 46
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->ACTION_ALARM_INTENT:Ljava/lang/String;
@@ -150,7 +133,6 @@
 
     iput-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmIntent:Landroid/content/Intent;
 
-    .line 47
     iget-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmIntent:Landroid/content/Intent;
@@ -163,7 +145,6 @@
 
     iput-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mPendingIntent:Landroid/app/PendingIntent;
 
-    .line 48
     iget-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mContext:Landroid/content/Context;
 
     const-string v2, "alarm"
@@ -176,14 +157,12 @@
 
     iput-object v1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 49
     sget-wide v1, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->DEFAULT_COUNTDOWN_TIME_FOR_MAC:J
 
     sget-wide v3, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->DEFAULT_COUNTDOWN_TIME_FOR_ID:J
 
     invoke-virtual {p0, v1, v2, v3, v4}, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->updateCountDownTime(JJ)V
 
-    .line 50
     return-void
 .end method
 
@@ -191,19 +170,13 @@
 # virtual methods
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 3
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "prefix"    # Ljava/lang/String;
 
-    .line 102
     invoke-virtual {p2, p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 103
     const-string v0, "ResetCountDownTimer dump"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 104
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -218,10 +191,8 @@
 
     move-result-object p3
 
-    .line 106
     invoke-virtual {p2, p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 107
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -240,10 +211,8 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 109
     invoke-virtual {p2, p3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 110
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -262,15 +231,12 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 112
     return-void
 .end method
 
 .method public getCountDownTimer(Ljava/lang/String;)J
     .locals 2
-    .param p1, "unlockType"    # Ljava/lang/String;
 
-    .line 69
     const-string/jumbo v0, "mac"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -279,14 +245,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 70
     iget-wide v0, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mCountDownTimeForMac:J
 
     return-wide v0
 
-    .line 71
     :cond_0
-    const-string/jumbo v0, "id"
+    const-string v0, "id"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -294,12 +258,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 72
     iget-wide v0, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mCountDownTimeForId:J
 
     return-wide v0
 
-    .line 74
     :cond_1
     const-wide/16 v0, -0x1
 
@@ -309,7 +271,6 @@
 .method public getPolicyManager()Lcom/android/server/secrecy/policy/PolicyManager;
     .locals 1
 
-    .line 98
     iget-object v0, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mPolicyManager:Lcom/android/server/secrecy/policy/PolicyManager;
 
     return-object v0
@@ -317,22 +278,17 @@
 
 .method public startCountDown(Ljava/lang/String;)V
     .locals 7
-    .param p1, "unlockType"    # Ljava/lang/String;
 
-    .line 61
     invoke-virtual {p0, p1}, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->getCountDownTimer(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 62
-    .local v0, "countDownTime":J
     iget-object v2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmManager:Landroid/app/AlarmManager;
 
     iget-object v3, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mPendingIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v2, v3}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 63
     iget-object v2, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mAlarmManager:Landroid/app/AlarmManager;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -351,7 +307,6 @@
 
     invoke-virtual {v2, v6, v3, v4, v5}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 64
     sget-object v2, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -370,22 +325,16 @@
 
     invoke-static {v2, v3}, Lcom/android/server/secrecy/policy/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 65
     return-void
 .end method
 
 .method public updateCountDownTime(JJ)V
     .locals 4
-    .param p1, "countDownTimeForMac"    # J
-    .param p3, "countDownTimeforId"    # J
 
-    .line 54
     iput-wide p1, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mCountDownTimeForMac:J
 
-    .line 55
     iput-wide p3, p0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->mCountDownTimeForId:J
 
-    .line 56
     sget-object v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -406,7 +355,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/secrecy/policy/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 57
     sget-object v0, Lcom/android/server/secrecy/policy/ResetCountDownTimer;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -433,6 +381,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/secrecy/policy/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 58
     return-void
 .end method

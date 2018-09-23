@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 652
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -60,19 +59,9 @@
 
 .method constructor <init>(Landroid/os/IBinder;Ljava/lang/String;IZLandroid/os/IBinder;Landroid/view/inputmethod/EditorInfo;II)V
     .locals 2
-    .param p1, "imeToken"    # Landroid/os/IBinder;
-    .param p2, "imeId"    # Ljava/lang/String;
-    .param p3, "startInputReason"    # I
-    .param p4, "restarting"    # Z
-    .param p5, "targetWindow"    # Landroid/os/IBinder;
-    .param p6, "editorInfo"    # Landroid/view/inputmethod/EditorInfo;
-    .param p7, "targetWindowSoftInputMode"    # I
-    .param p8, "clientBindSequenceNumber"    # I
 
-    .line 674
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 675
     sget-object v0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->sSequenceNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -81,44 +70,33 @@
 
     iput v0, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mSequenceNumber:I
 
-    .line 676
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mTimestamp:J
 
-    .line 677
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mWallTime:J
 
-    .line 678
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mImeToken:Landroid/os/IBinder;
 
-    .line 679
     iput-object p2, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mImeId:Ljava/lang/String;
 
-    .line 680
     iput p3, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mStartInputReason:I
 
-    .line 681
     iput-boolean p4, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mRestarting:Z
 
-    .line 682
     iput-object p5, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mTargetWindow:Landroid/os/IBinder;
 
-    .line 683
     iput-object p6, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mEditorInfo:Landroid/view/inputmethod/EditorInfo;
 
-    .line 684
     iput p7, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mTargetWindowSoftInputMode:I
 
-    .line 685
     iput p8, p0, Lcom/android/server/InputMethodManagerService$StartInputInfo;->mClientBindSequenceNumber:I
 
-    .line 686
     return-void
 .end method

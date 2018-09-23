@@ -40,23 +40,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "typeName"    # Ljava/lang/String;
 
-    .line 535
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 532
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mArray:Landroid/util/SparseArray;
 
-    .line 536
     iput-object p1, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mTypeName:Ljava/lang/String;
 
-    .line 537
     return-void
 .end method
 
@@ -64,7 +58,6 @@
 # virtual methods
 .method getRefcountedResourceOrThrow(I)Lcom/android/server/IpSecService$RefcountedResource;
     .locals 5
-    .param p1, "key"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -73,8 +66,6 @@
         }
     .end annotation
 
-    .line 554
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mArray:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -83,14 +74,10 @@
 
     check-cast v0, Lcom/android/server/IpSecService$RefcountedResource;
 
-    .line 555
-    .local v0, "resource":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     if-eqz v0, :cond_0
 
-    .line 560
     return-object v0
 
-    .line 556
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -106,7 +93,6 @@
 
     const/4 v3, 0x1
 
-    .line 557
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -126,15 +112,12 @@
 
 .method getResourceOrThrow(I)Lcom/android/server/IpSecService$IResource;
     .locals 1
-    .param p1, "key"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TT;"
         }
     .end annotation
 
-    .line 545
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
     invoke-virtual {p0, p1}, Lcom/android/server/IpSecService$RefcountedResourceArray;->getRefcountedResourceOrThrow(I)Lcom/android/server/IpSecService$RefcountedResource;
 
     move-result-object v0
@@ -148,7 +131,6 @@
 
 .method put(ILcom/android/server/IpSecService$RefcountedResource;)V
     .locals 1
-    .param p1, "key"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -157,41 +139,30 @@
         }
     .end annotation
 
-    .line 564
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
-    .local p2, "obj":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     const-string v0, "Null resources cannot be added"
 
     invoke-static {p2, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 565
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mArray:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 566
     return-void
 .end method
 
 .method remove(I)V
     .locals 1
-    .param p1, "key"    # I
 
-    .line 569
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mArray:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 570
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 574
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResourceArray;, "Lcom/android/server/IpSecService$RefcountedResourceArray<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResourceArray;->mArray:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->toString()Ljava/lang/String;

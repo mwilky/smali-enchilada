@@ -25,7 +25,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1633
     new-instance v0, Lcom/android/server/connectivity/NetworkMonitor$DefaultNetworkMonitorSettings;
 
     invoke-direct {v0}, Lcom/android/server/connectivity/NetworkMonitor$DefaultNetworkMonitorSettings;-><init>()V

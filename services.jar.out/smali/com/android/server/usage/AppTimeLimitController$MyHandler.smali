@@ -27,15 +27,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/AppTimeLimitController;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 127
     iput-object p1, p0, Lcom/android/server/usage/AppTimeLimitController$MyHandler;->this$0:Lcom/android/server/usage/AppTimeLimitController;
 
-    .line 128
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 129
     return-void
 .end method
 
@@ -43,19 +39,15 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 133
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 141
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 138
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/usage/AppTimeLimitController$MyHandler;->this$0:Lcom/android/server/usage/AppTimeLimitController;
 
@@ -65,10 +57,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/usage/AppTimeLimitController;->access$100(Lcom/android/server/usage/AppTimeLimitController;Lcom/android/server/usage/AppTimeLimitController$TimeLimitGroup;)V
 
-    .line 139
     goto :goto_0
 
-    .line 135
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/usage/AppTimeLimitController$MyHandler;->this$0:Lcom/android/server/usage/AppTimeLimitController;
 
@@ -78,10 +68,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/usage/AppTimeLimitController;->checkTimeout(Lcom/android/server/usage/AppTimeLimitController$TimeLimitGroup;)V
 
-    .line 136
     nop
 
-    .line 144
     :goto_0
     return-void
 

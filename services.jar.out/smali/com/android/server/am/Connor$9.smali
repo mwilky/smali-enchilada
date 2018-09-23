@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Connor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Connor;
 
-    .line 569
     iput-object p1, p0, Lcom/android/server/am/Connor$9;->this$0:Lcom/android/server/am/Connor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
     .locals 1
-    .param p1, "dir"    # Ljava/io/File;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 571
     const-string v0, ".caffemodel"
 
     invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z

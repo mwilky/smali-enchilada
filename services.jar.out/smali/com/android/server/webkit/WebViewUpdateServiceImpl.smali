@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 70
     const-class v0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -37,19 +36,13 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/webkit/SystemInterface;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "systemInterface"    # Lcom/android/server/webkit/SystemInterface;
 
-    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
     iput-object p1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
 
-    .line 81
     iput-object p2, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
-    .line 82
     new-instance v0, Lcom/android/server/webkit/WebViewUpdater;
 
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
@@ -60,15 +53,12 @@
 
     iput-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
-    .line 83
     return-void
 .end method
 
 .method private existsValidNonFallbackProvider([Landroid/webkit/WebViewProviderInfo;)Z
     .locals 7
-    .param p1, "providers"    # [Landroid/webkit/WebViewProviderInfo;
 
-    .line 100
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -80,8 +70,6 @@
 
     aget-object v3, p1, v2
 
-    .line 101
-    .local v3, "provider":Landroid/webkit/WebViewProviderInfo;
     iget-boolean v4, v3, Landroid/webkit/WebViewProviderInfo;->availableByDefault:Z
 
     if-eqz v4, :cond_0
@@ -90,18 +78,14 @@
 
     if-nez v4, :cond_0
 
-    .line 103
     iget-object v4, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v5, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
 
-    .line 104
     invoke-interface {v4, v5, v3}, Lcom/android/server/webkit/SystemInterface;->getPackageInfoForProviderAllUsers(Landroid/content/Context;Landroid/webkit/WebViewProviderInfo;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 105
-    .local v4, "userPackages":Ljava/util/List;, "Ljava/util/List<Landroid/webkit/UserPackage;>;"
     invoke-static {v4}, Lcom/android/server/webkit/WebViewUpdater;->isInstalledAndEnabledForAllUsers(Ljava/util/List;)Z
 
     move-result v5
@@ -110,7 +94,6 @@
 
     iget-object v5, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
-    .line 110
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -121,36 +104,28 @@
 
     move-result-object v6
 
-    .line 109
     invoke-virtual {v5, v3, v6}, Lcom/android/server/webkit/WebViewUpdater;->isValidProvider(Landroid/webkit/WebViewProviderInfo;Landroid/content/pm/PackageInfo;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 111
     const/4 v0, 0x1
 
     return v0
 
-    .line 100
-    .end local v3    # "provider":Landroid/webkit/WebViewProviderInfo;
-    .end local v4    # "userPackages":Ljava/util/List;, "Ljava/util/List<Landroid/webkit/UserPackage;>;"
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 115
     :cond_1
     return v1
 .end method
 
 .method private static getFallbackProvider([Landroid/webkit/WebViewProviderInfo;)Landroid/webkit/WebViewProviderInfo;
     .locals 4
-    .param p0, "webviewPackages"    # [Landroid/webkit/WebViewProviderInfo;
 
-    .line 227
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -160,23 +135,17 @@
 
     aget-object v2, p0, v1
 
-    .line 228
-    .local v2, "provider":Landroid/webkit/WebViewProviderInfo;
     iget-boolean v3, v2, Landroid/webkit/WebViewProviderInfo;->isFallback:Z
 
     if-eqz v3, :cond_0
 
-    .line 229
     return-object v2
 
-    .line 227
-    .end local v2    # "provider":Landroid/webkit/WebViewProviderInfo;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 232
     :cond_1
     const/4 v0, 0x0
 
@@ -186,7 +155,6 @@
 .method private handleUserChange()V
     .locals 2
 
-    .line 136
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0}, Lcom/android/server/webkit/SystemInterface;->isFallbackLogicEnabled()Z
@@ -195,7 +163,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0}, Lcom/android/server/webkit/SystemInterface;->getWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
@@ -204,7 +171,6 @@
 
     invoke-direct {p0, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->updateFallbackState([Landroid/webkit/WebViewProviderInfo;)V
 
-    .line 140
     :cond_0
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
@@ -212,7 +178,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/webkit/WebViewUpdater;->updateCurrentWebViewPackage(Ljava/lang/String;)Landroid/content/pm/PackageInfo;
 
-    .line 141
     return-void
 .end method
 
@@ -227,8 +192,6 @@
         }
     .end annotation
 
-    .line 266
-    .local p0, "userPackages":Ljava/util/List;, "Ljava/util/List<Landroid/webkit/UserPackage;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -246,8 +209,6 @@
 
     check-cast v1, Landroid/webkit/UserPackage;
 
-    .line 267
-    .local v1, "userPackage":Landroid/webkit/UserPackage;
     invoke-virtual {v1}, Landroid/webkit/UserPackage;->getPackageInfo()Landroid/content/pm/PackageInfo;
 
     move-result-object v2
@@ -260,17 +221,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 268
     const/4 v0, 0x0
 
     return v0
 
-    .line 270
-    .end local v1    # "userPackage":Landroid/webkit/UserPackage;
     :cond_0
     goto :goto_0
 
-    .line 271
     :cond_1
     const/4 v0, 0x1
 
@@ -279,38 +236,28 @@
 
 .method private updateFallbackState([Landroid/webkit/WebViewProviderInfo;)V
     .locals 7
-    .param p1, "webviewProviders"    # [Landroid/webkit/WebViewProviderInfo;
 
-    .line 206
     invoke-static {p1}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->getFallbackProvider([Landroid/webkit/WebViewProviderInfo;)Landroid/webkit/WebViewProviderInfo;
 
     move-result-object v0
 
-    .line 207
-    .local v0, "fallbackProvider":Landroid/webkit/WebViewProviderInfo;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 208
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->existsValidNonFallbackProvider([Landroid/webkit/WebViewProviderInfo;)Z
 
     move-result v1
 
-    .line 210
-    .local v1, "existsValidNonFallbackProvider":Z
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v3, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
 
-    .line 211
     invoke-interface {v2, v3, v0}, Lcom/android/server/webkit/SystemInterface;->getPackageInfoForProviderAllUsers(Landroid/content/Context;Landroid/webkit/WebViewProviderInfo;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 212
-    .local v2, "userPackages":Ljava/util/List;, "Ljava/util/List<Landroid/webkit/UserPackage;>;"
     if-eqz v1, :cond_1
 
     invoke-static {v2}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->isDisabledForAllUsers(Ljava/util/List;)Z
@@ -319,7 +266,6 @@
 
     if-nez v3, :cond_1
 
-    .line 213
     iget-object v3, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v4, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
@@ -330,18 +276,15 @@
 
     goto :goto_0
 
-    .line 215
     :cond_1
     if-nez v1, :cond_2
 
-    .line 216
     invoke-static {v2}, Lcom/android/server/webkit/WebViewUpdater;->isInstalledAndEnabledForAllUsers(Ljava/util/List;)Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    .line 218
     iget-object v3, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v4, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
@@ -352,7 +295,6 @@
 
     invoke-interface {v3, v4, v5, v6}, Lcom/android/server/webkit/SystemInterface;->enablePackageForAllUsers(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 221
     :cond_2
     :goto_0
     return-void
@@ -361,7 +303,6 @@
 .method private updateFallbackStateOnBoot()V
     .locals 1
 
-    .line 172
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0}, Lcom/android/server/webkit/SystemInterface;->isFallbackLogicEnabled()Z
@@ -372,7 +313,6 @@
 
     return-void
 
-    .line 174
     :cond_0
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
@@ -380,20 +320,14 @@
 
     move-result-object v0
 
-    .line 175
-    .local v0, "webviewProviders":[Landroid/webkit/WebViewProviderInfo;
     invoke-direct {p0, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->updateFallbackState([Landroid/webkit/WebViewProviderInfo;)V
 
-    .line 176
     return-void
 .end method
 
 .method private updateFallbackStateOnPackageChange(Ljava/lang/String;I)V
     .locals 6
-    .param p1, "changedPackage"    # Ljava/lang/String;
-    .param p2, "changedState"    # I
 
-    .line 184
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0}, Lcom/android/server/webkit/SystemInterface;->isFallbackLogicEnabled()Z
@@ -404,7 +338,6 @@
 
     return-void
 
-    .line 186
     :cond_0
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
@@ -412,12 +345,8 @@
 
     move-result-object v0
 
-    .line 190
-    .local v0, "webviewProviders":[Landroid/webkit/WebViewProviderInfo;
     const/4 v1, 0x0
 
-    .line 191
-    .local v1, "changedPackageAvailableByDefault":Z
     array-length v2, v0
 
     const/4 v3, 0x0
@@ -427,8 +356,6 @@
 
     aget-object v4, v0, v3
 
-    .line 192
-    .local v4, "provider":Landroid/webkit/WebViewProviderInfo;
     iget-object v5, v4, Landroid/webkit/WebViewProviderInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v5, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -437,35 +364,28 @@
 
     if-eqz v5, :cond_1
 
-    .line 193
     iget-boolean v2, v4, Landroid/webkit/WebViewProviderInfo;->availableByDefault:Z
 
     if-eqz v2, :cond_2
 
-    .line 194
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 191
-    .end local v4    # "provider":Landroid/webkit/WebViewProviderInfo;
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 199
     :cond_2
     :goto_1
     if-nez v1, :cond_3
 
     return-void
 
-    .line 200
     :cond_3
     invoke-direct {p0, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->updateFallbackState([Landroid/webkit/WebViewProviderInfo;)V
 
-    .line 201
     return-void
 .end method
 
@@ -473,9 +393,7 @@
 # virtual methods
 .method changeProviderAndSetting(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "newProvider"    # Ljava/lang/String;
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0, p1}, Lcom/android/server/webkit/WebViewUpdater;->changeProviderAndSetting(Ljava/lang/String;)Ljava/lang/String;
@@ -487,14 +405,11 @@
 
 .method dumpState(Ljava/io/PrintWriter;)V
     .locals 5
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 278
     const-string v0, "Current WebView Update Service state"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 279
     const-string v0, "  Fallback logic enabled: %b"
 
     const/4 v1, 0x1
@@ -503,7 +418,6 @@
 
     iget-object v3, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
-    .line 280
     invoke-interface {v3}, Lcom/android/server/webkit/SystemInterface;->isFallbackLogicEnabled()Z
 
     move-result v3
@@ -516,14 +430,12 @@
 
     aput-object v3, v2, v4
 
-    .line 279
     invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 281
     const-string v0, "  Multiprocess enabled: %b"
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -544,44 +456,34 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 282
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0, p1}, Lcom/android/server/webkit/WebViewUpdater;->dumpState(Ljava/io/PrintWriter;)V
 
-    .line 283
     return-void
 .end method
 
 .method enableFallbackLogic(Z)V
     .locals 1
-    .param p1, "enable"    # Z
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0, p1}, Lcom/android/server/webkit/SystemInterface;->enableFallbackLogic(Z)V
 
-    .line 169
     return-void
 .end method
 
 .method enableMultiProcess(Z)V
     .locals 4
-    .param p1, "enable"    # Z
 
-    .line 256
     invoke-virtual {p0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
-    .line 257
-    .local v0, "current":Landroid/content/pm/PackageInfo;
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
 
-    .line 258
     if-eqz p1, :cond_0
 
     const v3, 0x7fffffff
@@ -591,26 +493,21 @@
     :cond_0
     const/high16 v3, -0x80000000
 
-    .line 257
     :goto_0
     invoke-interface {v1, v2, v3}, Lcom/android/server/webkit/SystemInterface;->setMultiProcessSetting(Landroid/content/Context;I)V
 
-    .line 259
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v1, p1}, Lcom/android/server/webkit/SystemInterface;->notifyZygote(Z)V
 
-    .line 260
     if-eqz v0, :cond_1
 
-    .line 261
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v2, v0, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-interface {v1, v2}, Lcom/android/server/webkit/SystemInterface;->killPackageDependents(Ljava/lang/String;)V
 
-    .line 263
     :cond_1
     return-void
 .end method
@@ -618,7 +515,6 @@
 .method getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
     .locals 1
 
-    .line 164
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdater;->getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
@@ -631,7 +527,6 @@
 .method getValidWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
     .locals 1
 
-    .line 156
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdater;->getValidWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
@@ -644,7 +539,6 @@
 .method getWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
     .locals 1
 
-    .line 160
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v0}, Lcom/android/server/webkit/SystemInterface;->getWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
@@ -656,37 +550,28 @@
 
 .method handleNewUser(I)V
     .locals 0
-    .param p1, "userId"    # I
 
-    .line 122
     if-nez p1, :cond_0
 
     return-void
 
-    .line 123
     :cond_0
     invoke-direct {p0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->handleUserChange()V
 
-    .line 124
     return-void
 .end method
 
 .method handleUserRemoved(I)V
     .locals 0
-    .param p1, "userId"    # I
 
-    .line 127
     invoke-direct {p0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->handleUserChange()V
 
-    .line 128
     return-void
 .end method
 
 .method isFallbackPackage(Ljava/lang/String;)Z
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 236
     const/4 v0, 0x0
 
     if-eqz p1, :cond_2
@@ -701,7 +586,6 @@
 
     goto :goto_0
 
-    .line 238
     :cond_0
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
@@ -709,19 +593,14 @@
 
     move-result-object v1
 
-    .line 239
-    .local v1, "webviewPackages":[Landroid/webkit/WebViewProviderInfo;
     invoke-static {v1}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->getFallbackProvider([Landroid/webkit/WebViewProviderInfo;)Landroid/webkit/WebViewProviderInfo;
 
     move-result-object v2
 
-    .line 240
-    .local v2, "fallbackProvider":Landroid/webkit/WebViewProviderInfo;
     if-eqz v2, :cond_1
 
     iget-object v3, v2, Landroid/webkit/WebViewProviderInfo;->packageName:Ljava/lang/String;
 
-    .line 241
     invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -732,13 +611,9 @@
 
     nop
 
-    .line 240
     :cond_1
     return v0
 
-    .line 236
-    .end local v1    # "webviewPackages":[Landroid/webkit/WebViewProviderInfo;
-    .end local v2    # "fallbackProvider":Landroid/webkit/WebViewProviderInfo;
     :cond_2
     :goto_0
     return v0
@@ -747,7 +622,6 @@
 .method isMultiProcessEnabled()Z
     .locals 4
 
-    .line 245
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mContext:Landroid/content/Context;
@@ -756,8 +630,6 @@
 
     move-result v0
 
-    .line 246
-    .local v0, "settingValue":I
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-interface {v1}, Lcom/android/server/webkit/SystemInterface;->isMultiProcessDefaultEnabled()Z
@@ -770,7 +642,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 248
     const/high16 v1, -0x80000000
 
     if-le v0, v1, :cond_0
@@ -782,7 +653,6 @@
     :cond_0
     return v2
 
-    .line 251
     :cond_1
     const v1, 0x7fffffff
 
@@ -799,45 +669,34 @@
 .method notifyRelroCreationCompleted()V
     .locals 1
 
-    .line 144
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdater;->notifyRelroCreationCompleted()V
 
-    .line 145
     return-void
 .end method
 
 .method packageStateChanged(Ljava/lang/String;II)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "changedState"    # I
-    .param p3, "userId"    # I
 
-    .line 89
     invoke-direct {p0, p1, p2}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->updateFallbackStateOnPackageChange(Ljava/lang/String;I)V
 
-    .line 90
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/webkit/WebViewUpdater;->packageStateChanged(Ljava/lang/String;I)V
 
-    .line 91
     return-void
 .end method
 
 .method prepareWebViewInSystemServer()V
     .locals 2
 
-    .line 94
     invoke-direct {p0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->updateFallbackStateOnBoot()V
 
-    .line 95
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdater;->prepareWebViewInSystemServer()V
 
-    .line 96
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mSystemInterface:Lcom/android/server/webkit/SystemInterface;
 
     invoke-virtual {p0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->isMultiProcessEnabled()Z
@@ -846,14 +705,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/server/webkit/SystemInterface;->notifyZygote(Z)V
 
-    .line 97
     return-void
 .end method
 
 .method waitForAndGetProvider()Landroid/webkit/WebViewProviderResponse;
     .locals 1
 
-    .line 148
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->mWebViewUpdater:Lcom/android/server/webkit/WebViewUpdater;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdater;->waitForAndGetProvider()Landroid/webkit/WebViewProviderResponse;

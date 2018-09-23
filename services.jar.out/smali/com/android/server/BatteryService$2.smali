@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BatteryService;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 315
     iput-object p1, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .line 318
     iget-object v0, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$000(Lcom/android/server/BatteryService;)Ljava/lang/Object;
@@ -47,19 +42,15 @@
 
     monitor-enter v0
 
-    .line 319
     :try_start_0
     iget-object v1, p0, Lcom/android/server/BatteryService$2;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v1}, Lcom/android/server/BatteryService;->access$500(Lcom/android/server/BatteryService;)V
 
-    .line 320
     monitor-exit v0
 
-    .line 321
     return-void
 
-    .line 320
     :catchall_0
     move-exception v1
 

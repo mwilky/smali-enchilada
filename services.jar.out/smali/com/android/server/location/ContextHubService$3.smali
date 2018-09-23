@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/ContextHubService;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/ContextHubService;
 
-    .line 318
     iput-object p1, p0, Lcom/android/server/location/ContextHubService$3;->this$0:Lcom/android/server/location/ContextHubService;
 
     iput p2, p0, Lcom/android/server/location/ContextHubService$3;->val$contextHubId:I
@@ -39,7 +37,6 @@
 # virtual methods
 .method public onQueryResponse(ILjava/util/List;)V
     .locals 0
-    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -49,22 +46,17 @@
         }
     .end annotation
 
-    .line 326
-    .local p2, "nanoAppStateList":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/location/NanoAppState;>;"
     return-void
 .end method
 
 .method public onTransactionComplete(I)V
     .locals 2
-    .param p1, "result"    # I
 
-    .line 321
     iget-object v0, p0, Lcom/android/server/location/ContextHubService$3;->this$0:Lcom/android/server/location/ContextHubService;
 
     iget v1, p0, Lcom/android/server/location/ContextHubService$3;->val$contextHubId:I
 
     invoke-static {v0, v1, p1}, Lcom/android/server/location/ContextHubService;->access$800(Lcom/android/server/location/ContextHubService;II)V
 
-    .line 322
     return-void
 .end method

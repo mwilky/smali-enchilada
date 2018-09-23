@@ -22,12 +22,10 @@
 .method constructor <init>(Lcom/android/server/wm/SurfaceAnimationRunner;)V
     .locals 0
 
-    .line 276
     iput-object p1, p0, Lcom/android/server/wm/SurfaceAnimationRunner$SfValueAnimator;->this$0:Lcom/android/server/wm/SurfaceAnimationRunner;
 
     invoke-direct {p0}, Landroid/animation/ValueAnimator;-><init>()V
 
-    .line 277
     const/4 p1, 0x2
 
     new-array p1, p1, [F
@@ -36,7 +34,6 @@
 
     invoke-virtual {p0, p1}, Lcom/android/server/wm/SurfaceAnimationRunner$SfValueAnimator;->setFloatValues([F)V
 
-    .line 278
     return-void
 
     nop
@@ -53,7 +50,6 @@
 .method public getAnimationHandler()Landroid/animation/AnimationHandler;
     .locals 1
 
-    .line 282
     iget-object v0, p0, Lcom/android/server/wm/SurfaceAnimationRunner$SfValueAnimator;->this$0:Lcom/android/server/wm/SurfaceAnimationRunner;
 
     invoke-static {v0}, Lcom/android/server/wm/SurfaceAnimationRunner;->access$400(Lcom/android/server/wm/SurfaceAnimationRunner;)Landroid/animation/AnimationHandler;

@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/content/SyncManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
-    .line 2483
     iput-object p1, p0, Lcom/android/server/content/SyncManager$16;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/content/SyncManager$AuthoritySyncStats;Lcom/android/server/content/SyncManager$AuthoritySyncStats;)I
     .locals 5
-    .param p1, "lhs"    # Lcom/android/server/content/SyncManager$AuthoritySyncStats;
-    .param p2, "rhs"    # Lcom/android/server/content/SyncManager$AuthoritySyncStats;
 
-    .line 2487
     iget v0, p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->times:I
 
     iget v1, p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->times:I
@@ -59,11 +54,8 @@
 
     move-result v0
 
-    .line 2488
-    .local v0, "compare":I
     if-nez v0, :cond_0
 
-    .line 2489
     iget-wide v1, p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
 
     iget-wide v3, p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;->elapsedTime:J
@@ -72,7 +64,6 @@
 
     move-result v0
 
-    .line 2491
     :cond_0
     return v0
 .end method
@@ -80,7 +71,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 2483
     check-cast p1, Lcom/android/server/content/SyncManager$AuthoritySyncStats;
 
     check-cast p2, Lcom/android/server/content/SyncManager$AuthoritySyncStats;

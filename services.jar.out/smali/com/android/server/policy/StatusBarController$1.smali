@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/StatusBarController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/StatusBarController;
 
-    .line 41
     iput-object p1, p0, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
 
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAppTransitionCancelledLocked(I)V
     .locals 2
-    .param p1, "transit"    # I
 
-    .line 75
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
 
     iget-object v0, v0, Lcom/android/server/policy/StatusBarController;->mHandler:Landroid/os/Handler;
@@ -48,15 +44,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 84
     return-void
 .end method
 
 .method public onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .line 88
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
 
     iget-object v0, v0, Lcom/android/server/policy/StatusBarController;->mHandler:Landroid/os/Handler;
@@ -67,14 +60,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 98
     return-void
 .end method
 
 .method public onAppTransitionPendingLocked()V
     .locals 2
 
-    .line 45
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
 
     iget-object v0, v0, Lcom/android/server/policy/StatusBarController;->mHandler:Landroid/os/Handler;
@@ -85,20 +76,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 54
     return-void
 .end method
 
 .method public onAppTransitionStartingLocked(ILandroid/os/IBinder;Landroid/os/IBinder;JJJ)I
     .locals 9
-    .param p1, "transit"    # I
-    .param p2, "openToken"    # Landroid/os/IBinder;
-    .param p3, "closeToken"    # Landroid/os/IBinder;
-    .param p4, "duration"    # J
-    .param p6, "statusBarAnimationStartTime"    # J
-    .param p8, "statusBarAnimationDuration"    # J
 
-    .line 60
     move-object v6, p0
 
     iget-object v0, v6, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
@@ -119,7 +102,6 @@
 
     invoke-virtual {v7, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 70
     const/4 v0, 0x0
 
     return v0

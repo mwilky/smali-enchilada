@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;ILjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 15821
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$11;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$11;->val$packageName:Ljava/lang/String;
@@ -51,13 +49,10 @@
 .method public run()V
     .locals 6
 
-    .line 15824
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 15824
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$11;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -71,7 +66,6 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 15825
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerService$11;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v2, v2, Lcom/android/server/pm/PackageManagerService;->mRunningInstalls:Landroid/util/SparseArray;
@@ -82,18 +76,14 @@
 
     check-cast v2, Lcom/android/server/pm/PackageManagerService$PostInstallData;
 
-    .line 15826
-    .local v2, "data":Lcom/android/server/pm/PackageManagerService$PostInstallData;
     iget-object v4, v2, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
     iget v4, v4, Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;->returnCode:I
 
     if-eq v4, v3, :cond_0
 
-    .line 15827
     goto :goto_2
 
-    .line 15831
     :cond_0
     iget-object v3, v2, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
@@ -101,17 +91,14 @@
 
     if-nez v3, :cond_1
 
-    .line 15832
     const-string v3, "PackageManager"
 
     const-string/jumbo v4, "notifyFirstLaunch # run # pkg is null. error."
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 15833
     goto :goto_2
 
-    .line 15836
     :cond_1
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$11;->val$packageName:Ljava/lang/String;
 
@@ -129,11 +116,8 @@
 
     if-eqz v3, :cond_4
 
-    .line 15838
     move v3, v0
 
-    .line 15838
-    .local v3, "uIndex":I
     :goto_1
     iget-object v4, v2, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
@@ -143,7 +127,6 @@
 
     if-ge v3, v4, :cond_4
 
-    .line 15839
     iget v4, p0, Lcom/android/server/pm/PackageManagerService$11;->val$userId:I
 
     iget-object v5, v2, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
@@ -154,12 +137,10 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 15840
     sget-boolean v0, Lcom/android/server/pm/PackageManagerService;->DEBUG_BACKUP:Z
 
     if-eqz v0, :cond_2
 
-    .line 15841
     const-string v0, "PackageManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -184,33 +165,25 @@
 
     invoke-static {v0, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 15844
     :cond_2
     return-void
 
-    .line 15838
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 15824
-    .end local v2    # "data":Lcom/android/server/pm/PackageManagerService$PostInstallData;
-    .end local v3    # "uIndex":I
     :cond_4
     :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 15850
-    .end local v1    # "i":I
     :cond_5
     sget-boolean v1, Lcom/android/server/pm/PackageManagerService;->DEBUG_BACKUP:Z
 
     if-eqz v1, :cond_6
 
-    .line 15851
     const-string v1, "PackageManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -235,7 +208,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 15853
     :cond_6
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$11;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -247,8 +219,6 @@
 
     move-result v1
 
-    .line 15854
-    .local v1, "isInstantApp":Z
     if-eqz v1, :cond_7
 
     invoke-static {}, Lcom/android/server/pm/PackageManagerService;->access$3900()[I
@@ -264,8 +234,6 @@
 
     aput v4, v2, v0
 
-    .line 15855
-    .local v2, "userIds":[I
     :goto_3
     if-eqz v1, :cond_8
 
@@ -285,8 +253,6 @@
     :goto_4
     move-object v0, v3
 
-    .line 15856
-    .local v0, "instantUserIds":[I
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$11;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v4, p0, Lcom/android/server/pm/PackageManagerService$11;->val$packageName:Ljava/lang/String;
@@ -295,6 +261,5 @@
 
     invoke-static {v3, v4, v5, v2, v0}, Lcom/android/server/pm/PackageManagerService;->access$4100(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;Ljava/lang/String;[I[I)V
 
-    .line 15857
     return-void
 .end method

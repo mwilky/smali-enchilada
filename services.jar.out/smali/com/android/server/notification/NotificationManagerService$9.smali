@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
-    .line 1750
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Lcom/android/internal/app/IAppOpsCallback$Stub;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public opChanged(IILjava/lang/String;)V
     .locals 5
-    .param p1, "op"    # I
-    .param p2, "uid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
 
-    .line 1752
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -56,8 +50,6 @@
 
     move-result-object v0
 
-    .line 1755
-    .local v0, "key":Ljava/lang/String;
     :try_start_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -73,7 +65,6 @@
 
     if-nez v1, :cond_0
 
-    .line 1757
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v1}, Lcom/android/server/notification/NotificationManagerService;->access$3200(Lcom/android/server/notification/NotificationManagerService;)Ljava/util/List;
@@ -82,7 +73,6 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1758
     const-string v1, "NotificationService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -103,7 +93,6 @@
 
     goto :goto_0
 
-    .line 1760
     :cond_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -113,7 +102,6 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1761
     const-string v1, "NotificationService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -132,7 +120,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1764
     :goto_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$9;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -144,15 +131,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1767
     goto :goto_1
 
-    .line 1765
     :catch_0
     move-exception v1
 
-    .line 1766
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "NotificationService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -171,8 +154,6 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1768
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
 .end method

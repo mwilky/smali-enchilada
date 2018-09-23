@@ -59,9 +59,6 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/server/IpSecService;Lcom/android/server/IpSecService$IResource;Landroid/os/IBinder;[Lcom/android/server/IpSecService$RefcountedResource;)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/server/IpSecService;
-    .param p3, "binder"    # Landroid/os/IBinder;
-    .param p4, "children"    # [Lcom/android/server/IpSecService$RefcountedResource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -72,26 +69,19 @@
         }
     .end annotation
 
-    .line 193
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
-    .local p2, "resource":Lcom/android/server/IpSecService$IResource;, "TT;"
     iput-object p1, p0, Lcom/android/server/IpSecService$RefcountedResource;->this$0:Lcom/android/server/IpSecService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 190
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
-    .line 194
     monitor-enter p1
 
-    .line 195
     :try_start_0
     iput-object p2, p0, Lcom/android/server/IpSecService$RefcountedResource;->mResource:Lcom/android/server/IpSecService$IResource;
 
-    .line 196
     new-instance v1, Ljava/util/ArrayList;
 
     array-length v2, p4
@@ -100,10 +90,8 @@
 
     iput-object v1, p0, Lcom/android/server/IpSecService$RefcountedResource;->mChildren:Ljava/util/List;
 
-    .line 197
     iput-object p3, p0, Lcom/android/server/IpSecService$RefcountedResource;->mBinder:Landroid/os/IBinder;
 
-    .line 199
     array-length v1, p4
 
     const/4 v2, 0x0
@@ -115,13 +103,10 @@
 
     aget-object v4, p4, v3
 
-    .line 200
-    .local v4, "child":Lcom/android/server/IpSecService$RefcountedResource;
     iget-object v5, p0, Lcom/android/server/IpSecService$RefcountedResource;->mChildren:Ljava/util/List;
 
     invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 201
     iget v5, v4, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
     add-int/2addr v5, v0
@@ -130,13 +115,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 199
-    .end local v4    # "child":Lcom/android/server/IpSecService$RefcountedResource;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 205
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mBinder:Landroid/os/IBinder;
@@ -146,27 +128,19 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 208
     goto :goto_1
 
-    .line 206
     :catch_0
     move-exception v0
 
-    .line 207
-    .local v0, "e":Landroid/os/RemoteException;
     :try_start_2
     invoke-virtual {p0}, Lcom/android/server/IpSecService$RefcountedResource;->binderDied()V
 
-    .line 209
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_1
     monitor-exit p1
 
-    .line 210
     return-void
 
-    .line 209
     :catchall_0
     move-exception v0
 
@@ -182,34 +156,26 @@
 .method public binderDied()V
     .locals 5
 
-    .line 219
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->this$0:Lcom/android/server/IpSecService;
 
     monitor-enter v0
 
-    .line 221
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/IpSecService$RefcountedResource;->userRelease()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 224
     goto :goto_0
 
-    .line 225
     :catchall_0
     move-exception v1
 
     goto :goto_1
 
-    .line 222
     :catch_0
     move-exception v1
 
-    .line 223
-    .local v1, "e":Ljava/lang/Exception;
     :try_start_1
     const-string v2, "IpSecService"
 
@@ -229,15 +195,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     monitor-exit v0
 
-    .line 226
     return-void
 
-    .line 225
     :goto_1
     monitor-exit v0
     :try_end_1
@@ -254,8 +216,6 @@
         }
     .end annotation
 
-    .line 229
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mResource:Lcom/android/server/IpSecService$IResource;
 
     return-object v0
@@ -276,34 +236,27 @@
         }
     .end annotation
 
-    .line 272
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     iget v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
-    .line 274
     iget v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
     if-lez v0, :cond_0
 
-    .line 275
     return-void
 
-    .line 276
     :cond_0
     iget v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
     if-ltz v0, :cond_2
 
-    .line 282
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mResource:Lcom/android/server/IpSecService$IResource;
 
     invoke-interface {v0}, Lcom/android/server/IpSecService$IResource;->freeUnderlyingResources()V
 
-    .line 285
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mChildren:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -323,15 +276,10 @@
 
     check-cast v1, Lcom/android/server/IpSecService$RefcountedResource;
 
-    .line 286
-    .local v1, "child":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<+Lcom/android/server/IpSecService$IResource;>;"
     invoke-virtual {v1}, Lcom/android/server/IpSecService$RefcountedResource;->releaseReference()V
 
-    .line 287
-    .end local v1    # "child":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<+Lcom/android/server/IpSecService$IResource;>;"
     goto :goto_0
 
-    .line 292
     :cond_1
     iget v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
@@ -339,10 +287,8 @@
 
     iput v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
-    .line 293
     return-void
 
-    .line 277
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -356,53 +302,42 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 297
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v1, "{mResource="
 
-    .line 298
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/IpSecService$RefcountedResource;->mResource:Lcom/android/server/IpSecService$IResource;
 
-    .line 299
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v1, ", mRefCount="
 
-    .line 300
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/IpSecService$RefcountedResource;->mRefCount:I
 
-    .line 301
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", mChildren="
 
-    .line 302
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/IpSecService$RefcountedResource;->mChildren:Ljava/util/List;
 
-    .line 303
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "}"
 
-    .line 304
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 305
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 297
     return-object v0
 .end method
 
@@ -418,16 +353,12 @@
         }
     .end annotation
 
-    .line 247
-    .local p0, "this":Lcom/android/server/IpSecService$RefcountedResource;, "Lcom/android/server/IpSecService$RefcountedResource<TT;>;"
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mBinder:Landroid/os/IBinder;
 
     if-nez v0, :cond_0
 
-    .line 248
     return-void
 
-    .line 251
     :cond_0
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mBinder:Landroid/os/IBinder;
 
@@ -435,19 +366,15 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 252
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mBinder:Landroid/os/IBinder;
 
-    .line 254
     iget-object v0, p0, Lcom/android/server/IpSecService$RefcountedResource;->mResource:Lcom/android/server/IpSecService$IResource;
 
     invoke-interface {v0}, Lcom/android/server/IpSecService$IResource;->invalidate()V
 
-    .line 256
     invoke-virtual {p0}, Lcom/android/server/IpSecService$RefcountedResource;->releaseReference()V
 
-    .line 257
     return-void
 .end method

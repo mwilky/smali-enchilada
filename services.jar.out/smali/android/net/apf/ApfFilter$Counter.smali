@@ -89,7 +89,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 115
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "RESERVED_OOB"
@@ -100,7 +99,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->RESERVED_OOB:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 116
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "TOTAL_PACKETS"
@@ -111,7 +109,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->TOTAL_PACKETS:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 117
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_ARP"
@@ -122,7 +119,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_ARP:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 118
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_DHCP"
@@ -133,7 +129,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_DHCP:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 119
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_IPV4"
@@ -144,7 +139,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_IPV4:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 120
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_IPV6_NON_ICMP"
@@ -155,7 +149,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_IPV6_NON_ICMP:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 121
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_IPV4_UNICAST"
@@ -166,7 +159,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_IPV4_UNICAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 122
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_IPV6_ICMP"
@@ -177,7 +169,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_IPV6_ICMP:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 123
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_IPV6_UNICAST_NON_ICMP"
@@ -188,7 +179,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_IPV6_UNICAST_NON_ICMP:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 124
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_ARP_NON_IPV4"
@@ -199,7 +189,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_ARP_NON_IPV4:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 125
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_ARP_UNKNOWN"
@@ -210,7 +199,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_ARP_UNKNOWN:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 126
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_ARP_UNICAST_REPLY"
@@ -221,7 +209,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_ARP_UNICAST_REPLY:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 127
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "PASSED_NON_IP_UNICAST"
@@ -232,7 +219,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->PASSED_NON_IP_UNICAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 128
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_ETH_BROADCAST"
@@ -243,7 +229,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_ETH_BROADCAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 129
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_RA"
@@ -254,7 +239,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_RA:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 130
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_GARP_REPLY"
@@ -265,7 +249,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_GARP_REPLY:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 131
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_ARP_OTHER_HOST"
@@ -276,7 +259,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_ARP_OTHER_HOST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 132
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV4_L2_BROADCAST"
@@ -287,7 +269,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV4_L2_BROADCAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 133
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV4_BROADCAST_ADDR"
@@ -298,7 +279,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV4_BROADCAST_ADDR:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 134
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV4_BROADCAST_NET"
@@ -309,7 +289,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV4_BROADCAST_NET:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 135
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV4_MULTICAST"
@@ -320,7 +299,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV4_MULTICAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 136
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV6_ROUTER_SOLICITATION"
@@ -331,7 +309,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV6_ROUTER_SOLICITATION:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 137
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV6_MULTICAST_NA"
@@ -342,7 +319,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV6_MULTICAST_NA:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 138
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV6_MULTICAST"
@@ -353,7 +329,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV6_MULTICAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 139
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV6_MULTICAST_PING"
@@ -364,7 +339,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV6_MULTICAST_PING:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 140
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_IPV6_NON_ICMP_MULTICAST"
@@ -375,7 +349,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_IPV6_NON_ICMP_MULTICAST:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 141
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_802_3_FRAME"
@@ -386,7 +359,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_802_3_FRAME:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 142
     new-instance v0, Landroid/net/apf/ApfFilter$Counter;
 
     const-string v1, "DROPPED_ETHERTYPE_BLACKLISTED"
@@ -397,7 +369,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$Counter;->DROPPED_ETHERTYPE_BLACKLISTED:Landroid/net/apf/ApfFilter$Counter;
 
-    .line 113
     const/16 v0, 0x1c
 
     new-array v0, v0, [Landroid/net/apf/ApfFilter$Counter;
@@ -557,7 +528,6 @@
         }
     .end annotation
 
-    .line 114
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -566,7 +536,6 @@
 .method public static totalSize()I
     .locals 1
 
-    .line 152
     const-class v0, Landroid/net/apf/ApfFilter$Counter;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
@@ -586,9 +555,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/apf/ApfFilter$Counter;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 113
     const-class v0, Landroid/net/apf/ApfFilter$Counter;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -603,7 +570,6 @@
 .method public static values()[Landroid/net/apf/ApfFilter$Counter;
     .locals 1
 
-    .line 113
     sget-object v0, Landroid/net/apf/ApfFilter$Counter;->$VALUES:[Landroid/net/apf/ApfFilter$Counter;
 
     invoke-virtual {v0}, [Landroid/net/apf/ApfFilter$Counter;->clone()Ljava/lang/Object;
@@ -620,7 +586,6 @@
 .method public offset()I
     .locals 1
 
-    .line 147
     invoke-virtual {p0}, Landroid/net/apf/ApfFilter$Counter;->ordinal()I
 
     move-result v0

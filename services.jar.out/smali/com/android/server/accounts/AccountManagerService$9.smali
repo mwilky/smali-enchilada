@@ -29,17 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLjava/lang/String;ZZLjava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accounts/AccountManagerService;
-    .param p2, "accounts"    # Lcom/android/server/accounts/AccountManagerService$UserAccounts;
-    .param p3, "response"    # Landroid/accounts/IAccountManagerResponse;
-    .param p4, "accountType"    # Ljava/lang/String;
-    .param p5, "expectActivityLaunch"    # Z
-    .param p6, "stripAuthTokenFromResult"    # Z
-    .param p7, "accountName"    # Ljava/lang/String;
-    .param p8, "authDetailsRequired"    # Z
-    .param p9, "updateLastAuthenticatedTime"    # Z
 
-    .line 3200
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$9;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     iput-object p10, p0, Lcom/android/server/accounts/AccountManagerService$9;->val$authTokenType:Ljava/lang/String;
@@ -65,7 +55,6 @@
         }
     .end annotation
 
-    .line 3203
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$9;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$9;->mAccountType:Ljava/lang/String;
@@ -80,15 +69,12 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountAuthenticator;->addAccount(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 3205
     return-void
 .end method
 
 .method protected toDebugString(J)Ljava/lang/String;
     .locals 2
-    .param p1, "now"    # J
 
-    .line 3209
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -113,7 +99,6 @@
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$9;->val$requiredFeatures:[Ljava/lang/String;
 
-    .line 3211
     invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -124,6 +109,5 @@
 
     move-result-object v0
 
-    .line 3209
     return-object v0
 .end method

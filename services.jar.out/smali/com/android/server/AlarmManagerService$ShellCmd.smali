@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/AlarmManagerService;)V
     .locals 0
 
-    .line 5785
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$ShellCmd;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/AlarmManagerService;Lcom/android/server/AlarmManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/AlarmManagerService;
-    .param p2, "x1"    # Lcom/android/server/AlarmManagerService$1;
 
-    .line 5785
     invoke-direct {p0, p1}, Lcom/android/server/AlarmManagerService$ShellCmd;-><init>(Lcom/android/server/AlarmManagerService;)V
 
     return-void
@@ -46,7 +42,6 @@
 .method getBinderService()Landroid/app/IAlarmManager;
     .locals 1
 
-    .line 5788
     iget-object v0, p0, Lcom/android/server/AlarmManagerService$ShellCmd;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-static {v0}, Lcom/android/server/AlarmManagerService;->access$3600(Lcom/android/server/AlarmManagerService;)Landroid/os/IBinder;
@@ -62,26 +57,20 @@
 
 .method public onCommand(Ljava/lang/String;)I
     .locals 6
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 5793
     if-nez p1, :cond_0
 
-    .line 5794
     invoke-virtual {p0, p1}, Lcom/android/server/AlarmManagerService$ShellCmd;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v0
 
     return v0
 
-    .line 5797
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 5799
-    .local v0, "pw":Ljava/io/PrintWriter;
     const/4 v1, -0x1
 
     :try_start_0
@@ -134,32 +123,25 @@
     :goto_1
     packed-switch v2, :pswitch_data_0
 
-    .line 5808
     invoke-virtual {p0, p1}, Lcom/android/server/AlarmManagerService$ShellCmd;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v2
 
     goto :goto_2
 
-    .line 5804
     :pswitch_0
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getNextArgRequired()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5805
-    .local v2, "tz":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getBinderService()Landroid/app/IAlarmManager;
 
     move-result-object v3
 
     invoke-interface {v3, v2}, Landroid/app/IAlarmManager;->setTimeZone(Ljava/lang/String;)V
 
-    .line 5806
     return v4
 
-    .line 5801
-    .end local v2    # "tz":Ljava/lang/String;
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getNextArgRequired()Ljava/lang/String;
 
@@ -169,8 +151,6 @@
 
     move-result-wide v2
 
-    .line 5802
-    .local v2, "millis":J
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getBinderService()Landroid/app/IAlarmManager;
 
     move-result-object v5
@@ -190,21 +170,14 @@
     :cond_4
     return v1
 
-    .line 5808
-    .end local v2    # "millis":J
     :goto_2
     return v2
 
-    .line 5810
     :catch_0
     move-exception v2
 
-    .line 5811
-    .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 5813
-    .end local v2    # "e":Ljava/lang/Exception;
     return v1
 
     :pswitch_data_0
@@ -217,52 +190,41 @@
 .method public onHelp()V
     .locals 2
 
-    .line 5818
     invoke-virtual {p0}, Lcom/android/server/AlarmManagerService$ShellCmd;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 5819
-    .local v0, "pw":Ljava/io/PrintWriter;
     const-string v1, "Alarm manager service (alarm) commands:"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5820
     const-string v1, "  help"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5821
     const-string v1, "    Print this help text."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5822
     const-string v1, "  set-time TIME"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5823
     const-string v1, "    Set the system clock time to TIME where TIME is milliseconds"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5824
     const-string v1, "    since the Epoch."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5825
     const-string v1, "  set-timezone TZ"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5826
     const-string v1, "    Set the system timezone to TZ where TZ is an Olson id."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 5827
     return-void
 .end method

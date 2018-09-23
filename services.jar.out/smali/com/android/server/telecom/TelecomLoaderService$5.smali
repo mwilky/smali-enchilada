@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/telecom/TelecomLoaderService;Landroid/content/pm/PackageManagerInternal;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/telecom/TelecomLoaderService;
 
-    .line 315
     iput-object p1, p0, Lcom/android/server/telecom/TelecomLoaderService$5;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     iput-object p2, p0, Lcom/android/server/telecom/TelecomLoaderService$5;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 318
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -55,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 319
     invoke-static {}, Lcom/android/server/pm/UserManagerService;->getInstance()Lcom/android/server/pm/UserManagerService;
 
     move-result-object v0
@@ -73,21 +67,16 @@
 
     aget v3, v0, v2
 
-    .line 320
-    .local v3, "userId":I
     iget-object v4, p0, Lcom/android/server/telecom/TelecomLoaderService$5;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     iget-object v5, p0, Lcom/android/server/telecom/TelecomLoaderService$5;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
     invoke-static {v4, v5, v3}, Lcom/android/server/telecom/TelecomLoaderService;->access$800(Lcom/android/server/telecom/TelecomLoaderService;Landroid/content/pm/PackageManagerInternal;I)V
 
-    .line 319
-    .end local v3    # "userId":I
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 323
     :cond_0
     return-void
 .end method

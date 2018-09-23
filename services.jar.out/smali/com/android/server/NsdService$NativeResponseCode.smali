@@ -52,14 +52,12 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 617
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
-    .line 619
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_DISCOVERY_FAILED"
@@ -68,7 +66,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 620
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_FOUND"
@@ -77,7 +74,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 621
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_LOST"
@@ -86,7 +82,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 622
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_REGISTRATION_FAILED"
@@ -95,7 +90,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 623
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_REGISTERED"
@@ -104,7 +98,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 624
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_RESOLUTION_FAILED"
@@ -113,7 +106,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 625
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_RESOLVED"
@@ -122,7 +114,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 626
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_UPDATED"
@@ -131,7 +122,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 627
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_UPDATE_FAILED"
@@ -140,7 +130,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 628
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_GET_ADDR_FAILED"
@@ -149,7 +138,6 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 629
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     const-string v1, "SERVICE_GET_ADDR_SUCCESS"
@@ -158,14 +146,12 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 630
     return-void
 .end method
 
 .method constructor <init>()V
     .locals 0
 
-    .line 600
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -173,9 +159,7 @@
 
 .method static nameOf(I)Ljava/lang/String;
     .locals 2
-    .param p0, "code"    # I
 
-    .line 633
     sget-object v0, Lcom/android/server/NsdService$NativeResponseCode;->CODE_NAMES:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -184,18 +168,14 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 634
-    .local v0, "name":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 635
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 637
     :cond_0
     return-object v0
 .end method

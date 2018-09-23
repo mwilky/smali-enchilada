@@ -33,7 +33,6 @@
         value = "mCallbacksLock"
     .end annotation
 
-    .line 107
     return-void
 .end method
 

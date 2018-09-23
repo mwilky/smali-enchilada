@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/location/ProviderRequest;Landroid/os/WorkSource;)V
     .locals 0
-    .param p1, "request"    # Lcom/android/internal/location/ProviderRequest;
-    .param p2, "source"    # Landroid/os/WorkSource;
 
-    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 270
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$GpsRequest;->request:Lcom/android/internal/location/ProviderRequest;
 
-    .line 271
     iput-object p2, p0, Lcom/android/server/location/GnssLocationProvider$GpsRequest;->source:Landroid/os/WorkSource;
 
-    .line 272
     return-void
 .end method

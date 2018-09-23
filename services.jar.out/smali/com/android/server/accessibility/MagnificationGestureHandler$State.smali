@@ -17,9 +17,7 @@
 # direct methods
 .method public static nameOf(Lcom/android/server/accessibility/MagnificationGestureHandler$State;)Ljava/lang/String;
     .locals 1
-    .param p0, "s"    # Lcom/android/server/accessibility/MagnificationGestureHandler$State;
 
-    .line 376
     if-eqz p0, :cond_0
 
     invoke-interface {p0}, Lcom/android/server/accessibility/MagnificationGestureHandler$State;->name()Ljava/lang/String;
@@ -40,14 +38,12 @@
 .method public clear()V
     .locals 0
 
-    .line 369
     return-void
 .end method
 
 .method public name()Ljava/lang/String;
     .locals 1
 
-    .line 372
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0

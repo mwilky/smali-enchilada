@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 108
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     const-string v1, "MPSS"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->MPSS:Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
-    .line 109
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     const-string v1, "ADSP"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->ADSP:Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
-    .line 110
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     const-string v1, "CDSP"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->CDSP:Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
-    .line 111
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     const-string v1, "SLPI"
@@ -82,7 +78,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->SLPI:Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
-    .line 107
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 107
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 107
     const-class v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
     .locals 1
 
-    .line 107
     sget-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;
 
     invoke-virtual {v0}, [Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MASTER_TYPE;->clone()Ljava/lang/Object;

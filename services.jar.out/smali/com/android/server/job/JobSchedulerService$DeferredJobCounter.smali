@@ -34,10 +34,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 2457
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2458
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/job/JobSchedulerService$DeferredJobCounter;->mDeferred:I
@@ -49,9 +47,7 @@
 # virtual methods
 .method public accept(Lcom/android/server/job/controllers/JobStatus;)V
     .locals 4
-    .param p1, "job"    # Lcom/android/server/job/controllers/JobStatus;
 
-    .line 2466
     invoke-virtual {p1}, Lcom/android/server/job/controllers/JobStatus;->getWhenStandbyDeferred()J
 
     move-result-wide v0
@@ -62,14 +58,12 @@
 
     if-lez v0, :cond_0
 
-    .line 2467
     iget v0, p0, Lcom/android/server/job/JobSchedulerService$DeferredJobCounter;->mDeferred:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/job/JobSchedulerService$DeferredJobCounter;->mDeferred:I
 
-    .line 2469
     :cond_0
     return-void
 .end method
@@ -77,7 +71,6 @@
 .method public bridge synthetic accept(Ljava/lang/Object;)V
     .locals 0
 
-    .line 2457
     check-cast p1, Lcom/android/server/job/controllers/JobStatus;
 
     invoke-virtual {p0, p1}, Lcom/android/server/job/JobSchedulerService$DeferredJobCounter;->accept(Lcom/android/server/job/controllers/JobStatus;)V
@@ -88,7 +81,6 @@
 .method public numDeferred()I
     .locals 1
 
-    .line 2461
     iget v0, p0, Lcom/android/server/job/JobSchedulerService$DeferredJobCounter;->mDeferred:I
 
     return v0

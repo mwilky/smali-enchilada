@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 75
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "NORMAL"
@@ -55,7 +54,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->NORMAL:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 76
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "POWER"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->POWER:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 77
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "POWER_HOME"
@@ -77,7 +74,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->POWER_HOME:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 78
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "HOME"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->HOME:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 79
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "FOOT"
@@ -99,7 +94,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->FOOT:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 80
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "BACK_SWITCH"
@@ -110,7 +104,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->BACK_SWITCH:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 81
     new-instance v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     const-string v1, "BASE"
@@ -121,7 +114,6 @@
 
     sput-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->BASE:Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
-    .line 74
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/server/OemSceneButtonController$KeyLockMode;
@@ -167,7 +159,6 @@
         }
     .end annotation
 
-    .line 74
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -175,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/OemSceneButtonController$KeyLockMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 74
     const-class v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +181,6 @@
 .method public static values()[Lcom/android/server/OemSceneButtonController$KeyLockMode;
     .locals 1
 
-    .line 74
     sget-object v0, Lcom/android/server/OemSceneButtonController$KeyLockMode;->$VALUES:[Lcom/android/server/OemSceneButtonController$KeyLockMode;
 
     invoke-virtual {v0}, [Lcom/android/server/OemSceneButtonController$KeyLockMode;->clone()Ljava/lang/Object;

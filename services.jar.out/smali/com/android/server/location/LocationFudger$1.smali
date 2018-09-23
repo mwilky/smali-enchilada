@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/LocationFudger;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/LocationFudger;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 144
     iput-object p1, p0, Lcom/android/server/location/LocationFudger$1;->this$0:Lcom/android/server/location/LocationFudger;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .line 147
     iget-object v0, p0, Lcom/android/server/location/LocationFudger$1;->this$0:Lcom/android/server/location/LocationFudger;
 
     iget-object v1, p0, Lcom/android/server/location/LocationFudger$1;->this$0:Lcom/android/server/location/LocationFudger;
@@ -49,6 +44,5 @@
 
     invoke-static {v0, v1}, Lcom/android/server/location/LocationFudger;->access$100(Lcom/android/server/location/LocationFudger;F)V
 
-    .line 148
     return-void
 .end method

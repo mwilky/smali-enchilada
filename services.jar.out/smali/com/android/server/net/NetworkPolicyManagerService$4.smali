@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 1097
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -35,27 +33,19 @@
 # virtual methods
 .method public onUidActive(I)V
     .locals 0
-    .param p1, "uid"    # I
 
-    .line 1108
     return-void
 .end method
 
 .method public onUidCachedChanged(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "cached"    # Z
 
-    .line 1114
     return-void
 .end method
 
 .method public onUidGone(IZ)V
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
 
-    .line 1104
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidEventHandler:Landroid/os/Handler;
@@ -70,45 +60,33 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1105
     return-void
 .end method
 
 .method public onUidIdle(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
 
-    .line 1111
     return-void
 .end method
 
 .method public onUidStateChanged(IIJ)V
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "procState"    # I
-    .param p3, "procStateSeq"    # J
 
-    .line 1099
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$4;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidEventHandler:Landroid/os/Handler;
 
-    .line 1100
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    .line 1099
     const/16 v2, 0x64
 
     invoke-virtual {v0, v2, p1, p2, v1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1100
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1101
     return-void
 .end method

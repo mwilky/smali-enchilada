@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 1941
     const/4 v0, 0x4
 
     new-array v1, v0, [I
@@ -49,7 +48,6 @@
 
     sput-object v1, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->ORIG_ENUMS:[I
 
-    .line 1947
     new-array v0, v0, [I
 
     fill-array-data v0, :array_1
@@ -77,32 +75,21 @@
 
 .method constructor <init>(ILjava/lang/String;II)V
     .locals 1
-    .param p1, "_uid"    # I
-    .param p2, "_pkg"    # Ljava/lang/String;
-    .param p3, "_which"    # I
-    .param p4, "_cutpoint"    # I
 
-    .line 1954
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1955
     iput p1, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->uid:I
 
-    .line 1956
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->pkg:Ljava/lang/String;
 
-    .line 1957
     iput p3, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->which:I
 
-    .line 1958
     iput p4, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->cutpoint:I
 
-    .line 1959
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->cutpoint:I
 
     if-ltz v0, :cond_0
 
-    .line 1960
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
@@ -111,13 +98,11 @@
 
     goto :goto_0
 
-    .line 1962
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->lastProcStates:Landroid/util/SparseIntArray;
 
-    .line 1964
     :goto_0
     return-void
 .end method
@@ -126,34 +111,27 @@
 # virtual methods
 .method writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
     .locals 13
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "fieldId"    # J
 
     move-object v0, p0
 
     move-object v7, p1
 
-    .line 1967
     invoke-virtual/range {p1 .. p3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v8
 
-    .line 1968
-    .local v8, "token":J
     iget v1, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->uid:I
 
     const-wide v10, 0x10500000001L
 
     invoke-virtual {v7, v10, v11, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 1969
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->pkg:Ljava/lang/String;
 
     const-wide v2, 0x10900000002L
 
     invoke-virtual {v7, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 1970
     iget v4, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->which:I
 
     sget-object v5, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->ORIG_ENUMS:[I
@@ -166,42 +144,33 @@
 
     invoke-static/range {v1 .. v6}, Landroid/util/proto/ProtoUtils;->writeBitWiseFlagsToProtoEnum(Landroid/util/proto/ProtoOutputStream;JI[I[I)V
 
-    .line 1972
     iget v1, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->cutpoint:I
 
     const-wide v2, 0x10500000004L
 
     invoke-virtual {v7, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 1973
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->lastProcStates:Landroid/util/SparseIntArray;
 
     if-eqz v1, :cond_0
 
-    .line 1974
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->lastProcStates:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1}, Landroid/util/SparseIntArray;->size()I
 
     move-result v1
 
-    .line 1975
-    .local v1, "NI":I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 1976
     const-wide v3, 0x20b00000005L
 
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v3
 
-    .line 1977
-    .local v3, "pToken":J
     iget-object v5, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->lastProcStates:Landroid/util/SparseIntArray;
 
     invoke-virtual {v5, v2}, Landroid/util/SparseIntArray;->keyAt(I)I
@@ -210,7 +179,6 @@
 
     invoke-virtual {v7, v10, v11, v5}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 1978
     const-wide v5, 0x10500000002L
 
     iget-object v12, v0, Lcom/android/server/am/ActivityManagerService$UidObserverRegistration;->lastProcStates:Landroid/util/SparseIntArray;
@@ -221,21 +189,14 @@
 
     invoke-virtual {v7, v5, v6, v12}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 1979
     invoke-virtual {v7, v3, v4}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 1975
-    .end local v3    # "pToken":J
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1982
-    .end local v1    # "NI":I
-    .end local v2    # "i":I
     :cond_0
     invoke-virtual {v7, v8, v9}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 1983
     return-void
 .end method

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$BinderService;IZI)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
-    .line 1318
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->val$keyCode:I
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 1321
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -72,21 +69,16 @@
 
     move-result-object v0
 
-    .line 1322
-    .local v0, "device":Lcom/android/server/hdmi/HdmiMhlLocalDeviceStub;
     if-eqz v0, :cond_0
 
-    .line 1323
     iget v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->val$keyCode:I
 
     iget-boolean v2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->val$isPressed:Z
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/hdmi/HdmiMhlLocalDeviceStub;->sendKeyEvent(IZ)V
 
-    .line 1324
     return-void
 
-    .line 1326
     :cond_0
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
@@ -98,7 +90,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 1327
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v1, v1, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -113,21 +104,16 @@
 
     move-result-object v1
 
-    .line 1328
-    .local v1, "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     if-nez v1, :cond_1
 
-    .line 1329
     const-string v2, "HdmiControlService"
 
     const-string v3, "Local device not available"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1330
     return-void
 
-    .line 1332
     :cond_1
     iget v2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$3;->val$keyCode:I
 
@@ -135,8 +121,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->sendKeyEvent(IZ)V
 
-    .line 1334
-    .end local v1    # "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     :cond_2
     return-void
 .end method

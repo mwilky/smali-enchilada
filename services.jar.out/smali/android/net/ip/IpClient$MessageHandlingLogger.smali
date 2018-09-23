@@ -24,7 +24,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1842
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,9 +31,7 @@
 
 .method synthetic constructor <init>(Landroid/net/ip/IpClient$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/net/ip/IpClient$1;
 
-    .line 1842
     invoke-direct {p0}, Landroid/net/ip/IpClient$MessageHandlingLogger;-><init>()V
 
     return-void
@@ -44,10 +41,7 @@
 # virtual methods
 .method public handled(Lcom/android/internal/util/State;Lcom/android/internal/util/IState;)V
     .locals 1
-    .param p1, "processedIn"    # Lcom/android/internal/util/State;
-    .param p2, "receivedIn"    # Lcom/android/internal/util/IState;
 
-    .line 1852
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -58,36 +52,30 @@
 
     iput-object v0, p0, Landroid/net/ip/IpClient$MessageHandlingLogger;->processedInState:Ljava/lang/String;
 
-    .line 1853
     invoke-interface {p2}, Lcom/android/internal/util/IState;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/ip/IpClient$MessageHandlingLogger;->receivedInState:Ljava/lang/String;
 
-    .line 1854
     return-void
 .end method
 
 .method public reset()V
     .locals 1
 
-    .line 1847
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/ip/IpClient$MessageHandlingLogger;->processedInState:Ljava/lang/String;
 
-    .line 1848
     iput-object v0, p0, Landroid/net/ip/IpClient$MessageHandlingLogger;->receivedInState:Ljava/lang/String;
 
-    .line 1849
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 1857
     const-string/jumbo v0, "rcvd_in=%s, proc_in=%s"
 
     const/4 v1, 0x2

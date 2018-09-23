@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 44
     sget-boolean v0, Lcom/android/server/LocationManagerService;->D:Z
 
     sput-boolean v0, Lcom/android/server/location/LocationProviderProxy;->D:Z
@@ -46,61 +45,45 @@
 
 .method private constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/os/Handler;)V
     .locals 13
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "action"    # Ljava/lang/String;
-    .param p4, "overlaySwitchResId"    # I
-    .param p5, "defaultServicePackageNameResId"    # I
-    .param p6, "initialPackageNamesResId"    # I
-    .param p7, "handler"    # Landroid/os/Handler;
 
     move-object v0, p0
 
     move-object v1, p2
 
-    .line 74
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
     new-instance v2, Ljava/lang/Object;
 
     invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
     iput-object v2, v0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
-    .line 54
     const/4 v2, 0x0
 
     iput-boolean v2, v0, Lcom/android/server/location/LocationProviderProxy;->mEnabled:Z
 
-    .line 55
     const/4 v2, 0x0
 
     iput-object v2, v0, Lcom/android/server/location/LocationProviderProxy;->mRequest:Lcom/android/internal/location/ProviderRequest;
 
-    .line 56
     new-instance v2, Landroid/os/WorkSource;
 
     invoke-direct {v2}, Landroid/os/WorkSource;-><init>()V
 
     iput-object v2, v0, Lcom/android/server/location/LocationProviderProxy;->mWorksource:Landroid/os/WorkSource;
 
-    .line 95
     new-instance v2, Lcom/android/server/location/LocationProviderProxy$1;
 
     invoke-direct {v2, v0}, Lcom/android/server/location/LocationProviderProxy$1;-><init>(Lcom/android/server/location/LocationProviderProxy;)V
 
     iput-object v2, v0, Lcom/android/server/location/LocationProviderProxy;->mNewServiceWork:Ljava/lang/Runnable;
 
-    .line 75
     move-object v2, p1
 
     iput-object v2, v0, Lcom/android/server/location/LocationProviderProxy;->mContext:Landroid/content/Context;
 
-    .line 76
     iput-object v1, v0, Lcom/android/server/location/LocationProviderProxy;->mName:Ljava/lang/String;
 
-    .line 77
     new-instance v12, Lcom/android/server/ServiceWatcher;
 
     iget-object v4, v0, Lcom/android/server/location/LocationProviderProxy;->mContext:Landroid/content/Context;
@@ -137,14 +120,12 @@
 
     iput-object v12, v0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
-    .line 80
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .line 42
     sget-boolean v0, Lcom/android/server/location/LocationProviderProxy;->D:Z
 
     return v0
@@ -152,9 +133,7 @@
 
 .method static synthetic access$100(Lcom/android/server/location/LocationProviderProxy;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 42
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -162,9 +141,7 @@
 
 .method static synthetic access$200(Lcom/android/server/location/LocationProviderProxy;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 42
     iget-boolean v0, p0, Lcom/android/server/location/LocationProviderProxy;->mEnabled:Z
 
     return v0
@@ -172,9 +149,7 @@
 
 .method static synthetic access$300(Lcom/android/server/location/LocationProviderProxy;)Lcom/android/internal/location/ProviderRequest;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 42
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mRequest:Lcom/android/internal/location/ProviderRequest;
 
     return-object v0
@@ -182,9 +157,7 @@
 
 .method static synthetic access$400(Lcom/android/server/location/LocationProviderProxy;)Landroid/os/WorkSource;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 42
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mWorksource:Landroid/os/WorkSource;
 
     return-object v0
@@ -192,9 +165,7 @@
 
 .method static synthetic access$500(Lcom/android/server/location/LocationProviderProxy;)Lcom/android/server/ServiceWatcher;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 42
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     return-object v0
@@ -202,10 +173,7 @@
 
 .method static synthetic access$602(Lcom/android/server/location/LocationProviderProxy;Lcom/android/internal/location/ProviderProperties;)Lcom/android/internal/location/ProviderProperties;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/location/LocationProviderProxy;
-    .param p1, "x1"    # Lcom/android/internal/location/ProviderProperties;
 
-    .line 42
     iput-object p1, p0, Lcom/android/server/location/LocationProviderProxy;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
     return-object p1
@@ -214,7 +182,6 @@
 .method private bind()Z
     .locals 1
 
-    .line 83
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     invoke-virtual {v0}, Lcom/android/server/ServiceWatcher;->start()Z
@@ -226,15 +193,7 @@
 
 .method public static createAndBind(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/os/Handler;)Lcom/android/server/location/LocationProviderProxy;
     .locals 9
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "overlaySwitchResId"    # I
-    .param p4, "defaultServicePackageNameResId"    # I
-    .param p5, "initialPackageNamesResId"    # I
-    .param p6, "handler"    # Landroid/os/Handler;
 
-    .line 62
     new-instance v8, Lcom/android/server/location/LocationProviderProxy;
 
     move-object v0, v8
@@ -255,18 +214,14 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/server/location/LocationProviderProxy;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIILandroid/os/Handler;)V
 
-    .line 65
-    .local v0, "proxy":Lcom/android/server/location/LocationProviderProxy;
     invoke-direct {v0}, Lcom/android/server/location/LocationProviderProxy;->bind()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 66
     return-object v0
 
-    .line 68
     :cond_0
     const/4 v1, 0x0
 
@@ -278,23 +233,19 @@
 .method public disable()V
     .locals 2
 
-    .line 180
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 181
     const/4 v1, 0x0
 
     :try_start_0
     iput-boolean v1, p0, Lcom/android/server/location/LocationProviderProxy;->mEnabled:Z
 
-    .line 182
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 183
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v1, Lcom/android/server/location/LocationProviderProxy$3;
@@ -303,10 +254,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 197
     return-void
 
-    .line 182
     :catchall_0
     move-exception v1
 
@@ -320,16 +269,11 @@
 
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 3
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 230
     const-string v0, "REMOTE SERVICE"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 231
     const-string v0, " name="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -340,7 +284,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 232
     const-string v0, " pkg="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -355,7 +298,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 233
     const-string v0, " version="
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -384,12 +326,10 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 234
     const/16 v0, 0xa
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->append(C)Ljava/io/PrintWriter;
 
-    .line 235
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v1, Lcom/android/server/location/LocationProviderProxy$5;
@@ -402,12 +342,10 @@
 
     if-nez v0, :cond_0
 
-    .line 246
     const-string/jumbo v0, "service down (null)"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 248
     :cond_0
     return-void
 .end method
@@ -415,23 +353,19 @@
 .method public enable()V
     .locals 2
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 160
     const/4 v1, 0x1
 
     :try_start_0
     iput-boolean v1, p0, Lcom/android/server/location/LocationProviderProxy;->mEnabled:Z
 
-    .line 161
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 162
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v1, Lcom/android/server/location/LocationProviderProxy$2;
@@ -440,10 +374,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 176
     return-void
 
-    .line 161
     :catchall_0
     move-exception v1
 
@@ -458,7 +390,6 @@
 .method public getConnectedPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 87
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     invoke-virtual {v0}, Lcom/android/server/ServiceWatcher;->getBestPackageName()Ljava/lang/String;
@@ -471,7 +402,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 147
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mName:Ljava/lang/String;
 
     return-object v0
@@ -480,12 +410,10 @@
 .method public getProperties()Lcom/android/internal/location/ProviderProperties;
     .locals 2
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 153
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/LocationProviderProxy;->mProperties:Lcom/android/internal/location/ProviderProperties;
 
@@ -493,7 +421,6 @@
 
     return-object v1
 
-    .line 154
     :catchall_0
     move-exception v1
 
@@ -506,9 +433,7 @@
 
 .method public getStatus(Landroid/os/Bundle;)I
     .locals 4
-    .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 252
     const/4 v0, 0x1
 
     new-array v1, v0, [I
@@ -519,8 +444,6 @@
 
     move-object v0, v1
 
-    .line 253
-    .local v0, "result":[I
     iget-object v1, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v3, Lcom/android/server/location/LocationProviderProxy$6;
@@ -529,7 +452,6 @@
 
     invoke-virtual {v1, v3}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 267
     aget v1, v0, v2
 
     return v1
@@ -538,7 +460,6 @@
 .method public getStatusUpdateTime()J
     .locals 4
 
-    .line 272
     const/4 v0, 0x1
 
     new-array v0, v0, [J
@@ -549,8 +470,6 @@
 
     aput-wide v2, v0, v1
 
-    .line 273
-    .local v0, "result":[J
     iget-object v2, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v3, Lcom/android/server/location/LocationProviderProxy$7;
@@ -559,7 +478,6 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 287
     aget-wide v1, v0, v1
 
     return-wide v1
@@ -568,12 +486,10 @@
 .method public isEnabled()Z
     .locals 2
 
-    .line 201
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 202
     :try_start_0
     iget-boolean v1, p0, Lcom/android/server/location/LocationProviderProxy;->mEnabled:Z
 
@@ -581,7 +497,6 @@
 
     return v1
 
-    .line 203
     :catchall_0
     move-exception v1
 
@@ -594,10 +509,7 @@
 
 .method public sendExtraCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
     .locals 4
-    .param p1, "command"    # Ljava/lang/String;
-    .param p2, "extras"    # Landroid/os/Bundle;
 
-    .line 292
     const/4 v0, 0x1
 
     new-array v0, v0, [Z
@@ -606,8 +518,6 @@
 
     aput-boolean v1, v0, v1
 
-    .line 293
-    .local v0, "result":[Z
     iget-object v2, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v3, Lcom/android/server/location/LocationProviderProxy$8;
@@ -616,7 +526,6 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 307
     aget-boolean v1, v0, v1
 
     return v1
@@ -624,27 +533,20 @@
 
 .method public setRequest(Lcom/android/internal/location/ProviderRequest;Landroid/os/WorkSource;)V
     .locals 2
-    .param p1, "request"    # Lcom/android/internal/location/ProviderRequest;
-    .param p2, "source"    # Landroid/os/WorkSource;
 
-    .line 208
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 209
     :try_start_0
     iput-object p1, p0, Lcom/android/server/location/LocationProviderProxy;->mRequest:Lcom/android/internal/location/ProviderRequest;
 
-    .line 210
     iput-object p2, p0, Lcom/android/server/location/LocationProviderProxy;->mWorksource:Landroid/os/WorkSource;
 
-    .line 211
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 212
     iget-object v0, p0, Lcom/android/server/location/LocationProviderProxy;->mServiceWatcher:Lcom/android/server/ServiceWatcher;
 
     new-instance v1, Lcom/android/server/location/LocationProviderProxy$4;
@@ -653,10 +555,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/ServiceWatcher;->runOnBinder(Lcom/android/server/ServiceWatcher$BinderRunner;)Z
 
-    .line 226
     return-void
 
-    .line 211
     :catchall_0
     move-exception v1
 

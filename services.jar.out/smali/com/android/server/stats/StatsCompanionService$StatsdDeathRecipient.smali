@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/stats/StatsCompanionService;)V
     .locals 0
 
-    .line 1123
     iput-object p1, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/stats/StatsCompanionService;Lcom/android/server/stats/StatsCompanionService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/stats/StatsCompanionService;
-    .param p2, "x1"    # Lcom/android/server/stats/StatsCompanionService$1;
 
-    .line 1123
     invoke-direct {p0, p1}, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;-><init>(Lcom/android/server/stats/StatsCompanionService;)V
 
     return-void
@@ -49,28 +45,23 @@
 .method public binderDied()V
     .locals 11
 
-    .line 1126
     const-string v0, "StatsCompanionService"
 
     const-string v1, "Statsd is dead - erase all my knowledge."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1127
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$100()Ljava/lang/Object;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 1128
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
-    .line 1129
-    .local v1, "now":J
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v3}, Lcom/android/server/stats/StatsCompanionService;->access$800(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashSet;
@@ -94,16 +85,12 @@
 
     check-cast v4, Ljava/lang/Long;
 
-    .line 1130
-    .local v4, "timeMillis":Ljava/lang/Long;
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v5
 
     sub-long v5, v1, v5
 
-    .line 1131
-    .local v5, "ageMillis":J
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$900()J
 
     move-result-wide v7
@@ -112,7 +99,6 @@
 
     if-lez v7, :cond_0
 
-    .line 1132
     iget-object v7, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v7}, Lcom/android/server/stats/StatsCompanionService;->access$800(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashSet;
@@ -121,13 +107,9 @@
 
     invoke-virtual {v7, v4}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 1134
-    .end local v4    # "timeMillis":Ljava/lang/Long;
-    .end local v5    # "ageMillis":J
     :cond_0
     goto :goto_0
 
-    .line 1135
     :cond_1
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
@@ -156,16 +138,12 @@
 
     check-cast v4, Ljava/lang/Long;
 
-    .line 1136
-    .restart local v4    # "timeMillis":Ljava/lang/Long;
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v5
 
     sub-long v5, v1, v5
 
-    .line 1137
-    .restart local v5    # "ageMillis":J
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$900()J
 
     move-result-wide v7
@@ -178,7 +156,6 @@
 
     if-lez v7, :cond_2
 
-    .line 1138
     iget-object v7, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v7}, Lcom/android/server/stats/StatsCompanionService;->access$1000(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashMap;
@@ -187,13 +164,9 @@
 
     invoke-virtual {v7, v4}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1140
-    .end local v4    # "timeMillis":Ljava/lang/Long;
-    .end local v5    # "ageMillis":J
     :cond_2
     goto :goto_1
 
-    .line 1141
     :cond_3
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
@@ -207,7 +180,6 @@
 
     invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1142
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v3}, Lcom/android/server/stats/StatsCompanionService;->access$800(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashSet;
@@ -222,7 +194,6 @@
 
     if-lt v3, v4, :cond_4
 
-    .line 1143
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v3}, Lcom/android/server/stats/StatsCompanionService;->access$800(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashSet;
@@ -231,7 +202,6 @@
 
     invoke-virtual {v3}, Ljava/util/HashSet;->clear()V
 
-    .line 1144
     new-instance v3, Ljava/io/File;
 
     const-string v4, "/data/misc/stats-service"
@@ -242,13 +212,10 @@
 
     move-result-object v3
 
-    .line 1145
-    .local v3, "configs":[Ljava/io/File;
     array-length v4, v3
 
     if-lez v4, :cond_4
 
-    .line 1146
     const/4 v4, 0x0
 
     aget-object v5, v3, v4
@@ -257,8 +224,6 @@
 
     move-result-object v5
 
-    .line 1147
-    .local v5, "fileName":Ljava/lang/String;
     aget-object v4, v3, v4
 
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
@@ -267,7 +232,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 1148
     iget-object v4, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v4}, Lcom/android/server/stats/StatsCompanionService;->access$1000(Lcom/android/server/stats/StatsCompanionService;)Ljava/util/HashMap;
@@ -280,22 +244,15 @@
 
     invoke-virtual {v4, v6, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1152
-    .end local v3    # "configs":[Ljava/io/File;
-    .end local v5    # "fileName":Ljava/lang/String;
     :cond_4
     iget-object v3, p0, Lcom/android/server/stats/StatsCompanionService$StatsdDeathRecipient;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v3}, Lcom/android/server/stats/StatsCompanionService;->access$500(Lcom/android/server/stats/StatsCompanionService;)V
 
-    .line 1153
-    .end local v1    # "now":J
     monitor-exit v0
 
-    .line 1154
     return-void
 
-    .line 1153
     :catchall_0
     move-exception v1
 

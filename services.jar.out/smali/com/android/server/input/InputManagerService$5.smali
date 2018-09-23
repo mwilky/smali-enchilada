@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/input/InputManagerService;Ljava/util/HashSet;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
-    .line 1064
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$5;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$5;->val$availableKeyboardLayouts:Ljava/util/HashSet;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public visitKeyboardLayout(Landroid/content/res/Resources;ILandroid/hardware/input/KeyboardLayout;)V
     .locals 2
-    .param p1, "resources"    # Landroid/content/res/Resources;
-    .param p2, "keyboardLayoutResId"    # I
-    .param p3, "layout"    # Landroid/hardware/input/KeyboardLayout;
 
-    .line 1068
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$5;->val$availableKeyboardLayouts:Ljava/util/HashSet;
 
     invoke-virtual {p3}, Landroid/hardware/input/KeyboardLayout;->getDescriptor()Ljava/lang/String;
@@ -55,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1069
     return-void
 .end method

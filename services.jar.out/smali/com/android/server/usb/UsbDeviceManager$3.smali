@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbDeviceManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usb/UsbDeviceManager;
 
-    .line 338
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$3;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 341
     const-string/jumbo v0, "usb"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -47,7 +42,6 @@
 
     check-cast v0, Landroid/hardware/usb/UsbManager;
 
-    .line 342
     invoke-virtual {v0}, Landroid/hardware/usb/UsbManager;->getDeviceList()Ljava/util/HashMap;
 
     move-result-object v0
@@ -60,8 +54,6 @@
 
     move-result-object v0
 
-    .line 343
-    .local v0, "devices":Ljava/util/Iterator;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -76,7 +68,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 344
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$3;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-static {v1}, Lcom/android/server/usb/UsbDeviceManager;->access$100(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
@@ -89,7 +80,6 @@
 
     goto :goto_0
 
-    .line 346
     :cond_0
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$3;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
@@ -101,7 +91,6 @@
 
     invoke-virtual {v1, v2, v0, v3}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(ILjava/lang/Object;Z)V
 
-    .line 348
     :goto_0
     return-void
 .end method

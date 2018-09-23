@@ -18,19 +18,13 @@
 # direct methods
 .method constructor <init>(JJ)V
     .locals 4
-    .param p1, "initIntervalMillis"    # J
-    .param p3, "maxIntervalMillis"    # J
 
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
     iput-wide p1, p0, Lcom/android/server/location/ExponentialBackOff;->mInitIntervalMillis:J
 
-    .line 14
     iput-wide p3, p0, Lcom/android/server/location/ExponentialBackOff;->mMaxIntervalMillis:J
 
-    .line 16
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mInitIntervalMillis:J
 
     const-wide/16 v2, 0x2
@@ -39,7 +33,6 @@
 
     iput-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
-    .line 17
     return-void
 .end method
 
@@ -48,7 +41,6 @@
 .method nextBackoffMillis()J
     .locals 4
 
-    .line 20
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
     iget-wide v2, p0, Lcom/android/server/location/ExponentialBackOff;->mMaxIntervalMillis:J
@@ -57,12 +49,10 @@
 
     if-lez v0, :cond_0
 
-    .line 21
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mMaxIntervalMillis:J
 
     return-wide v0
 
-    .line 24
     :cond_0
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
@@ -72,7 +62,6 @@
 
     iput-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
-    .line 25
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
     return-wide v0
@@ -81,7 +70,6 @@
 .method reset()V
     .locals 4
 
-    .line 29
     iget-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mInitIntervalMillis:J
 
     const-wide/16 v2, 0x2
@@ -90,6 +78,5 @@
 
     iput-wide v0, p0, Lcom/android/server/location/ExponentialBackOff;->mCurrentIntervalMillis:J
 
-    .line 30
     return-void
 .end method

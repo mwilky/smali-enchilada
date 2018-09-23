@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GeocoderProxy;[Ljava/lang/String;DDILandroid/location/GeocoderParams;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GeocoderProxy;
 
-    .line 74
     iput-object p1, p0, Lcom/android/server/location/GeocoderProxy$1;->this$0:Lcom/android/server/location/GeocoderProxy;
 
     iput-object p2, p0, Lcom/android/server/location/GeocoderProxy$1;->val$result:[Ljava/lang/String;
@@ -62,15 +60,11 @@
 # virtual methods
 .method public run(Landroid/os/IBinder;)V
     .locals 10
-    .param p1, "binder"    # Landroid/os/IBinder;
 
-    .line 77
     invoke-static {p1}, Landroid/location/IGeocodeProvider$Stub;->asInterface(Landroid/os/IBinder;)Landroid/location/IGeocodeProvider;
 
     move-result-object v0
 
-    .line 79
-    .local v0, "provider":Landroid/location/IGeocodeProvider;
     :try_start_0
     iget-object v8, p0, Lcom/android/server/location/GeocoderProxy$1;->val$result:[Ljava/lang/String;
 
@@ -94,21 +88,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 83
     goto :goto_0
 
-    .line 81
     :catch_0
     move-exception v1
 
-    .line 82
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "GeocoderProxy"
 
     invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 84
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

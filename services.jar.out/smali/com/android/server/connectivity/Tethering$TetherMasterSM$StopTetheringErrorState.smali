@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
-    .line 1883
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$StopTetheringErrorState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$ErrorState;-><init>(Lcom/android/server/connectivity/Tethering$TetherMasterSM;)V
@@ -36,7 +34,6 @@
 .method public enter()V
     .locals 2
 
-    .line 1886
     invoke-static {}, Lcom/android/server/connectivity/Tethering;->access$2500()Ljava/lang/String;
 
     move-result-object v0
@@ -45,12 +42,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1887
     const v0, 0x5006e
 
     invoke-virtual {p0, v0}, Lcom/android/server/connectivity/Tethering$TetherMasterSM$StopTetheringErrorState;->notify(I)V
 
-    .line 1889
     :try_start_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$TetherMasterSM$StopTetheringErrorState;->this$1:Lcom/android/server/connectivity/Tethering$TetherMasterSM;
 
@@ -66,13 +61,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1890
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    .line 1891
     :goto_0
     return-void
 .end method

@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 38
     const/16 v0, 0x10
 
     new-array v1, v0, [F
@@ -24,7 +23,6 @@
 
     sput-object v1, Lcom/android/server/accessibility/DisplayAdjustmentUtils;->MATRIX_GRAYSCALE:[F
 
-    .line 52
     new-array v0, v0, [F
 
     fill-array-data v0, :array_1
@@ -79,7 +77,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -87,16 +84,11 @@
 
 .method public static applyDaltonizerSetting(Landroid/content/Context;I)V
     .locals 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "userId"    # I
 
-    .line 60
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 61
-    .local v0, "cr":Landroid/content/ContentResolver;
     const-class v1, Lcom/android/server/display/DisplayTransformManager;
 
     invoke-static {v1}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -105,18 +97,12 @@
 
     check-cast v1, Lcom/android/server/display/DisplayTransformManager;
 
-    .line 63
-    .local v1, "dtm":Lcom/android/server/display/DisplayTransformManager;
     const/4 v2, -0x1
 
-    .line 64
-    .local v2, "daltonizerMode":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v3
 
-    .line 66
-    .local v3, "identity":J
     :try_start_0
     const-string v5, "accessibility_display_daltonizer_enabled"
 
@@ -128,7 +114,6 @@
 
     if-eqz v5, :cond_0
 
-    .line 68
     const-string v5, "accessibility_display_daltonizer"
 
     const/16 v6, 0xc
@@ -141,40 +126,28 @@
 
     move v2, v5
 
-    .line 72
     :cond_0
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 73
     nop
 
-    .line 75
     const/4 v5, 0x0
 
-    .line 76
-    .local v5, "grayscaleMatrix":[F
     if-nez v2, :cond_1
 
-    .line 78
     sget-object v5, Lcom/android/server/accessibility/DisplayAdjustmentUtils;->MATRIX_GRAYSCALE:[F
 
-    .line 79
     const/4 v2, -0x1
 
-    .line 81
     :cond_1
     const/16 v6, 0xc8
 
     invoke-virtual {v1, v6, v5}, Lcom/android/server/display/DisplayTransformManager;->setColorMatrix(I[F)V
 
-    .line 82
     invoke-virtual {v1, v2}, Lcom/android/server/display/DisplayTransformManager;->setDaltonizerMode(I)V
 
-    .line 83
     return-void
 
-    .line 72
-    .end local v5    # "grayscaleMatrix":[F
     :catchall_0
     move-exception v5
 
@@ -185,16 +158,11 @@
 
 .method public static applyInversionSetting(Landroid/content/Context;I)V
     .locals 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "userId"    # I
 
-    .line 89
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 90
-    .local v0, "cr":Landroid/content/ContentResolver;
     const-class v1, Lcom/android/server/display/DisplayTransformManager;
 
     invoke-static {v1}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -203,14 +171,10 @@
 
     check-cast v1, Lcom/android/server/display/DisplayTransformManager;
 
-    .line 92
-    .local v1, "dtm":Lcom/android/server/display/DisplayTransformManager;
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 94
-    .local v2, "identity":J
     :try_start_0
     const-string v4, "accessibility_display_inversion_enabled"
 
@@ -229,11 +193,8 @@
     :cond_0
     move v4, v5
 
-    .line 96
-    .local v4, "invertColors":Z
     const/16 v5, 0x12c
 
-    .line 97
     if-eqz v4, :cond_1
 
     sget-object v6, Lcom/android/server/accessibility/DisplayAdjustmentUtils;->MATRIX_INVERT_COLOR:[F
@@ -243,23 +204,17 @@
     :cond_1
     const/4 v6, 0x0
 
-    .line 96
     :goto_0
     invoke-virtual {v1, v5, v6}, Lcom/android/server/display/DisplayTransformManager;->setColorMatrix(I[F)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 99
-    .end local v4    # "invertColors":Z
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 100
     nop
 
-    .line 101
     return-void
 
-    .line 99
     :catchall_0
     move-exception v4
 

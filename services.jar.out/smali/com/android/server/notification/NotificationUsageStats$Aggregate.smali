@@ -28,7 +28,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 988
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 # virtual methods
 .method public addSample(J)V
     .locals 12
-    .param p1, "sample"    # J
 
-    .line 997
     iget-wide v0, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->numSamples:J
 
     const-wide/16 v2, 0x1
@@ -49,21 +46,16 @@
 
     iput-wide v0, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->numSamples:J
 
-    .line 998
     iget-wide v0, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->numSamples:J
 
     long-to-double v0, v0
 
-    .line 999
-    .local v0, "n":D
     long-to-double v4, p1
 
     iget-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->avg:D
 
     sub-double/2addr v4, v6
 
-    .line 1000
-    .local v4, "delta":D
     iget-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->avg:D
 
     const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
@@ -76,7 +68,6 @@
 
     iput-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->avg:D
 
-    .line 1001
     iget-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->sum2:D
 
     sub-double v10, v0, v8
@@ -91,7 +82,6 @@
 
     iput-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->sum2:D
 
-    .line 1002
     iget-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->numSamples:J
 
     cmp-long v2, v6, v2
@@ -106,22 +96,18 @@
     :goto_0
     move-wide v2, v8
 
-    .line 1003
-    .local v2, "divisor":D
     iget-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->sum2:D
 
     div-double/2addr v6, v2
 
     iput-wide v6, p0, Lcom/android/server/notification/NotificationUsageStats$Aggregate;->var:D
 
-    .line 1004
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 1008
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

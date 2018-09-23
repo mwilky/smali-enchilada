@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OnePlusStandbyAnalyzer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OnePlusStandbyAnalyzer;
 
-    .line 1501
     iput-object p1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$5;->this$0:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;)I
     .locals 4
-    .param p1, "o1"    # Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;
-    .param p2, "o2"    # Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;
 
-    .line 1504
     iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
 
     iget-wide v2, p2, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
@@ -63,7 +58,6 @@
 
     return v0
 
-    .line 1505
     :cond_0
     iget-wide v0, p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;->mHolding:J
 
@@ -77,7 +71,6 @@
 
     return v0
 
-    .line 1506
     :cond_1
     const/4 v0, 0x0
 
@@ -87,7 +80,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1501
     check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;
 
     check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$PartialWakeLockInfo;

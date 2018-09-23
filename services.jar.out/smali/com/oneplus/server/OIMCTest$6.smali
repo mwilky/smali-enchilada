@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/OIMCTest;
-    .param p2, "arg"    # Lcom/oneplus/server/MsgObjectArg;
 
-    .line 756
     iput-object p1, p0, Lcom/oneplus/server/OIMCTest$6;->this$0:Lcom/oneplus/server/OIMCTest;
 
     invoke-direct {p0, p1, p2}, Lcom/oneplus/server/OIMCTest$checkSysInfo;-><init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
@@ -37,7 +34,6 @@
 .method public run()V
     .locals 1
 
-    .line 759
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCTest$6;->getArg()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v0
@@ -54,6 +50,5 @@
 
     invoke-virtual {p0, v0}, Lcom/oneplus/server/OIMCTest$6;->setResult(I)V
 
-    .line 760
     return-void
 .end method

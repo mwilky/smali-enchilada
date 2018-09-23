@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/WifiDisplayController;Landroid/net/wifi/p2p/WifiP2pDevice;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/display/WifiDisplayController;
 
-    .line 1049
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$19;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     iput-object p2, p0, Lcom/android/server/display/WifiDisplayController$19;->val$oldDevice:Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1052
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$19;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$3000(Lcom/android/server/display/WifiDisplayController;)Landroid/net/wifi/p2p/WifiP2pDevice;
@@ -62,14 +59,12 @@
 
     if-lez v0, :cond_0
 
-    .line 1053
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$19;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/server/display/WifiDisplayController;->access$3520(Lcom/android/server/display/WifiDisplayController;I)I
 
-    .line 1054
     const-string v0, "WifiDisplayController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,7 +77,6 @@
 
     iget-object v2, p0, Lcom/android/server/display/WifiDisplayController$19;->this$0:Lcom/android/server/display/WifiDisplayController;
 
-    .line 1055
     invoke-static {v2}, Lcom/android/server/display/WifiDisplayController;->access$3500(Lcom/android/server/display/WifiDisplayController;)I
 
     move-result v2
@@ -93,15 +87,12 @@
 
     move-result-object v1
 
-    .line 1054
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1056
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$19;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$3600(Lcom/android/server/display/WifiDisplayController;)V
 
-    .line 1058
     :cond_0
     return-void
 .end method

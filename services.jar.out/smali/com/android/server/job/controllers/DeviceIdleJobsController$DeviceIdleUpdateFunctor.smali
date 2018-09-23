@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/job/controllers/DeviceIdleJobsController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/job/controllers/DeviceIdleJobsController;
 
-    .line 284
     iput-object p1, p0, Lcom/android/server/job/controllers/DeviceIdleJobsController$DeviceIdleUpdateFunctor;->this$0:Lcom/android/server/job/controllers/DeviceIdleJobsController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,9 +47,7 @@
 # virtual methods
 .method public accept(Lcom/android/server/job/controllers/JobStatus;)V
     .locals 2
-    .param p1, "jobStatus"    # Lcom/android/server/job/controllers/JobStatus;
 
-    .line 289
     iget-boolean v0, p0, Lcom/android/server/job/controllers/DeviceIdleJobsController$DeviceIdleUpdateFunctor;->mChanged:Z
 
     iget-object v1, p0, Lcom/android/server/job/controllers/DeviceIdleJobsController$DeviceIdleUpdateFunctor;->this$0:Lcom/android/server/job/controllers/DeviceIdleJobsController;
@@ -64,14 +60,12 @@
 
     iput-boolean v0, p0, Lcom/android/server/job/controllers/DeviceIdleJobsController$DeviceIdleUpdateFunctor;->mChanged:Z
 
-    .line 290
     return-void
 .end method
 
 .method public bridge synthetic accept(Ljava/lang/Object;)V
     .locals 0
 
-    .line 284
     check-cast p1, Lcom/android/server/job/controllers/JobStatus;
 
     invoke-virtual {p0, p1}, Lcom/android/server/job/controllers/DeviceIdleJobsController$DeviceIdleUpdateFunctor;->accept(Lcom/android/server/job/controllers/JobStatus;)V

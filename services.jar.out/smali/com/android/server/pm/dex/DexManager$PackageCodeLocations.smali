@@ -45,10 +45,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ApplicationInfo;I)V
     .locals 3
-    .param p1, "ai"    # Landroid/content/pm/ApplicationInfo;
-    .param p2, "userId"    # I
 
-    .line 827
     iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
@@ -57,53 +54,40 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;-><init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 828
     iget-object v0, p1, Landroid/content/pm/ApplicationInfo;->dataDir:Ljava/lang/String;
 
     invoke-virtual {p0, v0, p2}, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mergeAppDataDirs(Ljava/lang/String;I)V
 
-    .line 829
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "baseCodePath"    # Ljava/lang/String;
-    .param p3, "splitCodePaths"    # [Ljava/lang/String;
 
-    .line 831
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 832
     iput-object p1, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mPackageName:Ljava/lang/String;
 
-    .line 833
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mSplitCodePaths:Ljava/util/Set;
 
-    .line 834
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mAppDataDirs:Ljava/util/Map;
 
-    .line 835
     invoke-virtual {p0, p2, p3}, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->updateCodeLocation(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 836
     return-void
 .end method
 
 .method static synthetic access$200(Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;
 
-    .line 819
     iget-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -113,10 +97,7 @@
 # virtual methods
 .method public mergeAppDataDirs(Ljava/lang/String;I)V
     .locals 3
-    .param p1, "dataDir"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 849
     iget-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mAppDataDirs:Ljava/util/Map;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -133,20 +114,14 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 850
-    .local v0, "dataDirs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 851
     return-void
 .end method
 
 .method public searchDex(Ljava/lang/String;I)I
     .locals 4
-    .param p1, "dexPath"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 856
     iget-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mAppDataDirs:Ljava/util/Map;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -159,18 +134,14 @@
 
     check-cast v0, Ljava/util/Set;
 
-    .line 857
-    .local v0, "userDataDirs":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
-    .line 858
     invoke-static {}, Lcom/android/server/pm/dex/DexManager;->access$400()I
 
     move-result v1
 
     return v1
 
-    .line 861
     :cond_0
     iget-object v1, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mBaseCodePath:Ljava/lang/String;
 
@@ -180,14 +151,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 862
     invoke-static {}, Lcom/android/server/pm/dex/DexManager;->access$500()I
 
     move-result v1
 
     return v1
 
-    .line 864
     :cond_1
     iget-object v1, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mSplitCodePaths:Ljava/util/Set;
 
@@ -197,14 +166,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 865
     invoke-static {}, Lcom/android/server/pm/dex/DexManager;->access$600()I
 
     move-result v1
 
     return v1
 
-    .line 867
     :cond_2
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -223,27 +190,21 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 868
-    .local v2, "dataDir":Ljava/lang/String;
     invoke-virtual {p1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 869
     invoke-static {}, Lcom/android/server/pm/dex/DexManager;->access$700()I
 
     move-result v1
 
     return v1
 
-    .line 871
-    .end local v2    # "dataDir":Ljava/lang/String;
     :cond_3
     goto :goto_0
 
-    .line 873
     :cond_4
     invoke-static {}, Lcom/android/server/pm/dex/DexManager;->access$400()I
 
@@ -254,21 +215,15 @@
 
 .method public updateCodeLocation(Ljava/lang/String;[Ljava/lang/String;)V
     .locals 4
-    .param p1, "baseCodePath"    # Ljava/lang/String;
-    .param p2, "splitCodePaths"    # [Ljava/lang/String;
 
-    .line 839
     iput-object p1, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mBaseCodePath:Ljava/lang/String;
 
-    .line 840
     iget-object v0, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mSplitCodePaths:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 841
     if-eqz p2, :cond_0
 
-    .line 842
     array-length v0, p2
 
     const/4 v1, 0x0
@@ -278,19 +233,14 @@
 
     aget-object v2, p2, v1
 
-    .line 843
-    .local v2, "split":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/pm/dex/DexManager$PackageCodeLocations;->mSplitCodePaths:Ljava/util/Set;
 
     invoke-interface {v3, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 842
-    .end local v2    # "split":Ljava/lang/String;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 846
     :cond_0
     return-void
 .end method

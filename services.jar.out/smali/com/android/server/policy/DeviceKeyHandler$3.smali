@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/DeviceKeyHandler;
 
-    .line 763
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$3;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardDismissCallback$Stub;-><init>()V
@@ -41,7 +39,6 @@
         }
     .end annotation
 
-    .line 777
     return-void
 .end method
 
@@ -53,7 +50,6 @@
         }
     .end annotation
 
-    .line 767
     return-void
 .end method
 
@@ -65,6 +61,5 @@
         }
     .end annotation
 
-    .line 772
     return-void
 .end method

@@ -23,19 +23,13 @@
 # direct methods
 .method constructor <init>(II)V
     .locals 0
-    .param p1, "piid"    # I
-    .param p2, "state"    # I
 
-    .line 772
     invoke-direct {p0}, Lcom/android/server/audio/AudioEventLogger$Event;-><init>()V
 
-    .line 773
     iput p1, p0, Lcom/android/server/audio/PlaybackActivityMonitor$PlayerEvent;->mPlayerIId:I
 
-    .line 774
     iput p2, p0, Lcom/android/server/audio/PlaybackActivityMonitor$PlayerEvent;->mState:I
 
-    .line 775
     return-void
 .end method
 
@@ -44,7 +38,6 @@
 .method public eventToString()Ljava/lang/String;
     .locals 2
 
-    .line 779
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "player piid:"
@@ -61,7 +54,6 @@
 
     iget v1, p0, Lcom/android/server/audio/PlaybackActivityMonitor$PlayerEvent;->mState:I
 
-    .line 780
     invoke-static {v1}, Landroid/media/AudioPlaybackConfiguration;->toLogFriendlyPlayerState(I)Ljava/lang/String;
 
     move-result-object v1
@@ -72,6 +64,5 @@
 
     move-result-object v0
 
-    .line 779
     return-object v0
 .end method

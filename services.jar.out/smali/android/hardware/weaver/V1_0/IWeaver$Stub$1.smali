@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/weaver/V1_0/IWeaver$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/weaver/V1_0/IWeaver$Stub;
 
-    .line 493
     iput-object p1, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->this$0:Landroid/hardware/weaver/V1_0/IWeaver$Stub;
 
     iput-object p2, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,31 +40,24 @@
 # virtual methods
 .method public onValues(ILandroid/hardware/weaver/V1_0/WeaverConfig;)V
     .locals 2
-    .param p1, "status"    # I
-    .param p2, "config"    # Landroid/hardware/weaver/V1_0/WeaverConfig;
 
-    .line 496
     iget-object v0, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 497
     iget-object v0, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 498
     iget-object v0, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {p2, v0}, Landroid/hardware/weaver/V1_0/WeaverConfig;->writeToParcel(Landroid/os/HwParcel;)V
 
-    .line 499
     iget-object v0, p0, Landroid/hardware/weaver/V1_0/IWeaver$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 500
     return-void
 .end method

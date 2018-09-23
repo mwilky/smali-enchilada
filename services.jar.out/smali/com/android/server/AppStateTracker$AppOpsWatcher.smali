@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/AppStateTracker;)V
     .locals 0
 
-    .line 660
     iput-object p1, p0, Lcom/android/server/AppStateTracker$AppOpsWatcher;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-direct {p0}, Lcom/android/internal/app/IAppOpsCallback$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/AppStateTracker;Lcom/android/server/AppStateTracker$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/AppStateTracker;
-    .param p2, "x1"    # Lcom/android/server/AppStateTracker$1;
 
-    .line 660
     invoke-direct {p0, p1}, Lcom/android/server/AppStateTracker$AppOpsWatcher;-><init>(Lcom/android/server/AppStateTracker;)V
 
     return-void
@@ -45,22 +41,16 @@
 # virtual methods
 .method public opChanged(IILjava/lang/String;)V
     .locals 4
-    .param p1, "op"    # I
-    .param p2, "uid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 663
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 665
-    .local v1, "restricted":Z
     :try_start_0
     iget-object v2, p0, Lcom/android/server/AppStateTracker$AppOpsWatcher;->this$0:Lcom/android/server/AppStateTracker;
 
@@ -83,14 +73,11 @@
     :cond_0
     move v1, v0
 
-    .line 669
     goto :goto_0
 
-    .line 667
     :catch_0
     move-exception v0
 
-    .line 670
     :goto_0
     iget-object v0, p0, Lcom/android/server/AppStateTracker$AppOpsWatcher;->this$0:Lcom/android/server/AppStateTracker;
 
@@ -100,7 +87,6 @@
 
     monitor-enter v0
 
-    .line 671
     :try_start_1
     iget-object v2, p0, Lcom/android/server/AppStateTracker$AppOpsWatcher;->this$0:Lcom/android/server/AppStateTracker;
 
@@ -110,7 +96,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 672
     iget-object v2, p0, Lcom/android/server/AppStateTracker$AppOpsWatcher;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v2}, Lcom/android/server/AppStateTracker;->access$200(Lcom/android/server/AppStateTracker;)Lcom/android/server/AppStateTracker$MyHandler;
@@ -119,14 +104,11 @@
 
     invoke-virtual {v2, p2, p3}, Lcom/android/server/AppStateTracker$MyHandler;->notifyRunAnyAppOpsChanged(ILjava/lang/String;)V
 
-    .line 674
     :cond_1
     monitor-exit v0
 
-    .line 675
     return-void
 
-    .line 674
     :catchall_0
     move-exception v2
 

@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    .line 266
     iput-object p1, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$1;->val$activity:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 269
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.APPLICATION_DETAILS_SETTINGS"
@@ -55,7 +51,6 @@
 
     iget-object v3, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$1;->val$activity:Landroid/app/Activity;
 
-    .line 270
     invoke-virtual {v3}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -72,17 +67,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 271
-    .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$1;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 272
     iget-object v1, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$1;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
-    .line 273
     return-void
 .end method

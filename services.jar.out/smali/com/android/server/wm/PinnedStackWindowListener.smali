@@ -9,9 +9,6 @@
 # virtual methods
 .method public updatePictureInPictureModeForPinnedStackAnimation(Landroid/graphics/Rect;Z)V
     .locals 0
-    .param p1, "targetStackBounds"    # Landroid/graphics/Rect;
-    .param p2, "forceUpdate"    # Z
 
-    .line 32
     return-void
 .end method

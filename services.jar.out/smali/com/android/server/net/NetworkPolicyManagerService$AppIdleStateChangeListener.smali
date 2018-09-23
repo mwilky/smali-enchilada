@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
 
-    .line 4741
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/app/usage/UsageStatsManagerInternal$AppIdleStateChangeListener;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;Lcom/android/server/net/NetworkPolicyManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/net/NetworkPolicyManagerService;
-    .param p2, "x1"    # Lcom/android/server/net/NetworkPolicyManagerService$1;
 
-    .line 4741
     invoke-direct {p0, p1}, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;-><init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
     return-void
@@ -45,13 +41,7 @@
 # virtual methods
 .method public onAppIdleStateChanged(Ljava/lang/String;IZII)V
     .locals 3
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "idle"    # Z
-    .param p4, "bucket"    # I
-    .param p5, "reason"    # I
 
-    .line 4748
     :try_start_0
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -69,8 +59,6 @@
 
     move-result v0
 
-    .line 4750
-    .local v0, "uid":I
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v1, v1, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
@@ -79,7 +67,6 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4751
     :try_start_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -89,25 +76,18 @@
 
     invoke-virtual {v2, v0, p3}, Lcom/android/server/net/NetworkPolicyLogger;->appIdleStateChanged(IZ)V
 
-    .line 4752
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v2, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->updateRuleForAppIdleUL(I)V
 
-    .line 4753
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v2, v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$3000(Lcom/android/server/net/NetworkPolicyManagerService;I)V
 
-    .line 4754
     monitor-exit v1
 
-    .line 4756
-    .end local v0    # "uid":I
     goto :goto_0
 
-    .line 4754
-    .restart local v0    # "uid":I
     :catchall_0
     move-exception v2
 
@@ -120,28 +100,22 @@
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 4755
-    .end local v0    # "uid":I
     :catch_0
     move-exception v0
 
-    .line 4757
     :goto_0
     return-void
 .end method
 
 .method public onParoleStateChanged(Z)V
     .locals 2
-    .param p1, "isParoleOn"    # Z
 
-    .line 4761
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 4762
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -151,18 +125,14 @@
 
     invoke-virtual {v1, p1}, Lcom/android/server/net/NetworkPolicyLogger;->paroleStateChanged(Z)V
 
-    .line 4763
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$AppIdleStateChangeListener;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForAppIdleParoleUL()V
 
-    .line 4764
     monitor-exit v0
 
-    .line 4765
     return-void
 
-    .line 4764
     :catchall_0
     move-exception v1
 

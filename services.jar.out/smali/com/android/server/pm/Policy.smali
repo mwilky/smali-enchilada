@@ -39,19 +39,15 @@
 # direct methods
 .method private constructor <init>(Lcom/android/server/pm/Policy$PolicyBuilder;)V
     .locals 1
-    .param p1, "builder"    # Lcom/android/server/pm/Policy$PolicyBuilder;
 
-    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 409
     invoke-static {p1}, Lcom/android/server/pm/Policy$PolicyBuilder;->access$000(Lcom/android/server/pm/Policy$PolicyBuilder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/pm/Policy;->mSeinfo:Ljava/lang/String;
 
-    .line 410
     invoke-static {p1}, Lcom/android/server/pm/Policy$PolicyBuilder;->access$100(Lcom/android/server/pm/Policy$PolicyBuilder;)Ljava/util/Set;
 
     move-result-object v0
@@ -62,7 +58,6 @@
 
     iput-object v0, p0, Lcom/android/server/pm/Policy;->mCerts:Ljava/util/Set;
 
-    .line 411
     invoke-static {p1}, Lcom/android/server/pm/Policy$PolicyBuilder;->access$200(Lcom/android/server/pm/Policy$PolicyBuilder;)Ljava/util/Map;
 
     move-result-object v0
@@ -73,16 +68,12 @@
 
     iput-object v0, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
-    .line 412
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/pm/Policy$PolicyBuilder;Lcom/android/server/pm/Policy$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/pm/Policy$PolicyBuilder;
-    .param p2, "x1"    # Lcom/android/server/pm/Policy$1;
 
-    .line 401
     invoke-direct {p0, p1}, Lcom/android/server/pm/Policy;-><init>(Lcom/android/server/pm/Policy$PolicyBuilder;)V
 
     return-void
@@ -90,9 +81,7 @@
 
 .method static synthetic access$400(Lcom/android/server/pm/Policy;)Ljava/util/Set;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/Policy;
 
-    .line 401
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mCerts:Ljava/util/Set;
 
     return-object v0
@@ -100,9 +89,7 @@
 
 .method static synthetic access$500(Lcom/android/server/pm/Policy;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/Policy;
 
-    .line 401
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mSeinfo:Ljava/lang/String;
 
     return-object v0
@@ -110,9 +97,7 @@
 
 .method static synthetic access$600(Lcom/android/server/pm/Policy;)Ljava/util/Map;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/Policy;
 
-    .line 401
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
     return-object v0
@@ -132,7 +117,6 @@
         }
     .end annotation
 
-    .line 440
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
     return-object v0
@@ -140,9 +124,7 @@
 
 .method public getMatchedSeInfo(Landroid/content/pm/PackageParser$Package;)Ljava/lang/String;
     .locals 4
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
 
-    .line 497
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mCerts:Ljava/util/Set;
 
     const/4 v1, 0x0
@@ -155,8 +137,6 @@
 
     check-cast v0, [Landroid/content/pm/Signature;
 
-    .line 498
-    .local v0, "certs":[Landroid/content/pm/Signature;
     iget-object v2, p1, Landroid/content/pm/PackageParser$Package;->mSigningDetails:Landroid/content/pm/PackageParser$SigningDetails;
 
     sget-object v3, Landroid/content/pm/PackageParser$SigningDetails;->UNKNOWN:Landroid/content/pm/PackageParser$SigningDetails;
@@ -167,14 +147,12 @@
 
     iget-object v2, v2, Landroid/content/pm/PackageParser$SigningDetails;->signatures:[Landroid/content/pm/Signature;
 
-    .line 499
     invoke-static {v0, v2}, Landroid/content/pm/Signature;->areExactMatch([Landroid/content/pm/Signature;[Landroid/content/pm/Signature;)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 502
     array-length v2, v0
 
     const/4 v3, 0x1
@@ -191,13 +169,11 @@
 
     if-nez v1, :cond_1
 
-    .line 503
     :cond_0
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 509
     :cond_1
     iget-object v1, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
@@ -209,14 +185,10 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 510
-    .local v1, "seinfoValue":Ljava/lang/String;
     if-eqz v1, :cond_2
 
-    .line 511
     return-object v1
 
-    .line 515
     :cond_2
     iget-object v2, p0, Lcom/android/server/pm/Policy;->mSeinfo:Ljava/lang/String;
 
@@ -234,7 +206,6 @@
         }
     .end annotation
 
-    .line 421
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mCerts:Ljava/util/Set;
 
     return-object v0
@@ -243,7 +214,6 @@
 .method public hasGlobalSeinfo()Z
     .locals 1
 
-    .line 449
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mSeinfo:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -262,7 +232,6 @@
 .method public hasInnerPackages()Z
     .locals 1
 
-    .line 430
     iget-object v0, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -277,13 +246,10 @@
 .method public toString()Ljava/lang/String;
     .locals 7
 
-    .line 454
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 455
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/server/pm/Policy;->mCerts:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -303,8 +269,6 @@
 
     check-cast v2, Landroid/content/pm/Signature;
 
-    .line 456
-    .local v2, "cert":Landroid/content/pm/Signature;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -337,17 +301,13 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 457
-    .end local v2    # "cert":Landroid/content/pm/Signature;
     goto :goto_0
 
-    .line 459
     :cond_0
     iget-object v1, p0, Lcom/android/server/pm/Policy;->mSeinfo:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 460
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -366,7 +326,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
     :cond_1
     iget-object v1, p0, Lcom/android/server/pm/Policy;->mPkgMap:Ljava/util/Map;
 
@@ -391,8 +350,6 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 464
-    .local v2, "name":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -423,11 +380,8 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 465
-    .end local v2    # "name":Ljava/lang/String;
     goto :goto_1
 
-    .line 467
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

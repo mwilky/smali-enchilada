@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/DisplayPowerState;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/display/DisplayPowerState;
 
-    .line 333
     iput-object p1, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public run()V
     .locals 5
 
-    .line 336
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/display/DisplayPowerState;->access$702(Lcom/android/server/display/DisplayPowerState;Z)Z
 
-    .line 338
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerState;->access$800(Lcom/android/server/display/DisplayPowerState;)Z
@@ -55,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 339
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerState;->access$900(Lcom/android/server/display/DisplayPowerState;)Lcom/android/server/display/ColorFade;
@@ -70,10 +65,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/display/ColorFade;->draw(F)Z
 
-    .line 340
     const-wide/32 v0, 0x20000
 
-    .line 341
     invoke-static {}, Lcom/android/server/display/DisplayPowerState;->access$1000()Ljava/lang/String;
 
     move-result-object v2
@@ -92,10 +85,8 @@
 
     move-result v3
 
-    .line 340
     invoke-static {v0, v1, v2, v3}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
 
-    .line 344
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
@@ -103,11 +94,9 @@
 
     invoke-static {v0, v1}, Lcom/android/server/display/DisplayPowerState;->access$1102(Lcom/android/server/display/DisplayPowerState;Z)Z
 
-    .line 345
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerState$4;->this$0:Lcom/android/server/display/DisplayPowerState;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerState;->access$600(Lcom/android/server/display/DisplayPowerState;)V
 
-    .line 346
     return-void
 .end method

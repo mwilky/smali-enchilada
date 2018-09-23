@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub;
 
-    .line 852
     iput-object p1, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->this$0:Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub;
 
     iput-object p2, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,31 +40,24 @@
 # virtual methods
 .method public onValues(IZ)V
     .locals 2
-    .param p1, "result"    # I
-    .param p2, "value"    # Z
 
-    .line 855
     iget-object v0, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 856
     iget-object v0, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeInt32(I)V
 
-    .line 857
     iget-object v0, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p2}, Landroid/os/HwParcel;->writeBool(Z)V
 
-    .line 858
     iget-object v0, p0, Landroid/hardware/broadcastradio/V2_0/ITunerSession$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 859
     return-void
 .end method

@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,9 +14,7 @@
 
 .method public static getIPv6Interface(Landroid/net/NetworkState;)Ljava/lang/String;
     .locals 3
-    .param p0, "ns"    # Landroid/net/NetworkState;
 
-    .line 69
     const/4 v0, 0x0
 
     if-eqz p0, :cond_0
@@ -36,7 +33,6 @@
 
     iget-object v1, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 73
     invoke-virtual {v1}, Landroid/net/LinkProperties;->hasIPv6DnsServer()Z
 
     move-result v1
@@ -45,7 +41,6 @@
 
     iget-object v1, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 75
     invoke-virtual {v1}, Landroid/net/LinkProperties;->hasGlobalIPv6Address()Z
 
     move-result v1
@@ -54,7 +49,6 @@
 
     iget-object v1, p0, Landroid/net/NetworkState;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
-    .line 77
     invoke-virtual {v1, v0}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
 
     move-result v1
@@ -65,12 +59,9 @@
 
     nop
 
-    .line 79
-    .local v0, "canTether":Z
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 80
     iget-object v1, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
     sget-object v2, Ljava/net/Inet6Address;->ANY:Ljava/net/InetAddress;
@@ -81,26 +72,20 @@
 
     goto :goto_0
 
-    .line 81
     :cond_1
     const/4 v1, 0x0
 
-    .line 79
     :goto_0
     return-object v1
 .end method
 
 .method private static getInterfaceForDestination(Landroid/net/LinkProperties;Ljava/net/InetAddress;)Ljava/lang/String;
     .locals 2
-    .param p0, "lp"    # Landroid/net/LinkProperties;
-    .param p1, "dst"    # Ljava/net/InetAddress;
 
-    .line 85
     const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
-    .line 86
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getAllRoutes()Ljava/util/List;
 
     move-result-object v1
@@ -111,12 +96,9 @@
 
     goto :goto_0
 
-    .line 87
     :cond_0
     move-object v1, v0
 
-    .line 88
-    .local v1, "ri":Landroid/net/RouteInfo;
     :goto_0
     if-eqz v1, :cond_1
 
@@ -132,36 +114,26 @@
 
 .method public static getTetheringInterfaces(Landroid/net/NetworkState;)Landroid/net/util/InterfaceSet;
     .locals 6
-    .param p0, "ns"    # Landroid/net/NetworkState;
 
-    .line 39
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 40
     return-object v0
 
-    .line 43
     :cond_0
     iget-object v1, p0, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
 
-    .line 44
-    .local v1, "lp":Landroid/net/LinkProperties;
     sget-object v2, Ljava/net/Inet4Address;->ANY:Ljava/net/InetAddress;
 
     invoke-static {v1, v2}, Lcom/android/server/connectivity/tethering/TetheringInterfaceUtils;->getInterfaceForDestination(Landroid/net/LinkProperties;Ljava/net/InetAddress;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 45
-    .local v2, "if4":Ljava/lang/String;
     invoke-static {p0}, Lcom/android/server/connectivity/tethering/TetheringInterfaceUtils;->getIPv6Interface(Landroid/net/NetworkState;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 47
-    .local v3, "if6":Ljava/lang/String;
     if-nez v2, :cond_1
 
     if-nez v3, :cond_1

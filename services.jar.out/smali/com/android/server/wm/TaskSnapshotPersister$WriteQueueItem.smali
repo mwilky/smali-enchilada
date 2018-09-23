@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/wm/TaskSnapshotPersister;)V
     .locals 0
 
-    .line 259
     iput-object p1, p0, Lcom/android/server/wm/TaskSnapshotPersister$WriteQueueItem;->this$0:Lcom/android/server/wm/TaskSnapshotPersister;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/TaskSnapshotPersister;Lcom/android/server/wm/TaskSnapshotPersister$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/TaskSnapshotPersister;
-    .param p2, "x1"    # Lcom/android/server/wm/TaskSnapshotPersister$1;
 
-    .line 259
     invoke-direct {p0, p1}, Lcom/android/server/wm/TaskSnapshotPersister$WriteQueueItem;-><init>(Lcom/android/server/wm/TaskSnapshotPersister;)V
 
     return-void
@@ -46,14 +42,12 @@
 .method onDequeuedLocked()V
     .locals 0
 
-    .line 272
     return-void
 .end method
 
 .method onQueuedLocked()V
     .locals 0
 
-    .line 266
     return-void
 .end method
 

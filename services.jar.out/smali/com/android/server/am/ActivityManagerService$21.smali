@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;ILcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 15652
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$21;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput p2, p0, Lcom/android/server/am/ActivityManagerService$21;->val$anrPid:I
@@ -63,7 +61,6 @@
 .method public run()V
     .locals 3
 
-    .line 15655
     iget v0, p0, Lcom/android/server/am/ActivityManagerService$21;->val$anrPid:I
 
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$21;->val$proc:Lcom/android/server/am/ProcessRecord;
@@ -72,7 +69,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 15656
     const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -107,18 +103,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 15658
     return-void
 
-    .line 15668
     :cond_0
     new-instance v0, Lcom/android/server/am/ActivityManagerService$21$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/am/ActivityManagerService$21$1;-><init>(Lcom/android/server/am/ActivityManagerService$21;)V
 
-    .line 15673
     invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService$21$1;->start()V
 
-    .line 15675
     return-void
 .end method

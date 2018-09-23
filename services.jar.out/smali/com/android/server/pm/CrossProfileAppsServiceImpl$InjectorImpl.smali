@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
     iput-object p1, p0, Lcom/android/server/pm/CrossProfileAppsServiceImpl$InjectorImpl;->mContext:Landroid/content/Context;
 
-    .line 202
     return-void
 .end method
 
@@ -41,7 +37,6 @@
 .method public clearCallingIdentity()J
     .locals 2
 
-    .line 217
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
@@ -52,7 +47,6 @@
 .method public getActivityManagerInternal()Landroid/app/ActivityManagerInternal;
     .locals 1
 
-    .line 242
     const-class v0, Landroid/app/ActivityManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -67,7 +61,6 @@
 .method public getAppOpsManager()Landroid/app/AppOpsManager;
     .locals 2
 
-    .line 237
     iget-object v0, p0, Lcom/android/server/pm/CrossProfileAppsServiceImpl$InjectorImpl;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/app/AppOpsManager;
@@ -84,7 +77,6 @@
 .method public getCallingUid()I
     .locals 1
 
-    .line 205
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -95,7 +87,6 @@
 .method public getCallingUserHandle()Landroid/os/UserHandle;
     .locals 1
 
-    .line 213
     invoke-static {}, Landroid/os/Binder;->getCallingUserHandle()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -106,7 +97,6 @@
 .method public getCallingUserId()I
     .locals 1
 
-    .line 209
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
@@ -117,7 +107,6 @@
 .method public getPackageManager()Landroid/content/pm/PackageManager;
     .locals 1
 
-    .line 233
     iget-object v0, p0, Lcom/android/server/pm/CrossProfileAppsServiceImpl$InjectorImpl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -130,7 +119,6 @@
 .method public getPackageManagerInternal()Landroid/content/pm/PackageManagerInternal;
     .locals 1
 
-    .line 229
     const-class v0, Landroid/content/pm/PackageManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -145,7 +133,6 @@
 .method public getUserManager()Landroid/os/UserManager;
     .locals 2
 
-    .line 225
     iget-object v0, p0, Lcom/android/server/pm/CrossProfileAppsServiceImpl$InjectorImpl;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/UserManager;
@@ -161,11 +148,8 @@
 
 .method public restoreCallingIdentity(J)V
     .locals 0
-    .param p1, "token"    # J
 
-    .line 221
     invoke-static {p1, p2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 222
     return-void
 .end method

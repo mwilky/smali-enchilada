@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ProcessStatsService;J)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ProcessStatsService;
 
-    .line 247
     iput-object p1, p0, Lcom/android/server/am/ProcessStatsService$2;->this$0:Lcom/android/server/am/ProcessStatsService;
 
     iput-wide p2, p0, Lcom/android/server/am/ProcessStatsService$2;->val$totalTime:J
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 3
 
-    .line 249
     iget-object v0, p0, Lcom/android/server/am/ProcessStatsService$2;->this$0:Lcom/android/server/am/ProcessStatsService;
 
     iget-wide v1, p0, Lcom/android/server/am/ProcessStatsService$2;->val$totalTime:J
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/am/ProcessStatsService;->performWriteState(J)V
 
-    .line 250
     return-void
 .end method

@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/usage/AppStandbyController;)V
     .locals 0
 
-    .line 1703
     iput-object p1, p0, Lcom/android/server/usage/AppStandbyController$DeviceStateReceiver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/usage/AppStandbyController;Lcom/android/server/usage/AppStandbyController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/usage/AppStandbyController;
-    .param p2, "x1"    # Lcom/android/server/usage/AppStandbyController$1;
 
-    .line 1703
     invoke-direct {p0, p1}, Lcom/android/server/usage/AppStandbyController$DeviceStateReceiver;-><init>(Lcom/android/server/usage/AppStandbyController;)V
 
     return-void
@@ -45,10 +41,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1706
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -123,7 +116,6 @@
 
     goto :goto_2
 
-    .line 1714
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$DeviceStateReceiver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
@@ -131,25 +123,20 @@
 
     goto :goto_2
 
-    .line 1711
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$DeviceStateReceiver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-virtual {v0, v4}, Lcom/android/server/usage/AppStandbyController;->setChargingState(Z)V
 
-    .line 1712
     goto :goto_2
 
-    .line 1708
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$DeviceStateReceiver;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-virtual {v0, v3}, Lcom/android/server/usage/AppStandbyController;->setChargingState(Z)V
 
-    .line 1709
     nop
 
-    .line 1717
     :goto_2
     return-void
 

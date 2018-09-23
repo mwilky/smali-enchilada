@@ -43,45 +43,33 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AppOpsService$UidState;Ljava/lang/String;I)V
     .locals 2
-    .param p1, "_uidState"    # Lcom/android/server/AppOpsService$UidState;
-    .param p2, "_packageName"    # Ljava/lang/String;
-    .param p3, "_op"    # I
 
-    .line 428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->proxyUid:I
 
-    .line 423
     const/4 v0, 0x6
 
     new-array v1, v0, [J
 
     iput-object v1, p0, Lcom/android/server/AppOpsService$Op;->time:[J
 
-    .line 424
     new-array v0, v0, [J
 
     iput-object v0, p0, Lcom/android/server/AppOpsService$Op;->rejectTime:[J
 
-    .line 429
     iput-object p1, p0, Lcom/android/server/AppOpsService$Op;->uidState:Lcom/android/server/AppOpsService$UidState;
 
-    .line 430
     iget v0, p1, Lcom/android/server/AppOpsService$UidState;->uid:I
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->uid:I
 
-    .line 431
     iput-object p2, p0, Lcom/android/server/AppOpsService$Op;->packageName:Ljava/lang/String;
 
-    .line 432
     iput p3, p0, Lcom/android/server/AppOpsService$Op;->op:I
 
-    .line 433
     iget v0, p0, Lcom/android/server/AppOpsService$Op;->op:I
 
     invoke-static {v0}, Landroid/app/AppOpsManager;->opToDefaultMode(I)I
@@ -90,7 +78,6 @@
 
     iput v0, p0, Lcom/android/server/AppOpsService$Op;->mode:I
 
-    .line 434
     return-void
 .end method
 
@@ -99,7 +86,6 @@
 .method getMode()I
     .locals 2
 
-    .line 449
     iget-object v0, p0, Lcom/android/server/AppOpsService$Op;->uidState:Lcom/android/server/AppOpsService$UidState;
 
     iget v1, p0, Lcom/android/server/AppOpsService$Op;->mode:I
@@ -114,18 +100,15 @@
 .method hasAnyTime()Z
     .locals 8
 
-    .line 437
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     const/4 v2, 0x6
 
     if-ge v1, v2, :cond_2
 
-    .line 438
     iget-object v2, p0, Lcom/android/server/AppOpsService$Op;->time:[J
 
     aget-wide v2, v2, v1
@@ -138,10 +121,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 439
     return v3
 
-    .line 441
     :cond_0
     iget-object v2, p0, Lcom/android/server/AppOpsService$Op;->rejectTime:[J
 
@@ -151,17 +132,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 442
     return v3
 
-    .line 437
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 445
-    .end local v1    # "i":I
     :cond_2
     return v0
 .end method

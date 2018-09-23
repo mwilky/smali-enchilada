@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActiveServices;Lcom/android/server/am/ServiceRecord;Landroid/content/Intent;ZLandroid/app/IServiceConnection;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActiveServices;
 
-    .line 1616
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
     iput-object p2, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceRecord:Lcom/android/server/am/ServiceRecord;
@@ -54,9 +52,7 @@
 # virtual methods
 .method public onResult(Landroid/os/Bundle;)V
     .locals 10
-    .param p1, "result"    # Landroid/os/Bundle;
 
-    .line 1619
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v0, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
@@ -66,15 +62,12 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 1620
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1622
-    .local v1, "identity":J
     :try_start_1
     iget-object v3, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
@@ -90,7 +83,6 @@
 
     if-nez v3, :cond_0
 
-    .line 1644
     :try_start_2
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
@@ -98,12 +90,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1623
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
     return-void
 
-    .line 1629
     :cond_0
     :try_start_3
     iget-object v3, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
@@ -122,7 +112,6 @@
 
     iget v5, v5, Lcom/android/server/am/ServiceRecord;->userId:I
 
-    .line 1630
     invoke-virtual {v3, v4, v5}, Landroid/content/pm/PackageManagerInternal;->isPermissionsReviewRequired(Ljava/lang/String;I)Z
 
     move-result v3
@@ -131,7 +120,6 @@
 
     if-nez v3, :cond_1
 
-    .line 1634
     :try_start_4
     iget-object v4, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
 
@@ -139,7 +127,6 @@
 
     iget-object v3, p0, Lcom/android/server/am/ActiveServices$3;->val$serviceIntent:Landroid/content/Intent;
 
-    .line 1635
     invoke-virtual {v3}, Landroid/content/Intent;->getFlags()I
 
     move-result v6
@@ -150,7 +137,6 @@
 
     const/4 v9, 0x0
 
-    .line 1634
     invoke-static/range {v4 .. v9}, Lcom/android/server/am/ActiveServices;->access$400(Lcom/android/server/am/ActiveServices;Lcom/android/server/am/ServiceRecord;IZZZ)Ljava/lang/String;
     :try_end_4
     .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_4} :catch_0
@@ -158,15 +144,12 @@
 
     goto :goto_0
 
-    .line 1637
     :catch_0
     move-exception v3
 
-    .line 1639
     :goto_0
     goto :goto_1
 
-    .line 1641
     :cond_1
     :try_start_5
     iget-object v3, p0, Lcom/android/server/am/ActiveServices$3;->this$0:Lcom/android/server/am/ActiveServices;
@@ -177,27 +160,20 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 1644
     :goto_1
     :try_start_6
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 1645
     nop
 
-    .line 1646
-    .end local v1    # "identity":J
     monitor-exit v0
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 1647
     return-void
 
-    .line 1644
-    .restart local v1    # "identity":J
     :catchall_0
     move-exception v3
 
@@ -206,8 +182,6 @@
 
     throw v3
 
-    .line 1646
-    .end local v1    # "identity":J
     :catchall_1
     move-exception v1
 

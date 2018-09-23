@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/IpClient;Ljava/lang/String;Lcom/android/server/net/NetlinkTracker$Callback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ip/IpClient;
-    .param p2, "x0"    # Ljava/lang/String;
-    .param p3, "x1"    # Lcom/android/server/net/NetlinkTracker$Callback;
 
-    .line 738
     iput-object p1, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0, p2, p3}, Lcom/android/server/net/NetlinkTracker;-><init>(Ljava/lang/String;Lcom/android/server/net/NetlinkTracker$Callback;)V
@@ -35,9 +31,7 @@
 
 .method public static synthetic lambda$logMsg$0(Landroid/net/ip/IpClient$3;Ljava/lang/String;)V
     .locals 3
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 772
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$000(Landroid/net/ip/IpClient;)Landroid/net/util/SharedLog;
@@ -65,9 +59,7 @@
 
 .method private logMsg(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 771
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$400(Landroid/net/ip/IpClient;)Ljava/lang/String;
@@ -76,7 +68,6 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 772
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient;->getHandler()Landroid/os/Handler;
@@ -89,7 +80,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 773
     return-void
 .end method
 
@@ -97,12 +87,9 @@
 # virtual methods
 .method public interfaceAdded(Ljava/lang/String;)V
     .locals 2
-    .param p1, "iface"    # Ljava/lang/String;
 
-    .line 741
     invoke-super {p0, p1}, Lcom/android/server/net/NetlinkTracker;->interfaceAdded(Ljava/lang/String;)V
 
-    .line 742
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$200(Landroid/net/ip/IpClient;)Ljava/lang/String;
@@ -115,7 +102,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 743
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v0, v0, Landroid/net/ip/IpClient;->mCallback:Landroid/net/ip/IpClient$Callback;
@@ -126,7 +112,6 @@
 
     goto :goto_0
 
-    .line 744
     :cond_0
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
@@ -140,10 +125,8 @@
 
     if-nez v0, :cond_1
 
-    .line 745
     return-void
 
-    .line 748
     :cond_1
     :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
@@ -164,22 +147,16 @@
 
     move-result-object v0
 
-    .line 749
-    .local v0, "msg":Ljava/lang/String;
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$3;->logMsg(Ljava/lang/String;)V
 
-    .line 750
     return-void
 .end method
 
 .method public interfaceRemoved(Ljava/lang/String;)V
     .locals 2
-    .param p1, "iface"    # Ljava/lang/String;
 
-    .line 754
     invoke-super {p0, p1}, Lcom/android/server/net/NetlinkTracker;->interfaceRemoved(Ljava/lang/String;)V
 
-    .line 757
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$200(Landroid/net/ip/IpClient;)Ljava/lang/String;
@@ -192,7 +169,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 761
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v0, v0, Landroid/net/ip/IpClient;->mCallback:Landroid/net/ip/IpClient$Callback;
@@ -203,7 +179,6 @@
 
     goto :goto_0
 
-    .line 762
     :cond_0
     iget-object v0, p0, Landroid/net/ip/IpClient$3;->this$0:Landroid/net/ip/IpClient;
 
@@ -217,10 +192,8 @@
 
     if-nez v0, :cond_1
 
-    .line 763
     return-void
 
-    .line 766
     :cond_1
     :goto_0
     new-instance v0, Ljava/lang/StringBuilder;
@@ -241,10 +214,7 @@
 
     move-result-object v0
 
-    .line 767
-    .local v0, "msg":Ljava/lang/String;
     invoke-direct {p0, v0}, Landroid/net/ip/IpClient$3;->logMsg(Ljava/lang/String;)V
 
-    .line 768
     return-void
 .end method

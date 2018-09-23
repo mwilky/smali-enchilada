@@ -18,21 +18,15 @@
 # direct methods
 .method public constructor <init>([B)V
     .locals 1
-    .param p1, "bytes"    # [B
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     if-eqz p1, :cond_0
 
-    .line 65
     iput-object p1, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
-    .line 66
     return-void
 
-    .line 63
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -45,12 +39,9 @@
 # virtual methods
 .method public advance(I)V
     .locals 4
-    .param p1, "numBytes"    # I
 
-    .line 184
     if-ltz p1, :cond_1
 
-    .line 189
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
     int-to-long v0, v0
@@ -59,8 +50,6 @@
 
     add-long/2addr v0, v2
 
-    .line 190
-    .local v0, "longNewIndex":J
     iget-object v2, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
     array-length v2, v2
@@ -71,24 +60,20 @@
 
     if-gez v2, :cond_0
 
-    .line 191
     iget v2, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
     add-int/2addr v2, p1
 
     iput v2, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
-    .line 192
     iget v2, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
     add-int/2addr v2, p1
 
     iput v2, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
-    .line 196
     return-void
 
-    .line 194
     :cond_0
     new-instance v2, Ljava/lang/IndexOutOfBoundsException;
 
@@ -96,8 +81,6 @@
 
     throw v2
 
-    .line 186
-    .end local v0    # "longNewIndex":J
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -109,7 +92,6 @@
 .method public available()I
     .locals 2
 
-    .line 221
     iget-object v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
     array-length v0, v0
@@ -124,21 +106,18 @@
 .method public getByte()B
     .locals 3
 
-    .line 102
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 103
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
-    .line 104
     iget-object v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
     iget v1, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
@@ -151,7 +130,6 @@
 
     return v0
 
-    .line 106
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -163,7 +141,6 @@
 .method public getReadCount()I
     .locals 1
 
-    .line 79
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
     return v0
@@ -172,21 +149,18 @@
 .method public getUnsignedByte()I
     .locals 3
 
-    .line 116
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 117
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
-    .line 118
     iget-object v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
     iget v1, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
@@ -201,7 +175,6 @@
 
     return v0
 
-    .line 120
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -213,14 +186,12 @@
 .method public peekByte()B
     .locals 2
 
-    .line 88
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 89
     iget-object v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mBytes:[B
 
     iget v1, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
@@ -231,7 +202,6 @@
 
     return v0
 
-    .line 91
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -243,45 +213,36 @@
 .method public resetReadCount()V
     .locals 1
 
-    .line 72
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
-    .line 73
     return-void
 .end method
 
 .method public reverse(I)V
     .locals 1
-    .param p1, "numBytes"    # I
 
-    .line 205
     if-ltz p1, :cond_1
 
-    .line 209
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
     if-lt v0, p1, :cond_0
 
-    .line 210
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
     sub-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mReadCount:I
 
-    .line 211
     iget v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
     sub-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/usb/descriptors/ByteStream;->mIndex:I
 
-    .line 215
     return-void
 
-    .line 213
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -289,7 +250,6 @@
 
     throw v0
 
-    .line 207
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -301,7 +261,6 @@
 .method public unpackUsbInt()I
     .locals 6
 
-    .line 167
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
@@ -310,31 +269,22 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 168
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v0
 
-    .line 169
-    .local v0, "b0":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v1
 
-    .line 170
-    .local v1, "b1":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v2
 
-    .line 171
-    .local v2, "b2":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v3
 
-    .line 172
-    .local v3, "b3":I
     shl-int/lit8 v4, v3, 0x18
 
     shl-int/lit8 v5, v2, 0x10
@@ -349,11 +299,6 @@
 
     return v4
 
-    .line 174
-    .end local v0    # "b0":I
-    .end local v1    # "b1":I
-    .end local v2    # "b2":I
-    .end local v3    # "b3":I
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -365,7 +310,6 @@
 .method public unpackUsbShort()I
     .locals 3
 
-    .line 133
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
@@ -374,28 +318,20 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 134
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v0
 
-    .line 135
-    .local v0, "b0":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v1
 
-    .line 136
-    .local v1, "b1":I
     shl-int/lit8 v2, v1, 0x8
 
     or-int/2addr v2, v0
 
     return v2
 
-    .line 138
-    .end local v0    # "b0":I
-    .end local v1    # "b1":I
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -407,7 +343,6 @@
 .method public unpackUsbTriple()I
     .locals 5
 
-    .line 151
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->available()I
 
     move-result v0
@@ -416,25 +351,18 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 152
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v0
 
-    .line 153
-    .local v0, "b0":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v1
 
-    .line 154
-    .local v1, "b1":I
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/ByteStream;->getUnsignedByte()I
 
     move-result v2
 
-    .line 155
-    .local v2, "b2":I
     shl-int/lit8 v3, v2, 0x10
 
     shl-int/lit8 v4, v1, 0x8
@@ -445,10 +373,6 @@
 
     return v3
 
-    .line 157
-    .end local v0    # "b0":I
-    .end local v1    # "b1":I
-    .end local v2    # "b2":I
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 

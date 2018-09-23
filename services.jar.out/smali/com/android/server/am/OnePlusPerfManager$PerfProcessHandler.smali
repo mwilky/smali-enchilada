@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/OnePlusPerfManager;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 659
     iput-object p1, p0, Lcom/android/server/am/OnePlusPerfManager$PerfProcessHandler;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
-    .line 660
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 661
     return-void
 .end method
 
@@ -37,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 664
     sget-boolean v0, Lcom/android/server/am/OnePlusPerfManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -60,7 +54,6 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusPerfManager;->myLog(Ljava/lang/String;)V
 
-    .line 665
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -68,7 +61,6 @@
 
     goto :goto_0
 
-    .line 673
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusPerfManager$PerfProcessHandler;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
@@ -76,7 +68,6 @@
 
     goto :goto_0
 
-    .line 670
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/OnePlusPerfManager$PerfProcessHandler;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
@@ -86,10 +77,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusPerfManager;->access$200(Lcom/android/server/am/OnePlusPerfManager;Ljava/lang/String;)V
 
-    .line 671
     goto :goto_0
 
-    .line 667
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/am/OnePlusPerfManager$PerfProcessHandler;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
@@ -99,10 +88,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/OnePlusPerfManager;->access$100(Lcom/android/server/am/OnePlusPerfManager;Ljava/lang/String;)V
 
-    .line 668
     nop
 
-    .line 676
     :goto_0
     return-void
 

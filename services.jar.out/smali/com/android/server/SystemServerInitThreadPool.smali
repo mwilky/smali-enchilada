@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 41
     const-class v0, Lcom/android/server/SystemServerInitThreadPool;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -30,7 +29,6 @@
 
     sput-object v0, Lcom/android/server/SystemServerInitThreadPool;->TAG:Ljava/lang/String;
 
-    .line 43
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     sput-boolean v0, Lcom/android/server/SystemServerInitThreadPool;->IS_DEBUGGABLE:Z
@@ -41,10 +39,8 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 47
     const-string/jumbo v0, "system-server-init-thread"
 
     const/4 v1, 0x4
@@ -67,20 +63,17 @@
 
     monitor-enter v0
 
-    .line 51
     :try_start_0
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
     if-nez v1, :cond_0
 
-    .line 52
     new-instance v1, Lcom/android/server/SystemServerInitThreadPool;
 
     invoke-direct {v1}, Lcom/android/server/SystemServerInitThreadPool;-><init>()V
 
     sput-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
-    .line 54
     :cond_0
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
@@ -118,7 +111,6 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/util/Preconditions;->checkState(ZLjava/lang/String;)V
 
-    .line 56
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -127,7 +119,6 @@
 
     return-object v1
 
-    .line 50
     :catchall_0
     move-exception v1
 
@@ -138,10 +129,7 @@
 
 .method static synthetic lambda$submit$0(Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 4
-    .param p0, "description"    # Ljava/lang/String;
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 62
     sget-object v0, Lcom/android/server/SystemServerInitThreadPool;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,16 +148,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     :try_start_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 68
     nop
 
-    .line 69
     sget-object v0, Lcom/android/server/SystemServerInitThreadPool;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -188,15 +173,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     return-void
 
-    .line 65
     :catch_0
     move-exception v0
 
-    .line 66
-    .local v0, "e":Ljava/lang/RuntimeException;
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -221,7 +202,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 67
     throw v0
 .end method
 
@@ -232,7 +212,6 @@
 
     monitor-enter v0
 
-    .line 76
     :try_start_0
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
@@ -244,7 +223,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 77
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
     iget-object v1, v1, Lcom/android/server/SystemServerInitThreadPool;->mService:Ljava/util/concurrent/ExecutorService;
@@ -253,7 +231,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 80
     :try_start_1
     sget-object v1, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
@@ -270,14 +247,10 @@
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 85
-    .local v1, "terminated":Z
     nop
 
-    .line 84
     nop
 
-    .line 86
     :try_start_2
     sget-object v2, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
@@ -287,31 +260,22 @@
 
     move-result-object v2
 
-    .line 87
-    .local v2, "unstartedRunnables":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Runnable;>;"
     if-eqz v1, :cond_0
 
-    .line 91
     sget-object v3, Lcom/android/server/SystemServerInitThreadPool;->sInstance:Lcom/android/server/SystemServerInitThreadPool;
 
     const/4 v4, 0x0
 
     iput-object v4, v3, Lcom/android/server/SystemServerInitThreadPool;->mService:Ljava/util/concurrent/ExecutorService;
 
-    .line 92
     sget-object v3, Lcom/android/server/SystemServerInitThreadPool;->TAG:Ljava/lang/String;
 
     const-string v4, "Shutdown successful"
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v1    # "terminated":Z
-    .end local v2    # "unstartedRunnables":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Runnable;>;"
     goto :goto_0
 
-    .line 88
-    .restart local v1    # "terminated":Z
-    .restart local v2    # "unstartedRunnables":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Runnable;>;"
     :cond_0
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -333,21 +297,15 @@
 
     throw v3
 
-    .line 82
-    .end local v1    # "terminated":Z
-    .end local v2    # "unstartedRunnables":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Runnable;>;"
     :catch_0
     move-exception v1
 
-    .line 83
-    .local v1, "e":Ljava/lang/InterruptedException;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
 
-    .line 84
     new-instance v2, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -372,15 +330,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 94
-    .end local v1    # "e":Ljava/lang/InterruptedException;
     :cond_1
     :goto_0
     monitor-exit v0
 
     return-void
 
-    .line 75
     :catchall_0
     move-exception v1
 
@@ -393,8 +348,6 @@
 # virtual methods
 .method public submit(Ljava/lang/Runnable;Ljava/lang/String;)Ljava/util/concurrent/Future;
     .locals 2
-    .param p1, "runnable"    # Ljava/lang/Runnable;
-    .param p2, "description"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -406,12 +359,10 @@
         }
     .end annotation
 
-    .line 60
     sget-boolean v0, Lcom/android/server/SystemServerInitThreadPool;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_0
 
-    .line 61
     iget-object v0, p0, Lcom/android/server/SystemServerInitThreadPool;->mService:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/android/server/-$$Lambda$SystemServerInitThreadPool$7wfLGkZF7FvYZv7xj3ghvuiJJGk;
@@ -424,7 +375,6 @@
 
     return-object v0
 
-    .line 72
     :cond_0
     iget-object v0, p0, Lcom/android/server/SystemServerInitThreadPool;->mService:Ljava/util/concurrent/ExecutorService;
 

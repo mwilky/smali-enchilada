@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/UserManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
-    .line 2973
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$5;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/app/IStopUserCallback$Stub;-><init>()V
@@ -35,21 +33,16 @@
 # virtual methods
 .method public userStopAborted(I)V
     .locals 0
-    .param p1, "userId"    # I
 
-    .line 2980
     return-void
 .end method
 
 .method public userStopped(I)V
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 2976
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$5;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/pm/UserManagerService;->finishRemoveUser(I)V
 
-    .line 2977
     return-void
 .end method

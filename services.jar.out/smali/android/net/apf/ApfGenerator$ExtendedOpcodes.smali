@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 74
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "LDM"
@@ -57,7 +56,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->LDM:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 75
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "STM"
@@ -70,7 +68,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->STM:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 76
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "NOT"
@@ -83,7 +80,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->NOT:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 77
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "NEG"
@@ -96,7 +92,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->NEG:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 78
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "SWAP"
@@ -109,7 +104,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->SWAP:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 79
     new-instance v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     const-string v1, "MOVE"
@@ -122,7 +116,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->MOVE:Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
-    .line 73
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
@@ -158,28 +151,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "value"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 83
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 84
     iput p3, p0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->value:I
 
-    .line 85
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 73
     const-class v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -194,7 +181,6 @@
 .method public static values()[Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
     .locals 1
 
-    .line 73
     sget-object v0, Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->$VALUES:[Landroid/net/apf/ApfGenerator$ExtendedOpcodes;
 
     invoke-virtual {v0}, [Landroid/net/apf/ApfGenerator$ExtendedOpcodes;->clone()Ljava/lang/Object;

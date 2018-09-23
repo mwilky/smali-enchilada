@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/slice/SliceManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/slice/SliceManagerService;
 
-    .line 551
     iput-object p1, p0, Lcom/android/server/slice/SliceManagerService$1;->this$0:Lcom/android/server/slice/SliceManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 554
     const-string v0, "android.intent.extra.user_handle"
 
     const/16 v1, -0x2710
@@ -47,11 +42,8 @@
 
     move-result v0
 
-    .line 555
-    .local v0, "userId":I
     if-ne v0, v1, :cond_0
 
-    .line 556
     const-string v1, "SliceManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -70,17 +62,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 557
     return-void
 
-    .line 559
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 560
-    .local v1, "data":Landroid/net/Uri;
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
@@ -92,12 +80,9 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 561
-    .local v2, "pkg":Ljava/lang/String;
     :goto_0
     if-nez v2, :cond_2
 
-    .line 562
     const-string v3, "SliceManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -116,10 +101,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 563
     return-void
 
-    .line 565
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -173,7 +156,6 @@
 
     goto :goto_2
 
-    .line 574
     :pswitch_0
     iget-object v3, p0, Lcom/android/server/slice/SliceManagerService$1;->this$0:Lcom/android/server/slice/SliceManagerService;
 
@@ -185,20 +167,15 @@
 
     goto :goto_2
 
-    .line 567
     :pswitch_1
     const-string v3, "android.intent.extra.REPLACING"
 
-    .line 568
     invoke-virtual {p2, v3, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v3
 
-    .line 569
-    .local v3, "replacing":Z
     if-nez v3, :cond_6
 
-    .line 570
     iget-object v4, p0, Lcom/android/server/slice/SliceManagerService$1;->this$0:Lcom/android/server/slice/SliceManagerService;
 
     invoke-static {v4}, Lcom/android/server/slice/SliceManagerService;->access$000(Lcom/android/server/slice/SliceManagerService;)Lcom/android/server/slice/SlicePermissionManager;
@@ -207,8 +184,6 @@
 
     invoke-virtual {v4, v2, v0}, Lcom/android/server/slice/SlicePermissionManager;->removePkg(Ljava/lang/String;I)V
 
-    .line 577
-    .end local v3    # "replacing":Z
     :cond_6
     :goto_2
     return-void

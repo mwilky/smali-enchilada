@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/InputMethodManagerService;
 
-    .line 913
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$ImmsBroadcastReceiver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 916
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 917
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -53,15 +46,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 918
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ImmsBroadcastReceiver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/InputMethodManagerService;->hideInputMethodMenu()V
 
-    .line 920
     return-void
 
-    .line 921
     :cond_0
     const-string v1, "android.intent.action.USER_ADDED"
 
@@ -73,7 +63,6 @@
 
     const-string v1, "android.intent.action.USER_REMOVED"
 
-    .line 922
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -82,7 +71,6 @@
 
     goto :goto_1
 
-    .line 925
     :cond_1
     const-string v1, "android.intent.action.LOCALE_CHANGED"
 
@@ -92,14 +80,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 926
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ImmsBroadcastReceiver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/InputMethodManagerService;->onActionLocaleChanged()V
 
     goto :goto_0
 
-    .line 927
     :cond_2
     const-string v1, "com.android.server.InputMethodManagerService.SHOW_INPUT_METHOD_PICKER"
 
@@ -109,7 +95,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 932
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ImmsBroadcastReceiver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v1, v1, Lcom/android/server/InputMethodManagerService;->mHandler:Landroid/os/Handler;
@@ -122,12 +107,10 @@
 
     move-result-object v1
 
-    .line 936
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    .line 938
     :cond_3
     const-string v1, "InputMethodManagerService"
 
@@ -147,17 +130,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 940
     :goto_0
     return-void
 
-    .line 923
     :cond_4
     :goto_1
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ImmsBroadcastReceiver;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/InputMethodManagerService;->updateCurrentProfileIds()V
 
-    .line 924
     return-void
 .end method

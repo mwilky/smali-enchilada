@@ -27,26 +27,16 @@
 # direct methods
 .method constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "time"    # J
-    .param p3, "shortMsg"    # Ljava/lang/String;
-    .param p4, "longMsg"    # Ljava/lang/String;
-    .param p5, "stack"    # Ljava/lang/String;
 
-    .line 1215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1216
     iput-wide p1, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->time:J
 
-    .line 1217
     iput-object p3, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->shortMsg:Ljava/lang/String;
 
-    .line 1218
     iput-object p4, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->longMsg:Ljava/lang/String;
 
-    .line 1219
     iput-object p5, p0, Lcom/android/server/am/AppErrors$BadProcessInfo;->stack:Ljava/lang/String;
 
-    .line 1220
     return-void
 .end method

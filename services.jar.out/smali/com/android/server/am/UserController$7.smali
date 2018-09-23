@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UserController;JLjava/lang/String;Landroid/util/ArraySet;Ljava/util/concurrent/atomic/AtomicInteger;Lcom/android/server/am/UserState;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/UserController;
 
-    .line 1368
     iput-object p1, p0, Lcom/android/server/am/UserController$7;->this$0:Lcom/android/server/am/UserController;
 
     iput-wide p2, p0, Lcom/android/server/am/UserController$7;->val$dispatchStartedTime:J
@@ -63,14 +61,12 @@
 # virtual methods
 .method public sendResult(Landroid/os/Bundle;)V
     .locals 7
-    .param p1, "data"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1371
     iget-object v0, p0, Lcom/android/server/am/UserController$7;->this$0:Lcom/android/server/am/UserController;
 
     invoke-static {v0}, Lcom/android/server/am/UserController;->access$300(Lcom/android/server/am/UserController;)Ljava/lang/Object;
@@ -79,7 +75,6 @@
 
     monitor-enter v0
 
-    .line 1372
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -89,15 +84,12 @@
 
     sub-long/2addr v1, v3
 
-    .line 1373
-    .local v1, "delay":J
     const-wide/16 v3, 0xbb8
 
     cmp-long v3, v1, v3
 
     if-lez v3, :cond_0
 
-    .line 1374
     const-string v3, "ActivityManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -128,7 +120,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1377
     :cond_0
     iget-object v3, p0, Lcom/android/server/am/UserController$7;->val$curWaitingUserSwitchCallbacks:Landroid/util/ArraySet;
 
@@ -136,7 +127,6 @@
 
     invoke-virtual {v3, v4}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
-    .line 1380
     iget-object v3, p0, Lcom/android/server/am/UserController$7;->val$waitingCallbacksCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
@@ -149,14 +139,12 @@
 
     iget-object v4, p0, Lcom/android/server/am/UserController$7;->this$0:Lcom/android/server/am/UserController;
 
-    .line 1382
     invoke-static {v4}, Lcom/android/server/am/UserController;->access$400(Lcom/android/server/am/UserController;)Landroid/util/ArraySet;
 
     move-result-object v4
 
     if-ne v3, v4, :cond_1
 
-    .line 1383
     iget-object v3, p0, Lcom/android/server/am/UserController$7;->this$0:Lcom/android/server/am/UserController;
 
     iget-object v4, p0, Lcom/android/server/am/UserController$7;->val$uss:Lcom/android/server/am/UserState;
@@ -167,15 +155,11 @@
 
     invoke-virtual {v3, v4, v5, v6}, Lcom/android/server/am/UserController;->sendContinueUserSwitchLU(Lcom/android/server/am/UserState;II)V
 
-    .line 1385
-    .end local v1    # "delay":J
     :cond_1
     monitor-exit v0
 
-    .line 1386
     return-void
 
-    .line 1385
     :catchall_0
     move-exception v1
 

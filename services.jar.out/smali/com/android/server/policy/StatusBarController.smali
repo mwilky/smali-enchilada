@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 8
 
-    .line 102
     const-string v1, "StatusBar"
 
     const/high16 v2, 0x4000000
@@ -30,14 +29,12 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/server/policy/BarController;-><init>(Ljava/lang/String;IIIIII)V
 
-    .line 40
     new-instance v0, Lcom/android/server/policy/StatusBarController$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/policy/StatusBarController$1;-><init>(Lcom/android/server/policy/StatusBarController;)V
 
     iput-object v0, p0, Lcom/android/server/policy/StatusBarController;->mAppTransitionListener:Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;
 
-    .line 109
     return-void
 .end method
 
@@ -46,7 +43,6 @@
 .method public getAppTransitionListener()Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;
     .locals 1
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController;->mAppTransitionListener:Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;
 
     return-object v0
@@ -54,21 +50,15 @@
 
 .method public setTopAppHidesStatusBar(Z)V
     .locals 1
-    .param p1, "hidesStatusBar"    # Z
 
-    .line 113
     invoke-virtual {p0}, Lcom/android/server/policy/StatusBarController;->getStatusBarInternal()Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     move-result-object v0
 
-    .line 114
-    .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_0
 
-    .line 115
     invoke-interface {v0, p1}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setTopAppHidesStatusBar(Z)V
 
-    .line 117
     :cond_0
     return-void
 .end method
@@ -76,7 +66,6 @@
 .method protected skipAnimation()Z
     .locals 2
 
-    .line 121
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController;->mWin:Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getAttrs()Landroid/view/WindowManager$LayoutParams;

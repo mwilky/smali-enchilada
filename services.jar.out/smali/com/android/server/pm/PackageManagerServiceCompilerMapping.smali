@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 28
     const-string v0, "first-boot"
 
     const-string v1, "boot"
@@ -34,7 +33,6 @@
 
     sput-object v0, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->REASON_STRINGS:[Ljava/lang/String;
 
-    .line 36
     sget-object v0, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->REASON_STRINGS:[Ljava/lang/String;
 
     array-length v0, v0
@@ -43,7 +41,6 @@
 
     if-ne v1, v0, :cond_1
 
-    .line 39
     const-string/jumbo v0, "shared"
 
     sget-object v1, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->REASON_STRINGS:[Ljava/lang/String;
@@ -58,10 +55,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 42
     return-void
 
-    .line 40
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -71,7 +66,6 @@
 
     throw v0
 
-    .line 37
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -85,7 +79,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -94,27 +87,20 @@
 .method static checkProperties()V
     .locals 6
 
-    .line 77
     const/4 v0, 0x0
 
-    .line 79
-    .local v0, "toThrow":Ljava/lang/RuntimeException;
     const/4 v1, 0x0
 
-    .local v1, "reason":I
     :goto_0
     const/4 v2, 0x6
 
     if-gt v1, v2, :cond_2
 
-    .line 82
     :try_start_0
     invoke-static {v1}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->getSystemPropertyName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 83
-    .local v2, "sysPropName":Ljava/lang/String;
     if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
@@ -123,15 +109,10 @@
 
     if-nez v3, :cond_0
 
-    .line 89
     invoke-static {v1}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->getAndCheckValidity(I)Ljava/lang/String;
 
-    .line 95
-    .end local v2    # "sysPropName":Ljava/lang/String;
     goto :goto_1
 
-    .line 84
-    .restart local v2    # "sysPropName":Ljava/lang/String;
     :cond_0
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -165,16 +146,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 90
-    .end local v2    # "sysPropName":Ljava/lang/String;
     :catch_0
     move-exception v2
 
-    .line 91
-    .local v2, "exc":Ljava/lang/Exception;
     if-nez v0, :cond_1
 
-    .line 92
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string v4, "PMS compiler filter settings are bad."
@@ -183,35 +159,26 @@
 
     move-object v0, v3
 
-    .line 94
     :cond_1
     invoke-virtual {v0, v2}, Ljava/lang/RuntimeException;->addSuppressed(Ljava/lang/Throwable;)V
 
-    .line 79
-    .end local v2    # "exc":Ljava/lang/Exception;
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 98
-    .end local v1    # "reason":I
     :cond_2
     if-nez v0, :cond_3
 
-    .line 101
     return-void
 
-    .line 99
     :cond_3
     throw v0
 .end method
 
 .method private static getAndCheckValidity(I)Ljava/lang/String;
     .locals 4
-    .param p0, "reason"    # I
 
-    .line 55
     invoke-static {p0}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->getSystemPropertyName(I)Ljava/lang/String;
 
     move-result-object v0
@@ -220,8 +187,6 @@
 
     move-result-object v0
 
-    .line 56
-    .local v0, "sysPropValue":Ljava/lang/String;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
@@ -230,24 +195,20 @@
 
     if-nez v1, :cond_1
 
-    .line 57
     invoke-static {v0}, Ldalvik/system/DexFile;->isValidCompilerFilter(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 60
     invoke-static {p0, v0}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->isFilterAllowedForReason(ILjava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 65
     return-object v0
 
-    .line 61
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -283,7 +244,6 @@
 
     throw v1
 
-    .line 58
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -322,9 +282,7 @@
 
 .method public static getCompilerFilterForReason(I)Ljava/lang/String;
     .locals 1
-    .param p0, "reason"    # I
 
-    .line 104
     invoke-static {p0}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->getAndCheckValidity(I)Ljava/lang/String;
 
     move-result-object v0
@@ -335,15 +293,12 @@
 .method public static getDefaultCompilerFilter()Ljava/lang/String;
     .locals 2
 
-    .line 114
     const-string v0, "dalvik.vm.dex2oat-filter"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 115
-    .local v0, "value":Ljava/lang/String;
     if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
@@ -354,7 +309,6 @@
 
     goto :goto_1
 
-    .line 119
     :cond_0
     invoke-static {v0}, Ldalvik/system/DexFile;->isValidCompilerFilter(Ljava/lang/String;)Z
 
@@ -362,7 +316,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 120
     invoke-static {v0}, Ldalvik/system/DexFile;->isProfileGuidedCompilerFilter(Ljava/lang/String;)Z
 
     move-result v1
@@ -371,18 +324,15 @@
 
     goto :goto_0
 
-    .line 124
     :cond_1
     return-object v0
 
-    .line 121
     :cond_2
     :goto_0
     const-string/jumbo v1, "speed"
 
     return-object v1
 
-    .line 116
     :cond_3
     :goto_1
     const-string/jumbo v1, "speed"
@@ -392,19 +342,15 @@
 
 .method public static getReasonName(I)Ljava/lang/String;
     .locals 3
-    .param p0, "reason"    # I
 
-    .line 128
     const/4 v0, -0x1
 
     if-ne p0, v0, :cond_0
 
-    .line 129
     const-string/jumbo v0, "unknown"
 
     return-object v0
 
-    .line 131
     :cond_0
     if-ltz p0, :cond_1
 
@@ -414,14 +360,12 @@
 
     if-ge p0, v0, :cond_1
 
-    .line 134
     sget-object v0, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->REASON_STRINGS:[Ljava/lang/String;
 
     aget-object v0, v0, p0
 
     return-object v0
 
-    .line 132
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -450,9 +394,7 @@
 
 .method private static getSystemPropertyName(I)Ljava/lang/String;
     .locals 3
-    .param p0, "reason"    # I
 
-    .line 45
     if-ltz p0, :cond_0
 
     sget-object v0, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->REASON_STRINGS:[Ljava/lang/String;
@@ -461,7 +403,6 @@
 
     if-ge p0, v0, :cond_0
 
-    .line 49
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -482,7 +423,6 @@
 
     return-object v0
 
-    .line 46
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -511,10 +451,7 @@
 
 .method private static isFilterAllowedForReason(ILjava/lang/String;)Z
     .locals 1
-    .param p0, "reason"    # I
-    .param p1, "filter"    # Ljava/lang/String;
 
-    .line 69
     const/4 v0, 0x6
 
     if-ne p0, v0, :cond_1

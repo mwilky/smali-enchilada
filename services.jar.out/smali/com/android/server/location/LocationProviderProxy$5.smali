@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/LocationProviderProxy;Ljava/io/FileDescriptor;[Ljava/lang/String;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/LocationProviderProxy;
 
-    .line 235
     iput-object p1, p0, Lcom/android/server/location/LocationProviderProxy$5;->this$0:Lcom/android/server/location/LocationProviderProxy;
 
     iput-object p2, p0, Lcom/android/server/location/LocationProviderProxy$5;->val$fd:Ljava/io/FileDescriptor;
@@ -50,15 +48,11 @@
 # virtual methods
 .method public run(Landroid/os/IBinder;)V
     .locals 5
-    .param p1, "binder"    # Landroid/os/IBinder;
 
-    .line 238
     invoke-static {p1}, Lcom/android/internal/location/ILocationProvider$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/location/ILocationProvider;
 
     move-result-object v0
 
-    .line 240
-    .local v0, "service":Lcom/android/internal/location/ILocationProvider;
     :try_start_0
     invoke-interface {v0}, Lcom/android/internal/location/ILocationProvider;->asBinder()Landroid/os/IBinder;
 
@@ -73,15 +67,11 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 243
     goto :goto_0
 
-    .line 241
     :catch_0
     move-exception v1
 
-    .line 242
-    .local v1, "e":Ljava/lang/Exception;
     iget-object v2, p0, Lcom/android/server/location/LocationProviderProxy$5;->val$pw:Ljava/io/PrintWriter;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -100,8 +90,6 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 244
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

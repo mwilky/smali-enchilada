@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 41
     const-string v0, "MediaUpdateService"
 
     const/4 v1, 0x3
@@ -34,44 +33,34 @@
 
     sput-boolean v0, Lcom/android/server/media/MediaUpdateService;->DEBUG:Z
 
-    .line 42
     const-string/jumbo v0, "ro.mediacomponents.package"
 
-    .line 43
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/media/MediaUpdateService;->MEDIA_UPDATE_PACKAGE_NAME:Ljava/lang/String;
 
-    .line 42
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 50
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 51
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/media/MediaUpdateService;->mHandler:Landroid/os/Handler;
 
-    .line 52
     return-void
 .end method
 
 .method static synthetic access$002(Lcom/android/server/media/MediaUpdateService;Landroid/media/IMediaExtractorUpdateService;)Landroid/media/IMediaExtractorUpdateService;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/media/MediaUpdateService;
-    .param p1, "x1"    # Landroid/media/IMediaExtractorUpdateService;
 
-    .line 39
     iput-object p1, p0, Lcom/android/server/media/MediaUpdateService;->mMediaExtractorUpdateService:Landroid/media/IMediaExtractorUpdateService;
 
     return-object p1
@@ -79,9 +68,7 @@
 
 .method static synthetic access$100(Lcom/android/server/media/MediaUpdateService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/media/MediaUpdateService;
 
-    .line 39
     invoke-direct {p0}, Lcom/android/server/media/MediaUpdateService;->connect()V
 
     return-void
@@ -89,9 +76,7 @@
 
 .method static synthetic access$200(Lcom/android/server/media/MediaUpdateService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/media/MediaUpdateService;
 
-    .line 39
     invoke-direct {p0}, Lcom/android/server/media/MediaUpdateService;->packageStateChanged()V
 
     return-void
@@ -100,18 +85,14 @@
 .method private connect()V
     .locals 3
 
-    .line 64
     const-string/jumbo v0, "media.extractor.update"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 65
-    .local v0, "binder":Landroid/os/IBinder;
     if-eqz v0, :cond_0
 
-    .line 67
     :try_start_0
     new-instance v1, Lcom/android/server/media/MediaUpdateService$1;
 
@@ -123,31 +104,23 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 77
     goto :goto_0
 
-    .line 75
     :catch_0
     move-exception v1
 
-    .line 76
-    .local v1, "e":Ljava/lang/Exception;
     const/4 v0, 0x0
 
-    .line 79
-    .end local v1    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 80
     invoke-static {v0}, Landroid/media/IMediaExtractorUpdateService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IMediaExtractorUpdateService;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/media/MediaUpdateService;->mMediaExtractorUpdateService:Landroid/media/IMediaExtractorUpdateService;
 
-    .line 81
     iget-object v1, p0, Lcom/android/server/media/MediaUpdateService;->mHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/server/media/MediaUpdateService$2;
@@ -158,7 +131,6 @@
 
     goto :goto_1
 
-    .line 88
     :cond_1
     const-string v1, "MediaUpdateService"
 
@@ -166,46 +138,36 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
     :goto_1
     return-void
 .end method
 
 .method private loadExtractorPlugins(Ljava/lang/String;)V
     .locals 3
-    .param p1, "apkPath"    # Ljava/lang/String;
 
-    .line 153
     :try_start_0
     iget-object v0, p0, Lcom/android/server/media/MediaUpdateService;->mMediaExtractorUpdateService:Landroid/media/IMediaExtractorUpdateService;
 
     if-eqz v0, :cond_0
 
-    .line 154
     iget-object v0, p0, Lcom/android/server/media/MediaUpdateService;->mMediaExtractorUpdateService:Landroid/media/IMediaExtractorUpdateService;
 
     invoke-interface {v0, p1}, Landroid/media/IMediaExtractorUpdateService;->loadPlugins(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 158
     :cond_0
     goto :goto_0
 
-    .line 156
     :catch_0
     move-exception v0
 
-    .line 157
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "MediaUpdateService"
 
     const-string v2, "Error in loadPlugins"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 159
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -213,15 +175,10 @@
 .method private packageStateChanged()V
     .locals 6
 
-    .line 132
     const/4 v0, 0x0
 
-    .line 133
-    .local v0, "packageInfo":Landroid/content/pm/ApplicationInfo;
     const/4 v1, 0x0
 
-    .line 135
-    .local v1, "pluginsAvailable":Z
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/media/MediaUpdateService;->getContext()Landroid/content/Context;
 
@@ -241,22 +198,17 @@
 
     move-object v0, v2
 
-    .line 137
     iget-boolean v2, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move v1, v2
 
-    .line 140
     goto :goto_0
 
-    .line 138
     :catch_0
     move-exception v2
 
-    .line 139
-    .local v2, "e":Ljava/lang/Exception;
     const-string v3, "MediaUpdateService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -281,8 +233,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 141
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_0
     if-eqz v0, :cond_0
 
@@ -292,7 +242,6 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 142
     const-string v2, "MediaUpdateService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -321,14 +270,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 145
     const/4 v1, 0x0
 
-    .line 147
     :cond_0
     nop
 
-    .line 148
     if-eqz v0, :cond_1
 
     if-eqz v1, :cond_1
@@ -340,59 +286,47 @@
     :cond_1
     const-string v2, ""
 
-    .line 147
     :goto_1
     invoke-direct {p0, v2}, Lcom/android/server/media/MediaUpdateService;->loadExtractorPlugins(Ljava/lang/String;)V
 
-    .line 149
     return-void
 .end method
 
 .method private registerBroadcastReceiver()V
     .locals 7
 
-    .line 93
     new-instance v1, Lcom/android/server/media/MediaUpdateService$3;
 
     invoke-direct {v1, p0}, Lcom/android/server/media/MediaUpdateService$3;-><init>(Lcom/android/server/media/MediaUpdateService;)V
 
-    .line 120
-    .local v1, "updateReceiver":Landroid/content/BroadcastReceiver;
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     move-object v6, v0
 
-    .line 121
-    .local v6, "filter":Landroid/content/IntentFilter;
     const-string v0, "android.intent.action.PACKAGE_ADDED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 122
     const-string v0, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 123
     const-string v0, "android.intent.action.PACKAGE_CHANGED"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 124
     const-string/jumbo v0, "package"
 
     invoke-virtual {v6, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 125
     sget-object v0, Lcom/android/server/media/MediaUpdateService;->MEDIA_UPDATE_PACKAGE_NAME:Ljava/lang/String;
 
     const/4 v2, 0x0
 
     invoke-virtual {v6, v0, v2}, Landroid/content/IntentFilter;->addDataSchemeSpecificPart(Ljava/lang/String;I)V
 
-    .line 127
     invoke-virtual {p0}, Lcom/android/server/media/MediaUpdateService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -407,7 +341,6 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 129
     return-void
 .end method
 
@@ -416,7 +349,6 @@
 .method public onStart()V
     .locals 2
 
-    .line 56
     const-string/jumbo v0, "userdebug"
 
     sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
@@ -440,20 +372,16 @@
     :cond_0
     sget-object v0, Lcom/android/server/media/MediaUpdateService;->MEDIA_UPDATE_PACKAGE_NAME:Ljava/lang/String;
 
-    .line 57
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 58
     invoke-direct {p0}, Lcom/android/server/media/MediaUpdateService;->connect()V
 
-    .line 59
     invoke-direct {p0}, Lcom/android/server/media/MediaUpdateService;->registerBroadcastReceiver()V
 
-    .line 61
     :cond_1
     return-void
 .end method

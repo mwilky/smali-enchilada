@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActiveServices;Landroid/content/Intent;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActiveServices;
 
-    .line 1661
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$4;->this$0:Lcom/android/server/am/ActiveServices;
 
     iput-object p2, p0, Lcom/android/server/am/ActiveServices$4;->val$intent:Landroid/content/Intent;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 1664
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$4;->this$0:Lcom/android/server/am/ActiveServices;
 
     iget-object v0, v0, Lcom/android/server/am/ActiveServices;->mAm:Lcom/android/server/am/ActivityManagerService;
@@ -64,6 +61,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1665
     return-void
 .end method

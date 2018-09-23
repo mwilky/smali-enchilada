@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$BinderService;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
-    .line 1601
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$13;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$13;->val$recorderAddress:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1604
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$13;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -54,17 +51,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1605
     const-string v0, "HdmiControlService"
 
     const-string v1, "TV device is not enabled."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1606
     return-void
 
-    .line 1608
     :cond_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$13;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
@@ -78,6 +72,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->stopOneTouchRecord(I)V
 
-    .line 1609
     return-void
 .end method

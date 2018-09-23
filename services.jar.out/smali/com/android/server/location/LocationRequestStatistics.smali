@@ -33,10 +33,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -50,18 +48,11 @@
 # virtual methods
 .method public startRequesting(Ljava/lang/String;Ljava/lang/String;JZ)V
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "providerName"    # Ljava/lang/String;
-    .param p3, "intervalMs"    # J
-    .param p5, "isForeground"    # Z
 
-    .line 29
     new-instance v0, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
 
     invoke-direct {v0, p1, p2}, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 30
-    .local v0, "key":Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
     iget-object v1, p0, Lcom/android/server/location/LocationRequestStatistics;->statistics:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -70,11 +61,8 @@
 
     check-cast v1, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
 
-    .line 31
-    .local v1, "stats":Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
     if-nez v1, :cond_0
 
-    .line 32
     new-instance v2, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
 
     const/4 v3, 0x0
@@ -83,34 +71,25 @@
 
     move-object v1, v2
 
-    .line 33
     iget-object v2, p0, Lcom/android/server/location/LocationRequestStatistics;->statistics:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35
     :cond_0
     invoke-static {v1, p3, p4}, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;->access$100(Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;J)V
 
-    .line 36
     invoke-static {v1, p5}, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;->access$200(Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;Z)V
 
-    .line 37
     return-void
 .end method
 
 .method public stopRequesting(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "providerName"    # Ljava/lang/String;
 
-    .line 46
     new-instance v0, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
 
     invoke-direct {v0, p1, p2}, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 47
-    .local v0, "key":Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
     iget-object v1, p0, Lcom/android/server/location/LocationRequestStatistics;->statistics:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -119,31 +98,21 @@
 
     check-cast v1, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
 
-    .line 48
-    .local v1, "stats":Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
     if-eqz v1, :cond_0
 
-    .line 49
     invoke-static {v1}, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;->access$300(Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;)V
 
-    .line 51
     :cond_0
     return-void
 .end method
 
 .method public updateForeground(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "providerName"    # Ljava/lang/String;
-    .param p3, "isForeground"    # Z
 
-    .line 60
     new-instance v0, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
 
     invoke-direct {v0, p1, p2}, Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 61
-    .local v0, "key":Lcom/android/server/location/LocationRequestStatistics$PackageProviderKey;
     iget-object v1, p0, Lcom/android/server/location/LocationRequestStatistics;->statistics:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -152,14 +121,10 @@
 
     check-cast v1, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
 
-    .line 62
-    .local v1, "stats":Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;
     if-eqz v1, :cond_0
 
-    .line 63
     invoke-static {v1, p3}, Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;->access$200(Lcom/android/server/location/LocationRequestStatistics$PackageStatistics;Z)V
 
-    .line 65
     :cond_0
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/Watchdog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/Watchdog;
 
-    .line 226
     iput-object p1, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 229
     const-string/jumbo v0, "nowait"
 
     const/4 v1, 0x0
@@ -49,17 +44,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 230
     iget-object v0, p0, Lcom/android/server/Watchdog$RebootRequestReceiver;->this$0:Lcom/android/server/Watchdog;
 
     const-string v1, "Received ACTION_REBOOT broadcast"
 
     invoke-virtual {v0, v1}, Lcom/android/server/Watchdog;->rebootSystem(Ljava/lang/String;)V
 
-    .line 231
     return-void
 
-    .line 233
     :cond_0
     const-string v0, "Watchdog"
 
@@ -79,6 +71,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 234
     return-void
 .end method

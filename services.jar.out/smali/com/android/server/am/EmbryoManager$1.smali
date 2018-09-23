@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/EmbryoManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/EmbryoManager;
 
-    .line 85
     iput-object p1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 89
     const-string v0, "EmbryoManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -61,13 +56,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 90
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 91
-    .local v0, "action":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-static {v1}, Lcom/android/server/am/EmbryoManager;->access$100(Lcom/android/server/am/EmbryoManager;)Landroid/os/PowerManager;
@@ -86,7 +78,6 @@
 
     goto :goto_0
 
-    .line 94
     :cond_0
     const-string v1, "EmbryoManager"
 
@@ -116,7 +107,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-static {v1}, Lcom/android/server/am/EmbryoManager;->access$100(Lcom/android/server/am/EmbryoManager;)Landroid/os/PowerManager;
@@ -129,7 +119,6 @@
 
     if-nez v1, :cond_2
 
-    .line 99
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-static {v1}, Lcom/android/server/am/EmbryoManager;->access$200(Lcom/android/server/am/EmbryoManager;)J
@@ -160,7 +149,6 @@
 
     if-lez v1, :cond_2
 
-    .line 101
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
@@ -170,7 +158,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/am/Uterus;->scheduleBackup()V
 
-    .line 102
     iget-object v1, p0, Lcom/android/server/am/EmbryoManager$1;->this$0:Lcom/android/server/am/EmbryoManager;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -179,11 +166,9 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/am/EmbryoManager;->access$202(Lcom/android/server/am/EmbryoManager;J)J
 
-    .line 105
     :cond_2
     return-void
 
-    .line 92
     :cond_3
     :goto_0
     return-void

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,52 +39,39 @@
 # virtual methods
 .method public compare(Landroid/content/pm/ResolveInfo;Landroid/content/pm/ResolveInfo;)I
     .locals 4
-    .param p1, "lhs"    # Landroid/content/pm/ResolveInfo;
-    .param p2, "rhs"    # Landroid/content/pm/ResolveInfo;
 
-    .line 357
     if-ne p1, p2, :cond_0
 
-    .line 358
     const/4 v0, 0x0
 
     return v0
 
-    .line 360
     :cond_0
     invoke-static {p1}, Lcom/android/server/search/Searchables;->access$000(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v0
 
-    .line 361
-    .local v0, "lhsSystem":Z
     invoke-static {p2}, Lcom/android/server/search/Searchables;->access$000(Landroid/content/pm/ResolveInfo;)Z
 
     move-result v1
 
-    .line 363
-    .local v1, "rhsSystem":Z
     if-eqz v0, :cond_1
 
     if-nez v1, :cond_1
 
-    .line 364
     const/4 v2, -0x1
 
     return v2
 
-    .line 365
     :cond_1
     if-eqz v1, :cond_2
 
     if-nez v0, :cond_2
 
-    .line 366
     const/4 v2, 0x1
 
     return v2
 
-    .line 373
     :cond_2
     iget v2, p2, Landroid/content/pm/ResolveInfo;->priority:I
 
@@ -99,7 +85,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 354
     check-cast p1, Landroid/content/pm/ResolveInfo;
 
     check-cast p2, Landroid/content/pm/ResolveInfo;

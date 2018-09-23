@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 5181
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$13;->val$awakenFromDreams:Z
@@ -42,12 +40,9 @@
 # virtual methods
 .method public onKeyguardExitResult(Z)V
     .locals 3
-    .param p1, "success"    # Z
 
-    .line 5184
     if-eqz p1, :cond_0
 
-    .line 5185
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$13;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const/4 v1, 0x1
@@ -56,7 +51,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
 
-    .line 5187
     :cond_0
     return-void
 .end method

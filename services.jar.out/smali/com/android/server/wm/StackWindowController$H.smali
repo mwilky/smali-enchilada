@@ -33,7 +33,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/ref/WeakReference;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,14 +44,10 @@
         }
     .end annotation
 
-    .line 399
-    .local p1, "controller":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Lcom/android/server/wm/StackWindowController;>;"
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 400
     iput-object p1, p0, Lcom/android/server/wm/StackWindowController$H;->mController:Ljava/lang/ref/WeakReference;
 
-    .line 401
     return-void
 .end method
 
@@ -60,9 +55,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 405
     iget-object v0, p0, Lcom/android/server/wm/StackWindowController$H;->mController:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -71,11 +64,8 @@
 
     check-cast v0, Lcom/android/server/wm/StackWindowController;
 
-    .line 406
-    .local v0, "controller":Lcom/android/server/wm/StackWindowController;
     if-eqz v0, :cond_0
 
-    .line 407
     iget-object v1, v0, Lcom/android/server/wm/StackWindowController;->mListener:Lcom/android/server/wm/WindowContainerListener;
 
     check-cast v1, Lcom/android/server/wm/StackWindowListener;
@@ -85,15 +75,11 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 408
-    .local v1, "listener":Lcom/android/server/wm/StackWindowListener;
     :goto_0
     if-nez v1, :cond_1
 
-    .line 409
     return-void
 
-    .line 411
     :cond_1
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -101,7 +87,6 @@
 
     goto :goto_1
 
-    .line 413
     :cond_2
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -109,7 +94,6 @@
 
     invoke-interface {v1, v2}, Lcom/android/server/wm/StackWindowListener;->requestResize(Landroid/graphics/Rect;)V
 
-    .line 416
     :goto_1
     return-void
 .end method

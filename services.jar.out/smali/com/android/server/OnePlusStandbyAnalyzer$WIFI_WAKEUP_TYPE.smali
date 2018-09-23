@@ -62,7 +62,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 115
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "uc"
@@ -73,7 +72,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->uc:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 116
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string v1, "bc"
@@ -84,7 +82,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->bc:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 117
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "v4_mc"
@@ -95,7 +92,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->v4_mc:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 118
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "v6_mc"
@@ -106,7 +102,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->v6_mc:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 119
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "ra"
@@ -117,7 +112,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->ra:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 120
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "ns"
@@ -128,7 +122,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->ns:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 121
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "na"
@@ -139,7 +132,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->na:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 122
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "pno_match"
@@ -150,7 +142,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->pno_match:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 123
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "pno_complete"
@@ -161,7 +152,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->pno_complete:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 124
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string v1, "gscan"
@@ -172,7 +162,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->gscan:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 125
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "low_rssi"
@@ -183,7 +172,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->low_rssi:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 126
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "rssi_breach"
@@ -194,10 +182,9 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->rssi_breach:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 127
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    const-string/jumbo v1, "icmp"
+    const-string v1, "icmp"
 
     const/16 v14, 0xc
 
@@ -205,10 +192,9 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->icmp:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 128
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    const-string/jumbo v1, "icmpv6"
+    const-string v1, "icmpv6"
 
     const/16 v15, 0xd
 
@@ -216,7 +202,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->icmpv6:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 129
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "oem"
@@ -227,7 +212,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->oem:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 130
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     const-string/jumbo v1, "unspecified"
@@ -238,7 +222,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->unspecified:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 114
     const/16 v0, 0x10
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
@@ -326,7 +309,6 @@
         }
     .end annotation
 
-    .line 114
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -334,9 +316,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 114
     const-class v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -351,7 +331,6 @@
 .method public static values()[Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
     .locals 1
 
-    .line 114
     sget-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
     invoke-virtual {v0}, [Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;->clone()Ljava/lang/Object;

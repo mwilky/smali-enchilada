@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    .line 275
     iput-object p1, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$2;->val$activity:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,13 +36,10 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .line 278
     iget-object v0, p0, Lcom/oneplus/sdk/upgradecenter/utils/UpgradeCenterUtils$2;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 279
     return-void
 .end method

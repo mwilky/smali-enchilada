@@ -26,50 +26,38 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 133
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;-><init>(Z)V
 
-    .line 134
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;)V
     .locals 1
-    .param p1, "cfg"    # Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;
 
-    .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 149
     iget-boolean v0, p1, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
     iput-boolean v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
-    .line 150
     iget-object v0, p1, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->hostname:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->hostname:Ljava/lang/String;
 
-    .line 151
     iget-object v0, p1, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->ips:[Ljava/net/InetAddress;
 
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->ips:[Ljava/net/InetAddress;
 
-    .line 152
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;[Ljava/net/InetAddress;)V
     .locals 1
-    .param p1, "hostname"    # Ljava/lang/String;
-    .param p2, "ips"    # [Ljava/net/InetAddress;
 
-    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 143
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -78,7 +66,6 @@
 
     iput-boolean v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
-    .line 144
     iget-boolean v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
     if-eqz v0, :cond_0
@@ -93,7 +80,6 @@
     :goto_0
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->hostname:Ljava/lang/String;
 
-    .line 145
     if-eqz p2, :cond_1
 
     move-object v0, p2
@@ -108,33 +94,26 @@
     :goto_1
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->ips:[Ljava/net/InetAddress;
 
-    .line 146
     return-void
 .end method
 
 .method public constructor <init>(Z)V
     .locals 1
-    .param p1, "useTls"    # Z
 
-    .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 137
     iput-boolean p1, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
-    .line 138
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->hostname:Ljava/lang/String;
 
-    .line 139
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/net/InetAddress;
 
     iput-object v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->ips:[Ljava/net/InetAddress;
 
-    .line 140
     return-void
 .end method
 
@@ -143,7 +122,6 @@
 .method public inStrictMode()Z
     .locals 1
 
-    .line 155
     iget-boolean v0, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->useTls:Z
 
     if-eqz v0, :cond_0
@@ -170,7 +148,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -205,7 +182,6 @@
 
     iget-object v1, p0, Lcom/android/server/connectivity/DnsManager$PrivateDnsConfig;->ips:[Ljava/net/InetAddress;
 
-    .line 160
     invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -220,6 +196,5 @@
 
     move-result-object v0
 
-    .line 159
     return-object v0
 .end method

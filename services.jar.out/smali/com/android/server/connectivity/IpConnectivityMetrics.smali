@@ -138,7 +138,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 57
     const-class v0, Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -147,7 +146,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->TAG:Ljava/lang/String;
 
-    .line 356
     sget-object v0, Lcom/android/server/connectivity/-$$Lambda$IpConnectivityMetrics$B0oR30xfeM300kIzUVaV_zUNLCg;->INSTANCE:Lcom/android/server/connectivity/-$$Lambda$IpConnectivityMetrics$B0oR30xfeM300kIzUVaV_zUNLCg;
 
     sput-object v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->READ_BUFFER_SIZE:Ljava/util/function/ToIntFunction;
@@ -157,20 +155,16 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "ctx"    # Landroid/content/Context;
 
-    .line 128
     sget-object v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->READ_BUFFER_SIZE:Ljava/util/function/ToIntFunction;
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/connectivity/IpConnectivityMetrics;-><init>(Landroid/content/Context;Ljava/util/function/ToIntFunction;)V
 
-    .line 129
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/util/function/ToIntFunction;)V
     .locals 3
-    .param p1, "ctx"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -181,25 +175,20 @@
         }
     .end annotation
 
-    .line 122
-    .local p2, "capacityGetter":Ljava/util/function/ToIntFunction;, "Ljava/util/function/ToIntFunction<Landroid/content/Context;>;"
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 86
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mLock:Ljava/lang/Object;
 
-    .line 89
     new-instance v0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;
 
     invoke-direct {v0, p0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;-><init>(Lcom/android/server/connectivity/IpConnectivityMetrics;)V
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->impl:Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;
 
-    .line 97
     new-instance v0, Lcom/android/internal/util/RingBuffer;
 
     const-class v1, Landroid/net/ConnectivityMetricsEvent;
@@ -210,39 +199,30 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mEventLog:Lcom/android/internal/util/RingBuffer;
 
-    .line 113
     nop
 
-    .line 114
     invoke-static {}, Lcom/android/server/connectivity/IpConnectivityMetrics;->makeRateLimitingBuckets()Landroid/util/ArrayMap;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuckets:Landroid/util/ArrayMap;
 
-    .line 118
     new-instance v0, Lcom/android/server/connectivity/DefaultNetworkMetrics;
 
     invoke-direct {v0}, Lcom/android/server/connectivity/DefaultNetworkMetrics;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDefaultNetworkMetrics:Lcom/android/server/connectivity/DefaultNetworkMetrics;
 
-    .line 123
     iput-object p2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mCapacityGetter:Ljava/util/function/ToIntFunction;
 
-    .line 124
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->initBuffer()V
 
-    .line 125
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/server/connectivity/IpConnectivityMetrics;Landroid/net/ConnectivityMetricsEvent;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
-    .param p1, "x1"    # Landroid/net/ConnectivityMetricsEvent;
 
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->append(Landroid/net/ConnectivityMetricsEvent;)I
 
     move-result v0
@@ -252,10 +232,7 @@
 
 .method static synthetic access$200(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
-    .param p1, "x1"    # Ljava/io/PrintWriter;
 
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->cmdFlush(Ljava/io/PrintWriter;)V
 
     return-void
@@ -263,10 +240,7 @@
 
 .method static synthetic access$300(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
-    .param p1, "x1"    # Ljava/io/PrintWriter;
 
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->cmdListAsProto(Ljava/io/PrintWriter;)V
 
     return-void
@@ -274,10 +248,7 @@
 
 .method static synthetic access$400(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
-    .param p1, "x1"    # Ljava/io/PrintWriter;
 
-    .line 56
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->cmdList(Ljava/io/PrintWriter;)V
 
     return-void
@@ -285,20 +256,16 @@
 
 .method private append(Landroid/net/ConnectivityMetricsEvent;)I
     .locals 3
-    .param p1, "event"    # Landroid/net/ConnectivityMetricsEvent;
 
-    .line 164
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 165
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mEventLog:Lcom/android/internal/util/RingBuffer;
 
     invoke-virtual {v1, p1}, Lcom/android/internal/util/RingBuffer;->append(Ljava/lang/Object;)V
 
-    .line 166
     iget v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mCapacity:I
 
     iget-object v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuffer:Ljava/util/ArrayList;
@@ -309,16 +276,12 @@
 
     sub-int/2addr v1, v2
 
-    .line 167
-    .local v1, "left":I
     if-nez p1, :cond_0
 
-    .line 168
     monitor-exit v0
 
     return v1
 
-    .line 170
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->isRateLimited(Landroid/net/ConnectivityMetricsEvent;)Z
 
@@ -326,46 +289,38 @@
 
     if-eqz v2, :cond_1
 
-    .line 172
     const/4 v2, -0x1
 
     monitor-exit v0
 
     return v2
 
-    .line 174
     :cond_1
     if-nez v1, :cond_2
 
-    .line 175
     iget v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDropped:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDropped:I
 
-    .line 176
     const/4 v2, 0x0
 
     monitor-exit v0
 
     return v2
 
-    .line 178
     :cond_2
     iget-object v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuffer:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 179
     add-int/lit8 v2, v1, -0x1
 
     monitor-exit v0
 
     return v2
 
-    .line 180
-    .end local v1    # "left":I
     :catchall_0
     move-exception v1
 
@@ -378,35 +333,27 @@
 
 .method private cmdFlush(Ljava/io/PrintWriter;)V
     .locals 1
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 221
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->flushEncodedOutput()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 222
     return-void
 .end method
 
 .method private cmdList(Ljava/io/PrintWriter;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 229
     const-string/jumbo v0, "metrics events:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 230
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->getEvents()Ljava/util/List;
 
     move-result-object v0
 
-    .line 231
-    .local v0, "events":Ljava/util/List;, "Ljava/util/List<Landroid/net/ConnectivityMetricsEvent;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -424,60 +371,46 @@
 
     check-cast v2, Landroid/net/ConnectivityMetricsEvent;
 
-    .line 232
-    .local v2, "ev":Landroid/net/ConnectivityMetricsEvent;
     invoke-virtual {v2}, Landroid/net/ConnectivityMetricsEvent;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 233
-    .end local v2    # "ev":Landroid/net/ConnectivityMetricsEvent;
     goto :goto_0
 
-    .line 234
     :cond_0
     const-string v1, ""
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 235
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     if-eqz v1, :cond_1
 
-    .line 236
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/connectivity/NetdEventListenerService;->list(Ljava/io/PrintWriter;)V
 
-    .line 238
     :cond_1
     const-string v1, ""
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 239
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDefaultNetworkMetrics:Lcom/android/server/connectivity/DefaultNetworkMetrics;
 
     invoke-virtual {v1, p1}, Lcom/android/server/connectivity/DefaultNetworkMetrics;->listEvents(Ljava/io/PrintWriter;)V
 
-    .line 240
     return-void
 .end method
 
 .method private cmdListAsProto(Ljava/io/PrintWriter;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 246
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->getEvents()Ljava/util/List;
 
     move-result-object v0
 
-    .line 247
-    .local v0, "events":Ljava/util/List;, "Ljava/util/List<Landroid/net/ConnectivityMetricsEvent;>;"
     invoke-static {v0}, Lcom/android/server/connectivity/IpConnectivityEventBuilder;->toProto(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v1
@@ -499,86 +432,65 @@
 
     check-cast v2, Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;
 
-    .line 248
-    .local v2, "ev":Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;
     invoke-virtual {v2}, Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 249
-    .end local v2    # "ev":Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;
     goto :goto_0
 
-    .line 250
     :cond_0
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     if-eqz v1, :cond_1
 
-    .line 251
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/connectivity/NetdEventListenerService;->listAsProtos(Ljava/io/PrintWriter;)V
 
-    .line 253
     :cond_1
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDefaultNetworkMetrics:Lcom/android/server/connectivity/DefaultNetworkMetrics;
 
     invoke-virtual {v1, p1}, Lcom/android/server/connectivity/DefaultNetworkMetrics;->listEventsAsProto(Ljava/io/PrintWriter;)V
 
-    .line 254
     return-void
 .end method
 
 .method private flushEncodedOutput()Ljava/lang/String;
     .locals 6
 
-    .line 191
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 192
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuffer:Ljava/util/ArrayList;
 
-    .line 193
-    .local v1, "events":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/net/ConnectivityMetricsEvent;>;"
     iget v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDropped:I
 
-    .line 194
-    .local v2, "dropped":I
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->initBuffer()V
 
-    .line 195
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 197
     invoke-static {v1}, Lcom/android/server/connectivity/IpConnectivityEventBuilder;->toProto(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 199
-    .local v0, "protoEvents":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;>;"
     iget-object v3, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDefaultNetworkMetrics:Lcom/android/server/connectivity/DefaultNetworkMetrics;
 
     invoke-virtual {v3, v0}, Lcom/android/server/connectivity/DefaultNetworkMetrics;->flushEvents(Ljava/util/List;)V
 
-    .line 201
     iget-object v3, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     if-eqz v3, :cond_0
 
-    .line 202
     iget-object v3, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     invoke-virtual {v3, v0}, Lcom/android/server/connectivity/NetdEventListenerService;->flushStatistics(Ljava/util/List;)V
 
-    .line 207
     :cond_0
     :try_start_1
     invoke-static {v2, v0}, Lcom/android/server/connectivity/IpConnectivityEventBuilder;->serialize(ILjava/util/List;)[B
@@ -587,14 +499,10 @@
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 211
-    .local v3, "data":[B
     nop
 
-    .line 210
     nop
 
-    .line 213
     const/4 v4, 0x0
 
     invoke-static {v3, v4}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
@@ -603,29 +511,19 @@
 
     return-object v4
 
-    .line 208
-    .end local v3    # "data":[B
     :catch_0
     move-exception v3
 
-    .line 209
-    .local v3, "e":Ljava/io/IOException;
     sget-object v4, Lcom/android/server/connectivity/IpConnectivityMetrics;->TAG:Ljava/lang/String;
 
     const-string v5, "could not serialize events"
 
     invoke-static {v4, v5, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 210
     const-string v4, ""
 
     return-object v4
 
-    .line 195
-    .end local v0    # "protoEvents":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/connectivity/metrics/nano/IpConnectivityLogClass$IpConnectivityEvent;>;"
-    .end local v1    # "events":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/net/ConnectivityMetricsEvent;>;"
-    .end local v2    # "dropped":I
-    .end local v3    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v1
 
@@ -648,12 +546,10 @@
         }
     .end annotation
 
-    .line 260
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 261
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mEventLog:Lcom/android/internal/util/RingBuffer;
 
@@ -671,7 +567,6 @@
 
     return-object v1
 
-    .line 262
     :catchall_0
     move-exception v1
 
@@ -685,25 +580,21 @@
 .method private initBuffer()V
     .locals 3
 
-    .line 155
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 156
     const/4 v1, 0x0
 
     :try_start_0
     iput v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDropped:I
 
-    .line 157
     invoke-virtual {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->bufferCapacity()I
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mCapacity:I
 
-    .line 158
     new-instance v1, Ljava/util/ArrayList;
 
     iget v2, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mCapacity:I
@@ -712,13 +603,10 @@
 
     iput-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuffer:Ljava/util/ArrayList;
 
-    .line 159
     monitor-exit v0
 
-    .line 160
     return-void
 
-    .line 159
     :catchall_0
     move-exception v1
 
@@ -731,9 +619,7 @@
 
 .method private isRateLimited(Landroid/net/ConnectivityMetricsEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/net/ConnectivityMetricsEvent;
 
-    .line 184
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mBuckets:Landroid/util/ArrayMap;
 
     iget-object v1, p1, Landroid/net/ConnectivityMetricsEvent;->data:Landroid/os/Parcelable;
@@ -748,8 +634,6 @@
 
     check-cast v0, Lcom/android/internal/util/TokenBucket;
 
-    .line 185
-    .local v0, "tb":Lcom/android/internal/util/TokenBucket;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lcom/android/internal/util/TokenBucket;->get()Z
@@ -771,9 +655,7 @@
 
 .method static synthetic lambda$static$0(Landroid/content/Context;)I
     .locals 3
-    .param p0, "ctx"    # Landroid/content/Context;
 
-    .line 357
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -786,14 +668,10 @@
 
     move-result v0
 
-    .line 359
-    .local v0, "size":I
     if-gtz v0, :cond_0
 
-    .line 360
     return v2
 
-    .line 362
     :cond_0
     const/16 v1, 0x4e20
 
@@ -817,13 +695,10 @@
         }
     .end annotation
 
-    .line 366
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 368
-    .local v0, "map":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Class<*>;Lcom/android/internal/util/TokenBucket;>;"
     const-class v1, Landroid/net/metrics/ApfProgramEvent;
 
     new-instance v2, Lcom/android/internal/util/TokenBucket;
@@ -836,7 +711,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 369
     return-object v0
 .end method
 
@@ -847,7 +721,6 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 151
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mCapacityGetter:Ljava/util/function/ToIntFunction;
 
     invoke-virtual {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->getContext()Landroid/content/Context;
@@ -863,14 +736,11 @@
 
 .method public onBootPhase(I)V
     .locals 3
-    .param p1, "phase"    # I
 
-    .line 138
     const/16 v0, 0x1f4
 
     if-ne p1, v0, :cond_0
 
-    .line 140
     new-instance v0, Lcom/android/server/connectivity/NetdEventListenerService;
 
     invoke-virtual {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->getContext()Landroid/content/Context;
@@ -881,14 +751,12 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
-    .line 142
     const-string v0, "connmetrics"
 
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->impl:Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     const-string/jumbo v0, "netd_listener"
@@ -897,7 +765,6 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 145
     const-class v0, Lcom/android/server/connectivity/IpConnectivityMetrics$Logger;
 
     new-instance v1, Lcom/android/server/connectivity/IpConnectivityMetrics$LoggerImpl;
@@ -908,7 +775,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 147
     :cond_0
     return-void
 .end method
@@ -916,6 +782,5 @@
 .method public onStart()V
     .locals 0
 
-    .line 134
     return-void
 .end method

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/broadcastradio/hal2/RadioModule;Landroid/hardware/radio/IAnnouncementListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/broadcastradio/hal2/RadioModule;
 
-    .line 109
     iput-object p1, p0, Lcom/android/server/broadcastradio/hal2/RadioModule$1;->this$0:Lcom/android/server/broadcastradio/hal2/RadioModule;
 
     iput-object p2, p0, Lcom/android/server/broadcastradio/hal2/RadioModule$1;->val$listener:Landroid/hardware/radio/IAnnouncementListener;
@@ -37,9 +35,7 @@
 
 .method static synthetic lambda$onListUpdated$0(Landroid/hardware/broadcastradio/V2_0/Announcement;)Landroid/hardware/radio/Announcement;
     .locals 1
-    .param p0, "a"    # Landroid/hardware/broadcastradio/V2_0/Announcement;
 
-    .line 113
     invoke-static {p0}, Lcom/android/server/broadcastradio/hal2/Convert;->announcementFromHal(Landroid/hardware/broadcastradio/V2_0/Announcement;)Landroid/hardware/radio/Announcement;
 
     move-result-object v0
@@ -66,8 +62,6 @@
         }
     .end annotation
 
-    .line 112
-    .local p1, "hwAnnouncements":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/hardware/broadcastradio/V2_0/Announcement;>;"
     iget-object v0, p0, Lcom/android/server/broadcastradio/hal2/RadioModule$1;->val$listener:Landroid/hardware/radio/IAnnouncementListener;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->stream()Ljava/util/stream/Stream;
@@ -76,7 +70,6 @@
 
     sget-object v2, Lcom/android/server/broadcastradio/hal2/-$$Lambda$RadioModule$1$WyDVzz-rauof7mi7PTqGNFI3b3E;->INSTANCE:Lcom/android/server/broadcastradio/hal2/-$$Lambda$RadioModule$1$WyDVzz-rauof7mi7PTqGNFI3b3E;
 
-    .line 113
     invoke-interface {v1, v2}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
 
     move-result-object v1
@@ -91,9 +84,7 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 112
     invoke-interface {v0, v1}, Landroid/hardware/radio/IAnnouncementListener;->onListUpdated(Ljava/util/List;)V
 
-    .line 114
     return-void
 .end method

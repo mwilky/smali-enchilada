@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/InputMethodManagerService;
 
-    .line 382
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$2;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Landroid/service/vr/IVrStateCallbacks$Stub;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onVrStateChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 385
     if-nez p1, :cond_0
 
-    .line 386
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$2;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-static {v0}, Lcom/android/server/InputMethodManagerService;->access$000(Lcom/android/server/InputMethodManagerService;)V
 
-    .line 388
     :cond_0
     return-void
 .end method

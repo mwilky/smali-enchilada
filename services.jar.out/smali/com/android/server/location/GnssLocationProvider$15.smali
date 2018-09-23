@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssLocationProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssLocationProvider;
 
-    .line 2121
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$15;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getGnssMetricsAsProtoString()Ljava/lang/String;
     .locals 1
 
-    .line 2124
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$15;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$3600(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/internal/location/gnssmetrics/GnssMetrics;

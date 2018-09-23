@@ -21,17 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Vpn;Landroid/os/Looper;Landroid/content/Context;Ljava/lang/String;Landroid/net/NetworkInfo;Landroid/net/NetworkCapabilities;Landroid/net/LinkProperties;ILandroid/net/NetworkMisc;)V
     .locals 11
-    .param p1, "this$0"    # Lcom/android/server/connectivity/Vpn;
-    .param p2, "x0"    # Landroid/os/Looper;
-    .param p3, "x1"    # Landroid/content/Context;
-    .param p4, "x2"    # Ljava/lang/String;
-    .param p5, "x3"    # Landroid/net/NetworkInfo;
-    .param p6, "x4"    # Landroid/net/NetworkCapabilities;
-    .param p7, "x5"    # Landroid/net/LinkProperties;
-    .param p8, "x6"    # I
-    .param p9, "x7"    # Landroid/net/NetworkMisc;
 
-    .line 955
     move-object v9, p0
 
     move-object v10, p1
@@ -66,6 +56,5 @@
 .method public unwanted()V
     .locals 0
 
-    .line 959
     return-void
 .end method

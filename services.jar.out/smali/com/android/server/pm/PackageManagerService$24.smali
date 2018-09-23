@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 22425
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$24;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,17 @@
 # virtual methods
 .method public getMountMode(ILjava/lang/String;)I
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 22428
     invoke-static {p1}, Landroid/os/Process;->isIsolated(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 22429
     const/4 v0, 0x0
 
     return v0
 
-    .line 22431
     :cond_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$24;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -67,12 +60,10 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 22432
     const/4 v0, 0x1
 
     return v0
 
-    .line 22434
     :cond_1
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$24;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -84,12 +75,10 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 22435
     const/4 v0, 0x2
 
     return v0
 
-    .line 22437
     :cond_2
     const/4 v0, 0x3
 
@@ -98,10 +87,7 @@
 
 .method public hasExternalStorage(ILjava/lang/String;)Z
     .locals 1
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 22442
     const/4 v0, 0x1
 
     return v0

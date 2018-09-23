@@ -23,16 +23,11 @@
 # direct methods
 .method private constructor <init>(ILjava/lang/String;)V
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     iput p1, p0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;->userId:I
 
-    .line 75
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -41,16 +36,12 @@
 
     iput-object v0, p0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;->packageName:Ljava/lang/String;
 
-    .line 76
     return-void
 .end method
 
 .method public static of(ILjava/lang/String;)Lcom/android/server/pm/ShortcutUser$PackageWithUser;
     .locals 1
-    .param p0, "userId"    # I
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 79
     new-instance v0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/pm/ShortcutUser$PackageWithUser;-><init>(ILjava/lang/String;)V
@@ -60,9 +51,7 @@
 
 .method public static of(Lcom/android/server/pm/ShortcutPackageItem;)Lcom/android/server/pm/ShortcutUser$PackageWithUser;
     .locals 3
-    .param p0, "spi"    # Lcom/android/server/pm/ShortcutPackageItem;
 
-    .line 83
     new-instance v0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;
 
     invoke-virtual {p0}, Lcom/android/server/pm/ShortcutPackageItem;->getPackageUserId()I
@@ -82,26 +71,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 93
     instance-of v0, p1, Lcom/android/server/pm/ShortcutUser$PackageWithUser;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 94
     return v1
 
-    .line 96
     :cond_0
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;
 
-    .line 98
-    .local v0, "that":Lcom/android/server/pm/ShortcutUser$PackageWithUser;
     iget v2, p0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;->userId:I
 
     iget v3, v0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;->userId:I
@@ -129,7 +112,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 88
     iget-object v0, p0, Lcom/android/server/pm/ShortcutUser$PackageWithUser;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -146,7 +128,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 103
     const-string v0, "[Package: %d, %s]"
 
     const/4 v1, 0x2

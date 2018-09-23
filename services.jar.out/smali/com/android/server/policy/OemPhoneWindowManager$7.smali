@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 2034
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$7;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 2037
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$7;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2300(Lcom/android/server/policy/OemPhoneWindowManager;)Z
@@ -56,14 +53,12 @@
 
     if-nez v0, :cond_0
 
-    .line 2038
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$7;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2302(Lcom/android/server/policy/OemPhoneWindowManager;Z)Z
 
-    .line 2039
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$7;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     const/16 v1, 0xc
@@ -72,7 +67,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2400(Lcom/android/server/policy/OemPhoneWindowManager;ILandroid/view/KeyEvent;)V
 
-    .line 2041
     :cond_0
     return-void
 .end method

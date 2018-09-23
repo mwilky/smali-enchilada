@@ -10,21 +10,15 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
     if-eqz p1, :cond_0
 
-    .line 31
     iput-object p1, p0, Lcom/android/server/firewall/FilterFactory;->mTag:Ljava/lang/String;
 
-    .line 32
     return-void
 
-    .line 29
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -38,7 +32,6 @@
 .method public getTagName()Ljava/lang/String;
     .locals 1
 
-    .line 35
     iget-object v0, p0, Lcom/android/server/firewall/FilterFactory;->mTag:Ljava/lang/String;
 
     return-object v0

@@ -25,34 +25,25 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;Landroid/net/NetworkPolicy;I)V
     .locals 0
-    .param p2, "policy"    # Landroid/net/NetworkPolicy;
-    .param p3, "type"    # I
 
-    .line 5646
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5647
     invoke-direct {p0, p2, p3}, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->buildNotificationTag(Landroid/net/NetworkPolicy;I)Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mTag:Ljava/lang/String;
 
-    .line 5648
     iput p3, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mId:I
 
-    .line 5649
     return-void
 .end method
 
 .method private buildNotificationTag(Landroid/net/NetworkPolicy;I)Ljava/lang/String;
     .locals 2
-    .param p1, "policy"    # Landroid/net/NetworkPolicy;
-    .param p2, "type"    # I
 
-    .line 5669
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -86,16 +77,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 5653
     if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
-    .line 5654
     :cond_0
     instance-of v0, p1, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;
 
@@ -105,14 +93,11 @@
 
     return v0
 
-    .line 5655
     :cond_1
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;
 
-    .line 5656
-    .local v0, "that":Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mTag:Ljava/lang/String;
 
     iget-object v2, v0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mTag:Ljava/lang/String;
@@ -127,7 +112,6 @@
 .method public getId()I
     .locals 1
 
-    .line 5677
     iget v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mId:I
 
     return v0
@@ -136,7 +120,6 @@
 .method public getTag()Ljava/lang/String;
     .locals 1
 
-    .line 5673
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$NotificationId;->mTag:Ljava/lang/String;
 
     return-object v0
@@ -145,7 +128,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 5661
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;

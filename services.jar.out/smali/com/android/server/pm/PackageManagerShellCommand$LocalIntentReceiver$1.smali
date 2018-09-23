@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;
 
-    .line 2967
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver$1;->this$0:Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;
 
     invoke-direct {p0}, Landroid/content/IIntentSender$Stub;-><init>()V
@@ -35,15 +33,7 @@
 # virtual methods
 .method public send(ILandroid/content/Intent;Ljava/lang/String;Landroid/os/IBinder;Landroid/content/IIntentReceiver;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "code"    # I
-    .param p2, "intent"    # Landroid/content/Intent;
-    .param p3, "resolvedType"    # Ljava/lang/String;
-    .param p4, "whitelistToken"    # Landroid/os/IBinder;
-    .param p5, "finishedReceiver"    # Landroid/content/IIntentReceiver;
-    .param p6, "requiredPermission"    # Ljava/lang/String;
-    .param p7, "options"    # Landroid/os/Bundle;
 
-    .line 2972
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver$1;->this$0:Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;
 
@@ -59,18 +49,13 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2975
     nop
 
-    .line 2976
     return-void
 
-    .line 2973
     :catch_0
     move-exception v0
 
-    .line 2974
-    .local v0, "e":Ljava/lang/InterruptedException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

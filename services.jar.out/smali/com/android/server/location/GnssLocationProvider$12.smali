@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssLocationProvider;Landroid/location/GnssNavigationMessage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssLocationProvider;
 
-    .line 1992
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$12;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     iput-object p2, p0, Lcom/android/server/location/GnssLocationProvider$12;->val$event:Landroid/location/GnssNavigationMessage;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1995
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$12;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$2900(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/server/location/GnssNavigationMessageProvider;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/location/GnssNavigationMessageProvider;->onNavigationMessageAvailable(Landroid/location/GnssNavigationMessage;)V
 
-    .line 1996
     return-void
 .end method

@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 3025
     invoke-static {}, Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;->values()[Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;
 
     move-result-object v0
@@ -76,7 +75,6 @@
     :catch_1
     move-exception v2
 
-    .line 2693
     :goto_1
     invoke-static {}, Lcom/android/server/ConnectivityService$UnneededFor;->values()[Lcom/android/server/ConnectivityService$UnneededFor;
 

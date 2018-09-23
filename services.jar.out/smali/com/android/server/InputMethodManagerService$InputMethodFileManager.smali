@@ -78,7 +78,6 @@
 # direct methods
 .method public constructor <init>(Ljava/util/HashMap;I)V
     .locals 5
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,27 +88,20 @@
         }
     .end annotation
 
-    .line 4379
-    .local p1, "methodMap":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/view/inputmethod/InputMethodInfo;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4377
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
-    .line 4380
     if-eqz p1, :cond_3
 
-    .line 4383
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mMethodMap:Ljava/util/HashMap;
 
-    .line 4384
     if-nez p2, :cond_0
 
-    .line 4385
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
@@ -122,14 +114,11 @@
 
     goto :goto_0
 
-    .line 4386
     :cond_0
     invoke-static {p2}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v0
 
-    .line 4387
-    .local v0, "systemDir":Ljava/io/File;
     :goto_0
     new-instance v1, Ljava/io/File;
 
@@ -137,8 +126,6 @@
 
     invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4388
-    .local v1, "inputMethodDir":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -151,7 +138,6 @@
 
     if-nez v2, :cond_1
 
-    .line 4389
     const-string v2, "InputMethodManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -174,7 +160,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4391
     :cond_1
     new-instance v2, Ljava/io/File;
 
@@ -182,8 +167,6 @@
 
     invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4392
-    .local v2, "subtypeFile":Ljava/io/File;
     new-instance v3, Landroid/util/AtomicFile;
 
     const-string/jumbo v4, "input-subtypes"
@@ -192,14 +175,12 @@
 
     iput-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalInputMethodSubtypeFile:Landroid/util/AtomicFile;
 
-    .line 4393
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v3
 
     if-nez v3, :cond_2
 
-    .line 4395
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
     iget-object v4, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalInputMethodSubtypeFile:Landroid/util/AtomicFile;
@@ -208,7 +189,6 @@
 
     goto :goto_1
 
-    .line 4398
     :cond_2
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
@@ -216,14 +196,9 @@
 
     invoke-static {v3, v4}, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->readAdditionalInputMethodSubtypes(Ljava/util/HashMap;Landroid/util/AtomicFile;)V
 
-    .line 4401
     :goto_1
     return-void
 
-    .line 4381
-    .end local v0    # "systemDir":Ljava/io/File;
-    .end local v1    # "inputMethodDir":Ljava/io/File;
-    .end local v2    # "subtypeFile":Ljava/io/File;
     :cond_3
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -236,10 +211,7 @@
 
 .method static synthetic access$700(Lcom/android/server/InputMethodManagerService$InputMethodFileManager;Ljava/lang/String;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/InputMethodManagerService$InputMethodFileManager;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 4358
     invoke-direct {p0, p1}, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->deleteAllInputMethodSubtypes(Ljava/lang/String;)V
 
     return-void
@@ -247,20 +219,16 @@
 
 .method private deleteAllInputMethodSubtypes(Ljava/lang/String;)V
     .locals 4
-    .param p1, "imiId"    # Ljava/lang/String;
 
-    .line 4404
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 4405
     :try_start_0
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4406
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalInputMethodSubtypeFile:Landroid/util/AtomicFile;
@@ -269,13 +237,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->writeAdditionalInputMethodSubtypes(Ljava/util/HashMap;Landroid/util/AtomicFile;Ljava/util/HashMap;)V
 
-    .line 4408
     monitor-exit v0
 
-    .line 4409
     return-void
 
-    .line 4408
     :catchall_0
     move-exception v1
 
@@ -288,7 +253,6 @@
 
 .method private static readAdditionalInputMethodSubtypes(Ljava/util/HashMap;Landroid/util/AtomicFile;)V
     .locals 20
-    .param p1, "subtypesFile"    # Landroid/util/AtomicFile;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -302,22 +266,17 @@
         }
     .end annotation
 
-    .line 4494
-    .local p0, "allSubtypes":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
     move-object/from16 v1, p0
 
-    .line 4494
     if-eqz v1, :cond_f
 
     if-nez p1, :cond_0
 
     goto/16 :goto_7
 
-    .line 4495
     :cond_0
     invoke-virtual/range {p0 .. p0}, Ljava/util/HashMap;->clear()V
 
-    .line 4496
     :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
@@ -329,8 +288,6 @@
 
     move-object v3, v0
 
-    .line 4497
-    .local v3, "fis":Ljava/io/FileInputStream;
     const/4 v4, 0x0
 
     :try_start_1
@@ -338,8 +295,6 @@
 
     move-result-object v0
 
-    .line 4498
-    .local v0, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v5}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -348,13 +303,10 @@
 
     invoke-interface {v0, v3, v5}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 4499
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v5
 
-    .line 4501
-    .local v5, "type":I
     :goto_0
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -372,14 +324,11 @@
 
     goto :goto_0
 
-    .line 4503
     :cond_1
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 4504
-    .local v6, "firstNodeName":Ljava/lang/String;
     const-string/jumbo v9, "subtypes"
 
     invoke-virtual {v9, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -388,27 +337,18 @@
 
     if-eqz v9, :cond_c
 
-    .line 4507
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v9
 
-    .line 4508
-    .local v9, "depth":I
     const/4 v10, 0x0
 
-    .line 4509
-    .local v10, "currentImiId":Ljava/lang/String;
     move-object v11, v10
 
     move v10, v5
 
     move-object v5, v4
 
-    .line 4510
-    .local v5, "tempSubtypesArray":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
-    .local v10, "type":I
-    .local v11, "currentImiId":Ljava/lang/String;
     :goto_1
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -423,7 +363,6 @@
 
     if-ne v12, v13, :cond_2
 
-    .line 4511
     :try_start_2
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
@@ -437,28 +376,22 @@
     :cond_2
     if-eq v10, v7, :cond_a
 
-    .line 4512
     if-eq v10, v8, :cond_3
 
-    .line 4513
     nop
 
-    .line 4509
     move-object/from16 v16, v6
 
     move/from16 v17, v9
 
     goto/16 :goto_3
 
-    .line 4514
     :cond_3
     :try_start_3
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 4515
-    .local v12, "nodeName":Ljava/lang/String;
     const-string/jumbo v13, "imi"
 
     invoke-virtual {v13, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -470,9 +403,8 @@
 
     if-eqz v13, :cond_5
 
-    .line 4516
     :try_start_4
-    const-string/jumbo v13, "id"
+    const-string v13, "id"
 
     invoke-interface {v0, v4, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -480,24 +412,20 @@
 
     move-object v11, v13
 
-    .line 4517
     invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v13
 
     if-eqz v13, :cond_4
 
-    .line 4518
     const-string v13, "InputMethodManagerService"
 
     const-string v14, "Invalid imi id found in subtypes.xml"
 
     invoke-static {v13, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4519
     goto :goto_1
 
-    .line 4521
     :cond_4
     new-instance v13, Ljava/util/ArrayList;
 
@@ -505,20 +433,17 @@
 
     move-object v5, v13
 
-    .line 4522
     invoke-virtual {v1, v11, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_4
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 4560
     move-object/from16 v16, v6
 
     move/from16 v17, v9
 
     goto/16 :goto_4
 
-    .line 4523
     :cond_5
     :try_start_5
     const-string/jumbo v13, "subtype"
@@ -529,7 +454,6 @@
 
     if-eqz v13, :cond_9
 
-    .line 4524
     invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v13
@@ -538,86 +462,63 @@
 
     if-nez v5, :cond_6
 
-    .line 4525
     move-object/from16 v16, v6
 
     move/from16 v17, v9
 
     goto/16 :goto_2
 
-    .line 4528
     :cond_6
-    const-string/jumbo v13, "icon"
+    const-string v13, "icon"
 
-    .line 4529
     invoke-interface {v0, v4, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 4528
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v13
 
-    .line 4530
-    .local v13, "icon":I
     const-string/jumbo v14, "label"
 
-    .line 4531
     invoke-interface {v0, v4, v14}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 4530
     invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v14
 
-    .line 4532
-    .local v14, "label":I
-    const-string/jumbo v15, "imeSubtypeLocale"
+    const-string v15, "imeSubtypeLocale"
 
-    .line 4533
     invoke-interface {v0, v4, v15}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 4534
-    .local v15, "imeSubtypeLocale":Ljava/lang/String;
     const-string/jumbo v7, "languageTag"
 
-    .line 4535
     invoke-interface {v0, v4, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 4536
-    .local v7, "languageTag":Ljava/lang/String;
-    const-string/jumbo v8, "imeSubtypeMode"
+    const-string v8, "imeSubtypeMode"
 
-    .line 4537
     invoke-interface {v0, v4, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 4538
-    .local v8, "imeSubtypeMode":Ljava/lang/String;
-    const-string/jumbo v4, "imeSubtypeExtraValue"
+    const-string v4, "imeSubtypeExtraValue"
 
-    .line 4539
     const/4 v1, 0x0
 
     invoke-interface {v0, v1, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4540
-    .local v4, "imeSubtypeExtraValue":Ljava/lang/String;
     const-string v1, "1"
 
     const-string/jumbo v2, "isAuxiliary"
 
-    .line 4541
     move-object/from16 v16, v6
 
     const/4 v6, 0x0
@@ -626,9 +527,6 @@
 
     move-result-object v2
 
-    .line 4540
-    .end local v6    # "firstNodeName":Ljava/lang/String;
-    .local v16, "firstNodeName":Ljava/lang/String;
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -637,13 +535,10 @@
 
     move-result v1
 
-    .line 4542
-    .local v1, "isAuxiliary":Z
     const-string v2, "1"
 
     const-string/jumbo v6, "isAsciiCapable"
 
-    .line 4543
     move/from16 v17, v9
 
     const/4 v9, 0x0
@@ -652,9 +547,6 @@
 
     move-result-object v6
 
-    .line 4542
-    .end local v9    # "depth":I
-    .local v17, "depth":I
     invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
@@ -663,57 +555,44 @@
 
     move-result v2
 
-    .line 4544
-    .local v2, "isAsciiCapable":Z
     new-instance v6, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     invoke-direct {v6}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;-><init>()V
 
-    .line 4545
     invoke-virtual {v6, v14}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeNameResId(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4546
     invoke-virtual {v6, v13}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeIconResId(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4547
     invoke-virtual {v6, v15}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeLocale(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4548
     invoke-virtual {v6, v7}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setLanguageTag(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4549
     invoke-virtual {v6, v8}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeMode(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4550
     invoke-virtual {v6, v4}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeExtraValue(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4551
     invoke-virtual {v6, v1}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setIsAuxiliary(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4552
     invoke-virtual {v6, v2}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setIsAsciiCapable(Z)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
     move-result-object v6
 
-    .line 4553
-    .local v6, "builder":Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
     const-string/jumbo v9, "subtypeId"
 
-    .line 4554
     move/from16 v18, v1
 
     const/4 v1, 0x0
@@ -722,20 +601,14 @@
 
     move-result-object v9
 
-    .line 4555
-    .end local v1    # "isAuxiliary":Z
-    .local v9, "subtypeIdString":Ljava/lang/String;
-    .local v18, "isAuxiliary":Z
     if-eqz v9, :cond_7
 
-    .line 4556
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v6, v1}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->setSubtypeId(I)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
 
-    .line 4558
     :cond_7
     invoke-virtual {v6}, Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;->build()Landroid/view/inputmethod/InputMethodSubtype;
 
@@ -743,36 +616,13 @@
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4558
-    .end local v2    # "isAsciiCapable":Z
-    .end local v4    # "imeSubtypeExtraValue":Ljava/lang/String;
-    .end local v6    # "builder":Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;
-    .end local v7    # "languageTag":Ljava/lang/String;
-    .end local v8    # "imeSubtypeMode":Ljava/lang/String;
-    .end local v9    # "subtypeIdString":Ljava/lang/String;
-    .end local v12    # "nodeName":Ljava/lang/String;
-    .end local v13    # "icon":I
-    .end local v14    # "label":I
-    .end local v15    # "imeSubtypeLocale":Ljava/lang/String;
-    .end local v18    # "isAuxiliary":Z
     goto :goto_4
 
-    .line 4525
-    .end local v16    # "firstNodeName":Ljava/lang/String;
-    .end local v17    # "depth":I
-    .local v6, "firstNodeName":Ljava/lang/String;
-    .local v9, "depth":I
-    .restart local v12    # "nodeName":Ljava/lang/String;
     :cond_8
     move-object/from16 v16, v6
 
     move/from16 v17, v9
 
-    .line 4525
-    .end local v6    # "firstNodeName":Ljava/lang/String;
-    .end local v9    # "depth":I
-    .restart local v16    # "firstNodeName":Ljava/lang/String;
-    .restart local v17    # "depth":I
     :goto_2
     const-string v1, "InputMethodManagerService"
 
@@ -795,15 +645,8 @@
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 4526
     nop
 
-    .line 4509
-    .end local v12    # "nodeName":Ljava/lang/String;
-    .end local v16    # "firstNodeName":Ljava/lang/String;
-    .end local v17    # "depth":I
-    .restart local v6    # "firstNodeName":Ljava/lang/String;
-    .restart local v9    # "depth":I
     :goto_3
     move-object/from16 v6, v16
 
@@ -817,28 +660,13 @@
 
     const/4 v8, 0x2
 
-    .line 4509
-    .end local v6    # "firstNodeName":Ljava/lang/String;
-    .end local v9    # "depth":I
-    .restart local v16    # "firstNodeName":Ljava/lang/String;
-    .restart local v17    # "depth":I
     goto/16 :goto_1
 
-    .line 4560
-    .end local v16    # "firstNodeName":Ljava/lang/String;
-    .end local v17    # "depth":I
-    .restart local v6    # "firstNodeName":Ljava/lang/String;
-    .restart local v9    # "depth":I
     :cond_9
     move-object/from16 v16, v6
 
     move/from16 v17, v9
 
-    .line 4509
-    .end local v6    # "firstNodeName":Ljava/lang/String;
-    .end local v9    # "depth":I
-    .restart local v16    # "firstNodeName":Ljava/lang/String;
-    .restart local v17    # "depth":I
     :goto_4
     move-object/from16 v6, v16
 
@@ -854,13 +682,6 @@
 
     goto/16 :goto_1
 
-    .line 4561
-    .end local v0    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v5    # "tempSubtypesArray":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
-    .end local v10    # "type":I
-    .end local v11    # "currentImiId":Ljava/lang/String;
-    .end local v16    # "firstNodeName":Ljava/lang/String;
-    .end local v17    # "depth":I
     :cond_a
     if-eqz v3, :cond_b
 
@@ -871,25 +692,14 @@
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 4564
-    .end local v3    # "fis":Ljava/io/FileInputStream;
     :cond_b
     nop
 
-    .line 4565
     return-void
 
-    .line 4505
-    .restart local v0    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v3    # "fis":Ljava/io/FileInputStream;
-    .local v5, "type":I
-    .restart local v6    # "firstNodeName":Ljava/lang/String;
     :cond_c
     move-object/from16 v16, v6
 
-    .line 4505
-    .end local v6    # "firstNodeName":Ljava/lang/String;
-    .restart local v16    # "firstNodeName":Ljava/lang/String;
     :try_start_7
     new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -902,10 +712,6 @@
     .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 4561
-    .end local v0    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v5    # "type":I
-    .end local v16    # "firstNodeName":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
@@ -915,7 +721,6 @@
 
     goto :goto_5
 
-    .line 4496
     :catch_0
     move-exception v0
 
@@ -926,7 +731,6 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 4561
     :catchall_1
     move-exception v0
 
@@ -968,23 +772,17 @@
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_a .. :try_end_a} :catch_2
 
-    .end local v3    # "fis":Ljava/io/FileInputStream;
     :catch_2
     move-exception v0
 
-    .line 4562
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "InputMethodManagerService"
 
     const-string v2, "Error reading subtypes"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4563
     return-void
 
-    .line 4494
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_f
     :goto_7
     return-void
@@ -992,7 +790,6 @@
 
 .method private static writeAdditionalInputMethodSubtypes(Ljava/util/HashMap;Landroid/util/AtomicFile;Ljava/util/HashMap;)V
     .locals 13
-    .param p1, "subtypesFile"    # Landroid/util/AtomicFile;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1009,9 +806,6 @@
         }
     .end annotation
 
-    .line 4441
-    .local p0, "allSubtypes":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;>;"
-    .local p2, "methodMap":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/view/inputmethod/InputMethodInfo;>;"
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -1031,15 +825,11 @@
     :cond_0
     move v2, v0
 
-    .line 4442
-    .local v2, "isSetMethodMap":Z
     :goto_0
     const/4 v3, 0x0
 
     move-object v4, v3
 
-    .line 4444
-    .local v4, "fos":Ljava/io/FileOutputStream;
     :try_start_0
     invoke-virtual {p1}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
@@ -1047,13 +837,10 @@
 
     move-object v4, v5
 
-    .line 4445
     new-instance v5, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v5}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 4446
-    .local v5, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v6, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v6}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -1062,24 +849,20 @@
 
     invoke-interface {v5, v4, v6}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 4447
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v6
 
     invoke-interface {v5, v3, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 4448
-    const-string/jumbo v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string v6, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     invoke-interface {v5, v6, v1}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 4449
     const-string/jumbo v1, "subtypes"
 
     invoke-interface {v5, v3, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4450
     invoke-virtual {p0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -1101,8 +884,6 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 4451
-    .local v6, "imiId":Ljava/lang/String;
     if-eqz v2, :cond_1
 
     invoke-virtual {p2, v6}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -1111,7 +892,6 @@
 
     if-nez v7, :cond_1
 
-    .line 4452
     const-string v7, "InputMethodManagerService"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1130,66 +910,50 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4453
     goto :goto_1
 
-    .line 4455
     :cond_1
     const-string/jumbo v7, "imi"
 
     invoke-interface {v5, v3, v7}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4456
-    const-string/jumbo v7, "id"
+    const-string v7, "id"
 
     invoke-interface {v5, v3, v7, v6}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4457
     invoke-virtual {p0, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Ljava/util/List;
 
-    .line 4458
-    .local v7, "subtypesList":Ljava/util/List;, "Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
     invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v8
 
-    .line 4459
-    .local v8, "N":I
     move v9, v0
 
-    .line 4459
-    .local v9, "i":I
     :goto_2
     if-ge v9, v8, :cond_3
 
-    .line 4460
     invoke-interface {v7, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Landroid/view/inputmethod/InputMethodSubtype;
 
-    .line 4461
-    .local v10, "subtype":Landroid/view/inputmethod/InputMethodSubtype;
     const-string/jumbo v11, "subtype"
 
     invoke-interface {v5, v3, v11}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4462
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->hasSubtypeId()Z
 
     move-result v11
 
     if-eqz v11, :cond_2
 
-    .line 4463
     const-string/jumbo v11, "subtypeId"
 
-    .line 4464
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getSubtypeId()I
 
     move-result v12
@@ -1198,12 +962,10 @@
 
     move-result-object v12
 
-    .line 4463
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4466
     :cond_2
-    const-string/jumbo v11, "icon"
+    const-string v11, "icon"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getIconResId()I
 
@@ -1215,7 +977,6 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4467
     const-string/jumbo v11, "label"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getNameResId()I
@@ -1228,8 +989,7 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4468
-    const-string/jumbo v11, "imeSubtypeLocale"
+    const-string v11, "imeSubtypeLocale"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
@@ -1237,19 +997,15 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4469
     const-string/jumbo v11, "languageTag"
 
-    .line 4470
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getLanguageTag()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 4469
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4471
-    const-string/jumbo v11, "imeSubtypeMode"
+    const-string v11, "imeSubtypeMode"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getMode()Ljava/lang/String;
 
@@ -1257,8 +1013,7 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4472
-    const-string/jumbo v11, "imeSubtypeExtraValue"
+    const-string v11, "imeSubtypeExtraValue"
 
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->getExtraValue()Ljava/lang/String;
 
@@ -1266,10 +1021,8 @@
 
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4473
     const-string/jumbo v11, "isAuxiliary"
 
-    .line 4474
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->isAuxiliary()Z
 
     move-result v12
@@ -1278,13 +1031,10 @@
 
     move-result-object v12
 
-    .line 4473
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4475
     const-string/jumbo v11, "isAsciiCapable"
 
-    .line 4476
     invoke-virtual {v10}, Landroid/view/inputmethod/InputMethodSubtype;->isAsciiCapable()Z
 
     move-result v12
@@ -1293,71 +1043,49 @@
 
     move-result-object v12
 
-    .line 4475
     invoke-interface {v5, v3, v11, v12}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4477
     const-string/jumbo v11, "subtype"
 
     invoke-interface {v5, v3, v11}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4459
-    .end local v10    # "subtype":Landroid/view/inputmethod/InputMethodSubtype;
     add-int/lit8 v9, v9, 0x1
 
     goto/16 :goto_2
 
-    .line 4479
-    .end local v9    # "i":I
     :cond_3
     const-string/jumbo v9, "imi"
 
     invoke-interface {v5, v3, v9}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4480
-    .end local v6    # "imiId":Ljava/lang/String;
-    .end local v7    # "subtypesList":Ljava/util/List;, "Ljava/util/List<Landroid/view/inputmethod/InputMethodSubtype;>;"
-    .end local v8    # "N":I
     goto/16 :goto_1
 
-    .line 4481
     :cond_4
     const-string/jumbo v0, "subtypes"
 
     invoke-interface {v5, v3, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4482
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 4483
     invoke-virtual {p1, v4}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4489
-    .end local v5    # "out":Lorg/xmlpull/v1/XmlSerializer;
     goto :goto_3
 
-    .line 4484
     :catch_0
     move-exception v0
 
-    .line 4485
-    .local v0, "e":Ljava/io/IOException;
     const-string v1, "InputMethodManagerService"
 
     const-string v3, "Error writing subtypes"
 
     invoke-static {v1, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 4486
     if-eqz v4, :cond_5
 
-    .line 4487
     invoke-virtual {p1, v4}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 4490
-    .end local v0    # "e":Ljava/io/IOException;
     :cond_5
     :goto_3
     return-void
@@ -1367,49 +1095,35 @@
 # virtual methods
 .method public addInputMethodSubtypes(Landroid/view/inputmethod/InputMethodInfo;[Landroid/view/inputmethod/InputMethodSubtype;)V
     .locals 8
-    .param p1, "imi"    # Landroid/view/inputmethod/InputMethodInfo;
-    .param p2, "additionalSubtypes"    # [Landroid/view/inputmethod/InputMethodSubtype;
 
-    .line 4413
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 4414
     :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4415
-    .local v1, "subtypes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
     array-length v2, p2
 
-    .line 4416
-    .local v2, "N":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_1
 
-    .line 4417
     aget-object v4, p2, v3
 
-    .line 4418
-    .local v4, "subtype":Landroid/view/inputmethod/InputMethodSubtype;
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 4419
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 4421
     :cond_0
     const-string v5, "InputMethodManagerService"
 
@@ -1421,7 +1135,6 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4422
     invoke-virtual {v4}, Landroid/view/inputmethod/InputMethodSubtype;->getLocale()Ljava/lang/String;
 
     move-result-object v7
@@ -1442,18 +1155,13 @@
 
     move-result-object v6
 
-    .line 4421
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4416
-    .end local v4    # "subtype":Landroid/view/inputmethod/InputMethodSubtype;
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 4425
-    .end local v3    # "i":I
     :cond_1
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
@@ -1463,7 +1171,6 @@
 
     invoke-virtual {v3, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4426
     iget-object v3, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
     iget-object v4, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalInputMethodSubtypeFile:Landroid/util/AtomicFile;
@@ -1472,15 +1179,10 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->writeAdditionalInputMethodSubtypes(Ljava/util/HashMap;Landroid/util/AtomicFile;Ljava/util/HashMap;)V
 
-    .line 4428
-    .end local v1    # "subtypes":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/view/inputmethod/InputMethodSubtype;>;"
-    .end local v2    # "N":I
     monitor-exit v0
 
-    .line 4429
     return-void
 
-    .line 4428
     :catchall_0
     move-exception v1
 
@@ -1504,12 +1206,10 @@
         }
     .end annotation
 
-    .line 4432
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v0
 
-    .line 4433
     :try_start_0
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$InputMethodFileManager;->mAdditionalSubtypesMap:Ljava/util/HashMap;
 
@@ -1517,7 +1217,6 @@
 
     return-object v1
 
-    .line 4434
     :catchall_0
     move-exception v1
 

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BluetoothManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BluetoothManagerService;
 
-    .line 2715
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$OPBtPrefixConfigUpdater;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 3
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 2718
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$OPBtPrefixConfigUpdater;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v0}, Lcom/android/server/BluetoothManagerService;->access$5400(Lcom/android/server/BluetoothManagerService;)Landroid/os/Handler;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 2719
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 895
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getServiceType()I
     .locals 1
 
-    .line 898
     const/4 v0, 0x6
 
     return v0
@@ -47,20 +44,15 @@
 
 .method public onLowPowerModeChanged(Landroid/os/PowerSaveState;)V
     .locals 4
-    .param p1, "result"    # Landroid/os/PowerSaveState;
 
-    .line 903
     iget-boolean v0, p1, Landroid/os/PowerSaveState;->batterySaverEnabled:Z
 
-    .line 904
-    .local v0, "enabled":Z
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$300()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 905
     const-string v1, "NetworkPolicy"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -83,7 +75,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 907
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -91,7 +82,6 @@
 
     monitor-enter v1
 
-    .line 908
     :try_start_0
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -99,24 +89,19 @@
 
     if-eq v2, v0, :cond_1
 
-    .line 909
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iput-boolean v0, v2, Lcom/android/server/net/NetworkPolicyManagerService;->mRestrictPower:Z
 
-    .line 910
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 912
     :cond_1
     monitor-exit v1
 
-    .line 913
     return-void
 
-    .line 912
     :catchall_0
     move-exception v2
 

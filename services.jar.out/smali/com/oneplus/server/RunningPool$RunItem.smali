@@ -37,9 +37,7 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/server/RunningPool;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/RunningPool;
 
-    .line 51
     iput-object p1, p0, Lcom/oneplus/server/RunningPool$RunItem;->this$0:Lcom/oneplus/server/RunningPool;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

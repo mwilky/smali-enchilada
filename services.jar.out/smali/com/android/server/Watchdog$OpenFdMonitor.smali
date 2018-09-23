@@ -27,36 +27,27 @@
 # direct methods
 .method constructor <init>(Ljava/io/File;Ljava/io/File;)V
     .locals 0
-    .param p1, "dumpDir"    # Ljava/io/File;
-    .param p2, "fdThreshold"    # Ljava/io/File;
 
-    .line 806
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 807
     iput-object p1, p0, Lcom/android/server/Watchdog$OpenFdMonitor;->mDumpDir:Ljava/io/File;
 
-    .line 808
     iput-object p2, p0, Lcom/android/server/Watchdog$OpenFdMonitor;->mFdHighWaterMark:Ljava/io/File;
 
-    .line 809
     return-void
 .end method
 
 .method public static create()Lcom/android/server/Watchdog$OpenFdMonitor;
     .locals 8
 
-    .line 775
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 776
     return-object v1
 
-    .line 782
     :cond_0
     const-string v0, "dalvik.vm.stack-trace-dir"
 
@@ -66,18 +57,14 @@
 
     move-result-object v0
 
-    .line 783
-    .local v0, "dumpDirStr":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 784
     return-object v1
 
-    .line 789
     :cond_1
     :try_start_0
     sget v2, Landroid/system/OsConstants;->RLIMIT_NOFILE:I
@@ -90,14 +77,10 @@
 
     move-object v1, v2
 
-    .line 793
-    .local v1, "rlimit":Landroid/system/StructRlimit;
     nop
 
-    .line 792
     nop
 
-    .line 802
     new-instance v2, Ljava/io/File;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -122,8 +105,6 @@
 
     invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 803
-    .local v2, "fdThreshold":Ljava/io/File;
     new-instance v3, Lcom/android/server/Watchdog$OpenFdMonitor;
 
     new-instance v4, Ljava/io/File;
@@ -134,28 +115,21 @@
 
     return-object v3
 
-    .line 790
-    .end local v1    # "rlimit":Landroid/system/StructRlimit;
-    .end local v2    # "fdThreshold":Ljava/io/File;
     :catch_0
     move-exception v2
 
-    .line 791
-    .local v2, "errno":Landroid/system/ErrnoException;
     const-string v3, "Watchdog"
 
     const-string v4, "Error thrown from getrlimit(RLIMIT_NOFILE)"
 
     invoke-static {v3, v4, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 792
     return-object v1
 .end method
 
 .method private dumpOpenDescriptors()V
     .locals 6
 
-    .line 813
     :try_start_0
     const-string v0, "anr_fd_"
 
@@ -167,8 +141,6 @@
 
     move-result-object v0
 
-    .line 814
-    .local v0, "dumpFile":Ljava/io/File;
     new-instance v1, Ljava/lang/ProcessBuilder;
 
     const/4 v2, 0x0
@@ -193,7 +165,6 @@
 
     const/4 v2, 0x2
 
-    .line 815
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v5
@@ -208,32 +179,24 @@
 
     move-result-object v1
 
-    .line 816
     invoke-virtual {v1, v4}, Ljava/lang/ProcessBuilder;->redirectErrorStream(Z)Ljava/lang/ProcessBuilder;
 
     move-result-object v1
 
-    .line 817
     invoke-virtual {v1, v0}, Ljava/lang/ProcessBuilder;->redirectOutput(Ljava/io/File;)Ljava/lang/ProcessBuilder;
 
     move-result-object v1
 
-    .line 818
     invoke-virtual {v1}, Ljava/lang/ProcessBuilder;->start()Ljava/lang/Process;
 
     move-result-object v1
 
-    .line 820
-    .local v1, "proc":Ljava/lang/Process;
     invoke-virtual {v1}, Ljava/lang/Process;->waitFor()I
 
     move-result v2
 
-    .line 821
-    .local v2, "returnCode":I
     if-eqz v2, :cond_0
 
-    .line 822
     const-string v3, "Watchdog"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -252,25 +215,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 824
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 828
-    .end local v0    # "dumpFile":Ljava/io/File;
-    .end local v1    # "proc":Ljava/lang/Process;
-    .end local v2    # "returnCode":I
     :cond_0
     goto :goto_0
 
-    .line 826
     :catch_0
     move-exception v0
 
-    .line 827
-    .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "Watchdog"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -289,8 +244,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 829
-    .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -300,7 +253,6 @@
 .method public monitor()Z
     .locals 1
 
-    .line 836
     iget-object v0, p0, Lcom/android/server/Watchdog$OpenFdMonitor;->mFdHighWaterMark:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -309,15 +261,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 837
     invoke-direct {p0}, Lcom/android/server/Watchdog$OpenFdMonitor;->dumpOpenDescriptors()V
 
-    .line 838
     const/4 v0, 0x1
 
     return v0
 
-    .line 841
     :cond_0
     const/4 v0, 0x0
 

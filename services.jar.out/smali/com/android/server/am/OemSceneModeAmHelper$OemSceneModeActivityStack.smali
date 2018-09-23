@@ -60,12 +60,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 69
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sProactivePausedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 70
     sput-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
     return-void
@@ -73,28 +71,19 @@
 
 .method public constructor <init>(Lcom/android/server/am/ActivityStack;Lcom/android/server/am/ActivityStackSupervisor;)V
     .locals 0
-    .param p1, "acs"    # Lcom/android/server/am/ActivityStack;
-    .param p2, "acss"    # Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 76
     iput-object p1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
-    .line 77
     iput-object p2, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 78
     return-void
 .end method
 
 .method private isSamePackageAndUid(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)Z
     .locals 2
-    .param p1, "r1"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "r2"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 229
     if-eqz p1, :cond_0
 
     if-eqz p2, :cond_0
@@ -113,7 +102,6 @@
 
     iget-object v1, p2, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
-    .line 231
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -127,7 +115,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 229
     :goto_0
     return v0
 .end method
@@ -136,9 +123,7 @@
 # virtual methods
 .method public handleEvaluateGameMode(Z)V
     .locals 4
-    .param p1, "enabled"    # Z
 
-    .line 245
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -149,14 +134,10 @@
 
     move-result-object v0
 
-    .line 246
-    .local v0, "resolver":Landroid/content/ContentResolver;
     const-string v1, "game_mode_status_auto"
 
-    .line 247
     if-eqz p1, :cond_0
 
-    .line 248
     const-string v2, "force-on"
 
     goto :goto_0
@@ -167,10 +148,8 @@
     :goto_0
     const/4 v3, -0x2
 
-    .line 246
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 249
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_1
@@ -193,16 +172,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 250
     :cond_1
     return-void
 .end method
 
 .method public handleEvaluateReadMode(Z)V
     .locals 4
-    .param p1, "enabled"    # Z
 
-    .line 236
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -213,14 +189,10 @@
 
     move-result-object v0
 
-    .line 237
-    .local v0, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v1, "rading_mode_status_auto"
 
-    .line 238
     if-eqz p1, :cond_0
 
-    .line 239
     const-string v2, "force-on"
 
     goto :goto_0
@@ -231,10 +203,8 @@
     :goto_0
     const/4 v3, -0x2
 
-    .line 237
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 240
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_1
@@ -257,17 +227,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 241
     :cond_1
     return-void
 .end method
 
 .method public startEvaluateGameMode(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
     .locals 6
-    .param p1, "prev"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "r"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -299,8 +265,6 @@
     :cond_0
     move v0, v1
 
-    .line 161
-    .local v0, "isGameModeApp":Z
     :goto_0
     iget-object v3, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
@@ -312,8 +276,6 @@
 
     move-result-object v3
 
-    .line 162
-    .local v3, "game_msg":Landroid/os/Message;
     if-eqz v0, :cond_1
 
     move v1, v2
@@ -323,7 +285,6 @@
     :cond_1
     iput v1, v3, Landroid/os/Message;->arg1:I
 
-    .line 163
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
@@ -332,7 +293,6 @@
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 164
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_2
@@ -363,17 +323,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
     :cond_2
     return-void
 .end method
 
 .method public startEvaluateReadingMode(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
     .locals 6
-    .param p1, "prev"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "r"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -384,7 +340,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 169
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v0, :cond_0
@@ -409,11 +364,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
     :cond_0
     return-void
 
-    .line 174
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -446,8 +399,6 @@
     :cond_2
     move v0, v1
 
-    .line 176
-    .local v0, "isReadModeApp":Z
     :goto_0
     iget-object v3, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
@@ -459,8 +410,6 @@
 
     move-result-object v3
 
-    .line 177
-    .local v3, "read_msg":Landroid/os/Message;
     if-eqz v0, :cond_3
 
     move v1, v2
@@ -470,7 +419,6 @@
     :cond_3
     iput v1, v3, Landroid/os/Message;->arg1:I
 
-    .line 178
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
@@ -479,7 +427,6 @@
 
     invoke-virtual {v1, v3, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 179
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_4
@@ -510,34 +457,26 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     :cond_4
     return-void
 .end method
 
 .method public startEvaluateSceneModes(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
     .locals 3
-    .param p1, "prev"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "r"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 183
     invoke-static {}, Lcom/android/server/am/OemSceneModeAmHelper;->access$000()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 185
     return-void
 
-    .line 187
     :cond_0
     if-nez p2, :cond_1
 
-    .line 189
     return-void
 
-    .line 191
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -569,7 +508,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 192
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v0, :cond_3
@@ -580,11 +518,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
     :cond_3
     return-void
 
-    .line 195
     :cond_4
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
@@ -630,7 +566,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
     :cond_5
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -641,7 +576,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 200
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -652,7 +586,6 @@
 
     if-eqz v1, :cond_7
 
-    .line 201
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_6
@@ -663,7 +596,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
     :cond_6
     monitor-exit v0
     :try_end_0
@@ -673,7 +605,6 @@
 
     return-void
 
-    .line 204
     :cond_7
     :try_start_1
     monitor-exit v0
@@ -682,10 +613,8 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 206
     if-eq p1, p2, :cond_9
 
-    .line 209
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->isSamePackageAndUid(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)Z
 
     move-result v0
@@ -696,7 +625,6 @@
 
     if-eq p1, v0, :cond_9
 
-    .line 212
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v0, :cond_8
@@ -707,11 +635,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 213
     :cond_8
     return-void
 
-    .line 217
     :cond_9
     sget-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
@@ -721,14 +647,12 @@
 
     sget-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 218
     invoke-direct {p0, v0, p2}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->isSamePackageAndUid(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 219
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v0, :cond_a
@@ -739,24 +663,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 220
     :cond_a
     return-void
 
-    .line 223
     :cond_b
     sput-object p2, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 224
     invoke-virtual {p0, p1, p2}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->startEvaluateGameMode(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
 
-    .line 225
     invoke-virtual {p0, p1, p2}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->startEvaluateReadingMode(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
 
-    .line 226
     return-void
 
-    .line 204
     :catchall_0
     move-exception v1
 
@@ -772,20 +690,15 @@
 
 .method public stopEvaluateSceneModes(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
     .locals 3
-    .param p1, "fromActivity"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "toActivity"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 126
     invoke-static {}, Lcom/android/server/am/OemSceneModeAmHelper;->access$000()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 128
     return-void
 
-    .line 131
     :cond_0
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
@@ -815,7 +728,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
     :cond_1
     const/4 v0, 0x0
 
@@ -823,16 +735,13 @@
 
     if-nez p2, :cond_2
 
-    .line 136
     sput-object p1, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sProactivePausedActivity:Lcom/android/server/am/ActivityRecord;
 
     goto :goto_0
 
-    .line 138
     :cond_2
     sput-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sProactivePausedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 142
     :goto_0
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->isSamePackageAndUid(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)Z
 
@@ -840,7 +749,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 143
     sget-boolean v0, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v0, :cond_3
@@ -851,11 +759,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 144
     :cond_3
     return-void
 
-    .line 147
     :cond_4
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
@@ -869,17 +775,14 @@
 
     if-eqz v1, :cond_5
 
-    .line 148
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 149
     sput-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 151
     :cond_5
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
@@ -893,26 +796,21 @@
 
     if-eqz v1, :cond_6
 
-    .line 152
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 153
     sput-object v0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->sSceneEvaluatedActivity:Lcom/android/server/am/ActivityRecord;
 
-    .line 155
     :cond_6
     return-void
 .end method
 
 .method public updateDisableSceneScreenEffectFlag(I)V
     .locals 4
-    .param p1, "toDisableMode"    # I
 
-    .line 255
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStackSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -923,15 +821,12 @@
 
     move-result-object v0
 
-    .line 256
-    .local v0, "resolver":Landroid/content/ContentResolver;
     const-string/jumbo v1, "temp_disable_scene_screen_effect"
 
     const/4 v2, -0x2
 
     invoke-static {v0, v1, p1, v2}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 259
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_0
@@ -954,16 +849,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
     :cond_0
     return-void
 .end method
 
 .method public updateSceneScreenEffectFlag(I)V
     .locals 2
-    .param p1, "disableScreenEffectMode"    # I
 
-    .line 119
     iget-object v0, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
@@ -974,56 +866,41 @@
 
     move-result-object v0
 
-    .line 120
-    .local v0, "msg":Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 121
     iget-object v1, p0, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->mActivityStack:Lcom/android/server/am/ActivityStack;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStack;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 122
     return-void
 .end method
 
 .method public updateSceneScreenEffectFlag(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;)V
     .locals 5
-    .param p1, "ams"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "r"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 81
     invoke-static {}, Lcom/android/server/am/OemSceneModeAmHelper;->access$000()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 83
     return-void
 
-    .line 85
     :cond_0
     if-nez p2, :cond_1
 
-    .line 87
     return-void
 
-    .line 89
     :cond_1
     if-nez p1, :cond_2
 
-    .line 91
     return-void
 
-    .line 94
     :cond_2
     const/4 v0, -0x1
 
-    .line 96
-    .local v0, "disableScreenEffectMode":I
     iget-object v1, p2, Lcom/android/server/am/ActivityRecord;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -1075,19 +952,15 @@
     :goto_1
     packed-switch v1, :pswitch_data_0
 
-    .line 102
     const/4 v0, 0x0
 
     goto :goto_2
 
-    .line 99
     :pswitch_0
     const/4 v0, 0x2
 
-    .line 100
     nop
 
-    .line 106
     :goto_2
     invoke-static {p1, p2}, Lcom/android/server/am/OemSceneModeAmHelper;->shouldIgnoreSceneEvaluation(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ActivityRecord;)Z
 
@@ -1095,7 +968,6 @@
 
     if-eqz v1, :cond_7
 
-    .line 109
     sget-boolean v1, Lcom/android/server/am/OemSceneModeAmHelper;->DBG:Z
 
     if-eqz v1, :cond_6
@@ -1106,18 +978,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
     :cond_6
     return-void
 
-    .line 113
     :cond_7
     if-eq v0, v4, :cond_8
 
-    .line 114
     invoke-virtual {p0, v0}, Lcom/android/server/am/OemSceneModeAmHelper$OemSceneModeActivityStack;->updateSceneScreenEffectFlag(I)V
 
-    .line 116
     :cond_8
     return-void
 

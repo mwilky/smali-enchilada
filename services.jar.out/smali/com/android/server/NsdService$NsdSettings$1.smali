@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/content/ContentResolver;)V
     .locals 0
 
-    .line 895
     iput-object p1, p0, Lcom/android/server/NsdService$NsdSettings$1;->val$resolver:Landroid/content/ContentResolver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public isEnabled()Z
     .locals 3
 
-    .line 898
     iget-object v0, p0, Lcom/android/server/NsdService$NsdSettings$1;->val$resolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v1, "nsd_on"
@@ -62,31 +60,24 @@
 
 .method public putEnabledStatus(Z)V
     .locals 2
-    .param p1, "isEnabled"    # Z
 
-    .line 903
     iget-object v0, p0, Lcom/android/server/NsdService$NsdSettings$1;->val$resolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v1, "nsd_on"
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 904
     return-void
 .end method
 
 .method public registerContentObserver(Landroid/net/Uri;Landroid/database/ContentObserver;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "observer"    # Landroid/database/ContentObserver;
 
-    .line 908
     iget-object v0, p0, Lcom/android/server/NsdService$NsdSettings$1;->val$resolver:Landroid/content/ContentResolver;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1, p2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 909
     return-void
 .end method

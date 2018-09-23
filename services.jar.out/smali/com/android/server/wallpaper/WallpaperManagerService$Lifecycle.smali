@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 159
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 160
     return-void
 .end method
 
@@ -34,19 +31,15 @@
 # virtual methods
 .method public onBootPhase(I)V
     .locals 1
-    .param p1, "phase"    # I
 
-    .line 178
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
 
     if-eqz v0, :cond_0
 
-    .line 179
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
 
     invoke-interface {v0, p1}, Lcom/android/server/wallpaper/IWallpaperManagerService;->onBootPhase(I)V
 
-    .line 181
     :cond_0
     return-void
 .end method
@@ -54,10 +47,8 @@
 .method public onStart()V
     .locals 5
 
-    .line 165
     nop
 
-    .line 167
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->getContext()Landroid/content/Context;
 
@@ -73,13 +64,10 @@
 
     move-result-object v0
 
-    .line 166
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 169
-    .local v0, "klass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/server/wallpaper/IWallpaperManagerService;>;"
     const/4 v1, 0x1
 
     new-array v2, v1, [Ljava/lang/Class;
@@ -110,7 +98,6 @@
 
     iput-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
 
-    .line 170
     const-string/jumbo v1, "wallpaper"
 
     iget-object v2, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
@@ -119,43 +106,32 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 173
-    .end local v0    # "klass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/server/wallpaper/IWallpaperManagerService;>;"
     goto :goto_0
 
-    .line 171
     :catch_0
     move-exception v0
 
-    .line 172
-    .local v0, "exp":Ljava/lang/Exception;
     const-string v1, "WallpaperManagerService"
 
     const-string v2, "Failed to instantiate WallpaperManagerService"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 174
-    .end local v0    # "exp":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
 
 .method public onUnlockUser(I)V
     .locals 1
-    .param p1, "userHandle"    # I
 
-    .line 185
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
 
     if-eqz v0, :cond_0
 
-    .line 186
     iget-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$Lifecycle;->mService:Lcom/android/server/wallpaper/IWallpaperManagerService;
 
     invoke-interface {v0, p1}, Lcom/android/server/wallpaper/IWallpaperManagerService;->onUnlockUser(I)V
 
-    .line 188
     :cond_0
     return-void
 .end method

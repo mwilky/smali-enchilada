@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;Ljava/lang/String;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 2891
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$11;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iput-object p2, p0, Lcom/android/server/policy/OemPhoneWindowManager$11;->val$pkg:Ljava/lang/String;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 2895
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -61,14 +58,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2897
     goto :goto_0
 
-    .line 2896
     :catch_0
     move-exception v0
 
-    .line 2898
     :goto_0
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$11;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
@@ -78,6 +72,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/OemPhoneWindowManager;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 2899
     return-void
 .end method

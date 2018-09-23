@@ -6,12 +6,7 @@
 # direct methods
 .method public constructor <init>(IIII)V
     .locals 9
-    .param p1, "fromL"    # I
-    .param p2, "fromR"    # I
-    .param p3, "toL"    # I
-    .param p4, "toR"    # I
 
-    .line 36
     const/4 v2, 0x0
 
     const/4 v4, 0x0
@@ -32,7 +27,6 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/ClipRectAnimation;-><init>(IIIIIIII)V
 
-    .line 37
     return-void
 .end method
 
@@ -40,16 +34,11 @@
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 6
-    .param p1, "it"    # F
-    .param p2, "tr"    # Landroid/view/animation/Transformation;
 
-    .line 45
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getClipRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 46
-    .local v0, "oldClipRect":Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/android/server/wm/animation/ClipRectLRAnimation;->mFromRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
@@ -100,6 +89,5 @@
 
     invoke-virtual {p2, v1, v2, v3, v4}, Landroid/view/animation/Transformation;->setClipRect(IIII)V
 
-    .line 50
     return-void
 .end method

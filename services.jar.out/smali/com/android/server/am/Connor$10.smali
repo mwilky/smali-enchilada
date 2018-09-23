@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Connor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Connor;
 
-    .line 575
     iput-object p1, p0, Lcom/android/server/am/Connor$10;->this$0:Lcom/android/server/am/Connor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Ljava/io/File;Ljava/io/File;)I
     .locals 3
-    .param p1, "f1"    # Ljava/io/File;
-    .param p2, "f2"    # Ljava/io/File;
 
-    .line 578
     iget-object v0, p0, Lcom/android/server/am/Connor$10;->this$0:Lcom/android/server/am/Connor;
 
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -71,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 575
     check-cast p1, Ljava/io/File;
 
     check-cast p2, Ljava/io/File;

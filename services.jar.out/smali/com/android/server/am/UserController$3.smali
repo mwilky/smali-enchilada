@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UserController;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/UserController;
 
-    .line 588
     iput-object p1, p0, Lcom/android/server/am/UserController$3;->this$0:Lcom/android/server/am/UserController;
 
     iput-boolean p2, p0, Lcom/android/server/am/UserController$3;->val$foreground:Z
@@ -37,10 +35,7 @@
 
 .method public static synthetic lambda$userStopped$0(Lcom/android/server/am/UserController$3;IZ)V
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "foreground"    # Z
 
-    .line 593
     iget-object v0, p0, Lcom/android/server/am/UserController$3;->this$0:Lcom/android/server/am/UserController;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/am/UserController;->startUser(IZ)Z
@@ -52,17 +47,13 @@
 # virtual methods
 .method public userStopAborted(I)V
     .locals 0
-    .param p1, "userId"    # I
 
-    .line 596
     return-void
 .end method
 
 .method public userStopped(I)V
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 593
     iget-object v0, p0, Lcom/android/server/am/UserController$3;->this$0:Lcom/android/server/am/UserController;
 
     invoke-static {v0}, Lcom/android/server/am/UserController;->access$200(Lcom/android/server/am/UserController;)Landroid/os/Handler;
@@ -77,6 +68,5 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 594
     return-void
 .end method

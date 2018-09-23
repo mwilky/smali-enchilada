@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BatteryService;
-    .param p2, "handler"    # Landroid/os/Handler;
-    .param p3, "target"    # Ljava/lang/String;
 
-    .line 334
     iput-object p1, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/BatteryService$SettingsObserver;-><init>(Lcom/android/server/BatteryService;Landroid/os/Handler;Ljava/lang/String;)V
@@ -37,9 +33,7 @@
 # virtual methods
 .method onUpdate(Z)V
     .locals 1
-    .param p1, "on"    # Z
 
-    .line 337
     iget-object v0, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$600(Lcom/android/server/BatteryService;)Z
@@ -48,12 +42,10 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 338
     iget-object v0, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$602(Lcom/android/server/BatteryService;Z)Z
 
-    .line 339
     iget-object v0, p0, Lcom/android/server/BatteryService$3;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$700(Lcom/android/server/BatteryService;)Lcom/android/server/BatteryService$Led;
@@ -62,7 +54,6 @@
 
     invoke-virtual {v0}, Lcom/android/server/BatteryService$Led;->updateLightsLocked()V
 
-    .line 341
     :cond_0
     return-void
 .end method

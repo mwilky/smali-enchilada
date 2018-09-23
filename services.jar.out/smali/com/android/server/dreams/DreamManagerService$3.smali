@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/dreams/DreamManagerService;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/dreams/DreamManagerService;
 
-    .line 388
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$immediate:Z
@@ -43,14 +41,12 @@
 .method public run()V
     .locals 2
 
-    .line 391
     const-string v0, "DreamManagerService"
 
     const-string v1, "Performing gentle wake from dream."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 392
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     invoke-static {v0}, Lcom/android/server/dreams/DreamManagerService;->access$500(Lcom/android/server/dreams/DreamManagerService;)Lcom/android/server/dreams/DreamController;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/dreams/DreamController;->stopDream(Z)V
 
-    .line 393
     return-void
 .end method

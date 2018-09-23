@@ -24,17 +24,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AppStateTracker;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/AppStateTracker;
 
-    .line 200
     iput-object p1, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
-    .line 201
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 202
     return-void
 .end method
 
@@ -43,7 +39,6 @@
 .method isForcedAppStandbyEnabled()Z
     .locals 3
 
-    .line 214
     iget-object v0, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     const-string v1, "forced_app_standby_enabled"
@@ -68,7 +63,6 @@
 .method isForcedAppStandbyForSmallBatteryEnabled()Z
     .locals 3
 
-    .line 218
     iget-object v0, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     const-string v1, "forced_app_standby_for_small_battery_enabled"
@@ -94,10 +88,7 @@
 
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 3
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 224
     const-string v0, "forced_app_standby_enabled"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -110,13 +101,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 225
     invoke-virtual {p0}, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->isForcedAppStandbyEnabled()Z
 
     move-result v0
 
-    .line 226
-    .local v0, "enabled":Z
     iget-object v1, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v1}, Lcom/android/server/AppStateTracker;->access$100(Lcom/android/server/AppStateTracker;)Ljava/lang/Object;
@@ -125,7 +113,6 @@
 
     monitor-enter v1
 
-    .line 227
     :try_start_0
     iget-object v2, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
@@ -133,23 +120,19 @@
 
     if-ne v2, v0, :cond_0
 
-    .line 228
     monitor-exit v1
 
     return-void
 
-    .line 230
     :cond_0
     iget-object v2, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     iput-boolean v0, v2, Lcom/android/server/AppStateTracker;->mForcedAppStandbyEnabled:Z
 
-    .line 235
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 236
     iget-object v1, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v1}, Lcom/android/server/AppStateTracker;->access$200(Lcom/android/server/AppStateTracker;)Lcom/android/server/AppStateTracker$MyHandler;
@@ -158,12 +141,8 @@
 
     invoke-virtual {v1}, Lcom/android/server/AppStateTracker$MyHandler;->notifyForcedAppStandbyFeatureFlagChanged()V
 
-    .line 237
-    .end local v0    # "enabled":Z
     goto :goto_0
 
-    .line 235
-    .restart local v0    # "enabled":Z
     :catchall_0
     move-exception v2
 
@@ -174,8 +153,6 @@
 
     throw v2
 
-    .line 237
-    .end local v0    # "enabled":Z
     :cond_1
     const-string v0, "forced_app_standby_for_small_battery_enabled"
 
@@ -183,20 +160,16 @@
 
     move-result-object v0
 
-    .line 238
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 239
     invoke-virtual {p0}, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->isForcedAppStandbyForSmallBatteryEnabled()Z
 
     move-result v0
 
-    .line 240
-    .restart local v0    # "enabled":Z
     iget-object v1, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v1}, Lcom/android/server/AppStateTracker;->access$100(Lcom/android/server/AppStateTracker;)Ljava/lang/Object;
@@ -205,7 +178,6 @@
 
     monitor-enter v1
 
-    .line 241
     :try_start_2
     iget-object v2, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
@@ -213,31 +185,23 @@
 
     if-ne v2, v0, :cond_2
 
-    .line 242
     monitor-exit v1
 
     return-void
 
-    .line 244
     :cond_2
     iget-object v2, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     iput-boolean v0, v2, Lcom/android/server/AppStateTracker;->mForceAllAppStandbyForSmallBattery:Z
 
-    .line 249
     iget-object v2, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v2}, Lcom/android/server/AppStateTracker;->access$300(Lcom/android/server/AppStateTracker;)V
 
-    .line 250
     monitor-exit v1
 
-    .line 251
-    .end local v0    # "enabled":Z
     goto :goto_0
 
-    .line 250
-    .restart local v0    # "enabled":Z
     :catchall_1
     move-exception v2
 
@@ -247,8 +211,6 @@
 
     throw v2
 
-    .line 252
-    .end local v0    # "enabled":Z
     :cond_3
     const-string v0, "AppStateTracker"
 
@@ -268,7 +230,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
     :goto_0
     return-void
 .end method
@@ -276,7 +237,6 @@
 .method register()V
     .locals 3
 
-    .line 205
     iget-object v0, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v0}, Lcom/android/server/AppStateTracker;->access$000(Lcom/android/server/AppStateTracker;)Landroid/content/Context;
@@ -289,17 +249,14 @@
 
     const-string v1, "forced_app_standby_enabled"
 
-    .line 206
     invoke-static {v1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 205
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 209
     iget-object v0, p0, Lcom/android/server/AppStateTracker$FeatureFlagsObserver;->this$0:Lcom/android/server/AppStateTracker;
 
     invoke-static {v0}, Lcom/android/server/AppStateTracker;->access$000(Lcom/android/server/AppStateTracker;)Landroid/content/Context;
@@ -318,6 +275,5 @@
 
     invoke-virtual {v0, v1, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 211
     return-void
 .end method

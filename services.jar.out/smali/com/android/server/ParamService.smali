@@ -41,7 +41,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 30
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/android/server/ParamService;->DEBUG_ONEPLUS:Z
@@ -51,12 +50,9 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 41
     invoke-direct {p0}, Lcom/oem/os/IParamService$Stub;-><init>()V
 
-    .line 42
     return-void
 .end method
 
@@ -65,7 +61,6 @@
 .method public getOneplusParamService()Lvendor/oneplus/hardware/param/V1_0/IOneplusParam;
     .locals 4
 
-    .line 34
     :try_start_0
     invoke-static {}, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam;->getService()Lvendor/oneplus/hardware/param/V1_0/IOneplusParam;
 
@@ -75,12 +70,9 @@
 
     return-object v0
 
-    .line 35
     :catch_0
     move-exception v0
 
-    .line 36
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ParamService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -99,7 +91,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 37
     const/4 v1, 0x0
 
     return-object v1
@@ -107,13 +98,9 @@
 
 .method public getParamIntSYNC(I)I
     .locals 5
-    .param p1, "id"    # I
 
-    .line 45
     const/4 v0, -0x1
 
-    .line 47
-    .local v0, "result":I
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/ParamService;->getOneplusParamService()Lvendor/oneplus/hardware/param/V1_0/IOneplusParam;
 
@@ -125,7 +112,6 @@
 
     move v0, v1
 
-    .line 48
     sget-boolean v1, Lcom/android/server/ParamService;->DEBUG_ONEPLUS:Z
 
     if-eqz v1, :cond_0
@@ -150,16 +136,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     :cond_0
     goto :goto_0
 
-    .line 49
     :catch_0
     move-exception v1
 
-    .line 50
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "ParamService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -178,8 +160,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 52
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     return v0
 .end method

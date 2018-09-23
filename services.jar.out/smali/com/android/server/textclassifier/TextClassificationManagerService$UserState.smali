@@ -59,14 +59,9 @@
 # direct methods
 .method private constructor <init>(ILandroid/content/Context;Ljava/lang/Object;)V
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "lock"    # Ljava/lang/Object;
 
-    .line 348
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
     new-instance v0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState$TextClassifierServiceConnection;
 
     const/4 v1, 0x0
@@ -75,17 +70,14 @@
 
     iput-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mConnection:Lcom/android/server/textclassifier/TextClassificationManagerService$UserState$TextClassifierServiceConnection;
 
-    .line 338
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mPendingRequests:Ljava/util/Queue;
 
-    .line 349
     iput p1, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mUserId:I
 
-    .line 350
     invoke-static {p2}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -94,25 +86,18 @@
 
     iput-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mContext:Landroid/content/Context;
 
-    .line 351
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mLock:Ljava/lang/Object;
 
-    .line 352
     return-void
 .end method
 
 .method synthetic constructor <init>(ILandroid/content/Context;Ljava/lang/Object;Lcom/android/server/textclassifier/TextClassificationManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Landroid/content/Context;
-    .param p3, "x2"    # Ljava/lang/Object;
-    .param p4, "x3"    # Lcom/android/server/textclassifier/TextClassificationManagerService$1;
 
-    .line 335
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;-><init>(ILandroid/content/Context;Ljava/lang/Object;)V
 
     return-void
@@ -120,9 +105,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;
 
-    .line 335
     iget-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -130,9 +113,7 @@
 
 .method static synthetic access$1200(Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;
 
-    .line 335
     invoke-direct {p0}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->handlePendingRequestsLocked()V
 
     return-void
@@ -140,9 +121,7 @@
 
 .method static synthetic access$300(Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;
 
-    .line 335
     invoke-direct {p0}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->bindIfHasPendingRequestsLocked()Z
 
     move-result v0
@@ -152,9 +131,7 @@
 
 .method static synthetic access$400(Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;
 
-    .line 335
     invoke-direct {p0}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->bindLocked()Z
 
     move-result v0
@@ -165,7 +142,6 @@
 .method private bindIfHasPendingRequestsLocked()Z
     .locals 1
 
-    .line 378
     iget-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mPendingRequests:Ljava/util/Queue;
 
     invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
@@ -194,7 +170,6 @@
 .method private bindLocked()Z
     .locals 8
 
-    .line 386
     invoke-virtual {p0}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->isBoundLocked()Z
 
     move-result v0
@@ -207,38 +182,28 @@
 
     goto :goto_0
 
-    .line 392
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 394
-    .local v0, "identity":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mContext:Landroid/content/Context;
 
-    .line 395
     invoke-static {v2}, Landroid/service/textclassifier/TextClassifierService;->getServiceComponentName(Landroid/content/Context;)Landroid/content/ComponentName;
 
     move-result-object v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 396
-    .local v2, "componentName":Landroid/content/ComponentName;
     if-nez v2, :cond_1
 
-    .line 398
     const/4 v3, 0x0
 
-    .line 409
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 398
     return v3
 
-    .line 400
     :cond_1
     :try_start_1
     new-instance v3, Landroid/content/Intent;
@@ -247,13 +212,10 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 401
     invoke-virtual {v3, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 402
-    .local v3, "serviceIntent":Landroid/content/Intent;
     const-string v4, "TextClassificationManagerService"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -276,7 +238,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
     iget-object v4, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mConnection:Lcom/android/server/textclassifier/TextClassificationManagerService$UserState$TextClassifierServiceConnection;
@@ -285,38 +246,26 @@
 
     iget v7, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mUserId:I
 
-    .line 406
     invoke-static {v7}, Landroid/os/UserHandle;->of(I)Landroid/os/UserHandle;
 
     move-result-object v7
 
-    .line 403
     invoke-virtual {v4, v3, v5, v6, v7}, Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/UserHandle;)Z
 
     move-result v4
 
-    .line 407
-    .local v4, "willBind":Z
     iput-boolean v4, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mBinding:Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 409
-    .end local v2    # "componentName":Landroid/content/ComponentName;
-    .end local v3    # "serviceIntent":Landroid/content/Intent;
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 410
     nop
 
-    .line 409
     nop
 
-    .line 411
     return v4
 
-    .line 409
-    .end local v4    # "willBind":Z
     :catchall_0
     move-exception v2
 
@@ -324,8 +273,6 @@
 
     throw v2
 
-    .line 387
-    .end local v0    # "identity":J
     :cond_2
     :goto_0
     const/4 v0, 0x1
@@ -339,7 +286,6 @@
         value = "mLock"
     .end annotation
 
-    .line 362
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mPendingRequests:Ljava/util/Queue;
@@ -352,17 +298,14 @@
 
     move-object v1, v0
 
-    .local v1, "request":Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;
     if-eqz v0, :cond_3
 
-    .line 363
     invoke-virtual {p0}, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->isBoundLocked()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 364
     invoke-static {v1}, Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;->access$800(Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;)Ljava/lang/Runnable;
 
     move-result-object v0
@@ -371,7 +314,6 @@
 
     goto :goto_1
 
-    .line 366
     :cond_1
     invoke-static {v1}, Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;->access$900(Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;)Ljava/lang/Runnable;
 
@@ -379,14 +321,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 367
     invoke-static {v1}, Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;->access$900(Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;)Ljava/lang/Runnable;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 371
     :cond_2
     :goto_1
     invoke-static {v1}, Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;->access$1000(Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;)Landroid/os/IBinder;
@@ -395,7 +335,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 372
     invoke-static {v1}, Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;->access$1000(Lcom/android/server/textclassifier/TextClassificationManagerService$PendingRequest;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -406,7 +345,6 @@
 
     goto :goto_0
 
-    .line 375
     :cond_3
     return-void
 .end method
@@ -419,7 +357,6 @@
         value = "mLock"
     .end annotation
 
-    .line 356
     iget-object v0, p0, Lcom/android/server/textclassifier/TextClassificationManagerService$UserState;->mService:Landroid/service/textclassifier/ITextClassifierService;
 
     if-eqz v0, :cond_0

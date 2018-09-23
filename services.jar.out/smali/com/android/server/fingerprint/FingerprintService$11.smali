@@ -21,19 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/fingerprint/FingerprintService;Landroid/content/Context;JLandroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;II[BZLjava/lang/String;Lcom/android/internal/statusbar/IStatusBarService;)V
     .locals 14
-    .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "halDeviceId"    # J
-    .param p5, "token"    # Landroid/os/IBinder;
-    .param p6, "receiver"    # Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
-    .param p7, "userId"    # I
-    .param p8, "groupId"    # I
-    .param p9, "cryptoToken"    # [B
-    .param p10, "restricted"    # Z
-    .param p11, "owner"    # Ljava/lang/String;
-    .param p12, "statusBarService"    # Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 1180
     move-object v12, p0
 
     move-object v13, p1
@@ -72,7 +60,6 @@
 .method public getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
     .locals 1
 
-    .line 1184
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$11;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v0}, Lcom/android/server/fingerprint/FingerprintService;->getFingerprintDaemon()Landroid/hardware/biometrics/fingerprint/V2_1/IBiometricsFingerprint;
@@ -85,11 +72,9 @@
 .method public notifyUserActivity()V
     .locals 1
 
-    .line 1189
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$11;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
-    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$600(Lcom/android/server/fingerprint/FingerprintService;)V
+    invoke-static {v0}, Lcom/android/server/fingerprint/FingerprintService;->access$500(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 1190
     return-void
 .end method

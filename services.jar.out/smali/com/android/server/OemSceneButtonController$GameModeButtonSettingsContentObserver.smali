@@ -21,17 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/OemSceneButtonController;Landroid/content/Context;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneButtonController;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .line 105
     iput-object p1, p0, Lcom/android/server/OemSceneButtonController$GameModeButtonSettingsContentObserver;->this$0:Lcom/android/server/OemSceneButtonController;
 
-    .line 106
     invoke-direct {p0, p3}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 107
     return-void
 .end method
 
@@ -39,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .line 110
     invoke-static {}, Lcom/android/server/OemSceneButtonController;->access$000()Z
 
     move-result v0
@@ -54,7 +46,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
     :cond_0
     iget-object v0, p0, Lcom/android/server/OemSceneButtonController$GameModeButtonSettingsContentObserver;->this$0:Lcom/android/server/OemSceneButtonController;
 
@@ -66,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/OemSceneButtonController;->updateFunctionRule(I)V
 
-    .line 112
     return-void
 .end method

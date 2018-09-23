@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/backup/BackupManagerService;J)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/backup/BackupManagerService;
 
-    .line 1922
     iput-object p1, p0, Lcom/android/server/backup/BackupManagerService$3;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     iput-wide p2, p0, Lcom/android/server/backup/BackupManagerService$3;->val$latency:J
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 1925
     iget-object v0, p0, Lcom/android/server/backup/BackupManagerService$3;->this$0:Lcom/android/server/backup/BackupManagerService;
 
     invoke-static {v0}, Lcom/android/server/backup/BackupManagerService;->access$1100(Lcom/android/server/backup/BackupManagerService;)Landroid/content/Context;
@@ -60,6 +57,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/backup/FullBackupJob;->schedule(Landroid/content/Context;JLcom/android/server/backup/BackupManagerConstants;)V
 
-    .line 1926
     return-void
 .end method

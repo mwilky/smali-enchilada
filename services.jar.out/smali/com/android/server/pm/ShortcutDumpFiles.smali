@@ -16,10 +16,7 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Throwable;
-    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
-    .line 63
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -45,23 +42,17 @@
 
 .method public constructor <init>(Lcom/android/server/pm/ShortcutService;)V
     .locals 0
-    .param p1, "service"    # Lcom/android/server/pm/ShortcutService;
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     iput-object p1, p0, Lcom/android/server/pm/ShortcutDumpFiles;->mService:Lcom/android/server/pm/ShortcutService;
 
-    .line 43
     return-void
 .end method
 
 .method static synthetic lambda$dumpAll$1(Ljava/io/File;)Z
     .locals 1
-    .param p0, "f"    # Ljava/io/File;
 
-    .line 79
     invoke-virtual {p0}, Ljava/io/File;->isFile()Z
 
     move-result v0
@@ -71,9 +62,7 @@
 
 .method static synthetic lambda$dumpAll$2(Ljava/io/File;)Ljava/lang/String;
     .locals 1
-    .param p0, "f"    # Ljava/io/File;
 
-    .line 84
     invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -83,28 +72,21 @@
 
 .method static synthetic lambda$save$0([BLjava/io/PrintWriter;)V
     .locals 2
-    .param p0, "utf8bytes"    # [B
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 72
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 73
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 72
     invoke-virtual {v0, v1}, Ljava/nio/charset/Charset;->decode(Ljava/nio/ByteBuffer;)Ljava/nio/CharBuffer;
 
     move-result-object v0
 
-    .line 73
     invoke-virtual {v0}, Ljava/nio/CharBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     return-void
@@ -114,9 +96,7 @@
 # virtual methods
 .method public dumpAll(Ljava/io/PrintWriter;)V
     .locals 9
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 78
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/ShortcutDumpFiles;->mService:Lcom/android/server/pm/ShortcutService;
 
@@ -124,16 +104,12 @@
 
     move-result-object v0
 
-    .line 79
-    .local v0, "directory":Ljava/io/File;
     sget-object v1, Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$v6wMz6MRa9pgSnEDM_9bjvrLaKY;->INSTANCE:Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$v6wMz6MRa9pgSnEDM_9bjvrLaKY;
 
     invoke-virtual {v0, v1}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
 
     move-result-object v1
 
-    .line 80
-    .local v1, "files":[Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -148,7 +124,6 @@
 
     goto :goto_3
 
-    .line 84
     :cond_0
     sget-object v2, Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$stGgHzhh-NVWPgDSwmH2ybAWRE8;->INSTANCE:Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$stGgHzhh-NVWPgDSwmH2ybAWRE8;
 
@@ -158,7 +133,6 @@
 
     invoke-static {v1, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
-    .line 86
     array-length v2, v1
 
     const/4 v3, 0x0
@@ -168,25 +142,20 @@
 
     aget-object v4, v1, v3
 
-    .line 87
-    .local v4, "path":Ljava/io/File;
     const-string v5, "*** Dumping: "
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 88
     invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 90
     const-string/jumbo v5, "mtime: "
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 91
     invoke-virtual {v4}, Ljava/io/File;->lastModified()J
 
     move-result-wide v5
@@ -197,7 +166,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 93
     new-instance v5, Ljava/io/BufferedReader;
 
     new-instance v6, Ljava/io/InputStreamReader;
@@ -213,14 +181,10 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 95
-    .local v5, "reader":Ljava/io/BufferedReader;
     const/4 v6, 0x0
 
     move-object v7, v6
 
-    .line 96
-    .local v7, "line":Ljava/lang/String;
     :goto_1
     :try_start_1
     invoke-virtual {v5}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -231,7 +195,6 @@
 
     if-eqz v8, :cond_1
 
-    .line 97
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
@@ -239,8 +202,6 @@
 
     goto :goto_1
 
-    .line 99
-    .end local v7    # "line":Ljava/lang/String;
     :cond_1
     :try_start_2
     invoke-static {v6, v5}, Lcom/android/server/pm/ShortcutDumpFiles;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
@@ -248,22 +209,15 @@
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 86
-    .end local v4    # "path":Ljava/io/File;
-    .end local v5    # "reader":Ljava/io/BufferedReader;
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 99
-    .restart local v4    # "path":Ljava/io/File;
-    .restart local v5    # "reader":Ljava/io/BufferedReader;
     :catchall_0
     move-exception v2
 
     goto :goto_2
 
-    .line 93
     :catch_0
     move-exception v2
 
@@ -274,24 +228,15 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 99
     :goto_2
     :try_start_4
     invoke-static {v6, v5}, Lcom/android/server/pm/ShortcutDumpFiles;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
     throw v2
 
-    .line 103
-    .end local v0    # "directory":Ljava/io/File;
-    .end local v1    # "files":[Ljava/io/File;
-    .end local v4    # "path":Ljava/io/File;
-    .end local v5    # "reader":Ljava/io/BufferedReader;
     :cond_2
     goto :goto_4
 
-    .line 81
-    .restart local v0    # "directory":Ljava/io/File;
-    .restart local v1    # "files":[Ljava/io/File;
     :cond_3
     :goto_3
     const-string v2, "  No dump files found."
@@ -301,32 +246,23 @@
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 82
     return-void
 
-    .line 101
-    .end local v0    # "directory":Ljava/io/File;
-    .end local v1    # "files":[Ljava/io/File;
     :catch_1
     move-exception v0
 
-    .line 102
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ShortcutService"
 
     const-string v2, "Failed to print dump files"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 104
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_4
     return-void
 .end method
 
 .method public save(Ljava/lang/String;Ljava/util/function/Consumer;)Z
     .locals 6
-    .param p1, "filename"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -337,8 +273,6 @@
         }
     .end annotation
 
-    .line 47
-    .local p2, "dumper":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Ljava/io/PrintWriter;>;"
     const/4 v0, 0x0
 
     :try_start_0
@@ -348,18 +282,14 @@
 
     move-result-object v1
 
-    .line 48
-    .local v1, "directory":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
-    .line 49
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 50
     const-string v2, "ShortcutService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -378,17 +308,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     return v0
 
-    .line 54
     :cond_0
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 60
-    .local v2, "path":Ljava/io/File;
     new-instance v3, Ljava/io/PrintWriter;
 
     new-instance v4, Ljava/io/BufferedOutputStream;
@@ -404,37 +330,29 @@
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .local v3, "pw":Ljava/io/PrintWriter;
     const/4 v4, 0x0
 
-    .line 62
     :try_start_1
     invoke-interface {p2, v3}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 63
     :try_start_2
     invoke-static {v4, v3}, Lcom/android/server/pm/ShortcutDumpFiles;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     :try_end_2
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 64
-    .end local v3    # "pw":Ljava/io/PrintWriter;
     const/4 v0, 0x1
 
     return v0
 
-    .line 63
-    .restart local v3    # "pw":Ljava/io/PrintWriter;
     :catchall_0
     move-exception v5
 
     goto :goto_0
 
-    .line 60
     :catch_0
     move-exception v4
 
@@ -443,7 +361,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 63
     :goto_0
     :try_start_4
     invoke-static {v4, v3}, Lcom/android/server/pm/ShortcutDumpFiles;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
@@ -453,15 +370,9 @@
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 65
-    .end local v1    # "directory":Ljava/io/File;
-    .end local v2    # "path":Ljava/io/File;
-    .end local v3    # "pw":Ljava/io/PrintWriter;
     :catch_1
     move-exception v1
 
-    .line 66
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "ShortcutService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -480,16 +391,12 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 67
     return v0
 .end method
 
 .method public save(Ljava/lang/String;[B)Z
     .locals 1
-    .param p1, "filename"    # Ljava/lang/String;
-    .param p2, "utf8bytes"    # [B
 
-    .line 72
     new-instance v0, Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$rwmVVp6PnQCcurF7D6VzrdNqEdk;
 
     invoke-direct {v0, p2}, Lcom/android/server/pm/-$$Lambda$ShortcutDumpFiles$rwmVVp6PnQCcurF7D6VzrdNqEdk;-><init>([B)V

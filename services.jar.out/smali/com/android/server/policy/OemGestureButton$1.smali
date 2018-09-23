@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemGestureButton;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemGestureButton;
 
-    .line 219
     iput-object p1, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerInternal$AppTransitionListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
     .locals 3
-    .param p1, "openToken"    # Landroid/os/IBinder;
 
-    .line 249
     sget-boolean v0, Lcom/android/server/policy/OemGestureButton;->mNeedRecoverAnimation:Z
 
     if-eqz v0, :cond_0
@@ -46,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 250
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     iget-object v0, v0, Lcom/android/server/policy/OemGestureButton;->mPwm:Lcom/android/server/policy/PhoneWindowManager;
@@ -59,13 +54,10 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/wm/WindowManagerInternal;->overridePendingAppTransition(ZLandroid/view/animation/Animation;)V
 
-    .line 251
     sput-boolean v2, Lcom/android/server/policy/OemGestureButton;->mIsAnimationStart:Z
 
-    .line 252
     sput-boolean v2, Lcom/android/server/policy/OemGestureButton;->mNeedRecoverAnimation:Z
 
-    .line 254
     :cond_0
     invoke-static {}, Lcom/android/server/policy/OemGestureButton;->access$000()Z
 
@@ -73,7 +65,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 255
     const-string v0, "OemGestureButton"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -92,7 +83,6 @@
 
     iget-object v2, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
-    .line 256
     invoke-static {v2}, Lcom/android/server/policy/OemGestureButton;->access$100(Lcom/android/server/policy/OemGestureButton;)I
 
     move-result v2
@@ -103,31 +93,21 @@
 
     move-result-object v1
 
-    .line 255
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
     :cond_1
     return-void
 .end method
 
 .method public onAppTransitionStartingLocked(ILandroid/os/IBinder;Landroid/os/IBinder;JJJ)I
     .locals 4
-    .param p1, "transit"    # I
-    .param p2, "openToken"    # Landroid/os/IBinder;
-    .param p3, "closeToken"    # Landroid/os/IBinder;
-    .param p4, "duration"    # J
-    .param p6, "statusBarAnimationStartTime"    # J
-    .param p8, "statusBarAnimationDuration"    # J
 
-    .line 224
     invoke-static {}, Lcom/android/server/policy/OemGestureButton;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 225
     const-string v0, "OemGestureButton"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -158,7 +138,6 @@
 
     iget-object v2, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
-    .line 227
     invoke-static {v2}, Lcom/android/server/policy/OemGestureButton;->access$100(Lcom/android/server/policy/OemGestureButton;)I
 
     move-result v2
@@ -169,10 +148,8 @@
 
     move-result-object v1
 
-    .line 225
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
@@ -180,7 +157,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 230
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     invoke-static {v0}, Lcom/android/server/policy/OemGestureButton;->access$100(Lcom/android/server/policy/OemGestureButton;)I
@@ -191,7 +167,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 231
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     iget-object v0, v0, Lcom/android/server/policy/OemGestureButton;->mOemGestureButtonHandler:Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;
@@ -200,7 +175,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->removeMessages(I)V
 
-    .line 233
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     iget-object v0, v0, Lcom/android/server/policy/OemGestureButton;->mOemGestureButtonHandler:Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;
@@ -209,12 +183,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 235
     const/4 v0, 0x5
 
     return v0
 
-    .line 237
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$1;->this$0:Lcom/android/server/policy/OemGestureButton;
 
@@ -224,7 +196,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->sendEmptyMessage(I)Z
 
-    .line 241
     :cond_2
     sget-boolean v0, Lcom/android/server/policy/OemGestureButton;->mNeedRecoverAnimation:Z
 
@@ -234,12 +205,10 @@
 
     if-nez v0, :cond_3
 
-    .line 242
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/server/policy/OemGestureButton;->mIsAnimationStart:Z
 
-    .line 244
     :cond_3
     const/4 v0, 0x0
 

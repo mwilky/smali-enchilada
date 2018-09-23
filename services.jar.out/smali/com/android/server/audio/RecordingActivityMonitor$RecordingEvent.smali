@@ -29,31 +29,19 @@
 # direct methods
 .method constructor <init>(IIIILjava/lang/String;)V
     .locals 0
-    .param p1, "event"    # I
-    .param p2, "uid"    # I
-    .param p3, "session"    # I
-    .param p4, "source"    # I
-    .param p5, "packName"    # Ljava/lang/String;
 
-    .line 304
     invoke-direct {p0}, Lcom/android/server/audio/AudioEventLogger$Event;-><init>()V
 
-    .line 305
     iput p1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mRecEvent:I
 
-    .line 306
     iput p2, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mClientUid:I
 
-    .line 307
     iput p3, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mSession:I
 
-    .line 308
     iput p4, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mSource:I
 
-    .line 309
     iput-object p5, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mPackName:Ljava/lang/String;
 
-    .line 310
     return-void
 .end method
 
@@ -62,14 +50,12 @@
 .method public eventToString()Ljava/lang/String;
     .locals 3
 
-    .line 314
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "rec "
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 315
     iget v1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mRecEvent:I
 
     const/4 v2, 0x1
@@ -83,13 +69,11 @@
     :cond_0
     const-string/jumbo v1, "stop "
 
-    .line 314
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, " uid:"
 
-    .line 316
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mClientUid:I
@@ -98,7 +82,6 @@
 
     const-string v1, " session:"
 
-    .line 317
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mSession:I
@@ -107,7 +90,6 @@
 
     const-string v1, " src:"
 
-    .line 318
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mSource:I
@@ -118,7 +100,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 319
     iget-object v1, p0, Lcom/android/server/audio/RecordingActivityMonitor$RecordingEvent;->mPackName:Ljava/lang/String;
 
     if-nez v1, :cond_1
@@ -151,6 +132,5 @@
 
     move-result-object v0
 
-    .line 314
     return-object v0
 .end method

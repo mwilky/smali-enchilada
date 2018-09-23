@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;ILjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
-    .line 368
     iput-object p1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$4;->this$0:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
     iput p2, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$4;->val$callingPid:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 370
     iget-object v0, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$4;->this$0:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->access$000(Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;)Lcom/android/server/am/ActivityManagerService;
@@ -64,11 +61,8 @@
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
 
-    .line 371
-    .local v0, "proc":Lcom/android/server/am/ProcessRecord;
     if-eqz v0, :cond_1
 
-    .line 372
     const-string/jumbo v1, "system"
 
     iget-object v2, v0, Lcom/android/server/am/ProcessRecord;->info:Landroid/content/pm/ApplicationInfo;
@@ -81,7 +75,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 373
     iget-object v1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$4;->this$0:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
     invoke-static {v1}, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;->access$100(Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;)Landroid/content/Context;
@@ -96,7 +89,6 @@
 
     goto :goto_0
 
-    .line 375
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$4;->this$0:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
@@ -110,7 +102,6 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/am/AppStateBroadcaster;->sendApplicationStop(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 378
     :cond_1
     :goto_0
     return-void

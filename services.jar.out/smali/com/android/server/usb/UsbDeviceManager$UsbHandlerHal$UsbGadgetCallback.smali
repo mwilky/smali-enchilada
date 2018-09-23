@@ -28,36 +28,26 @@
 .method constructor <init>(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;)V
     .locals 0
 
-    .line 1888
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-direct {p0}, Landroid/hardware/usb/gadget/V1_0/IUsbGadgetCallback$Stub;-><init>()V
 
-    .line 1889
     return-void
 .end method
 
 .method constructor <init>(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;IJZ)V
     .locals 0
-    .param p2, "request"    # I
-    .param p3, "functions"    # J
-    .param p5, "chargingFunctions"    # Z
 
-    .line 1892
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-direct {p0}, Landroid/hardware/usb/gadget/V1_0/IUsbGadgetCallback$Stub;-><init>()V
 
-    .line 1893
     iput p2, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->mRequest:I
 
-    .line 1894
     iput-wide p3, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->mFunctions:J
 
-    .line 1895
     iput-boolean p5, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->mChargingFunctions:Z
 
-    .line 1896
     return-void
 .end method
 
@@ -65,10 +55,7 @@
 # virtual methods
 .method public getCurrentUsbFunctionsCb(JI)V
     .locals 4
-    .param p1, "functions"    # J
-    .param p3, "status"    # I
 
-    .line 1922
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -91,16 +78,12 @@
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->sendMessage(ILjava/lang/Object;Z)V
 
-    .line 1924
     return-void
 .end method
 
 .method public setCurrentUsbFunctionsCb(JI)V
     .locals 4
-    .param p1, "functions"    # J
-    .param p3, "status"    # I
 
-    .line 1904
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-static {v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->access$800(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;)I
@@ -129,13 +112,11 @@
 
     goto :goto_1
 
-    .line 1909
     :cond_0
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-virtual {v0, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->removeMessages(I)V
 
-    .line 1910
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
 
     move-result-object v0
@@ -164,10 +145,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1911
     if-nez p3, :cond_1
 
-    .line 1912
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     const/4 v1, 0x1
@@ -176,13 +155,11 @@
 
     goto :goto_0
 
-    .line 1913
     :cond_1
     iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->mChargingFunctions:Z
 
     if-nez v0, :cond_2
 
-    .line 1914
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
 
     move-result-object v0
@@ -191,19 +168,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1915
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetCallback;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     const/16 v1, 0xe
 
     invoke-virtual {v0, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->sendEmptyMessage(I)Z
 
-    .line 1917
     :cond_2
     :goto_0
     return-void
 
-    .line 1906
     :cond_3
     :goto_1
     return-void

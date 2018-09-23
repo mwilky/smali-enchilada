@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver;Ljava/io/File;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver;
 
-    .line 171
     iput-object p1, p0, Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver$1;->this$0:Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver;
 
     iput-object p2, p0, Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver$1;->val$currentTarget:Ljava/io/File;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;)Z
     .locals 2
-    .param p1, "file"    # Ljava/io/File;
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/updates/CertificateTransparencyLogInstallReceiver$1;->val$currentTarget:Ljava/io/File;
 
     invoke-virtual {v0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z

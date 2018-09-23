@@ -32,17 +32,14 @@
 .method private constructor <init>(Lcom/android/server/notification/ZenModeHelper;)V
     .locals 2
 
-    .line 1311
     iput-object p1, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper$Callback;-><init>()V
 
-    .line 1315
     const/4 p1, -0x1
 
     iput p1, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mPreviousZenMode:I
 
-    .line 1316
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mBeginningMs:J
@@ -52,10 +49,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/notification/ZenModeHelper;Lcom/android/server/notification/ZenModeHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/notification/ZenModeHelper;
-    .param p2, "x1"    # Lcom/android/server/notification/ZenModeHelper$1;
 
-    .line 1311
     invoke-direct {p0, p1}, Lcom/android/server/notification/ZenModeHelper$Metrics;-><init>(Lcom/android/server/notification/ZenModeHelper;)V
 
     return-void
@@ -63,9 +57,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/notification/ZenModeHelper$Metrics;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/notification/ZenModeHelper$Metrics;
 
-    .line 1311
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper$Metrics;->emit()V
 
     return-void
@@ -74,7 +66,6 @@
 .method private emit()V
     .locals 7
 
-    .line 1324
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper;->access$800(Lcom/android/server/notification/ZenModeHelper;)Lcom/android/server/notification/ZenModeHelper$H;
@@ -83,19 +74,14 @@
 
     invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper$H;->access$200(Lcom/android/server/notification/ZenModeHelper$H;)V
 
-    .line 1325
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 1326
-    .local v0, "now":J
     iget-wide v2, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mBeginningMs:J
 
     sub-long v2, v0, v2
 
-    .line 1327
-    .local v2, "since":J
     iget v4, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mPreviousZenMode:I
 
     iget-object v5, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->this$0:Lcom/android/server/notification/ZenModeHelper;
@@ -110,7 +96,6 @@
 
     if-lez v4, :cond_2
 
-    .line 1328
     :cond_0
     iget v4, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mPreviousZenMode:I
 
@@ -118,7 +103,6 @@
 
     if-eq v4, v5, :cond_1
 
-    .line 1329
     iget-object v4, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
     invoke-static {v4}, Lcom/android/server/notification/ZenModeHelper;->access$600(Lcom/android/server/notification/ZenModeHelper;)Landroid/content/Context;
@@ -145,7 +129,6 @@
 
     invoke-static {v4, v5, v6}, Lcom/android/internal/logging/MetricsLogger;->count(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 1331
     :cond_1
     iget-object v4, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->this$0:Lcom/android/server/notification/ZenModeHelper;
 
@@ -153,10 +136,8 @@
 
     iput v4, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mPreviousZenMode:I
 
-    .line 1332
     iput-wide v0, p0, Lcom/android/server/notification/ZenModeHelper$Metrics;->mBeginningMs:J
 
-    .line 1334
     :cond_2
     return-void
 .end method
@@ -166,9 +147,7 @@
 .method onZenModeChanged()V
     .locals 0
 
-    .line 1320
     invoke-direct {p0}, Lcom/android/server/notification/ZenModeHelper$Metrics;->emit()V
 
-    .line 1321
     return-void
 .end method

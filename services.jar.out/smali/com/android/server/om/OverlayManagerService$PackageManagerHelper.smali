@@ -45,24 +45,20 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 846
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 844
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
-    .line 847
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mPackageManager:Landroid/content/pm/IPackageManager;
 
-    .line 848
     const-class v0, Landroid/content/pm/PackageManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -73,7 +69,6 @@
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mPackageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
-    .line 849
     return-void
 .end method
 
@@ -81,11 +76,7 @@
 # virtual methods
 .method public cachePackageInfo(Ljava/lang/String;ILandroid/content/pm/PackageInfo;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "pi"    # Landroid/content/pm/PackageInfo;
 
-    .line 903
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -94,73 +85,54 @@
 
     check-cast v0, Ljava/util/HashMap;
 
-    .line 904
-    .local v0, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     if-nez v0, :cond_0
 
-    .line 905
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     move-object v0, v1
 
-    .line 906
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 908
     :cond_0
     invoke-virtual {v0, p1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 909
     return-void
 .end method
 
 .method public dump(Ljava/io/PrintWriter;Z)V
     .locals 8
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "verbose"    # Z
 
-    .line 930
     const-string v0, "PackageInfo cache"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 932
     const/4 v0, 0x0
 
     if-nez p2, :cond_1
 
-    .line 933
     const/4 v1, 0x0
 
-    .line 934
-    .local v1, "count":I
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
 
     move-result v2
 
-    .line 935
-    .local v2, "N":I
     nop
 
-    .local v0, "i":I
     :goto_0
     if-ge v0, v2, :cond_0
 
-    .line 936
     iget-object v3, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v3
 
-    .line 937
-    .local v3, "userId":I
     iget-object v4, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v3}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -175,14 +147,10 @@
 
     add-int/2addr v1, v4
 
-    .line 935
-    .end local v3    # "userId":I
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 939
-    .end local v0    # "i":I
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -204,12 +172,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 940
     return-void
 
-    .line 943
-    .end local v1    # "count":I
-    .end local v2    # "N":I
     :cond_1
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
@@ -219,15 +183,12 @@
 
     if-nez v1, :cond_2
 
-    .line 944
     const-string v0, "    <empty>"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 945
     return-void
 
-    .line 948
     :cond_2
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
@@ -235,23 +196,17 @@
 
     move-result v1
 
-    .line 949
-    .local v1, "N":I
     nop
 
-    .restart local v0    # "i":I
     :goto_1
     if-ge v0, v1, :cond_4
 
-    .line 950
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    .line 951
-    .local v2, "userId":I
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -268,7 +223,6 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 952
     iget-object v3, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -277,8 +231,6 @@
 
     check-cast v3, Ljava/util/HashMap;
 
-    .line 953
-    .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     invoke-virtual {v3}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v4
@@ -300,8 +252,6 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 954
-    .local v5, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,43 +284,30 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 955
-    .end local v5    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     goto :goto_2
 
-    .line 949
-    .end local v2    # "userId":I
-    .end local v3    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 957
-    .end local v0    # "i":I
     :cond_4
     return-void
 .end method
 
 .method public forgetAllPackageInfos(I)V
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 923
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 924
     return-void
 .end method
 
 .method public forgetPackageInfo(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 912
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -379,40 +316,30 @@
 
     check-cast v0, Ljava/util/HashMap;
 
-    .line 913
-    .local v0, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     if-nez v0, :cond_0
 
-    .line 914
     return-void
 
-    .line 916
     :cond_0
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 917
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 918
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p2}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 920
     :cond_1
     return-void
 .end method
 
 .method public getCachedPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 897
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mCache:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -421,8 +348,6 @@
 
     check-cast v0, Ljava/util/HashMap;
 
-    .line 898
-    .local v0, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Landroid/content/pm/PackageInfo;>;"
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -442,7 +367,6 @@
 
 .method public getOverlayPackages(I)Ljava/util/List;
     .locals 1
-    .param p1, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -452,7 +376,6 @@
         }
     .end annotation
 
-    .line 892
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mPackageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManagerInternal;->getOverlayPackages(I)Ljava/util/List;
@@ -464,10 +387,7 @@
 
 .method public getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 873
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->getPackageInfo(Ljava/lang/String;IZ)Landroid/content/pm/PackageInfo;
@@ -479,27 +399,17 @@
 
 .method public getPackageInfo(Ljava/lang/String;IZ)Landroid/content/pm/PackageInfo;
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "useCache"    # Z
 
-    .line 853
     if-eqz p3, :cond_0
 
-    .line 854
     invoke-virtual {p0, p1, p2}, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->getCachedPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
-    .line 855
-    .local v0, "cachedPi":Landroid/content/pm/PackageInfo;
     if-eqz v0, :cond_0
 
-    .line 856
     return-object v0
 
-    .line 860
-    .end local v0    # "cachedPi":Landroid/content/pm/PackageInfo;
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->mPackageManager:Landroid/content/pm/IPackageManager;
@@ -510,27 +420,20 @@
 
     move-result-object v0
 
-    .line 861
-    .local v0, "pi":Landroid/content/pm/PackageInfo;
     if-eqz p3, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 862
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->cachePackageInfo(Ljava/lang/String;ILandroid/content/pm/PackageInfo;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 864
     :cond_1
     return-object v0
 
-    .line 865
-    .end local v0    # "pi":Landroid/content/pm/PackageInfo;
     :catch_0
     move-exception v0
 
-    .line 868
     const/4 v0, 0x0
 
     return-object v0
@@ -538,11 +441,7 @@
 
 .method public signaturesMatching(Ljava/lang/String;Ljava/lang/String;I)Z
     .locals 2
-    .param p1, "packageName1"    # Ljava/lang/String;
-    .param p2, "packageName2"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 882
     const/4 v0, 0x0
 
     :try_start_0
@@ -563,10 +462,8 @@
     :cond_0
     return v0
 
-    .line 884
     :catch_0
     move-exception v1
 
-    .line 887
     return v0
 .end method

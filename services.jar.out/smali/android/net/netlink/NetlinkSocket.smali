@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,19 +22,15 @@
 
 .method private static checkTimeout(J)V
     .locals 2
-    .param p0, "timeoutMs"    # J
 
-    .line 115
     const-wide/16 v0, 0x0
 
     cmp-long v0, p0, v0
 
     if-ltz v0, :cond_0
 
-    .line 118
     return-void
 
-    .line 116
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -48,7 +43,6 @@
 
 .method public static connectToKernel(Ljava/io/FileDescriptor;)V
     .locals 2
-    .param p0, "fd"    # Ljava/io/FileDescriptor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;,
@@ -56,7 +50,6 @@
         }
     .end annotation
 
-    .line 111
     new-instance v0, Landroid/system/NetlinkSocketAddress;
 
     const/4 v1, 0x0
@@ -65,20 +58,17 @@
 
     invoke-static {p0, v0}, Landroid/system/Os;->connect(Ljava/io/FileDescriptor;Ljava/net/SocketAddress;)V
 
-    .line 112
     return-void
 .end method
 
 .method public static forProto(I)Ljava/io/FileDescriptor;
     .locals 4
-    .param p0, "nlProto"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
         }
     .end annotation
 
-    .line 105
     sget v0, Landroid/system/OsConstants;->AF_NETLINK:I
 
     sget v1, Landroid/system/OsConstants;->SOCK_DGRAM:I
@@ -87,8 +77,6 @@
 
     move-result-object v0
 
-    .line 106
-    .local v0, "fd":Ljava/io/FileDescriptor;
     sget v1, Landroid/system/OsConstants;->SOL_SOCKET:I
 
     sget v2, Landroid/system/OsConstants;->SO_RCVBUF:I
@@ -97,15 +85,11 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/system/Os;->setsockoptInt(Ljava/io/FileDescriptor;III)V
 
-    .line 107
     return-object v0
 .end method
 
 .method public static recvMessage(Ljava/io/FileDescriptor;IJ)Ljava/nio/ByteBuffer;
     .locals 4
-    .param p0, "fd"    # Ljava/io/FileDescriptor;
-    .param p1, "bufsize"    # I
-    .param p2, "timeoutMs"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;,
@@ -114,10 +98,8 @@
         }
     .end annotation
 
-    .line 128
     invoke-static {p2, p3}, Landroid/net/netlink/NetlinkSocket;->checkTimeout(J)V
 
-    .line 130
     sget v0, Landroid/system/OsConstants;->SOL_SOCKET:I
 
     sget v1, Landroid/system/OsConstants;->SO_RCVTIMEO:I
@@ -128,55 +110,40 @@
 
     invoke-static {p0, v0, v1, v2}, Landroid/system/Os;->setsockoptTimeval(Ljava/io/FileDescriptor;IILandroid/system/StructTimeval;)V
 
-    .line 132
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 133
-    .local v0, "byteBuffer":Ljava/nio/ByteBuffer;
     invoke-static {p0, v0}, Landroid/system/Os;->read(Ljava/io/FileDescriptor;Ljava/nio/ByteBuffer;)I
 
     move-result v1
 
-    .line 134
-    .local v1, "length":I
     if-ne v1, p1, :cond_0
 
-    .line 135
     const-string v2, "NetlinkSocket"
 
     const-string/jumbo v3, "maximum read"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
     :cond_0
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 138
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 139
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 140
     return-object v0
 .end method
 
 .method public static sendMessage(Ljava/io/FileDescriptor;[BIIJ)I
     .locals 3
-    .param p0, "fd"    # Ljava/io/FileDescriptor;
-    .param p1, "bytes"    # [B
-    .param p2, "offset"    # I
-    .param p3, "count"    # I
-    .param p4, "timeoutMs"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;,
@@ -185,10 +152,8 @@
         }
     .end annotation
 
-    .line 152
     invoke-static {p4, p5}, Landroid/net/netlink/NetlinkSocket;->checkTimeout(J)V
 
-    .line 153
     sget v0, Landroid/system/OsConstants;->SOL_SOCKET:I
 
     sget v1, Landroid/system/OsConstants;->SO_SNDTIMEO:I
@@ -199,7 +164,6 @@
 
     invoke-static {p0, v0, v1, v2}, Landroid/system/Os;->setsockoptTimeval(Ljava/io/FileDescriptor;IILandroid/system/StructTimeval;)V
 
-    .line 154
     invoke-static {p0, p1, p2, p3}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
 
     move-result v0
@@ -209,35 +173,25 @@
 
 .method public static sendOneShotKernelMessage(I[B)V
     .locals 12
-    .param p0, "nlProto"    # I
-    .param p1, "msg"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/system/ErrnoException;
         }
     .end annotation
 
-    .line 59
     const-string v0, "Error in NetlinkSocket.sendOneShotKernelMessage"
 
-    .line 60
-    .local v0, "errPrefix":Ljava/lang/String;
     const-wide/16 v1, 0x12c
 
     move-wide v3, v1
 
-    .line 65
-    .local v3, "IO_TIMEOUT":J
     :try_start_0
     invoke-static {p0}, Landroid/net/netlink/NetlinkSocket;->forProto(I)Ljava/io/FileDescriptor;
 
     move-result-object v5
 
-    .line 66
-    .local v5, "fd":Ljava/io/FileDescriptor;
     invoke-static {v5}, Landroid/net/netlink/NetlinkSocket;->connectToKernel(Ljava/io/FileDescriptor;)V
 
-    .line 67
     const/4 v8, 0x0
 
     array-length v9, p1
@@ -250,21 +204,16 @@
 
     invoke-static/range {v6 .. v11}, Landroid/net/netlink/NetlinkSocket;->sendMessage(Ljava/io/FileDescriptor;[BIIJ)I
 
-    .line 68
     const/16 v6, 0x2000
 
     invoke-static {v5, v6, v1, v2}, Landroid/net/netlink/NetlinkSocket;->recvMessage(Ljava/io/FileDescriptor;IJ)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 70
-    .local v1, "bytes":Ljava/nio/ByteBuffer;
     invoke-static {v1}, Landroid/net/netlink/NetlinkMessage;->parse(Ljava/nio/ByteBuffer;)Landroid/net/netlink/NetlinkMessage;
 
     move-result-object v2
 
-    .line 71
-    .local v2, "response":Landroid/net/netlink/NetlinkMessage;
     if-eqz v2, :cond_1
 
     instance-of v6, v2, Landroid/net/netlink/NetlinkErrorMessage;
@@ -275,14 +224,12 @@
 
     check-cast v6, Landroid/net/netlink/NetlinkErrorMessage;
 
-    .line 72
     invoke-virtual {v6}, Landroid/net/netlink/NetlinkErrorMessage;->getNlMsgError()Landroid/net/netlink/StructNlMsgErr;
 
     move-result-object v6
 
     if-eqz v6, :cond_1
 
-    .line 73
     move-object v6, v2
 
     check-cast v6, Landroid/net/netlink/NetlinkErrorMessage;
@@ -296,32 +243,18 @@
     .catch Ljava/io/InterruptedIOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/net/SocketException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 74
-    .local v6, "errno":I
     if-nez v6, :cond_0
 
-    .line 82
-    .end local v6    # "errno":I
     nop
 
-    .line 99
-    .end local v1    # "bytes":Ljava/nio/ByteBuffer;
-    .end local v2    # "response":Landroid/net/netlink/NetlinkMessage;
     nop
 
-    .line 98
     nop
 
-    .line 101
     invoke-static {v5}, Llibcore/io/IoUtils;->closeQuietly(Ljava/io/FileDescriptor;)V
 
-    .line 102
     return-void
 
-    .line 78
-    .restart local v1    # "bytes":Ljava/nio/ByteBuffer;
-    .restart local v2    # "response":Landroid/net/netlink/NetlinkMessage;
-    .restart local v6    # "errno":I
     :cond_0
     :try_start_1
     const-string v7, "NetlinkSocket"
@@ -346,7 +279,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
     new-instance v7, Landroid/system/ErrnoException;
 
     invoke-virtual {v2}, Landroid/net/netlink/NetlinkMessage;->toString()Ljava/lang/String;
@@ -361,17 +293,13 @@
 
     throw v7
 
-    .line 84
-    .end local v6    # "errno":I
     :cond_1
     if-nez v2, :cond_2
 
-    .line 85
     const/4 v6, 0x0
 
     invoke-virtual {v1, v6}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 86
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -390,18 +318,13 @@
 
     move-result-object v6
 
-    .local v6, "errmsg":Ljava/lang/String;
     goto :goto_0
 
-    .line 88
-    .end local v6    # "errmsg":Ljava/lang/String;
     :cond_2
     invoke-virtual {v2}, Landroid/net/netlink/NetlinkMessage;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 90
-    .restart local v6    # "errmsg":Ljava/lang/String;
     :goto_0
     const-string v7, "NetlinkSocket"
 
@@ -421,7 +344,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
     new-instance v7, Landroid/system/ErrnoException;
 
     sget v8, Landroid/system/OsConstants;->EPROTO:I
@@ -433,23 +355,15 @@
     .catch Ljava/io/InterruptedIOException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/net/SocketException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 96
-    .end local v1    # "bytes":Ljava/nio/ByteBuffer;
-    .end local v2    # "response":Landroid/net/netlink/NetlinkMessage;
-    .end local v5    # "fd":Ljava/io/FileDescriptor;
-    .end local v6    # "errmsg":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 97
-    .local v1, "e":Ljava/net/SocketException;
     const-string v2, "NetlinkSocket"
 
     const-string v5, "Error in NetlinkSocket.sendOneShotKernelMessage"
 
     invoke-static {v2, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 98
     new-instance v2, Landroid/system/ErrnoException;
 
     sget v5, Landroid/system/OsConstants;->EIO:I
@@ -460,20 +374,15 @@
 
     throw v2
 
-    .line 93
-    .end local v1    # "e":Ljava/net/SocketException;
     :catch_1
     move-exception v1
 
-    .line 94
-    .local v1, "e":Ljava/io/InterruptedIOException;
     const-string v2, "NetlinkSocket"
 
     const-string v5, "Error in NetlinkSocket.sendOneShotKernelMessage"
 
     invoke-static {v2, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 95
     new-instance v2, Landroid/system/ErrnoException;
 
     sget v5, Landroid/system/OsConstants;->ETIMEDOUT:I

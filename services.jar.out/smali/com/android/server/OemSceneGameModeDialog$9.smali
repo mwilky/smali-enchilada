@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModeDialog;Landroid/graphics/drawable/AnimationDrawable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModeDialog;
 
-    .line 209
     iput-object p1, p0, Lcom/android/server/OemSceneGameModeDialog$9;->this$0:Lcom/android/server/OemSceneGameModeDialog;
 
     iput-object p2, p0, Lcom/android/server/OemSceneGameModeDialog$9;->val$animDrawable3:Landroid/graphics/drawable/AnimationDrawable;
@@ -43,11 +41,9 @@
 .method public run()V
     .locals 1
 
-    .line 212
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog$9;->val$animDrawable3:Landroid/graphics/drawable/AnimationDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
-    .line 213
     return-void
 .end method

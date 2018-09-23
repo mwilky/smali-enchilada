@@ -37,21 +37,14 @@
 
 .method public writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
     .locals 2
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "fieldId"    # J
 
-    .line 92
     invoke-virtual {p1, p2, p3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 93
-    .local v0, "token":J
     invoke-interface {p0, p1}, Lcom/android/server/wm/AnimationAdapter;->writeToProto(Landroid/util/proto/ProtoOutputStream;)V
 
-    .line 94
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 95
     return-void
 .end method

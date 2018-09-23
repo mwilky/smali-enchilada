@@ -28,14 +28,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;JLandroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;IIZLjava/lang/String;Ljava/util/List;)V
     .locals 11
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "halDeviceId"    # J
-    .param p4, "token"    # Landroid/os/IBinder;
-    .param p5, "receiver"    # Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
-    .param p6, "groupId"    # I
-    .param p7, "userId"    # I
-    .param p8, "restricted"    # Z
-    .param p9, "owner"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,10 +43,8 @@
         }
     .end annotation
 
-    .local p10, "enrolledList":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/fingerprint/Fingerprint;>;"
     move-object v10, p0
 
-    .line 39
     move-object v0, v10
 
     move-object v1, p1
@@ -75,34 +65,28 @@
 
     invoke-direct/range {v0 .. v9}, Lcom/android/server/fingerprint/EnumerateClient;-><init>(Landroid/content/Context;JLandroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;IIZLjava/lang/String;)V
 
-    .line 33
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v10, Lcom/android/server/fingerprint/InternalEnumerateClient;->mUnknownFingerprints:Ljava/util/List;
 
-    .line 40
     move-object/from16 v0, p10
 
     iput-object v0, v10, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
-    .line 41
     return-void
 .end method
 
 .method private doFingerprintCleanup()V
     .locals 6
 
-    .line 63
     iget-object v0, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 64
     return-void
 
-    .line 67
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
@@ -123,8 +107,6 @@
 
     check-cast v1, Landroid/hardware/fingerprint/Fingerprint;
 
-    .line 68
-    .local v1, "f":Landroid/hardware/fingerprint/Fingerprint;
     const-string v2, "FingerprintService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -135,7 +117,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 69
     invoke-virtual {v1}, Landroid/hardware/fingerprint/Fingerprint;->getName()Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -166,7 +147,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 70
     invoke-virtual {v1}, Landroid/hardware/fingerprint/Fingerprint;->getDeviceId()J
 
     move-result-wide v4
@@ -177,10 +157,8 @@
 
     move-result-object v3
 
-    .line 68
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     invoke-static {}, Lcom/android/server/fingerprint/FingerprintUtils;->getInstance()Lcom/android/server/fingerprint/FingerprintUtils;
 
     move-result-object v2
@@ -189,7 +167,6 @@
 
     move-result-object v3
 
-    .line 73
     invoke-virtual {v1}, Landroid/hardware/fingerprint/Fingerprint;->getFingerId()I
 
     move-result v4
@@ -198,37 +175,25 @@
 
     move-result v5
 
-    .line 72
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/server/fingerprint/FingerprintUtils;->removeFingerprintIdForUser(Landroid/content/Context;II)V
 
-    .line 74
-    .end local v1    # "f":Landroid/hardware/fingerprint/Fingerprint;
     goto :goto_0
 
-    .line 75
     :cond_1
     iget-object v0, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 76
     return-void
 .end method
 
 .method private handleEnumeratedFingerprint(III)V
     .locals 8
-    .param p1, "fingerId"    # I
-    .param p2, "groupId"    # I
-    .param p3, "remaining"    # I
 
-    .line 45
     const/4 v0, 0x0
 
-    .line 46
-    .local v0, "matched":Z
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
@@ -238,7 +203,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 47
     iget-object v2, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -253,32 +217,25 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 48
     iget-object v2, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mEnrolledList:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 49
     const/4 v0, 0x1
 
-    .line 50
     goto :goto_1
 
-    .line 46
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 55
-    .end local v1    # "i":I
     :cond_1
     :goto_1
     if-nez v0, :cond_2
 
     if-eqz p1, :cond_2
 
-    .line 56
     new-instance v7, Landroid/hardware/fingerprint/Fingerprint;
 
     const-string v2, ""
@@ -295,14 +252,10 @@
 
     invoke-direct/range {v1 .. v6}, Landroid/hardware/fingerprint/Fingerprint;-><init>(Ljava/lang/CharSequence;IIJ)V
 
-    .line 57
-    .local v1, "fingerprint":Landroid/hardware/fingerprint/Fingerprint;
     iget-object v2, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mUnknownFingerprints:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 59
-    .end local v1    # "fingerprint":Landroid/hardware/fingerprint/Fingerprint;
     :cond_2
     return-void
 .end method
@@ -320,7 +273,6 @@
         }
     .end annotation
 
-    .line 79
     iget-object v0, p0, Lcom/android/server/fingerprint/InternalEnumerateClient;->mUnknownFingerprints:Ljava/util/List;
 
     return-object v0
@@ -328,20 +280,13 @@
 
 .method public onEnumerationResult(III)Z
     .locals 1
-    .param p1, "fingerId"    # I
-    .param p2, "groupId"    # I
-    .param p3, "remaining"    # I
 
-    .line 85
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/fingerprint/InternalEnumerateClient;->handleEnumeratedFingerprint(III)V
 
-    .line 86
     if-nez p3, :cond_0
 
-    .line 87
     invoke-direct {p0}, Lcom/android/server/fingerprint/InternalEnumerateClient;->doFingerprintCleanup()V
 
-    .line 90
     :cond_0
     if-nez p3, :cond_1
 

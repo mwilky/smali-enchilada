@@ -21,16 +21,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/TaskRecord;)V
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 110
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/am/TaskPersister$WriteQueueItem;-><init>(Lcom/android/server/am/TaskPersister$1;)V
 
-    .line 111
     iput-object p1, p0, Lcom/android/server/am/TaskPersister$TaskWriteQueueItem;->mTask:Lcom/android/server/am/TaskRecord;
 
-    .line 112
     return-void
 .end method

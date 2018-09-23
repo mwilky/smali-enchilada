@@ -34,15 +34,11 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 608
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 609
     iput-object p1, p0, Lcom/android/server/NetworkScoreService$ScanResultsSupplier;->mContext:Landroid/content/Context;
 
-    .line 610
     return-void
 .end method
 
@@ -51,7 +47,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 605
     invoke-virtual {p0}, Lcom/android/server/NetworkScoreService$ScanResultsSupplier;->get()Ljava/util/List;
 
     move-result-object v0
@@ -70,7 +65,6 @@
         }
     .end annotation
 
-    .line 614
     iget-object v0, p0, Lcom/android/server/NetworkScoreService$ScanResultsSupplier;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/net/wifi/WifiScanner;
@@ -81,18 +75,14 @@
 
     check-cast v0, Landroid/net/wifi/WifiScanner;
 
-    .line 615
-    .local v0, "wifiScanner":Landroid/net/wifi/WifiScanner;
     if-eqz v0, :cond_0
 
-    .line 616
     invoke-virtual {v0}, Landroid/net/wifi/WifiScanner;->getSingleScanResults()Ljava/util/List;
 
     move-result-object v1
 
     return-object v1
 
-    .line 618
     :cond_0
     const-string v1, "NetworkScoreService"
 
@@ -100,7 +90,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 619
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v1

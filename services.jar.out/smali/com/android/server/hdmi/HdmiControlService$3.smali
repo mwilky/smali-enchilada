@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService;Ljava/util/List;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 2077
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$3;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiControlService$3;->val$devices:Ljava/util/List;
@@ -46,9 +44,7 @@
 # virtual methods
 .method public onCleared(Lcom/android/server/hdmi/HdmiCecLocalDevice;)V
     .locals 3
-    .param p1, "device"    # Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
-    .line 2080
     const-string v0, "HdmiControlService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,12 +65,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2081
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$3;->val$devices:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 2082
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$3;->val$devices:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -83,14 +77,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2083
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$3;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     iget v1, p0, Lcom/android/server/hdmi/HdmiControlService$3;->val$standbyAction:I
 
     invoke-static {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->access$5300(Lcom/android/server/hdmi/HdmiControlService;I)V
 
-    .line 2088
     :cond_0
     return-void
 .end method

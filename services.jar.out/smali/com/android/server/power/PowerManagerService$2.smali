@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/PowerManagerService;IZLjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/PowerManagerService;
 
-    .line 3349
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$2;->this$0:Lcom/android/server/power/PowerManagerService;
 
     iput p2, p0, Lcom/android/server/power/PowerManagerService$2;->val$haltMode:I
@@ -51,10 +49,8 @@
 .method public run()V
     .locals 3
 
-    .line 3352
     monitor-enter p0
 
-    .line 3353
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$2;->val$haltMode:I
 
@@ -62,7 +58,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 3354
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$2;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/power/PowerManagerService;->getUiContext()Landroid/content/Context;
@@ -75,7 +70,6 @@
 
     goto :goto_0
 
-    .line 3355
     :cond_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$2;->val$haltMode:I
 
@@ -83,7 +77,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3356
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$2;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/power/PowerManagerService;->getUiContext()Landroid/content/Context;
@@ -98,7 +91,6 @@
 
     goto :goto_0
 
-    .line 3358
     :cond_1
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$2;->this$0:Lcom/android/server/power/PowerManagerService;
 
@@ -112,14 +104,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/power/ShutdownThread;->shutdown(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 3360
     :goto_0
     monitor-exit p0
 
-    .line 3361
     return-void
 
-    .line 3360
     :catchall_0
     move-exception v0
 

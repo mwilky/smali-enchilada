@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/soundtrigger/SoundTriggerHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
-    .line 862
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;->this$0:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 865
     const-string v0, "android.os.action.POWER_SAVE_MODE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,10 +46,8 @@
 
     if-nez v0, :cond_0
 
-    .line 866
     return-void
 
-    .line 868
     :cond_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;->this$0:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
@@ -70,8 +63,6 @@
 
     iget-boolean v0, v0, Landroid/os/PowerSaveState;->batterySaverEnabled:Z
 
-    .line 871
-    .local v0, "active":Z
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;->this$0:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     invoke-static {v1}, Lcom/android/server/soundtrigger/SoundTriggerHelper;->access$000(Lcom/android/server/soundtrigger/SoundTriggerHelper;)Ljava/lang/Object;
@@ -80,19 +71,15 @@
 
     monitor-enter v1
 
-    .line 872
     :try_start_0
     iget-object v2, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$PowerSaveModeListener;->this$0:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     invoke-static {v2, v0}, Lcom/android/server/soundtrigger/SoundTriggerHelper;->access$300(Lcom/android/server/soundtrigger/SoundTriggerHelper;Z)V
 
-    .line 873
     monitor-exit v1
 
-    .line 874
     return-void
 
-    .line 873
     :catchall_0
     move-exception v2
 

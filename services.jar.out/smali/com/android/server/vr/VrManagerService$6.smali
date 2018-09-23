@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/vr/VrManagerService;Landroid/content/ComponentName;ZI)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/vr/VrManagerService;
 
-    .line 1008
     iput-object p1, p0, Lcom/android/server/vr/VrManagerService$6;->this$0:Lcom/android/server/vr/VrManagerService;
 
     iput-object p2, p0, Lcom/android/server/vr/VrManagerService$6;->val$c:Landroid/content/ComponentName;
@@ -50,20 +48,16 @@
 # virtual methods
 .method public runEvent(Landroid/os/IInterface;)V
     .locals 4
-    .param p1, "service"    # Landroid/os/IInterface;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1015
     move-object v0, p1
 
     check-cast v0, Landroid/service/vr/IVrListener;
 
-    .line 1016
-    .local v0, "l":Landroid/service/vr/IVrListener;
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$6;->val$c:Landroid/content/ComponentName;
 
     iget-boolean v2, p0, Lcom/android/server/vr/VrManagerService$6;->val$b:Z
@@ -72,6 +66,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/service/vr/IVrListener;->focusedActivityChanged(Landroid/content/ComponentName;ZI)V
 
-    .line 1017
     return-void
 .end method

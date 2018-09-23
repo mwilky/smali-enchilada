@@ -37,9 +37,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkStatsService;ILjava/lang/String;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkStatsService;
 
-    .line 563
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     iput p2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$callingUid:I
@@ -50,17 +48,14 @@
 
     invoke-direct {p0}, Landroid/net/INetworkStatsSession$Stub;-><init>()V
 
-    .line 564
     iget p2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$callingUid:I
 
     iput p2, p0, Lcom/android/server/net/NetworkStatsService$1;->mCallingUid:I
 
-    .line 565
     iget-object p2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$callingPackage:Ljava/lang/String;
 
     iput-object p2, p0, Lcom/android/server/net/NetworkStatsService$1;->mCallingPackage:Ljava/lang/String;
 
-    .line 566
     iget-object p2, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     iget-object p3, p0, Lcom/android/server/net/NetworkStatsService$1;->val$callingPackage:Ljava/lang/String;
@@ -77,7 +72,6 @@
 .method private getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
     .locals 2
 
-    .line 573
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$300(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
@@ -86,13 +80,11 @@
 
     monitor-enter v0
 
-    .line 574
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     if-nez v1, :cond_0
 
-    .line 575
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$400(Lcom/android/server/net/NetworkStatsService;)Lcom/android/server/net/NetworkStatsRecorder;
@@ -105,7 +97,6 @@
 
     iput-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 577
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
@@ -113,7 +104,6 @@
 
     return-object v1
 
-    .line 578
     :catchall_0
     move-exception v1
 
@@ -127,7 +117,6 @@
 .method private getUidTagComplete()Lcom/android/server/net/NetworkStatsCollection;
     .locals 2
 
-    .line 582
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-static {v0}, Lcom/android/server/net/NetworkStatsService;->access$300(Lcom/android/server/net/NetworkStatsService;)Ljava/lang/Object;
@@ -136,13 +125,11 @@
 
     monitor-enter v0
 
-    .line 583
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
     if-nez v1, :cond_0
 
-    .line 584
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     invoke-static {v1}, Lcom/android/server/net/NetworkStatsService;->access$500(Lcom/android/server/net/NetworkStatsService;)Lcom/android/server/net/NetworkStatsRecorder;
@@ -155,7 +142,6 @@
 
     iput-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 586
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
@@ -163,7 +149,6 @@
 
     return-object v1
 
-    .line 587
     :catchall_0
     move-exception v1
 
@@ -179,25 +164,18 @@
 .method public close()V
     .locals 1
 
-    .line 666
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 667
     iput-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->mUidTagComplete:Lcom/android/server/net/NetworkStatsCollection;
 
-    .line 668
     return-void
 .end method
 
 .method public getDeviceSummaryForNetwork(Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
     .locals 9
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "start"    # J
-    .param p4, "end"    # J
 
-    .line 598
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     iget v2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$usedFlags:I
@@ -221,10 +199,7 @@
 
 .method public getHistoryForNetwork(Landroid/net/NetworkTemplate;I)Landroid/net/NetworkStatsHistory;
     .locals 6
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "fields"    # I
 
-    .line 611
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     iget v2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$usedFlags:I
@@ -246,18 +221,11 @@
 
 .method public getHistoryForUid(Landroid/net/NetworkTemplate;IIII)Landroid/net/NetworkStatsHistory;
     .locals 15
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "uid"    # I
-    .param p3, "set"    # I
-    .param p4, "tag"    # I
-    .param p5, "fields"    # I
 
     move-object v0, p0
 
-    .line 638
     if-nez p4, :cond_0
 
-    .line 639
     invoke-direct {v0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v1
@@ -288,7 +256,6 @@
 
     return-object v1
 
-    .line 642
     :cond_0
     invoke-direct {v0}, Lcom/android/server/net/NetworkStatsService$1;->getUidTagComplete()Lcom/android/server/net/NetworkStatsCollection;
 
@@ -323,20 +290,11 @@
 
 .method public getHistoryIntervalForUid(Landroid/net/NetworkTemplate;IIIIJJ)Landroid/net/NetworkStatsHistory;
     .locals 15
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "uid"    # I
-    .param p3, "set"    # I
-    .param p4, "tag"    # I
-    .param p5, "fields"    # I
-    .param p6, "start"    # J
-    .param p8, "end"    # J
 
     move-object v0, p0
 
-    .line 652
     if-nez p4, :cond_0
 
-    .line 653
     invoke-direct {v0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v1
@@ -367,7 +325,6 @@
 
     return-object v1
 
-    .line 655
     :cond_0
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
@@ -377,7 +334,6 @@
 
     if-ne v14, v1, :cond_1
 
-    .line 656
     invoke-direct {v0}, Lcom/android/server/net/NetworkStatsService$1;->getUidTagComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v1
@@ -408,7 +364,6 @@
 
     return-object v1
 
-    .line 659
     :cond_1
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -440,7 +395,6 @@
 .method public getRelevantUids()[I
     .locals 2
 
-    .line 592
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v0
@@ -456,12 +410,7 @@
 
 .method public getSummaryForAllUid(Landroid/net/NetworkTemplate;JJZ)Landroid/net/NetworkStats;
     .locals 9
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "start"    # J
-    .param p4, "end"    # J
-    .param p6, "includeTags"    # Z
 
-    .line 619
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidComplete()Lcom/android/server/net/NetworkStatsCollection;
 
@@ -471,7 +420,6 @@
 
     iget v7, p0, Lcom/android/server/net/NetworkStatsService$1;->mCallingUid:I
 
-    .line 620
     move-object v1, p1
 
     move-wide v2, p2
@@ -482,11 +430,8 @@
 
     move-result-object v0
 
-    .line 621
-    .local v0, "stats":Landroid/net/NetworkStats;
     if-eqz p6, :cond_0
 
-    .line 622
     invoke-direct {p0}, Lcom/android/server/net/NetworkStatsService$1;->getUidTagComplete()Lcom/android/server/net/NetworkStatsCollection;
 
     move-result-object v1
@@ -495,7 +440,6 @@
 
     iget v8, p0, Lcom/android/server/net/NetworkStatsService$1;->mCallingUid:I
 
-    .line 623
     move-object v2, p1
 
     move-wide v3, p2
@@ -506,41 +450,28 @@
 
     move-result-object v1
 
-    .line 624
-    .local v1, "tagStats":Landroid/net/NetworkStats;
     invoke-virtual {v0, v1}, Landroid/net/NetworkStats;->combineAllValues(Landroid/net/NetworkStats;)V
     :try_end_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 626
-    .end local v1    # "tagStats":Landroid/net/NetworkStats;
     :cond_0
     return-object v0
 
-    .line 627
-    .end local v0    # "stats":Landroid/net/NetworkStats;
     :catch_0
     move-exception v0
 
-    .line 629
-    .local v0, "e":Ljava/lang/NullPointerException;
     const-string v1, "NetworkStats"
 
     const-string v2, "NullPointerException in getSummaryForAllUid"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 630
     throw v0
 .end method
 
 .method public getSummaryForNetwork(Landroid/net/NetworkTemplate;JJ)Landroid/net/NetworkStats;
     .locals 9
-    .param p1, "template"    # Landroid/net/NetworkTemplate;
-    .param p2, "start"    # J
-    .param p4, "end"    # J
 
-    .line 605
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsService$1;->this$0:Lcom/android/server/net/NetworkStatsService;
 
     iget v2, p0, Lcom/android/server/net/NetworkStatsService$1;->val$usedFlags:I

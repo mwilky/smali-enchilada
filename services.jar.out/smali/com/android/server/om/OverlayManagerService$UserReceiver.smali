@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/om/OverlayManagerService;)V
     .locals 0
 
-    .line 452
     iput-object p1, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/om/OverlayManagerService;Lcom/android/server/om/OverlayManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/om/OverlayManagerService;
-    .param p2, "x1"    # Lcom/android/server/om/OverlayManagerService$1;
 
-    .line 452
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerService$UserReceiver;-><init>(Lcom/android/server/om/OverlayManagerService;)V
 
     return-void
@@ -45,10 +41,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 455
     const-string v0, "android.intent.extra.user_handle"
 
     const/16 v1, -0x2710
@@ -57,8 +50,6 @@
 
     move-result v0
 
-    .line 456
-    .local v0, "userId":I
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v2
@@ -112,11 +103,9 @@
 
     goto :goto_2
 
-    .line 468
     :pswitch_0
     if-eq v0, v1, :cond_3
 
-    .line 469
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-static {v1}, Lcom/android/server/om/OverlayManagerService;->access$200(Lcom/android/server/om/OverlayManagerService;)Ljava/lang/Object;
@@ -125,7 +114,6 @@
 
     monitor-enter v1
 
-    .line 470
     :try_start_0
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
@@ -135,7 +123,6 @@
 
     invoke-virtual {v2, v0}, Lcom/android/server/om/OverlayManagerServiceImpl;->onUserRemoved(I)V
 
-    .line 471
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-static {v2}, Lcom/android/server/om/OverlayManagerService;->access$300(Lcom/android/server/om/OverlayManagerService;)Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;
@@ -144,7 +131,6 @@
 
     invoke-virtual {v2, v0}, Lcom/android/server/om/OverlayManagerService$PackageManagerHelper;->forgetAllPackageInfos(I)V
 
-    .line 472
     monitor-exit v1
 
     goto :goto_2
@@ -158,11 +144,9 @@
 
     throw v2
 
-    .line 458
     :pswitch_1
     if-eq v0, v1, :cond_3
 
-    .line 460
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-static {v1}, Lcom/android/server/om/OverlayManagerService;->access$200(Lcom/android/server/om/OverlayManagerService;)Ljava/lang/Object;
@@ -171,7 +155,6 @@
 
     monitor-enter v1
 
-    .line 461
     :try_start_1
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
@@ -183,22 +166,16 @@
 
     move-result-object v2
 
-    .line 462
-    .local v2, "targets":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 463
     iget-object v1, p0, Lcom/android/server/om/OverlayManagerService$UserReceiver;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-static {v1, v0, v2}, Lcom/android/server/om/OverlayManagerService;->access$500(Lcom/android/server/om/OverlayManagerService;ILjava/util/List;)V
 
-    .line 464
-    .end local v2    # "targets":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     goto :goto_2
 
-    .line 462
     :catchall_1
     move-exception v2
 
@@ -209,7 +186,6 @@
 
     throw v2
 
-    .line 479
     :cond_3
     :goto_2
     return-void

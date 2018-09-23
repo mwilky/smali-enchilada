@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/pm/permission/PermissionManagerService;)V
     .locals 0
 
-    .line 2089
     iput-object p1, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-direct {p0}, Lcom/android/server/pm/permission/PermissionManagerInternal;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/pm/permission/PermissionManagerService;Lcom/android/server/pm/permission/PermissionManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/pm/permission/PermissionManagerService;
-    .param p2, "x1"    # Lcom/android/server/pm/permission/PermissionManagerService$1;
 
-    .line 2089
     invoke-direct {p0, p1}, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;-><init>(Lcom/android/server/pm/permission/PermissionManagerService;)V
 
     return-void
@@ -45,40 +41,27 @@
 # virtual methods
 .method public addAllPermissionGroups(Landroid/content/pm/PackageParser$Package;Z)V
     .locals 1
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "chatty"    # Z
 
-    .line 2113
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/pm/permission/PermissionManagerService;->access$500(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;Z)V
 
-    .line 2114
     return-void
 .end method
 
 .method public addAllPermissions(Landroid/content/pm/PackageParser$Package;Z)V
     .locals 1
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "chatty"    # Z
 
-    .line 2109
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/pm/permission/PermissionManagerService;->access$400(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;Z)V
 
-    .line 2110
     return-void
 .end method
 
 .method public addDynamicPermission(Landroid/content/pm/PermissionInfo;ZILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)Z
     .locals 1
-    .param p1, "info"    # Landroid/content/pm/PermissionInfo;
-    .param p2, "async"    # Z
-    .param p3, "callingUid"    # I
-    .param p4, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2122
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$700(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PermissionInfo;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)Z
@@ -90,12 +73,7 @@
 
 .method public checkPermission(Ljava/lang/String;Ljava/lang/String;II)I
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "callingUid"    # I
-    .param p4, "userId"    # I
 
-    .line 2209
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2100(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;II)I
@@ -107,12 +85,7 @@
 
 .method public checkUidPermission(Ljava/lang/String;Landroid/content/pm/PackageParser$Package;II)I
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p3, "uid"    # I
-    .param p4, "callingUid"    # I
 
-    .line 2215
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2200(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Landroid/content/pm/PackageParser$Package;II)I
@@ -124,13 +97,7 @@
 
 .method public enforceCrossUserPermission(IIZZLjava/lang/String;)V
     .locals 7
-    .param p1, "callingUid"    # I
-    .param p2, "userId"    # I
-    .param p3, "requireFullPermission"    # Z
-    .param p4, "checkShell"    # Z
-    .param p5, "message"    # Ljava/lang/String;
 
-    .line 2192
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     const/4 v5, 0x0
@@ -147,20 +114,12 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1900(Lcom/android/server/pm/permission/PermissionManagerService;IIZZZLjava/lang/String;)V
 
-    .line 2194
     return-void
 .end method
 
 .method public enforceCrossUserPermission(IIZZZLjava/lang/String;)V
     .locals 7
-    .param p1, "callingUid"    # I
-    .param p2, "userId"    # I
-    .param p3, "requireFullPermission"    # Z
-    .param p4, "checkShell"    # Z
-    .param p5, "requirePermissionWhenSameUser"    # Z
-    .param p6, "message"    # Ljava/lang/String;
 
-    .line 2199
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move v1, p1
@@ -177,27 +136,21 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1900(Lcom/android/server/pm/permission/PermissionManagerService;IIZZZLjava/lang/String;)V
 
-    .line 2201
     return-void
 .end method
 
 .method public enforceGrantRevokeRuntimePermissionPermissions(Ljava/lang/String;)V
     .locals 1
-    .param p1, "message"    # Ljava/lang/String;
 
-    .line 2204
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2000(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;)V
 
-    .line 2205
     return-void
 .end method
 
 .method public getAllPermissionGroups(II)Ljava/util/List;
     .locals 1
-    .param p1, "flags"    # I
-    .param p2, "callingUid"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -207,7 +160,6 @@
         }
     .end annotation
 
-    .line 2225
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2400(Lcom/android/server/pm/permission/PermissionManagerService;II)Ljava/util/List;
@@ -219,9 +171,7 @@
 
 .method public getAppOpPermissionPackages(Ljava/lang/String;)[Ljava/lang/String;
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
 
-    .line 2169
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1500(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;)[Ljava/lang/String;
@@ -234,7 +184,6 @@
 .method public getDefaultPermissionGrantPolicy()Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy;
     .locals 1
 
-    .line 2244
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2800(Lcom/android/server/pm/permission/PermissionManagerService;)Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy;
@@ -246,12 +195,7 @@
 
 .method public getPermissionFlags(Ljava/lang/String;Ljava/lang/String;II)I
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "callingUid"    # I
-    .param p4, "userId"    # I
 
-    .line 2174
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1600(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;II)I
@@ -263,11 +207,7 @@
 
 .method public getPermissionGroupInfo(Ljava/lang/String;II)Landroid/content/pm/PermissionGroupInfo;
     .locals 1
-    .param p1, "groupName"    # Ljava/lang/String;
-    .param p2, "flags"    # I
-    .param p3, "callingUid"    # I
 
-    .line 2220
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2300(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;II)Landroid/content/pm/PermissionGroupInfo;
@@ -279,12 +219,7 @@
 
 .method public getPermissionInfo(Ljava/lang/String;Ljava/lang/String;II)Landroid/content/pm/PermissionInfo;
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "flags"    # I
-    .param p4, "callingUid"    # I
 
-    .line 2230
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2500(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;II)Landroid/content/pm/PermissionInfo;
@@ -296,9 +231,6 @@
 
 .method public getPermissionInfoByGroup(Ljava/lang/String;II)Ljava/util/List;
     .locals 1
-    .param p1, "group"    # Ljava/lang/String;
-    .param p2, "flags"    # I
-    .param p3, "callingUid"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -310,7 +242,6 @@
         }
     .end annotation
 
-    .line 2236
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2600(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;II)Ljava/util/List;
@@ -323,7 +254,6 @@
 .method public getPermissionSettings()Lcom/android/server/pm/permission/PermissionSettings;
     .locals 1
 
-    .line 2240
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2700(Lcom/android/server/pm/permission/PermissionManagerService;)Lcom/android/server/pm/permission/PermissionSettings;
@@ -335,9 +265,7 @@
 
 .method public getPermissionTEMP(Ljava/lang/String;)Lcom/android/server/pm/permission/BasePermission;
     .locals 2
-    .param p1, "permName"    # Ljava/lang/String;
 
-    .line 2248
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/permission/PermissionManagerService;->access$2900(Lcom/android/server/pm/permission/PermissionManagerService;)Ljava/lang/Object;
@@ -346,7 +274,6 @@
 
     monitor-enter v0
 
-    .line 2249
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
@@ -362,7 +289,6 @@
 
     return-object v1
 
-    .line 2250
     :catchall_0
     move-exception v1
 
@@ -375,13 +301,7 @@
 
 .method public grantRequestedRuntimePermissions(Landroid/content/pm/PackageParser$Package;[I[Ljava/lang/String;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 6
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "userIds"    # [I
-    .param p3, "grantedPermissions"    # [Ljava/lang/String;
-    .param p4, "callingUid"    # I
-    .param p5, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2139
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move-object v1, p1
@@ -396,20 +316,12 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1000(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;[I[Ljava/lang/String;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2141
     return-void
 .end method
 
 .method public grantRuntimePermission(Ljava/lang/String;Ljava/lang/String;ZIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 7
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "overridePolicy"    # Z
-    .param p4, "callingUid"    # I
-    .param p5, "userId"    # I
-    .param p6, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2133
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move-object v1, p1
@@ -426,31 +338,22 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/permission/PermissionManagerService;->access$900(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;ZIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2135
     return-void
 .end method
 
 .method public grantRuntimePermissionsGrantedToDisabledPackage(Landroid/content/pm/PackageParser$Package;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 1
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "callingUid"    # I
-    .param p3, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2145
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1100(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2147
     return-void
 .end method
 
 .method public isPermissionsReviewRequired(Landroid/content/pm/PackageParser$Package;I)Z
     .locals 1
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "userId"    # I
 
-    .line 2096
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/pm/permission/PermissionManagerService;->access$200(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;I)Z
@@ -462,43 +365,27 @@
 
 .method public removeAllPermissions(Landroid/content/pm/PackageParser$Package;Z)V
     .locals 1
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "chatty"    # Z
 
-    .line 2117
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2}, Lcom/android/server/pm/permission/PermissionManagerService;->access$600(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;Z)V
 
-    .line 2118
     return-void
 .end method
 
 .method public removeDynamicPermission(Ljava/lang/String;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 1
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "callingUid"    # I
-    .param p3, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2127
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/pm/permission/PermissionManagerService;->access$800(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;ILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2128
     return-void
 .end method
 
 .method public revokeRuntimePermission(Ljava/lang/String;Ljava/lang/String;ZIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 7
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "overridePolicy"    # Z
-    .param p4, "callingUid"    # I
-    .param p5, "userId"    # I
-    .param p6, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2152
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move-object v1, p1
@@ -515,15 +402,11 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1200(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;ZIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2154
     return-void
 .end method
 
 .method public revokeRuntimePermissionsIfGroupChanged(Landroid/content/pm/PackageParser$Package;Landroid/content/pm/PackageParser$Package;Ljava/util/ArrayList;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 1
-    .param p1, "newPackage"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "oldPackage"    # Landroid/content/pm/PackageParser$Package;
-    .param p4, "permissionCallback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -537,33 +420,25 @@
         }
     .end annotation
 
-    .line 2104
-    .local p3, "allPackageNames":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$300(Lcom/android/server/pm/permission/PermissionManagerService;Landroid/content/pm/PackageParser$Package;Landroid/content/pm/PackageParser$Package;Ljava/util/ArrayList;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2106
     return-void
 .end method
 
 .method public systemReady()V
     .locals 1
 
-    .line 2092
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/permission/PermissionManagerService;->access$100(Lcom/android/server/pm/permission/PermissionManagerService;)V
 
-    .line 2093
     return-void
 .end method
 
 .method public updateAllPermissions(Ljava/lang/String;ZLjava/util/Collection;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 1
-    .param p1, "volumeUuid"    # Ljava/lang/String;
-    .param p2, "sdkUpdated"    # Z
-    .param p4, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -577,27 +452,16 @@
         }
     .end annotation
 
-    .line 2164
-    .local p3, "allPackages":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/content/pm/PackageParser$Package;>;"
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1400(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;ZLjava/util/Collection;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2166
     return-void
 .end method
 
 .method public updatePermissionFlags(Ljava/lang/String;Ljava/lang/String;IIIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 8
-    .param p1, "permName"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "flagMask"    # I
-    .param p4, "flagValues"    # I
-    .param p5, "callingUid"    # I
-    .param p6, "userId"    # I
-    .param p7, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
 
-    .line 2180
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move-object v1, p1
@@ -616,17 +480,11 @@
 
     invoke-static/range {v0 .. v7}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1700(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Ljava/lang/String;IIIILcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2182
     return-void
 .end method
 
 .method public updatePermissionFlagsForAllApps(IIIILjava/util/Collection;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)Z
     .locals 7
-    .param p1, "flagMask"    # I
-    .param p2, "flagValues"    # I
-    .param p3, "callingUid"    # I
-    .param p4, "userId"    # I
-    .param p6, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIII",
@@ -638,8 +496,6 @@
         }
     .end annotation
 
-    .line 2186
-    .local p5, "packages":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/content/pm/PackageParser$Package;>;"
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move v1, p1
@@ -663,10 +519,6 @@
 
 .method public updatePermissions(Ljava/lang/String;Landroid/content/pm/PackageParser$Package;ZLjava/util/Collection;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
     .locals 6
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p3, "replaceGrant"    # Z
-    .param p5, "callback"    # Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -681,8 +533,6 @@
         }
     .end annotation
 
-    .line 2158
-    .local p4, "allPackages":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/content/pm/PackageParser$Package;>;"
     iget-object v0, p0, Lcom/android/server/pm/permission/PermissionManagerService$PermissionManagerInternalImpl;->this$0:Lcom/android/server/pm/permission/PermissionManagerService;
 
     move-object v1, p1
@@ -697,6 +547,5 @@
 
     invoke-static/range {v0 .. v5}, Lcom/android/server/pm/permission/PermissionManagerService;->access$1300(Lcom/android/server/pm/permission/PermissionManagerService;Ljava/lang/String;Landroid/content/pm/PackageParser$Package;ZLjava/util/Collection;Lcom/android/server/pm/permission/PermissionManagerInternal$PermissionCallback;)V
 
-    .line 2160
     return-void
 .end method

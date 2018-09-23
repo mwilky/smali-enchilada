@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 122
     invoke-static {}, Landroid/net/IpConfiguration$ProxySettings;->values()[Landroid/net/IpConfiguration$ProxySettings;
 
     move-result-object v0
@@ -118,7 +117,6 @@
     :catch_3
     move-exception v3
 
-    .line 84
     :goto_3
     invoke-static {}, Landroid/net/IpConfiguration$IpAssignment;->values()[Landroid/net/IpConfiguration$IpAssignment;
 

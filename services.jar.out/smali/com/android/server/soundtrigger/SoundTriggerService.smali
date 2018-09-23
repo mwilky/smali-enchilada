@@ -82,80 +82,65 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 114
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 110
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mNumOpsPerPackage:Landroid/util/ArrayMap;
 
-    .line 1178
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/soundtrigger/SoundTriggerService$1;-><init>(Lcom/android/server/soundtrigger/SoundTriggerService;)V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbackCompletedHandler:Landroid/app/PendingIntent$OnFinished;
 
-    .line 115
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mContext:Landroid/content/Context;
 
-    .line 116
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerService$SoundTriggerServiceStub;
 
     invoke-direct {v0, p0}, Lcom/android/server/soundtrigger/SoundTriggerService$SoundTriggerServiceStub;-><init>(Lcom/android/server/soundtrigger/SoundTriggerService;)V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mServiceStub:Lcom/android/server/soundtrigger/SoundTriggerService$SoundTriggerServiceStub;
 
-    .line 117
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerService$LocalSoundTriggerService;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/soundtrigger/SoundTriggerService$LocalSoundTriggerService;-><init>(Lcom/android/server/soundtrigger/SoundTriggerService;Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLocalSoundTriggerService:Lcom/android/server/soundtrigger/SoundTriggerService$LocalSoundTriggerService;
 
-    .line 118
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLoadedModels:Ljava/util/TreeMap;
 
-    .line 119
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbacksLock:Ljava/lang/Object;
 
-    .line 120
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbacks:Ljava/util/TreeMap;
 
-    .line 121
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLock:Ljava/lang/Object;
 
-    .line 122
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/soundtrigger/SoundTriggerService;Ljava/lang/String;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 94
     invoke-direct {p0, p1}, Lcom/android/server/soundtrigger/SoundTriggerService;->enforceCallingPermission(Ljava/lang/String;)V
 
     return-void
@@ -163,9 +148,7 @@
 
 .method static synthetic access$100(Lcom/android/server/soundtrigger/SoundTriggerService;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     invoke-direct {p0}, Lcom/android/server/soundtrigger/SoundTriggerService;->isInitialized()Z
 
     move-result v0
@@ -175,9 +158,7 @@
 
 .method static synthetic access$1000(Lcom/android/server/soundtrigger/SoundTriggerService;)Landroid/os/PowerManager$WakeLock;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mWakelock:Landroid/os/PowerManager$WakeLock;
 
     return-object v0
@@ -185,9 +166,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/soundtrigger/SoundTriggerService;)Landroid/util/ArrayMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mNumOpsPerPackage:Landroid/util/ArrayMap;
 
     return-object v0
@@ -195,9 +174,7 @@
 
 .method static synthetic access$200(Lcom/android/server/soundtrigger/SoundTriggerService;)Lcom/android/server/soundtrigger/SoundTriggerHelper;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mSoundTriggerHelper:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     return-object v0
@@ -205,9 +182,7 @@
 
 .method static synthetic access$300(Lcom/android/server/soundtrigger/SoundTriggerService;)Lcom/android/server/soundtrigger/SoundTriggerDbHelper;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mDbHelper:Lcom/android/server/soundtrigger/SoundTriggerDbHelper;
 
     return-object v0
@@ -215,9 +190,7 @@
 
 .method static synthetic access$400(Lcom/android/server/soundtrigger/SoundTriggerService;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -225,9 +198,7 @@
 
 .method static synthetic access$500(Lcom/android/server/soundtrigger/SoundTriggerService;)Ljava/util/TreeMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLoadedModels:Ljava/util/TreeMap;
 
     return-object v0
@@ -235,9 +206,7 @@
 
 .method static synthetic access$600(Lcom/android/server/soundtrigger/SoundTriggerService;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbacksLock:Ljava/lang/Object;
 
     return-object v0
@@ -245,9 +214,7 @@
 
 .method static synthetic access$700(Lcom/android/server/soundtrigger/SoundTriggerService;)Ljava/util/TreeMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbacks:Ljava/util/TreeMap;
 
     return-object v0
@@ -255,9 +222,7 @@
 
 .method static synthetic access$800(Lcom/android/server/soundtrigger/SoundTriggerService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     invoke-direct {p0}, Lcom/android/server/soundtrigger/SoundTriggerService;->grabWakeLock()V
 
     return-void
@@ -265,9 +230,7 @@
 
 .method static synthetic access$900(Lcom/android/server/soundtrigger/SoundTriggerService;)Landroid/app/PendingIntent$OnFinished;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbackCompletedHandler:Landroid/app/PendingIntent$OnFinished;
 
     return-object v0
@@ -275,9 +238,7 @@
 
 .method private enforceCallingPermission(Ljava/lang/String;)V
     .locals 3
-    .param p1, "permission"    # Ljava/lang/String;
 
-    .line 1243
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
@@ -286,10 +247,8 @@
 
     if-nez v0, :cond_0
 
-    .line 1247
     return-void
 
-    .line 1245
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -315,18 +274,15 @@
 .method private grabWakeLock()V
     .locals 4
 
-    .line 1169
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mCallbacksLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1170
     :try_start_0
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mWakelock:Landroid/os/PowerManager$WakeLock;
 
     if-nez v1, :cond_0
 
-    .line 1171
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "power"
@@ -337,8 +293,6 @@
 
     check-cast v1, Landroid/os/PowerManager;
 
-    .line 1172
-    .local v1, "pm":Landroid/os/PowerManager;
     const/4 v2, 0x1
 
     const-string v3, "SoundTriggerService"
@@ -349,20 +303,15 @@
 
     iput-object v2, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mWakelock:Landroid/os/PowerManager$WakeLock;
 
-    .line 1174
-    .end local v1    # "pm":Landroid/os/PowerManager;
     :cond_0
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mWakelock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1175
     monitor-exit v0
 
-    .line 1176
     return-void
 
-    .line 1175
     :catchall_0
     move-exception v1
 
@@ -378,13 +327,11 @@
 
     monitor-enter p0
 
-    .line 149
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mSoundTriggerHelper:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     if-nez v0, :cond_0
 
-    .line 150
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mContext:Landroid/content/Context;
@@ -395,19 +342,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 152
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 148
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerService;
     throw v0
 .end method
 
@@ -416,13 +360,11 @@
 
     monitor-enter p0
 
-    .line 155
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mSoundTriggerHelper:Lcom/android/server/soundtrigger/SoundTriggerHelper;
 
     if-nez v0, :cond_0
 
-    .line 156
     const-string v0, "SoundTriggerService"
 
     const-string v1, "SoundTriggerHelper not initialized."
@@ -431,14 +373,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 157
     const/4 v0, 0x0
 
     monitor-exit p0
 
     return v0
 
-    .line 159
     :cond_0
     const/4 v0, 0x1
 
@@ -446,13 +386,11 @@
 
     return v0
 
-    .line 154
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerService;
     throw v0
 .end method
 
@@ -460,17 +398,13 @@
 # virtual methods
 .method public onBootPhase(I)V
     .locals 2
-    .param p1, "phase"    # I
 
-    .line 132
     const/16 v0, 0x1f4
 
     if-ne v0, p1, :cond_0
 
-    .line 133
     invoke-direct {p0}, Lcom/android/server/soundtrigger/SoundTriggerService;->initSoundTriggerHelper()V
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLocalSoundTriggerService:Lcom/android/server/soundtrigger/SoundTriggerService$LocalSoundTriggerService;
 
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mSoundTriggerHelper:Lcom/android/server/soundtrigger/SoundTriggerHelper;
@@ -479,13 +413,11 @@
 
     goto :goto_0
 
-    .line 135
     :cond_0
     const/16 v0, 0x258
 
     if-ne v0, p1, :cond_1
 
-    .line 136
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerDbHelper;
 
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mContext:Landroid/content/Context;
@@ -494,7 +426,6 @@
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mDbHelper:Lcom/android/server/soundtrigger/SoundTriggerDbHelper;
 
-    .line 138
     :cond_1
     :goto_0
     return-void
@@ -503,36 +434,29 @@
 .method public onStart()V
     .locals 2
 
-    .line 126
     const-string/jumbo v0, "soundtrigger"
 
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mServiceStub:Lcom/android/server/soundtrigger/SoundTriggerService$SoundTriggerServiceStub;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/soundtrigger/SoundTriggerService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 127
     const-class v0, Lcom/android/server/soundtrigger/SoundTriggerInternal;
 
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService;->mLocalSoundTriggerService:Lcom/android/server/soundtrigger/SoundTriggerService$LocalSoundTriggerService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/soundtrigger/SoundTriggerService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 128
     return-void
 .end method
 
 .method public onStartUser(I)V
     .locals 0
-    .param p1, "userHandle"    # I
 
-    .line 142
     return-void
 .end method
 
 .method public onSwitchUser(I)V
     .locals 0
-    .param p1, "userHandle"    # I
 
-    .line 146
     return-void
 .end method

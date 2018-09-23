@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/LegacyGlobalActions$BugReportAction;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/LegacyGlobalActions$BugReportAction;
 
-    .line 366
     iput-object p1, p0, Lcom/android/server/policy/LegacyGlobalActions$BugReportAction$1;->this$1:Lcom/android/server/policy/LegacyGlobalActions$BugReportAction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 371
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/LegacyGlobalActions$BugReportAction$1;->this$1:Lcom/android/server/policy/LegacyGlobalActions$BugReportAction;
 
@@ -53,7 +50,6 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
 
-    .line 373
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v0
@@ -64,14 +60,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 376
     goto :goto_0
 
-    .line 375
     :catch_0
     move-exception v0
 
-    .line 377
     :goto_0
     return-void
 .end method

@@ -27,17 +27,14 @@
 .method constructor <init>(Lcom/oneplus/server/OIMCService;)V
     .locals 0
 
-    .line 256
     iput-object p1, p0, Lcom/oneplus/server/OIMCService$SyncRunnable;->this$0:Lcom/oneplus/server/OIMCService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 257
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/oneplus/server/OIMCService$SyncRunnable;->done:Z
 
-    .line 258
     return-void
 .end method
 
@@ -45,9 +42,7 @@
 # virtual methods
 .method public config(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 276
     const/4 v0, 0x0
 
     return v0
@@ -56,7 +51,6 @@
 .method public getStatus()Z
     .locals 1
 
-    .line 280
     iget-boolean v0, p0, Lcom/oneplus/server/OIMCService$SyncRunnable;->done:Z
 
     return v0
@@ -64,29 +58,22 @@
 
 .method public start(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 262
     monitor-enter p0
 
-    .line 263
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/oneplus/server/OIMCService$SyncRunnable;->done:Z
 
-    .line 264
     invoke-virtual {p0}, Ljava/lang/Object;->notify()V
 
-    .line 265
     monitor-exit p0
 
-    .line 266
     const/4 v0, 0x0
 
     return v0
 
-    .line 265
     :catchall_0
     move-exception v0
 
@@ -99,9 +86,7 @@
 
 .method public stop(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 271
     const/4 v0, 0x0
 
     return v0

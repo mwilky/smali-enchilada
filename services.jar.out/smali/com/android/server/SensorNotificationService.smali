@@ -40,54 +40,43 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 64
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 61
     const-wide/32 v0, -0x1b7740
 
     iput-wide v0, p0, Lcom/android/server/SensorNotificationService;->mLocalGeomagneticFieldUpdateTime:J
 
-    .line 65
     iput-object p1, p0, Lcom/android/server/SensorNotificationService;->mContext:Landroid/content/Context;
 
-    .line 66
     return-void
 .end method
 
 .method private broadcastDynamicSensorChanged()V
     .locals 3
 
-    .line 101
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.DYNAMIC_SENSOR_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 102
-    .local v0, "i":Landroid/content/Intent;
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 103
     iget-object v1, p0, Lcom/android/server/SensorNotificationService;->mContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 105
     return-void
 .end method
 
 .method private useMockedLocation()Z
     .locals 3
 
-    .line 170
     const-string v0, "false"
 
     const-string/jumbo v1, "sensor.notification.use_mocked"
@@ -109,23 +98,17 @@
 # virtual methods
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "accuracy"    # I
 
-    .line 161
     return-void
 .end method
 
 .method public onBootPhase(I)V
     .locals 7
-    .param p1, "phase"    # I
 
-    .line 73
     const/16 v0, 0x258
 
     if-ne p1, v0, :cond_1
 
-    .line 74
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "sensor"
@@ -138,7 +121,6 @@
 
     iput-object v0, p0, Lcom/android/server/SensorNotificationService;->mSensorManager:Landroid/hardware/SensorManager;
 
-    .line 75
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mSensorManager:Landroid/hardware/SensorManager;
 
     const/16 v1, 0x20
@@ -149,14 +131,12 @@
 
     iput-object v0, p0, Lcom/android/server/SensorNotificationService;->mMetaSensor:Landroid/hardware/Sensor;
 
-    .line 76
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mMetaSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_0
 
     goto :goto_0
 
-    .line 79
     :cond_0
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -166,19 +146,16 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 84
     :cond_1
     :goto_0
     const/16 v0, 0x3e8
 
     if-ne p1, v0, :cond_3
 
-    .line 86
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "location"
 
-    .line 87
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -187,14 +164,12 @@
 
     iput-object v0, p0, Lcom/android/server/SensorNotificationService;->mLocationManager:Landroid/location/LocationManager;
 
-    .line 88
     iget-object v0, p0, Lcom/android/server/SensorNotificationService;->mLocationManager:Landroid/location/LocationManager;
 
     if-nez v0, :cond_2
 
     goto :goto_1
 
-    .line 91
     :cond_2
     iget-object v1, p0, Lcom/android/server/SensorNotificationService;->mLocationManager:Landroid/location/LocationManager;
 
@@ -208,7 +183,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 98
     :cond_3
     :goto_1
     return-void
@@ -216,9 +190,7 @@
 
 .method public onLocationChanged(Landroid/location/Location;)V
     .locals 13
-    .param p1, "location"    # Landroid/location/Location;
 
-    .line 123
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v0
@@ -237,10 +209,8 @@
 
     if-nez v0, :cond_0
 
-    .line 124
     return-void
 
-    .line 128
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -256,17 +226,13 @@
 
     if-gez v0, :cond_1
 
-    .line 129
     return-void
 
-    .line 132
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
 
-    .line 135
-    .local v7, "time":J
     invoke-direct {p0}, Lcom/android/server/SensorNotificationService;->useMockedLocation()Z
 
     move-result v0
@@ -285,11 +251,9 @@
 
     goto :goto_1
 
-    .line 139
     :cond_2
     new-instance v0, Landroid/hardware/GeomagneticField;
 
-    .line 140
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v1
@@ -302,7 +266,6 @@
 
     double-to-float v3, v3
 
-    .line 141
     invoke-virtual {p1}, Landroid/location/Location;->getAltitude()D
 
     move-result-wide v4
@@ -315,11 +278,8 @@
 
     invoke-direct/range {v1 .. v6}, Landroid/hardware/GeomagneticField;-><init>(FFFJ)V
 
-    .line 147
-    .local v0, "field":Landroid/hardware/GeomagneticField;
     nop
 
-    .line 148
     :try_start_0
     invoke-virtual {v0}, Landroid/hardware/GeomagneticField;->getFieldStrength()F
 
@@ -329,7 +289,6 @@
 
     div-float/2addr v1, v2
 
-    .line 149
     invoke-virtual {v0}, Landroid/hardware/GeomagneticField;->getDeclination()F
 
     move-result v2
@@ -346,7 +305,6 @@
 
     double-to-float v2, v2
 
-    .line 150
     invoke-virtual {v0}, Landroid/hardware/GeomagneticField;->getInclination()F
 
     move-result v3
@@ -359,21 +317,16 @@
 
     double-to-float v3, v11
 
-    .line 147
     invoke-static {v1, v2, v3}, Landroid/hardware/SensorAdditionalInfo;->createLocalGeomagneticField(FFF)Landroid/hardware/SensorAdditionalInfo;
 
     move-result-object v1
 
-    .line 151
-    .local v1, "info":Landroid/hardware/SensorAdditionalInfo;
     if-eqz v1, :cond_3
 
-    .line 152
     iget-object v2, p0, Lcom/android/server/SensorNotificationService;->mSensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v2, v1}, Landroid/hardware/SensorManager;->setOperationParameter(Landroid/hardware/SensorAdditionalInfo;)Z
 
-    .line 153
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -382,30 +335,21 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 157
-    .end local v1    # "info":Landroid/hardware/SensorAdditionalInfo;
     :cond_3
     goto :goto_0
 
-    .line 155
     :catch_0
     move-exception v1
 
-    .line 156
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
     const-string v2, "SensorNotificationService"
 
     const-string v3, "Invalid local geomagnetic field, ignore."
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
-    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     return-void
 
-    .line 136
-    .end local v0    # "field":Landroid/hardware/GeomagneticField;
     :cond_4
     :goto_1
     return-void
@@ -413,35 +357,27 @@
 
 .method public onProviderDisabled(Ljava/lang/String;)V
     .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
 
-    .line 167
     return-void
 .end method
 
 .method public onProviderEnabled(Ljava/lang/String;)V
     .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
 
-    .line 165
     return-void
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/hardware/SensorEvent;
 
-    .line 109
     iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
     iget-object v1, p0, Lcom/android/server/SensorNotificationService;->mMetaSensor:Landroid/hardware/Sensor;
 
     if-ne v0, v1, :cond_0
 
-    .line 110
     invoke-direct {p0}, Lcom/android/server/SensorNotificationService;->broadcastDynamicSensorChanged()V
 
-    .line 112
     :cond_0
     return-void
 .end method
@@ -449,21 +385,15 @@
 .method public onStart()V
     .locals 1
 
-    .line 69
     const-class v0, Lcom/android/server/SensorNotificationService;
 
     invoke-static {v0, p0}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 70
     return-void
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "provider"    # Ljava/lang/String;
-    .param p2, "status"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
 
-    .line 163
     return-void
 .end method

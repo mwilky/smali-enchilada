@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModePanel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModePanel;
 
-    .line 189
     iput-object p1, p0, Lcom/android/server/OemSceneGameModePanel$2;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 192
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 193
-    .local v0, "animatorValue":F
     iget-object v1, p0, Lcom/android/server/OemSceneGameModePanel$2;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-static {v1}, Lcom/android/server/OemSceneGameModePanel;->access$100(Lcom/android/server/OemSceneGameModePanel;)Lcom/android/server/OemSceneGameModeView;
@@ -61,7 +55,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 194
     iget-object v1, p0, Lcom/android/server/OemSceneGameModePanel$2;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-static {v1}, Lcom/android/server/OemSceneGameModePanel;->access$100(Lcom/android/server/OemSceneGameModePanel;)Lcom/android/server/OemSceneGameModeView;
@@ -70,7 +63,6 @@
 
     invoke-virtual {v1, v0}, Lcom/android/server/OemSceneGameModeView;->setAlpha(F)V
 
-    .line 196
     :cond_0
     return-void
 .end method

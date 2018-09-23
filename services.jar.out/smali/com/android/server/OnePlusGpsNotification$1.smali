@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OnePlusGpsNotification;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OnePlusGpsNotification;
 
-    .line 72
     iput-object p1, p0, Lcom/android/server/OnePlusGpsNotification$1;->this$0:Lcom/android/server/OnePlusGpsNotification;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,20 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 75
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 76
-    .local v0, "action":Ljava/lang/String;
     const-string v1, ""
 
-    .line 77
-    .local v1, "packages":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/OnePlusGpsNotification$1;->this$0:Lcom/android/server/OnePlusGpsNotification;
 
     invoke-static {v2}, Lcom/android/server/OnePlusGpsNotification;->access$000(Lcom/android/server/OnePlusGpsNotification;)Ljava/lang/String;
@@ -61,14 +52,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 78
     const-string v2, "forcePackageName"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 79
     if-eqz v1, :cond_1
 
     const-string v2, ""
@@ -79,12 +68,10 @@
 
     if-nez v2, :cond_1
 
-    .line 80
     sget-boolean v2, Lcom/android/server/OnePlusGpsNotification;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 81
     iget-object v2, p0, Lcom/android/server/OnePlusGpsNotification$1;->this$0:Lcom/android/server/OnePlusGpsNotification;
 
     iget-object v2, v2, Lcom/android/server/OnePlusGpsNotification;->TAG:Ljava/lang/String;
@@ -105,7 +92,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 82
     :cond_0
     iget-object v2, p0, Lcom/android/server/OnePlusGpsNotification$1;->this$0:Lcom/android/server/OnePlusGpsNotification;
 
@@ -115,7 +101,6 @@
 
     invoke-virtual {v2, v1}, Landroid/app/ActivityManager;->forceStopPackage(Ljava/lang/String;)V
 
-    .line 85
     :cond_1
     return-void
 .end method

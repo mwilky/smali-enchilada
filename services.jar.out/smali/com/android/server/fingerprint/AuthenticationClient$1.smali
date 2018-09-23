@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/fingerprint/AuthenticationClient;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/fingerprint/AuthenticationClient;
 
-    .line 67
     iput-object p1, p0, Lcom/android/server/fingerprint/AuthenticationClient$1;->this$0:Lcom/android/server/fingerprint/AuthenticationClient;
 
     invoke-direct {p0}, Landroid/hardware/biometrics/IBiometricPromptReceiver$Stub;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onDialogDismissed(I)V
     .locals 4
-    .param p1, "reason"    # I
 
-    .line 70
     iget-object v0, p0, Lcom/android/server/fingerprint/AuthenticationClient$1;->this$0:Lcom/android/server/fingerprint/AuthenticationClient;
 
     invoke-static {v0}, Lcom/android/server/fingerprint/AuthenticationClient;->access$000(Lcom/android/server/fingerprint/AuthenticationClient;)Landroid/os/Bundle;
@@ -61,7 +57,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 72
     const/4 v0, 0x1
 
     :try_start_0
@@ -73,12 +68,10 @@
 
     invoke-interface {v1, p1}, Landroid/hardware/biometrics/IBiometricPromptReceiver;->onDialogDismissed(I)V
 
-    .line 73
     const/4 v1, 0x3
 
     if-ne p1, v1, :cond_1
 
-    .line 74
     iget-object v1, p0, Lcom/android/server/fingerprint/AuthenticationClient$1;->this$0:Lcom/android/server/fingerprint/AuthenticationClient;
 
     const/16 v2, 0xa
@@ -87,7 +80,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/server/fingerprint/AuthenticationClient;->onError(II)Z
 
-    .line 77
     :cond_1
     iget-object v1, p0, Lcom/android/server/fingerprint/AuthenticationClient$1;->this$0:Lcom/android/server/fingerprint/AuthenticationClient;
 
@@ -95,29 +87,22 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 80
     goto :goto_0
 
-    .line 78
     :catch_0
     move-exception v1
 
-    .line 79
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "FingerprintService"
 
     const-string v3, "Unable to notify dialog dismissed"
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 81
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     iget-object v1, p0, Lcom/android/server/fingerprint/AuthenticationClient$1;->this$0:Lcom/android/server/fingerprint/AuthenticationClient;
 
     invoke-virtual {v1, v0}, Lcom/android/server/fingerprint/AuthenticationClient;->stop(Z)I
 
-    .line 83
     :cond_2
     return-void
 .end method

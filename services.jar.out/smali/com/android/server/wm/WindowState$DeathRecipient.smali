@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/wm/WindowState;)V
     .locals 0
 
-    .line 2629
     iput-object p1, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/WindowState;Lcom/android/server/wm/WindowState$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/WindowState;
-    .param p2, "x1"    # Lcom/android/server/wm/WindowState$1;
 
-    .line 2629
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowState$DeathRecipient;-><init>(Lcom/android/server/wm/WindowState;)V
 
     return-void
@@ -49,11 +45,8 @@
 .method public binderDied()V
     .locals 7
 
-    .line 2633
     const/4 v0, 0x0
 
-    .line 2634
-    .local v0, "resetSplitScreenResizing":Z
     :try_start_0
     iget-object v1, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -68,7 +61,6 @@
     :try_start_1
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 2635
     iget-object v2, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     iget-object v2, v2, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -87,8 +79,6 @@
 
     move-result-object v2
 
-    .line 2636
-    .local v2, "win":Lcom/android/server/wm/WindowState;
     const-string v3, "WindowManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -107,10 +97,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2637
     if-eqz v2, :cond_3
 
-    .line 2640
     iget-object v3, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     iget-object v3, v3, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -123,15 +111,12 @@
 
     invoke-interface {v3, v4}, Lcom/android/server/policy/WindowManagerPolicy;->notifyAppLaunchFailedLw(Ljava/lang/String;)V
 
-    .line 2642
     iget-object v3, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v3}, Lcom/android/server/wm/WindowState;->getDisplayContent()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v3
 
-    .line 2643
-    .local v3, "dc":Lcom/android/server/wm/DisplayContent;
     iget-object v4, v2, Lcom/android/server/wm/WindowState;->mAppToken:Lcom/android/server/wm/AppWindowToken;
 
     if-eqz v4, :cond_0
@@ -144,7 +129,6 @@
 
     if-ne v4, v2, :cond_0
 
-    .line 2644
     iget-object v4, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     iget-object v4, v4, Lcom/android/server/wm/WindowState;->mService:Lcom/android/server/wm/WindowManagerService;
@@ -155,7 +139,6 @@
 
     invoke-virtual {v4, v6}, Lcom/android/server/wm/TaskSnapshotController;->onAppDied(Lcom/android/server/wm/AppWindowToken;)V
 
-    .line 2646
     :cond_0
     iget-object v4, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -165,7 +148,6 @@
 
     invoke-static {v2, v4}, Lcom/android/server/wm/WindowState;->access$300(Lcom/android/server/wm/WindowState;Z)V
 
-    .line 2647
     iget-object v4, v2, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     iget v4, v4, Landroid/view/WindowManager$LayoutParams;->type:I
@@ -174,28 +156,19 @@
 
     if-ne v4, v6, :cond_2
 
-    .line 2652
     nop
 
-    .line 2653
     invoke-virtual {v3}, Lcom/android/server/wm/DisplayContent;->getSplitScreenPrimaryStackIgnoringVisibility()Lcom/android/server/wm/TaskStack;
 
     move-result-object v4
 
-    .line 2654
-    .local v4, "stack":Lcom/android/server/wm/TaskStack;
     if-eqz v4, :cond_1
 
-    .line 2655
     invoke-virtual {v4}, Lcom/android/server/wm/TaskStack;->resetDockedStackToMiddle()V
 
-    .line 2657
     :cond_1
     const/4 v0, 0x1
 
-    .line 2659
-    .end local v3    # "dc":Lcom/android/server/wm/DisplayContent;
-    .end local v4    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_2
     goto :goto_0
 
@@ -206,20 +179,16 @@
 
     if-eqz v3, :cond_4
 
-    .line 2660
     const-string v3, "WindowManager"
 
     const-string v4, "!!! LEAK !!! Window removed but surface still valid."
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2661
     iget-object v3, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
     invoke-virtual {v3}, Lcom/android/server/wm/WindowState;->removeIfPossible()V
 
-    .line 2663
-    .end local v2    # "win":Lcom/android/server/wm/WindowState;
     :cond_4
     :goto_0
     monitor-exit v1
@@ -231,10 +200,8 @@
     :try_end_2
     .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 2664
     if-eqz v0, :cond_5
 
-    .line 2668
     :try_start_3
     iget-object v1, p0, Lcom/android/server/wm/WindowState$DeathRecipient;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -247,15 +214,11 @@
     .catch Landroid/os/RemoteException; {:try_start_3 .. :try_end_3} :catch_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 2672
     goto :goto_1
 
-    .line 2669
     :catch_0
     move-exception v1
 
-    .line 2671
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_4
     invoke-virtual {v1}, Landroid/os/RemoteException;->rethrowAsRuntimeException()Ljava/lang/RuntimeException;
 
@@ -265,15 +228,10 @@
     :try_end_4
     .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 2676
-    .end local v0    # "resetSplitScreenResizing":Z
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_5
     :goto_1
     goto :goto_2
 
-    .line 2663
-    .restart local v0    # "resetSplitScreenResizing":Z
     :catchall_0
     move-exception v2
 
@@ -289,12 +247,9 @@
     :try_end_6
     .catch Ljava/lang/IllegalArgumentException; {:try_start_6 .. :try_end_6} :catch_1
 
-    .line 2674
-    .end local v0    # "resetSplitScreenResizing":Z
     :catch_1
     move-exception v0
 
-    .line 2677
     :goto_2
     return-void
 .end method

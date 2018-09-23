@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaRouterService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/media/MediaRouterService;
 
-    .line 667
     iput-object p1, p0, Lcom/android/server/media/MediaRouterService$MediaRouterServiceBroadcastReceiver;->this$0:Lcom/android/server/media/MediaRouterService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,11 +32,8 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .locals 4
 
-    .line 670
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 671
     const-string v0, "android.bluetooth.device.extra.DEVICE"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -60,8 +54,6 @@
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    .line 672
-    .local v0, "btDevice":Landroid/bluetooth/BluetoothDevice;
     iget-object v1, p0, Lcom/android/server/media/MediaRouterService$MediaRouterServiceBroadcastReceiver;->this$0:Lcom/android/server/media/MediaRouterService;
 
     invoke-static {v1}, Lcom/android/server/media/MediaRouterService;->access$400(Lcom/android/server/media/MediaRouterService;)Ljava/lang/Object;
@@ -70,13 +62,11 @@
 
     monitor-enter v1
 
-    .line 673
     :try_start_0
     iget-object v2, p0, Lcom/android/server/media/MediaRouterService$MediaRouterServiceBroadcastReceiver;->this$0:Lcom/android/server/media/MediaRouterService;
 
     iput-object v0, v2, Lcom/android/server/media/MediaRouterService;->mActiveBluetoothDevice:Landroid/bluetooth/BluetoothDevice;
 
-    .line 674
     iget-object v2, p0, Lcom/android/server/media/MediaRouterService$MediaRouterServiceBroadcastReceiver;->this$0:Lcom/android/server/media/MediaRouterService;
 
     if-eqz v0, :cond_0
@@ -91,30 +81,6 @@
     :goto_0
     iput-boolean v3, v2, Lcom/android/server/media/MediaRouterService;->mGlobalBluetoothA2dpOn:Z
 
-    .line 677
-    const-string v2, "MediaRouterService"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "3 mGlobalBluetoothA2dpOn "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcom/android/server/media/MediaRouterService$MediaRouterServiceBroadcastReceiver;->this$0:Lcom/android/server/media/MediaRouterService;
-
-    iget-boolean v4, v4, Lcom/android/server/media/MediaRouterService;->mGlobalBluetoothA2dpOn:Z
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 679
     monitor-exit v1
 
     goto :goto_1
@@ -128,8 +94,6 @@
 
     throw v2
 
-    .line 681
-    .end local v0    # "btDevice":Landroid/bluetooth/BluetoothDevice;
     :cond_1
     :goto_1
     return-void

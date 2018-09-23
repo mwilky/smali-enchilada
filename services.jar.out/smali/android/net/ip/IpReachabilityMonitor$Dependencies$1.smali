@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/os/PowerManager$WakeLock;)V
     .locals 0
 
-    .line 162
     iput-object p1, p0, Landroid/net/ip/IpReachabilityMonitor$Dependencies$1;->val$lock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,13 +36,10 @@
 # virtual methods
 .method public acquireWakeLock(J)V
     .locals 1
-    .param p1, "durationMs"    # J
 
-    .line 164
     iget-object v0, p0, Landroid/net/ip/IpReachabilityMonitor$Dependencies$1;->val$lock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 165
     return-void
 .end method

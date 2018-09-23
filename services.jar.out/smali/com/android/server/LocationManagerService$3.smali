@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 349
     iput-object p1, p0, Lcom/android/server/LocationManagerService$3;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onPermissionsChanged(I)V
     .locals 2
-    .param p1, "uid"    # I
 
-    .line 352
     iget-object v0, p0, Lcom/android/server/LocationManagerService$3;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$100(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
@@ -49,19 +45,15 @@
 
     monitor-enter v0
 
-    .line 353
     :try_start_0
     iget-object v1, p0, Lcom/android/server/LocationManagerService$3;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)V
 
-    .line 354
     monitor-exit v0
 
-    .line 355
     return-void
 
-    .line 354
     :catchall_0
     move-exception v1
 

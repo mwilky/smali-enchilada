@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 21261
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$18;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,8 +36,6 @@
 # virtual methods
 .method public apply(Lorg/xmlpull/v1/XmlPullParser;I)V
     .locals 2
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -47,14 +43,12 @@
         }
     .end annotation
 
-    .line 21265
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$18;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 21266
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$18;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -62,13 +56,10 @@
 
     invoke-virtual {v1, p1, p2}, Lcom/android/server/pm/Settings;->readPreferredActivitiesLPw(Lorg/xmlpull/v1/XmlPullParser;I)V
 
-    .line 21267
     monitor-exit v0
 
-    .line 21268
     return-void
 
-    .line 21267
     :catchall_0
     move-exception v1
 

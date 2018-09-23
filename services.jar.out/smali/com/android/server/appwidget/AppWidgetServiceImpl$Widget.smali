@@ -36,10 +36,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 4255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4264
     new-instance v0, Landroid/util/SparseLongArray;
 
     const/4 v1, 0x2
@@ -53,9 +51,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$1;
 
-    .line 4255
     invoke-direct {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;-><init>()V
 
     return-void
@@ -63,9 +59,7 @@
 
 .method static synthetic access$1000(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4255
     invoke-direct {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->clearMaskedViewsLocked()Z
 
     move-result v0
@@ -75,10 +69,7 @@
 
 .method static synthetic access$900(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;Landroid/widget/RemoteViews;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .param p1, "x1"    # Landroid/widget/RemoteViews;
 
-    .line 4255
     invoke-direct {p0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->replaceWithMaskedViewsLocked(Landroid/widget/RemoteViews;)Z
 
     move-result v0
@@ -89,22 +80,18 @@
 .method private clearMaskedViewsLocked()Z
     .locals 1
 
-    .line 4277
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
 
-    .line 4278
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
-    .line 4279
     const/4 v0, 0x1
 
     return v0
 
-    .line 4281
     :cond_0
     const/4 v0, 0x0
 
@@ -113,12 +100,9 @@
 
 .method private replaceWithMaskedViewsLocked(Landroid/widget/RemoteViews;)Z
     .locals 1
-    .param p1, "views"    # Landroid/widget/RemoteViews;
 
-    .line 4272
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
-    .line 4273
     const/4 v0, 0x1
 
     return v0
@@ -129,7 +113,6 @@
 .method public getEffectiveViewsLocked()Landroid/widget/RemoteViews;
     .locals 1
 
-    .line 4286
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->maskedViews:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
@@ -148,7 +131,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 4268
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

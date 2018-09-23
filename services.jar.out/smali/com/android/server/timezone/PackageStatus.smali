@@ -28,16 +28,11 @@
 # direct methods
 .method constructor <init>(ILcom/android/server/timezone/PackageVersions;)V
     .locals 3
-    .param p1, "checkStatus"    # I
-    .param p2, "versions"    # Lcom/android/server/timezone/PackageVersions;
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput p1, p0, Lcom/android/server/timezone/PackageStatus;->mCheckStatus:I
 
-    .line 49
     const/4 v0, 0x1
 
     if-lt p1, v0, :cond_1
@@ -46,16 +41,12 @@
 
     if-gt p1, v0, :cond_1
 
-    .line 52
     if-eqz p2, :cond_0
 
-    .line 55
     iput-object p2, p0, Lcom/android/server/timezone/PackageStatus;->mVersions:Lcom/android/server/timezone/PackageVersions;
 
-    .line 56
     return-void
 
-    .line 53
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -65,7 +56,6 @@
 
     throw v0
 
-    .line 50
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -92,17 +82,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 60
     if-ne p0, p1, :cond_0
 
-    .line 61
     const/4 v0, 0x1
 
     return v0
 
-    .line 63
     :cond_0
     const/4 v0, 0x0
 
@@ -120,24 +106,19 @@
 
     goto :goto_0
 
-    .line 67
     :cond_1
     move-object v1, p1
 
     check-cast v1, Lcom/android/server/timezone/PackageStatus;
 
-    .line 69
-    .local v1, "that":Lcom/android/server/timezone/PackageStatus;
     iget v2, p0, Lcom/android/server/timezone/PackageStatus;->mCheckStatus:I
 
     iget v3, v1, Lcom/android/server/timezone/PackageStatus;->mCheckStatus:I
 
     if-eq v2, v3, :cond_2
 
-    .line 70
     return v0
 
-    .line 72
     :cond_2
     iget-object v0, p0, Lcom/android/server/timezone/PackageStatus;->mVersions:Lcom/android/server/timezone/PackageVersions;
 
@@ -149,8 +130,6 @@
 
     return v0
 
-    .line 64
-    .end local v1    # "that":Lcom/android/server/timezone/PackageStatus;
     :cond_3
     :goto_0
     return v0
@@ -159,11 +138,8 @@
 .method public hashCode()I
     .locals 3
 
-    .line 77
     iget v0, p0, Lcom/android/server/timezone/PackageStatus;->mCheckStatus:I
 
-    .line 78
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int/2addr v1, v0
@@ -176,16 +152,12 @@
 
     add-int/2addr v1, v2
 
-    .line 79
-    .end local v0    # "result":I
-    .local v1, "result":I
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

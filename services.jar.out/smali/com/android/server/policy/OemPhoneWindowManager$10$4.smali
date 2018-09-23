@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager$10;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/OemPhoneWindowManager$10;
 
-    .line 2814
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$4;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 2817
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$4;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager$10;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -61,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2818
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$4;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager$10;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -80,7 +75,6 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 2819
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$4;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager$10;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -103,7 +97,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2821
     :cond_0
     return-void
 .end method

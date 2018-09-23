@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,8 +39,6 @@
 # virtual methods
 .method public combine(Lcom/android/server/usage/IntervalStats;ZLjava/util/List;)V
     .locals 0
-    .param p1, "stats"    # Lcom/android/server/usage/IntervalStats;
-    .param p2, "mutable"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,10 +50,7 @@
         }
     .end annotation
 
-    .line 270
-    .local p3, "accResult":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/EventStats;>;"
     invoke-virtual {p1, p3}, Lcom/android/server/usage/IntervalStats;->addEventStatsTo(Ljava/util/List;)V
 
-    .line 271
     return-void
 .end method

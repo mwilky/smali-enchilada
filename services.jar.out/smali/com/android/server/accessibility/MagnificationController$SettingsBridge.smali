@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ContentResolver;)V
     .locals 0
-    .param p1, "contentResolver"    # Landroid/content/ContentResolver;
 
-    .line 972
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 973
     iput-object p1, p0, Lcom/android/server/accessibility/MagnificationController$SettingsBridge;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 974
     return-void
 .end method
 
@@ -37,9 +33,7 @@
 # virtual methods
 .method public getMagnificationScale(I)F
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 982
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationController$SettingsBridge;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v1, "accessibility_display_magnification_scale"
@@ -55,16 +49,12 @@
 
 .method public putMagnificationScale(FI)V
     .locals 2
-    .param p1, "value"    # F
-    .param p2, "userId"    # I
 
-    .line 977
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationController$SettingsBridge;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v1, "accessibility_display_magnification_scale"
 
     invoke-static {v0, v1, p1, p2}, Landroid/provider/Settings$Secure;->putFloatForUser(Landroid/content/ContentResolver;Ljava/lang/String;FI)Z
 
-    .line 979
     return-void
 .end method

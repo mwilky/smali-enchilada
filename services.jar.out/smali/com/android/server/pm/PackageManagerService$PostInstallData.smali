@@ -23,18 +23,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService$InstallArgs;Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;)V
     .locals 0
-    .param p1, "_a"    # Lcom/android/server/pm/PackageManagerService$InstallArgs;
-    .param p2, "_r"    # Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
-    .line 1537
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1538
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->args:Lcom/android/server/pm/PackageManagerService$InstallArgs;
 
-    .line 1539
     iput-object p2, p0, Lcom/android/server/pm/PackageManagerService$PostInstallData;->res:Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;
 
-    .line 1540
     return-void
 .end method

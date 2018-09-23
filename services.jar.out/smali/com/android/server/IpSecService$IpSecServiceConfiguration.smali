@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 126
     new-instance v0, Lcom/android/server/IpSecService$IpSecServiceConfiguration$1;
 
     invoke-direct {v0}, Lcom/android/server/IpSecService$IpSecServiceConfiguration$1;-><init>()V

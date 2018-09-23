@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/DisplayPowerController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/display/DisplayPowerController;
 
-    .line 791
     iput-object p1, p0, Lcom/android/server/display/DisplayPowerController$2;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,24 +37,20 @@
 .method public onAnimationEnd()V
     .locals 1
 
-    .line 796
     invoke-static {}, Lcom/android/server/display/DisplayPowerController;->access$100()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 797
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->access$202(Z)Z
 
-    .line 799
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$2;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->access$000(Lcom/android/server/display/DisplayPowerController;)V
 
-    .line 800
     return-void
 .end method

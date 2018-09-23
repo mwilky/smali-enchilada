@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/Network;Landroid/net/Network;)V
     .locals 0
-    .param p1, "x0"    # Landroid/net/Network;
 
-    .line 74
     iput-object p2, p0, Landroid/net/dns/ResolvUtil$1;->val$network:Landroid/net/Network;
 
     invoke-direct {p0, p1}, Landroid/net/Network;-><init>(Landroid/net/Network;)V
@@ -35,14 +33,12 @@
 # virtual methods
 .method public getAllByName(Ljava/lang/String;)[Ljava/net/InetAddress;
     .locals 1
-    .param p1, "host"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/net/UnknownHostException;
         }
     .end annotation
 
-    .line 77
     iget-object v0, p0, Landroid/net/dns/ResolvUtil$1;->val$network:Landroid/net/Network;
 
     invoke-static {v0, p1}, Landroid/net/dns/ResolvUtil;->blockingResolveAllLocally(Landroid/net/Network;Ljava/lang/String;)[Ljava/net/InetAddress;

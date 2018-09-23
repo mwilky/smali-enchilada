@@ -26,25 +26,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/hdmi/HdmiControlService;Landroid/hardware/hdmi/IHdmiInputChangeListener;)V
     .locals 0
-    .param p2, "listener"    # Landroid/hardware/hdmi/IHdmiInputChangeListener;
 
-    .line 1835
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1836
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiInputChangeListener;
 
-    .line 1837
     return-void
 .end method
 
 .method static synthetic access$5100(Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;)Landroid/hardware/hdmi/IHdmiInputChangeListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;
 
-    .line 1832
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiInputChangeListener;
 
     return-object v0
@@ -55,7 +49,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 1841
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->access$2100(Lcom/android/server/hdmi/HdmiControlService;)Ljava/lang/Object;
@@ -64,7 +57,6 @@
 
     monitor-enter v0
 
-    .line 1842
     :try_start_0
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -74,21 +66,17 @@
 
     if-ne v1, p0, :cond_0
 
-    .line 1843
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/server/hdmi/HdmiControlService;->access$5002(Lcom/android/server/hdmi/HdmiControlService;Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;)Lcom/android/server/hdmi/HdmiControlService$InputChangeListenerRecord;
 
-    .line 1845
     :cond_0
     monitor-exit v0
 
-    .line 1846
     return-void
 
-    .line 1845
     :catchall_0
     move-exception v1
 

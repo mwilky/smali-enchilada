@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/DragDropController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/wm/DragDropController;
 
-    .line 71
     iput-object p1, p0, Lcom/android/server/wm/DragDropController$1;->this$0:Lcom/android/server/wm/DragDropController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

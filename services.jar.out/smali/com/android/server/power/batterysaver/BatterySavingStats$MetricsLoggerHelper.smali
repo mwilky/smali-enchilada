@@ -36,14 +36,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/batterysaver/BatterySavingStats;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/power/batterysaver/BatterySavingStats;
 
-    .line 477
     iput-object p1, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->this$0:Lcom/android/server/power/batterysaver/BatterySavingStats;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 478
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mLastState:I
@@ -55,14 +52,7 @@
 # virtual methods
 .method reportLocked(IJIIII)V
     .locals 6
-    .param p1, "state"    # I
-    .param p2, "deltaTimeMs"    # J
-    .param p4, "startBatteryLevelUa"    # I
-    .param p5, "startBatteryLevelPercent"    # I
-    .param p6, "endBatteryLevelUa"    # I
-    .param p7, "endBatteryLevelPercent"    # I
 
-    .line 509
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->this$0:Lcom/android/server/power/batterysaver/BatterySavingStats;
 
     invoke-static {v0}, Lcom/android/server/power/batterysaver/BatterySavingStats;->access$000(Lcom/android/server/power/batterysaver/BatterySavingStats;)Z
@@ -71,14 +61,11 @@
 
     if-nez v0, :cond_0
 
-    .line 510
     return-void
 
-    .line 512
     :cond_0
     nop
 
-    .line 513
     invoke-static {p1}, Lcom/android/server/power/batterysaver/BatterySavingStats$BatterySaverState;->fromIndex(I)I
 
     move-result v0
@@ -96,12 +83,9 @@
     :cond_1
     move v0, v1
 
-    .line 514
-    .local v0, "batterySaverOn":Z
     :goto_0
     nop
 
-    .line 515
     invoke-static {p1}, Lcom/android/server/power/batterysaver/BatterySavingStats$InteractiveState;->fromIndex(I)I
 
     move-result v3
@@ -115,8 +99,6 @@
     :cond_2
     move v3, v1
 
-    .line 517
-    .local v3, "interactive":Z
     :goto_1
     new-instance v4, Landroid/metrics/LogMaker;
 
@@ -124,7 +106,6 @@
 
     invoke-direct {v4, v5}, Landroid/metrics/LogMaker;-><init>(I)V
 
-    .line 518
     if-eqz v0, :cond_3
 
     move v5, v2
@@ -141,7 +122,6 @@
 
     const/16 v5, 0x517
 
-    .line 519
     if-eqz v3, :cond_4
 
     move v1, v2
@@ -159,7 +139,6 @@
 
     const/16 v2, 0x518
 
-    .line 520
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
@@ -170,7 +149,6 @@
 
     const/16 v2, 0x519
 
-    .line 521
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -181,19 +159,16 @@
 
     const/16 v2, 0x51b
 
-    .line 523
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    .line 522
     invoke-virtual {v1, v2, v4}, Landroid/metrics/LogMaker;->addTaggedData(ILjava/lang/Object;)Landroid/metrics/LogMaker;
 
     move-result-object v1
 
     const/16 v2, 0x51a
 
-    .line 524
     invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -204,7 +179,6 @@
 
     const/16 v2, 0x51c
 
-    .line 525
     invoke-static {p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -213,8 +187,6 @@
 
     move-result-object v1
 
-    .line 527
-    .local v1, "logMaker":Landroid/metrics/LogMaker;
     iget-object v2, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->this$0:Lcom/android/server/power/batterysaver/BatterySavingStats;
 
     invoke-static {v2}, Lcom/android/server/power/batterysaver/BatterySavingStats;->access$100(Lcom/android/server/power/batterysaver/BatterySavingStats;)Lcom/android/internal/logging/MetricsLogger;
@@ -223,16 +195,11 @@
 
     invoke-virtual {v2, v1}, Lcom/android/internal/logging/MetricsLogger;->write(Landroid/metrics/LogMaker;)V
 
-    .line 528
     return-void
 .end method
 
 .method public transitionStateLocked(IJII)V
     .locals 15
-    .param p1, "newState"    # I
-    .param p2, "now"    # J
-    .param p4, "batteryLevel"    # I
-    .param p5, "batteryPercent"    # I
 
     move-object v8, p0
 
@@ -240,7 +207,6 @@
 
     move-wide/from16 v10, p2
 
-    .line 489
     iget v0, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mLastState:I
 
     const/4 v1, 0x0
@@ -291,22 +257,16 @@
     :goto_3
     move v12, v1
 
-    .line 492
-    .local v12, "stateChanging":Z
     if-eqz v12, :cond_5
 
-    .line 493
     iget v0, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mLastState:I
 
     if-ltz v0, :cond_4
 
-    .line 494
     iget-wide v0, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mStartTime:J
 
     sub-long v13, v10, v0
 
-    .line 496
-    .local v13, "deltaTime":J
     iget v1, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mLastState:I
 
     iget v4, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mStartBatteryLevel:I
@@ -323,24 +283,19 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->reportLocked(IJIIII)V
 
-    .line 499
-    .end local v13    # "deltaTime":J
     :cond_4
     iput-wide v10, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mStartTime:J
 
-    .line 500
     move/from16 v0, p4
 
     iput v0, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mStartBatteryLevel:I
 
-    .line 501
     move/from16 v1, p5
 
     iput v1, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mStartPercent:I
 
     goto :goto_4
 
-    .line 503
     :cond_5
     move/from16 v0, p4
 
@@ -349,6 +304,5 @@
     :goto_4
     iput v9, v8, Lcom/android/server/power/batterysaver/BatterySavingStats$MetricsLoggerHelper;->mLastState:I
 
-    .line 504
     return-void
 .end method

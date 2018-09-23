@@ -43,59 +43,45 @@
 # direct methods
 .method constructor <init>(Landroid/net/apf/ApfGenerator;Landroid/net/apf/ApfGenerator$Opcodes;)V
     .locals 1
-    .param p2, "opcode"    # Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 120
     sget-object v0, Landroid/net/apf/ApfGenerator$Register;->R0:Landroid/net/apf/ApfGenerator$Register;
 
     invoke-direct {p0, p1, p2, v0}, Landroid/net/apf/ApfGenerator$Instruction;-><init>(Landroid/net/apf/ApfGenerator;Landroid/net/apf/ApfGenerator$Opcodes;Landroid/net/apf/ApfGenerator$Register;)V
 
-    .line 121
     return-void
 .end method
 
 .method constructor <init>(Landroid/net/apf/ApfGenerator;Landroid/net/apf/ApfGenerator$Opcodes;Landroid/net/apf/ApfGenerator$Register;)V
     .locals 0
-    .param p2, "opcode"    # Landroid/net/apf/ApfGenerator$Opcodes;
-    .param p3, "register"    # Landroid/net/apf/ApfGenerator$Register;
 
-    .line 114
     iput-object p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 115
     iget p1, p2, Landroid/net/apf/ApfGenerator$Opcodes;->value:I
 
     int-to-byte p1, p1
 
     iput-byte p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
-    .line 116
     iget p1, p3, Landroid/net/apf/ApfGenerator$Register;->value:I
 
     int-to-byte p1, p1
 
     iput-byte p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mRegister:B
 
-    .line 117
     return-void
 .end method
 
 .method private calculateImmSize(IZ)B
     .locals 1
-    .param p1, "imm"    # I
-    .param p2, "signed"    # Z
 
-    .line 291
     if-nez p1, :cond_0
 
-    .line 292
     const/4 v0, 0x0
 
     return v0
 
-    .line 294
     :cond_0
     if-eqz p2, :cond_1
 
@@ -116,13 +102,11 @@
 
     if-gt p1, v0, :cond_3
 
-    .line 296
     :cond_2
     const/4 v0, 0x1
 
     return v0
 
-    .line 298
     :cond_3
     if-eqz p2, :cond_4
 
@@ -143,13 +127,11 @@
 
     if-gt p1, v0, :cond_6
 
-    .line 300
     :cond_5
     const/4 v0, 0x2
 
     return v0
 
-    .line 302
     :cond_6
     const/4 v0, 0x4
 
@@ -164,27 +146,21 @@
         }
     .end annotation
 
-    .line 271
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
     const-string v1, "__DROP__"
 
     if-ne v0, v1, :cond_0
 
-    .line 272
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
     invoke-static {v0}, Landroid/net/apf/ApfGenerator;->access$100(Landroid/net/apf/ApfGenerator;)Landroid/net/apf/ApfGenerator$Instruction;
 
     move-result-object v0
 
-    .line 272
-    .local v0, "targetLabelInstruction":Landroid/net/apf/ApfGenerator$Instruction;
     :goto_0
     goto :goto_1
 
-    .line 273
-    .end local v0    # "targetLabelInstruction":Landroid/net/apf/ApfGenerator$Instruction;
     :cond_0
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
@@ -192,7 +168,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 274
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
     invoke-static {v0}, Landroid/net/apf/ApfGenerator;->access$200(Landroid/net/apf/ApfGenerator;)Landroid/net/apf/ApfGenerator$Instruction;
@@ -201,7 +176,6 @@
 
     goto :goto_0
 
-    .line 276
     :cond_1
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
@@ -217,12 +191,9 @@
 
     check-cast v0, Landroid/net/apf/ApfGenerator$Instruction;
 
-    .line 278
-    .restart local v0    # "targetLabelInstruction":Landroid/net/apf/ApfGenerator$Instruction;
     :goto_1
     if-eqz v0, :cond_3
 
-    .line 282
     iget v1, v0, Landroid/net/apf/ApfGenerator$Instruction;->offset:I
 
     iget v2, p0, Landroid/net/apf/ApfGenerator$Instruction;->offset:I
@@ -235,14 +206,10 @@
 
     sub-int/2addr v1, v2
 
-    .line 283
-    .local v1, "targetLabelOffset":I
     if-ltz v1, :cond_2
 
-    .line 287
     return v1
 
-    .line 284
     :cond_2
     new-instance v2, Landroid/net/apf/ApfGenerator$IllegalInstructionException;
 
@@ -266,8 +233,6 @@
 
     throw v2
 
-    .line 279
-    .end local v1    # "targetLabelOffset":I
     :cond_3
     new-instance v1, Landroid/net/apf/ApfGenerator$IllegalInstructionException;
 
@@ -295,13 +260,10 @@
 .method private generateImmSizeField()B
     .locals 2
 
-    .line 203
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generatedImmSize()B
 
     move-result v0
 
-    .line 205
-    .local v0, "immSize":B
     const/4 v1, 0x4
 
     if-ne v0, v1, :cond_0
@@ -320,13 +282,10 @@
 .method private generateInstructionByte()B
     .locals 3
 
-    .line 212
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generateImmSizeField()B
 
     move-result v0
 
-    .line 213
-    .local v0, "sizeField":B
     iget-byte v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
     shl-int/lit8 v1, v1, 0x3
@@ -347,7 +306,6 @@
 .method private generatedImmSize()B
     .locals 2
 
-    .line 266
     iget-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mImmSize:B
 
     iget-byte v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabelSize:B
@@ -367,25 +325,18 @@
 
 .method private writeValue(I[BI)I
     .locals 3
-    .param p1, "value"    # I
-    .param p2, "bytecode"    # [B
-    .param p3, "writingOffset"    # I
 
-    .line 226
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generatedImmSize()B
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 227
     add-int/lit8 v1, p3, 0x1
 
-    .local v1, "writingOffset":I
     mul-int/lit8 v2, v0, 0x8
 
     shr-int v2, p1, v2
@@ -396,18 +347,12 @@
 
     aput-byte v2, p2, p3
 
-    .line 226
-    .end local p3    # "writingOffset":I
     add-int/lit8 v0, v0, -0x1
 
     move p3, v1
 
     goto :goto_0
 
-    .line 229
-    .end local v0    # "i":I
-    .end local v1    # "writingOffset":I
-    .restart local p3    # "writingOffset":I
     :cond_0
     return p3
 .end method
@@ -416,14 +361,12 @@
 # virtual methods
 .method generate([B)V
     .locals 4
-    .param p1, "bytecode"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/apf/ApfGenerator$IllegalInstructionException;
         }
     .end annotation
 
-    .line 236
     iget-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
     sget-object v1, Landroid/net/apf/ApfGenerator$Opcodes;->LABEL:Landroid/net/apf/ApfGenerator$Opcodes;
@@ -432,32 +375,23 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 237
     return-void
 
-    .line 239
     :cond_0
     iget v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->offset:I
 
-    .line 240
-    .local v0, "writingOffset":I
     add-int/lit8 v1, v0, 0x1
 
-    .line 240
-    .local v1, "writingOffset":I
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generateInstructionByte()B
 
     move-result v2
 
     aput-byte v2, p1, v0
 
-    .line 241
-    .end local v0    # "writingOffset":I
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 242
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->calculateTargetLabelOffset()I
 
     move-result v0
@@ -466,26 +400,22 @@
 
     move-result v1
 
-    .line 244
     :cond_1
     iget-boolean v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mHasImm:Z
 
     if-eqz v0, :cond_2
 
-    .line 245
     iget v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mImm:I
 
     invoke-direct {p0, v0, p1, v1}, Landroid/net/apf/ApfGenerator$Instruction;->writeValue(I[BI)I
 
     move-result v1
 
-    .line 247
     :cond_2
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
     if-eqz v0, :cond_3
 
-    .line 248
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
     const/4 v2, 0x0
@@ -496,14 +426,12 @@
 
     invoke-static {v0, v2, p1, v1, v3}, Ljava/lang/System;->arraycopy([BI[BII)V
 
-    .line 249
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
     array-length v0, v0
 
     add-int/2addr v1, v0
 
-    .line 251
     :cond_3
     iget v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->offset:I
 
@@ -515,10 +443,8 @@
 
     if-ne v0, v2, :cond_4
 
-    .line 255
     return-void
 
-    .line 252
     :cond_4
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -540,7 +466,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 253
     invoke-virtual {p0}, Landroid/net/apf/ApfGenerator$Instruction;->size()I
 
     move-result v3
@@ -558,9 +483,7 @@
 
 .method setCompareBytes([B)V
     .locals 2
-    .param p1, "bytes"    # [B
 
-    .line 155
     iget-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
     sget-object v1, Landroid/net/apf/ApfGenerator$Opcodes;->JNEBS:Landroid/net/apf/ApfGenerator$Opcodes;
@@ -569,13 +492,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 158
     iput-object p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
-    .line 159
     return-void
 
-    .line 156
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -588,41 +508,32 @@
 
 .method setImm(IZ)V
     .locals 1
-    .param p1, "imm"    # I
-    .param p2, "signed"    # Z
 
-    .line 124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mHasImm:Z
 
-    .line 125
     iput p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mImm:I
 
-    .line 126
     iput-boolean p2, p0, Landroid/net/apf/ApfGenerator$Instruction;->mImmSigned:Z
 
-    .line 127
     invoke-direct {p0, p1, p2}, Landroid/net/apf/ApfGenerator$Instruction;->calculateImmSize(IZ)B
 
     move-result v0
 
     iput-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mImmSize:B
 
-    .line 128
     return-void
 .end method
 
 .method setLabel(Ljava/lang/String;)V
     .locals 3
-    .param p1, "label"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/net/apf/ApfGenerator$IllegalInstructionException;
         }
     .end annotation
 
-    .line 139
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
     invoke-static {v0}, Landroid/net/apf/ApfGenerator;->access$000(Landroid/net/apf/ApfGenerator;)Ljava/util/HashMap;
@@ -635,7 +546,6 @@
 
     if-nez v0, :cond_1
 
-    .line 142
     iget-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
     sget-object v1, Landroid/net/apf/ApfGenerator$Opcodes;->LABEL:Landroid/net/apf/ApfGenerator$Opcodes;
@@ -644,10 +554,8 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 145
     iput-object p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mLabel:Ljava/lang/String;
 
-    .line 146
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->this$0:Landroid/net/apf/ApfGenerator;
 
     invoke-static {v0}, Landroid/net/apf/ApfGenerator;->access$000(Landroid/net/apf/ApfGenerator;)Ljava/util/HashMap;
@@ -656,10 +564,8 @@
 
     invoke-virtual {v0, p1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 147
     return-void
 
-    .line 143
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -669,7 +575,6 @@
 
     throw v0
 
-    .line 140
     :cond_1
     new-instance v0, Landroid/net/apf/ApfGenerator$IllegalInstructionException;
 
@@ -694,43 +599,33 @@
 
 .method setSignedImm(I)V
     .locals 1
-    .param p1, "imm"    # I
 
-    .line 135
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/net/apf/ApfGenerator$Instruction;->setImm(IZ)V
 
-    .line 136
     return-void
 .end method
 
 .method setTargetLabel(Ljava/lang/String;)V
     .locals 1
-    .param p1, "label"    # Ljava/lang/String;
 
-    .line 150
     iput-object p1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
-    .line 151
     const/4 v0, 0x4
 
     iput-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabelSize:B
 
-    .line 152
     return-void
 .end method
 
 .method setUnsignedImm(I)V
     .locals 1
-    .param p1, "imm"    # I
 
-    .line 131
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroid/net/apf/ApfGenerator$Instruction;->setImm(IZ)V
 
-    .line 132
     return-void
 .end method
 
@@ -742,28 +637,21 @@
         }
     .end annotation
 
-    .line 187
     iget-object v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 188
     return v1
 
-    .line 190
     :cond_0
     invoke-virtual {p0}, Landroid/net/apf/ApfGenerator$Instruction;->size()I
 
     move-result v0
 
-    .line 191
-    .local v0, "oldSize":I
     iget-byte v2, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabelSize:B
 
-    .line 192
-    .local v2, "oldTargetLabelSize":I
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->calculateTargetLabelOffset()I
 
     move-result v3
@@ -774,12 +662,10 @@
 
     iput-byte v3, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabelSize:B
 
-    .line 193
     iget-byte v3, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabelSize:B
 
     if-gt v3, v2, :cond_2
 
-    .line 196
     invoke-virtual {p0}, Landroid/net/apf/ApfGenerator$Instruction;->size()I
 
     move-result v3
@@ -793,7 +679,6 @@
     :cond_1
     return v1
 
-    .line 194
     :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -807,7 +692,6 @@
 .method size()I
     .locals 2
 
-    .line 165
     iget-byte v0, p0, Landroid/net/apf/ApfGenerator$Instruction;->mOpcode:B
 
     sget-object v1, Landroid/net/apf/ApfGenerator$Opcodes;->LABEL:Landroid/net/apf/ApfGenerator$Opcodes;
@@ -816,55 +700,45 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 166
     const/4 v0, 0x0
 
     return v0
 
-    .line 168
     :cond_0
     const/4 v0, 0x1
 
-    .line 169
-    .local v0, "size":I
     iget-boolean v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mHasImm:Z
 
     if-eqz v1, :cond_1
 
-    .line 170
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generatedImmSize()B
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 172
     :cond_1
     iget-object v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mTargetLabel:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
-    .line 173
     invoke-direct {p0}, Landroid/net/apf/ApfGenerator$Instruction;->generatedImmSize()B
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 175
     :cond_2
     iget-object v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
     if-eqz v1, :cond_3
 
-    .line 176
     iget-object v1, p0, Landroid/net/apf/ApfGenerator$Instruction;->mCompareBytes:[B
 
     array-length v1, v1
 
     add-int/2addr v0, v1
 
-    .line 178
     :cond_3
     return v0
 .end method

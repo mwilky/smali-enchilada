@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$BinderService;III[B)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
-    .line 1649
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->val$portId:I
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 6
 
-    .line 1652
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -66,17 +63,14 @@
 
     if-nez v0, :cond_0
 
-    .line 1653
     const-string v0, "HdmiControlService"
 
     const-string v1, "Hdmi control is disabled."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1654
     return-void
 
-    .line 1656
     :cond_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
@@ -92,11 +86,8 @@
 
     move-result-object v0
 
-    .line 1657
-    .local v0, "device":Lcom/android/server/hdmi/HdmiMhlLocalDeviceStub;
     if-nez v0, :cond_1
 
-    .line 1658
     const-string v1, "HdmiControlService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,10 +108,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1659
     return-void
 
-    .line 1661
     :cond_1
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$16;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
@@ -140,6 +129,5 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/server/hdmi/HdmiMhlControllerStub;->sendVendorCommand(III[B)V
 
-    .line 1662
     return-void
 .end method

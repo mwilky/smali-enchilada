@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssLocationProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssLocationProvider;
 
-    .line 493
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$1;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-direct {p0}, Landroid/location/IGnssStatusProvider$Stub;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public registerGnssStatusCallback(Landroid/location/IGnssStatusListener;)V
     .locals 1
-    .param p1, "callback"    # Landroid/location/IGnssStatusListener;
 
-    .line 496
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$1;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$200(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/server/location/GnssStatusListenerHelper;
@@ -46,15 +42,12 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/location/GnssStatusListenerHelper;->addListener(Landroid/os/IInterface;)Z
 
-    .line 497
     return-void
 .end method
 
 .method public unregisterGnssStatusCallback(Landroid/location/IGnssStatusListener;)V
     .locals 1
-    .param p1, "callback"    # Landroid/location/IGnssStatusListener;
 
-    .line 501
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$1;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$200(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/server/location/GnssStatusListenerHelper;
@@ -63,6 +56,5 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/location/GnssStatusListenerHelper;->removeListener(Landroid/os/IInterface;)V
 
-    .line 502
     return-void
 .end method

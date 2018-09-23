@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbService$2;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/usb/UsbService$2;
 
-    .line 442
     iput-object p1, p0, Lcom/android/server/usb/UsbService$2$1;->this$1:Lcom/android/server/usb/UsbService$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 444
     const-string v0, "UsbService"
 
     const-string/jumbo v1, "onClick start rndis"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 445
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2$1;->this$1:Lcom/android/server/usb/UsbService$2;
 
     iget-object v0, v0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
@@ -73,7 +67,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 446
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2$1;->this$1:Lcom/android/server/usb/UsbService$2;
 
     iget-object v0, v0, Lcom/android/server/usb/UsbService$2;->val$mgr:Landroid/net/wifi/WifiManager;
@@ -82,7 +75,6 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/net/wifi/WifiManager;->setTetherState(IZ)V
 
-    .line 447
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2$1;->this$1:Lcom/android/server/usb/UsbService$2;
 
     iget-object v0, v0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
@@ -97,7 +89,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/usb/UsbDeviceManager;->setCurrentFunctions(J)V
 
-    .line 448
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2$1;->this$1:Lcom/android/server/usb/UsbService$2;
 
     iget-object v0, v0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
@@ -106,6 +97,5 @@
 
     iput-object v1, v0, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
 
-    .line 449
     return-void
 .end method

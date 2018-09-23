@@ -24,48 +24,37 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 73
     invoke-static {p1}, Lcom/android/server/oemlock/OemLockService;->getOemLock(Landroid/content/Context;)Lcom/android/server/oemlock/OemLock;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/oemlock/OemLockService;-><init>(Landroid/content/Context;Lcom/android/server/oemlock/OemLock;)V
 
-    .line 74
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/server/oemlock/OemLock;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "oemLock"    # Lcom/android/server/oemlock/OemLock;
 
-    .line 77
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 90
     new-instance v0, Lcom/android/server/oemlock/OemLockService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/oemlock/OemLockService$1;-><init>(Lcom/android/server/oemlock/OemLockService;)V
 
     iput-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mUserRestrictionsListener:Landroid/os/UserManagerInternal$UserRestrictionsListener;
 
-    .line 114
     new-instance v0, Lcom/android/server/oemlock/OemLockService$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/oemlock/OemLockService$2;-><init>(Lcom/android/server/oemlock/OemLockService;)V
 
     iput-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mService:Landroid/os/IBinder;
 
-    .line 78
     iput-object p1, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
-    .line 79
     iput-object p2, p0, Lcom/android/server/oemlock/OemLockService;->mOemLock:Lcom/android/server/oemlock/OemLock;
 
-    .line 81
     const-class v0, Landroid/os/UserManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -76,18 +65,14 @@
 
     iget-object v1, p0, Lcom/android/server/oemlock/OemLockService;->mUserRestrictionsListener:Landroid/os/UserManagerInternal$UserRestrictionsListener;
 
-    .line 82
     invoke-virtual {v0, v1}, Landroid/os/UserManagerInternal;->addUserRestrictionsListener(Landroid/os/UserManagerInternal$UserRestrictionsListener;)V
 
-    .line 83
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/oemlock/OemLockService;)Lcom/android/server/oemlock/OemLock;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     iget-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mOemLock:Lcom/android/server/oemlock/OemLock;
 
     return-object v0
@@ -95,10 +80,7 @@
 
 .method static synthetic access$100(Lcom/android/server/oemlock/OemLockService;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
-    .param p1, "x1"    # Z
 
-    .line 47
     invoke-direct {p0, p1}, Lcom/android/server/oemlock/OemLockService;->setPersistentDataBlockOemUnlockAllowedBit(Z)V
 
     return-void
@@ -106,9 +88,7 @@
 
 .method static synthetic access$200(Lcom/android/server/oemlock/OemLockService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     invoke-direct {p0}, Lcom/android/server/oemlock/OemLockService;->enforceManageCarrierOemUnlockPermission()V
 
     return-void
@@ -116,9 +96,7 @@
 
 .method static synthetic access$300(Lcom/android/server/oemlock/OemLockService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     invoke-direct {p0}, Lcom/android/server/oemlock/OemLockService;->enforceUserIsAdmin()V
 
     return-void
@@ -126,9 +104,7 @@
 
 .method static synthetic access$400(Lcom/android/server/oemlock/OemLockService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     invoke-direct {p0}, Lcom/android/server/oemlock/OemLockService;->enforceManageUserOemUnlockPermission()V
 
     return-void
@@ -136,9 +112,7 @@
 
 .method static synthetic access$500(Lcom/android/server/oemlock/OemLockService;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     invoke-direct {p0}, Lcom/android/server/oemlock/OemLockService;->isOemUnlockAllowedByAdmin()Z
 
     move-result v0
@@ -148,9 +122,7 @@
 
 .method static synthetic access$600(Lcom/android/server/oemlock/OemLockService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oemlock/OemLockService;
 
-    .line 47
     invoke-direct {p0}, Lcom/android/server/oemlock/OemLockService;->enforceOemUnlockReadPermission()V
 
     return-void
@@ -159,7 +131,6 @@
 .method private enforceManageCarrierOemUnlockPermission()V
     .locals 3
 
-    .line 235
     iget-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_CARRIER_OEM_UNLOCK_STATE"
@@ -168,14 +139,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 238
     return-void
 .end method
 
 .method private enforceManageUserOemUnlockPermission()V
     .locals 3
 
-    .line 241
     iget-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_USER_OEM_UNLOCK_STATE"
@@ -184,14 +153,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 244
     return-void
 .end method
 
 .method private enforceOemUnlockReadPermission()V
     .locals 3
 
-    .line 247
     iget-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_OEM_UNLOCK_STATE"
@@ -208,7 +175,6 @@
 
     const-string v2, "android.permission.OEM_UNLOCK_STATE"
 
-    .line 249
     invoke-virtual {v0, v2}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -217,7 +183,6 @@
 
     goto :goto_0
 
-    .line 251
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -227,7 +192,6 @@
 
     throw v0
 
-    .line 254
     :cond_1
     :goto_0
     return-void
@@ -236,19 +200,14 @@
 .method private enforceUserIsAdmin()V
     .locals 5
 
-    .line 257
     invoke-static {}, Landroid/os/UserHandle;->getCallingUserId()I
 
     move-result v0
 
-    .line 258
-    .local v0, "userId":I
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v1
 
-    .line 260
-    .local v1, "token":J
     :try_start_0
     iget-object v3, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
@@ -264,16 +223,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 264
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 265
     nop
 
-    .line 266
     return-void
 
-    .line 261
     :cond_0
     :try_start_1
     new-instance v3, Ljava/lang/SecurityException;
@@ -286,7 +241,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 264
     :catchall_0
     move-exception v3
 
@@ -297,32 +251,25 @@
 
 .method private static getOemLock(Landroid/content/Context;)Lcom/android/server/oemlock/OemLock;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 62
     invoke-static {}, Lcom/android/server/oemlock/VendorLock;->getOemLockHalService()Landroid/hardware/oemlock/V1_0/IOemLock;
 
     move-result-object v0
 
-    .line 63
-    .local v0, "oemLockHal":Landroid/hardware/oemlock/V1_0/IOemLock;
     if-eqz v0, :cond_0
 
-    .line 64
     const-string v1, "OemLock"
 
     const-string v2, "Using vendor lock via the HAL"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
     new-instance v1, Lcom/android/server/oemlock/VendorLock;
 
     invoke-direct {v1, p0, v0}, Lcom/android/server/oemlock/VendorLock;-><init>(Landroid/content/Context;Landroid/hardware/oemlock/V1_0/IOemLock;)V
 
     return-object v1
 
-    .line 67
     :cond_0
     const-string v1, "OemLock"
 
@@ -330,7 +277,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
     new-instance v1, Lcom/android/server/oemlock/PersistentDataBlockLock;
 
     invoke-direct {v1, p0}, Lcom/android/server/oemlock/PersistentDataBlockLock;-><init>(Landroid/content/Context;)V
@@ -341,7 +287,6 @@
 .method public static isHalPresent()Z
     .locals 1
 
-    .line 57
     invoke-static {}, Lcom/android/server/oemlock/VendorLock;->getOemLockHalService()Landroid/hardware/oemlock/V1_0/IOemLock;
 
     move-result-object v0
@@ -362,7 +307,6 @@
 .method private isOemUnlockAllowedByAdmin()Z
     .locals 3
 
-    .line 230
     iget-object v0, p0, Lcom/android/server/oemlock/OemLockService;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -373,12 +317,10 @@
 
     sget-object v2, Landroid/os/UserHandle;->SYSTEM:Landroid/os/UserHandle;
 
-    .line 231
     invoke-virtual {v0, v1, v2}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;Landroid/os/UserHandle;)Z
 
     move-result v0
 
-    .line 230
     xor-int/lit8 v0, v0, 0x1
 
     return v0
@@ -386,20 +328,15 @@
 
 .method private setPersistentDataBlockOemUnlockAllowedBit(Z)V
     .locals 4
-    .param p1, "allowed"    # Z
 
-    .line 220
     const-class v0, Lcom/android/server/PersistentDataBlockManagerInternal;
 
-    .line 221
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/server/PersistentDataBlockManagerInternal;
 
-    .line 223
-    .local v0, "pdbmi":Lcom/android/server/PersistentDataBlockManagerInternal;
     if-eqz v0, :cond_0
 
     iget-object v1, p0, Lcom/android/server/oemlock/OemLockService;->mOemLock:Lcom/android/server/oemlock/OemLock;
@@ -408,7 +345,6 @@
 
     if-nez v1, :cond_0
 
-    .line 224
     const-string v1, "OemLock"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -427,10 +363,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
     invoke-interface {v0, p1}, Lcom/android/server/PersistentDataBlockManagerInternal;->forceOemUnlockEnabled(Z)V
 
-    .line 227
     :cond_0
     return-void
 .end method
@@ -440,13 +374,11 @@
 .method public onStart()V
     .locals 2
 
-    .line 87
     const-string/jumbo v0, "oem_lock"
 
     iget-object v1, p0, Lcom/android/server/oemlock/OemLockService;->mService:Landroid/os/IBinder;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/oemlock/OemLockService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 88
     return-void
 .end method

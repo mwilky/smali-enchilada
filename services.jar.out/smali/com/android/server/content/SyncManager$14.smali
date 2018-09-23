@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/content/SyncManager;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
-    .line 753
     iput-object p1, p0, Lcom/android/server/content/SyncManager$14;->this$0:Lcom/android/server/content/SyncManager;
 
     iput-object p2, p0, Lcom/android/server/content/SyncManager$14;->val$startServiceIntent:Landroid/content/Intent;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 756
     iget-object v0, p0, Lcom/android/server/content/SyncManager$14;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-static {v0}, Lcom/android/server/content/SyncManager;->access$2000(Lcom/android/server/content/SyncManager;)Landroid/content/Context;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 757
     return-void
 .end method

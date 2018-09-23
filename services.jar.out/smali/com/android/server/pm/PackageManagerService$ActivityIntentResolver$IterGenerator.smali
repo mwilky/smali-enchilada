@@ -30,10 +30,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;
 
-    .line 13224
-    .local p0, "this":Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator;, "Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator<TE;>;"
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator;->this$1:Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +42,6 @@
 # virtual methods
 .method public generate(Landroid/content/pm/PackageParser$ActivityIntentInfo;)Ljava/util/Iterator;
     .locals 1
-    .param p1, "info"    # Landroid/content/pm/PackageParser$ActivityIntentInfo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,8 +52,6 @@
         }
     .end annotation
 
-    .line 13226
-    .local p0, "this":Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator;, "Lcom/android/server/pm/PackageManagerService$ActivityIntentResolver$IterGenerator<TE;>;"
     const/4 v0, 0x0
 
     return-object v0

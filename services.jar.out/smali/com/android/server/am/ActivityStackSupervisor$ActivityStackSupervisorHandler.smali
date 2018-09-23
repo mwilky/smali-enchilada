@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityStackSupervisor;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 4803
     iput-object p1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 4804
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 4805
     return-void
 .end method
 
@@ -37,10 +33,7 @@
 # virtual methods
 .method activityIdleInternal(Lcom/android/server/am/ActivityRecord;Z)V
     .locals 5
-    .param p1, "r"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "processPausingActivities"    # Z
 
-    .line 4808
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -50,7 +43,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4809
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v2, 0x0
@@ -69,17 +61,14 @@
 
     invoke-virtual {v1, v3, v4, p2, v2}, Lcom/android/server/am/ActivityStackSupervisor;->activityIdleInternalLocked(Landroid/os/IBinder;ZZLandroid/content/res/Configuration;)Lcom/android/server/am/ActivityRecord;
 
-    .line 4811
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4812
     return-void
 
-    .line 4811
     :catchall_0
     move-exception v1
 
@@ -95,9 +84,7 @@
 
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 4816
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x70
@@ -114,7 +101,6 @@
 
     goto/16 :goto_2
 
-    .line 4826
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -125,7 +111,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4827
     iget-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mPipModeChangedActivities:Ljava/util/ArrayList;
@@ -136,15 +121,11 @@
 
     sub-int/2addr v3, v2
 
-    .local v3, "i":I
     :goto_0
     move v2, v3
 
-    .end local v3    # "i":I
-    .local v2, "i":I
     if-ltz v2, :cond_0
 
-    .line 4828
     iget-object v3, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityStackSupervisor;->mPipModeChangedActivities:Ljava/util/ArrayList;
@@ -155,24 +136,16 @@
 
     check-cast v3, Lcom/android/server/am/ActivityRecord;
 
-    .line 4829
-    .local v3, "r":Lcom/android/server/am/ActivityRecord;
     iget-object v4, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v4, v4, Lcom/android/server/am/ActivityStackSupervisor;->mPipModeChangedTargetStackBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v4, v1}, Lcom/android/server/am/ActivityRecord;->updatePictureInPictureMode(Landroid/graphics/Rect;Z)V
 
-    .line 4827
-    .end local v3    # "r":Lcom/android/server/am/ActivityRecord;
     add-int/lit8 v3, v2, -0x1
 
-    .end local v2    # "i":I
-    .local v3, "i":I
     goto :goto_0
 
-    .line 4832
-    .end local v3    # "i":I
     :cond_0
     monitor-exit v0
     :try_end_0
@@ -180,10 +153,8 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4833
     goto/16 :goto_2
 
-    .line 4832
     :catchall_0
     move-exception v1
 
@@ -196,7 +167,6 @@
 
     throw v1
 
-    .line 4818
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -207,7 +177,6 @@
     :try_start_2
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4819
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mMultiWindowModeChangedActivities:Ljava/util/ArrayList;
@@ -218,11 +187,9 @@
 
     sub-int/2addr v1, v2
 
-    .local v1, "i":I
     :goto_1
     if-ltz v1, :cond_1
 
-    .line 4820
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStackSupervisor;->mMultiWindowModeChangedActivities:Ljava/util/ArrayList;
@@ -233,18 +200,12 @@
 
     check-cast v2, Lcom/android/server/am/ActivityRecord;
 
-    .line 4821
-    .local v2, "r":Lcom/android/server/am/ActivityRecord;
     invoke-virtual {v2}, Lcom/android/server/am/ActivityRecord;->updateMultiWindowMode()V
 
-    .line 4819
-    .end local v2    # "r":Lcom/android/server/am/ActivityRecord;
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 4823
-    .end local v1    # "i":I
     :cond_1
     monitor-exit v0
     :try_end_2
@@ -252,10 +213,8 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4824
     goto/16 :goto_2
 
-    .line 4823
     :catchall_1
     move-exception v1
 
@@ -268,7 +227,6 @@
 
     throw v1
 
-    .line 4879
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -276,10 +234,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$300(Lcom/android/server/am/ActivityStackSupervisor;I)V
 
-    .line 4880
     goto/16 :goto_2
 
-    .line 4876
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -287,10 +243,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$200(Lcom/android/server/am/ActivityStackSupervisor;I)V
 
-    .line 4877
     goto/16 :goto_2
 
-    .line 4873
     :pswitch_4
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -298,10 +252,8 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$100(Lcom/android/server/am/ActivityStackSupervisor;I)V
 
-    .line 4874
     goto/16 :goto_2
 
-    .line 4861
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -312,7 +264,6 @@
     :try_start_4
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4862
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mLaunchingActivity:Landroid/os/PowerManager$WakeLock;
@@ -323,21 +274,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 4863
     const-string v1, "ActivityManager"
 
     const-string v2, "Launch timeout has expired, giving up wake lock!"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4868
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mLaunchingActivity:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 4870
     :cond_2
     monitor-exit v0
     :try_end_4
@@ -345,10 +293,8 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4871
     goto/16 :goto_2
 
-    .line 4870
     :catchall_2
     move-exception v1
 
@@ -361,7 +307,6 @@
 
     throw v1
 
-    .line 4853
     :pswitch_6
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -372,7 +317,6 @@
     :try_start_6
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4854
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityStackSupervisor;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -383,19 +327,16 @@
 
     if-eqz v2, :cond_3
 
-    .line 4855
     const-string v2, "ActivityManager"
 
     const-string v3, "Sleep timeout!  Sleeping now."
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4856
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v2, v1}, Lcom/android/server/am/ActivityStackSupervisor;->checkReadyForSleepLocked(Z)V
 
-    .line 4858
     :cond_3
     monitor-exit v0
     :try_end_6
@@ -403,10 +344,8 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4859
     goto/16 :goto_2
 
-    .line 4858
     :catchall_3
     move-exception v1
 
@@ -419,7 +358,6 @@
 
     throw v1
 
-    .line 4848
     :pswitch_7
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -430,22 +368,18 @@
     :try_start_8
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4849
     iget-object v1, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->resumeFocusedStackTopActivityLocked()Z
 
-    .line 4850
     monitor-exit v0
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_4
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4851
     goto :goto_2
 
-    .line 4850
     :catchall_4
     move-exception v1
 
@@ -458,7 +392,6 @@
 
     throw v1
 
-    .line 4843
     :pswitch_8
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_IDLE:Z
 
@@ -484,7 +417,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4844
     :cond_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -492,10 +424,8 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->activityIdleInternal(Lcom/android/server/am/ActivityRecord;Z)V
 
-    .line 4846
     goto :goto_2
 
-    .line 4835
     :pswitch_9
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_IDLE:Z
 
@@ -521,7 +451,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4839
     :cond_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -529,10 +458,8 @@
 
     invoke-virtual {p0, v0, v2}, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->activityIdleInternal(Lcom/android/server/am/ActivityRecord;Z)V
 
-    .line 4841
     goto :goto_2
 
-    .line 4882
     :cond_6
     iget-object v0, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -543,7 +470,6 @@
     :try_start_a
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 4883
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Landroid/os/IBinder;
@@ -552,17 +478,12 @@
 
     move-result-object v1
 
-    .line 4884
-    .local v1, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v1, :cond_7
 
-    .line 4885
     iget-object v2, p0, Lcom/android/server/am/ActivityStackSupervisor$ActivityStackSupervisorHandler;->this$0:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-static {v2, v1}, Lcom/android/server/am/ActivityStackSupervisor;->access$400(Lcom/android/server/am/ActivityStackSupervisor;Lcom/android/server/am/ActivityRecord;)V
 
-    .line 4887
-    .end local v1    # "r":Lcom/android/server/am/ActivityRecord;
     :cond_7
     monitor-exit v0
     :try_end_a
@@ -570,11 +491,9 @@
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 4891
     :goto_2
     return-void
 
-    .line 4887
     :catchall_5
     move-exception v1
 

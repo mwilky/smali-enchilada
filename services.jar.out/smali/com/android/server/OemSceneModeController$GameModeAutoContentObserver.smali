@@ -21,17 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/OemSceneModeController;Landroid/content/Context;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneModeController;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .line 254
     iput-object p1, p0, Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;->this$0:Lcom/android/server/OemSceneModeController;
 
-    .line 255
     invoke-direct {p0, p3}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 256
     return-void
 .end method
 
@@ -39,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
-    .param p1, "selfChange"    # Z
 
-    .line 259
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;->this$0:Lcom/android/server/OemSceneModeController;
 
     invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$500(Lcom/android/server/OemSceneModeController;)Z
@@ -52,7 +44,6 @@
 
     return-void
 
-    .line 261
     :cond_0
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;->this$0:Lcom/android/server/OemSceneModeController;
 
@@ -76,10 +67,8 @@
 
     if-nez v0, :cond_1
 
-    .line 263
     return-void
 
-    .line 265
     :cond_1
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$GameModeAutoContentObserver;->this$0:Lcom/android/server/OemSceneModeController;
 
@@ -91,7 +80,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 266
     invoke-static {}, Lcom/android/server/OemSceneModeController;->access$400()Z
 
     move-result v0
@@ -104,7 +92,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
     :cond_2
     return-void
 .end method

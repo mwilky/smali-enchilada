@@ -29,17 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZLjava/lang/String;ZZZLjava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accounts/AccountManagerService;
-    .param p2, "accounts"    # Lcom/android/server/accounts/AccountManagerService$UserAccounts;
-    .param p3, "response"    # Landroid/accounts/IAccountManagerResponse;
-    .param p4, "accountType"    # Ljava/lang/String;
-    .param p5, "expectActivityLaunch"    # Z
-    .param p6, "accountName"    # Ljava/lang/String;
-    .param p7, "authDetailsRequired"    # Z
-    .param p8, "updateLastAuthenticationTime"    # Z
-    .param p9, "isPasswordForwardingAllowed"    # Z
 
-    .line 3369
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$11;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     iput-object p10, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$authTokenType:Ljava/lang/String;
@@ -65,7 +55,6 @@
         }
     .end annotation
 
-    .line 3372
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$11;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$11;->mAccountType:Ljava/lang/String;
@@ -80,15 +69,12 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/accounts/IAccountAuthenticator;->startAddAccountSession(Landroid/accounts/IAccountAuthenticatorResponse;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 3374
     return-void
 .end method
 
 .method protected toDebugString(J)Ljava/lang/String;
     .locals 3
-    .param p1, "now"    # J
 
-    .line 3378
     const-string v0, ","
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$requiredFeatures:[Ljava/lang/String;
@@ -97,8 +83,6 @@
 
     move-result-object v0
 
-    .line 3379
-    .local v0, "requiredFeaturesStr":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -121,7 +105,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3381
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$11;->val$requiredFeatures:[Ljava/lang/String;
 
     if-eqz v2, :cond_0
@@ -140,6 +123,5 @@
 
     move-result-object v1
 
-    .line 3379
     return-object v1
 .end method

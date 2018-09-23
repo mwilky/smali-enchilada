@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 1752
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$4;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iput-object p2, p0, Lcom/android/server/policy/OemPhoneWindowManager$4;->val$intent:Landroid/content/Intent;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1755
     const-string v0, "OemPhoneWindowManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +61,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1756
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$4;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$4;->val$intent:Landroid/content/Intent;
@@ -73,6 +69,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/OemPhoneWindowManager;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1757
     return-void
 .end method

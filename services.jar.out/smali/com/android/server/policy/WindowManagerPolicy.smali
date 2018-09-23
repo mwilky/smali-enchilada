@@ -51,25 +51,20 @@
 # direct methods
 .method public static userRotationModeToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "mode"    # I
 
-    .line 1787
     packed-switch p0, :pswitch_data_0
 
-    .line 1793
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 1791
     :pswitch_0
     const-string v0, "USER_ROTATION_LOCKED"
 
     return-object v0
 
-    .line 1789
     :pswitch_1
     const-string v0, "USER_ROTATION_FREE"
 
@@ -104,10 +99,7 @@
 
 .method public beginLayoutLw(Lcom/android/server/wm/DisplayFrames;I)V
     .locals 0
-    .param p1, "displayFrames"    # Lcom/android/server/wm/DisplayFrames;
-    .param p2, "uiMode"    # I
 
-    .line 1191
     return-void
 .end method
 
@@ -170,16 +162,7 @@
 
 .method public getLayoutHintLw(Landroid/view/WindowManager$LayoutParams;Landroid/graphics/Rect;Lcom/android/server/wm/DisplayFrames;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/view/DisplayCutout$ParcelableWrapper;)Z
     .locals 1
-    .param p1, "attrs"    # Landroid/view/WindowManager$LayoutParams;
-    .param p2, "taskBounds"    # Landroid/graphics/Rect;
-    .param p3, "displayFrames"    # Lcom/android/server/wm/DisplayFrames;
-    .param p4, "outFrame"    # Landroid/graphics/Rect;
-    .param p5, "outContentInsets"    # Landroid/graphics/Rect;
-    .param p6, "outStableInsets"    # Landroid/graphics/Rect;
-    .param p7, "outOutsets"    # Landroid/graphics/Rect;
-    .param p8, "outDisplayCutout"    # Landroid/view/DisplayCutout$ParcelableWrapper;
 
-    .line 1235
     const/4 v0, 0x0
 
     return v0
@@ -205,12 +188,9 @@
 
 .method public getSubWindowLayerFromTypeLw(I)I
     .locals 3
-    .param p1, "type"    # I
 
-    .line 955
     packed-switch p1, :pswitch_data_0
 
-    .line 968
     const-string v0, "WindowManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -229,36 +209,30 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 969
     const/4 v0, 0x0
 
     return v0
 
-    .line 966
     :pswitch_0
     const/4 v0, 0x3
 
     return v0
 
-    .line 962
     :pswitch_1
     const/4 v0, -0x1
 
     return v0
 
-    .line 964
     :pswitch_2
     const/4 v0, 0x2
 
     return v0
 
-    .line 960
     :pswitch_3
     const/4 v0, -0x2
 
     return v0
 
-    .line 958
     :pswitch_4
     const/4 v0, 0x1
 
@@ -285,16 +259,13 @@
 
 .method public getWindowLayerFromTypeLw(I)I
     .locals 2
-    .param p1, "type"    # I
 
-    .line 809
     invoke-static {p1}, Landroid/view/WindowManager$LayoutParams;->isSystemAlertWindowType(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 813
     const/4 v0, 0x0
 
     invoke-interface {p0, p1, v0}, Lcom/android/server/policy/WindowManagerPolicy;->getWindowLayerFromTypeLw(IZ)I
@@ -303,7 +274,6 @@
 
     return v0
 
-    .line 810
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -316,10 +286,7 @@
 
 .method public getWindowLayerFromTypeLw(IZ)I
     .locals 4
-    .param p1, "type"    # I
-    .param p2, "canAddInternalSystemWindow"    # Z
 
-    .line 831
     const/4 v0, 0x1
 
     const/4 v1, 0x2
@@ -330,10 +297,8 @@
 
     if-gt p1, v2, :cond_0
 
-    .line 832
     return v1
 
-    .line 835
     :cond_0
     const/16 v2, 0xb
 
@@ -349,7 +314,6 @@
 
     packed-switch p1, :pswitch_data_4
 
-    .line 940
     const-string v0, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,164 +332,135 @@
 
     invoke-static {v0, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 941
     return v1
 
-    .line 936
     :pswitch_0
     const/16 v0, 0x67
 
     return v0
 
-    .line 934
     :pswitch_1
     const/16 v0, 0x66
 
     return v0
 
-    .line 932
     :pswitch_2
     const/16 v0, 0x65
 
     return v0
 
-    .line 930
     :pswitch_3
     const/16 v0, 0x64
 
     return v0
 
-    .line 868
     :pswitch_4
     const/16 v0, 0xc
 
     return v0
 
-    .line 903
     :pswitch_5
     const/16 v0, 0x19
 
     return v0
 
-    .line 845
     :pswitch_6
     return v1
 
-    .line 843
     :pswitch_7
     return v1
 
-    .line 919
     :pswitch_8
     const/16 v0, 0x1e
 
     return v0
 
-    .line 853
     :pswitch_9
     const/4 v0, 0x5
 
     return v0
 
-    .line 841
     :pswitch_a
     return v1
 
-    .line 909
     :pswitch_b
     const/16 v0, 0x1b
 
     return v0
 
-    .line 912
     :pswitch_c
     const/16 v0, 0x1c
 
     return v0
 
-    .line 899
     :pswitch_d
     const/16 v0, 0x18
 
     return v0
 
-    .line 871
     :pswitch_e
     const/16 v0, 0xd
 
     return v0
 
-    .line 855
     :pswitch_f
     const/4 v0, 0x6
 
     return v0
 
-    .line 923
     :pswitch_10
     const/16 v0, 0x20
 
     return v0
 
-    .line 889
     :pswitch_11
     const/16 v0, 0x15
 
     return v0
 
-    .line 896
     :pswitch_12
     const/16 v0, 0x17
 
     return v0
 
-    .line 926
     :pswitch_13
     const/16 v0, 0x21
 
     return v0
 
-    .line 883
     :pswitch_14
     const/16 v0, 0x13
 
     return v0
 
-    .line 916
     :pswitch_15
     const/16 v0, 0x1d
 
     return v0
 
-    .line 921
     :pswitch_16
     const/16 v0, 0x1f
 
     return v0
 
-    .line 881
     :pswitch_17
     const/16 v0, 0x12
 
     return v0
 
-    .line 838
     :pswitch_18
     return v0
 
-    .line 877
     :pswitch_19
     const/16 v0, 0xf
 
     return v0
 
-    .line 874
     :pswitch_1a
     const/16 v0, 0xe
 
     return v0
 
-    .line 906
     :pswitch_1b
     if-eqz p2, :cond_1
 
@@ -536,25 +471,21 @@
     :cond_1
     return v3
 
-    .line 885
     :pswitch_1c
     const/16 v0, 0x14
 
     return v0
 
-    .line 857
     :pswitch_1d
     const/4 v0, 0x7
 
     return v0
 
-    .line 863
     :pswitch_1e
     const/16 v0, 0x9
 
     return v0
 
-    .line 893
     :pswitch_1f
     if-eqz p2, :cond_2
 
@@ -565,13 +496,11 @@
     :cond_2
     return v2
 
-    .line 860
     :pswitch_20
     const/16 v0, 0x8
 
     return v0
 
-    .line 866
     :pswitch_21
     if-eqz p2, :cond_3
 
@@ -583,19 +512,16 @@
     :goto_0
     return v2
 
-    .line 847
     :pswitch_22
     const/4 v0, 0x3
 
     return v0
 
-    .line 850
     :pswitch_23
     const/4 v0, 0x4
 
     return v0
 
-    .line 879
     :pswitch_24
     const/16 v0, 0x11
 
@@ -665,9 +591,7 @@
 
 .method public getWindowLayerLw(Lcom/android/server/policy/WindowManagerPolicy$WindowState;)I
     .locals 2
-    .param p1, "win"    # Lcom/android/server/policy/WindowManagerPolicy$WindowState;
 
-    .line 798
     invoke-interface {p1}, Lcom/android/server/policy/WindowManagerPolicy$WindowState;->getBaseType()I
 
     move-result v0
@@ -757,11 +681,7 @@
 
 .method public layoutWindowLw(Lcom/android/server/policy/WindowManagerPolicy$WindowState;Lcom/android/server/policy/WindowManagerPolicy$WindowState;Lcom/android/server/wm/DisplayFrames;)V
     .locals 0
-    .param p1, "win"    # Lcom/android/server/policy/WindowManagerPolicy$WindowState;
-    .param p2, "attached"    # Lcom/android/server/policy/WindowManagerPolicy$WindowState;
-    .param p3, "displayFrames"    # Lcom/android/server/wm/DisplayFrames;
 
-    .line 1211
     return-void
 .end method
 
@@ -795,7 +715,6 @@
 .method public onOverlayChangedLw()V
     .locals 0
 
-    .line 179
     return-void
 .end method
 
@@ -860,9 +779,7 @@
 
 .method public setDismissImeOnBackKeyPressed(Z)V
     .locals 0
-    .param p1, "newValue"    # Z
 
-    .line 1637
     return-void
 .end method
 

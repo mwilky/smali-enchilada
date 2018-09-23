@@ -27,14 +27,10 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "uid"    # I
 
-    .line 5523
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5524
     iput p1, p0, Lcom/android/server/power/PowerManagerService$UidState;->mUid:I
 
-    .line 5525
     return-void
 .end method

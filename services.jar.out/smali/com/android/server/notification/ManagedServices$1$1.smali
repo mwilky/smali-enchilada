@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/ManagedServices$1;Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/notification/ManagedServices$1;
 
-    .line 1015
     iput-object p1, p0, Lcom/android/server/notification/ManagedServices$1$1;->this$1:Lcom/android/server/notification/ManagedServices$1;
 
     iput-object p2, p0, Lcom/android/server/notification/ManagedServices$1$1;->val$name:Landroid/content/ComponentName;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1018
     iget-object v0, p0, Lcom/android/server/notification/ManagedServices$1$1;->this$1:Lcom/android/server/notification/ManagedServices$1;
 
     iget-object v0, v0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
@@ -56,6 +53,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/server/notification/ManagedServices;->access$500(Lcom/android/server/notification/ManagedServices;Landroid/content/ComponentName;I)V
 
-    .line 1019
     return-void
 .end method

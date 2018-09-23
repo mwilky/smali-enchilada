@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 708
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "dir"    # Ljava/io/File;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 711
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0

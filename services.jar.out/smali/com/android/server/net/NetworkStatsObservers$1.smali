@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkStatsObservers;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkStatsObservers;
 
-    .line 132
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsObservers$1;->this$0:Lcom/android/server/net/NetworkStatsObservers;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,17 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 135
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    .line 149
     const/4 v0, 0x0
 
     return v0
 
-    .line 145
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsObservers$1;->this$0:Lcom/android/server/net/NetworkStatsObservers;
 
@@ -62,10 +56,8 @@
 
     invoke-static {v0, v2}, Lcom/android/server/net/NetworkStatsObservers;->access$200(Lcom/android/server/net/NetworkStatsObservers;Lcom/android/server/net/NetworkStatsObservers$StatsContext;)V
 
-    .line 146
     return v1
 
-    .line 141
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsObservers$1;->this$0:Lcom/android/server/net/NetworkStatsObservers;
 
@@ -77,10 +69,8 @@
 
     invoke-static {v0, v2, v3}, Lcom/android/server/net/NetworkStatsObservers;->access$100(Lcom/android/server/net/NetworkStatsObservers;Landroid/net/DataUsageRequest;I)V
 
-    .line 142
     return v1
 
-    .line 137
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/net/NetworkStatsObservers$1;->this$0:Lcom/android/server/net/NetworkStatsObservers;
 
@@ -90,7 +80,6 @@
 
     invoke-static {v0, v2}, Lcom/android/server/net/NetworkStatsObservers;->access$000(Lcom/android/server/net/NetworkStatsObservers;Lcom/android/server/net/NetworkStatsObservers$RequestInfo;)V
 
-    .line 138
     return v1
 
     :pswitch_data_0

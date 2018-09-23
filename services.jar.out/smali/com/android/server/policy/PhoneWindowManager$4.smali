@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 1199
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
     .locals 3
-    .param p1, "event"    # Landroid/os/UEventObserver$UEvent;
 
-    .line 1202
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$4;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const-string v1, "1"
@@ -54,6 +50,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/PhoneWindowManager;->setHdmiPlugged(Z)V
 
-    .line 1203
     return-void
 .end method

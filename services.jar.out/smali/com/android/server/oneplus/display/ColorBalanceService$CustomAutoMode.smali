@@ -35,14 +35,12 @@
 .method public constructor <init>(Lcom/android/server/oneplus/display/ColorBalanceService;)V
     .locals 2
 
-    .line 1429
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$AutoMode;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService;Lcom/android/server/oneplus/display/ColorBalanceService$1;)V
 
-    .line 1430
     invoke-virtual {p1}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -57,22 +55,18 @@
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
-    .line 1431
     new-instance v0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode$1;-><init>(Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;Lcom/android/server/oneplus/display/ColorBalanceService;)V
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mTimeChangedReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 1437
     return-void
 .end method
 
 .method static synthetic access$1200(Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;
 
-    .line 1419
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateActivated()V
 
     return-void
@@ -81,14 +75,12 @@
 .method private updateActivated()V
     .locals 9
 
-    .line 1444
     const-string v0, "ColorBalanceService"
 
     const-string v1, "CustomAutoMode updateActivated!"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1445
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1300(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Object;
@@ -97,36 +89,27 @@
 
     monitor-enter v0
 
-    .line 1446
     :try_start_0
     invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
 
     move-result-object v1
 
-    .line 1447
-    .local v1, "now":Ljava/time/LocalDateTime;
     iget-object v2, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mStartTime:Ljava/time/LocalTime;
 
     invoke-static {v2, v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->getDateTimeBefore(Ljava/time/LocalTime;Ljava/time/LocalDateTime;)Ljava/time/LocalDateTime;
 
     move-result-object v2
 
-    .line 1448
-    .local v2, "start":Ljava/time/LocalDateTime;
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mEndTime:Ljava/time/LocalTime;
 
     invoke-static {v3, v2}, Lcom/android/server/oneplus/display/ColorBalanceService;->getDateTimeAfter(Ljava/time/LocalTime;Ljava/time/LocalDateTime;)Ljava/time/LocalDateTime;
 
     move-result-object v3
 
-    .line 1449
-    .local v3, "end":Ljava/time/LocalDateTime;
     invoke-virtual {v1, v3}, Ljava/time/LocalDateTime;->isBefore(Ljava/time/chrono/ChronoLocalDateTime;)Z
 
     move-result v4
 
-    .line 1451
-    .local v4, "activated":Z
     iget-object v5, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mLastActivatedTime:Ljava/time/LocalDateTime;
 
     const/4 v6, 0x0
@@ -142,8 +125,6 @@
     :cond_0
     move v5, v6
 
-    .line 1452
-    .local v5, "setActivated":Z
     :goto_0
     if-nez v5, :cond_7
 
@@ -167,7 +148,6 @@
 
     if-eq v8, v4, :cond_7
 
-    .line 1454
     :cond_1
     iget-object v8, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
@@ -189,7 +169,6 @@
 
     if-eqz v8, :cond_4
 
-    .line 1455
     invoke-virtual {v1, v2}, Ljava/time/LocalDateTime;->isBefore(Ljava/time/chrono/ChronoLocalDateTime;)Z
 
     move-result v8
@@ -216,7 +195,6 @@
 
     goto :goto_5
 
-    .line 1457
     :cond_4
     invoke-virtual {v1, v3}, Ljava/time/LocalDateTime;->isBefore(Ljava/time/chrono/ChronoLocalDateTime;)Z
 
@@ -242,7 +220,6 @@
     :goto_4
     move v5, v6
 
-    .line 1460
     :cond_7
     :goto_5
     const-string v6, "ColorBalanceService"
@@ -263,10 +240,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1461
     if-eqz v5, :cond_8
 
-    .line 1462
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -275,7 +250,6 @@
 
     invoke-static {v6, v7}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1402(Lcom/android/server/oneplus/display/ColorBalanceService;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
-    .line 1463
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v6}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -284,7 +258,6 @@
 
     invoke-virtual {v6, v4}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
-    .line 1465
     :cond_8
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
@@ -294,7 +267,6 @@
 
     invoke-static {v6, v7}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1502(Lcom/android/server/oneplus/display/ColorBalanceService;Ljava/lang/Boolean;)Ljava/lang/Boolean;
 
-    .line 1466
     iget-object v6, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v6}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1400(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
@@ -303,18 +275,10 @@
 
     invoke-direct {p0, v6, v1}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateNextAlarm(Ljava/lang/Boolean;Ljava/time/LocalDateTime;)V
 
-    .line 1467
-    .end local v1    # "now":Ljava/time/LocalDateTime;
-    .end local v2    # "start":Ljava/time/LocalDateTime;
-    .end local v3    # "end":Ljava/time/LocalDateTime;
-    .end local v4    # "activated":Z
-    .end local v5    # "setActivated":Z
     monitor-exit v0
 
-    .line 1468
     return-void
 
-    .line 1467
     :catchall_0
     move-exception v1
 
@@ -328,13 +292,10 @@
 .method private updateActivatedOnCustomStartTimeChanged()V
     .locals 2
 
-    .line 1439
     invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
 
     move-result-object v0
 
-    .line 1440
-    .local v0, "now":Ljava/time/LocalDateTime;
     const/4 v1, 0x1
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -343,39 +304,30 @@
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateNextAlarm(Ljava/lang/Boolean;Ljava/time/LocalDateTime;)V
 
-    .line 1441
     return-void
 .end method
 
 .method private updateNextAlarm(Ljava/lang/Boolean;Ljava/time/LocalDateTime;)V
     .locals 12
-    .param p1, "activated"    # Ljava/lang/Boolean;
-    .param p2, "now"    # Ljava/time/LocalDateTime;
 
-    .line 1478
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mStartTime:Ljava/time/LocalTime;
 
     invoke-static {v0, p2}, Lcom/android/server/oneplus/display/ColorBalanceService;->getDateTimeAfter(Ljava/time/LocalTime;Ljava/time/LocalDateTime;)Ljava/time/LocalDateTime;
 
     move-result-object v0
 
-    .line 1479
-    .local v0, "nextStart":Ljava/time/LocalDateTime;
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mEndTime:Ljava/time/LocalTime;
 
     invoke-static {v1, p2}, Lcom/android/server/oneplus/display/ColorBalanceService;->getDateTimeAfter(Ljava/time/LocalTime;Ljava/time/LocalDateTime;)Ljava/time/LocalDateTime;
 
     move-result-object v1
 
-    .line 1480
-    .local v1, "nextEnd":Ljava/time/LocalDateTime;
     invoke-virtual {v0, v1}, Ljava/time/LocalDateTime;->isBefore(Ljava/time/chrono/ChronoLocalDateTime;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 1481
     const-string v2, "ColorBalanceService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -394,7 +346,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1482
     invoke-static {}, Ljava/time/ZoneId;->systemDefault()Ljava/time/ZoneId;
 
     move-result-object v2
@@ -411,8 +362,6 @@
 
     move-result-wide v10
 
-    .line 1483
-    .local v10, "millis":J
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
     const/4 v4, 0x1
@@ -427,11 +376,8 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/app/AlarmManager;->setExact(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 1484
-    .end local v10    # "millis":J
     goto :goto_0
 
-    .line 1485
     :cond_0
     const-string v2, "ColorBalanceService"
 
@@ -451,7 +397,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1486
     invoke-static {}, Ljava/time/ZoneId;->systemDefault()Ljava/time/ZoneId;
 
     move-result-object v2
@@ -468,8 +413,6 @@
 
     move-result-wide v10
 
-    .line 1487
-    .restart local v10    # "millis":J
     iget-object v3, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
     const/4 v4, 0x1
@@ -484,8 +427,6 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/app/AlarmManager;->setExact(IJLjava/lang/String;Landroid/app/AlarmManager$OnAlarmListener;Landroid/os/Handler;)V
 
-    .line 1489
-    .end local v10    # "millis":J
     :goto_0
     return-void
 .end method
@@ -494,100 +435,77 @@
 # virtual methods
 .method public onActivated(Z)V
     .locals 2
-    .param p1, "activated"    # Z
 
-    .line 1518
     invoke-static {}, Ljava/time/LocalDateTime;->now()Ljava/time/LocalDateTime;
 
     move-result-object v0
 
-    .line 1519
-    .local v0, "now":Ljava/time/LocalDateTime;
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mLastActivatedTime:Ljava/time/LocalDateTime;
 
-    .line 1520
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     invoke-direct {p0, v1, v0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateNextAlarm(Ljava/lang/Boolean;Ljava/time/LocalDateTime;)V
 
-    .line 1521
     return-void
 .end method
 
 .method public onAlarm()V
     .locals 2
 
-    .line 1539
     const-string v0, "ColorBalanceService"
 
     const-string/jumbo v1, "onAlarm"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1540
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateActivated()V
 
-    .line 1541
     return-void
 .end method
 
 .method public onCustomEndTimeChanged(Ljava/time/LocalTime;)V
     .locals 1
-    .param p1, "endTime"    # Ljava/time/LocalTime;
 
-    .line 1532
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mEndTime:Ljava/time/LocalTime;
 
-    .line 1533
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mLastActivatedTime:Ljava/time/LocalDateTime;
 
-    .line 1534
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateActivated()V
 
-    .line 1535
     return-void
 .end method
 
 .method public onCustomStartTimeChanged(Ljava/time/LocalTime;)V
     .locals 1
-    .param p1, "startTime"    # Ljava/time/LocalTime;
 
-    .line 1525
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mStartTime:Ljava/time/LocalTime;
 
-    .line 1526
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mLastActivatedTime:Ljava/time/LocalDateTime;
 
-    .line 1527
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateActivated()V
 
-    .line 1528
     return-void
 .end method
 
 .method public onStart()V
     .locals 3
 
-    .line 1493
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.TIME_SET"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 1494
-    .local v0, "intentFilter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.TIMEZONE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 1495
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-virtual {v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
@@ -598,7 +516,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 1497
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -611,7 +528,6 @@
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mStartTime:Ljava/time/LocalTime;
 
-    .line 1498
     iget-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v1}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -624,17 +540,14 @@
 
     iput-object v1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mEndTime:Ljava/time/LocalTime;
 
-    .line 1501
     invoke-direct {p0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->updateActivated()V
 
-    .line 1502
     return-void
 .end method
 
 .method public onStop()V
     .locals 2
 
-    .line 1506
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-virtual {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->getContext()Landroid/content/Context;
@@ -645,17 +558,14 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 1507
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mAlarmManager:Landroid/app/AlarmManager;
 
     invoke-virtual {v0, p0}, Landroid/app/AlarmManager;->cancel(Landroid/app/AlarmManager$OnAlarmListener;)V
 
-    .line 1508
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->mLastActivatedTime:Ljava/time/LocalDateTime;
 
-    .line 1509
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$1400(Lcom/android/server/oneplus/display/ColorBalanceService;)Ljava/lang/Boolean;
@@ -668,14 +578,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1510
     const-string v0, "ColorBalanceService"
 
     const-string v1, "CustomAutoMode stop,disable night display mode!"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1511
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -684,7 +592,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1512
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService;->access$400(Lcom/android/server/oneplus/display/ColorBalanceService;)Lcom/android/internal/app/ColorDisplayController;
@@ -695,7 +602,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/ColorDisplayController;->setActivated(Z)Z
 
-    .line 1514
     :cond_0
     return-void
 .end method

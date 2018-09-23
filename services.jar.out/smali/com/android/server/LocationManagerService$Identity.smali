@@ -25,22 +25,14 @@
 # direct methods
 .method constructor <init>(IILjava/lang/String;)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "pid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
 
-    .line 843
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 844
     iput p1, p0, Lcom/android/server/LocationManagerService$Identity;->mUid:I
 
-    .line 845
     iput p2, p0, Lcom/android/server/LocationManagerService$Identity;->mPid:I
 
-    .line 846
     iput-object p3, p0, Lcom/android/server/LocationManagerService$Identity;->mPackageName:Ljava/lang/String;
 
-    .line 847
     return-void
 .end method

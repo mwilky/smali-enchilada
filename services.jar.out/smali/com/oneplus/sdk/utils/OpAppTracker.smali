@@ -34,24 +34,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/sdk/utils/OpAppTracker;->mAppTrackerInst:Ljava/lang/Object;
 
-    .line 24
     iput-object v0, p0, Lcom/oneplus/sdk/utils/OpAppTracker;->mOnEventFunc:Ljava/lang/reflect/Method;
 
-    .line 37
     nop
 
-    .line 39
-    .local v0, "argClasses":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     :try_start_0
     const-string/jumbo v1, "net.oneplus.odm.insight.tracker.AppTracker"
 
@@ -59,8 +52,6 @@
 
     move-result-object v1
 
-    .line 40
-    .local v1, "appTrackerClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v2, 0x1
 
     new-array v3, v2, [Ljava/lang/Class;
@@ -75,8 +66,6 @@
 
     move-result-object v3
 
-    .line 41
-    .local v3, "appTrackerContructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     new-array v4, v2, [Ljava/lang/Object;
 
     aput-object p1, v4, v5
@@ -87,7 +76,6 @@
 
     iput-object v4, p0, Lcom/oneplus/sdk/utils/OpAppTracker;->mAppTrackerInst:Ljava/lang/Object;
 
-    .line 43
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/Class;
@@ -102,7 +90,6 @@
 
     move-object v0, v4
 
-    .line 44
     const-string/jumbo v2, "onEvent"
 
     invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
@@ -111,7 +98,6 @@
 
     iput-object v2, p0, Lcom/oneplus/sdk/utils/OpAppTracker;->mOnEventFunc:Ljava/lang/reflect/Method;
 
-    .line 45
     const-string v2, "OpAppTracker"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -134,17 +120,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 50
-    .end local v3    # "appTrackerContructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     goto :goto_0
 
-    .line 47
-    .end local v1    # "appTrackerClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :catch_0
     move-exception v1
 
-    .line 48
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "OpAppTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -163,11 +143,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 49
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 51
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -176,7 +153,6 @@
 # virtual methods
 .method public onEvent(Ljava/lang/String;Ljava/util/Map;)I
     .locals 5
-    .param p1, "tag"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -188,14 +164,10 @@
         }
     .end annotation
 
-    .line 64
-    .local p2, "eventData":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 66
-    .local v1, "result":I
     :try_start_0
     iget-object v2, p0, Lcom/oneplus/sdk/utils/OpAppTracker;->mOnEventFunc:Ljava/lang/reflect/Method;
 
@@ -215,15 +187,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 71
     goto :goto_0
 
-    .line 67
     :catch_0
     move-exception v0
 
-    .line 68
-    .local v0, "e":Ljava/lang/Exception;
     const-string v2, "OpAppTracker"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -242,14 +210,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 69
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 70
     const/4 v1, -0x1
 
-    .line 73
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return v1
 .end method

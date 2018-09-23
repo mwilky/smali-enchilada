@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 24355
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$31;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput p2, p0, Lcom/android/server/pm/PackageManagerService$31;->val$realMoveId:I
@@ -39,20 +37,13 @@
 # virtual methods
 .method public onCreated(ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "moveId"    # I
-    .param p2, "extras"    # Landroid/os/Bundle;
 
-    .line 24359
     return-void
 .end method
 
 .method public onStatusChanged(IIJ)V
     .locals 2
-    .param p1, "moveId"    # I
-    .param p2, "status"    # I
-    .param p3, "estMillis"    # J
 
-    .line 24363
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$31;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-static {v0}, Lcom/android/server/pm/PackageManagerService;->access$7100(Lcom/android/server/pm/PackageManagerService;)Lcom/android/server/pm/PackageManagerService$MoveCallbacks;
@@ -63,6 +54,5 @@
 
     invoke-static {v0, v1, p2, p3, p4}, Lcom/android/server/pm/PackageManagerService$MoveCallbacks;->access$7400(Lcom/android/server/pm/PackageManagerService$MoveCallbacks;IIJ)V
 
-    .line 24364
     return-void
 .end method

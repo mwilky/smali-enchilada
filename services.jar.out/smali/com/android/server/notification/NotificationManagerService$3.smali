@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
-    .line 1028
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$3;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1031
     const-string v0, "android.os.action.SETTING_RESTORED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1033
     :try_start_0
     const-string/jumbo v0, "setting_name"
 
@@ -59,16 +53,12 @@
 
     move-result-object v0
 
-    .line 1034
-    .local v0, "element":Ljava/lang/String;
     const-string/jumbo v1, "new_value"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1035
-    .local v1, "newValue":Ljava/lang/String;
     const-string/jumbo v2, "restored_from_sdk_int"
 
     const/4 v3, 0x0
@@ -77,59 +67,43 @@
 
     move-result v2
 
-    .line 1037
-    .local v2, "restoredFromSdkInt":I
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$3;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->access$800(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/NotificationManagerService$NotificationListeners;
 
     move-result-object v3
 
-    .line 1038
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService$3;->getSendingUserId()I
 
     move-result v4
 
-    .line 1037
     invoke-virtual {v3, v0, v1, v2, v4}, Lcom/android/server/notification/NotificationManagerService$NotificationListeners;->onSettingRestored(Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 1039
     iget-object v3, p0, Lcom/android/server/notification/NotificationManagerService$3;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->access$900(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/ConditionProviders;
 
     move-result-object v3
 
-    .line 1040
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationManagerService$3;->getSendingUserId()I
 
     move-result v4
 
-    .line 1039
     invoke-virtual {v3, v0, v1, v2, v4}, Lcom/android/server/notification/ConditionProviders;->onSettingRestored(Ljava/lang/String;Ljava/lang/String;II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1043
-    .end local v0    # "element":Ljava/lang/String;
-    .end local v1    # "newValue":Ljava/lang/String;
-    .end local v2    # "restoredFromSdkInt":I
     goto :goto_0
 
-    .line 1041
     :catch_0
     move-exception v0
 
-    .line 1042
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "NotificationService"
 
     const-string v2, "Cannot restore managed services from settings"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1045
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     return-void

@@ -23,116 +23,85 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;ILjava/lang/String;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "userId"    # I
-    .param p3, "preNDatabaseName"    # Ljava/lang/String;
 
-    .line 1104
     const/4 v0, 0x0
 
     const/16 v1, 0x9
 
     invoke-direct {p0, p1, p3, v0, v1}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 1105
     iput-object p1, p0, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->mContext:Landroid/content/Context;
 
-    .line 1106
     iput p2, p0, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->mUserId:I
 
-    .line 1107
     return-void
 .end method
 
 .method private addDebugTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 0
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1133
     invoke-static {p1}, Lcom/android/server/accounts/AccountsDb$DeDatabaseHelper;->createDebugTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1134
     return-void
 .end method
 
 .method private addLastSuccessfullAuthenticatedTimeColumn(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1124
     const-string v0, "ALTER TABLE accounts ADD COLUMN last_password_entry_time_millis_epoch DEFAULT 0"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1126
     return-void
 .end method
 
 .method private addOldAccountNameColumn(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1129
     const-string v0, "ALTER TABLE accounts ADD COLUMN previous_name"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1130
     return-void
 .end method
 
 .method private createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1137
     const-string v0, " CREATE TRIGGER accountsDelete DELETE ON accounts BEGIN   DELETE FROM authtokens     WHERE accounts_id=OLD._id ;   DELETE FROM extras     WHERE accounts_id=OLD._id ;   DELETE FROM grants     WHERE accounts_id=OLD._id ; END"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1147
     return-void
 .end method
 
 .method private createGrantsTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1150
     const-string v0, "CREATE TABLE grants (  accounts_id INTEGER NOT NULL, auth_token_type STRING NOT NULL,  uid INTEGER NOT NULL,  UNIQUE (accounts_id,auth_token_type,uid))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1156
     return-void
 .end method
 
 .method private createSharedAccountsTable(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 1
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1116
     const-string v0, "CREATE TABLE shared_accounts ( _id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, type TEXT NOT NULL, UNIQUE(name,type))"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1121
     return-void
 .end method
 
 .method static insertMetaAuthTypeAndUid(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;I)J
     .locals 4
-    .param p0, "db"    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p1, "authenticatorType"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 1159
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1160
-    .local v0, "values":Landroid/content/ContentValues;
     const-string/jumbo v1, "key"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -151,7 +120,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1162
     const-string/jumbo v1, "value"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -160,7 +128,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1163
     const-string/jumbo v1, "meta"
 
     const/4 v2, 0x0
@@ -174,7 +141,6 @@
 
 .method private populateMetaTableWithAuthTypeAndUID(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
     .locals 4
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -186,8 +152,6 @@
         }
     .end annotation
 
-    .line 1168
-    .local p2, "authTypeAndUIDMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Integer;>;"
     invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -209,8 +173,6 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 1169
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -229,11 +191,8 @@
 
     invoke-static {p1, v2, v3}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->insertMetaAuthTypeAndUid(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;I)J
 
-    .line 1170
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Integer;>;"
     goto :goto_0
 
-    .line 1171
     :cond_0
     return-void
 .end method
@@ -242,9 +201,7 @@
 # virtual methods
 .method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 2
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1112
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Legacy database cannot be created - only upgraded!"
@@ -256,9 +213,7 @@
 
 .method public onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 2
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1233
     const-string v0, "AccountsDb"
 
     const/4 v1, 0x2
@@ -275,18 +230,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1234
     :cond_0
     return-void
 .end method
 
 .method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .locals 3
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2, "oldVersion"    # I
-    .param p3, "newVersion"    # I
 
-    .line 1178
     const-string v0, "AccountsDb"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -311,123 +261,94 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1180
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 1183
     add-int/lit8 p2, p2, 0x1
 
-    .line 1186
     :cond_0
     const/4 v0, 0x2
 
     if-ne p2, v0, :cond_1
 
-    .line 1187
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->createGrantsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1188
     const-string v0, "DROP TRIGGER accountsDelete"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1189
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->createAccountsDeletionTrigger(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1190
     add-int/lit8 p2, p2, 0x1
 
-    .line 1193
     :cond_1
     const/4 v0, 0x3
 
     if-ne p2, v0, :cond_2
 
-    .line 1194
     const-string v0, "UPDATE accounts SET type = \'com.google\' WHERE type == \'com.google.GAIA\'"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 1196
     add-int/lit8 p2, p2, 0x1
 
-    .line 1199
     :cond_2
     const/4 v0, 0x4
 
     if-ne p2, v0, :cond_3
 
-    .line 1200
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->createSharedAccountsTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1201
     add-int/lit8 p2, p2, 0x1
 
-    .line 1204
     :cond_3
     const/4 v0, 0x5
 
     if-ne p2, v0, :cond_4
 
-    .line 1205
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->addOldAccountNameColumn(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1206
     add-int/lit8 p2, p2, 0x1
 
-    .line 1209
     :cond_4
     const/4 v0, 0x6
 
     if-ne p2, v0, :cond_5
 
-    .line 1210
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->addLastSuccessfullAuthenticatedTimeColumn(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1211
     add-int/lit8 p2, p2, 0x1
 
-    .line 1214
     :cond_5
     const/4 v0, 0x7
 
     if-ne p2, v0, :cond_6
 
-    .line 1215
     invoke-direct {p0, p1}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->addDebugTable(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1216
     add-int/lit8 p2, p2, 0x1
 
-    .line 1219
     :cond_6
     const/16 v0, 0x8
 
     if-ne p2, v0, :cond_7
 
-    .line 1220
     iget-object v0, p0, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->mContext:Landroid/content/Context;
 
     iget v1, p0, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->mUserId:I
 
-    .line 1222
     invoke-static {v0, v1}, Lcom/android/server/accounts/AccountManagerService;->getAuthenticatorTypeAndUIDForUser(Landroid/content/Context;I)Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 1220
     invoke-direct {p0, p1, v0}, Lcom/android/server/accounts/AccountsDb$PreNDatabaseHelper;->populateMetaTableWithAuthTypeAndUID(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Map;)V
 
-    .line 1223
     add-int/lit8 p2, p2, 0x1
 
-    .line 1226
     :cond_7
     if-eq p2, p3, :cond_8
 
-    .line 1227
     const-string v0, "AccountsDb"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -452,7 +373,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1229
     :cond_8
     return-void
 .end method

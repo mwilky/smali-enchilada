@@ -67,19 +67,15 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;)V
     .locals 2
-    .param p1, "handler"    # Landroid/os/Handler;
 
-    .line 90
     invoke-direct {p0}, Lcom/android/server/accessibility/BaseEventStreamTransformation;-><init>()V
 
-    .line 69
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
-    .line 72
     new-instance v0, Landroid/util/IntArray;
 
     const/4 v1, 0x5
@@ -88,40 +84,32 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
-    .line 73
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mIsDestroyed:Z
 
-    .line 78
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
-    .line 91
     iput-object p1, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
-    .line 92
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Looper;)V
     .locals 2
-    .param p1, "looper"    # Landroid/os/Looper;
 
-    .line 83
     invoke-direct {p0}, Lcom/android/server/accessibility/BaseEventStreamTransformation;-><init>()V
 
-    .line 69
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
-    .line 72
     new-instance v0, Landroid/util/IntArray;
 
     const/4 v1, 0x5
@@ -130,34 +118,27 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
-    .line 73
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mIsDestroyed:Z
 
-    .line 78
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0, v1}, Landroid/util/SparseIntArray;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
-    .line 84
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p1, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
-    .line 85
     return-void
 .end method
 
 .method private appendDownEvents(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
     .locals 16
-    .param p2, "currentTouchPoints"    # [Landroid/accessibilityservice/GestureDescription$TouchPoint;
-    .param p3, "currentTouchPointsSize"    # I
-    .param p4, "currentTime"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,38 +150,29 @@
         }
     .end annotation
 
-    .local p1, "motionEvents":Ljava/util/List;, "Ljava/util/List<Landroid/view/MotionEvent;>;"
     move-object/from16 v8, p0
 
-    .line 419
     invoke-direct/range {p0 .. p0}, Lcom/android/server/accessibility/MotionEventInjector;->getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     move-result-object v9
 
-    .line 420
-    .local v9, "lastTouchPoints":[Landroid/accessibilityservice/GestureDescription$TouchPoint;
     const/4 v10, 0x0
 
     move v0, v10
 
-    .local v0, "i":I
     :goto_0
     move v11, v0
 
-    .end local v0    # "i":I
-    .local v11, "i":I
     move/from16 v12, p3
 
     if-ge v11, v12, :cond_3
 
-    .line 421
     aget-object v0, p2, v11
 
     iget-boolean v0, v0, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mIsStartOfPath:Z
 
     if-eqz v0, :cond_2
 
-    .line 423
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     add-int/lit8 v1, v0, 0x1
@@ -213,14 +185,12 @@
 
     invoke-virtual {v0, v1}, Landroid/accessibilityservice/GestureDescription$TouchPoint;->copyFrom(Landroid/accessibilityservice/GestureDescription$TouchPoint;)V
 
-    .line 424
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 425
     move v0, v10
 
     goto :goto_1
@@ -228,19 +198,15 @@
     :cond_0
     const/4 v0, 0x5
 
-    .line 426
-    .local v0, "action":I
     :goto_1
     if-nez v0, :cond_1
 
-    .line 427
     move-wide/from16 v13, p4
 
     iput-wide v13, v8, Lcom/android/server/accessibility/MotionEventInjector;->mDownTime:J
 
     goto :goto_2
 
-    .line 429
     :cond_1
     move-wide/from16 v13, p4
 
@@ -249,9 +215,6 @@
 
     or-int v15, v0, v1
 
-    .line 430
-    .end local v0    # "action":I
-    .local v15, "action":I
     iget-wide v1, v8, Lcom/android/server/accessibility/MotionEventInjector;->mDownTime:J
 
     iget v7, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
@@ -272,10 +235,8 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .end local v15    # "action":I
     goto :goto_3
 
-    .line 420
     :cond_2
     move-object/from16 v1, p1
 
@@ -284,12 +245,8 @@
     :goto_3
     add-int/lit8 v0, v11, 0x1
 
-    .end local v11    # "i":I
-    .local v0, "i":I
     goto :goto_0
 
-    .line 434
-    .end local v0    # "i":I
     :cond_3
     move-object/from16 v1, p1
 
@@ -300,9 +257,6 @@
 
 .method private appendMoveEventIfNeeded(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
     .locals 12
-    .param p2, "currentTouchPoints"    # [Landroid/accessibilityservice/GestureDescription$TouchPoint;
-    .param p3, "currentTouchPointsSize"    # I
-    .param p4, "currentTime"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -314,34 +268,25 @@
         }
     .end annotation
 
-    .local p1, "motionEvents":Ljava/util/List;, "Ljava/util/List<Landroid/view/MotionEvent;>;"
     move-object v8, p0
 
-    .line 370
     const/4 v0, 0x0
 
-    .line 371
-    .local v0, "moveFound":Z
     invoke-direct {v8}, Lcom/android/server/accessibility/MotionEventInjector;->getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     move-result-object v9
 
-    .line 372
-    .local v9, "lastTouchPoints":[Landroid/accessibilityservice/GestureDescription$TouchPoint;
     const/4 v1, 0x0
 
     move v10, v0
 
     move v0, v1
 
-    .local v0, "i":I
-    .local v10, "moveFound":Z
     :goto_0
     move v11, p3
 
     if-ge v0, v11, :cond_3
 
-    .line 373
     iget v2, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     aget-object v3, p2, v0
@@ -352,11 +297,8 @@
 
     move-result v2
 
-    .line 375
-    .local v2, "lastPointsIndex":I
     if-ltz v2, :cond_2
 
-    .line 376
     aget-object v3, v9, v2
 
     iget v3, v3, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mX:F
@@ -395,32 +337,22 @@
     :goto_2
     or-int/2addr v3, v10
 
-    .line 378
-    .end local v10    # "moveFound":Z
-    .local v3, "moveFound":Z
     aget-object v4, v9, v2
 
     aget-object v5, p2, v0
 
     invoke-virtual {v4, v5}, Landroid/accessibilityservice/GestureDescription$TouchPoint;->copyFrom(Landroid/accessibilityservice/GestureDescription$TouchPoint;)V
 
-    .line 372
-    .end local v2    # "lastPointsIndex":I
     move v10, v3
 
-    .end local v3    # "moveFound":Z
-    .restart local v10    # "moveFound":Z
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 382
-    .end local v0    # "i":I
     :cond_3
     if-eqz v10, :cond_4
 
-    .line 383
     iget-wide v1, v8, Lcom/android/server/accessibility/MotionEventInjector;->mDownTime:J
 
     const/4 v5, 0x2
@@ -443,7 +375,6 @@
 
     goto :goto_3
 
-    .line 386
     :cond_4
     move-object v1, p1
 
@@ -453,9 +384,6 @@
 
 .method private appendUpEvents(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
     .locals 15
-    .param p2, "currentTouchPoints"    # [Landroid/accessibilityservice/GestureDescription$TouchPoint;
-    .param p3, "currentTouchPointsSize"    # I
-    .param p4, "currentTime"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -467,36 +395,27 @@
         }
     .end annotation
 
-    .local p1, "motionEvents":Ljava/util/List;, "Ljava/util/List<Landroid/view/MotionEvent;>;"
     move-object v8, p0
 
-    .line 391
     invoke-direct {v8}, Lcom/android/server/accessibility/MotionEventInjector;->getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     move-result-object v9
 
-    .line 392
-    .local v9, "lastTouchPoints":[Landroid/accessibilityservice/GestureDescription$TouchPoint;
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     move v10, v0
 
-    .end local v0    # "i":I
-    .local v10, "i":I
     move/from16 v11, p3
 
     if-ge v10, v11, :cond_5
 
-    .line 393
     aget-object v0, p2, v10
 
     iget-boolean v0, v0, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mIsEndOfPath:Z
 
     if-eqz v0, :cond_3
 
-    .line 394
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     aget-object v1, p2, v10
@@ -507,14 +426,10 @@
 
     move-result v12
 
-    .line 396
-    .local v12, "indexOfUpEvent":I
     if-gez v12, :cond_0
 
-    .line 397
     goto :goto_3
 
-    .line 399
     :cond_0
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
@@ -522,7 +437,6 @@
 
     if-ne v0, v13, :cond_1
 
-    .line 400
     move v0, v13
 
     goto :goto_1
@@ -530,16 +444,11 @@
     :cond_1
     const/4 v0, 0x6
 
-    .line 401
-    .local v0, "action":I
     :goto_1
     shl-int/lit8 v1, v12, 0x8
 
     or-int v14, v0, v1
 
-    .line 402
-    .end local v0    # "action":I
-    .local v14, "action":I
     iget-wide v1, v8, Lcom/android/server/accessibility/MotionEventInjector;->mDownTime:J
 
     iget v7, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
@@ -560,10 +469,8 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 405
     move v0, v12
 
-    .local v0, "j":I
     :goto_2
     iget v2, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
@@ -571,7 +478,6 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 406
     aget-object v2, v9, v0
 
     iget-object v3, v8, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
@@ -582,13 +488,10 @@
 
     invoke-virtual {v2, v3}, Landroid/accessibilityservice/GestureDescription$TouchPoint;->copyFrom(Landroid/accessibilityservice/GestureDescription$TouchPoint;)V
 
-    .line 405
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 408
-    .end local v0    # "j":I
     :cond_2
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
@@ -596,21 +499,16 @@
 
     iput v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
-    .line 409
     iget v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     if-nez v0, :cond_4
 
-    .line 410
     iget-object v0, v8, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .end local v12    # "indexOfUpEvent":I
-    .end local v14    # "action":I
     goto :goto_4
 
-    .line 392
     :cond_3
     :goto_3
     move-object/from16 v1, p1
@@ -619,12 +517,8 @@
     :goto_4
     add-int/lit8 v0, v10, 0x1
 
-    .end local v10    # "i":I
-    .local v0, "i":I
     goto :goto_0
 
-    .line 414
-    .end local v0    # "i":I
     :cond_5
     move-object/from16 v1, p1
 
@@ -633,9 +527,7 @@
 
 .method private cancelAnyGestureInProgress(I)V
     .locals 12
-    .param p1, "source"    # I
 
-    .line 295
     invoke-virtual {p0}, Lcom/android/server/accessibility/MotionEventInjector;->getNext()Lcom/android/server/accessibility/EventStreamTransformation;
 
     move-result-object v0
@@ -662,16 +554,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 296
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v10
 
-    .line 297
-    .local v10, "now":J
     const/4 v7, 0x3
 
-    .line 298
     invoke-direct {p0}, Lcom/android/server/accessibility/MotionEventInjector;->getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     move-result-object v8
@@ -688,13 +576,10 @@
 
     move-result-object v0
 
-    .line 299
-    .local v0, "cancelEvent":Landroid/view/MotionEvent;
     const/high16 v2, 0x40000000    # 2.0f
 
     invoke-direct {p0, v0, v0, v2}, Lcom/android/server/accessibility/MotionEventInjector;->sendMotionEventToNext(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
-    .line 301
     iget-object v2, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -703,9 +588,6 @@
 
     invoke-virtual {v2, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 303
-    .end local v0    # "cancelEvent":Landroid/view/MotionEvent;
-    .end local v10    # "now":J
     :cond_0
     return-void
 .end method
@@ -713,7 +595,6 @@
 .method private cancelAnyPendingInjectedEvents()V
     .locals 4
 
-    .line 306
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
@@ -728,15 +609,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 307
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 308
     invoke-direct {p0, v3}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyGestureInProgress(I)V
 
-    .line 309
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
     invoke-virtual {v0}, Landroid/util/IntArray;->size()I
@@ -745,87 +623,65 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 310
     iget-object v1, p0, Lcom/android/server/accessibility/MotionEventInjector;->mServiceInterfaceForCurrentGesture:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
     iget-object v3, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
-    .line 311
     invoke-virtual {v3, v0}, Landroid/util/IntArray;->get(I)I
 
     move-result v3
 
-    .line 310
     invoke-direct {p0, v1, v3, v2}, Lcom/android/server/accessibility/MotionEventInjector;->notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
 
-    .line 312
     iget-object v1, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
     invoke-virtual {v1, v0}, Landroid/util/IntArray;->remove(I)V
 
-    .line 309
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 314
-    .end local v0    # "i":I
     :cond_0
     iget v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     if-eqz v0, :cond_1
 
-    .line 316
     invoke-direct {p0, v3}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyGestureInProgress(I)V
 
-    .line 318
     :cond_1
     iput v2, p0, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
-    .line 319
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 320
     return-void
 .end method
 
 .method private static findPointByStrokeId([Landroid/accessibilityservice/GestureDescription$TouchPoint;II)I
     .locals 2
-    .param p0, "touchPoints"    # [Landroid/accessibilityservice/GestureDescription$TouchPoint;
-    .param p1, "touchPointsSize"    # I
-    .param p2, "strokeId"    # I
 
-    .line 472
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     if-ge v0, p1, :cond_1
 
-    .line 473
     aget-object v1, p0, v0
 
     iget v1, v1, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mStrokeId:I
 
     if-ne v1, p2, :cond_0
 
-    .line 474
     return v0
 
-    .line 472
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 477
-    .end local v0    # "i":I
     :cond_1
     const/4 v0, -0x1
 
@@ -835,30 +691,23 @@
 .method private getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
     .locals 4
 
-    .line 357
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     if-nez v0, :cond_0
 
-    .line 358
     invoke-static {}, Landroid/accessibilityservice/GestureDescription;->getMaxStrokeCount()I
 
     move-result v0
 
-    .line 359
-    .local v0, "capacity":I
     new-array v1, v0, [Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     iput-object v1, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
-    .line 360
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 361
     iget-object v2, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     new-instance v3, Landroid/accessibilityservice/GestureDescription$TouchPoint;
@@ -867,14 +716,10 @@
 
     aput-object v3, v2, v1
 
-    .line 360
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 364
-    .end local v0    # "capacity":I
-    .end local v1    # "i":I
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
@@ -883,7 +728,6 @@
 
 .method private getMotionEventsFromGestureSteps(Ljava/util/List;J)Ljava/util/List;
     .locals 12
-    .param p2, "startTime"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -896,37 +740,27 @@
         }
     .end annotation
 
-    .line 333
-    .local p1, "steps":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/GestureDescription$GestureStep;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 335
-    .local v0, "motionEvents":Ljava/util/List;, "Ljava/util/List<Landroid/view/MotionEvent;>;"
     invoke-direct {p0}, Lcom/android/server/accessibility/MotionEventInjector;->getLastTouchPoints()[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     move-result-object v7
 
-    .line 337
-    .local v7, "lastTouchPoints":[Landroid/accessibilityservice/GestureDescription$TouchPoint;
     const/4 v8, 0x0
 
     move v1, v8
 
-    .local v1, "i":I
     :goto_0
     move v9, v1
 
-    .end local v1    # "i":I
-    .local v9, "i":I
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
     if-ge v9, v1, :cond_1
 
-    .line 338
     invoke-interface {p1, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -935,26 +769,18 @@
 
     check-cast v10, Landroid/accessibilityservice/GestureDescription$GestureStep;
 
-    .line 339
-    .local v10, "step":Landroid/accessibilityservice/GestureDescription$GestureStep;
     iget v11, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->numTouchPoints:I
 
-    .line 340
-    .local v11, "currentTouchPointSize":I
     array-length v1, v7
 
     if-le v11, v1, :cond_0
 
-    .line 341
     iput v8, p0, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
-    .line 342
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 343
     return-object v0
 
-    .line 346
     :cond_0
     iget-object v3, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->touchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
@@ -970,7 +796,6 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/accessibility/MotionEventInjector;->appendMoveEventIfNeeded(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
 
-    .line 348
     iget-object v3, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->touchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     iget-wide v1, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->timeSinceGestureStart:J
@@ -983,7 +808,6 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/accessibility/MotionEventInjector;->appendUpEvents(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
 
-    .line 350
     iget-object v3, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->touchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     iget-wide v1, v10, Landroid/accessibilityservice/GestureDescription$GestureStep;->timeSinceGestureStart:J
@@ -996,17 +820,10 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/accessibility/MotionEventInjector;->appendDownEvents(Ljava/util/List;[Landroid/accessibilityservice/GestureDescription$TouchPoint;IJ)V
 
-    .line 337
-    .end local v10    # "step":Landroid/accessibilityservice/GestureDescription$GestureStep;
-    .end local v11    # "currentTouchPointSize":I
     add-int/lit8 v1, v9, 0x1
 
-    .end local v9    # "i":I
-    .restart local v1    # "i":I
     goto :goto_0
 
-    .line 353
-    .end local v1    # "i":I
     :cond_1
     return-object v0
 .end method
@@ -1014,15 +831,10 @@
 .method private getUnusedPointerId()I
     .locals 3
 
-    .line 480
     const/16 v0, 0xa
 
-    .line 481
-    .local v0, "MAX_POINTER_ID":I
     const/4 v1, 0x0
 
-    .line 482
-    .local v1, "pointerId":I
     :cond_0
     iget-object v2, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
@@ -1032,24 +844,18 @@
 
     if-ltz v2, :cond_1
 
-    .line 483
     add-int/lit8 v1, v1, 0x1
 
-    .line 484
     if-lt v1, v0, :cond_0
 
-    .line 485
     return v0
 
-    .line 488
     :cond_1
     return v1
 .end method
 
 .method private injectEventsMainThread(Ljava/util/List;Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
     .locals 19
-    .param p2, "serviceInterface"    # Landroid/accessibilityservice/IAccessibilityServiceClient;
-    .param p3, "sequence"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1061,12 +867,10 @@
         }
     .end annotation
 
-    .local p1, "gestureSteps":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/GestureDescription$GestureStep;>;"
     move-object/from16 v1, p0
 
     move-object/from16 v2, p2
 
-    .line 160
     move/from16 v3, p3
 
     iget-boolean v0, v1, Lcom/android/server/accessibility/MotionEventInjector;->mIsDestroyed:Z
@@ -1075,23 +879,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 162
     :try_start_0
     invoke-interface {v2, v3, v4}, Landroid/accessibilityservice/IAccessibilityServiceClient;->onPerformGestureResult(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 166
     goto :goto_0
 
-    .line 163
     :catch_0
     move-exception v0
 
     move-object v4, v0
 
-    .line 164
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v4, "MotionEventInjector"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1110,12 +909,9 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 167
-    .end local v0    # "re":Landroid/os/RemoteException;
     :goto_0
     return-void
 
-    .line 170
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/accessibility/MotionEventInjector;->getNext()Lcom/android/server/accessibility/EventStreamTransformation;
 
@@ -1123,70 +919,52 @@
 
     if-nez v0, :cond_1
 
-    .line 171
     invoke-direct {v1, v2, v3, v4}, Lcom/android/server/accessibility/MotionEventInjector;->notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
 
-    .line 172
     return-void
 
-    .line 175
     :cond_1
     invoke-direct/range {p0 .. p1}, Lcom/android/server/accessibility/MotionEventInjector;->newGestureTriesToContinueOldOne(Ljava/util/List;)Z
 
     move-result v0
 
-    .line 177
-    .local v0, "continuingGesture":Z
     if-eqz v0, :cond_3
 
-    .line 178
     iget-object v5, v1, Lcom/android/server/accessibility/MotionEventInjector;->mServiceInterfaceForCurrentGesture:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
     if-ne v2, v5, :cond_2
 
-    .line 179
     invoke-direct/range {p0 .. p1}, Lcom/android/server/accessibility/MotionEventInjector;->prepareToContinueOldGesture(Ljava/util/List;)Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    .line 180
     :cond_2
     invoke-direct/range {p0 .. p0}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyPendingInjectedEvents()V
 
-    .line 181
     invoke-direct {v1, v2, v3, v4}, Lcom/android/server/accessibility/MotionEventInjector;->notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
 
-    .line 182
     return-void
 
-    .line 185
     :cond_3
     if-nez v0, :cond_4
 
-    .line 186
     invoke-direct/range {p0 .. p0}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyPendingInjectedEvents()V
 
-    .line 188
     const/16 v5, 0x1002
 
     invoke-direct {v1, v5}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyGestureInProgress(I)V
 
-    .line 190
     :cond_4
     iput-object v2, v1, Lcom/android/server/accessibility/MotionEventInjector;->mServiceInterfaceForCurrentGesture:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    .line 192
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v5
 
-    .line 193
-    .local v5, "currentTime":J
     nop
 
-    .line 194
     iget-object v7, v1, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
     invoke-virtual {v7}, Landroid/util/IntArray;->size()I
@@ -1195,16 +973,13 @@
 
     if-nez v7, :cond_5
 
-    .line 193
     move-wide v7, v5
 
     goto :goto_1
 
-    .line 194
     :cond_5
     iget-wide v7, v1, Lcom/android/server/accessibility/MotionEventInjector;->mLastScheduledEventTime:J
 
-    .line 193
     :goto_1
     move-object/from16 v9, p1
 
@@ -1212,30 +987,23 @@
 
     move-result-object v7
 
-    .line 195
-    .local v7, "events":Ljava/util/List;, "Ljava/util/List<Landroid/view/MotionEvent;>;"
     invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
     move-result v8
 
     if-eqz v8, :cond_6
 
-    .line 196
     invoke-direct {v1, v2, v3, v4}, Lcom/android/server/accessibility/MotionEventInjector;->notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
 
-    .line 197
     return-void
 
-    .line 199
     :cond_6
     iget-object v8, v1, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
     invoke-virtual {v8, v3}, Landroid/util/IntArray;->add(I)V
 
-    .line 201
     move v8, v4
 
-    .local v8, "i":I
     :goto_2
     invoke-interface {v7}, Ljava/util/List;->size()I
 
@@ -1243,15 +1011,12 @@
 
     if-ge v8, v10, :cond_8
 
-    .line 202
     invoke-interface {v7, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Landroid/view/MotionEvent;
 
-    .line 203
-    .local v10, "event":Landroid/view/MotionEvent;
     invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v11
@@ -1269,8 +1034,6 @@
     :cond_7
     move v11, v4
 
-    .line 204
-    .local v11, "isEndOfSequence":I
     :goto_3
     iget-object v13, v1, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
@@ -1278,15 +1041,12 @@
 
     move-result-object v12
 
-    .line 206
-    .local v12, "message":Landroid/os/Message;
     invoke-virtual {v10}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v13
 
     iput-wide v13, v1, Lcom/android/server/accessibility/MotionEventInjector;->mLastScheduledEventTime:J
 
-    .line 207
     iget-object v13, v1, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v14, 0x0
@@ -1299,18 +1059,12 @@
 
     sub-long v0, v16, v5
 
-    .end local v0    # "continuingGesture":Z
-    .local v18, "continuingGesture":Z
     invoke-static {v14, v15, v0, v1}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
 
     invoke-virtual {v13, v12, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 201
-    .end local v10    # "event":Landroid/view/MotionEvent;
-    .end local v11    # "isEndOfSequence":I
-    .end local v12    # "message":Landroid/os/Message;
     add-int/lit8 v8, v8, 0x1
 
     move/from16 v0, v18
@@ -1319,15 +1073,9 @@
 
     goto :goto_2
 
-    .line 209
-    .end local v8    # "i":I
-    .end local v18    # "continuingGesture":Z
-    .restart local v0    # "continuingGesture":Z
     :cond_8
     move/from16 v18, v0
 
-    .end local v0    # "continuingGesture":Z
-    .restart local v18    # "continuingGesture":Z
     return-void
 .end method
 
@@ -1342,8 +1090,6 @@
         }
     .end annotation
 
-    .line 212
-    .local p1, "gestureSteps":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/GestureDescription$GestureStep;>;"
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1352,10 +1098,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 213
     return v1
 
-    .line 215
     :cond_0
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1363,17 +1107,13 @@
 
     check-cast v0, Landroid/accessibilityservice/GestureDescription$GestureStep;
 
-    .line 216
-    .local v0, "firstStep":Landroid/accessibilityservice/GestureDescription$GestureStep;
     move v2, v1
 
-    .local v2, "i":I
     :goto_0
     iget v3, v0, Landroid/accessibilityservice/GestureDescription$GestureStep;->numTouchPoints:I
 
     if-ge v2, v3, :cond_2
 
-    .line 217
     iget-object v3, v0, Landroid/accessibilityservice/GestureDescription$GestureStep;->touchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     aget-object v3, v3, v2
@@ -1382,44 +1122,32 @@
 
     if-nez v3, :cond_1
 
-    .line 218
     const/4 v1, 0x1
 
     return v1
 
-    .line 216
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 221
-    .end local v2    # "i":I
     :cond_2
     return v1
 .end method
 
 .method private notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
     .locals 4
-    .param p1, "service"    # Landroid/accessibilityservice/IAccessibilityServiceClient;
-    .param p2, "sequence"    # I
-    .param p3, "success"    # Z
 
-    .line 324
     :try_start_0
     invoke-interface {p1, p2, p3}, Landroid/accessibilityservice/IAccessibilityServiceClient;->onPerformGestureResult(IZ)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 328
     goto :goto_0
 
-    .line 325
     :catch_0
     move-exception v0
 
-    .line 326
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "MotionEventInjector"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1440,23 +1168,15 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 329
-    .end local v0    # "re":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
 
 .method private obtainMotionEvent(JJI[Landroid/accessibilityservice/GestureDescription$TouchPoint;I)Landroid/view/MotionEvent;
     .locals 18
-    .param p1, "downTime"    # J
-    .param p3, "eventTime"    # J
-    .param p5, "action"    # I
-    .param p6, "touchPoints"    # [Landroid/accessibilityservice/GestureDescription$TouchPoint;
-    .param p7, "touchPointsSize"    # I
 
     move-object/from16 v0, p0
 
-    .line 438
     move/from16 v14, p7
 
     sget-object v1, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
@@ -1471,20 +1191,16 @@
 
     if-ge v1, v14, :cond_1
 
-    .line 439
     :cond_0
     new-array v1, v14, [Landroid/view/MotionEvent$PointerCoords;
 
     sput-object v1, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
-    .line 440
     move v1, v2
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v14, :cond_1
 
-    .line 441
     sget-object v3, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     new-instance v4, Landroid/view/MotionEvent$PointerCoords;
@@ -1493,13 +1209,10 @@
 
     aput-object v4, v3, v1
 
-    .line 440
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 444
-    .end local v1    # "i":I
     :cond_1
     sget-object v1, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
@@ -1511,20 +1224,16 @@
 
     if-ge v1, v14, :cond_3
 
-    .line 445
     :cond_2
     new-array v1, v14, [Landroid/view/MotionEvent$PointerProperties;
 
     sput-object v1, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
-    .line 446
     move v1, v2
 
-    .restart local v1    # "i":I
     :goto_1
     if-ge v1, v14, :cond_3
 
-    .line 447
     sget-object v3, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
     new-instance v4, Landroid/view/MotionEvent$PointerProperties;
@@ -1533,21 +1242,16 @@
 
     aput-object v4, v3, v1
 
-    .line 446
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 450
-    .end local v1    # "i":I
     :cond_3
     move v1, v2
 
-    .restart local v1    # "i":I
     :goto_2
     if-ge v1, v14, :cond_5
 
-    .line 451
     iget-object v3, v0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
     aget-object v4, p6, v1
@@ -1560,16 +1264,12 @@
 
     move-result v3
 
-    .line 452
-    .local v3, "pointerId":I
     if-ne v3, v5, :cond_4
 
-    .line 453
     invoke-direct/range {p0 .. p0}, Lcom/android/server/accessibility/MotionEventInjector;->getUnusedPointerId()I
 
     move-result v3
 
-    .line 454
     iget-object v4, v0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
     aget-object v5, p6, v1
@@ -1578,7 +1278,6 @@
 
     invoke-virtual {v4, v5, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 456
     :cond_4
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
@@ -1586,21 +1285,18 @@
 
     iput v3, v4, Landroid/view/MotionEvent$PointerProperties;->id:I
 
-    .line 457
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
     aget-object v4, v4, v1
 
     iput v2, v4, Landroid/view/MotionEvent$PointerProperties;->toolType:I
 
-    .line 458
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v4, v4, v1
 
     invoke-virtual {v4}, Landroid/view/MotionEvent$PointerCoords;->clear()V
 
-    .line 459
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v4, v4, v1
@@ -1609,14 +1305,12 @@
 
     iput v5, v4, Landroid/view/MotionEvent$PointerCoords;->pressure:F
 
-    .line 460
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v4, v4, v1
 
     iput v5, v4, Landroid/view/MotionEvent$PointerCoords;->size:F
 
-    .line 461
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v4, v4, v1
@@ -1627,7 +1321,6 @@
 
     iput v5, v4, Landroid/view/MotionEvent$PointerCoords;->x:F
 
-    .line 462
     sget-object v4, Lcom/android/server/accessibility/MotionEventInjector;->sPointerCoords:[Landroid/view/MotionEvent$PointerCoords;
 
     aget-object v4, v4, v1
@@ -1638,14 +1331,10 @@
 
     iput v5, v4, Landroid/view/MotionEvent$PointerCoords;->y:F
 
-    .line 450
-    .end local v3    # "pointerId":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 464
-    .end local v1    # "i":I
     :cond_5
     sget-object v7, Lcom/android/server/accessibility/MotionEventInjector;->sPointerProps:[Landroid/view/MotionEvent$PointerProperties;
 
@@ -1699,8 +1388,6 @@
         }
     .end annotation
 
-    .line 233
-    .local p1, "gestureSteps":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/GestureDescription$GestureStep;>;"
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1719,7 +1406,6 @@
 
     goto/16 :goto_4
 
-    .line 236
     :cond_0
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1727,51 +1413,37 @@
 
     check-cast v0, Landroid/accessibilityservice/GestureDescription$GestureStep;
 
-    .line 238
-    .local v0, "firstStep":Landroid/accessibilityservice/GestureDescription$GestureStep;
     const/4 v2, 0x0
 
-    .line 239
-    .local v2, "numContinuedStrokes":I
     move v3, v2
 
     move v2, v1
 
-    .local v2, "i":I
-    .local v3, "numContinuedStrokes":I
     :goto_0
     iget v4, v0, Landroid/accessibilityservice/GestureDescription$GestureStep;->numTouchPoints:I
 
     if-ge v2, v4, :cond_6
 
-    .line 240
     iget-object v4, v0, Landroid/accessibilityservice/GestureDescription$GestureStep;->touchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     aget-object v4, v4, v2
 
-    .line 241
-    .local v4, "touchPoint":Landroid/accessibilityservice/GestureDescription$TouchPoint;
     iget-boolean v5, v4, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mIsStartOfPath:Z
 
     if-nez v5, :cond_5
 
-    .line 242
     iget-object v5, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
     iget v6, v4, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mContinuedStrokeId:I
 
-    .line 243
     const/4 v7, -0x1
 
     invoke-virtual {v5, v6, v7}, Landroid/util/SparseIntArray;->get(II)I
 
     move-result v5
 
-    .line 244
-    .local v5, "continuedPointerId":I
     if-ne v5, v7, :cond_1
 
-    .line 245
     const-string v6, "MotionEventInjector"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1790,10 +1462,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
     return v1
 
-    .line 249
     :cond_1
     iget-object v6, p0, Lcom/android/server/accessibility/MotionEventInjector;->mStrokeIdToPointerId:Landroid/util/SparseIntArray;
 
@@ -1801,7 +1471,6 @@
 
     invoke-virtual {v6, v7, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 250
     iget-object v6, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     iget v7, p0, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
@@ -1812,11 +1481,8 @@
 
     move-result v6
 
-    .line 252
-    .local v6, "lastPointIndex":I
     if-gez v6, :cond_2
 
-    .line 253
     const-string v7, "MotionEventInjector"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1835,7 +1501,6 @@
 
     iget-object v9, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
-    .line 255
     invoke-static {v9}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v9
@@ -1846,13 +1511,10 @@
 
     move-result-object v8
 
-    .line 253
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
     return v1
 
-    .line 258
     :cond_2
     iget-object v7, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
@@ -1888,7 +1550,6 @@
 
     goto :goto_1
 
-    .line 267
     :cond_3
     iget-object v7, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
@@ -1898,13 +1559,8 @@
 
     iput v8, v7, Landroid/accessibilityservice/GestureDescription$TouchPoint;->mStrokeId:I
 
-    .end local v5    # "continuedPointerId":I
-    .end local v6    # "lastPointIndex":I
     goto :goto_2
 
-    .line 261
-    .restart local v5    # "continuedPointerId":I
-    .restart local v6    # "lastPointIndex":I
     :cond_4
     :goto_1
     const-string v7, "MotionEventInjector"
@@ -1935,34 +1591,24 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 263
     return v1
 
-    .line 269
-    .end local v5    # "continuedPointerId":I
-    .end local v6    # "lastPointIndex":I
     :cond_5
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
-    .line 239
-    .end local v4    # "touchPoint":Landroid/accessibilityservice/GestureDescription$TouchPoint;
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 272
-    .end local v2    # "i":I
     :cond_6
     move v2, v1
 
-    .restart local v2    # "i":I
     :goto_3
     iget v4, p0, Lcom/android/server/accessibility/MotionEventInjector;->mNumLastTouchPoints:I
 
     if-ge v2, v4, :cond_8
 
-    .line 273
     iget-object v4, p0, Lcom/android/server/accessibility/MotionEventInjector;->mLastTouchPoints:[Landroid/accessibilityservice/GestureDescription$TouchPoint;
 
     aget-object v4, v4, v2
@@ -1971,17 +1617,13 @@
 
     if-nez v4, :cond_7
 
-    .line 274
     add-int/lit8 v3, v3, -0x1
 
-    .line 272
     :cond_7
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 277
-    .end local v2    # "i":I
     :cond_8
     if-nez v3, :cond_9
 
@@ -1992,9 +1634,6 @@
     :cond_9
     return v1
 
-    .line 234
-    .end local v0    # "firstStep":Landroid/accessibilityservice/GestureDescription$GestureStep;
-    .end local v3    # "numContinuedStrokes":I
     :cond_a
     :goto_4
     return v1
@@ -2002,21 +1641,15 @@
 
 .method private sendMotionEventToNext(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "rawEvent"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 282
     invoke-virtual {p0}, Lcom/android/server/accessibility/MotionEventInjector;->getNext()Lcom/android/server/accessibility/EventStreamTransformation;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 283
     invoke-super {p0, p1, p2, p3}, Lcom/android/server/accessibility/BaseEventStreamTransformation;->onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
-    .line 284
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -2025,7 +1658,6 @@
 
     if-nez v0, :cond_0
 
-    .line 285
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getSource()I
@@ -2038,7 +1670,6 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 287
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -2046,7 +1677,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 288
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -2055,7 +1685,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 289
     :cond_1
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
@@ -2071,7 +1700,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 292
     :cond_2
     return-void
 .end method
@@ -2080,9 +1708,7 @@
 # virtual methods
 .method public clearEvents(I)V
     .locals 2
-    .param p1, "inputSource"    # I
 
-    .line 124
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
@@ -2093,7 +1719,6 @@
 
     if-nez v0, :cond_0
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mOpenGesturesInProgress:Landroid/util/SparseArray;
 
     const/4 v1, 0x0
@@ -2104,7 +1729,6 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 127
     :cond_0
     return-void
 .end method
@@ -2112,7 +1736,6 @@
 .method public bridge synthetic getNext()Lcom/android/server/accessibility/EventStreamTransformation;
     .locals 1
 
-    .line 48
     invoke-super {p0}, Lcom/android/server/accessibility/BaseEventStreamTransformation;->getNext()Lcom/android/server/accessibility/EventStreamTransformation;
 
     move-result-object v0
@@ -2122,9 +1745,7 @@
 
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 6
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 137
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -2133,13 +1754,10 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 138
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 139
-    .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v2, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v2, Ljava/util/List;
@@ -2152,14 +1770,10 @@
 
     invoke-direct {p0, v2, v3, v4}, Lcom/android/server/accessibility/MotionEventInjector;->injectEventsMainThread(Ljava/util/List;Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
 
-    .line 141
     invoke-virtual {v0}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 142
     return v1
 
-    .line 144
-    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -2167,7 +1781,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 145
     const-string v0, "MotionEventInjector"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2188,22 +1801,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
     return v2
 
-    .line 148
     :cond_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/MotionEvent;
 
-    .line 149
-    .local v0, "motionEvent":Landroid/view/MotionEvent;
     const/high16 v3, 0x40000000    # 2.0f
 
     invoke-direct {p0, v0, v0, v3}, Lcom/android/server/accessibility/MotionEventInjector;->sendMotionEventToNext(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
-    .line 150
     iget v3, p1, Landroid/os/Message;->arg1:I
 
     if-eqz v3, :cond_2
@@ -2215,12 +1823,9 @@
     :cond_2
     move v3, v2
 
-    .line 151
-    .local v3, "isEndOfSequence":Z
     :goto_0
     if-eqz v3, :cond_3
 
-    .line 152
     iget-object v4, p0, Lcom/android/server/accessibility/MotionEventInjector;->mServiceInterfaceForCurrentGesture:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
     iget-object v5, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
@@ -2231,20 +1836,16 @@
 
     invoke-direct {p0, v4, v5, v1}, Lcom/android/server/accessibility/MotionEventInjector;->notifyService(Landroid/accessibilityservice/IAccessibilityServiceClient;IZ)V
 
-    .line 153
     iget-object v4, p0, Lcom/android/server/accessibility/MotionEventInjector;->mSequencesInProgress:Landroid/util/IntArray;
 
     invoke-virtual {v4, v2}, Landroid/util/IntArray;->remove(I)V
 
-    .line 155
     :cond_3
     return v1
 .end method
 
 .method public injectEvents(Ljava/util/List;Landroid/accessibilityservice/IAccessibilityServiceClient;I)V
     .locals 4
-    .param p2, "serviceInterface"    # Landroid/accessibilityservice/IAccessibilityServiceClient;
-    .param p3, "sequence"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2256,23 +1857,16 @@
         }
     .end annotation
 
-    .line 105
-    .local p1, "gestureSteps":Ljava/util/List;, "Ljava/util/List<Landroid/accessibilityservice/GestureDescription$GestureStep;>;"
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 106
-    .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 107
     iput-object p2, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 108
     iput p3, v0, Lcom/android/internal/os/SomeArgs;->argi1:I
 
-    .line 109
     iget-object v1, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/server/accessibility/MotionEventInjector;->mHandler:Landroid/os/Handler;
@@ -2285,45 +1879,34 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 110
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 1
 
-    .line 131
     invoke-direct {p0}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyPendingInjectedEvents()V
 
-    .line 132
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/MotionEventInjector;->mIsDestroyed:Z
 
-    .line 133
     return-void
 .end method
 
 .method public onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 0
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "rawEvent"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 114
     invoke-direct {p0}, Lcom/android/server/accessibility/MotionEventInjector;->cancelAnyPendingInjectedEvents()V
 
-    .line 115
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/accessibility/MotionEventInjector;->sendMotionEventToNext(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
-    .line 116
     return-void
 .end method
 
 .method public bridge synthetic setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
     .locals 0
 
-    .line 48
     invoke-super {p0, p1}, Lcom/android/server/accessibility/BaseEventStreamTransformation;->setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
     return-void

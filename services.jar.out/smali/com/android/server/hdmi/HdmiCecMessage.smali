@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 29
     sget-object v0, Llibcore/util/EmptyArray;->BYTE:[B
 
     sput-object v0, Lcom/android/server/hdmi/HdmiCecMessage;->EMPTY_PARAM:[B
@@ -31,26 +30,17 @@
 
 .method public constructor <init>(III[B)V
     .locals 1
-    .param p1, "source"    # I
-    .param p2, "destination"    # I
-    .param p3, "opcode"    # I
-    .param p4, "params"    # [B
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     iput p1, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mSource:I
 
-    .line 42
     iput p2, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mDestination:I
 
-    .line 43
     and-int/lit16 v0, p3, 0xff
 
     iput v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mOpcode:I
 
-    .line 44
     array-length v0, p4
 
     invoke-static {p4, v0}, Ljava/util/Arrays;->copyOf([BI)[B
@@ -59,15 +49,12 @@
 
     iput-object v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mParams:[B
 
-    .line 45
     return-void
 .end method
 
 .method private static opcodeToString(I)Ljava/lang/String;
     .locals 4
-    .param p0, "opcode"    # I
 
-    .line 103
     packed-switch p0, :pswitch_data_0
 
     packed-switch p0, :pswitch_data_1
@@ -92,7 +79,6 @@
 
     sparse-switch p0, :sswitch_data_0
 
-    .line 247
     const-string v0, "Opcode: %02X"
 
     const/4 v1, 0x1
@@ -113,427 +99,356 @@
 
     return-object v0
 
-    .line 245
     :sswitch_0
     const-string v0, "Abort"
 
     return-object v0
 
-    .line 243
     :sswitch_1
     const-string v0, "Cdc Message"
 
     return-object v0
 
-    .line 209
     :sswitch_2
     const-string v0, "Set Digital Timer"
 
     return-object v0
 
-    .line 165
     :sswitch_3
     const-string v0, "Report Audio Status"
 
     return-object v0
 
-    .line 157
     :sswitch_4
     const-string v0, "Set Timer Program Title"
 
     return-object v0
 
-    .line 155
     :sswitch_5
     const-string v0, "Set Osd String"
 
     return-object v0
 
-    .line 125
     :sswitch_6
     const-string v0, "Record Tv Screen"
 
     return-object v0
 
-    .line 123
     :sswitch_7
     const-string v0, "Text View On"
 
     return-object v0
 
-    .line 105
     :sswitch_8
     const-string v0, "Feature Abort"
 
     return-object v0
 
-    .line 241
     :pswitch_0
     const-string v0, "Terminate ARC"
 
     return-object v0
 
-    .line 239
     :pswitch_1
     const-string v0, "Request ARC Termination"
 
     return-object v0
 
-    .line 237
     :pswitch_2
     const-string v0, "Request ARC Initiation"
 
     return-object v0
 
-    .line 235
     :pswitch_3
     const-string v0, "Report ARC Terminated"
 
     return-object v0
 
-    .line 233
     :pswitch_4
     const-string v0, "Report ARC Initiated"
 
     return-object v0
 
-    .line 231
     :pswitch_5
     const-string v0, "Initiate ARC"
 
     return-object v0
 
-    .line 229
     :pswitch_6
     const-string v0, "Request Short Audio Descriptor"
 
     return-object v0
 
-    .line 227
     :pswitch_7
     const-string v0, "Repot Short Audio Descriptor"
 
     return-object v0
 
-    .line 225
     :pswitch_8
     const-string v0, "Set External Timer"
 
     return-object v0
 
-    .line 223
     :pswitch_9
     const-string v0, "Clear External Timer"
 
     return-object v0
 
-    .line 221
     :pswitch_a
     const-string v0, "Vendor Command With Id"
 
     return-object v0
 
-    .line 219
     :pswitch_b
     const-string v0, "Get Cec Version"
 
     return-object v0
 
-    .line 217
     :pswitch_c
     const-string v0, "Cec Version"
 
     return-object v0
 
-    .line 215
     :pswitch_d
     const-string v0, "InActive Source"
 
     return-object v0
 
-    .line 213
     :pswitch_e
     const-string v0, "Set Audio Rate"
 
     return-object v0
 
-    .line 211
     :pswitch_f
     const-string v0, "Clear Digital Timer"
 
     return-object v0
 
-    .line 207
     :pswitch_10
     const-string v0, "Select Digital Service"
 
     return-object v0
 
-    .line 205
     :pswitch_11
     const-string v0, "Select Analog Service"
 
     return-object v0
 
-    .line 203
     :pswitch_12
     const-string v0, "Get Menu Language"
 
     return-object v0
 
-    .line 201
     :pswitch_13
     const-string v0, "Report Power Status"
 
     return-object v0
 
-    .line 199
     :pswitch_14
     const-string v0, "Give Device Power Status"
 
     return-object v0
 
-    .line 197
     :pswitch_15
     const-string v0, "Menu Status"
 
     return-object v0
 
-    .line 195
     :pswitch_16
     const-string v0, "Menu REquest"
 
     return-object v0
 
-    .line 193
     :pswitch_17
     const-string v0, "Give Device Vendor Id"
 
     return-object v0
 
-    .line 191
     :pswitch_18
     const-string v0, "Vendor Remote Button Up"
 
     return-object v0
 
-    .line 189
     :pswitch_19
     const-string v0, "Vendor Remote Button Down"
 
     return-object v0
 
-    .line 187
     :pswitch_1a
     const-string v0, "Vendor Commandn"
 
     return-object v0
 
-    .line 185
     :pswitch_1b
     const-string v0, "Device Vendor Id"
 
     return-object v0
 
-    .line 183
     :pswitch_1c
     const-string v0, "Set Stream Path"
 
     return-object v0
 
-    .line 181
     :pswitch_1d
     const-string v0, "Request Active Source"
 
     return-object v0
 
-    .line 179
     :pswitch_1e
     const-string v0, "Report Physical Address"
 
     return-object v0
 
-    .line 177
     :pswitch_1f
     const-string v0, "Give Physical Address"
 
     return-object v0
 
-    .line 175
     :pswitch_20
     const-string v0, "Active Source"
 
     return-object v0
 
-    .line 173
     :pswitch_21
     const-string v0, "Routing Information"
 
     return-object v0
 
-    .line 171
     :pswitch_22
     const-string v0, "Routing Change"
 
     return-object v0
 
-    .line 169
     :pswitch_23
     const-string v0, "System Audio Mode Status"
 
     return-object v0
 
-    .line 167
     :pswitch_24
     const-string v0, "Give System Audio Mode Status"
 
     return-object v0
 
-    .line 163
     :pswitch_25
     const-string v0, "Set System Audio Mode"
 
     return-object v0
 
-    .line 161
     :pswitch_26
     const-string v0, "Give Audio Status"
 
     return-object v0
 
-    .line 159
     :pswitch_27
     const-string v0, "System Audio Mode Request"
 
     return-object v0
 
-    .line 153
     :pswitch_28
     const-string v0, "Set Osd Name"
 
     return-object v0
 
-    .line 151
     :pswitch_29
     const-string v0, "Give Osd Name"
 
     return-object v0
 
-    .line 149
     :pswitch_2a
     const-string v0, "User Control Release"
 
     return-object v0
 
-    .line 147
     :pswitch_2b
     const-string v0, "User Control Pressed"
 
     return-object v0
 
-    .line 145
     :pswitch_2c
     const-string v0, "Timer Cleared Status"
 
     return-object v0
 
-    .line 143
     :pswitch_2d
     const-string v0, "Deck Control"
 
     return-object v0
 
-    .line 141
     :pswitch_2e
     const-string v0, "Play"
 
     return-object v0
 
-    .line 139
     :pswitch_2f
     const-string v0, "Standby"
 
     return-object v0
 
-    .line 137
     :pswitch_30
     const-string v0, "Timer Status"
 
     return-object v0
 
-    .line 135
     :pswitch_31
     const-string v0, "Set Analog Timer"
 
     return-object v0
 
-    .line 133
     :pswitch_32
     const-string v0, "Clear Analog Timer"
 
     return-object v0
 
-    .line 131
     :pswitch_33
     const-string v0, "Set Menu Language"
 
     return-object v0
 
-    .line 129
     :pswitch_34
     const-string v0, "Deck Status"
 
     return-object v0
 
-    .line 127
     :pswitch_35
     const-string v0, "Give Deck Status"
 
     return-object v0
 
-    .line 121
     :pswitch_36
     const-string v0, "Record Off"
 
     return-object v0
 
-    .line 119
     :pswitch_37
     const-string v0, "Record Status"
 
     return-object v0
 
-    .line 117
     :pswitch_38
     const-string v0, "Record On"
 
     return-object v0
 
-    .line 115
     :pswitch_39
     const-string v0, "Give Tuner Device Status"
 
     return-object v0
 
-    .line 113
     :pswitch_3a
     const-string v0, "Tuner Device Staus"
 
     return-object v0
 
-    .line 111
     :pswitch_3b
     const-string v0, "Tuner Step Decrement"
 
     return-object v0
 
-    .line 109
     :pswitch_3c
     const-string v0, "Tuner Step Increment"
 
     return-object v0
 
-    .line 107
     :pswitch_3d
     const-string v0, "Image View On"
 
@@ -664,7 +579,6 @@
 .method public getDestination()I
     .locals 1
 
-    .line 64
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mDestination:I
 
     return v0
@@ -673,7 +587,6 @@
 .method public getOpcode()I
     .locals 1
 
-    .line 74
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mOpcode:I
 
     return v0
@@ -682,7 +595,6 @@
 .method public getParams()[B
     .locals 1
 
-    .line 85
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mParams:[B
 
     return-object v0
@@ -691,7 +603,6 @@
 .method public getSource()I
     .locals 1
 
-    .line 54
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mSource:I
 
     return v0
@@ -700,13 +611,10 @@
 .method public toString()Ljava/lang/String;
     .locals 10
 
-    .line 90
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 91
-    .local v0, "s":Ljava/lang/StringBuffer;
     const-string v1, "<%s> src: %d, dst: %d"
 
     const/4 v2, 0x3
@@ -715,7 +623,6 @@
 
     iget v3, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mOpcode:I
 
-    .line 92
     invoke-static {v3}, Lcom/android/server/hdmi/HdmiCecMessage;->opcodeToString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -744,26 +651,22 @@
 
     aput-object v3, v2, v6
 
-    .line 91
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 93
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mParams:[B
 
     array-length v1, v1
 
     if-lez v1, :cond_0
 
-    .line 94
     const-string v1, ", params:"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 95
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiCecMessage;->mParams:[B
 
     array-length v2, v1
@@ -775,8 +678,6 @@
 
     aget-byte v6, v1, v3
 
-    .line 96
-    .local v6, "data":B
     const-string v7, " %02X"
 
     new-array v8, v5, [Ljava/lang/Object;
@@ -793,13 +694,10 @@
 
     invoke-virtual {v0, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 95
-    .end local v6    # "data":B
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 99
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 

@@ -48,7 +48,6 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    .line 75
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "NOT_DEFINDED"
@@ -59,7 +58,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->NOT_DEFINDED:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 81
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "DOZE_DISABLED"
@@ -70,7 +68,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->DOZE_DISABLED:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 82
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "NO_ENTER_DEEPIDLE"
@@ -81,7 +78,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->NO_ENTER_DEEPIDLE:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 83
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "USERSPEACE_WAKELOCK"
@@ -92,7 +88,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->USERSPEACE_WAKELOCK:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 84
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "KERNELSPACE_WAKELOCK"
@@ -103,7 +98,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->KERNELSPACE_WAKELOCK:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 85
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "KERNEL_WAKEUP"
@@ -114,7 +108,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->KERNEL_WAKEUP:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 86
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "SINGAL_BAD"
@@ -125,7 +118,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->SINGAL_BAD:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 87
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "HIGH_UNACCOUNTED"
@@ -136,7 +128,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->HIGH_UNACCOUNTED:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 88
     new-instance v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     const-string v1, "UNKNOWN"
@@ -147,7 +138,6 @@
 
     sput-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->UNKNOWN:Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
-    .line 74
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
@@ -201,7 +191,6 @@
         }
     .end annotation
 
-    .line 74
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -209,9 +198,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 74
     const-class v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -226,7 +213,6 @@
 .method public static values()[Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
     .locals 1
 
-    .line 74
     sget-object v0, Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->$VALUES:[Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;
 
     invoke-virtual {v0}, [Lcom/android/server/OnePlusStandbyAnalyzer$BATTERY_OUTLIER_TYPE;->clone()Ljava/lang/Object;

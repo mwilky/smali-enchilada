@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +30,6 @@
 # virtual methods
 .method public onValues(ZLjava/util/ArrayList;)V
     .locals 0
-    .param p1, "result"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -41,13 +39,9 @@
         }
     .end annotation
 
-    .line 56
-    .local p2, "param":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     invoke-static {p1}, Lcom/android/server/secrecy/policy/util/ParamReader;->access$002(Z)Z
 
-    .line 57
     invoke-static {p2}, Lcom/android/server/secrecy/policy/util/ParamReader;->access$102(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 58
     return-void
 .end method

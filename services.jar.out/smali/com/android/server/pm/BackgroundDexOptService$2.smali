@@ -27,10 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/BackgroundDexOptService;Ljava/lang/String;Lcom/android/server/pm/PackageManagerService;Landroid/util/ArraySet;Landroid/app/job/JobParameters;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/BackgroundDexOptService;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 248
     iput-object p1, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->this$0:Lcom/android/server/pm/BackgroundDexOptService;
 
     iput-object p3, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->val$pm:Lcom/android/server/pm/PackageManagerService;
@@ -49,7 +46,6 @@
 .method public run()V
     .locals 4
 
-    .line 251
     iget-object v0, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->this$0:Lcom/android/server/pm/BackgroundDexOptService;
 
     iget-object v1, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->val$pm:Lcom/android/server/pm/PackageManagerService;
@@ -62,20 +58,16 @@
 
     move-result v0
 
-    .line 252
-    .local v0, "result":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    .line 253
     const-string v1, "BackgroundDexOptService"
 
     const-string v2, "Idle optimizations aborted because of space constraints."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
     iget-object v1, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->this$0:Lcom/android/server/pm/BackgroundDexOptService;
 
     iget-object v2, p0, Lcom/android/server/pm/BackgroundDexOptService$2;->val$jobParams:Landroid/app/job/JobParameters;
@@ -84,7 +76,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/server/pm/BackgroundDexOptService;->jobFinished(Landroid/app/job/JobParameters;Z)V
 
-    .line 258
     :cond_0
     return-void
 .end method

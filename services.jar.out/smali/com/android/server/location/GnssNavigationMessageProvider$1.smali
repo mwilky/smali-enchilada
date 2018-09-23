@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssNavigationMessageProvider;Landroid/location/GnssNavigationMessage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssNavigationMessageProvider;
 
-    .line 88
     iput-object p1, p0, Lcom/android/server/location/GnssNavigationMessageProvider$1;->this$0:Lcom/android/server/location/GnssNavigationMessageProvider;
 
     iput-object p2, p0, Lcom/android/server/location/GnssNavigationMessageProvider$1;->val$event:Landroid/location/GnssNavigationMessage;
@@ -51,19 +49,16 @@
 # virtual methods
 .method public execute(Landroid/location/IGnssNavigationMessageListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/location/IGnssNavigationMessageListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 92
     iget-object v0, p0, Lcom/android/server/location/GnssNavigationMessageProvider$1;->val$event:Landroid/location/GnssNavigationMessage;
 
     invoke-interface {p1, v0}, Landroid/location/IGnssNavigationMessageListener;->onGnssNavigationMessageReceived(Landroid/location/GnssNavigationMessage;)V
 
-    .line 93
     return-void
 .end method
 
@@ -75,7 +70,6 @@
         }
     .end annotation
 
-    .line 88
     check-cast p1, Landroid/location/IGnssNavigationMessageListener;
 
     invoke-virtual {p0, p1}, Lcom/android/server/location/GnssNavigationMessageProvider$1;->execute(Landroid/location/IGnssNavigationMessageListener;)V

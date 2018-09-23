@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/PinnerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/PinnerService;
 
-    .line 87
     iput-object p1, p0, Lcom/android/server/PinnerService$1;->this$0:Lcom/android/server/PinnerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 91
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -47,36 +42,24 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 92
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 93
-    .local v0, "packageUri":Landroid/net/Uri;
     invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 94
-    .local v1, "packageName":Ljava/lang/String;
     new-instance v2, Landroid/util/ArraySet;
 
     invoke-direct {v2}, Landroid/util/ArraySet;-><init>()V
 
-    .line 95
-    .local v2, "updatedPackages":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     invoke-virtual {v2, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 96
     iget-object v3, p0, Lcom/android/server/PinnerService$1;->this$0:Lcom/android/server/PinnerService;
 
     invoke-virtual {v3, v2}, Lcom/android/server/PinnerService;->update(Landroid/util/ArraySet;)V
 
-    .line 98
-    .end local v0    # "packageUri":Landroid/net/Uri;
-    .end local v1    # "packageName":Ljava/lang/String;
-    .end local v2    # "updatedPackages":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/String;>;"
     :cond_0
     return-void
 .end method

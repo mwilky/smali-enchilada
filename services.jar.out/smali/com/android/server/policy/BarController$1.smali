@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/BarController;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/BarController;
 
-    .line 231
     iput-object p1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     iput p2, p0, Lcom/android/server/policy/BarController$1;->val$state:I
@@ -43,18 +41,14 @@
 .method public run()V
     .locals 3
 
-    .line 234
     iget-object v0, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-virtual {v0}, Lcom/android/server/policy/BarController;->getStatusBarInternal()Lcom/android/server/statusbar/StatusBarManagerInternal;
 
     move-result-object v0
 
-    .line 235
-    .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_0
 
-    .line 236
     iget-object v1, p0, Lcom/android/server/policy/BarController$1;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-static {v1}, Lcom/android/server/policy/BarController;->access$100(Lcom/android/server/policy/BarController;)I
@@ -65,7 +59,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/statusbar/StatusBarManagerInternal;->setWindowState(II)V
 
-    .line 238
     :cond_0
     return-void
 .end method

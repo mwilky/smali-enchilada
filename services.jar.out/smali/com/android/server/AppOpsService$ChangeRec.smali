@@ -25,22 +25,14 @@
 # direct methods
 .method constructor <init>(IILjava/lang/String;)V
     .locals 0
-    .param p1, "_op"    # I
-    .param p2, "_uid"    # I
-    .param p3, "_pkg"    # Ljava/lang/String;
 
-    .line 1498
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1499
     iput p1, p0, Lcom/android/server/AppOpsService$ChangeRec;->op:I
 
-    .line 1500
     iput p2, p0, Lcom/android/server/AppOpsService$ChangeRec;->uid:I
 
-    .line 1501
     iput-object p3, p0, Lcom/android/server/AppOpsService$ChangeRec;->pkg:Ljava/lang/String;
 
-    .line 1502
     return-void
 .end method

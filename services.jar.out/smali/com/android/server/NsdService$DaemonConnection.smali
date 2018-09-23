@@ -24,12 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NsdService$NativeCallbackReceiver;)V
     .locals 8
-    .param p1, "callback"    # Lcom/android/server/NsdService$NativeCallbackReceiver;
 
-    .line 688
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 689
     new-instance v7, Lcom/android/server/NativeDaemonConnector;
 
     const-string/jumbo v2, "mdns"
@@ -50,7 +47,6 @@
 
     iput-object v7, p0, Lcom/android/server/NsdService$DaemonConnection;->mNativeConnector:Lcom/android/server/NativeDaemonConnector;
 
-    .line 690
     new-instance v0, Ljava/lang/Thread;
 
     iget-object v1, p0, Lcom/android/server/NsdService$DaemonConnection;->mNativeConnector:Lcom/android/server/NativeDaemonConnector;
@@ -61,7 +57,6 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 691
     return-void
 .end method
 
@@ -69,9 +64,7 @@
 # virtual methods
 .method public varargs execute([Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "args"    # [Ljava/lang/Object;
 
-    .line 695
     const-string v0, "NsdService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,7 +87,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 698
     :try_start_0
     iget-object v0, p0, Lcom/android/server/NsdService$DaemonConnection;->mNativeConnector:Lcom/android/server/NativeDaemonConnector;
 
@@ -104,20 +96,15 @@
     :try_end_0
     .catch Lcom/android/server/NativeDaemonConnectorException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 702
     nop
 
-    .line 703
     const/4 v0, 0x1
 
     return v0
 
-    .line 699
     :catch_0
     move-exception v0
 
-    .line 700
-    .local v0, "e":Lcom/android/server/NativeDaemonConnectorException;
     const-string v1, "NsdService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -140,7 +127,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 701
     const/4 v1, 0x0
 
     return v1
@@ -149,7 +135,6 @@
 .method public start()V
     .locals 3
 
-    .line 707
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -162,14 +147,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/server/NsdService$DaemonConnection;->execute([Ljava/lang/Object;)Z
 
-    .line 708
     return-void
 .end method
 
 .method public stop()V
     .locals 3
 
-    .line 711
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -182,6 +165,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/server/NsdService$DaemonConnection;->execute([Ljava/lang/Object;)Z
 
-    .line 712
     return-void
 .end method

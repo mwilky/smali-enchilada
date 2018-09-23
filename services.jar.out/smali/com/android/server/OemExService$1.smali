@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemExService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemExService;
 
-    .line 164
     iput-object p1, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 167
     const-string v0, "OemExService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,7 +52,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
     const-string v0, "android.content.pm.extra.STATUS"
 
     const/16 v1, -0x3e8
@@ -66,21 +60,16 @@
 
     move-result v0
 
-    .line 170
-    .local v0, "callbackStatus":I
     const-string/jumbo v1, "pkgName"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 171
-    .local v1, "pkgName":Ljava/lang/String;
     if-nez v0, :cond_3
 
     if-eqz v1, :cond_3
 
-    .line 172
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
     invoke-static {v2}, Lcom/android/server/OemExService;->access$000(Lcom/android/server/OemExService;)Landroid/content/Context;
@@ -97,11 +86,8 @@
 
     move-result-object v2
 
-    .line 174
-    .local v2, "strAppInstalled":Ljava/lang/String;
     if-nez v2, :cond_0
 
-    .line 175
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -118,7 +104,6 @@
 
     goto :goto_0
 
-    .line 177
     :cond_0
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -136,7 +121,6 @@
 
     move-result-object v2
 
-    .line 179
     :goto_0
     iget-object v3, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
@@ -152,7 +136,6 @@
 
     invoke-static {v3, v4, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 180
     sget-boolean v3, Lcom/android/server/OemExService;->DEBUG_ONEPLUS:Z
 
     if-eqz v3, :cond_1
@@ -179,11 +162,9 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 181
     :cond_1
     invoke-static {}, Lcom/android/server/OemExService;->access$110()I
 
-    .line 182
     invoke-static {}, Lcom/android/server/OemExService;->access$200()Ljava/util/HashMap;
 
     move-result-object v3
@@ -194,14 +175,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 183
     invoke-static {}, Lcom/android/server/OemExService;->access$200()Ljava/util/HashMap;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 185
     :cond_2
     invoke-static {}, Lcom/android/server/OemExService;->access$300()Z
 
@@ -237,8 +216,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
-    .end local v2    # "strAppInstalled":Ljava/lang/String;
     :cond_3
     invoke-static {}, Lcom/android/server/OemExService;->access$100()I
 
@@ -246,7 +223,6 @@
 
     if-nez v2, :cond_5
 
-    .line 190
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
     invoke-static {v2}, Lcom/android/server/OemExService;->access$000(Lcom/android/server/OemExService;)Landroid/content/Context;
@@ -265,7 +241,6 @@
 
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 191
     sget-boolean v2, Lcom/android/server/OemExService;->DEBUG_ONEPLUS:Z
 
     if-eqz v2, :cond_4
@@ -304,13 +279,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
     :cond_4
     iget-object v2, p0, Lcom/android/server/OemExService$1;->this$0:Lcom/android/server/OemExService;
 
     invoke-static {v2}, Lcom/android/server/OemExService;->access$500(Lcom/android/server/OemExService;)V
 
-    .line 194
     :cond_5
     return-void
 .end method

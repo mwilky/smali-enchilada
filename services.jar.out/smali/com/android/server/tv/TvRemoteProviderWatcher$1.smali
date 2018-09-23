@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/tv/TvRemoteProviderWatcher;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/tv/TvRemoteProviderWatcher;
 
-    .line 199
     iput-object p1, p0, Lcom/android/server/tv/TvRemoteProviderWatcher$1;->this$0:Lcom/android/server/tv/TvRemoteProviderWatcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 202
     invoke-static {}, Lcom/android/server/tv/TvRemoteProviderWatcher;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 203
     const-string v0, "TvRemoteProvWatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +58,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
     :cond_0
     iget-object v0, p0, Lcom/android/server/tv/TvRemoteProviderWatcher$1;->this$0:Lcom/android/server/tv/TvRemoteProviderWatcher;
 
@@ -80,6 +73,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 206
     return-void
 .end method

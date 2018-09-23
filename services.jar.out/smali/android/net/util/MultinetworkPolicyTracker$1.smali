@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/util/MultinetworkPolicyTracker;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/util/MultinetworkPolicyTracker;
 
-    .line 91
     iput-object p1, p0, Landroid/net/util/MultinetworkPolicyTracker$1;->this$0:Landroid/net/util/MultinetworkPolicyTracker;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,14 +33,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 94
     iget-object v0, p0, Landroid/net/util/MultinetworkPolicyTracker$1;->this$0:Landroid/net/util/MultinetworkPolicyTracker;
 
     invoke-virtual {v0}, Landroid/net/util/MultinetworkPolicyTracker;->reevaluate()V
 
-    .line 95
     return-void
 .end method

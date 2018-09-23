@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ServiceWatcher;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/ServiceWatcher;
 
-    .line 329
     iput-object p1, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-direct {p0}, Lcom/android/internal/content/PackageMonitor;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onPackageAdded(Ljava/lang/String;I)V
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 343
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$000(Lcom/android/server/ServiceWatcher;)Ljava/lang/Object;
@@ -47,7 +42,6 @@
 
     monitor-enter v0
 
-    .line 344
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -59,22 +53,16 @@
 
     move-result v1
 
-    .line 345
-    .local v1, "forceRebind":Z
     iget-object v2, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3, v1}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;Ljava/lang/String;Z)Z
 
-    .line 346
-    .end local v1    # "forceRebind":Z
     monitor-exit v0
 
-    .line 347
     return-void
 
-    .line 346
     :catchall_0
     move-exception v1
 
@@ -87,11 +75,7 @@
 
 .method public onPackageChanged(Ljava/lang/String;I[Ljava/lang/String;)Z
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "components"    # [Ljava/lang/String;
 
-    .line 359
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$000(Lcom/android/server/ServiceWatcher;)Ljava/lang/Object;
@@ -100,7 +84,6 @@
 
     monitor-enter v0
 
-    .line 360
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -112,28 +95,22 @@
 
     move-result v1
 
-    .line 361
-    .local v1, "forceRebind":Z
     iget-object v2, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3, v1}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;Ljava/lang/String;Z)Z
 
-    .line 362
-    .end local v1    # "forceRebind":Z
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 363
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/content/PackageMonitor;->onPackageChanged(Ljava/lang/String;I[Ljava/lang/String;)Z
 
     move-result v0
 
     return v0
 
-    .line 362
     :catchall_0
     move-exception v1
 
@@ -147,10 +124,7 @@
 
 .method public onPackageRemoved(Ljava/lang/String;I)V
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 351
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$000(Lcom/android/server/ServiceWatcher;)Ljava/lang/Object;
@@ -159,7 +133,6 @@
 
     monitor-enter v0
 
-    .line 352
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -171,22 +144,16 @@
 
     move-result v1
 
-    .line 353
-    .local v1, "forceRebind":Z
     iget-object v2, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3, v1}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;Ljava/lang/String;Z)Z
 
-    .line 354
-    .end local v1    # "forceRebind":Z
     monitor-exit v0
 
-    .line 355
     return-void
 
-    .line 354
     :catchall_0
     move-exception v1
 
@@ -199,10 +166,7 @@
 
 .method public onPackageUpdateFinished(Ljava/lang/String;I)V
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 335
     iget-object v0, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     invoke-static {v0}, Lcom/android/server/ServiceWatcher;->access$000(Lcom/android/server/ServiceWatcher;)Ljava/lang/Object;
@@ -211,7 +175,6 @@
 
     monitor-enter v0
 
-    .line 336
     :try_start_0
     iget-object v1, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
@@ -223,22 +186,16 @@
 
     move-result v1
 
-    .line 337
-    .local v1, "forceRebind":Z
     iget-object v2, p0, Lcom/android/server/ServiceWatcher$2;->this$0:Lcom/android/server/ServiceWatcher;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3, v1}, Lcom/android/server/ServiceWatcher;->access$200(Lcom/android/server/ServiceWatcher;Ljava/lang/String;Z)Z
 
-    .line 338
-    .end local v1    # "forceRebind":Z
     monitor-exit v0
 
-    .line 339
     return-void
 
-    .line 338
     :catchall_0
     move-exception v1
 

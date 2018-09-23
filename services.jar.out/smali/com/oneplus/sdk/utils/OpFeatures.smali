@@ -55,7 +55,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,13 +62,9 @@
 
 .method public static varargs isSupport([I)Z
     .locals 6
-    .param p0, "features"    # [I
 
-    .line 127
     const/4 v0, 0x1
 
-    .line 129
-    .local v0, "result":Z
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -78,22 +73,17 @@
 
     move v0, v2
 
-    .end local v0    # "result":Z
-    .local v3, "result":Z
     :goto_0
     if-ge v0, v1, :cond_2
 
     aget v4, p0, v0
 
-    .line 131
-    .local v4, "feature":I
     if-ltz v4, :cond_1
 
     const/16 v5, 0x14
 
     if-gt v4, v5, :cond_1
 
-    .line 134
     const/4 v5, 0x1
 
     :try_start_0
@@ -107,21 +97,15 @@
 
     if-nez v5, :cond_0
 
-    .line 135
     const/4 v3, 0x0
 
-    .line 141
     :cond_0
     nop
 
-    .line 129
-    .end local v4    # "feature":I
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 132
-    .restart local v4    # "feature":I
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -145,23 +129,15 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 137
     :catch_0
     move-exception v0
 
-    .line 138
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->printStackTrace()V
 
-    .line 139
     const/4 v3, 0x0
 
-    .line 140
     nop
 
-    .line 143
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
-    .end local v4    # "feature":I
     :cond_2
     return v3
 .end method

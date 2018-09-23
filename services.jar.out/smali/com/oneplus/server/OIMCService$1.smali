@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCService;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/OIMCService;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 94
     iput-object p1, p0, Lcom/oneplus/server/OIMCService$1;->this$0:Lcom/oneplus/server/OIMCService;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 97
     sget-boolean v0, Lcom/oneplus/server/OIMCUtil;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -53,7 +48,6 @@
 
     iget v1, p1, Landroid/os/Message;->what:I
 
-    .line 98
     invoke-static {v1}, Lcom/oneplus/server/OIMCMessage;->getModeType(I)I
 
     move-result v1
@@ -70,7 +64,6 @@
 
     iget v1, p1, Landroid/os/Message;->what:I
 
-    .line 99
     invoke-static {v1}, Lcom/oneplus/server/OIMCMessage;->getMajorType(I)I
 
     move-result v1
@@ -109,10 +102,8 @@
 
     move-result-object v0
 
-    .line 97
     invoke-static {v0}, Lcom/oneplus/server/OIMCUtil;->log(Ljava/lang/String;)V
 
-    .line 103
     :cond_0
     iget-object v0, p0, Lcom/oneplus/server/OIMCService$1;->this$0:Lcom/oneplus/server/OIMCService;
 
@@ -120,6 +111,5 @@
 
     invoke-virtual {v0, p1}, Lcom/oneplus/server/TriggerManager;->updateTrigger(Landroid/os/Message;)Z
 
-    .line 104
     return-void
 .end method

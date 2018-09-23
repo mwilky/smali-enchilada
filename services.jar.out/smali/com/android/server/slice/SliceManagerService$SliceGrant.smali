@@ -27,25 +27,17 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/slice/SliceManagerService;Landroid/net/Uri;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "pkg"    # Ljava/lang/String;
-    .param p4, "userId"    # I
 
-    .line 648
     iput-object p1, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->this$0:Lcom/android/server/slice/SliceManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 649
     iput-object p2, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mUri:Landroid/net/Uri;
 
-    .line 650
     iput-object p3, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mPkg:Ljava/lang/String;
 
-    .line 651
     iput p4, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mUserId:I
 
-    .line 652
     return-void
 .end method
 
@@ -53,9 +45,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 661
     instance-of v0, p1, Lcom/android/server/slice/SliceManagerService$SliceGrant;
 
     const/4 v1, 0x0
@@ -64,14 +54,11 @@
 
     return v1
 
-    .line 662
     :cond_0
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/slice/SliceManagerService$SliceGrant;
 
-    .line 663
-    .local v0, "other":Lcom/android/server/slice/SliceManagerService$SliceGrant;
     iget-object v2, v0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mUri:Landroid/net/Uri;
 
     iget-object v3, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mUri:Landroid/net/Uri;
@@ -109,7 +96,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 656
     iget-object v0, p0, Lcom/android/server/slice/SliceManagerService$SliceGrant;->mUri:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I

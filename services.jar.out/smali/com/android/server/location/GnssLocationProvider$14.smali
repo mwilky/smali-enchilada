@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssLocationProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssLocationProvider;
 
-    .line 2091
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$14;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getGnssHardwareModelName()Ljava/lang/String;
     .locals 1
 
-    .line 2098
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$14;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$3500(Lcom/android/server/location/GnssLocationProvider;)Ljava/lang/String;
@@ -52,7 +49,6 @@
 .method public getGnssYearOfHardware()I
     .locals 1
 
-    .line 2094
     iget-object v0, p0, Lcom/android/server/location/GnssLocationProvider$14;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v0}, Lcom/android/server/location/GnssLocationProvider;->access$3400(Lcom/android/server/location/GnssLocationProvider;)I

@@ -17,9 +17,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 58
     invoke-direct {p0, p1}, Lcom/android/server/firewall/FilterFactory;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -29,7 +27,6 @@
 # virtual methods
 .method public newFilter(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/server/firewall/Filter;
     .locals 5
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -37,7 +34,6 @@
         }
     .end annotation
 
-    .line 61
     const-string/jumbo v0, "type"
 
     const/4 v1, 0x0
@@ -46,11 +42,8 @@
 
     move-result-object v0
 
-    .line 62
-    .local v0, "typeString":Ljava/lang/String;
     if-eqz v0, :cond_4
 
-    .line 66
     const-string/jumbo v2, "system"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -59,14 +52,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 67
     invoke-static {}, Lcom/android/server/firewall/SenderFilter;->access$000()Lcom/android/server/firewall/Filter;
 
     move-result-object v1
 
     return-object v1
 
-    .line 68
     :cond_0
     const-string/jumbo v2, "signature"
 
@@ -76,14 +67,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 69
     invoke-static {}, Lcom/android/server/firewall/SenderFilter;->access$100()Lcom/android/server/firewall/Filter;
 
     move-result-object v1
 
     return-object v1
 
-    .line 70
     :cond_1
     const-string/jumbo v2, "system|signature"
 
@@ -93,14 +82,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 71
     invoke-static {}, Lcom/android/server/firewall/SenderFilter;->access$200()Lcom/android/server/firewall/Filter;
 
     move-result-object v1
 
     return-object v1
 
-    .line 72
     :cond_2
     const-string/jumbo v2, "userId"
 
@@ -110,14 +97,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 73
     invoke-static {}, Lcom/android/server/firewall/SenderFilter;->access$300()Lcom/android/server/firewall/Filter;
 
     move-result-object v1
 
     return-object v1
 
-    .line 75
     :cond_3
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
@@ -139,7 +124,6 @@
 
     throw v2
 
-    .line 63
     :cond_4
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 

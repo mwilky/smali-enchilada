@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;B)V
     .locals 0
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "score"    # B
 
-    .line 205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 206
     iput-object p1, p0, Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;->mPrefix:Ljava/lang/String;
 
-    .line 207
     iput-byte p2, p0, Lcom/android/server/CommonTimeManagementService$InterfaceScoreRule;->mScore:B
 
-    .line 208
     return-void
 .end method

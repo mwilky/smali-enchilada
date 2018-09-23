@@ -21,20 +21,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/OnePlusHighPowerDetector;Landroid/os/Looper;)V
     .locals 2
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusHighPowerDetector;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 1669
     iput-object p1, p0, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->this$0:Lcom/android/server/am/OnePlusHighPowerDetector;
 
-    .line 1670
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 1671
     return-void
 .end method
 
@@ -42,13 +37,10 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1675
     iget-object v0, p0, Lcom/android/server/am/OnePlusHighPowerDetector$MyHandler;->this$0:Lcom/android/server/am/OnePlusHighPowerDetector;
 
     invoke-virtual {v0, p1}, Lcom/android/server/am/OnePlusHighPowerDetector;->handleMyMessage(Landroid/os/Message;)V
 
-    .line 1676
     return-void
 .end method

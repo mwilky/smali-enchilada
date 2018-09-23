@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemGestureButton;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemGestureButton;
 
-    .line 1189
     iput-object p1, p0, Lcom/android/server/policy/OemGestureButton$7;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 1193
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$7;->this$0:Lcom/android/server/policy/OemGestureButton;
 
@@ -57,15 +54,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1197
     goto :goto_0
 
-    .line 1194
     :catch_0
     move-exception v0
 
-    .line 1195
-    .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "OemGestureButton"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -88,8 +81,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1198
-    .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

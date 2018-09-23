@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/am/EmbryoSupervisor;Lcom/android/server/am/EmbryoSupervisor;)I
     .locals 3
-    .param p1, "lhs"    # Lcom/android/server/am/EmbryoSupervisor;
-    .param p2, "rhs"    # Lcom/android/server/am/EmbryoSupervisor;
 
-    .line 222
     invoke-static {p1}, Lcom/android/server/am/EmbryoSupervisor;->access$200(Lcom/android/server/am/EmbryoSupervisor;)I
 
     move-result v0
@@ -52,8 +48,6 @@
 
     move-result-object v0
 
-    .line 223
-    .local v0, "l1":Ljava/lang/Integer;
     invoke-static {p2}, Lcom/android/server/am/EmbryoSupervisor;->access$200(Lcom/android/server/am/EmbryoSupervisor;)I
 
     move-result v1
@@ -62,8 +56,6 @@
 
     move-result-object v1
 
-    .line 224
-    .local v1, "l2":Ljava/lang/Integer;
     invoke-virtual {v0, v1}, Ljava/lang/Integer;->compareTo(Ljava/lang/Integer;)I
 
     move-result v2
@@ -74,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 219
     check-cast p1, Lcom/android/server/am/EmbryoSupervisor;
 
     check-cast p2, Lcom/android/server/am/EmbryoSupervisor;

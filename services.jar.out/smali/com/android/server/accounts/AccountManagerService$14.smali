@@ -27,17 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accounts/AccountManagerService;Lcom/android/server/accounts/AccountManagerService$UserAccounts;Landroid/accounts/IAccountManagerResponse;Ljava/lang/String;ZZLjava/lang/String;ZZLandroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accounts/AccountManagerService;
-    .param p2, "accounts"    # Lcom/android/server/accounts/AccountManagerService$UserAccounts;
-    .param p3, "response"    # Landroid/accounts/IAccountManagerResponse;
-    .param p4, "accountType"    # Ljava/lang/String;
-    .param p5, "expectActivityLaunch"    # Z
-    .param p6, "stripAuthTokenFromResult"    # Z
-    .param p7, "accountName"    # Ljava/lang/String;
-    .param p8, "authDetailsRequired"    # Z
-    .param p9, "updateLastAuthenticatedTime"    # Z
 
-    .line 3732
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$14;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     iput-object p10, p0, Lcom/android/server/accounts/AccountManagerService$14;->val$account:Landroid/accounts/Account;
@@ -61,7 +51,6 @@
         }
     .end annotation
 
-    .line 3735
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$14;->mAuthenticator:Landroid/accounts/IAccountAuthenticator;
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$14;->val$account:Landroid/accounts/Account;
@@ -72,15 +61,12 @@
 
     invoke-interface {v0, p0, v1, v2, v3}, Landroid/accounts/IAccountAuthenticator;->updateCredentials(Landroid/accounts/IAccountAuthenticatorResponse;Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 3736
     return-void
 .end method
 
 .method protected toDebugString(J)Ljava/lang/String;
     .locals 2
-    .param p1, "now"    # J
 
-    .line 3739
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$14;->val$loginOptions:Landroid/os/Bundle;
 
     if-eqz v0, :cond_0
@@ -89,7 +75,6 @@
 
     invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
-    .line 3740
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 

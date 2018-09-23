@@ -38,7 +38,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +48,6 @@
 .method public drainPerHour()D
     .locals 6
 
-    .line 122
     iget-wide v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->totalTimeMillis:J
 
     const-wide/16 v2, 0x0
@@ -58,12 +56,10 @@
 
     if-nez v0, :cond_0
 
-    .line 123
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 125
     :cond_0
     iget v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->totalBatteryDrain:I
 
@@ -85,7 +81,6 @@
 .method public drainPercentPerHour()D
     .locals 6
 
-    .line 129
     iget-wide v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->totalTimeMillis:J
 
     const-wide/16 v2, 0x0
@@ -94,12 +89,10 @@
 
     if-nez v0, :cond_0
 
-    .line 130
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 132
     :cond_0
     iget v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->totalBatteryDrainPercent:I
 
@@ -123,7 +116,6 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 137
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -156,7 +148,6 @@
 
     new-array v3, v2, [Ljava/lang/Object;
 
-    .line 138
     invoke-virtual {p0}, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->drainPerHour()D
 
     move-result-wide v4
@@ -183,7 +174,6 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 139
     invoke-virtual {p0}, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->drainPercentPerHour()D
 
     move-result-wide v3
@@ -208,14 +198,12 @@
 
     move-result-object v0
 
-    .line 137
     return-object v0
 .end method
 
 .method public totalMinutes()J
     .locals 4
 
-    .line 118
     iget-wide v0, p0, Lcom/android/server/power/batterysaver/BatterySavingStats$Stat;->totalTimeMillis:J
 
     const-wide/32 v2, 0xea60

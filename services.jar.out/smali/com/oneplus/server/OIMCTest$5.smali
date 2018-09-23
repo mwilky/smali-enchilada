@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/OIMCTest;
-    .param p2, "arg"    # Lcom/oneplus/server/MsgObjectArg;
 
-    .line 277
     iput-object p1, p0, Lcom/oneplus/server/OIMCTest$5;->this$0:Lcom/oneplus/server/OIMCTest;
 
     invoke-direct {p0, p1, p2}, Lcom/oneplus/server/OIMCTest$checkSysInfo;-><init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
@@ -37,7 +34,6 @@
 .method public run()V
     .locals 3
 
-    .line 280
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCTest$5;->getArg()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v0
@@ -48,8 +44,6 @@
 
     check-cast v0, Lcom/oneplus/server/FunctionManager;
 
-    .line 281
-    .local v0, "fm":Lcom/oneplus/server/FunctionManager;
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCTest$5;->getArg()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v1
@@ -60,25 +54,20 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 282
-    .local v1, "name":Ljava/lang/String;
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Lcom/oneplus/server/OIMCTest$5;->setResult(I)V
 
-    .line 283
     invoke-virtual {v0, v1}, Lcom/oneplus/server/FunctionManager;->getFunc(Ljava/lang/String;)Lcom/oneplus/server/OPFunction;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 284
     const/4 v2, 0x1
 
     invoke-virtual {p0, v2}, Lcom/oneplus/server/OIMCTest$5;->setResult(I)V
 
-    .line 286
     :cond_0
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/LockTaskController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/LockTaskController;
 
-    .line 756
     iput-object p1, p0, Lcom/android/server/am/LockTaskController$1;->this$0:Lcom/android/server/am/LockTaskController;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardDismissCallback$Stub;-><init>()V
@@ -34,7 +32,6 @@
 .method public static synthetic lambda$onDismissSucceeded$0(Lcom/android/server/am/LockTaskController$1;)V
     .locals 3
 
-    .line 765
     iget-object v0, p0, Lcom/android/server/am/LockTaskController$1;->this$0:Lcom/android/server/am/LockTaskController;
 
     iget-object v0, v0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -62,14 +59,12 @@
         }
     .end annotation
 
-    .line 770
     const-string v0, "ActivityManager"
 
     const-string/jumbo v1, "setKeyguardState: dismiss cancelled"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 771
     return-void
 .end method
 
@@ -81,14 +76,12 @@
         }
     .end annotation
 
-    .line 759
     const-string v0, "ActivityManager"
 
     const-string/jumbo v1, "setKeyguardState: failed to dismiss keyguard"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 760
     return-void
 .end method
 
@@ -100,7 +93,6 @@
         }
     .end annotation
 
-    .line 764
     iget-object v0, p0, Lcom/android/server/am/LockTaskController$1;->this$0:Lcom/android/server/am/LockTaskController;
 
     invoke-static {v0}, Lcom/android/server/am/LockTaskController;->access$000(Lcom/android/server/am/LockTaskController;)Landroid/os/Handler;
@@ -113,6 +105,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 766
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 624
     iput-object p1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$BaseServingState;-><init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
@@ -36,10 +34,8 @@
 .method public enter()V
     .locals 2
 
-    .line 627
     invoke-super {p0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$BaseServingState;->enter()V
 
-    .line 628
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     invoke-static {v0}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->access$200(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)I
@@ -48,7 +44,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 629
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     iget-object v1, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
@@ -59,7 +54,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 633
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
@@ -67,15 +61,12 @@
 
     invoke-static {v0, v1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->access$000(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;I)V
 
-    .line 634
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 3
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 638
     invoke-super {p0, p1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$BaseServingState;->processMessage(Landroid/os/Message;)Z
 
     move-result v0
@@ -86,7 +77,6 @@
 
     return v1
 
-    .line 640
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
@@ -94,7 +84,6 @@
 
     invoke-static {v0, p0, v2}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->access$100(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;Lcom/android/internal/util/State;I)V
 
-    .line 641
     iget v0, p1, Landroid/os/Message;->what:I
 
     const v2, 0x50066
@@ -105,16 +94,13 @@
 
     if-eq v0, v2, :cond_1
 
-    .line 649
     const/4 v0, 0x0
 
     return v0
 
-    .line 647
     :cond_1
     goto :goto_0
 
-    .line 643
     :cond_2
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine$LocalHotspotState;->this$0:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
@@ -126,10 +112,8 @@
 
     invoke-virtual {v0, v2}, Landroid/net/util/SharedLog;->e(Ljava/lang/String;)V
 
-    .line 644
     nop
 
-    .line 651
     :goto_0
     return v1
 .end method

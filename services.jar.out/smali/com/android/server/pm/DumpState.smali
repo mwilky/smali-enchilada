@@ -71,7 +71,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -82,7 +81,6 @@
 .method public getSharedUser()Lcom/android/server/pm/SharedUserSetting;
     .locals 1
 
-    .line 90
     iget-object v0, p0, Lcom/android/server/pm/DumpState;->mSharedUser:Lcom/android/server/pm/SharedUserSetting;
 
     return-object v0
@@ -91,7 +89,6 @@
 .method public getTitlePrinted()Z
     .locals 1
 
-    .line 82
     iget-boolean v0, p0, Lcom/android/server/pm/DumpState;->mTitlePrinted:Z
 
     return v0
@@ -99,9 +96,7 @@
 
 .method public isDumping(I)Z
     .locals 2
-    .param p1, "type"    # I
 
-    .line 56
     iget v0, p0, Lcom/android/server/pm/DumpState;->mTypes:I
 
     const/4 v1, 0x1
@@ -112,10 +107,8 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 57
     return v1
 
-    .line 60
     :cond_0
     iget v0, p0, Lcom/android/server/pm/DumpState;->mTypes:I
 
@@ -134,9 +127,7 @@
 
 .method public isOptionEnabled(I)Z
     .locals 1
-    .param p1, "option"    # I
 
-    .line 68
     iget v0, p0, Lcom/android/server/pm/DumpState;->mOptions:I
 
     and-int/2addr v0, p1
@@ -157,67 +148,51 @@
 .method public onTitlePrinted()Z
     .locals 2
 
-    .line 76
     iget-boolean v0, p0, Lcom/android/server/pm/DumpState;->mTitlePrinted:Z
 
-    .line 77
-    .local v0, "printed":Z
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/pm/DumpState;->mTitlePrinted:Z
 
-    .line 78
     return v0
 .end method
 
 .method public setDump(I)V
     .locals 1
-    .param p1, "type"    # I
 
-    .line 64
     iget v0, p0, Lcom/android/server/pm/DumpState;->mTypes:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/DumpState;->mTypes:I
 
-    .line 65
     return-void
 .end method
 
 .method public setOptionEnabled(I)V
     .locals 1
-    .param p1, "option"    # I
 
-    .line 72
     iget v0, p0, Lcom/android/server/pm/DumpState;->mOptions:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Lcom/android/server/pm/DumpState;->mOptions:I
 
-    .line 73
     return-void
 .end method
 
 .method public setSharedUser(Lcom/android/server/pm/SharedUserSetting;)V
     .locals 0
-    .param p1, "user"    # Lcom/android/server/pm/SharedUserSetting;
 
-    .line 94
     iput-object p1, p0, Lcom/android/server/pm/DumpState;->mSharedUser:Lcom/android/server/pm/SharedUserSetting;
 
-    .line 95
     return-void
 .end method
 
 .method public setTitlePrinted(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 86
     iput-boolean p1, p0, Lcom/android/server/pm/DumpState;->mTitlePrinted:Z
 
-    .line 87
     return-void
 .end method

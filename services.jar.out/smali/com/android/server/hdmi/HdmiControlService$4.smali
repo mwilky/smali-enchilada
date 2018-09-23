@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 2240
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$4;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-direct {p0}, Landroid/hardware/hdmi/IHdmiControlCallback$Stub;-><init>()V
@@ -35,12 +33,9 @@
 # virtual methods
 .method public onComplete(I)V
     .locals 3
-    .param p1, "result"    # I
 
-    .line 2243
     if-eqz p1, :cond_0
 
-    .line 2244
     const-string v0, "HdmiControlService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -59,7 +54,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2246
     :cond_0
     return-void
 .end method

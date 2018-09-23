@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 1612
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1613
     iput-object p1, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
-    .line 1614
     return-void
 .end method
 
@@ -40,11 +36,7 @@
 # virtual methods
 .method public pendingIntentGetActivityAsUser(Landroid/content/Intent;ILandroid/os/UserHandle;)Landroid/app/PendingIntent;
     .locals 6
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "flags"    # I
-    .param p3, "user"    # Landroid/os/UserHandle;
 
-    .line 1621
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -66,11 +58,7 @@
 
 .method public settingsSecureGetIntForUser(Ljava/lang/String;II)I
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "def"    # I
-    .param p3, "userId"    # I
 
-    .line 1650
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -86,10 +74,7 @@
 
 .method public settingsSecureGetStringForUser(Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 1643
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -105,11 +90,7 @@
 
 .method public settingsSecurePutIntForUser(Ljava/lang/String;II)V
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # I
-    .param p3, "userId"    # I
 
-    .line 1636
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -118,17 +99,12 @@
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 1637
     return-void
 .end method
 
 .method public settingsSecurePutStringForUser(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 1629
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$SystemServices;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -137,6 +113,5 @@
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 1630
     return-void
 .end method

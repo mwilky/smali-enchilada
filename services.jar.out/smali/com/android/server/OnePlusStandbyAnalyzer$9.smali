@@ -26,7 +26,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 702
     invoke-static {}, Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MODE_TYPE;->values()[Lcom/android/server/OnePlusStandbyAnalyzer$RPM_MODE_TYPE;
 
     move-result-object v0
@@ -120,7 +119,6 @@
     :catch_3
     move-exception v4
 
-    .line 392
     :goto_3
     invoke-static {}, Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;->values()[Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;
 
@@ -188,7 +186,6 @@
     :catch_6
     move-exception v4
 
-    .line 319
     :goto_6
     invoke-static {}, Lcom/android/server/OnePlusStandbyAnalyzer$CRITERIA_TYPE;->values()[Lcom/android/server/OnePlusStandbyAnalyzer$CRITERIA_TYPE;
 

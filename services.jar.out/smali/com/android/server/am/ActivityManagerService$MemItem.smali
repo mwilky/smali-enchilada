@@ -43,77 +43,48 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJI)V
     .locals 1
-    .param p1, "_label"    # Ljava/lang/String;
-    .param p2, "_shortLabel"    # Ljava/lang/String;
-    .param p3, "_pss"    # J
-    .param p5, "_swapPss"    # J
-    .param p7, "_id"    # I
 
-    .line 20452
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20453
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->isProc:Z
 
-    .line 20454
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 20455
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 20456
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 20457
     iput-wide p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->swapPss:J
 
-    .line 20458
     iput p7, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 20459
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->hasActivities:Z
 
-    .line 20460
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJIZ)V
     .locals 1
-    .param p1, "_label"    # Ljava/lang/String;
-    .param p2, "_shortLabel"    # Ljava/lang/String;
-    .param p3, "_pss"    # J
-    .param p5, "_swapPss"    # J
-    .param p7, "_id"    # I
-    .param p8, "_hasActivities"    # Z
 
-    .line 20442
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20443
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->isProc:Z
 
-    .line 20444
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->label:Ljava/lang/String;
 
-    .line 20445
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->shortLabel:Ljava/lang/String;
 
-    .line 20446
     iput-wide p3, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->pss:J
 
-    .line 20447
     iput-wide p5, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->swapPss:J
 
-    .line 20448
     iput p7, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->id:I
 
-    .line 20449
     iput-boolean p8, p0, Lcom/android/server/am/ActivityManagerService$MemItem;->hasActivities:Z
 
-    .line 20450
     return-void
 .end method

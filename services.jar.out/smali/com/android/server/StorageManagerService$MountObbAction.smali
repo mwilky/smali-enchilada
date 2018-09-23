@@ -25,24 +25,15 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
-    .param p2, "obbState"    # Lcom/android/server/StorageManagerService$ObbState;
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "callingUid"    # I
 
-    .line 3355
     iput-object p1, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
-    .line 3356
     invoke-direct {p0, p1, p2}, Lcom/android/server/StorageManagerService$ObbAction;-><init>(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;)V
 
-    .line 3357
     iput-object p3, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mKey:Ljava/lang/String;
 
-    .line 3358
     iput p4, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mCallingUid:I
 
-    .line 3359
     return-void
 .end method
 
@@ -56,18 +47,14 @@
         }
     .end annotation
 
-    .line 3363
     iget-object v0, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$4600(Lcom/android/server/StorageManagerService;)V
 
-    .line 3365
     invoke-virtual {p0}, Lcom/android/server/StorageManagerService$MountObbAction;->getObbInfo()Landroid/content/res/ObbInfo;
 
     move-result-object v0
 
-    .line 3367
-    .local v0, "obbInfo":Landroid/content/res/ObbInfo;
     iget-object v1, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     iget-object v2, v0, Landroid/content/res/ObbInfo;->packageName:Ljava/lang/String;
@@ -80,7 +67,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 3373
     iget-object v1, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v1}, Lcom/android/server/StorageManagerService;->access$4200(Lcom/android/server/StorageManagerService;)Ljava/util/Map;
@@ -89,7 +75,6 @@
 
     monitor-enter v1
 
-    .line 3374
     :try_start_0
     iget-object v2, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
@@ -105,34 +90,22 @@
 
     move-result v2
 
-    .line 3375
-    .local v2, "isMounted":Z
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 3376
     if-nez v2, :cond_1
 
-    .line 3383
     iget-object v1, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mKey:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 3384
     const-string/jumbo v1, "none"
 
-    .line 3385
-    .local v1, "hashedKey":Ljava/lang/String;
     const-string v3, ""
 
-    .line 3385
-    .local v3, "binderKey":Ljava/lang/String;
     goto :goto_0
 
-    .line 3388
-    .end local v1    # "hashedKey":Ljava/lang/String;
-    .end local v3    # "binderKey":Ljava/lang/String;
     :cond_0
     :try_start_1
     const-string v1, "PBKDF2WithHmacSHA1"
@@ -141,8 +114,6 @@
 
     move-result-object v1
 
-    .line 3390
-    .local v1, "factory":Ljavax/crypto/SecretKeyFactory;
     new-instance v3, Ljavax/crypto/spec/PBEKeySpec;
 
     iget-object v4, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mKey:Ljava/lang/String;
@@ -159,14 +130,10 @@
 
     invoke-direct {v3, v4, v5, v6, v7}, Ljavax/crypto/spec/PBEKeySpec;-><init>([C[BII)V
 
-    .line 3392
-    .local v3, "ks":Ljava/security/spec/KeySpec;
     invoke-virtual {v1, v3}, Ljavax/crypto/SecretKeyFactory;->generateSecret(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;
 
     move-result-object v4
 
-    .line 3393
-    .local v4, "key":Ljavax/crypto/SecretKey;
     new-instance v5, Ljava/math/BigInteger;
 
     invoke-interface {v4}, Ljavax/crypto/SecretKey;->getEncoded()[B
@@ -175,8 +142,6 @@
 
     invoke-direct {v5, v6}, Ljava/math/BigInteger;-><init>([B)V
 
-    .line 3394
-    .local v5, "bi":Ljava/math/BigInteger;
     const/16 v6, 0x10
 
     invoke-virtual {v5, v6}, Ljava/math/BigInteger;->toString(I)Ljava/lang/String;
@@ -185,27 +150,14 @@
     :try_end_1
     .catch Ljava/security/GeneralSecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 3395
-    .local v6, "hashedKey":Ljava/lang/String;
     nop
 
-    .line 3395
-    .end local v1    # "factory":Ljavax/crypto/SecretKeyFactory;
-    .end local v3    # "ks":Ljava/security/spec/KeySpec;
-    .end local v4    # "key":Ljavax/crypto/SecretKey;
-    .end local v5    # "bi":Ljava/math/BigInteger;
     move-object v3, v6
 
-    .line 3398
-    .local v3, "binderKey":Ljava/lang/String;
     nop
 
-    .line 3397
     move-object v1, v6
 
-    .line 3402
-    .end local v6    # "hashedKey":Ljava/lang/String;
-    .local v1, "hashedKey":Ljava/lang/String;
     :goto_0
     :try_start_2
     iget-object v4, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mObbState:Lcom/android/server/StorageManagerService$ObbState;
@@ -230,7 +182,6 @@
 
     iput-object v5, v4, Lcom/android/server/StorageManagerService$ObbState;->volId:Ljava/lang/String;
 
-    .line 3404
     iget-object v4, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v4}, Lcom/android/server/StorageManagerService;->access$1200(Lcom/android/server/StorageManagerService;)Landroid/os/IVold;
@@ -247,7 +198,6 @@
 
     invoke-interface {v4, v5, v6, v7}, Landroid/os/IVold;->mount(Ljava/lang/String;II)V
 
-    .line 3409
     iget-object v4, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v4}, Lcom/android/server/StorageManagerService;->access$4200(Lcom/android/server/StorageManagerService;)Ljava/util/Map;
@@ -258,7 +208,6 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 3410
     :try_start_3
     iget-object v5, p0, Lcom/android/server/StorageManagerService$MountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
@@ -266,12 +215,10 @@
 
     invoke-static {v5, v6}, Lcom/android/server/StorageManagerService;->access$4800(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;)V
 
-    .line 3411
     monitor-exit v4
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 3413
     const/4 v4, 0x1
 
     :try_start_4
@@ -279,13 +226,10 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 3416
     nop
 
-    .line 3417
     return-void
 
-    .line 3411
     :catchall_0
     move-exception v5
 
@@ -299,12 +243,9 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
 
-    .line 3414
     :catch_0
     move-exception v4
 
-    .line 3415
-    .local v4, "e":Ljava/lang/Exception;
     new-instance v5, Lcom/android/server/StorageManagerService$ObbException;
 
     const/16 v6, 0x15
@@ -313,15 +254,9 @@
 
     throw v5
 
-    .line 3396
-    .end local v1    # "hashedKey":Ljava/lang/String;
-    .end local v3    # "binderKey":Ljava/lang/String;
-    .end local v4    # "e":Ljava/lang/Exception;
     :catch_1
     move-exception v1
 
-    .line 3397
-    .local v1, "e":Ljava/security/GeneralSecurityException;
     new-instance v3, Lcom/android/server/StorageManagerService$ObbException;
 
     const/16 v4, 0x14
@@ -330,8 +265,6 @@
 
     throw v3
 
-    .line 3377
-    .end local v1    # "e":Ljava/security/GeneralSecurityException;
     :cond_1
     new-instance v1, Lcom/android/server/StorageManagerService$ObbException;
 
@@ -357,8 +290,6 @@
 
     throw v1
 
-    .line 3375
-    .end local v2    # "isMounted":Z
     :catchall_1
     move-exception v2
 
@@ -369,7 +300,6 @@
 
     throw v2
 
-    .line 3368
     :cond_2
     new-instance v1, Lcom/android/server/StorageManagerService$ObbException;
 
@@ -407,28 +337,22 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 3421
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3422
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "MountObbAction{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3423
     iget-object v1, p0, Lcom/android/server/StorageManagerService$MountObbAction;->mObbState:Lcom/android/server/StorageManagerService$ObbState;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 3424
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3425
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

@@ -34,7 +34,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 891
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,9 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/locksettings/LockSettingsStorage$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/locksettings/LockSettingsStorage$1;
 
-    .line 891
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;-><init>()V
 
     return-void
@@ -54,26 +51,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 909
     instance-of v0, p1, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 910
     return v1
 
-    .line 911
     :cond_0
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;
 
-    .line 912
-    .local v0, "o":Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;
     iget v2, p0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->userId:I
 
     iget v3, v0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->userId:I
@@ -107,7 +98,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 917
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->key:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -127,19 +117,12 @@
 
 .method public set(ILjava/lang/String;I)Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;
     .locals 0
-    .param p1, "type"    # I
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 901
     iput p1, p0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->type:I
 
-    .line 902
     iput-object p2, p0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->key:Ljava/lang/String;
 
-    .line 903
     iput p3, p0, Lcom/android/server/locksettings/LockSettingsStorage$Cache$CacheKey;->userId:I
 
-    .line 904
     return-object p0
 .end method

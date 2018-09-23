@@ -21,20 +21,14 @@
 # direct methods
 .method public varargs constructor <init>(ILjava/lang/String;[Ljava/lang/Object;)V
     .locals 1
-    .param p1, "errorCode"    # I
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "args"    # [Ljava/lang/Object;
 
-    .line 744
     invoke-static {p2, p3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 745
     iput p1, p0, Landroid/net/dhcp/DhcpPacket$ParseException;->errorCode:I
 
-    .line 746
     return-void
 .end method

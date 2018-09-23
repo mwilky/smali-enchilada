@@ -66,15 +66,9 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager;)V
     .locals 3
-    .param p1, "handlerToSendKeyEventsToInputFilter"    # Landroid/os/Handler;
-    .param p2, "messageTypeForSendKeyEvent"    # I
-    .param p3, "lock"    # Ljava/lang/Object;
-    .param p4, "powerManager"    # Landroid/os/PowerManager;
 
-    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     new-instance v0, Landroid/util/Pools$SimplePool;
 
     const/16 v1, 0xa
@@ -83,28 +77,24 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventPool:Landroid/util/Pools$Pool;
 
-    .line 65
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
-    .line 86
     invoke-static {}, Landroid/view/InputEventConsistencyVerifier;->isInstrumentationEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 87
     new-instance v0, Landroid/view/InputEventConsistencyVerifier;
 
     const/4 v1, 0x0
 
     const-class v2, Lcom/android/server/accessibility/KeyEventDispatcher;
 
-    .line 88
     invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v2
@@ -115,23 +105,18 @@
 
     goto :goto_0
 
-    .line 90
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mSentEventsVerifier:Landroid/view/InputEventConsistencyVerifier;
 
-    .line 92
     :goto_0
     iput-object p1, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mHandlerToSendKeyEventsToInputFilter:Landroid/os/Handler;
 
-    .line 93
     iput p2, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mMessageTypeForSendKeyEvent:I
 
-    .line 94
     new-instance v0, Landroid/os/Handler;
 
-    .line 95
     invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
@@ -140,40 +125,26 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mKeyEventTimeoutHandler:Landroid/os/Handler;
 
-    .line 96
     iput-object p3, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mLock:Ljava/lang/Object;
 
-    .line 97
     iput-object p4, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPowerManager:Landroid/os/PowerManager;
 
-    .line 98
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "handlerToSendKeyEventsToInputFilter"    # Landroid/os/Handler;
-    .param p2, "messageTypeForSendKeyEvent"    # I
-    .param p3, "lock"    # Ljava/lang/Object;
-    .param p4, "powerManager"    # Landroid/os/PowerManager;
-    .param p5, "timeoutHandler"    # Landroid/os/Handler;
 
-    .line 108
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/accessibility/KeyEventDispatcher;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager;)V
 
-    .line 109
     iput-object p5, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mKeyEventTimeoutHandler:Landroid/os/Handler;
 
-    .line 110
     return-void
 .end method
 
 .method private obtainPendingEventLocked(Landroid/view/KeyEvent;I)Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     .locals 3
-    .param p1, "event"    # Landroid/view/KeyEvent;
-    .param p2, "policyFlags"    # I
 
-    .line 222
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventPool:Landroid/util/Pools$Pool;
 
     invoke-interface {v0}, Landroid/util/Pools$Pool;->acquire()Ljava/lang/Object;
@@ -182,11 +153,8 @@
 
     check-cast v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
-    .line 223
-    .local v0, "pendingEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     if-nez v0, :cond_0
 
-    .line 224
     new-instance v1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
     const/4 v2, 0x0
@@ -195,28 +163,22 @@
 
     move-object v0, v1
 
-    .line 226
     :cond_0
     iput-object p1, v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->event:Landroid/view/KeyEvent;
 
-    .line 227
     iput p2, v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->policyFlags:I
 
-    .line 228
     const/4 v1, 0x0
 
     iput v1, v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->referenceCount:I
 
-    .line 229
     iput-boolean v1, v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->handled:Z
 
-    .line 230
     return-object v0
 .end method
 
 .method private static removeEventFromListLocked(Ljava/util/List;I)Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     .locals 3
-    .param p1, "sequence"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -227,11 +189,8 @@
         }
     .end annotation
 
-    .line 236
-    .local p0, "listOfEvents":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -239,15 +198,12 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 237
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
-    .line 238
-    .local v1, "pendingKeyEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     iget-object v2, v1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v2}, Landroid/view/KeyEvent;->getSequenceNumber()I
@@ -256,21 +212,15 @@
 
     if-ne v2, p1, :cond_0
 
-    .line 246
     invoke-interface {p0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 247
     return-object v1
 
-    .line 236
-    .end local v1    # "pendingKeyEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 250
-    .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x0
 
@@ -279,9 +229,7 @@
 
 .method private removeReferenceToPendingEventLocked(Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;)Z
     .locals 6
-    .param p1, "pendingEvent"    # Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
-    .line 258
     iget v0, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->referenceCount:I
 
     const/4 v1, 0x1
@@ -294,33 +242,27 @@
 
     if-lez v0, :cond_0
 
-    .line 259
     return v2
 
-    .line 261
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mKeyEventTimeoutHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 262
     iget-boolean v0, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->handled:Z
 
     if-nez v0, :cond_2
 
-    .line 267
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mSentEventsVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     if-eqz v0, :cond_1
 
-    .line 268
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mSentEventsVerifier:Landroid/view/InputEventConsistencyVerifier;
 
     iget-object v3, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v0, v3, v2}, Landroid/view/InputEventConsistencyVerifier;->onKeyEvent(Landroid/view/KeyEvent;I)V
 
-    .line 270
     :cond_1
     iget v0, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->policyFlags:I
 
@@ -328,39 +270,30 @@
 
     or-int/2addr v0, v3
 
-    .line 271
-    .local v0, "policyFlags":I
     iget-object v3, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mHandlerToSendKeyEventsToInputFilter:Landroid/os/Handler;
 
     iget v4, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mMessageTypeForSendKeyEvent:I
 
     iget-object v5, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->event:Landroid/view/KeyEvent;
 
-    .line 272
     invoke-virtual {v3, v4, v0, v2, v5}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 273
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 274
-    .end local v0    # "policyFlags":I
     goto :goto_0
 
-    .line 275
     :cond_2
     iget-object v0, p1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->event:Landroid/view/KeyEvent;
 
     invoke-virtual {v0}, Landroid/view/KeyEvent;->recycle()V
 
-    .line 277
     :goto_0
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventPool:Landroid/util/Pools$Pool;
 
     invoke-interface {v0, p1}, Landroid/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
-    .line 278
     return v1
 .end method
 
@@ -368,14 +301,11 @@
 # virtual methods
 .method public flush(Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;)V
     .locals 4
-    .param p1, "keyEventFilter"    # Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;
 
-    .line 190
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 191
     :try_start_0
     iget-object v1, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
@@ -385,14 +315,10 @@
 
     check-cast v1, Ljava/util/List;
 
-    .line 192
-    .local v1, "pendingEvents":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     if-eqz v1, :cond_1
 
-    .line 193
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -400,39 +326,28 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 194
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
-    .line 195
-    .local v3, "pendingEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     invoke-direct {p0, v3}, Lcom/android/server/accessibility/KeyEventDispatcher;->removeReferenceToPendingEventLocked(Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;)Z
 
-    .line 193
-    .end local v3    # "pendingEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 197
-    .end local v2    # "i":I
     :cond_0
     iget-object v2, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
     invoke-interface {v2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 199
-    .end local v1    # "pendingEvents":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     :cond_1
     monitor-exit v0
 
-    .line 200
     return-void
 
-    .line 199
     :catchall_0
     move-exception v1
 
@@ -445,16 +360,13 @@
 
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 6
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 204
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 205
     const-string v0, "KeyEventDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -475,24 +387,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
     const/4 v0, 0x0
 
     return v0
 
-    .line 208
     :cond_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
-    .line 209
-    .local v0, "pendingKeyEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     iget-object v2, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 210
     :try_start_0
     iget-object v3, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
@@ -517,38 +424,29 @@
 
     check-cast v4, Ljava/util/ArrayList;
 
-    .line 211
-    .local v4, "listForService":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 212
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/KeyEventDispatcher;->removeReferenceToPendingEventLocked(Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;)Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    .line 213
     goto :goto_1
 
-    .line 216
-    .end local v4    # "listForService":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     :cond_1
     goto :goto_0
 
-    .line 217
     :cond_2
     :goto_1
     monitor-exit v2
 
-    .line 218
     return v1
 
-    .line 217
     :catchall_0
     move-exception v1
 
@@ -561,8 +459,6 @@
 
 .method public notifyKeyEventLocked(Landroid/view/KeyEvent;ILjava/util/List;)Z
     .locals 8
-    .param p1, "event"    # Landroid/view/KeyEvent;
-    .param p2, "policyFlags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -575,26 +471,18 @@
         }
     .end annotation
 
-    .line 128
-    .local p3, "keyEventFilters":Ljava/util/List;, "Ljava/util/List<+Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;>;"
     const/4 v0, 0x0
 
-    .line 129
-    .local v0, "pendingKeyEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     invoke-static {p1}, Landroid/view/KeyEvent;->obtain(Landroid/view/KeyEvent;)Landroid/view/KeyEvent;
 
     move-result-object v1
 
-    .line 130
-    .local v1, "localClone":Landroid/view/KeyEvent;
     const/4 v2, 0x0
 
     move-object v3, v0
 
     move v0, v2
 
-    .local v0, "i":I
-    .local v3, "pendingKeyEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     :goto_0
     invoke-interface {p3}, Ljava/util/List;->size()I
 
@@ -604,15 +492,12 @@
 
     if-ge v0, v4, :cond_3
 
-    .line 131
     invoke-interface {p3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;
 
-    .line 132
-    .local v4, "keyEventFilter":Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;
     invoke-virtual {v1}, Landroid/view/KeyEvent;->getSequenceNumber()I
 
     move-result v6
@@ -623,15 +508,12 @@
 
     if-eqz v6, :cond_2
 
-    .line 133
     if-nez v3, :cond_0
 
-    .line 134
     invoke-direct {p0, v1, p2}, Lcom/android/server/accessibility/KeyEventDispatcher;->obtainPendingEventLocked(Landroid/view/KeyEvent;I)Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
 
     move-result-object v3
 
-    .line 136
     :cond_0
     iget-object v6, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
@@ -641,53 +523,39 @@
 
     check-cast v6, Ljava/util/ArrayList;
 
-    .line 137
-    .local v6, "pendingEventList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     if-nez v6, :cond_1
 
-    .line 138
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     move-object v6, v7
 
-    .line 139
     iget-object v7, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
     invoke-interface {v7, v4, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 141
     :cond_1
     invoke-virtual {v6, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 142
     iget v7, v3, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->referenceCount:I
 
     add-int/2addr v7, v5
 
     iput v7, v3, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->referenceCount:I
 
-    .line 130
-    .end local v4    # "keyEventFilter":Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;
-    .end local v6    # "pendingEventList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;>;"
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 146
-    .end local v0    # "i":I
     :cond_3
     if-nez v3, :cond_4
 
-    .line 147
     invoke-virtual {v1}, Landroid/view/KeyEvent;->recycle()V
 
-    .line 148
     return v2
 
-    .line 151
     :cond_4
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mKeyEventTimeoutHandler:Landroid/os/Handler;
 
@@ -695,34 +563,25 @@
 
     move-result-object v0
 
-    .line 153
-    .local v0, "message":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mKeyEventTimeoutHandler:Landroid/os/Handler;
 
     const-wide/16 v6, 0x1f4
 
     invoke-virtual {v2, v0, v6, v7}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 154
     return v5
 .end method
 
 .method public setOnKeyEventResult(Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;ZI)V
     .locals 9
-    .param p1, "keyEventFilter"    # Lcom/android/server/accessibility/KeyEventDispatcher$KeyEventFilter;
-    .param p2, "handled"    # Z
-    .param p3, "sequence"    # I
 
-    .line 165
     iget-object v0, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 166
     :try_start_0
     iget-object v1, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPendingEventsMap:Ljava/util/Map;
 
-    .line 167
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -733,29 +592,22 @@
 
     move-result-object v1
 
-    .line 168
-    .local v1, "pendingEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     if-eqz v1, :cond_1
 
-    .line 169
     if-eqz p2, :cond_0
 
     iget-boolean v2, v1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->handled:Z
 
     if-nez v2, :cond_0
 
-    .line 170
     iput-boolean p2, v1, Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;->handled:Z
 
-    .line 171
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 173
-    .local v2, "identity":J
     :try_start_1
     iget-object v4, p0, Lcom/android/server/accessibility/KeyEventDispatcher;->mPowerManager:Landroid/os/PowerManager;
 
@@ -773,14 +625,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 176
     :try_start_2
     invoke-static {v2, v3}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 177
     goto :goto_0
 
-    .line 176
     :catchall_0
     move-exception v4
 
@@ -788,21 +637,15 @@
 
     throw v4
 
-    .line 179
-    .end local v2    # "identity":J
     :cond_0
     :goto_0
     invoke-direct {p0, v1}, Lcom/android/server/accessibility/KeyEventDispatcher;->removeReferenceToPendingEventLocked(Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;)Z
 
-    .line 181
-    .end local v1    # "pendingEvent":Lcom/android/server/accessibility/KeyEventDispatcher$PendingKeyEvent;
     :cond_1
     monitor-exit v0
 
-    .line 182
     return-void
 
-    .line 181
     :catchall_1
     move-exception v1
 

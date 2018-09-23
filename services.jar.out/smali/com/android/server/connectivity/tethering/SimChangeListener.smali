@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 44
     const-class v0, Lcom/android/server/connectivity/tethering/SimChangeListener;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -27,11 +26,7 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/Runnable;)V
     .locals 6
-    .param p1, "ctx"    # Landroid/content/Context;
-    .param p2, "handler"    # Landroid/os/Handler;
-    .param p3, "onSimCardLoadedCallback"    # Ljava/lang/Runnable;
 
-    .line 48
     sget-object v1, Lcom/android/server/connectivity/tethering/SimChangeListener;->TAG:Ljava/lang/String;
 
     invoke-static {}, Lcom/android/server/connectivity/tethering/SimChangeListener;->makeIntentFilter()Landroid/content/IntentFilter;
@@ -50,14 +45,12 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/net/util/VersionedBroadcastListener;-><init>(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;Landroid/content/IntentFilter;Ljava/util/function/Consumer;)V
 
-    .line 49
     return-void
 .end method
 
 .method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
-    .line 43
     sget-object v0, Lcom/android/server/connectivity/tethering/SimChangeListener;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -65,7 +58,6 @@
 
 .method private static makeCallback(Ljava/lang/Runnable;)Ljava/util/function/Consumer;
     .locals 1
-    .param p0, "onSimCardLoadedCallback"    # Ljava/lang/Runnable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -77,7 +69,6 @@
         }
     .end annotation
 
-    .line 58
     new-instance v0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/connectivity/tethering/SimChangeListener$1;-><init>(Ljava/lang/Runnable;)V
@@ -88,17 +79,13 @@
 .method private static makeIntentFilter()Landroid/content/IntentFilter;
     .locals 2
 
-    .line 52
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 53
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 54
     return-object v0
 .end method

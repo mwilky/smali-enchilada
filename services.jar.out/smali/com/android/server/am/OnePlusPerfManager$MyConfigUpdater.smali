@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/OnePlusPerfManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusPerfManager;
 
-    .line 740
     iput-object p1, p0, Lcom/android/server/am/OnePlusPerfManager$MyConfigUpdater;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 1
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 743
     sget-boolean v0, Lcom/android/server/am/OnePlusPerfManager;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -49,12 +45,10 @@
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusPerfManager;->myLog(Ljava/lang/String;)V
 
-    .line 744
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/OnePlusPerfManager$MyConfigUpdater;->this$0:Lcom/android/server/am/OnePlusPerfManager;
 
     invoke-static {v0, p1}, Lcom/android/server/am/OnePlusPerfManager;->access$400(Lcom/android/server/am/OnePlusPerfManager;Lorg/json/JSONArray;)V
 
-    .line 745
     return-void
 .end method

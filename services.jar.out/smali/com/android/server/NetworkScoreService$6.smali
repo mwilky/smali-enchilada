@@ -40,9 +40,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkScoreService;Ljava/io/FileDescriptor;[Ljava/lang/String;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NetworkScoreService;
 
-    .line 911
     iput-object p1, p0, Lcom/android/server/NetworkScoreService$6;->this$0:Lcom/android/server/NetworkScoreService;
 
     iput-object p2, p0, Lcom/android/server/NetworkScoreService$6;->val$fd:Ljava/io/FileDescriptor;
@@ -60,10 +58,7 @@
 # virtual methods
 .method public accept(Landroid/net/INetworkScoreCache;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "networkScoreCache"    # Landroid/net/INetworkScoreCache;
-    .param p2, "cookie"    # Ljava/lang/Object;
 
-    .line 915
     :try_start_0
     invoke-interface {p1}, Landroid/net/INetworkScoreCache;->asBinder()Landroid/os/IBinder;
 
@@ -78,15 +73,11 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 918
     goto :goto_0
 
-    .line 916
     :catch_0
     move-exception v0
 
-    .line 917
-    .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Lcom/android/server/NetworkScoreService$6;->val$writer:Ljava/io/PrintWriter;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -105,8 +96,6 @@
 
     invoke-virtual {v1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 919
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -114,7 +103,6 @@
 .method public bridge synthetic accept(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 911
     check-cast p1, Landroid/net/INetworkScoreCache;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/server/NetworkScoreService$6;->accept(Landroid/net/INetworkScoreCache;Ljava/lang/Object;)V

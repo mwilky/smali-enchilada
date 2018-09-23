@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/ShortcutService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/ShortcutService;
 
-    .line 2875
     iput-object p1, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 11
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 2878
     const-string v0, "android.intent.extra.user_handle"
 
     const/16 v1, -0x2710
@@ -47,11 +42,8 @@
 
     move-result v0
 
-    .line 2879
-    .local v0, "userId":I
     if-ne v0, v1, :cond_0
 
-    .line 2880
     const-string v1, "ShortcutService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -70,25 +62,19 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2881
     return-void
 
-    .line 2884
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2888
-    .local v1, "action":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v2}, Lcom/android/server/pm/ShortcutService;->injectClearCallingIdentity()J
 
     move-result-wide v2
 
-    .line 2890
-    .local v2, "token":J
     :try_start_0
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -101,7 +87,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2891
     :try_start_1
     iget-object v5, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -111,20 +96,16 @@
 
     if-nez v5, :cond_1
 
-    .line 2896
     monitor-exit v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2943
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, v2, v3}, Lcom/android/server/pm/ShortcutService;->injectRestoreCallingIdentity(J)V
 
-    .line 2896
     return-void
 
-    .line 2901
     :cond_1
     :try_start_2
     iget-object v5, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
@@ -133,17 +114,12 @@
 
     move-result-object v5
 
-    .line 2902
-    .local v5, "user":Lcom/android/server/pm/ShortcutUser;
     invoke-virtual {v5}, Lcom/android/server/pm/ShortcutUser;->clearLauncher()V
 
-    .line 2903
-    .end local v5    # "user":Lcom/android/server/pm/ShortcutUser;
     monitor-exit v4
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2904
     :try_start_3
     const-string v4, "android.intent.action.ACTION_PREFERRED_ACTIVITY_CHANGED"
 
@@ -156,23 +132,18 @@
 
     if-eqz v4, :cond_2
 
-    .line 2943
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, v2, v3}, Lcom/android/server/pm/ShortcutService;->injectRestoreCallingIdentity(J)V
 
-    .line 2906
     return-void
 
-    .line 2909
     :cond_2
     :try_start_4
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v4
 
-    .line 2910
-    .local v4, "intentUri":Landroid/net/Uri;
     if-eqz v4, :cond_3
 
     invoke-virtual {v4}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
@@ -181,16 +152,12 @@
 
     goto :goto_0
 
-    .line 2911
     :cond_3
     const/4 v5, 0x0
 
-    .line 2912
-    .local v5, "packageName":Ljava/lang/String;
     :goto_0
     if-nez v5, :cond_4
 
-    .line 2913
     const-string v6, "ShortcutService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -212,15 +179,12 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 2943
     iget-object v6, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v6, v2, v3}, Lcom/android/server/pm/ShortcutService;->injectRestoreCallingIdentity(J)V
 
-    .line 2914
     return-void
 
-    .line 2917
     :cond_4
     :try_start_5
     const-string v6, "android.intent.extra.REPLACING"
@@ -231,8 +195,6 @@
 
     move-result v6
 
-    .line 2919
-    .local v6, "replacing":Z
     const/4 v8, -0x1
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -314,60 +276,40 @@
     :goto_2
     packed-switch v7, :pswitch_data_0
 
-    .end local v4    # "intentUri":Landroid/net/Uri;
-    .end local v5    # "packageName":Ljava/lang/String;
-    .end local v6    # "replacing":Z
     goto :goto_3
 
-    .line 2937
-    .restart local v4    # "intentUri":Landroid/net/Uri;
-    .restart local v5    # "packageName":Ljava/lang/String;
-    .restart local v6    # "replacing":Z
     :pswitch_0
     iget-object v7, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v7, v5, v0}, Lcom/android/server/pm/ShortcutService;->access$1200(Lcom/android/server/pm/ShortcutService;Ljava/lang/String;I)V
 
-    .end local v4    # "intentUri":Landroid/net/Uri;
-    .end local v5    # "packageName":Ljava/lang/String;
-    .end local v6    # "replacing":Z
     goto :goto_3
 
-    .line 2933
-    .restart local v4    # "intentUri":Landroid/net/Uri;
-    .restart local v5    # "packageName":Ljava/lang/String;
-    .restart local v6    # "replacing":Z
     :pswitch_1
     iget-object v7, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v7, v5, v0}, Lcom/android/server/pm/ShortcutService;->access$1100(Lcom/android/server/pm/ShortcutService;Ljava/lang/String;I)V
 
-    .line 2935
     goto :goto_3
 
-    .line 2928
     :pswitch_2
     if-nez v6, :cond_b
 
-    .line 2929
     iget-object v7, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v7, v5, v0}, Lcom/android/server/pm/ShortcutService;->access$1000(Lcom/android/server/pm/ShortcutService;Ljava/lang/String;I)V
 
     goto :goto_3
 
-    .line 2921
     :pswitch_3
     if-eqz v6, :cond_a
 
-    .line 2922
     iget-object v7, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-static {v7, v5, v0}, Lcom/android/server/pm/ShortcutService;->access$800(Lcom/android/server/pm/ShortcutService;Ljava/lang/String;I)V
 
     goto :goto_3
 
-    .line 2924
     :cond_a
     iget-object v7, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -376,13 +318,8 @@
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 2926
     goto :goto_3
 
-    .line 2903
-    .end local v4    # "intentUri":Landroid/net/Uri;
-    .end local v5    # "packageName":Ljava/lang/String;
-    .end local v6    # "replacing":Z
     :catchall_0
     move-exception v5
 
@@ -397,18 +334,14 @@
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 2943
     :catchall_1
     move-exception v4
 
     goto :goto_4
 
-    .line 2940
     :catch_0
     move-exception v4
 
-    .line 2941
-    .local v4, "e":Ljava/lang/Exception;
     :try_start_8
     iget-object v5, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
@@ -418,21 +351,16 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 2943
-    .end local v4    # "e":Ljava/lang/Exception;
     :cond_b
     :goto_3
     iget-object v4, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 
     invoke-virtual {v4, v2, v3}, Lcom/android/server/pm/ShortcutService;->injectRestoreCallingIdentity(J)V
 
-    .line 2944
     nop
 
-    .line 2945
     return-void
 
-    .line 2943
     :goto_4
     iget-object v5, p0, Lcom/android/server/pm/ShortcutService$5;->this$0:Lcom/android/server/pm/ShortcutService;
 

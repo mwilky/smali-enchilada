@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/dreams/DreamController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/dreams/DreamController;
 
-    .line 79
     iput-object p1, p0, Lcom/android/server/dreams/DreamController$1;->this$0:Lcom/android/server/dreams/DreamController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 82
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$1;->this$0:Lcom/android/server/dreams/DreamController;
 
     invoke-static {v0}, Lcom/android/server/dreams/DreamController;->access$000(Lcom/android/server/dreams/DreamController;)Lcom/android/server/dreams/DreamController$DreamRecord;
@@ -68,21 +65,18 @@
 
     if-nez v0, :cond_0
 
-    .line 83
     const-string v0, "DreamController"
 
     const-string v1, "Bound dream did not connect in the time allotted"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
     iget-object v0, p0, Lcom/android/server/dreams/DreamController$1;->this$0:Lcom/android/server/dreams/DreamController;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/server/dreams/DreamController;->stopDream(Z)V
 
-    .line 86
     :cond_0
     return-void
 .end method

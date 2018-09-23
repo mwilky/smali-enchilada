@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/ScheduleConditionProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/ScheduleConditionProvider;
 
-    .line 330
     iput-object p1, p0, Lcom/android/server/notification/ScheduleConditionProvider$1;->this$0:Lcom/android/server/notification/ScheduleConditionProvider;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 333
     sget-boolean v0, Lcom/android/server/notification/ScheduleConditionProvider;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -65,7 +60,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
     :cond_0
     const-string v0, "android.intent.action.TIMEZONE_CHANGED"
 
@@ -79,7 +73,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 335
     iget-object v0, p0, Lcom/android/server/notification/ScheduleConditionProvider$1;->this$0:Lcom/android/server/notification/ScheduleConditionProvider;
 
     invoke-static {v0}, Lcom/android/server/notification/ScheduleConditionProvider;->access$000(Lcom/android/server/notification/ScheduleConditionProvider;)Landroid/util/ArrayMap;
@@ -88,7 +81,6 @@
 
     monitor-enter v0
 
-    .line 336
     :try_start_0
     iget-object v1, p0, Lcom/android/server/notification/ScheduleConditionProvider$1;->this$0:Lcom/android/server/notification/ScheduleConditionProvider;
 
@@ -117,8 +109,6 @@
 
     check-cast v2, Landroid/net/Uri;
 
-    .line 337
-    .local v2, "conditionId":Landroid/net/Uri;
     iget-object v3, p0, Lcom/android/server/notification/ScheduleConditionProvider$1;->this$0:Lcom/android/server/notification/ScheduleConditionProvider;
 
     invoke-static {v3}, Lcom/android/server/notification/ScheduleConditionProvider;->access$000(Lcom/android/server/notification/ScheduleConditionProvider;)Landroid/util/ArrayMap;
@@ -131,11 +121,8 @@
 
     check-cast v3, Landroid/service/notification/ScheduleCalendar;
 
-    .line 338
-    .local v3, "cal":Landroid/service/notification/ScheduleCalendar;
     if-eqz v3, :cond_1
 
-    .line 339
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v4
@@ -146,13 +133,9 @@
 
     invoke-virtual {v3, v4}, Landroid/service/notification/ScheduleCalendar;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 341
-    .end local v2    # "conditionId":Landroid/net/Uri;
-    .end local v3    # "cal":Landroid/service/notification/ScheduleCalendar;
     :cond_1
     goto :goto_0
 
-    .line 342
     :cond_2
     monitor-exit v0
 
@@ -167,13 +150,11 @@
 
     throw v1
 
-    .line 344
     :cond_3
     :goto_1
     iget-object v0, p0, Lcom/android/server/notification/ScheduleConditionProvider$1;->this$0:Lcom/android/server/notification/ScheduleConditionProvider;
 
     invoke-static {v0}, Lcom/android/server/notification/ScheduleConditionProvider;->access$100(Lcom/android/server/notification/ScheduleConditionProvider;)V
 
-    .line 345
     return-void
 .end method

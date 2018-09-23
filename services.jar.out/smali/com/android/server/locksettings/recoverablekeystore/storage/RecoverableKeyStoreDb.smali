@@ -22,10 +22,7 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Throwable;
-    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
-    .line 159
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -51,35 +48,28 @@
 
 .method private constructor <init>(Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;)V
     .locals 1
-    .param p1, "keyStoreDbHelper"    # Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
-    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
     iput-object p1, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
-    .line 82
     new-instance v0, Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
 
     invoke-direct {v0}, Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mTestOnlyInsecureCertificateHelper:Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
 
-    .line 83
     return-void
 .end method
 
 .method private static decodeCertPath([B)Ljava/security/cert/CertPath;
     .locals 3
-    .param p0, "bytes"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/cert/CertificateException;
         }
     .end annotation
 
-    .line 1214
     :try_start_0
     const-string v0, "X.509"
 
@@ -89,14 +79,10 @@
     :try_end_0
     .catch Ljava/security/cert/CertificateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1218
-    .local v0, "certFactory":Ljava/security/cert/CertificateFactory;
     nop
 
-    .line 1217
     nop
 
-    .line 1219
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v1, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
@@ -109,13 +95,9 @@
 
     return-object v1
 
-    .line 1215
-    .end local v0    # "certFactory":Ljava/security/cert/CertificateFactory;
     :catch_0
     move-exception v0
 
-    .line 1217
-    .local v0, "e":Ljava/security/cert/CertificateException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -125,20 +107,16 @@
 
 .method private static decodeX509Key([B)Ljava/security/PublicKey;
     .locals 3
-    .param p0, "keyBytes"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/spec/InvalidKeySpecException;
         }
     .end annotation
 
-    .line 1201
     new-instance v0, Ljava/security/spec/X509EncodedKeySpec;
 
     invoke-direct {v0, p0}, Ljava/security/spec/X509EncodedKeySpec;-><init>([B)V
 
-    .line 1203
-    .local v0, "publicKeySpec":Ljava/security/spec/X509EncodedKeySpec;
     :try_start_0
     const-string v1, "EC"
 
@@ -154,12 +132,9 @@
 
     return-object v1
 
-    .line 1204
     :catch_0
     move-exception v1
 
-    .line 1206
-    .local v1, "e":Ljava/security/NoSuchAlgorithmException;
     new-instance v2, Ljava/lang/RuntimeException;
 
     invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -169,24 +144,17 @@
 
 .method private ensureRecoveryServiceMetadataEntryExists(II)V
     .locals 5
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 1170
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 1171
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1172
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "user_id"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -195,7 +163,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1173
     const-string/jumbo v2, "uid"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -204,7 +171,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1174
     const-string/jumbo v2, "recovery_service_metadata"
 
     const/4 v3, 0x0
@@ -213,31 +179,22 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
 
-    .line 1176
     return-void
 .end method
 
 .method private ensureRootOfTrustEntryExists(IILjava/lang/String;)V
     .locals 5
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
 
-    .line 1183
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 1184
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1185
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "user_id"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -246,7 +203,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1186
     const-string/jumbo v2, "uid"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -255,12 +211,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1187
     const-string/jumbo v2, "root_alias"
 
     invoke-virtual {v1, v2, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1188
     const-string/jumbo v2, "root_of_trust"
 
     const/4 v3, 0x0
@@ -269,17 +223,12 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
 
-    .line 1190
     return-void
 .end method
 
 .method private getBytes(IILjava/lang/String;)[B
     .locals 17
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "key"    # Ljava/lang/String;
 
-    .line 923
     move-object/from16 v1, p3
 
     move-object/from16 v2, p0
@@ -290,8 +239,6 @@
 
     move-result-object v11
 
-    .line 925
-    .local v11, "db":Landroid/database/sqlite/SQLiteDatabase;
     const/4 v0, 0x4
 
     new-array v5, v0, [Ljava/lang/String;
@@ -318,12 +265,8 @@
 
     aput-object v1, v5, v0
 
-    .line 930
-    .local v5, "projection":[Ljava/lang/String;
     const-string/jumbo v15, "user_id = ? AND uid = ?"
 
-    .line 933
-    .local v15, "selection":Ljava/lang/String;
     new-array v7, v14, [Ljava/lang/String;
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -338,8 +281,6 @@
 
     aput-object v3, v7, v13
 
-    .line 936
-    .local v7, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v4, "recovery_service_metadata"
 
     const/4 v8, 0x0
@@ -356,11 +297,8 @@
 
     move-result-object v3
 
-    .line 935
-    .local v3, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 945
     const/4 v4, 0x0
 
     :try_start_0
@@ -371,27 +309,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 946
-    .local v6, "count":I
     if-nez v6, :cond_1
 
-    .line 947
     nop
 
-    .line 963
     if-eqz v3, :cond_0
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 947
     :cond_0
     return-object v4
 
-    .line 949
     :cond_1
     if-le v6, v13, :cond_3
 
-    .line 950
     :try_start_1
     const-string v8, "RecoverableKeyStoreDb"
 
@@ -401,7 +332,6 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 953
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v16
@@ -420,41 +350,32 @@
 
     aput-object v12, v0, v14
 
-    .line 951
     invoke-static {v9, v10, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 950
     invoke-static {v8, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 954
     nop
 
-    .line 963
     if-eqz v3, :cond_2
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 954
     :cond_2
     return-object v4
 
-    .line 956
     :cond_3
     :try_start_2
     invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 957
     invoke-interface {v3, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 958
-    .local v0, "idx":I
     invoke-interface {v3, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v8
@@ -464,19 +385,15 @@
 
     if-eqz v8, :cond_5
 
-    .line 959
     nop
 
-    .line 963
     if-eqz v3, :cond_4
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 959
     :cond_4
     return-object v4
 
-    .line 961
     :cond_5
     :try_start_3
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getBlob(I)[B
@@ -486,24 +403,18 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 963
     if-eqz v3, :cond_6
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 961
     :cond_6
     return-object v8
 
-    .line 963
-    .end local v0    # "idx":I
-    .end local v6    # "count":I
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 935
     :catch_0
     move-exception v0
 
@@ -514,7 +425,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 963
     :goto_0
     if-eqz v3, :cond_7
 
@@ -526,14 +436,9 @@
 
 .method private getBytes(IILjava/lang/String;Ljava/lang/String;)[B
     .locals 18
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "key"    # Ljava/lang/String;
 
     move-object/from16 v1, p0
 
-    .line 1003
     move-object/from16 v2, p4
 
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mTestOnlyInsecureCertificateHelper:Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
@@ -544,17 +449,12 @@
 
     move-result-object v3
 
-    .line 1004
-    .end local p3    # "rootAlias":Ljava/lang/String;
-    .local v3, "rootAlias":Ljava/lang/String;
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v12
 
-    .line 1006
-    .local v12, "db":Landroid/database/sqlite/SQLiteDatabase;
     const/4 v0, 0x5
 
     new-array v6, v0, [Ljava/lang/String;
@@ -587,12 +487,8 @@
 
     aput-object v2, v6, v0
 
-    .line 1012
-    .local v6, "projection":[Ljava/lang/String;
     const-string/jumbo v16, "user_id = ? AND uid = ? AND root_alias = ?"
 
-    .line 1016
-    .local v16, "selection":Ljava/lang/String;
     new-array v8, v11, [Ljava/lang/String;
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -609,8 +505,6 @@
 
     aput-object v3, v8, v15
 
-    .line 1019
-    .local v8, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v5, "root_of_trust"
 
     const/4 v9, 0x0
@@ -631,11 +525,8 @@
 
     move-result-object v4
 
-    .line 1018
-    .local v4, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 1028
     const/4 v5, 0x0
 
     :try_start_0
@@ -646,27 +537,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1029
-    .local v0, "count":I
     if-nez v0, :cond_1
 
-    .line 1030
     nop
 
-    .line 1046
     if-eqz v4, :cond_0
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1030
     :cond_0
     return-object v5
 
-    .line 1032
     :cond_1
     if-le v0, v14, :cond_3
 
-    .line 1033
     :try_start_1
     const-string v7, "RecoverableKeyStoreDb"
 
@@ -676,7 +560,6 @@
 
     new-array v11, v15, [Ljava/lang/Object;
 
-    .line 1036
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -697,41 +580,32 @@
 
     aput-object v13, v11, v14
 
-    .line 1034
     invoke-static {v9, v10, v11}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1033
     invoke-static {v7, v9}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1037
     nop
 
-    .line 1046
     if-eqz v4, :cond_2
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1037
     :cond_2
     return-object v5
 
-    .line 1039
     :cond_3
     :try_start_2
     invoke-interface {v4}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 1040
     invoke-interface {v4, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 1041
-    .local v7, "idx":I
     invoke-interface {v4, v7}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v9
@@ -741,19 +615,15 @@
 
     if-eqz v9, :cond_5
 
-    .line 1042
     nop
 
-    .line 1046
     if-eqz v4, :cond_4
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1042
     :cond_4
     return-object v5
 
-    .line 1044
     :cond_5
     :try_start_3
     invoke-interface {v4, v7}, Landroid/database/Cursor;->getBlob(I)[B
@@ -763,24 +633,18 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1046
     if-eqz v4, :cond_6
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1044
     :cond_6
     return-object v9
 
-    .line 1046
-    .end local v0    # "count":I
-    .end local v7    # "idx":I
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 1018
     :catch_0
     move-exception v0
 
@@ -791,7 +655,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1046
     :goto_0
     if-eqz v4, :cond_7
 
@@ -803,11 +666,7 @@
 
 .method private getLong(IILjava/lang/String;)Ljava/lang/Long;
     .locals 17
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "key"    # Ljava/lang/String;
 
-    .line 843
     move-object/from16 v1, p3
 
     move-object/from16 v2, p0
@@ -818,8 +677,6 @@
 
     move-result-object v11
 
-    .line 845
-    .local v11, "db":Landroid/database/sqlite/SQLiteDatabase;
     const/4 v0, 0x4
 
     new-array v5, v0, [Ljava/lang/String;
@@ -846,12 +703,8 @@
 
     aput-object v1, v5, v0
 
-    .line 850
-    .local v5, "projection":[Ljava/lang/String;
     const-string/jumbo v15, "user_id = ? AND uid = ?"
 
-    .line 853
-    .local v15, "selection":Ljava/lang/String;
     new-array v7, v14, [Ljava/lang/String;
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -866,8 +719,6 @@
 
     aput-object v3, v7, v13
 
-    .line 856
-    .local v7, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v4, "recovery_service_metadata"
 
     const/4 v8, 0x0
@@ -884,11 +735,8 @@
 
     move-result-object v3
 
-    .line 855
-    .local v3, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 865
     const/4 v4, 0x0
 
     :try_start_0
@@ -899,27 +747,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 866
-    .local v6, "count":I
     if-nez v6, :cond_1
 
-    .line 867
     nop
 
-    .line 883
     if-eqz v3, :cond_0
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 867
     :cond_0
     return-object v4
 
-    .line 869
     :cond_1
     if-le v6, v13, :cond_3
 
-    .line 870
     :try_start_1
     const-string v8, "RecoverableKeyStoreDb"
 
@@ -929,7 +770,6 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 873
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v16
@@ -948,41 +788,32 @@
 
     aput-object v12, v0, v14
 
-    .line 871
     invoke-static {v9, v10, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 870
     invoke-static {v8, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 874
     nop
 
-    .line 883
     if-eqz v3, :cond_2
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 874
     :cond_2
     return-object v4
 
-    .line 876
     :cond_3
     :try_start_2
     invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 877
     invoke-interface {v3, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 878
-    .local v0, "idx":I
     invoke-interface {v3, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v8
@@ -992,19 +823,15 @@
 
     if-eqz v8, :cond_5
 
-    .line 879
     nop
 
-    .line 883
     if-eqz v3, :cond_4
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 879
     :cond_4
     return-object v4
 
-    .line 881
     :cond_5
     :try_start_3
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getLong(I)J
@@ -1018,24 +845,18 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 883
     if-eqz v3, :cond_6
 
     invoke-static {v4, v3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 881
     :cond_6
     return-object v8
 
-    .line 883
-    .end local v0    # "idx":I
-    .end local v6    # "count":I
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 855
     :catch_0
     move-exception v0
 
@@ -1046,7 +867,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 883
     :goto_0
     if-eqz v3, :cond_7
 
@@ -1058,14 +878,9 @@
 
 .method private getLong(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/Long;
     .locals 18
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "key"    # Ljava/lang/String;
 
     move-object/from16 v1, p0
 
-    .line 1089
     move-object/from16 v2, p4
 
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mTestOnlyInsecureCertificateHelper:Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
@@ -1076,17 +891,12 @@
 
     move-result-object v3
 
-    .line 1090
-    .end local p3    # "rootAlias":Ljava/lang/String;
-    .local v3, "rootAlias":Ljava/lang/String;
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v12
 
-    .line 1092
-    .local v12, "db":Landroid/database/sqlite/SQLiteDatabase;
     const/4 v0, 0x5
 
     new-array v6, v0, [Ljava/lang/String;
@@ -1119,12 +929,8 @@
 
     aput-object v2, v6, v0
 
-    .line 1098
-    .local v6, "projection":[Ljava/lang/String;
     const-string/jumbo v16, "user_id = ? AND uid = ? AND root_alias = ?"
 
-    .line 1102
-    .local v16, "selection":Ljava/lang/String;
     new-array v8, v11, [Ljava/lang/String;
 
     invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -1141,8 +947,6 @@
 
     aput-object v3, v8, v15
 
-    .line 1105
-    .local v8, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v5, "root_of_trust"
 
     const/4 v9, 0x0
@@ -1163,11 +967,8 @@
 
     move-result-object v4
 
-    .line 1104
-    .local v4, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 1114
     const/4 v5, 0x0
 
     :try_start_0
@@ -1178,27 +979,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1115
-    .local v0, "count":I
     if-nez v0, :cond_1
 
-    .line 1116
     nop
 
-    .line 1132
     if-eqz v4, :cond_0
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1116
     :cond_0
     return-object v5
 
-    .line 1118
     :cond_1
     if-le v0, v14, :cond_3
 
-    .line 1119
     :try_start_1
     const-string v7, "RecoverableKeyStoreDb"
 
@@ -1208,7 +1002,6 @@
 
     new-array v11, v15, [Ljava/lang/Object;
 
-    .line 1122
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -1229,41 +1022,32 @@
 
     aput-object v13, v11, v14
 
-    .line 1120
     invoke-static {v9, v10, v11}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1119
     invoke-static {v7, v9}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1123
     nop
 
-    .line 1132
     if-eqz v4, :cond_2
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1123
     :cond_2
     return-object v5
 
-    .line 1125
     :cond_3
     :try_start_2
     invoke-interface {v4}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 1126
     invoke-interface {v4, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 1127
-    .local v7, "idx":I
     invoke-interface {v4, v7}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v9
@@ -1273,19 +1057,15 @@
 
     if-eqz v9, :cond_5
 
-    .line 1128
     nop
 
-    .line 1132
     if-eqz v4, :cond_4
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1128
     :cond_4
     return-object v5
 
-    .line 1130
     :cond_5
     :try_start_3
     invoke-interface {v4, v7}, Landroid/database/Cursor;->getLong(I)J
@@ -1299,24 +1079,18 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1132
     if-eqz v4, :cond_6
 
     invoke-static {v5, v4}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1130
     :cond_6
     return-object v9
 
-    .line 1132
-    .end local v0    # "count":I
-    .end local v7    # "idx":I
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 1104
     :catch_0
     move-exception v0
 
@@ -1327,7 +1101,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1132
     :goto_0
     if-eqz v4, :cond_7
 
@@ -1339,10 +1112,7 @@
 
 .method static synthetic lambda$setRecoverySecretTypes$0(Ljava/util/StringJoiner;I)V
     .locals 1
-    .param p0, "joiner"    # Ljava/util/StringJoiner;
-    .param p1, "i"    # I
 
-    .line 545
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1354,25 +1124,19 @@
 
 .method public static newInstance(Landroid/content/Context;)Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 74
     new-instance v0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-direct {v0, p0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;-><init>(Landroid/content/Context;)V
 
-    .line 75
-    .local v0, "helper":Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->setWriteAheadLoggingEnabled(Z)V
 
-    .line 76
     const-wide/16 v1, 0x1e
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->setIdleConnectionTimeout(J)V
 
-    .line 77
     new-instance v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;
 
     invoke-direct {v1, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;-><init>(Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;)V
@@ -1382,41 +1146,27 @@
 
 .method private setBytes(IILjava/lang/String;Ljava/lang/String;[B)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "key"    # Ljava/lang/String;
-    .param p5, "value"    # [B
 
-    .line 1062
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mTestOnlyInsecureCertificateHelper:Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
 
     invoke-virtual {v0, p3}, Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;->getDefaultCertificateAliasIfEmpty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 1063
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 1064
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1065
-    .local v1, "values":Landroid/content/ContentValues;
     invoke-virtual {v1, p4, p5}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 1066
     const-string/jumbo v2, "user_id = ? AND uid = ? AND root_alias = ?"
 
-    .line 1070
-    .local v2, "selection":Ljava/lang/String;
     const/4 v3, 0x3
 
     new-array v3, v3, [Ljava/lang/String;
@@ -1441,11 +1191,8 @@
 
     aput-object p3, v3, v4
 
-    .line 1072
-    .local v3, "selectionArguments":[Ljava/lang/String;
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRootOfTrustEntryExists(IILjava/lang/String;)V
 
-    .line 1073
     const-string/jumbo v4, "root_of_trust"
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
@@ -1459,33 +1206,21 @@
 
 .method private setBytes(IILjava/lang/String;[B)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "value"    # [B
 
-    .line 978
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 979
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 980
-    .local v1, "values":Landroid/content/ContentValues;
     invoke-virtual {v1, p3, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 981
     const-string/jumbo v2, "user_id = ? AND uid = ?"
 
-    .line 984
-    .local v2, "selection":Ljava/lang/String;
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/String;
@@ -1506,11 +1241,8 @@
 
     aput-object v4, v3, v5
 
-    .line 986
-    .local v3, "selectionArguments":[Ljava/lang/String;
     invoke-direct {p0, p1, p2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRecoveryServiceMetadataEntryExists(II)V
 
-    .line 987
     const-string/jumbo v4, "recovery_service_metadata"
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
@@ -1524,37 +1256,25 @@
 
 .method private setLong(IILjava/lang/String;J)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "value"    # J
 
-    .line 899
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 900
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 901
-    .local v1, "values":Landroid/content/ContentValues;
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
     invoke-virtual {v1, p3, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 902
     const-string/jumbo v2, "user_id = ? AND uid = ?"
 
-    .line 905
-    .local v2, "selection":Ljava/lang/String;
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/String;
@@ -1575,11 +1295,8 @@
 
     aput-object v4, v3, v5
 
-    .line 907
-    .local v3, "selectionArguments":[Ljava/lang/String;
     invoke-direct {p0, p1, p2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRecoveryServiceMetadataEntryExists(II)V
 
-    .line 908
     const-string/jumbo v4, "recovery_service_metadata"
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
@@ -1593,45 +1310,31 @@
 
 .method private setLong(IILjava/lang/String;Ljava/lang/String;J)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "key"    # Ljava/lang/String;
-    .param p5, "value"    # J
 
-    .line 1149
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mTestOnlyInsecureCertificateHelper:Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;
 
     invoke-virtual {v0, p3}, Lcom/android/server/locksettings/recoverablekeystore/TestOnlyInsecureCertificateHelper;->getDefaultCertificateAliasIfEmpty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 1150
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 1151
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1152
-    .local v1, "values":Landroid/content/ContentValues;
     invoke-static {p5, p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
     invoke-virtual {v1, p4, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1153
     const-string/jumbo v2, "user_id = ? AND uid = ? AND root_alias = ?"
 
-    .line 1157
-    .local v2, "selection":Ljava/lang/String;
     const/4 v3, 0x3
 
     new-array v3, v3, [Ljava/lang/String;
@@ -1656,11 +1359,8 @@
 
     aput-object p3, v3, v4
 
-    .line 1159
-    .local v3, "selectionArguments":[Ljava/lang/String;
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRootOfTrustEntryExists(IILjava/lang/String;)V
 
-    .line 1160
     const-string/jumbo v4, "root_of_trust"
 
     invoke-virtual {v0, v4, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
@@ -1677,21 +1377,16 @@
 .method public close()V
     .locals 1
 
-    .line 1196
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->close()V
 
-    .line 1197
     return-void
 .end method
 
 .method public getActiveRootOfTrust(II)Ljava/lang/String;
     .locals 16
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 654
     move-object/from16 v1, p0
 
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
@@ -1700,8 +1395,6 @@
 
     move-result-object v10
 
-    .line 656
-    .local v10, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string v0, "_id"
 
     const-string/jumbo v2, "user_id"
@@ -1714,12 +1407,8 @@
 
     move-result-object v4
 
-    .line 661
-    .local v4, "projection":[Ljava/lang/String;
     const-string/jumbo v11, "user_id = ? AND uid = ?"
 
-    .line 664
-    .local v11, "selection":Ljava/lang/String;
     const/4 v0, 0x2
 
     new-array v6, v0, [Ljava/lang/String;
@@ -1740,8 +1429,6 @@
 
     aput-object v2, v6, v13
 
-    .line 667
-    .local v6, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v3, "recovery_service_metadata"
 
     const/4 v7, 0x0
@@ -1758,11 +1445,8 @@
 
     move-result-object v2
 
-    .line 666
-    .local v2, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 676
     const/4 v3, 0x0
 
     :try_start_0
@@ -1773,27 +1457,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 677
-    .local v5, "count":I
     if-nez v5, :cond_1
 
-    .line 678
     nop
 
-    .line 698
     if-eqz v2, :cond_0
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 678
     :cond_0
     return-object v3
 
-    .line 680
     :cond_1
     if-le v5, v13, :cond_3
 
-    .line 681
     :try_start_1
     const-string v7, "RecoverableKeyStoreDb"
 
@@ -1805,7 +1482,6 @@
 
     new-array v14, v14, [Ljava/lang/Object;
 
-    .line 684
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -1824,43 +1500,34 @@
 
     aput-object v12, v14, v0
 
-    .line 682
     invoke-static {v8, v9, v14}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 681
     invoke-static {v7, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 685
     nop
 
-    .line 698
     if-eqz v2, :cond_2
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 685
     :cond_2
     return-object v3
 
-    .line 687
     :cond_3
     :try_start_2
     invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 688
     const-string v0, "active_root_of_trust"
 
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 690
-    .local v0, "idx":I
     invoke-interface {v2, v0}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v7
@@ -1870,27 +1537,21 @@
 
     if-eqz v7, :cond_5
 
-    .line 691
     nop
 
-    .line 698
     if-eqz v2, :cond_4
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 691
     :cond_4
     return-object v3
 
-    .line 693
     :cond_5
     :try_start_3
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 694
-    .local v7, "result":Ljava/lang/String;
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v8
@@ -1900,41 +1561,30 @@
 
     if-eqz v8, :cond_7
 
-    .line 695
     nop
 
-    .line 698
     if-eqz v2, :cond_6
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 695
     :cond_6
     return-object v3
 
-    .line 697
     :cond_7
     nop
 
-    .line 698
     if-eqz v2, :cond_8
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 697
     :cond_8
     return-object v7
 
-    .line 698
-    .end local v0    # "idx":I
-    .end local v5    # "count":I
-    .end local v7    # "result":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 666
     :catch_0
     move-exception v0
 
@@ -1945,7 +1595,6 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 698
     :goto_0
     if-eqz v2, :cond_9
 
@@ -1957,9 +1606,6 @@
 
 .method public getAllKeys(III)Ljava/util/Map;
     .locals 12
-    .param p1, "userId"    # I
-    .param p2, "recoveryAgentUid"    # I
-    .param p3, "platformKeyGenerationId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III)",
@@ -1970,15 +1616,12 @@
         }
     .end annotation
 
-    .line 249
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 250
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string v1, "_id"
 
     const-string/jumbo v2, "nonce"
@@ -1993,17 +1636,12 @@
 
     move-result-object v3
 
-    .line 256
-    .local v3, "projection":[Ljava/lang/String;
     const-string/jumbo v9, "user_id = ? AND uid = ? AND platform_key_generation_id = ?"
 
-    .line 260
-    .local v9, "selection":Ljava/lang/String;
     const/4 v1, 0x3
 
     new-array v5, v1, [Ljava/lang/String;
 
-    .line 261
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -2012,7 +1650,6 @@
 
     aput-object v1, v5, v2
 
-    .line 262
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -2021,7 +1658,6 @@
 
     aput-object v1, v5, v2
 
-    .line 263
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -2030,8 +1666,6 @@
 
     aput-object v1, v5, v2
 
-    .line 267
-    .local v5, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v2, "keys"
 
     const/4 v6, 0x0
@@ -2048,11 +1682,8 @@
 
     move-result-object v1
 
-    .line 266
-    .local v1, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 276
     const/4 v2, 0x0
 
     :try_start_0
@@ -2060,8 +1691,6 @@
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 277
-    .local v4, "keys":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;>;"
     :goto_0
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -2069,63 +1698,46 @@
 
     if-eqz v6, :cond_0
 
-    .line 278
     const-string/jumbo v6, "nonce"
 
-    .line 279
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v6
 
-    .line 278
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v6
 
-    .line 280
-    .local v6, "nonce":[B
     const-string/jumbo v7, "wrapped_key"
 
-    .line 281
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 280
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v7
 
-    .line 282
-    .local v7, "keyMaterial":[B
     const-string v8, "alias"
 
-    .line 283
     invoke-interface {v1, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v8
 
-    .line 282
     invoke-interface {v1, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 284
-    .local v8, "alias":Ljava/lang/String;
     const-string/jumbo v10, "recovery_status"
 
-    .line 285
     invoke-interface {v1, v10}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 284
     invoke-interface {v1, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
 
-    .line 286
-    .local v10, "recoveryStatus":I
     new-instance v11, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
 
     invoke-direct {v11, v6, v7, p3, v10}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;-><init>([B[BII)V
@@ -2135,34 +1747,23 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 288
-    .end local v6    # "nonce":[B
-    .end local v7    # "keyMaterial":[B
-    .end local v8    # "alias":Ljava/lang/String;
-    .end local v10    # "recoveryStatus":I
     goto :goto_0
 
-    .line 289
     :cond_0
     nop
 
-    .line 290
     if-eqz v1, :cond_1
 
     invoke-static {v2, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 289
     :cond_1
     return-object v4
 
-    .line 290
-    .end local v4    # "keys":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;>;"
     :catchall_0
     move-exception v4
 
     goto :goto_1
 
-    .line 266
     :catch_0
     move-exception v2
 
@@ -2171,7 +1772,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 290
     :goto_1
     if-eqz v1, :cond_2
 
@@ -2183,10 +1783,7 @@
 
 .method public getCounterId(II)Ljava/lang/Long;
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 727
     const-string v0, "counter_id"
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getLong(IILjava/lang/String;)Ljava/lang/Long;
@@ -2198,10 +1795,7 @@
 
 .method public getKey(ILjava/lang/String;)Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
     .locals 16
-    .param p1, "uid"    # I
-    .param p2, "alias"    # Ljava/lang/String;
 
-    .line 116
     move-object/from16 v1, p0
 
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
@@ -2210,8 +1804,6 @@
 
     move-result-object v10
 
-    .line 117
-    .local v10, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string v0, "_id"
 
     const-string/jumbo v2, "nonce"
@@ -2226,12 +1818,8 @@
 
     move-result-object v4
 
-    .line 123
-    .local v4, "projection":[Ljava/lang/String;
     const-string/jumbo v11, "uid = ? AND alias = ?"
 
-    .line 126
-    .local v11, "selection":Ljava/lang/String;
     const/4 v0, 0x2
 
     new-array v6, v0, [Ljava/lang/String;
@@ -2248,8 +1836,6 @@
 
     aput-object p2, v6, v13
 
-    .line 129
-    .local v6, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v3, "keys"
 
     const/4 v7, 0x0
@@ -2266,11 +1852,8 @@
 
     move-result-object v2
 
-    .line 128
-    .local v2, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 138
     const/4 v3, 0x0
 
     :try_start_0
@@ -2281,27 +1864,20 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 139
-    .local v5, "count":I
     if-nez v5, :cond_1
 
-    .line 140
     nop
 
-    .line 159
     if-eqz v2, :cond_0
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 140
     :cond_0
     return-object v3
 
-    .line 142
     :cond_1
     if-le v5, v13, :cond_3
 
-    .line 143
     :try_start_1
     const-string v7, "RecoverableKeyStoreDb"
 
@@ -2313,7 +1889,6 @@
 
     new-array v14, v14, [Ljava/lang/Object;
 
-    .line 146
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2328,91 +1903,68 @@
 
     aput-object p2, v14, v0
 
-    .line 144
     invoke-static {v8, v9, v14}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 143
     invoke-static {v7, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 147
     nop
 
-    .line 159
     if-eqz v2, :cond_2
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 147
     :cond_2
     return-object v3
 
-    .line 149
     :cond_3
     :try_start_2
     invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 150
     const-string/jumbo v0, "nonce"
 
-    .line 151
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 150
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v0
 
-    .line 152
-    .local v0, "nonce":[B
     const-string/jumbo v7, "wrapped_key"
 
-    .line 153
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 152
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v7
 
-    .line 154
-    .local v7, "keyMaterial":[B
     const-string/jumbo v8, "platform_key_generation_id"
 
-    .line 155
     invoke-interface {v2, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v8
 
-    .line 154
     invoke-interface {v2, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v8
 
-    .line 156
-    .local v8, "generationId":I
     const-string/jumbo v9, "recovery_status"
 
-    .line 157
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v9
 
-    .line 156
     invoke-interface {v2, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v9
 
-    .line 158
-    .local v9, "recoveryStatus":I
     new-instance v12, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
 
     invoke-direct {v12, v0, v7, v8, v9}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;-><init>([B[BII)V
@@ -2420,27 +1972,18 @@
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 159
     if-eqz v2, :cond_4
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 158
     :cond_4
     return-object v12
 
-    .line 159
-    .end local v0    # "nonce":[B
-    .end local v5    # "count":I
-    .end local v7    # "keyMaterial":[B
-    .end local v8    # "generationId":I
-    .end local v9    # "recoveryStatus":I
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 128
     :catch_0
     move-exception v0
 
@@ -2451,7 +1994,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 159
     :goto_0
     if-eqz v2, :cond_5
 
@@ -2463,34 +2005,25 @@
 
 .method public getPlatformKeyGenerationId(I)I
     .locals 10
-    .param p1, "userId"    # I
 
-    .line 344
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 345
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v1, "platform_key_generation_id"
 
     filled-new-array {v1}, [Ljava/lang/String;
 
     move-result-object v3
 
-    .line 347
-    .local v3, "projection":[Ljava/lang/String;
     const-string/jumbo v9, "user_id = ?"
 
-    .line 349
-    .local v9, "selection":Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v5, v1, [Ljava/lang/String;
 
-    .line 350
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -2499,8 +2032,6 @@
 
     aput-object v1, v5, v2
 
-    .line 353
-    .local v5, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v2, "user_metadata"
 
     const/4 v6, 0x0
@@ -2517,11 +2048,8 @@
 
     move-result-object v1
 
-    .line 352
-    .local v1, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 362
     const/4 v2, 0x0
 
     :try_start_0
@@ -2534,32 +2062,25 @@
 
     if-nez v4, :cond_1
 
-    .line 363
     const/4 v4, -0x1
 
-    .line 369
     if-eqz v1, :cond_0
 
     invoke-static {v2, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 363
     :cond_0
     return v4
 
-    .line 365
     :cond_1
     :try_start_1
     invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 366
     const-string/jumbo v4, "platform_key_generation_id"
 
-    .line 367
     invoke-interface {v1, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v4
 
-    .line 366
     invoke-interface {v1, v4}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -2567,22 +2088,18 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 369
     if-eqz v1, :cond_2
 
     invoke-static {v2, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 366
     :cond_2
     return v4
 
-    .line 369
     :catchall_0
     move-exception v4
 
     goto :goto_0
 
-    .line 352
     :catch_0
     move-exception v2
 
@@ -2591,7 +2108,6 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 369
     :goto_0
     if-eqz v1, :cond_3
 
@@ -2603,7 +2119,6 @@
 
 .method public getRecoveryAgents(I)Ljava/util/List;
     .locals 10
-    .param p1, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -2613,27 +2128,20 @@
         }
     .end annotation
 
-    .line 475
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 477
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v1, "uid"
 
     filled-new-array {v1}, [Ljava/lang/String;
 
     move-result-object v3
 
-    .line 478
-    .local v3, "projection":[Ljava/lang/String;
     const-string/jumbo v9, "user_id = ?"
 
-    .line 479
-    .local v9, "selection":Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v5, v1, [Ljava/lang/String;
@@ -2646,8 +2154,6 @@
 
     aput-object v1, v5, v2
 
-    .line 482
-    .local v5, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v2, "recovery_service_metadata"
 
     const/4 v6, 0x0
@@ -2664,11 +2170,8 @@
 
     move-result-object v1
 
-    .line 481
-    .local v1, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 491
     const/4 v2, 0x0
 
     :try_start_0
@@ -2676,14 +2179,10 @@
 
     move-result v4
 
-    .line 492
-    .local v4, "count":I
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 493
-    .local v6, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     :goto_0
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -2691,21 +2190,16 @@
 
     if-eqz v7, :cond_0
 
-    .line 494
     const-string/jumbo v7, "uid"
 
-    .line 495
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 494
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    .line 496
-    .local v7, "uid":I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -2715,32 +2209,23 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 497
-    .end local v7    # "uid":I
     goto :goto_0
 
-    .line 498
     :cond_0
     nop
 
-    .line 499
     if-eqz v1, :cond_1
 
     invoke-static {v2, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 498
     :cond_1
     return-object v6
 
-    .line 499
-    .end local v4    # "count":I
-    .end local v6    # "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
     :catchall_0
     move-exception v4
 
     goto :goto_1
 
-    .line 481
     :catch_0
     move-exception v2
 
@@ -2749,7 +2234,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 499
     :goto_1
     if-eqz v1, :cond_2
 
@@ -2761,10 +2245,7 @@
 
 .method public getRecoverySecretTypes(II)[I
     .locals 17
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 566
     move-object/from16 v1, p0
 
     iget-object v0, v1, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
@@ -2773,8 +2254,6 @@
 
     move-result-object v10
 
-    .line 568
-    .local v10, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string v0, "_id"
 
     const-string/jumbo v2, "user_id"
@@ -2787,12 +2266,8 @@
 
     move-result-object v4
 
-    .line 573
-    .local v4, "projection":[Ljava/lang/String;
     const-string/jumbo v11, "user_id = ? AND uid = ?"
 
-    .line 576
-    .local v11, "selection":Ljava/lang/String;
     const/4 v0, 0x2
 
     new-array v6, v0, [Ljava/lang/String;
@@ -2813,8 +2288,6 @@
 
     aput-object v2, v6, v13
 
-    .line 579
-    .local v6, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v3, "recovery_service_metadata"
 
     const/4 v7, 0x0
@@ -2831,11 +2304,8 @@
 
     move-result-object v2
 
-    .line 578
-    .local v2, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 588
     const/4 v3, 0x0
 
     :try_start_0
@@ -2843,30 +2313,23 @@
 
     move-result v5
 
-    .line 589
-    .local v5, "count":I
     if-nez v5, :cond_1
 
-    .line 590
     new-array v0, v12, [I
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 619
     if-eqz v2, :cond_0
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 590
     :cond_0
     return-object v0
 
-    .line 592
     :cond_1
     if-le v5, v13, :cond_3
 
-    .line 593
     :try_start_1
     const-string v7, "RecoverableKeyStoreDb"
 
@@ -2878,7 +2341,6 @@
 
     new-array v14, v14, [Ljava/lang/Object;
 
-    .line 596
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2897,35 +2359,28 @@
 
     aput-object v13, v14, v0
 
-    .line 594
     invoke-static {v8, v9, v14}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 593
     invoke-static {v7, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 597
     new-array v0, v12, [I
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 619
     if-eqz v2, :cond_2
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 597
     :cond_2
     return-object v0
 
-    .line 599
     :cond_3
     :try_start_2
     invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
-    .line 600
     const-string/jumbo v0, "secret_types"
 
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -2934,30 +2389,24 @@
 
     move v7, v0
 
-    .line 602
-    .local v7, "idx":I
     invoke-interface {v2, v7}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_5
 
-    .line 603
     new-array v0, v12, [I
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 619
     if-eqz v2, :cond_4
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 603
     :cond_4
     return-object v0
 
-    .line 605
     :cond_5
     :try_start_3
     invoke-interface {v2, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -2966,30 +2415,24 @@
 
     move-object v8, v0
 
-    .line 606
-    .local v8, "csv":Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 607
     new-array v0, v12, [I
     :try_end_3
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 619
     if-eqz v2, :cond_6
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 607
     :cond_6
     return-object v0
 
-    .line 609
     :cond_7
     :try_start_4
     const-string v0, ","
@@ -3000,20 +2443,14 @@
 
     move-object v9, v0
 
-    .line 610
-    .local v9, "types":[Ljava/lang/String;
     array-length v0, v9
 
     new-array v0, v0, [I
 
     move-object v13, v0
 
-    .line 611
-    .local v13, "result":[I
     nop
 
-    .line 611
-    .local v12, "i":I
     :goto_0
     array-length v0, v9
     :try_end_4
@@ -3022,7 +2459,6 @@
 
     if-ge v12, v0, :cond_8
 
-    .line 613
     :try_start_5
     aget-object v0, v9, v12
 
@@ -3036,15 +2472,11 @@
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_1
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 616
     goto :goto_1
 
-    .line 614
     :catch_0
     move-exception v0
 
-    .line 615
-    .local v0, "e":Ljava/lang/NumberFormatException;
     :try_start_6
     const-string v14, "RecoverableKeyStoreDb"
 
@@ -3067,8 +2499,6 @@
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 611
-    .end local v0    # "e":Ljava/lang/NumberFormatException;
     :goto_1
     add-int/lit8 v12, v12, 0x1
 
@@ -3076,13 +2506,6 @@
 
     goto :goto_0
 
-    .line 619
-    .end local v5    # "count":I
-    .end local v7    # "idx":I
-    .end local v8    # "csv":Ljava/lang/String;
-    .end local v9    # "types":[Ljava/lang/String;
-    .end local v12    # "i":I
-    .end local v13    # "result":[I
     :catchall_0
     move-exception v0
 
@@ -3090,38 +2513,23 @@
 
     goto :goto_2
 
-    .line 618
-    .restart local v5    # "count":I
-    .restart local v7    # "idx":I
-    .restart local v8    # "csv":Ljava/lang/String;
-    .restart local v9    # "types":[Ljava/lang/String;
-    .restart local v13    # "result":[I
     :cond_8
     nop
 
-    .line 619
     if-eqz v2, :cond_9
 
     const/4 v3, 0x0
 
     invoke-static {v3, v2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 618
     :cond_9
     return-object v13
 
-    .line 619
-    .end local v5    # "count":I
-    .end local v7    # "idx":I
-    .end local v8    # "csv":Ljava/lang/String;
-    .end local v9    # "types":[Ljava/lang/String;
-    .end local v13    # "result":[I
     :catchall_1
     move-exception v0
 
     goto :goto_2
 
-    .line 578
     :catch_1
     move-exception v0
 
@@ -3132,7 +2540,6 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
-    .line 619
     :goto_2
     if-eqz v2, :cond_a
 
@@ -3144,27 +2551,19 @@
 
 .method public getRecoveryServiceCertPath(IILjava/lang/String;)Ljava/security/cert/CertPath;
     .locals 9
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
 
-    .line 432
     const-string v0, "cert_path"
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getBytes(IILjava/lang/String;Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 434
-    .local v0, "bytes":[B
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 435
     return-object v1
 
-    .line 438
     :cond_0
     :try_start_0
     invoke-static {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->decodeCertPath([B)Ljava/security/cert/CertPath;
@@ -3175,12 +2574,9 @@
 
     return-object v2
 
-    .line 439
     :catch_0
     move-exception v2
 
-    .line 440
-    .local v2, "e":Ljava/security/cert/CertificateException;
     const-string v3, "RecoverableKeyStoreDb"
 
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -3193,7 +2589,6 @@
 
     const/4 v7, 0x0
 
-    .line 444
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -3208,25 +2603,18 @@
 
     aput-object v8, v6, v7
 
-    .line 441
     invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 440
     invoke-static {v3, v4, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 445
     return-object v1
 .end method
 
 .method public getRecoveryServiceCertSerial(IILjava/lang/String;)Ljava/lang/Long;
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
 
-    .line 399
     const-string v0, "cert_serial"
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getLong(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/Long;
@@ -3238,27 +2626,19 @@
 
 .method public getRecoveryServicePublicKey(II)Ljava/security/PublicKey;
     .locals 9
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 512
     const-string/jumbo v0, "public_key"
 
-    .line 513
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getBytes(IILjava/lang/String;)[B
 
     move-result-object v0
 
-    .line 514
-    .local v0, "keyBytes":[B
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 515
     return-object v1
 
-    .line 518
     :cond_0
     :try_start_0
     invoke-static {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->decodeX509Key([B)Ljava/security/PublicKey;
@@ -3269,12 +2649,9 @@
 
     return-object v2
 
-    .line 519
     :catch_0
     move-exception v2
 
-    .line 520
-    .local v2, "e":Ljava/security/spec/InvalidKeySpecException;
     const-string v3, "RecoverableKeyStoreDb"
 
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -3287,7 +2664,6 @@
 
     const/4 v7, 0x0
 
-    .line 524
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -3302,24 +2678,18 @@
 
     aput-object v8, v6, v7
 
-    .line 521
     invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 520
     invoke-static {v3, v4}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 525
     return-object v1
 .end method
 
 .method public getServerParams(II)[B
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 758
     const-string/jumbo v0, "server_params"
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getBytes(IILjava/lang/String;)[B
@@ -3331,18 +2701,13 @@
 
 .method public getShouldCreateSnapshot(II)Z
     .locals 5
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 826
     const-string/jumbo v0, "should_create_snapshot"
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getLong(IILjava/lang/String;)Ljava/lang/Long;
 
     move-result-object v0
 
-    .line 828
-    .local v0, "res":Ljava/lang/Long;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
@@ -3368,10 +2733,7 @@
 
 .method public getSnapshotVersion(II)Ljava/lang/Long;
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
 
-    .line 787
     const-string/jumbo v0, "snapshot_version"
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->getLong(IILjava/lang/String;)Ljava/lang/Long;
@@ -3383,7 +2745,6 @@
 
 .method public getStatusForAllKeys(I)Ljava/util/Map;
     .locals 10
-    .param p1, "uid"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -3394,15 +2755,12 @@
         }
     .end annotation
 
-    .line 185
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 186
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string v1, "_id"
 
     const-string v2, "alias"
@@ -3413,12 +2771,8 @@
 
     move-result-object v3
 
-    .line 190
-    .local v3, "projection":[Ljava/lang/String;
     const-string/jumbo v9, "uid = ?"
 
-    .line 192
-    .local v9, "selection":Ljava/lang/String;
     const/4 v1, 0x1
 
     new-array v5, v1, [Ljava/lang/String;
@@ -3431,8 +2785,6 @@
 
     aput-object v1, v5, v2
 
-    .line 195
-    .local v5, "selectionArguments":[Ljava/lang/String;
     const-string/jumbo v2, "keys"
 
     const/4 v6, 0x0
@@ -3449,11 +2801,8 @@
 
     move-result-object v1
 
-    .line 194
-    .local v1, "cursor":Landroid/database/Cursor;
     nop
 
-    .line 204
     const/4 v2, 0x0
 
     :try_start_0
@@ -3461,8 +2810,6 @@
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 205
-    .local v4, "statuses":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     :goto_0
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -3470,35 +2817,26 @@
 
     if-eqz v6, :cond_0
 
-    .line 206
     const-string v6, "alias"
 
-    .line 207
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v6
 
-    .line 206
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 208
-    .local v6, "alias":Ljava/lang/String;
     const-string/jumbo v7, "recovery_status"
 
-    .line 209
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 208
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    .line 210
-    .local v7, "recoveryStatus":I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -3508,32 +2846,23 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 211
-    .end local v6    # "alias":Ljava/lang/String;
-    .end local v7    # "recoveryStatus":I
     goto :goto_0
 
-    .line 212
     :cond_0
     nop
 
-    .line 213
     if-eqz v1, :cond_1
 
     invoke-static {v2, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 212
     :cond_1
     return-object v4
 
-    .line 213
-    .end local v4    # "statuses":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     :catchall_0
     move-exception v4
 
     goto :goto_1
 
-    .line 194
     :catch_0
     move-exception v2
 
@@ -3542,7 +2871,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 213
     :goto_1
     if-eqz v1, :cond_2
 
@@ -3554,26 +2882,17 @@
 
 .method public insertKey(IILjava/lang/String;Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;)J
     .locals 4
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "alias"    # Ljava/lang/String;
-    .param p4, "wrappedKey"    # Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
 
-    .line 97
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 98
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 99
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "user_id"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3582,7 +2901,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 100
     const-string/jumbo v2, "uid"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3591,12 +2909,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 101
     const-string v2, "alias"
 
     invoke-virtual {v1, v2, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 102
     const-string/jumbo v2, "nonce"
 
     invoke-virtual {p4}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getNonce()[B
@@ -3605,7 +2921,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 103
     const-string/jumbo v2, "wrapped_key"
 
     invoke-virtual {p4}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getKeyMaterial()[B
@@ -3614,7 +2929,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 104
     const-string/jumbo v2, "last_synced_at"
 
     const/4 v3, -0x1
@@ -3625,7 +2939,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 105
     const-string/jumbo v2, "platform_key_generation_id"
 
     invoke-virtual {p4}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getPlatformKeyGenerationId()I
@@ -3638,7 +2951,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 106
     const-string/jumbo v2, "recovery_status"
 
     invoke-virtual {p4}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getRecoveryStatus()I
@@ -3651,7 +2963,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 107
     const-string/jumbo v2, "keys"
 
     const/4 v3, 0x0
@@ -3665,47 +2976,35 @@
 
 .method public invalidateKeysForUserIdOnCustomScreenLock(I)V
     .locals 7
-    .param p1, "userId"    # I
 
-    .line 330
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 331
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 332
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "recovery_status"
 
-    .line 333
     const/4 v3, 0x3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 332
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 334
     const-string/jumbo v2, "user_id = ?"
 
-    .line 336
-    .local v2, "selection":Ljava/lang/String;
     const-string/jumbo v3, "keys"
 
     const/4 v4, 0x1
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 337
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v5
@@ -3714,57 +3013,42 @@
 
     aput-object v5, v4, v6
 
-    .line 336
     invoke-virtual {v0, v3, v1, v2, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 338
     return-void
 .end method
 
 .method public invalidateKeysWithOldGenerationId(II)V
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "newGenerationId"    # I
 
-    .line 315
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 316
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 317
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "recovery_status"
 
-    .line 318
     const/4 v3, 0x3
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 317
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 319
     const-string/jumbo v2, "user_id = ? AND platform_key_generation_id < ?"
 
-    .line 322
-    .local v2, "selection":Ljava/lang/String;
     const-string/jumbo v3, "keys"
 
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 323
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v5
@@ -3781,31 +3065,22 @@
 
     aput-object v5, v4, v6
 
-    .line 322
     invoke-virtual {v0, v3, v1, v2, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 324
     return-void
 .end method
 
 .method public removeKey(ILjava/lang/String;)Z
     .locals 6
-    .param p1, "uid"    # I
-    .param p2, "alias"    # Ljava/lang/String;
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 169
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v1, "uid = ? AND alias = ?"
 
-    .line 171
-    .local v1, "selection":Ljava/lang/String;
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/String;
@@ -3822,8 +3097,6 @@
 
     aput-object p2, v2, v3
 
-    .line 172
-    .local v2, "selectionArgs":[Ljava/lang/String;
     const-string/jumbo v5, "keys"
 
     invoke-virtual {v0, v5, v1, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
@@ -3843,44 +3116,31 @@
 
 .method public setActiveRootOfTrust(IILjava/lang/String;)J
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
 
-    .line 633
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 634
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 635
-    .local v1, "values":Landroid/content/ContentValues;
     const-string v2, "active_root_of_trust"
 
     invoke-virtual {v1, v2, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 636
     const-string/jumbo v2, "user_id = ? AND uid = ?"
 
-    .line 639
-    .local v2, "selection":Ljava/lang/String;
     invoke-direct {p0, p1, p2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRecoveryServiceMetadataEntryExists(II)V
 
-    .line 640
     const-string/jumbo v3, "recovery_service_metadata"
 
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 641
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v5
@@ -3897,7 +3157,6 @@
 
     aput-object v5, v4, v6
 
-    .line 640
     invoke-virtual {v0, v3, v1, v2, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v3
@@ -3909,11 +3168,7 @@
 
 .method public setCounterId(IIJ)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "counterId"    # J
 
-    .line 712
     const-string v3, "counter_id"
 
     move-object v0, p0
@@ -3933,24 +3188,17 @@
 
 .method public setPlatformKeyGenerationId(II)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "generationId"    # I
 
-    .line 299
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 300
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 301
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "user_id"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3959,7 +3207,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 302
     const-string/jumbo v2, "platform_key_generation_id"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3968,7 +3215,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 303
     const-string/jumbo v2, "user_metadata"
 
     const/4 v3, 0x0
@@ -3977,51 +3223,37 @@
 
     move-result-wide v2
 
-    .line 305
-    .local v2, "result":J
     const-wide/16 v4, -0x1
 
     cmp-long v4, v2, v4
 
     if-eqz v4, :cond_0
 
-    .line 306
     invoke-virtual {p0, p1, p2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->invalidateKeysWithOldGenerationId(II)V
 
-    .line 308
     :cond_0
     return-wide v2
 .end method
 
 .method public setRecoverySecretTypes(II[I)J
     .locals 9
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "secretTypes"    # [I
 
-    .line 542
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 543
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 544
-    .local v1, "values":Landroid/content/ContentValues;
     new-instance v2, Ljava/util/StringJoiner;
 
     const-string v3, ","
 
     invoke-direct {v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 545
-    .local v2, "joiner":Ljava/util/StringJoiner;
     invoke-static {p3}, Ljava/util/Arrays;->stream([I)Ljava/util/stream/IntStream;
 
     move-result-object v3
@@ -4032,32 +3264,24 @@
 
     invoke-interface {v3, v4}, Ljava/util/stream/IntStream;->forEach(Ljava/util/function/IntConsumer;)V
 
-    .line 546
     invoke-virtual {v2}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 547
-    .local v3, "typesAsCsv":Ljava/lang/String;
     const-string/jumbo v4, "secret_types"
 
     invoke-virtual {v1, v4, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 548
     const-string/jumbo v4, "user_id = ? AND uid = ?"
 
-    .line 551
-    .local v4, "selection":Ljava/lang/String;
     invoke-direct {p0, p1, p2}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->ensureRecoveryServiceMetadataEntryExists(II)V
 
-    .line 552
     const-string/jumbo v5, "recovery_service_metadata"
 
     const/4 v6, 0x2
 
     new-array v6, v6, [Ljava/lang/String;
 
-    .line 553
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v7
@@ -4074,7 +3298,6 @@
 
     aput-object v7, v6, v8
 
-    .line 552
     invoke-virtual {v0, v5, v1, v4, v6}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v5
@@ -4086,17 +3309,12 @@
 
 .method public setRecoveryServiceCertPath(IILjava/lang/String;Ljava/security/cert/CertPath;)J
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "certPath"    # Ljava/security/cert/CertPath;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/cert/CertificateEncodingException;
         }
     .end annotation
 
-    .line 461
     invoke-virtual {p4}, Ljava/security/cert/CertPath;->getCertificates()Ljava/util/List;
 
     move-result-object v0
@@ -4107,17 +3325,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 464
     const-string v5, "cert_path"
 
     const-string v0, "PkiPath"
 
-    .line 465
     invoke-virtual {p4, v0}, Ljava/security/cert/CertPath;->getEncoded(Ljava/lang/String;)[B
 
     move-result-object v6
 
-    .line 464
     move-object v1, p0
 
     move v2, p1
@@ -4132,7 +3347,6 @@
 
     return-wide v0
 
-    .line 462
     :cond_0
     new-instance v0, Ljava/security/cert/CertificateEncodingException;
 
@@ -4145,12 +3359,7 @@
 
 .method public setRecoveryServiceCertSerial(IILjava/lang/String;J)J
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "rootAlias"    # Ljava/lang/String;
-    .param p4, "serial"    # J
 
-    .line 416
     const-string v4, "cert_serial"
 
     move-object v0, p0
@@ -4172,19 +3381,13 @@
 
 .method public setRecoveryServicePublicKey(IILjava/security/PublicKey;)J
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "publicKey"    # Ljava/security/PublicKey;
 
-    .line 383
     const-string/jumbo v0, "public_key"
 
-    .line 384
     invoke-interface {p3}, Ljava/security/PublicKey;->getEncoded()[B
 
     move-result-object v1
 
-    .line 383
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->setBytes(IILjava/lang/String;[B)J
 
     move-result-wide v0
@@ -4194,25 +3397,17 @@
 
 .method public setRecoveryStatus(ILjava/lang/String;I)I
     .locals 7
-    .param p1, "uid"    # I
-    .param p2, "alias"    # Ljava/lang/String;
-    .param p3, "status"    # I
 
-    .line 225
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->mKeyStoreDbHelper:Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDbHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    .line 226
-    .local v0, "db":Landroid/database/sqlite/SQLiteDatabase;
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 227
-    .local v1, "values":Landroid/content/ContentValues;
     const-string/jumbo v2, "recovery_status"
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4221,18 +3416,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 228
     const-string/jumbo v2, "uid = ? AND alias = ?"
 
-    .line 231
-    .local v2, "selection":Ljava/lang/String;
     const-string/jumbo v3, "keys"
 
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 232
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v5
@@ -4245,7 +3436,6 @@
 
     aput-object p2, v4, v5
 
-    .line 231
     invoke-virtual {v0, v3, v1, v2, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v3
@@ -4255,11 +3445,7 @@
 
 .method public setServerParams(II[B)J
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "serverParams"    # [B
 
-    .line 742
     const-string/jumbo v0, "server_params"
 
     invoke-direct {p0, p1, p2, v0, p3}, Lcom/android/server/locksettings/recoverablekeystore/storage/RecoverableKeyStoreDb;->setBytes(IILjava/lang/String;[B)J
@@ -4271,31 +3457,23 @@
 
 .method public setShouldCreateSnapshot(IIZ)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "pending"    # Z
 
-    .line 811
     const-string/jumbo v3, "should_create_snapshot"
 
-    .line 812
     if-eqz p3, :cond_0
 
     const-wide/16 v0, 0x1
 
-    .line 811
     :goto_0
     move-wide v4, v0
 
     goto :goto_1
 
-    .line 812
     :cond_0
     const-wide/16 v0, 0x0
 
     goto :goto_0
 
-    .line 811
     :goto_1
     move-object v0, p0
 
@@ -4312,11 +3490,7 @@
 
 .method public setSnapshotVersion(IIJ)J
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "uid"    # I
-    .param p3, "snapshotVersion"    # J
 
-    .line 772
     const-string/jumbo v3, "snapshot_version"
 
     move-object v0, p0

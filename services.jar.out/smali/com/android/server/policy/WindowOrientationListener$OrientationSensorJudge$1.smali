@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
-    .line 1210
     iput-object p1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 1214
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
     iget-object v0, v0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
@@ -50,7 +47,6 @@
 
     monitor-enter v0
 
-    .line 1215
     :try_start_0
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
@@ -58,35 +54,27 @@
 
     invoke-static {v1, v2}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->access$502(Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;Z)Z
 
-    .line 1216
     iget-object v1, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
     invoke-virtual {v1}, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->evaluateRotationChangeLocked()I
 
     move-result v1
 
-    .line 1217
-    .local v1, "newRotation":I
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1218
     if-ltz v1, :cond_0
 
-    .line 1219
     iget-object v0, p0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge$1;->this$1:Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;
 
     iget-object v0, v0, Lcom/android/server/policy/WindowOrientationListener$OrientationSensorJudge;->this$0:Lcom/android/server/policy/WindowOrientationListener;
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/WindowOrientationListener;->onProposedRotationChanged(I)V
 
-    .line 1221
     :cond_0
     return-void
 
-    .line 1217
-    .end local v1    # "newRotation":I
     :catchall_0
     move-exception v1
 

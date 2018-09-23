@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 77
     new-instance v0, Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;
 
     const-string v1, "IF_NEEDED"
@@ -80,7 +79,6 @@
         }
     .end annotation
 
-    .line 77
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -88,9 +86,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 77
     const-class v0, Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -105,7 +101,6 @@
 .method public static values()[Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;
     .locals 1
 
-    .line 77
     sget-object v0, Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;->$VALUES:[Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;
 
     invoke-virtual {v0}, [Lcom/android/server/connectivity/tethering/OffloadController$UpdateType;->clone()Ljava/lang/Object;

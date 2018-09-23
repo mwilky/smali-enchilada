@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerShellCommand;
 
-    .line 484
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerShellCommand$2;->this$0:Lcom/android/server/pm/PackageManagerShellCommand;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/content/pm/InstrumentationInfo;Landroid/content/pm/InstrumentationInfo;)I
     .locals 2
-    .param p1, "o1"    # Landroid/content/pm/InstrumentationInfo;
-    .param p2, "o2"    # Landroid/content/pm/InstrumentationInfo;
 
-    .line 486
     iget-object v0, p1, Landroid/content/pm/InstrumentationInfo;->targetPackage:Ljava/lang/String;
 
     iget-object v1, p2, Landroid/content/pm/InstrumentationInfo;->targetPackage:Ljava/lang/String;
@@ -65,7 +60,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 484
     check-cast p1, Landroid/content/pm/InstrumentationInfo;
 
     check-cast p2, Landroid/content/pm/InstrumentationInfo;

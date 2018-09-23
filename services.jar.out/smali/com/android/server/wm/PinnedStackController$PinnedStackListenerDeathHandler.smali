@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/wm/PinnedStackController;)V
     .locals 0
 
-    .line 154
     iput-object p1, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackListenerDeathHandler;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/PinnedStackController;Lcom/android/server/wm/PinnedStackController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/PinnedStackController;
-    .param p2, "x1"    # Lcom/android/server/wm/PinnedStackController$1;
 
-    .line 154
     invoke-direct {p0, p1}, Lcom/android/server/wm/PinnedStackController$PinnedStackListenerDeathHandler;-><init>(Lcom/android/server/wm/PinnedStackController;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackListenerDeathHandler;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$900(Lcom/android/server/wm/PinnedStackController;)Landroid/view/IPinnedStackListener;
@@ -58,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackListenerDeathHandler;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$900(Lcom/android/server/wm/PinnedStackController;)Landroid/view/IPinnedStackListener;
@@ -79,7 +73,6 @@
 
     invoke-interface {v0, v1, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 162
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackListenerDeathHandler;->this$0:Lcom/android/server/wm/PinnedStackController;
 
@@ -87,6 +80,5 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wm/PinnedStackController;->access$902(Lcom/android/server/wm/PinnedStackController;Landroid/view/IPinnedStackListener;)Landroid/view/IPinnedStackListener;
 
-    .line 163
     return-void
 .end method

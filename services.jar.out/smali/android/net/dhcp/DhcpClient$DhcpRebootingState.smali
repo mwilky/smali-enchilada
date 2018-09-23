@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/dhcp/DhcpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
-    .line 1103
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$DhcpRebootingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0, p1}, Landroid/net/dhcp/DhcpClient$LoggingState;-><init>(Landroid/net/dhcp/DhcpClient;)V

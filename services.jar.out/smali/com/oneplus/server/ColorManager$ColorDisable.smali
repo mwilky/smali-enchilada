@@ -30,18 +30,13 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/server/ColorManager;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/ColorManager;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 211
     iput-object p1, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 212
     iput-object p2, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->mContext:Landroid/content/Context;
 
-    .line 213
     return-void
 .end method
 
@@ -49,15 +44,11 @@
 # virtual methods
 .method public config(Ljava/lang/Object;)I
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 240
     move-object v0, p1
 
     check-cast v0, Ljava/lang/String;
 
-    .line 241
-    .local v0, "string":Ljava/lang/String;
     const-string v1, "ColorDisable"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -76,7 +67,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 242
     const/4 v1, 0x0
 
     return v1
@@ -84,9 +74,7 @@
 
 .method public start(Ljava/lang/Object;)I
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 218
     const-string v0, "ColorDisable"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -129,7 +117,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     iget-boolean v0, v0, Lcom/oneplus/server/ColorManager;->mCBActivated:Z
@@ -148,7 +135,6 @@
 
     if-nez v0, :cond_0
 
-    .line 220
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     invoke-static {v0}, Lcom/oneplus/server/ColorManager;->access$000(Lcom/oneplus/server/ColorManager;)Lcom/oneplus/display/ColorBalanceManager;
@@ -157,7 +143,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 221
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     invoke-static {v0}, Lcom/oneplus/server/ColorManager;->access$000(Lcom/oneplus/server/ColorManager;)Lcom/oneplus/display/ColorBalanceManager;
@@ -168,7 +153,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->DisableColor(I)V
 
-    .line 223
     :cond_0
     const/4 v0, 0x0
 
@@ -177,9 +161,7 @@
 
 .method public stop(Ljava/lang/Object;)I
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 229
     const-string v0, "ColorDisable"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -222,7 +204,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     iget-boolean v0, v0, Lcom/oneplus/server/ColorManager;->mCBActivated:Z
@@ -241,7 +222,6 @@
 
     if-nez v0, :cond_0
 
-    .line 231
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     invoke-static {v0}, Lcom/oneplus/server/ColorManager;->access$000(Lcom/oneplus/server/ColorManager;)Lcom/oneplus/display/ColorBalanceManager;
@@ -250,7 +230,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 232
     iget-object v0, p0, Lcom/oneplus/server/ColorManager$ColorDisable;->this$0:Lcom/oneplus/server/ColorManager;
 
     invoke-static {v0}, Lcom/oneplus/server/ColorManager;->access$000(Lcom/oneplus/server/ColorManager;)Lcom/oneplus/display/ColorBalanceManager;
@@ -261,7 +240,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->DisableColor(I)V
 
-    .line 234
     :cond_0
     const/4 v0, 0x0
 

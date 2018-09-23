@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/tv/TvInputManagerService$BinderService;Lcom/android/server/tv/TvInputManagerService$UserState;Landroid/media/tv/ITvInputManagerCallback;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/tv/TvInputManagerService$BinderService;
 
-    .line 1004
     iput-object p1, p0, Lcom/android/server/tv/TvInputManagerService$BinderService$1;->this$1:Lcom/android/server/tv/TvInputManagerService$BinderService;
 
     iput-object p2, p0, Lcom/android/server/tv/TvInputManagerService$BinderService$1;->val$userState:Lcom/android/server/tv/TvInputManagerService$UserState;
@@ -47,7 +45,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 1007
     iget-object v0, p0, Lcom/android/server/tv/TvInputManagerService$BinderService$1;->this$1:Lcom/android/server/tv/TvInputManagerService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/tv/TvInputManagerService$BinderService;->this$0:Lcom/android/server/tv/TvInputManagerService;
@@ -58,7 +55,6 @@
 
     monitor-enter v0
 
-    .line 1008
     :try_start_0
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$BinderService$1;->val$userState:Lcom/android/server/tv/TvInputManagerService$UserState;
 
@@ -68,7 +64,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1009
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$BinderService$1;->val$userState:Lcom/android/server/tv/TvInputManagerService$UserState;
 
     invoke-static {v1}, Lcom/android/server/tv/TvInputManagerService$UserState;->access$2900(Lcom/android/server/tv/TvInputManagerService$UserState;)Ljava/util/Set;
@@ -79,14 +74,11 @@
 
     invoke-interface {v1, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 1011
     :cond_0
     monitor-exit v0
 
-    .line 1012
     return-void
 
-    .line 1011
     :catchall_0
     move-exception v1
 

@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 243
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "NORMAL"
@@ -55,7 +54,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->NORMAL:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 244
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "POWER"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->POWER:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 245
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "POWER_HOME"
@@ -77,7 +74,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->POWER_HOME:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 246
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "HOME"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->HOME:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 247
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "FOOT"
@@ -99,7 +94,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->FOOT:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 248
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "BACK_SWITCH"
@@ -110,7 +104,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->BACK_SWITCH:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 249
     new-instance v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     const-string v1, "BASE"
@@ -121,7 +114,6 @@
 
     sput-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->BASE:Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
-    .line 242
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
@@ -167,7 +159,6 @@
         }
     .end annotation
 
-    .line 242
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -175,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 242
     const-class v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +181,6 @@
 .method public static values()[Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
     .locals 1
 
-    .line 242
     sget-object v0, Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->$VALUES:[Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;
 
     invoke-virtual {v0}, [Lcom/android/server/policy/OemPhoneWindowManager$KeyLockMode;->clone()Ljava/lang/Object;

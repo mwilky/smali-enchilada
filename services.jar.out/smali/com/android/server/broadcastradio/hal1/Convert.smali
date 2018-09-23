@@ -11,7 +11,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,20 +29,16 @@
         }
     .end annotation
 
-    .line 40
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v0, 0x0
 
     if-nez p0, :cond_0
 
-    .line 41
     const-string v1, "BroadcastRadioService.Convert"
 
     const-string/jumbo v2, "map is null, returning zero-elements array"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     filled-new-array {v0, v0}, [I
 
     move-result-object v0
@@ -58,20 +53,15 @@
 
     return-object v0
 
-    .line 45
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v1
 
-    .line 46
-    .local v1, "entries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;>;"
     invoke-interface {v1}, Ljava/util/Set;->size()I
 
     move-result v2
 
-    .line 47
-    .local v2, "len":I
     const/4 v3, 0x2
 
     filled-new-array {v2, v3}, [I
@@ -86,12 +76,8 @@
 
     check-cast v3, [[Ljava/lang/String;
 
-    .line 49
-    .local v3, "arr":[[Ljava/lang/String;
     const/4 v4, 0x0
 
-    .line 50
-    .local v4, "i":I
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -109,8 +95,6 @@
 
     check-cast v6, Ljava/util/Map$Entry;
 
-    .line 51
-    .local v6, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     aget-object v7, v3, v4
 
     invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -121,7 +105,6 @@
 
     aput-object v8, v7, v0
 
-    .line 52
     aget-object v7, v3, v4
 
     invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -134,14 +117,10 @@
 
     aput-object v8, v7, v9
 
-    .line 53
     add-int/lit8 v4, v4, 0x1
 
-    .line 54
-    .end local v6    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 56
     :cond_1
     const-string v0, "BroadcastRadioService.Convert"
 
@@ -165,6 +144,5 @@
 
     invoke-static {v0, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 57
     return-object v3
 .end method

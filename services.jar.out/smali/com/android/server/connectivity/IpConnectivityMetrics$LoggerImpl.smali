@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/connectivity/IpConnectivityMetrics;)V
     .locals 0
 
-    .line 377
     iput-object p1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$LoggerImpl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/connectivity/IpConnectivityMetrics;Lcom/android/server/connectivity/IpConnectivityMetrics$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
-    .param p2, "x1"    # Lcom/android/server/connectivity/IpConnectivityMetrics$1;
 
-    .line 377
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics$LoggerImpl;-><init>(Lcom/android/server/connectivity/IpConnectivityMetrics;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public defaultNetworkMetrics()Lcom/android/server/connectivity/DefaultNetworkMetrics;
     .locals 1
 
-    .line 379
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$LoggerImpl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     iget-object v0, v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mDefaultNetworkMetrics:Lcom/android/server/connectivity/DefaultNetworkMetrics;

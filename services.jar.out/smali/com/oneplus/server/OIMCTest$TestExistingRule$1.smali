@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCTest$TestExistingRule;Lcom/oneplus/server/MsgObjectArg;)V
     .locals 1
-    .param p1, "this$1"    # Lcom/oneplus/server/OIMCTest$TestExistingRule;
-    .param p2, "arg"    # Lcom/oneplus/server/MsgObjectArg;
 
-    .line 784
     iput-object p1, p0, Lcom/oneplus/server/OIMCTest$TestExistingRule$1;->this$1:Lcom/oneplus/server/OIMCTest$TestExistingRule;
 
     iget-object v0, p1, Lcom/oneplus/server/OIMCTest$TestExistingRule;->this$0:Lcom/oneplus/server/OIMCTest;
@@ -39,7 +36,6 @@
 .method public run()V
     .locals 4
 
-    .line 787
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCTest$TestExistingRule$1;->getArg()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v0
@@ -50,13 +46,10 @@
 
     check-cast v0, Lcom/oneplus/server/RuleManager;
 
-    .line 788
-    .local v0, "rm":Lcom/oneplus/server/RuleManager;
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/oneplus/server/OIMCTest$TestExistingRule$1;->setResult(I)V
 
-    .line 789
     iget-object v1, p0, Lcom/oneplus/server/OIMCTest$TestExistingRule$1;->this$1:Lcom/oneplus/server/OIMCTest$TestExistingRule;
 
     iget-object v1, v1, Lcom/oneplus/server/OIMCTest$TestExistingRule;->modeNames:Ljava/util/ArrayList;
@@ -73,8 +66,6 @@
 
     move-result-object v1
 
-    .line 790
-    .local v1, "rule":Lcom/oneplus/server/Rule;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Lcom/oneplus/server/Rule;->getRinfo()Ljava/lang/Object;
@@ -87,12 +78,10 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 791
     const/4 v2, 0x1
 
     invoke-virtual {p0, v2}, Lcom/oneplus/server/OIMCTest$TestExistingRule$1;->setResult(I)V
 
-    .line 792
     :cond_0
     return-void
 .end method

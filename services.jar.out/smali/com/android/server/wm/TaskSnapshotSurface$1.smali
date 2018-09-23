@@ -17,9 +17,7 @@
 # direct methods
 .method constructor <init>(Landroid/os/Looper;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Looper;
 
-    .line 414
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -29,23 +27,18 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 418
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 421
     :cond_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/wm/TaskSnapshotSurface;
 
-    .line 422
-    .local v0, "surface":Lcom/android/server/wm/TaskSnapshotSurface;
     invoke-static {v0}, Lcom/android/server/wm/TaskSnapshotSurface;->access$000(Lcom/android/server/wm/TaskSnapshotSurface;)Lcom/android/server/wm/WindowManagerService;
 
     move-result-object v1
@@ -57,34 +50,24 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 423
     invoke-static {v0}, Lcom/android/server/wm/TaskSnapshotSurface;->access$100(Lcom/android/server/wm/TaskSnapshotSurface;)Z
 
     move-result v2
 
-    .line 424
-    .local v2, "hasDrawn":Z
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 425
     if-eqz v2, :cond_1
 
-    .line 426
     invoke-static {v0}, Lcom/android/server/wm/TaskSnapshotSurface;->access$200(Lcom/android/server/wm/TaskSnapshotSurface;)V
 
-    .line 430
-    .end local v0    # "surface":Lcom/android/server/wm/TaskSnapshotSurface;
-    .end local v2    # "hasDrawn":Z
     :cond_1
     :goto_0
     return-void
 
-    .line 424
-    .restart local v0    # "surface":Lcom/android/server/wm/TaskSnapshotSurface;
     :catchall_0
     move-exception v2
 

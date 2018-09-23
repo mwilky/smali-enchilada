@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/input/InputManagerService;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/input/InputManagerService;
 
-    .line 1978
     iput-object p1, p0, Lcom/android/server/input/InputManagerService$12;->this$0:Lcom/android/server/input/InputManagerService;
 
     iput-object p2, p0, Lcom/android/server/input/InputManagerService$12;->val$result:[Ljava/lang/String;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public visitKeyboardLayout(Landroid/content/res/Resources;ILandroid/hardware/input/KeyboardLayout;)V
     .locals 4
-    .param p1, "resources"    # Landroid/content/res/Resources;
-    .param p2, "keyboardLayoutResId"    # I
-    .param p3, "layout"    # Landroid/hardware/input/KeyboardLayout;
 
-    .line 1983
     :try_start_0
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$12;->val$result:[Ljava/lang/String;
 
@@ -58,21 +52,18 @@
 
     aput-object v2, v0, v1
 
-    .line 1984
     iget-object v0, p0, Lcom/android/server/input/InputManagerService$12;->val$result:[Ljava/lang/String;
 
     const/4 v1, 0x1
 
     new-instance v2, Ljava/io/InputStreamReader;
 
-    .line 1985
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
     move-result-object v3
 
     invoke-direct {v2, v3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    .line 1984
     invoke-static {v2}, Llibcore/io/Streams;->readFully(Ljava/io/Reader;)Ljava/lang/String;
 
     move-result-object v2
@@ -84,21 +75,17 @@
 
     goto :goto_0
 
-    .line 1987
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 1986
     :catch_1
     move-exception v0
 
-    .line 1988
     :goto_0
     nop
 
-    .line 1989
     :goto_1
     return-void
 .end method

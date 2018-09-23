@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/hdmi/HdmiControlService;)V
     .locals 0
 
-    .line 141
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/hdmi/HdmiControlService;Lcom/android/server/hdmi/HdmiControlService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/hdmi/HdmiControlService;
-    .param p2, "x1"    # Lcom/android/server/hdmi/HdmiControlService$1;
 
-    .line 141
     invoke-direct {p0, p1}, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;-><init>(Lcom/android/server/hdmi/HdmiControlService;)V
 
     return-void
@@ -44,13 +40,10 @@
 .method private getMenuLanguage()Ljava/lang/String;
     .locals 2
 
-    .line 172
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 173
-    .local v0, "locale":Ljava/util/Locale;
     sget-object v1, Ljava/util/Locale;->TAIWAN:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
@@ -85,7 +78,6 @@
 
     goto :goto_0
 
-    .line 179
     :cond_0
     invoke-virtual {v0}, Ljava/util/Locale;->getISO3Language()Ljava/lang/String;
 
@@ -93,7 +85,6 @@
 
     return-object v1
 
-    .line 177
     :cond_1
     :goto_0
     const-string v1, "chi"
@@ -105,17 +96,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
     .annotation runtime Lcom/android/server/hdmi/HdmiAnnotations$ServiceThreadOnly;
     .end annotation
 
-    .line 145
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->access$000(Lcom/android/server/hdmi/HdmiControlService;)V
 
-    .line 146
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -207,7 +194,6 @@
 
     goto :goto_2
 
-    .line 164
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -217,21 +203,17 @@
 
     if-eqz v0, :cond_5
 
-    .line 165
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0, v4}, Lcom/android/server/hdmi/HdmiControlService;->access$100(Lcom/android/server/hdmi/HdmiControlService;I)V
 
     goto :goto_2
 
-    .line 158
     :pswitch_1
     invoke-direct {p0}, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->getMenuLanguage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 159
-    .local v0, "language":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v1}, Lcom/android/server/hdmi/HdmiControlService;->access$300(Lcom/android/server/hdmi/HdmiControlService;)Ljava/lang/String;
@@ -244,15 +226,12 @@
 
     if-nez v1, :cond_5
 
-    .line 160
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v1, v0}, Lcom/android/server/hdmi/HdmiControlService;->access$400(Lcom/android/server/hdmi/HdmiControlService;Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 153
-    .end local v0    # "language":Ljava/lang/String;
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -262,14 +241,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 154
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->access$200(Lcom/android/server/hdmi/HdmiControlService;)V
 
     goto :goto_2
 
-    .line 148
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -279,12 +256,10 @@
 
     if-eqz v0, :cond_5
 
-    .line 149
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HdmiControlBroadcastReceiver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0, v3}, Lcom/android/server/hdmi/HdmiControlService;->access$100(Lcom/android/server/hdmi/HdmiControlService;I)V
 
-    .line 169
     :cond_5
     :goto_2
     return-void

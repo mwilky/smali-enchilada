@@ -36,12 +36,10 @@
 .method constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 58
     iput-object p1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->val$onSimCardLoadedCallback:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->mSimNotLoadedSeen:Z
@@ -53,17 +51,13 @@
 # virtual methods
 .method public accept(Landroid/content/Intent;)V
     .locals 4
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 63
     const-string/jumbo v0, "ss"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "state":Ljava/lang/String;
     invoke-static {}, Lcom/android/server/connectivity/tethering/SimChangeListener;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -92,7 +86,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
     const-string v1, "LOADED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -101,31 +94,25 @@
 
     if-nez v1, :cond_0
 
-    .line 68
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->mSimNotLoadedSeen:Z
 
-    .line 69
     return-void
 
-    .line 72
     :cond_0
     iget-boolean v1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->mSimNotLoadedSeen:Z
 
     if-eqz v1, :cond_1
 
-    .line 73
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->mSimNotLoadedSeen:Z
 
-    .line 74
     iget-object v1, p0, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->val$onSimCardLoadedCallback:Ljava/lang/Runnable;
 
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    .line 76
     :cond_1
     return-void
 .end method
@@ -133,7 +120,6 @@
 .method public bridge synthetic accept(Ljava/lang/Object;)V
     .locals 0
 
-    .line 58
     check-cast p1, Landroid/content/Intent;
 
     invoke-virtual {p0, p1}, Lcom/android/server/connectivity/tethering/SimChangeListener$1;->accept(Landroid/content/Intent;)V

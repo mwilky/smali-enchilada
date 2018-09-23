@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 100
     new-instance v0, Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;
 
     const-string v1, "NOERROR"
@@ -144,7 +143,6 @@
         }
     .end annotation
 
-    .line 100
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -152,9 +150,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 100
     const-class v0, Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -169,7 +165,6 @@
 .method public static values()[Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;
     .locals 1
 
-    .line 100
     sget-object v0, Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;->$VALUES:[Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;
 
     invoke-virtual {v0}, [Lcom/android/server/connectivity/NetworkDiagnostics$DnsResponseCode;->clone()Ljava/lang/Object;

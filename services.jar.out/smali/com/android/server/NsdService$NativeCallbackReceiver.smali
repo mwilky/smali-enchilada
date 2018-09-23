@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NsdService;)V
     .locals 2
-    .param p1, "this$0"    # Lcom/android/server/NsdService;
 
-    .line 653
     iput-object p1, p0, Lcom/android/server/NsdService$NativeCallbackReceiver;->this$0:Lcom/android/server/NsdService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 654
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -55,20 +52,16 @@
         }
     .end annotation
 
-    .line 657
     iget-object v0, p0, Lcom/android/server/NsdService$NativeCallbackReceiver;->connected:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
 
-    .line 658
     return-void
 .end method
 
 .method public onCheckHoldWakeLock(I)Z
     .locals 1
-    .param p1, "code"    # I
 
-    .line 667
     const/4 v0, 0x0
 
     return v0
@@ -77,30 +70,22 @@
 .method public onDaemonConnected()V
     .locals 1
 
-    .line 662
     iget-object v0, p0, Lcom/android/server/NsdService$NativeCallbackReceiver;->connected:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 663
     return-void
 .end method
 
 .method public onEvent(ILjava/lang/String;[Ljava/lang/String;)Z
     .locals 3
-    .param p1, "code"    # I
-    .param p2, "raw"    # Ljava/lang/String;
-    .param p3, "cooked"    # [Ljava/lang/String;
 
-    .line 674
     new-instance v0, Lcom/android/server/NsdService$NativeEvent;
 
     iget-object v1, p0, Lcom/android/server/NsdService$NativeCallbackReceiver;->this$0:Lcom/android/server/NsdService;
 
     invoke-direct {v0, v1, p1, p2, p3}, Lcom/android/server/NsdService$NativeEvent;-><init>(Lcom/android/server/NsdService;ILjava/lang/String;[Ljava/lang/String;)V
 
-    .line 675
-    .local v0, "event":Lcom/android/server/NsdService$NativeEvent;
     iget-object v1, p0, Lcom/android/server/NsdService$NativeCallbackReceiver;->this$0:Lcom/android/server/NsdService;
 
     invoke-static {v1}, Lcom/android/server/NsdService;->access$3000(Lcom/android/server/NsdService;)Lcom/android/server/NsdService$NsdStateMachine;
@@ -111,7 +96,6 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/server/NsdService$NsdStateMachine;->sendMessage(ILjava/lang/Object;)V
 
-    .line 676
     const/4 v1, 0x1
 
     return v1

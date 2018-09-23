@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/search/SearchManagerService$Lifecycle;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/search/SearchManagerService$Lifecycle;
 
-    .line 78
     iput-object p1, p0, Lcom/android/server/search/SearchManagerService$Lifecycle$1;->this$0:Lcom/android/server/search/SearchManagerService$Lifecycle;
 
     iput p2, p0, Lcom/android/server/search/SearchManagerService$Lifecycle$1;->val$userId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 81
     iget-object v0, p0, Lcom/android/server/search/SearchManagerService$Lifecycle$1;->this$0:Lcom/android/server/search/SearchManagerService$Lifecycle;
 
     invoke-static {v0}, Lcom/android/server/search/SearchManagerService$Lifecycle;->access$000(Lcom/android/server/search/SearchManagerService$Lifecycle;)Lcom/android/server/search/SearchManagerService;
@@ -54,6 +51,5 @@
 
     invoke-static {v0, v1}, Lcom/android/server/search/SearchManagerService;->access$100(Lcom/android/server/search/SearchManagerService;I)V
 
-    .line 82
     return-void
 .end method

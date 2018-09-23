@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService$12;Ljava/lang/String;II)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/notification/NotificationManagerService$12;
 
-    .line 4241
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->this$1:Lcom/android/server/notification/NotificationManagerService$12;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->val$pkg:Ljava/lang/String;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 6
 
-    .line 4244
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->this$1:Lcom/android/server/notification/NotificationManagerService$12;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService$12;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -60,7 +57,6 @@
 
     monitor-enter v0
 
-    .line 4245
     :try_start_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->this$1:Lcom/android/server/notification/NotificationManagerService$12;
 
@@ -78,7 +74,6 @@
 
     invoke-static {v1, v2, v3, v4, v5}, Lcom/android/server/notification/NotificationManagerService$12;->access$6500(Lcom/android/server/notification/NotificationManagerService$12;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 4247
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->this$1:Lcom/android/server/notification/NotificationManagerService$12;
 
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$12$1;->this$1:Lcom/android/server/notification/NotificationManagerService$12;
@@ -95,13 +90,10 @@
 
     invoke-static {v1, v2, v3, v4, v5}, Lcom/android/server/notification/NotificationManagerService$12;->access$6500(Lcom/android/server/notification/NotificationManagerService$12;Ljava/util/ArrayList;Ljava/lang/String;II)V
 
-    .line 4249
     monitor-exit v0
 
-    .line 4250
     return-void
 
-    .line 4249
     :catchall_0
     move-exception v1
 

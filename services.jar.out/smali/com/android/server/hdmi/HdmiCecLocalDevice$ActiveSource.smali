@@ -24,40 +24,28 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     invoke-virtual {p0}, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->invalidate()V
 
-    .line 69
     return-void
 .end method
 
 .method public constructor <init>(II)V
     .locals 0
-    .param p1, "logical"    # I
-    .param p2, "physical"    # I
 
-    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
     iput p1, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
-    .line 72
     iput p2, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->physicalAddress:I
 
-    .line 73
     return-void
 .end method
 
 .method public static of(II)Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
     .locals 1
-    .param p0, "logical"    # I
-    .param p1, "physical"    # I
 
-    .line 78
     new-instance v0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;-><init>(II)V
@@ -67,9 +55,7 @@
 
 .method public static of(Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;)Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
     .locals 3
-    .param p0, "source"    # Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
 
-    .line 75
     new-instance v0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
 
     iget v1, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
@@ -85,10 +71,7 @@
 # virtual methods
 .method public equals(II)Z
     .locals 1
-    .param p1, "logical"    # I
-    .param p2, "physical"    # I
 
-    .line 88
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
     if-ne v0, p1, :cond_0
@@ -110,22 +93,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 92
     instance-of v0, p1, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 93
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
 
-    .line 94
-    .local v0, "that":Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
     iget v2, v0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
     iget v3, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
@@ -145,8 +123,6 @@
     :cond_0
     return v1
 
-    .line 97
-    .end local v0    # "that":Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;
     :cond_1
     return v1
 .end method
@@ -154,7 +130,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 101
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
     mul-int/lit8 v0, v0, 0x1d
@@ -169,24 +144,20 @@
 .method public invalidate()V
     .locals 1
 
-    .line 84
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
-    .line 85
     const v0, 0xffff
 
     iput v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->physicalAddress:I
 
-    .line 86
     return-void
 .end method
 
 .method public isValid()Z
     .locals 1
 
-    .line 81
     iget v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiUtils;->isValidAddress(I)Z
@@ -199,13 +170,10 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .line 105
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 106
-    .local v0, "s":Ljava/lang/StringBuffer;
     iget v1, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->logicalAddress:I
 
     const/4 v2, 0x0
@@ -216,7 +184,6 @@
 
     if-ne v1, v4, :cond_0
 
-    .line 107
     const-string/jumbo v1, "invalid"
 
     goto :goto_0
@@ -238,8 +205,6 @@
 
     move-result-object v1
 
-    .line 108
-    .local v1, "logicalAddressString":Ljava/lang/String;
     :goto_0
     const-string v4, "("
 
@@ -247,14 +212,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 109
     iget v4, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$ActiveSource;->physicalAddress:I
 
     const v5, 0xffff
 
     if-ne v4, v5, :cond_1
 
-    .line 110
     const-string/jumbo v2, "invalid"
 
     goto :goto_1
@@ -276,8 +239,6 @@
 
     move-result-object v2
 
-    .line 111
-    .local v2, "physicalAddressString":Ljava/lang/String;
     :goto_1
     const-string v3, ", "
 
@@ -289,7 +250,6 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 112
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3

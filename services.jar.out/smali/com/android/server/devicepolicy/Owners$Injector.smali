@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1036
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
 .method environmentGetDataSystemDirectory()Ljava/io/File;
     .locals 1
 
-    .line 1038
     invoke-static {}, Landroid/os/Environment;->getDataSystemDirectory()Ljava/io/File;
 
     move-result-object v0
@@ -42,9 +40,7 @@
 
 .method environmentGetUserSystemDirectory(I)Ljava/io/File;
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 1042
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v0

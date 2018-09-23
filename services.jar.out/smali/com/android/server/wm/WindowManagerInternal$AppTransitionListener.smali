@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,37 +27,25 @@
 # virtual methods
 .method public onAppTransitionCancelledLocked(I)V
     .locals 0
-    .param p1, "transit"    # I
 
-    .line 115
     return-void
 .end method
 
 .method public onAppTransitionFinishedLocked(Landroid/os/IBinder;)V
     .locals 0
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .line 145
     return-void
 .end method
 
 .method public onAppTransitionPendingLocked()V
     .locals 0
 
-    .line 108
     return-void
 .end method
 
 .method public onAppTransitionStartingLocked(ILandroid/os/IBinder;Landroid/os/IBinder;JJJ)I
     .locals 1
-    .param p1, "transit"    # I
-    .param p2, "openToken"    # Landroid/os/IBinder;
-    .param p3, "closeToken"    # Landroid/os/IBinder;
-    .param p4, "duration"    # J
-    .param p6, "statusBarAnimationStartTime"    # J
-    .param p8, "statusBarAnimationDuration"    # J
 
-    .line 137
     const/4 v0, 0x0
 
     return v0

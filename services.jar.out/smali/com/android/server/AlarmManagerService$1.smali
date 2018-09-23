@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AlarmManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/AlarmManagerService;
 
-    .line 1399
     iput-object p1, p0, Lcom/android/server/AlarmManagerService$1;->this$0:Lcom/android/server/AlarmManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/AlarmManagerService$Alarm;Lcom/android/server/AlarmManagerService$Alarm;)I
     .locals 6
-    .param p1, "lhs"    # Lcom/android/server/AlarmManagerService$Alarm;
-    .param p2, "rhs"    # Lcom/android/server/AlarmManagerService$Alarm;
 
-    .line 1403
     iget-object v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->priorityClass:Lcom/android/server/AlarmManagerService$PriorityClass;
 
     iget v0, v0, Lcom/android/server/AlarmManagerService$PriorityClass;->priority:I
@@ -63,10 +58,8 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1404
     return v2
 
-    .line 1405
     :cond_0
     iget-object v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->priorityClass:Lcom/android/server/AlarmManagerService$PriorityClass;
 
@@ -80,10 +73,8 @@
 
     if-le v0, v1, :cond_1
 
-    .line 1406
     return v3
 
-    .line 1410
     :cond_1
     iget-wide v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->whenElapsed:J
 
@@ -93,10 +84,8 @@
 
     if-gez v0, :cond_2
 
-    .line 1411
     return v2
 
-    .line 1412
     :cond_2
     iget-wide v0, p1, Lcom/android/server/AlarmManagerService$Alarm;->whenElapsed:J
 
@@ -106,10 +95,8 @@
 
     if-lez v0, :cond_3
 
-    .line 1413
     return v3
 
-    .line 1417
     :cond_3
     const/4 v0, 0x0
 
@@ -119,7 +106,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1399
     check-cast p1, Lcom/android/server/AlarmManagerService$Alarm;
 
     check-cast p2, Lcom/android/server/AlarmManagerService$Alarm;

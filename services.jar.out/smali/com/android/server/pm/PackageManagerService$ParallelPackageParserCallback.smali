@@ -31,14 +31,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 1026
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0, p1}, Lcom/android/server/pm/PackageManagerService$PackageParserCallback;-><init>(Lcom/android/server/pm/PackageManagerService;)V
 
-    .line 1027
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
@@ -51,14 +48,12 @@
 .method findStaticOverlayPackages()V
     .locals 4
 
-    .line 1030
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 1031
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -85,43 +80,33 @@
 
     check-cast v2, Landroid/content/pm/PackageParser$Package;
 
-    .line 1032
-    .local v2, "p":Landroid/content/pm/PackageParser$Package;
     iget-boolean v3, v2, Landroid/content/pm/PackageParser$Package;->mOverlayIsStatic:Z
 
     if-eqz v3, :cond_1
 
-    .line 1033
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
 
     if-nez v3, :cond_0
 
-    .line 1034
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
 
-    .line 1036
     :cond_0
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1038
-    .end local v2    # "p":Landroid/content/pm/PackageParser$Package;
     :cond_1
     goto :goto_0
 
-    .line 1039
     :cond_2
     monitor-exit v0
 
-    .line 1040
     return-void
 
-    .line 1039
     :catchall_0
     move-exception v1
 
@@ -134,12 +119,9 @@
 
 .method declared-synchronized getStaticOverlayPaths(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
     .locals 1
-    .param p1, "targetPackageName"    # Ljava/lang/String;
-    .param p2, "targetPath"    # Ljava/lang/String;
 
     monitor-enter p0
 
-    .line 1049
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
 
@@ -149,36 +131,28 @@
 
     goto :goto_0
 
-    .line 1050
     :cond_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->mOverlayPackages:Ljava/util/List;
 
-    .line 1051
     invoke-virtual {p0, v0, p1}, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->getStaticOverlayPackages(Ljava/util/Collection;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1050
     invoke-virtual {p0, v0, p2}, Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;->getStaticOverlayPaths(Ljava/util/List;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1049
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 1048
-    .end local p1    # "targetPackageName":Ljava/lang/String;
-    .end local p2    # "targetPath":Ljava/lang/String;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/PackageManagerService$ParallelPackageParserCallback;
     throw p1
 .end method

@@ -60,7 +60,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1466
     const/16 v0, -0x2710
 
     sput v0, Lcom/android/server/notification/RankingHelper$Record;->UNKNOWN_UID:I
@@ -71,43 +70,34 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 1465
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1469
     sget v0, Lcom/android/server/notification/RankingHelper$Record;->UNKNOWN_UID:I
 
     iput v0, p0, Lcom/android/server/notification/RankingHelper$Record;->uid:I
 
-    .line 1470
     const/16 v0, -0x3e8
 
     iput v0, p0, Lcom/android/server/notification/RankingHelper$Record;->importance:I
 
-    .line 1471
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/notification/RankingHelper$Record;->priority:I
 
-    .line 1472
     iput v0, p0, Lcom/android/server/notification/RankingHelper$Record;->visibility:I
 
-    .line 1473
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/notification/RankingHelper$Record;->showBadge:Z
 
-    .line 1474
     iput v1, p0, Lcom/android/server/notification/RankingHelper$Record;->lockedAppFields:I
 
-    .line 1476
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/RankingHelper$Record;->channels:Landroid/util/ArrayMap;
 
-    .line 1477
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
@@ -119,9 +109,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/notification/RankingHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/notification/RankingHelper$1;
 
-    .line 1465
     invoke-direct {p0}, Lcom/android/server/notification/RankingHelper$Record;-><init>()V
 
     return-void

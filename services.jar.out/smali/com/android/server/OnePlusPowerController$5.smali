@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OnePlusPowerController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OnePlusPowerController;
 
-    .line 1673
     iput-object p1, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -36,7 +34,6 @@
 .method public onSubscriptionsChanged()V
     .locals 6
 
-    .line 1677
     invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1100()Z
 
     move-result v0
@@ -49,7 +46,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1679
     :cond_0
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
@@ -61,8 +57,6 @@
 
     move-result-object v0
 
-    .line 1681
-    .local v0, "subInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4300()Z
 
     move-result v1
@@ -71,22 +65,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 1683
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1684
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/telephony/SubscriptionInfo;
 
-    .line 1685
-    .local v1, "subinfo":Landroid/telephony/SubscriptionInfo;
     const-string v3, "OnePlusPowerController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -109,7 +99,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1686
     iget-object v3, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -120,14 +109,11 @@
 
     invoke-virtual {v3, v4}, Lcom/android/server/OnePlusPowerController;->setMccMncValue(Landroid/telephony/SubscriptionInfo;)V
 
-    .line 1689
-    .end local v1    # "subinfo":Landroid/telephony/SubscriptionInfo;
     :cond_1
     invoke-static {v2}, Lcom/android/server/OnePlusPowerController;->access$4302(Z)Z
 
     goto :goto_0
 
-    .line 1691
     :cond_2
     invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$4400()I
 
@@ -135,14 +121,12 @@
 
     if-gtz v1, :cond_3
 
-    .line 1693
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 1694
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -153,7 +137,6 @@
 
     invoke-virtual {v1, v3}, Lcom/android/server/OnePlusPowerController;->setMccMncValue(Landroid/telephony/SubscriptionInfo;)V
 
-    .line 1697
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$5;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$1900(Lcom/android/server/OnePlusPowerController;)Lcom/android/server/OnePlusPowerController$MyHandler;
@@ -168,7 +151,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1702
     :cond_3
     :goto_0
     invoke-static {}, Lcom/android/server/OnePlusPowerController;->access$1100()Z
@@ -177,7 +159,6 @@
 
     if-eqz v1, :cond_5
 
-    .line 1703
     const-string v1, "OnePlusPowerController"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -218,7 +199,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1704
     const-string v1, "OnePlusPowerController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -251,7 +231,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1707
     :cond_5
     return-void
 .end method

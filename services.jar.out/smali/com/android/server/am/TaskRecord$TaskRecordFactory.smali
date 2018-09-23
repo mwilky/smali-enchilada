@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,35 +27,6 @@
 # virtual methods
 .method create(Lcom/android/server/am/ActivityManagerService;ILandroid/content/Intent;Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;Landroid/content/ComponentName;ZZZIILjava/lang/String;Ljava/util/ArrayList;JZLandroid/app/ActivityManager$TaskDescription;IIIIILjava/lang/String;IZZZII)Lcom/android/server/am/TaskRecord;
     .locals 33
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "taskId"    # I
-    .param p3, "intent"    # Landroid/content/Intent;
-    .param p4, "affinityIntent"    # Landroid/content/Intent;
-    .param p5, "affinity"    # Ljava/lang/String;
-    .param p6, "rootAffinity"    # Ljava/lang/String;
-    .param p7, "realActivity"    # Landroid/content/ComponentName;
-    .param p8, "origActivity"    # Landroid/content/ComponentName;
-    .param p9, "rootWasReset"    # Z
-    .param p10, "autoRemoveRecents"    # Z
-    .param p11, "askedCompatMode"    # Z
-    .param p12, "userId"    # I
-    .param p13, "effectiveUid"    # I
-    .param p14, "lastDescription"    # Ljava/lang/String;
-    .param p16, "lastTimeMoved"    # J
-    .param p18, "neverRelinquishIdentity"    # Z
-    .param p19, "lastTaskDescription"    # Landroid/app/ActivityManager$TaskDescription;
-    .param p20, "taskAffiliation"    # I
-    .param p21, "prevTaskId"    # I
-    .param p22, "nextTaskId"    # I
-    .param p23, "taskAffiliationColor"    # I
-    .param p24, "callingUid"    # I
-    .param p25, "callingPackage"    # Ljava/lang/String;
-    .param p26, "resizeMode"    # I
-    .param p27, "supportsPictureInPicture"    # Z
-    .param p28, "realActivitySuspended"    # Z
-    .param p29, "userSetupComplete"    # Z
-    .param p30, "minWidth"    # I
-    .param p31, "minHeight"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,8 +51,6 @@
         }
     .end annotation
 
-    .line 2275
-    .local p15, "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
     new-instance v32, Lcom/android/server/am/TaskRecord;
 
     move-object/from16 v0, v32
@@ -154,13 +122,7 @@
 
 .method create(Lcom/android/server/am/ActivityManagerService;ILandroid/content/pm/ActivityInfo;Landroid/content/Intent;Landroid/app/ActivityManager$TaskDescription;)Lcom/android/server/am/TaskRecord;
     .locals 7
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "taskId"    # I
-    .param p3, "info"    # Landroid/content/pm/ActivityInfo;
-    .param p4, "intent"    # Landroid/content/Intent;
-    .param p5, "taskDescription"    # Landroid/app/ActivityManager$TaskDescription;
 
-    .line 2259
     new-instance v6, Lcom/android/server/am/TaskRecord;
 
     move-object v0, v6
@@ -182,14 +144,7 @@
 
 .method create(Lcom/android/server/am/ActivityManagerService;ILandroid/content/pm/ActivityInfo;Landroid/content/Intent;Landroid/service/voice/IVoiceInteractionSession;Lcom/android/internal/app/IVoiceInteractor;)Lcom/android/server/am/TaskRecord;
     .locals 8
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "taskId"    # I
-    .param p3, "info"    # Landroid/content/pm/ActivityInfo;
-    .param p4, "intent"    # Landroid/content/Intent;
-    .param p5, "voiceSession"    # Landroid/service/voice/IVoiceInteractionSession;
-    .param p6, "voiceInteractor"    # Lcom/android/internal/app/IVoiceInteractor;
 
-    .line 2253
     new-instance v7, Lcom/android/server/am/TaskRecord;
 
     move-object v0, v7
@@ -213,8 +168,6 @@
 
 .method handleUnknownTag(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;)V
     .locals 3
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "in"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -222,7 +175,6 @@
         }
     .end annotation
 
-    .line 2509
     const-string v0, "ActivityManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -241,17 +193,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2510
     invoke-static {p2}, Lcom/android/internal/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 2511
     return-void
 .end method
 
 .method restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/am/ActivityStackSupervisor;)Lcom/android/server/am/TaskRecord;
     .locals 69
-    .param p1, "in"    # Lorg/xmlpull/v1/XmlPullParser;
-    .param p2, "stackSupervisor"    # Lcom/android/server/am/ActivityStackSupervisor;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -261,159 +209,86 @@
 
     move-object/from16 v1, p1
 
-    .line 2286
     const/4 v0, 0x0
 
-    .line 2287
-    .local v0, "intent":Landroid/content/Intent;
     const/4 v2, 0x0
 
-    .line 2288
-    .local v2, "affinityIntent":Landroid/content/Intent;
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2289
-    .local v3, "activities":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/ActivityRecord;>;"
     const/4 v4, 0x0
 
-    .line 2290
-    .local v4, "realActivity":Landroid/content/ComponentName;
     const/4 v5, 0x0
 
-    .line 2291
-    .local v5, "realActivitySuspended":Z
     const/4 v6, 0x0
 
-    .line 2292
-    .local v6, "origActivity":Landroid/content/ComponentName;
     const/4 v7, 0x0
 
-    .line 2293
-    .local v7, "affinity":Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 2294
-    .local v8, "rootAffinity":Ljava/lang/String;
     const/4 v9, 0x0
 
-    .line 2295
-    .local v9, "hasRootAffinity":Z
     const/4 v10, 0x0
 
-    .line 2296
-    .local v10, "rootHasReset":Z
     const/4 v11, 0x0
 
-    .line 2297
-    .local v11, "autoRemoveRecents":Z
     const/4 v12, 0x0
 
-    .line 2298
-    .local v12, "askedCompatMode":Z
     const/4 v13, 0x0
 
-    .line 2299
-    .local v13, "taskType":I
     const/4 v14, 0x0
 
-    .line 2300
-    .local v14, "userId":I
     const/4 v15, 0x1
 
-    .line 2301
-    .local v15, "userSetupComplete":Z
     const/16 v16, -0x1
 
-    .line 2302
-    .local v16, "effectiveUid":I
     const/16 v17, 0x0
 
-    .line 2303
-    .local v17, "lastDescription":Ljava/lang/String;
     const-wide/16 v18, 0x0
 
-    .line 2304
-    .local v18, "lastTimeOnTop":J
     const/16 v20, 0x1
 
-    .line 2305
-    .local v20, "neverRelinquishIdentity":Z
     const/16 v21, -0x1
 
-    .line 2306
-    .local v21, "taskId":I
     move-object/from16 v36, v2
 
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v2
 
-    .line 2307
-    .local v2, "outerDepth":I
-    .local v36, "affinityIntent":Landroid/content/Intent;
     move-object/from16 v37, v0
 
     new-instance v0, Landroid/app/ActivityManager$TaskDescription;
 
-    .line 2307
-    .end local v0    # "intent":Landroid/content/Intent;
-    .local v37, "intent":Landroid/content/Intent;
     invoke-direct {v0}, Landroid/app/ActivityManager$TaskDescription;-><init>()V
 
     move-object/from16 v38, v0
 
-    .line 2308
-    .local v38, "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     const/4 v0, -0x1
 
-    .line 2309
-    .local v0, "taskAffiliation":I
     const/16 v22, 0x0
 
-    .line 2310
-    .local v22, "taskAffiliationColor":I
     const/16 v23, -0x1
 
-    .line 2311
-    .local v23, "prevTaskId":I
     const/16 v24, -0x1
 
-    .line 2312
-    .local v24, "nextTaskId":I
     const/16 v25, -0x1
 
-    .line 2313
-    .local v25, "callingUid":I
     const-string v26, ""
 
-    .line 2314
-    .local v26, "callingPackage":Ljava/lang/String;
     const/16 v27, 0x4
 
-    .line 2315
-    .local v27, "resizeMode":I
     const/16 v28, 0x0
 
-    .line 2316
-    .local v28, "supportsPictureInPicture":Z
     const/16 v29, 0x0
 
-    .line 2317
-    .local v29, "lastNonFullscreenBounds":Landroid/graphics/Rect;
     const/16 v30, -0x1
 
-    .line 2318
-    .local v30, "minWidth":I
     const/16 v31, -0x1
 
-    .line 2319
-    .local v31, "minHeight":I
     const/16 v32, 0x0
 
-    .line 2321
-    .local v32, "persistTaskVersion":I
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeCount()I
 
     move-result v33
@@ -422,9 +297,6 @@
 
     const/4 v15, 0x1
 
-    .line 2321
-    .end local v15    # "userSetupComplete":Z
-    .local v39, "userSetupComplete":Z
     add-int/lit8 v33, v33, -0x1
 
     move/from16 v40, v0
@@ -479,73 +351,19 @@
 
     move/from16 v39, v20
 
-    .end local v0    # "taskAffiliation":I
-    .end local v5    # "realActivitySuspended":Z
-    .end local v6    # "origActivity":Landroid/content/ComponentName;
-    .end local v7    # "affinity":Ljava/lang/String;
-    .end local v9    # "hasRootAffinity":Z
-    .end local v17    # "lastDescription":Ljava/lang/String;
-    .end local v18    # "lastTimeOnTop":J
-    .end local v20    # "neverRelinquishIdentity":Z
-    .end local v21    # "taskId":I
-    .end local v22    # "taskAffiliationColor":I
-    .end local v23    # "prevTaskId":I
-    .end local v24    # "nextTaskId":I
-    .end local v25    # "callingUid":I
-    .end local v26    # "callingPackage":Ljava/lang/String;
-    .end local v27    # "resizeMode":I
-    .end local v29    # "lastNonFullscreenBounds":Landroid/graphics/Rect;
-    .end local v30    # "minWidth":I
-    .end local v31    # "minHeight":I
-    .end local v32    # "persistTaskVersion":I
-    .local v4, "resizeMode":I
-    .local v10, "userId":I
-    .local v11, "taskType":I
-    .local v12, "lastNonFullscreenBounds":Landroid/graphics/Rect;
-    .local v13, "persistTaskVersion":I
-    .local v14, "taskId":I
-    .local v33, "attrNdx":I
-    .local v39, "neverRelinquishIdentity":Z
-    .local v40, "taskAffiliation":I
-    .local v41, "realActivity":Landroid/content/ComponentName;
-    .local v42, "taskAffiliationColor":I
-    .local v43, "prevTaskId":I
-    .local v44, "origActivity":Landroid/content/ComponentName;
-    .local v45, "nextTaskId":I
-    .local v46, "affinity":Ljava/lang/String;
-    .local v47, "callingUid":I
-    .local v48, "minWidth":I
-    .local v49, "minHeight":I
-    .local v50, "lastDescription":Ljava/lang/String;
-    .local v51, "callingPackage":Ljava/lang/String;
-    .local v52, "lastTimeOnTop":J
-    .local v54, "realActivitySuspended":Z
-    .local v55, "hasRootAffinity":Z
-    .local v56, "rootHasReset":Z
-    .local v57, "autoRemoveRecents":Z
-    .local v58, "askedCompatMode":Z
-    .local v59, "userSetupComplete":Z
     :goto_0
     move/from16 v0, v33
 
-    .line 2321
-    .end local v33    # "attrNdx":I
-    .local v0, "attrNdx":I
     if-ltz v0, :cond_3
 
-    .line 2322
     invoke-interface {v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 2323
-    .local v7, "attrName":Ljava/lang/String;
     invoke-interface {v1, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 2326
-    .local v9, "attrValue":Ljava/lang/String;
     invoke-virtual {v7}, Ljava/lang/String;->hashCode()I
 
     move-result v17
@@ -927,7 +745,6 @@
     :goto_2
     packed-switch v6, :pswitch_data_0
 
-    .line 2413
     const-string/jumbo v5, "task_description_"
 
     invoke-virtual {v7, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -936,301 +753,209 @@
 
     if-eqz v5, :cond_2
 
-    .line 2414
     move-object/from16 v6, v38
 
     invoke-virtual {v6, v7, v9}, Landroid/app/ActivityManager$TaskDescription;->restoreFromXml(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2321
-    .end local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .local v6, "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     move-object/from16 v63, v6
 
     goto/16 :goto_4
 
-    .line 2410
-    .end local v6    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .restart local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     :pswitch_0
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2411
-    .end local v13    # "persistTaskVersion":I
-    .local v5, "persistTaskVersion":I
     nop
 
-    .line 2321
     move v13, v5
 
     goto/16 :goto_3
 
-    .line 2407
-    .end local v5    # "persistTaskVersion":I
-    .restart local v13    # "persistTaskVersion":I
     :pswitch_1
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v49
 
-    .line 2408
     goto/16 :goto_3
 
-    .line 2404
     :pswitch_2
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v48
 
-    .line 2405
     goto/16 :goto_3
 
-    .line 2401
     :pswitch_3
     invoke-static {v9}, Landroid/graphics/Rect;->unflattenFromString(Ljava/lang/String;)Landroid/graphics/Rect;
 
     move-result-object v5
 
-    .line 2402
-    .end local v12    # "lastNonFullscreenBounds":Landroid/graphics/Rect;
-    .local v5, "lastNonFullscreenBounds":Landroid/graphics/Rect;
     nop
 
-    .line 2321
     move-object v12, v5
 
     goto/16 :goto_3
 
-    .line 2398
-    .end local v5    # "lastNonFullscreenBounds":Landroid/graphics/Rect;
-    .restart local v12    # "lastNonFullscreenBounds":Landroid/graphics/Rect;
     :pswitch_4
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v5
 
-    .line 2399
-    .end local v28    # "supportsPictureInPicture":Z
-    .local v5, "supportsPictureInPicture":Z
     nop
 
-    .line 2321
     move/from16 v28, v5
 
     goto/16 :goto_3
 
-    .line 2395
-    .end local v5    # "supportsPictureInPicture":Z
-    .restart local v28    # "supportsPictureInPicture":Z
     :pswitch_5
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v4
 
-    .line 2396
     goto/16 :goto_3
 
-    .line 2392
     :pswitch_6
     move-object/from16 v51, v9
 
-    .line 2393
     goto/16 :goto_3
 
-    .line 2389
     :pswitch_7
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v47
 
-    .line 2390
     goto/16 :goto_3
 
-    .line 2386
     :pswitch_8
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v42
 
-    .line 2387
     goto/16 :goto_3
 
-    .line 2383
     :pswitch_9
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v45
 
-    .line 2384
     goto/16 :goto_3
 
-    .line 2380
     :pswitch_a
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v43
 
-    .line 2381
     goto/16 :goto_3
 
-    .line 2377
     :pswitch_b
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v40
 
-    .line 2378
     goto :goto_3
 
-    .line 2374
     :pswitch_c
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v39
 
-    .line 2375
     goto :goto_3
 
-    .line 2371
     :pswitch_d
     invoke-static {v9}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v52
 
-    .line 2372
     goto :goto_3
 
-    .line 2368
     :pswitch_e
     move-object/from16 v50, v9
 
-    .line 2369
     goto :goto_3
 
-    .line 2365
     :pswitch_f
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2366
-    .end local v11    # "taskType":I
-    .local v5, "taskType":I
     nop
 
-    .line 2321
     move v11, v5
 
     goto :goto_3
 
-    .line 2362
-    .end local v5    # "taskType":I
-    .restart local v11    # "taskType":I
     :pswitch_10
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 2363
-    .end local v16    # "effectiveUid":I
-    .local v5, "effectiveUid":I
     nop
 
-    .line 2321
     move/from16 v16, v5
 
     goto :goto_3
 
-    .line 2359
-    .end local v5    # "effectiveUid":I
-    .restart local v16    # "effectiveUid":I
     :pswitch_11
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v59
 
-    .line 2360
     goto :goto_3
 
-    .line 2356
     :pswitch_12
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 2357
     goto :goto_3
 
-    .line 2353
     :pswitch_13
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v58
 
-    .line 2354
     goto :goto_3
 
-    .line 2350
     :pswitch_14
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v57
 
-    .line 2351
     goto :goto_3
 
-    .line 2347
     :pswitch_15
     invoke-static {v9}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v56
 
-    .line 2348
     goto :goto_3
 
-    .line 2343
     :pswitch_16
     move-object v5, v9
 
-    .line 2344
-    .end local v8    # "rootAffinity":Ljava/lang/String;
-    .local v5, "rootAffinity":Ljava/lang/String;
     const/4 v6, 0x1
 
-    .line 2345
-    .end local v55    # "hasRootAffinity":Z
-    .local v6, "hasRootAffinity":Z
     nop
 
-    .line 2321
     move-object v8, v5
 
     move/from16 v55, v6
 
     goto :goto_3
 
-    .line 2340
-    .end local v5    # "rootAffinity":Ljava/lang/String;
-    .end local v6    # "hasRootAffinity":Z
-    .restart local v8    # "rootAffinity":Ljava/lang/String;
-    .restart local v55    # "hasRootAffinity":Z
     :pswitch_17
     move-object/from16 v46, v9
 
-    .line 2341
     goto :goto_3
 
-    .line 2337
     :pswitch_18
     invoke-static {v9}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v44
 
-    .line 2338
     goto :goto_3
 
-    .line 2334
     :pswitch_19
     invoke-static {v9}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -1240,34 +965,21 @@
 
     move-result v54
 
-    .line 2335
     goto :goto_3
 
-    .line 2331
     :pswitch_1a
     invoke-static {v9}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v41
 
-    .line 2332
     nop
 
-    .line 2321
-    .end local v7    # "attrName":Ljava/lang/String;
-    .end local v9    # "attrValue":Ljava/lang/String;
-    .end local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .local v63, "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     :cond_1
     :goto_3
     move-object/from16 v63, v38
 
     goto :goto_4
 
-    .line 2328
-    .end local v63    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .restart local v7    # "attrName":Ljava/lang/String;
-    .restart local v9    # "attrValue":Ljava/lang/String;
-    .restart local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     :pswitch_1b
     if-ne v14, v5, :cond_1
 
@@ -1277,13 +989,9 @@
 
     goto :goto_3
 
-    .line 2416
     :cond_2
     move-object/from16 v6, v38
 
-    .line 2416
-    .end local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .local v6, "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     const-string v5, "ActivityManager"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -1294,9 +1002,6 @@
 
     const-string v6, "TaskRecord: Unknown attribute="
 
-    .line 2416
-    .end local v6    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .restart local v63    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v15, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1307,31 +1012,18 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2321
-    .end local v7    # "attrName":Ljava/lang/String;
-    .end local v9    # "attrValue":Ljava/lang/String;
     :goto_4
     add-int/lit8 v33, v0, -0x1
 
-    .line 2321
-    .end local v0    # "attrNdx":I
-    .restart local v33    # "attrNdx":I
     move-object/from16 v38, v63
 
     const/4 v15, 0x1
 
     goto/16 :goto_0
 
-    .line 2422
-    .end local v33    # "attrNdx":I
-    .end local v63    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .restart local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     :cond_3
     move-object/from16 v63, v38
 
-    .line 2422
-    .end local v38    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .restart local v63    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     :goto_5
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -1339,8 +1031,6 @@
 
     move v15, v0
 
-    .line 2422
-    .local v15, "event":I
     const/4 v5, 0x1
 
     if-eq v0, v5, :cond_a
@@ -1349,26 +1039,21 @@
 
     if-ne v15, v5, :cond_4
 
-    .line 2423
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v0
 
     if-lt v0, v2, :cond_a
 
-    .line 2424
     :cond_4
     const/4 v5, 0x2
 
     if-ne v15, v5, :cond_9
 
-    .line 2425
     invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2428
-    .local v0, "name":Ljava/lang/String;
     const-string v5, "affinity_intent"
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1377,23 +1062,16 @@
 
     if-eqz v5, :cond_5
 
-    .line 2429
     invoke-static/range {p1 .. p1}, Landroid/content/Intent;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/content/Intent;
 
     move-result-object v5
 
-    .line 2443
-    .end local v36    # "affinityIntent":Landroid/content/Intent;
-    .local v5, "affinityIntent":Landroid/content/Intent;
     move-object/from16 v9, p0
 
     move-object/from16 v36, v5
 
     goto :goto_6
 
-    .line 2430
-    .end local v5    # "affinityIntent":Landroid/content/Intent;
-    .restart local v36    # "affinityIntent":Landroid/content/Intent;
     :cond_5
     const-string/jumbo v5, "intent"
 
@@ -1403,23 +1081,16 @@
 
     if-eqz v5, :cond_6
 
-    .line 2431
     invoke-static/range {p1 .. p1}, Landroid/content/Intent;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/content/Intent;
 
     move-result-object v5
 
-    .line 2443
-    .end local v37    # "intent":Landroid/content/Intent;
-    .local v5, "intent":Landroid/content/Intent;
     move-object/from16 v9, p0
 
     move-object/from16 v37, v5
 
     goto :goto_6
 
-    .line 2432
-    .end local v5    # "intent":Landroid/content/Intent;
-    .restart local v37    # "intent":Landroid/content/Intent;
     :cond_6
     const-string v5, "activity"
 
@@ -1429,72 +1100,48 @@
 
     if-eqz v5, :cond_8
 
-    .line 2433
     nop
 
-    .line 2434
     invoke-static/range {p1 .. p2}, Lcom/android/server/am/ActivityRecord;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/am/ActivityStackSupervisor;)Lcom/android/server/am/ActivityRecord;
 
     move-result-object v5
 
-    .line 2437
-    .local v5, "activity":Lcom/android/server/am/ActivityRecord;
     if-eqz v5, :cond_7
 
-    .line 2438
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2440
-    .end local v5    # "activity":Lcom/android/server/am/ActivityRecord;
     :cond_7
     nop
 
-    .line 2443
     move-object/from16 v9, p0
 
     goto :goto_6
 
-    .line 2441
     :cond_8
     move-object/from16 v9, p0
 
     invoke-virtual {v9, v0, v1}, Lcom/android/server/am/TaskRecord$TaskRecordFactory;->handleUnknownTag(Ljava/lang/String;Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 2443
-    .end local v0    # "name":Ljava/lang/String;
     :goto_6
     goto :goto_5
 
-    .line 2422
-    .end local v15    # "event":I
     :cond_9
     move-object/from16 v9, p0
 
     goto :goto_5
 
-    .line 2445
-    .restart local v15    # "event":I
     :cond_a
     move-object/from16 v9, p0
 
     if-nez v55, :cond_b
 
-    .line 2446
     move-object/from16 v0, v46
 
-    .line 2450
-    .end local v8    # "rootAffinity":Ljava/lang/String;
-    .local v0, "rootAffinity":Ljava/lang/String;
-    .local v38, "rootAffinity":Ljava/lang/String;
     :goto_7
     move-object/from16 v38, v0
 
     goto :goto_8
 
-    .line 2447
-    .end local v0    # "rootAffinity":Ljava/lang/String;
-    .end local v38    # "rootAffinity":Ljava/lang/String;
-    .restart local v8    # "rootAffinity":Ljava/lang/String;
     :cond_b
     const-string v0, "@"
 
@@ -1504,22 +1151,16 @@
 
     if-eqz v0, :cond_c
 
-    .line 2448
     const/4 v0, 0x0
 
     goto :goto_7
 
-    .line 2450
     :cond_c
     move-object/from16 v38, v8
 
-    .line 2450
-    .end local v8    # "rootAffinity":Ljava/lang/String;
-    .restart local v38    # "rootAffinity":Ljava/lang/String;
     :goto_8
     if-gtz v16, :cond_10
 
-    .line 2451
     if-eqz v37, :cond_d
 
     move-object/from16 v0, v37
@@ -1532,27 +1173,18 @@
     :goto_9
     move-object v5, v0
 
-    .line 2452
-    .local v5, "checkIntent":Landroid/content/Intent;
     const/4 v6, 0x0
 
-    .line 2453
-    .end local v16    # "effectiveUid":I
-    .local v6, "effectiveUid":I
     if-eqz v5, :cond_f
 
-    .line 2454
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
 
     move-object v7, v0
 
-    .line 2456
-    .local v7, "pm":Landroid/content/pm/IPackageManager;
     nop
 
-    .line 2457
     :try_start_0
     invoke-virtual {v5}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
@@ -1564,39 +1196,26 @@
 
     const/16 v8, 0x2200
 
-    .line 2456
     invoke-interface {v7, v0, v8, v10}, Landroid/content/pm/IPackageManager;->getApplicationInfo(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 2460
-    .local v0, "ai":Landroid/content/pm/ApplicationInfo;
     if-eqz v0, :cond_e
 
-    .line 2461
     iget v8, v0, Landroid/content/pm/ApplicationInfo;->uid:I
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     move v0, v8
 
-    .line 2464
-    .end local v6    # "effectiveUid":I
-    .local v0, "effectiveUid":I
     move v6, v0
 
-    .line 2464
-    .end local v0    # "effectiveUid":I
-    .restart local v6    # "effectiveUid":I
     :cond_e
     goto :goto_a
 
-    .line 2463
     :catch_0
     move-exception v0
 
-    .line 2466
-    .end local v7    # "pm":Landroid/content/pm/IPackageManager;
     :cond_f
     :goto_a
     const-string v0, "ActivityManager"
@@ -1629,64 +1248,43 @@
 
     invoke-static {v0, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2470
-    .end local v5    # "checkIntent":Landroid/content/Intent;
     move v0, v6
 
     goto :goto_b
 
-    .line 2470
-    .end local v6    # "effectiveUid":I
-    .restart local v16    # "effectiveUid":I
     :cond_10
     move/from16 v0, v16
 
-    .line 2470
-    .end local v16    # "effectiveUid":I
-    .restart local v0    # "effectiveUid":I
     :goto_b
     const/4 v8, 0x1
 
     if-ge v13, v8, :cond_11
 
-    .line 2475
     if-ne v11, v8, :cond_12
 
     const/4 v5, 0x2
 
     if-ne v4, v5, :cond_12
 
-    .line 2476
     const/4 v4, 0x1
 
     goto :goto_c
 
-    .line 2483
     :cond_11
     const/4 v5, 0x3
 
     if-ne v4, v5, :cond_12
 
-    .line 2484
     const/4 v4, 0x2
 
-    .line 2485
     const/4 v5, 0x1
 
-    .line 2489
-    .end local v28    # "supportsPictureInPicture":Z
-    .local v5, "supportsPictureInPicture":Z
     move/from16 v60, v4
 
     move/from16 v61, v5
 
     goto :goto_d
 
-    .line 2489
-    .end local v4    # "resizeMode":I
-    .end local v5    # "supportsPictureInPicture":Z
-    .local v60, "resizeMode":I
-    .local v61, "supportsPictureInPicture":Z
     :cond_12
     :goto_c
     move/from16 v60, v4
@@ -1704,9 +1302,6 @@
 
     move v6, v14
 
-    .line 2489
-    .end local v63    # "taskDescription":Landroid/app/ActivityManager$TaskDescription;
-    .local v62, "taskDescription":Landroid/app/ActivityManager$TaskDescription;
     move-object/from16 v7, v37
 
     move/from16 v16, v8
@@ -1719,46 +1314,28 @@
 
     move-object/from16 v10, v38
 
-    .line 2489
-    .end local v10    # "userId":I
-    .local v63, "userId":I
     move/from16 v64, v11
 
     move-object/from16 v11, v41
 
-    .line 2489
-    .end local v11    # "taskType":I
-    .local v64, "taskType":I
     move-object v1, v12
 
     move-object/from16 v12, v44
 
-    .line 2489
-    .end local v12    # "lastNonFullscreenBounds":Landroid/graphics/Rect;
-    .local v1, "lastNonFullscreenBounds":Landroid/graphics/Rect;
     move/from16 v65, v13
 
     move/from16 v13, v56
 
-    .line 2489
-    .end local v13    # "persistTaskVersion":I
-    .local v65, "persistTaskVersion":I
     move/from16 v66, v14
 
     move/from16 v14, v57
 
-    .line 2489
-    .end local v14    # "taskId":I
-    .local v66, "taskId":I
     move/from16 v67, v15
 
     move/from16 v68, v16
 
     move/from16 v15, v58
 
-    .line 2489
-    .end local v15    # "event":I
-    .local v67, "event":I
     move/from16 v16, v63
 
     move/from16 v17, v0
@@ -1801,26 +1378,19 @@
 
     move-result-object v4
 
-    .line 2496
-    .local v4, "task":Lcom/android/server/am/TaskRecord;
     iput-object v1, v4, Lcom/android/server/am/TaskRecord;->mLastNonFullscreenBounds:Landroid/graphics/Rect;
 
-    .line 2497
     invoke-virtual {v4, v1}, Lcom/android/server/am/TaskRecord;->setBounds(Landroid/graphics/Rect;)I
 
-    .line 2499
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
     add-int/lit8 v5, v5, -0x1
 
-    .line 2499
-    .local v5, "activityNdx":I
     :goto_e
     if-ltz v5, :cond_13
 
-    .line 2500
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1829,13 +1399,10 @@
 
     invoke-virtual {v6, v4}, Lcom/android/server/am/ActivityRecord;->setTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 2499
     add-int/lit8 v5, v5, -0x1
 
     goto :goto_e
 
-    .line 2503
-    .end local v5    # "activityNdx":I
     :cond_13
     sget-boolean v5, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_RECENTS:Z
 
@@ -1859,7 +1426,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2504
     :cond_14
     return-object v4
 

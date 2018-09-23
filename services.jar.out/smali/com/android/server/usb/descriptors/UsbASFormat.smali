@@ -28,49 +28,29 @@
 # direct methods
 .method public constructor <init>(IBBBI)V
     .locals 0
-    .param p1, "length"    # I
-    .param p2, "type"    # B
-    .param p3, "subtype"    # B
-    .param p4, "formatType"    # B
-    .param p5, "mSubclass"    # I
 
-    .line 44
     invoke-direct {p0, p1, p2, p3, p5}, Lcom/android/server/usb/descriptors/UsbACInterface;-><init>(IBBI)V
 
-    .line 45
     iput-byte p4, p0, Lcom/android/server/usb/descriptors/UsbASFormat;->mFormatType:B
 
-    .line 46
     return-void
 .end method
 
 .method public static allocDescriptor(Lcom/android/server/usb/descriptors/UsbDescriptorParser;Lcom/android/server/usb/descriptors/ByteStream;IBBI)Lcom/android/server/usb/descriptors/UsbDescriptor;
     .locals 9
-    .param p0, "parser"    # Lcom/android/server/usb/descriptors/UsbDescriptorParser;
-    .param p1, "stream"    # Lcom/android/server/usb/descriptors/ByteStream;
-    .param p2, "length"    # I
-    .param p3, "type"    # B
-    .param p4, "subtype"    # B
-    .param p5, "subclass"    # I
 
-    .line 72
     invoke-virtual {p1}, Lcom/android/server/usb/descriptors/ByteStream;->getByte()B
 
     move-result v6
 
-    .line 73
-    .local v6, "formatType":B
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/UsbDescriptorParser;->getACInterfaceSpec()I
 
     move-result v7
 
-    .line 75
-    .local v7, "acInterfaceSpec":I
     const/16 v0, 0x200
 
     packed-switch v6, :pswitch_data_0
 
-    .line 97
     new-instance v8, Lcom/android/server/usb/descriptors/UsbASFormat;
 
     move-object v0, v8
@@ -89,7 +69,6 @@
 
     return-object v8
 
-    .line 92
     :pswitch_0
     new-instance v8, Lcom/android/server/usb/descriptors/Usb20ASFormatIII;
 
@@ -109,11 +88,9 @@
 
     return-object v8
 
-    .line 84
     :pswitch_1
     if-ne v7, v0, :cond_0
 
-    .line 85
     new-instance v8, Lcom/android/server/usb/descriptors/Usb20ASFormatII;
 
     move-object v0, v8
@@ -132,7 +109,6 @@
 
     return-object v8
 
-    .line 87
     :cond_0
     new-instance v8, Lcom/android/server/usb/descriptors/Usb10ASFormatII;
 
@@ -152,11 +128,9 @@
 
     return-object v8
 
-    .line 77
     :pswitch_2
     if-ne v7, v0, :cond_1
 
-    .line 78
     new-instance v8, Lcom/android/server/usb/descriptors/Usb20ASFormatI;
 
     move-object v0, v8
@@ -175,7 +149,6 @@
 
     return-object v8
 
-    .line 80
     :cond_1
     new-instance v8, Lcom/android/server/usb/descriptors/Usb10ASFormatI;
 
@@ -210,7 +183,6 @@
 .method public getBitDepths()[I
     .locals 1
 
-    .line 57
     const/4 v0, 0x0
 
     return-object v0
@@ -219,7 +191,6 @@
 .method public getChannelCounts()[I
     .locals 1
 
-    .line 61
     const/4 v0, 0x0
 
     return-object v0
@@ -228,7 +199,6 @@
 .method public getFormatType()B
     .locals 1
 
-    .line 49
     iget-byte v0, p0, Lcom/android/server/usb/descriptors/UsbASFormat;->mFormatType:B
 
     return v0
@@ -237,7 +207,6 @@
 .method public getSampleRates()[I
     .locals 1
 
-    .line 53
     const/4 v0, 0x0
 
     return-object v0
@@ -245,12 +214,9 @@
 
 .method public report(Lcom/android/server/usb/descriptors/report/ReportCanvas;)V
     .locals 2
-    .param p1, "canvas"    # Lcom/android/server/usb/descriptors/report/ReportCanvas;
 
-    .line 103
     invoke-super {p0, p1}, Lcom/android/server/usb/descriptors/UsbACInterface;->report(Lcom/android/server/usb/descriptors/report/ReportCanvas;)V
 
-    .line 105
     invoke-virtual {p0}, Lcom/android/server/usb/descriptors/UsbASFormat;->getFormatType()B
 
     move-result v0
@@ -263,6 +229,5 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/android/server/usb/descriptors/report/ReportCanvas;->writeParagraph(Ljava/lang/String;Z)V
 
-    .line 106
     return-void
 .end method

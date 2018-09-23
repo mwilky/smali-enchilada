@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/VibratorService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
-    .line 663
     iput-object p1, p0, Lcom/android/server/VibratorService$3;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 666
     iget-object v0, p0, Lcom/android/server/VibratorService$3;->this$0:Lcom/android/server/VibratorService;
 
     invoke-virtual {v0}, Lcom/android/server/VibratorService;->onVibrationFinished()V
 
-    .line 667
     return-void
 .end method

@@ -29,31 +29,19 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;IIII)V
     .locals 0
-    .param p1, "callingPackage"    # Ljava/lang/String;
-    .param p2, "requesterPid"    # I
-    .param p3, "requestedMode"    # I
-    .param p4, "ownerPid"    # I
-    .param p5, "actualMode"    # I
 
-    .line 35
     invoke-direct {p0}, Lcom/android/server/audio/AudioEventLogger$Event;-><init>()V
 
-    .line 36
     iput-object p1, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mPackage:Ljava/lang/String;
 
-    .line 37
     iput p2, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mRequesterPid:I
 
-    .line 38
     iput p3, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mRequestedMode:I
 
-    .line 39
     iput p4, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mOwnerPid:I
 
-    .line 40
     iput p5, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mActualMode:I
 
-    .line 41
     return-void
 .end method
 
@@ -62,7 +50,6 @@
 .method public eventToString()Ljava/lang/String;
     .locals 2
 
-    .line 45
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "setMode("
@@ -79,7 +66,6 @@
 
     const-string v1, ") from package="
 
-    .line 46
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mPackage:Ljava/lang/String;
@@ -88,7 +74,6 @@
 
     const-string v1, " pid="
 
-    .line 47
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mRequesterPid:I
@@ -97,7 +82,6 @@
 
     const-string v1, " selected mode="
 
-    .line 48
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mActualMode:I
@@ -110,7 +94,6 @@
 
     const-string v1, " by pid="
 
-    .line 49
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/AudioServiceEvents$PhoneStateEvent;->mOwnerPid:I
@@ -121,6 +104,5 @@
 
     move-result-object v0
 
-    .line 45
     return-object v0
 .end method

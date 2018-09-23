@@ -31,53 +31,39 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/backup/transport/TransportStats;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "transportStats"    # Lcom/android/server/backup/transport/TransportStats;
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsLock:Ljava/lang/Object;
 
-    .line 42
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCreated:I
 
-    .line 43
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCallerMap:Ljava/util/Map;
 
-    .line 46
     iput-object p1, p0, Lcom/android/server/backup/transport/TransportClientManager;->mContext:Landroid/content/Context;
 
-    .line 47
     iput-object p2, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportStats:Lcom/android/server/backup/transport/TransportStats;
 
-    .line 48
     return-void
 .end method
 
 .method private getTransportClient(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/Intent;)Lcom/android/server/backup/transport/TransportClient;
     .locals 9
-    .param p1, "transportComponent"    # Landroid/content/ComponentName;
-    .param p2, "caller"    # Ljava/lang/String;
-    .param p3, "bindIntent"    # Landroid/content/Intent;
 
-    .line 89
     iget-object v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 90
     :try_start_0
     new-instance v8, Lcom/android/server/backup/transport/TransportClient;
 
@@ -87,7 +73,6 @@
 
     iget v1, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCreated:I
 
-    .line 96
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v6
@@ -104,20 +89,16 @@
 
     move-object v1, v8
 
-    .line 98
-    .local v1, "transportClient":Lcom/android/server/backup/transport/TransportClient;
     iget-object v2, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCallerMap:Ljava/util/Map;
 
     invoke-interface {v2, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
     iget v2, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCreated:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCreated:I
 
-    .line 100
     const/4 v2, 0x3
 
     const-string v3, "TransportClientManager"
@@ -138,21 +119,16 @@
 
     move-result-object v5
 
-    .line 103
     invoke-static {v4, p2, v5}, Lcom/android/server/backup/transport/TransportUtils;->formatMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 100
     invoke-static {v2, v3, v4}, Lcom/android/server/backup/transport/TransportUtils;->log(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 104
     monitor-exit v0
 
     return-object v1
 
-    .line 105
-    .end local v1    # "transportClient":Lcom/android/server/backup/transport/TransportClient;
     :catchall_0
     move-exception v1
 
@@ -167,21 +143,15 @@
 # virtual methods
 .method public disposeOfTransportClient(Lcom/android/server/backup/transport/TransportClient;Ljava/lang/String;)V
     .locals 6
-    .param p1, "transportClient"    # Lcom/android/server/backup/transport/TransportClient;
-    .param p2, "caller"    # Ljava/lang/String;
 
-    .line 117
     invoke-virtual {p1, p2}, Lcom/android/server/backup/transport/TransportClient;->unbind(Ljava/lang/String;)V
 
-    .line 118
     invoke-virtual {p1}, Lcom/android/server/backup/transport/TransportClient;->markAsDisposed()V
 
-    .line 119
     iget-object v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 120
     const/4 v1, 0x3
 
     :try_start_0
@@ -203,26 +173,20 @@
 
     move-result-object v4
 
-    .line 123
     invoke-static {v3, p2, v4}, Lcom/android/server/backup/transport/TransportUtils;->formatMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 120
     invoke-static {v1, v2, v3}, Lcom/android/server/backup/transport/TransportUtils;->log(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 124
     iget-object v1, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCallerMap:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 125
     monitor-exit v0
 
-    .line 126
     return-void
 
-    .line 125
     :catchall_0
     move-exception v1
 
@@ -235,9 +199,7 @@
 
 .method public dump(Ljava/io/PrintWriter;)V
     .locals 8
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 129
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -256,12 +218,10 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 130
     iget-object v0, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 131
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -285,7 +245,6 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 132
     iget-object v1, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCallerMap:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -309,8 +268,6 @@
 
     check-cast v2, Lcom/android/server/backup/transport/TransportClient;
 
-    .line 133
-    .local v2, "transportClient":Lcom/android/server/backup/transport/TransportClient;
     iget-object v3, p0, Lcom/android/server/backup/transport/TransportClientManager;->mTransportClientsCallerMap:Ljava/util/Map;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -319,8 +276,6 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 134
-    .local v3, "caller":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -347,7 +302,6 @@
 
     invoke-virtual {p1, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 135
     invoke-virtual {v2}, Lcom/android/server/backup/transport/TransportClient;->getLogBuffer()Ljava/util/List;
 
     move-result-object v4
@@ -369,8 +323,6 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 136
-    .local v5, "logEntry":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -387,24 +339,16 @@
 
     invoke-virtual {p1, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 137
-    .end local v5    # "logEntry":Ljava/lang/String;
     goto :goto_1
 
-    .line 138
-    .end local v2    # "transportClient":Lcom/android/server/backup/transport/TransportClient;
-    .end local v3    # "caller":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
-    .line 139
     :cond_1
     monitor-exit v0
 
-    .line 140
     return-void
 
-    .line 139
     :catchall_0
     move-exception v1
 
@@ -417,27 +361,19 @@
 
 .method public getTransportClient(Landroid/content/ComponentName;Landroid/os/Bundle;Ljava/lang/String;)Lcom/android/server/backup/transport/TransportClient;
     .locals 2
-    .param p1, "transportComponent"    # Landroid/content/ComponentName;
-    .param p2, "extras"    # Landroid/os/Bundle;
-    .param p3, "caller"    # Ljava/lang/String;
 
-    .line 80
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.backup.TRANSPORT_HOST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 81
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 82
-    .local v0, "bindIntent":Landroid/content/Intent;
     invoke-virtual {v0, p2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 84
     invoke-direct {p0, p1, p3, v0}, Lcom/android/server/backup/transport/TransportClientManager;->getTransportClient(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/Intent;)Lcom/android/server/backup/transport/TransportClient;
 
     move-result-object v1
@@ -447,23 +383,17 @@
 
 .method public getTransportClient(Landroid/content/ComponentName;Ljava/lang/String;)Lcom/android/server/backup/transport/TransportClient;
     .locals 2
-    .param p1, "transportComponent"    # Landroid/content/ComponentName;
-    .param p2, "caller"    # Ljava/lang/String;
 
-    .line 61
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.backup.TRANSPORT_HOST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 62
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "bindIntent":Landroid/content/Intent;
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/backup/transport/TransportClientManager;->getTransportClient(Landroid/content/ComponentName;Ljava/lang/String;Landroid/content/Intent;)Lcom/android/server/backup/transport/TransportClient;
 
     move-result-object v1

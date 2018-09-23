@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BluetoothManagerService;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BluetoothManagerService;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 504
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$5;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 507
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -47,7 +42,6 @@
 
     goto :goto_0
 
-    .line 509
     :cond_0
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
@@ -63,24 +57,16 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 510
-    .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     invoke-virtual {v0}, Lcom/oneplus/config/ConfigGrabber;->grabConfig()Lorg/json/JSONArray;
 
     move-result-object v1
 
-    .line 511
-    .local v1, "jsonArr":Lorg/json/JSONArray;
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$5;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v2, v1}, Lcom/android/server/BluetoothManagerService;->access$1900(Lcom/android/server/BluetoothManagerService;Lorg/json/JSONArray;)V
 
-    .line 512
     nop
 
-    .line 516
-    .end local v0    # "configGrabber":Lcom/oneplus/config/ConfigGrabber;
-    .end local v1    # "jsonArr":Lorg/json/JSONArray;
     :goto_0
     return-void
 .end method

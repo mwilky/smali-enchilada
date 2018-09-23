@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/emergency/EmergencyAffordanceService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/emergency/EmergencyAffordanceService;
 
-    .line 131
     iput-object p1, p0, Lcom/android/server/emergency/EmergencyAffordanceService$3;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -36,7 +34,6 @@
 .method public onSubscriptionsChanged()V
     .locals 2
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$3;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$400(Lcom/android/server/emergency/EmergencyAffordanceService;)Lcom/android/server/emergency/EmergencyAffordanceService$MyHandler;
@@ -51,6 +48,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 135
     return-void
 .end method

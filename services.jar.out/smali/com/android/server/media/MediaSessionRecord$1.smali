@@ -38,9 +38,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaSessionRecord;ZIIILjava/lang/String;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/media/MediaSessionRecord;
 
-    .line 467
     iput-object p1, p0, Lcom/android/server/media/MediaSessionRecord$1;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
     iput-boolean p2, p0, Lcom/android/server/media/MediaSessionRecord$1;->val$useSuggested:Z
@@ -67,13 +65,11 @@
 .method public run()V
     .locals 7
 
-    .line 471
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/media/MediaSessionRecord$1;->val$useSuggested:Z
 
     if-eqz v0, :cond_1
 
-    .line 472
     iget v0, p0, Lcom/android/server/media/MediaSessionRecord$1;->val$stream:I
 
     const/4 v1, 0x0
@@ -84,7 +80,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 473
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$1;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
     invoke-static {v0}, Lcom/android/server/media/MediaSessionRecord;->access$200(Lcom/android/server/media/MediaSessionRecord;)Landroid/media/AudioManagerInternal;
@@ -105,7 +100,6 @@
 
     goto :goto_0
 
-    .line 476
     :cond_0
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$1;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -131,7 +125,6 @@
 
     goto :goto_0
 
-    .line 481
     :cond_1
     iget-object v0, p0, Lcom/android/server/media/MediaSessionRecord$1;->this$0:Lcom/android/server/media/MediaSessionRecord;
 
@@ -153,16 +146,12 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 489
     :goto_0
     goto :goto_1
 
-    .line 484
     :catch_0
     move-exception v0
 
-    .line 485
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v1, "MediaSessionRecord"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -231,8 +220,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 490
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :goto_1
     return-void
 .end method

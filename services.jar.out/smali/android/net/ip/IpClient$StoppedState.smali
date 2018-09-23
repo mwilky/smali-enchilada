@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/IpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ip/IpClient;
 
-    .line 1434
     iput-object p1, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -36,17 +34,14 @@
 .method public enter()V
     .locals 4
 
-    .line 1437
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$500(Landroid/net/ip/IpClient;)V
 
-    .line 1439
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$600(Landroid/net/ip/IpClient;)V
 
-    .line 1440
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$700(Landroid/net/ip/IpClient;)J
@@ -59,28 +54,23 @@
 
     if-lez v0, :cond_0
 
-    .line 1441
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     const/4 v1, 0x3
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$800(Landroid/net/ip/IpClient;I)V
 
-    .line 1442
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0, v2, v3}, Landroid/net/ip/IpClient;->access$702(Landroid/net/ip/IpClient;J)J
 
-    .line 1444
     :cond_0
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1448
     iget v0, p1, Landroid/os/Message;->what:I
 
     const v1, 0x30005
@@ -93,10 +83,8 @@
 
     packed-switch v0, :pswitch_data_1
 
-    .line 1486
     return v2
 
-    .line 1477
     :pswitch_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -110,10 +98,8 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1502(Landroid/net/ip/IpClient;Z)Z
 
-    .line 1478
     goto :goto_0
 
-    .line 1472
     :pswitch_1
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -123,15 +109,12 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1402(Landroid/net/ip/IpClient;Landroid/net/ProxyInfo;)Landroid/net/ProxyInfo;
 
-    .line 1473
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0, v2}, Landroid/net/ip/IpClient;->access$1200(Landroid/net/ip/IpClient;Z)Z
 
-    .line 1474
     goto :goto_0
 
-    .line 1467
     :pswitch_2
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -141,24 +124,19 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1302(Landroid/net/ip/IpClient;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1468
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0, v2}, Landroid/net/ip/IpClient;->access$1200(Landroid/net/ip/IpClient;Z)Z
 
-    .line 1469
     goto :goto_0
 
-    .line 1463
     :pswitch_3
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0, v2}, Landroid/net/ip/IpClient;->access$1200(Landroid/net/ip/IpClient;Z)Z
 
-    .line 1464
     goto :goto_0
 
-    .line 1458
     :pswitch_4
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -168,7 +146,6 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1002(Landroid/net/ip/IpClient;Landroid/net/ip/IpClient$ProvisioningConfiguration;)Landroid/net/ip/IpClient$ProvisioningConfiguration;
 
-    .line 1459
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v1, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
@@ -179,28 +156,22 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ip/IpClient;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 1460
     goto :goto_0
 
-    .line 1455
     :pswitch_5
     goto :goto_0
 
-    .line 1450
     :pswitch_6
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$900(Landroid/net/ip/IpClient;)V
 
-    .line 1451
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-virtual {v0}, Landroid/net/ip/IpClient;->quit()V
 
-    .line 1452
     goto :goto_0
 
-    .line 1482
     :cond_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -210,10 +181,8 @@
 
     invoke-static {v0, v1, v2}, Landroid/net/ip/IpClient;->access$1600(Landroid/net/ip/IpClient;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1483
     nop
 
-    .line 1489
     :goto_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StoppedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -229,7 +198,6 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/net/ip/IpClient$MessageHandlingLogger;->handled(Lcom/android/internal/util/State;Lcom/android/internal/util/IState;)V
 
-    .line 1490
     const/4 v0, 0x1
 
     return v0

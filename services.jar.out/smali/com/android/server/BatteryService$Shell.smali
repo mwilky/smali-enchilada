@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BatteryService;
 
-    .line 991
     iput-object p1, p0, Lcom/android/server/BatteryService$Shell;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onCommand(Ljava/lang/String;)I
     .locals 1
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 994
     iget-object v0, p0, Lcom/android/server/BatteryService$Shell;->this$0:Lcom/android/server/BatteryService;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/server/BatteryService;->onShellCommand(Lcom/android/server/BatteryService$Shell;Ljava/lang/String;)I
@@ -50,15 +46,11 @@
 .method public onHelp()V
     .locals 1
 
-    .line 999
     invoke-virtual {p0}, Lcom/android/server/BatteryService$Shell;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 1000
-    .local v0, "pw":Ljava/io/PrintWriter;
     invoke-static {v0}, Lcom/android/server/BatteryService;->dumpHelp(Ljava/io/PrintWriter;)V
 
-    .line 1001
     return-void
 .end method

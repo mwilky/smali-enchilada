@@ -33,13 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager$10;Landroid/content/Context;II[Ljava/lang/String;ILjava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/OemPhoneWindowManager$10;
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # I
-    .param p4, "x2"    # I
-    .param p5, "x3"    # [Ljava/lang/String;
 
-    .line 2774
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$1;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iput p6, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$1;->val$nowWhich:I
@@ -55,22 +49,15 @@
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 4
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 2776
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2777
-    .local v0, "view":Landroid/view/View;
     iget v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$1;->val$nowWhich:I
 
     if-ne p1, v1, :cond_0
 
-    .line 2778
     const v1, 0x5070034
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -79,14 +66,10 @@
 
     check-cast v1, Landroid/widget/CheckedTextView;
 
-    .line 2780
-    .local v1, "checkTextView":Landroid/widget/CheckedTextView;
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/CheckedTextView;->setChecked(Z)V
 
-    .line 2782
-    .end local v1    # "checkTextView":Landroid/widget/CheckedTextView;
     :cond_0
     const v1, 0x5070035
 
@@ -96,8 +79,6 @@
 
     check-cast v1, Landroid/widget/CheckedTextView;
 
-    .line 2784
-    .restart local v1    # "checkTextView":Landroid/widget/CheckedTextView;
     iget-object v2, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$1;->val$availableApps:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -112,6 +93,5 @@
 
     invoke-virtual {v1, v2, v3, v3, v3}, Landroid/widget/CheckedTextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 2786
     return-object v0
 .end method

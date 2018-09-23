@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 227
     invoke-static {}, Lcom/android/server/backup/internal/BackupState;->values()[Lcom/android/server/backup/internal/BackupState;
 
     move-result-object v0

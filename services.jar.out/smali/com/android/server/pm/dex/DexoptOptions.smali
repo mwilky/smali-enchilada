@@ -38,11 +38,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;II)V
     .locals 6
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "compilationReason"    # I
-    .param p3, "flags"    # I
 
-    .line 89
     invoke-static {p2}, Lcom/android/server/pm/PackageManagerServiceCompilerMapping;->getCompilerFilterForReason(I)Ljava/lang/String;
 
     move-result-object v3
@@ -59,51 +55,34 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/pm/dex/DexoptOptions;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 91
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
     .locals 4
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "compilationReason"    # I
-    .param p3, "compilerFilter"    # Ljava/lang/String;
-    .param p4, "splitName"    # Ljava/lang/String;
-    .param p5, "flags"    # I
 
-    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     const/16 v0, 0x67f
 
-    .line 105
-    .local v0, "validityMask":I
     not-int v1, v0
 
     and-int/2addr v1, p5
 
     if-nez v1, :cond_0
 
-    .line 109
     iput-object p1, p0, Lcom/android/server/pm/dex/DexoptOptions;->mPackageName:Ljava/lang/String;
 
-    .line 110
     iput-object p3, p0, Lcom/android/server/pm/dex/DexoptOptions;->mCompilerFilter:Ljava/lang/String;
 
-    .line 111
     iput p5, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
-    .line 112
     iput-object p4, p0, Lcom/android/server/pm/dex/DexoptOptions;->mSplitName:Ljava/lang/String;
 
-    .line 113
     iput p2, p0, Lcom/android/server/pm/dex/DexoptOptions;->mCompilationReason:I
 
-    .line 114
     return-void
 
-    .line 106
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -132,11 +111,7 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 6
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "compilerFilter"    # Ljava/lang/String;
-    .param p3, "flags"    # I
 
-    .line 85
     const/4 v2, -0x1
 
     const/4 v4, 0x0
@@ -151,7 +126,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/server/pm/dex/DexoptOptions;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 86
     return-void
 .end method
 
@@ -160,7 +134,6 @@
 .method public getCompilationReason()I
     .locals 1
 
-    .line 169
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mCompilationReason:I
 
     return v0
@@ -169,7 +142,6 @@
 .method public getCompilerFilter()Ljava/lang/String;
     .locals 1
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mCompilerFilter:Ljava/lang/String;
 
     return-object v0
@@ -178,7 +150,6 @@
 .method public getFlags()I
     .locals 1
 
-    .line 165
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     return v0
@@ -187,7 +158,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -196,7 +166,6 @@
 .method public getSplitName()Ljava/lang/String;
     .locals 1
 
-    .line 161
     iget-object v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mSplitName:Ljava/lang/String;
 
     return-object v0
@@ -205,7 +174,6 @@
 .method public isBootComplete()Z
     .locals 1
 
-    .line 133
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x4
@@ -226,7 +194,6 @@
 .method public isCheckForProfileUpdates()Z
     .locals 2
 
-    .line 121
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     const/4 v1, 0x1
@@ -247,7 +214,6 @@
 .method public isDexoptAsSharedLibrary()Z
     .locals 1
 
-    .line 149
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x40
@@ -268,7 +234,6 @@
 .method public isDexoptIdleBackgroundJob()Z
     .locals 1
 
-    .line 153
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit16 v0, v0, 0x200
@@ -289,7 +254,6 @@
 .method public isDexoptInstallWithDexMetadata()Z
     .locals 1
 
-    .line 157
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit16 v0, v0, 0x400
@@ -310,7 +274,6 @@
 .method public isDexoptOnlySecondaryDex()Z
     .locals 1
 
-    .line 137
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x8
@@ -331,7 +294,6 @@
 .method public isDexoptOnlySharedDex()Z
     .locals 1
 
-    .line 141
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x10
@@ -352,7 +314,6 @@
 .method public isDowngrade()Z
     .locals 1
 
-    .line 145
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x20
@@ -373,7 +334,6 @@
 .method public isForce()Z
     .locals 1
 
-    .line 129
     iget v0, p0, Lcom/android/server/pm/dex/DexoptOptions;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2

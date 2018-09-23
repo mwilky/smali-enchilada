@@ -25,22 +25,14 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ProcessRecord;JJ)V
     .locals 0
-    .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
-    .param p2, "txBytes"    # J
-    .param p4, "rxBytes"    # J
 
-    .line 857
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 858
     iput-object p1, p0, Lcom/android/server/am/OnePlusProcessManager$SuspendMsgObj;->app:Lcom/android/server/am/ProcessRecord;
 
-    .line 859
     iput-wide p2, p0, Lcom/android/server/am/OnePlusProcessManager$SuspendMsgObj;->txBytes:J
 
-    .line 860
     iput-wide p4, p0, Lcom/android/server/am/OnePlusProcessManager$SuspendMsgObj;->rxBytes:J
 
-    .line 861
     return-void
 .end method

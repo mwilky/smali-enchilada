@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkManagementService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NetworkManagementService;
 
-    .line 2773
     iput-object p1, p0, Lcom/android/server/NetworkManagementService$LocalService;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-direct {p0}, Lcom/android/server/NetworkManagementInternal;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public forceCloseUidSocketForDeepSleep(I)V
     .locals 5
-    .param p1, "uid"    # I
 
-    .line 2783
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/net/UidRange;
@@ -53,8 +49,6 @@
 
     aput-object v1, v0, v2
 
-    .line 2787
-    .local v0, "ranges":[Landroid/net/UidRange;
     :try_start_0
     const-string v1, "NetworkManagement"
 
@@ -74,7 +68,6 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2788
     iget-object v1, p0, Lcom/android/server/NetworkManagementService$LocalService;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v1}, Lcom/android/server/NetworkManagementService;->access$1600(Lcom/android/server/NetworkManagementService;)Landroid/net/INetd;
@@ -88,15 +81,11 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/ServiceSpecificException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2791
     goto :goto_0
 
-    .line 2789
     :catch_0
     move-exception v1
 
-    .line 2790
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "NetworkManagement"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -115,17 +104,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2792
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
 
 .method public isNetworkRestrictedForUid(I)Z
     .locals 1
-    .param p1, "uid"    # I
 
-    .line 2776
     iget-object v0, p0, Lcom/android/server/NetworkManagementService$LocalService;->this$0:Lcom/android/server/NetworkManagementService;
 
     invoke-static {v0, p1}, Lcom/android/server/NetworkManagementService;->access$1700(Lcom/android/server/NetworkManagementService;I)Z

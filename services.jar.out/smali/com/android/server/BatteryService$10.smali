@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BatteryService;
 
-    .line 655
     iput-object p1, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 657
     iget-object v0, p0, Lcom/android/server/BatteryService$10;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$1300(Lcom/android/server/BatteryService;)Landroid/content/Context;
@@ -54,8 +51,6 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 658
-    .local v0, "mVibrator":Landroid/os/Vibrator;
     const/4 v1, 0x4
 
     new-array v1, v1, [J
@@ -66,7 +61,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate([JI)V
 
-    .line 659
     return-void
 
     nop

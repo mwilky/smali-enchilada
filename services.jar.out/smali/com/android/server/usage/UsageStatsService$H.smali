@@ -21,16 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/usage/UsageStatsService;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 638
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
-    .line 639
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 640
     return-void
 .end method
 
@@ -38,28 +33,20 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 9
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 644
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 677
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto/16 :goto_2
 
-    .line 658
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 659
-    .local v0, "uid":I
     iget v1, p1, Landroid/os/Message;->arg2:I
 
-    .line 661
-    .local v1, "procState":I
     const/4 v2, 0x2
 
     const/4 v3, 0x0
@@ -73,8 +60,6 @@
     :cond_0
     const/4 v2, 0x1
 
-    .line 662
-    .local v2, "newCounter":I
     :goto_0
     iget-object v4, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -84,7 +69,6 @@
 
     monitor-enter v4
 
-    .line 663
     :try_start_0
     iget-object v5, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -96,11 +80,8 @@
 
     move-result v3
 
-    .line 664
-    .local v3, "oldCounter":I
     if-eq v2, v3, :cond_1
 
-    .line 665
     iget-object v5, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-static {v5}, Lcom/android/server/usage/UsageStatsService;->access$300(Lcom/android/server/usage/UsageStatsService;)Landroid/util/SparseIntArray;
@@ -111,7 +92,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 667
     :try_start_1
     invoke-static {}, Lcom/android/server/usage/UsageStatsService;->access$400()Ljava/io/File;
 
@@ -138,15 +118,11 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 670
     goto :goto_1
 
-    .line 668
     :catch_0
     move-exception v5
 
-    .line 669
-    .local v5, "e":Ljava/io/IOException;
     :try_start_2
     const-string v6, "UsageStatsService"
 
@@ -166,17 +142,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 672
-    .end local v3    # "oldCounter":I
-    .end local v5    # "e":Ljava/io/IOException;
     :cond_1
     :goto_1
     monitor-exit v4
 
-    .line 673
     goto :goto_2
 
-    .line 672
     :catchall_0
     move-exception v3
 
@@ -186,10 +157,6 @@
 
     throw v3
 
-    .line 654
-    .end local v0    # "uid":I
-    .end local v1    # "procState":I
-    .end local v2    # "newCounter":I
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -197,19 +164,15 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/usage/UsageStatsService;->onUserRemoved(I)V
 
-    .line 655
     goto :goto_2
 
-    .line 650
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-virtual {v0}, Lcom/android/server/usage/UsageStatsService;->flushToDisk()V
 
-    .line 651
     goto :goto_2
 
-    .line 646
     :pswitch_3
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$H;->this$0:Lcom/android/server/usage/UsageStatsService;
 
@@ -221,10 +184,8 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/usage/UsageStatsService;->reportEvent(Landroid/app/usage/UsageEvents$Event;I)V
 
-    .line 647
     nop
 
-    .line 680
     :goto_2
     return-void
 

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$BinderService;Z)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
-    .line 1676
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$17;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput-boolean p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$17;->val$isStandbyModeOn:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1679
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$17;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -52,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->setStandbyMode(Z)V
 
-    .line 1680
     return-void
 .end method

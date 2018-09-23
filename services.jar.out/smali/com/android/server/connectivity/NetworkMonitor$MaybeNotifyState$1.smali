@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;
 
-    .line 623
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState$1;->this$1:Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;
 
     invoke-direct {p0}, Landroid/net/ICaptivePortal$Stub;-><init>()V
@@ -35,14 +33,11 @@
 # virtual methods
 .method public appResponse(I)V
     .locals 3
-    .param p1, "response"    # I
 
-    .line 626
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_0
 
-    .line 627
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState$1;->this$1:Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;
 
     iget-object v0, v0, Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;->this$0:Lcom/android/server/connectivity/NetworkMonitor;
@@ -57,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 631
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState$1;->this$1:Lcom/android/server/connectivity/NetworkMonitor$MaybeNotifyState;
 
@@ -67,6 +61,5 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/connectivity/NetworkMonitor;->sendMessage(II)V
 
-    .line 632
     return-void
 .end method

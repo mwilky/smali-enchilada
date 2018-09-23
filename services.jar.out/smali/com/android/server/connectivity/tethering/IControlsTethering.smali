@@ -17,7 +17,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,12 +24,9 @@
 
 .method public static getStateString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "state"    # I
 
-    .line 37
     packed-switch p0, :pswitch_data_0
 
-    .line 43
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -47,25 +43,21 @@
 
     return-object v0
 
-    .line 41
     :pswitch_0
     const-string v0, "LOCAL_ONLY"
 
     return-object v0
 
-    .line 40
     :pswitch_1
     const-string v0, "TETHERED"
 
     return-object v0
 
-    .line 39
     :pswitch_2
     const-string v0, "AVAILABLE"
 
     return-object v0
 
-    .line 38
     :pswitch_3
     const-string v0, "UNAVAILABLE"
 
@@ -86,19 +78,12 @@
 # virtual methods
 .method public updateInterfaceState(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;II)V
     .locals 0
-    .param p1, "who"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
-    .param p2, "state"    # I
-    .param p3, "lastError"    # I
 
-    .line 55
     return-void
 .end method
 
 .method public updateLinkProperties(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;Landroid/net/LinkProperties;)V
     .locals 0
-    .param p1, "who"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
-    .param p2, "newLp"    # Landroid/net/LinkProperties;
 
-    .line 65
     return-void
 .end method

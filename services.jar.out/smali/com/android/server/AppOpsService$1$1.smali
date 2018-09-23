@@ -31,9 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AppOpsService$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/AppOpsService$1;
 
-    .line 203
     iput-object p1, p0, Lcom/android/server/AppOpsService$1$1;->this$1:Lcom/android/server/AppOpsService$1;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -46,7 +44,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 203
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/server/AppOpsService$1$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -58,16 +55,13 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 1
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 205
     iget-object v0, p0, Lcom/android/server/AppOpsService$1$1;->this$1:Lcom/android/server/AppOpsService$1;
 
     iget-object v0, v0, Lcom/android/server/AppOpsService$1;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-virtual {v0}, Lcom/android/server/AppOpsService;->writeState()V
 
-    .line 206
     const/4 v0, 0x0
 
     return-object v0

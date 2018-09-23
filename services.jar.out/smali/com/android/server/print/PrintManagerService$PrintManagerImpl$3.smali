@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
-    .line 985
     iput-object p1, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$3;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     iput p2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$3;->val$userId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 5
 
-    .line 988
     iget-object v0, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$3;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     invoke-static {v0}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->access$500(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/os/UserManager;
@@ -60,7 +57,6 @@
 
     return-void
 
-    .line 991
     :cond_0
     iget-object v0, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$3;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
@@ -70,7 +66,6 @@
 
     monitor-enter v0
 
-    .line 992
     :try_start_0
     iget-object v1, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$3;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
@@ -84,23 +79,16 @@
 
     move-result-object v1
 
-    .line 994
-    .local v1, "userState":Lcom/android/server/print/UserState;
     invoke-virtual {v1}, Lcom/android/server/print/UserState;->updateIfNeededLocked()V
 
-    .line 995
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 999
     invoke-virtual {v1}, Lcom/android/server/print/UserState;->removeObsoletePrintJobs()V
 
-    .line 1000
     return-void
 
-    .line 995
-    .end local v1    # "userState":Lcom/android/server/print/UserState;
     :catchall_0
     move-exception v1
 

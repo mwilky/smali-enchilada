@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/batterysaver/BatterySaverController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/batterysaver/BatterySaverController;
 
-    .line 115
     iput-object p1, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 121
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -129,7 +124,6 @@
 
     goto :goto_3
 
-    .line 133
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
@@ -139,7 +133,6 @@
 
     monitor-enter v0
 
-    .line 134
     :try_start_0
     iget-object v1, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
@@ -159,12 +152,10 @@
     :goto_2
     invoke-static {v1, v2}, Lcom/android/server/power/batterysaver/BatterySaverController;->access$302(Lcom/android/server/power/batterysaver/BatterySaverController;Z)Z
 
-    .line 135
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 139
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
@@ -172,7 +163,6 @@
 
     goto :goto_3
 
-    .line 135
     :catchall_0
     move-exception v1
 
@@ -183,7 +173,6 @@
 
     throw v1
 
-    .line 124
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
@@ -193,15 +182,12 @@
 
     if-nez v0, :cond_2
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
     invoke-static {v0}, Lcom/android/server/power/batterysaver/BatterySaverController;->access$000(Lcom/android/server/power/batterysaver/BatterySaverController;)V
 
-    .line 126
     return-void
 
-    .line 129
     :cond_2
     iget-object v0, p0, Lcom/android/server/power/batterysaver/BatterySaverController$1;->this$0:Lcom/android/server/power/batterysaver/BatterySaverController;
 
@@ -213,10 +199,8 @@
 
     invoke-virtual {v0, v3, v1}, Lcom/android/server/power/batterysaver/BatterySaverController$MyHandler;->postStateChanged(ZI)V
 
-    .line 131
     nop
 
-    .line 142
     :goto_3
     return-void
 

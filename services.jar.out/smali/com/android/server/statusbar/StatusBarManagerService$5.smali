@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/statusbar/StatusBarManagerService;Landroid/os/IBinder;IIZ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/statusbar/StatusBarManagerService;
 
-    .line 845
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$5;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     iput-object p2, p0, Lcom/android/server/statusbar/StatusBarManagerService$5;->val$token:Landroid/os/IBinder;
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 5
 
-    .line 847
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$5;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$100(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -64,7 +61,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 849
     :try_start_0
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$5;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -84,14 +80,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 851
     goto :goto_0
 
-    .line 850
     :catch_0
     move-exception v0
 
-    .line 853
     :cond_0
     :goto_0
     return-void

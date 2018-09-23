@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/os/SchedulingPolicyService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/os/SchedulingPolicyService;
 
-    .line 45
     iput-object p1, p0, Lcom/android/server/os/SchedulingPolicyService$1;->this$0:Lcom/android/server/os/SchedulingPolicyService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 48
     iget-object v0, p0, Lcom/android/server/os/SchedulingPolicyService$1;->this$0:Lcom/android/server/os/SchedulingPolicyService;
 
     const/4 v1, 0x0
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/os/SchedulingPolicyService;->requestCpusetBoost(ZLandroid/os/IBinder;)I
 
-    .line 49
     return-void
 .end method

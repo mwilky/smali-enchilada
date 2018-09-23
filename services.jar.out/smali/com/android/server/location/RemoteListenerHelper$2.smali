@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/RemoteListenerHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/RemoteListenerHelper;
 
-    .line 236
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$2;, "Lcom/android/server/location/RemoteListenerHelper$2;"
     iput-object p1, p0, Lcom/android/server/location/RemoteListenerHelper$2;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 239
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$2;, "Lcom/android/server/location/RemoteListenerHelper$2;"
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$2;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-static {v0}, Lcom/android/server/location/RemoteListenerHelper;->access$000(Lcom/android/server/location/RemoteListenerHelper;)Z
@@ -50,22 +45,18 @@
 
     if-nez v0, :cond_0
 
-    .line 240
     return-void
 
-    .line 242
     :cond_0
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$2;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-virtual {v0}, Lcom/android/server/location/RemoteListenerHelper;->unregisterFromService()V
 
-    .line 243
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$2;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/location/RemoteListenerHelper;->access$002(Lcom/android/server/location/RemoteListenerHelper;Z)Z
 
-    .line 244
     return-void
 .end method

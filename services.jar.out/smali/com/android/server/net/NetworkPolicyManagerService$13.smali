@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 1352
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1358
     const-string v0, "android.net.NETWORK_TEMPLATE"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -47,8 +42,6 @@
 
     check-cast v0, Landroid/net/NetworkTemplate;
 
-    .line 1359
-    .local v0, "template":Landroid/net/NetworkTemplate;
     const-string v1, "com.android.server.net.action.SNOOZE_WARNING"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -61,7 +54,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1360
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     const/16 v2, 0x22
@@ -70,7 +62,6 @@
 
     goto :goto_0
 
-    .line 1361
     :cond_0
     const-string v1, "com.android.server.net.action.SNOOZE_RAPID"
 
@@ -84,14 +75,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 1362
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$13;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     const/16 v2, 0x2d
 
     invoke-virtual {v1, v0, v2}, Lcom/android/server/net/NetworkPolicyManagerService;->performSnooze(Landroid/net/NetworkTemplate;I)V
 
-    .line 1364
     :cond_1
     :goto_0
     return-void

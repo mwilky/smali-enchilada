@@ -24,7 +24,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1615
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,9 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/am/ActivityManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/am/ActivityManagerService$1;
 
-    .line 1615
     invoke-direct {p0}, Lcom/android/server/am/ActivityManagerService$UpdateConfigurationResult;-><init>()V
 
     return-void
@@ -45,14 +42,11 @@
 .method reset()V
     .locals 1
 
-    .line 1622
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/ActivityManagerService$UpdateConfigurationResult;->changes:I
 
-    .line 1623
     iput-boolean v0, p0, Lcom/android/server/am/ActivityManagerService$UpdateConfigurationResult;->activityRelaunched:Z
 
-    .line 1624
     return-void
 .end method

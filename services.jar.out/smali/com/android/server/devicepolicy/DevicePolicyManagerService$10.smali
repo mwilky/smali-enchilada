@@ -31,9 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/devicepolicy/DevicePolicyManagerService;Landroid/content/ComponentName;ILandroid/content/ComponentName;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
-    .line 11996
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     iput-object p2, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->val$admin:Landroid/content/ComponentName;
@@ -55,22 +53,17 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 1
-    .param p1, "reason"    # I
 
-    .line 12004
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->val$countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 12005
     return-void
 .end method
 
 .method public onSuccess(Ljava/lang/String;)V
     .locals 4
-    .param p1, "transportName"    # Ljava/lang/String;
 
-    .line 11998
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->this$0:Lcom/android/server/devicepolicy/DevicePolicyManagerService;
 
     iget-object v1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->val$admin:Landroid/content/ComponentName;
@@ -81,18 +74,15 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;->access$3200(Lcom/android/server/devicepolicy/DevicePolicyManagerService;Landroid/content/ComponentName;ILandroid/content/ComponentName;)V
 
-    .line 11999
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->val$success:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 12000
     iget-object v0, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$10;->val$countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 12001
     return-void
 .end method

@@ -36,26 +36,19 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/Dimmer;Landroid/view/SurfaceControl;)V
     .locals 4
-    .param p1, "this$0"    # Lcom/android/server/wm/Dimmer;
-    .param p2, "dimLayer"    # Landroid/view/SurfaceControl;
 
-    .line 127
     iput-object p1, p0, Lcom/android/server/wm/Dimmer$DimState;->this$0:Lcom/android/server/wm/Dimmer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 119
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wm/Dimmer$DimState;->mAnimateExit:Z
 
-    .line 128
     iput-object p2, p0, Lcom/android/server/wm/Dimmer$DimState;->mDimLayer:Landroid/view/SurfaceControl;
 
-    .line 129
     iput-boolean v0, p0, Lcom/android/server/wm/Dimmer$DimState;->mDimming:Z
 
-    .line 130
     new-instance v0, Lcom/android/server/wm/SurfaceAnimator;
 
     new-instance v1, Lcom/android/server/wm/Dimmer$DimAnimatable;
@@ -68,7 +61,6 @@
 
     invoke-direct {v2, p0}, Lcom/android/server/wm/-$$Lambda$Dimmer$DimState$jMIg4fVfhKsf8fm7mIcffBmkFt8;-><init>(Lcom/android/server/wm/Dimmer$DimState;)V
 
-    .line 134
     invoke-static {p1}, Lcom/android/server/wm/Dimmer;->access$000(Lcom/android/server/wm/Dimmer;)Lcom/android/server/wm/WindowContainer;
 
     move-result-object v3
@@ -79,24 +71,20 @@
 
     iput-object v0, p0, Lcom/android/server/wm/Dimmer$DimState;->mSurfaceAnimator:Lcom/android/server/wm/SurfaceAnimator;
 
-    .line 135
     return-void
 .end method
 
 .method public static synthetic lambda$new$0(Lcom/android/server/wm/Dimmer$DimState;)V
     .locals 1
 
-    .line 131
     iget-boolean v0, p0, Lcom/android/server/wm/Dimmer$DimState;->mDimming:Z
 
     if-nez v0, :cond_0
 
-    .line 132
     iget-object v0, p0, Lcom/android/server/wm/Dimmer$DimState;->mDimLayer:Landroid/view/SurfaceControl;
 
     invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
 
-    .line 134
     :cond_0
     return-void
 .end method

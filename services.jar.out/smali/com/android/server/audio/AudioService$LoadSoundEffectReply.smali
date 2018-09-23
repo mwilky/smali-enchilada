@@ -23,14 +23,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/audio/AudioService;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/audio/AudioService;
 
-    .line 3426
     iput-object p1, p0, Lcom/android/server/audio/AudioService$LoadSoundEffectReply;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3427
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/audio/AudioService$LoadSoundEffectReply;->mStatus:I

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/StatusBarController$1;JJ)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/StatusBarController$1;
 
-    .line 60
     iput-object p1, p0, Lcom/android/server/policy/StatusBarController$1$2;->this$1:Lcom/android/server/policy/StatusBarController$1;
 
     iput-wide p2, p0, Lcom/android/server/policy/StatusBarController$1$2;->val$statusBarAnimationStartTime:J
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 5
 
-    .line 63
     iget-object v0, p0, Lcom/android/server/policy/StatusBarController$1$2;->this$1:Lcom/android/server/policy/StatusBarController$1;
 
     iget-object v0, v0, Lcom/android/server/policy/StatusBarController$1;->this$0:Lcom/android/server/policy/StatusBarController;
@@ -56,18 +53,14 @@
 
     move-result-object v0
 
-    .line 64
-    .local v0, "statusbar":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_0
 
-    .line 65
     iget-wide v1, p0, Lcom/android/server/policy/StatusBarController$1$2;->val$statusBarAnimationStartTime:J
 
     iget-wide v3, p0, Lcom/android/server/policy/StatusBarController$1$2;->val$statusBarAnimationDuration:J
 
     invoke-interface {v0, v1, v2, v3, v4}, Lcom/android/server/statusbar/StatusBarManagerInternal;->appTransitionStarting(JJ)V
 
-    .line 68
     :cond_0
     return-void
 .end method

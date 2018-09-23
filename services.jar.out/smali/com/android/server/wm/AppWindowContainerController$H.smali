@@ -27,15 +27,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/wm/AppWindowContainerController;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 75
     iput-object p1, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
-    .line 76
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 77
     return-void
 .end method
 
@@ -43,16 +39,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 81
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 91
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
@@ -60,10 +53,8 @@
 
     if-nez v0, :cond_0
 
-    .line 92
     return-void
 
-    .line 94
     :cond_0
     sget-boolean v0, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_VISIBILITY:Z
 
@@ -81,7 +72,6 @@
 
     iget-object v2, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
-    .line 95
     invoke-static {v2}, Lcom/android/server/wm/AppWindowContainerController;->access$000(Lcom/android/server/wm/AppWindowContainerController;)Landroid/view/IApplicationToken;
 
     move-result-object v2
@@ -92,10 +82,8 @@
 
     move-result-object v1
 
-    .line 94
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     :cond_1
     iget-object v0, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
@@ -109,10 +97,8 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/wm/AppWindowContainerListener;->onStartingWindowDrawn(J)V
 
-    .line 97
     goto :goto_0
 
-    .line 83
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
@@ -120,10 +106,8 @@
 
     if-nez v0, :cond_2
 
-    .line 84
     return-void
 
-    .line 86
     :cond_2
     sget-boolean v0, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_VISIBILITY:Z
 
@@ -141,7 +125,6 @@
 
     iget-object v2, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
-    .line 87
     invoke-static {v2}, Lcom/android/server/wm/AppWindowContainerController;->access$000(Lcom/android/server/wm/AppWindowContainerController;)Landroid/view/IApplicationToken;
 
     move-result-object v2
@@ -152,10 +135,8 @@
 
     move-result-object v1
 
-    .line 86
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
     :cond_3
     iget-object v0, p0, Lcom/android/server/wm/AppWindowContainerController$H;->this$0:Lcom/android/server/wm/AppWindowContainerController;
 
@@ -169,10 +150,8 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/server/wm/AppWindowContainerListener;->onWindowsDrawn(J)V
 
-    .line 89
     nop
 
-    .line 101
     :goto_0
     return-void
 

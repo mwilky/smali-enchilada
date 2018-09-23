@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/policy/BarController;)V
     .locals 0
 
-    .line 357
     iput-object p1, p0, Lcom/android/server/policy/BarController$BarHandler;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/policy/BarController;Lcom/android/server/policy/BarController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/policy/BarController;
-    .param p2, "x1"    # Lcom/android/server/policy/BarController$1;
 
-    .line 357
     invoke-direct {p0, p1}, Lcom/android/server/policy/BarController$BarHandler;-><init>(Lcom/android/server/policy/BarController;)V
 
     return-void
@@ -45,9 +41,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 360
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -56,7 +50,6 @@
 
     goto :goto_1
 
-    .line 362
     :cond_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -70,8 +63,6 @@
     :goto_0
     move v0, v1
 
-    .line 363
-    .local v0, "visible":Z
     iget-object v1, p0, Lcom/android/server/policy/BarController$BarHandler;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-static {v1}, Lcom/android/server/policy/BarController;->access$200(Lcom/android/server/policy/BarController;)Lcom/android/server/policy/BarController$OnBarVisibilityChangedListener;
@@ -80,7 +71,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 364
     iget-object v1, p0, Lcom/android/server/policy/BarController$BarHandler;->this$0:Lcom/android/server/policy/BarController;
 
     invoke-static {v1}, Lcom/android/server/policy/BarController;->access$200(Lcom/android/server/policy/BarController;)Lcom/android/server/policy/BarController$OnBarVisibilityChangedListener;
@@ -89,8 +79,6 @@
 
     invoke-interface {v1, v0}, Lcom/android/server/policy/BarController$OnBarVisibilityChangedListener;->onBarVisibilityChanged(Z)V
 
-    .line 368
-    .end local v0    # "visible":Z
     :cond_2
     :goto_1
     return-void

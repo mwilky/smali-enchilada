@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/DeviceKeyHandler;
 
-    .line 518
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +36,13 @@
 # virtual methods
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "accuracy"    # I
 
-    .line 544
     return-void
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 5
-    .param p1, "event"    # Landroid/hardware/SensorEvent;
 
-    .line 522
     invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
 
     move-result v0
@@ -58,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 523
     const-string v0, "DeviceKeyHandler"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -81,7 +73,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 526
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
@@ -91,14 +82,11 @@
 
     monitor-enter v0
 
-    .line 527
     :try_start_0
     iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
 
     aget v2, v2, v1
 
-    .line 531
-    .local v2, "distance":F
     iget-object v3, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     const v4, 0x3dcccccd    # 0.1f
@@ -114,14 +102,12 @@
     :cond_1
     invoke-static {v3, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$702(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
-    .line 533
     invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 534
     const-string v1, "DeviceKeyHandler"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -134,7 +120,6 @@
 
     iget-object v4, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
-    .line 535
     invoke-static {v4}, Lcom/android/server/policy/DeviceKeyHandler;->access$700(Lcom/android/server/policy/DeviceKeyHandler;)Z
 
     move-result v4
@@ -145,10 +130,8 @@
 
     move-result-object v3
 
-    .line 534
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 538
     :cond_2
     iget-object v1, p0, Lcom/android/server/policy/DeviceKeyHandler$2;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
@@ -158,14 +141,10 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 539
-    .end local v2    # "distance":F
     monitor-exit v0
 
-    .line 540
     return-void
 
-    .line 539
     :catchall_0
     move-exception v1
 

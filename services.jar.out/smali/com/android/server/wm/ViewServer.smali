@@ -51,28 +51,19 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowManagerService;I)V
     .locals 0
-    .param p1, "windowManager"    # Lcom/android/server/wm/WindowManagerService;
-    .param p2, "port"    # I
 
-    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     iput-object p1, p0, Lcom/android/server/wm/ViewServer;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    .line 89
     iput p2, p0, Lcom/android/server/wm/ViewServer;->mPort:I
 
-    .line 90
     return-void
 .end method
 
 .method static synthetic access$000(Ljava/net/Socket;Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Ljava/net/Socket;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 44
     invoke-static {p0, p1}, Lcom/android/server/wm/ViewServer;->writeValue(Ljava/net/Socket;Ljava/lang/String;)Z
 
     move-result v0
@@ -82,9 +73,7 @@
 
 .method static synthetic access$100(Lcom/android/server/wm/ViewServer;)Lcom/android/server/wm/WindowManagerService;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/ViewServer;
 
-    .line 44
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     return-object v0
@@ -92,21 +81,14 @@
 
 .method private static writeValue(Ljava/net/Socket;Ljava/lang/String;)Z
     .locals 5
-    .param p0, "client"    # Ljava/net/Socket;
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 187
     const/4 v0, 0x0
 
-    .line 189
-    .local v0, "out":Ljava/io/BufferedWriter;
     :try_start_0
     invoke-virtual {p0}, Ljava/net/Socket;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v1
 
-    .line 190
-    .local v1, "clientStream":Ljava/io/OutputStream;
     new-instance v2, Ljava/io/BufferedWriter;
 
     new-instance v3, Ljava/io/OutputStreamWriter;
@@ -119,28 +101,21 @@
 
     move-object v0, v2
 
-    .line 191
     invoke-virtual {v0, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 192
     const-string v2, "\n"
 
     invoke-virtual {v0, v2}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
 
-    .line 193
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->flush()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 194
     const/4 v1, 0x1
 
-    .line 198
-    .local v1, "result":Z
     nop
 
-    .line 200
     :try_start_1
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
     :try_end_1
@@ -148,49 +123,34 @@
 
     goto :goto_1
 
-    .line 198
-    .end local v1    # "result":Z
     :catchall_0
     move-exception v1
 
     if-eqz v0, :cond_0
 
-    .line 200
     :try_start_2
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 203
     goto :goto_0
 
-    .line 201
     :catch_0
     move-exception v2
 
-    .line 202
-    .local v2, "e":Ljava/io/IOException;
     nop
 
-    .line 203
-    .end local v2    # "e":Ljava/io/IOException;
     :cond_0
     :goto_0
     throw v1
 
-    .line 195
     :catch_1
     move-exception v1
 
-    .line 196
-    .local v1, "e":Ljava/lang/Exception;
     const/4 v1, 0x0
 
-    .line 198
-    .local v1, "result":Z
     if-eqz v0, :cond_1
 
-    .line 200
     :try_start_3
     invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
     :try_end_3
@@ -198,20 +158,14 @@
 
     goto :goto_1
 
-    .line 201
     :catch_2
     move-exception v2
 
-    .line 202
-    .restart local v2    # "e":Ljava/io/IOException;
     const/4 v1, 0x0
 
-    .line 203
-    .end local v2    # "e":Ljava/io/IOException;
     :goto_1
     nop
 
-    .line 206
     :cond_1
     return v1
 .end method
@@ -221,7 +175,6 @@
 .method isRunning()Z
     .locals 1
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_0
@@ -248,7 +201,6 @@
 .method public run()V
     .locals 3
 
-    .line 166
     :goto_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -258,7 +210,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 169
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mServer:Ljava/net/ServerSocket;
 
@@ -266,13 +217,10 @@
 
     move-result-object v0
 
-    .line 170
-    .local v0, "client":Ljava/net/Socket;
     iget-object v1, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v1, :cond_0
 
-    .line 171
     iget-object v1, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
     new-instance v2, Lcom/android/server/wm/ViewServer$ViewServerWorker;
@@ -285,7 +233,6 @@
 
     goto :goto_1
 
-    .line 174
     :cond_0
     :try_start_1
     invoke-virtual {v0}, Ljava/net/Socket;->close()V
@@ -293,42 +240,30 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 177
     goto :goto_1
 
-    .line 175
     :catch_0
     move-exception v1
 
-    .line 176
-    .local v1, "e":Ljava/io/IOException;
     :try_start_2
     invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .end local v0    # "client":Ljava/net/Socket;
-    .end local v1    # "e":Ljava/io/IOException;
     goto :goto_1
 
-    .line 179
     :catch_1
     move-exception v0
 
-    .line 180
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "WindowManager"
 
     const-string v2, "Connection error: "
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 181
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     goto :goto_0
 
-    .line 183
     :cond_1
     return-void
 .end method
@@ -341,17 +276,14 @@
         }
     .end annotation
 
-    .line 103
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_0
 
-    .line 104
     const/4 v0, 0x0
 
     return v0
 
-    .line 107
     :cond_0
     new-instance v0, Ljava/net/ServerSocket;
 
@@ -367,7 +299,6 @@
 
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mServer:Ljava/net/ServerSocket;
 
-    .line 108
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -394,19 +325,16 @@
 
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
-    .line 109
     invoke-static {v3}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
-    .line 110
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 112
     const/4 v0, 0x1
 
     return v0
@@ -415,22 +343,18 @@
 .method stop()Z
     .locals 3
 
-    .line 126
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
     if-eqz v0, :cond_1
 
-    .line 128
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
     invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    .line 129
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v0, :cond_0
 
-    .line 131
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
@@ -438,62 +362,47 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 134
     goto :goto_0
 
-    .line 132
     :catch_0
     move-exception v0
 
-    .line 133
-    .local v0, "e":Ljava/lang/SecurityException;
     const-string v1, "WindowManager"
 
     const-string v2, "Could not stop all view server threads"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
-    .end local v0    # "e":Ljava/lang/SecurityException;
     :cond_0
     :goto_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mThreadPool:Ljava/util/concurrent/ExecutorService;
 
-    .line 137
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mThread:Ljava/lang/Thread;
 
-    .line 139
     :try_start_1
     iget-object v1, p0, Lcom/android/server/wm/ViewServer;->mServer:Ljava/net/ServerSocket;
 
     invoke-virtual {v1}, Ljava/net/ServerSocket;->close()V
 
-    .line 140
     iput-object v0, p0, Lcom/android/server/wm/ViewServer;->mServer:Ljava/net/ServerSocket;
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 141
     const/4 v0, 0x1
 
     return v0
 
-    .line 142
     :catch_1
     move-exception v0
 
-    .line 143
-    .local v0, "e":Ljava/io/IOException;
     const-string v1, "WindowManager"
 
     const-string v2, "Could not close the view server"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
-    .end local v0    # "e":Ljava/io/IOException;
     :cond_1
     const/4 v0, 0x0
 

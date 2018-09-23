@@ -55,7 +55,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,16 +62,13 @@
 
 .method public static final alignedLengthOf(I)I
     .locals 1
-    .param p0, "length"    # I
 
-    .line 46
     if-gtz p0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    .line 47
     :cond_0
     add-int/lit8 v0, p0, 0x4
 
@@ -87,15 +83,11 @@
 
 .method public static final alignedLengthOf(S)I
     .locals 2
-    .param p0, "length"    # S
 
-    .line 41
     const v0, 0xffff
 
     and-int/2addr v0, p0
 
-    .line 42
-    .local v0, "intLength":I
     invoke-static {v0}, Landroid/net/netlink/NetlinkConstants;->alignedLengthOf(I)I
 
     move-result v1
@@ -105,20 +97,16 @@
 
 .method public static hexify(Ljava/nio/ByteBuffer;)Ljava/lang/String;
     .locals 3
-    .param p0, "buffer"    # Ljava/nio/ByteBuffer;
 
-    .line 63
     if-nez p0, :cond_0
 
     const-string v0, "(null)"
 
     return-object v0
 
-    .line 64
     :cond_0
     nop
 
-    .line 65
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
@@ -131,7 +119,6 @@
 
     move-result v2
 
-    .line 64
     invoke-static {v0, v1, v2}, Lcom/android/internal/util/HexDump;->toHexString([BII)Ljava/lang/String;
 
     move-result-object v0
@@ -141,16 +128,13 @@
 
 .method public static hexify([B)Ljava/lang/String;
     .locals 1
-    .param p0, "bytes"    # [B
 
-    .line 58
     if-nez p0, :cond_0
 
     const-string v0, "(null)"
 
     return-object v0
 
-    .line 59
     :cond_0
     invoke-static {p0}, Lcom/android/internal/util/HexDump;->toHexString([B)Ljava/lang/String;
 
@@ -161,9 +145,7 @@
 
 .method public static stringForAddressFamily(I)Ljava/lang/String;
     .locals 1
-    .param p0, "family"    # I
 
-    .line 51
     sget v0, Landroid/system/OsConstants;->AF_INET:I
 
     if-ne p0, v0, :cond_0
@@ -172,7 +154,6 @@
 
     return-object v0
 
-    .line 52
     :cond_0
     sget v0, Landroid/system/OsConstants;->AF_INET6:I
 
@@ -182,7 +163,6 @@
 
     return-object v0
 
-    .line 53
     :cond_1
     sget v0, Landroid/system/OsConstants;->AF_NETLINK:I
 
@@ -192,7 +172,6 @@
 
     return-object v0
 
-    .line 54
     :cond_2
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -203,9 +182,7 @@
 
 .method public static stringForNlMsgType(S)Ljava/lang/String;
     .locals 2
-    .param p0, "nlm_type"    # S
 
-    .line 94
     const/16 v0, 0x44
 
     if-eq p0, v0, :cond_0
@@ -220,7 +197,6 @@
 
     packed-switch p0, :pswitch_data_4
 
-    .line 117
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -241,127 +217,106 @@
 
     return-object v0
 
-    .line 114
     :pswitch_0
     const-string v0, "RTM_GETRULE"
 
     return-object v0
 
-    .line 113
     :pswitch_1
     const-string v0, "RTM_DELRULE"
 
     return-object v0
 
-    .line 112
     :pswitch_2
     const-string v0, "RTM_NEWRULE"
 
     return-object v0
 
-    .line 111
     :pswitch_3
     const-string v0, "RTM_GETNEIGH"
 
     return-object v0
 
-    .line 110
     :pswitch_4
     const-string v0, "RTM_DELNEIGH"
 
     return-object v0
 
-    .line 109
     :pswitch_5
     const-string v0, "RTM_NEWNEIGH"
 
     return-object v0
 
-    .line 108
     :pswitch_6
     const-string v0, "RTM_GETROUTE"
 
     return-object v0
 
-    .line 107
     :pswitch_7
     const-string v0, "RTM_DELROUTE"
 
     return-object v0
 
-    .line 106
     :pswitch_8
     const-string v0, "RTM_NEWROUTE"
 
     return-object v0
 
-    .line 105
     :pswitch_9
     const-string v0, "RTM_GETADDR"
 
     return-object v0
 
-    .line 104
     :pswitch_a
     const-string v0, "RTM_DELADDR"
 
     return-object v0
 
-    .line 103
     :pswitch_b
     const-string v0, "RTM_NEWADDR"
 
     return-object v0
 
-    .line 102
     :pswitch_c
     const-string v0, "RTM_SETLINK"
 
     return-object v0
 
-    .line 101
     :pswitch_d
     const-string v0, "RTM_GETLINK"
 
     return-object v0
 
-    .line 100
     :pswitch_e
     const-string v0, "RTM_DELLINK"
 
     return-object v0
 
-    .line 99
     :pswitch_f
     const-string v0, "RTM_NEWLINK"
 
     return-object v0
 
-    .line 98
     :pswitch_10
     const-string v0, "NLMSG_OVERRUN"
 
     return-object v0
 
-    .line 97
     :pswitch_11
     const-string v0, "NLMSG_DONE"
 
     return-object v0
 
-    .line 96
     :pswitch_12
     const-string v0, "NLMSG_ERROR"
 
     return-object v0
 
-    .line 95
     :pswitch_13
     const-string v0, "NLMSG_NOOP"
 
     return-object v0
 
-    .line 115
     :cond_0
     const-string v0, "RTM_NEWNDUSEROPT"
 

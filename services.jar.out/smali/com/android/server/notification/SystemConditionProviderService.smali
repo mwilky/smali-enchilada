@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 31
     invoke-direct {p0}, Landroid/service/notification/ConditionProviderService;-><init>()V
 
     return-void
@@ -15,12 +14,7 @@
 
 .method protected static dumpUpcomingTime(Ljava/io/PrintWriter;Ljava/lang/String;JJ)V
     .locals 5
-    .param p0, "pw"    # Ljava/io/PrintWriter;
-    .param p1, "var"    # Ljava/lang/String;
-    .param p2, "time"    # J
-    .param p4, "now"    # J
 
-    .line 51
     const-string v0, "      "
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -31,14 +25,12 @@
 
     invoke-virtual {p0, v0}, Ljava/io/PrintWriter;->print(C)V
 
-    .line 52
     const-wide/16 v0, 0x0
 
     cmp-long v0, p2, v0
 
     if-lez v0, :cond_0
 
-    .line 53
     const-string v0, "%s, in %s, now=%s"
 
     const/4 v1, 0x3
@@ -75,32 +67,24 @@
 
     goto :goto_0
 
-    .line 55
     :cond_0
     invoke-virtual {p0, p2, p3}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 57
     :goto_0
     invoke-virtual {p0}, Ljava/io/PrintWriter;->println()V
 
-    .line 58
     return-void
 .end method
 
 .method protected static formatDuration(J)Ljava/lang/String;
     .locals 2
-    .param p0, "millis"    # J
 
-    .line 45
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 46
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {p0, p1, v0}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 47
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -110,9 +94,7 @@
 
 .method protected static ts(J)Ljava/lang/String;
     .locals 2
-    .param p0, "time"    # J
 
-    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

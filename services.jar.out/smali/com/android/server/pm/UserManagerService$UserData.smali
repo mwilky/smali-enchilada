@@ -39,7 +39,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 261
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,22 +49,17 @@
 .method clearSeedAccountData()V
     .locals 1
 
-    .line 283
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/UserManagerService$UserData;->seedAccountName:Ljava/lang/String;
 
-    .line 284
     iput-object v0, p0, Lcom/android/server/pm/UserManagerService$UserData;->seedAccountType:Ljava/lang/String;
 
-    .line 285
     iput-object v0, p0, Lcom/android/server/pm/UserManagerService$UserData;->seedAccountOptions:Landroid/os/PersistableBundle;
 
-    .line 286
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/pm/UserManagerService$UserData;->persistSeedData:Z
 
-    .line 287
     return-void
 .end method

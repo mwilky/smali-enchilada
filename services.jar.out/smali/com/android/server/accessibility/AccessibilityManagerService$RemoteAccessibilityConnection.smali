@@ -34,42 +34,27 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accessibility/AccessibilityManagerService;ILandroid/view/accessibility/IAccessibilityInteractionConnection;Ljava/lang/String;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accessibility/AccessibilityManagerService;
-    .param p2, "windowId"    # I
-    .param p3, "connection"    # Landroid/view/accessibility/IAccessibilityInteractionConnection;
-    .param p4, "packageName"    # Ljava/lang/String;
-    .param p5, "uid"    # I
-    .param p6, "userId"    # I
 
-    .line 2458
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2459
     iput p2, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mWindowId:I
 
-    .line 2460
     iput-object p4, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mPackageName:Ljava/lang/String;
 
-    .line 2461
     iput p5, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mUid:I
 
-    .line 2462
     iput p6, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mUserId:I
 
-    .line 2463
     iput-object p3, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mConnection:Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
-    .line 2464
     return-void
 .end method
 
 .method static synthetic access$2200(Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;)Landroid/view/accessibility/IAccessibilityInteractionConnection;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;
 
-    .line 2449
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mConnection:Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
     return-object v0
@@ -80,10 +65,8 @@
 .method public binderDied()V
     .locals 4
 
-    .line 2488
     invoke-virtual {p0}, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->unlinkToDeath()V
 
-    .line 2489
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-static {v0}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$200(Lcom/android/server/accessibility/AccessibilityManagerService;)Ljava/lang/Object;
@@ -92,7 +75,6 @@
 
     monitor-enter v0
 
-    .line 2490
     :try_start_0
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->this$0:Lcom/android/server/accessibility/AccessibilityManagerService;
 
@@ -102,13 +84,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/accessibility/AccessibilityManagerService;->access$1800(Lcom/android/server/accessibility/AccessibilityManagerService;II)V
 
-    .line 2491
     monitor-exit v0
 
-    .line 2492
     return-void
 
-    .line 2491
     :catchall_0
     move-exception v1
 
@@ -122,7 +101,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 2471
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -131,7 +109,6 @@
 .method public getRemote()Landroid/view/accessibility/IAccessibilityInteractionConnection;
     .locals 1
 
-    .line 2475
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mConnection:Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
     return-object v0
@@ -140,7 +117,6 @@
 .method public getUid()I
     .locals 1
 
-    .line 2467
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mUid:I
 
     return v0
@@ -154,7 +130,6 @@
         }
     .end annotation
 
-    .line 2479
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mConnection:Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
     invoke-interface {v0}, Landroid/view/accessibility/IAccessibilityInteractionConnection;->asBinder()Landroid/os/IBinder;
@@ -165,14 +140,12 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 2480
     return-void
 .end method
 
 .method public unlinkToDeath()V
     .locals 2
 
-    .line 2483
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityManagerService$RemoteAccessibilityConnection;->mConnection:Landroid/view/accessibility/IAccessibilityInteractionConnection;
 
     invoke-interface {v0}, Landroid/view/accessibility/IAccessibilityInteractionConnection;->asBinder()Landroid/os/IBinder;
@@ -183,6 +156,5 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 2484
     return-void
 .end method

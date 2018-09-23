@@ -50,9 +50,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;IILjava/lang/String;ILjava/lang/String;IIIIZII)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
-    .line 6071
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$15;->val$listener:Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
@@ -91,7 +89,6 @@
 .method public run()V
     .locals 19
 
-    .line 6074
     move-object/from16 v1, p0
 
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$15;->val$listener:Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
@@ -116,8 +113,6 @@
 
     goto :goto_0
 
-    .line 6075
-    .local v11, "listenerName":Ljava/lang/String;
     :goto_1
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
@@ -143,7 +138,6 @@
 
     invoke-static/range {v2 .. v11}, Lcom/android/server/EventLogTags;->writeNotificationCancel(IILjava/lang/String;ILjava/lang/String;IIIILjava/lang/String;)V
 
-    .line 6078
     :cond_1
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -151,7 +145,6 @@
 
     monitor-enter v2
 
-    .line 6080
     :try_start_0
     iget-object v0, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -167,18 +160,14 @@
 
     move-result-object v0
 
-    .line 6081
-    .local v0, "r":Lcom/android/server/notification/NotificationRecord;
     if-eqz v0, :cond_5
 
-    .line 6086
     iget v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->val$reason:I
 
     const/4 v4, 0x1
 
     if-ne v3, v4, :cond_2
 
-    .line 6087
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->access$7100(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/NotificationUsageStats;
@@ -187,7 +176,6 @@
 
     invoke-virtual {v3, v0}, Lcom/android/server/notification/NotificationUsageStats;->registerClickedByUser(Lcom/android/server/notification/NotificationRecord;)V
 
-    .line 6090
     :cond_2
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
@@ -203,12 +191,10 @@
 
     if-eq v3, v4, :cond_3
 
-    .line 6091
     monitor-exit v2
 
     return-void
 
-    .line 6093
     :cond_3
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
@@ -222,12 +208,10 @@
 
     if-eqz v3, :cond_4
 
-    .line 6094
     monitor-exit v2
 
     return-void
 
-    .line 6098
     :cond_4
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -235,8 +219,6 @@
 
     move-result v9
 
-    .line 6099
-    .local v9, "wasPosted":Z
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget-boolean v5, v1, Lcom/android/server/notification/NotificationManagerService$15;->val$sendDelete:Z
@@ -251,9 +233,8 @@
 
     move-object v10, v11
 
-    invoke-static/range {v3 .. v10}, Lcom/android/server/notification/NotificationManagerService;->access$8700(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/NotificationRecord;ZIIIZLjava/lang/String;)V
+    invoke-static/range {v3 .. v10}, Lcom/android/server/notification/NotificationManagerService;->access$8600(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/NotificationRecord;ZIIIZLjava/lang/String;)V
 
-    .line 6100
     iget-object v12, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     iget v14, v1, Lcom/android/server/notification/NotificationManagerService$15;->val$callingUid:I
@@ -270,18 +251,14 @@
 
     move/from16 v17, v3
 
-    invoke-static/range {v12 .. v18}, Lcom/android/server/notification/NotificationManagerService;->access$8800(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;ZLcom/android/server/notification/NotificationManagerService$FlagChecker;)V
+    invoke-static/range {v12 .. v18}, Lcom/android/server/notification/NotificationManagerService;->access$8700(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/NotificationRecord;IILjava/lang/String;ZLcom/android/server/notification/NotificationManagerService$FlagChecker;)V
 
-    .line 6102
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-virtual {v3}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
 
-    .line 6103
-    .end local v9    # "wasPosted":Z
     goto :goto_2
 
-    .line 6105
     :cond_5
     iget v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->val$reason:I
 
@@ -289,7 +266,6 @@
 
     if-eq v3, v4, :cond_6
 
-    .line 6106
     iget-object v3, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-static {v3}, Lcom/android/server/notification/NotificationManagerService;->access$4300(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/SnoozeHelper;
@@ -308,26 +284,18 @@
 
     move-result v3
 
-    .line 6107
-    .local v3, "wasSnoozed":Z
     if-eqz v3, :cond_6
 
-    .line 6108
     iget-object v4, v1, Lcom/android/server/notification/NotificationManagerService$15;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-virtual {v4}, Lcom/android/server/notification/NotificationManagerService;->savePolicyFile()V
 
-    .line 6112
-    .end local v0    # "r":Lcom/android/server/notification/NotificationRecord;
-    .end local v3    # "wasSnoozed":Z
     :cond_6
     :goto_2
     monitor-exit v2
 
-    .line 6113
     return-void
 
-    .line 6112
     :catchall_0
     move-exception v0
 

@@ -28,29 +28,21 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/media/MediaSessionService;Landroid/media/ISessionTokensListener;I)V
     .locals 0
-    .param p2, "listener"    # Landroid/media/ISessionTokensListener;
-    .param p3, "userId"    # I
 
-    .line 2265
     iput-object p1, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->this$0:Lcom/android/server/media/MediaSessionService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2266
     iput-object p2, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->mListener:Landroid/media/ISessionTokensListener;
 
-    .line 2268
     iput p3, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->mUserId:I
 
-    .line 2269
     return-void
 .end method
 
 .method static synthetic access$4700(Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;)Landroid/media/ISessionTokensListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;
 
-    .line 2261
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->mListener:Landroid/media/ISessionTokensListener;
 
     return-object v0
@@ -58,9 +50,7 @@
 
 .method static synthetic access$6400(Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;
 
-    .line 2261
     iget v0, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->mUserId:I
 
     return v0
@@ -71,7 +61,6 @@
 .method public binderDied()V
     .locals 2
 
-    .line 2273
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->this$0:Lcom/android/server/media/MediaSessionService;
 
     invoke-static {v0}, Lcom/android/server/media/MediaSessionService;->access$1700(Lcom/android/server/media/MediaSessionService;)Ljava/lang/Object;
@@ -80,7 +69,6 @@
 
     monitor-enter v0
 
-    .line 2274
     :try_start_0
     iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionTokensListenerRecord;->this$0:Lcom/android/server/media/MediaSessionService;
 
@@ -90,13 +78,10 @@
 
     invoke-interface {v1, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 2275
     monitor-exit v0
 
-    .line 2276
     return-void
 
-    .line 2275
     :catchall_0
     move-exception v1
 

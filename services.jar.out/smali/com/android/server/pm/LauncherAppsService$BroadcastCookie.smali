@@ -27,26 +27,16 @@
 # direct methods
 .method constructor <init>(Landroid/os/UserHandle;Ljava/lang/String;II)V
     .locals 0
-    .param p1, "userHandle"    # Landroid/os/UserHandle;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "callingPid"    # I
-    .param p4, "callingUid"    # I
 
-    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     iput-object p1, p0, Lcom/android/server/pm/LauncherAppsService$BroadcastCookie;->user:Landroid/os/UserHandle;
 
-    .line 96
     iput-object p2, p0, Lcom/android/server/pm/LauncherAppsService$BroadcastCookie;->packageName:Ljava/lang/String;
 
-    .line 97
     iput p4, p0, Lcom/android/server/pm/LauncherAppsService$BroadcastCookie;->callingUid:I
 
-    .line 98
     iput p3, p0, Lcom/android/server/pm/LauncherAppsService$BroadcastCookie;->callingPid:I
 
-    .line 99
     return-void
 .end method

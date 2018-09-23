@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/display/BrightnessTracker;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 774
     iput-object p1, p0, Lcom/android/server/display/BrightnessTracker$SettingsObserver;->this$0:Lcom/android/server/display/BrightnessTracker;
 
-    .line 775
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 776
     return-void
 .end method
 
@@ -37,10 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 2
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 783
     iget-object v0, p0, Lcom/android/server/display/BrightnessTracker$SettingsObserver;->this$0:Lcom/android/server/display/BrightnessTracker;
 
     invoke-static {v0}, Lcom/android/server/display/BrightnessTracker;->access$600(Lcom/android/server/display/BrightnessTracker;)Lcom/android/server/display/BrightnessTracker$Injector;
@@ -59,7 +52,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 784
     iget-object v0, p0, Lcom/android/server/display/BrightnessTracker$SettingsObserver;->this$0:Lcom/android/server/display/BrightnessTracker;
 
     invoke-static {v0}, Lcom/android/server/display/BrightnessTracker;->access$700(Lcom/android/server/display/BrightnessTracker;)Landroid/os/Handler;
@@ -76,7 +68,6 @@
 
     goto :goto_0
 
-    .line 786
     :cond_0
     iget-object v0, p0, Lcom/android/server/display/BrightnessTracker$SettingsObserver;->this$0:Lcom/android/server/display/BrightnessTracker;
 
@@ -92,7 +83,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 788
     :goto_0
     return-void
 .end method

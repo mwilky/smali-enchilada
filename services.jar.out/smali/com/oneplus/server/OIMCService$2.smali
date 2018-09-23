@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/OIMCService;
 
-    .line 166
     iput-object p1, p0, Lcom/oneplus/server/OIMCService$2;->this$0:Lcom/oneplus/server/OIMCService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 169
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
     iget-object v1, p0, Lcom/oneplus/server/OIMCService$2;->this$0:Lcom/oneplus/server/OIMCService;
@@ -52,8 +49,6 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 170
-    .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     iget-object v1, p0, Lcom/oneplus/server/OIMCService$2;->this$0:Lcom/oneplus/server/OIMCService;
 
     iget-object v1, v1, Lcom/oneplus/server/OIMCService;->mTM:Lcom/oneplus/server/TriggerManager;
@@ -64,6 +59,5 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/server/TriggerManager;->parseOnlineConfig(Lorg/json/JSONArray;)V
 
-    .line 171
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/UserManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/UserManagerService;
 
-    .line 394
     iput-object p1, p0, Lcom/android/server/pm/UserManagerService$1;->this$0:Lcom/android/server/pm/UserManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -33,10 +31,7 @@
 
 .method public static synthetic lambda$onReceive$0(Lcom/android/server/pm/UserManagerService$1;ILandroid/content/IntentSender;)V
     .locals 2
-    .param p1, "userHandle"    # I
-    .param p2, "target"    # Landroid/content/IntentSender;
 
-    .line 404
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService$1;->this$0:Lcom/android/server/pm/UserManagerService;
 
     const/4 v1, 0x0
@@ -50,10 +45,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 397
     const-string v0, "com.android.server.pm.DISABLE_QUIET_MODE_AFTER_UNLOCK"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -66,10 +58,8 @@
 
     if-nez v0, :cond_0
 
-    .line 398
     return-void
 
-    .line 400
     :cond_0
     const-string v0, "android.intent.extra.INTENT"
 
@@ -79,8 +69,6 @@
 
     check-cast v0, Landroid/content/IntentSender;
 
-    .line 401
-    .local v0, "target":Landroid/content/IntentSender;
     const-string v1, "android.intent.extra.USER_ID"
 
     const/16 v2, -0x2710
@@ -89,8 +77,6 @@
 
     move-result v1
 
-    .line 403
-    .local v1, "userHandle":I
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v2
@@ -99,9 +85,7 @@
 
     invoke-direct {v3, p0, v1, v0}, Lcom/android/server/pm/-$$Lambda$UserManagerService$1$DQ_02g7kZ7QrJXO6aCATwE6DYCE;-><init>(Lcom/android/server/pm/UserManagerService$1;ILandroid/content/IntentSender;)V
 
-    .line 404
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 405
     return-void
 .end method

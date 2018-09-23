@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 654
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,18 +39,11 @@
 # virtual methods
 .method public compare(Lcom/android/server/wm/WindowState;Lcom/android/server/wm/WindowState;)I
     .locals 3
-    .param p1, "w1"    # Lcom/android/server/wm/WindowState;
-    .param p2, "w2"    # Lcom/android/server/wm/WindowState;
 
-    .line 657
     iget v0, p1, Lcom/android/server/wm/WindowState;->mSubLayer:I
 
-    .line 658
-    .local v0, "layer1":I
     iget v1, p2, Lcom/android/server/wm/WindowState;->mSubLayer:I
 
-    .line 659
-    .local v1, "layer2":I
     if-lt v0, v1, :cond_1
 
     if-ne v0, v1, :cond_0
@@ -60,13 +52,11 @@
 
     goto :goto_0
 
-    .line 666
     :cond_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 664
     :cond_1
     :goto_0
     const/4 v2, -0x1
@@ -77,7 +67,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 654
     check-cast p1, Lcom/android/server/wm/WindowState;
 
     check-cast p2, Lcom/android/server/wm/WindowState;

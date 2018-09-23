@@ -40,14 +40,10 @@
         }
     .end annotation
 
-    .line 596
-    .local p1, "pkgSource":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 597
     iput-object p1, p0, Lcom/android/server/slice/SliceManagerService$PackageMatchingCache;->mPkgSource:Ljava/util/function/Supplier;
 
-    .line 598
     return-void
 .end method
 
@@ -55,16 +51,13 @@
 # virtual methods
 .method public matches(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "pkgCandidate"    # Ljava/lang/String;
 
-    .line 601
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    .line 603
     :cond_0
     iget-object v0, p0, Lcom/android/server/slice/SliceManagerService$PackageMatchingCache;->mCurrentPkg:Ljava/lang/String;
 
@@ -74,12 +67,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 604
     const/4 v0, 0x1
 
     return v0
 
-    .line 607
     :cond_1
     iget-object v0, p0, Lcom/android/server/slice/SliceManagerService$PackageMatchingCache;->mPkgSource:Ljava/util/function/Supplier;
 
@@ -91,7 +82,6 @@
 
     iput-object v0, p0, Lcom/android/server/slice/SliceManagerService$PackageMatchingCache;->mCurrentPkg:Ljava/lang/String;
 
-    .line 608
     iget-object v0, p0, Lcom/android/server/slice/SliceManagerService$PackageMatchingCache;->mCurrentPkg:Ljava/lang/String;
 
     invoke-static {p1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z

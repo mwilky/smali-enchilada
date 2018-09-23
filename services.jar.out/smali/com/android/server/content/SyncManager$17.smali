@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/content/SyncManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
-    .line 2527
     iput-object p1, p0, Lcom/android/server/content/SyncManager$17;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/content/SyncManager$AccountSyncStats;Lcom/android/server/content/SyncManager$AccountSyncStats;)I
     .locals 5
-    .param p1, "lhs"    # Lcom/android/server/content/SyncManager$AccountSyncStats;
-    .param p2, "rhs"    # Lcom/android/server/content/SyncManager$AccountSyncStats;
 
-    .line 2531
     iget v0, p2, Lcom/android/server/content/SyncManager$AccountSyncStats;->times:I
 
     iget v1, p1, Lcom/android/server/content/SyncManager$AccountSyncStats;->times:I
@@ -59,11 +54,8 @@
 
     move-result v0
 
-    .line 2532
-    .local v0, "compare":I
     if-nez v0, :cond_0
 
-    .line 2533
     iget-wide v1, p2, Lcom/android/server/content/SyncManager$AccountSyncStats;->elapsedTime:J
 
     iget-wide v3, p1, Lcom/android/server/content/SyncManager$AccountSyncStats;->elapsedTime:J
@@ -72,7 +64,6 @@
 
     move-result v0
 
-    .line 2535
     :cond_0
     return v0
 .end method
@@ -80,7 +71,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 2527
     check-cast p1, Lcom/android/server/content/SyncManager$AccountSyncStats;
 
     check-cast p2, Lcom/android/server/content/SyncManager$AccountSyncStats;

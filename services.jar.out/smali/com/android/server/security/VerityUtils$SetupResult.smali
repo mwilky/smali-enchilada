@@ -33,30 +33,21 @@
 # direct methods
 .method private constructor <init>(ILjava/io/FileDescriptor;I)V
     .locals 0
-    .param p1, "code"    # I
-    .param p2, "fileDescriptor"    # Ljava/io/FileDescriptor;
-    .param p3, "contentSize"    # I
 
-    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
     iput p1, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mCode:I
 
-    .line 157
     iput-object p2, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mFileDescriptor:Ljava/io/FileDescriptor;
 
-    .line 158
     iput p3, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mContentSize:I
 
-    .line 159
     return-void
 .end method
 
 .method public static failed()Lcom/android/server/security/VerityUtils$SetupResult;
     .locals 4
 
-    .line 152
     new-instance v0, Lcom/android/server/security/VerityUtils$SetupResult;
 
     const/4 v1, 0x3
@@ -72,10 +63,7 @@
 
 .method public static ok(Ljava/io/FileDescriptor;I)Lcom/android/server/security/VerityUtils$SetupResult;
     .locals 2
-    .param p0, "fileDescriptor"    # Ljava/io/FileDescriptor;
-    .param p1, "contentSize"    # I
 
-    .line 144
     new-instance v0, Lcom/android/server/security/VerityUtils$SetupResult;
 
     const/4 v1, 0x1
@@ -88,7 +76,6 @@
 .method public static skipped()Lcom/android/server/security/VerityUtils$SetupResult;
     .locals 4
 
-    .line 148
     new-instance v0, Lcom/android/server/security/VerityUtils$SetupResult;
 
     const/4 v1, 0x2
@@ -107,7 +94,6 @@
 .method public getContentSize()I
     .locals 1
 
-    .line 174
     iget v0, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mContentSize:I
 
     return v0
@@ -116,7 +102,6 @@
 .method public getUnownedFileDescriptor()Ljava/io/FileDescriptor;
     .locals 1
 
-    .line 170
     iget-object v0, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mFileDescriptor:Ljava/io/FileDescriptor;
 
     return-object v0
@@ -125,7 +110,6 @@
 .method public isFailed()Z
     .locals 2
 
-    .line 162
     iget v0, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mCode:I
 
     const/4 v1, 0x3
@@ -146,7 +130,6 @@
 .method public isOk()Z
     .locals 2
 
-    .line 166
     iget v0, p0, Lcom/android/server/security/VerityUtils$SetupResult;->mCode:I
 
     const/4 v1, 0x1

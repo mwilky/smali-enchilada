@@ -25,31 +25,21 @@
 # direct methods
 .method public constructor <init>(IIJ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "triggerCount"    # I
-    .param p3, "triggerWindow"    # J
 
-    .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 235
     iput p1, p0, Lcom/android/server/RescueParty$Threshold;->uid:I
 
-    .line 236
     iput p2, p0, Lcom/android/server/RescueParty$Threshold;->triggerCount:I
 
-    .line 237
     iput-wide p3, p0, Lcom/android/server/RescueParty$Threshold;->triggerWindow:J
 
-    .line 238
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/RescueParty$Threshold;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/RescueParty$Threshold;
 
-    .line 224
     iget v0, p0, Lcom/android/server/RescueParty$Threshold;->uid:I
 
     return v0
@@ -66,21 +56,16 @@
 .method public incrementAndTest()Z
     .locals 11
 
-    .line 249
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 250
-    .local v0, "now":J
     invoke-virtual {p0}, Lcom/android/server/RescueParty$Threshold;->getStart()J
 
     move-result-wide v2
 
     sub-long v2, v0, v2
 
-    .line 251
-    .local v2, "window":J
     iget-wide v4, p0, Lcom/android/server/RescueParty$Threshold;->triggerWindow:J
 
     cmp-long v4, v2, v4
@@ -91,16 +76,12 @@
 
     if-lez v4, :cond_0
 
-    .line 252
     invoke-virtual {p0, v6}, Lcom/android/server/RescueParty$Threshold;->setCount(I)V
 
-    .line 253
     invoke-virtual {p0, v0, v1}, Lcom/android/server/RescueParty$Threshold;->setStart(J)V
 
-    .line 254
     return v5
 
-    .line 256
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/RescueParty$Threshold;->getCount()I
 
@@ -108,16 +89,12 @@
 
     add-int/2addr v4, v6
 
-    .line 257
-    .local v4, "count":I
     invoke-virtual {p0, v4}, Lcom/android/server/RescueParty$Threshold;->setCount(I)V
 
-    .line 258
     iget v7, p0, Lcom/android/server/RescueParty$Threshold;->uid:I
 
     invoke-static {v7, v4, v2, v3}, Lcom/android/server/EventLogTags;->writeRescueNote(IIJ)V
 
-    .line 259
     const-string v7, "RescueParty"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -158,7 +135,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
     iget v7, p0, Lcom/android/server/RescueParty$Threshold;->triggerCount:I
 
     if-lt v4, v7, :cond_1
@@ -174,17 +150,14 @@
 .method public reset()V
     .locals 2
 
-    .line 241
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/RescueParty$Threshold;->setCount(I)V
 
-    .line 242
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/RescueParty$Threshold;->setStart(J)V
 
-    .line 243
     return-void
 .end method
 

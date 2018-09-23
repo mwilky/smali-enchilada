@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 48
     const-string/jumbo v0, "total_pgfault (\\d+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -52,7 +51,6 @@
 
     sput-object v0, Lcom/android/server/am/MemoryStatUtil;->PGFAULT:Ljava/util/regex/Pattern;
 
-    .line 49
     const-string/jumbo v0, "total_pgmajfault (\\d+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -61,7 +59,6 @@
 
     sput-object v0, Lcom/android/server/am/MemoryStatUtil;->PGMAJFAULT:Ljava/util/regex/Pattern;
 
-    .line 50
     const-string/jumbo v0, "total_rss (\\d+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -70,7 +67,6 @@
 
     sput-object v0, Lcom/android/server/am/MemoryStatUtil;->RSS_IN_BYTES:Ljava/util/regex/Pattern;
 
-    .line 51
     const-string/jumbo v0, "total_cache (\\d+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -79,7 +75,6 @@
 
     sput-object v0, Lcom/android/server/am/MemoryStatUtil;->CACHE_IN_BYTES:Ljava/util/regex/Pattern;
 
-    .line 52
     const-string/jumbo v0, "total_swap (\\d+)"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -94,7 +89,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -103,12 +97,10 @@
 .method static hasMemcg()Z
     .locals 2
 
-    .line 164
     sget-object v0, Lcom/android/server/am/MemoryStatUtil;->sDeviceHasMemCg:Ljava/lang/Boolean;
 
     if-nez v0, :cond_0
 
-    .line 165
     new-instance v0, Ljava/io/File;
 
     const-string v1, "/dev/memcg/apps/memory.stat"
@@ -125,7 +117,6 @@
 
     sput-object v0, Lcom/android/server/am/MemoryStatUtil;->sDeviceHasMemCg:Ljava/lang/Boolean;
 
-    .line 167
     :cond_0
     sget-object v0, Lcom/android/server/am/MemoryStatUtil;->sDeviceHasMemCg:Ljava/lang/Boolean;
 
@@ -138,12 +129,10 @@
 
 .method static parseMemoryStatFromMemcg(Ljava/lang/String;)Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     .locals 8
-    .param p0, "memoryStatContents"    # Ljava/lang/String;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
         visibility = .enum Lcom/android/internal/annotations/VisibleForTesting$Visibility;->PRIVATE:Lcom/android/internal/annotations/VisibleForTesting$Visibility;
     .end annotation
 
-    .line 117
     if-eqz p0, :cond_6
 
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
@@ -154,22 +143,17 @@
 
     goto/16 :goto_4
 
-    .line 121
     :cond_0
     new-instance v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;
 
     invoke-direct {v0}, Lcom/android/server/am/MemoryStatUtil$MemoryStat;-><init>()V
 
-    .line 123
-    .local v0, "memoryStat":Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     sget-object v1, Lcom/android/server/am/MemoryStatUtil;->PGFAULT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 124
-    .local v1, "m":Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
@@ -200,14 +184,12 @@
     :goto_0
     iput-wide v6, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->pgfault:J
 
-    .line 125
     sget-object v2, Lcom/android/server/am/MemoryStatUtil;->PGMAJFAULT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 126
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
@@ -234,14 +216,12 @@
     :goto_1
     iput-wide v6, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->pgmajfault:J
 
-    .line 127
     sget-object v2, Lcom/android/server/am/MemoryStatUtil;->RSS_IN_BYTES:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 128
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
@@ -268,14 +248,12 @@
     :goto_2
     iput-wide v6, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->rssInBytes:J
 
-    .line 129
     sget-object v2, Lcom/android/server/am/MemoryStatUtil;->CACHE_IN_BYTES:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 130
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
@@ -302,14 +280,12 @@
     :goto_3
     iput-wide v6, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->cacheInBytes:J
 
-    .line 131
     sget-object v2, Lcom/android/server/am/MemoryStatUtil;->SWAP_IN_BYTES:Ljava/util/regex/Pattern;
 
     invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 132
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v2
@@ -333,12 +309,8 @@
     :cond_5
     iput-wide v3, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->swapInBytes:J
 
-    .line 133
     return-object v0
 
-    .line 118
-    .end local v0    # "memoryStat":Lcom/android/server/am/MemoryStatUtil$MemoryStat;
-    .end local v1    # "m":Ljava/util/regex/Matcher;
     :cond_6
     :goto_4
     const/4 v0, 0x0
@@ -348,12 +320,10 @@
 
 .method static parseMemoryStatFromProcfs(Ljava/lang/String;)Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     .locals 4
-    .param p0, "procStatContents"    # Ljava/lang/String;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
         visibility = .enum Lcom/android/internal/annotations/VisibleForTesting$Visibility;->PRIVATE:Lcom/android/internal/annotations/VisibleForTesting$Visibility;
     .end annotation
 
-    .line 142
     const/4 v0, 0x0
 
     if-eqz p0, :cond_2
@@ -366,7 +336,6 @@
 
     goto :goto_0
 
-    .line 146
     :cond_0
     const-string v1, " "
 
@@ -374,25 +343,19 @@
 
     move-result-object v1
 
-    .line 147
-    .local v1, "splits":[Ljava/lang/String;
     array-length v2, v1
 
     const/16 v3, 0x18
 
     if-ge v2, v3, :cond_1
 
-    .line 148
     return-object v0
 
-    .line 151
     :cond_1
     new-instance v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;
 
     invoke-direct {v0}, Lcom/android/server/am/MemoryStatUtil$MemoryStat;-><init>()V
 
-    .line 152
-    .local v0, "memoryStat":Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     const/16 v2, 0x9
 
     aget-object v2, v1, v2
@@ -407,7 +370,6 @@
 
     iput-wide v2, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->pgfault:J
 
-    .line 153
     const/16 v2, 0xb
 
     aget-object v2, v1, v2
@@ -422,7 +384,6 @@
 
     iput-wide v2, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->pgmajfault:J
 
-    .line 154
     const/16 v2, 0x17
 
     aget-object v2, v1, v2
@@ -437,12 +398,8 @@
 
     iput-wide v2, v0, Lcom/android/server/am/MemoryStatUtil$MemoryStat;->rssInBytes:J
 
-    .line 155
     return-object v0
 
-    .line 143
-    .end local v0    # "memoryStat":Lcom/android/server/am/MemoryStatUtil$MemoryStat;
-    .end local v1    # "splits":[Ljava/lang/String;
     :cond_2
     :goto_0
     return-object v0
@@ -450,15 +407,11 @@
 
 .method private static readFileContents(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
-    .param p0, "path"    # Ljava/lang/String;
 
-    .line 97
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 98
-    .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -467,7 +420,6 @@
 
     if-nez v1, :cond_1
 
-    .line 99
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_METRICS:Z
 
     if-eqz v1, :cond_0
@@ -490,11 +442,9 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
     :cond_0
     return-object v2
 
-    .line 104
     :cond_1
     const/4 v1, 0x0
 
@@ -507,28 +457,21 @@
 
     return-object v1
 
-    .line 105
     :catch_0
     move-exception v1
 
-    .line 106
-    .local v1, "e":Ljava/io/IOException;
     const-string v3, "ActivityManager"
 
     const-string v4, "Failed to read file:"
 
     invoke-static {v3, v4, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 107
     return-object v2
 .end method
 
 .method static readMemoryStatFromFilesystem(II)Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     .locals 1
-    .param p0, "uid"    # I
-    .param p1, "pid"    # I
 
-    .line 71
     invoke-static {}, Lcom/android/server/am/MemoryStatUtil;->hasMemcg()Z
 
     move-result v0
@@ -552,10 +495,7 @@
 
 .method static readMemoryStatFromMemcg(II)Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     .locals 5
-    .param p0, "uid"    # I
-    .param p1, "pid"    # I
 
-    .line 81
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v1, "/dev/memcg/apps/uid_%d/pid_%d/memory.stat"
@@ -584,8 +524,6 @@
 
     move-result-object v0
 
-    .line 82
-    .local v0, "path":Ljava/lang/String;
     invoke-static {v0}, Lcom/android/server/am/MemoryStatUtil;->readFileContents(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -599,9 +537,7 @@
 
 .method static readMemoryStatFromProcfs(I)Lcom/android/server/am/MemoryStatUtil$MemoryStat;
     .locals 5
-    .param p0, "pid"    # I
 
-    .line 92
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v1, "/proc/%d/stat"
@@ -622,8 +558,6 @@
 
     move-result-object v0
 
-    .line 93
-    .local v0, "path":Ljava/lang/String;
     invoke-static {v0}, Lcom/android/server/am/MemoryStatUtil;->readFileContents(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1

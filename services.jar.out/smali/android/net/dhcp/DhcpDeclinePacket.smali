@@ -6,15 +6,7 @@
 # direct methods
 .method constructor <init>(ISLjava/net/Inet4Address;Ljava/net/Inet4Address;Ljava/net/Inet4Address;Ljava/net/Inet4Address;[B)V
     .locals 9
-    .param p1, "transId"    # I
-    .param p2, "secs"    # S
-    .param p3, "clientIp"    # Ljava/net/Inet4Address;
-    .param p4, "yourIp"    # Ljava/net/Inet4Address;
-    .param p5, "nextIp"    # Ljava/net/Inet4Address;
-    .param p6, "relayIp"    # Ljava/net/Inet4Address;
-    .param p7, "clientMac"    # [B
 
-    .line 32
     const/4 v8, 0x0
 
     move-object v0, p0
@@ -35,7 +27,6 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/net/dhcp/DhcpPacket;-><init>(ISLjava/net/Inet4Address;Ljava/net/Inet4Address;Ljava/net/Inet4Address;Ljava/net/Inet4Address;[BZ)V
 
-    .line 33
     return-void
 .end method
 
@@ -43,19 +34,13 @@
 # virtual methods
 .method public buildPacket(ISS)Ljava/nio/ByteBuffer;
     .locals 10
-    .param p1, "encap"    # I
-    .param p2, "destUdp"    # S
-    .param p3, "srcUdp"    # S
 
-    .line 44
     const/16 v0, 0x5dc
 
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 46
-    .local v0, "result":Ljava/nio/ByteBuffer;
     iget-object v3, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mClientIp:Ljava/net/Inet4Address;
 
     iget-object v4, p0, Landroid/net/dhcp/DhcpDeclinePacket;->mYourIp:Ljava/net/Inet4Address;
@@ -76,25 +61,20 @@
 
     invoke-virtual/range {v1 .. v9}, Landroid/net/dhcp/DhcpDeclinePacket;->fillInPacket(ILjava/net/Inet4Address;Ljava/net/Inet4Address;SSLjava/nio/ByteBuffer;BZ)V
 
-    .line 48
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 49
     return-object v0
 .end method
 
 .method finishPacket(Ljava/nio/ByteBuffer;)V
     .locals 2
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
 
-    .line 56
     const/16 v0, 0x35
 
     const/4 v1, 0x4
 
     invoke-static {p1, v0, v1}, Landroid/net/dhcp/DhcpDeclinePacket;->addTlv(Ljava/nio/ByteBuffer;BB)V
 
-    .line 57
     invoke-virtual {p0}, Landroid/net/dhcp/DhcpDeclinePacket;->getClientId()[B
 
     move-result-object v0
@@ -103,23 +83,18 @@
 
     invoke-static {p1, v1, v0}, Landroid/net/dhcp/DhcpDeclinePacket;->addTlv(Ljava/nio/ByteBuffer;B[B)V
 
-    .line 59
     invoke-static {p1}, Landroid/net/dhcp/DhcpDeclinePacket;->addTlvEnd(Ljava/nio/ByteBuffer;)V
 
-    .line 60
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 36
     invoke-super {p0}, Landroid/net/dhcp/DhcpPacket;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 37
-    .local v0, "s":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

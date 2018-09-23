@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ServiceRecord;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ServiceRecord;
 
-    .line 709
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$2;->this$0:Lcom/android/server/am/ServiceRecord;
 
     iput-object p2, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
@@ -47,19 +45,14 @@
 .method public run()V
     .locals 5
 
-    .line 711
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v0
 
-    .line 712
-    .local v0, "inm":Landroid/app/INotificationManager;
     if-nez v0, :cond_0
 
-    .line 713
     return-void
 
-    .line 716
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$2;->val$localPackageName:Ljava/lang/String;
@@ -79,30 +72,23 @@
 
     goto :goto_0
 
-    .line 720
     :catch_0
     move-exception v1
 
     goto :goto_1
 
-    .line 718
     :catch_1
     move-exception v1
 
-    .line 719
-    .local v1, "e":Ljava/lang/RuntimeException;
     const-string v2, "ActivityManager"
 
     const-string v3, "Error canceling notification for service"
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 721
-    .end local v1    # "e":Ljava/lang/RuntimeException;
     :goto_0
     nop
 
-    .line 722
     :goto_1
     return-void
 .end method

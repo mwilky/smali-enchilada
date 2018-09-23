@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 42
     new-instance v0, Landroid/content/ComponentName;
 
     const-string v1, "com.android.server.accessibility"
@@ -52,10 +51,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
     new-instance v0, Lcom/android/server/accessibility/UiAutomationManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/accessibility/UiAutomationManager$1;-><init>(Lcom/android/server/accessibility/UiAutomationManager;)V
@@ -67,9 +64,7 @@
 
 .method static synthetic access$000(Lcom/android/server/accessibility/UiAutomationManager;)Landroid/os/IBinder;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/UiAutomationManager;
 
-    .line 41
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
     return-object v0
@@ -77,10 +72,7 @@
 
 .method static synthetic access$002(Lcom/android/server/accessibility/UiAutomationManager;Landroid/os/IBinder;)Landroid/os/IBinder;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/accessibility/UiAutomationManager;
-    .param p1, "x1"    # Landroid/os/IBinder;
 
-    .line 41
     iput-object p1, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
     return-object p1
@@ -88,9 +80,7 @@
 
 .method static synthetic access$100(Lcom/android/server/accessibility/UiAutomationManager;)Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/UiAutomationManager;
 
-    .line 41
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     return-object v0
@@ -98,9 +88,7 @@
 
 .method static synthetic access$200(Lcom/android/server/accessibility/UiAutomationManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/accessibility/UiAutomationManager;
 
-    .line 41
     invoke-direct {p0}, Lcom/android/server/accessibility/UiAutomationManager;->destroyUiAutomationService()V
 
     return-void
@@ -109,7 +97,6 @@
 .method static synthetic access$300()Landroid/content/ComponentName;
     .locals 1
 
-    .line 41
     sget-object v0, Lcom/android/server/accessibility/UiAutomationManager;->COMPONENT_NAME:Landroid/content/ComponentName;
 
     return-object v0
@@ -118,7 +105,6 @@
 .method private destroyUiAutomationService()V
     .locals 4
 
-    .line 181
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     const/4 v1, 0x0
@@ -127,7 +113,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 182
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     iget-object v0, v0, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->mServiceInterface:Landroid/accessibilityservice/IAccessibilityServiceClient;
@@ -140,45 +125,36 @@
 
     invoke-interface {v0, v3, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 183
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->onRemoved()V
 
-    .line 184
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->resetLocked()V
 
-    .line 185
     iput-object v1, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
-    .line 186
     iput v2, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationFlags:I
 
-    .line 189
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
     if-eqz v0, :cond_1
 
-    .line 190
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
     iget-object v3, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwnerDeathRecipient:Landroid/os/IBinder$DeathRecipient;
 
     invoke-interface {v0, v3, v2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 191
     iput-object v1, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
-    .line 193
     :cond_1
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mSystemSupport:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$SystemSupport;
 
     invoke-interface {v0, v2}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$SystemSupport;->onClientChange(Z)V
 
-    .line 194
     return-void
 .end method
 
@@ -187,7 +163,6 @@
 .method canRetrieveInteractiveWindowsLocked()Z
     .locals 1
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
@@ -211,21 +186,15 @@
 
 .method dumpUiAutomationService(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 1
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 173
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 176
     :cond_0
     return-void
 .end method
@@ -233,7 +202,6 @@
 .method getRelevantEventTypes()I
     .locals 1
 
-    .line 162
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-nez v0, :cond_0
@@ -242,7 +210,6 @@
 
     return v0
 
-    .line 163
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
@@ -256,7 +223,6 @@
 .method getRequestedEventMaskLocked()I
     .locals 1
 
-    .line 157
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-nez v0, :cond_0
@@ -265,7 +231,6 @@
 
     return v0
 
-    .line 158
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
@@ -277,7 +242,6 @@
 .method getServiceInfo()Landroid/accessibilityservice/AccessibilityServiceInfo;
     .locals 1
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-nez v0, :cond_0
@@ -286,7 +250,6 @@
 
     return-object v0
 
-    .line 169
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
@@ -300,7 +263,6 @@
 .method isTouchExplorationEnabledLocked()Z
     .locals 1
 
-    .line 148
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
@@ -325,7 +287,6 @@
 .method isUiAutomationRunningLocked()Z
     .locals 1
 
-    .line 139
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
@@ -343,18 +304,6 @@
 
 .method registerUiTestAutomationServiceLocked(Landroid/os/IBinder;Landroid/accessibilityservice/IAccessibilityServiceClient;Landroid/content/Context;Landroid/accessibilityservice/AccessibilityServiceInfo;ILandroid/os/Handler;Ljava/lang/Object;Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$SystemSupport;Lcom/android/server/wm/WindowManagerInternal;Lcom/android/server/accessibility/GlobalActionPerformer;I)V
     .locals 17
-    .param p1, "owner"    # Landroid/os/IBinder;
-    .param p2, "serviceClient"    # Landroid/accessibilityservice/IAccessibilityServiceClient;
-    .param p3, "context"    # Landroid/content/Context;
-    .param p4, "accessibilityServiceInfo"    # Landroid/accessibilityservice/AccessibilityServiceInfo;
-    .param p5, "id"    # I
-    .param p6, "mainHandler"    # Landroid/os/Handler;
-    .param p7, "lock"    # Ljava/lang/Object;
-    .param p8, "securityPolicy"    # Lcom/android/server/accessibility/AccessibilityManagerService$SecurityPolicy;
-    .param p9, "systemSupport"    # Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$SystemSupport;
-    .param p10, "windowManagerInternal"    # Lcom/android/server/wm/WindowManagerInternal;
-    .param p11, "globalActionPerfomer"    # Lcom/android/server/accessibility/GlobalActionPerformer;
-    .param p12, "flags"    # I
 
     move-object/from16 v12, p0
 
@@ -364,17 +313,14 @@
 
     move-object/from16 v15, p4
 
-    .line 85
     sget-object v0, Lcom/android/server/accessibility/UiAutomationManager;->COMPONENT_NAME:Landroid/content/ComponentName;
 
     invoke-virtual {v15, v0}, Landroid/accessibilityservice/AccessibilityServiceInfo;->setComponentName(Landroid/content/ComponentName;)V
 
-    .line 87
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-nez v0, :cond_0
 
-    .line 93
     :try_start_0
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwnerDeathRecipient:Landroid/os/IBinder$DeathRecipient;
 
@@ -384,15 +330,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 97
     nop
 
-    .line 99
     move-object/from16 v10, p9
 
     iput-object v10, v12, Lcom/android/server/accessibility/UiAutomationManager;->mSystemSupport:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$SystemSupport;
 
-    .line 100
     new-instance v0, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     move-object v1, v0
@@ -421,28 +364,22 @@
 
     iput-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
-    .line 103
     iput-object v13, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceOwner:Landroid/os/IBinder;
 
-    .line 104
     move/from16 v1, p12
 
     iput v1, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationFlags:I
 
-    .line 105
     iput-object v15, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationServiceInfo:Landroid/accessibilityservice/AccessibilityServiceInfo;
 
-    .line 106
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     iput-object v14, v0, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->mServiceInterface:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    .line 107
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->onAdded()V
 
-    .line 109
     :try_start_1
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
@@ -460,23 +397,17 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 114
     nop
 
-    .line 116
     iget-object v0, v12, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->connectServiceUnknownThread()V
 
-    .line 117
     return-void
 
-    .line 110
     :catch_0
     move-exception v0
 
-    .line 111
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v2, "UiAutomationManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -495,32 +426,23 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     invoke-direct/range {p0 .. p0}, Lcom/android/server/accessibility/UiAutomationManager;->destroyUiAutomationService()V
 
-    .line 113
     return-void
 
-    .line 94
-    .end local v0    # "re":Landroid/os/RemoteException;
     :catch_1
     move-exception v0
 
     move/from16 v1, p12
 
-    .line 95
-    .restart local v0    # "re":Landroid/os/RemoteException;
     const-string v2, "UiAutomationManager"
 
     const-string v3, "Couldn\'t register for the death of a UiTestAutomationService!"
 
     invoke-static {v2, v3, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 96
     return-void
 
-    .line 88
-    .end local v0    # "re":Landroid/os/RemoteException;
     :cond_0
     move/from16 v1, p12
 
@@ -551,19 +473,15 @@
 
 .method sendAccessibilityEventLocked(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 133
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->notifyAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 136
     :cond_0
     return-void
 .end method
@@ -571,7 +489,6 @@
 .method suppressingAccessibilityServicesLocked()Z
     .locals 2
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     const/4 v1, 0x1
@@ -595,9 +512,7 @@
 
 .method unregisterUiTestAutomationServiceLocked(Landroid/accessibilityservice/IAccessibilityServiceClient;)V
     .locals 3
-    .param p1, "serviceClient"    # Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    .line 120
     iget-object v0, p0, Lcom/android/server/accessibility/UiAutomationManager;->mUiAutomationService:Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;
 
     if-eqz v0, :cond_0
@@ -610,7 +525,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 123
     invoke-interface {p1}, Landroid/accessibilityservice/IAccessibilityServiceClient;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
@@ -619,20 +533,16 @@
 
     iget-object v1, v1, Lcom/android/server/accessibility/UiAutomationManager$UiAutomationService;->mServiceInterface:Landroid/accessibilityservice/IAccessibilityServiceClient;
 
-    .line 124
     invoke-interface {v1}, Landroid/accessibilityservice/IAccessibilityServiceClient;->asBinder()Landroid/os/IBinder;
 
     move-result-object v1
 
     if-ne v0, v1, :cond_0
 
-    .line 129
     invoke-direct {p0}, Lcom/android/server/accessibility/UiAutomationManager;->destroyUiAutomationService()V
 
-    .line 130
     return-void
 
-    .line 125
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

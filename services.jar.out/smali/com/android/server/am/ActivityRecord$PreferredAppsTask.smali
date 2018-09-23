@@ -32,7 +32,6 @@
 .method private constructor <init>(Lcom/android/server/am/ActivityRecord;)V
     .locals 0
 
-    .line 807
     iput-object p1, p0, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;->this$0:Lcom/android/server/am/ActivityRecord;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -42,10 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/am/ActivityRecord;
-    .param p2, "x1"    # Lcom/android/server/am/ActivityRecord$1;
 
-    .line 807
     invoke-direct {p0, p1}, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;-><init>(Lcom/android/server/am/ActivityRecord;)V
 
     return-void
@@ -56,7 +52,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 807
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -68,15 +63,11 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 18
-    .param p1, "params"    # [Ljava/lang/Void;
 
     move-object/from16 v0, p0
 
-    .line 810
     const/4 v1, 0x0
 
-    .line 811
-    .local v1, "res":Ljava/lang/String;
     iget-object v2, v0, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;->this$0:Lcom/android/server/am/ActivityRecord;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityRecord;->mUxPerf:Landroid/util/BoostFramework;
@@ -85,7 +76,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 812
     iget-object v2, v0, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;->this$0:Lcom/android/server/am/ActivityRecord;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityRecord;->mUxPerf:Landroid/util/BoostFramework;
@@ -96,13 +86,10 @@
 
     move-result-object v1
 
-    .line 813
     if-nez v1, :cond_0
 
-    .line 814
     return-object v3
 
-    .line 815
     :cond_0
     const-string v2, "/"
 
@@ -110,13 +97,10 @@
 
     move-result-object v2
 
-    .line 816
-    .local v2, "p_apps":[Ljava/lang/String;
     array-length v4, v2
 
     if-eqz v4, :cond_1
 
-    .line 817
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -125,22 +109,16 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 818
-    .local v4, "apps_l":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     new-instance v5, Landroid/os/Bundle;
 
     invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
 
-    .line 819
-    .local v5, "bParams":Landroid/os/Bundle;
     nop
 
-    .line 821
     const-string/jumbo v6, "start_empty_apps"
 
     invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 822
     iget-object v6, v0, Lcom/android/server/am/ActivityRecord$PreferredAppsTask;->this$0:Lcom/android/server/am/ActivityRecord;
 
     iget-object v6, v6, Lcom/android/server/am/ActivityRecord;->service:Lcom/android/server/am/ActivityManagerService;
@@ -171,10 +149,6 @@
 
     invoke-virtual/range {v6 .. v17}, Lcom/android/server/am/ActivityManagerService;->startActivityAsUserEmpty(Landroid/app/IApplicationThread;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/os/IBinder;Ljava/lang/String;IILandroid/app/ProfilerInfo;Landroid/os/Bundle;I)I
 
-    .line 826
-    .end local v2    # "p_apps":[Ljava/lang/String;
-    .end local v4    # "apps_l":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    .end local v5    # "bParams":Landroid/os/Bundle;
     :cond_1
     return-object v3
 .end method

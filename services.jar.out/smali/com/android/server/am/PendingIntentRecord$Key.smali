@@ -49,36 +49,19 @@
 # direct methods
 .method constructor <init>(ILjava/lang/String;Lcom/android/server/am/ActivityRecord;Ljava/lang/String;I[Landroid/content/Intent;[Ljava/lang/String;ILcom/android/server/am/SafeActivityOptions;I)V
     .locals 4
-    .param p1, "_t"    # I
-    .param p2, "_p"    # Ljava/lang/String;
-    .param p3, "_a"    # Lcom/android/server/am/ActivityRecord;
-    .param p4, "_w"    # Ljava/lang/String;
-    .param p5, "_r"    # I
-    .param p6, "_i"    # [Landroid/content/Intent;
-    .param p7, "_it"    # [Ljava/lang/String;
-    .param p8, "_f"    # I
-    .param p9, "_o"    # Lcom/android/server/am/SafeActivityOptions;
-    .param p10, "_userId"    # I
 
-    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
     iput p1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->type:I
 
-    .line 82
     iput-object p2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->packageName:Ljava/lang/String;
 
-    .line 83
     iput-object p3, p0, Lcom/android/server/am/PendingIntentRecord$Key;->activity:Lcom/android/server/am/ActivityRecord;
 
-    .line 84
     iput-object p4, p0, Lcom/android/server/am/PendingIntentRecord$Key;->who:Ljava/lang/String;
 
-    .line 85
     iput p5, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestCode:I
 
-    .line 86
     const/4 v0, 0x0
 
     if-eqz p6, :cond_0
@@ -97,7 +80,6 @@
     :goto_0
     iput-object v1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
-    .line 87
     if-eqz p7, :cond_1
 
     array-length v0, p7
@@ -111,52 +93,34 @@
     :cond_1
     iput-object v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
 
-    .line 88
     iput-object p6, p0, Lcom/android/server/am/PendingIntentRecord$Key;->allIntents:[Landroid/content/Intent;
 
-    .line 89
     iput-object p7, p0, Lcom/android/server/am/PendingIntentRecord$Key;->allResolvedTypes:[Ljava/lang/String;
 
-    .line 90
     iput p8, p0, Lcom/android/server/am/PendingIntentRecord$Key;->flags:I
 
-    .line 91
     iput-object p9, p0, Lcom/android/server/am/PendingIntentRecord$Key;->options:Lcom/android/server/am/SafeActivityOptions;
 
-    .line 92
     iput p10, p0, Lcom/android/server/am/PendingIntentRecord$Key;->userId:I
 
-    .line 94
     const/16 v0, 0x17
 
-    .line 95
-    .local v0, "hash":I
     const/16 v1, 0x25
 
     mul-int v2, v1, v0
 
     add-int/2addr v2, p8
 
-    .line 96
-    .end local v0    # "hash":I
-    .local v2, "hash":I
     mul-int v0, v1, v2
 
     add-int/2addr v0, p5
 
-    .line 97
-    .end local v2    # "hash":I
-    .restart local v0    # "hash":I
     mul-int v2, v1, v0
 
     add-int/2addr v2, p10
 
-    .line 98
-    .end local v0    # "hash":I
-    .restart local v2    # "hash":I
     if-eqz p4, :cond_2
 
-    .line 99
     mul-int v0, v1, v2
 
     invoke-virtual {p4}, Ljava/lang/String;->hashCode()I
@@ -165,11 +129,9 @@
 
     add-int v2, v0, v3
 
-    .line 101
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 102
     mul-int v0, v1, v2
 
     invoke-virtual {p3}, Ljava/lang/Object;->hashCode()I
@@ -178,13 +140,11 @@
 
     add-int v2, v0, v3
 
-    .line 104
     :cond_3
     iget-object v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_4
 
-    .line 105
     mul-int v0, v1, v2
 
     iget-object v3, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
@@ -195,13 +155,11 @@
 
     add-int v2, v0, v3
 
-    .line 107
     :cond_4
     iget-object v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
 
     if-eqz v0, :cond_5
 
-    .line 108
     mul-int v0, v1, v2
 
     iget-object v3, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
@@ -212,7 +170,6 @@
 
     add-int v2, v0, v3
 
-    .line 110
     :cond_5
     mul-int v0, v1, v2
 
@@ -230,19 +187,12 @@
     :goto_1
     add-int/2addr v0, v3
 
-    .line 111
-    .end local v2    # "hash":I
-    .restart local v0    # "hash":I
     mul-int/2addr v1, v0
 
     add-int/2addr v1, p1
 
-    .line 112
-    .end local v0    # "hash":I
-    .local v1, "hash":I
     iput v1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->hashCode:I
 
-    .line 115
     return-void
 .end method
 
@@ -250,35 +200,27 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "otherObj"    # Ljava/lang/Object;
 
-    .line 118
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 119
     return v0
 
-    .line 122
     :cond_0
     :try_start_0
     move-object v1, p1
 
     check-cast v1, Lcom/android/server/am/PendingIntentRecord$Key;
 
-    .line 123
-    .local v1, "other":Lcom/android/server/am/PendingIntentRecord$Key;
     iget v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->type:I
 
     iget v3, v1, Lcom/android/server/am/PendingIntentRecord$Key;->type:I
 
     if-eq v2, v3, :cond_1
 
-    .line 124
     return v0
 
-    .line 126
     :cond_1
     iget v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->userId:I
 
@@ -286,10 +228,8 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 127
     return v0
 
-    .line 129
     :cond_2
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->packageName:Ljava/lang/String;
 
@@ -301,10 +241,8 @@
 
     if-nez v2, :cond_3
 
-    .line 130
     return v0
 
-    .line 132
     :cond_3
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->activity:Lcom/android/server/am/ActivityRecord;
 
@@ -312,10 +250,8 @@
 
     if-eq v2, v3, :cond_4
 
-    .line 133
     return v0
 
-    .line 135
     :cond_4
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->who:Ljava/lang/String;
 
@@ -327,10 +263,8 @@
 
     if-nez v2, :cond_5
 
-    .line 136
     return v0
 
-    .line 138
     :cond_5
     iget v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestCode:I
 
@@ -338,10 +272,8 @@
 
     if-eq v2, v3, :cond_6
 
-    .line 139
     return v0
 
-    .line 141
     :cond_6
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
@@ -349,12 +281,10 @@
 
     if-eq v2, v3, :cond_8
 
-    .line 142
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     if-eqz v2, :cond_7
 
-    .line 143
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     iget-object v3, v1, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
@@ -365,19 +295,15 @@
 
     if-nez v2, :cond_8
 
-    .line 144
     return v0
 
-    .line 146
     :cond_7
     iget-object v2, v1, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     if-eqz v2, :cond_8
 
-    .line 147
     return v0
 
-    .line 150
     :cond_8
     iget-object v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestResolvedType:Ljava/lang/String;
 
@@ -389,10 +315,8 @@
 
     if-nez v2, :cond_9
 
-    .line 151
     return v0
 
-    .line 153
     :cond_9
     iget v2, p0, Lcom/android/server/am/PendingIntentRecord$Key;->flags:I
 
@@ -402,28 +326,22 @@
 
     if-eq v2, v3, :cond_a
 
-    .line 154
     return v0
 
-    .line 156
     :cond_a
     const/4 v0, 0x1
 
     return v0
 
-    .line 157
-    .end local v1    # "other":Lcom/android/server/am/PendingIntentRecord$Key;
     :catch_0
     move-exception v1
 
-    .line 159
     return v0
 .end method
 
 .method public hashCode()I
     .locals 1
 
-    .line 163
     iget v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->hashCode:I
 
     return v0
@@ -432,7 +350,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 167
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -459,12 +376,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 169
     iget-object v1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     if-eqz v1, :cond_0
 
-    .line 170
     iget-object v1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->requestIntent:Landroid/content/Intent;
 
     const/4 v2, 0x1
@@ -489,7 +404,6 @@
 
     iget v1, p0, Lcom/android/server/am/PendingIntentRecord$Key;->flags:I
 
-    .line 171
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -512,19 +426,16 @@
 
     move-result-object v0
 
-    .line 167
     return-object v0
 .end method
 
 .method typeName()Ljava/lang/String;
     .locals 1
 
-    .line 175
     iget v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->type:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 187
     iget v0, p0, Lcom/android/server/am/PendingIntentRecord$Key;->type:I
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -533,31 +444,26 @@
 
     return-object v0
 
-    .line 183
     :pswitch_0
     const-string/jumbo v0, "startForegroundService"
 
     return-object v0
 
-    .line 181
     :pswitch_1
     const-string/jumbo v0, "startService"
 
     return-object v0
 
-    .line 185
     :pswitch_2
     const-string v0, "activityResult"
 
     return-object v0
 
-    .line 177
     :pswitch_3
     const-string/jumbo v0, "startActivity"
 
     return-object v0
 
-    .line 179
     :pswitch_4
     const-string v0, "broadcastIntent"
 

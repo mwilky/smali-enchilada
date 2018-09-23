@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/OnePlusDuallteManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusDuallteManager;
 
-    .line 536
     iput-object p1, p0, Lcom/android/server/am/OnePlusDuallteManager$DuallteConfigUpdater;->this$0:Lcom/android/server/am/OnePlusDuallteManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 1
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 539
     iget-object v0, p0, Lcom/android/server/am/OnePlusDuallteManager$DuallteConfigUpdater;->this$0:Lcom/android/server/am/OnePlusDuallteManager;
 
     invoke-static {v0, p1}, Lcom/android/server/am/OnePlusDuallteManager;->access$300(Lcom/android/server/am/OnePlusDuallteManager;Lorg/json/JSONArray;)V
 
-    .line 540
     return-void
 .end method

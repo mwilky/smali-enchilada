@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 39
     const-string v0, "GnssMeasurementsProvider"
 
     const/4 v1, 0x3
@@ -56,47 +55,35 @@
 
 .method protected constructor <init>(Landroid/content/Context;Landroid/os/Handler;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 48
     new-instance v0, Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
     invoke-direct {v0}, Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;-><init>()V
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/location/GnssMeasurementsProvider;-><init>(Landroid/content/Context;Landroid/os/Handler;Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;)V
 
-    .line 49
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "handler"    # Landroid/os/Handler;
-    .param p3, "aNative"    # Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 54
     const-string v0, "GnssMeasurementsProvider"
 
     invoke-direct {p0, p2, v0}, Lcom/android/server/location/RemoteListenerHelper;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
 
-    .line 55
     iput-object p1, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mContext:Landroid/content/Context;
 
-    .line 56
     iput-object p3, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mNative:Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
-    .line 57
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .line 36
     invoke-static {}, Lcom/android/server/location/GnssMeasurementsProvider;->native_is_measurement_supported()Z
 
     move-result v0
@@ -106,9 +93,7 @@
 
 .method static synthetic access$100(Z)Z
     .locals 1
-    .param p0, "x0"    # Z
 
-    .line 36
     invoke-static {p0}, Lcom/android/server/location/GnssMeasurementsProvider;->native_start_measurement_collection(Z)Z
 
     move-result v0
@@ -119,7 +104,6 @@
 .method static synthetic access$200()Z
     .locals 1
 
-    .line 36
     invoke-static {}, Lcom/android/server/location/GnssMeasurementsProvider;->native_stop_measurement_collection()Z
 
     move-result v0
@@ -129,15 +113,12 @@
 
 .method static synthetic lambda$onMeasurementsAvailable$0(Landroid/location/GnssMeasurementsEvent;Landroid/location/IGnssMeasurementsListener;)V
     .locals 0
-    .param p0, "event"    # Landroid/location/GnssMeasurementsEvent;
-    .param p1, "listener"    # Landroid/location/IGnssMeasurementsListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 102
     invoke-interface {p1, p0}, Landroid/location/IGnssMeasurementsListener;->onGnssMeasurementsReceived(Landroid/location/GnssMeasurementsEvent;)V
 
     return-void
@@ -156,7 +137,6 @@
 # virtual methods
 .method protected getHandlerOperation(I)Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;
     .locals 4
-    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -166,12 +146,10 @@
         }
     .end annotation
 
-    .line 119
     const/4 v0, 0x0
 
     packed-switch p1, :pswitch_data_0
 
-    .line 137
     const-string v1, "GnssMeasurementsProvider"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -190,53 +168,34 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
     return-object v0
 
-    .line 129
     :pswitch_0
     const/4 v0, 0x3
 
-    .line 130
-    .local v0, "status":I
     goto :goto_0
 
-    .line 135
-    .end local v0    # "status":I
     :pswitch_1
     return-object v0
 
-    .line 132
     :pswitch_2
     const/4 v0, 0x2
 
-    .line 133
-    .restart local v0    # "status":I
     goto :goto_0
 
-    .line 126
-    .end local v0    # "status":I
     :pswitch_3
     const/4 v0, 0x0
 
-    .line 127
-    .restart local v0    # "status":I
     goto :goto_0
 
-    .line 121
-    .end local v0    # "status":I
     :pswitch_4
     const/4 v0, 0x1
 
-    .line 122
-    .restart local v0    # "status":I
     nop
 
-    .line 138
     :goto_0
     nop
 
-    .line 140
     new-instance v1, Lcom/android/server/location/GnssMeasurementsProvider$StatusChangedOperation;
 
     invoke-direct {v1, v0}, Lcom/android/server/location/GnssMeasurementsProvider$StatusChangedOperation;-><init>(I)V
@@ -260,7 +219,6 @@
 .method public isAvailableInPlatform()Z
     .locals 1
 
-    .line 71
     iget-object v0, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mNative:Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
     invoke-virtual {v0}, Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;->isMeasurementSupported()Z
@@ -273,7 +231,6 @@
 .method public bridge synthetic isRegistered()Z
     .locals 1
 
-    .line 36
     invoke-super {p0}, Lcom/android/server/location/RemoteListenerHelper;->isRegistered()Z
 
     move-result v0
@@ -283,52 +240,39 @@
 
 .method public onCapabilitiesUpdated(Z)V
     .locals 0
-    .param p1, "isGnssMeasurementsSupported"    # Z
 
-    .line 107
     invoke-virtual {p0, p1}, Lcom/android/server/location/GnssMeasurementsProvider;->setSupported(Z)V
 
-    .line 108
     invoke-virtual {p0}, Lcom/android/server/location/GnssMeasurementsProvider;->updateResult()V
 
-    .line 109
     return-void
 .end method
 
 .method public onGpsEnabledChanged()V
     .locals 0
 
-    .line 112
     invoke-virtual {p0}, Lcom/android/server/location/GnssMeasurementsProvider;->tryUpdateRegistrationWithService()V
 
-    .line 113
     invoke-virtual {p0}, Lcom/android/server/location/GnssMeasurementsProvider;->updateResult()V
 
-    .line 114
     return-void
 .end method
 
 .method public onMeasurementsAvailable(Landroid/location/GnssMeasurementsEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/location/GnssMeasurementsEvent;
 
-    .line 101
     new-instance v0, Lcom/android/server/location/-$$Lambda$GnssMeasurementsProvider$865xzodmeiSeR2xhh7cKZjiZkhE;
 
-    .local v0, "operation":Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;, "Lcom/android/server/location/RemoteListenerHelper$ListenerOperation<Landroid/location/IGnssMeasurementsListener;>;"
     invoke-direct {v0, p1}, Lcom/android/server/location/-$$Lambda$GnssMeasurementsProvider$865xzodmeiSeR2xhh7cKZjiZkhE;-><init>(Landroid/location/GnssMeasurementsEvent;)V
 
-    .line 103
     invoke-virtual {p0, v0}, Lcom/android/server/location/GnssMeasurementsProvider;->foreach(Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;)V
 
-    .line 104
     return-void
 .end method
 
 .method protected registerWithService()I
     .locals 6
 
-    .line 76
     iget-object v0, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -343,8 +287,6 @@
 
     move-result v0
 
-    .line 78
-    .local v0, "devOptions":I
     iget-object v1, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -357,8 +299,6 @@
 
     move-result v1
 
-    .line 80
-    .local v1, "fullTrackingToggled":I
     const/4 v3, 0x1
 
     if-ne v0, v3, :cond_0
@@ -372,8 +312,6 @@
     :cond_0
     move v4, v2
 
-    .line 82
-    .local v4, "enableFullTracking":Z
     :goto_0
     iget-object v5, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mNative:Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
@@ -381,20 +319,14 @@
 
     move-result v5
 
-    .line 83
-    .local v5, "result":Z
     if-eqz v5, :cond_1
 
-    .line 84
     iput-boolean v3, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mIsCollectionStarted:Z
 
-    .line 85
     iput-boolean v4, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mEnableFullTracking:Z
 
-    .line 86
     return v2
 
-    .line 88
     :cond_1
     const/4 v2, 0x4
 
@@ -404,32 +336,27 @@
 .method resumeIfStarted()V
     .locals 2
 
-    .line 61
     sget-boolean v0, Lcom/android/server/location/GnssMeasurementsProvider;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 62
     const-string v0, "GnssMeasurementsProvider"
 
     const-string/jumbo v1, "resumeIfStarted"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     :cond_0
     iget-boolean v0, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mIsCollectionStarted:Z
 
     if-eqz v0, :cond_1
 
-    .line 65
     iget-object v0, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mNative:Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
     iget-boolean v1, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mEnableFullTracking:Z
 
     invoke-virtual {v0, v1}, Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;->startMeasurementCollection(Z)Z
 
-    .line 67
     :cond_1
     return-void
 .end method
@@ -437,23 +364,18 @@
 .method protected unregisterFromService()V
     .locals 2
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mNative:Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;
 
     invoke-virtual {v0}, Lcom/android/server/location/GnssMeasurementsProvider$GnssMeasurementProviderNative;->stopMeasurementCollection()Z
 
     move-result v0
 
-    .line 95
-    .local v0, "stopped":Z
     if-eqz v0, :cond_0
 
-    .line 96
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/server/location/GnssMeasurementsProvider;->mIsCollectionStarted:Z
 
-    .line 98
     :cond_0
     return-void
 .end method

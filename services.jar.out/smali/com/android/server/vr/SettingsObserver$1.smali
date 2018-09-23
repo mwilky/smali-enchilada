@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/vr/SettingsObserver;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/vr/SettingsObserver;
 
-    .line 70
     iput-object p1, p0, Lcom/android/server/vr/SettingsObserver$1;->this$0:Lcom/android/server/vr/SettingsObserver;
 
     iput-object p2, p0, Lcom/android/server/vr/SettingsObserver$1;->val$secureSettingName:Ljava/lang/String;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 73
     const-string v0, "android.os.action.SETTING_RESTORED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -55,15 +50,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 74
     const-string/jumbo v0, "setting_name"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 75
-    .local v0, "element":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/vr/SettingsObserver$1;->val$secureSettingName:Ljava/lang/String;
 
     invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -72,23 +64,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 76
     const-string/jumbo v1, "previous_value"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 77
-    .local v1, "prevValue":Ljava/lang/String;
     const-string/jumbo v2, "new_value"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 78
-    .local v2, "newValue":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/vr/SettingsObserver$1;->this$0:Lcom/android/server/vr/SettingsObserver;
 
     invoke-virtual {p0}, Lcom/android/server/vr/SettingsObserver$1;->getSendingUserId()I
@@ -97,10 +84,6 @@
 
     invoke-static {v3, v1, v2, v4}, Lcom/android/server/vr/SettingsObserver;->access$000(Lcom/android/server/vr/SettingsObserver;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 81
-    .end local v0    # "element":Ljava/lang/String;
-    .end local v1    # "prevValue":Ljava/lang/String;
-    .end local v2    # "newValue":Ljava/lang/String;
     :cond_0
     return-void
 .end method

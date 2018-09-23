@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
     .locals 0
 
-    .line 1793
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$PolicyHandler;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;Lcom/android/server/policy/OemPhoneWindowManager$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/policy/OemPhoneWindowManager;
-    .param p2, "x1"    # Lcom/android/server/policy/OemPhoneWindowManager$1;
 
-    .line 1793
     invoke-direct {p0, p1}, Lcom/android/server/policy/OemPhoneWindowManager$PolicyHandler;-><init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
 
     return-void
@@ -45,11 +41,8 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1796
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 1800
     return-void
 .end method

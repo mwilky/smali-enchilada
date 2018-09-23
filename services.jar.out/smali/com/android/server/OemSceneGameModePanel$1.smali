@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModePanel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModePanel;
 
-    .line 84
     iput-object p1, p0, Lcom/android/server/OemSceneGameModePanel$1;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-direct {p0}, Landroid/app/UserSwitchObserver;-><init>()V
@@ -35,14 +33,12 @@
 # virtual methods
 .method public onUserSwitchComplete(I)V
     .locals 2
-    .param p1, "newUserId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 87
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanel$1;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-static {v0}, Lcom/android/server/OemSceneGameModePanel;->access$000(Lcom/android/server/OemSceneGameModePanel;)Landroid/os/Handler;
@@ -55,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 94
     return-void
 .end method

@@ -24,7 +24,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,11 +33,7 @@
 # virtual methods
 .method public getSetting(Landroid/content/Context;Ljava/lang/String;I)I
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "symbol"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 1639
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -52,11 +47,7 @@
 
 .method public getSetting(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "symbol"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # Ljava/lang/String;
 
-    .line 1643
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -65,8 +56,6 @@
 
     move-result-object v0
 
-    .line 1644
-    .local v0, "value":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     move-object v1, v0

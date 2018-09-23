@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
 
-    .line 2177
     iput-object p1, p0, Lcom/android/server/StorageManagerService$10;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-direct {p0}, Landroid/os/IVoldTaskListener$Stub;-><init>()V
@@ -35,19 +33,13 @@
 # virtual methods
 .method public onFinished(ILandroid/os/PersistableBundle;)V
     .locals 0
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 2188
     return-void
 .end method
 
 .method public onStatus(ILandroid/os/PersistableBundle;)V
     .locals 2
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 2180
     iget-object v0, p0, Lcom/android/server/StorageManagerService$10;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$2200(Lcom/android/server/StorageManagerService;)Ljava/lang/Object;
@@ -56,19 +48,15 @@
 
     monitor-enter v0
 
-    .line 2181
     :try_start_0
     iget-object v1, p0, Lcom/android/server/StorageManagerService$10;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v1, p1}, Lcom/android/server/StorageManagerService;->access$4000(Lcom/android/server/StorageManagerService;I)V
 
-    .line 2182
     monitor-exit v0
 
-    .line 2183
     return-void
 
-    .line 2182
     :catchall_0
     move-exception v1
 

@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 69
     new-instance v0, Lcom/android/server/connectivity/Nat464Xlat$State;
 
     const-string v1, "IDLE"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/Nat464Xlat$State;->IDLE:Lcom/android/server/connectivity/Nat464Xlat$State;
 
-    .line 70
     new-instance v0, Lcom/android/server/connectivity/Nat464Xlat$State;
 
     const-string v1, "STARTING"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/Nat464Xlat$State;->STARTING:Lcom/android/server/connectivity/Nat464Xlat$State;
 
-    .line 71
     new-instance v0, Lcom/android/server/connectivity/Nat464Xlat$State;
 
     const-string v1, "RUNNING"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/Nat464Xlat$State;->RUNNING:Lcom/android/server/connectivity/Nat464Xlat$State;
 
-    .line 72
     new-instance v0, Lcom/android/server/connectivity/Nat464Xlat$State;
 
     const-string v1, "STOPPING"
@@ -82,7 +78,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/Nat464Xlat$State;->STOPPING:Lcom/android/server/connectivity/Nat464Xlat$State;
 
-    .line 68
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/android/server/connectivity/Nat464Xlat$State;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 68
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/connectivity/Nat464Xlat$State;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 68
     const-class v0, Lcom/android/server/connectivity/Nat464Xlat$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Lcom/android/server/connectivity/Nat464Xlat$State;
     .locals 1
 
-    .line 68
     sget-object v0, Lcom/android/server/connectivity/Nat464Xlat$State;->$VALUES:[Lcom/android/server/connectivity/Nat464Xlat$State;
 
     invoke-virtual {v0}, [Lcom/android/server/connectivity/Nat464Xlat$State;->clone()Ljava/lang/Object;

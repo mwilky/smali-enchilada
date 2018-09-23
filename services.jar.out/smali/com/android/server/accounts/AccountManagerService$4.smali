@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accounts/AccountManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accounts/AccountManagerService;
 
-    .line 354
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$4;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-direct {p0}, Landroid/app/AppOpsManager$OnOpChangedInternalListener;-><init>()V
@@ -35,17 +33,12 @@
 # virtual methods
 .method public onOpChanged(ILjava/lang/String;)V
     .locals 7
-    .param p1, "op"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 358
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
-    .line 359
-    .local v0, "userId":I
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$4;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-static {v1}, Lcom/android/server/accounts/AccountManagerService;->access$500(Lcom/android/server/accounts/AccountManagerService;)Landroid/content/pm/PackageManager;
@@ -56,8 +49,6 @@
 
     move-result v1
 
-    .line 360
-    .local v1, "uid":I
     iget-object v2, p0, Lcom/android/server/accounts/AccountManagerService$4;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
     invoke-static {v2}, Lcom/android/server/accounts/AccountManagerService;->access$600(Lcom/android/server/accounts/AccountManagerService;)Landroid/app/AppOpsManager;
@@ -70,19 +61,14 @@
 
     move-result v2
 
-    .line 362
-    .local v2, "mode":I
     if-nez v2, :cond_0
 
-    .line 363
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v3
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 365
-    .local v3, "identity":J
     :try_start_1
     iget-object v5, p0, Lcom/android/server/accounts/AccountManagerService$4;->this$0:Lcom/android/server/accounts/AccountManagerService;
 
@@ -92,14 +78,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 367
     :try_start_2
     invoke-static {v3, v4}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 368
     goto :goto_0
 
-    .line 367
     :catchall_0
     move-exception v5
 
@@ -109,20 +92,13 @@
     :try_end_2
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 372
-    .end local v0    # "userId":I
-    .end local v1    # "uid":I
-    .end local v2    # "mode":I
-    .end local v3    # "identity":J
     :cond_0
     :goto_0
     goto :goto_1
 
-    .line 370
     :catch_0
     move-exception v0
 
-    .line 373
     :goto_1
     return-void
 .end method

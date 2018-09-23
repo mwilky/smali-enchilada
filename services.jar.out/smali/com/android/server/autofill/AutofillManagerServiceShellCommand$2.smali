@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/autofill/AutofillManagerServiceShellCommand;Ljava/io/PrintWriter;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/autofill/AutofillManagerServiceShellCommand;
 
-    .line 319
     iput-object p1, p0, Lcom/android/server/autofill/AutofillManagerServiceShellCommand$2;->this$0:Lcom/android/server/autofill/AutofillManagerServiceShellCommand;
 
     iput-object p2, p0, Lcom/android/server/autofill/AutofillManagerServiceShellCommand$2;->val$pw:Ljava/io/PrintWriter;
@@ -43,19 +41,13 @@
 # virtual methods
 .method public send(ILandroid/os/Bundle;)V
     .locals 4
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 322
     const-string/jumbo v0, "sessions"
 
-    .line 323
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 324
-    .local v0, "sessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -73,22 +65,16 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 325
-    .local v2, "session":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/autofill/AutofillManagerServiceShellCommand$2;->val$pw:Ljava/io/PrintWriter;
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 326
-    .end local v2    # "session":Ljava/lang/String;
     goto :goto_0
 
-    .line 327
     :cond_0
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerServiceShellCommand$2;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 328
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 461
     iput-object p1, p0, Lcom/android/server/LocationManagerService$EmergencyCallStateListener;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 3
-    .param p1, "state"    # I
-    .param p2, "arg1"    # Ljava/lang/String;
 
-    .line 464
     sget-boolean v0, Lcom/android/server/LocationManagerService;->D:Z
 
     if-nez v0, :cond_0
@@ -68,7 +63,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 465
     :cond_1
     invoke-static {p2}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumber(Ljava/lang/String;)Z
 
@@ -76,7 +70,6 @@
 
     if-eqz v0, :cond_7
 
-    .line 466
     sget-boolean v0, Lcom/android/server/LocationManagerService;->D:Z
 
     if-nez v0, :cond_2
@@ -130,7 +123,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 467
     :cond_3
     iget-object v0, p0, Lcom/android/server/LocationManagerService$EmergencyCallStateListener;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -150,17 +142,14 @@
 
     if-nez v0, :cond_4
 
-    .line 469
     const-string v0, "LocationManagerService"
 
     const-string v1, "Emergency Call...WiFi default Enabled, ignore...."
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
     return-void
 
-    .line 472
     :cond_4
     const/4 v0, 0x1
 
@@ -177,14 +166,12 @@
 
     if-nez v1, :cond_6
 
-    .line 473
     const-string v1, "LocationManagerService"
 
     const-string v2, "Emergency Call Start...Modify state..."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 474
     iget-object v1, p0, Lcom/android/server/LocationManagerService$EmergencyCallStateListener;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$1200(Lcom/android/server/LocationManagerService;)Landroid/net/wifi/WifiManager;
@@ -193,12 +180,10 @@
 
     invoke-virtual {v1, v0}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 475
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$1302(Z)Z
 
     goto :goto_0
 
-    .line 477
     :cond_6
     const-string v0, "LocationManagerService"
 
@@ -206,7 +191,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 478
     iget-object v0, p0, Lcom/android/server/LocationManagerService$EmergencyCallStateListener;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$1200(Lcom/android/server/LocationManagerService;)Landroid/net/wifi/WifiManager;
@@ -217,10 +201,8 @@
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 479
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$1302(Z)Z
 
-    .line 482
     :cond_7
     :goto_0
     return-void

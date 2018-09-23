@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/stats/StatsCompanionService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/stats/StatsCompanionService;
 
-    .line 168
     iput-object p1, p0, Lcom/android/server/stats/StatsCompanionService$1;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 171
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$100()Ljava/lang/Object;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 172
     :try_start_0
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$300()Landroid/os/IStatsManager;
 
@@ -53,28 +47,24 @@
 
     invoke-static {v1}, Lcom/android/server/stats/StatsCompanionService;->access$202(Landroid/os/IStatsManager;)Landroid/os/IStatsManager;
 
-    .line 173
     invoke-static {}, Lcom/android/server/stats/StatsCompanionService;->access$200()Landroid/os/IStatsManager;
 
     move-result-object v1
 
     if-nez v1, :cond_0
 
-    .line 174
     const-string v1, "StatsCompanionService"
 
     const-string v2, "Could not access statsd for UserUpdateReceiver"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    .line 180
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/stats/StatsCompanionService$1;->this$0:Lcom/android/server/stats/StatsCompanionService;
@@ -84,15 +74,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 184
     goto :goto_0
 
-    .line 181
     :catch_0
     move-exception v1
 
-    .line 182
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "StatsCompanionService"
 
@@ -100,20 +86,15 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 183
     iget-object v2, p0, Lcom/android/server/stats/StatsCompanionService$1;->this$0:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v2}, Lcom/android/server/stats/StatsCompanionService;->access$500(Lcom/android/server/stats/StatsCompanionService;)V
 
-    .line 185
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 186
     return-void
 
-    .line 185
     :catchall_0
     move-exception v1
 

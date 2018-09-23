@@ -43,17 +43,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 10
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->DBG:Z
 
-    .line 49
     const/4 v0, 0x0
 
     sput-object v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
-    .line 51
     const-string/jumbo v0, "ro.prj_name"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -62,7 +59,6 @@
 
     sput-object v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName_old:Ljava/lang/String;
 
-    .line 53
     const-string/jumbo v0, "ro.boot.project_name"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -77,22 +73,18 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     sget-object v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
     if-nez v0, :cond_0
 
-    .line 60
     new-instance v0, Landroid/util/BoostFramework;
 
     invoke-direct {v0}, Landroid/util/BoostFramework;-><init>()V
 
     sput-object v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
-    .line 63
     :cond_0
     const-string v0, "OpBoostFramework"
 
@@ -114,14 +106,12 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 64
     return-void
 .end method
 
 .method static synthetic access$100()Z
     .locals 1
 
-    .line 8
     sget-boolean v0, Lcom/oneplus/sdk/utils/OpBoostFramework;->DBG:Z
 
     return v0
@@ -131,18 +121,11 @@
 # virtual methods
 .method public acquireBoostFor(II)I
     .locals 6
-    .param p1, "policy"    # I
-    .param p2, "duration"    # I
 
-    .line 85
     const/4 v0, 0x0
 
-    .line 86
-    .local v0, "ret":I
     const-string v1, ""
 
-    .line 87
-    .local v1, "projectName":Ljava/lang/String;
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName_old:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -151,16 +134,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 88
     sget-object v1, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName_old:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 90
     :cond_0
     sget-object v1, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName:Ljava/lang/String;
 
-    .line 92
     :goto_0
     const-string v2, "OpBoostFramework"
 
@@ -180,7 +160,6 @@
 
     invoke-static {v2, v3}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 93
     const-string v2, "OpBoostFramework"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -199,7 +178,6 @@
 
     invoke-static {v2, v3}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 94
     const-string v2, "OpBoostFramework"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -218,15 +196,12 @@
 
     invoke-static {v2, v3}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 96
     if-eqz p1, :cond_1
 
-    .line 123
     const/4 v0, -0x3
 
     goto/16 :goto_3
 
-    .line 98
     :cond_1
     const/16 v2, 0x7d0
 
@@ -236,7 +211,6 @@
 
     goto/16 :goto_2
 
-    .line 103
     :cond_2
     :try_start_0
     const-string v2, "14049"
@@ -249,7 +223,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 104
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
     new-array v3, v3, [I
@@ -260,7 +233,6 @@
 
     goto/16 :goto_3
 
-    .line 105
     :cond_3
     const-string v2, "15801"
 
@@ -270,7 +242,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 107
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
     new-array v3, v3, [I
@@ -281,7 +252,6 @@
 
     goto :goto_3
 
-    .line 108
     :cond_4
     const-string v2, "15811"
 
@@ -291,7 +261,6 @@
 
     if-eqz v2, :cond_5
 
-    .line 110
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
     new-array v3, v3, [I
@@ -302,7 +271,6 @@
 
     goto :goto_3
 
-    .line 111
     :cond_5
     const-string v2, "16859"
 
@@ -330,7 +298,6 @@
 
     goto :goto_1
 
-    .line 115
     :cond_6
     const-string v2, "OpBoostFramework"
 
@@ -338,7 +305,6 @@
 
     invoke-static {v2, v4}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 117
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
     new-array v3, v3, [I
@@ -347,10 +313,8 @@
 
     invoke-virtual {v2, p2, v3}, Landroid/util/BoostFramework;->perfLockAcquire(I[I)I
 
-    .line 120
     goto :goto_3
 
-    .line 113
     :cond_7
     :goto_1
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
@@ -365,12 +329,9 @@
 
     goto :goto_3
 
-    .line 126
     :catch_0
     move-exception v2
 
-    .line 127
-    .local v2, "e":Ljava/lang/Exception;
     const-string v3, "OpBoostFramework"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -389,26 +350,19 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 128
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 129
     const/4 v0, -0x4
 
-    .line 129
-    .end local v2    # "e":Ljava/lang/Exception;
     goto :goto_4
 
-    .line 99
     :cond_8
     :goto_2
     const/4 v0, -0x2
 
-    .line 130
     :goto_3
     nop
 
-    .line 131
     :goto_4
     const-string v2, "OpBoostFramework"
 
@@ -428,7 +382,6 @@
 
     invoke-static {v2, v3}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 132
     return v0
 
     nop
@@ -479,15 +432,10 @@
 .method public releaseBoost()I
     .locals 6
 
-    .line 145
     const/4 v0, 0x0
 
-    .line 146
-    .local v0, "ret":I
     const-string v1, ""
 
-    .line 147
-    .local v1, "projectName":Ljava/lang/String;
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName_old:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->length()I
@@ -496,16 +444,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 148
     sget-object v1, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName_old:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 150
     :cond_0
     sget-object v1, Lcom/oneplus/sdk/utils/OpBoostFramework;->sProjectName:Ljava/lang/String;
 
-    .line 152
     :goto_0
     const-string v2, "OpBoostFramework"
 
@@ -525,7 +470,6 @@
 
     invoke-static {v2, v3}, Lcom/oneplus/sdk/utils/OpBoostFramework$MyLog;->access$000(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 154
     :try_start_0
     sget-object v2, Lcom/oneplus/sdk/utils/OpBoostFramework;->sPerfBoostInstance:Landroid/util/BoostFramework;
 
@@ -537,15 +481,11 @@
 
     move v0, v2
 
-    .line 159
     goto :goto_1
 
-    .line 155
     :catch_0
     move-exception v2
 
-    .line 156
-    .local v2, "e":Ljava/lang/Exception;
     const-string v3, "OpBoostFramework"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -564,14 +504,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 157
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 158
     const/4 v0, -0x4
 
-    .line 160
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_1
     return v0
 .end method

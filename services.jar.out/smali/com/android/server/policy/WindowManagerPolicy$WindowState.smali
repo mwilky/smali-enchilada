@@ -21,7 +21,6 @@
 .method public canAddInternalSystemWindow()Z
     .locals 1
 
-    .line 501
     const/4 v0, 0x0
 
     return v0
@@ -149,7 +148,6 @@
 .method public isLetterboxedForDisplayCutoutLw()Z
     .locals 1
 
-    .line 468
     const/4 v0, 0x0
 
     return v0
@@ -157,9 +155,7 @@
 
 .method public isLetterboxedOverlappingWith(Landroid/graphics/Rect;)Z
     .locals 1
-    .param p1, "rect"    # Landroid/graphics/Rect;
 
-    .line 476
     const/4 v0, 0x0
 
     return v0

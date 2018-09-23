@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemGestureButton;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemGestureButton;
 
-    .line 275
     iput-object p1, p0, Lcom/android/server/policy/OemGestureButton$2;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +36,19 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 279
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 284
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$2;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/policy/OemGestureButton;->access$202(Lcom/android/server/policy/OemGestureButton;Z)Z
 
-    .line 285
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$2;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     iget-object v0, v0, Lcom/android/server/policy/OemGestureButton;->mOemGestureButtonHandler:Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;
@@ -64,7 +57,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->removeMessages(I)V
 
-    .line 288
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$2;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -77,27 +69,22 @@
 
     invoke-static {v0, v2, v3}, Lcom/android/server/policy/OemGestureButton;->access$302(Lcom/android/server/policy/OemGestureButton;J)J
 
-    .line 289
     iget-object v0, p0, Lcom/android/server/policy/OemGestureButton$2;->this$0:Lcom/android/server/policy/OemGestureButton;
 
     iget-object v0, v0, Lcom/android/server/policy/OemGestureButton;->mOemGestureButtonHandler:Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;
 
-    .line 291
     const/4 v2, 0x1
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
-    .line 289
     invoke-virtual {v0, v1, v2}, Lcom/android/server/policy/OemGestureButton$OemGestureButtonHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 291
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 292
     const-string v0, "OemGestureButton"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -122,22 +109,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 293
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 281
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 277
     return-void
 .end method

@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 13
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     sput-boolean v0, Lcom/oneplus/sdk/utils/OpConnor;->DBG:Z
@@ -26,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,13 +33,10 @@
 .method public static getAggregateNext()[Ljava/lang/String;
     .locals 6
 
-    .line 24
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    .line 26
-    .local v1, "get_service":Ljava/lang/reflect/Method;
     :try_start_0
     const-string v2, "android.app.ActivityManager"
 
@@ -49,8 +44,6 @@
 
     move-result-object v2
 
-    .line 27
-    .local v2, "activityManager":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-string v3, "getService"
 
     const/4 v4, 0x0
@@ -63,7 +56,6 @@
 
     move-object v1, v3
 
-    .line 28
     new-array v3, v4, [Ljava/lang/Object;
 
     invoke-virtual {v1, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -72,8 +64,6 @@
 
     check-cast v3, Landroid/app/IActivityManager;
 
-    .line 29
-    .local v3, "iAm":Landroid/app/IActivityManager;
     invoke-interface {v3}, Landroid/app/IActivityManager;->getAggregateNext()[Ljava/lang/String;
 
     move-result-object v4
@@ -82,14 +72,9 @@
 
     return-object v4
 
-    .line 30
-    .end local v2    # "activityManager":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v3    # "iAm":Landroid/app/IActivityManager;
     :catch_0
     move-exception v2
 
-    .line 31
-    .local v2, "t":Ljava/lang/Throwable;
     const-string v3, "OpConnor"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -108,15 +93,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 32
     sget-boolean v3, Lcom/oneplus/sdk/utils/OpConnor;->DBG:Z
 
     if-eqz v3, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 34
-    .end local v2    # "t":Ljava/lang/Throwable;
     :cond_0
     return-object v0
 .end method

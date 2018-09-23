@@ -14,15 +14,11 @@
 # direct methods
 .method constructor <init>(Landroid/os/IPowerManager;)V
     .locals 0
-    .param p1, "service"    # Landroid/os/IPowerManager;
 
-    .line 31
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
 
-    .line 32
     iput-object p1, p0, Lcom/android/server/power/PowerManagerShellCommand;->mInterface:Landroid/os/IPowerManager;
 
-    .line 33
     return-void
 .end method
 
@@ -34,19 +30,14 @@
         }
     .end annotation
 
-    .line 56
     invoke-virtual {p0}, Lcom/android/server/power/PowerManagerShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 57
-    .local v0, "pw":Ljava/io/PrintWriter;
     const/4 v1, -0x1
 
     move v2, v1
 
-    .line 59
-    .local v2, "mode":I
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/power/PowerManagerShellCommand;->getNextArgRequired()Ljava/lang/String;
 
@@ -60,12 +51,8 @@
 
     move v1, v3
 
-    .line 63
-    .end local v2    # "mode":I
-    .local v1, "mode":I
     nop
 
-    .line 64
     iget-object v2, p0, Lcom/android/server/power/PowerManagerShellCommand;->mInterface:Landroid/os/IPowerManager;
 
     const/4 v3, 0x0
@@ -82,17 +69,11 @@
     :goto_0
     invoke-interface {v2, v4}, Landroid/os/IPowerManager;->setPowerSaveMode(Z)Z
 
-    .line 65
     return v3
 
-    .line 60
-    .end local v1    # "mode":I
-    .restart local v2    # "mode":I
     :catch_0
     move-exception v3
 
-    .line 61
-    .local v3, "ex":Ljava/lang/RuntimeException;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -113,7 +94,6 @@
 
     invoke-virtual {v0, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 62
     return v1
 .end method
 
@@ -121,26 +101,20 @@
 # virtual methods
 .method public onCommand(Ljava/lang/String;)I
     .locals 5
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 37
     if-nez p1, :cond_0
 
-    .line 38
     invoke-virtual {p0, p1}, Lcom/android/server/power/PowerManagerShellCommand;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v0
 
     return v0
 
-    .line 41
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/power/PowerManagerShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 43
-    .local v0, "pw":Ljava/io/PrintWriter;
     const/4 v1, -0x1
 
     :try_start_0
@@ -174,14 +148,12 @@
     :goto_1
     if-eqz v2, :cond_3
 
-    .line 47
     invoke-virtual {p0, p1}, Lcom/android/server/power/PowerManagerShellCommand;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v2
 
     return v2
 
-    .line 45
     :cond_3
     invoke-direct {p0}, Lcom/android/server/power/PowerManagerShellCommand;->runSetMode()I
 
@@ -191,12 +163,9 @@
 
     return v2
 
-    .line 49
     :catch_0
     move-exception v2
 
-    .line 50
-    .local v2, "e":Landroid/os/RemoteException;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -213,63 +182,49 @@
 
     invoke-virtual {v0, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 52
-    .end local v2    # "e":Landroid/os/RemoteException;
     return v1
 .end method
 
 .method public onHelp()V
     .locals 2
 
-    .line 70
     invoke-virtual {p0}, Lcom/android/server/power/PowerManagerShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 71
-    .local v0, "pw":Ljava/io/PrintWriter;
     const-string v1, "Power manager (power) commands:"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 72
     const-string v1, "  help"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 73
     const-string v1, "    Print this help text."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 74
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 75
     const-string v1, "  set-mode MODE"
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 76
     const-string v1, "    sets the power mode of the device to MODE."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 77
     const-string v1, "    1 turns low power mode on and 0 turns low power mode off."
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 78
     invoke-virtual {v0}, Ljava/io/PrintWriter;->println()V
 
-    .line 79
     const-string v1, ""
 
     invoke-static {v0, v1}, Landroid/content/Intent;->printIntentArgsHelp(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 80
     return-void
 .end method

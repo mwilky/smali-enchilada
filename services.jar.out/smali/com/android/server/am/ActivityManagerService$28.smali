@@ -32,7 +32,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 20080
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,9 +55,6 @@
         }
     .end annotation
 
-    .line 20084
-    .local p1, "object1":Landroid/util/Pair;, "Landroid/util/Pair<Lcom/android/server/am/ProcessRecord;Ljava/lang/Integer;>;"
-    .local p2, "object2":Landroid/util/Pair;, "Landroid/util/Pair<Lcom/android/server/am/ProcessRecord;Ljava/lang/Integer;>;"
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
@@ -77,7 +73,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 20085
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
@@ -99,7 +94,6 @@
     :cond_0
     return v2
 
-    .line 20087
     :cond_1
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -115,7 +109,6 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 20088
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/am/ProcessRecord;
@@ -137,7 +130,6 @@
     :cond_2
     return v2
 
-    .line 20090
     :cond_3
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -157,7 +149,6 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 20091
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -183,7 +174,6 @@
     :cond_4
     return v2
 
-    .line 20093
     :cond_5
     const/4 v0, 0x0
 
@@ -193,7 +183,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 20080
     check-cast p1, Landroid/util/Pair;
 
     check-cast p2, Landroid/util/Pair;

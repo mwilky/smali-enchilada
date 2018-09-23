@@ -26,7 +26,6 @@
 .method private constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
 
-    .line 646
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -36,10 +35,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;Lcom/android/server/policy/DeviceKeyHandler$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/policy/DeviceKeyHandler;
-    .param p2, "x1"    # Lcom/android/server/policy/DeviceKeyHandler$1;
 
-    .line 646
     invoke-direct {p0, p1}, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;-><init>(Lcom/android/server/policy/DeviceKeyHandler;)V
 
     return-void
@@ -49,9 +45,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 651
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -60,7 +54,6 @@
 
     goto :goto_0
 
-    .line 654
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
@@ -72,19 +65,15 @@
 
     if-eqz v0, :cond_1
 
-    .line 655
     return-void
 
-    .line 657
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$EventHandler;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-static {v0}, Lcom/android/server/policy/DeviceKeyHandler;->access$900(Lcom/android/server/policy/DeviceKeyHandler;)V
 
-    .line 658
     nop
 
-    .line 662
     :goto_0
     return-void
 .end method

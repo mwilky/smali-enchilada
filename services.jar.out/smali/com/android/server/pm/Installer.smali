@@ -64,37 +64,27 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 88
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/pm/Installer;-><init>(Landroid/content/Context;Z)V
 
-    .line 89
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "isolated"    # Z
 
-    .line 97
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 98
     iput-boolean p2, p0, Lcom/android/server/pm/Installer;->mIsolated:Z
 
-    .line 99
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/pm/Installer;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/pm/Installer;
 
-    .line 41
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->connect()V
 
     return-void
@@ -102,14 +92,12 @@
 
 .method private static assertValidInstructionSet(Ljava/lang/String;)V
     .locals 5
-    .param p0, "instructionSet"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 596
     sget-object v0, Landroid/os/Build;->SUPPORTED_ABIS:[Ljava/lang/String;
 
     array-length v1, v0
@@ -121,8 +109,6 @@
 
     aget-object v3, v0, v2
 
-    .line 597
-    .local v3, "abi":Ljava/lang/String;
     invoke-static {v3}, Ldalvik/system/VMRuntime;->getInstructionSet(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -133,17 +119,13 @@
 
     if-eqz v4, :cond_0
 
-    .line 598
     return-void
 
-    .line 596
-    .end local v3    # "abi":Ljava/lang/String;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 601
     :cond_1
     new-instance v0, Lcom/android/server/pm/Installer$InstallerException;
 
@@ -169,7 +151,6 @@
 .method private checkBeforeRemote()Z
     .locals 3
 
-    .line 154
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mWarnIfHeld:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
@@ -182,7 +163,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 155
     const-string v0, "Installer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -209,7 +189,6 @@
 
     iget-object v2, p0, Lcom/android/server/pm/Installer;->mWarnIfHeld:Ljava/lang/Object;
 
-    .line 156
     invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v2
@@ -228,28 +207,23 @@
 
     invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
 
-    .line 155
     invoke-static {v0, v1, v2}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 158
     :cond_0
     iget-boolean v0, p0, Lcom/android/server/pm/Installer;->mIsolated:Z
 
     if-eqz v0, :cond_1
 
-    .line 159
     const-string v0, "Installer"
 
     const-string v1, "Ignoring request because this installer is isolated"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 160
     const/4 v0, 0x0
 
     return v0
 
-    .line 162
     :cond_1
     const/4 v0, 0x1
 
@@ -259,18 +233,14 @@
 .method private connect()V
     .locals 5
 
-    .line 119
     const-string/jumbo v0, "installd"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 120
-    .local v0, "binder":Landroid/os/IBinder;
     if-eqz v0, :cond_0
 
-    .line 122
     :try_start_0
     new-instance v1, Lcom/android/server/pm/Installer$1;
 
@@ -282,47 +252,36 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 131
     goto :goto_0
 
-    .line 129
     :catch_0
     move-exception v1
 
-    .line 130
-    .local v1, "e":Landroid/os/RemoteException;
     const/4 v0, 0x0
 
-    .line 134
-    .end local v1    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 135
     invoke-static {v0}, Landroid/os/IInstalld$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IInstalld;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
 
-    .line 137
     :try_start_1
     invoke-virtual {p0}, Lcom/android/server/pm/Installer;->invalidateMounts()V
     :try_end_1
     .catch Lcom/android/server/pm/Installer$InstallerException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 139
     :goto_1
     goto :goto_2
 
-    .line 138
     :catch_1
     move-exception v1
 
     goto :goto_1
 
-    .line 141
     :cond_1
     const-string v1, "Installer"
 
@@ -330,7 +289,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v1
@@ -343,7 +301,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 146
     :goto_2
     return-void
 .end method
@@ -351,10 +308,8 @@
 .method public static synthetic lambda$connect$0(Lcom/android/server/pm/Installer;)V
     .locals 0
 
-    .line 143
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->connect()V
 
-    .line 144
     return-void
 .end method
 
@@ -362,15 +317,12 @@
 # virtual methods
 .method public assertFsverityRootHashMatches(Ljava/lang/String;[B)V
     .locals 2
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "expectedHash"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 501
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -379,7 +331,6 @@
 
     return-void
 
-    .line 503
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -388,18 +339,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 506
     nop
 
-    .line 507
     return-void
 
-    .line 504
     :catch_0
     move-exception v0
 
-    .line 505
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -409,18 +355,12 @@
 
 .method public clearAppData(Ljava/lang/String;Ljava/lang/String;IIJ)V
     .locals 8
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
-    .param p5, "ceDataInode"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 199
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -429,7 +369,6 @@
 
     return-void
 
-    .line 201
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -448,18 +387,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 204
     nop
 
-    .line 205
     return-void
 
-    .line 202
     :catch_0
     move-exception v0
 
-    .line 203
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -469,15 +403,12 @@
 
 .method public clearAppProfiles(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "profileName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 378
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -486,7 +417,6 @@
 
     return-void
 
-    .line 380
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -495,18 +425,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 383
     nop
 
-    .line 384
     return-void
 
-    .line 381
     :catch_0
     move-exception v0
 
-    .line 382
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -516,17 +441,12 @@
 
 .method public copySystemProfile(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "systemProfile"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "profileName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 331
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -537,7 +457,6 @@
 
     return v0
 
-    .line 333
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -550,12 +469,9 @@
 
     return v0
 
-    .line 334
     :catch_0
     move-exception v0
 
-    .line 335
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -565,20 +481,12 @@
 
 .method public createAppData(Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;I)J
     .locals 10
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
-    .param p5, "appId"    # I
-    .param p6, "seInfo"    # Ljava/lang/String;
-    .param p7, "targetSdkVersion"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 168
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -589,7 +497,6 @@
 
     return-wide v0
 
-    .line 170
     :cond_0
     move-object v1, p0
 
@@ -618,12 +525,9 @@
 
     return-wide v2
 
-    .line 172
     :catch_0
     move-exception v0
 
-    .line 173
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v2
@@ -633,15 +537,12 @@
 
 .method public createOatDir(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "oatDir"    # Ljava/lang/String;
-    .param p2, "dexInstructionSet"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 451
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -650,7 +551,6 @@
 
     return-void
 
-    .line 453
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -659,18 +559,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 456
     nop
 
-    .line 457
     return-void
 
-    .line 454
     :catch_0
     move-exception v0
 
-    .line 455
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -680,17 +575,12 @@
 
 .method public createProfileSnapshot(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "appId"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "profileName"    # Ljava/lang/String;
-    .param p4, "classpath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 535
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -701,7 +591,6 @@
 
     return v0
 
-    .line 537
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -714,12 +603,9 @@
 
     return v0
 
-    .line 538
     :catch_0
     move-exception v0
 
-    .line 539
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -729,17 +615,12 @@
 
 .method public createUserData(Ljava/lang/String;III)V
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "userSerial"    # I
-    .param p4, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 397
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -748,7 +629,6 @@
 
     return-void
 
-    .line 399
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -757,18 +637,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 402
     nop
 
-    .line 403
     return-void
 
-    .line 400
     :catch_0
     move-exception v0
 
-    .line 401
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -778,16 +653,12 @@
 
 .method public deleteOdex(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "apkPath"    # Ljava/lang/String;
-    .param p2, "instructionSet"    # Ljava/lang/String;
-    .param p3, "outputPath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 481
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -796,7 +667,6 @@
 
     return-void
 
-    .line 483
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -805,18 +675,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 486
     nop
 
-    .line 487
     return-void
 
-    .line 484
     :catch_0
     move-exception v0
 
-    .line 485
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -826,18 +691,12 @@
 
 .method public destroyAppData(Ljava/lang/String;Ljava/lang/String;IIJ)V
     .locals 8
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
-    .param p5, "ceDataInode"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 209
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -846,7 +705,6 @@
 
     return-void
 
-    .line 211
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -865,18 +723,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 214
     nop
 
-    .line 215
     return-void
 
-    .line 212
     :catch_0
     move-exception v0
 
-    .line 213
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -886,14 +739,12 @@
 
 .method public destroyAppProfiles(Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 387
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -902,7 +753,6 @@
 
     return-void
 
-    .line 389
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -911,18 +761,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 392
     nop
 
-    .line 393
     return-void
 
-    .line 390
     :catch_0
     move-exception v0
 
-    .line 391
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -932,15 +777,12 @@
 
 .method public destroyProfileSnapshot(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "profileName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 545
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -949,7 +791,6 @@
 
     return-void
 
-    .line 547
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -958,18 +799,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 550
     nop
 
-    .line 551
     return-void
 
-    .line 548
     :catch_0
     move-exception v0
 
-    .line 549
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -979,16 +815,12 @@
 
 .method public destroyUserData(Ljava/lang/String;II)V
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 406
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -997,7 +829,6 @@
 
     return-void
 
-    .line 408
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1006,18 +837,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 411
     nop
 
-    .line 412
     return-void
 
-    .line 409
     :catch_0
     move-exception v0
 
-    .line 410
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1027,32 +853,14 @@
 
 .method public dexopt(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 19
-    .param p1, "apkPath"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "pkgName"    # Ljava/lang/String;
-    .param p4, "instructionSet"    # Ljava/lang/String;
-    .param p5, "dexoptNeeded"    # I
-    .param p6, "outputPath"    # Ljava/lang/String;
-    .param p7, "dexFlags"    # I
-    .param p8, "compilerFilter"    # Ljava/lang/String;
-    .param p9, "volumeUuid"    # Ljava/lang/String;
-    .param p10, "sharedLibraries"    # Ljava/lang/String;
-    .param p11, "seInfo"    # Ljava/lang/String;
-    .param p12, "downgrade"    # Z
-    .param p13, "targetSdkVersion"    # I
-    .param p14, "profileName"    # Ljava/lang/String;
-    .param p15, "dexMetadataPath"    # Ljava/lang/String;
-    .param p16, "compilationReason"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 298
     invoke-static/range {p4 .. p4}, Lcom/android/server/pm/Installer;->assertValidInstructionSet(Ljava/lang/String;)V
 
-    .line 299
     invoke-direct/range {p0 .. p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1061,7 +869,6 @@
 
     return-void
 
-    .line 301
     :cond_0
     move-object/from16 v1, p0
 
@@ -1104,18 +911,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 306
     nop
 
-    .line 307
     return-void
 
-    .line 304
     :catch_0
     move-exception v0
 
-    .line 305
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v2
@@ -1125,17 +927,12 @@
 
 .method public dumpProfiles(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "profileName"    # Ljava/lang/String;
-    .param p4, "codePath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 321
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1146,7 +943,6 @@
 
     return v0
 
-    .line 323
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1159,12 +955,9 @@
 
     return v0
 
-    .line 324
     :catch_0
     move-exception v0
 
-    .line 325
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1174,15 +967,12 @@
 
 .method public fixupAppData(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 218
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1191,7 +981,6 @@
 
     return-void
 
-    .line 220
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1200,18 +989,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
     nop
 
-    .line 224
     return-void
 
-    .line 221
     :catch_0
     move-exception v0
 
-    .line 222
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1221,17 +1005,12 @@
 
 .method public freeCache(Ljava/lang/String;JJI)V
     .locals 8
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "targetFreeBytes"    # J
-    .param p4, "cacheReservedBytes"    # J
-    .param p6, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 426
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1240,7 +1019,6 @@
 
     return-void
 
-    .line 428
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1257,18 +1035,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 431
     nop
 
-    .line 432
     return-void
 
-    .line 429
     :catch_0
     move-exception v0
 
-    .line 430
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1278,21 +1051,12 @@
 
 .method public getAppSize(Ljava/lang/String;[Ljava/lang/String;III[J[Ljava/lang/String;Landroid/content/pm/PackageStats;)V
     .locals 11
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageNames"    # [Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
-    .param p5, "appId"    # I
-    .param p6, "ceDataInodes"    # [J
-    .param p7, "codePaths"    # [Ljava/lang/String;
-    .param p8, "stats"    # Landroid/content/pm/PackageStats;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 241
     move-object/from16 v1, p8
 
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
@@ -1303,7 +1067,6 @@
 
     return-void
 
-    .line 243
     :cond_0
     move-object v2, p0
 
@@ -1328,8 +1091,6 @@
 
     move-result-object v0
 
-    .line 245
-    .local v0, "res":[J
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->codeSize:J
 
     const/4 v5, 0x0
@@ -1340,7 +1101,6 @@
 
     iput-wide v3, v1, Landroid/content/pm/PackageStats;->codeSize:J
 
-    .line 246
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->dataSize:J
 
     const/4 v5, 0x1
@@ -1351,7 +1111,6 @@
 
     iput-wide v3, v1, Landroid/content/pm/PackageStats;->dataSize:J
 
-    .line 247
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->cacheSize:J
 
     const/4 v5, 0x2
@@ -1362,7 +1121,6 @@
 
     iput-wide v3, v1, Landroid/content/pm/PackageStats;->cacheSize:J
 
-    .line 248
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->externalCodeSize:J
 
     const/4 v5, 0x3
@@ -1373,7 +1131,6 @@
 
     iput-wide v3, v1, Landroid/content/pm/PackageStats;->externalCodeSize:J
 
-    .line 249
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->externalDataSize:J
 
     const/4 v5, 0x4
@@ -1384,7 +1141,6 @@
 
     iput-wide v3, v1, Landroid/content/pm/PackageStats;->externalDataSize:J
 
-    .line 250
     iget-wide v3, v1, Landroid/content/pm/PackageStats;->externalCacheSize:J
 
     const/4 v5, 0x5
@@ -1397,19 +1153,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 253
-    .end local v0    # "res":[J
     nop
 
-    .line 254
     return-void
 
-    .line 251
     :catch_0
     move-exception v0
 
-    .line 252
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v3
@@ -1419,17 +1169,12 @@
 
 .method public getExternalSize(Ljava/lang/String;II[I)[J
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "flags"    # I
-    .param p4, "appIds"    # [I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 274
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1442,7 +1187,6 @@
 
     return-object v0
 
-    .line 276
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1455,12 +1199,9 @@
 
     return-object v0
 
-    .line 277
     :catch_0
     move-exception v0
 
-    .line 278
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1470,18 +1211,12 @@
 
 .method public getUserSize(Ljava/lang/String;II[ILandroid/content/pm/PackageStats;)V
     .locals 5
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "flags"    # I
-    .param p4, "appIds"    # [I
-    .param p5, "stats"    # Landroid/content/pm/PackageStats;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 258
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1490,7 +1225,6 @@
 
     return-void
 
-    .line 260
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1499,8 +1233,6 @@
 
     move-result-object v0
 
-    .line 261
-    .local v0, "res":[J
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->codeSize:J
 
     const/4 v3, 0x0
@@ -1511,7 +1243,6 @@
 
     iput-wide v1, p5, Landroid/content/pm/PackageStats;->codeSize:J
 
-    .line 262
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->dataSize:J
 
     const/4 v3, 0x1
@@ -1522,7 +1253,6 @@
 
     iput-wide v1, p5, Landroid/content/pm/PackageStats;->dataSize:J
 
-    .line 263
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->cacheSize:J
 
     const/4 v3, 0x2
@@ -1533,7 +1263,6 @@
 
     iput-wide v1, p5, Landroid/content/pm/PackageStats;->cacheSize:J
 
-    .line 264
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->externalCodeSize:J
 
     const/4 v3, 0x3
@@ -1544,7 +1273,6 @@
 
     iput-wide v1, p5, Landroid/content/pm/PackageStats;->externalCodeSize:J
 
-    .line 265
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->externalDataSize:J
 
     const/4 v3, 0x4
@@ -1555,7 +1283,6 @@
 
     iput-wide v1, p5, Landroid/content/pm/PackageStats;->externalDataSize:J
 
-    .line 266
     iget-wide v1, p5, Landroid/content/pm/PackageStats;->externalCacheSize:J
 
     const/4 v3, 0x5
@@ -1568,19 +1295,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 269
-    .end local v0    # "res":[J
     nop
 
-    .line 270
     return-void
 
-    .line 267
     :catch_0
     move-exception v0
 
-    .line 268
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1590,18 +1311,12 @@
 
 .method public hashSecondaryDexFile(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)[B
     .locals 7
-    .param p1, "dexPath"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "uid"    # I
-    .param p4, "volumeUuid"    # Ljava/lang/String;
-    .param p5, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 525
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1614,7 +1329,6 @@
 
     return-object v0
 
-    .line 527
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1637,12 +1351,9 @@
 
     return-object v0
 
-    .line 528
     :catch_0
     move-exception v0
 
-    .line 529
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1652,16 +1363,12 @@
 
 .method public idmap(Ljava/lang/String;Ljava/lang/String;I)V
     .locals 2
-    .param p1, "targetApkPath"    # Ljava/lang/String;
-    .param p2, "overlayApkPath"    # Ljava/lang/String;
-    .param p3, "uid"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 341
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1670,7 +1377,6 @@
 
     return-void
 
-    .line 343
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1679,18 +1385,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 346
     nop
 
-    .line 347
     return-void
 
-    .line 344
     :catch_0
     move-exception v0
 
-    .line 345
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1700,16 +1401,12 @@
 
 .method public installApkVerity(Ljava/lang/String;Ljava/io/FileDescriptor;I)V
     .locals 2
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "verityInput"    # Ljava/io/FileDescriptor;
-    .param p3, "contentSize"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 491
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1718,7 +1415,6 @@
 
     return-void
 
-    .line 493
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1727,18 +1423,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 496
     nop
 
-    .line 497
     return-void
 
-    .line 494
     :catch_0
     move-exception v0
 
-    .line 495
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1754,7 +1445,6 @@
         }
     .end annotation
 
-    .line 554
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1763,7 +1453,6 @@
 
     return-void
 
-    .line 556
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1772,18 +1461,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 559
     nop
 
-    .line 560
     return-void
 
-    .line 557
     :catch_0
     move-exception v0
 
-    .line 558
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1793,14 +1477,12 @@
 
 .method public isQuotaSupported(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "volumeUuid"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 563
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1811,7 +1493,6 @@
 
     return v0
 
-    .line 565
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1824,12 +1505,9 @@
 
     return v0
 
-    .line 566
     :catch_0
     move-exception v0
 
-    .line 567
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1839,16 +1517,12 @@
 
 .method public linkFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "relativePath"    # Ljava/lang/String;
-    .param p2, "fromBase"    # Ljava/lang/String;
-    .param p3, "toBase"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 461
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1857,7 +1531,6 @@
 
     return-void
 
-    .line 463
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1866,18 +1539,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 466
     nop
 
-    .line 467
     return-void
 
-    .line 464
     :catch_0
     move-exception v0
 
-    .line 465
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1887,17 +1555,12 @@
 
 .method public linkNativeLibraryDirectory(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "nativeLibPath32"    # Ljava/lang/String;
-    .param p4, "userId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 441
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1906,7 +1569,6 @@
 
     return-void
 
-    .line 443
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1915,18 +1577,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 446
     nop
 
-    .line 447
     return-void
 
-    .line 444
     :catch_0
     move-exception v0
 
-    .line 445
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1936,17 +1593,14 @@
 
 .method public markBootComplete(Ljava/lang/String;)V
     .locals 2
-    .param p1, "instructionSet"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 415
     invoke-static {p1}, Lcom/android/server/pm/Installer;->assertValidInstructionSet(Ljava/lang/String;)V
 
-    .line 416
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -1955,7 +1609,6 @@
 
     return-void
 
-    .line 418
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -1964,18 +1617,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 421
     nop
 
-    .line 422
     return-void
 
-    .line 419
     :catch_0
     move-exception v0
 
-    .line 420
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -1985,16 +1633,12 @@
 
 .method public mergeProfiles(ILjava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "profileName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 311
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2005,7 +1649,6 @@
 
     return v0
 
-    .line 313
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2018,12 +1661,9 @@
 
     return v0
 
-    .line 314
     :catch_0
     move-exception v0
 
-    .line 315
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2033,17 +1673,12 @@
 
 .method public migrateAppData(Ljava/lang/String;Ljava/lang/String;II)V
     .locals 2
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 189
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2052,7 +1687,6 @@
 
     return-void
 
-    .line 191
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2061,18 +1695,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 194
     nop
 
-    .line 195
     return-void
 
-    .line 192
     :catch_0
     move-exception v0
 
-    .line 193
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2082,16 +1711,12 @@
 
 .method public moveAb(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "apkPath"    # Ljava/lang/String;
-    .param p2, "instructionSet"    # Ljava/lang/String;
-    .param p3, "outputPath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 471
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2100,7 +1725,6 @@
 
     return-void
 
-    .line 473
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2109,18 +1733,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 476
     nop
 
-    .line 477
     return-void
 
-    .line 474
     :catch_0
     move-exception v0
 
-    .line 475
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2130,20 +1749,12 @@
 
 .method public moveCompleteApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;I)V
     .locals 10
-    .param p1, "fromUuid"    # Ljava/lang/String;
-    .param p2, "toUuid"    # Ljava/lang/String;
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "dataAppName"    # Ljava/lang/String;
-    .param p5, "appId"    # I
-    .param p6, "seInfo"    # Ljava/lang/String;
-    .param p7, "targetSdkVersion"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 229
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2152,7 +1763,6 @@
 
     return-void
 
-    .line 231
     :cond_0
     move-object v1, p0
 
@@ -2177,18 +1787,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 235
     nop
 
-    .line 236
     return-void
 
-    .line 233
     :catch_0
     move-exception v0
 
-    .line 234
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v2
@@ -2199,42 +1804,31 @@
 .method public onStart()V
     .locals 1
 
-    .line 111
     iget-boolean v0, p0, Lcom/android/server/pm/Installer;->mIsolated:Z
 
     if-eqz v0, :cond_0
 
-    .line 112
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
 
     goto :goto_0
 
-    .line 114
     :cond_0
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->connect()V
 
-    .line 116
     :goto_0
     return-void
 .end method
 
 .method public prepareAppProfile(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 8
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "appId"    # I
-    .param p4, "profileName"    # Ljava/lang/String;
-    .param p5, "codePath"    # Ljava/lang/String;
-    .param p6, "dexMetadataPath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 573
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2245,7 +1839,6 @@
 
     return v0
 
-    .line 575
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2270,12 +1863,9 @@
 
     return v0
 
-    .line 577
     :catch_0
     move-exception v0
 
-    .line 578
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2285,41 +1875,29 @@
 
 .method public reconcileSecondaryDexFile(Ljava/lang/String;Ljava/lang/String;I[Ljava/lang/String;Ljava/lang/String;I)Z
     .locals 9
-    .param p1, "apkPath"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "uid"    # I
-    .param p4, "isas"    # [Ljava/lang/String;
-    .param p5, "volumeUuid"    # Ljava/lang/String;
-    .param p6, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 511
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, p4
 
     if-ge v1, v2, :cond_0
 
-    .line 512
     aget-object v2, p4, v1
 
     invoke-static {v2}, Lcom/android/server/pm/Installer;->assertValidInstructionSet(Ljava/lang/String;)V
 
-    .line 511
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 514
-    .end local v1    # "i":I
     :cond_0
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
@@ -2329,7 +1907,6 @@
 
     return v0
 
-    .line 516
     :cond_1
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2354,12 +1931,9 @@
 
     return v0
 
-    .line 518
     :catch_0
     move-exception v0
 
-    .line 519
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2369,14 +1943,12 @@
 
 .method public removeIdmap(Ljava/lang/String;)V
     .locals 2
-    .param p1, "overlayApkPath"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 350
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2385,7 +1957,6 @@
 
     return-void
 
-    .line 352
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2394,18 +1965,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 355
     nop
 
-    .line 356
     return-void
 
-    .line 353
     :catch_0
     move-exception v0
 
-    .line 354
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2415,19 +1981,12 @@
 
 .method public restoreconAppData(Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)V
     .locals 8
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "flags"    # I
-    .param p5, "appId"    # I
-    .param p6, "seInfo"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 179
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2436,7 +1995,6 @@
 
     return-void
 
-    .line 181
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2457,18 +2015,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 184
     nop
 
-    .line 185
     return-void
 
-    .line 182
     :catch_0
     move-exception v0
 
-    .line 183
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2478,14 +2031,12 @@
 
 .method public rmPackageDir(Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageDir"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 369
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2494,7 +2045,6 @@
 
     return-void
 
-    .line 371
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2503,18 +2053,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 374
     nop
 
-    .line 375
     return-void
 
-    .line 372
     :catch_0
     move-exception v0
 
-    .line 373
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2524,18 +2069,14 @@
 
 .method public rmdex(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "codePath"    # Ljava/lang/String;
-    .param p2, "instructionSet"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 359
     invoke-static {p2}, Lcom/android/server/pm/Installer;->assertValidInstructionSet(Ljava/lang/String;)V
 
-    .line 360
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2544,7 +2085,6 @@
 
     return-void
 
-    .line 362
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2553,18 +2093,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 365
     nop
 
-    .line 366
     return-void
 
-    .line 363
     :catch_0
     move-exception v0
 
-    .line 364
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2574,17 +2109,12 @@
 
 .method public setAppQuota(Ljava/lang/String;IIJ)V
     .locals 7
-    .param p1, "uuid"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "appId"    # I
-    .param p4, "cacheQuota"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 284
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2593,7 +2123,6 @@
 
     return-void
 
-    .line 286
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2610,18 +2139,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 289
     nop
 
-    .line 290
     return-void
 
-    .line 287
     :catch_0
     move-exception v0
 
-    .line 288
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2631,14 +2155,12 @@
 
 .method public setBackupRestoreState(I)Z
     .locals 2
-    .param p1, "state"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/server/pm/Installer$InstallerException;
         }
     .end annotation
 
-    .line 585
     invoke-direct {p0}, Lcom/android/server/pm/Installer;->checkBeforeRemote()Z
 
     move-result v0
@@ -2649,7 +2171,6 @@
 
     return v0
 
-    .line 587
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/Installer;->mInstalld:Landroid/os/IInstalld;
@@ -2662,12 +2183,9 @@
 
     return v0
 
-    .line 588
     :catch_0
     move-exception v0
 
-    .line 589
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/android/server/pm/Installer$InstallerException;->from(Ljava/lang/Exception;)Lcom/android/server/pm/Installer$InstallerException;
 
     move-result-object v1
@@ -2677,11 +2195,8 @@
 
 .method public setWarnIfHeld(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "warnIfHeld"    # Ljava/lang/Object;
 
-    .line 106
     iput-object p1, p0, Lcom/android/server/pm/Installer;->mWarnIfHeld:Ljava/lang/Object;
 
-    .line 107
     return-void
 .end method

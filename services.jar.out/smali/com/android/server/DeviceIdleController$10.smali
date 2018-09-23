@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DeviceIdleController;IF)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
-    .line 2848
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     iput p2, p0, Lcom/android/server/DeviceIdleController$10;->val$levelDrop:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 5
 
-    .line 2851
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$3300(Lcom/android/server/DeviceIdleController;)Z
@@ -56,14 +53,12 @@
 
     if-nez v0, :cond_3
 
-    .line 2852
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/server/DeviceIdleController;->access$3302(Lcom/android/server/DeviceIdleController;Z)Z
 
-    .line 2853
     invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
 
     move-result v0
@@ -99,7 +94,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2855
     :cond_1
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
@@ -110,7 +104,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 2856
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
@@ -127,7 +120,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/OnePlusStandbyAnalyzer;->snapShot(Lcom/android/server/OnePlusStandbyAnalyzer$SNAPSHOT_TYPE;Lcom/android/server/OnePlusStandbyAnalyzer$STATISTIC_TYPE;IF)V
 
-    .line 2857
     iget-object v0, p0, Lcom/android/server/DeviceIdleController$10;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-static {v0}, Lcom/android/server/DeviceIdleController;->access$200(Lcom/android/server/DeviceIdleController;)Lcom/android/server/OnePlusStandbyAnalyzer;
@@ -142,19 +134,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2862
     :cond_2
     goto :goto_0
 
-    .line 2859
     :catch_0
     move-exception v0
 
-    .line 2860
-    .local v0, "e":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2861
     const-string v1, "DeviceIdleController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -173,8 +160,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2864
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_3
     :goto_0
     return-void

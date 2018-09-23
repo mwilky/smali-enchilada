@@ -31,31 +31,25 @@
 # direct methods
 .method public static cameraLensStateToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "lens"    # I
 
-    .line 666
     packed-switch p0, :pswitch_data_0
 
-    .line 674
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 672
     :pswitch_0
     const-string v0, "CAMERA_LENS_COVERED"
 
     return-object v0
 
-    .line 670
     :pswitch_1
     const-string v0, "CAMERA_LENS_UNCOVERED"
 
     return-object v0
 
-    .line 668
     :pswitch_2
     const-string v0, "CAMERA_LENS_COVER_ABSENT"
 
@@ -73,31 +67,25 @@
 
 .method public static lidStateToString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "lid"    # I
 
-    .line 650
     packed-switch p0, :pswitch_data_0
 
-    .line 658
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 656
     :pswitch_0
     const-string v0, "LID_OPEN"
 
     return-object v0
 
-    .line 654
     :pswitch_1
     const-string v0, "LID_CLOSED"
 
     return-object v0
 
-    .line 652
     :pswitch_2
     const-string v0, "LID_ABSENT"
 

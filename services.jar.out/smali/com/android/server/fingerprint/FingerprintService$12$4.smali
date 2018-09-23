@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/fingerprint/FingerprintService$12;JII)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/fingerprint/FingerprintService$12;
 
-    .line 1310
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$12$4;->this$1:Lcom/android/server/fingerprint/FingerprintService$12;
 
     iput-wide p2, p0, Lcom/android/server/fingerprint/FingerprintService$12$4;->val$deviceId:J
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 5
 
-    .line 1313
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$12$4;->this$1:Lcom/android/server/fingerprint/FingerprintService$12;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$12;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -64,6 +61,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/fingerprint/FingerprintService;->handleError(JII)V
 
-    .line 1314
     return-void
 .end method

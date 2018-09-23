@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiCecLocalDevice;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
-    .line 132
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 135
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 140
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
@@ -52,16 +47,13 @@
 
     goto :goto_0
 
-    .line 137
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDevice$1;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->access$000(Lcom/android/server/hdmi/HdmiCecLocalDevice;)V
 
-    .line 138
     nop
 
-    .line 143
     :goto_0
     return-void
 

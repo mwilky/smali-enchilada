@@ -27,13 +27,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowManagerService;)V
     .locals 0
-    .param p1, "service"    # Lcom/android/server/wm/WindowManagerService;
 
-    .line 3285
-    .local p0, "this":Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer;, "Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer<TE;>;"
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowContainer;-><init>(Lcom/android/server/wm/WindowManagerService;)V
 
-    .line 3286
     return-void
 .end method
 
@@ -42,8 +38,6 @@
 .method fillsParent()Z
     .locals 1
 
-    .line 3290
-    .local p0, "this":Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer;, "Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer<TE;>;"
     const/4 v0, 0x1
 
     return v0
@@ -52,8 +46,6 @@
 .method isVisible()Z
     .locals 1
 
-    .line 3295
-    .local p0, "this":Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer;, "Lcom/android/server/wm/DisplayContent$DisplayChildWindowContainer<TE;>;"
     const/4 v0, 0x1
 
     return v0

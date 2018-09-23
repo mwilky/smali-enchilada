@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 20553
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$16;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput p2, p0, Lcom/android/server/pm/PackageManagerService$16;->val$appId:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 20556
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerService$16;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget v1, p0, Lcom/android/server/pm/PackageManagerService$16;->val$appId:I
@@ -58,6 +55,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/pm/PackageManagerService;->access$2200(Lcom/android/server/pm/PackageManagerService;IILjava/lang/String;)V
 
-    .line 20557
     return-void
 .end method

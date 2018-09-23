@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 40
     new-instance v0, Landroid/net/util/SharedLog$Category;
 
     const-string v1, "NONE"
@@ -49,7 +48,6 @@
 
     sput-object v0, Landroid/net/util/SharedLog$Category;->NONE:Landroid/net/util/SharedLog$Category;
 
-    .line 41
     new-instance v0, Landroid/net/util/SharedLog$Category;
 
     const-string v1, "ERROR"
@@ -60,7 +58,6 @@
 
     sput-object v0, Landroid/net/util/SharedLog$Category;->ERROR:Landroid/net/util/SharedLog$Category;
 
-    .line 42
     new-instance v0, Landroid/net/util/SharedLog$Category;
 
     const-string v1, "MARK"
@@ -71,7 +68,6 @@
 
     sput-object v0, Landroid/net/util/SharedLog$Category;->MARK:Landroid/net/util/SharedLog$Category;
 
-    .line 43
     new-instance v0, Landroid/net/util/SharedLog$Category;
 
     const-string v1, "WARN"
@@ -82,7 +78,6 @@
 
     sput-object v0, Landroid/net/util/SharedLog$Category;->WARN:Landroid/net/util/SharedLog$Category;
 
-    .line 39
     const/4 v0, 0x4
 
     new-array v0, v0, [Landroid/net/util/SharedLog$Category;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 39
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/util/SharedLog$Category;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 39
     const-class v0, Landroid/net/util/SharedLog$Category;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Landroid/net/util/SharedLog$Category;
     .locals 1
 
-    .line 39
     sget-object v0, Landroid/net/util/SharedLog$Category;->$VALUES:[Landroid/net/util/SharedLog$Category;
 
     invoke-virtual {v0}, [Landroid/net/util/SharedLog$Category;->clone()Ljava/lang/Object;

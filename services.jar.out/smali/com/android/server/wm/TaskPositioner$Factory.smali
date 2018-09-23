@@ -17,9 +17,7 @@
 # virtual methods
 .method public create(Lcom/android/server/wm/WindowManagerService;)Lcom/android/server/wm/TaskPositioner;
     .locals 1
-    .param p1, "service"    # Lcom/android/server/wm/WindowManagerService;
 
-    .line 643
     new-instance v0, Lcom/android/server/wm/TaskPositioner;
 
     invoke-direct {v0, p1}, Lcom/android/server/wm/TaskPositioner;-><init>(Lcom/android/server/wm/WindowManagerService;)V

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/PowerManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/PowerManagerService;
 
-    .line 4179
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$DozeBlackConfigUpdater;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 1
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 4183
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$DozeBlackConfigUpdater;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/power/PowerManagerService;->access$2200(Lcom/android/server/power/PowerManagerService;Lorg/json/JSONArray;)V
 
-    .line 4184
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub;
 
-    .line 835
     iput-object p1, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->this$0:Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub;
 
     iput-object p2, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,31 +40,24 @@
 # virtual methods
 .method public onValues(JJ)V
     .locals 2
-    .param p1, "rxBytes"    # J
-    .param p3, "txBytes"    # J
 
-    .line 838
     iget-object v0, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 839
     iget-object v0, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/HwParcel;->writeInt64(J)V
 
-    .line 840
     iget-object v0, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p3, p4}, Landroid/os/HwParcel;->writeInt64(J)V
 
-    .line 841
     iget-object v0, p0, Landroid/hardware/tetheroffload/control/V1_0/IOffloadControl$Stub$4;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 842
     return-void
 .end method

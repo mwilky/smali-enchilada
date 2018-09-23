@@ -32,12 +32,10 @@
 .method private constructor <init>(Lcom/android/server/StorageManagerService;)V
     .locals 0
 
-    .line 3712
     iput-object p1, p0, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-direct {p0}, Landroid/os/storage/StorageManagerInternal;-><init>()V
 
-    .line 3714
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
@@ -49,10 +47,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/StorageManagerService;
-    .param p2, "x1"    # Lcom/android/server/StorageManagerService$1;
 
-    .line 3712
     invoke-direct {p0, p1}, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;-><init>(Lcom/android/server/StorageManagerService;)V
 
     return-void
@@ -62,27 +57,19 @@
 # virtual methods
 .method public addExternalStoragePolicy(Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;)V
     .locals 1
-    .param p1, "policy"    # Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
 
-    .line 3720
     iget-object v0, p0, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3721
     return-void
 .end method
 
 .method public getExternalStorageMountMode(ILjava/lang/String;)I
     .locals 5
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 3732
     const v0, 0x7fffffff
 
-    .line 3733
-    .local v0, "mountMode":I
     iget-object v1, p0, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -104,60 +91,43 @@
 
     check-cast v2, Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
 
-    .line 3734
-    .local v2, "policy":Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
     invoke-interface {v2, p1, p2}, Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;->getMountMode(ILjava/lang/String;)I
 
     move-result v4
 
-    .line 3735
-    .local v4, "policyMode":I
     if-nez v4, :cond_0
 
-    .line 3736
     return v3
 
-    .line 3738
     :cond_0
     invoke-static {v0, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 3739
-    .end local v2    # "policy":Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
-    .end local v4    # "policyMode":I
     goto :goto_0
 
-    .line 3740
     :cond_1
     const v1, 0x7fffffff
 
     if-ne v0, v1, :cond_2
 
-    .line 3741
     return v3
 
-    .line 3743
     :cond_2
     return v0
 .end method
 
 .method public hasExternalStorage(ILjava/lang/String;)Z
     .locals 4
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 3749
     const/4 v0, 0x1
 
     const/16 v1, 0x3e8
 
     if-ne p1, v1, :cond_0
 
-    .line 3750
     return v0
 
-    .line 3753
     :cond_0
     iget-object v1, p0, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->mPolicies:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -178,48 +148,33 @@
 
     check-cast v2, Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
 
-    .line 3754
-    .local v2, "policy":Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
     invoke-interface {v2, p1, p2}, Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;->hasExternalStorage(ILjava/lang/String;)Z
 
     move-result v3
 
-    .line 3755
-    .local v3, "policyHasStorage":Z
     if-nez v3, :cond_1
 
-    .line 3756
     const/4 v0, 0x0
 
     return v0
 
-    .line 3758
-    .end local v2    # "policy":Landroid/os/storage/StorageManagerInternal$ExternalStorageMountPolicy;
-    .end local v3    # "policyHasStorage":Z
     :cond_1
     goto :goto_0
 
-    .line 3759
     :cond_2
     return v0
 .end method
 
 .method public onExternalStoragePolicyChanged(ILjava/lang/String;)V
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 3725
     invoke-virtual {p0, p1, p2}, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->getExternalStorageMountMode(ILjava/lang/String;)I
 
     move-result v0
 
-    .line 3726
-    .local v0, "mountMode":I
     iget-object v1, p0, Lcom/android/server/StorageManagerService$StorageManagerInternalImpl;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v1, p1, v0}, Lcom/android/server/StorageManagerService;->access$4900(Lcom/android/server/StorageManagerService;II)V
 
-    .line 3727
     return-void
 .end method

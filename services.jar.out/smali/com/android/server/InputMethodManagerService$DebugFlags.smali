@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 299
     new-instance v0, Lcom/android/server/InputMethodManagerService$DebugFlag;
 
     const-string v1, "debug.optimize_startinput"
@@ -39,7 +38,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

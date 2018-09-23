@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/webkit/WebViewUpdateService;)V
     .locals 0
 
-    .line 146
     iput-object p1, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-direct {p0}, Landroid/webkit/IWebViewUpdateService$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/webkit/WebViewUpdateService;Lcom/android/server/webkit/WebViewUpdateService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/webkit/WebViewUpdateService;
-    .param p2, "x1"    # Lcom/android/server/webkit/WebViewUpdateService$1;
 
-    .line 146
     invoke-direct {p0, p1}, Lcom/android/server/webkit/WebViewUpdateService$BinderService;-><init>(Lcom/android/server/webkit/WebViewUpdateService;)V
 
     return-void
@@ -45,9 +41,7 @@
 # virtual methods
 .method public changeProviderAndSetting(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p1, "newProvider"    # Ljava/lang/String;
 
-    .line 202
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdateService;->getContext()Landroid/content/Context;
@@ -62,13 +56,10 @@
 
     if-nez v0, :cond_0
 
-    .line 213
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 215
-    .local v0, "callingId":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -82,13 +73,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 218
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 215
     return-object v2
 
-    .line 218
     :catchall_0
     move-exception v2
 
@@ -96,8 +84,6 @@
 
     throw v2
 
-    .line 205
-    .end local v0    # "callingId":J
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -107,7 +93,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 206
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
@@ -118,7 +103,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 207
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -137,13 +121,10 @@
 
     move-result-object v0
 
-    .line 209
-    .local v0, "msg":Ljava/lang/String;
     const-string v1, "WebViewUpdateService"
 
     invoke-static {v1, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 210
     new-instance v1, Ljava/lang/SecurityException;
 
     invoke-direct {v1, v0}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
@@ -153,11 +134,7 @@
 
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 2
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 297
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdateService;->getContext()Landroid/content/Context;
@@ -174,7 +151,6 @@
 
     return-void
 
-    .line 298
     :cond_0
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -184,15 +160,12 @@
 
     invoke-virtual {v0, p2}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->dumpState(Ljava/io/PrintWriter;)V
 
-    .line 299
     return-void
 .end method
 
 .method public enableFallbackLogic(Z)V
     .locals 3
-    .param p1, "enable"    # Z
 
-    .line 250
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdateService;->getContext()Landroid/content/Context;
@@ -207,13 +180,10 @@
 
     if-nez v0, :cond_0
 
-    .line 261
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 263
-    .local v0, "callingId":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -225,16 +195,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 265
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 266
     nop
 
-    .line 267
     return-void
 
-    .line 265
     :catchall_0
     move-exception v2
 
@@ -242,8 +208,6 @@
 
     throw v2
 
-    .line 253
-    .end local v0    # "callingId":J
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -253,7 +217,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 254
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
@@ -264,7 +227,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 255
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -283,13 +245,10 @@
 
     move-result-object v0
 
-    .line 257
-    .local v0, "msg":Ljava/lang/String;
     const-string v1, "WebViewUpdateService"
 
     invoke-static {v1, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 258
     new-instance v1, Ljava/lang/SecurityException;
 
     invoke-direct {v1, v0}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
@@ -299,9 +258,7 @@
 
 .method public enableMultiProcess(Z)V
     .locals 3
-    .param p1, "enable"    # Z
 
-    .line 276
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-virtual {v0}, Lcom/android/server/webkit/WebViewUpdateService;->getContext()Landroid/content/Context;
@@ -316,13 +273,10 @@
 
     if-nez v0, :cond_0
 
-    .line 287
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 289
-    .local v0, "callingId":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -334,16 +288,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 291
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 292
     nop
 
-    .line 293
     return-void
 
-    .line 291
     :catchall_0
     move-exception v2
 
@@ -351,8 +301,6 @@
 
     throw v2
 
-    .line 279
-    .end local v0    # "callingId":J
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -362,7 +310,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 280
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
@@ -373,7 +320,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 281
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -392,13 +338,10 @@
 
     move-result-object v0
 
-    .line 283
-    .local v0, "msg":Ljava/lang/String;
     const-string v1, "WebViewUpdateService"
 
     invoke-static {v1, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
     new-instance v1, Ljava/lang/SecurityException;
 
     invoke-direct {v1, v0}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
@@ -409,7 +352,6 @@
 .method public getAllWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
     .locals 1
 
-    .line 229
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -426,7 +368,6 @@
 .method public getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
     .locals 1
 
-    .line 240
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -443,7 +384,6 @@
 .method public getCurrentWebViewPackageName()Ljava/lang/String;
     .locals 2
 
-    .line 234
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -454,8 +394,6 @@
 
     move-result-object v0
 
-    .line 235
-    .local v0, "pi":Landroid/content/pm/PackageInfo;
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -472,7 +410,6 @@
 .method public getValidWebViewPackages()[Landroid/webkit/WebViewProviderInfo;
     .locals 1
 
-    .line 224
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -488,9 +425,7 @@
 
 .method public isFallbackPackage(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 245
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -507,7 +442,6 @@
 .method public isMultiProcessEnabled()Z
     .locals 1
 
-    .line 271
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -524,7 +458,6 @@
 .method public notifyRelroCreationCompleted()V
     .locals 3
 
-    .line 167
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -533,7 +466,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 168
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -542,17 +474,13 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 169
     return-void
 
-    .line 172
     :cond_0
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 174
-    .local v0, "callingId":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -564,16 +492,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 176
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 177
     nop
 
-    .line 178
     return-void
 
-    .line 176
     :catchall_0
     move-exception v2
 
@@ -584,14 +508,7 @@
 
 .method public onShellCommand(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)V
     .locals 8
-    .param p1, "in"    # Ljava/io/FileDescriptor;
-    .param p2, "out"    # Ljava/io/FileDescriptor;
-    .param p3, "err"    # Ljava/io/FileDescriptor;
-    .param p4, "args"    # [Ljava/lang/String;
-    .param p5, "callback"    # Landroid/os/ShellCallback;
-    .param p6, "resultReceiver"    # Landroid/os/ResultReceiver;
 
-    .line 152
     new-instance v0, Lcom/android/server/webkit/WebViewUpdateServiceShellCommand;
 
     invoke-direct {v0, p0}, Lcom/android/server/webkit/WebViewUpdateServiceShellCommand;-><init>(Landroid/webkit/IWebViewUpdateService;)V
@@ -612,14 +529,12 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/server/webkit/WebViewUpdateServiceShellCommand;->exec(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)I
 
-    .line 154
     return-void
 .end method
 
 .method public waitForAndGetProvider()Landroid/webkit/WebViewProviderResponse;
     .locals 2
 
-    .line 190
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v0
@@ -630,7 +545,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 194
     iget-object v0, p0, Lcom/android/server/webkit/WebViewUpdateService$BinderService;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v0}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -643,7 +557,6 @@
 
     return-object v0
 
-    .line 191
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

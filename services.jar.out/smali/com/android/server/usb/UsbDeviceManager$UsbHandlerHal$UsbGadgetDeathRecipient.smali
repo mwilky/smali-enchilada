@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
-    .line 1811
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetDeathRecipient;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,13 @@
 # virtual methods
 .method public serviceDied(J)V
     .locals 3
-    .param p1, "cookie"    # J
 
-    .line 1814
     const-wide/16 v0, 0x7d0
 
     cmp-long v0, p1, v0
 
     if-nez v0, :cond_0
 
-    .line 1815
     invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->access$200()Ljava/lang/String;
 
     move-result-object v0
@@ -68,7 +63,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1816
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetDeathRecipient;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
     invoke-static {v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->access$600(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;)Ljava/lang/Object;
@@ -77,7 +71,6 @@
 
     monitor-enter v0
 
-    .line 1817
     :try_start_0
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal$UsbGadgetDeathRecipient;->this$0:Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;
 
@@ -85,7 +78,6 @@
 
     invoke-static {v1, v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;->access$702(Lcom/android/server/usb/UsbDeviceManager$UsbHandlerHal;Landroid/hardware/usb/gadget/V1_0/IUsbGadget;)Landroid/hardware/usb/gadget/V1_0/IUsbGadget;
 
-    .line 1818
     monitor-exit v0
 
     goto :goto_0
@@ -99,7 +91,6 @@
 
     throw v1
 
-    .line 1820
     :cond_0
     :goto_0
     return-void

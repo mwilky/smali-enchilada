@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/UserController;Landroid/content/pm/UserInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/UserController;
 
-    .line 538
     iput-object p1, p0, Lcom/android/server/am/UserController$1;->this$0:Lcom/android/server/am/UserController;
 
     iput-object p2, p0, Lcom/android/server/am/UserController$1;->val$userInfo:Landroid/content/pm/UserInfo;
@@ -39,15 +37,7 @@
 # virtual methods
 .method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Ljava/lang/String;
-    .param p4, "extras"    # Landroid/os/Bundle;
-    .param p5, "ordered"    # Z
-    .param p6, "sticky"    # Z
-    .param p7, "sendingUser"    # I
 
-    .line 544
     iget-object v0, p0, Lcom/android/server/am/UserController$1;->this$0:Lcom/android/server/am/UserController;
 
     invoke-static {v0}, Lcom/android/server/am/UserController;->access$100(Lcom/android/server/am/UserController;)Lcom/android/server/am/UserController$Injector;
@@ -64,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/pm/UserManagerService;->makeInitialized(I)V
 
-    .line 545
     return-void
 .end method

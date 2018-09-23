@@ -12,15 +12,11 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
-    .param p1, "displayId"    # I
 
-    .line 36
     invoke-direct {p0}, Landroid/app/IInputForwarder$Stub;-><init>()V
 
-    .line 37
     iput p1, p0, Lcom/android/server/input/InputForwarder;->mDisplayId:I
 
-    .line 38
     const-class v0, Landroid/hardware/input/InputManagerInternal;
 
     invoke-static {v0}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -31,7 +27,6 @@
 
     iput-object v0, p0, Lcom/android/server/input/InputForwarder;->mInputManagerInternal:Landroid/hardware/input/InputManagerInternal;
 
-    .line 39
     return-void
 .end method
 
@@ -39,9 +34,7 @@
 # virtual methods
 .method public forwardEvent(Landroid/view/InputEvent;)Z
     .locals 3
-    .param p1, "event"    # Landroid/view/InputEvent;
 
-    .line 43
     iget-object v0, p0, Lcom/android/server/input/InputForwarder;->mInputManagerInternal:Landroid/hardware/input/InputManagerInternal;
 
     iget v1, p0, Lcom/android/server/input/InputForwarder;->mDisplayId:I

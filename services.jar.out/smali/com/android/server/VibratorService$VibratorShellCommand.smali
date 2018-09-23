@@ -27,10 +27,7 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Throwable;
-    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
-    .line 1382
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -56,27 +53,19 @@
 
 .method private constructor <init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;)V
     .locals 0
-    .param p2, "token"    # Landroid/os/IBinder;
 
-    .line 1358
     iput-object p1, p0, Lcom/android/server/VibratorService$VibratorShellCommand;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
 
-    .line 1359
     iput-object p2, p0, Lcom/android/server/VibratorService$VibratorShellCommand;->mToken:Landroid/os/IBinder;
 
-    .line 1360
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;Lcom/android/server/VibratorService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/VibratorService;
-    .param p2, "x1"    # Landroid/os/IBinder;
-    .param p3, "x2"    # Lcom/android/server/VibratorService$1;
 
-    .line 1352
     invoke-direct {p0, p1, p2}, Lcom/android/server/VibratorService$VibratorShellCommand;-><init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;)V
 
     return-void
@@ -85,14 +74,12 @@
 .method private runVibrate()I
     .locals 12
 
-    .line 1371
     const-string/jumbo v0, "runVibrate"
 
     const-wide/32 v1, 0x800000
 
     invoke-static {v1, v2, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 1374
     const/4 v0, 0x0
 
     :try_start_0
@@ -112,11 +99,8 @@
 
     move-result v3
 
-    .line 1376
-    .local v3, "zenMode":I
     if-eqz v3, :cond_2
 
-    .line 1377
     invoke-virtual {p0}, Lcom/android/server/VibratorService$VibratorShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v4
@@ -124,17 +108,13 @@
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1377
-    .local v4, "pw":Ljava/io/PrintWriter;
     const/4 v5, 0x0
 
-    .line 1378
     :try_start_1
     const-string v6, "Ignoring because device is on DND mode "
 
     invoke-virtual {v4, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 1379
     const-class v6, Landroid/provider/Settings$Global;
 
     const-string v7, "ZEN_MODE_"
@@ -148,10 +128,8 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1381
     nop
 
-    .line 1382
     if-eqz v4, :cond_0
 
     :try_start_2
@@ -160,20 +138,16 @@
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 1403
     :cond_0
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 1381
     return v0
 
-    .line 1382
     :catchall_0
     move-exception v6
 
     goto :goto_0
 
-    .line 1377
     :catch_0
     move-exception v5
 
@@ -182,7 +156,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1382
     :goto_0
     if-eqz v4, :cond_1
 
@@ -195,23 +168,17 @@
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 1386
-    .end local v3    # "zenMode":I
-    .end local v4    # "pw":Ljava/io/PrintWriter;
     :cond_2
     goto :goto_1
 
-    .line 1403
     :catchall_1
     move-exception v0
 
     goto :goto_2
 
-    .line 1384
     :catch_1
     move-exception v3
 
-    .line 1388
     :goto_1
     :try_start_5
     invoke-virtual {p0}, Lcom/android/server/VibratorService$VibratorShellCommand;->getNextArgRequired()Ljava/lang/String;
@@ -222,43 +189,31 @@
 
     move-result-wide v3
 
-    .line 1389
-    .local v3, "duration":J
     const-wide/16 v5, 0xc8
 
     cmp-long v5, v3, v5
 
     if-gtz v5, :cond_4
 
-    .line 1392
     invoke-virtual {p0}, Lcom/android/server/VibratorService$VibratorShellCommand;->getNextArg()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1393
-    .local v5, "description":Ljava/lang/String;
     if-nez v5, :cond_3
 
-    .line 1394
     const-string v6, "Shell command"
 
     move-object v5, v6
 
-    .line 1397
-    .end local v5    # "description":Ljava/lang/String;
-    .local v11, "description":Ljava/lang/String;
     :cond_3
     move-object v11, v5
 
     const/4 v5, -0x1
 
-    .line 1398
     invoke-static {v3, v4, v5}, Landroid/os/VibrationEffect;->createOneShot(JI)Landroid/os/VibrationEffect;
 
     move-result-object v8
 
-    .line 1399
-    .local v8, "effect":Landroid/os/VibrationEffect;
     iget-object v5, p0, Lcom/android/server/VibratorService$VibratorShellCommand;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
@@ -275,18 +230,12 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 1401
     nop
 
-    .line 1403
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 1401
     return v0
 
-    .line 1390
-    .end local v8    # "effect":Landroid/os/VibrationEffect;
-    .end local v11    # "description":Ljava/lang/String;
     :cond_4
     :try_start_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -299,8 +248,6 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 1403
-    .end local v3    # "duration":J
     :goto_2
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
@@ -311,9 +258,7 @@
 # virtual methods
 .method public onCommand(Ljava/lang/String;)I
     .locals 1
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 1364
     const-string/jumbo v0, "vibrate"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -322,14 +267,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1365
     invoke-direct {p0}, Lcom/android/server/VibratorService$VibratorShellCommand;->runVibrate()I
 
     move-result v0
 
     return v0
 
-    .line 1367
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/VibratorService$VibratorShellCommand;->handleDefaultCommands(Ljava/lang/String;)I
 
@@ -341,13 +284,10 @@
 .method public onHelp()V
     .locals 3
 
-    .line 1409
     invoke-virtual {p0}, Lcom/android/server/VibratorService$VibratorShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 1410
-    .local v0, "pw":Ljava/io/PrintWriter;
     const/4 v1, 0x0
 
     :try_start_0
@@ -355,37 +295,30 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1411
     const-string v2, "  help"
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1412
     const-string v2, "    Prints this help text."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1413
     const-string v2, ""
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1414
     const-string v2, "  vibrate duration [description]"
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1415
     const-string v2, "    Vibrates for duration milliseconds; ignored when device is on DND "
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1416
     const-string v2, "    (Do Not Disturb) mode."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1417
     const-string v2, ""
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -393,24 +326,18 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1418
     if-eqz v0, :cond_0
 
     invoke-static {v1, v0}, Lcom/android/server/VibratorService$VibratorShellCommand;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 1419
-    .end local v0    # "pw":Ljava/io/PrintWriter;
     :cond_0
     return-void
 
-    .line 1418
-    .restart local v0    # "pw":Ljava/io/PrintWriter;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
-    .line 1409
     :catch_0
     move-exception v1
 
@@ -419,7 +346,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1418
     :goto_0
     if-eqz v0, :cond_1
 

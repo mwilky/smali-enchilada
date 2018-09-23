@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 249
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,8 +39,6 @@
 # virtual methods
 .method public combine(Lcom/android/server/usage/IntervalStats;ZLjava/util/List;)V
     .locals 4
-    .param p1, "stats"    # Lcom/android/server/usage/IntervalStats;
-    .param p2, "mutable"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,11 +50,8 @@
         }
     .end annotation
 
-    .line 253
-    .local p3, "accResult":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/ConfigurationStats;>;"
     if-nez p2, :cond_0
 
-    .line 254
     iget-object v0, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->values()Ljava/util/Collection;
@@ -66,10 +60,8 @@
 
     invoke-interface {p3, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 255
     return-void
 
-    .line 258
     :cond_0
     iget-object v0, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
 
@@ -77,15 +69,11 @@
 
     move-result v0
 
-    .line 259
-    .local v0, "configCount":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 260
     new-instance v2, Landroid/app/usage/ConfigurationStats;
 
     iget-object v3, p1, Lcom/android/server/usage/IntervalStats;->configurations:Landroid/util/ArrayMap;
@@ -100,13 +88,10 @@
 
     invoke-interface {p3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 259
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 262
-    .end local v1    # "i":I
     :cond_1
     return-void
 .end method

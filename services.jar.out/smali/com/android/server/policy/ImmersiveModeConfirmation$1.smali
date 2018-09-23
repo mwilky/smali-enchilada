@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 370
     iput-object p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 374
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->access$800(Lcom/android/server/policy/ImmersiveModeConfirmation;)Z
@@ -48,24 +45,20 @@
 
     if-nez v0, :cond_0
 
-    .line 375
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation;->access$802(Lcom/android/server/policy/ImmersiveModeConfirmation;Z)Z
 
-    .line 376
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->access$900(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
 
-    .line 378
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;->this$0:Lcom/android/server/policy/ImmersiveModeConfirmation;
 
     invoke-static {v0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->access$1000(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
 
-    .line 379
     return-void
 .end method

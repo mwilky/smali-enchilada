@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
 
-    .line 1995
     iput-object p1, p0, Lcom/android/server/StorageManagerService$9;->this$0:Lcom/android/server/StorageManagerService;
 
     iput-object p2, p0, Lcom/android/server/StorageManagerService$9;->val$callback:Ljava/lang/Runnable;
@@ -39,15 +37,11 @@
 # virtual methods
 .method public onFinished(ILandroid/os/PersistableBundle;)V
     .locals 2
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 2002
     iget-object v0, p0, Lcom/android/server/StorageManagerService$9;->val$callback:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 2003
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -56,16 +50,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2005
     :cond_0
     return-void
 .end method
 
 .method public onStatus(ILandroid/os/PersistableBundle;)V
     .locals 0
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 1999
     return-void
 .end method

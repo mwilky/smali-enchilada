@@ -17,12 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 74
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 75
     return-void
 .end method
 
@@ -31,7 +28,6 @@
 .method public onStart()V
     .locals 2
 
-    .line 79
     invoke-virtual {p0}, Lcom/android/server/timezone/RulesManagerService$Lifecycle;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -40,20 +36,15 @@
 
     move-result-object v0
 
-    .line 80
-    .local v0, "service":Lcom/android/server/timezone/RulesManagerService;
     invoke-virtual {v0}, Lcom/android/server/timezone/RulesManagerService;->start()V
 
-    .line 84
     const-string/jumbo v1, "timezone"
 
     invoke-virtual {p0, v1, v0}, Lcom/android/server/timezone/RulesManagerService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 88
     const-class v1, Lcom/android/server/timezone/RulesManagerService;
 
     invoke-virtual {p0, v1, v0}, Lcom/android/server/timezone/RulesManagerService$Lifecycle;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 89
     return-void
 .end method

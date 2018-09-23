@@ -17,7 +17,6 @@
 # virtual methods
 .method public get(Ljava/lang/String;)Landroid/hardware/health/V2_0/IHealth;
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/util/NoSuchElementException;,
@@ -25,7 +24,6 @@
         }
     .end annotation
 
-    .line 1729
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Landroid/hardware/health/V2_0/IHealth;->getService(Ljava/lang/String;Z)Landroid/hardware/health/V2_0/IHealth;

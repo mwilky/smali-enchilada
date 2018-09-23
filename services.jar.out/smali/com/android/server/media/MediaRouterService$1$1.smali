@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaRouterService$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/media/MediaRouterService$1;
 
-    .line 122
     iput-object p1, p0, Lcom/android/server/media/MediaRouterService$1$1;->this$1:Lcom/android/server/media/MediaRouterService$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 1
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/media/MediaRouterService$1$1;->this$1:Lcom/android/server/media/MediaRouterService$1;
 
     iget-object v0, v0, Lcom/android/server/media/MediaRouterService$1;->this$0:Lcom/android/server/media/MediaRouterService;
 
     invoke-virtual {v0}, Lcom/android/server/media/MediaRouterService;->restoreBluetoothA2dp()V
 
-    .line 126
     return-void
 .end method

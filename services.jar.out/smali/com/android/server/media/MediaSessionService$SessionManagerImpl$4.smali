@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaSessionService$SessionManagerImpl;III)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
-    .line 1861
     iput-object p1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$4;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     iput p2, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$4;->val$direction:I
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 7
 
-    .line 1865
     :try_start_0
     iget-object v0, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$4;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
@@ -65,8 +62,6 @@
 
     move-result-object v0
 
-    .line 1867
-    .local v0, "packageName":Ljava/lang/String;
     const-string v1, "MediaSessionService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -85,7 +80,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1869
     iget-object v1, p0, Lcom/android/server/media/MediaSessionService$SessionManagerImpl$4;->this$1:Lcom/android/server/media/MediaSessionService$SessionManagerImpl;
 
     iget-object v1, v1, Lcom/android/server/media/MediaSessionService$SessionManagerImpl;->this$0:Lcom/android/server/media/MediaSessionService;
@@ -109,15 +103,11 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .end local v0    # "packageName":Ljava/lang/String;
     goto :goto_0
 
-    .line 1873
     :catch_0
     move-exception v0
 
-    .line 1874
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v1, "MediaSessionService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -154,27 +144,20 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     goto :goto_1
 
-    .line 1871
     :catch_1
     move-exception v0
 
-    .line 1872
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "MediaSessionService"
 
     const-string v2, "Error adjusting default volume."
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1877
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     nop
 
-    .line 1878
     :goto_1
     return-void
 .end method

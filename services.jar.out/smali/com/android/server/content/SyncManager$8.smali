@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/content/SyncManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
 
-    .line 485
     iput-object p1, p0, Lcom/android/server/content/SyncManager$8;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,21 +37,16 @@
 .method public run()V
     .locals 10
 
-    .line 488
     iget-object v0, p0, Lcom/android/server/content/SyncManager$8;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-static {v0}, Lcom/android/server/content/SyncManager;->access$1500(Lcom/android/server/content/SyncManager;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 489
-    .local v0, "ops":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/content/SyncOperation;>;"
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 490
-    .local v1, "cleanedKeys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -71,8 +64,6 @@
 
     check-cast v3, Lcom/android/server/content/SyncOperation;
 
-    .line 491
-    .local v3, "opx":Lcom/android/server/content/SyncOperation;
     iget-object v4, v3, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
 
     invoke-interface {v1, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -81,16 +72,13 @@
 
     if-eqz v4, :cond_0
 
-    .line 492
     goto :goto_0
 
-    .line 494
     :cond_0
     iget-object v4, v3, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
 
     invoke-interface {v1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 495
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -108,14 +96,10 @@
 
     check-cast v5, Lcom/android/server/content/SyncOperation;
 
-    .line 496
-    .local v5, "opy":Lcom/android/server/content/SyncOperation;
     if-ne v3, v5, :cond_1
 
-    .line 497
     goto :goto_1
 
-    .line 499
     :cond_1
     iget-object v6, v3, Lcom/android/server/content/SyncOperation;->key:Ljava/lang/String;
 
@@ -127,7 +111,6 @@
 
     if-eqz v6, :cond_2
 
-    .line 500
     iget-object v6, p0, Lcom/android/server/content/SyncManager$8;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-static {v6}, Lcom/android/server/content/SyncManager;->access$1000(Lcom/android/server/content/SyncManager;)Lcom/android/server/content/SyncLogger;
@@ -150,7 +133,6 @@
 
     invoke-virtual {v6, v7}, Lcom/android/server/content/SyncLogger;->log([Ljava/lang/Object;)V
 
-    .line 501
     iget-object v6, p0, Lcom/android/server/content/SyncManager$8;->this$0:Lcom/android/server/content/SyncManager;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -175,17 +157,12 @@
 
     invoke-static {v6, v5, v7}, Lcom/android/server/content/SyncManager;->access$1600(Lcom/android/server/content/SyncManager;Lcom/android/server/content/SyncOperation;Ljava/lang/String;)V
 
-    .line 503
-    .end local v5    # "opy":Lcom/android/server/content/SyncOperation;
     :cond_2
     goto :goto_1
 
-    .line 504
-    .end local v3    # "opx":Lcom/android/server/content/SyncOperation;
     :cond_3
     goto :goto_0
 
-    .line 505
     :cond_4
     return-void
 .end method

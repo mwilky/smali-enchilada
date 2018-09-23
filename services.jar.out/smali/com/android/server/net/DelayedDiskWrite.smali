@@ -25,15 +25,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mWriteSequence:I
 
-    .line 34
     const-string v0, "DelayedDiskWrite"
 
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->TAG:Ljava/lang/String;
@@ -43,12 +40,7 @@
 
 .method static synthetic access$000(Lcom/android/server/net/DelayedDiskWrite;Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/net/DelayedDiskWrite;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # Lcom/android/server/net/DelayedDiskWrite$Writer;
-    .param p3, "x3"    # Z
 
-    .line 29
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/net/DelayedDiskWrite;->doWrite(Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;Z)V
 
     return-void
@@ -56,20 +48,13 @@
 
 .method private doWrite(Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;Z)V
     .locals 5
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "w"    # Lcom/android/server/net/DelayedDiskWrite$Writer;
-    .param p3, "open"    # Z
 
-    .line 67
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    .line 69
-    .local v1, "out":Ljava/io/DataOutputStream;
     if-eqz p3, :cond_0
 
-    .line 70
     :try_start_0
     new-instance v2, Ljava/io/DataOutputStream;
 
@@ -87,19 +72,16 @@
 
     goto :goto_0
 
-    .line 77
     :catchall_0
     move-exception v2
 
     goto :goto_6
 
-    .line 74
     :catch_0
     move-exception v2
 
     goto :goto_3
 
-    .line 73
     :cond_0
     :goto_0
     invoke-interface {p2, v1}, Lcom/android/server/net/DelayedDiskWrite$Writer;->onWriteCalled(Ljava/io/DataOutputStream;)V
@@ -107,27 +89,22 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 77
     if-eqz v1, :cond_1
 
-    .line 79
     :try_start_1
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 80
     goto :goto_1
 
     :catch_1
     move-exception v2
 
-    .line 84
     :cond_1
     :goto_1
     monitor-enter p0
 
-    .line 85
     :try_start_2
     iget v2, p0, Lcom/android/server/net/DelayedDiskWrite;->mWriteSequence:I
 
@@ -137,7 +114,6 @@
 
     if-nez v2, :cond_2
 
-    .line 86
     iget-object v2, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
     invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -146,21 +122,16 @@
 
     invoke-virtual {v2}, Landroid/os/Looper;->quit()V
 
-    .line 87
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
-    .line 88
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
 
-    .line 90
     :cond_2
     monitor-exit p0
 
-    .line 91
     :goto_2
     goto :goto_5
 
-    .line 90
     :catchall_1
     move-exception v0
 
@@ -170,12 +141,9 @@
 
     throw v0
 
-    .line 74
     :goto_3
     nop
 
-    .line 75
-    .local v2, "e":Ljava/io/IOException;
     :try_start_3
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -195,28 +163,22 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 77
-    .end local v2    # "e":Ljava/io/IOException;
     if-eqz v1, :cond_3
 
-    .line 79
     :try_start_4
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 80
     goto :goto_4
 
     :catch_2
     move-exception v2
 
-    .line 84
     :cond_3
     :goto_4
     monitor-enter p0
 
-    .line 85
     :try_start_5
     iget v2, p0, Lcom/android/server/net/DelayedDiskWrite;->mWriteSequence:I
 
@@ -226,7 +188,6 @@
 
     if-nez v2, :cond_4
 
-    .line 86
     iget-object v2, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
     invoke-virtual {v2}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -235,23 +196,18 @@
 
     invoke-virtual {v2}, Landroid/os/Looper;->quit()V
 
-    .line 87
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
-    .line 88
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
 
-    .line 90
     :cond_4
     monitor-exit p0
 
     goto :goto_2
 
-    .line 92
     :goto_5
     return-void
 
-    .line 90
     :catchall_2
     move-exception v0
 
@@ -261,28 +217,23 @@
 
     throw v0
 
-    .line 77
     :goto_6
     if-eqz v1, :cond_5
 
-    .line 79
     :try_start_6
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 80
     goto :goto_7
 
     :catch_3
     move-exception v3
 
-    .line 84
     :cond_5
     :goto_7
     monitor-enter p0
 
-    .line 85
     :try_start_7
     iget v3, p0, Lcom/android/server/net/DelayedDiskWrite;->mWriteSequence:I
 
@@ -292,7 +243,6 @@
 
     if-nez v3, :cond_6
 
-    .line 86
     iget-object v3, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
     invoke-virtual {v3}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -301,13 +251,10 @@
 
     invoke-virtual {v3}, Landroid/os/Looper;->quit()V
 
-    .line 87
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
-    .line 88
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
 
-    .line 90
     :cond_6
     monitor-exit p0
     :try_end_7
@@ -328,14 +275,11 @@
 
 .method private loge(Ljava/lang/String;)V
     .locals 1
-    .param p1, "s"    # Ljava/lang/String;
 
-    .line 95
     const-string v0, "DelayedDiskWrite"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
     return-void
 .end method
 
@@ -343,35 +287,25 @@
 # virtual methods
 .method public write(Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;)V
     .locals 1
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "w"    # Lcom/android/server/net/DelayedDiskWrite$Writer;
 
-    .line 41
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/server/net/DelayedDiskWrite;->write(Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;Z)V
 
-    .line 42
     return-void
 .end method
 
 .method public write(Ljava/lang/String;Lcom/android/server/net/DelayedDiskWrite$Writer;Z)V
     .locals 2
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "w"    # Lcom/android/server/net/DelayedDiskWrite$Writer;
-    .param p3, "open"    # Z
 
-    .line 45
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 50
     monitor-enter p0
 
-    .line 51
     :try_start_0
     iget v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mWriteSequence:I
 
@@ -383,7 +317,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 52
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "DelayedDiskWriteThread"
@@ -392,12 +325,10 @@
 
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
 
-    .line 53
     iget-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 54
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandlerThread:Landroid/os/HandlerThread;
@@ -410,13 +341,11 @@
 
     iput-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
-    .line 56
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 58
     iget-object v0, p0, Lcom/android/server/net/DelayedDiskWrite;->mDiskWriteHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/server/net/DelayedDiskWrite$1;
@@ -425,10 +354,8 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 64
     return-void
 
-    .line 56
     :catchall_0
     move-exception v0
 
@@ -439,7 +366,6 @@
 
     throw v0
 
-    .line 46
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

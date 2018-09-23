@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/autofill/ui/FillUi;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/autofill/ui/FillUi;
 
-    .line 367
     iput-object p1, p0, Lcom/android/server/autofill/ui/FillUi$2;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-direct {p0}, Landroid/widget/RemoteViews$OnClickHandler;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p3, "fillInIntent"    # Landroid/content/Intent;
 
-    .line 371
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_0
@@ -62,7 +56,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 372
     :cond_0
     const/4 v0, 0x1
 

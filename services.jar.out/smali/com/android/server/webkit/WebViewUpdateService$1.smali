@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/webkit/WebViewUpdateService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/webkit/WebViewUpdateService;
 
-    .line 66
     iput-object p1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 69
     const-string v0, "android.intent.extra.user_handle"
 
     const/16 v1, -0x2710
@@ -47,8 +42,6 @@
 
     move-result v0
 
-    .line 70
-    .local v0, "userId":I
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -143,7 +136,6 @@
 
     goto :goto_3
 
-    .line 99
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -155,7 +147,6 @@
 
     goto :goto_3
 
-    .line 96
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -165,10 +156,8 @@
 
     invoke-virtual {v1, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->handleNewUser(I)V
 
-    .line 97
     goto :goto_3
 
-    .line 91
     :pswitch_2
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -180,7 +169,6 @@
 
     move-result-object v2
 
-    .line 92
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v3
@@ -193,26 +181,20 @@
 
     if-eqz v3, :cond_1
 
-    .line 93
     nop
 
-    .line 91
     move v4, v6
 
     goto :goto_2
 
-    .line 93
     :cond_1
     nop
 
-    .line 91
     :goto_2
     invoke-virtual {v1, v2, v4, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->packageStateChanged(Ljava/lang/String;II)V
 
-    .line 94
     goto :goto_3
 
-    .line 85
     :pswitch_3
     invoke-static {p2}, Lcom/android/server/webkit/WebViewUpdateService;->entirePackageChanged(Landroid/content/Intent;)Z
 
@@ -220,7 +202,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 86
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
     invoke-static {v1}, Lcom/android/server/webkit/WebViewUpdateService;->access$100(Lcom/android/server/webkit/WebViewUpdateService;)Lcom/android/server/webkit/WebViewUpdateServiceImpl;
@@ -235,7 +216,6 @@
 
     goto :goto_3
 
-    .line 78
     :pswitch_4
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -251,7 +231,6 @@
 
     return-void
 
-    .line 79
     :cond_2
     iget-object v1, p0, Lcom/android/server/webkit/WebViewUpdateService$1;->this$0:Lcom/android/server/webkit/WebViewUpdateService;
 
@@ -265,10 +244,8 @@
 
     invoke-virtual {v1, v2, v3, v0}, Lcom/android/server/webkit/WebViewUpdateServiceImpl;->packageStateChanged(Ljava/lang/String;II)V
 
-    .line 81
     nop
 
-    .line 102
     :cond_3
     :goto_3
     return-void

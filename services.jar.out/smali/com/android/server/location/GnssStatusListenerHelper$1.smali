@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssStatusListenerHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssStatusListenerHelper;
 
-    .line 48
     iput-object p1, p0, Lcom/android/server/location/GnssStatusListenerHelper$1;->this$0:Lcom/android/server/location/GnssStatusListenerHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,14 @@
 # virtual methods
 .method public execute(Landroid/location/IGnssStatusListener;)V
     .locals 0
-    .param p1, "listener"    # Landroid/location/IGnssStatusListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 51
     invoke-interface {p1}, Landroid/location/IGnssStatusListener;->onGnssStarted()V
 
-    .line 52
     return-void
 .end method
 
@@ -60,7 +55,6 @@
         }
     .end annotation
 
-    .line 48
     check-cast p1, Landroid/location/IGnssStatusListener;
 
     invoke-virtual {p0, p1}, Lcom/android/server/location/GnssStatusListenerHelper$1;->execute(Landroid/location/IGnssStatusListener;)V

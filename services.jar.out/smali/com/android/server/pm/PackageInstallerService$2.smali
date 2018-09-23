@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageInstallerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageInstallerService;
 
-    .line 392
     iput-object p1, p0, Lcom/android/server/pm/PackageInstallerService$2;->this$0:Lcom/android/server/pm/PackageInstallerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 395
     iget-object v0, p0, Lcom/android/server/pm/PackageInstallerService$2;->this$0:Lcom/android/server/pm/PackageInstallerService;
 
     invoke-static {v0}, Lcom/android/server/pm/PackageInstallerService;->access$000(Lcom/android/server/pm/PackageInstallerService;)Landroid/util/SparseArray;
@@ -48,19 +45,15 @@
 
     monitor-enter v0
 
-    .line 396
     :try_start_0
     iget-object v1, p0, Lcom/android/server/pm/PackageInstallerService$2;->this$0:Lcom/android/server/pm/PackageInstallerService;
 
     invoke-static {v1}, Lcom/android/server/pm/PackageInstallerService;->access$100(Lcom/android/server/pm/PackageInstallerService;)V
 
-    .line 397
     monitor-exit v0
 
-    .line 398
     return-void
 
-    .line 397
     :catchall_0
     move-exception v1
 

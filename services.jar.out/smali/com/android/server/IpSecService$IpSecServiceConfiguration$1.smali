@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 127
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,19 +36,14 @@
         }
     .end annotation
 
-    .line 130
     invoke-static {}, Landroid/net/util/NetdService;->getInstance()Landroid/net/INetd;
 
     move-result-object v0
 
-    .line 131
-    .local v0, "netd":Landroid/net/INetd;
     if-eqz v0, :cond_0
 
-    .line 134
     return-object v0
 
-    .line 132
     :cond_0
     new-instance v1, Landroid/os/RemoteException;
 

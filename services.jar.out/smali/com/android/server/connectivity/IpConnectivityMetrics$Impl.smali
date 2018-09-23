@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/connectivity/IpConnectivityMetrics;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/IpConnectivityMetrics;
 
-    .line 265
     iput-object p1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-direct {p0}, Landroid/net/IIpConnectivityMetrics$Stub;-><init>()V
@@ -46,45 +44,36 @@
 .method private enforceConnectivityInternalPermission()V
     .locals 1
 
-    .line 317
     const-string v0, "android.permission.CONNECTIVITY_INTERNAL"
 
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforcePermission(Ljava/lang/String;)V
 
-    .line 318
     return-void
 .end method
 
 .method private enforceDumpPermission()V
     .locals 1
 
-    .line 321
     const-string v0, "android.permission.DUMP"
 
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforcePermission(Ljava/lang/String;)V
 
-    .line 322
     return-void
 .end method
 
 .method private enforceNetdEventListeningPermission()V
     .locals 5
 
-    .line 329
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
 
-    .line 330
-    .local v0, "uid":I
     const/16 v1, 0x3e8
 
     if-ne v0, v1, :cond_0
 
-    .line 334
     return-void
 
-    .line 331
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
@@ -94,14 +83,12 @@
 
     const/4 v3, 0x0
 
-    .line 332
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     aput-object v4, v2, v3
 
-    .line 331
     const-string v3, "Uid %d has no permission to listen for netd events."
 
     invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -115,9 +102,7 @@
 
 .method private enforcePermission(Ljava/lang/String;)V
     .locals 2
-    .param p1, "what"    # Ljava/lang/String;
 
-    .line 325
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-virtual {v0}, Lcom/android/server/connectivity/IpConnectivityMetrics;->getContext()Landroid/content/Context;
@@ -128,7 +113,6 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 326
     return-void
 .end method
 
@@ -136,25 +120,19 @@
 # virtual methods
 .method public addNetdEventCallback(ILandroid/net/INetdEventCallback;)Z
     .locals 1
-    .param p1, "callerType"    # I
-    .param p2, "callback"    # Landroid/net/INetdEventCallback;
 
-    .line 338
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforceNetdEventListeningPermission()V
 
-    .line 339
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     iget-object v0, v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     if-nez v0, :cond_0
 
-    .line 340
     const/4 v0, 0x0
 
     return v0
 
-    .line 342
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
@@ -169,14 +147,9 @@
 
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 6
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 288
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforceDumpPermission()V
 
-    .line 290
     array-length v0, p3
 
     const/4 v1, 0x0
@@ -190,8 +163,6 @@
     :cond_0
     const-string v0, ""
 
-    .line 291
-    .local v0, "cmd":Ljava/lang/String;
     :goto_0
     const/4 v2, -0x1
 
@@ -278,32 +249,25 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 309
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-static {v1, p2}, Lcom/android/server/connectivity/IpConnectivityMetrics;->access$400(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
 
-    .line 310
     const-string v1, ""
 
     invoke-virtual {p2, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 311
     invoke-static {p2, v2}, Landroid/net/ip/IpClient;->dumpAllLogs(Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 312
     return-void
 
-    .line 306
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-static {v1, p2}, Lcom/android/server/connectivity/IpConnectivityMetrics;->access$400(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
 
-    .line 307
     return-void
 
-    .line 299
     :pswitch_1
     if-eqz p3, :cond_6
 
@@ -311,7 +275,6 @@
 
     if-le v1, v5, :cond_6
 
-    .line 300
     array-length v1, p3
 
     invoke-static {p3, v5, v1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
@@ -324,34 +287,25 @@
 
     nop
 
-    .line 301
     :cond_6
     move-object v1, v2
 
-    .line 302
-    .local v1, "ipclientArgs":[Ljava/lang/String;
     invoke-static {p2, v1}, Landroid/net/ip/IpClient;->dumpAllLogs(Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 303
     return-void
 
-    .line 296
-    .end local v1    # "ipclientArgs":[Ljava/lang/String;
     :pswitch_2
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-static {v1, p2}, Lcom/android/server/connectivity/IpConnectivityMetrics;->access$300(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
 
-    .line 297
     return-void
 
-    .line 293
     :pswitch_3
     iget-object v1, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-static {v1, p2}, Lcom/android/server/connectivity/IpConnectivityMetrics;->access$200(Lcom/android/server/connectivity/IpConnectivityMetrics;Ljava/io/PrintWriter;)V
 
-    .line 294
     return-void
 
     nop
@@ -367,12 +321,9 @@
 
 .method public logEvent(Landroid/net/ConnectivityMetricsEvent;)I
     .locals 1
-    .param p1, "event"    # Landroid/net/ConnectivityMetricsEvent;
 
-    .line 282
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforceConnectivityInternalPermission()V
 
-    .line 283
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     invoke-static {v0, p1}, Lcom/android/server/connectivity/IpConnectivityMetrics;->access$100(Lcom/android/server/connectivity/IpConnectivityMetrics;Landroid/net/ConnectivityMetricsEvent;)I
@@ -384,24 +335,19 @@
 
 .method public removeNetdEventCallback(I)Z
     .locals 1
-    .param p1, "callerType"    # I
 
-    .line 347
     invoke-direct {p0}, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->enforceNetdEventListeningPermission()V
 
-    .line 348
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 
     iget-object v0, v0, Lcom/android/server/connectivity/IpConnectivityMetrics;->mNetdListener:Lcom/android/server/connectivity/NetdEventListenerService;
 
     if-nez v0, :cond_0
 
-    .line 350
     const/4 v0, 0x1
 
     return v0
 
-    .line 352
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/IpConnectivityMetrics$Impl;->this$0:Lcom/android/server/connectivity/IpConnectivityMetrics;
 

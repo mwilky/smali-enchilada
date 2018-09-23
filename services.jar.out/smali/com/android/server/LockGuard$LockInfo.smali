@@ -34,10 +34,8 @@
 .method private constructor <init>()V
     .locals 3
 
-    .line 84
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     new-instance v0, Landroid/util/ArraySet;
 
     const/4 v1, 0x0
@@ -53,9 +51,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/LockGuard$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/LockGuard$1;
 
-    .line 84
     invoke-direct {p0}, Lcom/android/server/LockGuard$LockInfo;-><init>()V
 
     return-void

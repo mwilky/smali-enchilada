@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 1961
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$5;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iput-boolean p2, p0, Lcom/android/server/policy/OemPhoneWindowManager$5;->val$lidOpen:Z
@@ -43,27 +41,22 @@
 .method public run()V
     .locals 3
 
-    .line 1964
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.LID_SWITCH"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1965
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x1000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1966
     const-string/jumbo v1, "lidOpen"
 
     iget-boolean v2, p0, Lcom/android/server/policy/OemPhoneWindowManager$5;->val$lidOpen:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 1967
     iget-object v1, p0, Lcom/android/server/policy/OemPhoneWindowManager$5;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/server/policy/OemPhoneWindowManager;->mContext:Landroid/content/Context;
@@ -72,6 +65,5 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 1969
     return-void
 .end method

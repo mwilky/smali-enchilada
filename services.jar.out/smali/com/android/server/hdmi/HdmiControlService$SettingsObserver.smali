@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/hdmi/HdmiControlService;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 501
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 502
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 503
     return-void
 .end method
 
@@ -37,16 +33,11 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 5
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 508
     invoke-virtual {p2}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 509
-    .local v0, "option":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     const/4 v2, 0x1
@@ -55,8 +46,6 @@
 
     move-result v1
 
-    .line 510
-    .local v1, "enabled":Z
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v3
@@ -152,7 +141,6 @@
 
     goto/16 :goto_3
 
-    .line 538
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -170,16 +158,13 @@
 
     goto :goto_3
 
-    .line 535
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v2, v1}, Lcom/android/server/hdmi/HdmiControlService;->setMhlInputChangeEnabled(Z)V
 
-    .line 536
     goto :goto_3
 
-    .line 530
     :pswitch_2
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -189,7 +174,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 531
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v2}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
@@ -200,7 +184,6 @@
 
     goto :goto_3
 
-    .line 521
     :pswitch_3
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -229,8 +212,6 @@
 
     move-result v3
 
-    .line 522
-    .local v3, "type":I
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v4}, Lcom/android/server/hdmi/HdmiControlService;->access$1100(Lcom/android/server/hdmi/HdmiControlService;)Lcom/android/server/hdmi/HdmiCecController;
@@ -241,24 +222,16 @@
 
     move-result-object v4
 
-    .line 523
-    .local v4, "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     if-eqz v4, :cond_1
 
-    .line 524
     invoke-virtual {v4, v1}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->setAutoDeviceOff(Z)V
 
-    .line 526
-    .end local v3    # "type":I
-    .end local v4    # "localDevice":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     :cond_1
     goto :goto_2
 
-    .line 528
     :cond_2
     goto :goto_3
 
-    .line 515
     :pswitch_4
     iget-object v3, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -268,7 +241,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 516
     iget-object v3, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v3}, Lcom/android/server/hdmi/HdmiControlService;->tv()Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
@@ -277,25 +249,20 @@
 
     invoke-virtual {v3, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->setAutoWakeup(Z)V
 
-    .line 518
     :cond_3
     iget-object v3, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v3, v2, v1}, Lcom/android/server/hdmi/HdmiControlService;->setCecOption(IZ)V
 
-    .line 519
     goto :goto_3
 
-    .line 512
     :pswitch_5
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiControlService$SettingsObserver;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-virtual {v2, v1}, Lcom/android/server/hdmi/HdmiControlService;->setControlEnabled(Z)V
 
-    .line 513
     nop
 
-    .line 541
     :cond_4
     :goto_3
     return-void

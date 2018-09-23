@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;
 
-    .line 6887
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->this$1:Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->val$info:Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
@@ -47,15 +45,13 @@
 .method public run()V
     .locals 3
 
-    .line 6890
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->this$1:Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->val$info:Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
 
     iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants$1;->val$sbnToPost:Landroid/service/notification/StatusBarNotification;
 
-    invoke-static {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;->access$9200(Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;)V
+    invoke-static {v0, v1, v2}, Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;->access$9100(Lcom/android/server/notification/NotificationManagerService$NotificationAssistants;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;Landroid/service/notification/StatusBarNotification;)V
 
-    .line 6891
     return-void
 .end method

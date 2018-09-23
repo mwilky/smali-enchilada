@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AppOpsService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/AppOpsService;
 
-    .line 948
     iput-object p1, p0, Lcom/android/server/AppOpsService$4;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public getMountMode(ILjava/lang/String;)I
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 951
     invoke-static {p1}, Landroid/os/Process;->isIsolated(I)Z
 
     move-result v0
@@ -50,10 +45,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 952
     return v1
 
-    .line 954
     :cond_0
     iget-object v0, p0, Lcom/android/server/AppOpsService$4;->this$0:Lcom/android/server/AppOpsService;
 
@@ -65,10 +58,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 956
     return v1
 
-    .line 958
     :cond_1
     iget-object v0, p0, Lcom/android/server/AppOpsService$4;->this$0:Lcom/android/server/AppOpsService;
 
@@ -80,12 +71,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 960
     const/4 v0, 0x2
 
     return v0
 
-    .line 962
     :cond_2
     const/4 v0, 0x3
 
@@ -94,16 +83,11 @@
 
 .method public hasExternalStorage(ILjava/lang/String;)Z
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 967
     invoke-virtual {p0, p1, p2}, Lcom/android/server/AppOpsService$4;->getMountMode(ILjava/lang/String;)I
 
     move-result v0
 
-    .line 968
-    .local v0, "mountMode":I
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_1

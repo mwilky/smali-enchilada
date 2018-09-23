@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public test(Landroid/content/pm/PackageInfo;)Z
     .locals 1
-    .param p1, "pi"    # Landroid/content/pm/PackageInfo;
 
-    .line 266
     invoke-static {p1}, Lcom/android/server/pm/ShortcutService;->access$000(Landroid/content/pm/PackageInfo;)Z
 
     move-result v0
@@ -55,7 +52,6 @@
 .method public bridge synthetic test(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 264
     check-cast p1, Landroid/content/pm/PackageInfo;
 
     invoke-virtual {p0, p1}, Lcom/android/server/pm/ShortcutService$2;->test(Landroid/content/pm/PackageInfo;)Z

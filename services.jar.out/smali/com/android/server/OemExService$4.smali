@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemExService;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemExService;
 
-    .line 416
     iput-object p1, p0, Lcom/android/server/OemExService$4;->this$0:Lcom/android/server/OemExService;
 
     iput-object p2, p0, Lcom/android/server/OemExService$4;->val$apkPath:Ljava/lang/String;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 420
     :try_start_0
     iget-object v0, p0, Lcom/android/server/OemExService$4;->this$0:Lcom/android/server/OemExService;
 
@@ -53,23 +50,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 423
     goto :goto_0
 
-    .line 421
     :catch_0
     move-exception v0
 
-    .line 422
-    .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "OemExService"
 
     const-string/jumbo v2, "installAPKs error."
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 424
-    .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

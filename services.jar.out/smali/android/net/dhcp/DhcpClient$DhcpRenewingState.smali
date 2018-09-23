@@ -21,19 +21,15 @@
 # direct methods
 .method public constructor <init>(Landroid/net/dhcp/DhcpClient;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
-    .line 1048
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$DhcpRenewingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0, p1}, Landroid/net/dhcp/DhcpClient$DhcpReacquiringState;-><init>(Landroid/net/dhcp/DhcpClient;)V
 
-    .line 1049
     const-string v0, "Renewed"
 
     iput-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpRenewingState;->mLeaseMsg:Ljava/lang/String;
 
-    .line 1050
     return-void
 .end method
 
@@ -42,7 +38,6 @@
 .method protected packetDestination()Ljava/net/Inet4Address;
     .locals 1
 
-    .line 1071
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpRenewingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->access$3100(Landroid/net/dhcp/DhcpClient;)Landroid/net/DhcpResults;
@@ -53,7 +48,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1072
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpRenewingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-static {v0}, Landroid/net/dhcp/DhcpClient;->access$3100(Landroid/net/dhcp/DhcpClient;)Landroid/net/DhcpResults;
@@ -67,16 +61,13 @@
     :cond_0
     sget-object v0, Landroid/net/dhcp/DhcpPacket;->INADDR_BROADCAST:Ljava/net/Inet4Address;
 
-    .line 1071
     :goto_0
     return-object v0
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 3
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 1054
     invoke-super {p0, p1}, Landroid/net/dhcp/DhcpClient$DhcpReacquiringState;->processMessage(Landroid/os/Message;)Z
 
     move-result v0
@@ -85,10 +76,8 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1055
     return v1
 
-    .line 1058
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -96,12 +85,10 @@
 
     if-eq v0, v2, :cond_1
 
-    .line 1063
     const/4 v0, 0x0
 
     return v0
 
-    .line 1060
     :cond_1
     iget-object v0, p0, Landroid/net/dhcp/DhcpClient$DhcpRenewingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
@@ -113,6 +100,5 @@
 
     invoke-virtual {v0, v2}, Landroid/net/dhcp/DhcpClient;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 1061
     return v1
 .end method

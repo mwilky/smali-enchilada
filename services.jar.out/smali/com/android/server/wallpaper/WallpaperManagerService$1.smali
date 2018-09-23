@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wallpaper/WallpaperManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/wallpaper/WallpaperManagerService;
 
-    .line 1390
     iput-object p1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$1;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1393
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1394
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_REMOVED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -53,7 +46,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1395
     iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$1;->this$0:Lcom/android/server/wallpaper/WallpaperManagerService;
 
     const-string v2, "android.intent.extra.user_handle"
@@ -66,7 +58,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/wallpaper/WallpaperManagerService;->onRemoveUser(I)V
 
-    .line 1398
     :cond_0
     return-void
 .end method

@@ -47,9 +47,7 @@
 
 .method public shouldDeferAnimationFinish(Ljava/lang/Runnable;)Z
     .locals 1
-    .param p1, "endDeferFinishCallback"    # Ljava/lang/Runnable;
 
-    .line 429
     const/4 v0, 0x0
 
     return v0

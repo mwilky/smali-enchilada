@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/appwidget/AppWidgetServiceImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
-    .line 183
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 186
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 187
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.extra.user_handle"
 
     const/16 v2, -0x2710
@@ -53,15 +46,12 @@
 
     move-result v1
 
-    .line 189
-    .local v1, "userId":I
     invoke-static {}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$000()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 190
     const-string v2, "AppWidgetServiceImpl"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -86,7 +76,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
     :cond_0
     const/4 v2, -0x1
 
@@ -169,7 +158,6 @@
     :goto_0
     packed-switch v2, :pswitch_data_0
 
-    .line 212
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-virtual {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->getSendingUserId()I
@@ -180,7 +168,6 @@
 
     goto :goto_1
 
-    .line 208
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -190,7 +177,6 @@
 
     invoke-static {v2, p2, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$400(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;I)V
 
-    .line 209
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-virtual {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->getSendingUserId()I
@@ -199,10 +185,8 @@
 
     invoke-static {v2, p2, v5, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$500(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;ZI)V
 
-    .line 210
     goto :goto_1
 
-    .line 204
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -212,7 +196,6 @@
 
     invoke-static {v2, p2, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$400(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;I)V
 
-    .line 205
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-virtual {p0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->getSendingUserId()I
@@ -221,10 +204,8 @@
 
     invoke-static {v2, p2, v4, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$500(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;ZI)V
 
-    .line 206
     goto :goto_1
 
-    .line 199
     :pswitch_2
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -234,19 +215,15 @@
 
     monitor-enter v2
 
-    .line 200
     :try_start_0
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v3, v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$300(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
 
-    .line 201
     monitor-exit v2
 
-    .line 202
     goto :goto_1
 
-    .line 201
     :catchall_0
     move-exception v3
 
@@ -256,16 +233,13 @@
 
     throw v3
 
-    .line 195
     :pswitch_3
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$1;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)V
 
-    .line 196
     nop
 
-    .line 215
     :goto_1
     return-void
 

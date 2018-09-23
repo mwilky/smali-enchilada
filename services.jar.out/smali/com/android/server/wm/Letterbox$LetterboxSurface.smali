@@ -29,38 +29,31 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/wm/Letterbox;Ljava/lang/String;)V
     .locals 0
-    .param p2, "type"    # Ljava/lang/String;
 
-    .line 136
     iput-object p1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->this$0:Lcom/android/server/wm/Letterbox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 133
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
 
-    .line 134
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
-    .line 137
     iput-object p2, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mType:Ljava/lang/String;
 
-    .line 138
     return-void
 .end method
 
 .method private createSurface()V
     .locals 3
 
-    .line 150
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->this$0:Lcom/android/server/wm/Letterbox;
 
     invoke-static {v0}, Lcom/android/server/wm/Letterbox;->access$000(Lcom/android/server/wm/Letterbox;)Ljava/util/function/Supplier;
@@ -93,7 +86,6 @@
 
     move-result-object v0
 
-    .line 151
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceControl$Builder;->setFlags(I)Landroid/view/SurfaceControl$Builder;
@@ -112,14 +104,12 @@
 
     iput-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceControl;->setLayer(I)V
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     const/4 v1, 0x3
@@ -130,7 +120,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/SurfaceControl;->setColor([F)V
 
-    .line 154
     return-void
 
     nop
@@ -147,9 +136,7 @@
 # virtual methods
 .method public applySurfaceChanges(Landroid/view/SurfaceControl$Transaction;)V
     .locals 3
-    .param p1, "t"    # Landroid/view/SurfaceControl$Transaction;
 
-    .line 179
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
@@ -160,10 +147,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 181
     return-void
 
-    .line 183
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
 
@@ -171,7 +156,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 184
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -180,15 +164,12 @@
 
     if-nez v0, :cond_2
 
-    .line 185
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     if-nez v0, :cond_1
 
-    .line 186
     invoke-direct {p0}, Lcom/android/server/wm/Letterbox$LetterboxSurface;->createSurface()V
 
-    .line 188
     :cond_1
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
@@ -206,7 +187,6 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/view/SurfaceControl$Transaction;->setPosition(Landroid/view/SurfaceControl;FF)Landroid/view/SurfaceControl$Transaction;
 
-    .line 189
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     iget-object v1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
@@ -223,25 +203,21 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/view/SurfaceControl$Transaction;->setSize(Landroid/view/SurfaceControl;II)Landroid/view/SurfaceControl$Transaction;
 
-    .line 190
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     invoke-virtual {p1, v0}, Landroid/view/SurfaceControl$Transaction;->show(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Transaction;
 
     goto :goto_0
 
-    .line 191
     :cond_2
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     if-eqz v0, :cond_3
 
-    .line 192
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     invoke-virtual {p1, v0}, Landroid/view/SurfaceControl$Transaction;->hide(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Transaction;
 
-    .line 194
     :cond_3
     :goto_0
     return-void
@@ -250,22 +226,18 @@
 .method public destroy()V
     .locals 1
 
-    .line 157
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     if-eqz v0, :cond_0
 
-    .line 158
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
     invoke-virtual {v0}, Landroid/view/SurfaceControl;->destroy()V
 
-    .line 159
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurface:Landroid/view/SurfaceControl;
 
-    .line 161
     :cond_0
     return-void
 .end method
@@ -273,7 +245,6 @@
 .method public getHeight()I
     .locals 2
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -292,7 +263,6 @@
 .method public getWidth()I
     .locals 2
 
-    .line 164
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -310,9 +280,7 @@
 
 .method public isOverlappingWith(Landroid/graphics/Rect;)Z
     .locals 1
-    .param p1, "rect"    # Landroid/graphics/Rect;
 
-    .line 172
     invoke-virtual {p0}, Lcom/android/server/wm/Letterbox$LetterboxSurface;->getWidth()I
 
     move-result v0
@@ -327,7 +295,6 @@
 
     goto :goto_0
 
-    .line 175
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
@@ -337,7 +304,6 @@
 
     return v0
 
-    .line 173
     :cond_1
     :goto_0
     const/4 v0, 0x0
@@ -347,12 +313,7 @@
 
 .method public layout(IIII)V
     .locals 1
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
-    .line 141
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -377,23 +338,19 @@
 
     if-ne v0, p4, :cond_0
 
-    .line 144
     return-void
 
-    .line 146
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 147
     return-void
 .end method
 
 .method public needsApplySurfaceChanges()Z
     .locals 2
 
-    .line 197
     iget-object v0, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mSurfaceFrame:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/server/wm/Letterbox$LetterboxSurface;->mLayoutFrame:Landroid/graphics/Rect;

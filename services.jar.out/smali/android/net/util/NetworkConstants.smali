@@ -127,7 +127,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 56
     const/16 v0, 0xff
 
     invoke-static {v0}, Landroid/net/util/NetworkConstants;->asByte(I)B
@@ -136,7 +135,6 @@
 
     sput-byte v0, Landroid/net/util/NetworkConstants;->FF:B
 
-    .line 57
     const/4 v0, 0x6
 
     new-array v0, v0, [B
@@ -185,7 +183,6 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Ljava/lang/RuntimeException;
@@ -199,9 +196,7 @@
 
 .method public static asByte(I)B
     .locals 1
-    .param p0, "i"    # I
 
-    .line 181
     int-to-byte v0, p0
 
     return v0
@@ -209,9 +204,7 @@
 
 .method public static asString(I)Ljava/lang/String;
     .locals 1
-    .param p0, "i"    # I
 
-    .line 183
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -221,9 +214,7 @@
 
 .method public static asUint(B)I
     .locals 1
-    .param p0, "b"    # B
 
-    .line 185
     and-int/lit16 v0, p0, 0xff
 
     return v0
@@ -231,9 +222,7 @@
 
 .method public static asUint(S)I
     .locals 1
-    .param p0, "s"    # S
 
-    .line 186
     const v0, 0xffff
 
     and-int/2addr v0, p0

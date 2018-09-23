@@ -24,7 +24,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 354
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,9 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$1;
 
-    .line 354
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$CbResults;-><init>()V
 
     return-void
@@ -45,17 +42,14 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 360
     iget-boolean v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$CbResults;->success:Z
 
     if-eqz v0, :cond_0
 
-    .line 361
     const-string/jumbo v0, "ok"
 
     return-object v0
 
-    .line 363
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 

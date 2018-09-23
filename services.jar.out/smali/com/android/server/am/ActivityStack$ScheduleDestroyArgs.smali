@@ -23,18 +23,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;)V
     .locals 0
-    .param p1, "owner"    # Lcom/android/server/am/ProcessRecord;
-    .param p2, "reason"    # Ljava/lang/String;
 
-    .line 393
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 394
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mOwner:Lcom/android/server/am/ProcessRecord;
 
-    .line 395
     iput-object p2, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mReason:Ljava/lang/String;
 
-    .line 396
     return-void
 .end method

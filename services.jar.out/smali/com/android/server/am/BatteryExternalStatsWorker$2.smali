@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/BatteryExternalStatsWorker;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/BatteryExternalStatsWorker;
 
-    .line 384
     iput-object p1, p0, Lcom/android/server/am/BatteryExternalStatsWorker$2;->this$0:Lcom/android/server/am/BatteryExternalStatsWorker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 387
     iget-object v0, p0, Lcom/android/server/am/BatteryExternalStatsWorker$2;->this$0:Lcom/android/server/am/BatteryExternalStatsWorker;
 
     invoke-static {v0}, Lcom/android/server/am/BatteryExternalStatsWorker;->access$1000(Lcom/android/server/am/BatteryExternalStatsWorker;)Lcom/android/internal/os/BatteryStatsImpl;
@@ -48,7 +45,6 @@
 
     monitor-enter v0
 
-    .line 388
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/BatteryExternalStatsWorker$2;->this$0:Lcom/android/server/am/BatteryExternalStatsWorker;
 
@@ -58,13 +54,10 @@
 
     invoke-virtual {v1}, Lcom/android/internal/os/BatteryStatsImpl;->writeAsyncLocked()V
 
-    .line 389
     monitor-exit v0
 
-    .line 390
     return-void
 
-    .line 389
     :catchall_0
     move-exception v1
 

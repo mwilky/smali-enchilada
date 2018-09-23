@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/soundtrigger/SoundTriggerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/soundtrigger/SoundTriggerService;
 
-    .line 1178
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerService$1;->this$0:Lcom/android/server/soundtrigger/SoundTriggerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,7 @@
 # virtual methods
 .method public onSendFinished(Landroid/app/PendingIntent;Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p2, "intent"    # Landroid/content/Intent;
-    .param p3, "resultCode"    # I
-    .param p4, "resultData"    # Ljava/lang/String;
-    .param p5, "resultExtras"    # Landroid/os/Bundle;
 
-    .line 1183
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerService$1;->this$0:Lcom/android/server/soundtrigger/SoundTriggerService;
 
     invoke-static {v0}, Lcom/android/server/soundtrigger/SoundTriggerService;->access$600(Lcom/android/server/soundtrigger/SoundTriggerService;)Ljava/lang/Object;
@@ -53,7 +45,6 @@
 
     monitor-enter v0
 
-    .line 1184
     :try_start_0
     iget-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerService$1;->this$0:Lcom/android/server/soundtrigger/SoundTriggerService;
 
@@ -63,13 +54,10 @@
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1185
     monitor-exit v0
 
-    .line 1186
     return-void
 
-    .line 1185
     :catchall_0
     move-exception v1
 

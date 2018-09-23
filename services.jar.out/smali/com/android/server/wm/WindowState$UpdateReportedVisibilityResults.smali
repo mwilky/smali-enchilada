@@ -28,10 +28,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 4832
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4836
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowState$UpdateReportedVisibilityResults;->nowGone:Z
@@ -44,22 +42,17 @@
 .method reset()V
     .locals 1
 
-    .line 4839
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/wm/WindowState$UpdateReportedVisibilityResults;->numInteresting:I
 
-    .line 4840
     iput v0, p0, Lcom/android/server/wm/WindowState$UpdateReportedVisibilityResults;->numVisible:I
 
-    .line 4841
     iput v0, p0, Lcom/android/server/wm/WindowState$UpdateReportedVisibilityResults;->numDrawn:I
 
-    .line 4842
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/wm/WindowState$UpdateReportedVisibilityResults;->nowGone:Z
 
-    .line 4843
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService$21;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/am/ActivityManagerService$21;
 
-    .line 15668
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$21$1;->this$1:Lcom/android/server/am/ActivityManagerService$21;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -36,7 +34,6 @@
 .method public run()V
     .locals 7
 
-    .line 15671
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$21$1;->this$1:Lcom/android/server/am/ActivityManagerService$21;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService$21;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -65,6 +62,5 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/server/am/AppErrors;->appNotResponding(Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;ZLjava/lang/String;)V
 
-    .line 15672
     return-void
 .end method

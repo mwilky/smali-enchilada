@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 6237
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6238
     iput-object p1, p0, Lcom/android/server/accounts/AccountManagerService$Injector;->mContext:Landroid/content/Context;
 
-    .line 6239
     return-void
 .end method
 
@@ -40,21 +36,17 @@
 # virtual methods
 .method addLocalService(Landroid/accounts/AccountManagerInternal;)V
     .locals 1
-    .param p1, "service"    # Landroid/accounts/AccountManagerInternal;
 
-    .line 6253
     const-class v0, Landroid/accounts/AccountManagerInternal;
 
     invoke-static {v0, p1}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 6254
     return-void
 .end method
 
 .method getAccountAuthenticatorCache()Lcom/android/server/accounts/IAccountAuthenticatorCache;
     .locals 2
 
-    .line 6297
     new-instance v0, Lcom/android/server/accounts/AccountAuthenticatorCache;
 
     iget-object v1, p0, Lcom/android/server/accounts/AccountManagerService$Injector;->mContext:Landroid/content/Context;
@@ -66,9 +58,7 @@
 
 .method getCeDatabaseName(I)Ljava/lang/String;
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 6263
     new-instance v0, Ljava/io/File;
 
     invoke-static {p1}, Landroid/os/Environment;->getDataSystemCeDirectory(I)Ljava/io/File;
@@ -79,8 +69,6 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 6265
-    .local v0, "databaseFile":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v1
@@ -91,7 +79,6 @@
 .method getContext()Landroid/content/Context;
     .locals 1
 
-    .line 6249
     iget-object v0, p0, Lcom/android/server/accounts/AccountManagerService$Injector;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -99,9 +86,7 @@
 
 .method getDeDatabaseName(I)Ljava/lang/String;
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 6257
     new-instance v0, Ljava/io/File;
 
     invoke-static {p1}, Landroid/os/Environment;->getDataSystemDeDirectory(I)Ljava/io/File;
@@ -112,8 +97,6 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 6259
-    .local v0, "databaseFile":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v1
@@ -124,7 +107,6 @@
 .method getMessageHandlerLooper()Landroid/os/Looper;
     .locals 4
 
-    .line 6242
     new-instance v0, Lcom/android/server/ServiceThread;
 
     const-string v1, "AccountManagerService"
@@ -135,11 +117,8 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/server/ServiceThread;-><init>(Ljava/lang/String;IZ)V
 
-    .line 6244
-    .local v0, "serviceThread":Lcom/android/server/ServiceThread;
     invoke-virtual {v0}, Lcom/android/server/ServiceThread;->start()V
 
-    .line 6245
     invoke-virtual {v0}, Lcom/android/server/ServiceThread;->getLooper()Landroid/os/Looper;
 
     move-result-object v1
@@ -150,7 +129,6 @@
 .method getNotificationManager()Landroid/app/INotificationManager;
     .locals 1
 
-    .line 6301
     invoke-static {}, Landroid/app/NotificationManager;->getService()Landroid/app/INotificationManager;
 
     move-result-object v0
@@ -160,15 +138,11 @@
 
 .method getPreNDatabaseName(I)Ljava/lang/String;
     .locals 7
-    .param p1, "userId"    # I
 
-    .line 6269
     invoke-static {}, Landroid/os/Environment;->getDataSystemDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 6270
-    .local v0, "systemDir":Ljava/io/File;
     new-instance v1, Ljava/io/File;
 
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
@@ -179,19 +153,14 @@
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 6272
-    .local v1, "databaseFile":Ljava/io/File;
     if-nez p1, :cond_3
 
-    .line 6277
     new-instance v2, Ljava/io/File;
 
     const-string v3, "accounts.db"
 
     invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 6278
-    .local v2, "oldFile":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -204,20 +173,16 @@
 
     if-nez v3, :cond_3
 
-    .line 6280
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v3
 
-    .line 6281
-    .local v3, "userDir":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 6282
     invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
 
     move-result v4
@@ -226,7 +191,6 @@
 
     goto :goto_0
 
-    .line 6283
     :cond_0
     new-instance v4, Ljava/lang/IllegalStateException;
 
@@ -248,7 +212,6 @@
 
     throw v4
 
-    .line 6287
     :cond_1
     :goto_0
     invoke-virtual {v2, v1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
@@ -257,13 +220,8 @@
 
     if-eqz v4, :cond_2
 
-    .end local v2    # "oldFile":Ljava/io/File;
-    .end local v3    # "userDir":Ljava/io/File;
     goto :goto_1
 
-    .line 6288
-    .restart local v2    # "oldFile":Ljava/io/File;
-    .restart local v3    # "userDir":Ljava/io/File;
     :cond_2
     new-instance v4, Ljava/lang/IllegalStateException;
 
@@ -285,9 +243,6 @@
 
     throw v4
 
-    .line 6293
-    .end local v2    # "oldFile":Ljava/io/File;
-    .end local v3    # "userDir":Ljava/io/File;
     :cond_3
     :goto_1
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;

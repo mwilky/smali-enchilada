@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/ShutdownThread;Landroid/os/RecoverySystem$ProgressListener;[Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/ShutdownThread;
 
-    .line 894
     iput-object p1, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     iput-object p2, p0, Lcom/android/server/power/ShutdownThread$7;->val$progressListener:Landroid/os/RecoverySystem$ProgressListener;
@@ -44,7 +42,6 @@
 .method public run()V
     .locals 5
 
-    .line 897
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1000(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
@@ -55,13 +52,10 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 899
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    .line 901
-    .local v1, "filename":Ljava/lang/String;
     const/4 v2, 0x0
 
     :try_start_0
@@ -73,7 +67,6 @@
 
     move-object v1, v0
 
-    .line 902
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$7;->this$0:Lcom/android/server/power/ShutdownThread;
 
     invoke-static {v0}, Lcom/android/server/power/ShutdownThread;->access$1000(Lcom/android/server/power/ShutdownThread;)Landroid/content/Context;
@@ -90,23 +83,17 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 905
     goto :goto_0
 
-    .line 903
     :catch_0
     move-exception v0
 
-    .line 904
-    .local v0, "e":Ljava/io/IOException;
     const-string v3, "ShutdownThread"
 
     const-string v4, "Error uncrypting file"
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 906
-    .end local v0    # "e":Ljava/io/IOException;
     :goto_0
     iget-object v0, p0, Lcom/android/server/power/ShutdownThread$7;->val$done:[Z
 
@@ -114,6 +101,5 @@
 
     aput-boolean v3, v0, v2
 
-    .line 907
     return-void
 .end method

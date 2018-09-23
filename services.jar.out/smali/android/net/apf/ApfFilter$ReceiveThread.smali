@@ -34,55 +34,43 @@
 # direct methods
 .method public constructor <init>(Landroid/net/apf/ApfFilter;Ljava/io/FileDescriptor;)V
     .locals 2
-    .param p1, "this$0"    # Landroid/net/apf/ApfFilter;
-    .param p2, "socket"    # Ljava/io/FileDescriptor;
 
-    .line 180
     iput-object p1, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
-    .line 173
     const/16 v0, 0x5ea
 
     new-array v0, v0, [B
 
     iput-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mPacket:[B
 
-    .line 175
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStart:J
 
-    .line 176
     new-instance v0, Landroid/net/metrics/ApfStats;
 
     invoke-direct {v0}, Landroid/net/metrics/ApfStats;-><init>()V
 
     iput-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
-    .line 181
     iput-object p2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mSocket:Ljava/io/FileDescriptor;
 
-    .line 182
     return-void
 .end method
 
 .method private logStats()V
     .locals 5
 
-    .line 234
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 235
-    .local v0, "nowMs":J
     monitor-enter p0
 
-    .line 236
     :try_start_0
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -92,7 +80,6 @@
 
     iput-wide v3, v2, Landroid/net/metrics/ApfStats;->durationMs:J
 
-    .line 237
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
     iget-object v3, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
@@ -105,7 +92,6 @@
 
     iput v3, v2, Landroid/net/metrics/ApfStats;->maxProgramSize:I
 
-    .line 238
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
     iget-object v3, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
@@ -116,7 +102,6 @@
 
     iput v3, v2, Landroid/net/metrics/ApfStats;->programUpdatesAll:I
 
-    .line 239
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
     iget-object v3, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
@@ -127,7 +112,6 @@
 
     iput v3, v2, Landroid/net/metrics/ApfStats;->programUpdatesAllowingMulticast:I
 
-    .line 240
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
 
     invoke-static {v2}, Landroid/net/apf/ApfFilter;->access$400(Landroid/net/apf/ApfFilter;)Landroid/net/metrics/IpConnectivityLog;
@@ -138,7 +122,6 @@
 
     invoke-virtual {v2, v3}, Landroid/net/metrics/IpConnectivityLog;->log(Landroid/os/Parcelable;)Z
 
-    .line 241
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
 
     const-wide/16 v3, 0x3e8
@@ -147,13 +130,10 @@
 
     invoke-static {v2, v3, v4}, Landroid/net/apf/ApfFilter;->access$500(Landroid/net/apf/ApfFilter;J)V
 
-    .line 242
     monitor-exit p0
 
-    .line 243
     return-void
 
-    .line 242
     :catchall_0
     move-exception v2
 
@@ -166,9 +146,7 @@
 
 .method private updateStats(Landroid/net/apf/ApfFilter$ProcessRaResult;)V
     .locals 2
-    .param p1, "result"    # Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 209
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
     iget v1, v0, Landroid/net/metrics/ApfStats;->receivedRas:I
@@ -177,7 +155,6 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->receivedRas:I
 
-    .line 210
     sget-object v0, Landroid/net/apf/ApfFilter$2;->$SwitchMap$android$net$apf$ApfFilter$ProcessRaResult:[I
 
     invoke-virtual {p1}, Landroid/net/apf/ApfFilter$ProcessRaResult;->ordinal()I
@@ -188,10 +165,8 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 231
     return-void
 
-    .line 228
     :pswitch_0
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -201,10 +176,8 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->programUpdates:I
 
-    .line 229
     return-void
 
-    .line 224
     :pswitch_1
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -214,7 +187,6 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->matchingRas:I
 
-    .line 225
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
     iget v1, v0, Landroid/net/metrics/ApfStats;->programUpdates:I
@@ -223,10 +195,8 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->programUpdates:I
 
-    .line 226
     return-void
 
-    .line 221
     :pswitch_2
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -236,10 +206,8 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->zeroLifetimeRas:I
 
-    .line 222
     return-void
 
-    .line 218
     :pswitch_3
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -249,10 +217,8 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->parseErrors:I
 
-    .line 219
     return-void
 
-    .line 215
     :pswitch_4
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -262,10 +228,8 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->droppedRas:I
 
-    .line 216
     return-void
 
-    .line 212
     :pswitch_5
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStats:Landroid/net/metrics/ApfStats;
 
@@ -275,7 +239,6 @@
 
     iput v1, v0, Landroid/net/metrics/ApfStats;->matchingRas:I
 
-    .line 213
     return-void
 
     :pswitch_data_0
@@ -294,12 +257,10 @@
 .method public halt()V
     .locals 1
 
-    .line 185
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStopped:Z
 
-    .line 188
     :try_start_0
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mSocket:Ljava/io/FileDescriptor;
 
@@ -307,13 +268,11 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 189
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    .line 190
     :goto_0
     return-void
 .end method
@@ -321,20 +280,17 @@
 .method public run()V
     .locals 4
 
-    .line 194
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
 
     const-string v1, "begin monitoring"
 
     invoke-static {v0, v1}, Landroid/net/apf/ApfFilter;->access$000(Landroid/net/apf/ApfFilter;Ljava/lang/String;)V
 
-    .line 195
     :goto_0
     iget-boolean v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStopped:Z
 
     if-nez v0, :cond_1
 
-    .line 197
     :try_start_0
     iget-object v0, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mSocket:Ljava/io/FileDescriptor;
 
@@ -350,8 +306,6 @@
 
     move-result v0
 
-    .line 198
-    .local v0, "length":I
     iget-object v1, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->this$0:Landroid/net/apf/ApfFilter;
 
     iget-object v2, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mPacket:[B
@@ -365,36 +319,27 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .end local v0    # "length":I
     goto :goto_1
 
-    .line 199
     :catch_0
     move-exception v0
 
-    .line 200
-    .local v0, "e":Ljava/lang/Exception;
     iget-boolean v1, p0, Landroid/net/apf/ApfFilter$ReceiveThread;->mStopped:Z
 
     if-nez v1, :cond_0
 
-    .line 201
     const-string v1, "ApfFilter"
 
     const-string v2, "Read error"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 203
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_1
     goto :goto_0
 
-    .line 205
     :cond_1
     invoke-direct {p0}, Landroid/net/apf/ApfFilter$ReceiveThread;->logStats()V
 
-    .line 206
     return-void
 .end method

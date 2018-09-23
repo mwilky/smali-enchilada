@@ -67,7 +67,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 102
     const-string v0, "com.android.companiondevicemanager"
 
     const-string v1, ".DeviceDiscoveryService"
@@ -83,76 +82,59 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 128
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 116
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mUidToStorage:Ljava/util/concurrent/ConcurrentMap;
 
-    .line 125
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mLock:Ljava/lang/Object;
 
-    .line 129
     new-instance v0, Lcom/android/server/companion/CompanionDeviceManagerService$CompanionDeviceManagerImpl;
 
     invoke-direct {v0, p0}, Lcom/android/server/companion/CompanionDeviceManagerService$CompanionDeviceManagerImpl;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mImpl:Lcom/android/server/companion/CompanionDeviceManagerService$CompanionDeviceManagerImpl;
 
-    .line 130
     const-string v0, "deviceidle"
 
-    .line 131
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 130
     invoke-static {v0}, Landroid/os/IDeviceIdleController$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/IDeviceIdleController;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mIdleController:Landroid/os/IDeviceIdleController;
 
-    .line 132
     const-string v0, "appops"
 
-    .line 133
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 132
     invoke-static {v0}, Lcom/android/internal/app/IAppOpsService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IAppOpsService;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mAppOpsManager:Lcom/android/internal/app/IAppOpsService;
 
-    .line 134
     invoke-direct {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->registerPackageMonitor()V
 
-    .line 135
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/companion/CompanionDeviceManagerService;Ljava/util/function/Function;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Ljava/util/function/Function;
-    .param p2, "x2"    # I
 
-    .line 100
     invoke-direct {p0, p1, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateAssociations(Ljava/util/function/Function;I)V
 
     return-void
@@ -160,11 +142,7 @@
 
 .method static synthetic access$100(Lcom/android/server/companion/CompanionDeviceManagerService;ILjava/lang/String;)Ljava/util/Set;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # Ljava/lang/String;
 
-    .line 100
     invoke-direct {p0, p1, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->readAllAssociations(ILjava/lang/String;)Ljava/util/Set;
 
     move-result-object v0
@@ -175,7 +153,6 @@
 .method static synthetic access$1000()Z
     .locals 1
 
-    .line 100
     invoke-static {}, Lcom/android/server/companion/CompanionDeviceManagerService;->isCallerSystem()Z
 
     move-result v0
@@ -185,9 +162,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/companion/CompanionDeviceManagerService;)Lcom/android/internal/app/IAppOpsService;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mAppOpsManager:Lcom/android/internal/app/IAppOpsService;
 
     return-object v0
@@ -195,11 +170,7 @@
 
 .method static synthetic access$1200(Lcom/android/server/companion/CompanionDeviceManagerService;Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # I
 
-    .line 100
     invoke-direct {p0, p1, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
@@ -209,9 +180,7 @@
 
 .method static synthetic access$1400(Lcom/android/server/companion/CompanionDeviceManagerService;)Landroid/companion/ICompanionDeviceDiscoveryServiceCallback$Stub;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     invoke-direct {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->getServiceCallback()Landroid/companion/ICompanionDeviceDiscoveryServiceCallback$Stub;
 
     move-result-object v0
@@ -221,10 +190,7 @@
 
 .method static synthetic access$1600(Lcom/android/server/companion/CompanionDeviceManagerService;I)Ljava/util/Set;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # I
 
-    .line 100
     invoke-direct {p0, p1}, Lcom/android/server/companion/CompanionDeviceManagerService;->readAllAssociations(I)Ljava/util/Set;
 
     move-result-object v0
@@ -234,11 +200,7 @@
 
 .method static synthetic access$200(Lcom/android/server/companion/CompanionDeviceManagerService;Ljava/lang/String;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # I
 
-    .line 100
     invoke-direct {p0, p1, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateSpecialAccessPermissionForAssociatedPackage(Ljava/lang/String;I)V
 
     return-void
@@ -247,7 +209,6 @@
 .method static synthetic access$300()I
     .locals 1
 
-    .line 100
     invoke-static {}, Lcom/android/server/companion/CompanionDeviceManagerService;->getCallingUserId()I
 
     move-result v0
@@ -258,7 +219,6 @@
 .method static synthetic access$400()Landroid/content/ComponentName;
     .locals 1
 
-    .line 100
     sget-object v0, Lcom/android/server/companion/CompanionDeviceManagerService;->SERVICE_TO_BIND_TO:Landroid/content/ComponentName;
 
     return-object v0
@@ -266,12 +226,7 @@
 
 .method static synthetic access$500(Lcom/android/server/companion/CompanionDeviceManagerService;Landroid/companion/AssociationRequest;Landroid/companion/IFindDeviceCallback;Ljava/lang/String;)Landroid/content/ServiceConnection;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Landroid/companion/AssociationRequest;
-    .param p2, "x2"    # Landroid/companion/IFindDeviceCallback;
-    .param p3, "x3"    # Ljava/lang/String;
 
-    .line 100
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/companion/CompanionDeviceManagerService;->createServiceConnection(Landroid/companion/AssociationRequest;Landroid/companion/IFindDeviceCallback;Ljava/lang/String;)Landroid/content/ServiceConnection;
 
     move-result-object v0
@@ -281,9 +236,7 @@
 
 .method static synthetic access$600(Lcom/android/server/companion/CompanionDeviceManagerService;)Landroid/companion/AssociationRequest;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mRequest:Landroid/companion/AssociationRequest;
 
     return-object v0
@@ -291,10 +244,7 @@
 
 .method static synthetic access$602(Lcom/android/server/companion/CompanionDeviceManagerService;Landroid/companion/AssociationRequest;)Landroid/companion/AssociationRequest;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Landroid/companion/AssociationRequest;
 
-    .line 100
     iput-object p1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mRequest:Landroid/companion/AssociationRequest;
 
     return-object p1
@@ -302,9 +252,7 @@
 
 .method static synthetic access$700(Lcom/android/server/companion/CompanionDeviceManagerService;)Landroid/companion/IFindDeviceCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mFindDeviceCallback:Landroid/companion/IFindDeviceCallback;
 
     return-object v0
@@ -312,10 +260,7 @@
 
 .method static synthetic access$702(Lcom/android/server/companion/CompanionDeviceManagerService;Landroid/companion/IFindDeviceCallback;)Landroid/companion/IFindDeviceCallback;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Landroid/companion/IFindDeviceCallback;
 
-    .line 100
     iput-object p1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mFindDeviceCallback:Landroid/companion/IFindDeviceCallback;
 
     return-object p1
@@ -323,9 +268,7 @@
 
 .method static synthetic access$800(Lcom/android/server/companion/CompanionDeviceManagerService;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mCallingPackage:Ljava/lang/String;
 
     return-object v0
@@ -333,10 +276,7 @@
 
 .method static synthetic access$802(Lcom/android/server/companion/CompanionDeviceManagerService;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 100
     iput-object p1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mCallingPackage:Ljava/lang/String;
 
     return-object p1
@@ -344,9 +284,7 @@
 
 .method static synthetic access$900(Lcom/android/server/companion/CompanionDeviceManagerService;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/companion/CompanionDeviceManagerService;
 
-    .line 100
     invoke-direct {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->cleanup()V
 
     return-void
@@ -355,12 +293,10 @@
 .method private cleanup()V
     .locals 3
 
-    .line 169
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 170
     :try_start_0
     iget-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mServiceConnection:Landroid/content/ServiceConnection;
 
@@ -370,7 +306,6 @@
 
     iput-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mServiceConnection:Landroid/content/ServiceConnection;
 
-    .line 171
     iget-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mFindDeviceCallback:Landroid/companion/IFindDeviceCallback;
 
     const/4 v2, 0x0
@@ -383,21 +318,16 @@
 
     iput-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mFindDeviceCallback:Landroid/companion/IFindDeviceCallback;
 
-    .line 172
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mRequest:Landroid/companion/AssociationRequest;
 
-    .line 173
     iput-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mCallingPackage:Ljava/lang/String;
 
-    .line 174
     monitor-exit v0
 
-    .line 175
     return-void
 
-    .line 174
     :catchall_0
     move-exception v1
 
@@ -418,10 +348,6 @@
         }
     .end annotation
 
-    .line 477
-    .local p0, "array":[Ljava/lang/Object;, "[TT;"
-    .local p1, "a":Ljava/lang/Object;, "TT;"
-    .local p2, "b":Ljava/lang/Object;, "TT;"
     invoke-static {p0, p1}, Lcom/android/internal/util/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -451,18 +377,13 @@
 
 .method private createServiceConnection(Landroid/companion/AssociationRequest;Landroid/companion/IFindDeviceCallback;Ljava/lang/String;)Landroid/content/ServiceConnection;
     .locals 1
-    .param p1, "request"    # Landroid/companion/AssociationRequest;
-    .param p2, "findDeviceCallback"    # Landroid/companion/IFindDeviceCallback;
-    .param p3, "callingPackage"    # Ljava/lang/String;
 
-    .line 360
     new-instance v0, Lcom/android/server/companion/CompanionDeviceManagerService$2;
 
     invoke-direct {v0, p0, p2, p1, p3}, Lcom/android/server/companion/CompanionDeviceManagerService$2;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;Landroid/companion/IFindDeviceCallback;Landroid/companion/AssociationRequest;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mServiceConnection:Landroid/content/ServiceConnection;
 
-    .line 399
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mServiceConnection:Landroid/content/ServiceConnection;
 
     return-object v0
@@ -471,7 +392,6 @@
 .method private static getCallingUserId()I
     .locals 1
 
-    .line 349
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -485,13 +405,9 @@
 
 .method private getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 3
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 482
     sget-object v0, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$0VKz9ecFqvfFXzRrfaz-Pf5wW2s;->INSTANCE:Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$0VKz9ecFqvfFXzRrfaz-Pf5wW2s;
 
-    .line 492
     invoke-virtual {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -500,17 +416,14 @@
 
     move-result-object v2
 
-    .line 482
     invoke-static {v0, v1, p1, v2}, Lcom/android/internal/util/function/pooled/PooledLambda;->obtainSupplier(Lcom/android/internal/util/function/TriFunction;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/android/internal/util/function/pooled/PooledSupplier;
 
     move-result-object v0
 
-    .line 492
     invoke-interface {v0}, Lcom/android/internal/util/function/pooled/PooledSupplier;->recycleOnUse()Lcom/android/internal/util/function/pooled/PooledSupplier;
 
     move-result-object v0
 
-    .line 482
     invoke-static {v0}, Landroid/os/Binder;->withCleanCallingIdentity(Lcom/android/internal/util/FunctionalUtils$ThrowingSupplier;)Ljava/lang/Object;
 
     move-result-object v0
@@ -523,7 +436,6 @@
 .method private getServiceCallback()Landroid/companion/ICompanionDeviceDiscoveryServiceCallback$Stub;
     .locals 1
 
-    .line 403
     new-instance v0, Lcom/android/server/companion/CompanionDeviceManagerService$3;
 
     invoke-direct {v0, p0}, Lcom/android/server/companion/CompanionDeviceManagerService$3;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;)V
@@ -533,9 +445,7 @@
 
 .method private getStorageFileForUser(I)Landroid/util/AtomicFile;
     .locals 3
-    .param p1, "uid"    # I
 
-    .line 546
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mUidToStorage:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -556,7 +466,6 @@
 .method private static isCallerSystem()Z
     .locals 2
 
-    .line 353
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -578,11 +487,7 @@
 
 .method static synthetic lambda$getPackageInfo$1(Landroid/content/Context;Ljava/lang/String;Ljava/lang/Integer;)Landroid/content/pm/PackageInfo;
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "id"    # Ljava/lang/Integer;
 
-    .line 484
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -590,12 +495,10 @@
 
     const/16 v1, 0x5000
 
-    .line 487
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    .line 484
     invoke-virtual {v0, p1, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
@@ -604,12 +507,9 @@
 
     return-object v0
 
-    .line 488
     :catch_0
     move-exception v0
 
-    .line 489
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v1, "CompanionDeviceManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -628,7 +528,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 490
     const/4 v1, 0x0
 
     return-object v1
@@ -636,14 +535,11 @@
 
 .method static synthetic lambda$getStorageFileForUser$5(Ljava/lang/Integer;)Landroid/util/AtomicFile;
     .locals 4
-    .param p0, "u"    # Ljava/lang/Integer;
 
-    .line 547
     new-instance v0, Landroid/util/AtomicFile;
 
     new-instance v1, Ljava/io/File;
 
-    .line 549
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -658,7 +554,6 @@
 
     invoke-direct {v0, v1}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 547
     return-object v0
 .end method
 
@@ -672,12 +567,7 @@
 
 .method public static synthetic lambda$recordAssociation$2(Lcom/android/server/companion/CompanionDeviceManagerService;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "deviceAddress"    # Ljava/lang/String;
-    .param p3, "priviledgedPackage"    # Ljava/lang/String;
-    .param p4, "associations"    # Ljava/util/Set;
 
-    .line 501
     new-instance v6, Lcom/android/server/companion/CompanionDeviceManagerService$Association;
 
     const/4 v5, 0x0
@@ -703,12 +593,7 @@
 
 .method public static synthetic lambda$removeAssociation$0(Lcom/android/server/companion/CompanionDeviceManagerService;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "deviceMacAddress"    # Ljava/lang/String;
-    .param p3, "pkg"    # Ljava/lang/String;
-    .param p4, "associations"    # Ljava/util/Set;
 
-    .line 435
     new-instance v6, Lcom/android/server/companion/CompanionDeviceManagerService$Association;
 
     const/4 v5, 0x0
@@ -734,15 +619,12 @@
 
 .method static synthetic lambda$updateAssociations$3(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/companion/CompanionDeviceManagerService$Association;)V
     .locals 4
-    .param p0, "xml"    # Lorg/xmlpull/v1/XmlSerializer;
-    .param p1, "association"    # Lcom/android/server/companion/CompanionDeviceManagerService$Association;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
         }
     .end annotation
 
-    .line 528
     const-string v0, "association"
 
     const/4 v1, 0x0
@@ -755,7 +637,6 @@
 
     iget-object v3, p1, Lcom/android/server/companion/CompanionDeviceManagerService$Association;->companionAppPackage:Ljava/lang/String;
 
-    .line 529
     invoke-interface {v0, v1, v2, v3}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     move-result-object v0
@@ -764,32 +645,24 @@
 
     iget-object v3, p1, Lcom/android/server/companion/CompanionDeviceManagerService$Association;->deviceAddress:Ljava/lang/String;
 
-    .line 530
     invoke-interface {v0, v1, v2, v3}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     move-result-object v0
 
     const-string v2, "association"
 
-    .line 531
     invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 532
     return-void
 .end method
 
 .method static synthetic lambda$updateAssociations$4(Ljava/util/Set;Ljava/io/FileOutputStream;)V
     .locals 4
-    .param p0, "finalAssociations"    # Ljava/util/Set;
-    .param p1, "out"    # Ljava/io/FileOutputStream;
 
-    .line 520
     invoke-static {}, Landroid/util/Xml;->newSerializer()Lorg/xmlpull/v1/XmlSerializer;
 
     move-result-object v0
 
-    .line 522
-    .local v0, "xml":Lorg/xmlpull/v1/XmlSerializer;
     :try_start_0
     sget-object v1, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -799,14 +672,12 @@
 
     invoke-interface {v0, p1, v1}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 523
-    const-string/jumbo v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
+    const-string v1, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v2, 0x1
 
     invoke-interface {v0, v1, v2}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 524
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -815,47 +686,37 @@
 
     invoke-interface {v0, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 525
     const-string v1, "associations"
 
     invoke-interface {v0, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 527
     new-instance v1, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$_WjcclQ59faBsgHHLmf5Dm8Zo8k;
 
     invoke-direct {v1, v0}, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$_WjcclQ59faBsgHHLmf5Dm8Zo8k;-><init>(Lorg/xmlpull/v1/XmlSerializer;)V
 
     invoke-static {p0, v1}, Lcom/android/internal/util/CollectionUtils;->forEach(Ljava/util/Set;Lcom/android/internal/util/FunctionalUtils$ThrowingConsumer;)V
 
-    .line 534
     const-string v1, "associations"
 
     invoke-interface {v0, v2, v1}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 535
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 539
     nop
 
-    .line 541
     return-void
 
-    .line 536
     :catch_0
     move-exception v1
 
-    .line 537
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "CompanionDeviceManagerService"
 
     const-string v3, "Error while writing associations file"
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 538
     invoke-static {v1}, Landroid/util/ExceptionUtils;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v2
@@ -873,7 +734,6 @@
 
 .method private readAllAssociations(I)Ljava/util/Set;
     .locals 1
-    .param p1, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -883,7 +743,6 @@
         }
     .end annotation
 
-    .line 555
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/companion/CompanionDeviceManagerService;->readAllAssociations(ILjava/lang/String;)Ljava/util/Set;
@@ -895,8 +754,6 @@
 
 .method private readAllAssociations(ILjava/lang/String;)Ljava/util/Set;
     .locals 16
-    .param p1, "userId"    # I
-    .param p2, "packageFilter"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -908,15 +765,12 @@
         }
     .end annotation
 
-    .line 560
     move-object/from16 v1, p2
 
     invoke-direct/range {p0 .. p1}, Lcom/android/server/companion/CompanionDeviceManagerService;->getStorageFileForUser(I)Landroid/util/AtomicFile;
 
     move-result-object v2
 
-    .line 562
-    .local v2, "file":Landroid/util/AtomicFile;
     invoke-virtual {v2}, Landroid/util/AtomicFile;->getBaseFile()Ljava/io/File;
 
     move-result-object v0
@@ -931,21 +785,15 @@
 
     return-object v3
 
-    .line 564
     :cond_0
     const/4 v4, 0x0
 
-    .line 565
-    .local v4, "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v5
 
-    .line 566
-    .local v5, "parser":Lorg/xmlpull/v1/XmlPullParser;
     monitor-enter v2
 
-    .line 567
     :try_start_0
     invoke-virtual {v2}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
@@ -957,8 +805,6 @@
 
     move-object v6, v0
 
-    .line 568
-    .local v6, "in":Ljava/io/FileInputStream;
     :try_start_1
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
@@ -968,7 +814,6 @@
 
     invoke-interface {v5, v6, v0}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 570
     :cond_1
     :goto_0
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -977,20 +822,16 @@
 
     move v7, v0
 
-    .line 570
-    .local v7, "type":I
     const/4 v8, 0x1
 
     if-eq v0, v8, :cond_5
 
-    .line 571
     const/4 v0, 0x2
 
     if-eq v7, v0, :cond_2
 
     const-string v0, "associations"
 
-    .line 572
     invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v8
@@ -1001,12 +842,8 @@
 
     if-nez v0, :cond_2
 
-    .line 572
-    .end local v7    # "type":I
     goto :goto_0
 
-    .line 574
-    .restart local v7    # "type":I
     :cond_2
     const-string/jumbo v0, "package"
 
@@ -1014,8 +851,6 @@
 
     move-result-object v0
 
-    .line 575
-    .local v0, "appPackage":Ljava/lang/String;
     const-string v8, "device"
 
     invoke-interface {v5, v3, v8}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1024,22 +859,12 @@
 
     move-object v14, v8
 
-    .line 577
-    .local v14, "deviceAddress":Ljava/lang/String;
     if-eqz v0, :cond_1
 
     if-nez v14, :cond_3
 
-    .line 577
-    .end local v0    # "appPackage":Ljava/lang/String;
-    .end local v7    # "type":I
-    .end local v14    # "deviceAddress":Ljava/lang/String;
     goto :goto_0
 
-    .line 578
-    .restart local v0    # "appPackage":Ljava/lang/String;
-    .restart local v7    # "type":I
-    .restart local v14    # "deviceAddress":Ljava/lang/String;
     :cond_3
     if-eqz v1, :cond_4
 
@@ -1049,16 +874,8 @@
 
     if-nez v8, :cond_4
 
-    .line 578
-    .end local v0    # "appPackage":Ljava/lang/String;
-    .end local v7    # "type":I
-    .end local v14    # "deviceAddress":Ljava/lang/String;
     goto :goto_0
 
-    .line 580
-    .restart local v0    # "appPackage":Ljava/lang/String;
-    .restart local v7    # "type":I
-    .restart local v14    # "deviceAddress":Ljava/lang/String;
     :cond_4
     new-instance v15, Lcom/android/server/companion/CompanionDeviceManagerService$Association;
 
@@ -1085,16 +902,11 @@
 
     move-object v4, v8
 
-    .line 582
-    .end local v0    # "appPackage":Ljava/lang/String;
-    .end local v14    # "deviceAddress":Ljava/lang/String;
     goto :goto_0
 
-    .line 583
     :cond_5
     nop
 
-    .line 584
     if-eqz v6, :cond_6
 
     :try_start_2
@@ -1110,11 +922,8 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .line 583
     return-object v4
 
-    .line 584
-    .end local v7    # "type":I
     :catchall_0
     move-exception v0
 
@@ -1122,17 +931,11 @@
 
     move-object v8, v4
 
-    .line 584
-    .end local v4    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .local v8, "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     :goto_1
     move-object v4, v0
 
     goto :goto_2
 
-    .line 567
-    .end local v8    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .restart local v4    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     :catch_0
     move-exception v0
 
@@ -1140,15 +943,11 @@
 
     move-object v4, v0
 
-    .line 567
-    .end local v4    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .local v7, "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     :try_start_4
     throw v4
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 584
     :catchall_1
     move-exception v0
 
@@ -1158,9 +957,6 @@
 
     goto :goto_1
 
-    .line 584
-    .end local v7    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .restart local v8    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     :goto_2
     if-eqz v6, :cond_8
 
@@ -1197,8 +993,6 @@
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 588
-    .end local v6    # "in":Ljava/io/FileInputStream;
     :catchall_2
     move-exception v0
 
@@ -1206,7 +1000,6 @@
 
     goto :goto_5
 
-    .line 584
     :catch_2
     move-exception v0
 
@@ -1214,20 +1007,14 @@
 
     goto :goto_4
 
-    .line 588
-    .end local v8    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .restart local v4    # "result":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     :catchall_3
     move-exception v0
 
     goto :goto_5
 
-    .line 584
     :catch_3
     move-exception v0
 
-    .line 585
-    .local v0, "e":Ljava/lang/Exception;
     :goto_4
     :try_start_7
     const-string v6, "CompanionDeviceManagerService"
@@ -1236,13 +1023,10 @@
 
     invoke-static {v6, v7, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 586
     monitor-exit v2
 
     return-object v3
 
-    .line 588
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_5
     monitor-exit v2
     :try_end_7
@@ -1253,35 +1037,27 @@
 
 .method private recordAssociation(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "priviledgedPackage"    # Ljava/lang/String;
-    .param p2, "deviceAddress"    # Ljava/lang/String;
 
-    .line 500
     invoke-static {}, Lcom/android/server/companion/CompanionDeviceManagerService;->getCallingUserId()I
 
     move-result v0
 
-    .line 501
-    .local v0, "userId":I
     new-instance v1, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$pF7vjIJpy5wI-u498jmFdSjoS_0;
 
     invoke-direct {v1, p0, v0, p2, p1}, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$pF7vjIJpy5wI-u498jmFdSjoS_0;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;ILjava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0, v1}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateAssociations(Ljava/util/function/Function;)V
 
-    .line 503
     return-void
 .end method
 
 .method private registerPackageMonitor()V
     .locals 5
 
-    .line 138
     new-instance v0, Lcom/android/server/companion/CompanionDeviceManagerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/companion/CompanionDeviceManagerService$1;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;)V
 
-    .line 155
     invoke-virtual {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1300,25 +1076,20 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/companion/CompanionDeviceManagerService$1;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
-    .line 156
     return-void
 .end method
 
 .method private unbind(Landroid/content/ServiceConnection;)Landroid/content/ServiceConnection;
     .locals 1
-    .param p1, "conn"    # Landroid/content/ServiceConnection;
 
-    .line 193
     if-eqz p1, :cond_0
 
-    .line 194
     invoke-virtual {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 196
     :cond_0
     const/4 v0, 0x0
 
@@ -1327,8 +1098,6 @@
 
 .method private static unlinkToDeath(Landroid/os/IInterface;Landroid/os/IBinder$DeathRecipient;I)Landroid/os/IInterface;
     .locals 1
-    .param p1, "deathRecipient"    # Landroid/os/IBinder$DeathRecipient;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -1339,18 +1108,14 @@
         }
     .end annotation
 
-    .line 184
-    .local p0, "iinterface":Landroid/os/IInterface;, "TT;"
     if-eqz p0, :cond_0
 
-    .line 185
     invoke-interface {p0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 187
     :cond_0
     const/4 v0, 0x0
 
@@ -1372,21 +1137,17 @@
         }
     .end annotation
 
-    .line 506
-    .local p1, "update":Ljava/util/function/Function;, "Ljava/util/function/Function<Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;>;"
     invoke-static {}, Lcom/android/server/companion/CompanionDeviceManagerService;->getCallingUserId()I
 
     move-result v0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateAssociations(Ljava/util/function/Function;I)V
 
-    .line 507
     return-void
 .end method
 
 .method private updateAssociations(Ljava/util/function/Function;I)V
     .locals 5
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1400,30 +1161,21 @@
         }
     .end annotation
 
-    .line 511
-    .local p1, "update":Ljava/util/function/Function;, "Ljava/util/function/Function<Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;>;"
     invoke-direct {p0, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->getStorageFileForUser(I)Landroid/util/AtomicFile;
 
     move-result-object v0
 
-    .line 512
-    .local v0, "file":Landroid/util/AtomicFile;
     monitor-enter v0
 
-    .line 513
     :try_start_0
     invoke-direct {p0, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->readAllAssociations(I)Ljava/util/Set;
 
     move-result-object v1
 
-    .line 514
-    .local v1, "associations":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     invoke-static {v1}, Lcom/android/internal/util/CollectionUtils;->copyOf(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v2
 
-    .line 515
-    .local v2, "old":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     invoke-interface {p1, v1}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -1432,7 +1184,6 @@
 
     move-object v1, v3
 
-    .line 516
     invoke-static {v2}, Lcom/android/internal/util/CollectionUtils;->size(Ljava/util/Collection;)I
 
     move-result v3
@@ -1447,28 +1198,19 @@
 
     return-void
 
-    .line 518
     :cond_0
     move-object v3, v1
 
-    .line 519
-    .local v3, "finalAssociations":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     new-instance v4, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$_wqnNKMj0AXNyFu-i6lXk6tA3xs;
 
     invoke-direct {v4, v3}, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$_wqnNKMj0AXNyFu-i6lXk6tA3xs;-><init>(Ljava/util/Set;)V
 
     invoke-virtual {v0, v4}, Landroid/util/AtomicFile;->write(Ljava/util/function/Consumer;)V
 
-    .line 542
-    .end local v1    # "associations":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .end local v2    # "old":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
-    .end local v3    # "finalAssociations":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/server/companion/CompanionDeviceManagerService$Association;>;"
     monitor-exit v0
 
-    .line 543
     return-void
 
-    .line 542
     :catchall_0
     move-exception v1
 
@@ -1481,9 +1223,7 @@
 
 .method private updateSpecialAccessPermissionAsSystem(Landroid/content/pm/PackageInfo;)V
     .locals 4
-    .param p1, "packageInfo"    # Landroid/content/pm/PackageInfo;
 
-    .line 451
     :try_start_0
     iget-object v0, p1, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
@@ -1497,7 +1237,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 454
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mIdleController:Landroid/os/IDeviceIdleController;
 
     iget-object v1, p1, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
@@ -1506,7 +1245,6 @@
 
     goto :goto_0
 
-    .line 456
     :cond_0
     iget-object v0, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mIdleController:Landroid/os/IDeviceIdleController;
 
@@ -1516,15 +1254,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 460
     :goto_0
     goto :goto_1
 
-    .line 458
     :catch_0
     move-exception v0
 
-    .line 462
     :goto_1
     invoke-virtual {p0}, Lcom/android/server/companion/CompanionDeviceManagerService;->getContext()Landroid/content/Context;
 
@@ -1534,8 +1269,6 @@
 
     move-result-object v0
 
-    .line 463
-    .local v0, "networkPolicyManager":Landroid/net/NetworkPolicyManager;
     iget-object v1, p1, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
     const-string v2, "android.permission.USE_DATA_IN_BACKGROUND"
@@ -1550,7 +1283,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 466
     iget-object v1, p1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -1559,7 +1291,6 @@
 
     goto :goto_2
 
-    .line 470
     :cond_1
     iget-object v1, p1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1567,29 +1298,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/NetworkPolicyManager;->removeUidPolicy(II)V
 
-    .line 474
     :goto_2
     return-void
 .end method
 
 .method private updateSpecialAccessPermissionForAssociatedPackage(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 440
     invoke-direct {p0, p1, p2}, Lcom/android/server/companion/CompanionDeviceManagerService;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
-    .line 441
-    .local v0, "packageInfo":Landroid/content/pm/PackageInfo;
     if-nez v0, :cond_0
 
-    .line 442
     return-void
 
-    .line 445
     :cond_0
     sget-object v1, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$wnUkAY8uXyjMGM59-bNpzLLMJ1I;->INSTANCE:Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$wnUkAY8uXyjMGM59-bNpzLLMJ1I;
 
@@ -1597,15 +1320,12 @@
 
     move-result-object v1
 
-    .line 446
     invoke-interface {v1}, Lcom/android/internal/util/function/pooled/PooledRunnable;->recycleOnUse()Lcom/android/internal/util/function/pooled/PooledRunnable;
 
     move-result-object v1
 
-    .line 445
     invoke-static {v1}, Landroid/os/Binder;->withCleanCallingIdentity(Lcom/android/internal/util/FunctionalUtils$ThrowingRunnable;)V
 
-    .line 447
     return-void
 .end method
 
@@ -1613,24 +1333,17 @@
 # virtual methods
 .method addAssociation(ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "userId"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "deviceAddress"    # Ljava/lang/String;
 
-    .line 430
     invoke-direct {p0, p2, p1}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateSpecialAccessPermissionForAssociatedPackage(Ljava/lang/String;I)V
 
-    .line 431
     invoke-direct {p0, p2, p3}, Lcom/android/server/companion/CompanionDeviceManagerService;->recordAssociation(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 432
     return-void
 .end method
 
 .method public binderDied()V
     .locals 2
 
-    .line 165
     invoke-static {}, Landroid/os/Handler;->getMain()Landroid/os/Handler;
 
     move-result-object v0
@@ -1641,37 +1354,29 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 166
     return-void
 .end method
 
 .method public onStart()V
     .locals 2
 
-    .line 160
     const-string v0, "companiondevice"
 
     iget-object v1, p0, Lcom/android/server/companion/CompanionDeviceManagerService;->mImpl:Lcom/android/server/companion/CompanionDeviceManagerService$CompanionDeviceManagerImpl;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/companion/CompanionDeviceManagerService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 161
     return-void
 .end method
 
 .method removeAssociation(ILjava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
-    .param p3, "deviceMacAddress"    # Ljava/lang/String;
 
-    .line 435
     new-instance v0, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$utOm0rPFb4x9GgnuV9fsUZ-eMfY;
 
     invoke-direct {v0, p0, p1, p3, p2}, Lcom/android/server/companion/-$$Lambda$CompanionDeviceManagerService$utOm0rPFb4x9GgnuV9fsUZ-eMfY;-><init>(Lcom/android/server/companion/CompanionDeviceManagerService;ILjava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0, v0}, Lcom/android/server/companion/CompanionDeviceManagerService;->updateAssociations(Ljava/util/function/Function;)V
 
-    .line 437
     return-void
 .end method

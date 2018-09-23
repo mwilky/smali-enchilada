@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/DeviceKeyHandler;
 
-    .line 955
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$TorchCallback;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onTorchModeChanged(Ljava/lang/String;Z)V
     .locals 3
-    .param p1, "cameraId"    # Ljava/lang/String;
-    .param p2, "enabled"    # Z
 
-    .line 968
     invoke-static {}, Lcom/android/server/policy/DeviceKeyHandler;->access$500()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 969
     const-string v0, "DeviceKeyHandler"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +58,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 972
     :cond_0
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
@@ -74,27 +67,22 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 973
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-static {v0, p2}, Lcom/android/server/policy/DeviceKeyHandler;->access$1002(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
-    .line 975
     :cond_1
     return-void
 .end method
 
 .method public onTorchModeUnavailable(Ljava/lang/String;)V
     .locals 2
-    .param p1, "cameraId"    # Ljava/lang/String;
 
-    .line 963
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$4;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/policy/DeviceKeyHandler;->access$1002(Lcom/android/server/policy/DeviceKeyHandler;Z)Z
 
-    .line 964
     return-void
 .end method

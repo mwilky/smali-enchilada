@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/AppStandbyController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usage/AppStandbyController;
 
-    .line 1723
     iput-object p1, p0, Lcom/android/server/usage/AppStandbyController$1;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 1
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 1726
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$1;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-static {v0}, Lcom/android/server/usage/AppStandbyController;->access$500(Lcom/android/server/usage/AppStandbyController;)Landroid/net/ConnectivityManager;
@@ -46,11 +42,9 @@
 
     invoke-virtual {v0, p0}, Landroid/net/ConnectivityManager;->unregisterNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
-    .line 1727
     iget-object v0, p0, Lcom/android/server/usage/AppStandbyController$1;->this$0:Lcom/android/server/usage/AppStandbyController;
 
     invoke-virtual {v0}, Lcom/android/server/usage/AppStandbyController;->checkParoleTimeout()V
 
-    .line 1728
     return-void
 .end method

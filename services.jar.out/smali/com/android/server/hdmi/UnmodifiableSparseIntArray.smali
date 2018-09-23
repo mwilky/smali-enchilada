@@ -14,15 +14,11 @@
 # direct methods
 .method public constructor <init>(Landroid/util/SparseIntArray;)V
     .locals 0
-    .param p1, "array"    # Landroid/util/SparseIntArray;
 
-    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
     iput-object p1, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
-    .line 31
     return-void
 .end method
 
@@ -30,9 +26,7 @@
 # virtual methods
 .method public get(I)I
     .locals 1
-    .param p1, "key"    # I
 
-    .line 38
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -44,10 +38,7 @@
 
 .method public get(II)I
     .locals 1
-    .param p1, "key"    # I
-    .param p2, "valueIfKeyNotFound"    # I
 
-    .line 42
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseIntArray;->get(II)I
@@ -59,9 +50,7 @@
 
 .method public indexOfValue(I)I
     .locals 1
-    .param p1, "value"    # I
 
-    .line 54
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfValue(I)I
@@ -73,9 +62,7 @@
 
 .method public keyAt(I)I
     .locals 1
-    .param p1, "index"    # I
 
-    .line 46
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->keyAt(I)I
@@ -88,7 +75,6 @@
 .method public size()I
     .locals 1
 
-    .line 34
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->size()I
@@ -101,7 +87,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 59
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->toString()Ljava/lang/String;
@@ -113,9 +98,7 @@
 
 .method public valueAt(I)I
     .locals 1
-    .param p1, "index"    # I
 
-    .line 50
     iget-object v0, p0, Lcom/android/server/hdmi/UnmodifiableSparseIntArray;->mArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->valueAt(I)I

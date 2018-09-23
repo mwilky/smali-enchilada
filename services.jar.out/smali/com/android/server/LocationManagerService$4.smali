@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 361
     iput-object p1, p0, Lcom/android/server/LocationManagerService$4;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onUidImportance(II)V
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "importance"    # I
 
-    .line 364
     iget-object v0, p0, Lcom/android/server/LocationManagerService$4;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$500(Lcom/android/server/LocationManagerService;)Lcom/android/server/LocationManagerService$LocationWorkerHandler;
@@ -54,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/LocationManagerService$LocationWorkerHandler;->post(Ljava/lang/Runnable;)Z
 
-    .line 370
     return-void
 .end method

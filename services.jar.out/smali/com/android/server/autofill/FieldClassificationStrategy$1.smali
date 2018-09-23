@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/autofill/FieldClassificationStrategy;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/autofill/FieldClassificationStrategy;
 
-    .line 157
     iput-object p1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onBindingDied(Landroid/content/ComponentName;)V
     .locals 3
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 192
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_0
@@ -63,7 +59,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -73,7 +68,6 @@
 
     monitor-enter v0
 
-    .line 194
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -81,13 +75,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$102(Lcom/android/server/autofill/FieldClassificationStrategy;Landroid/service/autofill/IAutofillFieldClassificationService;)Landroid/service/autofill/IAutofillFieldClassificationService;
 
-    .line 195
     monitor-exit v0
 
-    .line 196
     return-void
 
-    .line 195
     :catchall_0
     move-exception v1
 
@@ -100,9 +91,7 @@
 
 .method public onNullBinding(Landroid/content/ComponentName;)V
     .locals 3
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 200
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_0
@@ -125,7 +114,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 201
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -135,7 +123,6 @@
 
     monitor-enter v0
 
-    .line 202
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -143,13 +130,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$102(Lcom/android/server/autofill/FieldClassificationStrategy;Landroid/service/autofill/IAutofillFieldClassificationService;)Landroid/service/autofill/IAutofillFieldClassificationService;
 
-    .line 203
     monitor-exit v0
 
-    .line 204
     return-void
 
-    .line 203
     :catchall_0
     move-exception v1
 
@@ -162,10 +146,7 @@
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 8
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 160
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_0
@@ -188,7 +169,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 161
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -198,19 +178,15 @@
 
     monitor-enter v0
 
-    .line 162
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
-    .line 163
     invoke-static {p2}, Landroid/service/autofill/IAutofillFieldClassificationService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/autofill/IAutofillFieldClassificationService;
 
     move-result-object v2
 
-    .line 162
     invoke-static {v1, v2}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$102(Lcom/android/server/autofill/FieldClassificationStrategy;Landroid/service/autofill/IAutofillFieldClassificationService;)Landroid/service/autofill/IAutofillFieldClassificationService;
 
-    .line 164
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
     invoke-static {v1}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$200(Lcom/android/server/autofill/FieldClassificationStrategy;)Ljava/util/ArrayList;
@@ -219,7 +195,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 165
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
     invoke-static {v1}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$200(Lcom/android/server/autofill/FieldClassificationStrategy;)Ljava/util/ArrayList;
@@ -230,8 +205,6 @@
 
     move-result v1
 
-    .line 166
-    .local v1, "size":I
     sget-boolean v2, Lcom/android/server/autofill/Helper;->sDebug:Z
 
     if-eqz v2, :cond_1
@@ -258,16 +231,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 167
     :cond_1
     const/4 v2, 0x0
 
-    .line 167
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_3
 
-    .line 168
     iget-object v3, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
     invoke-static {v3}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$200(Lcom/android/server/autofill/FieldClassificationStrategy;)Ljava/util/ArrayList;
@@ -282,8 +251,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 170
-    .local v3, "queuedCommand":Lcom/android/server/autofill/FieldClassificationStrategy$Command;
     :try_start_1
     sget-boolean v4, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
@@ -307,7 +274,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 171
     :cond_2
     iget-object v4, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -320,15 +286,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 174
     goto :goto_1
 
-    .line 172
     :catch_0
     move-exception v4
 
-    .line 173
-    .local v4, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v5, "FieldClassificationStrategy"
 
@@ -354,16 +316,11 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 167
-    .end local v3    # "queuedCommand":Lcom/android/server/autofill/FieldClassificationStrategy$Command;
-    .end local v4    # "e":Landroid/os/RemoteException;
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 176
-    .end local v2    # "i":I
     :cond_3
     iget-object v2, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -371,8 +328,6 @@
 
     invoke-static {v2, v3}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$202(Lcom/android/server/autofill/FieldClassificationStrategy;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 177
-    .end local v1    # "size":I
     goto :goto_2
 
     :cond_4
@@ -386,15 +341,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 178
     :cond_5
     :goto_2
     monitor-exit v0
 
-    .line 179
     return-void
 
-    .line 178
     :catchall_0
     move-exception v1
 
@@ -407,9 +359,7 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 3
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 184
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v0, :cond_0
@@ -432,7 +382,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -442,7 +391,6 @@
 
     monitor-enter v0
 
-    .line 186
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/FieldClassificationStrategy$1;->this$0:Lcom/android/server/autofill/FieldClassificationStrategy;
 
@@ -450,13 +398,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/autofill/FieldClassificationStrategy;->access$102(Lcom/android/server/autofill/FieldClassificationStrategy;Landroid/service/autofill/IAutofillFieldClassificationService;)Landroid/service/autofill/IAutofillFieldClassificationService;
 
-    .line 187
     monitor-exit v0
 
-    .line 188
     return-void
 
-    .line 187
     :catchall_0
     move-exception v1
 

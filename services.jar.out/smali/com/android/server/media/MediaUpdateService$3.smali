@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaUpdateService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/media/MediaUpdateService;
 
-    .line 93
     iput-object p1, p0, Lcom/android/server/media/MediaUpdateService$3;->this$0:Lcom/android/server/media/MediaUpdateService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 96
     const-string v0, "android.intent.extra.user_handle"
 
     const/4 v1, 0x0
@@ -49,10 +44,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 100
     return-void
 
-    .line 102
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -124,7 +117,6 @@
 
     goto :goto_2
 
-    .line 115
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/media/MediaUpdateService$3;->this$0:Lcom/android/server/media/MediaUpdateService;
 
@@ -132,16 +124,13 @@
 
     goto :goto_2
 
-    .line 112
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/media/MediaUpdateService$3;->this$0:Lcom/android/server/media/MediaUpdateService;
 
     invoke-static {v0}, Lcom/android/server/media/MediaUpdateService;->access$200(Lcom/android/server/media/MediaUpdateService;)V
 
-    .line 113
     goto :goto_2
 
-    .line 104
     :pswitch_2
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -155,19 +144,15 @@
 
     if-eqz v0, :cond_5
 
-    .line 107
     return-void
 
-    .line 109
     :cond_5
     iget-object v0, p0, Lcom/android/server/media/MediaUpdateService$3;->this$0:Lcom/android/server/media/MediaUpdateService;
 
     invoke-static {v0}, Lcom/android/server/media/MediaUpdateService;->access$200(Lcom/android/server/media/MediaUpdateService;)V
 
-    .line 110
     nop
 
-    .line 118
     :goto_2
     return-void
 

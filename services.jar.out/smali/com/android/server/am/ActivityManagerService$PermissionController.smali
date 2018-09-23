@@ -21,15 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
-    .param p1, "activityManagerService"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 10490
     invoke-direct {p0}, Landroid/os/IPermissionController$Stub;-><init>()V
 
-    .line 10491
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 10492
     return-void
 .end method
 
@@ -37,11 +33,7 @@
 # virtual methods
 .method public checkPermission(Ljava/lang/String;II)Z
     .locals 1
-    .param p1, "permission"    # Ljava/lang/String;
-    .param p2, "pid"    # I
-    .param p3, "uid"    # I
 
-    .line 10496
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkPermission(Ljava/lang/String;II)I
@@ -63,10 +55,7 @@
 
 .method public getPackageUid(Ljava/lang/String;I)I
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "flags"    # I
 
-    .line 10528
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
@@ -76,22 +65,17 @@
 
     move-result-object v0
 
-    .line 10529
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getPackageUid(Ljava/lang/String;I)I
 
     move-result v0
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10528
     return v0
 
-    .line 10530
     :catch_0
     move-exception v0
 
-    .line 10531
-    .local v0, "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v1, -0x1
 
     return v1
@@ -99,9 +83,7 @@
 
 .method public getPackagesForUid(I)[Ljava/lang/String;
     .locals 1
-    .param p1, "uid"    # I
 
-    .line 10508
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
@@ -110,20 +92,16 @@
 
     move-result-object v0
 
-    .line 10509
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 10508
     return-object v0
 .end method
 
 .method public isRuntimePermission(Ljava/lang/String;)Z
     .locals 5
-    .param p1, "permission"    # Ljava/lang/String;
 
-    .line 10515
     const/4 v0, 0x0
 
     :try_start_0
@@ -135,13 +113,10 @@
 
     move-result-object v1
 
-    .line 10516
     invoke-virtual {v1, p1, v0}, Landroid/content/pm/PackageManager;->getPermissionInfo(Ljava/lang/String;I)Landroid/content/pm/PermissionInfo;
 
     move-result-object v1
 
-    .line 10517
-    .local v1, "info":Landroid/content/pm/PermissionInfo;
     iget v2, v1, Landroid/content/pm/PermissionInfo;->protectionLevel:I
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -159,13 +134,9 @@
     :cond_0
     return v0
 
-    .line 10519
-    .end local v1    # "info":Landroid/content/pm/PermissionInfo;
     :catch_0
     move-exception v1
 
-    .line 10520
-    .local v1, "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v2, "ActivityManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -184,23 +155,16 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 10522
-    .end local v1    # "nnfe":Landroid/content/pm/PackageManager$NameNotFoundException;
     return v0
 .end method
 
 .method public noteOp(Ljava/lang/String;ILjava/lang/String;)I
     .locals 2
-    .param p1, "op"    # Ljava/lang/String;
-    .param p2, "uid"    # I
-    .param p3, "packageName"    # Ljava/lang/String;
 
-    .line 10502
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$PermissionController;->mActivityManagerService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mAppOpsService:Lcom/android/server/AppOpsService;
 
-    .line 10503
     invoke-static {p1}, Landroid/app/AppOpsManager;->strOpToOp(Ljava/lang/String;)I
 
     move-result v1
@@ -209,6 +173,5 @@
 
     move-result v0
 
-    .line 10502
     return v0
 .end method

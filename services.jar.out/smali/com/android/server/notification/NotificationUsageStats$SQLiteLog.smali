@@ -109,12 +109,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 9
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 1091
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1092
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string/jumbo v1, "notification-sqlite-log"
@@ -123,11 +120,8 @@
 
     invoke-direct {v0, v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    .line 1094
-    .local v0, "backgroundThread":Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 1095
     new-instance v1, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -138,7 +132,6 @@
 
     iput-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
 
-    .line 1119
     new-instance v1, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$2;
 
     const-string/jumbo v6, "notification_log.db"
@@ -157,18 +150,12 @@
 
     iput-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mHelper:Landroid/database/sqlite/SQLiteOpenHelper;
 
-    .line 1163
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;JILcom/android/server/notification/NotificationRecord;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
-    .param p1, "x1"    # J
-    .param p3, "x2"    # I
-    .param p4, "x3"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1016
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->writeEvent(JILcom/android/server/notification/NotificationRecord;)V
 
     return-void
@@ -177,13 +164,10 @@
 .method private getMidnightMs()J
     .locals 8
 
-    .line 1238
     new-instance v0, Ljava/util/GregorianCalendar;
 
     invoke-direct {v0}, Ljava/util/GregorianCalendar;-><init>()V
 
-    .line 1239
-    .local v0, "midnight":Ljava/util/GregorianCalendar;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/GregorianCalendar;->get(I)I
@@ -196,14 +180,12 @@
 
     move-result v3
 
-    .line 1240
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1}, Ljava/util/GregorianCalendar;->get(I)I
 
     move-result v4
 
-    .line 1239
     const/16 v5, 0x17
 
     const/16 v6, 0x3b
@@ -214,7 +196,6 @@
 
     invoke-virtual/range {v1 .. v7}, Ljava/util/GregorianCalendar;->set(IIIIII)V
 
-    .line 1241
     invoke-virtual {v0}, Ljava/util/GregorianCalendar;->getTimeInMillis()J
 
     move-result-wide v1
@@ -224,14 +205,12 @@
 
 .method private jsonPostFrequencies(Lcom/android/server/notification/NotificationManagerService$DumpFilter;)Lorg/json/JSONArray;
     .locals 17
-    .param p1, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/json/JSONException;
         }
     .end annotation
 
-    .line 1182
     move-object/from16 v1, p1
 
     new-instance v0, Lorg/json/JSONArray;
@@ -240,8 +219,6 @@
 
     move-object v2, v0
 
-    .line 1183
-    .local v2, "frequencies":Lorg/json/JSONArray;
     move-object/from16 v3, p0
 
     iget-object v0, v3, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mHelper:Landroid/database/sqlite/SQLiteOpenHelper;
@@ -250,14 +227,10 @@
 
     move-result-object v4
 
-    .line 1184
-    .local v4, "db":Landroid/database/sqlite/SQLiteDatabase;
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->getMidnightMs()J
 
     move-result-wide v5
 
-    .line 1185
-    .local v5, "midnight":J
     const-string v0, "SELECT event_user_id, pkg, CAST(((%d - event_time_ms) / 86400000) AS int) AS day, COUNT(*) AS cnt, SUM(muted) as muted, SUM(noisy) as noisy, SUM(demoted) as demoted FROM log WHERE event_type=1 AND event_time_ms > %d  GROUP BY event_user_id, day, pkg"
 
     const/4 v7, 0x2
@@ -286,8 +259,6 @@
 
     move-result-object v8
 
-    .line 1186
-    .local v8, "q":Ljava/lang/String;
     const/4 v0, 0x0
 
     invoke-virtual {v4, v8, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
@@ -296,8 +267,6 @@
 
     move-object v9, v0
 
-    .line 1188
-    .local v9, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -308,19 +277,14 @@
 
     if-nez v0, :cond_1
 
-    .line 1189
     invoke-interface {v9, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
-    .line 1190
-    .local v0, "userId":I
     invoke-interface {v9, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 1191
-    .local v12, "pkg":Ljava/lang/String;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1, v12}, Lcom/android/server/notification/NotificationManagerService$DumpFilter;->matches(Ljava/lang/String;)Z
@@ -329,105 +293,71 @@
 
     if-nez v13, :cond_0
 
-    .line 1191
-    .end local v0    # "userId":I
-    .end local v12    # "pkg":Ljava/lang/String;
     goto :goto_1
 
-    .line 1192
-    .restart local v0    # "userId":I
-    .restart local v12    # "pkg":Ljava/lang/String;
     :cond_0
     invoke-interface {v9, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v13
 
-    .line 1193
-    .local v13, "day":I
     const/4 v14, 0x3
 
     invoke-interface {v9, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v14
 
-    .line 1194
-    .local v14, "count":I
     const/4 v15, 0x4
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v15
 
-    .line 1195
-    .local v15, "muted":I
     const/4 v7, 0x5
 
     invoke-interface {v9, v7}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v7
 
-    .line 1196
-    .local v7, "noisy":I
     const/4 v10, 0x6
 
     invoke-interface {v9, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
 
-    .line 1197
-    .local v10, "demoted":I
     new-instance v11, Lorg/json/JSONObject;
 
     invoke-direct {v11}, Lorg/json/JSONObject;-><init>()V
 
-    .line 1198
-    .local v11, "row":Lorg/json/JSONObject;
     const-string/jumbo v1, "user_id"
 
     invoke-virtual {v11, v1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1199
     const-string/jumbo v1, "package"
 
     invoke-virtual {v11, v1, v12}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 1200
     const-string v1, "day"
 
     invoke-virtual {v11, v1, v13}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1201
     const-string v1, "count"
 
     invoke-virtual {v11, v1, v14}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1202
     const-string/jumbo v1, "noisy"
 
     invoke-virtual {v11, v1, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1203
     const-string/jumbo v1, "muted"
 
     invoke-virtual {v11, v1, v15}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1204
     const-string v1, "demoted"
 
     invoke-virtual {v11, v1, v10}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    .line 1205
     invoke-virtual {v2, v11}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
 
-    .line 1188
-    .end local v0    # "userId":I
-    .end local v7    # "noisy":I
-    .end local v10    # "demoted":I
-    .end local v11    # "row":Lorg/json/JSONObject;
-    .end local v12    # "pkg":Ljava/lang/String;
-    .end local v13    # "day":I
-    .end local v14    # "count":I
-    .end local v15    # "muted":I
     :goto_1
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
@@ -443,17 +373,13 @@
 
     goto :goto_0
 
-    .line 1208
     :cond_1
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 1209
     nop
 
-    .line 1210
     return-object v2
 
-    .line 1208
     :catchall_0
     move-exception v0
 
@@ -464,15 +390,11 @@
 
 .method private pruneIfNecessary(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 9
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 1265
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1266
-    .local v0, "nowMs":J
     sget-wide v2, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->sNumWrites:J
 
     const-wide/16 v4, 0x400
@@ -491,22 +413,17 @@
 
     if-lez v2, :cond_1
 
-    .line 1268
     :cond_0
     const-wide/16 v2, 0x0
 
     sput-wide v2, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->sNumWrites:J
 
-    .line 1269
     sput-wide v0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->sLastPruneMs:J
 
-    .line 1270
     const-wide/32 v2, 0x240c8400
 
     sub-long v2, v0, v2
 
-    .line 1280
-    .local v2, "horizonStartMs":J
     :try_start_0
     const-string/jumbo v4, "log"
 
@@ -518,20 +435,16 @@
 
     const/4 v7, 0x0
 
-    .line 1281
     invoke-static {v2, v3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v8
 
     aput-object v8, v6, v7
 
-    .line 1280
     invoke-virtual {p1, v4, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     move-result v4
 
-    .line 1282
-    .local v4, "deletedRows":I
     const-string v5, "NotificationSQLiteLog"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -554,25 +467,17 @@
     .catch Landroid/database/sqlite/SQLiteFullException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/database/sqlite/SQLiteDatabaseCorruptException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1285
-    .end local v4    # "deletedRows":I
     goto :goto_0
 
-    .line 1283
     :catch_0
     move-exception v4
 
-    .line 1284
-    .local v4, "ex":Landroid/database/sqlite/SQLiteException;
     const-string v5, "NotificationSQLiteLog"
 
     const-string/jumbo v6, "pruneIfNecessary error: "
 
     invoke-static {v5, v6, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1288
-    .end local v2    # "horizonStartMs":J
-    .end local v4    # "ex":Landroid/database/sqlite/SQLiteException;
     :cond_1
     :goto_0
     return-void
@@ -580,10 +485,7 @@
 
 .method private static putNotificationDetails(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
     .locals 7
-    .param p0, "r"    # Lcom/android/server/notification/NotificationRecord;
-    .param p1, "outCv"    # Landroid/content/ContentValues;
 
-    .line 1296
     const-string/jumbo v0, "nid"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -598,7 +500,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1297
     iget-object v0, p0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getTag()Ljava/lang/String;
@@ -607,7 +508,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1298
     const-string/jumbo v0, "tag"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -618,7 +518,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1300
     :cond_0
     const-string/jumbo v0, "when_ms"
 
@@ -634,7 +533,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1301
     const-string v0, "flags"
 
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
@@ -649,25 +547,18 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1302
     iget-object v0, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
 
     iget v0, v0, Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;->requestedImportance:I
 
-    .line 1303
-    .local v0, "before":I
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationRecord;->getImportance()I
 
     move-result v1
 
-    .line 1304
-    .local v1, "after":I
     iget-object v2, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
 
     iget-boolean v2, v2, Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;->isNoisy:Z
 
-    .line 1305
-    .local v2, "noisy":Z
     const-string/jumbo v3, "importance_request"
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -676,7 +567,6 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1306
     const-string/jumbo v3, "importance_final"
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -685,7 +575,6 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1307
     const-string v3, "demoted"
 
     const/4 v4, 0x1
@@ -708,7 +597,6 @@
 
     invoke-virtual {p1, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1308
     const-string/jumbo v3, "noisy"
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -717,14 +605,12 @@
 
     invoke-virtual {p1, v3, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 1309
     if-eqz v2, :cond_2
 
     const/4 v3, 0x4
 
     if-ge v1, v3, :cond_2
 
-    .line 1310
     const-string/jumbo v3, "muted"
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -735,7 +621,6 @@
 
     goto :goto_1
 
-    .line 1312
     :cond_2
     const-string/jumbo v3, "muted"
 
@@ -745,7 +630,6 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1314
     :goto_1
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
@@ -755,7 +639,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 1315
     const-string v3, "category"
 
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
@@ -766,7 +649,6 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1317
     :cond_3
     const-string v3, "action_count"
 
@@ -778,7 +660,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 1318
     invoke-virtual {p0}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
     move-result-object v4
@@ -789,7 +670,6 @@
 
     nop
 
-    .line 1317
     :cond_4
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -797,16 +677,12 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1319
     return-void
 .end method
 
 .method private static putNotificationIdentifiers(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
     .locals 2
-    .param p0, "r"    # Lcom/android/server/notification/NotificationRecord;
-    .param p1, "outCv"    # Landroid/content/ContentValues;
 
-    .line 1291
     const-string/jumbo v0, "key"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -817,7 +693,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1292
     const-string/jumbo v0, "pkg"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -828,16 +703,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1293
     return-void
 .end method
 
 .method private static putPosttimeVisibility(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
     .locals 3
-    .param p0, "r"    # Lcom/android/server/notification/NotificationRecord;
-    .param p1, "outCv"    # Landroid/content/ContentValues;
 
-    .line 1322
     const-string/jumbo v0, "posttime_ms"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
@@ -852,7 +723,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1323
     const-string v0, "airtime_ms"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
@@ -867,7 +737,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1324
     const-string v0, "expansion_count"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
@@ -880,7 +749,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1325
     const-string v0, "expansion_airtime_ms"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
@@ -895,7 +763,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1326
     const-string v0, "first_expansion_time_ms"
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationRecord;->stats:Lcom/android/server/notification/NotificationUsageStats$SingleNotificationStats;
@@ -908,23 +775,16 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1327
     return-void
 .end method
 
 .method private writeEvent(JILcom/android/server/notification/NotificationRecord;)V
     .locals 6
-    .param p1, "eventTimeMs"    # J
-    .param p3, "eventType"    # I
-    .param p4, "r"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1245
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1246
-    .local v0, "cv":Landroid/content/ContentValues;
     const-string v1, "event_user_id"
 
     iget-object v2, p4, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
@@ -943,7 +803,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1247
     const-string v1, "event_time_ms"
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -952,7 +811,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1248
     const-string v1, "event_type"
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -961,24 +819,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1249
     invoke-static {p4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->putNotificationIdentifiers(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
 
-    .line 1250
     const/4 v1, 0x1
 
     if-ne p3, v1, :cond_0
 
-    .line 1251
     invoke-static {p4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->putNotificationDetails(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
 
     goto :goto_0
 
-    .line 1253
     :cond_0
     invoke-static {p4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->putPosttimeVisibility(Lcom/android/server/notification/NotificationRecord;Landroid/content/ContentValues;)V
 
-    .line 1255
     :goto_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mHelper:Landroid/database/sqlite/SQLiteOpenHelper;
 
@@ -986,8 +839,6 @@
 
     move-result-object v1
 
-    .line 1256
-    .local v1, "db":Landroid/database/sqlite/SQLiteDatabase;
     const-string/jumbo v2, "log"
 
     const/4 v3, 0x0
@@ -1002,7 +853,6 @@
 
     if-gez v2, :cond_1
 
-    .line 1257
     const-string v2, "NotificationSQLiteLog"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1021,7 +871,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1259
     :cond_1
     sget-wide v2, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->sNumWrites:J
 
@@ -1031,10 +880,8 @@
 
     sput-wide v2, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->sNumWrites:J
 
-    .line 1260
     invoke-direct {p0, v1}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->pruneIfNecessary(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 1261
     return-void
 .end method
 
@@ -1042,28 +889,19 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
     .locals 0
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "indent"    # Ljava/lang/String;
-    .param p3, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
-    .line 1330
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->printPostFrequencies(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
 
-    .line 1331
     return-void
 .end method
 
 .method public dumpJson(Lcom/android/server/notification/NotificationManagerService$DumpFilter;)Lorg/json/JSONObject;
     .locals 4
-    .param p1, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
-    .line 1334
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 1336
-    .local v0, "dump":Lorg/json/JSONObject;
     :try_start_0
     const-string/jumbo v1, "post_frequency"
 
@@ -1073,14 +911,12 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 1337
     const-string/jumbo v1, "since"
 
     iget-wide v2, p1, Lcom/android/server/notification/NotificationManagerService$DumpFilter;->since:J
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
 
-    .line 1338
     const-string/jumbo v1, "now"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -1091,23 +927,18 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1341
     goto :goto_0
 
-    .line 1339
     :catch_0
     move-exception v1
 
-    .line 1342
     :goto_0
     return-object v0
 .end method
 
 .method public logClicked(Lcom/android/server/notification/NotificationRecord;)V
     .locals 3
-    .param p1, "notification"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1170
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
@@ -1120,15 +951,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1171
     return-void
 .end method
 
 .method public logDismissed(Lcom/android/server/notification/NotificationRecord;)V
     .locals 3
-    .param p1, "notification"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1178
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
@@ -1141,15 +969,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1179
     return-void
 .end method
 
 .method public logPosted(Lcom/android/server/notification/NotificationRecord;)V
     .locals 3
-    .param p1, "notification"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1166
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
@@ -1162,15 +987,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1167
     return-void
 .end method
 
 .method public logRemoved(Lcom/android/server/notification/NotificationRecord;)V
     .locals 3
-    .param p1, "notification"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1174
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->mWriteHandler:Landroid/os/Handler;
@@ -1183,17 +1005,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1175
     return-void
 .end method
 
 .method public printPostFrequencies(Ljava/io/PrintWriter;Ljava/lang/String;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
     .locals 17
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "indent"    # Ljava/lang/String;
-    .param p3, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
-    .line 1214
     move-object/from16 v1, p3
 
     move-object/from16 v2, p0
@@ -1204,14 +1021,10 @@
 
     move-result-object v3
 
-    .line 1215
-    .local v3, "db":Landroid/database/sqlite/SQLiteDatabase;
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->getMidnightMs()J
 
     move-result-wide v4
 
-    .line 1216
-    .local v4, "midnight":J
     const-string v0, "SELECT event_user_id, pkg, CAST(((%d - event_time_ms) / 86400000) AS int) AS day, COUNT(*) AS cnt, SUM(muted) as muted, SUM(noisy) as noisy, SUM(demoted) as demoted FROM log WHERE event_type=1 AND event_time_ms > %d  GROUP BY event_user_id, day, pkg"
 
     const/4 v6, 0x2
@@ -1240,8 +1053,6 @@
 
     move-result-object v7
 
-    .line 1217
-    .local v7, "q":Ljava/lang/String;
     const/4 v0, 0x0
 
     invoke-virtual {v3, v7, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
@@ -1250,8 +1061,6 @@
 
     move-object v8, v0
 
-    .line 1219
-    .local v8, "cursor":Landroid/database/Cursor;
     :try_start_0
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1262,19 +1071,14 @@
 
     if-nez v0, :cond_1
 
-    .line 1220
     invoke-interface {v8, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
-    .line 1221
-    .local v0, "userId":I
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 1222
-    .local v11, "pkg":Ljava/lang/String;
     if-eqz v1, :cond_0
 
     invoke-virtual {v1, v11}, Lcom/android/server/notification/NotificationManagerService$DumpFilter;->matches(Ljava/lang/String;)Z
@@ -1283,57 +1087,41 @@
 
     if-nez v12, :cond_0
 
-    .line 1219
-    .end local v0    # "userId":I
-    .end local v11    # "pkg":Ljava/lang/String;
     move-object/from16 v9, p1
 
     move-object/from16 v10, p2
 
     goto :goto_1
 
-    .line 1223
-    .restart local v0    # "userId":I
-    .restart local v11    # "pkg":Ljava/lang/String;
     :cond_0
     invoke-interface {v8, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v12
 
-    .line 1224
-    .local v12, "day":I
     const/4 v13, 0x3
 
     invoke-interface {v8, v13}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v13
 
-    .line 1225
-    .local v13, "count":I
     const/4 v14, 0x4
 
     invoke-interface {v8, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v14
 
-    .line 1226
-    .local v14, "muted":I
     const/4 v15, 0x5
 
     invoke-interface {v8, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v15
 
-    .line 1227
-    .local v15, "noisy":I
     const/4 v6, 0x6
 
     invoke-interface {v8, v6}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v6
 
-    .line 1228
-    .local v6, "demoted":I
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1402,14 +1190,6 @@
     :try_start_2
     invoke-virtual {v9, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 1219
-    .end local v0    # "userId":I
-    .end local v6    # "demoted":I
-    .end local v11    # "pkg":Ljava/lang/String;
-    .end local v12    # "day":I
-    .end local v13    # "count":I
-    .end local v14    # "muted":I
-    .end local v15    # "noisy":I
     :goto_1
     invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_2
@@ -1425,7 +1205,6 @@
 
     goto/16 :goto_0
 
-    .line 1233
     :catchall_0
     move-exception v0
 
@@ -1445,13 +1224,10 @@
 
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 1234
     nop
 
-    .line 1235
     return-void
 
-    .line 1233
     :catchall_2
     move-exception v0
 

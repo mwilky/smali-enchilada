@@ -37,22 +37,17 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
-    .param p1, "maxCount"    # I
 
-    .line 652
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 653
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
-    .line 654
     iput p1, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mMaxCount:I
 
-    .line 655
     return-void
 .end method
 
@@ -60,19 +55,13 @@
 # virtual methods
 .method public add(ILcom/android/server/NativeDaemonEvent;)V
     .locals 6
-    .param p1, "cmdNum"    # I
-    .param p2, "response"    # Lcom/android/server/NativeDaemonEvent;
 
-    .line 658
     const/4 v0, 0x0
 
-    .line 659
-    .local v0, "found":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     iget-object v1, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     monitor-enter v1
 
-    .line 660
     :try_start_0
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
@@ -93,29 +82,21 @@
 
     check-cast v3, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
-    .line 661
-    .local v3, "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     iget v4, v3, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->cmdNum:I
 
     if-ne v4, p1, :cond_0
 
-    .line 662
     move-object v0, v3
 
-    .line 663
     goto :goto_1
 
-    .line 665
-    .end local v3    # "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     :cond_0
     goto :goto_0
 
-    .line 666
     :cond_1
     :goto_1
     if-nez v0, :cond_3
 
-    .line 668
     :goto_2
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
@@ -127,7 +108,6 @@
 
     if-lt v2, v3, :cond_2
 
-    .line 669
     const-string v2, "NativeDaemonConnector.ResponseQueue"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -140,7 +120,6 @@
 
     iget-object v4, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
-    .line 670
     invoke-virtual {v4}, Ljava/util/LinkedList;->size()I
 
     move-result v4
@@ -159,10 +138,8 @@
 
     move-result-object v3
 
-    .line 669
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 673
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     invoke-virtual {v2}, Ljava/util/LinkedList;->remove()Ljava/lang/Object;
@@ -171,8 +148,6 @@
 
     check-cast v2, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
-    .line 674
-    .local v2, "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     const-string v3, "NativeDaemonConnector.ResponseQueue"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -205,11 +180,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 677
-    .end local v2    # "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     goto :goto_2
 
-    .line 678
     :cond_2
     new-instance v2, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
@@ -219,12 +191,10 @@
 
     move-object v0, v2
 
-    .line 679
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     invoke-virtual {v2, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 681
     :cond_3
     iget v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
@@ -232,7 +202,6 @@
 
     iput v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
-    .line 684
     iget v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
     if-nez v2, :cond_4
@@ -241,13 +210,11 @@
 
     invoke-virtual {v2, v0}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 685
     :cond_4
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 687
     :try_start_1
     iget-object v1, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->responses:Ljava/util/concurrent/BlockingQueue;
 
@@ -255,17 +222,14 @@
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 688
     goto :goto_3
 
     :catch_0
     move-exception v1
 
-    .line 689
     :goto_3
     return-void
 
-    .line 685
     :catchall_0
     move-exception v2
 
@@ -279,21 +243,15 @@
 
 .method public dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 5
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 722
     const-string v0, "Pending requests:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 723
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     monitor-enter v0
 
-    .line 724
     :try_start_0
     iget-object v1, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
@@ -314,8 +272,6 @@
 
     check-cast v2, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
-    .line 725
-    .local v2, "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -342,18 +298,13 @@
 
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 726
-    .end local v2    # "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     goto :goto_0
 
-    .line 727
     :cond_0
     monitor-exit v0
 
-    .line 728
     return-void
 
-    .line 727
     :catchall_0
     move-exception v1
 
@@ -366,20 +317,13 @@
 
 .method public remove(IJLjava/lang/String;)Lcom/android/server/NativeDaemonEvent;
     .locals 5
-    .param p1, "cmdNum"    # I
-    .param p2, "timeoutMs"    # J
-    .param p4, "logCmd"    # Ljava/lang/String;
 
-    .line 694
     const/4 v0, 0x0
 
-    .line 695
-    .local v0, "found":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     iget-object v1, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     monitor-enter v1
 
-    .line 696
     :try_start_0
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
@@ -400,41 +344,31 @@
 
     check-cast v3, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
-    .line 697
-    .local v3, "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     iget v4, v3, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->cmdNum:I
 
     if-ne v4, p1, :cond_0
 
-    .line 698
     move-object v0, v3
 
-    .line 699
     goto :goto_1
 
-    .line 701
-    .end local v3    # "pendingCmd":Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
     :cond_0
     goto :goto_0
 
-    .line 702
     :cond_1
     :goto_1
     if-nez v0, :cond_2
 
-    .line 703
     new-instance v2, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;
 
     invoke-direct {v2, p1, p4}, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;-><init>(ILjava/lang/String;)V
 
     move-object v0, v2
 
-    .line 704
     iget-object v2, p0, Lcom/android/server/NativeDaemonConnector$ResponseQueue;->mPendingCmds:Ljava/util/LinkedList;
 
     invoke-virtual {v2, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 706
     :cond_2
     iget v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
@@ -442,7 +376,6 @@
 
     iput v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
-    .line 709
     iget v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->availableResponseCount:I
 
     if-nez v2, :cond_3
@@ -451,17 +384,13 @@
 
     invoke-virtual {v2, v0}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 710
     :cond_3
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 711
     const/4 v1, 0x0
 
-    .line 713
-    .local v1, "result":Lcom/android/server/NativeDaemonEvent;
     :try_start_1
     iget-object v2, v0, Lcom/android/server/NativeDaemonConnector$ResponseQueue$PendingCmd;->responses:Ljava/util/concurrent/BlockingQueue;
 
@@ -477,29 +406,23 @@
 
     move-object v1, v2
 
-    .line 714
     goto :goto_2
 
     :catch_0
     move-exception v2
 
-    .line 715
     :goto_2
     if-nez v1, :cond_4
 
-    .line 716
     const-string v2, "NativeDaemonConnector.ResponseQueue"
 
     const-string v3, "Timeout waiting for response"
 
     invoke-static {v2, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 718
     :cond_4
     return-object v1
 
-    .line 710
-    .end local v1    # "result":Lcom/android/server/NativeDaemonEvent;
     :catchall_0
     move-exception v2
 

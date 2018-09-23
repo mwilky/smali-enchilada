@@ -23,22 +23,17 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/trust/TrustManagerService;Landroid/content/Context;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 1227
     iput-object p1, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->this$0:Lcom/android/server/trust/TrustManagerService;
 
-    .line 1228
     invoke-direct {p0, p2}, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;-><init>(Landroid/content/Context;)V
 
-    .line 1225
     new-instance p1, Landroid/util/SparseBooleanArray;
 
     invoke-direct {p1}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->mStartFromSuccessfulUnlock:Landroid/util/SparseBooleanArray;
 
-    .line 1229
     return-void
 .end method
 
@@ -46,30 +41,23 @@
 # virtual methods
 .method allowTrustFromUnlock(I)V
     .locals 4
-    .param p1, "userId"    # I
 
-    .line 1262
     if-ltz p1, :cond_2
 
-    .line 1265
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->canAgentsRunForUser(I)Z
 
     move-result v0
 
-    .line 1266
-    .local v0, "previous":Z
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->mStartFromSuccessfulUnlock:Landroid/util/SparseBooleanArray;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, p1, v2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 1268
     sget-boolean v1, Lcom/android/server/trust/TrustManagerService;->DEBUG:Z
 
     if-eqz v1, :cond_0
 
-    .line 1269
     const-string v1, "TrustManagerService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -86,7 +74,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1270
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->isTrustAllowedForUser(I)Z
 
     move-result v3
@@ -97,7 +84,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1271
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->canAgentsRunForUser(I)Z
 
     move-result v3
@@ -108,10 +94,8 @@
 
     move-result-object v2
 
-    .line 1269
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1274
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->canAgentsRunForUser(I)Z
 
@@ -119,17 +103,13 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 1275
     iget-object v1, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/trust/TrustManagerService;->refreshAgentList(I)V
 
-    .line 1277
     :cond_1
     return-void
 
-    .line 1263
-    .end local v0    # "previous":Z
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -154,9 +134,7 @@
 
 .method canAgentsRunForUser(I)Z
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 1249
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->mStartFromSuccessfulUnlock:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
@@ -165,7 +143,6 @@
 
     if-nez v0, :cond_1
 
-    .line 1250
     invoke-super {p0, p1}, Lcom/android/internal/widget/LockPatternUtils$StrongAuthTracker;->isTrustAllowedForUser(I)Z
 
     move-result v0
@@ -183,26 +160,21 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 1249
     :goto_1
     return v0
 .end method
 
 .method public onStrongAuthRequiredChanged(I)V
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 1233
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->mStartFromSuccessfulUnlock:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
-    .line 1235
     sget-boolean v0, Lcom/android/server/trust/TrustManagerService;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 1236
     const-string v0, "TrustManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -219,7 +191,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1237
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->isTrustAllowedForUser(I)Z
 
     move-result v2
@@ -230,7 +201,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1238
     invoke-virtual {p0, p1}, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->canAgentsRunForUser(I)Z
 
     move-result v2
@@ -241,22 +211,18 @@
 
     move-result-object v1
 
-    .line 1236
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1241
     :cond_0
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/trust/TrustManagerService;->refreshAgentList(I)V
 
-    .line 1245
     iget-object v0, p0, Lcom/android/server/trust/TrustManagerService$StrongAuthTracker;->this$0:Lcom/android/server/trust/TrustManagerService;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Lcom/android/server/trust/TrustManagerService;->updateTrust(II)V
 
-    .line 1246
     return-void
 .end method

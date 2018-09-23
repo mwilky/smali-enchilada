@@ -22,17 +22,14 @@
 .method protected constructor <init>(Lcom/android/server/devicepolicy/Owners;)V
     .locals 0
 
-    .line 758
     iput-object p1, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
-    .line 759
     invoke-virtual {p1}, Lcom/android/server/devicepolicy/Owners;->getDeviceOwnerFile()Ljava/io/File;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Lcom/android/server/devicepolicy/Owners$FileReadWriter;-><init>(Ljava/io/File;)V
 
-    .line 760
     return-void
 .end method
 
@@ -40,21 +37,15 @@
 # virtual methods
 .method readInner(Lorg/xmlpull/v1/XmlPullParser;ILjava/lang/String;)Z
     .locals 6
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-    .param p2, "depth"    # I
-    .param p3, "tag"    # Ljava/lang/String;
 
-    .line 802
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
     if-le p2, v0, :cond_0
 
-    .line 803
     return v1
 
-    .line 805
     :cond_0
     const/4 v2, -0x1
 
@@ -153,7 +144,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 843
     const-string v0, "DevicePolicyManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -172,10 +162,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 844
     return v4
 
-    .line 830
     :pswitch_0
     const-string/jumbo v0, "start"
 
@@ -183,21 +171,16 @@
 
     move-result-object v0
 
-    .line 831
-    .local v0, "startDate":Ljava/lang/String;
     const-string v3, "end"
 
     invoke-interface {p1, v2, v3}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 832
-    .local v3, "endDate":Ljava/lang/String;
     if-eqz v0, :cond_2
 
     if-eqz v3, :cond_2
 
-    .line 833
     iget-object v4, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Ljava/time/LocalDate;->parse(Ljava/lang/CharSequence;)Ljava/time/LocalDate;
@@ -206,7 +189,6 @@
 
     invoke-static {v4, v5}, Lcom/android/server/devicepolicy/Owners;->access$402(Lcom/android/server/devicepolicy/Owners;Ljava/time/LocalDate;)Ljava/time/LocalDate;
 
-    .line 834
     iget-object v4, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v3}, Ljava/time/LocalDate;->parse(Ljava/lang/CharSequence;)Ljava/time/LocalDate;
@@ -215,7 +197,6 @@
 
     invoke-static {v4, v5}, Lcom/android/server/devicepolicy/Owners;->access$502(Lcom/android/server/devicepolicy/Owners;Ljava/time/LocalDate;)Ljava/time/LocalDate;
 
-    .line 835
     iget-object v4, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v4}, Lcom/android/server/devicepolicy/Owners;->access$400(Lcom/android/server/devicepolicy/Owners;)Ljava/time/LocalDate;
@@ -234,28 +215,22 @@
 
     if-eqz v4, :cond_2
 
-    .line 836
     const-string v4, "DevicePolicyManagerService"
 
     const-string v5, "Invalid system update freeze record loaded"
 
     invoke-static {v4, v5}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 837
     iget-object v4, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v4, v2}, Lcom/android/server/devicepolicy/Owners;->access$402(Lcom/android/server/devicepolicy/Owners;Ljava/time/LocalDate;)Ljava/time/LocalDate;
 
-    .line 838
     iget-object v4, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v4, v2}, Lcom/android/server/devicepolicy/Owners;->access$502(Lcom/android/server/devicepolicy/Owners;Ljava/time/LocalDate;)Ljava/time/LocalDate;
 
     goto :goto_2
 
-    .line 827
-    .end local v0    # "startDate":Ljava/lang/String;
-    .end local v3    # "endDate":Ljava/lang/String;
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -265,10 +240,8 @@
 
     invoke-static {v0, v2}, Lcom/android/server/devicepolicy/Owners;->access$202(Lcom/android/server/devicepolicy/Owners;Landroid/app/admin/SystemUpdateInfo;)Landroid/app/admin/SystemUpdateInfo;
 
-    .line 828
     goto :goto_2
 
-    .line 824
     :pswitch_2
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -278,24 +251,18 @@
 
     invoke-static {v0, v2}, Lcom/android/server/devicepolicy/Owners;->access$102(Lcom/android/server/devicepolicy/Owners;Landroid/app/admin/SystemUpdatePolicy;)Landroid/app/admin/SystemUpdatePolicy;
 
-    .line 825
     goto :goto_2
 
-    .line 822
     :pswitch_3
     goto :goto_2
 
-    .line 811
     :pswitch_4
     const-string/jumbo v0, "userId"
 
-    .line 812
     invoke-interface {p1, v2, v0}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 814
-    .local v0, "userIdString":Ljava/lang/String;
     :try_start_0
     iget-object v2, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -307,15 +274,11 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 817
     goto :goto_2
 
-    .line 815
     :catch_0
     move-exception v2
 
-    .line 816
-    .local v2, "e":Ljava/lang/NumberFormatException;
     const-string v3, "DevicePolicyManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -334,12 +297,8 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 818
-    .end local v2    # "e":Ljava/lang/NumberFormatException;
     goto :goto_2
 
-    .line 807
-    .end local v0    # "userIdString":Ljava/lang/String;
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -349,15 +308,12 @@
 
     invoke-static {v0, v2}, Lcom/android/server/devicepolicy/Owners;->access$002(Lcom/android/server/devicepolicy/Owners;Lcom/android/server/devicepolicy/Owners$OwnerInfo;)Lcom/android/server/devicepolicy/Owners$OwnerInfo;
 
-    .line 808
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0, v4}, Lcom/android/server/devicepolicy/Owners;->access$302(Lcom/android/server/devicepolicy/Owners;I)I
 
-    .line 809
     nop
 
-    .line 847
     :cond_2
     :goto_2
     return v1
@@ -388,7 +344,6 @@
 .method shouldWrite()Z
     .locals 1
 
-    .line 764
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$000(Lcom/android/server/devicepolicy/Owners;)Lcom/android/server/devicepolicy/Owners$OwnerInfo;
@@ -407,7 +362,6 @@
 
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
-    .line 765
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$200(Lcom/android/server/devicepolicy/Owners;)Landroid/app/admin/SystemUpdateInfo;
 
     move-result-object v0
@@ -425,21 +379,18 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 764
     :goto_1
     return v0
 .end method
 
 .method writeInner(Lorg/xmlpull/v1/XmlSerializer;)V
     .locals 3
-    .param p1, "out"    # Lorg/xmlpull/v1/XmlSerializer;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 770
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$000(Lcom/android/server/devicepolicy/Owners;)Lcom/android/server/devicepolicy/Owners$OwnerInfo;
@@ -450,7 +401,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 771
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$000(Lcom/android/server/devicepolicy/Owners;)Lcom/android/server/devicepolicy/Owners$OwnerInfo;
@@ -461,12 +411,10 @@
 
     invoke-virtual {v0, p1, v2}, Lcom/android/server/devicepolicy/Owners$OwnerInfo;->writeToXml(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;)V
 
-    .line 772
     const-string v0, "device-owner-context"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 773
     const-string/jumbo v0, "userId"
 
     iget-object v2, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
@@ -481,12 +429,10 @@
 
     invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 774
     const-string v0, "device-owner-context"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 777
     :cond_0
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -496,12 +442,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 778
     const-string/jumbo v0, "system-update-policy"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 779
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$100(Lcom/android/server/devicepolicy/Owners;)Landroid/app/admin/SystemUpdatePolicy;
@@ -510,12 +454,10 @@
 
     invoke-virtual {v0, p1}, Landroid/app/admin/SystemUpdatePolicy;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 780
     const-string/jumbo v0, "system-update-policy"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 783
     :cond_1
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -525,7 +467,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 784
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$200(Lcom/android/server/devicepolicy/Owners;)Landroid/app/admin/SystemUpdateInfo;
@@ -536,7 +477,6 @@
 
     invoke-virtual {v0, p1, v2}, Landroid/app/admin/SystemUpdateInfo;->writeToXml(Lorg/xmlpull/v1/XmlSerializer;Ljava/lang/String;)V
 
-    .line 787
     :cond_2
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -554,13 +494,11 @@
 
     if-eqz v0, :cond_6
 
-    .line 788
     :cond_3
     const-string v0, "freeze-record"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 789
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
     invoke-static {v0}, Lcom/android/server/devicepolicy/Owners;->access$400(Lcom/android/server/devicepolicy/Owners;)Ljava/time/LocalDate;
@@ -569,12 +507,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 790
     const-string/jumbo v0, "start"
 
     iget-object v2, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
-    .line 791
     invoke-static {v2}, Lcom/android/server/devicepolicy/Owners;->access$400(Lcom/android/server/devicepolicy/Owners;)Ljava/time/LocalDate;
 
     move-result-object v2
@@ -583,10 +519,8 @@
 
     move-result-object v2
 
-    .line 790
     invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 793
     :cond_4
     iget-object v0, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
 
@@ -596,7 +530,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 794
     const-string v0, "end"
 
     iget-object v2, p0, Lcom/android/server/devicepolicy/Owners$DeviceOwnerReadWriter;->this$0:Lcom/android/server/devicepolicy/Owners;
@@ -611,13 +544,11 @@
 
     invoke-interface {p1, v1, v0, v2}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 796
     :cond_5
     const-string v0, "freeze-record"
 
     invoke-interface {p1, v1, v0}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 798
     :cond_6
     return-void
 .end method

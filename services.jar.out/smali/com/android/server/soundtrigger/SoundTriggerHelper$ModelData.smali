@@ -43,53 +43,39 @@
 # direct methods
 .method private constructor <init>(Ljava/util/UUID;I)V
     .locals 2
-    .param p1, "modelId"    # Ljava/util/UUID;
-    .param p2, "modelType"    # I
 
-    .line 1224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1208
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRequested:Z
 
-    .line 1212
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
 
-    .line 1214
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mCallback:Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
 
-    .line 1215
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRecognitionConfig:Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
 
-    .line 1219
     const/high16 v1, -0x80000000
 
     iput v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelHandle:I
 
-    .line 1222
     iput-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
 
-    .line 1225
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelId:Ljava/util/UUID;
 
-    .line 1228
     iput p2, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
 
-    .line 1229
     return-void
 .end method
 
 .method static createGenericModelData(Ljava/util/UUID;)Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     .locals 2
-    .param p0, "modelId"    # Ljava/util/UUID;
 
-    .line 1236
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
 
     const/4 v1, 0x1
@@ -101,9 +87,7 @@
 
 .method static createKeyphraseModelData(Ljava/util/UUID;)Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     .locals 2
-    .param p0, "modelId"    # Ljava/util/UUID;
 
-    .line 1232
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
 
     const/4 v1, 0x0
@@ -115,9 +99,7 @@
 
 .method static createModelDataOfUnknownType(Ljava/util/UUID;)Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     .locals 2
-    .param p0, "modelId"    # Ljava/util/UUID;
 
-    .line 1242
     new-instance v0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
 
     const/4 v1, -0x1
@@ -134,7 +116,6 @@
 
     monitor-enter p0
 
-    .line 1352
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -177,7 +158,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -186,7 +166,6 @@
 
     monitor-enter p0
 
-    .line 1286
     const/4 v0, 0x0
 
     :try_start_0
@@ -194,18 +173,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1287
     monitor-exit p0
 
     return-void
 
-    .line 1285
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -214,42 +190,34 @@
 
     monitor-enter p0
 
-    .line 1278
     const/4 v0, 0x0
 
     :try_start_0
     iput v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelState:I
 
-    .line 1279
     const/high16 v1, -0x80000000
 
     iput v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelHandle:I
 
-    .line 1280
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRecognitionConfig:Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
 
-    .line 1281
     iput-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRequested:Z
 
-    .line 1282
     iput-object v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mCallback:Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1283
     monitor-exit p0
 
     return-void
 
-    .line 1277
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -258,7 +226,6 @@
 
     monitor-enter p0
 
-    .line 1250
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mCallback:Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
     :try_end_0
@@ -273,7 +240,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -282,7 +248,6 @@
 
     monitor-enter p0
 
-    .line 1298
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelHandle:I
     :try_end_0
@@ -297,7 +262,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -306,7 +270,6 @@
 
     monitor-enter p0
 
-    .line 1302
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelId:Ljava/util/UUID;
     :try_end_0
@@ -321,7 +284,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -330,7 +292,6 @@
 
     monitor-enter p0
 
-    .line 1327
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
     :try_end_0
@@ -345,7 +306,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -354,7 +314,6 @@
 
     monitor-enter p0
 
-    .line 1306
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRecognitionConfig:Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
     :try_end_0
@@ -369,7 +328,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -378,7 +336,6 @@
 
     monitor-enter p0
 
-    .line 1323
     :try_start_0
     iget-object v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
     :try_end_0
@@ -393,7 +350,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -402,7 +358,6 @@
 
     monitor-enter p0
 
-    .line 1335
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
     :try_end_0
@@ -427,7 +382,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -436,7 +390,6 @@
 
     monitor-enter p0
 
-    .line 1331
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
     :try_end_0
@@ -461,7 +414,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -470,7 +422,6 @@
 
     monitor-enter p0
 
-    .line 1254
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelState:I
 
@@ -504,7 +455,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -513,7 +463,6 @@
 
     monitor-enter p0
 
-    .line 1258
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelState:I
     :try_end_0
@@ -538,7 +487,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -547,7 +495,6 @@
 
     monitor-enter p0
 
-    .line 1274
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelState:I
     :try_end_0
@@ -574,7 +521,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -583,7 +529,6 @@
 
     monitor-enter p0
 
-    .line 1311
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRequested:Z
     :try_end_0
@@ -598,7 +543,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -607,11 +551,8 @@
 
     monitor-enter p0
 
-    .line 1368
     const/4 v0, 0x0
 
-    .line 1369
-    .local v0, "type":Ljava/lang/String;
     :try_start_0
     iget v1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelType:I
 
@@ -619,7 +560,6 @@
 
     goto :goto_0
 
-    .line 1370
     :pswitch_0
     const-string v1, "Generic"
 
@@ -627,7 +567,6 @@
 
     goto :goto_0
 
-    .line 1372
     :pswitch_1
     const-string v1, "Keyphrase"
 
@@ -635,13 +574,11 @@
 
     goto :goto_0
 
-    .line 1371
     :pswitch_2
     const-string v1, "Unknown"
 
     move-object v0, v1
 
-    .line 1374
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -667,14 +604,11 @@
 
     return-object v1
 
-    .line 1367
-    .end local v0    # "type":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 
     :pswitch_data_0
@@ -690,7 +624,6 @@
 
     monitor-enter p0
 
-    .line 1348
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -729,63 +662,50 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
 .method declared-synchronized setCallback(Landroid/hardware/soundtrigger/IRecognitionStatusCallback;)V
     .locals 0
-    .param p1, "callback"    # Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
 
     monitor-enter p0
 
-    .line 1246
     :try_start_0
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mCallback:Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1247
     monitor-exit p0
 
     return-void
 
-    .line 1245
-    .end local p1    # "callback":Landroid/hardware/soundtrigger/IRecognitionStatusCallback;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw p1
 .end method
 
 .method declared-synchronized setHandle(I)V
     .locals 0
-    .param p1, "handle"    # I
 
     monitor-enter p0
 
-    .line 1290
     :try_start_0
     iput p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelHandle:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1291
     monitor-exit p0
 
     return-void
 
-    .line 1289
-    .end local p1    # "handle":I
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw p1
 .end method
 
@@ -794,7 +714,6 @@
 
     monitor-enter p0
 
-    .line 1270
     const/4 v0, 0x1
 
     :try_start_0
@@ -802,102 +721,81 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1271
     monitor-exit p0
 
     return-void
 
-    .line 1269
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
 .method declared-synchronized setRecognitionConfig(Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;)V
     .locals 0
-    .param p1, "config"    # Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
 
     monitor-enter p0
 
-    .line 1294
     :try_start_0
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRecognitionConfig:Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1295
     monitor-exit p0
 
     return-void
 
-    .line 1293
-    .end local p1    # "config":Landroid/hardware/soundtrigger/SoundTrigger$RecognitionConfig;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw p1
 .end method
 
 .method declared-synchronized setRequested(Z)V
     .locals 0
-    .param p1, "requested"    # Z
 
     monitor-enter p0
 
-    .line 1315
     :try_start_0
     iput-boolean p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mRequested:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1316
     monitor-exit p0
 
     return-void
 
-    .line 1314
-    .end local p1    # "requested":Z
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw p1
 .end method
 
 .method declared-synchronized setSoundModel(Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;)V
     .locals 0
-    .param p1, "soundModel"    # Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
 
     monitor-enter p0
 
-    .line 1319
     :try_start_0
     iput-object p1, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mSoundModel:Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1320
     monitor-exit p0
 
     return-void
 
-    .line 1318
-    .end local p1    # "soundModel":Landroid/hardware/soundtrigger/SoundTrigger$SoundModel;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw p1
 .end method
 
@@ -906,7 +804,6 @@
 
     monitor-enter p0
 
-    .line 1262
     const/4 v0, 0x2
 
     :try_start_0
@@ -914,18 +811,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1263
     monitor-exit p0
 
     return-void
 
-    .line 1261
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -934,7 +828,6 @@
 
     monitor-enter p0
 
-    .line 1266
     const/4 v0, 0x1
 
     :try_start_0
@@ -942,18 +835,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1267
     monitor-exit p0
 
     return-void
 
-    .line 1265
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -962,18 +852,15 @@
 
     monitor-enter p0
 
-    .line 1339
     :try_start_0
     iget v0, p0, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->mModelState:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1344
     const-string v0, "Unknown state"
 
     goto :goto_0
 
-    .line 1342
     :pswitch_0
     const-string v0, "STARTED"
     :try_end_0
@@ -983,7 +870,6 @@
 
     return-object v0
 
-    .line 1341
     :pswitch_1
     :try_start_1
     const-string v0, "LOADED"
@@ -994,7 +880,6 @@
 
     return-object v0
 
-    .line 1340
     :pswitch_2
     :try_start_2
     const-string v0, "NOT_LOADED"
@@ -1005,19 +890,16 @@
 
     return-object v0
 
-    .line 1344
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 1338
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 
     :pswitch_data_0
@@ -1033,7 +915,6 @@
 
     monitor-enter p0
 
-    .line 1360
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1051,7 +932,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1361
     invoke-virtual {p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->stateToString()Ljava/lang/String;
 
     move-result-object v1
@@ -1062,7 +942,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1362
     invoke-virtual {p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->requestedToString()Ljava/lang/String;
 
     move-result-object v1
@@ -1073,7 +952,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1363
     invoke-virtual {p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->callbackToString()Ljava/lang/String;
 
     move-result-object v1
@@ -1084,7 +962,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1364
     invoke-virtual {p0}, Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;->uuidToString()Ljava/lang/String;
 
     move-result-object v1
@@ -1107,18 +984,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1360
     monitor-exit p0
 
     return-object v0
 
-    .line 1359
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method
 
@@ -1127,7 +1001,6 @@
 
     monitor-enter p0
 
-    .line 1356
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1156,6 +1029,5 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/soundtrigger/SoundTriggerHelper$ModelData;
     throw v0
 .end method

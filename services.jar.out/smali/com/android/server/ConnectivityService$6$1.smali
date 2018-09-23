@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ConnectivityService$6;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/ConnectivityService$6;
 
-    .line 3367
     iput-object p1, p0, Lcom/android/server/ConnectivityService$6$1;->this$1:Lcom/android/server/ConnectivityService$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 5
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 3369
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,7 +57,6 @@
 
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$000(Ljava/lang/String;)V
 
-    .line 3370
     iget-object v0, p0, Lcom/android/server/ConnectivityService$6$1;->this$1:Lcom/android/server/ConnectivityService$6;
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
@@ -87,7 +81,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3371
     iget-object v0, p0, Lcom/android/server/ConnectivityService$6$1;->this$1:Lcom/android/server/ConnectivityService$6;
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$6;->val$mgr:Landroid/net/wifi/WifiManager;
@@ -100,7 +93,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/net/wifi/WifiManager;->setTetherState(IZ)V
 
-    .line 3372
     iget-object v0, p0, Lcom/android/server/ConnectivityService$6$1;->this$1:Lcom/android/server/ConnectivityService$6;
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
@@ -127,7 +119,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/connectivity/Tethering;->startTethering(ILandroid/os/ResultReceiver;ZLjava/lang/String;)V
 
-    .line 3373
     iget-object v0, p0, Lcom/android/server/ConnectivityService$6$1;->this$1:Lcom/android/server/ConnectivityService$6;
 
     iget-object v0, v0, Lcom/android/server/ConnectivityService$6;->this$0:Lcom/android/server/ConnectivityService;
@@ -136,6 +127,5 @@
 
     iput-object v1, v0, Lcom/android/server/ConnectivityService;->mDialog:Landroid/app/AlertDialog;
 
-    .line 3374
     return-void
 .end method

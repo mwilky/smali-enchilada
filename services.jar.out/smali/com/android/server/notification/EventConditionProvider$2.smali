@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/EventConditionProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/EventConditionProvider;
 
-    .line 317
     iput-object p1, p0, Lcom/android/server/notification/EventConditionProvider$2;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onChanged()V
     .locals 4
 
-    .line 320
     invoke-static {}, Lcom/android/server/notification/EventConditionProvider;->access$100()Z
 
     move-result v0
@@ -52,7 +49,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/EventConditionProvider$2;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
@@ -68,7 +64,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 322
     iget-object v0, p0, Lcom/android/server/notification/EventConditionProvider$2;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-static {v0}, Lcom/android/server/notification/EventConditionProvider;->access$300(Lcom/android/server/notification/EventConditionProvider;)Landroid/os/Handler;
@@ -85,6 +80,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 323
     return-void
 .end method

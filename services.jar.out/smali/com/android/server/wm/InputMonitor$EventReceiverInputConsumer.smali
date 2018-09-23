@@ -26,15 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wm/InputMonitor;Landroid/os/Looper;Ljava/lang/String;Landroid/view/InputEventReceiver$Factory;ILandroid/os/UserHandle;)V
     .locals 7
-    .param p1, "service"    # Lcom/android/server/wm/WindowManagerService;
-    .param p2, "monitor"    # Lcom/android/server/wm/InputMonitor;
-    .param p3, "looper"    # Landroid/os/Looper;
-    .param p4, "name"    # Ljava/lang/String;
-    .param p5, "inputEventReceiverFactory"    # Landroid/view/InputEventReceiver$Factory;
-    .param p6, "clientPid"    # I
-    .param p7, "clientUser"    # Landroid/os/UserHandle;
 
-    .line 116
     const/4 v2, 0x0
 
     const/4 v4, 0x0
@@ -51,10 +43,8 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/server/wm/InputConsumerImpl;-><init>(Lcom/android/server/wm/WindowManagerService;Landroid/os/IBinder;Ljava/lang/String;Landroid/view/InputChannel;ILandroid/os/UserHandle;)V
 
-    .line 117
     iput-object p2, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mInputMonitor:Lcom/android/server/wm/InputMonitor;
 
-    .line 118
     iget-object v0, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mClientChannel:Landroid/view/InputChannel;
 
     invoke-interface {p5, v0, p3}, Landroid/view/InputEventReceiver$Factory;->createInputEventReceiver(Landroid/view/InputChannel;Landroid/os/Looper;)Landroid/view/InputEventReceiver;
@@ -63,7 +53,6 @@
 
     iput-object v0, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mInputEventReceiver:Landroid/view/InputEventReceiver;
 
-    .line 120
     return-void
 .end method
 
@@ -72,7 +61,6 @@
 .method public dismiss()V
     .locals 3
 
-    .line 124
     iget-object v0, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
@@ -82,7 +70,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 125
     iget-object v1, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mInputMonitor:Lcom/android/server/wm/InputMonitor;
 
     iget-object v2, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mWindowHandle:Lcom/android/server/input/InputWindowHandle;
@@ -95,12 +82,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 126
     iget-object v1, p0, Lcom/android/server/wm/InputMonitor$EventReceiverInputConsumer;->mInputEventReceiver:Landroid/view/InputEventReceiver;
 
     invoke-virtual {v1}, Landroid/view/InputEventReceiver;->dispose()V
 
-    .line 128
     :cond_0
     monitor-exit v0
     :try_end_0
@@ -108,10 +93,8 @@
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 129
     return-void
 
-    .line 128
     :catchall_0
     move-exception v1
 

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/vr/Vr2dDisplay;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/vr/Vr2dDisplay;
 
-    .line 87
     iput-object p1, p0, Lcom/android/server/vr/Vr2dDisplay$1;->this$0:Lcom/android/server/vr/Vr2dDisplay;
 
     invoke-direct {p0}, Landroid/service/vr/IPersistentVrStateCallbacks$Stub;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onPersistentVrStateChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 90
     iget-object v0, p0, Lcom/android/server/vr/Vr2dDisplay$1;->this$0:Lcom/android/server/vr/Vr2dDisplay;
 
     invoke-static {v0}, Lcom/android/server/vr/Vr2dDisplay;->access$000(Lcom/android/server/vr/Vr2dDisplay;)Z
@@ -46,17 +42,14 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 91
     iget-object v0, p0, Lcom/android/server/vr/Vr2dDisplay$1;->this$0:Lcom/android/server/vr/Vr2dDisplay;
 
     invoke-static {v0, p1}, Lcom/android/server/vr/Vr2dDisplay;->access$002(Lcom/android/server/vr/Vr2dDisplay;Z)Z
 
-    .line 92
     iget-object v0, p0, Lcom/android/server/vr/Vr2dDisplay$1;->this$0:Lcom/android/server/vr/Vr2dDisplay;
 
     invoke-static {v0}, Lcom/android/server/vr/Vr2dDisplay;->access$100(Lcom/android/server/vr/Vr2dDisplay;)V
 
-    .line 94
     :cond_0
     return-void
 .end method

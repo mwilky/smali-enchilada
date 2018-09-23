@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiCecController;Lcom/android/server/hdmi/HdmiCecMessage;Lcom/android/server/hdmi/HdmiControlService$SendMessageCallback;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiCecController;
 
-    .line 593
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiCecController$7;->this$0:Lcom/android/server/hdmi/HdmiCecController;
 
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiCecController$7;->val$cecMessage:Lcom/android/server/hdmi/HdmiCecMessage;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 7
 
-    .line 596
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +67,6 @@
 
     invoke-static {v0, v2}, Lcom/android/server/hdmi/HdmiLogger;->debug(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 597
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecController$7;->val$cecMessage:Lcom/android/server/hdmi/HdmiCecMessage;
 
     invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiCecMessage;->getOpcode()I
@@ -87,16 +83,10 @@
 
     move-result-object v0
 
-    .line 598
-    .local v0, "body":[B
     const/4 v2, 0x0
 
-    .line 599
-    .local v2, "i":I
     nop
 
-    .line 601
-    .local v1, "errorCode":I
     :goto_0
     iget-object v3, p0, Lcom/android/server/hdmi/HdmiCecController$7;->this$0:Lcom/android/server/hdmi/HdmiCecController;
 
@@ -112,45 +102,32 @@
 
     iget-object v6, p0, Lcom/android/server/hdmi/HdmiCecController$7;->val$cecMessage:Lcom/android/server/hdmi/HdmiCecMessage;
 
-    .line 602
     invoke-virtual {v6}, Lcom/android/server/hdmi/HdmiCecMessage;->getDestination()I
 
     move-result v6
 
-    .line 601
     invoke-static {v3, v4, v5, v6, v0}, Lcom/android/server/hdmi/HdmiCecController;->access$700(JII[B)I
 
     move-result v1
 
-    .line 603
     if-nez v1, :cond_0
 
-    .line 604
     goto :goto_1
 
-    .line 606
     :cond_0
     add-int/lit8 v3, v2, 0x1
 
-    .local v3, "i":I
     const/4 v4, 0x1
 
     if-lt v2, v4, :cond_3
 
-    .line 608
-    .end local v2    # "i":I
     move v2, v3
 
-    .end local v3    # "i":I
-    .restart local v2    # "i":I
     :goto_1
     move v3, v1
 
-    .line 609
-    .local v3, "finalError":I
     if-eqz v3, :cond_1
 
-    .line 610
     const-string v4, "HdmiCecController"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -177,13 +154,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 612
     :cond_1
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiCecController$7;->val$callback:Lcom/android/server/hdmi/HdmiControlService$SendMessageCallback;
 
     if-eqz v4, :cond_2
 
-    .line 613
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiCecController$7;->this$0:Lcom/android/server/hdmi/HdmiCecController;
 
     new-instance v5, Lcom/android/server/hdmi/HdmiCecController$7$1;
@@ -192,13 +167,9 @@
 
     invoke-static {v4, v5}, Lcom/android/server/hdmi/HdmiCecController;->access$400(Lcom/android/server/hdmi/HdmiCecController;Ljava/lang/Runnable;)V
 
-    .line 620
     :cond_2
     return-void
 
-    .line 599
-    .end local v2    # "i":I
-    .local v3, "i":I
     :cond_3
     move v2, v3
 

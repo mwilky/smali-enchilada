@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/DeviceDiscoveryAction;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/DeviceDiscoveryAction;
 
-    .line 108
     iput-object p1, p0, Lcom/android/server/hdmi/DeviceDiscoveryAction$1;->this$0:Lcom/android/server/hdmi/DeviceDiscoveryAction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,30 +45,24 @@
         }
     .end annotation
 
-    .line 111
-    .local p1, "ackedAddress":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 112
     const-string v0, "DeviceDiscoveryAction"
 
     const-string v1, "No device is detected."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
     iget-object v0, p0, Lcom/android/server/hdmi/DeviceDiscoveryAction$1;->this$0:Lcom/android/server/hdmi/DeviceDiscoveryAction;
 
     invoke-static {v0}, Lcom/android/server/hdmi/DeviceDiscoveryAction;->access$000(Lcom/android/server/hdmi/DeviceDiscoveryAction;)V
 
-    .line 114
     return-void
 
-    .line 117
     :cond_0
     const-string v0, "DeviceDiscoveryAction"
 
@@ -90,16 +82,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     iget-object v0, p0, Lcom/android/server/hdmi/DeviceDiscoveryAction$1;->this$0:Lcom/android/server/hdmi/DeviceDiscoveryAction;
 
     invoke-static {v0, p1}, Lcom/android/server/hdmi/DeviceDiscoveryAction;->access$100(Lcom/android/server/hdmi/DeviceDiscoveryAction;Ljava/util/List;)V
 
-    .line 119
     iget-object v0, p0, Lcom/android/server/hdmi/DeviceDiscoveryAction$1;->this$0:Lcom/android/server/hdmi/DeviceDiscoveryAction;
 
     invoke-static {v0}, Lcom/android/server/hdmi/DeviceDiscoveryAction;->access$200(Lcom/android/server/hdmi/DeviceDiscoveryAction;)V
 
-    .line 120
     return-void
 .end method

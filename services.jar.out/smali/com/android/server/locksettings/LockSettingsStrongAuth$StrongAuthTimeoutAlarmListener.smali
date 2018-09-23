@@ -26,17 +26,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/locksettings/LockSettingsStrongAuth;I)V
     .locals 0
-    .param p2, "userId"    # I
 
-    .line 203
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsStrongAuth$StrongAuthTimeoutAlarmListener;->this$0:Lcom/android/server/locksettings/LockSettingsStrongAuth;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 204
     iput p2, p0, Lcom/android/server/locksettings/LockSettingsStrongAuth$StrongAuthTimeoutAlarmListener;->mUserId:I
 
-    .line 205
     return-void
 .end method
 
@@ -45,7 +41,6 @@
 .method public onAlarm()V
     .locals 3
 
-    .line 209
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsStrongAuth$StrongAuthTimeoutAlarmListener;->this$0:Lcom/android/server/locksettings/LockSettingsStrongAuth;
 
     iget v1, p0, Lcom/android/server/locksettings/LockSettingsStrongAuth$StrongAuthTimeoutAlarmListener;->mUserId:I
@@ -54,6 +49,5 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/server/locksettings/LockSettingsStrongAuth;->requireStrongAuth(II)V
 
-    .line 210
     return-void
 .end method

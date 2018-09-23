@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NativeDaemonConnector;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NativeDaemonConnector;
 
-    .line 368
     iput-object p1, p0, Lcom/android/server/NativeDaemonConnector$1;->this$0:Lcom/android/server/NativeDaemonConnector;
 
     iput-object p2, p0, Lcom/android/server/NativeDaemonConnector$1;->val$latch:Ljava/util/concurrent/CountDownLatch;
@@ -43,11 +41,9 @@
 .method public run()V
     .locals 1
 
-    .line 371
     iget-object v0, p0, Lcom/android/server/NativeDaemonConnector$1;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 372
     return-void
 .end method

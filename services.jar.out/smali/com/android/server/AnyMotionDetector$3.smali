@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AnyMotionDetector;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/AnyMotionDetector;
 
-    .line 328
     iput-object p1, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,8 @@
 .method public run()V
     .locals 5
 
-    .line 331
     const/4 v0, -0x1
 
-    .line 332
-    .local v0, "status":I
     iget-object v1, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-static {v1}, Lcom/android/server/AnyMotionDetector;->access$000(Lcom/android/server/AnyMotionDetector;)Ljava/lang/Object;
@@ -52,7 +47,6 @@
 
     monitor-enter v1
 
-    .line 333
     :try_start_0
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
@@ -64,14 +58,12 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 334
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Lcom/android/server/AnyMotionDetector;->access$1002(Lcom/android/server/AnyMotionDetector;Z)Z
 
-    .line 338
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-static {v2}, Lcom/android/server/AnyMotionDetector;->access$300(Lcom/android/server/AnyMotionDetector;)I
@@ -80,12 +72,10 @@
 
     move v0, v2
 
-    .line 339
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_0
 
-    .line 340
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-static {v2}, Lcom/android/server/AnyMotionDetector;->access$500(Lcom/android/server/AnyMotionDetector;)Landroid/os/Handler;
@@ -100,12 +90,10 @@
 
     invoke-virtual {v2, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 341
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-static {v2, v3}, Lcom/android/server/AnyMotionDetector;->access$602(Lcom/android/server/AnyMotionDetector;Z)Z
 
-    .line 342
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$3;->this$0:Lcom/android/server/AnyMotionDetector;
 
     invoke-static {v2}, Lcom/android/server/AnyMotionDetector;->access$700(Lcom/android/server/AnyMotionDetector;)Lcom/android/server/AnyMotionDetector$DeviceIdleCallback;
@@ -114,14 +102,11 @@
 
     invoke-interface {v2, v0}, Lcom/android/server/AnyMotionDetector$DeviceIdleCallback;->onAnyMotionResult(I)V
 
-    .line 345
     :cond_0
     monitor-exit v1
 
-    .line 346
     return-void
 
-    .line 345
     :catchall_0
     move-exception v2
 

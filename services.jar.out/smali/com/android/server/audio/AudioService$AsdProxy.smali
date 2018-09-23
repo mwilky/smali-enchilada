@@ -26,17 +26,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/audio/AudioService;Landroid/media/IAudioServerStateDispatcher;)V
     .locals 0
-    .param p2, "asd"    # Landroid/media/IAudioServerStateDispatcher;
 
-    .line 9210
     iput-object p1, p0, Lcom/android/server/audio/AudioService$AsdProxy;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9211
     iput-object p2, p0, Lcom/android/server/audio/AudioService$AsdProxy;->mAsd:Landroid/media/IAudioServerStateDispatcher;
 
-    .line 9212
     return-void
 .end method
 
@@ -45,7 +41,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 9215
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AsdProxy;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-static {v0}, Lcom/android/server/audio/AudioService;->access$13700(Lcom/android/server/audio/AudioService;)Ljava/util/HashMap;
@@ -54,7 +49,6 @@
 
     monitor-enter v0
 
-    .line 9216
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/AudioService$AsdProxy;->this$0:Lcom/android/server/audio/AudioService;
 
@@ -70,13 +64,10 @@
 
     invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 9217
     monitor-exit v0
 
-    .line 9218
     return-void
 
-    .line 9217
     :catchall_0
     move-exception v1
 
@@ -90,7 +81,6 @@
 .method callback()Landroid/media/IAudioServerStateDispatcher;
     .locals 1
 
-    .line 9221
     iget-object v0, p0, Lcom/android/server/audio/AudioService$AsdProxy;->mAsd:Landroid/media/IAudioServerStateDispatcher;
 
     return-object v0

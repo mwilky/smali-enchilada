@@ -25,16 +25,11 @@
 # direct methods
 .method constructor <init>(Landroid/os/Looper;Lcom/android/server/media/AudioPlayerStateMonitor$OnAudioPlayerActiveStateChangedListener;)V
     .locals 0
-    .param p1, "looper"    # Landroid/os/Looper;
-    .param p2, "listener"    # Lcom/android/server/media/AudioPlayerStateMonitor$OnAudioPlayerActiveStateChangedListener;
 
-    .line 73
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 74
     iput-object p2, p0, Lcom/android/server/media/AudioPlayerStateMonitor$MessageHandler;->mListener:Lcom/android/server/media/AudioPlayerStateMonitor$OnAudioPlayerActiveStateChangedListener;
 
-    .line 75
     return-void
 .end method
 
@@ -42,9 +37,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 79
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -53,7 +46,6 @@
 
     goto :goto_1
 
-    .line 81
     :cond_0
     iget-object v0, p0, Lcom/android/server/media/AudioPlayerStateMonitor$MessageHandler;->mListener:Lcom/android/server/media/AudioPlayerStateMonitor$OnAudioPlayerActiveStateChangedListener;
 
@@ -73,32 +65,24 @@
     :goto_0
     invoke-interface {v0, v2, v1}, Lcom/android/server/media/AudioPlayerStateMonitor$OnAudioPlayerActiveStateChangedListener;->onAudioPlayerActiveStateChanged(Landroid/media/AudioPlaybackConfiguration;Z)V
 
-    .line 85
     :goto_1
     return-void
 .end method
 
 .method sendAudioPlayerActiveStateChangedMessage(Landroid/media/AudioPlaybackConfiguration;Z)V
     .locals 2
-    .param p1, "config"    # Landroid/media/AudioPlaybackConfiguration;
-    .param p2, "isRemoved"    # Z
 
-    .line 89
     nop
 
-    .line 90
     const/4 v0, 0x0
 
-    .line 89
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1, p2, v0, p1}, Lcom/android/server/media/AudioPlayerStateMonitor$MessageHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 90
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 91
     return-void
 .end method

@@ -25,10 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Tethering;Landroid/os/Handler;ILandroid/os/ResultReceiver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/Tethering;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 570
     iput-object p1, p0, Lcom/android/server/connectivity/Tethering$2;->this$0:Lcom/android/server/connectivity/Tethering;
 
     iput p3, p0, Lcom/android/server/connectivity/Tethering$2;->val$type:I
@@ -44,13 +41,9 @@
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 4
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 574
     if-nez p1, :cond_0
 
-    .line 575
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$2;->this$0:Lcom/android/server/connectivity/Tethering;
 
     iget v1, p0, Lcom/android/server/connectivity/Tethering$2;->val$type:I
@@ -63,7 +56,6 @@
 
     goto :goto_0
 
-    .line 577
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/Tethering$2;->this$0:Lcom/android/server/connectivity/Tethering;
 
@@ -71,7 +63,6 @@
 
     invoke-static {v0, v1, p1}, Lcom/android/server/connectivity/Tethering;->access$100(Lcom/android/server/connectivity/Tethering;Landroid/os/ResultReceiver;I)V
 
-    .line 579
     :goto_0
     return-void
 .end method

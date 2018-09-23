@@ -23,29 +23,21 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/ConnectivityPacketTracker;Landroid/os/Handler;Landroid/net/util/InterfaceParams;)V
     .locals 0
-    .param p2, "h"    # Landroid/os/Handler;
-    .param p3, "ifParams"    # Landroid/net/util/InterfaceParams;
 
-    .line 95
     iput-object p1, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
-    .line 96
     iget p1, p3, Landroid/net/util/InterfaceParams;->defaultMtu:I
 
     invoke-direct {p0, p2, p1}, Landroid/net/util/PacketReader;-><init>(Landroid/os/Handler;I)V
 
-    .line 97
     iput-object p3, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->mInterface:Landroid/net/util/InterfaceParams;
 
-    .line 98
     return-void
 .end method
 
 .method private addLogEntry(Ljava/lang/String;)V
     .locals 1
-    .param p1, "entry"    # Ljava/lang/String;
 
-    .line 150
     iget-object v0, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
     invoke-static {v0}, Landroid/net/ip/ConnectivityPacketTracker;->access$100(Landroid/net/ip/ConnectivityPacketTracker;)Landroid/util/LocalLog;
@@ -54,7 +46,6 @@
 
     invoke-virtual {v0, p1}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 151
     return-void
 .end method
 
@@ -63,13 +54,10 @@
 .method protected createFd()Ljava/io/FileDescriptor;
     .locals 5
 
-    .line 102
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    .line 104
-    .local v1, "s":Ljava/io/FileDescriptor;
     :try_start_0
     sget v2, Landroid/system/OsConstants;->AF_PACKET:I
 
@@ -83,12 +71,10 @@
 
     move-object v1, v2
 
-    .line 105
     sget v2, Landroid/system/OsConstants;->ARPHRD_ETHER:I
 
     invoke-static {v1, v2}, Landroid/net/NetworkUtils;->attachControlPacketFilter(Ljava/io/FileDescriptor;I)V
 
-    .line 106
     new-instance v2, Landroid/system/PacketSocketAddress;
 
     sget v3, Landroid/system/OsConstants;->ETH_P_ALL:I
@@ -106,35 +92,25 @@
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 111
     nop
 
-    .line 112
     return-object v1
 
-    .line 107
     :catch_0
     move-exception v2
 
-    .line 108
-    .local v2, "e":Ljava/lang/Exception;
     const-string v3, "Failed to create packet tracking socket: "
 
     invoke-virtual {p0, v3, v2}, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->logError(Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 109
     invoke-static {v1}, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->closeFd(Ljava/io/FileDescriptor;)V
 
-    .line 110
     return-object v0
 .end method
 
 .method protected handlePacket([BI)V
     .locals 4
-    .param p1, "recvbuf"    # [B
-    .param p2, "length"    # I
 
-    .line 117
     iget-object v0, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->mInterface:Landroid/net/util/InterfaceParams;
 
     iget-object v0, v0, Landroid/net/util/InterfaceParams;->macAddr:Landroid/net/MacAddress;
@@ -143,13 +119,10 @@
 
     move-result-object v0
 
-    .line 119
-    .local v0, "summary":Ljava/lang/String;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 122
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -165,7 +138,6 @@
 
     const/4 v3, 0x0
 
-    .line 123
     invoke-static {p1, v3, p2}, Llibcore/util/HexEncoding;->encode([BII)[C
 
     move-result-object v3
@@ -182,19 +154,14 @@
 
     move-result-object v1
 
-    .line 122
     invoke-direct {p0, v1}, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->addLogEntry(Ljava/lang/String;)V
 
-    .line 124
     return-void
 .end method
 
 .method protected logError(Ljava/lang/String;Ljava/lang/Exception;)V
     .locals 1
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "e"    # Ljava/lang/Exception;
 
-    .line 145
     iget-object v0, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
     invoke-static {v0}, Landroid/net/ip/ConnectivityPacketTracker;->access$300(Landroid/net/ip/ConnectivityPacketTracker;)Ljava/lang/String;
@@ -203,7 +170,6 @@
 
     invoke-static {v0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 146
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -218,14 +184,12 @@
 
     invoke-direct {p0, v0}, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->addLogEntry(Ljava/lang/String;)V
 
-    .line 147
     return-void
 .end method
 
 .method protected onStart()V
     .locals 4
 
-    .line 128
     iget-object v0, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
     invoke-static {v0}, Landroid/net/ip/ConnectivityPacketTracker;->access$000(Landroid/net/ip/ConnectivityPacketTracker;)Ljava/lang/String;
@@ -238,12 +202,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 129
     const-string v0, "--- START ---"
 
     goto :goto_0
 
-    .line 130
     :cond_0
     const-string v0, "--- START (%s) ---"
 
@@ -265,8 +227,6 @@
 
     move-result-object v0
 
-    .line 131
-    .local v0, "msg":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
@@ -276,14 +236,12 @@
 
     invoke-virtual {v1, v0}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 132
     return-void
 .end method
 
 .method protected onStop()V
     .locals 4
 
-    .line 136
     iget-object v0, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
     invoke-static {v0}, Landroid/net/ip/ConnectivityPacketTracker;->access$000(Landroid/net/ip/ConnectivityPacketTracker;)Ljava/lang/String;
@@ -296,12 +254,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
     const-string v0, "--- STOP ---"
 
     goto :goto_0
 
-    .line 138
     :cond_0
     const-string v0, "--- STOP (%s) ---"
 
@@ -323,8 +279,6 @@
 
     move-result-object v0
 
-    .line 139
-    .local v0, "msg":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
@@ -348,7 +302,6 @@
 
     move-result-object v0
 
-    .line 140
     :cond_1
     iget-object v1, p0, Landroid/net/ip/ConnectivityPacketTracker$PacketListener;->this$0:Landroid/net/ip/ConnectivityPacketTracker;
 
@@ -358,6 +311,5 @@
 
     invoke-virtual {v1, v0}, Landroid/util/LocalLog;->log(Ljava/lang/String;)V
 
-    .line 141
     return-void
 .end method

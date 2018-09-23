@@ -34,21 +34,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/statusbar/StatusBarManagerService;ILandroid/os/IBinder;)V
     .locals 0
-    .param p2, "userId"    # I
-    .param p3, "token"    # Landroid/os/IBinder;
 
-    .line 104
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
     iput p2, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->userId:I
 
-    .line 106
     iput-object p3, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->token:Landroid/os/IBinder;
 
-    .line 108
     const/4 p1, 0x0
 
     :try_start_0
@@ -56,14 +50,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 111
     goto :goto_0
 
-    .line 109
     :catch_0
     move-exception p1
 
-    .line 112
     :goto_0
     return-void
 .end method
@@ -73,7 +64,6 @@
 .method public binderDied()V
     .locals 5
 
-    .line 116
     const-string v0, "StatusBarManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,7 +84,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->token:Landroid/os/IBinder;
@@ -107,7 +96,6 @@
 
     invoke-virtual {v0, v4, v1, v2, v3}, Lcom/android/server/statusbar/StatusBarManagerService;->disableForUser(ILandroid/os/IBinder;Ljava/lang/String;I)V
 
-    .line 118
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     iget-object v1, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->token:Landroid/os/IBinder;
@@ -118,23 +106,18 @@
 
     invoke-virtual {v0, v4, v1, v2, v3}, Lcom/android/server/statusbar/StatusBarManagerService;->disable2ForUser(ILandroid/os/IBinder;Ljava/lang/String;I)V
 
-    .line 119
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->token:Landroid/os/IBinder;
 
     invoke-interface {v0, p0, v4}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 120
     return-void
 .end method
 
 .method public getFlags(I)I
     .locals 3
-    .param p1, "which"    # I
 
-    .line 138
     packed-switch p1, :pswitch_data_0
 
-    .line 142
     const-string v0, "StatusBarManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -153,18 +136,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
     const/4 v0, 0x0
 
     return v0
 
-    .line 140
     :pswitch_0
     iget v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->what2:I
 
     return v0
 
-    .line 139
     :pswitch_1
     iget v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->what1:I
 
@@ -182,7 +162,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 148
     iget v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->what1:I
 
     if-nez v0, :cond_0
@@ -204,14 +183,9 @@
 
 .method public setFlags(IILjava/lang/String;)V
     .locals 3
-    .param p1, "what"    # I
-    .param p2, "which"    # I
-    .param p3, "pkg"    # Ljava/lang/String;
 
-    .line 123
     packed-switch p2, :pswitch_data_0
 
-    .line 131
     const-string v0, "StatusBarManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -228,7 +202,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 132
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -239,27 +212,20 @@
 
     move-result-object v1
 
-    .line 131
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     iput-object p3, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->pkg:Ljava/lang/String;
 
-    .line 135
     return-void
 
-    .line 128
     :pswitch_0
     iput p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->what2:I
 
-    .line 129
     return-void
 
-    .line 125
     :pswitch_1
     iput p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->what1:I
 
-    .line 126
     return-void
 
     :pswitch_data_0
@@ -272,7 +238,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 153
     const-string/jumbo v0, "userId=%d what1=0x%08X what2=0x%08X pkg=%s token=%s"
 
     const/4 v1, 0x5
@@ -281,7 +246,6 @@
 
     iget v2, p0, Lcom/android/server/statusbar/StatusBarManagerService$DisableRecord;->userId:I
 
-    .line 154
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -322,7 +286,6 @@
 
     aput-object v2, v1, v3
 
-    .line 153
     invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

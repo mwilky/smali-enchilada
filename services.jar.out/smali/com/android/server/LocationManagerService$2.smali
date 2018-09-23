@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 336
     iput-object p1, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/app/AppOpsManager$OnOpChangedInternalListener;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onOpChanged(ILjava/lang/String;)V
     .locals 4
-    .param p1, "op"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 338
     iget-object v0, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v0}, Lcom/android/server/LocationManagerService;->access$100(Lcom/android/server/LocationManagerService;)Ljava/lang/Object;
@@ -47,7 +42,6 @@
 
     monitor-enter v0
 
-    .line 339
     :try_start_0
     iget-object v1, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
@@ -76,29 +70,21 @@
 
     check-cast v2, Lcom/android/server/LocationManagerService$Receiver;
 
-    .line 340
-    .local v2, "receiver":Lcom/android/server/LocationManagerService$Receiver;
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lcom/android/server/LocationManagerService$Receiver;->updateMonitoring(Z)V
 
-    .line 341
-    .end local v2    # "receiver":Lcom/android/server/LocationManagerService$Receiver;
     goto :goto_0
 
-    .line 342
     :cond_0
     iget-object v1, p0, Lcom/android/server/LocationManagerService$2;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$300(Lcom/android/server/LocationManagerService;)V
 
-    .line 343
     monitor-exit v0
 
-    .line 344
     return-void
 
-    .line 343
     :catchall_0
     move-exception v1
 

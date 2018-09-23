@@ -28,23 +28,15 @@
 # direct methods
 .method public constructor <init>(III)V
     .locals 0
-    .param p1, "color"    # I
-    .param p2, "onMs"    # I
-    .param p3, "offMs"    # I
 
-    .line 1150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1151
     iput p1, p0, Lcom/android/server/notification/NotificationRecord$Light;->color:I
 
-    .line 1152
     iput p2, p0, Lcom/android/server/notification/NotificationRecord$Light;->onMs:I
 
-    .line 1153
     iput p3, p0, Lcom/android/server/notification/NotificationRecord$Light;->offMs:I
 
-    .line 1154
     return-void
 .end method
 
@@ -52,16 +44,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 1158
     const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
     return v0
 
-    .line 1159
     :cond_0
     const/4 v1, 0x0
 
@@ -79,14 +68,11 @@
 
     goto :goto_1
 
-    .line 1161
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lcom/android/server/notification/NotificationRecord$Light;
 
-    .line 1163
-    .local v2, "light":Lcom/android/server/notification/NotificationRecord$Light;
     iget v3, p0, Lcom/android/server/notification/NotificationRecord$Light;->color:I
 
     iget v4, v2, Lcom/android/server/notification/NotificationRecord$Light;->color:I
@@ -95,7 +81,6 @@
 
     return v1
 
-    .line 1164
     :cond_2
     iget v3, p0, Lcom/android/server/notification/NotificationRecord$Light;->onMs:I
 
@@ -105,7 +90,6 @@
 
     return v1
 
-    .line 1165
     :cond_3
     iget v3, p0, Lcom/android/server/notification/NotificationRecord$Light;->offMs:I
 
@@ -121,8 +105,6 @@
     :goto_0
     return v0
 
-    .line 1159
-    .end local v2    # "light":Lcom/android/server/notification/NotificationRecord$Light;
     :cond_5
     :goto_1
     return v1
@@ -131,11 +113,8 @@
 .method public hashCode()I
     .locals 4
 
-    .line 1171
     iget v0, p0, Lcom/android/server/notification/NotificationRecord$Light;->color:I
 
-    .line 1172
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -144,25 +123,18 @@
 
     add-int/2addr v2, v3
 
-    .line 1173
-    .end local v0    # "result":I
-    .local v2, "result":I
     mul-int/2addr v1, v2
 
     iget v0, p0, Lcom/android/server/notification/NotificationRecord$Light;->offMs:I
 
     add-int/2addr v1, v0
 
-    .line 1174
-    .end local v2    # "result":I
-    .local v1, "result":I
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1179
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

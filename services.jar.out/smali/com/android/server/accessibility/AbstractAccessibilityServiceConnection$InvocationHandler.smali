@@ -39,35 +39,27 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;Landroid/os/Looper;)V
     .locals 1
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 1272
     iput-object p1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
-    .line 1273
     const/4 p1, 0x0
 
     const/4 v0, 0x1
 
     invoke-direct {p0, p2, p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 1269
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsMagnificationCallbackEnabled:Z
 
-    .line 1270
     iput-boolean p1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsSoftKeyboardCallbackEnabled:Z
 
-    .line 1274
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;
 
-    .line 1260
     iget-boolean v0, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsMagnificationCallbackEnabled:Z
 
     return v0
@@ -77,16 +69,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 1278
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 1279
-    .local v0, "type":I
     packed-switch v0, :pswitch_data_0
 
-    .line 1314
     :pswitch_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -108,7 +95,6 @@
 
     throw v1
 
-    .line 1309
     :pswitch_1
     iget v1, p1, Landroid/os/Message;->arg1:I
 
@@ -121,54 +107,38 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1310
-    .local v1, "available":Z
     :goto_0
     iget-object v2, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v2, v1}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$700(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;Z)V
 
-    .line 1311
-    .end local v1    # "available":Z
     goto :goto_1
 
-    .line 1305
     :pswitch_2
     iget-object v1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v1}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$600(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;)V
 
-    .line 1306
     goto :goto_1
 
-    .line 1300
     :pswitch_3
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 1301
-    .local v1, "showState":I
     iget-object v2, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v2, v1}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$500(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;I)V
 
-    .line 1302
-    .end local v1    # "showState":I
     goto :goto_1
 
-    .line 1290
     :pswitch_4
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/internal/os/SomeArgs;
 
-    .line 1291
-    .local v1, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v2, v1, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
     check-cast v2, Landroid/graphics/Region;
 
-    .line 1292
-    .local v2, "region":Landroid/graphics/Region;
     iget-object v3, v1, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
     check-cast v3, Ljava/lang/Float;
@@ -177,8 +147,6 @@
 
     move-result v3
 
-    .line 1293
-    .local v3, "scale":F
     iget-object v4, v1, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/Float;
@@ -187,8 +155,6 @@
 
     move-result v4
 
-    .line 1294
-    .local v4, "centerX":F
     iget-object v5, v1, Lcom/android/internal/os/SomeArgs;->arg4:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Float;
@@ -197,47 +163,30 @@
 
     move-result v5
 
-    .line 1295
-    .local v5, "centerY":F
     iget-object v6, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v6, v2, v3, v4, v5}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$400(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;Landroid/graphics/Region;FFF)V
 
-    .line 1296
     invoke-virtual {v1}, Lcom/android/internal/os/SomeArgs;->recycle()V
 
-    .line 1297
-    .end local v1    # "args":Lcom/android/internal/os/SomeArgs;
-    .end local v2    # "region":Landroid/graphics/Region;
-    .end local v3    # "scale":F
-    .end local v4    # "centerX":F
-    .end local v5    # "centerY":F
     goto :goto_1
 
-    .line 1286
     :pswitch_5
     iget-object v1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v1}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$300(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;)V
 
-    .line 1287
     goto :goto_1
 
-    .line 1281
     :pswitch_6
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 1282
-    .local v1, "gestureId":I
     iget-object v2, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->this$0:Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;
 
     invoke-static {v2, v1}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;->access$200(Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection;I)V
 
-    .line 1283
-    .end local v1    # "gestureId":I
     nop
 
-    .line 1317
     :goto_1
     return-void
 
@@ -258,121 +207,90 @@
 
 .method public notifyAccessibilityButtonAvailabilityChangedLocked(Z)V
     .locals 2
-    .param p1, "available"    # Z
 
-    .line 1359
     nop
 
-    .line 1360
     const/4 v0, 0x0
 
-    .line 1359
     const/16 v1, 0x8
 
     invoke-virtual {p0, v1, p1, v0}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1361
-    .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1362
     return-void
 .end method
 
 .method public notifyAccessibilityButtonClickedLocked()V
     .locals 1
 
-    .line 1354
     const/4 v0, 0x7
 
     invoke-virtual {p0, v0}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 1355
-    .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1356
     return-void
 .end method
 
 .method public notifyMagnificationChangedLocked(Landroid/graphics/Region;FFF)V
     .locals 2
-    .param p1, "region"    # Landroid/graphics/Region;
-    .param p2, "scale"    # F
-    .param p3, "centerX"    # F
-    .param p4, "centerY"    # F
 
-    .line 1321
     iget-boolean v0, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsMagnificationCallbackEnabled:Z
 
     if-nez v0, :cond_0
 
-    .line 1323
     return-void
 
-    .line 1326
     :cond_0
     invoke-static {}, Lcom/android/internal/os/SomeArgs;->obtain()Lcom/android/internal/os/SomeArgs;
 
     move-result-object v0
 
-    .line 1327
-    .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iput-object p1, v0, Lcom/android/internal/os/SomeArgs;->arg1:Ljava/lang/Object;
 
-    .line 1328
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg2:Ljava/lang/Object;
 
-    .line 1329
     invoke-static {p3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg3:Ljava/lang/Object;
 
-    .line 1330
     invoke-static {p4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/internal/os/SomeArgs;->arg4:Ljava/lang/Object;
 
-    .line 1332
     const/4 v1, 0x5
 
     invoke-virtual {p0, v1, v0}, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1333
-    .local v1, "msg":Landroid/os/Message;
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1334
     return-void
 .end method
 
 .method public notifySoftKeyboardShowModeChangedLocked(I)V
     .locals 2
-    .param p1, "showState"    # I
 
-    .line 1341
     iget-boolean v0, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsSoftKeyboardCallbackEnabled:Z
 
     if-nez v0, :cond_0
 
-    .line 1342
     return-void
 
-    .line 1345
     :cond_0
     const/4 v0, 0x6
 
@@ -382,32 +300,23 @@
 
     move-result-object v0
 
-    .line 1346
-    .local v0, "msg":Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1347
     return-void
 .end method
 
 .method public setMagnificationCallbackEnabled(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 1337
     iput-boolean p1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsMagnificationCallbackEnabled:Z
 
-    .line 1338
     return-void
 .end method
 
 .method public setSoftKeyboardCallbackEnabled(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 1350
     iput-boolean p1, p0, Lcom/android/server/accessibility/AbstractAccessibilityServiceConnection$InvocationHandler;->mIsSoftKeyboardCallbackEnabled:Z
 
-    .line 1351
     return-void
 .end method

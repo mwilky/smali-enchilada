@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Connor;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Connor;
 
-    .line 472
     iput-object p1, p0, Lcom/android/server/am/Connor$7;->this$0:Lcom/android/server/am/Connor;
 
     iput-object p2, p0, Lcom/android/server/am/Connor$7;->val$params:[Ljava/lang/String;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;Ljava/lang/String;)Z
     .locals 6
-    .param p1, "dir"    # Ljava/io/File;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 474
     iget-object v0, p0, Lcom/android/server/am/Connor$7;->val$params:[Ljava/lang/String;
 
     array-length v1, v0
@@ -59,8 +54,6 @@
 
     aget-object v4, v0, v3
 
-    .line 475
-    .local v4, "filePostFix":Ljava/lang/String;
     invoke-virtual {p2, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v5
@@ -71,14 +64,11 @@
 
     return v0
 
-    .line 474
-    .end local v4    # "filePostFix":Ljava/lang/String;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 477
     :cond_1
     return v2
 .end method

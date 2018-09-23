@@ -12,38 +12,27 @@
 # direct methods
 .method protected constructor <init>(J)V
     .locals 1
-    .param p1, "id"    # J
 
-    .line 25
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 26
     iput-wide p1, p0, Lcom/android/server/pm/KeySetHandle;->mId:J
 
-    .line 27
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
-    .line 28
     return-void
 .end method
 
 .method protected constructor <init>(JI)V
     .locals 0
-    .param p1, "id"    # J
-    .param p3, "refCount"    # I
 
-    .line 33
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 34
     iput-wide p1, p0, Lcom/android/server/pm/KeySetHandle;->mId:J
 
-    .line 35
     iput p3, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
-    .line 36
     return-void
 .end method
 
@@ -52,14 +41,12 @@
 .method protected decrRefCountLPw()I
     .locals 1
 
-    .line 60
     iget v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
-    .line 61
     iget v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
     return v0
@@ -68,7 +55,6 @@
 .method public getId()J
     .locals 2
 
-    .line 39
     iget-wide v0, p0, Lcom/android/server/pm/KeySetHandle;->mId:J
 
     return-wide v0
@@ -77,7 +63,6 @@
 .method protected getRefCountLPr()I
     .locals 1
 
-    .line 43
     iget v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
     return v0
@@ -86,24 +71,19 @@
 .method protected incrRefCountLPw()V
     .locals 1
 
-    .line 55
     iget v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
-    .line 56
     return-void
 .end method
 
 .method protected setRefCountLPw(I)V
     .locals 0
-    .param p1, "newCount"    # I
 
-    .line 50
     iput p1, p0, Lcom/android/server/pm/KeySetHandle;->mRefCount:I
 
-    .line 51
     return-void
 .end method

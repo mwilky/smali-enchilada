@@ -31,10 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OverHeatingDiagnosis;Ljava/lang/String;Ljava/lang/StringBuilder;ILjava/lang/String;JLandroid/os/DropBoxManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OverHeatingDiagnosis;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 485
     iput-object p1, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
 
     iput-object p3, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
@@ -57,7 +54,6 @@
 .method public run()V
     .locals 12
 
-    .line 489
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -88,7 +84,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 490
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -111,14 +106,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 492
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     const-string v1, "--------- beginning of CPU usage\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 493
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
@@ -133,7 +126,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 494
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
@@ -150,20 +142,16 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 496
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     const-string v1, "--------- beginning of battery history\n"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 497
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 497
-    .local v1, "i":I
     :goto_0
     iget-object v3, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
 
@@ -175,7 +163,6 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 498
     iget-object v3, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
 
     iget-object v3, v3, Lcom/android/server/OverHeatingDiagnosis;->mBatteryHistory:Ljava/util/ArrayList;
@@ -186,8 +173,6 @@
 
     check-cast v3, Lcom/android/server/OverHeatingDiagnosis$BatteryRecord;
 
-    .line 499
-    .local v3, "br":Lcom/android/server/OverHeatingDiagnosis$BatteryRecord;
     iget-object v4, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -208,19 +193,13 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 497
-    .end local v3    # "br":Lcom/android/server/OverHeatingDiagnosis$BatteryRecord;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 502
-    .end local v1    # "i":I
     :cond_0
     const-string/jumbo v1, "logcat_for_overheat"
 
-    .line 503
-    .local v1, "setting":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/server/OverHeatingDiagnosis$1;->this$0:Lcom/android/server/OverHeatingDiagnosis;
 
     invoke-static {v3}, Lcom/android/server/OverHeatingDiagnosis;->access$400(Lcom/android/server/OverHeatingDiagnosis;)Landroid/content/Context;
@@ -237,8 +216,6 @@
 
     move-result v3
 
-    .line 504
-    .local v3, "lines":I
     const/high16 v4, 0x40000
 
     iget-object v5, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
@@ -253,19 +230,14 @@
 
     sub-int/2addr v4, v5
 
-    .line 507
-    .local v4, "maxDataFileSize":I
     new-instance v5, Ljava/io/File;
 
     const-string v6, "/data/system/power/diagnosis_heating.txt"
 
     invoke-direct {v5, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 509
-    .local v5, "dataFile":Ljava/io/File;
     if-lez v4, :cond_1
 
-    .line 511
     :try_start_0
     iget-object v6, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
@@ -273,7 +245,6 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 512
     iget-object v6, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     const-string v7, "\n\n[[TRUNCATED]]"
@@ -286,15 +257,11 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 516
     goto :goto_1
 
-    .line 514
     :catch_0
     move-exception v6
 
-    .line 515
-    .local v6, "e":Ljava/io/IOException;
     const-string v7, "OverHeatingDiagnosis"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -313,24 +280,18 @@
 
     invoke-static {v7, v8, v6}, Lcom/android/server/OPLogger$Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 519
-    .end local v6    # "e":Ljava/io/IOException;
     :cond_1
     :goto_1
     if-lez v3, :cond_4
 
-    .line 520
     iget-object v6, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
 
     const-string v7, "\n"
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 523
     const/4 v6, 0x0
 
-    .line 525
-    .local v6, "input":Ljava/io/InputStreamReader;
     :try_start_1
     new-instance v7, Ljava/lang/ProcessBuilder;
 
@@ -432,7 +393,6 @@
 
     const/16 v2, 0x10
 
-    .line 528
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v9
@@ -441,7 +401,6 @@
 
     invoke-direct {v7, v8}, Ljava/lang/ProcessBuilder;-><init>([Ljava/lang/String;)V
 
-    .line 529
     invoke-virtual {v7, v10}, Ljava/lang/ProcessBuilder;->redirectErrorStream(Z)Ljava/lang/ProcessBuilder;
 
     move-result-object v2
@@ -453,8 +412,6 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_4
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 531
-    .local v2, "logcat":Ljava/lang/Process;
     :try_start_2
     invoke-virtual {v2}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
 
@@ -470,7 +427,6 @@
     :catch_1
     move-exception v7
 
-    .line 532
     :goto_2
     :try_start_3
     invoke-virtual {v2}, Ljava/lang/Process;->getErrorStream()Ljava/io/InputStream;
@@ -487,7 +443,6 @@
     :catch_2
     move-exception v7
 
-    .line 533
     :goto_3
     :try_start_4
     new-instance v7, Ljava/io/InputStreamReader;
@@ -500,13 +455,10 @@
 
     move-object v6, v7
 
-    .line 536
     const/16 v7, 0x2000
 
     new-array v7, v7, [C
 
-    .line 537
-    .local v7, "buf":[C
     :goto_4
     invoke-virtual {v6, v7}, Ljava/io/InputStreamReader;->read([C)I
 
@@ -514,8 +466,6 @@
 
     move v9, v8
 
-    .line 537
-    .local v9, "num":I
     if-lez v8, :cond_2
 
     iget-object v8, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$sb:Ljava/lang/StringBuilder;
@@ -527,10 +477,6 @@
 
     goto :goto_4
 
-    .line 541
-    .end local v2    # "logcat":Ljava/lang/Process;
-    .end local v7    # "buf":[C
-    .end local v9    # "num":I
     :cond_2
     :goto_5
     :try_start_5
@@ -550,12 +496,9 @@
 
     goto :goto_6
 
-    .line 538
     :catch_4
     move-exception v0
 
-    .line 539
-    .local v0, "e":Ljava/io/IOException;
     :try_start_6
     const-string v2, "OverHeatingDiagnosis"
 
@@ -565,8 +508,6 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 541
-    .end local v0    # "e":Ljava/io/IOException;
     if-eqz v6, :cond_4
 
     goto :goto_5
@@ -588,8 +529,6 @@
     :goto_7
     throw v0
 
-    .line 545
-    .end local v6    # "input":Ljava/io/InputStreamReader;
     :cond_4
     :goto_8
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$1;->val$dbox:Landroid/os/DropBoxManager;
@@ -604,6 +543,5 @@
 
     invoke-virtual {v0, v2, v6}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 546
     return-void
 .end method

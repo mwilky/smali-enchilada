@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 549
     invoke-static {}, Landroid/os/Environment;->getDownloadCacheDirectory()Ljava/io/File;
 
     move-result-object v0
@@ -31,7 +30,6 @@
 
     invoke-direct {p0, v0, v1}, Landroid/os/FileObserver;-><init>(Ljava/lang/String;I)V
 
-    .line 550
     return-void
 .end method
 
@@ -39,12 +37,8 @@
 # virtual methods
 .method public onEvent(ILjava/lang/String;)V
     .locals 0
-    .param p1, "event"    # I
-    .param p2, "path"    # Ljava/lang/String;
 
-    .line 554
     invoke-static {p2}, Lcom/android/server/EventLogTags;->writeCacheFileDeleted(Ljava/lang/String;)V
 
-    .line 555
     return-void
 .end method

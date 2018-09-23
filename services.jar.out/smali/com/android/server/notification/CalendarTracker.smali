@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    .line 42
     const-string v0, "ConditionProviders"
 
     const/4 v1, 0x3
@@ -57,7 +56,6 @@
 
     sput-boolean v0, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
-    .line 47
     const-string v1, "begin"
 
     const-string v2, "end"
@@ -82,7 +80,6 @@
 
     sput-object v0, Lcom/android/server/notification/CalendarTracker;->INSTANCE_PROJECTION:[Ljava/lang/String;
 
-    .line 61
     const-string v0, "event_id"
 
     const-string v1, "attendeeEmail"
@@ -100,13 +97,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/content/Context;)V
     .locals 2
-    .param p1, "systemContext"    # Landroid/content/Context;
-    .param p2, "userContext"    # Landroid/content/Context;
 
-    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 273
     new-instance v0, Lcom/android/server/notification/CalendarTracker$1;
 
     const/4 v1, 0x0
@@ -115,20 +108,16 @@
 
     iput-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mObserver:Landroid/database/ContentObserver;
 
-    .line 77
     iput-object p1, p0, Lcom/android/server/notification/CalendarTracker;->mSystemContext:Landroid/content/Context;
 
-    .line 78
     iput-object p2, p0, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
 
-    .line 79
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .line 40
     sget-boolean v0, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
     return v0
@@ -136,9 +125,7 @@
 
 .method static synthetic access$100(Lcom/android/server/notification/CalendarTracker;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/notification/CalendarTracker;
 
-    .line 40
     iget-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
 
     return-object v0
@@ -146,9 +133,7 @@
 
 .method static synthetic access$200(Lcom/android/server/notification/CalendarTracker;)Lcom/android/server/notification/CalendarTracker$Callback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/notification/CalendarTracker;
 
-    .line 40
     iget-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mCallback:Lcom/android/server/notification/CalendarTracker$Callback;
 
     return-object v0
@@ -156,12 +141,9 @@
 
 .method private static attendeeStatusToString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "status"    # I
 
-    .line 240
     packed-switch p0, :pswitch_data_0
 
-    .line 246
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -178,31 +160,26 @@
 
     return-object v0
 
-    .line 245
     :pswitch_0
     const-string v0, "ATTENDEE_STATUS_TENTATIVE"
 
     return-object v0
 
-    .line 244
     :pswitch_1
     const-string v0, "ATTENDEE_STATUS_INVITED"
 
     return-object v0
 
-    .line 243
     :pswitch_2
     const-string v0, "ATTENDEE_STATUS_DECLINED"
 
     return-object v0
 
-    .line 242
     :pswitch_3
     const-string v0, "ATTENDEE_STATUS_ACCEPTED"
 
     return-object v0
 
-    .line 241
     :pswitch_4
     const-string v0, "ATTENDEE_STATUS_NONE"
 
@@ -220,12 +197,9 @@
 
 .method private static availabilityToString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "availability"    # I
 
-    .line 251
     packed-switch p0, :pswitch_data_0
 
-    .line 255
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -242,19 +216,16 @@
 
     return-object v0
 
-    .line 254
     :pswitch_0
     const-string v0, "AVAILABILITY_TENTATIVE"
 
     return-object v0
 
-    .line 253
     :pswitch_1
     const-string v0, "AVAILABILITY_FREE"
 
     return-object v0
 
-    .line 252
     :pswitch_2
     const-string v0, "AVAILABILITY_BUSY"
 
@@ -279,23 +250,16 @@
         }
     .end annotation
 
-    .line 94
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 95
-    .local v0, "start":J
     new-instance v2, Landroid/util/ArraySet;
 
     invoke-direct {v2}, Landroid/util/ArraySet;-><init>()V
 
-    .line 96
-    .local v2, "rt":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
     const-string v3, "\"primary\""
 
-    .line 97
-    .local v3, "primary":Ljava/lang/String;
     const-string v4, "_id"
 
     const-string v5, "(account_name=ownerAccount) AS \"primary\""
@@ -304,16 +268,10 @@
 
     move-result-object v8
 
-    .line 99
-    .local v8, "projection":[Ljava/lang/String;
     const-string v4, "\"primary\" = 1"
 
-    .line 100
-    .local v4, "selection":Ljava/lang/String;
     const/4 v5, 0x0
 
-    .line 102
-    .local v5, "cursor":Landroid/database/Cursor;
     :try_start_0
     iget-object v6, p0, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
 
@@ -335,7 +293,6 @@
 
     move-object v5, v6
 
-    .line 104
     :goto_0
     if-eqz v5, :cond_0
 
@@ -345,7 +302,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 105
     const/4 v6, 0x0
 
     invoke-interface {v5, v6}, Landroid/database/Cursor;->getLong(I)J
@@ -363,40 +319,31 @@
 
     goto :goto_0
 
-    .line 115
     :cond_0
     if-eqz v5, :cond_1
 
-    .line 116
     :goto_1
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
     goto :goto_2
 
-    .line 115
     :catchall_0
     move-exception v6
 
     goto :goto_3
 
-    .line 110
     :catch_0
     move-exception v6
 
-    .line 111
-    .local v6, "e":Landroid/database/sqlite/SQLiteException;
     :try_start_1
     invoke-virtual {v6}, Landroid/database/sqlite/SQLiteException;->printStackTrace()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 115
-    .end local v6    # "e":Landroid/database/sqlite/SQLiteException;
     if-eqz v5, :cond_1
 
     goto :goto_1
 
-    .line 119
     :cond_1
     :goto_2
     sget-boolean v6, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
@@ -427,15 +374,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 120
     :cond_2
     return-object v2
 
-    .line 115
     :goto_3
     if-eqz v5, :cond_3
 
-    .line 116
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -444,23 +388,15 @@
 
 .method private meetsAttendee(Landroid/service/notification/ZenModeConfig$EventInfo;ILjava/lang/String;)Z
     .locals 22
-    .param p1, "filter"    # Landroid/service/notification/ZenModeConfig$EventInfo;
-    .param p2, "eventId"    # I
-    .param p3, "email"    # Ljava/lang/String;
 
-    .line 184
     move-object/from16 v1, p3
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 185
-    .local v2, "start":J
     const-string v10, "event_id = ? AND attendeeEmail = ?"
 
-    .line 186
-    .local v10, "selection":Ljava/lang/String;
     const/4 v0, 0x2
 
     new-array v8, v0, [Ljava/lang/String;
@@ -477,8 +413,6 @@
 
     aput-object v1, v8, v12
 
-    .line 191
-    .local v8, "selectionArgs":[Ljava/lang/String;
     move-object/from16 v13, p0
 
     iget-object v4, v13, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
@@ -499,8 +433,6 @@
 
     move-result-object v4
 
-    .line 194
-    .local v4, "cursor":Landroid/database/Cursor;
     if-eqz v4, :cond_6
 
     :try_start_0
@@ -510,7 +442,6 @@
 
     if-nez v5, :cond_0
 
-    .line 195
     move-object/from16 v15, p1
 
     move-object/from16 v19, v8
@@ -521,12 +452,9 @@
 
     goto/16 :goto_4
 
-    .line 198
     :cond_0
     move v5, v11
 
-    .line 199
-    .local v5, "rt":Z
     :goto_0
     if-eqz v4, :cond_3
 
@@ -536,27 +464,20 @@
 
     if-eqz v6, :cond_3
 
-    .line 200
     invoke-interface {v4, v11}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
 
-    .line 201
-    .local v6, "rowEventId":J
     invoke-interface {v4, v12}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 202
-    .local v9, "rowEmail":Ljava/lang/String;
     invoke-interface {v4, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v14
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
-    .line 203
-    .local v14, "status":I
     move-object/from16 v15, p1
 
     :try_start_1
@@ -566,8 +487,6 @@
 
     move-result v12
 
-    .line 204
-    .local v12, "meetsReply":Z
     sget-boolean v17, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
     if-eqz v17, :cond_1
@@ -585,9 +504,6 @@
     :try_start_2
     const-string v8, ""
 
-    .line 204
-    .end local v8    # "selectionArgs":[Ljava/lang/String;
-    .local v19, "selectionArgs":[Ljava/lang/String;
     invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string/jumbo v8, "status=%s, meetsReply=%s"
@@ -601,9 +517,6 @@
     :try_start_3
     new-array v13, v10, [Ljava/lang/Object;
 
-    .line 207
-    .end local v10    # "selection":Ljava/lang/String;
-    .local v20, "selection":Ljava/lang/String;
     invoke-static {v14}, Lcom/android/server/notification/CalendarTracker;->attendeeStatusToString(I)Ljava/lang/String;
 
     move-result-object v17
@@ -620,7 +533,6 @@
 
     aput-object v17, v13, v16
 
-    .line 206
     invoke-static {v8, v13}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
@@ -631,19 +543,12 @@
 
     move-result-object v0
 
-    .line 204
     invoke-static {v11, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     goto :goto_1
 
-    .line 214
-    .end local v5    # "rt":Z
-    .end local v6    # "rowEventId":J
-    .end local v9    # "rowEmail":Ljava/lang/String;
-    .end local v12    # "meetsReply":Z
-    .end local v14    # "status":I
     :catchall_0
     move-exception v0
 
@@ -651,9 +556,6 @@
 
     goto/16 :goto_5
 
-    .line 214
-    .end local v20    # "selection":Ljava/lang/String;
-    .restart local v10    # "selection":Ljava/lang/String;
     :catchall_1
     move-exception v0
 
@@ -661,21 +563,8 @@
 
     move/from16 v8, p2
 
-    .line 214
-    .end local v10    # "selection":Ljava/lang/String;
-    .restart local v20    # "selection":Ljava/lang/String;
     goto/16 :goto_5
 
-    .line 208
-    .end local v19    # "selectionArgs":[Ljava/lang/String;
-    .end local v20    # "selection":Ljava/lang/String;
-    .restart local v5    # "rt":Z
-    .restart local v6    # "rowEventId":J
-    .restart local v8    # "selectionArgs":[Ljava/lang/String;
-    .restart local v9    # "rowEmail":Ljava/lang/String;
-    .restart local v10    # "selection":Ljava/lang/String;
-    .restart local v12    # "meetsReply":Z
-    .restart local v14    # "status":I
     :cond_1
     move-object/from16 v19, v8
 
@@ -685,11 +574,6 @@
 
     move v10, v0
 
-    .line 208
-    .end local v8    # "selectionArgs":[Ljava/lang/String;
-    .end local v10    # "selection":Ljava/lang/String;
-    .restart local v19    # "selectionArgs":[Ljava/lang/String;
-    .restart local v20    # "selection":Ljava/lang/String;
     :goto_1
     move/from16 v8, p2
 
@@ -717,20 +601,11 @@
     :cond_2
     move/from16 v0, v18
 
-    .line 210
-    .local v0, "eventMeets":Z
     :goto_2
     or-int/2addr v5, v0
 
-    .line 211
-    .end local v0    # "eventMeets":Z
-    .end local v6    # "rowEventId":J
-    .end local v9    # "rowEmail":Ljava/lang/String;
-    .end local v12    # "meetsReply":Z
-    .end local v14    # "status":I
     nop
 
-    .line 198
     move/from16 v11, v18
 
     move-object/from16 v8, v19
@@ -745,19 +620,11 @@
 
     goto/16 :goto_0
 
-    .line 214
-    .end local v5    # "rt":Z
-    .end local v19    # "selectionArgs":[Ljava/lang/String;
-    .end local v20    # "selection":Ljava/lang/String;
-    .restart local v8    # "selectionArgs":[Ljava/lang/String;
-    .restart local v10    # "selection":Ljava/lang/String;
     :catchall_2
     move-exception v0
 
     goto :goto_3
 
-    .line 212
-    .restart local v5    # "rt":Z
     :cond_3
     move-object/from16 v15, p1
 
@@ -767,17 +634,10 @@
 
     move/from16 v8, p2
 
-    .line 214
-    .end local v8    # "selectionArgs":[Ljava/lang/String;
-    .end local v10    # "selection":Ljava/lang/String;
-    .restart local v19    # "selectionArgs":[Ljava/lang/String;
-    .restart local v20    # "selection":Ljava/lang/String;
     if-eqz v4, :cond_4
 
-    .line 215
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    .line 217
     :cond_4
     sget-boolean v0, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
@@ -807,16 +667,9 @@
 
     invoke-static {v0, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
     :cond_5
     return v5
 
-    .line 214
-    .end local v5    # "rt":Z
-    .end local v19    # "selectionArgs":[Ljava/lang/String;
-    .end local v20    # "selection":Ljava/lang/String;
-    .restart local v8    # "selectionArgs":[Ljava/lang/String;
-    .restart local v10    # "selection":Ljava/lang/String;
     :catchall_3
     move-exception v0
 
@@ -829,18 +682,8 @@
 
     move/from16 v8, p2
 
-    .line 214
-    .end local v8    # "selectionArgs":[Ljava/lang/String;
-    .end local v10    # "selection":Ljava/lang/String;
-    .restart local v19    # "selectionArgs":[Ljava/lang/String;
-    .restart local v20    # "selection":Ljava/lang/String;
     goto :goto_5
 
-    .line 195
-    .end local v19    # "selectionArgs":[Ljava/lang/String;
-    .end local v20    # "selection":Ljava/lang/String;
-    .restart local v8    # "selectionArgs":[Ljava/lang/String;
-    .restart local v10    # "selection":Ljava/lang/String;
     :cond_6
     move-object/from16 v15, p1
 
@@ -850,11 +693,6 @@
 
     move/from16 v8, p2
 
-    .line 195
-    .end local v8    # "selectionArgs":[Ljava/lang/String;
-    .end local v10    # "selection":Ljava/lang/String;
-    .restart local v19    # "selectionArgs":[Ljava/lang/String;
-    .restart local v20    # "selection":Ljava/lang/String;
     :goto_4
     :try_start_5
     sget-boolean v0, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
@@ -869,17 +707,13 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
-    .line 196
     :cond_7
     nop
 
-    .line 214
     if-eqz v4, :cond_8
 
-    .line 215
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    .line 217
     :cond_8
     sget-boolean v0, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
@@ -909,23 +743,19 @@
 
     invoke-static {v0, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
     :cond_9
     const/4 v0, 0x1
 
     return v0
 
-    .line 214
     :catchall_4
     move-exception v0
 
     :goto_5
     if-eqz v4, :cond_a
 
-    .line 215
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
 
-    .line 217
     :cond_a
     sget-boolean v5, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
@@ -961,20 +791,15 @@
 
 .method private static meetsReply(II)Z
     .locals 3
-    .param p0, "reply"    # I
-    .param p1, "attendeeStatus"    # I
 
-    .line 260
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     packed-switch p0, :pswitch_data_0
 
-    .line 269
     return v0
 
-    .line 262
     :pswitch_0
     if-ne p1, v1, :cond_0
 
@@ -985,7 +810,6 @@
     :cond_0
     return v0
 
-    .line 264
     :pswitch_1
     if-eq p1, v1, :cond_2
 
@@ -1005,7 +829,6 @@
     :goto_1
     return v0
 
-    .line 267
     :pswitch_2
     const/4 v2, 0x2
 
@@ -1028,16 +851,13 @@
 
 .method private setRegistered(Z)V
     .locals 5
-    .param p1, "registered"    # Z
 
-    .line 222
     iget-boolean v0, p0, Lcom/android/server/notification/CalendarTracker;->mRegistered:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 223
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mSystemContext:Landroid/content/Context;
 
@@ -1045,21 +865,16 @@
 
     move-result-object v0
 
-    .line 224
-    .local v0, "cr":Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getUserId()I
 
     move-result v1
 
-    .line 225
-    .local v1, "userId":I
     iget-boolean v2, p0, Lcom/android/server/notification/CalendarTracker;->mRegistered:Z
 
     if-eqz v2, :cond_2
 
-    .line 226
     sget-boolean v2, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
     if-eqz v2, :cond_1
@@ -1082,17 +897,14 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
     :cond_1
     iget-object v2, p0, Lcom/android/server/notification/CalendarTracker;->mObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 229
     :cond_2
     iput-boolean p1, p0, Lcom/android/server/notification/CalendarTracker;->mRegistered:Z
 
-    .line 230
     sget-boolean v2, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
     if-eqz v2, :cond_3
@@ -1121,13 +933,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
     :cond_3
     iget-boolean v2, p0, Lcom/android/server/notification/CalendarTracker;->mRegistered:Z
 
     if-eqz v2, :cond_5
 
-    .line 232
     sget-boolean v2, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
 
     if-eqz v2, :cond_4
@@ -1150,7 +960,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 233
     :cond_4
     sget-object v2, Landroid/provider/CalendarContract$Instances;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1160,21 +969,18 @@
 
     invoke-virtual {v0, v2, v4, v3, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 234
     sget-object v2, Landroid/provider/CalendarContract$Events;->CONTENT_URI:Landroid/net/Uri;
 
     iget-object v3, p0, Lcom/android/server/notification/CalendarTracker;->mObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v2, v4, v3, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 235
     sget-object v2, Landroid/provider/CalendarContract$Calendars;->CONTENT_URI:Landroid/net/Uri;
 
     iget-object v3, p0, Lcom/android/server/notification/CalendarTracker;->mObserver:Landroid/database/ContentObserver;
 
     invoke-virtual {v0, v2, v4, v3, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 237
     :cond_5
     return-void
 .end method
@@ -1183,14 +989,11 @@
 # virtual methods
 .method public checkEvent(Landroid/service/notification/ZenModeConfig$EventInfo;J)Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     .locals 41
-    .param p1, "filter"    # Landroid/service/notification/ZenModeConfig$EventInfo;
-    .param p2, "time"    # J
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
 
-    .line 124
     move-wide/from16 v3, p2
 
     sget-object v0, Landroid/provider/CalendarContract$Instances;->CONTENT_URI:Landroid/net/Uri;
@@ -1199,24 +1002,18 @@
 
     move-result-object v5
 
-    .line 125
-    .local v5, "uriBuilder":Landroid/net/Uri$Builder;
     invoke-static {v5, v3, v4}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 126
     const-wide/32 v6, 0x5265c00
 
     add-long v8, v3, v6
 
     invoke-static {v5, v8, v9}, Landroid/content/ContentUris;->appendId(Landroid/net/Uri$Builder;J)Landroid/net/Uri$Builder;
 
-    .line 127
     invoke-virtual {v5}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v8
 
-    .line 128
-    .local v8, "uri":Landroid/net/Uri;
     iget-object v0, v1, Lcom/android/server/notification/CalendarTracker;->mUserContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1237,21 +1034,16 @@
 
     move-result-object v9
 
-    .line 130
-    .local v9, "cursor":Landroid/database/Cursor;
     new-instance v0, Lcom/android/server/notification/CalendarTracker$CheckEventResult;
 
     invoke-direct {v0}, Lcom/android/server/notification/CalendarTracker$CheckEventResult;-><init>()V
 
     move-object v10, v0
 
-    .line 131
-    .local v10, "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     add-long/2addr v6, v3
 
     iput-wide v6, v10, Lcom/android/server/notification/CalendarTracker$CheckEventResult;->recheckAt:J
 
-    .line 133
     :try_start_0
     invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/CalendarTracker;->getPrimaryCalendars()Landroid/util/ArraySet;
 
@@ -1260,8 +1052,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_8
     .catchall {:try_start_0 .. :try_end_0} :catchall_8
 
-    .line 134
-    .local v0, "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
     :goto_0
     if-eqz v9, :cond_e
 
@@ -1272,31 +1062,24 @@
 
     if-eqz v6, :cond_e
 
-    .line 135
     const/4 v6, 0x0
 
     invoke-interface {v9, v6}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v11
 
-    .line 136
-    .local v11, "begin":J
     const/4 v7, 0x1
 
     invoke-interface {v9, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v13
 
-    .line 137
-    .local v13, "end":J
     const/4 v15, 0x2
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 138
-    .local v16, "title":Ljava/lang/String;
     const/4 v15, 0x3
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getInt(I)I
@@ -1312,8 +1095,6 @@
     :cond_0
     const/4 v6, 0x0
 
-    .line 139
-    .local v6, "calendarVisible":Z
     :goto_1
     const/4 v15, 0x4
 
@@ -1323,8 +1104,6 @@
 
     move/from16 v21, v20
 
-    .line 140
-    .local v21, "eventId":I
     const/4 v15, 0x5
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1333,8 +1112,6 @@
 
     move-object/from16 v22, v20
 
-    .line 141
-    .local v22, "name":Ljava/lang/String;
     const/4 v15, 0x6
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -1343,8 +1120,6 @@
 
     move-object/from16 v23, v20
 
-    .line 142
-    .local v23, "owner":Ljava/lang/String;
     const/4 v15, 0x7
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getLong(I)J
@@ -1353,8 +1128,6 @@
 
     move-wide/from16 v26, v24
 
-    .line 143
-    .local v26, "calendarId":J
     const/16 v15, 0x8
 
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getInt(I)I
@@ -1366,8 +1139,6 @@
 
     move/from16 v28, v20
 
-    .line 144
-    .local v28, "availability":I
     move-object/from16 v29, v8
 
     move-wide/from16 v7, v26
@@ -1377,16 +1148,10 @@
 
     move-result-object v15
 
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v26    # "calendarId":J
-    .local v7, "calendarId":J
-    .local v29, "uri":Landroid/net/Uri;
     invoke-virtual {v0, v15}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
 
     move-result v15
 
-    .line 145
-    .local v15, "calendarPrimary":Z
     sget-boolean v20, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_6
@@ -1402,8 +1167,6 @@
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .end local v0    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .local v30, "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
     move-object/from16 v31, v5
 
     :try_start_4
@@ -1412,14 +1175,10 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .local v31, "uriBuilder":Landroid/net/Uri$Builder;
     move-object/from16 v32, v9
 
     const/16 v9, 0xa
 
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .local v32, "cursor":Landroid/database/Cursor;
     :try_start_5
     new-array v9, v9, [Ljava/lang/Object;
 
@@ -1435,8 +1194,6 @@
     :try_start_6
     new-instance v10, Ljava/util/Date;
 
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .local v33, "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     invoke-direct {v10, v11, v12}, Ljava/util/Date;-><init>(J)V
 
     const/16 v20, 0x1
@@ -1451,7 +1208,6 @@
 
     aput-object v10, v9, v17
 
-    .line 148
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v10
@@ -1460,15 +1216,12 @@
 
     aput-object v10, v9, v17
 
-    .line 149
     move/from16 v10, v28
 
     invoke-static {v10}, Lcom/android/server/notification/CalendarTracker;->availabilityToString(I)Ljava/lang/String;
 
     move-result-object v17
 
-    .end local v28    # "availability":I
-    .local v10, "availability":I
     const/16 v19, 0x4
 
     aput-object v17, v9, v19
@@ -1479,8 +1232,6 @@
 
     move-result-object v17
 
-    .end local v21    # "eventId":I
-    .local v1, "eventId":I
     const/16 v19, 0x5
 
     aput-object v17, v9, v19
@@ -1493,9 +1244,6 @@
 
     aput-object v1, v9, v17
 
-    .end local v22    # "name":Ljava/lang/String;
-    .local v1, "name":Ljava/lang/String;
-    .local v34, "eventId":I
     move/from16 v35, v10
 
     move-object/from16 v10, v23
@@ -1504,9 +1252,6 @@
 
     aput-object v10, v9, v17
 
-    .end local v23    # "owner":Ljava/lang/String;
-    .local v10, "owner":Ljava/lang/String;
-    .local v35, "availability":I
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v17
@@ -1517,14 +1262,12 @@
 
     const/16 v17, 0x9
 
-    .line 150
     invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v19
 
     aput-object v19, v9, v17
 
-    .line 145
     invoke-static {v5, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
@@ -1533,18 +1276,6 @@
 
     goto :goto_2
 
-    .line 176
-    .end local v1    # "name":Ljava/lang/String;
-    .end local v6    # "calendarVisible":Z
-    .end local v7    # "calendarId":J
-    .end local v10    # "owner":Ljava/lang/String;
-    .end local v11    # "begin":J
-    .end local v13    # "end":J
-    .end local v15    # "calendarPrimary":Z
-    .end local v16    # "title":Ljava/lang/String;
-    .end local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .end local v34    # "eventId":I
-    .end local v35    # "availability":I
     :catchall_0
     move-exception v0
 
@@ -1554,7 +1285,6 @@
 
     goto/16 :goto_b
 
-    .line 173
     :catch_0
     move-exception v0
 
@@ -1564,9 +1294,6 @@
 
     goto/16 :goto_9
 
-    .line 176
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .local v10, "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_1
     move-exception v0
 
@@ -1574,13 +1301,8 @@
 
     move-object/from16 v2, v32
 
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_b
 
-    .line 173
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_1
     move-exception v0
 
@@ -1588,15 +1310,8 @@
 
     move-object/from16 v2, v32
 
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_9
 
-    .line 176
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_2
     move-exception v0
 
@@ -1604,17 +1319,8 @@
 
     move-object v1, v10
 
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_b
 
-    .line 173
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_2
     move-exception v0
 
@@ -1622,19 +1328,8 @@
 
     move-object v1, v10
 
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_9
 
-    .line 176
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_3
     move-exception v0
 
@@ -1644,21 +1339,8 @@
 
     move-object v1, v10
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_b
 
-    .line 173
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_3
     move-exception v0
 
@@ -1668,32 +1350,8 @@
 
     move-object v1, v10
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_9
 
-    .line 151
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v0    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v6    # "calendarVisible":Z
-    .restart local v7    # "calendarId":J
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v11    # "begin":J
-    .restart local v13    # "end":J
-    .restart local v15    # "calendarPrimary":Z
-    .restart local v16    # "title":Ljava/lang/String;
-    .restart local v21    # "eventId":I
-    .restart local v22    # "name":Ljava/lang/String;
-    .restart local v23    # "owner":Ljava/lang/String;
-    .restart local v28    # "availability":I
     :cond_1
     move-object/from16 v30, v0
 
@@ -1713,21 +1371,6 @@
 
     const/16 v18, 0x0
 
-    .end local v0    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v21    # "eventId":I
-    .end local v22    # "name":Ljava/lang/String;
-    .end local v23    # "owner":Ljava/lang/String;
-    .end local v28    # "availability":I
-    .restart local v1    # "name":Ljava/lang/String;
-    .local v10, "owner":Ljava/lang/String;
-    .restart local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v34    # "eventId":I
-    .restart local v35    # "availability":I
     :goto_2
     cmp-long v0, v3, v11
 
@@ -1744,8 +1387,6 @@
     :cond_2
     move/from16 v0, v18
 
-    .line 152
-    .local v0, "meetsTime":Z
     :goto_3
     if-eqz v6, :cond_4
 
@@ -1757,7 +1398,6 @@
 
     iget-object v5, v2, Landroid/service/notification/ZenModeConfig$EventInfo;->calendar:Ljava/lang/String;
 
-    .line 153
     invoke-static {v5, v10}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
@@ -1766,7 +1406,6 @@
 
     iget-object v5, v2, Landroid/service/notification/ZenModeConfig$EventInfo;->calendar:Ljava/lang/String;
 
-    .line 154
     invoke-static {v5, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
@@ -1784,8 +1423,6 @@
     :cond_4
     move/from16 v5, v18
 
-    .line 155
-    .local v5, "meetsCalendar":Z
     :goto_4
     move-object/from16 v36, v1
 
@@ -1795,10 +1432,6 @@
 
     if-eq v9, v1, :cond_5
 
-    .end local v1    # "name":Ljava/lang/String;
-    .end local v35    # "availability":I
-    .local v9, "availability":I
-    .local v36, "name":Ljava/lang/String;
     const/16 v18, 0x1
 
     nop
@@ -1806,13 +1439,10 @@
     :cond_5
     move/from16 v1, v18
 
-    .line 156
-    .local v1, "meetsAvailability":Z
     if-eqz v5, :cond_c
 
     if-eqz v1, :cond_c
 
-    .line 157
     :try_start_7
     sget-boolean v17, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
     :try_end_7
@@ -1826,14 +1456,10 @@
     :try_start_8
     const-string v1, "ConditionProviders.CT"
 
-    .end local v1    # "meetsAvailability":Z
-    .local v37, "meetsAvailability":Z
     move/from16 v38, v5
 
     const-string v5, "  MEETS CALENDAR & AVAILABILITY"
 
-    .end local v5    # "meetsCalendar":Z
-    .local v38, "meetsCalendar":Z
     invoke-static {v1, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
@@ -1841,20 +1467,11 @@
 
     goto :goto_5
 
-    .line 158
-    .end local v37    # "meetsAvailability":Z
-    .end local v38    # "meetsCalendar":Z
-    .restart local v1    # "meetsAvailability":Z
-    .restart local v5    # "meetsCalendar":Z
     :cond_6
     move/from16 v37, v1
 
     move/from16 v38, v5
 
-    .end local v1    # "meetsAvailability":Z
-    .end local v5    # "meetsCalendar":Z
-    .restart local v37    # "meetsAvailability":Z
-    .restart local v38    # "meetsCalendar":Z
     :goto_5
     move/from16 v5, v34
 
@@ -1865,13 +1482,8 @@
 
     move-result v17
 
-    .line 159
-    .end local v34    # "eventId":I
-    .local v5, "eventId":I
-    .local v17, "meetsAttendee":Z
     if-eqz v17, :cond_c
 
-    .line 160
     sget-boolean v18, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
@@ -1889,11 +1501,9 @@
     .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_0
     .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    .line 161
     :cond_7
     if-eqz v0, :cond_9
 
-    .line 162
     :try_start_b
     sget-boolean v1, Lcom/android/server/notification/CalendarTracker;->DEBUG:Z
     :try_end_b
@@ -1912,7 +1522,6 @@
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_0
     .catchall {:try_start_c .. :try_end_c} :catchall_0
 
-    .line 163
     :cond_8
     move-object/from16 v1, v33
 
@@ -1921,18 +1530,11 @@
     :try_start_d
     iput-boolean v2, v1, Lcom/android/server/notification/CalendarTracker$CheckEventResult;->inEvent:Z
 
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .local v1, "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto :goto_6
 
-    .line 165
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :cond_9
     move-object/from16 v1, v33
 
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :goto_6
     cmp-long v2, v11, v3
 
@@ -1944,35 +1546,14 @@
 
     iget-wide v5, v1, Lcom/android/server/notification/CalendarTracker$CheckEventResult;->recheckAt:J
 
-    .end local v5    # "eventId":I
-    .end local v6    # "calendarVisible":Z
-    .local v39, "calendarVisible":Z
-    .local v40, "eventId":I
     cmp-long v2, v11, v5
 
     if-gez v2, :cond_b
 
-    .line 166
     iput-wide v11, v1, Lcom/android/server/notification/CalendarTracker$CheckEventResult;->recheckAt:J
 
     goto :goto_7
 
-    .line 176
-    .end local v0    # "meetsTime":Z
-    .end local v7    # "calendarId":J
-    .end local v9    # "availability":I
-    .end local v10    # "owner":Ljava/lang/String;
-    .end local v11    # "begin":J
-    .end local v13    # "end":J
-    .end local v15    # "calendarPrimary":Z
-    .end local v16    # "title":Ljava/lang/String;
-    .end local v17    # "meetsAttendee":Z
-    .end local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .end local v36    # "name":Ljava/lang/String;
-    .end local v37    # "meetsAvailability":Z
-    .end local v38    # "meetsCalendar":Z
-    .end local v39    # "calendarVisible":Z
-    .end local v40    # "eventId":I
     :catchall_4
     move-exception v0
 
@@ -1980,7 +1561,6 @@
 
     goto/16 :goto_b
 
-    .line 173
     :catch_4
     move-exception v0
 
@@ -1988,31 +1568,11 @@
 
     goto/16 :goto_9
 
-    .line 167
-    .restart local v0    # "meetsTime":Z
-    .restart local v5    # "eventId":I
-    .restart local v6    # "calendarVisible":Z
-    .restart local v7    # "calendarId":J
-    .restart local v9    # "availability":I
-    .restart local v10    # "owner":Ljava/lang/String;
-    .restart local v11    # "begin":J
-    .restart local v13    # "end":J
-    .restart local v15    # "calendarPrimary":Z
-    .restart local v16    # "title":Ljava/lang/String;
-    .restart local v17    # "meetsAttendee":Z
-    .restart local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .restart local v36    # "name":Ljava/lang/String;
-    .restart local v37    # "meetsAvailability":Z
-    .restart local v38    # "meetsCalendar":Z
     :cond_a
     move/from16 v40, v5
 
     move/from16 v39, v6
 
-    .end local v5    # "eventId":I
-    .end local v6    # "calendarVisible":Z
-    .restart local v39    # "calendarVisible":Z
-    .restart local v40    # "eventId":I
     :cond_b
     cmp-long v2, v13, v3
 
@@ -2024,32 +1584,13 @@
 
     if-gez v2, :cond_d
 
-    .line 168
     iput-wide v13, v1, Lcom/android/server/notification/CalendarTracker$CheckEventResult;->recheckAt:J
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_d} :catch_4
     .catchall {:try_start_d .. :try_end_d} :catchall_4
 
-    .end local v0    # "meetsTime":Z
-    .end local v7    # "calendarId":J
-    .end local v9    # "availability":I
-    .end local v10    # "owner":Ljava/lang/String;
-    .end local v11    # "begin":J
-    .end local v13    # "end":J
-    .end local v15    # "calendarPrimary":Z
-    .end local v16    # "title":Ljava/lang/String;
-    .end local v17    # "meetsAttendee":Z
-    .end local v36    # "name":Ljava/lang/String;
-    .end local v37    # "meetsAvailability":Z
-    .end local v38    # "meetsCalendar":Z
-    .end local v39    # "calendarVisible":Z
-    .end local v40    # "eventId":I
     goto :goto_7
 
-    .line 176
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_5
     move-exception v0
 
@@ -2057,13 +1598,8 @@
 
     move-object/from16 v2, v32
 
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_b
 
-    .line 173
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_5
     move-exception v0
 
@@ -2071,20 +1607,11 @@
 
     move-object/from16 v2, v32
 
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     goto/16 :goto_9
 
-    .line 172
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .restart local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :cond_c
     move-object/from16 v1, v33
 
-    .line 133
-    .end local v33    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :cond_d
     :goto_7
     move-object v10, v1
@@ -2103,14 +1630,6 @@
 
     goto/16 :goto_0
 
-    .line 176
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v30    # "primaryCalendars":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Ljava/lang/Long;>;"
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .local v5, "uriBuilder":Landroid/net/Uri$Builder;
-    .local v9, "cursor":Landroid/database/Cursor;
-    .local v10, "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_6
     move-exception v0
 
@@ -2120,21 +1639,8 @@
 
     move-object v2, v9
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
     goto :goto_b
 
-    .line 173
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_6
     move-exception v0
 
@@ -2144,23 +1650,8 @@
 
     move-object v2, v9
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
     goto :goto_9
 
-    .line 176
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v29    # "uri":Landroid/net/Uri;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_7
     move-exception v0
 
@@ -2172,25 +1663,8 @@
 
     move-object v2, v9
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v29    # "uri":Landroid/net/Uri;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
     goto :goto_b
 
-    .line 173
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v29    # "uri":Landroid/net/Uri;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_7
     move-exception v0
 
@@ -2202,25 +1676,8 @@
 
     move-object v2, v9
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v29    # "uri":Landroid/net/Uri;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
     goto :goto_9
 
-    .line 176
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v29    # "uri":Landroid/net/Uri;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :cond_e
     move-object/from16 v31, v5
 
@@ -2230,41 +1687,20 @@
 
     move-object v1, v10
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v29    # "uri":Landroid/net/Uri;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v32    # "cursor":Landroid/database/Cursor;
     if-eqz v32, :cond_f
 
-    .line 177
     move-object/from16 v2, v32
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     goto :goto_8
 
-    .line 180
     :cond_f
     move-object/from16 v2, v32
 
-    .end local v32    # "cursor":Landroid/database/Cursor;
-    .local v2, "cursor":Landroid/database/Cursor;
     :goto_8
     goto :goto_a
 
-    .line 176
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v2    # "cursor":Landroid/database/Cursor;
-    .end local v29    # "uri":Landroid/net/Uri;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catchall_8
     move-exception v0
 
@@ -2276,25 +1712,8 @@
 
     move-object v1, v10
 
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v2    # "cursor":Landroid/database/Cursor;
-    .restart local v29    # "uri":Landroid/net/Uri;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
     goto :goto_b
 
-    .line 173
-    .end local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .end local v2    # "cursor":Landroid/database/Cursor;
-    .end local v29    # "uri":Landroid/net/Uri;
-    .end local v31    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "cursor":Landroid/database/Cursor;
-    .restart local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
     :catch_8
     move-exception v0
 
@@ -2306,16 +1725,6 @@
 
     move-object v1, v10
 
-    .line 174
-    .end local v5    # "uriBuilder":Landroid/net/Uri$Builder;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "cursor":Landroid/database/Cursor;
-    .end local v10    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .local v0, "e":Ljava/lang/Exception;
-    .restart local v1    # "result":Lcom/android/server/notification/CalendarTracker$CheckEventResult;
-    .restart local v2    # "cursor":Landroid/database/Cursor;
-    .restart local v29    # "uri":Landroid/net/Uri;
-    .restart local v31    # "uriBuilder":Landroid/net/Uri$Builder;
     :goto_9
     :try_start_e
     const-string v5, "ConditionProviders.CT"
@@ -2326,26 +1735,20 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_9
 
-    .line 176
-    .end local v0    # "e":Ljava/lang/Exception;
     if-eqz v2, :cond_10
 
-    .line 177
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 180
     :cond_10
     :goto_a
     return-object v1
 
-    .line 176
     :catchall_9
     move-exception v0
 
     :goto_b
     if-eqz v2, :cond_11
 
-    .line 177
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     :cond_11
@@ -2354,10 +1757,7 @@
 
 .method public dump(Ljava/lang/String;Ljava/io/PrintWriter;)V
     .locals 1
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
 
-    .line 88
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "mCallback="
@@ -2368,7 +1768,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 89
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "mRegistered="
@@ -2379,7 +1778,6 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 90
     invoke-virtual {p2, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "u="
@@ -2394,26 +1792,21 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 91
     return-void
 .end method
 
 .method public setCallback(Lcom/android/server/notification/CalendarTracker$Callback;)V
     .locals 1
-    .param p1, "callback"    # Lcom/android/server/notification/CalendarTracker$Callback;
 
-    .line 82
     iget-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mCallback:Lcom/android/server/notification/CalendarTracker$Callback;
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 83
     :cond_0
     iput-object p1, p0, Lcom/android/server/notification/CalendarTracker;->mCallback:Lcom/android/server/notification/CalendarTracker$Callback;
 
-    .line 84
     iget-object v0, p0, Lcom/android/server/notification/CalendarTracker;->mCallback:Lcom/android/server/notification/CalendarTracker$Callback;
 
     if-eqz v0, :cond_1
@@ -2428,6 +1821,5 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/server/notification/CalendarTracker;->setRegistered(Z)V
 
-    .line 85
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 935
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getServiceType()I
     .locals 1
 
-    .line 938
     const/16 v0, 0xa
 
     return v0
@@ -47,28 +44,22 @@
 
 .method public onLowPowerModeChanged(Landroid/os/PowerSaveState;)V
     .locals 2
-    .param p1, "result"    # Landroid/os/PowerSaveState;
 
-    .line 943
     iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRulesFirstLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 944
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/NetworkPolicyManagerService$2;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/net/NetworkPolicyManagerService;->updateRestrictBackgroundByLowPowerModeUL(Landroid/os/PowerSaveState;)V
 
-    .line 945
     monitor-exit v0
 
-    .line 946
     return-void
 
-    .line 945
     :catchall_0
     move-exception v1
 

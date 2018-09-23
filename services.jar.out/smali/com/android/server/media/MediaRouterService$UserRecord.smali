@@ -37,32 +37,25 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/media/MediaRouterService;I)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/media/MediaRouterService;
-    .param p2, "userId"    # I
 
-    .line 749
     iput-object p1, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->this$0:Lcom/android/server/media/MediaRouterService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 745
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mClientRecords:Ljava/util/ArrayList;
 
-    .line 750
     iput p2, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mUserId:I
 
-    .line 751
     new-instance v0, Lcom/android/server/media/MediaRouterService$UserHandler;
 
     invoke-direct {v0, p1, p0}, Lcom/android/server/media/MediaRouterService$UserHandler;-><init>(Lcom/android/server/media/MediaRouterService;Lcom/android/server/media/MediaRouterService$UserRecord;)V
 
     iput-object v0, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mHandler:Lcom/android/server/media/MediaRouterService$UserHandler;
 
-    .line 752
     return-void
 .end method
 
@@ -70,10 +63,7 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 6
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 755
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -88,7 +78,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 757
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -103,27 +92,19 @@
 
     move-result-object v0
 
-    .line 758
-    .local v0, "indent":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mClientRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 759
-    .local v1, "clientCount":I
     if-eqz v1, :cond_0
 
-    .line 760
     const/4 v2, 0x0
 
-    .line 760
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 761
     iget-object v3, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mClientRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -134,13 +115,10 @@
 
     invoke-virtual {v3, p1, v0}, Lcom/android/server/media/MediaRouterService$ClientRecord;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 760
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 764
-    .end local v2    # "i":I
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -158,7 +136,6 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 767
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -176,7 +153,6 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 768
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -197,7 +173,6 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 770
     iget-object v2, p0, Lcom/android/server/media/MediaRouterService$UserRecord;->mHandler:Lcom/android/server/media/MediaRouterService$UserHandler;
 
     new-instance v3, Lcom/android/server/media/MediaRouterService$UserRecord$1;
@@ -212,7 +187,6 @@
 
     if-nez v2, :cond_2
 
-    .line 776
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -229,7 +203,6 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 778
     :cond_2
     return-void
 .end method
@@ -237,7 +210,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 782
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

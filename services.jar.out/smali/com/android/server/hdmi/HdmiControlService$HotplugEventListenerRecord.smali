@@ -26,25 +26,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/hdmi/HdmiControlService;Landroid/hardware/hdmi/IHdmiHotplugEventListener;)V
     .locals 0
-    .param p2, "listener"    # Landroid/hardware/hdmi/IHdmiHotplugEventListener;
 
-    .line 1123
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1124
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiHotplugEventListener;
 
-    .line 1125
     return-void
 .end method
 
 .method static synthetic access$4800(Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;)Landroid/hardware/hdmi/IHdmiHotplugEventListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;
 
-    .line 1120
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiHotplugEventListener;
 
     return-object v0
@@ -55,7 +49,6 @@
 .method public binderDied()V
     .locals 2
 
-    .line 1129
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiControlService;->access$2100(Lcom/android/server/hdmi/HdmiControlService;)Ljava/lang/Object;
@@ -64,7 +57,6 @@
 
     monitor-enter v0
 
-    .line 1130
     :try_start_0
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
@@ -74,13 +66,10 @@
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1131
     monitor-exit v0
 
-    .line 1132
     return-void
 
-    .line 1131
     :catchall_0
     move-exception v1
 
@@ -93,9 +82,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 1136
     instance-of v0, p1, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;
 
     const/4 v1, 0x0
@@ -104,7 +91,6 @@
 
     return v1
 
-    .line 1137
     :cond_0
     const/4 v0, 0x1
 
@@ -112,14 +98,11 @@
 
     return v0
 
-    .line 1138
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;
 
-    .line 1139
-    .local v2, "other":Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;
     iget-object v3, v2, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiHotplugEventListener;
 
     iget-object v4, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiHotplugEventListener;
@@ -138,7 +121,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1144
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$HotplugEventListenerRecord;->mListener:Landroid/hardware/hdmi/IHdmiHotplugEventListener;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

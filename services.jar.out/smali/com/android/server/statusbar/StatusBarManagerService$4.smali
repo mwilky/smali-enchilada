@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/statusbar/StatusBarManagerService;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/statusbar/StatusBarManagerService;
 
-    .line 815
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$4;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/statusbar/StatusBarManagerService$4;->val$menuVisible:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 817
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$4;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$100(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -52,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 819
     :try_start_0
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$4;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -66,14 +62,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 821
     goto :goto_0
 
-    .line 820
     :catch_0
     move-exception v0
 
-    .line 823
     :cond_0
     :goto_0
     return-void

@@ -21,15 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;)V
     .locals 0
-    .param p1, "state"    # Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
 
-    .line 56
     invoke-direct {p0}, Lcom/android/server/audio/AudioEventLogger$Event;-><init>()V
 
-    .line 57
     iput-object p1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
 
-    .line 58
     return-void
 .end method
 
@@ -38,7 +34,6 @@
 .method public eventToString()Ljava/lang/String;
     .locals 2
 
-    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "setWiredDeviceConnectionState("
@@ -47,7 +42,6 @@
 
     const-string v1, " type:"
 
-    .line 63
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
@@ -62,7 +56,6 @@
 
     const-string v1, " state:"
 
-    .line 64
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
@@ -77,7 +70,6 @@
 
     const-string v1, " addr:"
 
-    .line 65
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
@@ -88,7 +80,6 @@
 
     const-string v1, " name:"
 
-    .line 66
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
@@ -99,7 +90,6 @@
 
     const-string v1, ") from "
 
-    .line 67
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/audio/AudioServiceEvents$WiredDevConnectEvent;->mState:Lcom/android/server/audio/AudioService$WiredDeviceConnectionState;
@@ -112,6 +102,5 @@
 
     move-result-object v0
 
-    .line 62
     return-object v0
 .end method

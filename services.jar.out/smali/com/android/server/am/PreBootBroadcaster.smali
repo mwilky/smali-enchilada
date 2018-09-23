@@ -40,20 +40,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;ILcom/android/internal/util/ProgressReporter;Z)V
     .locals 4
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "userId"    # I
-    .param p3, "progress"    # Lcom/android/internal/util/ProgressReporter;
-    .param p4, "quiet"    # Z
 
-    .line 64
     invoke-direct {p0}, Landroid/content/IIntentReceiver$Stub;-><init>()V
 
-    .line 61
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mIndex:I
 
-    .line 123
     new-instance v0, Lcom/android/server/am/PreBootBroadcaster$1;
 
     invoke-static {}, Lcom/android/server/UiThread;->get()Lcom/android/server/UiThread;
@@ -72,19 +65,14 @@
 
     iput-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mHandler:Landroid/os/Handler;
 
-    .line 65
     iput-object p1, p0, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 66
     iput p2, p0, Lcom/android/server/am/PreBootBroadcaster;->mUserId:I
 
-    .line 67
     iput-object p3, p0, Lcom/android/server/am/PreBootBroadcaster;->mProgress:Lcom/android/internal/util/ProgressReporter;
 
-    .line 68
     iput-boolean p4, p0, Lcom/android/server/am/PreBootBroadcaster;->mQuiet:Z
 
-    .line 70
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.PRE_BOOT_COMPLETED"
@@ -93,14 +81,12 @@
 
     iput-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mIntent:Landroid/content/Intent;
 
-    .line 71
     iget-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mIntent:Landroid/content/Intent;
 
     const v1, 0x2000100
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 73
     iget-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
@@ -111,12 +97,10 @@
 
     iget-object v1, p0, Lcom/android/server/am/PreBootBroadcaster;->mIntent:Landroid/content/Intent;
 
-    .line 74
     invoke-static {p2}, Landroid/os/UserHandle;->of(I)Landroid/os/UserHandle;
 
     move-result-object v2
 
-    .line 73
     const/high16 v3, 0x100000
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/content/pm/PackageManager;->queryBroadcastReceiversAsUser(Landroid/content/Intent;ILandroid/os/UserHandle;)Ljava/util/List;
@@ -125,15 +109,12 @@
 
     iput-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mTargets:Ljava/util/List;
 
-    .line 75
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/am/PreBootBroadcaster;)Lcom/android/server/am/ActivityManagerService;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/am/PreBootBroadcaster;
 
-    .line 50
     iget-object v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0
@@ -141,9 +122,7 @@
 
 .method static synthetic access$100(Lcom/android/server/am/PreBootBroadcaster;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/am/PreBootBroadcaster;
 
-    .line 50
     iget v0, p0, Lcom/android/server/am/PreBootBroadcaster;->mUserId:I
 
     return v0
@@ -156,25 +135,15 @@
 
 .method public performReceive(Landroid/content/Intent;ILjava/lang/String;Landroid/os/Bundle;ZZI)V
     .locals 0
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Ljava/lang/String;
-    .param p4, "extras"    # Landroid/os/Bundle;
-    .param p5, "ordered"    # Z
-    .param p6, "sticky"    # Z
-    .param p7, "sendingUser"    # I
 
-    .line 117
     invoke-virtual {p0}, Lcom/android/server/am/PreBootBroadcaster;->sendNext()V
 
-    .line 118
     return-void
 .end method
 
 .method public sendNext()V
     .locals 22
 
-    .line 78
     move-object/from16 v15, p0
 
     iget v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mIndex:I
@@ -189,7 +158,6 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 79
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -198,13 +166,10 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 80
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/PreBootBroadcaster;->onFinished()V
 
-    .line 81
     return-void
 
-    .line 84
     :cond_0
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
@@ -218,7 +183,6 @@
 
     if-nez v0, :cond_1
 
-    .line 85
     const-string v0, "PreBootBroadcaster"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -243,7 +207,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -252,13 +215,10 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 87
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/PreBootBroadcaster;->onFinished()V
 
-    .line 88
     return-void
 
-    .line 91
     :cond_1
     iget-boolean v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mQuiet:Z
 
@@ -266,7 +226,6 @@
 
     if-nez v0, :cond_2
 
-    .line 92
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mHandler:Landroid/os/Handler;
 
     iget-object v2, v15, Lcom/android/server/am/PreBootBroadcaster;->mTargets:Ljava/util/List;
@@ -283,7 +242,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 95
     :cond_2
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mTargets:Ljava/util/List;
 
@@ -301,28 +259,22 @@
 
     check-cast v14, Landroid/content/pm/ResolveInfo;
 
-    .line 96
-    .local v14, "ri":Landroid/content/pm/ResolveInfo;
     iget-object v0, v14, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v13
 
-    .line 98
-    .local v13, "componentName":Landroid/content/ComponentName;
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mProgress:Lcom/android/internal/util/ProgressReporter;
 
     if-eqz v0, :cond_3
 
-    .line 99
     iget-object v0, v14, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v15, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    .line 100
     invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
@@ -331,8 +283,6 @@
 
     move-result-object v0
 
-    .line 101
-    .local v0, "label":Ljava/lang/CharSequence;
     iget-object v2, v15, Lcom/android/server/am/PreBootBroadcaster;->mProgress:Lcom/android/internal/util/ProgressReporter;
 
     iget v4, v15, Lcom/android/server/am/PreBootBroadcaster;->mIndex:I
@@ -353,16 +303,12 @@
 
     aput-object v0, v1, v3
 
-    .line 102
     invoke-virtual {v6, v7, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 101
     invoke-virtual {v2, v4, v5, v1}, Lcom/android/internal/util/ProgressReporter;->setProgress(IILjava/lang/CharSequence;)V
 
-    .line 105
-    .end local v0    # "label":Ljava/lang/CharSequence;
     :cond_3
     const-string v0, "PreBootBroadcaster"
 
@@ -394,7 +340,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     iget v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mUserId:I
 
     invoke-virtual {v13}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -403,12 +348,10 @@
 
     invoke-static {v0, v1}, Lcom/android/server/am/EventLogTags;->writeAmPreBoot(ILjava/lang/String;)V
 
-    .line 108
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mIntent:Landroid/content/Intent;
 
     invoke-virtual {v0, v13}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 109
     iget-object v0, v15, Lcom/android/server/am/PreBootBroadcaster;->mService:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v1, 0x0
@@ -449,20 +392,15 @@
 
     move/from16 v13, v16
 
-    .end local v13    # "componentName":Landroid/content/ComponentName;
-    .local v20, "componentName":Landroid/content/ComponentName;
     move-object/from16 v21, v14
 
     move/from16 v14, v17
 
-    .end local v14    # "ri":Landroid/content/pm/ResolveInfo;
-    .local v21, "ri":Landroid/content/pm/ResolveInfo;
     move/from16 v15, v18
 
     move/from16 v16, v19
 
     invoke-virtual/range {v0 .. v16}, Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;[Ljava/lang/String;ILandroid/os/Bundle;ZZIII)I
 
-    .line 112
     return-void
 .end method

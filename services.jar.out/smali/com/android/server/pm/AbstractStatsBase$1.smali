@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/AbstractStatsBase;Ljava/lang/String;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/AbstractStatsBase;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 75
-    .local p0, "this":Lcom/android/server/pm/AbstractStatsBase$1;, "Lcom/android/server/pm/AbstractStatsBase$1;"
     iput-object p1, p0, Lcom/android/server/pm/AbstractStatsBase$1;->this$0:Lcom/android/server/pm/AbstractStatsBase;
 
     iput-object p3, p0, Lcom/android/server/pm/AbstractStatsBase$1;->val$data:Ljava/lang/Object;
@@ -42,8 +38,6 @@
 .method public run()V
     .locals 4
 
-    .line 79
-    .local p0, "this":Lcom/android/server/pm/AbstractStatsBase$1;, "Lcom/android/server/pm/AbstractStatsBase$1;"
     const/4 v0, 0x0
 
     :try_start_0
@@ -53,7 +47,6 @@
 
     invoke-static {v1, v2}, Lcom/android/server/pm/AbstractStatsBase;->access$000(Lcom/android/server/pm/AbstractStatsBase;Ljava/lang/Object;)V
 
-    .line 80
     iget-object v1, p0, Lcom/android/server/pm/AbstractStatsBase$1;->this$0:Lcom/android/server/pm/AbstractStatsBase;
 
     invoke-static {v1}, Lcom/android/server/pm/AbstractStatsBase;->access$100(Lcom/android/server/pm/AbstractStatsBase;)Ljava/util/concurrent/atomic/AtomicLong;
@@ -68,7 +61,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 82
     iget-object v1, p0, Lcom/android/server/pm/AbstractStatsBase$1;->this$0:Lcom/android/server/pm/AbstractStatsBase;
 
     invoke-static {v1}, Lcom/android/server/pm/AbstractStatsBase;->access$200(Lcom/android/server/pm/AbstractStatsBase;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -77,13 +69,10 @@
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 83
     nop
 
-    .line 84
     return-void
 
-    .line 82
     :catchall_0
     move-exception v1
 

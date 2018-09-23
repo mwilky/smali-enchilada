@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/power/Notifier;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/power/Notifier;
 
-    .line 493
     iput-object p1, p0, Lcom/android/server/power/Notifier$4;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 1
 
-    .line 496
     iget-object v0, p0, Lcom/android/server/power/Notifier$4;->this$0:Lcom/android/server/power/Notifier;
 
     invoke-static {v0}, Lcom/android/server/power/Notifier;->access$100(Lcom/android/server/power/Notifier;)Lcom/android/server/policy/WindowManagerPolicy;
@@ -48,6 +45,5 @@
 
     invoke-interface {v0}, Lcom/android/server/policy/WindowManagerPolicy;->finishedWakingUp()V
 
-    .line 497
     return-void
 .end method

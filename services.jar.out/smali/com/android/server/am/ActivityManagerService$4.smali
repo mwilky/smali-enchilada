@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 2077
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 8
 
-    .line 2080
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 2082
-    .local v1, "timeoutShutdown":Z
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -55,7 +50,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 2084
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v2}, Lcom/android/server/am/ActivityManagerService;->access$400(Lcom/android/server/am/ActivityManagerService;)Z
@@ -64,7 +58,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 2085
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
@@ -77,12 +70,10 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/wm/WindowManagerService;->unregisterPointerEventListener(Landroid/view/WindowManagerPolicyConstants$PointerEventListener;)V
 
-    .line 2086
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v2, v0}, Lcom/android/server/am/ActivityManagerService;->access$402(Lcom/android/server/am/ActivityManagerService;Z)Z
 
-    .line 2088
     :cond_0
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -92,7 +83,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 2089
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v2}, Lcom/android/server/am/ActivityManagerService;->access$600(Lcom/android/server/am/ActivityManagerService;)Landroid/os/PowerManager$WakeLock;
@@ -104,30 +94,24 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2109
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 2110
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v2, v0}, Lcom/android/server/wm/WindowManagerService;->shutdown(Z)V
 
-    .line 2091
     :cond_2
     return-void
 
-    .line 2093
     :cond_3
     :try_start_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    .line 2094
-    .local v2, "now":J
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v4}, Lcom/android/server/am/ActivityManagerService;->access$900(Lcom/android/server/am/ActivityManagerService;)J
@@ -142,7 +126,6 @@
 
     if-ltz v4, :cond_4
 
-    .line 2095
     const-string v4, "ActivityManager"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -155,7 +138,6 @@
 
     iget-object v6, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    .line 2096
     invoke-static {v6}, Lcom/android/server/am/ActivityManagerService;->access$900(Lcom/android/server/am/ActivityManagerService;)J
 
     move-result-wide v6
@@ -172,13 +154,10 @@
 
     move-result-object v5
 
-    .line 2095
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2097
     const/4 v1, 0x1
 
-    .line 2099
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v4}, Lcom/android/server/am/ActivityManagerService;->access$600(Lcom/android/server/am/ActivityManagerService;)Landroid/os/PowerManager$WakeLock;
@@ -187,7 +166,6 @@
 
     if-eqz v4, :cond_5
 
-    .line 2100
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v4}, Lcom/android/server/am/ActivityManagerService;->access$600(Lcom/android/server/am/ActivityManagerService;)Landroid/os/PowerManager$WakeLock;
@@ -198,7 +176,6 @@
 
     goto :goto_0
 
-    .line 2104
     :cond_4
     iget-object v4, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -217,13 +194,10 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2109
-    .end local v2    # "now":J
     :cond_5
     :goto_0
     if-eqz v1, :cond_6
 
-    .line 2110
     :goto_1
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -233,18 +207,14 @@
 
     goto :goto_2
 
-    .line 2109
     :catchall_0
     move-exception v2
 
     goto :goto_3
 
-    .line 2106
     :catch_0
     move-exception v2
 
-    .line 2107
-    .local v2, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v3, "ActivityManager"
 
@@ -266,22 +236,17 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2109
-    .end local v2    # "e":Ljava/lang/Exception;
     if-eqz v1, :cond_6
 
     goto :goto_1
 
-    .line 2113
     :cond_6
     :goto_2
     return-void
 
-    .line 2109
     :goto_3
     if-eqz v1, :cond_7
 
-    .line 2110
     iget-object v3, p0, Lcom/android/server/am/ActivityManagerService$4;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mWindowManager:Lcom/android/server/wm/WindowManagerService;

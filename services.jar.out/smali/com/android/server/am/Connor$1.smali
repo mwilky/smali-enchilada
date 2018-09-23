@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Connor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Connor;
 
-    .line 115
     iput-object p1, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 6
 
-    .line 119
     const-wide/16 v0, 0x1388
 
     :try_start_0
@@ -65,7 +62,6 @@
 
     invoke-static {v2, v3}, Lcom/android/server/am/Connor;->access$002(Lcom/android/server/am/Connor;Landroid/database/sqlite/SQLiteDatabase;)Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 121
     :cond_0
     iget-object v2, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
@@ -74,7 +70,6 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 122
     :try_start_1
     iget-object v3, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
@@ -88,13 +83,10 @@
 
     check-cast v3, Landroid/content/ContentValues;
 
-    .line 123
-    .local v3, "cv":Landroid/content/ContentValues;
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 124
     :try_start_2
     iget-object v2, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
@@ -108,7 +100,6 @@
 
     invoke-virtual {v2, v4, v5, v3}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    .line 125
     iget-object v2, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
     monitor-enter v2
@@ -116,11 +107,9 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 126
     :try_start_3
     invoke-virtual {v3}, Landroid/content/ContentValues;->clear()V
 
-    .line 127
     iget-object v4, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v4}, Lcom/android/server/am/Connor;->access$300(Lcom/android/server/am/Connor;)Ljava/util/LinkedList;
@@ -129,7 +118,6 @@
 
     invoke-virtual {v4, v3}, Ljava/util/LinkedList;->addLast(Ljava/lang/Object;)V
 
-    .line 128
     monitor-exit v2
 
     goto :goto_0
@@ -147,8 +135,6 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 123
-    .end local v3    # "cv":Landroid/content/ContentValues;
     :catchall_1
     move-exception v3
 
@@ -163,25 +149,19 @@
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 133
     :catchall_2
     move-exception v2
 
     goto :goto_1
 
-    .line 130
     :catch_0
     move-exception v2
 
-    .line 131
-    .local v2, "e":Ljava/lang/Exception;
     :try_start_7
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
-    .line 133
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_0
     iget-object v2, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
@@ -199,7 +179,6 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 134
     iget-object v2, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v2}, Lcom/android/server/am/Connor;->access$500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ActivityManagerService;
@@ -216,13 +195,10 @@
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 135
     nop
 
-    .line 136
     return-void
 
-    .line 133
     :goto_1
     iget-object v3, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
@@ -240,7 +216,6 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 134
     iget-object v3, p0, Lcom/android/server/am/Connor$1;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v3}, Lcom/android/server/am/Connor;->access$500(Lcom/android/server/am/Connor;)Lcom/android/server/am/ActivityManagerService;

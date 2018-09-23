@@ -7,19 +7,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     return-void
 .end method
 
 .method public static addInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
     .locals 2
-    .param p0, "inOutInsets"    # Landroid/graphics/Rect;
-    .param p1, "insetsToAdd"    # Landroid/graphics/Rect;
 
-    .line 33
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
     iget v1, p1, Landroid/graphics/Rect;->left:I
@@ -28,7 +23,6 @@
 
     iput v0, p0, Landroid/graphics/Rect;->left:I
 
-    .line 34
     iget v0, p0, Landroid/graphics/Rect;->top:I
 
     iget v1, p1, Landroid/graphics/Rect;->top:I
@@ -37,7 +31,6 @@
 
     iput v0, p0, Landroid/graphics/Rect;->top:I
 
-    .line 35
     iget v0, p0, Landroid/graphics/Rect;->right:I
 
     iget v1, p1, Landroid/graphics/Rect;->right:I
@@ -46,7 +39,6 @@
 
     iput v0, p0, Landroid/graphics/Rect;->right:I
 
-    .line 36
     iget v0, p0, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p1, Landroid/graphics/Rect;->bottom:I
@@ -55,6 +47,5 @@
 
     iput v0, p0, Landroid/graphics/Rect;->bottom:I
 
-    .line 37
     return-void
 .end method

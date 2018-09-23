@@ -21,14 +21,10 @@
 # direct methods
 .method constructor <init>(Landroid/os/PersistableBundle;)V
     .locals 0
-    .param p1, "bundle"    # Landroid/os/PersistableBundle;
 
-    .line 953
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 954
     iput-object p1, p0, Lcom/android/server/devicepolicy/DevicePolicyManagerService$ActiveAdmin$TrustAgentInfo;->options:Landroid/os/PersistableBundle;
 
-    .line 955
     return-void
 .end method

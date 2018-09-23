@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,11 +18,7 @@
 
 .method public static getInt(Landroid/content/Context;Ljava/lang/String;I)I
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "resId"    # I
 
-    .line 26
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -41,19 +36,13 @@
 
 .method public static getStringArray(Landroid/content/Context;Ljava/lang/String;I)[Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "resId"    # I
 
-    .line 30
     const-string v0, "UNSET"
 
     invoke-static {p1, v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 31
-    .local v0, "prop":Ljava/lang/String;
     const-string v1, "UNSET"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

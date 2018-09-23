@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemPhoneWindowManager;
 
-    .line 2905
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$QuickPayConfigUpdater;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public updateConfig(Lorg/json/JSONArray;)V
     .locals 1
-    .param p1, "configJSONArray"    # Lorg/json/JSONArray;
 
-    .line 2908
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$QuickPayConfigUpdater;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
 
     invoke-static {v0, p1}, Lcom/android/server/policy/OemPhoneWindowManager;->access$2200(Lcom/android/server/policy/OemPhoneWindowManager;Lorg/json/JSONArray;)V
 
-    .line 2909
     return-void
 .end method

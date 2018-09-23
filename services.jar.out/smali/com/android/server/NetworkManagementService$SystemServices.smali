@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method public getNetd()Landroid/net/INetd;
     .locals 1
 
-    .line 152
     invoke-static {}, Landroid/net/util/NetdService;->get()Landroid/net/INetd;
 
     move-result-object v0
@@ -39,9 +37,7 @@
 
 .method public getService(Ljava/lang/String;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 146
     invoke-static {p1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
@@ -51,13 +47,10 @@
 
 .method public registerLocalService(Lcom/android/server/NetworkManagementInternal;)V
     .locals 1
-    .param p1, "nmi"    # Lcom/android/server/NetworkManagementInternal;
 
-    .line 149
     const-class v0, Lcom/android/server/NetworkManagementInternal;
 
     invoke-static {v0, p1}, Lcom/android/server/LocalServices;->addService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 150
     return-void
 .end method

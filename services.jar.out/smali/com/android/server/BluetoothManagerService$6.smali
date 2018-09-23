@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BluetoothManagerService;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/BluetoothManagerService;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 762
     iput-object p1, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
-    .param p1, "selfChange"    # Z
 
-    .line 765
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/BluetoothManagerService;->isBleScanAlwaysAvailable()Z
@@ -47,21 +42,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 767
     return-void
 
-    .line 770
     :cond_0
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v0}, Lcom/android/server/BluetoothManagerService;->access$2100(Lcom/android/server/BluetoothManagerService;)V
 
-    .line 771
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v0}, Lcom/android/server/BluetoothManagerService;->access$1100(Lcom/android/server/BluetoothManagerService;)V
 
-    .line 773
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
@@ -75,7 +66,6 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
-    .line 774
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v0}, Lcom/android/server/BluetoothManagerService;->access$1000(Lcom/android/server/BluetoothManagerService;)Landroid/bluetooth/IBluetooth;
@@ -84,14 +74,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 775
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     const/4 v1, 0x1
 
     iget-object v2, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
-    .line 776
     invoke-static {v2}, Lcom/android/server/BluetoothManagerService;->access$400(Lcom/android/server/BluetoothManagerService;)Landroid/content/Context;
 
     move-result-object v2
@@ -102,10 +90,8 @@
 
     const/4 v3, 0x0
 
-    .line 775
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/BluetoothManagerService;->access$1200(Lcom/android/server/BluetoothManagerService;ILjava/lang/String;Z)V
 
-    .line 777
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-static {v0}, Lcom/android/server/BluetoothManagerService;->access$1000(Lcom/android/server/BluetoothManagerService;)Landroid/bluetooth/IBluetooth;
@@ -119,18 +105,14 @@
 
     goto :goto_0
 
-    .line 782
     :catchall_0
     move-exception v0
 
     goto :goto_1
 
-    .line 779
     :catch_0
     move-exception v0
 
-    .line 780
-    .local v0, "e":Landroid/os/RemoteException;
     :try_start_1
     const-string v1, "BluetoothManagerService"
 
@@ -140,8 +122,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 782
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
@@ -156,13 +136,10 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
-    .line 783
     nop
 
-    .line 784
     return-void
 
-    .line 782
     :goto_1
     iget-object v1, p0, Lcom/android/server/BluetoothManagerService$6;->this$0:Lcom/android/server/BluetoothManagerService;
 

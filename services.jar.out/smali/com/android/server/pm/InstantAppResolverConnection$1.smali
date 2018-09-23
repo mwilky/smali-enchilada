@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/InstantAppResolverConnection;Landroid/os/Handler;Lcom/android/server/pm/InstantAppResolverConnection$PhaseTwoCallback;J)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/InstantAppResolverConnection;
 
-    .line 118
     iput-object p1, p0, Lcom/android/server/pm/InstantAppResolverConnection$1;->this$0:Lcom/android/server/pm/InstantAppResolverConnection;
 
     iput-object p2, p0, Lcom/android/server/pm/InstantAppResolverConnection$1;->val$callbackHandler:Landroid/os/Handler;
@@ -45,11 +43,7 @@
 
 .method static synthetic lambda$sendResult$0(Lcom/android/server/pm/InstantAppResolverConnection$PhaseTwoCallback;Ljava/util/ArrayList;J)V
     .locals 0
-    .param p0, "callback"    # Lcom/android/server/pm/InstantAppResolverConnection$PhaseTwoCallback;
-    .param p1, "resolveList"    # Ljava/util/ArrayList;
-    .param p2, "startTime"    # J
 
-    .line 124
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/server/pm/InstantAppResolverConnection$PhaseTwoCallback;->onPhaseTwoResolved(Ljava/util/List;J)V
 
     return-void
@@ -59,23 +53,18 @@
 # virtual methods
 .method public sendResult(Landroid/os/Bundle;)V
     .locals 6
-    .param p1, "data"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 121
     const-string v0, "android.app.extra.RESOLVE_INFO"
 
-    .line 122
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 124
-    .local v0, "resolveList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/pm/InstantAppResolveInfo;>;"
     iget-object v1, p0, Lcom/android/server/pm/InstantAppResolverConnection$1;->val$callbackHandler:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/server/pm/InstantAppResolverConnection$1;->val$callback:Lcom/android/server/pm/InstantAppResolverConnection$PhaseTwoCallback;
@@ -88,6 +77,5 @@
 
     invoke-virtual {v1, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 125
     return-void
 .end method

@@ -35,7 +35,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/ref/WeakReference;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,14 +46,10 @@
         }
     .end annotation
 
-    .line 233
-    .local p1, "controller":Ljava/lang/ref/WeakReference;, "Ljava/lang/ref/WeakReference<Lcom/android/server/wm/TaskWindowContainerController;>;"
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 234
     iput-object p1, p0, Lcom/android/server/wm/TaskWindowContainerController$H;->mController:Ljava/lang/ref/WeakReference;
 
-    .line 235
     return-void
 .end method
 
@@ -62,9 +57,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 239
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController$H;->mController:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -73,11 +66,8 @@
 
     check-cast v0, Lcom/android/server/wm/TaskWindowContainerController;
 
-    .line 240
-    .local v0, "controller":Lcom/android/server/wm/TaskWindowContainerController;
     if-eqz v0, :cond_0
 
-    .line 241
     iget-object v1, v0, Lcom/android/server/wm/TaskWindowContainerController;->mListener:Lcom/android/server/wm/WindowContainerListener;
 
     check-cast v1, Lcom/android/server/wm/TaskWindowContainerListener;
@@ -87,15 +77,11 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 242
-    .local v1, "listener":Lcom/android/server/wm/TaskWindowContainerListener;
     :goto_0
     if-nez v1, :cond_1
 
-    .line 243
     return-void
 
-    .line 245
     :cond_1
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -103,7 +89,6 @@
 
     goto :goto_1
 
-    .line 250
     :pswitch_0
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -115,7 +100,6 @@
 
     goto :goto_1
 
-    .line 247
     :pswitch_1
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -123,10 +107,8 @@
 
     invoke-interface {v1, v2}, Lcom/android/server/wm/TaskWindowContainerListener;->onSnapshotChanged(Landroid/app/ActivityManager$TaskSnapshot;)V
 
-    .line 248
     nop
 
-    .line 253
     :goto_1
     return-void
 

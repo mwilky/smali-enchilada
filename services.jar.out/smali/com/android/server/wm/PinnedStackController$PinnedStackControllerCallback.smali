@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/wm/PinnedStackController;)V
     .locals 0
 
-    .line 126
     iput-object p1, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-direct {p0}, Landroid/view/IPinnedStackController$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/PinnedStackController;Lcom/android/server/wm/PinnedStackController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/PinnedStackController;
-    .param p2, "x1"    # Lcom/android/server/wm/PinnedStackController$1;
 
-    .line 126
     invoke-direct {p0, p1}, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;-><init>(Lcom/android/server/wm/PinnedStackController;)V
 
     return-void
@@ -43,14 +39,11 @@
 
 .method public static synthetic lambda$setIsMinimized$0(Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;Z)V
     .locals 1
-    .param p1, "isMinimized"    # Z
 
-    .line 131
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0, p1}, Lcom/android/server/wm/PinnedStackController;->access$702(Lcom/android/server/wm/PinnedStackController;Z)Z
 
-    .line 132
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$800(Lcom/android/server/wm/PinnedStackController;)Lcom/android/internal/policy/PipSnapAlgorithm;
@@ -59,15 +52,12 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/policy/PipSnapAlgorithm;->setMinimized(Z)V
 
-    .line 133
     return-void
 .end method
 
 .method public static synthetic lambda$setMinEdgeSize$1(Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;I)V
     .locals 2
-    .param p1, "minEdgeSize"    # I
 
-    .line 139
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     iget-object v1, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
@@ -82,7 +72,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/wm/PinnedStackController;->access$502(Lcom/android/server/wm/PinnedStackController;I)I
 
-    .line 140
     return-void
 .end method
 
@@ -91,7 +80,6 @@
 .method public getDisplayRotation()I
     .locals 2
 
-    .line 145
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$300(Lcom/android/server/wm/PinnedStackController;)Lcom/android/server/wm/WindowManagerService;
@@ -105,7 +93,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 146
     iget-object v1, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v1}, Lcom/android/server/wm/PinnedStackController;->access$400(Lcom/android/server/wm/PinnedStackController;)Landroid/view/DisplayInfo;
@@ -122,7 +109,6 @@
 
     return v1
 
-    .line 147
     :catchall_0
     move-exception v1
 
@@ -138,9 +124,7 @@
 
 .method public setIsMinimized(Z)V
     .locals 2
-    .param p1, "isMinimized"    # Z
 
-    .line 130
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$200(Lcom/android/server/wm/PinnedStackController;)Landroid/os/Handler;
@@ -153,15 +137,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 134
     return-void
 .end method
 
 .method public setMinEdgeSize(I)V
     .locals 2
-    .param p1, "minEdgeSize"    # I
 
-    .line 138
     iget-object v0, p0, Lcom/android/server/wm/PinnedStackController$PinnedStackControllerCallback;->this$0:Lcom/android/server/wm/PinnedStackController;
 
     invoke-static {v0}, Lcom/android/server/wm/PinnedStackController;->access$200(Lcom/android/server/wm/PinnedStackController;)Landroid/os/Handler;
@@ -174,6 +155,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 141
     return-void
 .end method

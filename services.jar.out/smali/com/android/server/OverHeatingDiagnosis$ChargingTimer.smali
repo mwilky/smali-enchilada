@@ -32,12 +32,10 @@
 .method private constructor <init>(Lcom/android/server/OverHeatingDiagnosis;)V
     .locals 2
 
-    .line 1553
     iput-object p1, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->this$0:Lcom/android/server/OverHeatingDiagnosis;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1557
     new-instance p1, Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
 
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->this$0:Lcom/android/server/OverHeatingDiagnosis;
@@ -53,10 +51,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/OverHeatingDiagnosis;Lcom/android/server/OverHeatingDiagnosis$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/OverHeatingDiagnosis;
-    .param p2, "x1"    # Lcom/android/server/OverHeatingDiagnosis$1;
 
-    .line 1553
     invoke-direct {p0, p1}, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;-><init>(Lcom/android/server/OverHeatingDiagnosis;)V
 
     return-void
@@ -67,7 +62,6 @@
 .method public getTime()J
     .locals 2
 
-    .line 1585
     iget-wide v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mTime:J
 
     return-wide v0
@@ -76,43 +70,36 @@
 .method public reset()V
     .locals 2
 
-    .line 1578
     const-string v0, "ChargingTimer"
 
     const-string/jumbo v1, "reset"
 
     invoke-static {v0, v1}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1579
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mTime:J
 
-    .line 1580
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mIsCharging:Z
 
-    .line 1581
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mStopwatch:Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
 
     invoke-virtual {v0}, Lcom/android/server/OverHeatingDiagnosis$Stopwatch;->reset()V
 
-    .line 1582
     return-void
 .end method
 
 .method public start()V
     .locals 2
 
-    .line 1560
     const-string v0, "ChargingTimer"
 
     const-string/jumbo v1, "start"
 
     invoke-static {v0, v1}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1561
     iget-boolean v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mIsCharging:Z
 
     const/4 v1, 0x1
@@ -121,43 +108,36 @@
 
     return-void
 
-    .line 1563
     :cond_0
     iput-boolean v1, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mIsCharging:Z
 
-    .line 1564
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mStopwatch:Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
 
     invoke-virtual {v0}, Lcom/android/server/OverHeatingDiagnosis$Stopwatch;->start()Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
 
-    .line 1565
     return-void
 .end method
 
 .method public stop()V
     .locals 4
 
-    .line 1568
     const-string v0, "ChargingTimer"
 
     const-string/jumbo v1, "stop"
 
     invoke-static {v0, v1}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1569
     iget-boolean v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mIsCharging:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1571
     :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mIsCharging:Z
 
-    .line 1572
     iget-wide v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mTime:J
 
     iget-object v2, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mStopwatch:Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
@@ -170,12 +150,10 @@
 
     iput-wide v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mTime:J
 
-    .line 1573
     iget-object v0, p0, Lcom/android/server/OverHeatingDiagnosis$ChargingTimer;->mStopwatch:Lcom/android/server/OverHeatingDiagnosis$Stopwatch;
 
     invoke-virtual {v0}, Lcom/android/server/OverHeatingDiagnosis$Stopwatch;->reset()V
 
-    .line 1574
     const-string v0, "ChargingTimer"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -196,6 +174,5 @@
 
     invoke-static {v0, v1}, Lcom/android/server/OPLogger$Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1575
     return-void
 .end method

@@ -27,67 +27,45 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;I)V
     .locals 1
-    .param p1, "type"    # Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
-    .param p2, "count"    # I
 
-    .line 754
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 751
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    .line 752
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mStart:I
 
-    .line 753
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mEnd:I
 
-    .line 755
     iput-object p1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mType:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 756
     iput p2, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    .line 757
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;III)V
     .locals 1
-    .param p1, "type"    # Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
-    .param p2, "count"    # I
-    .param p3, "start"    # I
-    .param p4, "end"    # I
 
-    .line 758
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 751
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    .line 752
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mStart:I
 
-    .line 753
     iput v0, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mEnd:I
 
-    .line 759
     iput-object p1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mType:Lcom/android/server/OnePlusStandbyAnalyzer$WIFI_WAKEUP_TYPE;
 
-    .line 760
     iput p2, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
-    .line 761
     iput p3, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mStart:I
 
-    .line 762
     iput p4, p0, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mEnd:I
 
-    .line 763
     return-void
 .end method
 
@@ -96,7 +74,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 766
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

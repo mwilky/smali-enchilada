@@ -73,7 +73,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 27
     const-string v0, "NtpTimeHelper"
 
     const/4 v1, 0x3
@@ -89,34 +88,23 @@
 
 .method constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "callback"    # Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;
 
-    .line 88
     invoke-static {p1}, Landroid/util/NtpTrustedTime;->getInstance(Landroid/content/Context;)Landroid/util/NtpTrustedTime;
 
     move-result-object v0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/server/location/NtpTimeHelper;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;Landroid/util/NtpTrustedTime;)V
 
-    .line 89
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;Landroid/util/NtpTrustedTime;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "callback"    # Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;
-    .param p4, "ntpTime"    # Landroid/util/NtpTrustedTime;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
     new-instance v0, Lcom/android/server/location/ExponentialBackOff;
 
     const-wide/32 v1, 0x493e0
@@ -127,12 +115,10 @@
 
     iput-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mNtpBackOff:Lcom/android/server/location/ExponentialBackOff;
 
-    .line 65
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
 
-    .line 79
     const-string v0, "connectivity"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -143,20 +129,16 @@
 
     iput-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mConnMgr:Landroid/net/ConnectivityManager;
 
-    .line 80
     iput-object p3, p0, Lcom/android/server/location/NtpTimeHelper;->mCallback:Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;
 
-    .line 81
     iput-object p4, p0, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
-    .line 82
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mHandler:Landroid/os/Handler;
 
-    .line 83
     const-string/jumbo v0, "power"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -165,8 +147,6 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 84
-    .local v0, "powerManager":Landroid/os/PowerManager;
     const-string v1, "NtpTimeHelper"
 
     const/4 v2, 0x1
@@ -177,20 +157,16 @@
 
     iput-object v1, p0, Lcom/android/server/location/NtpTimeHelper;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 85
     return-void
 .end method
 
 .method private blockingGetNtpTimeAndInject()V
     .locals 18
 
-    .line 132
     move-object/from16 v9, p0
 
     const/4 v0, 0x1
 
-    .line 133
-    .local v0, "refreshSuccess":Z
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->getCacheAge()J
@@ -203,28 +179,22 @@
 
     if-ltz v1, :cond_0
 
-    .line 135
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->forceRefresh()Z
 
     move-result v0
 
-    .line 138
-    .end local v0    # "refreshSuccess":Z
-    .local v10, "refreshSuccess":Z
     :cond_0
     move v10, v0
 
     monitor-enter p0
 
-    .line 139
     const/4 v0, 0x2
 
     :try_start_0
     iput v0, v9, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
 
-    .line 143
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->getCacheAge()J
@@ -235,7 +205,6 @@
 
     if-gez v1, :cond_2
 
-    .line 144
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->getCachedNtpTime()J
@@ -244,8 +213,6 @@
 
     move-wide v11, v1
 
-    .line 145
-    .local v11, "time":J
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->getCachedNtpTimeReference()J
@@ -254,8 +221,6 @@
 
     move-wide v13, v1
 
-    .line 146
-    .local v13, "timeReference":J
     iget-object v1, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpTime:Landroid/util/NtpTrustedTime;
 
     invoke-virtual {v1}, Landroid/util/NtpTrustedTime;->getCacheCertainty()J
@@ -264,19 +229,14 @@
 
     move-wide v7, v1
 
-    .line 148
-    .local v7, "certainty":J
     sget-boolean v1, Lcom/android/server/location/NtpTimeHelper;->DEBUG:Z
 
     if-eqz v1, :cond_1
 
-    .line 149
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 150
-    .local v1, "now":J
     const-string v3, "NtpTimeHelper"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -325,8 +285,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
-    .end local v1    # "now":J
     :cond_1
     iget-object v15, v9, Lcom/android/server/location/NtpTimeHelper;->mHandler:Landroid/os/Handler;
 
@@ -344,30 +302,18 @@
 
     move-wide/from16 v16, v7
 
-    .line 158
-    .end local v7    # "certainty":J
-    .local v16, "certainty":J
     invoke-direct/range {v1 .. v8}, Lcom/android/server/location/-$$Lambda$NtpTimeHelper$xPxgficKWFyuwUj60WMuiGEEjdg;-><init>(Lcom/android/server/location/NtpTimeHelper;JJJ)V
 
     invoke-virtual {v15, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 160
     const-wide/32 v0, 0x5265c00
 
-    .line 161
-    .local v0, "delay":J
     iget-object v2, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpBackOff:Lcom/android/server/location/ExponentialBackOff;
 
     invoke-virtual {v2}, Lcom/android/server/location/ExponentialBackOff;->reset()V
 
-    .line 162
-    .end local v11    # "time":J
-    .end local v13    # "timeReference":J
-    .end local v16    # "certainty":J
     goto :goto_0
 
-    .line 163
-    .end local v0    # "delay":J
     :cond_2
     const-string v0, "NtpTimeHelper"
 
@@ -375,21 +321,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
     iget-object v0, v9, Lcom/android/server/location/NtpTimeHelper;->mNtpBackOff:Lcom/android/server/location/ExponentialBackOff;
 
     invoke-virtual {v0}, Lcom/android/server/location/ExponentialBackOff;->nextBackoffMillis()J
 
     move-result-wide v0
 
-    .line 167
-    .restart local v0    # "delay":J
     :goto_0
     sget-boolean v2, Lcom/android/server/location/NtpTimeHelper;->DEBUG:Z
 
     if-eqz v2, :cond_3
 
-    .line 168
     const-string v2, "NtpTimeHelper"
 
     const-string/jumbo v3, "onDemandTimeInjection=%s, refreshSuccess=%s, delay=%s"
@@ -402,7 +344,6 @@
 
     iget-boolean v6, v9, Lcom/android/server/location/NtpTimeHelper;->mOnDemandTimeInjection:Z
 
-    .line 170
     invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v6
@@ -411,14 +352,12 @@
 
     const/4 v5, 0x1
 
-    .line 171
     invoke-static {v10}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 172
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -427,14 +366,12 @@
 
     aput-object v5, v4, v6
 
-    .line 168
     invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 176
     :cond_3
     iget-boolean v2, v9, Lcom/android/server/location/NtpTimeHelper;->mOnDemandTimeInjection:Z
 
@@ -442,7 +379,6 @@
 
     if-nez v10, :cond_5
 
-    .line 181
     :cond_4
     iget-object v2, v9, Lcom/android/server/location/NtpTimeHelper;->mHandler:Landroid/os/Handler;
 
@@ -452,7 +388,6 @@
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 183
     :cond_5
     monitor-exit p0
     :try_end_0
@@ -460,9 +395,6 @@
 
     move-wide v1, v0
 
-    .line 186
-    .end local v0    # "delay":J
-    .local v1, "delay":J
     :try_start_1
     iget-object v0, v9, Lcom/android/server/location/NtpTimeHelper;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -470,19 +402,14 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 189
     goto :goto_1
 
-    .line 187
     :catch_0
     move-exception v0
 
-    .line 190
     :goto_1
     return-void
 
-    .line 183
-    .end local v1    # "delay":J
     :catchall_0
     move-exception v0
 
@@ -497,15 +424,12 @@
 .method private isNetworkConnected()Z
     .locals 2
 
-    .line 106
     iget-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mConnMgr:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
-    .line 107
-    .local v0, "activeNetworkInfo":Landroid/net/NetworkInfo;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -527,11 +451,7 @@
 
 .method public static synthetic lambda$blockingGetNtpTimeAndInject$0(Lcom/android/server/location/NtpTimeHelper;JJJ)V
     .locals 6
-    .param p1, "time"    # J
-    .param p3, "timeReference"    # J
-    .param p5, "certainty"    # J
 
-    .line 158
     iget-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mCallback:Lcom/android/server/location/NtpTimeHelper$InjectNtpTimeCallback;
 
     long-to-int v5, p5
@@ -560,7 +480,6 @@
 
     monitor-enter p0
 
-    .line 92
     const/4 v0, 0x1
 
     :try_start_0
@@ -568,18 +487,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 93
     monitor-exit p0
 
     return-void
 
-    .line 91
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/location/NtpTimeHelper;
     throw v0
 .end method
 
@@ -588,30 +504,25 @@
 
     monitor-enter p0
 
-    .line 96
     :try_start_0
     iget v0, p0, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
 
     if-nez v0, :cond_0
 
-    .line 97
     invoke-virtual {p0}, Lcom/android/server/location/NtpTimeHelper;->retrieveAndInjectNtpTime()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 99
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 95
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/location/NtpTimeHelper;
     throw v0
 .end method
 
@@ -620,7 +531,6 @@
 
     monitor-enter p0
 
-    .line 111
     :try_start_0
     iget v0, p0, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
     :try_end_0
@@ -630,12 +540,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 113
     monitor-exit p0
 
     return-void
 
-    .line 115
     :cond_0
     :try_start_1
     invoke-direct {p0}, Lcom/android/server/location/NtpTimeHelper;->isNetworkConnected()Z
@@ -644,31 +552,26 @@
 
     if-nez v0, :cond_1
 
-    .line 117
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 118
     monitor-exit p0
 
     return-void
 
-    .line 120
     :cond_1
     :try_start_2
     iput v1, p0, Lcom/android/server/location/NtpTimeHelper;->mInjectNtpTimeState:I
 
-    .line 123
     iget-object v0, p0, Lcom/android/server/location/NtpTimeHelper;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     const-wide/32 v1, 0xea60
 
     invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
-    .line 124
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lcom/android/server/location/-$$Lambda$NtpTimeHelper$xWqlqJuq4jBJ5-xhFLCwEKGVB0k;
@@ -681,17 +584,14 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 125
     monitor-exit p0
 
     return-void
 
-    .line 110
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/location/NtpTimeHelper;
     throw v0
 .end method

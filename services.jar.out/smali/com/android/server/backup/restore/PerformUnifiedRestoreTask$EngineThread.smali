@@ -28,24 +28,17 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/backup/restore/PerformUnifiedRestoreTask;Lcom/android/server/backup/restore/FullRestoreEngine;Landroid/os/ParcelFileDescriptor;)V
     .locals 3
-    .param p1, "this$0"    # Lcom/android/server/backup/restore/PerformUnifiedRestoreTask;
-    .param p2, "engine"    # Lcom/android/server/backup/restore/FullRestoreEngine;
-    .param p3, "engineSocket"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 1039
     iput-object p1, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->this$0:Lcom/android/server/backup/restore/PerformUnifiedRestoreTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1040
     iput-object p2, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
 
-    .line 1041
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->setRunning(Z)V
 
-    .line 1045
     new-instance v1, Ljava/io/FileInputStream;
 
     invoke-virtual {p3}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -56,7 +49,6 @@
 
     iput-object v1, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
-    .line 1046
     return-void
 .end method
 
@@ -65,24 +57,20 @@
 .method public handleTimeout()V
     .locals 1
 
-    .line 1073
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 1074
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->handleTimeout()V
 
-    .line 1075
     return-void
 .end method
 
 .method public isRunning()Z
     .locals 1
 
-    .line 1049
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->isRunning()Z
@@ -95,7 +83,6 @@
 .method public run()V
     .locals 9
 
-    .line 1059
     :goto_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
@@ -106,7 +93,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1061
     iget-object v1, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
 
     iget-object v2, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
@@ -139,19 +125,15 @@
 
     goto :goto_0
 
-    .line 1068
     :cond_0
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngineStream:Ljava/io/FileInputStream;
 
     invoke-static {v0}, Llibcore/io/IoUtils;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
-    .line 1069
     nop
 
-    .line 1070
     return-void
 
-    .line 1068
     :catchall_0
     move-exception v0
 
@@ -165,7 +147,6 @@
 .method public waitForResult()I
     .locals 1
 
-    .line 1053
     iget-object v0, p0, Lcom/android/server/backup/restore/PerformUnifiedRestoreTask$EngineThread;->mEngine:Lcom/android/server/backup/restore/FullRestoreEngine;
 
     invoke-virtual {v0}, Lcom/android/server/backup/restore/FullRestoreEngine;->waitForResult()I

@@ -26,61 +26,40 @@
 # direct methods
 .method public constructor <init>([B[BI)V
     .locals 1
-    .param p1, "nonce"    # [B
-    .param p2, "keyMaterial"    # [B
-    .param p3, "platformKeyGenerationId"    # I
 
-    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
     iput-object p1, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mNonce:[B
 
-    .line 115
     iput-object p2, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mKeyMaterial:[B
 
-    .line 116
     iput p3, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mPlatformKeyGenerationId:I
 
-    .line 117
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mRecoveryStatus:I
 
-    .line 118
     return-void
 .end method
 
 .method public constructor <init>([B[BII)V
     .locals 0
-    .param p1, "nonce"    # [B
-    .param p2, "keyMaterial"    # [B
-    .param p3, "platformKeyGenerationId"    # I
-    .param p4, "recoveryStatus"    # I
 
-    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
     iput-object p1, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mNonce:[B
 
-    .line 133
     iput-object p2, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mKeyMaterial:[B
 
-    .line 134
     iput p3, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mPlatformKeyGenerationId:I
 
-    .line 135
     iput p4, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mRecoveryStatus:I
 
-    .line 136
     return-void
 .end method
 
 .method public static fromSecretKey(Lcom/android/server/locksettings/recoverablekeystore/PlatformEncryptionKey;Ljavax/crypto/SecretKey;)Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
     .locals 6
-    .param p0, "wrappingKey"    # Lcom/android/server/locksettings/recoverablekeystore/PlatformEncryptionKey;
-    .param p1, "key"    # Ljavax/crypto/SecretKey;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/security/InvalidKeyException;,
@@ -88,14 +67,12 @@
         }
     .end annotation
 
-    .line 63
     invoke-interface {p1}, Ljavax/crypto/SecretKey;->getEncoded()[B
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 70
     :try_start_0
     const-string v0, "AES/GCM/NoPadding"
 
@@ -106,14 +83,10 @@
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljavax/crypto/NoSuchPaddingException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 74
-    .local v0, "cipher":Ljavax/crypto/Cipher;
     nop
 
-    .line 72
     nop
 
-    .line 76
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/android/server/locksettings/recoverablekeystore/PlatformEncryptionKey;->getKey()Landroid/security/keystore/AndroidKeyStoreSecretKey;
@@ -122,7 +95,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
-    .line 79
     :try_start_1
     invoke-virtual {v0, p1}, Ljavax/crypto/Cipher;->wrap(Ljava/security/Key;)[B
 
@@ -130,22 +102,16 @@
     :try_end_1
     .catch Ljavax/crypto/IllegalBlockSizeException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 94
-    .local v1, "encryptedKeyMaterial":[B
     nop
 
-    .line 90
     nop
 
-    .line 96
     new-instance v2, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
 
-    .line 97
     invoke-virtual {v0}, Ljavax/crypto/Cipher;->getIV()[B
 
     move-result-object v3
 
-    .line 99
     invoke-virtual {p0}, Lcom/android/server/locksettings/recoverablekeystore/PlatformEncryptionKey;->getGenerationId()I
 
     move-result v4
@@ -154,34 +120,25 @@
 
     invoke-direct {v2, v3, v1, v4, v5}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;-><init>([B[BII)V
 
-    .line 96
     return-object v2
 
-    .line 80
-    .end local v1    # "encryptedKeyMaterial":[B
     :catch_0
     move-exception v1
 
-    .line 81
-    .local v1, "e":Ljavax/crypto/IllegalBlockSizeException;
     invoke-virtual {v1}, Ljavax/crypto/IllegalBlockSizeException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v2
 
-    .line 82
-    .local v2, "cause":Ljava/lang/Throwable;
     instance-of v3, v2, Ljava/security/KeyStoreException;
 
     if-eqz v3, :cond_0
 
-    .line 88
     move-object v3, v2
 
     check-cast v3, Ljava/security/KeyStoreException;
 
     throw v3
 
-    .line 90
     :cond_0
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -191,15 +148,9 @@
 
     throw v3
 
-    .line 71
-    .end local v0    # "cipher":Ljavax/crypto/Cipher;
-    .end local v1    # "e":Ljavax/crypto/IllegalBlockSizeException;
-    .end local v2    # "cause":Ljava/lang/Throwable;
     :catch_1
     move-exception v0
 
-    .line 72
-    .local v0, "e":Ljava/security/GeneralSecurityException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Android does not support AES/GCM/NoPadding. This should never happen."
@@ -208,8 +159,6 @@
 
     throw v1
 
-    .line 64
-    .end local v0    # "e":Ljava/security/GeneralSecurityException;
     :cond_1
     new-instance v0, Ljava/security/InvalidKeyException;
 
@@ -222,7 +171,6 @@
 
 .method public static unwrapKeys(Lcom/android/server/locksettings/recoverablekeystore/PlatformDecryptionKey;Ljava/util/Map;)Ljava/util/Map;
     .locals 14
-    .param p0, "platformKey"    # Lcom/android/server/locksettings/recoverablekeystore/PlatformDecryptionKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -248,28 +196,20 @@
         }
     .end annotation
 
-    .line 189
-    .local p1, "wrappedKeys":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;>;"
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 190
-    .local v0, "unwrappedKeys":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljavax/crypto/SecretKey;>;"
     const-string v1, "AES/GCM/NoPadding"
 
     invoke-static {v1}, Ljavax/crypto/Cipher;->getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
 
     move-result-object v1
 
-    .line 191
-    .local v1, "cipher":Ljavax/crypto/Cipher;
     invoke-virtual {p0}, Lcom/android/server/locksettings/recoverablekeystore/PlatformDecryptionKey;->getGenerationId()I
 
     move-result v2
 
-    .line 193
-    .local v2, "platformKeyGenerationId":I
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v3
@@ -291,16 +231,12 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 194
-    .local v4, "alias":Ljava/lang/String;
     invoke-interface {p1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
 
-    .line 195
-    .local v5, "wrappedKey":Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
     invoke-virtual {v5}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getPlatformKeyGenerationId()I
 
     move-result v6
@@ -313,10 +249,8 @@
 
     if-ne v6, v2, :cond_0
 
-    .line 205
     const/4 v6, 0x4
 
-    .line 207
     invoke-virtual {p0}, Lcom/android/server/locksettings/recoverablekeystore/PlatformDecryptionKey;->getKey()Landroid/security/keystore/AndroidKeyStoreSecretKey;
 
     move-result-object v10
@@ -325,20 +259,16 @@
 
     const/16 v12, 0x80
 
-    .line 208
     invoke-virtual {v5}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getNonce()[B
 
     move-result-object v13
 
     invoke-direct {v11, v12, v13}, Ljavax/crypto/spec/GCMParameterSpec;-><init>(I[B)V
 
-    .line 205
     invoke-virtual {v1, v6, v10, v11}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;Ljava/security/spec/AlgorithmParameterSpec;)V
 
-    .line 211
     nop
 
-    .line 212
     :try_start_0
     invoke-virtual {v5}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getKeyMaterial()[B
 
@@ -346,7 +276,6 @@
 
     const-string v10, "AES"
 
-    .line 211
     invoke-virtual {v1, v6, v10, v9}, Ljavax/crypto/Cipher;->unwrap([BLjava/lang/String;I)Ljava/security/Key;
 
     move-result-object v6
@@ -356,30 +285,17 @@
     .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 221
-    .local v6, "key":Ljavax/crypto/SecretKey;
     nop
 
-    .line 220
     nop
 
-    .line 222
     invoke-virtual {v0, v4, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 223
-    .end local v4    # "alias":Ljava/lang/String;
-    .end local v5    # "wrappedKey":Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
-    .end local v6    # "key":Ljavax/crypto/SecretKey;
     goto :goto_0
 
-    .line 213
-    .restart local v4    # "alias":Ljava/lang/String;
-    .restart local v5    # "wrappedKey":Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
     :catch_0
     move-exception v6
 
-    .line 214
-    .local v6, "e":Ljava/security/GeneralSecurityException;
     const-string v9, "WrappedKey"
 
     sget-object v10, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -390,19 +306,14 @@
 
     aput-object v4, v8, v7
 
-    .line 215
     invoke-static {v10, v11, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 214
     invoke-static {v9, v7, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 220
     goto :goto_0
 
-    .line 196
-    .end local v6    # "e":Ljava/security/GeneralSecurityException;
     :cond_0
     new-instance v3, Lcom/android/server/locksettings/recoverablekeystore/BadPlatformKeyException;
 
@@ -412,7 +323,6 @@
 
     aput-object v4, v9, v7
 
-    .line 201
     invoke-virtual {v5}, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->getPlatformKeyGenerationId()I
 
     move-result v7
@@ -425,7 +335,6 @@
 
     const/4 v7, 0x2
 
-    .line 202
     invoke-virtual {p0}, Lcom/android/server/locksettings/recoverablekeystore/PlatformDecryptionKey;->getGenerationId()I
 
     move-result v8
@@ -436,7 +345,6 @@
 
     aput-object v8, v9, v7
 
-    .line 196
     const-string v7, "WrappedKey with alias \'%s\' was wrapped with platform key %d, not platform key %d"
 
     invoke-static {v6, v7, v9}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -447,9 +355,6 @@
 
     throw v3
 
-    .line 225
-    .end local v4    # "alias":Ljava/lang/String;
-    .end local v5    # "wrappedKey":Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;
     :cond_1
     return-object v0
 .end method
@@ -459,7 +364,6 @@
 .method public getKeyMaterial()[B
     .locals 1
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mKeyMaterial:[B
 
     return-object v0
@@ -468,7 +372,6 @@
 .method public getNonce()[B
     .locals 1
 
-    .line 144
     iget-object v0, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mNonce:[B
 
     return-object v0
@@ -477,7 +380,6 @@
 .method public getPlatformKeyGenerationId()I
     .locals 1
 
-    .line 162
     iget v0, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mPlatformKeyGenerationId:I
 
     return v0
@@ -486,7 +388,6 @@
 .method public getRecoveryStatus()I
     .locals 1
 
-    .line 171
     iget v0, p0, Lcom/android/server/locksettings/recoverablekeystore/WrappedKey;->mRecoveryStatus:I
 
     return v0

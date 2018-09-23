@@ -59,60 +59,47 @@
 # direct methods
 .method public constructor <init>(ILandroid/content/Context;)V
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 99
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUpdateCount:I
 
-    .line 102
     iput p1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
 
-    .line 103
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
-    .line 104
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerList:Ljava/util/ArrayList;
 
-    .line 105
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerBindGroups:Ljava/util/HashMap;
 
-    .line 106
     iput-object p2, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mContext:Landroid/content/Context;
 
-    .line 107
     invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mResolver:Landroid/content/ContentResolver;
 
-    .line 108
     return-void
 .end method
 
 .method static synthetic access$1400(Lcom/android/server/TextServicesManagerService$TextServicesData;)Ljava/util/HashMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
 
-    .line 91
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerBindGroups:Ljava/util/HashMap;
 
     return-object v0
@@ -120,9 +107,7 @@
 
 .method static synthetic access$1500(Lcom/android/server/TextServicesManagerService$TextServicesData;)Ljava/util/ArrayList;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
 
-    .line 91
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerList:Ljava/util/ArrayList;
 
     return-object v0
@@ -130,9 +115,7 @@
 
 .method static synthetic access$1600(Lcom/android/server/TextServicesManagerService$TextServicesData;)Ljava/util/HashMap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
 
-    .line 91
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
     return-object v0
@@ -140,9 +123,7 @@
 
 .method static synthetic access$1700(Lcom/android/server/TextServicesManagerService$TextServicesData;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
 
-    .line 91
     iget v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
 
     return v0
@@ -150,10 +131,7 @@
 
 .method static synthetic access$1800(Lcom/android/server/TextServicesManagerService$TextServicesData;Ljava/io/PrintWriter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
-    .param p1, "x1"    # Ljava/io/PrintWriter;
 
-    .line 91
     invoke-direct {p0, p1}, Lcom/android/server/TextServicesManagerService$TextServicesData;->dump(Ljava/io/PrintWriter;)V
 
     return-void
@@ -161,9 +139,7 @@
 
 .method static synthetic access$900(Lcom/android/server/TextServicesManagerService$TextServicesData;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/TextServicesManagerService$TextServicesData;
 
-    .line 91
     invoke-direct {p0}, Lcom/android/server/TextServicesManagerService$TextServicesData;->initializeTextServicesData()V
 
     return-void
@@ -171,13 +147,9 @@
 
 .method private dump(Ljava/io/PrintWriter;)V
     .locals 12
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 220
     const/4 v0, 0x0
 
-    .line 221
-    .local v0, "spellCheckerIndex":I
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,12 +168,10 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 222
     const-string v1, "  Spell Checkers:"
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 223
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -220,7 +190,6 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 224
     iget-object v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -244,8 +213,6 @@
 
     check-cast v2, Landroid/view/textservice/SpellCheckerInfo;
 
-    .line 225
-    .local v2, "info":Landroid/view/textservice/SpellCheckerInfo;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -262,34 +229,25 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 226
     const-string v3, "    "
 
     invoke-virtual {v2, p1, v3}, Landroid/view/textservice/SpellCheckerInfo;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 227
     add-int/lit8 v0, v0, 0x1
 
-    .line 228
-    .end local v2    # "info":Landroid/view/textservice/SpellCheckerInfo;
     goto :goto_0
 
-    .line 230
     :cond_0
     const-string v1, ""
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 231
     const-string v1, "  Spell Checker Bind Groups:"
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 232
     iget-object v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerBindGroups:Ljava/util/HashMap;
 
-    .line 234
-    .local v1, "spellCheckerBindGroups":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;>;"
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -311,16 +269,12 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 235
-    .local v3, "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
 
-    .line 236
-    .local v4, "grp":Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -353,7 +307,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 237
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -374,7 +327,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 238
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -395,7 +347,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 239
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -416,7 +367,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 240
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -437,7 +387,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 241
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$500(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Ljava/util/ArrayList;
 
     move-result-object v5
@@ -446,17 +395,13 @@
 
     move-result v5
 
-    .line 242
-    .local v5, "numPendingSessionRequests":I
     const/4 v6, 0x0
 
     move v7, v6
 
-    .local v7, "j":I
     :goto_2
     if-ge v7, v5, :cond_1
 
-    .line 243
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$500(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Ljava/util/ArrayList;
 
     move-result-object v8
@@ -467,8 +412,6 @@
 
     check-cast v8, Lcom/android/server/TextServicesManagerService$SessionRequest;
 
-    .line 244
-    .local v8, "req":Lcom/android/server/TextServicesManagerService$SessionRequest;
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -489,7 +432,6 @@
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 245
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -508,7 +450,6 @@
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 246
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -527,7 +468,6 @@
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 247
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -554,14 +494,10 @@
 
     invoke-virtual {p1, v9}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 242
-    .end local v8    # "req":Lcom/android/server/TextServicesManagerService$SessionRequest;
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_2
 
-    .line 250
-    .end local v7    # "j":I
     :cond_1
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$600(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Ljava/util/ArrayList;
 
@@ -571,15 +507,11 @@
 
     move-result v7
 
-    .line 251
-    .local v7, "numOnGoingSessionRequests":I
     move v8, v6
 
-    .local v8, "j":I
     :goto_3
     if-ge v8, v7, :cond_2
 
-    .line 252
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$600(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Ljava/util/ArrayList;
 
     move-result-object v9
@@ -590,8 +522,6 @@
 
     check-cast v9, Lcom/android/server/TextServicesManagerService$SessionRequest;
 
-    .line 253
-    .local v9, "req":Lcom/android/server/TextServicesManagerService$SessionRequest;
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -612,10 +542,8 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 254
     add-int/lit8 v8, v8, 0x1
 
-    .line 255
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -634,7 +562,6 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 256
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -653,7 +580,6 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 257
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -680,14 +606,10 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 251
-    .end local v9    # "req":Lcom/android/server/TextServicesManagerService$SessionRequest;
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
-    .line 260
-    .end local v8    # "j":I
     :cond_2
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$700(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Lcom/android/server/TextServicesManagerService$InternalDeathRecipients;
 
@@ -697,18 +619,13 @@
 
     move-result v8
 
-    .line 261
-    .local v8, "N":I
     nop
 
-    .local v6, "j":I
     :goto_4
     if-ge v6, v8, :cond_3
 
-    .line 262
     nop
 
-    .line 263
     invoke-static {v4}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->access$700(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)Lcom/android/server/TextServicesManagerService$InternalDeathRecipients;
 
     move-result-object v9
@@ -719,8 +636,6 @@
 
     check-cast v9, Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
-    .line 264
-    .local v9, "mScListener":Lcom/android/internal/textservice/ISpellCheckerSessionListener;
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -741,7 +656,6 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 265
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -758,7 +672,6 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 266
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -775,33 +688,20 @@
 
     invoke-virtual {p1, v10}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 261
-    .end local v9    # "mScListener":Lcom/android/internal/textservice/ISpellCheckerSessionListener;
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_4
 
-    .line 268
-    .end local v3    # "ent":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;>;"
-    .end local v4    # "grp":Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
-    .end local v5    # "numPendingSessionRequests":I
-    .end local v6    # "j":I
-    .end local v7    # "numOnGoingSessionRequests":I
-    .end local v8    # "N":I
     :cond_3
     goto/16 :goto_1
 
-    .line 269
     :cond_4
     return-void
 .end method
 
 .method private getBoolean(Ljava/lang/String;Z)Z
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defaultValue"    # Z
 
-    .line 130
     invoke-direct {p0, p1, p2}, Lcom/android/server/TextServicesManagerService$TextServicesData;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -821,10 +721,7 @@
 
 .method private getInt(Ljava/lang/String;I)I
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defaultValue"    # I
 
-    .line 126
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mResolver:Landroid/content/ContentResolver;
 
     iget v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
@@ -839,7 +736,6 @@
 .method private getSelectedSpellChecker()Ljava/lang/String;
     .locals 2
 
-    .line 143
     const-string/jumbo v0, "selected_spell_checker"
 
     const-string v1, ""
@@ -853,10 +749,7 @@
 
 .method private getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defaultValue"    # Ljava/lang/String;
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mResolver:Landroid/content/ContentResolver;
 
     iget v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
@@ -865,8 +758,6 @@
 
     move-result-object v0
 
-    .line 118
-    .local v0, "result":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     move-object v1, v0
@@ -883,32 +774,26 @@
 .method private initializeTextServicesData()V
     .locals 11
 
-    .line 176
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 177
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 178
     iget v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUpdateCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUpdateCount:I
 
-    .line 179
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 183
-    .local v0, "pm":Landroid/content/pm/PackageManager;
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.service.textservice.SpellCheckerService"
@@ -923,33 +808,23 @@
 
     move-result-object v1
 
-    .line 186
-    .local v1, "services":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 187
-    .local v2, "N":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_2
 
-    .line 188
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/content/pm/ResolveInfo;
 
-    .line 189
-    .local v4, "ri":Landroid/content/pm/ResolveInfo;
     iget-object v5, v4, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    .line 190
-    .local v5, "si":Landroid/content/pm/ServiceInfo;
     new-instance v6, Landroid/content/ComponentName;
 
     iget-object v7, v5, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
@@ -958,8 +833,6 @@
 
     invoke-direct {v6, v7, v8}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 191
-    .local v6, "compName":Landroid/content/ComponentName;
     const-string v7, "android.permission.BIND_TEXT_SERVICE"
 
     iget-object v8, v5, Landroid/content/pm/ServiceInfo;->permission:Ljava/lang/String;
@@ -970,7 +843,6 @@
 
     if-nez v7, :cond_0
 
-    .line 192
     invoke-static {}, Lcom/android/server/TextServicesManagerService;->access$000()Ljava/lang/String;
 
     move-result-object v7
@@ -999,10 +871,8 @@
 
     invoke-static {v7, v8}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
     goto :goto_2
 
-    .line 199
     :cond_0
     :try_start_0
     new-instance v7, Landroid/view/textservice/SpellCheckerInfo;
@@ -1011,15 +881,12 @@
 
     invoke-direct {v7, v8, v4}, Landroid/view/textservice/SpellCheckerInfo;-><init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V
 
-    .line 200
-    .local v7, "sci":Landroid/view/textservice/SpellCheckerInfo;
     invoke-virtual {v7}, Landroid/view/textservice/SpellCheckerInfo;->getSubtypeCount()I
 
     move-result v8
 
     if-gtz v8, :cond_1
 
-    .line 201
     invoke-static {}, Lcom/android/server/TextServicesManagerService;->access$000()Ljava/lang/String;
 
     move-result-object v8
@@ -1044,16 +911,13 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
     goto :goto_2
 
-    .line 205
     :cond_1
     iget-object v8, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerList:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 206
     iget-object v8, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
     invoke-virtual {v7}, Landroid/view/textservice/SpellCheckerInfo;->getId()Ljava/lang/String;
@@ -1065,15 +929,11 @@
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .end local v7    # "sci":Landroid/view/textservice/SpellCheckerInfo;
     goto :goto_1
 
-    .line 209
     :catch_0
     move-exception v7
 
-    .line 210
-    .local v7, "e":Ljava/io/IOException;
     invoke-static {}, Lcom/android/server/TextServicesManagerService;->access$000()Ljava/lang/String;
 
     move-result-object v8
@@ -1094,21 +954,11 @@
 
     invoke-static {v8, v9, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .end local v4    # "ri":Landroid/content/pm/ResolveInfo;
-    .end local v5    # "si":Landroid/content/pm/ServiceInfo;
-    .end local v6    # "compName":Landroid/content/ComponentName;
-    .end local v7    # "e":Ljava/io/IOException;
     goto :goto_2
 
-    .line 207
-    .restart local v4    # "ri":Landroid/content/pm/ResolveInfo;
-    .restart local v5    # "si":Landroid/content/pm/ServiceInfo;
-    .restart local v6    # "compName":Landroid/content/ComponentName;
     :catch_1
     move-exception v7
 
-    .line 208
-    .local v7, "e":Lorg/xmlpull/v1/XmlPullParserException;
     invoke-static {}, Lcom/android/server/TextServicesManagerService;->access$000()Ljava/lang/String;
 
     move-result-object v8
@@ -1129,81 +979,59 @@
 
     invoke-static {v8, v9, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 211
-    .end local v4    # "ri":Landroid/content/pm/ResolveInfo;
-    .end local v5    # "si":Landroid/content/pm/ServiceInfo;
-    .end local v6    # "compName":Landroid/content/ComponentName;
-    .end local v7    # "e":Lorg/xmlpull/v1/XmlPullParserException;
     :goto_1
     nop
 
-    .line 187
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
-    .line 217
-    .end local v3    # "i":I
     :cond_2
     return-void
 .end method
 
 .method private putInt(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # I
 
-    .line 122
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mResolver:Landroid/content/ContentResolver;
 
     iget v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
 
     invoke-static {v0, p1, p2, v1}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 123
     return-void
 .end method
 
 .method private putSelectedSpellChecker(Ljava/lang/String;)V
     .locals 1
-    .param p1, "sciId"    # Ljava/lang/String;
 
-    .line 134
     const-string/jumbo v0, "selected_spell_checker"
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/TextServicesManagerService$TextServicesData;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 135
     return-void
 .end method
 
 .method private putSelectedSpellCheckerSubtype(I)V
     .locals 1
-    .param p1, "hashCode"    # I
 
-    .line 138
     const-string/jumbo v0, "selected_spell_checker_subtype"
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/TextServicesManagerService$TextServicesData;->putInt(Ljava/lang/String;I)V
 
-    .line 139
     return-void
 .end method
 
 .method private putString(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "str"    # Ljava/lang/String;
 
-    .line 111
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mResolver:Landroid/content/ContentResolver;
 
     iget v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mUserId:I
 
     invoke-static {v0, p1, p2, v1}, Landroid/provider/Settings$Secure;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 112
     return-void
 .end method
 
@@ -1212,25 +1040,20 @@
 .method public getCurrentSpellChecker()Landroid/view/textservice/SpellCheckerInfo;
     .locals 2
 
-    .line 156
     invoke-direct {p0}, Lcom/android/server/TextServicesManagerService$TextServicesData;->getSelectedSpellChecker()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 157
-    .local v0, "curSpellCheckerId":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 158
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 160
     :cond_0
     iget-object v1, p0, Lcom/android/server/TextServicesManagerService$TextServicesData;->mSpellCheckerMap:Ljava/util/HashMap;
 
@@ -1245,9 +1068,7 @@
 
 .method public getSelectedSpellCheckerSubtype(I)I
     .locals 1
-    .param p1, "defaultValue"    # I
 
-    .line 147
     const-string/jumbo v0, "selected_spell_checker_subtype"
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/TextServicesManagerService$TextServicesData;->getInt(Ljava/lang/String;I)I
@@ -1260,7 +1081,6 @@
 .method public isSpellCheckerEnabled()Z
     .locals 2
 
-    .line 151
     const-string/jumbo v0, "spell_checker_enabled"
 
     const/4 v1, 0x1
@@ -1274,12 +1094,9 @@
 
 .method public setCurrentSpellChecker(Landroid/view/textservice/SpellCheckerInfo;)V
     .locals 1
-    .param p1, "sci"    # Landroid/view/textservice/SpellCheckerInfo;
 
-    .line 164
     if-eqz p1, :cond_0
 
-    .line 165
     invoke-virtual {p1}, Landroid/view/textservice/SpellCheckerInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
@@ -1288,18 +1105,15 @@
 
     goto :goto_0
 
-    .line 167
     :cond_0
     const-string v0, ""
 
     invoke-direct {p0, v0}, Lcom/android/server/TextServicesManagerService$TextServicesData;->putSelectedSpellChecker(Ljava/lang/String;)V
 
-    .line 169
     :goto_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/TextServicesManagerService$TextServicesData;->putSelectedSpellCheckerSubtype(I)V
 
-    .line 170
     return-void
 .end method

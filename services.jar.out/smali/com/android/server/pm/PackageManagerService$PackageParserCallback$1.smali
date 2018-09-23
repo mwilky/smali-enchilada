@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService$PackageParserCallback;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/pm/PackageManagerService$PackageParserCallback;
 
-    .line 957
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageParserCallback$1;->this$1:Lcom/android/server/pm/PackageManagerService$PackageParserCallback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/content/pm/PackageParser$Package;Landroid/content/pm/PackageParser$Package;)I
     .locals 2
-    .param p1, "p1"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "p2"    # Landroid/content/pm/PackageParser$Package;
 
-    .line 959
     iget v0, p1, Landroid/content/pm/PackageParser$Package;->mOverlayPriority:I
 
     iget v1, p2, Landroid/content/pm/PackageParser$Package;->mOverlayPriority:I
@@ -63,7 +58,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 957
     check-cast p1, Landroid/content/pm/PackageParser$Package;
 
     check-cast p2, Landroid/content/pm/PackageParser$Package;

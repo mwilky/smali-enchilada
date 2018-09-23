@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/display/DisplayPowerController;)V
     .locals 0
 
-    .line 2237
     iput-object p1, p0, Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/display/DisplayPowerController;Lcom/android/server/display/DisplayPowerController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/display/DisplayPowerController;
-    .param p2, "x1"    # Lcom/android/server/display/DisplayPowerController$1;
 
-    .line 2237
     invoke-direct {p0, p1}, Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;-><init>(Lcom/android/server/display/DisplayPowerController;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public onScreenOn()V
     .locals 2
 
-    .line 2240
     iget-object v0, p0, Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v0}, Lcom/android/server/display/DisplayPowerController;->access$2400(Lcom/android/server/display/DisplayPowerController;)Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;
@@ -62,8 +57,6 @@
 
     move-result-object v0
 
-    .line 2241
-    .local v0, "msg":Landroid/os/Message;
     iget-object v1, p0, Lcom/android/server/display/DisplayPowerController$ScreenOnUnblocker;->this$0:Lcom/android/server/display/DisplayPowerController;
 
     invoke-static {v1}, Lcom/android/server/display/DisplayPowerController;->access$2400(Lcom/android/server/display/DisplayPowerController;)Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;
@@ -72,6 +65,5 @@
 
     invoke-virtual {v1, v0}, Lcom/android/server/display/DisplayPowerController$DisplayControllerHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 2242
     return-void
 .end method

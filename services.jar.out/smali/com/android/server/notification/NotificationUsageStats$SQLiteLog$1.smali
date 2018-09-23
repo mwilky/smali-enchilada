@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 1095
     iput-object p1, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$0:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,26 +33,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1098
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/server/notification/NotificationRecord;
 
-    .line 1099
-    .local v0, "r":Lcom/android/server/notification/NotificationRecord;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 1100
-    .local v1, "nowMs":J
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 1114
     const-string v3, "NotificationSQLiteLog"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -78,7 +68,6 @@
 
     goto :goto_0
 
-    .line 1111
     :pswitch_0
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$0:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -86,10 +75,8 @@
 
     invoke-static {v3, v1, v2, v4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->access$000(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;JILcom/android/server/notification/NotificationRecord;)V
 
-    .line 1112
     goto :goto_0
 
-    .line 1108
     :pswitch_1
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$0:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -97,10 +84,8 @@
 
     invoke-static {v3, v1, v2, v4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->access$000(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;JILcom/android/server/notification/NotificationRecord;)V
 
-    .line 1109
     goto :goto_0
 
-    .line 1105
     :pswitch_2
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$0:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -108,10 +93,8 @@
 
     invoke-static {v3, v1, v2, v4, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->access$000(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;JILcom/android/server/notification/NotificationRecord;)V
 
-    .line 1106
     goto :goto_0
 
-    .line 1102
     :pswitch_3
     iget-object v3, p0, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog$1;->this$0:Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;
 
@@ -125,10 +108,8 @@
 
     invoke-static {v3, v4, v5, v6, v0}, Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;->access$000(Lcom/android/server/notification/NotificationUsageStats$SQLiteLog;JILcom/android/server/notification/NotificationRecord;)V
 
-    .line 1103
     nop
 
-    .line 1117
     :goto_0
     return-void
 

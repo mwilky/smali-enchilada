@@ -57,17 +57,12 @@
         }
     .end annotation
 
-    .line 345
-    .local p0, "this":Lcom/android/server/IntentResolver$IteratorWrapper;, "Lcom/android/server/IntentResolver<TF;TR;>.IteratorWrapper;"
-    .local p2, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<TF;>;"
     iput-object p1, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->this$0:Lcom/android/server/IntentResolver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 346
     iput-object p2, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mI:Ljava/util/Iterator;
 
-    .line 347
     return-void
 .end method
 
@@ -76,8 +71,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 350
-    .local p0, "this":Lcom/android/server/IntentResolver$IteratorWrapper;, "Lcom/android/server/IntentResolver<TF;TR;>.IteratorWrapper;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mI:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -95,8 +88,6 @@
         }
     .end annotation
 
-    .line 354
-    .local p0, "this":Lcom/android/server/IntentResolver$IteratorWrapper;, "Lcom/android/server/IntentResolver<TF;TR;>.IteratorWrapper;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mI:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -113,8 +104,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 341
-    .local p0, "this":Lcom/android/server/IntentResolver$IteratorWrapper;, "Lcom/android/server/IntentResolver<TF;TR;>.IteratorWrapper;"
     invoke-virtual {p0}, Lcom/android/server/IntentResolver$IteratorWrapper;->next()Landroid/content/IntentFilter;
 
     move-result-object v0
@@ -125,25 +114,20 @@
 .method public remove()V
     .locals 2
 
-    .line 358
-    .local p0, "this":Lcom/android/server/IntentResolver$IteratorWrapper;, "Lcom/android/server/IntentResolver<TF;TR;>.IteratorWrapper;"
     iget-object v0, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mCur:Landroid/content/IntentFilter;
 
     if-eqz v0, :cond_0
 
-    .line 359
     iget-object v0, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->this$0:Lcom/android/server/IntentResolver;
 
     iget-object v1, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mCur:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1}, Lcom/android/server/IntentResolver;->removeFilterInternal(Landroid/content/IntentFilter;)V
 
-    .line 361
     :cond_0
     iget-object v0, p0, Lcom/android/server/IntentResolver$IteratorWrapper;->mI:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 362
     return-void
 .end method

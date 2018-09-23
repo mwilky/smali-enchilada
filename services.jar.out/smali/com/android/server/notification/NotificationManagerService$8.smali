@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationManagerService;
 
-    .line 1658
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$8;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,12 @@
 # virtual methods
 .method public repost(ILcom/android/server/notification/NotificationRecord;)V
     .locals 10
-    .param p1, "userId"    # I
-    .param p2, "r"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 1662
     :try_start_0
     sget-boolean v0, Lcom/android/server/notification/NotificationManagerService;->DBG:Z
 
     if-eqz v0, :cond_0
 
-    .line 1663
     const-string v0, "NotificationService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -70,7 +64,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1665
     :cond_0
     iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$8;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
@@ -88,7 +81,6 @@
 
     iget-object v0, p2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 1666
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getUid()I
 
     move-result v4
@@ -113,35 +105,27 @@
 
     iget-object v0, p2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 1667
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v8
 
-    .line 1665
     move v9, p1
 
     invoke-virtual/range {v1 .. v9}, Lcom/android/server/notification/NotificationManagerService;->enqueueNotificationInternal(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ILandroid/app/Notification;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1670
     goto :goto_0
 
-    .line 1668
     :catch_0
     move-exception v0
 
-    .line 1669
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "NotificationService"
 
     const-string v2, "Cannot un-snooze notification"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1671
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

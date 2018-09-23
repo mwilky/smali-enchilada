@@ -29,14 +29,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/server/audio/RotationHelper;->sRotationLock:Ljava/lang/Object;
 
-    .line 46
     const/4 v0, 0x0
 
     sput v0, Lcom/android/server/audio/RotationHelper;->sDeviceRotation:I
@@ -47,7 +45,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,7 +53,6 @@
 .method static disable()V
     .locals 2
 
-    .line 73
     sget-object v0, Lcom/android/server/audio/RotationHelper;->sContext:Landroid/content/Context;
 
     const-string v1, "display"
@@ -69,17 +65,14 @@
 
     sget-object v1, Lcom/android/server/audio/RotationHelper;->sDisplayListener:Lcom/android/server/audio/RotationHelper$AudioDisplayListener;
 
-    .line 74
     invoke-virtual {v0, v1}, Landroid/hardware/display/DisplayManager;->unregisterDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;)V
 
-    .line 75
     return-void
 .end method
 
 .method static enable()V
     .locals 3
 
-    .line 67
     sget-object v0, Lcom/android/server/audio/RotationHelper;->sContext:Landroid/content/Context;
 
     const-string v1, "display"
@@ -94,44 +87,32 @@
 
     sget-object v2, Lcom/android/server/audio/RotationHelper;->sHandler:Landroid/os/Handler;
 
-    .line 68
     invoke-virtual {v0, v1, v2}, Landroid/hardware/display/DisplayManager;->registerDisplayListener(Landroid/hardware/display/DisplayManager$DisplayListener;Landroid/os/Handler;)V
 
-    .line 69
     invoke-static {}, Lcom/android/server/audio/RotationHelper;->updateOrientation()V
 
-    .line 70
     return-void
 .end method
 
 .method static init(Landroid/content/Context;Landroid/os/Handler;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "handler"    # Landroid/os/Handler;
 
-    .line 57
     if-eqz p0, :cond_0
 
-    .line 60
     sput-object p0, Lcom/android/server/audio/RotationHelper;->sContext:Landroid/content/Context;
 
-    .line 61
     sput-object p1, Lcom/android/server/audio/RotationHelper;->sHandler:Landroid/os/Handler;
 
-    .line 62
     new-instance v0, Lcom/android/server/audio/RotationHelper$AudioDisplayListener;
 
     invoke-direct {v0}, Lcom/android/server/audio/RotationHelper$AudioDisplayListener;-><init>()V
 
     sput-object v0, Lcom/android/server/audio/RotationHelper;->sDisplayListener:Lcom/android/server/audio/RotationHelper$AudioDisplayListener;
 
-    .line 63
     invoke-static {}, Lcom/android/server/audio/RotationHelper;->enable()V
 
-    .line 64
     return-void
 
-    .line 58
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -144,9 +125,7 @@
 
 .method private static publishRotation(I)V
     .locals 3
-    .param p0, "rotation"    # I
 
-    .line 94
     const-string v0, "AudioService.RotationHelper"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -169,10 +148,8 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
     packed-switch p0, :pswitch_data_0
 
-    .line 109
     const-string v0, "AudioService.RotationHelper"
 
     const-string v1, "Unknown device rotation"
@@ -181,43 +158,34 @@
 
     goto :goto_0
 
-    .line 106
     :pswitch_0
     const-string/jumbo v0, "rotation=270"
 
     invoke-static {v0}, Landroid/media/AudioSystem;->setParameters(Ljava/lang/String;)I
 
-    .line 107
     goto :goto_0
 
-    .line 103
     :pswitch_1
     const-string/jumbo v0, "rotation=180"
 
     invoke-static {v0}, Landroid/media/AudioSystem;->setParameters(Ljava/lang/String;)I
 
-    .line 104
     goto :goto_0
 
-    .line 100
     :pswitch_2
     const-string/jumbo v0, "rotation=90"
 
     invoke-static {v0}, Landroid/media/AudioSystem;->setParameters(Ljava/lang/String;)I
 
-    .line 101
     goto :goto_0
 
-    .line 97
     :pswitch_3
     const-string/jumbo v0, "rotation=0"
 
     invoke-static {v0}, Landroid/media/AudioSystem;->setParameters(Ljava/lang/String;)I
 
-    .line 98
     nop
 
-    .line 111
     :goto_0
     return-void
 
@@ -237,7 +205,6 @@
 .method static updateOrientation()V
     .locals 3
 
-    .line 83
     sget-object v0, Lcom/android/server/audio/RotationHelper;->sContext:Landroid/content/Context;
 
     const-string/jumbo v1, "window"
@@ -248,7 +215,6 @@
 
     check-cast v0, Landroid/view/WindowManager;
 
-    .line 84
     invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -257,34 +223,26 @@
 
     move-result v0
 
-    .line 85
-    .local v0, "newRotation":I
     sget-object v1, Lcom/android/server/audio/RotationHelper;->sRotationLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 86
     :try_start_0
     sget v2, Lcom/android/server/audio/RotationHelper;->sDeviceRotation:I
 
     if-eq v0, v2, :cond_0
 
-    .line 87
     sput v0, Lcom/android/server/audio/RotationHelper;->sDeviceRotation:I
 
-    .line 88
     sget v2, Lcom/android/server/audio/RotationHelper;->sDeviceRotation:I
 
     invoke-static {v2}, Lcom/android/server/audio/RotationHelper;->publishRotation(I)V
 
-    .line 90
     :cond_0
     monitor-exit v1
 
-    .line 91
     return-void
 
-    .line 90
     :catchall_0
     move-exception v2
 

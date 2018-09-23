@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/dhcp/DhcpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/dhcp/DhcpClient;
 
-    .line 528
     iput-object p1, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -35,9 +33,7 @@
 
 .method private messageName(I)Ljava/lang/String;
     .locals 2
-    .param p1, "what"    # I
 
-    .line 544
     invoke-static {}, Landroid/net/dhcp/DhcpClient;->access$400()Landroid/util/SparseArray;
 
     move-result-object v0
@@ -57,23 +53,17 @@
 
 .method private messageToString(Landroid/os/Message;)Ljava/lang/String;
     .locals 5
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 548
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 549
-    .local v0, "now":J
     new-instance v2, Ljava/lang/StringBuilder;
 
     const-string v3, " "
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 550
-    .local v2, "b":Ljava/lang/StringBuilder;
     invoke-virtual {p1}, Landroid/os/Message;->getWhen()J
 
     move-result-wide v3
@@ -82,7 +72,6 @@
 
     invoke-static {v3, v4, v2}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 551
     const-string v3, " "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -97,7 +86,6 @@
 
     const-string v3, " "
 
-    .line 552
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v3, p1, Landroid/os/Message;->arg1:I
@@ -106,7 +94,6 @@
 
     const-string v3, " "
 
-    .line 553
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v3, p1, Landroid/os/Message;->arg2:I
@@ -115,14 +102,12 @@
 
     const-string v3, " "
 
-    .line 554
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v3, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 555
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -135,21 +120,18 @@
 .method public enter()V
     .locals 2
 
-    .line 534
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->mEnterTimeMs:J
 
-    .line 535
     return-void
 .end method
 
 .method public exit()V
     .locals 5
 
-    .line 539
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -158,8 +140,6 @@
 
     sub-long/2addr v0, v2
 
-    .line 540
-    .local v0, "durationMs":J
     iget-object v2, p0, Landroid/net/dhcp/DhcpClient$LoggingState;->this$0:Landroid/net/dhcp/DhcpClient;
 
     invoke-virtual {p0}, Landroid/net/dhcp/DhcpClient$LoggingState;->getName()Ljava/lang/String;
@@ -170,14 +150,12 @@
 
     invoke-static {v2, v3, v4}, Landroid/net/dhcp/DhcpClient;->access$300(Landroid/net/dhcp/DhcpClient;Ljava/lang/String;I)V
 
-    .line 541
     return-void
 .end method
 
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 570
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -191,9 +169,7 @@
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 1
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 563
     const/4 v0, 0x0
 
     return v0

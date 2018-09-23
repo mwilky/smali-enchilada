@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/content/SyncManager;Landroid/os/Handler;Landroid/content/ContentResolver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/content/SyncManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 714
     iput-object p1, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
 
     iput-object p3, p0, Lcom/android/server/content/SyncManager$13;->val$resolver:Landroid/content/ContentResolver;
@@ -40,9 +37,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 2
-    .param p1, "selfChange"    # Z
 
-    .line 716
     iget-object v0, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
 
     iget-object v1, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
@@ -53,7 +48,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/content/SyncManager;->access$1876(Lcom/android/server/content/SyncManager;I)Z
 
-    .line 717
     iget-object v0, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-static {v0}, Lcom/android/server/content/SyncManager;->access$1800(Lcom/android/server/content/SyncManager;)Z
@@ -62,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 718
     iget-object v0, p0, Lcom/android/server/content/SyncManager$13;->this$0:Lcom/android/server/content/SyncManager;
 
     invoke-static {v0}, Lcom/android/server/content/SyncManager;->access$400(Lcom/android/server/content/SyncManager;)Lcom/android/server/content/SyncManager$SyncHandler;
@@ -71,12 +64,10 @@
 
     invoke-virtual {v0}, Lcom/android/server/content/SyncManager$SyncHandler;->onDeviceProvisioned()V
 
-    .line 719
     iget-object v0, p0, Lcom/android/server/content/SyncManager$13;->val$resolver:Landroid/content/ContentResolver;
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 721
     :cond_0
     return-void
 .end method

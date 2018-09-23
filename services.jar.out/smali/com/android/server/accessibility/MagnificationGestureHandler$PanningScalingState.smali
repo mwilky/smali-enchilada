@@ -35,26 +35,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/accessibility/MagnificationGestureHandler;Landroid/content/Context;)V
     .locals 4
-    .param p1, "this$0"    # Lcom/android/server/accessibility/MagnificationGestureHandler;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 399
     iput-object p1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
-    .line 396
     const/high16 v0, -0x40800000    # -1.0f
 
     iput v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mInitialScaleFactor:F
 
-    .line 400
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 401
-    .local v0, "scaleValue":Landroid/util/TypedValue;
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -65,14 +58,12 @@
 
     invoke-virtual {v1, v3, v0, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 404
     invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v1
 
     iput v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScalingThreshold:F
 
-    .line 405
     new-instance v1, Landroid/view/ScaleGestureDetector;
 
     invoke-static {}, Landroid/os/Handler;->getMain()Landroid/os/Handler;
@@ -83,12 +74,10 @@
 
     iput-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
-    .line 406
     iget-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v1, v2}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
 
-    .line 407
     new-instance v1, Landroid/view/GestureDetector;
 
     invoke-static {}, Landroid/os/Handler;->getMain()Landroid/os/Handler;
@@ -99,15 +88,12 @@
 
     iput-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScrollGestureDetector:Landroid/view/GestureDetector;
 
-    .line 408
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;)Landroid/view/GestureDetector;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;
 
-    .line 389
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScrollGestureDetector:Landroid/view/GestureDetector;
 
     return-object v0
@@ -115,9 +101,7 @@
 
 .method static synthetic access$100(Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;)Landroid/view/ScaleGestureDetector;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;
 
-    .line 389
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaleGestureDetector:Landroid/view/ScaleGestureDetector;
 
     return-object v0
@@ -128,38 +112,28 @@
 .method public clear()V
     .locals 1
 
-    .line 499
     const/high16 v0, -0x40800000    # -1.0f
 
     iput v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mInitialScaleFactor:F
 
-    .line 500
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaling:Z
 
-    .line 501
     return-void
 .end method
 
 .method public onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "rawEvent"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 412
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 414
-    .local v0, "action":I
     const/4 v1, 0x6
 
     if-ne v0, v1, :cond_0
 
-    .line 415
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v1
@@ -178,7 +152,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 418
     iget-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v1, v1, Lcom/android/server/accessibility/MagnificationGestureHandler;->mViewportDraggingState:Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;
@@ -187,7 +160,6 @@
 
     goto :goto_0
 
-    .line 420
     :cond_0
     const/4 v1, 0x1
 
@@ -197,7 +169,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 422
     :cond_1
     iget-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
@@ -205,7 +176,6 @@
 
     invoke-virtual {p0, v1}, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->persistScaleAndTransitionTo(Lcom/android/server/accessibility/MagnificationGestureHandler$State;)V
 
-    .line 425
     :cond_2
     :goto_0
     return-void
@@ -213,16 +183,13 @@
 
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 11
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 450
     iget-boolean v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaling:Z
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_2
 
-    .line 451
     iget v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mInitialScaleFactor:F
 
     const/4 v2, 0x0
@@ -233,17 +200,14 @@
 
     if-gez v0, :cond_0
 
-    .line 452
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mInitialScaleFactor:F
 
-    .line 453
     return v2
 
-    .line 455
     :cond_0
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
@@ -253,8 +217,6 @@
 
     sub-float/2addr v0, v3
 
-    .line 456
-    .local v0, "deltaScale":F
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -273,13 +235,10 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaling:Z
 
-    .line 457
     iget-boolean v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->mScaling:Z
 
     return v1
 
-    .line 460
-    .end local v0    # "deltaScale":F
     :cond_2
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
@@ -289,16 +248,12 @@
 
     move-result v0
 
-    .line 461
-    .local v0, "initialScale":F
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
     move-result v2
 
     mul-float/2addr v2, v0
 
-    .line 466
-    .local v2, "targetScale":F
     const/high16 v3, 0x40a00000    # 5.0f
 
     cmpl-float v3, v2, v3
@@ -309,20 +264,13 @@
 
     if-lez v3, :cond_3
 
-    .line 468
     const/high16 v3, 0x40a00000    # 5.0f
 
-    .line 476
-    .local v3, "scale":F
-    .local v5, "scale":F
     :goto_1
     move v5, v3
 
     goto :goto_2
 
-    .line 469
-    .end local v3    # "scale":F
-    .end local v5    # "scale":F
     :cond_3
     const/high16 v3, 0x40000000    # 2.0f
 
@@ -334,30 +282,22 @@
 
     if-gez v3, :cond_4
 
-    .line 471
     const/high16 v3, 0x40000000    # 2.0f
 
     goto :goto_1
 
-    .line 476
     :cond_4
     move v5, v2
 
-    .line 479
-    .restart local v5    # "scale":F
     :goto_2
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusX()F
 
     move-result v3
 
-    .line 480
-    .local v3, "pivotX":F
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getFocusY()F
 
     move-result v10
 
-    .line 482
-    .local v10, "pivotY":F
     iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v4, v4, Lcom/android/server/accessibility/MagnificationGestureHandler;->mMagnificationController:Lcom/android/server/accessibility/MagnificationController;
@@ -372,15 +312,12 @@
 
     invoke-virtual/range {v4 .. v9}, Lcom/android/server/accessibility/MagnificationController;->setScale(FFFZI)Z
 
-    .line 484
     return v1
 .end method
 
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 2
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 489
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/MagnificationGestureHandler;->mCurrentState:Lcom/android/server/accessibility/MagnificationGestureHandler$State;
@@ -404,23 +341,15 @@
 
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 0
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 494
     invoke-virtual {p0}, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->clear()V
 
-    .line 495
     return-void
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 3
-    .param p1, "first"    # Landroid/view/MotionEvent;
-    .param p2, "second"    # Landroid/view/MotionEvent;
-    .param p3, "distanceX"    # F
-    .param p4, "distanceY"    # F
 
-    .line 436
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/MagnificationGestureHandler;->mCurrentState:Lcom/android/server/accessibility/MagnificationGestureHandler$State;
@@ -433,10 +362,8 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 437
     return v2
 
-    .line 443
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
@@ -446,37 +373,30 @@
 
     invoke-virtual {v0, p3, p4, v1}, Lcom/android/server/accessibility/MagnificationController;->offsetMagnifiedRegion(FFI)V
 
-    .line 445
     return v2
 .end method
 
 .method public persistScaleAndTransitionTo(Lcom/android/server/accessibility/MagnificationGestureHandler$State;)V
     .locals 1
-    .param p1, "state"    # Lcom/android/server/accessibility/MagnificationGestureHandler$State;
 
-    .line 428
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v0, v0, Lcom/android/server/accessibility/MagnificationGestureHandler;->mMagnificationController:Lcom/android/server/accessibility/MagnificationController;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/MagnificationController;->persistScale()V
 
-    .line 429
     invoke-virtual {p0}, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->clear()V
 
-    .line 430
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$PanningScalingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-static {v0, p1}, Lcom/android/server/accessibility/MagnificationGestureHandler;->access$200(Lcom/android/server/accessibility/MagnificationGestureHandler;Lcom/android/server/accessibility/MagnificationGestureHandler$State;)V
 
-    .line 431
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 505
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

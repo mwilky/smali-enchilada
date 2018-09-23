@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/SystemAudioStatusAction;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/SystemAudioStatusAction;
 
-    .line 56
     iput-object p1, p0, Lcom/android/server/hdmi/SystemAudioStatusAction$1;->this$0:Lcom/android/server/hdmi/SystemAudioStatusAction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onSendCompleted(I)V
     .locals 1
-    .param p1, "error"    # I
 
-    .line 59
     if-eqz p1, :cond_0
 
-    .line 60
     iget-object v0, p0, Lcom/android/server/hdmi/SystemAudioStatusAction$1;->this$0:Lcom/android/server/hdmi/SystemAudioStatusAction;
 
     invoke-static {v0}, Lcom/android/server/hdmi/SystemAudioStatusAction;->access$000(Lcom/android/server/hdmi/SystemAudioStatusAction;)V
 
-    .line 62
     :cond_0
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Uterus;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Uterus;
 
-    .line 380
     iput-object p1, p0, Lcom/android/server/am/Uterus$1;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,16 +37,13 @@
 .method public run()V
     .locals 1
 
-    .line 384
     iget-object v0, p0, Lcom/android/server/am/Uterus$1;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v0}, Lcom/android/server/am/Uterus;->access$300(Lcom/android/server/am/Uterus;)V
 
-    .line 385
     iget-object v0, p0, Lcom/android/server/am/Uterus$1;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v0}, Lcom/android/server/am/Uterus;->access$400(Lcom/android/server/am/Uterus;)V
 
-    .line 386
     return-void
 .end method

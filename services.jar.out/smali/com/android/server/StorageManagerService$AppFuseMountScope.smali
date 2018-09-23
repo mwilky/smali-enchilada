@@ -23,23 +23,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/StorageManagerService;III)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
-    .param p2, "uid"    # I
-    .param p3, "pid"    # I
-    .param p4, "mountId"    # I
 
-    .line 2683
     iput-object p1, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->this$0:Lcom/android/server/StorageManagerService;
 
-    .line 2684
     invoke-direct {p0, p2, p3, p4}, Lcom/android/server/storage/AppFuseBridge$MountScope;-><init>(III)V
 
-    .line 2681
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->opened:Z
 
-    .line 2685
     return-void
 .end method
 
@@ -53,12 +45,10 @@
         }
     .end annotation
 
-    .line 2699
     iget-boolean v0, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->opened:Z
 
     if-eqz v0, :cond_0
 
-    .line 2700
     iget-object v0, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$1200(Lcom/android/server/StorageManagerService;)Landroid/os/IVold;
@@ -75,12 +65,10 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/os/IVold;->unmountAppFuse(III)V
 
-    .line 2701
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->opened:Z
 
-    .line 2703
     :cond_0
     return-void
 .end method
@@ -93,13 +81,11 @@
         }
     .end annotation
 
-    .line 2690
     :try_start_0
     new-instance v0, Landroid/os/ParcelFileDescriptor;
 
     iget-object v1, p0, Lcom/android/server/StorageManagerService$AppFuseMountScope;->this$0:Lcom/android/server/StorageManagerService;
 
-    .line 2691
     invoke-static {v1}, Lcom/android/server/StorageManagerService;->access$1200(Lcom/android/server/StorageManagerService;)Landroid/os/IVold;
 
     move-result-object v1
@@ -120,15 +106,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2690
     return-object v0
 
-    .line 2692
     :catch_0
     move-exception v0
 
-    .line 2693
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Lcom/android/server/NativeDaemonConnectorException;
 
     const-string v2, "Failed to mount"

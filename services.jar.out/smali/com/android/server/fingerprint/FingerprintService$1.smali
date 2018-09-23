@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/fingerprint/FingerprintService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
 
-    .line 228
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$1;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 231
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0xa
 
     if-eq v0, v1, :cond_0
 
-    .line 237
     const-string v0, "FingerprintService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -67,7 +62,6 @@
 
     goto :goto_0
 
-    .line 233
     :cond_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$1;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -75,10 +69,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/fingerprint/FingerprintService;->handleUserSwitching(I)V
 
-    .line 234
     nop
 
-    .line 239
     :goto_0
     return-void
 .end method

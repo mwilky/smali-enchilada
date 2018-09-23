@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemThreePointersGesturesListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/OemThreePointersGesturesListener;
 
-    .line 343
     iput-object p1, p0, Lcom/android/server/policy/OemThreePointersGesturesListener$YComparator;->this$0:Lcom/android/server/policy/OemThreePointersGesturesListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/graphics/Point;Landroid/graphics/Point;)I
     .locals 2
-    .param p1, "o1"    # Landroid/graphics/Point;
-    .param p2, "o2"    # Landroid/graphics/Point;
 
-    .line 345
     iget v0, p1, Landroid/graphics/Point;->y:I
 
     iget v1, p2, Landroid/graphics/Point;->y:I
@@ -82,7 +77,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 343
     check-cast p1, Landroid/graphics/Point;
 
     check-cast p2, Landroid/graphics/Point;

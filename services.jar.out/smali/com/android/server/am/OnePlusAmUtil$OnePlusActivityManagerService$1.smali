@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
-    .line 344
     iput-object p1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$1;->this$0:Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$1;->val$context:Landroid/content/Context;
@@ -47,13 +45,11 @@
 .method public run()V
     .locals 2
 
-    .line 346
     iget-object v0, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/am/OnePlusAmUtil$OnePlusActivityManagerService$1;->val$packageName:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/android/server/am/AppStateBroadcaster;->sendApplicationFocusGain(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 347
     return-void
 .end method

@@ -28,7 +28,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 275
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +38,6 @@
 .method public totalAccountedSize()J
     .locals 4
 
-    .line 285
     iget-wide v0, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->imagesSize:J
 
     iget-wide v2, p0, Lcom/android/server/storage/FileCollector$MeasurementResult;->videosSize:J

@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/RemoteListenerHelper$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/location/RemoteListenerHelper$1;
 
-    .line 221
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$1$1;, "Lcom/android/server/location/RemoteListenerHelper$1$1;"
     iput-object p1, p0, Lcom/android/server/location/RemoteListenerHelper$1$1;->this$1:Lcom/android/server/location/RemoteListenerHelper$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 224
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$1$1;, "Lcom/android/server/location/RemoteListenerHelper$1$1;"
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1$1;->this$1:Lcom/android/server/location/RemoteListenerHelper$1;
 
     iget-object v0, v0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
@@ -52,7 +47,6 @@
 
     monitor-enter v0
 
-    .line 225
     :try_start_0
     iget-object v1, p0, Lcom/android/server/location/RemoteListenerHelper$1$1;->this$1:Lcom/android/server/location/RemoteListenerHelper$1;
 
@@ -66,22 +60,16 @@
 
     move-result-object v1
 
-    .line 226
-    .local v1, "operation":Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;, "Lcom/android/server/location/RemoteListenerHelper$ListenerOperation<TTListener;>;"
     iget-object v2, p0, Lcom/android/server/location/RemoteListenerHelper$1$1;->this$1:Lcom/android/server/location/RemoteListenerHelper$1;
 
     iget-object v2, v2, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-static {v2, v1}, Lcom/android/server/location/RemoteListenerHelper;->access$200(Lcom/android/server/location/RemoteListenerHelper;Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;)V
 
-    .line 227
-    .end local v1    # "operation":Lcom/android/server/location/RemoteListenerHelper$ListenerOperation;, "Lcom/android/server/location/RemoteListenerHelper$ListenerOperation<TTListener;>;"
     monitor-exit v0
 
-    .line 228
     return-void
 
-    .line 227
     :catchall_0
     move-exception v1
 

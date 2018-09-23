@@ -97,19 +97,16 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 104
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
-    .line 106
     sget-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     new-instance v1, Landroid/util/Pair;
 
-    .line 107
     const/high16 v2, 0x800000
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -124,24 +121,20 @@
 
     invoke-direct {v1, v2, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 106
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 109
     sget-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     new-instance v1, Landroid/util/Pair;
 
-    .line 110
     const/high16 v2, 0x60000
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 112
     const/4 v4, 0x4
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -150,15 +143,12 @@
 
     invoke-direct {v1, v2, v5}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 109
     invoke-virtual {v0, v3, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 114
     sget-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     new-instance v1, Landroid/util/Pair;
 
-    .line 115
     const/high16 v2, 0x200000
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -173,15 +163,12 @@
 
     invoke-direct {v1, v2, v5}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 114
     invoke-virtual {v0, v4, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 117
     sget-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     new-instance v1, Landroid/util/Pair;
 
-    .line 118
     const/high16 v2, 0x1000000
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -194,97 +181,76 @@
 
     invoke-direct {v1, v2, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 117
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 120
     sget-object v0, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     new-instance v1, Landroid/util/Pair;
 
-    .line 121
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 122
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
     invoke-direct {v1, v3, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 120
     const/16 v2, 0x10
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 123
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/server/am/ActivityStackSupervisor;Landroid/os/Handler;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "supervisor"    # Lcom/android/server/am/ActivityStackSupervisor;
-    .param p3, "handler"    # Landroid/os/Handler;
 
-    .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 128
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mToken:Landroid/os/IBinder;
 
-    .line 158
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
-    .line 163
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskPackages:Landroid/util/SparseArray;
 
-    .line 168
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskFeatures:Landroid/util/SparseIntArray;
 
-    .line 175
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
-    .line 184
     iput-object p1, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
 
-    .line 185
     iput-object p2, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
-    .line 186
     iput-object p3, p0, Lcom/android/server/am/LockTaskController;->mHandler:Landroid/os/Handler;
 
-    .line 187
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/am/LockTaskController;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/am/LockTaskController;
 
-    .line 86
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -292,9 +258,7 @@
 
 .method static synthetic access$100(Lcom/android/server/am/LockTaskController;)Landroid/os/IBinder;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/am/LockTaskController;
 
-    .line 86
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mToken:Landroid/os/IBinder;
 
     return-object v0
@@ -303,39 +267,32 @@
 .method private getDevicePolicyManager()Landroid/app/admin/IDevicePolicyManager;
     .locals 2
 
-    .line 850
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mDevicePolicyManager:Landroid/app/admin/IDevicePolicyManager;
 
     if-nez v0, :cond_0
 
-    .line 851
     const-string v0, "device_policy"
 
-    .line 852
     invoke-static {v0}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 851
     invoke-static {v0}, Landroid/app/admin/IDevicePolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mDevicePolicyManager:Landroid/app/admin/IDevicePolicyManager;
 
-    .line 853
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mDevicePolicyManager:Landroid/app/admin/IDevicePolicyManager;
 
     if-nez v0, :cond_0
 
-    .line 854
     const-string v0, "ActivityManager"
 
     const-string/jumbo v1, "warning: no DEVICE_POLICY_SERVICE"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 857
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mDevicePolicyManager:Landroid/app/admin/IDevicePolicyManager;
 
@@ -345,12 +302,10 @@
 .method private getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
     .locals 2
 
-    .line 862
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     if-nez v0, :cond_0
 
-    .line 864
     new-instance v0, Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
@@ -359,7 +314,6 @@
 
     return-object v0
 
-    .line 866
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -368,9 +322,7 @@
 
 .method private getLockTaskFeaturesForUser(I)I
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 831
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskFeatures:Landroid/util/SparseIntArray;
 
     const/4 v1, 0x0
@@ -385,39 +337,32 @@
 .method private getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
     .locals 2
 
-    .line 837
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     if-nez v0, :cond_0
 
-    .line 838
     const-string/jumbo v0, "statusbar"
 
-    .line 839
     invoke-static {v0}, Landroid/os/ServiceManager;->checkService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 838
     invoke-static {v0}, Lcom/android/internal/statusbar/IStatusBarService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/am/LockTaskController;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
-    .line 840
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
     if-nez v0, :cond_0
 
-    .line 841
     const-string v0, "StatusBarManager"
 
     const-string/jumbo v1, "warning: no STATUS_BAR_SERVICE"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 844
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mStatusBarService:Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -427,12 +372,10 @@
 .method private getTelecomManager()Landroid/telecom/TelecomManager;
     .locals 2
 
-    .line 871
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mTelecomManager:Landroid/telecom/TelecomManager;
 
     if-nez v0, :cond_0
 
-    .line 873
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/telecom/TelecomManager;
@@ -445,7 +388,6 @@
 
     return-object v0
 
-    .line 875
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mTelecomManager:Landroid/telecom/TelecomManager;
 
@@ -454,21 +396,15 @@
 
 .method private isEmergencyCallTask(Lcom/android/server/am/TaskRecord;)Z
     .locals 6
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 330
     iget-object v0, p1, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 331
-    .local v0, "intent":Landroid/content/Intent;
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 332
     return v1
 
-    .line 336
     :cond_0
     sget-object v2, Landroid/telecom/TelecomManager;->EMERGENCY_DIALER_COMPONENT:Landroid/content/ComponentName;
 
@@ -484,10 +420,8 @@
 
     if-eqz v2, :cond_1
 
-    .line 337
     return v3
 
-    .line 341
     :cond_1
     const-string v2, "android.intent.action.CALL_EMERGENCY"
 
@@ -501,17 +435,13 @@
 
     if-eqz v2, :cond_2
 
-    .line 342
     return v3
 
-    .line 346
     :cond_2
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getTelecomManager()Landroid/telecom/TelecomManager;
 
     move-result-object v2
 
-    .line 347
-    .local v2, "tm":Landroid/telecom/TelecomManager;
     if-eqz v2, :cond_3
 
     invoke-virtual {v2}, Landroid/telecom/TelecomManager;->getSystemDialerPackage()Ljava/lang/String;
@@ -523,8 +453,6 @@
     :cond_3
     const/4 v4, 0x0
 
-    .line 348
-    .local v4, "dialerPackage":Ljava/lang/String;
     :goto_0
     if-eqz v4, :cond_4
 
@@ -542,19 +470,15 @@
 
     if-eqz v5, :cond_4
 
-    .line 349
     return v3
 
-    .line 352
     :cond_4
     return v1
 .end method
 
 .method private isKeyguardAllowed(I)Z
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 325
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskController;->getLockTaskFeaturesForUser(I)I
 
     move-result v0
@@ -576,10 +500,7 @@
 
 .method private isLockTaskModeViolationInternal(Lcom/android/server/am/TaskRecord;Z)Z
     .locals 2
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "isNewClearTask"    # Z
 
-    .line 301
     invoke-virtual {p0, p1}, Lcom/android/server/am/LockTaskController;->isTaskLocked(Lcom/android/server/am/TaskRecord;)Z
 
     move-result v0
@@ -590,10 +511,8 @@
 
     if-nez p2, :cond_0
 
-    .line 303
     return v1
 
-    .line 307
     :cond_0
     invoke-virtual {p1}, Lcom/android/server/am/TaskRecord;->isActivityTypeRecents()Z
 
@@ -609,10 +528,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 308
     return v1
 
-    .line 312
     :cond_1
     iget v0, p1, Lcom/android/server/am/TaskRecord;->userId:I
 
@@ -628,10 +545,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 313
     return v1
 
-    .line 316
     :cond_2
     invoke-virtual {p0, p1}, Lcom/android/server/am/LockTaskController;->isTaskWhitelisted(Lcom/android/server/am/TaskRecord;)Z
 
@@ -657,9 +572,7 @@
 
 .method private isRecentsAllowed(I)Z
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 320
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskController;->getLockTaskFeaturesForUser(I)I
 
     move-result v0
@@ -681,9 +594,7 @@
 
 .method private isRootTask(Lcom/android/server/am/TaskRecord;)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 219
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -705,9 +616,7 @@
 
 .method public static synthetic lambda$removeLockedTask$0(Lcom/android/server/am/LockTaskController;Lcom/android/server/am/TaskRecord;)V
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 464
     iget v0, p1, Lcom/android/server/am/TaskRecord;->userId:I
 
     invoke-direct {p0, v0}, Lcom/android/server/am/LockTaskController;->performStopLockTask(I)V
@@ -717,14 +626,9 @@
 
 .method public static synthetic lambda$setLockTaskMode$1(Lcom/android/server/am/LockTaskController;Landroid/content/Intent;Lcom/android/server/am/TaskRecord;I)V
     .locals 2
-    .param p1, "taskIntent"    # Landroid/content/Intent;
-    .param p2, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p3, "lockTaskModeState"    # I
 
-    .line 566
     nop
 
-    .line 567
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -735,7 +639,6 @@
 
     iget v1, p2, Lcom/android/server/am/TaskRecord;->userId:I
 
-    .line 566
     invoke-direct {p0, v0, v1, p3}, Lcom/android/server/am/LockTaskController;->performStartLockTask(Ljava/lang/String;II)V
 
     return-void
@@ -743,26 +646,21 @@
 
 .method public static synthetic lambda$updateLockTaskFeatures$2(Lcom/android/server/am/LockTaskController;I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 700
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 701
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/LockTaskController;->setStatusBarState(II)V
 
-    .line 702
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/LockTaskController;->setKeyguardState(II)V
 
-    .line 704
     :cond_0
     return-void
 .end method
@@ -770,11 +668,9 @@
 .method private lockKeyguardIfNeeded()V
     .locals 3
 
-    .line 789
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
 
-    .line 790
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -783,7 +679,6 @@
 
     const/4 v2, -0x2
 
-    .line 789
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->getIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
@@ -797,24 +692,19 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 793
-    .local v0, "shouldLockKeyguard":Z
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 794
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/server/wm/WindowManagerService;->lockNow(Landroid/os/Bundle;)V
 
-    .line 795
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v1, v2, v2}, Lcom/android/server/wm/WindowManagerService;->dismissKeyguard(Lcom/android/internal/policy/IKeyguardDismissCallback;Ljava/lang/CharSequence;)V
 
-    .line 796
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getLockPatternUtils()Lcom/android/internal/widget/LockPatternUtils;
 
     move-result-object v1
@@ -825,16 +715,12 @@
     :try_end_0
     .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 800
-    .end local v0    # "shouldLockKeyguard":Z
     :cond_1
     goto :goto_1
 
-    .line 798
     :catch_0
     move-exception v0
 
-    .line 801
     :goto_1
     return-void
 .end method
@@ -842,12 +728,10 @@
 .method private lockTaskModeToString()Ljava/lang/String;
     .locals 2
 
-    .line 894
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 901
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -866,19 +750,16 @@
 
     return-object v0
 
-    .line 898
     :pswitch_0
     const-string v0, "PINNED"
 
     return-object v0
 
-    .line 896
     :pswitch_1
     const-string v0, "LOCKED"
 
     return-object v0
 
-    .line 900
     :pswitch_2
     const-string v0, "NONE"
 
@@ -896,18 +777,13 @@
 
 .method private performStartLockTask(Ljava/lang/String;II)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "lockTaskModeState"    # I
 
-    .line 597
     const/4 v0, 0x2
 
     const/4 v1, 0x1
 
     if-ne p3, v0, :cond_0
 
-    .line 598
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -917,36 +793,29 @@
 
     goto :goto_0
 
-    .line 607
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 600
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v0, p3}, Lcom/android/server/wm/WindowManagerService;->onLockTaskStateChanged(I)V
 
-    .line 601
     iput p3, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
-    .line 602
     invoke-direct {p0, p3, p2}, Lcom/android/server/am/LockTaskController;->setStatusBarState(II)V
 
-    .line 603
     invoke-direct {p0, p3, p2}, Lcom/android/server/am/LockTaskController;->setKeyguardState(II)V
 
-    .line 604
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getDevicePolicyManager()Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 605
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getDevicePolicyManager()Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v0
@@ -955,24 +824,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 609
     :cond_1
     nop
 
-    .line 612
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
 
     invoke-static {v0, v1}, Lcom/android/server/am/OemSceneModeAmHelper;->disableSceneButtonLockFeature(Landroid/content/Context;Z)V
 
-    .line 614
     return-void
 
-    .line 607
     :goto_1
     nop
 
-    .line 608
-    .local v0, "ex":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -982,28 +845,22 @@
 
 .method private performStopLockTask(I)V
     .locals 4
-    .param p1, "userId"    # I
 
-    .line 472
     const/4 v0, 0x0
 
     :try_start_0
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/LockTaskController;->setStatusBarState(II)V
 
-    .line 473
     invoke-direct {p0, v0, p1}, Lcom/android/server/am/LockTaskController;->setKeyguardState(II)V
 
-    .line 474
     iget v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_0
 
-    .line 475
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->lockKeyguardIfNeeded()V
 
-    .line 477
     :cond_0
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getDevicePolicyManager()Landroid/app/admin/IDevicePolicyManager;
 
@@ -1011,7 +868,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 478
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getDevicePolicyManager()Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v1
@@ -1020,20 +876,17 @@
 
     invoke-interface {v1, v0, v3, p1}, Landroid/app/admin/IDevicePolicyManager;->notifyLockTaskModeChanged(ZLjava/lang/String;I)V
 
-    .line 480
     :cond_1
     iget v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     if-ne v1, v2, :cond_2
 
-    .line 481
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v1
 
     invoke-interface {v1, v0}, Lcom/android/internal/statusbar/IStatusBarService;->showPinningEnterExitToast(Z)V
 
-    .line 483
     :cond_2
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
@@ -1042,32 +895,24 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 487
     iput v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
-    .line 488
     nop
 
-    .line 491
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
 
     invoke-static {v1, v0}, Lcom/android/server/am/OemSceneModeAmHelper;->disableSceneButtonLockFeature(Landroid/content/Context;Z)V
 
-    .line 493
     return-void
 
-    .line 487
     :catchall_0
     move-exception v1
 
     goto :goto_0
 
-    .line 484
     :catch_0
     move-exception v1
 
-    .line 485
-    .local v1, "ex":Landroid/os/RemoteException;
     :try_start_1
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -1077,8 +922,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 487
-    .end local v1    # "ex":Landroid/os/RemoteException;
     :goto_0
     iput v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
@@ -1087,9 +930,7 @@
 
 .method private removeLockedTask(Lcom/android/server/am/TaskRecord;)V
     .locals 3
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 457
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -1098,10 +939,8 @@
 
     if-nez v0, :cond_0
 
-    .line 458
     return-void
 
-    .line 460
     :cond_0
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
@@ -1125,7 +964,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 461
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -1135,7 +973,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 462
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
     if-eqz v0, :cond_2
@@ -1158,7 +995,6 @@
 
     const/4 v2, 0x3
 
-    .line 463
     invoke-static {v2}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
     move-result-object v2
@@ -1169,10 +1005,8 @@
 
     move-result-object v1
 
-    .line 462
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 464
     :cond_2
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mHandler:Landroid/os/Handler;
 
@@ -1182,20 +1016,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 466
     :cond_3
     return-void
 .end method
 
 .method private setKeyguardState(II)V
     .locals 3
-    .param p1, "lockTaskModeState"    # I
-    .param p2, "userId"    # I
 
-    .line 746
     if-nez p1, :cond_0
 
-    .line 747
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mToken:Landroid/os/IBinder;
@@ -1204,20 +1033,17 @@
 
     goto :goto_0
 
-    .line 749
     :cond_0
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_3
 
-    .line 750
     invoke-direct {p0, p2}, Lcom/android/server/am/LockTaskController;->isKeyguardAllowed(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 751
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mToken:Landroid/os/IBinder;
@@ -1226,7 +1052,6 @@
 
     goto :goto_0
 
-    .line 755
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
@@ -1244,7 +1069,6 @@
 
     if-nez v0, :cond_2
 
-    .line 756
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     new-instance v1, Lcom/android/server/am/LockTaskController$1;
@@ -1257,7 +1081,6 @@
 
     goto :goto_0
 
-    .line 774
     :cond_2
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
@@ -1269,7 +1092,6 @@
 
     goto :goto_0
 
-    .line 779
     :cond_3
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
@@ -1279,24 +1101,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/wm/WindowManagerService;->disableKeyguard(Landroid/os/IBinder;Ljava/lang/String;)V
 
-    .line 781
     :goto_0
     return-void
 .end method
 
 .method private setLockTaskMode(Lcom/android/server/am/TaskRecord;ILjava/lang/String;Z)V
     .locals 8
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "lockTaskModeState"    # I
-    .param p3, "reason"    # Ljava/lang/String;
-    .param p4, "andResume"    # Z
 
-    .line 552
     iget v0, p1, Lcom/android/server/am/TaskRecord;->mLockTaskAuth:I
 
     if-nez v0, :cond_1
 
-    .line 553
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
     if-eqz v0, :cond_0
@@ -1307,11 +1122,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 555
     :cond_0
     return-void
 
-    .line 557
     :cond_1
     invoke-virtual {p0, p1}, Lcom/android/server/am/LockTaskController;->isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;)Z
 
@@ -1319,22 +1132,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 558
     const-string v0, "ActivityManager"
 
     const-string/jumbo v1, "setLockTaskMode: Attempt to start an unauthorized lock task."
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 559
     return-void
 
-    .line 562
     :cond_2
     iget-object v0, p1, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 563
-    .local v0, "taskIntent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1345,7 +1153,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 564
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityStackSupervisor;->mRecentTasks:Lcom/android/server/am/RecentTasks;
@@ -1354,7 +1161,6 @@
 
     invoke-virtual {v1, p2, v2}, Lcom/android/server/am/RecentTasks;->onLockTaskModeStateChanged(II)V
 
-    .line 566
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/server/am/-$$Lambda$LockTaskController$utz-CwgPkuGXoN5jp5hMoe4EpuQ;
@@ -1363,7 +1169,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 571
     :cond_3
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
@@ -1387,7 +1192,6 @@
 
     const/4 v3, 0x4
 
-    .line 572
     invoke-static {v3}, Landroid/os/Debug;->getCallers(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1398,10 +1202,8 @@
 
     move-result-object v2
 
-    .line 571
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 574
     :cond_4
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -1411,12 +1213,10 @@
 
     if-nez v1, :cond_5
 
-    .line 575
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 578
     :cond_5
     iget v1, p1, Lcom/android/server/am/TaskRecord;->mLockTaskUid:I
 
@@ -1424,16 +1224,13 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 579
     iget v1, p1, Lcom/android/server/am/TaskRecord;->effectiveUid:I
 
     iput v1, p1, Lcom/android/server/am/TaskRecord;->mLockTaskUid:I
 
-    .line 582
     :cond_6
     if-eqz p4, :cond_8
 
-    .line 583
     iget-object v2, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v4, 0x0
@@ -1461,42 +1258,35 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/server/am/ActivityStackSupervisor;->findTaskToMoveToFront(Lcom/android/server/am/TaskRecord;ILandroid/app/ActivityOptions;Ljava/lang/String;Z)V
 
-    .line 585
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v1}, Lcom/android/server/am/ActivityStackSupervisor;->resumeFocusedStackTopActivityLocked()Z
 
-    .line 586
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
     invoke-virtual {v1}, Lcom/android/server/wm/WindowManagerService;->executeAppTransition()V
 
     goto :goto_2
 
-    .line 587
     :cond_8
     if-eqz p2, :cond_9
 
-    .line 588
     iget-object v2, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    .line 589
     invoke-virtual {p1}, Lcom/android/server/am/TaskRecord;->getStack()Lcom/android/server/am/ActivityStack;
 
     move-result-object v6
 
     const/4 v7, 0x1
 
-    .line 588
     move-object v3, p1
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/server/am/ActivityStackSupervisor;->handleNonResizableTaskIfNeeded(Lcom/android/server/am/TaskRecord;IILcom/android/server/am/ActivityStack;Z)V
 
-    .line 591
     :cond_9
     :goto_2
     return-void
@@ -1504,66 +1294,47 @@
 
 .method private setStatusBarState(II)V
     .locals 6
-    .param p1, "lockTaskModeState"    # I
-    .param p2, "userId"    # I
 
-    .line 713
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
     move-result-object v0
 
-    .line 714
-    .local v0, "statusBar":Lcom/android/internal/statusbar/IStatusBarService;
     if-nez v0, :cond_0
 
-    .line 715
     const-string v1, "ActivityManager"
 
     const-string v2, "Can\'t find StatusBarService"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 716
     return-void
 
-    .line 720
     :cond_0
     const/4 v1, 0x0
 
-    .line 721
-    .local v1, "flags1":I
     const/4 v2, 0x0
 
-    .line 723
-    .local v2, "flags2":I
     const/4 v3, 0x2
 
     if-ne p1, v3, :cond_1
 
-    .line 724
     const/high16 v1, 0x29f0000
 
     goto :goto_0
 
-    .line 726
     :cond_1
     const/4 v3, 0x1
 
     if-ne p1, v3, :cond_2
 
-    .line 727
     invoke-direct {p0, p2}, Lcom/android/server/am/LockTaskController;->getLockTaskFeaturesForUser(I)I
 
     move-result v3
 
-    .line 728
-    .local v3, "lockTaskFeatures":I
     invoke-virtual {p0, v3}, Lcom/android/server/am/LockTaskController;->getStatusBarDisableFlags(I)Landroid/util/Pair;
 
     move-result-object v4
 
-    .line 729
-    .local v4, "statusBarFlags":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     iget-object v5, v4, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Integer;
@@ -1572,7 +1343,6 @@
 
     move-result v1
 
-    .line 730
     iget-object v5, v4, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v5, Ljava/lang/Integer;
@@ -1581,9 +1351,6 @@
 
     move-result v2
 
-    .line 734
-    .end local v3    # "lockTaskFeatures":I
-    .end local v4    # "statusBarFlags":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     :cond_2
     :goto_0
     :try_start_0
@@ -1597,7 +1364,6 @@
 
     invoke-interface {v0, v1, v3, v4}, Lcom/android/internal/statusbar/IStatusBarService;->disable(ILandroid/os/IBinder;Ljava/lang/String;)V
 
-    .line 735
     iget-object v3, p0, Lcom/android/server/am/LockTaskController;->mToken:Landroid/os/IBinder;
 
     iget-object v4, p0, Lcom/android/server/am/LockTaskController;->mContext:Landroid/content/Context;
@@ -1610,23 +1376,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 738
     goto :goto_1
 
-    .line 736
     :catch_0
     move-exception v3
 
-    .line 737
-    .local v3, "e":Landroid/os/RemoteException;
     const-string v4, "ActivityManager"
 
     const-string v5, "Failed to set status bar flags"
 
     invoke-static {v4, v5, v3}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 739
-    .end local v3    # "e":Landroid/os/RemoteException;
     :goto_1
     return-void
 .end method
@@ -1635,22 +1395,17 @@
 # virtual methods
 .method activityBlockedFromFinish(Lcom/android/server/am/ActivityRecord;)Z
     .locals 3
-    .param p1, "activity"    # Lcom/android/server/am/ActivityRecord;
 
-    .line 227
     invoke-virtual {p1}, Lcom/android/server/am/ActivityRecord;->getTask()Lcom/android/server/am/TaskRecord;
 
     move-result-object v0
 
-    .line 228
-    .local v0, "task":Lcom/android/server/am/TaskRecord;
     invoke-virtual {v0}, Lcom/android/server/am/TaskRecord;->getRootActivity()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 229
     invoke-virtual {v0}, Lcom/android/server/am/TaskRecord;->getTopActivity()Lcom/android/server/am/ActivityRecord;
 
     move-result-object v1
@@ -1663,29 +1418,24 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 231
     invoke-direct {p0, v0}, Lcom/android/server/am/LockTaskController;->isRootTask(Lcom/android/server/am/TaskRecord;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 232
     const-string v1, "ActivityManager"
 
     const-string v2, "Not finishing task in lock task mode"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 233
     invoke-virtual {p0}, Lcom/android/server/am/LockTaskController;->showLockTaskToast()V
 
-    .line 234
     const/4 v1, 0x1
 
     return v1
 
-    .line 236
     :cond_0
     const/4 v1, 0x0
 
@@ -1694,24 +1444,19 @@
 
 .method canMoveTaskToBack(Lcom/android/server/am/TaskRecord;)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 245
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskController;->isRootTask(Lcom/android/server/am/TaskRecord;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 246
     invoke-virtual {p0}, Lcom/android/server/am/LockTaskController;->showLockTaskToast()V
 
-    .line 247
     const/4 v0, 0x0
 
     return v0
 
-    .line 249
     :cond_0
     const/4 v0, 0x1
 
@@ -1720,9 +1465,7 @@
 
 .method clearLockedTask(Lcom/android/server/am/TaskRecord;)V
     .locals 2
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 434
     if-eqz p1, :cond_3
 
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
@@ -1735,7 +1478,6 @@
 
     goto :goto_1
 
-    .line 436
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -1747,7 +1489,6 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 439
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1756,11 +1497,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "taskNdx":I
     :goto_0
     if-lez v0, :cond_1
 
-    .line 440
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1771,17 +1510,13 @@
 
     invoke-virtual {p0, v1}, Lcom/android/server/am/LockTaskController;->clearLockedTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 439
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 444
-    .end local v0    # "taskNdx":I
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskController;->removeLockedTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 445
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1790,22 +1525,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 446
     return-void
 
-    .line 448
     :cond_2
     invoke-virtual {p1}, Lcom/android/server/am/TaskRecord;->performClearTaskLocked()V
 
-    .line 449
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityStackSupervisor;->resumeFocusedStackTopActivityLocked()Z
 
-    .line 450
     return-void
 
-    .line 434
     :cond_3
     :goto_1
     return-void
@@ -1813,9 +1543,7 @@
 
 .method clearLockedTasks(Ljava/lang/String;)V
     .locals 3
-    .param p1, "reason"    # Ljava/lang/String;
 
-    .line 418
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
     if-eqz v0, :cond_0
@@ -1838,7 +1566,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -1848,7 +1575,6 @@
 
     if-nez v0, :cond_1
 
-    .line 420
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -1861,17 +1587,13 @@
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/LockTaskController;->clearLockedTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 422
     :cond_1
     return-void
 .end method
 
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 879
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1888,7 +1610,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 880
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1903,7 +1624,6 @@
 
     move-result-object p2
 
-    .line 881
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1926,7 +1646,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 882
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1943,13 +1662,10 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 883
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 883
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -1959,7 +1675,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 884
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1990,13 +1705,10 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 883
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 886
-    .end local v1    # "i":I
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2014,11 +1726,8 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 887
     nop
 
-    .line 887
-    .local v0, "i":I
     :goto_1
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskPackages:Landroid/util/SparseArray;
 
@@ -2028,7 +1737,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 888
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2053,7 +1761,6 @@
 
     iget-object v2, p0, Lcom/android/server/am/LockTaskController;->mLockTaskPackages:Landroid/util/SparseArray;
 
-    .line 889
     invoke-virtual {v2, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2070,16 +1777,12 @@
 
     move-result-object v1
 
-    .line 888
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 887
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 891
-    .end local v0    # "i":I
     :cond_1
     return-void
 .end method
@@ -2087,7 +1790,6 @@
 .method getLockTaskModeState()I
     .locals 1
 
-    .line 203
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     return v0
@@ -2096,7 +1798,6 @@
 .method getRootTask()Lcom/android/server/am/TaskRecord;
     .locals 2
 
-    .line 292
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2105,12 +1806,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 293
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 295
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -2127,7 +1826,6 @@
 
 .method getStatusBarDisableFlags(I)Landroid/util/Pair;
     .locals 5
-    .param p1, "lockTaskFlags"    # I
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
@@ -2141,15 +1839,10 @@
         }
     .end annotation
 
-    .line 813
     const/high16 v0, 0x3ff0000
 
-    .line 814
-    .local v0, "flags1":I
     const/16 v1, 0x1f
 
-    .line 815
-    .local v1, "flags2":I
     sget-object v2, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->size()I
@@ -2158,11 +1851,9 @@
 
     add-int/lit8 v2, v2, -0x1
 
-    .local v2, "i":I
     :goto_0
     if-ltz v2, :cond_1
 
-    .line 816
     sget-object v3, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2171,8 +1862,6 @@
 
     check-cast v3, Landroid/util/Pair;
 
-    .line 817
-    .local v3, "statusBarFlags":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     sget-object v4, Lcom/android/server/am/LockTaskController;->STATUS_BAR_FLAG_MAP_LOCKED:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v2}, Landroid/util/SparseArray;->keyAt(I)I
@@ -2183,7 +1872,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 818
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/Integer;
@@ -2196,7 +1884,6 @@
 
     and-int/2addr v0, v4
 
-    .line 819
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/Integer;
@@ -2209,21 +1896,16 @@
 
     and-int/2addr v1, v4
 
-    .line 815
-    .end local v3    # "statusBarFlags":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     :cond_0
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 823
-    .end local v2    # "i":I
     :cond_1
     const/high16 v2, 0x3a60000
 
     and-int/2addr v0, v2
 
-    .line 824
     new-instance v2, Landroid/util/Pair;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2241,9 +1923,7 @@
 
 .method isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 273
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/am/LockTaskController;->isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;Z)Z
@@ -2255,25 +1935,19 @@
 
 .method isLockTaskModeViolation(Lcom/android/server/am/TaskRecord;Z)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "isNewClearTask"    # Z
 
-    .line 281
     invoke-direct {p0, p1, p2}, Lcom/android/server/am/LockTaskController;->isLockTaskModeViolationInternal(Lcom/android/server/am/TaskRecord;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 282
     invoke-virtual {p0}, Lcom/android/server/am/LockTaskController;->showLockTaskToast()V
 
-    .line 283
     const/4 v0, 0x1
 
     return v0
 
-    .line 285
     :cond_0
     const/4 v0, 0x0
 
@@ -2282,18 +1956,13 @@
 
 .method isPackageWhitelisted(ILjava/lang/String;)Z
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
 
-    .line 669
     const/4 v0, 0x0
 
     if-nez p2, :cond_0
 
-    .line 670
     return v0
 
-    .line 673
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskPackages:Landroid/util/SparseArray;
 
@@ -2303,14 +1972,10 @@
 
     check-cast v1, [Ljava/lang/String;
 
-    .line 674
-    .local v1, "whitelist":[Ljava/lang/String;
     if-nez v1, :cond_1
 
-    .line 675
     return v0
 
-    .line 677
     :cond_1
     array-length v2, v1
 
@@ -2321,38 +1986,30 @@
 
     aget-object v4, v1, v3
 
-    .line 678
-    .local v4, "whitelistedPkg":Ljava/lang/String;
     invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 679
     const/4 v0, 0x1
 
     return v0
 
-    .line 677
-    .end local v4    # "whitelistedPkg":Ljava/lang/String;
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 682
     :cond_3
     return v0
 .end method
 
 .method isTaskLocked(Lcom/android/server/am/TaskRecord;)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 212
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -2364,19 +2021,15 @@
 
 .method isTaskWhitelisted(Lcom/android/server/am/TaskRecord;)Z
     .locals 1
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
 
-    .line 257
     iget v0, p1, Lcom/android/server/am/TaskRecord;->mLockTaskAuth:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 265
     const/4 v0, 0x0
 
     return v0
 
-    .line 261
     :pswitch_0
     const/4 v0, 0x1
 
@@ -2394,26 +2047,21 @@
 
 .method setWindowManager(Lcom/android/server/wm/WindowManagerService;)V
     .locals 0
-    .param p1, "windowManager"    # Lcom/android/server/wm/WindowManagerService;
 
-    .line 194
     iput-object p1, p0, Lcom/android/server/am/LockTaskController;->mWindowManager:Lcom/android/server/wm/WindowManagerService;
 
-    .line 195
     return-void
 .end method
 
 .method showLockTaskToast()V
     .locals 3
 
-    .line 500
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 502
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/am/LockTaskController;->getStatusBarService()Lcom/android/internal/statusbar/IStatusBarService;
 
@@ -2423,23 +2071,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 505
     goto :goto_0
 
-    .line 503
     :catch_0
     move-exception v0
 
-    .line 504
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ActivityManager"
 
     const-string v2, "Failed to send pinning escape toast"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 507
-    .end local v0    # "e":Landroid/os/RemoteException;
     :cond_0
     :goto_0
     return-void
@@ -2447,24 +2089,17 @@
 
 .method startLockTaskMode(Lcom/android/server/am/TaskRecord;ZI)V
     .locals 3
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "isSystemCaller"    # Z
-    .param p3, "callingUid"    # I
 
-    .line 522
     const/4 v0, 0x1
 
     if-nez p2, :cond_2
 
-    .line 523
     iput p3, p1, Lcom/android/server/am/TaskRecord;->mLockTaskUid:I
 
-    .line 524
     iget v1, p1, Lcom/android/server/am/TaskRecord;->mLockTaskAuth:I
 
     if-ne v1, v0, :cond_2
 
-    .line 527
     sget-boolean v0, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
     if-eqz v0, :cond_0
@@ -2475,7 +2110,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 528
     :cond_0
     const-class v0, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
@@ -2485,21 +2119,15 @@
 
     check-cast v0, Lcom/android/server/statusbar/StatusBarManagerInternal;
 
-    .line 530
-    .local v0, "statusBarManager":Lcom/android/server/statusbar/StatusBarManagerInternal;
     if-eqz v0, :cond_1
 
-    .line 531
     iget v1, p1, Lcom/android/server/am/TaskRecord;->taskId:I
 
     invoke-interface {v0, v1}, Lcom/android/server/statusbar/StatusBarManagerInternal;->showScreenPinningRequest(I)V
 
-    .line 533
     :cond_1
     return-void
 
-    .line 538
-    .end local v0    # "statusBarManager":Lcom/android/server/statusbar/StatusBarManagerInternal;
     :cond_2
     sget-boolean v1, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
@@ -2507,7 +2135,6 @@
 
     const-string v1, "ActivityManager"
 
-    .line 539
     if-eqz p2, :cond_3
 
     const-string v2, "Locking pinned"
@@ -2517,11 +2144,9 @@
     :cond_3
     const-string v2, "Locking fully"
 
-    .line 538
     :goto_0
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 540
     :cond_4
     if-eqz p2, :cond_5
 
@@ -2537,43 +2162,33 @@
 
     invoke-direct {p0, p1, v1, v2, v0}, Lcom/android/server/am/LockTaskController;->setLockTaskMode(Lcom/android/server/am/TaskRecord;ILjava/lang/String;Z)V
 
-    .line 542
     return-void
 .end method
 
 .method stopLockTaskMode(Lcom/android/server/am/TaskRecord;ZI)V
     .locals 3
-    .param p1, "task"    # Lcom/android/server/am/TaskRecord;
-    .param p2, "isSystemCaller"    # Z
-    .param p3, "callingUid"    # I
 
-    .line 375
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     if-nez v0, :cond_0
 
-    .line 376
     return-void
 
-    .line 379
     :cond_0
     if-eqz p2, :cond_2
 
-    .line 380
     iget v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 381
     const-string/jumbo v0, "stopAppPinning"
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/LockTaskController;->clearLockedTasks(Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 383
     :cond_1
     const-string v0, "ActivityManager"
 
@@ -2581,16 +2196,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
     invoke-virtual {p0}, Lcom/android/server/am/LockTaskController;->showLockTaskToast()V
 
     goto :goto_1
 
-    .line 389
     :cond_2
     if-eqz p1, :cond_5
 
-    .line 400
     iget v0, p1, Lcom/android/server/am/TaskRecord;->mLockTaskUid:I
 
     if-eq p3, v0, :cond_4
@@ -2605,7 +2217,6 @@
 
     goto :goto_0
 
-    .line 402
     :cond_3
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -2643,16 +2254,13 @@
 
     throw v0
 
-    .line 407
     :cond_4
     :goto_0
     invoke-virtual {p0, p1}, Lcom/android/server/am/LockTaskController;->clearLockedTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 409
     :goto_1
     return-void
 
-    .line 390
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2665,28 +2273,20 @@
 
 .method updateLockTaskFeatures(II)V
     .locals 3
-    .param p1, "userId"    # I
-    .param p2, "flags"    # I
 
-    .line 692
     invoke-direct {p0, p1}, Lcom/android/server/am/LockTaskController;->getLockTaskFeaturesForUser(I)I
 
     move-result v0
 
-    .line 693
-    .local v0, "oldFlags":I
     if-ne p2, v0, :cond_0
 
-    .line 694
     return-void
 
-    .line 697
     :cond_0
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskFeatures:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p1, p2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 698
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2709,7 +2309,6 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 699
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/server/am/-$$Lambda$LockTaskController$HCwwKEV1_Hy1M3bHXdwhoMEXmJM;
@@ -2718,26 +2317,19 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 706
     :cond_1
     return-void
 .end method
 
 .method updateLockTaskPackages(I[Ljava/lang/String;)V
     .locals 9
-    .param p1, "userId"    # I
-    .param p2, "packages"    # [Ljava/lang/String;
 
-    .line 623
     iget-object v0, p0, Lcom/android/server/am/LockTaskController;->mLockTaskPackages:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 625
     const/4 v0, 0x0
 
-    .line 626
-    .local v0, "taskChanged":Z
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2748,8 +2340,6 @@
 
     sub-int/2addr v1, v2
 
-    .line 626
-    .local v1, "taskNdx":I
     :goto_0
     const/4 v3, 0x0
 
@@ -2757,7 +2347,6 @@
 
     if-ltz v1, :cond_7
 
-    .line 627
     iget-object v5, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2766,8 +2355,6 @@
 
     check-cast v5, Lcom/android/server/am/TaskRecord;
 
-    .line 628
-    .local v5, "lockedTask":Lcom/android/server/am/TaskRecord;
     iget v6, v5, Lcom/android/server/am/TaskRecord;->mLockTaskAuth:I
 
     const/4 v7, 0x3
@@ -2789,12 +2376,9 @@
     :goto_1
     move v6, v2
 
-    .line 630
-    .local v6, "wasWhitelisted":Z
     :goto_2
     invoke-virtual {v5}, Lcom/android/server/am/TaskRecord;->setLockTaskAuth()V
 
-    .line 631
     iget v8, v5, Lcom/android/server/am/TaskRecord;->mLockTaskAuth:I
 
     if-eq v8, v4, :cond_3
@@ -2812,8 +2396,6 @@
     :goto_3
     move v3, v2
 
-    .line 634
-    .local v3, "isWhitelisted":Z
     :goto_4
     iget v4, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeState:I
 
@@ -2827,10 +2409,8 @@
 
     if-eqz v3, :cond_4
 
-    .line 637
     goto :goto_5
 
-    .line 641
     :cond_4
     sget-boolean v4, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
@@ -2852,7 +2432,6 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 642
     invoke-virtual {v5}, Lcom/android/server/am/TaskRecord;->lockTaskAuthToString()Ljava/lang/String;
 
     move-result-object v8
@@ -2863,31 +2442,21 @@
 
     move-result-object v7
 
-    .line 641
     invoke-static {v4, v7}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 643
     :cond_5
     invoke-direct {p0, v5}, Lcom/android/server/am/LockTaskController;->removeLockedTask(Lcom/android/server/am/TaskRecord;)V
 
-    .line 644
     invoke-virtual {v5}, Lcom/android/server/am/TaskRecord;->performClearTaskLocked()V
 
-    .line 645
     const/4 v0, 0x1
 
-    .line 626
-    .end local v3    # "isWhitelisted":Z
-    .end local v5    # "lockedTask":Lcom/android/server/am/TaskRecord;
-    .end local v6    # "wasWhitelisted":Z
     :cond_6
     :goto_5
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 648
-    .end local v1    # "taskNdx":I
     :cond_7
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -2897,12 +2466,9 @@
 
     sub-int/2addr v1, v2
 
-    .line 648
-    .local v1, "displayNdx":I
     :goto_6
     if-ltz v1, :cond_8
 
-    .line 649
     iget-object v5, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v5, v1}, Lcom/android/server/am/ActivityStackSupervisor;->getChildAt(I)Lcom/android/server/am/ActivityDisplay;
@@ -2911,13 +2477,10 @@
 
     invoke-virtual {v5}, Lcom/android/server/am/ActivityDisplay;->onLockTaskPackagesUpdated()V
 
-    .line 648
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_6
 
-    .line 652
-    .end local v1    # "displayNdx":I
     :cond_8
     iget-object v1, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
@@ -2925,8 +2488,6 @@
 
     move-result-object v1
 
-    .line 653
-    .local v1, "r":Lcom/android/server/am/ActivityRecord;
     if-eqz v1, :cond_9
 
     invoke-virtual {v1}, Lcom/android/server/am/ActivityRecord;->getTask()Lcom/android/server/am/TaskRecord;
@@ -2938,8 +2499,6 @@
     :cond_9
     const/4 v5, 0x0
 
-    .line 654
-    .local v5, "task":Lcom/android/server/am/TaskRecord;
     :goto_7
     iget-object v6, p0, Lcom/android/server/am/LockTaskController;->mLockTaskModeTasks:Ljava/util/ArrayList;
 
@@ -2955,7 +2514,6 @@
 
     if-ne v6, v4, :cond_b
 
-    .line 657
     sget-boolean v4, Lcom/android/server/am/ActivityManagerDebugConfig;->DEBUG_LOCKTASK:Z
 
     if-eqz v4, :cond_a
@@ -2978,25 +2536,20 @@
 
     invoke-static {v4, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 659
     :cond_a
     const-string/jumbo v4, "package updated"
 
     invoke-direct {p0, v5, v2, v4, v3}, Lcom/android/server/am/LockTaskController;->setLockTaskMode(Lcom/android/server/am/TaskRecord;ILjava/lang/String;Z)V
 
-    .line 660
     const/4 v0, 0x1
 
-    .line 663
     :cond_b
     if-eqz v0, :cond_c
 
-    .line 664
     iget-object v2, p0, Lcom/android/server/am/LockTaskController;->mSupervisor:Lcom/android/server/am/ActivityStackSupervisor;
 
     invoke-virtual {v2}, Lcom/android/server/am/ActivityStackSupervisor;->resumeFocusedStackTopActivityLocked()Z
 
-    .line 666
     :cond_c
     return-void
 .end method

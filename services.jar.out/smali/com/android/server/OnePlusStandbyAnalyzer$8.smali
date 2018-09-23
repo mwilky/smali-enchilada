@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2065
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/internal/os/BatterySipper;Lcom/android/internal/os/BatterySipper;)I
     .locals 4
-    .param p1, "a"    # Lcom/android/internal/os/BatterySipper;
-    .param p2, "b"    # Lcom/android/internal/os/BatterySipper;
 
-    .line 2068
     iget-wide v0, p2, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
 
     iget-wide v2, p1, Lcom/android/internal/os/BatterySipper;->totalPowerMah:D
@@ -58,7 +54,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 2065
     check-cast p1, Lcom/android/internal/os/BatterySipper;
 
     check-cast p2, Lcom/android/internal/os/BatterySipper;

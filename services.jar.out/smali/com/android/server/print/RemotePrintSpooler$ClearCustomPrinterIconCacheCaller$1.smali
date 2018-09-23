@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;
 
-    .line 840
     iput-object p1, p0, Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller$1;->this$0:Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;
 
     const/4 v0, 0x0
@@ -37,15 +35,12 @@
 # virtual methods
 .method public customPrinterIconCacheCleared(I)V
     .locals 2
-    .param p1, "sequence"    # I
 
-    .line 843
     iget-object v0, p0, Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller$1;->this$0:Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1, p1}, Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;->access$1100(Lcom/android/server/print/RemotePrintSpooler$ClearCustomPrinterIconCacheCaller;Ljava/lang/Object;I)V
 
-    .line 844
     return-void
 .end method

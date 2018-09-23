@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/am/BroadcastStats$ActionEntry;Lcom/android/server/am/BroadcastStats$ActionEntry;)I
     .locals 4
-    .param p1, "o1"    # Lcom/android/server/am/BroadcastStats$ActionEntry;
-    .param p2, "o2"    # Lcom/android/server/am/BroadcastStats$ActionEntry;
 
-    .line 45
     iget-wide v0, p1, Lcom/android/server/am/BroadcastStats$ActionEntry;->mTotalDispatchTime:J
 
     iget-wide v2, p2, Lcom/android/server/am/BroadcastStats$ActionEntry;->mTotalDispatchTime:J
@@ -52,12 +48,10 @@
 
     if-gez v0, :cond_0
 
-    .line 46
     const/4 v0, -0x1
 
     return v0
 
-    .line 48
     :cond_0
     iget-wide v0, p1, Lcom/android/server/am/BroadcastStats$ActionEntry;->mTotalDispatchTime:J
 
@@ -67,12 +61,10 @@
 
     if-lez v0, :cond_1
 
-    .line 49
     const/4 v0, 0x1
 
     return v0
 
-    .line 51
     :cond_1
     const/4 v0, 0x0
 
@@ -82,7 +74,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 43
     check-cast p1, Lcom/android/server/am/BroadcastStats$ActionEntry;
 
     check-cast p2, Lcom/android/server/am/BroadcastStats$ActionEntry;

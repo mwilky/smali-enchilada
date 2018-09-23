@@ -29,17 +29,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "pkgUserStr"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
-    .line 402
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 404
     :try_start_0
     const-string v0, "@"
 
@@ -49,15 +46,12 @@
 
     move-result-object v0
 
-    .line 405
-    .local v0, "vals":[Ljava/lang/String;
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
 
     iput-object v1, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
-    .line 406
     const/4 v1, 0x1
 
     aget-object v1, v0, v1
@@ -70,19 +64,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 409
-    .end local v0    # "vals":[Ljava/lang/String;
     nop
 
-    .line 410
     return-void
 
-    .line 407
     :catch_0
     move-exception v0
 
-    .line 408
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
@@ -92,27 +80,19 @@
 
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 397
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 398
     iput-object p1, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
-    .line 399
     iput p2, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mUserId:I
 
-    .line 400
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/slice/SlicePermissionManager$PkgUser;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/slice/SlicePermissionManager$PkgUser;
 
-    .line 391
     iget-object v0, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
     return-object v0
@@ -122,9 +102,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 427
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -151,14 +129,11 @@
 
     return v1
 
-    .line 428
     :cond_1
     move-object v0, p1
 
     check-cast v0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;
 
-    .line 429
-    .local v0, "other":Lcom/android/server/slice/SlicePermissionManager$PkgUser;
     iget-object v2, v0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
@@ -186,7 +161,6 @@
 .method public getPkg()Ljava/lang/String;
     .locals 1
 
-    .line 413
     iget-object v0, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
     return-object v0
@@ -195,7 +169,6 @@
 .method public getUserId()I
     .locals 1
 
-    .line 417
     iget v0, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mUserId:I
 
     return v0
@@ -204,7 +177,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 422
     iget-object v0, p0, Lcom/android/server/slice/SlicePermissionManager$PkgUser;->mPkg:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -221,7 +193,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 434
     const-string v0, "%s@%d"
 
     const/4 v1, 0x2

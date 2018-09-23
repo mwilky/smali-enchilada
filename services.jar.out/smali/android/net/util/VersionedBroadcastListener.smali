@@ -43,10 +43,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;Landroid/content/IntentFilter;Ljava/util/function/Consumer;)V
     .locals 2
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "ctx"    # Landroid/content/Context;
-    .param p3, "handler"    # Landroid/os/Handler;
-    .param p4, "filter"    # Landroid/content/IntentFilter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,26 +56,18 @@
         }
     .end annotation
 
-    .line 55
-    .local p5, "callback":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Landroid/content/Intent;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     iput-object p1, p0, Landroid/net/util/VersionedBroadcastListener;->mTag:Ljava/lang/String;
 
-    .line 57
     iput-object p2, p0, Landroid/net/util/VersionedBroadcastListener;->mContext:Landroid/content/Context;
 
-    .line 58
     iput-object p3, p0, Landroid/net/util/VersionedBroadcastListener;->mHandler:Landroid/os/Handler;
 
-    .line 59
     iput-object p4, p0, Landroid/net/util/VersionedBroadcastListener;->mFilter:Landroid/content/IntentFilter;
 
-    .line 60
     iput-object p5, p0, Landroid/net/util/VersionedBroadcastListener;->mCallback:Ljava/util/function/Consumer;
 
-    .line 61
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -88,7 +76,6 @@
 
     iput-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mGenerationNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 62
     return-void
 .end method
 
@@ -97,14 +84,12 @@
 .method public startListening()V
     .locals 5
 
-    .line 66
     iget-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 68
     :cond_0
     new-instance v0, Landroid/net/util/VersionedBroadcastListener$Receiver;
 
@@ -118,7 +103,6 @@
 
     iput-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 69
     iget-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -131,38 +115,32 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 70
     return-void
 .end method
 
 .method public stopListening()V
     .locals 2
 
-    .line 74
     iget-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 76
     :cond_0
     iget-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mGenerationNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 77
     iget-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 78
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/util/VersionedBroadcastListener;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 79
     return-void
 .end method

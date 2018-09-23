@@ -10,14 +10,9 @@
 # direct methods
 .method public constructor <init>(IBI)V
     .locals 0
-    .param p1, "length"    # I
-    .param p2, "type"    # B
-    .param p3, "subclass"    # I
 
-    .line 28
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/usb/descriptors/UsbACEndpoint;-><init>(IBI)V
 
-    .line 29
     return-void
 .end method
 
@@ -26,7 +21,6 @@
 .method public bridge synthetic getSubclass()I
     .locals 1
 
-    .line 23
     invoke-super {p0}, Lcom/android/server/usb/descriptors/UsbACEndpoint;->getSubclass()I
 
     move-result v0
@@ -37,7 +31,6 @@
 .method public bridge synthetic getSubtype()B
     .locals 1
 
-    .line 23
     invoke-super {p0}, Lcom/android/server/usb/descriptors/UsbACEndpoint;->getSubtype()B
 
     move-result v0
@@ -47,12 +40,9 @@
 
 .method public parseRawDescriptors(Lcom/android/server/usb/descriptors/ByteStream;)I
     .locals 2
-    .param p1, "stream"    # Lcom/android/server/usb/descriptors/ByteStream;
 
-    .line 33
     invoke-super {p0, p1}, Lcom/android/server/usb/descriptors/UsbACEndpoint;->parseRawDescriptors(Lcom/android/server/usb/descriptors/ByteStream;)I
 
-    .line 36
     iget v0, p0, Lcom/android/server/usb/descriptors/UsbACAudioStreamEndpoint;->mLength:I
 
     invoke-virtual {p1}, Lcom/android/server/usb/descriptors/ByteStream;->getReadCount()I
@@ -63,7 +53,6 @@
 
     invoke-virtual {p1, v0}, Lcom/android/server/usb/descriptors/ByteStream;->advance(I)V
 
-    .line 37
     iget v0, p0, Lcom/android/server/usb/descriptors/UsbACAudioStreamEndpoint;->mLength:I
 
     return v0

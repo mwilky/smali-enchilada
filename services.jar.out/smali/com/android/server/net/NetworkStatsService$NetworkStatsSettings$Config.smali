@@ -25,22 +25,14 @@
 # direct methods
 .method public constructor <init>(JJJ)V
     .locals 0
-    .param p1, "bucketDuration"    # J
-    .param p3, "rotateAgeMillis"    # J
-    .param p5, "deleteAgeMillis"    # J
 
-    .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 223
     iput-wide p1, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->bucketDuration:J
 
-    .line 224
     iput-wide p3, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->rotateAgeMillis:J
 
-    .line 225
     iput-wide p5, p0, Lcom/android/server/net/NetworkStatsService$NetworkStatsSettings$Config;->deleteAgeMillis:J
 
-    .line 226
     return-void
 .end method

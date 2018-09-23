@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModeMessage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModeMessage;
 
-    .line 48
     iput-object p1, p0, Lcom/android/server/OemSceneGameModeMessage$1;->this$0:Lcom/android/server/OemSceneGameModeMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 52
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeMessage$1;->this$0:Lcom/android/server/OemSceneGameModeMessage;
 
     iget-object v0, v0, Lcom/android/server/OemSceneGameModeMessage;->mPanel:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-virtual {v0}, Lcom/android/server/OemSceneGameModePanel;->hide()V
 
-    .line 54
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeMessage$1;->this$0:Lcom/android/server/OemSceneGameModeMessage;
 
     iget-object v0, v0, Lcom/android/server/OemSceneGameModeMessage;->mPanel:Lcom/android/server/OemSceneGameModePanel;
@@ -56,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/OemSceneGameModePanel;->showDetail(Z)V
 
-    .line 55
     return-void
 .end method

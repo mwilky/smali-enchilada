@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
 .method public isMeasurementSupported()Z
     .locals 1
 
-    .line 160
     invoke-static {}, Lcom/android/server/location/GnssMeasurementsProvider;->access$000()Z
 
     move-result v0
@@ -42,9 +40,7 @@
 
 .method public startMeasurementCollection(Z)Z
     .locals 1
-    .param p1, "enableFullTracking"    # Z
 
-    .line 164
     invoke-static {p1}, Lcom/android/server/location/GnssMeasurementsProvider;->access$100(Z)Z
 
     move-result v0
@@ -55,7 +51,6 @@
 .method public stopMeasurementCollection()Z
     .locals 1
 
-    .line 168
     invoke-static {}, Lcom/android/server/location/GnssMeasurementsProvider;->access$200()Z
 
     move-result v0

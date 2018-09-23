@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "fixed"    # Z
 
-    .line 1663
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1664
     iput-object p1, p0, Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy$DefaultPermissionGrant;->name:Ljava/lang/String;
 
-    .line 1665
     iput-boolean p2, p0, Lcom/android/server/pm/permission/DefaultPermissionGrantPolicy$DefaultPermissionGrant;->fixed:Z
 
-    .line 1666
     return-void
 .end method

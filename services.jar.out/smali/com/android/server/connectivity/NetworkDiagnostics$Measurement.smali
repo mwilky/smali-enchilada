@@ -39,19 +39,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/connectivity/NetworkDiagnostics;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/connectivity/NetworkDiagnostics;
 
-    .line 114
     iput-object p1, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 121
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->description:Ljava/lang/String;
 
-    .line 124
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->result:Ljava/lang/String;
@@ -62,7 +58,6 @@
 .method private maybeFixupTimes()V
     .locals 4
 
-    .line 150
     iget-wide v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->finishTime:J
 
     const-wide/16 v2, 0x0
@@ -77,7 +72,6 @@
 
     iput-wide v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->finishTime:J
 
-    .line 154
     :cond_0
     iget-wide v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->startTime:J
 
@@ -89,7 +83,6 @@
 
     iput-wide v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->startTime:J
 
-    .line 155
     :cond_1
     return-void
 .end method
@@ -99,7 +92,6 @@
 .method public checkSucceeded()Z
     .locals 1
 
-    .line 127
     iget-boolean v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->succeeded:Z
 
     return v0
@@ -107,17 +99,13 @@
 
 .method recordFailure(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 139
     invoke-direct {p0}, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->maybeFixupTimes()V
 
-    .line 140
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->succeeded:Z
 
-    .line 141
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -134,7 +122,6 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->result:Ljava/lang/String;
 
-    .line 142
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-static {v0}, Lcom/android/server/connectivity/NetworkDiagnostics;->access$000(Lcom/android/server/connectivity/NetworkDiagnostics;)Ljava/util/concurrent/CountDownLatch;
@@ -143,7 +130,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-static {v0}, Lcom/android/server/connectivity/NetworkDiagnostics;->access$000(Lcom/android/server/connectivity/NetworkDiagnostics;)Ljava/util/concurrent/CountDownLatch;
@@ -152,24 +138,19 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 145
     :cond_0
     return-void
 .end method
 
 .method recordSuccess(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 130
     invoke-direct {p0}, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->maybeFixupTimes()V
 
-    .line 131
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->succeeded:Z
 
-    .line 132
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -186,7 +167,6 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->result:Ljava/lang/String;
 
-    .line 133
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-static {v0}, Lcom/android/server/connectivity/NetworkDiagnostics;->access$000(Lcom/android/server/connectivity/NetworkDiagnostics;)Ljava/util/concurrent/CountDownLatch;
@@ -195,7 +175,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkDiagnostics$Measurement;->this$0:Lcom/android/server/connectivity/NetworkDiagnostics;
 
     invoke-static {v0}, Lcom/android/server/connectivity/NetworkDiagnostics;->access$000(Lcom/android/server/connectivity/NetworkDiagnostics;)Ljava/util/concurrent/CountDownLatch;
@@ -204,7 +183,6 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 136
     :cond_0
     return-void
 .end method
@@ -212,7 +190,6 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

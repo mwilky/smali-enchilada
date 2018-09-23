@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/BatteryService$HealthServiceWrapper;)V
     .locals 0
 
-    .line 1733
     iput-object p1, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
     invoke-direct {p0}, Landroid/hidl/manager/V1_0/IServiceNotification$Stub;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/BatteryService$HealthServiceWrapper;Lcom/android/server/BatteryService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/BatteryService$HealthServiceWrapper;
-    .param p2, "x1"    # Lcom/android/server/BatteryService$1;
 
-    .line 1733
     invoke-direct {p0, p1}, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;-><init>(Lcom/android/server/BatteryService$HealthServiceWrapper;)V
 
     return-void
@@ -45,11 +41,7 @@
 # virtual methods
 .method public final onRegistration(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 2
-    .param p1, "interfaceName"    # Ljava/lang/String;
-    .param p2, "instanceName"    # Ljava/lang/String;
-    .param p3, "preexisting"    # Z
 
-    .line 1737
     const-string v0, "android.hardware.health@2.0::IHealth"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -60,7 +52,6 @@
 
     return-void
 
-    .line 1738
     :cond_0
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
@@ -76,7 +67,6 @@
 
     return-void
 
-    .line 1742
     :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
 
@@ -94,6 +84,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1760
     return-void
 .end method

@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;IIZIILandroid/os/IBinder;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
-    .line 494
     iput-object p1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
     iput p2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$oldState:I
@@ -60,9 +58,7 @@
 
 .method private setDisplayBrightness(I)V
     .locals 3
-    .param p1, "brightness"    # I
 
-    .line 597
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -93,7 +89,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 600
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
@@ -103,23 +98,18 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/lights/Light;->setBrightness(I)V
 
-    .line 601
     const-string v0, "ScreenBrightness"
 
     invoke-static {v1, v2, v0, p1}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 604
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 605
     nop
 
-    .line 606
     return-void
 
-    .line 604
     :catchall_0
     move-exception v0
 
@@ -130,9 +120,7 @@
 
 .method private setDisplayState(I)V
     .locals 5
-    .param p1, "state"    # I
 
-    .line 557
     iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
     invoke-static {v0}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->access$100(Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;)Z
@@ -143,12 +131,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 558
     const-string v0, "SidekickInternal#endDisplayControl"
 
     invoke-static {v1, v2, v0}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 561
     :try_start_0
     iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
@@ -160,13 +146,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 563
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 564
     nop
 
-    .line 565
     iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
     const/4 v3, 0x0
@@ -175,7 +158,6 @@
 
     goto :goto_0
 
-    .line 563
     :catchall_0
     move-exception v0
 
@@ -183,15 +165,12 @@
 
     throw v0
 
-    .line 567
     :cond_0
     :goto_0
     invoke-static {p1}, Lcom/android/server/display/LocalDisplayAdapter;->getPowerModeForState(I)I
 
     move-result v0
 
-    .line 568
-    .local v0, "mode":I
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,7 +187,6 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 570
     invoke-static {p1}, Landroid/view/Display;->stateToString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -223,29 +201,23 @@
 
     move-result-object v3
 
-    .line 568
     invoke-static {v1, v2, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 572
     :try_start_1
     iget-object v3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$token:Landroid/os/IBinder;
 
     invoke-static {v3, v0}, Landroid/view/SurfaceControl;->setDisplayPowerMode(Landroid/os/IBinder;I)V
 
-    .line 573
     const-string v3, "DisplayPowerMode"
 
     invoke-static {v1, v2, v3, v0}, Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 575
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 576
     nop
 
-    .line 579
     invoke-static {p1}, Landroid/view/Display;->isSuspendedState(I)Z
 
     move-result v3
@@ -258,7 +230,6 @@
 
     iget-object v3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
-    .line 580
     invoke-static {v3}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->access$200(Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;)Landroid/hardware/sidekick/SidekickInternal;
 
     move-result-object v3
@@ -273,12 +244,10 @@
 
     if-nez v3, :cond_1
 
-    .line 581
     const-string v3, "SidekickInternal#startDisplayControl"
 
     invoke-static {v1, v2, v3}, Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V
 
-    .line 584
     :try_start_2
     iget-object v3, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
@@ -296,13 +265,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 586
     invoke-static {v1, v2}, Landroid/os/Trace;->traceEnd(J)V
 
-    .line 587
     goto :goto_1
 
-    .line 586
     :catchall_1
     move-exception v3
 
@@ -310,12 +276,10 @@
 
     throw v3
 
-    .line 589
     :cond_1
     :goto_1
     return-void
 
-    .line 575
     :catchall_2
     move-exception v3
 
@@ -326,9 +290,7 @@
 
 .method private setVrMode(Z)V
     .locals 1
-    .param p1, "isVrEnabled"    # Z
 
-    .line 545
     iget-object v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->this$1:Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;
 
     invoke-static {v0}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;->access$000(Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice;)Lcom/android/server/lights/Light;
@@ -337,7 +299,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/server/lights/Light;->setVrMode(Z)V
 
-    .line 546
     return-void
 .end method
 
@@ -346,11 +307,8 @@
 .method public run()V
     .locals 4
 
-    .line 498
     iget v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$oldState:I
 
-    .line 499
-    .local v0, "currentState":I
     iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$oldState:I
 
     invoke-static {v1}, Landroid/view/Display;->isSuspendedState(I)Z
@@ -363,7 +321,6 @@
 
     if-nez v1, :cond_6
 
-    .line 501
     :cond_0
     iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
@@ -373,17 +330,14 @@
 
     if-nez v1, :cond_1
 
-    .line 502
     iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     invoke-direct {p0, v1}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setDisplayState(I)V
 
-    .line 503
     iget v0, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     goto :goto_2
 
-    .line 504
     :cond_1
     iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
@@ -397,7 +351,6 @@
 
     goto :goto_1
 
-    .line 508
     :cond_2
     iget v1, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
@@ -411,39 +364,31 @@
 
     goto :goto_0
 
-    .line 513
     :cond_3
     return-void
 
-    .line 510
     :cond_4
     :goto_0
     const/4 v1, 0x2
 
     invoke-direct {p0, v1}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setDisplayState(I)V
 
-    .line 511
     const/4 v0, 0x2
 
     goto :goto_2
 
-    .line 506
     :cond_5
     :goto_1
     const/4 v1, 0x3
 
     invoke-direct {p0, v1}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setDisplayState(I)V
 
-    .line 507
     const/4 v0, 0x3
 
-    .line 520
     :cond_6
     :goto_2
     const/4 v1, 0x0
 
-    .line 521
-    .local v1, "vrModeChange":Z
     iget v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     const/4 v3, 0x5
@@ -457,7 +402,6 @@
 
     if-eq v0, v2, :cond_9
 
-    .line 523
     iget v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     if-ne v2, v3, :cond_8
@@ -472,10 +416,8 @@
     :goto_3
     invoke-direct {p0, v2}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setVrMode(Z)V
 
-    .line 524
     const/4 v1, 0x1
 
-    .line 529
     :cond_9
     iget-boolean v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$brightnessChanged:Z
 
@@ -483,24 +425,20 @@
 
     if-eqz v1, :cond_b
 
-    .line 530
     :cond_a
     iget v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$brightness:I
 
     invoke-direct {p0, v2}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setDisplayBrightness(I)V
 
-    .line 534
     :cond_b
     iget v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     if-eq v2, v0, :cond_c
 
-    .line 535
     iget v2, p0, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->val$state:I
 
     invoke-direct {p0, v2}, Lcom/android/server/display/LocalDisplayAdapter$LocalDisplayDevice$1;->setDisplayState(I)V
 
-    .line 537
     :cond_c
     return-void
 .end method

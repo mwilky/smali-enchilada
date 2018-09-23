@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;
 
-    .line 798
     iput-object p1, p0, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller$1;->this$0:Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;
 
     const/4 v0, 0x0
@@ -37,10 +35,7 @@
 # virtual methods
 .method public onSetPrintJobTagResult(ZI)V
     .locals 2
-    .param p1, "success"    # Z
-    .param p2, "sequence"    # I
 
-    .line 801
     iget-object v0, p0, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller$1;->this$0:Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -49,6 +44,5 @@
 
     invoke-static {v0, v1, p2}, Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;->access$900(Lcom/android/server/print/RemotePrintSpooler$SetPrintJobTagCaller;Ljava/lang/Object;I)V
 
-    .line 802
     return-void
 .end method

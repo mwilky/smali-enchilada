@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
-    .line 767
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,8 +45,6 @@
         }
     .end annotation
 
-    .line 770
-    .local p1, "deviceInfos":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/hdmi/HdmiDeviceInfo;>;"
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -66,17 +62,12 @@
 
     check-cast v1, Landroid/hardware/hdmi/HdmiDeviceInfo;
 
-    .line 771
-    .local v1, "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v2, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->addCecDevice(Landroid/hardware/hdmi/HdmiDeviceInfo;)V
 
-    .line 772
-    .end local v1    # "info":Landroid/hardware/hdmi/HdmiDeviceInfo;
     goto :goto_0
 
-    .line 777
     :cond_0
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
@@ -103,8 +94,6 @@
 
     check-cast v1, Lcom/android/server/hdmi/HdmiCecLocalDevice;
 
-    .line 778
-    .local v1, "device":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     iget-object v2, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v1}, Lcom/android/server/hdmi/HdmiCecLocalDevice;->getDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
@@ -113,11 +102,8 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->addCecDevice(Landroid/hardware/hdmi/HdmiDeviceInfo;)V
 
-    .line 779
-    .end local v1    # "device":Lcom/android/server/hdmi/HdmiCecLocalDevice;
     goto :goto_1
 
-    .line 781
     :cond_1
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
@@ -127,12 +113,10 @@
 
     invoke-virtual {v0}, Lcom/android/server/hdmi/SelectRequestBuffer;->process()V
 
-    .line 782
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-static {v0}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->access$300(Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;)V
 
-    .line 784
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     new-instance v1, Lcom/android/server/hdmi/HotplugDetectionAction;
@@ -143,7 +127,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->addAndStartAction(Lcom/android/server/hdmi/HdmiCecFeatureAction;)V
 
-    .line 785
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     new-instance v1, Lcom/android/server/hdmi/PowerStatusMonitorAction;
@@ -154,25 +137,20 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->addAndStartAction(Lcom/android/server/hdmi/HdmiCecFeatureAction;)V
 
-    .line 787
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v0}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->getAvrDeviceInfo()Landroid/hardware/hdmi/HdmiDeviceInfo;
 
     move-result-object v0
 
-    .line 788
-    .local v0, "avr":Landroid/hardware/hdmi/HdmiDeviceInfo;
     if-eqz v0, :cond_2
 
-    .line 789
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
     invoke-virtual {v1, v0}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->onNewAvrAdded(Landroid/hardware/hdmi/HdmiDeviceInfo;)V
 
     goto :goto_2
 
-    .line 791
     :cond_2
     iget-object v1, p0, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv$2;->this$0:Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;
 
@@ -180,7 +158,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/hdmi/HdmiCecLocalDeviceTv;->setSystemAudioMode(Z)V
 
-    .line 793
     :goto_2
     return-void
 .end method

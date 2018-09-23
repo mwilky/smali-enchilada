@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;Landroid/service/notification/StatusBarNotification;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;
 
-    .line 4840
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable$2;->this$1:Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable$2;->val$n:Landroid/service/notification/StatusBarNotification;
@@ -43,12 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 4843
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable$2;->this$1:Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService$PostNotificationRunnable;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$7500(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/GroupHelper;
+    invoke-static {v0}, Lcom/android/server/notification/NotificationManagerService;->access$7400(Lcom/android/server/notification/NotificationManagerService;)Lcom/android/server/notification/GroupHelper;
 
     move-result-object v0
 
@@ -56,6 +53,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/notification/GroupHelper;->onNotificationRemoved(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 4844
     return-void
 .end method

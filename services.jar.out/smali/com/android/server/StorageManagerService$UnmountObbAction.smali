@@ -23,20 +23,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
-    .param p2, "obbState"    # Lcom/android/server/StorageManagerService$ObbState;
-    .param p3, "force"    # Z
 
-    .line 3432
     iput-object p1, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
-    .line 3433
     invoke-direct {p0, p1, p2}, Lcom/android/server/StorageManagerService$ObbAction;-><init>(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;)V
 
-    .line 3434
     iput-boolean p3, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->mForceUnmount:Z
 
-    .line 3435
     return-void
 .end method
 
@@ -50,12 +43,10 @@
         }
     .end annotation
 
-    .line 3439
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$4600(Lcom/android/server/StorageManagerService;)V
 
-    .line 3442
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$4200(Lcom/android/server/StorageManagerService;)Ljava/util/Map;
@@ -64,7 +55,6 @@
 
     monitor-enter v0
 
-    .line 3443
     :try_start_0
     iget-object v1, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
@@ -82,16 +72,12 @@
 
     check-cast v1, Lcom/android/server/StorageManagerService$ObbState;
 
-    .line 3444
-    .local v1, "existingState":Lcom/android/server/StorageManagerService$ObbState;
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 3446
     if-eqz v1, :cond_1
 
-    .line 3450
     iget v0, v1, Lcom/android/server/StorageManagerService$ObbState;->ownerGid:I
 
     iget-object v2, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->mObbState:Lcom/android/server/StorageManagerService$ObbState;
@@ -100,7 +86,6 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 3451
     new-instance v0, Lcom/android/server/StorageManagerService$ObbException;
 
     const/16 v2, 0x19
@@ -137,10 +122,8 @@
 
     invoke-virtual {p0, v0}, Lcom/android/server/StorageManagerService$UnmountObbAction;->notifyObbStateChange(Lcom/android/server/StorageManagerService$ObbException;)V
 
-    .line 3454
     return-void
 
-    .line 3458
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
@@ -155,7 +138,6 @@
 
     invoke-interface {v0, v2}, Landroid/os/IVold;->unmount(Ljava/lang/String;)V
 
-    .line 3459
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$1200(Lcom/android/server/StorageManagerService;)Landroid/os/IVold;
@@ -168,14 +150,12 @@
 
     invoke-interface {v0, v2}, Landroid/os/IVold;->destroyObb(Ljava/lang/String;)V
 
-    .line 3460
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->mObbState:Lcom/android/server/StorageManagerService$ObbState;
 
     const/4 v2, 0x0
 
     iput-object v2, v0, Lcom/android/server/StorageManagerService$ObbState;->volId:Ljava/lang/String;
 
-    .line 3462
     iget-object v0, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v0}, Lcom/android/server/StorageManagerService;->access$4200(Lcom/android/server/StorageManagerService;)Ljava/util/Map;
@@ -186,18 +166,15 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 3463
     :try_start_2
     iget-object v2, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v2, v1}, Lcom/android/server/StorageManagerService;->access$4400(Lcom/android/server/StorageManagerService;Lcom/android/server/StorageManagerService$ObbState;)V
 
-    .line 3464
     monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 3466
     const/4 v0, 0x2
 
     :try_start_3
@@ -205,13 +182,10 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 3469
     nop
 
-    .line 3470
     return-void
 
-    .line 3464
     :catchall_0
     move-exception v2
 
@@ -225,12 +199,9 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
 
-    .line 3467
     :catch_0
     move-exception v0
 
-    .line 3468
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v2, Lcom/android/server/StorageManagerService$ObbException;
 
     const/16 v3, 0x16
@@ -239,8 +210,6 @@
 
     throw v2
 
-    .line 3447
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_1
     new-instance v0, Lcom/android/server/StorageManagerService$ObbException;
 
@@ -252,8 +221,6 @@
 
     throw v0
 
-    .line 3444
-    .end local v1    # "existingState":Lcom/android/server/StorageManagerService$ObbState;
     :catchall_1
     move-exception v1
 
@@ -268,38 +235,30 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 3474
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3475
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "UnmountObbAction{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3476
     iget-object v1, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->mObbState:Lcom/android/server/StorageManagerService$ObbState;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 3477
     const-string v1, ",force="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3478
     iget-boolean v1, p0, Lcom/android/server/StorageManagerService$UnmountObbAction;->mForceUnmount:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 3479
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 3480
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

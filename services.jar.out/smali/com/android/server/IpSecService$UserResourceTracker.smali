@@ -33,10 +33,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 441
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -48,9 +46,7 @@
 
 .method private checkCallerUid(I)V
     .locals 2
-    .param p1, "uid"    # I
 
-    .line 457
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -59,7 +55,6 @@
 
     const/16 v0, 0x3e8
 
-    .line 458
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
@@ -68,7 +63,6 @@
 
     goto :goto_0
 
-    .line 459
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -78,7 +72,6 @@
 
     throw v0
 
-    .line 461
     :cond_1
     :goto_0
     return-void
@@ -88,12 +81,9 @@
 # virtual methods
 .method public getUserRecord(I)Lcom/android/server/IpSecService$UserRecord;
     .locals 2
-    .param p1, "uid"    # I
 
-    .line 445
     invoke-direct {p0, p1}, Lcom/android/server/IpSecService$UserResourceTracker;->checkCallerUid(I)V
 
-    .line 447
     iget-object v0, p0, Lcom/android/server/IpSecService$UserResourceTracker;->mUserRecords:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -102,23 +92,18 @@
 
     check-cast v0, Lcom/android/server/IpSecService$UserRecord;
 
-    .line 448
-    .local v0, "r":Lcom/android/server/IpSecService$UserRecord;
     if-nez v0, :cond_0
 
-    .line 449
     new-instance v1, Lcom/android/server/IpSecService$UserRecord;
 
     invoke-direct {v1}, Lcom/android/server/IpSecService$UserRecord;-><init>()V
 
     move-object v0, v1
 
-    .line 450
     iget-object v1, p0, Lcom/android/server/IpSecService$UserResourceTracker;->mUserRecords:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 452
     :cond_0
     return-object v0
 .end method
@@ -126,7 +111,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 465
     iget-object v0, p0, Lcom/android/server/IpSecService$UserResourceTracker;->mUserRecords:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->toString()Ljava/lang/String;

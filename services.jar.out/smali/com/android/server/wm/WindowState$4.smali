@@ -46,9 +46,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowState;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;ZLandroid/util/MergedConfiguration;ZILandroid/view/DisplayCutout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/wm/WindowState;
 
-    .line 3244
     iput-object p1, p0, Lcom/android/server/wm/WindowState$4;->this$0:Lcom/android/server/wm/WindowState;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowState$4;->val$frame:Landroid/graphics/Rect;
@@ -83,7 +81,6 @@
 .method public run()V
     .locals 12
 
-    .line 3248
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/WindowState$4;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -113,14 +110,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3253
     goto :goto_0
 
-    .line 3251
     :catch_0
     move-exception v0
 
-    .line 3254
     :goto_0
     return-void
 .end method

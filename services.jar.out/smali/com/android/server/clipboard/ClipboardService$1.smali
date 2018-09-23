@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/clipboard/ClipboardService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/clipboard/ClipboardService;
 
-    .line 185
     iput-object p1, p0, Lcom/android/server/clipboard/ClipboardService$1;->this$0:Lcom/android/server/clipboard/ClipboardService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,10 @@
 # virtual methods
 .method public onHostClipboardUpdated(Ljava/lang/String;)V
     .locals 5
-    .param p1, "contents"    # Ljava/lang/String;
 
-    .line 188
     new-instance v0, Landroid/content/ClipData;
 
-    const-string/jumbo v1, "host clipboard"
+    const-string v1, "host clipboard"
 
     const-string/jumbo v2, "text/plain"
 
@@ -57,8 +53,6 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/content/ClipData;-><init>(Ljava/lang/CharSequence;[Ljava/lang/String;Landroid/content/ClipData$Item;)V
 
-    .line 192
-    .local v0, "clip":Landroid/content/ClipData;
     iget-object v1, p0, Lcom/android/server/clipboard/ClipboardService$1;->this$0:Lcom/android/server/clipboard/ClipboardService;
 
     invoke-static {v1}, Lcom/android/server/clipboard/ClipboardService;->access$000(Lcom/android/server/clipboard/ClipboardService;)Landroid/util/SparseArray;
@@ -67,7 +61,6 @@
 
     monitor-enter v1
 
-    .line 193
     :try_start_0
     iget-object v2, p0, Lcom/android/server/clipboard/ClipboardService$1;->this$0:Lcom/android/server/clipboard/ClipboardService;
 
@@ -83,13 +76,10 @@
 
     invoke-virtual {v2, v3, v0, v4}, Lcom/android/server/clipboard/ClipboardService;->setPrimaryClipInternal(Lcom/android/server/clipboard/ClipboardService$PerUserClipboard;Landroid/content/ClipData;I)V
 
-    .line 195
     monitor-exit v1
 
-    .line 196
     return-void
 
-    .line 195
     :catchall_0
     move-exception v2
 

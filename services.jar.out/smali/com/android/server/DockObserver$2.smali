@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DockObserver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/DockObserver;
 
-    .line 237
     iput-object p1, p0, Lcom/android/server/DockObserver$2;->this$0:Lcom/android/server/DockObserver;
 
     invoke-direct {p0}, Landroid/os/UEventObserver;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onUEvent(Landroid/os/UEventObserver$UEvent;)V
     .locals 4
-    .param p1, "event"    # Landroid/os/UEventObserver$UEvent;
 
-    .line 240
     const-string v0, "DockObserver"
 
     const/4 v1, 0x2
@@ -48,7 +44,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 241
     const-string v0, "DockObserver"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -71,7 +66,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 245
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/server/DockObserver$2;->this$0:Lcom/android/server/DockObserver;
@@ -84,7 +78,6 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 246
     :try_start_1
     iget-object v1, p0, Lcom/android/server/DockObserver$2;->this$0:Lcom/android/server/DockObserver;
 
@@ -100,13 +93,10 @@
 
     invoke-static {v1, v2}, Lcom/android/server/DockObserver;->access$400(Lcom/android/server/DockObserver;I)V
 
-    .line 247
     monitor-exit v0
 
-    .line 250
     goto :goto_0
 
-    .line 247
     :catchall_0
     move-exception v1
 
@@ -119,12 +109,9 @@
     :try_end_2
     .catch Ljava/lang/NumberFormatException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 248
     :catch_0
     move-exception v0
 
-    .line 249
-    .local v0, "e":Ljava/lang/NumberFormatException;
     const-string v1, "DockObserver"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -143,8 +130,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 251
-    .end local v0    # "e":Ljava/lang/NumberFormatException;
     :goto_0
     return-void
 .end method

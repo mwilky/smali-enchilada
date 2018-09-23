@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21
     invoke-direct {p0}, Lcom/android/server/IntentResolver;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method protected bridge synthetic isPackageForFilter(Ljava/lang/String;Landroid/content/IntentFilter;)Z
     .locals 0
 
-    .line 21
     check-cast p2, Lcom/android/server/pm/PersistentPreferredActivity;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/server/pm/PersistentPreferredIntentResolver;->isPackageForFilter(Ljava/lang/String;Lcom/android/server/pm/PersistentPreferredActivity;)Z
@@ -41,10 +39,7 @@
 
 .method protected isPackageForFilter(Ljava/lang/String;Lcom/android/server/pm/PersistentPreferredActivity;)Z
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "filter"    # Lcom/android/server/pm/PersistentPreferredActivity;
 
-    .line 30
     iget-object v0, p2, Lcom/android/server/pm/PersistentPreferredActivity;->mComponent:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -61,7 +56,6 @@
 .method protected bridge synthetic newArray(I)[Landroid/content/IntentFilter;
     .locals 0
 
-    .line 21
     invoke-virtual {p0, p1}, Lcom/android/server/pm/PersistentPreferredIntentResolver;->newArray(I)[Lcom/android/server/pm/PersistentPreferredActivity;
 
     move-result-object p1
@@ -71,9 +65,7 @@
 
 .method protected newArray(I)[Lcom/android/server/pm/PersistentPreferredActivity;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 25
     new-array v0, p1, [Lcom/android/server/pm/PersistentPreferredActivity;
 
     return-object v0

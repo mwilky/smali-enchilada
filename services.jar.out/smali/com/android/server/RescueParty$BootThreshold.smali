@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 275
     const/4 v0, 0x0
 
     const/4 v1, 0x5
@@ -27,7 +26,6 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/server/RescueParty$Threshold;-><init>(IIJ)V
 
-    .line 276
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public getCount()I
     .locals 2
 
-    .line 280
     const-string/jumbo v0, "sys.rescue_boot_count"
 
     const/4 v1, 0x0
@@ -51,7 +48,6 @@
 .method public getStart()J
     .locals 3
 
-    .line 290
     const-string/jumbo v0, "sys.rescue_boot_start"
 
     const-wide/16 v1, 0x0
@@ -65,9 +61,7 @@
 
 .method public setCount(I)V
     .locals 2
-    .param p1, "count"    # I
 
-    .line 285
     const-string/jumbo v0, "sys.rescue_boot_count"
 
     invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -76,15 +70,12 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 286
     return-void
 .end method
 
 .method public setStart(J)V
     .locals 2
-    .param p1, "start"    # J
 
-    .line 295
     const-string/jumbo v0, "sys.rescue_boot_start"
 
     invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
@@ -93,6 +84,5 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 296
     return-void
 .end method

@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/Watchdog;Ljava/lang/String;J)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/Watchdog;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 694
     iput-object p1, p0, Lcom/android/server/Watchdog$2;->this$0:Lcom/android/server/Watchdog;
 
     iput-wide p3, p0, Lcom/android/server/Watchdog$2;->val$timeout:J
@@ -41,7 +38,6 @@
 .method public run()V
     .locals 4
 
-    .line 696
     iget-wide v0, p0, Lcom/android/server/Watchdog$2;->val$timeout:J
 
     const-wide/16 v2, 0x7530
@@ -50,7 +46,6 @@
 
     if-nez v0, :cond_0
 
-    .line 697
     iget-object v0, p0, Lcom/android/server/Watchdog$2;->this$0:Lcom/android/server/Watchdog;
 
     iget-object v0, v0, Lcom/android/server/Watchdog;->mActivity:Lcom/android/server/am/ActivityManagerService;
@@ -59,7 +54,6 @@
 
     goto :goto_0
 
-    .line 699
     :cond_0
     iget-object v0, p0, Lcom/android/server/Watchdog$2;->this$0:Lcom/android/server/Watchdog;
 
@@ -69,7 +63,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->cleanupProcesses(J)V
 
-    .line 701
     :goto_0
     return-void
 .end method

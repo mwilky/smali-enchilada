@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accessibility/MagnificationGestureHandler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accessibility/MagnificationGestureHandler;
 
-    .line 521
     iput-object p1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,38 +41,28 @@
 .method public clear()V
     .locals 1
 
-    .line 571
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->mLastMoveOutsideMagnifiedRegion:Z
 
-    .line 572
     return-void
 .end method
 
 .method public onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 6
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "rawEvent"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 529
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    .line 530
-    .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
     :pswitch_0
     goto :goto_1
 
-    .line 532
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->clear()V
 
-    .line 533
     iget-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v2, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
@@ -83,10 +71,8 @@
 
     invoke-static {v1, v2}, Lcom/android/server/accessibility/MagnificationGestureHandler;->access$200(Lcom/android/server/accessibility/MagnificationGestureHandler;Lcom/android/server/accessibility/MagnificationGestureHandler$State;)V
 
-    .line 535
     goto :goto_1
 
-    .line 537
     :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -96,19 +82,14 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 540
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
-    .line 541
-    .local v1, "eventX":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
-    .line 542
-    .local v3, "eventY":F
     iget-object v4, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v4, v4, Lcom/android/server/accessibility/MagnificationGestureHandler;->mMagnificationController:Lcom/android/server/accessibility/MagnificationController;
@@ -119,7 +100,6 @@
 
     if-eqz v4, :cond_0
 
-    .line 543
     iget-object v2, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v2, v2, Lcom/android/server/accessibility/MagnificationGestureHandler;->mMagnificationController:Lcom/android/server/accessibility/MagnificationController;
@@ -130,22 +110,16 @@
 
     invoke-virtual {v2, v1, v3, v4, v5}, Lcom/android/server/accessibility/MagnificationController;->setCenter(FFZI)Z
 
-    .line 546
     iput-boolean v5, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->mLastMoveOutsideMagnifiedRegion:Z
 
     goto :goto_0
 
-    .line 548
     :cond_0
     iput-boolean v2, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->mLastMoveOutsideMagnifiedRegion:Z
 
-    .line 551
-    .end local v1    # "eventX":F
-    .end local v3    # "eventY":F
     :goto_0
     goto :goto_1
 
-    .line 538
     :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -155,7 +129,6 @@
 
     throw v1
 
-    .line 555
     :pswitch_3
     iget-boolean v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->mZoomedInBeforeDrag:Z
 
@@ -165,11 +138,9 @@
 
     invoke-static {v1}, Lcom/android/server/accessibility/MagnificationGestureHandler;->access$300(Lcom/android/server/accessibility/MagnificationGestureHandler;)V
 
-    .line 556
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->clear()V
 
-    .line 557
     iget-object v1, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     iget-object v2, p0, Lcom/android/server/accessibility/MagnificationGestureHandler$ViewportDraggingState;->this$0:Lcom/android/server/accessibility/MagnificationGestureHandler;
@@ -178,10 +149,8 @@
 
     invoke-static {v1, v2}, Lcom/android/server/accessibility/MagnificationGestureHandler;->access$200(Lcom/android/server/accessibility/MagnificationGestureHandler;Lcom/android/server/accessibility/MagnificationGestureHandler$State;)V
 
-    .line 559
     goto :goto_1
 
-    .line 563
     :pswitch_4
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -193,7 +162,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 564
     invoke-static {v0}, Landroid/view/MotionEvent;->actionToString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -208,7 +176,6 @@
 
     throw v1
 
-    .line 567
     :goto_1
     return-void
 
@@ -227,7 +194,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 576
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

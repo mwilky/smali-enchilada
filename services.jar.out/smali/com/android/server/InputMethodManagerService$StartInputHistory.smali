@@ -36,10 +36,8 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 695
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 723
     invoke-static {}, Lcom/android/server/InputMethodManagerService$StartInputHistory;->getEntrySize()I
 
     move-result v0
@@ -48,7 +46,6 @@
 
     iput-object v0, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
-    .line 729
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mNextIndex:I
@@ -58,9 +55,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/InputMethodManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/InputMethodManagerService$1;
 
-    .line 695
     invoke-direct {p0}, Lcom/android/server/InputMethodManagerService$StartInputHistory;-><init>()V
 
     return-void
@@ -69,19 +64,16 @@
 .method private static getEntrySize()I
     .locals 1
 
-    .line 713
     invoke-static {}, Landroid/app/ActivityManager;->isLowRamDeviceStatic()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 714
     const/4 v0, 0x5
 
     return v0
 
-    .line 716
     :cond_0
     const/16 v0, 0x10
 
@@ -92,20 +84,15 @@
 # virtual methods
 .method addEntry(Lcom/android/server/InputMethodManagerService$StartInputInfo;)V
     .locals 3
-    .param p1, "info"    # Lcom/android/server/InputMethodManagerService$StartInputInfo;
 
-    .line 780
     iget v0, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mNextIndex:I
 
-    .line 781
-    .local v0, "index":I
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
     aget-object v1, v1, v0
 
     if-nez v1, :cond_0
 
-    .line 782
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
     new-instance v2, Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
@@ -116,7 +103,6 @@
 
     goto :goto_0
 
-    .line 784
     :cond_0
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
@@ -124,7 +110,6 @@
 
     invoke-virtual {v1, p1}, Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;->set(Lcom/android/server/InputMethodManagerService$StartInputInfo;)V
 
-    .line 786
     :goto_0
     iget v1, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mNextIndex:I
 
@@ -138,16 +123,12 @@
 
     iput v1, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mNextIndex:I
 
-    .line 787
     return-void
 .end method
 
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 7
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 790
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v1, "yyyy-MM-dd HH:mm:ss.SSS"
@@ -156,12 +137,8 @@
 
     invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    .line 793
-    .local v0, "dataFormat":Ljava/text/SimpleDateFormat;
     const/4 v1, 0x0
 
-    .line 793
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
@@ -169,7 +146,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 794
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mEntries:[Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
 
     iget v3, p0, Lcom/android/server/InputMethodManagerService$StartInputHistory;->mNextIndex:I
@@ -184,18 +160,13 @@
 
     aget-object v2, v2, v3
 
-    .line 795
-    .local v2, "entry":Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
     if-nez v2, :cond_0
 
-    .line 796
     goto/16 :goto_1
 
-    .line 798
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 799
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -218,10 +189,8 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 801
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 802
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -256,7 +225,6 @@
 
     iget v4, v2, Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;->mStartInputReason:I
 
-    .line 805
     invoke-static {v4}, Lcom/android/internal/view/InputMethodClient;->getStartInputReason(I)Ljava/lang/String;
 
     move-result-object v4
@@ -275,13 +243,10 @@
 
     move-result-object v3
 
-    .line 802
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 808
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 809
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -312,10 +277,8 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 811
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 812
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -352,10 +315,8 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 816
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 817
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -378,10 +339,8 @@
 
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 820
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 821
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -408,7 +367,6 @@
 
     iget v4, v4, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
-    .line 822
     invoke-static {v4}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -423,7 +381,6 @@
 
     iget v4, v4, Landroid/view/inputmethod/EditorInfo;->fieldId:I
 
-    .line 823
     invoke-static {v4}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -464,18 +421,13 @@
 
     move-result-object v3
 
-    .line 821
     invoke-virtual {p1, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 793
-    .end local v2    # "entry":Lcom/android/server/InputMethodManagerService$StartInputHistory$Entry;
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    .line 828
-    .end local v1    # "i":I
     :cond_1
     return-void
 .end method

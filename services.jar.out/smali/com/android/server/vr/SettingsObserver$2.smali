@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/vr/SettingsObserver;Landroid/os/Handler;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/vr/SettingsObserver;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 84
     iput-object p1, p0, Lcom/android/server/vr/SettingsObserver$2;->this$0:Lcom/android/server/vr/SettingsObserver;
 
     iput-object p3, p0, Lcom/android/server/vr/SettingsObserver$2;->val$settingUri:Landroid/net/Uri;
@@ -40,10 +37,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 87
     if-eqz p2, :cond_0
 
     iget-object v0, p0, Lcom/android/server/vr/SettingsObserver$2;->val$settingUri:Landroid/net/Uri;
@@ -54,13 +48,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 88
     :cond_0
     iget-object v0, p0, Lcom/android/server/vr/SettingsObserver$2;->this$0:Lcom/android/server/vr/SettingsObserver;
 
     invoke-static {v0}, Lcom/android/server/vr/SettingsObserver;->access$100(Lcom/android/server/vr/SettingsObserver;)V
 
-    .line 90
     :cond_1
     return-void
 .end method

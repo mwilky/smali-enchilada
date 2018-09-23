@@ -25,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,17 +34,13 @@
 # virtual methods
 .method public compare(Lcom/android/server/notification/NotificationRecord;Lcom/android/server/notification/NotificationRecord;)I
     .locals 3
-    .param p1, "left"    # Lcom/android/server/notification/NotificationRecord;
-    .param p2, "right"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 30
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getGlobalSortKey()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 31
     const-string v0, "GlobalSortComp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,12 +59,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 32
     const/4 v0, 0x1
 
     return v0
 
-    .line 34
     :cond_0
     invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getGlobalSortKey()Ljava/lang/String;
 
@@ -77,7 +70,6 @@
 
     if-nez v0, :cond_1
 
-    .line 35
     const-string v0, "GlobalSortComp"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -96,12 +88,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 36
     const/4 v0, -0x1
 
     return v0
 
-    .line 38
     :cond_1
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getGlobalSortKey()Ljava/lang/String;
 
@@ -121,7 +111,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 25
     check-cast p1, Lcom/android/server/notification/NotificationRecord;
 
     check-cast p2, Lcom/android/server/notification/NotificationRecord;

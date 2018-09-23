@@ -99,10 +99,7 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;Landroid/content/ContentResolver;)V
     .locals 1
-    .param p1, "handler"    # Landroid/os/Handler;
-    .param p2, "resolver"    # Landroid/content/ContentResolver;
 
-    .line 92
     const-string v0, "backup_agent_timeout_parameters"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -111,14 +108,12 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/util/KeyValueSettingObserver;-><init>(Landroid/os/Handler;Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    .line 89
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
-    .line 93
     return-void
 .end method
 
@@ -127,12 +122,10 @@
 .method public getFullBackupAgentTimeoutMillis()J
     .locals 5
 
-    .line 134
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 136
     :try_start_0
     const-string v1, "BackupAgentTimeout"
 
@@ -154,14 +147,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
     iget-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mFullBackupAgentTimeoutMillis:J
 
     monitor-exit v0
 
     return-wide v1
 
-    .line 139
     :catchall_0
     move-exception v1
 
@@ -175,12 +166,10 @@
 .method public getKvBackupAgentTimeoutMillis()J
     .locals 5
 
-    .line 125
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 127
     :try_start_0
     const-string v1, "BackupAgentTimeout"
 
@@ -202,14 +191,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 129
     iget-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mKvBackupAgentTimeoutMillis:J
 
     monitor-exit v0
 
     return-wide v1
 
-    .line 130
     :catchall_0
     move-exception v1
 
@@ -223,12 +210,10 @@
 .method public getRestoreAgentFinishedTimeoutMillis()J
     .locals 5
 
-    .line 163
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 165
     :try_start_0
     const-string v1, "BackupAgentTimeout"
 
@@ -250,14 +235,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
     iget-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mRestoreAgentFinishedTimeoutMillis:J
 
     monitor-exit v0
 
     return-wide v1
 
-    .line 171
     :catchall_0
     move-exception v1
 
@@ -271,12 +254,10 @@
 .method public getRestoreAgentTimeoutMillis()J
     .locals 5
 
-    .line 154
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 156
     :try_start_0
     const-string v1, "BackupAgentTimeout"
 
@@ -298,14 +279,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
     iget-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mRestoreAgentTimeoutMillis:J
 
     monitor-exit v0
 
     return-wide v1
 
-    .line 159
     :catchall_0
     move-exception v1
 
@@ -318,9 +297,7 @@
 
 .method public getSettingValue(Landroid/content/ContentResolver;)Ljava/lang/String;
     .locals 1
-    .param p1, "resolver"    # Landroid/content/ContentResolver;
 
-    .line 96
     const-string v0, "backup_agent_timeout_parameters"
 
     invoke-static {p1, v0}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
@@ -333,12 +310,10 @@
 .method public getSharedBackupAgentTimeoutMillis()J
     .locals 5
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 145
     :try_start_0
     const-string v1, "BackupAgentTimeout"
 
@@ -360,14 +335,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
     iget-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mSharedBackupAgentTimeoutMillis:J
 
     monitor-exit v0
 
     return-wide v1
 
-    .line 150
     :catchall_0
     move-exception v1
 
@@ -380,18 +353,14 @@
 
 .method public update(Landroid/util/KeyValueListParser;)V
     .locals 6
-    .param p1, "parser"    # Landroid/util/KeyValueListParser;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 101
     :try_start_0
     const-string/jumbo v1, "kv_backup_agent_timeout_millis"
 
-    .line 102
     const-wide/16 v2, 0x7530
 
     invoke-virtual {p1, v1, v2, v3}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
@@ -400,59 +369,48 @@
 
     iput-wide v4, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mKvBackupAgentTimeoutMillis:J
 
-    .line 105
     const-string v1, "full_backup_agent_timeout_millis"
 
     const-wide/32 v4, 0x493e0
 
-    .line 106
     invoke-virtual {p1, v1, v4, v5}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mFullBackupAgentTimeoutMillis:J
 
-    .line 109
     const-string/jumbo v1, "shared_backup_agent_timeout_millis"
 
     const-wide/32 v4, 0x1b7740
 
-    .line 110
     invoke-virtual {p1, v1, v4, v5}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mSharedBackupAgentTimeoutMillis:J
 
-    .line 113
     const-string/jumbo v1, "restore_agent_timeout_millis"
 
     const-wide/32 v4, 0xea60
 
-    .line 114
     invoke-virtual {p1, v1, v4, v5}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
     iput-wide v4, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mRestoreAgentTimeoutMillis:J
 
-    .line 117
     const-string/jumbo v1, "restore_agent_finished_timeout_millis"
 
-    .line 118
     invoke-virtual {p1, v1, v2, v3}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/server/backup/BackupAgentTimeoutParameters;->mRestoreAgentFinishedTimeoutMillis:J
 
-    .line 121
     monitor-exit v0
 
-    .line 122
     return-void
 
-    .line 121
     :catchall_0
     move-exception v1
 

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/WindowState;Landroid/graphics/Rect;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/wm/WindowState;
 
-    .line 900
     iput-object p1, p0, Lcom/android/server/wm/WindowState$3;->this$0:Lcom/android/server/wm/WindowState;
 
     iput-object p2, p0, Lcom/android/server/wm/WindowState$3;->val$pf:Landroid/graphics/Rect;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 904
     :try_start_0
     iget-object v0, p0, Lcom/android/server/wm/WindowState$3;->val$pf:Landroid/graphics/Rect;
 
@@ -67,12 +64,9 @@
 
     goto :goto_0
 
-    .line 905
     :cond_0
     sget v0, Lcom/android/server/wm/WindowManagerService;->mLandLeft:I
 
-    .line 906
-    .local v0, "offSet":I
     :goto_0
     iget-object v1, p0, Lcom/android/server/wm/WindowState$3;->this$0:Lcom/android/server/wm/WindowState;
 
@@ -84,16 +78,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 909
-    .end local v0    # "offSet":I
     goto :goto_1
 
-    .line 907
     :catch_0
     move-exception v0
 
-    .line 908
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -112,8 +101,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 910
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_1
     return-void
 .end method

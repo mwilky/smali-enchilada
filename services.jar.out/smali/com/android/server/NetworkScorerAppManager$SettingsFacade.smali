@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,11 +27,7 @@
 # virtual methods
 .method public getInt(Landroid/content/Context;Ljava/lang/String;I)I
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 408
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -46,11 +41,7 @@
 
 .method public getSecureInt(Landroid/content/Context;Ljava/lang/String;I)I
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "defaultValue"    # I
 
-    .line 412
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -64,10 +55,7 @@
 
 .method public getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 400
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -81,11 +69,7 @@
 
 .method public putInt(Landroid/content/Context;Ljava/lang/String;I)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "value"    # I
 
-    .line 404
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -99,11 +83,7 @@
 
 .method public putString(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "value"    # Ljava/lang/String;
 
-    .line 396
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0

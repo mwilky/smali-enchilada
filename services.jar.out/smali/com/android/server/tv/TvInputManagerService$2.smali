@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/tv/TvInputManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/tv/TvInputManagerService;
 
-    .line 245
     iput-object p1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 248
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 249
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -55,7 +48,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 250
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     const-string v3, "android.intent.extra.user_handle"
@@ -68,7 +60,6 @@
 
     goto :goto_0
 
-    .line 251
     :cond_0
     const-string v1, "android.intent.action.USER_REMOVED"
 
@@ -78,7 +69,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 252
     iget-object v1, p0, Lcom/android/server/tv/TvInputManagerService$2;->this$0:Lcom/android/server/tv/TvInputManagerService;
 
     const-string v3, "android.intent.extra.user_handle"
@@ -89,7 +79,6 @@
 
     invoke-static {v1, v2}, Lcom/android/server/tv/TvInputManagerService;->access$700(Lcom/android/server/tv/TvInputManagerService;I)V
 
-    .line 254
     :cond_1
     :goto_0
     return-void

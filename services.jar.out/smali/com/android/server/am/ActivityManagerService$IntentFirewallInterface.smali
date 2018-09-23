@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/ActivityManagerService;
 
-    .line 10536
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,7 @@
 # virtual methods
 .method public checkComponentPermission(Ljava/lang/String;IIIZ)I
     .locals 6
-    .param p1, "permission"    # Ljava/lang/String;
-    .param p2, "pid"    # I
-    .param p3, "uid"    # I
-    .param p4, "owningUid"    # I
-    .param p5, "exported"    # Z
 
-    .line 10540
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     move-object v1, p1
@@ -67,7 +59,6 @@
 .method public getAMSLock()Ljava/lang/Object;
     .locals 1
 
-    .line 10546
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$IntentFirewallInterface;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     return-object v0

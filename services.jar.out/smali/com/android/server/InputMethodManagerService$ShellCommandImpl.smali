@@ -21,10 +21,7 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Throwable;
-    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
-    .line 4877
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -50,25 +47,19 @@
 
 .method constructor <init>(Lcom/android/server/InputMethodManagerService;)V
     .locals 0
-    .param p1, "service"    # Lcom/android/server/InputMethodManagerService;
 
-    .line 4808
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
 
-    .line 4809
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
-    .line 4810
     return-void
 .end method
 
 .method private onImeCommandHelp()V
     .locals 4
 
-    .line 4881
     new-instance v0, Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4882
     invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v1
@@ -79,138 +70,103 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/android/internal/util/IndentingPrintWriter;-><init>(Ljava/io/Writer;Ljava/lang/String;I)V
 
-    .line 4881
-    .local v0, "pw":Lcom/android/internal/util/IndentingPrintWriter;
     nop
 
-    .line 4883
     const/4 v1, 0x0
 
     :try_start_0
-    const-string/jumbo v2, "ime <command>:"
+    const-string v2, "ime <command>:"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4884
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4886
     const-string/jumbo v2, "list [-a] [-s]"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4887
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4888
     const-string/jumbo v2, "prints all enabled input methods."
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4889
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4890
     const-string v2, "-a: see all input methods"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4891
     const-string v2, "-s: only a single summary line of each"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4892
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4893
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4895
     const-string v2, "enable <ID>"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4896
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4897
     const-string v2, "allows the given input method ID to be used."
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4898
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4900
     const-string v2, "disable <ID>"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4901
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4902
     const-string v2, "disallows the given input method ID to be used."
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4903
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4905
     const-string/jumbo v2, "set <ID>"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4906
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4907
     const-string/jumbo v2, "switches to the given input method ID."
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4908
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4910
     const-string/jumbo v2, "reset"
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4911
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->increaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4912
     const-string/jumbo v2, "reset currently selected/enabled IMEs to the default ones as if the device is initially booted with the current locale."
 
     invoke-virtual {v0, v2}, Lcom/android/internal/util/IndentingPrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4914
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
 
-    .line 4916
     invoke-virtual {v0}, Lcom/android/internal/util/IndentingPrintWriter;->decreaseIndent()Lcom/android/internal/util/IndentingPrintWriter;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4917
     invoke-static {v1, v0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 4918
-    .end local v0    # "pw":Lcom/android/internal/util/IndentingPrintWriter;
     return-void
 
-    .line 4917
-    .restart local v0    # "pw":Lcom/android/internal/util/IndentingPrintWriter;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
-    .line 4881
     :catch_0
     move-exception v1
 
@@ -219,7 +175,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4917
     :goto_0
     invoke-static {v1, v0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
@@ -229,12 +184,10 @@
 .method private refreshDebugProperties()I
     .locals 1
 
-    .line 4859
     sget-object v0, Lcom/android/server/InputMethodManagerService$DebugFlags;->FLAG_OPTIMIZE_START_INPUT:Lcom/android/server/InputMethodManagerService$DebugFlag;
 
     invoke-virtual {v0}, Lcom/android/server/InputMethodManagerService$DebugFlag;->refresh()V
 
-    .line 4860
     const/4 v0, 0x0
 
     return v0
@@ -243,7 +196,6 @@
 .method private setBindInstantServiceAllowed()I
     .locals 1
 
-    .line 4853
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
     invoke-static {v0, p0}, Lcom/android/server/InputMethodManagerService;->access$2100(Lcom/android/server/InputMethodManagerService;Landroid/os/ShellCommand;)I
@@ -257,9 +209,7 @@
 # virtual methods
 .method public onCommand(Ljava/lang/String;)I
     .locals 5
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 4816
     const-string/jumbo v0, "refresh_debug_properties"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -268,14 +218,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 4817
     invoke-direct {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->refreshDebugProperties()I
 
     move-result v0
 
     return v0
 
-    .line 4819
     :cond_0
     const-string/jumbo v0, "set-bind-instant-service-allowed"
 
@@ -285,16 +233,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 4820
     invoke-direct {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->setBindInstantServiceAllowed()I
 
     move-result v0
 
     return v0
 
-    .line 4824
     :cond_1
-    const-string/jumbo v0, "ime"
+    const-string v0, "ime"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -302,13 +248,10 @@
 
     if-eqz v0, :cond_5
 
-    .line 4825
     invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->getNextArg()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 4826
-    .local v0, "imeCommand":Ljava/lang/String;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_4
@@ -331,7 +274,6 @@
 
     goto/16 :goto_2
 
-    .line 4830
     :cond_2
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -417,7 +359,6 @@
     :goto_1
     packed-switch v2, :pswitch_data_0
 
-    .line 4842
     invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v1
@@ -438,10 +379,8 @@
 
     invoke-virtual {v1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4843
     return v4
 
-    .line 4840
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
@@ -451,7 +390,6 @@
 
     return v1
 
-    .line 4838
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
@@ -461,7 +399,6 @@
 
     return v1
 
-    .line 4836
     :pswitch_2
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
@@ -471,7 +408,6 @@
 
     return v1
 
-    .line 4834
     :pswitch_3
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
@@ -481,7 +417,6 @@
 
     return v1
 
-    .line 4832
     :pswitch_4
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->mService:Lcom/android/server/InputMethodManagerService;
 
@@ -491,22 +426,20 @@
 
     return v1
 
-    .line 4827
     :cond_4
     :goto_2
     invoke-direct {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->onImeCommandHelp()V
 
-    .line 4828
     return v1
 
-    .line 4847
-    .end local v0    # "imeCommand":Ljava/lang/String;
     :cond_5
     invoke-virtual {p0, p1}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->handleDefaultCommands(Ljava/lang/String;)I
 
     move-result v0
 
     return v0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -530,13 +463,10 @@
 .method public onHelp()V
     .locals 3
 
-    .line 4866
     invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    .line 4867
-    .local v0, "pw":Ljava/io/PrintWriter;
     const/4 v1, 0x0
 
     :try_start_0
@@ -544,42 +474,34 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4868
     const-string v2, "  help"
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4869
     const-string v2, "    Prints this help text."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4870
     const-string v2, "  dump [options]"
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4871
     const-string v2, "    Synonym of dumpsys."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4872
     const-string v2, "  ime <command> [options]"
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4873
     const-string v2, "    Manipulate IMEs.  Run \"ime help\" for details."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4874
     const-string v2, "  set-bind-instant-service-allowed true|false "
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 4875
     const-string v2, "    Set whether binding to services provided by instant apps is allowed."
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
@@ -587,24 +509,18 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4877
     if-eqz v0, :cond_0
 
     invoke-static {v1, v0}, Lcom/android/server/InputMethodManagerService$ShellCommandImpl;->$closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
 
-    .line 4878
-    .end local v0    # "pw":Ljava/io/PrintWriter;
     :cond_0
     return-void
 
-    .line 4877
-    .restart local v0    # "pw":Ljava/io/PrintWriter;
     :catchall_0
     move-exception v2
 
     goto :goto_0
 
-    .line 4866
     :catch_0
     move-exception v1
 
@@ -613,7 +529,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4877
     :goto_0
     if-eqz v0, :cond_1
 

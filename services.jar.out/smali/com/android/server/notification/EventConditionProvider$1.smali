@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/EventConditionProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/EventConditionProvider;
 
-    .line 123
     iput-object p1, p0, Lcom/android/server/notification/EventConditionProvider$1;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,14 +33,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 126
     iget-object v0, p0, Lcom/android/server/notification/EventConditionProvider$1;->this$0:Lcom/android/server/notification/EventConditionProvider;
 
     invoke-static {v0}, Lcom/android/server/notification/EventConditionProvider;->access$000(Lcom/android/server/notification/EventConditionProvider;)V
 
-    .line 127
     return-void
 .end method

@@ -26,20 +26,15 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
-    .param p1, "max"    # I
 
-    .line 320
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 321
     iput p1, p0, Lcom/android/server/IpSecService$ResourceTracker;->mMax:I
 
-    .line 322
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
-    .line 323
     return-void
 .end method
 
@@ -48,19 +43,16 @@
 .method give()V
     .locals 2
 
-    .line 337
     iget v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
     if-gtz v0, :cond_0
 
-    .line 338
     const-string v0, "IpSecService"
 
     const-string v1, "We\'ve released this resource too many times"
 
     invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
     :cond_0
     iget v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
@@ -68,14 +60,12 @@
 
     iput v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
-    .line 341
     return-void
 .end method
 
 .method isAvailable()Z
     .locals 2
 
-    .line 326
     iget v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
     iget v1, p0, Lcom/android/server/IpSecService$ResourceTracker;->mMax:I
@@ -96,21 +86,18 @@
 .method take()V
     .locals 2
 
-    .line 330
     invoke-virtual {p0}, Lcom/android/server/IpSecService$ResourceTracker;->isAvailable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 331
     const-string v0, "IpSecService"
 
     const-string v1, "Too many resources allocated!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 333
     :cond_0
     iget v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
@@ -118,48 +105,39 @@
 
     iput v0, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
-    .line 334
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 345
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v1, "{mCurrent="
 
-    .line 346
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/IpSecService$ResourceTracker;->mCurrent:I
 
-    .line 347
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v1, ", mMax="
 
-    .line 348
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/IpSecService$ResourceTracker;->mMax:I
 
-    .line 349
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string/jumbo v1, "}"
 
-    .line 350
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 351
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 345
     return-object v0
 .end method

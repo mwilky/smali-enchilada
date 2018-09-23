@@ -55,41 +55,33 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowToken:Landroid/os/IBinder;
 
-    .line 83
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mVrModeEnabled:Z
 
-    .line 84
     iput v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mLockTaskState:I
 
-    .line 370
     new-instance v0, Lcom/android/server/policy/ImmersiveModeConfirmation$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/policy/ImmersiveModeConfirmation$1;-><init>(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirm:Ljava/lang/Runnable;
 
-    .line 399
     new-instance v0, Lcom/android/server/policy/ImmersiveModeConfirmation$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/policy/ImmersiveModeConfirmation$2;-><init>(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mVrStateCallbacks:Landroid/service/vr/IVrStateCallbacks;
 
-    .line 87
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v0
@@ -100,7 +92,6 @@
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
-    .line 88
     new-instance v0, Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
     const/4 v1, 0x0
@@ -109,7 +100,6 @@
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
-    .line 89
     invoke-direct {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->getNavBarExitDuration()J
 
     move-result-wide v0
@@ -120,12 +110,10 @@
 
     iput-wide v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mShowDelayMs:J
 
-    .line 90
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 91
     const v1, 0x10e0048
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
@@ -136,12 +124,10 @@
 
     iput-wide v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mPanicThresholdMs:J
 
-    .line 92
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "window"
 
-    .line 93
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -150,15 +136,12 @@
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 94
     return-void
 .end method
 
 .method static synthetic access$1000(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     invoke-direct {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->handleHide()V
 
     return-void
@@ -166,9 +149,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     invoke-direct {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->handleShow()V
 
     return-void
@@ -176,9 +157,7 @@
 
 .method static synthetic access$1200(Lcom/android/server/policy/ImmersiveModeConfirmation;)Lcom/android/server/policy/ImmersiveModeConfirmation$H;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
     return-object v0
@@ -186,9 +165,7 @@
 
 .method static synthetic access$300(Lcom/android/server/policy/ImmersiveModeConfirmation;)Landroid/view/WindowManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowManager:Landroid/view/WindowManager;
 
     return-object v0
@@ -196,9 +173,7 @@
 
 .method static synthetic access$800(Lcom/android/server/policy/ImmersiveModeConfirmation;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     iget-boolean v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirmed:Z
 
     return v0
@@ -206,10 +181,7 @@
 
 .method static synthetic access$802(Lcom/android/server/policy/ImmersiveModeConfirmation;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
-    .param p1, "x1"    # Z
 
-    .line 64
     iput-boolean p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirmed:Z
 
     return p1
@@ -217,9 +189,7 @@
 
 .method static synthetic access$900(Lcom/android/server/policy/ImmersiveModeConfirmation;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/policy/ImmersiveModeConfirmation;
 
-    .line 64
     invoke-direct {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->saveSetting()V
 
     return-void
@@ -228,7 +198,6 @@
 .method private getNavBarExitDuration()J
     .locals 3
 
-    .line 97
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
     const v1, 0x10a0027
@@ -237,8 +206,6 @@
 
     move-result-object v0
 
-    .line 98
-    .local v0, "exit":Landroid/view/animation/Animation;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/animation/Animation;->getDuration()J
@@ -257,24 +224,20 @@
 .method private handleHide()V
     .locals 2
 
-    .line 187
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     if-eqz v0, :cond_0
 
-    .line 189
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
 
-    .line 190
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
-    .line 192
     :cond_0
     return-void
 .end method
@@ -282,7 +245,6 @@
 .method private handleShow()V
     .locals 3
 
-    .line 358
     new-instance v0, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
@@ -293,34 +255,28 @@
 
     iput-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
-    .line 361
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     const/16 v1, 0x300
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;->setSystemUiVisibility(I)V
 
-    .line 366
     invoke-virtual {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->getClingWindowLayoutParams()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 367
-    .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowManager:Landroid/view/WindowManager;
 
     iget-object v2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-interface {v1, v2, v0}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 368
     return-void
 .end method
 
 .method private saveSetting()V
     .locals 4
 
-    .line 120
     :try_start_0
     iget-boolean v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirmed:Z
 
@@ -333,8 +289,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 121
-    .local v0, "value":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
@@ -350,16 +304,11 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 128
-    .end local v0    # "value":Ljava/lang/String;
     goto :goto_1
 
-    .line 126
     :catch_0
     move-exception v0
 
-    .line 127
-    .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "ImmersiveModeConfirmation"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -380,8 +329,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 129
-    .end local v0    # "t":Ljava/lang/Throwable;
     :goto_1
     return-void
 .end method
@@ -391,19 +338,16 @@
 .method public confirmCurrentPrompt()V
     .locals 2
 
-    .line 180
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     if-eqz v0, :cond_0
 
-    .line 182
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirm:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->post(Ljava/lang/Runnable;)Z
 
-    .line 184
     :cond_0
     return-void
 .end method
@@ -411,12 +355,10 @@
 .method public getBubbleLayoutParams()Landroid/widget/FrameLayout$LayoutParams;
     .locals 4
 
-    .line 213
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
-    .line 214
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -433,14 +375,12 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 213
     return-object v0
 .end method
 
 .method public getClingWindowLayoutParams()Landroid/view/WindowManager$LayoutParams;
     .locals 7
 
-    .line 195
     new-instance v6, Landroid/view/WindowManager$LayoutParams;
 
     const/4 v1, -0x1
@@ -457,39 +397,32 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/view/WindowManager$LayoutParams;-><init>(IIIII)V
 
-    .line 205
-    .local v0, "lp":Landroid/view/WindowManager$LayoutParams;
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
     or-int/lit8 v1, v1, 0x10
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
-    .line 206
     const-string v1, "ImmersiveModeConfirmation"
 
     invoke-virtual {v0, v1}, Landroid/view/WindowManager$LayoutParams;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 207
     const v1, 0x10302f4
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
-    .line 208
     invoke-virtual {p0}, Lcom/android/server/policy/ImmersiveModeConfirmation;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v1
 
     iput-object v1, v0, Landroid/view/WindowManager$LayoutParams;->token:Landroid/os/IBinder;
 
-    .line 209
     return-object v0
 .end method
 
 .method public getWindowToken()Landroid/os/IBinder;
     .locals 1
 
-    .line 224
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mWindowToken:Landroid/os/IBinder;
 
     return-object v0
@@ -497,28 +430,19 @@
 
 .method public immersiveModeChangedLw(Ljava/lang/String;ZZZ)V
     .locals 5
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "isImmersiveMode"    # Z
-    .param p3, "userSetupComplete"    # Z
-    .param p4, "navBarEmpty"    # Z
 
-    .line 145
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->removeMessages(I)V
 
-    .line 146
     if-eqz p2, :cond_1
 
-    .line 147
     invoke-static {p1}, Lcom/android/server/policy/PolicyControl;->disableImmersiveConfirmation(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 150
-    .local v0, "disabled":Z
     if-nez v0, :cond_0
 
     iget-boolean v2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirmed:Z
@@ -535,7 +459,6 @@
 
     iget-object v2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
-    .line 155
     invoke-static {v2}, Landroid/os/UserManager;->isDeviceInDemoMode(Landroid/content/Context;)Z
 
     move-result v2
@@ -546,19 +469,15 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 157
     iget-object v2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
     iget-wide v3, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mShowDelayMs:J
 
     invoke-virtual {v2, v1, v3, v4}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 159
-    .end local v0    # "disabled":Z
     :cond_0
     goto :goto_0
 
-    .line 160
     :cond_1
     iget-object v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mHandler:Lcom/android/server/policy/ImmersiveModeConfirmation$H;
 
@@ -566,28 +485,21 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/policy/ImmersiveModeConfirmation$H;->sendEmptyMessage(I)Z
 
-    .line 162
     :goto_0
     return-void
 .end method
 
 .method public loadSetting(I)V
     .locals 5
-    .param p1, "currentUserId"    # I
 
-    .line 102
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mConfirmed:Z
 
-    .line 103
     iput p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mCurrentUserId:I
 
-    .line 105
     const/4 v0, 0x0
 
-    .line 107
-    .local v0, "value":Ljava/lang/String;
     :try_start_0
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mContext:Landroid/content/Context;
 
@@ -605,7 +517,6 @@
 
     move-object v0, v1
 
-    .line 110
     const-string v1, "confirmed"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -616,15 +527,11 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 114
     goto :goto_0
 
-    .line 112
     :catch_0
     move-exception v1
 
-    .line 113
-    .local v1, "t":Ljava/lang/Throwable;
     const-string v2, "ImmersiveModeConfirmation"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -643,31 +550,21 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 115
-    .end local v1    # "t":Ljava/lang/Throwable;
     :goto_0
     return-void
 .end method
 
 .method onLockTaskModeChangedLw(I)V
     .locals 0
-    .param p1, "lockTaskState"    # I
 
-    .line 411
     iput p1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mLockTaskState:I
 
-    .line 412
     return-void
 .end method
 
 .method public onPowerKeyDown(ZJZZ)Z
     .locals 5
-    .param p1, "isScreenOn"    # Z
-    .param p2, "time"    # J
-    .param p4, "inImmersiveMode"    # Z
-    .param p5, "navBarEmpty"    # Z
 
-    .line 166
     const/4 v0, 0x0
 
     if-nez p1, :cond_1
@@ -682,7 +579,6 @@
 
     if-gez v1, :cond_1
 
-    .line 168
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mClingWindow:Lcom/android/server/policy/ImmersiveModeConfirmation$ClingWindowView;
 
     if-nez v1, :cond_0
@@ -694,7 +590,6 @@
     :cond_0
     return v0
 
-    .line 170
     :cond_1
     if-eqz p1, :cond_2
 
@@ -702,18 +597,15 @@
 
     if-nez p5, :cond_2
 
-    .line 172
     iput-wide p2, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mPanicTime:J
 
     goto :goto_0
 
-    .line 174
     :cond_2
     const-wide/16 v1, 0x0
 
     iput-wide v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mPanicTime:J
 
-    .line 176
     :goto_0
     return v0
 .end method
@@ -721,30 +613,23 @@
 .method systemReady()V
     .locals 2
 
-    .line 132
     const-string/jumbo v0, "vrmanager"
 
-    .line 133
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 132
     invoke-static {v0}, Landroid/service/vr/IVrManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/service/vr/IVrManager;
 
     move-result-object v0
 
-    .line 134
-    .local v0, "vrManager":Landroid/service/vr/IVrManager;
     if-eqz v0, :cond_0
 
-    .line 136
     :try_start_0
     iget-object v1, p0, Lcom/android/server/policy/ImmersiveModeConfirmation;->mVrStateCallbacks:Landroid/service/vr/IVrStateCallbacks;
 
     invoke-interface {v0, v1}, Landroid/service/vr/IVrManager;->registerListener(Landroid/service/vr/IVrStateCallbacks;)V
 
-    .line 137
     invoke-interface {v0}, Landroid/service/vr/IVrManager;->getVrModeState()Z
 
     move-result v1
@@ -753,14 +638,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 139
     goto :goto_0
 
-    .line 138
     :catch_0
     move-exception v1
 
-    .line 141
     :cond_0
     :goto_0
     return-void

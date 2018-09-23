@@ -66,43 +66,29 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/pm/ProviderInfo;Landroid/content/pm/ApplicationInfo;Landroid/content/ComponentName;Z)V
     .locals 2
-    .param p1, "_service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "_info"    # Landroid/content/pm/ProviderInfo;
-    .param p3, "ai"    # Landroid/content/pm/ApplicationInfo;
-    .param p4, "_name"    # Landroid/content/ComponentName;
-    .param p5, "_singleton"    # Z
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
-    .line 59
     iput-object p1, p0, Lcom/android/server/am/ContentProviderRecord;->service:Lcom/android/server/am/ActivityManagerService;
 
-    .line 60
     iput-object p2, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 61
     iget v0, p3, Landroid/content/pm/ApplicationInfo;->uid:I
 
     iput v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
-    .line 62
     iput-object p3, p0, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 63
     iput-object p4, p0, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
-    .line 64
     iput-boolean p5, p0, Lcom/android/server/am/ContentProviderRecord;->singleton:Z
 
-    .line 65
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
     if-eqz v0, :cond_1
@@ -127,69 +113,54 @@
     :goto_1
     iput-boolean v0, p0, Lcom/android/server/am/ContentProviderRecord;->noReleaseNeeded:Z
 
-    .line 66
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/server/am/ContentProviderRecord;)V
     .locals 1
-    .param p1, "cpr"    # Lcom/android/server/am/ContentProviderRecord;
 
-    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
-    .line 69
     iget-object v0, p1, Lcom/android/server/am/ContentProviderRecord;->service:Lcom/android/server/am/ActivityManagerService;
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->service:Lcom/android/server/am/ActivityManagerService;
 
-    .line 70
     iget-object v0, p1, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 71
     iget v0, p1, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
     iput v0, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
-    .line 72
     iget-object v0, p1, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->appInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 73
     iget-object v0, p1, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
-    .line 74
     iget-boolean v0, p1, Lcom/android/server/am/ContentProviderRecord;->singleton:Z
 
     iput-boolean v0, p0, Lcom/android/server/am/ContentProviderRecord;->singleton:Z
 
-    .line 75
     iget-boolean v0, p1, Lcom/android/server/am/ContentProviderRecord;->noReleaseNeeded:Z
 
     iput-boolean v0, p0, Lcom/android/server/am/ContentProviderRecord;->noReleaseNeeded:Z
 
-    .line 76
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/server/am/ContentProviderRecord;Landroid/os/IBinder;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/am/ContentProviderRecord;
-    .param p1, "x1"    # Landroid/os/IBinder;
 
-    .line 35
     invoke-direct {p0, p1}, Lcom/android/server/am/ContentProviderRecord;->removeExternalProcessHandleInternalLocked(Landroid/os/IBinder;)V
 
     return-void
@@ -197,9 +168,7 @@
 
 .method private removeExternalProcessHandleInternalLocked(Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .line 130
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -208,16 +177,12 @@
 
     check-cast v0, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
 
-    .line 131
-    .local v0, "handle":Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
     invoke-virtual {v0}, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;->unlinkFromOwnDeathLocked()V
 
-    .line 132
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 133
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->size()I
@@ -226,12 +191,10 @@
 
     if-nez v1, :cond_0
 
-    .line 134
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
-    .line 136
     :cond_0
     return-void
 .end method
@@ -240,12 +203,9 @@
 # virtual methods
 .method public addExternalProcessHandleLocked(Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .line 92
     if-nez p1, :cond_0
 
-    .line 93
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessNoHandleCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -254,20 +214,17 @@
 
     goto :goto_0
 
-    .line 95
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     if-nez v0, :cond_1
 
-    .line 96
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
-    .line 98
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
@@ -277,37 +234,28 @@
 
     check-cast v0, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
 
-    .line 99
-    .local v0, "handle":Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
     if-nez v0, :cond_2
 
-    .line 100
     new-instance v1, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
 
     invoke-direct {v1, p0, p1}, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;-><init>(Lcom/android/server/am/ContentProviderRecord;Landroid/os/IBinder;)V
 
     move-object v0, v1
 
-    .line 101
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
     :cond_2
     invoke-static {v0}, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;->access$008(Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;)I
 
-    .line 105
-    .end local v0    # "handle":Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
     :goto_0
     return-void
 .end method
 
 .method public canRunHere(Lcom/android/server/am/ProcessRecord;)Z
     .locals 2
-    .param p1, "app"    # Lcom/android/server/am/ProcessRecord;
 
-    .line 87
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ProviderInfo;->multiprocess:Z
@@ -348,21 +296,15 @@
 
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;Z)V
     .locals 3
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
-    .param p3, "full"    # Z
 
-    .line 147
     if-eqz p3, :cond_0
 
-    .line 148
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "package="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 149
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iget-object v0, v0, Landroid/content/pm/ProviderInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -371,7 +313,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 150
     const-string v0, " process="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -382,7 +323,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 152
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -394,12 +334,10 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->launchingApp:Lcom/android/server/am/ProcessRecord;
 
     if-eqz v0, :cond_1
 
-    .line 154
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "launchingApp="
@@ -410,11 +348,9 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 156
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 157
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "uid="
@@ -425,7 +361,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 158
     const-string v0, " provider="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -434,13 +369,11 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 160
     :cond_2
     iget-boolean v0, p0, Lcom/android/server/am/ContentProviderRecord;->singleton:Z
 
     if-eqz v0, :cond_3
 
-    .line 161
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "singleton="
@@ -451,7 +384,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 163
     :cond_3
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -465,10 +397,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 164
     if-eqz p3, :cond_5
 
-    .line 165
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     iget-boolean v0, v0, Landroid/content/pm/ProviderInfo;->isSyncable:Z
@@ -487,7 +417,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 166
     :cond_4
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -501,7 +430,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 167
     const-string v0, " multiprocess="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -512,7 +440,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 168
     const-string v0, " initOrder="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -523,35 +450,29 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 171
     :cond_5
     if-eqz p3, :cond_8
 
-    .line 172
     invoke-virtual {p0}, Lcom/android/server/am/ContentProviderRecord;->hasExternalProcessHandles()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 173
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "externals:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     if-eqz v0, :cond_6
 
-    .line 175
     const-string v0, " w/token="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 176
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
@@ -560,29 +481,24 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 178
     :cond_6
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessNoHandleCount:I
 
     if-lez v0, :cond_7
 
-    .line 179
     const-string v0, " notoken="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 180
     iget v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessNoHandleCount:I
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 182
     :cond_7
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
     goto :goto_0
 
-    .line 185
     :cond_8
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
@@ -596,7 +512,6 @@
 
     if-lez v0, :cond_a
 
-    .line 186
     :cond_9
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -608,7 +523,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 187
     const-string v0, " connections, "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -617,12 +531,10 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 188
     const-string v0, " external handles"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 191
     :cond_a
     :goto_0
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
@@ -633,22 +545,17 @@
 
     if-lez v0, :cond_d
 
-    .line 192
     if-eqz p3, :cond_b
 
-    .line 193
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "Connections:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 195
     :cond_b
     const/4 v0, 0x0
 
-    .line 195
-    .local v0, "i":I
     :goto_1
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
@@ -658,7 +565,6 @@
 
     if-ge v0, v1, :cond_d
 
-    .line 196
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -667,8 +573,6 @@
 
     check-cast v1, Lcom/android/server/am/ContentProviderConnection;
 
-    .line 197
-    .local v1, "conn":Lcom/android/server/am/ContentProviderConnection;
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v2, "  -> "
@@ -681,32 +585,25 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 198
     iget-object v2, v1, Lcom/android/server/am/ContentProviderConnection;->provider:Lcom/android/server/am/ContentProviderRecord;
 
     if-eq v2, p0, :cond_c
 
-    .line 199
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v2, "    *** WRONG PROVIDER: "
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 200
     iget-object v2, v1, Lcom/android/server/am/ContentProviderConnection;->provider:Lcom/android/server/am/ContentProviderRecord;
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 195
-    .end local v1    # "conn":Lcom/android/server/am/ContentProviderConnection;
     :cond_c
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 204
-    .end local v0    # "i":I
     :cond_d
     return-void
 .end method
@@ -714,7 +611,6 @@
 .method public getComponentName()Landroid/content/ComponentName;
     .locals 1
 
-    .line 265
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
     return-object v0
@@ -723,7 +619,6 @@
 .method public hasConnectionOrHandle()Z
     .locals 1
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->connections:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -756,7 +651,6 @@
 .method public hasExternalProcessHandles()Z
     .locals 1
 
-    .line 139
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     if-nez v0, :cond_1
@@ -782,56 +676,43 @@
 
 .method public newHolder(Lcom/android/server/am/ContentProviderConnection;)Landroid/app/ContentProviderHolder;
     .locals 2
-    .param p1, "conn"    # Lcom/android/server/am/ContentProviderConnection;
 
-    .line 79
     new-instance v0, Landroid/app/ContentProviderHolder;
 
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->info:Landroid/content/pm/ProviderInfo;
 
     invoke-direct {v0, v1}, Landroid/app/ContentProviderHolder;-><init>(Landroid/content/pm/ProviderInfo;)V
 
-    .line 80
-    .local v0, "holder":Landroid/app/ContentProviderHolder;
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->provider:Landroid/content/IContentProvider;
 
     iput-object v1, v0, Landroid/app/ContentProviderHolder;->provider:Landroid/content/IContentProvider;
 
-    .line 81
     iget-boolean v1, p0, Lcom/android/server/am/ContentProviderRecord;->noReleaseNeeded:Z
 
     iput-boolean v1, v0, Landroid/app/ContentProviderHolder;->noReleaseNeeded:Z
 
-    .line 82
     iput-object p1, v0, Landroid/app/ContentProviderHolder;->connection:Landroid/os/IBinder;
 
-    .line 83
     return-object v0
 .end method
 
 .method public removeExternalProcessHandleLocked(Landroid/os/IBinder;)Z
     .locals 4
-    .param p1, "token"    # Landroid/os/IBinder;
 
-    .line 108
     invoke-virtual {p0}, Lcom/android/server/am/ContentProviderRecord;->hasExternalProcessHandles()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 109
     const/4 v0, 0x0
 
-    .line 110
-    .local v0, "hasHandle":Z
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     const/4 v2, 0x1
 
     if-eqz v1, :cond_0
 
-    .line 111
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessTokenToHandle:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -840,46 +721,33 @@
 
     check-cast v1, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
 
-    .line 112
-    .local v1, "handle":Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
     if-eqz v1, :cond_0
 
-    .line 113
     const/4 v0, 0x1
 
-    .line 114
     invoke-static {v1}, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;->access$010(Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;)I
 
-    .line 115
     invoke-static {v1}, Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;->access$000(Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;)I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 116
     invoke-direct {p0, p1}, Lcom/android/server/am/ContentProviderRecord;->removeExternalProcessHandleInternalLocked(Landroid/os/IBinder;)V
 
-    .line 117
     return v2
 
-    .line 121
-    .end local v1    # "handle":Lcom/android/server/am/ContentProviderRecord$ExternalProcessHandle;
     :cond_0
     if-nez v0, :cond_1
 
-    .line 122
     iget v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessNoHandleCount:I
 
     sub-int/2addr v1, v2
 
     iput v1, p0, Lcom/android/server/am/ContentProviderRecord;->externalProcessNoHandleCount:I
 
-    .line 123
     return v2
 
-    .line 126
-    .end local v0    # "hasHandle":Z
     :cond_1
     const/4 v0, 0x0
 
@@ -889,17 +757,14 @@
 .method public toShortString()Ljava/lang/String;
     .locals 2
 
-    .line 223
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->shortStringName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 224
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->shortStringName:Ljava/lang/String;
 
     return-object v0
 
-    .line 226
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -907,8 +772,6 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 227
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -919,12 +782,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 228
     const/16 v1, 0x2f
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 229
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
@@ -933,7 +794,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 230
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -946,17 +806,14 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 208
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->stringName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 209
     iget-object v0, p0, Lcom/android/server/am/ContentProviderRecord;->stringName:Ljava/lang/String;
 
     return-object v0
 
-    .line 211
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -964,13 +821,10 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 212
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "ContentProviderRecord{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 213
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -981,12 +835,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 214
     const-string v1, " u"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 215
     iget v1, p0, Lcom/android/server/am/ContentProviderRecord;->uid:I
 
     invoke-static {v1}, Landroid/os/UserHandle;->getUserId(I)I
@@ -995,12 +847,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 216
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 217
     iget-object v1, p0, Lcom/android/server/am/ContentProviderRecord;->name:Landroid/content/ComponentName;
 
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
@@ -1009,12 +859,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 218
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 219
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

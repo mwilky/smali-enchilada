@@ -27,25 +27,17 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/audio/AudioService;ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p2, "deviceType"    # I
-    .param p3, "deviceName"    # Ljava/lang/String;
-    .param p4, "deviceAddress"    # Ljava/lang/String;
 
-    .line 559
     iput-object p1, p0, Lcom/android/server/audio/AudioService$DeviceListSpec;->this$0:Lcom/android/server/audio/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 560
     iput p2, p0, Lcom/android/server/audio/AudioService$DeviceListSpec;->mDeviceType:I
 
-    .line 561
     iput-object p3, p0, Lcom/android/server/audio/AudioService$DeviceListSpec;->mDeviceName:Ljava/lang/String;
 
-    .line 562
     iput-object p4, p0, Lcom/android/server/audio/AudioService$DeviceListSpec;->mDeviceAddress:Ljava/lang/String;
 
-    .line 563
     return-void
 .end method
 
@@ -54,7 +46,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 566
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

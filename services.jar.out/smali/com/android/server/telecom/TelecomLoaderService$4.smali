@@ -27,10 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/telecom/TelecomLoaderService;Landroid/os/Handler;Landroid/net/Uri;Landroid/content/pm/PackageManagerInternal;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/telecom/TelecomLoaderService;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 283
     iput-object p1, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
     iput-object p3, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$defaultSmsAppUri:Landroid/net/Uri;
@@ -48,11 +45,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 3
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 286
     iget-object v0, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$defaultSmsAppUri:Landroid/net/Uri;
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -61,38 +54,28 @@
 
     if-eqz v0, :cond_1
 
-    .line 287
     iget-object v0, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
-    .line 288
     invoke-static {v0}, Lcom/android/server/telecom/TelecomLoaderService;->access$100(Lcom/android/server/telecom/TelecomLoaderService;)Landroid/content/Context;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    .line 287
     invoke-static {v0, v1}, Lcom/android/internal/telephony/SmsApplication;->getDefaultSmsApplication(Landroid/content/Context;Z)Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 289
-    .local v0, "smsComponent":Landroid/content/ComponentName;
     if-eqz v0, :cond_0
 
-    .line 290
     iget-object v1, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
-    .line 291
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 290
     invoke-virtual {v1, v2, p3}, Landroid/content/pm/PackageManagerInternal;->grantDefaultPermissionsToDefaultSmsApp(Ljava/lang/String;I)V
 
-    .line 293
-    .end local v0    # "smsComponent":Landroid/content/ComponentName;
     :cond_0
     goto :goto_0
 
@@ -105,29 +88,22 @@
 
     if-eqz v0, :cond_3
 
-    .line 294
     iget-object v0, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
-    .line 295
     invoke-static {v0}, Lcom/android/server/telecom/TelecomLoaderService;->access$100(Lcom/android/server/telecom/TelecomLoaderService;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 294
     invoke-static {v0}, Landroid/telecom/DefaultDialerManager;->getDefaultDialerApplication(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 296
-    .local v0, "packageName":Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 297
     iget-object v1, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->val$packageManagerInternal:Landroid/content/pm/PackageManagerInternal;
 
     invoke-virtual {v1, v0, p3}, Landroid/content/pm/PackageManagerInternal;->grantDefaultPermissionsToDefaultDialerApp(Ljava/lang/String;I)V
 
-    .line 300
     :cond_2
     iget-object v1, p0, Lcom/android/server/telecom/TelecomLoaderService$4;->this$0:Lcom/android/server/telecom/TelecomLoaderService;
 
@@ -135,8 +111,6 @@
 
     invoke-static {v1, v2, p3}, Lcom/android/server/telecom/TelecomLoaderService;->access$800(Lcom/android/server/telecom/TelecomLoaderService;Landroid/content/pm/PackageManagerInternal;I)V
 
-    .line 302
-    .end local v0    # "packageName":Ljava/lang/String;
     :cond_3
     :goto_0
     return-void

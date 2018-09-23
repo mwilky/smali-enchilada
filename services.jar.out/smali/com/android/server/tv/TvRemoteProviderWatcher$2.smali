@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/tv/TvRemoteProviderWatcher;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/tv/TvRemoteProviderWatcher;
 
-    .line 209
     iput-object p1, p0, Lcom/android/server/tv/TvRemoteProviderWatcher$2;->this$0:Lcom/android/server/tv/TvRemoteProviderWatcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 212
     iget-object v0, p0, Lcom/android/server/tv/TvRemoteProviderWatcher$2;->this$0:Lcom/android/server/tv/TvRemoteProviderWatcher;
 
     invoke-static {v0}, Lcom/android/server/tv/TvRemoteProviderWatcher;->access$300(Lcom/android/server/tv/TvRemoteProviderWatcher;)V
 
-    .line 213
     return-void
 .end method

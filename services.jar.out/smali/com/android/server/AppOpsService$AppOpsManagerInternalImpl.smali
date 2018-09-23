@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/AppOpsService;)V
     .locals 0
 
-    .line 4071
     iput-object p1, p0, Lcom/android/server/AppOpsService$AppOpsManagerInternalImpl;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-direct {p0}, Landroid/app/AppOpsManagerInternal;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/AppOpsService;Lcom/android/server/AppOpsService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/AppOpsService;
-    .param p2, "x1"    # Lcom/android/server/AppOpsService$1;
 
-    .line 4071
     invoke-direct {p0, p1}, Lcom/android/server/AppOpsService$AppOpsManagerInternalImpl;-><init>(Lcom/android/server/AppOpsService;)V
 
     return-void
@@ -45,26 +41,20 @@
 # virtual methods
 .method public setDeviceAndProfileOwners(Landroid/util/SparseIntArray;)V
     .locals 2
-    .param p1, "owners"    # Landroid/util/SparseIntArray;
 
-    .line 4073
     iget-object v0, p0, Lcom/android/server/AppOpsService$AppOpsManagerInternalImpl;->this$0:Lcom/android/server/AppOpsService;
 
     monitor-enter v0
 
-    .line 4074
     :try_start_0
     iget-object v1, p0, Lcom/android/server/AppOpsService$AppOpsManagerInternalImpl;->this$0:Lcom/android/server/AppOpsService;
 
     iput-object p1, v1, Lcom/android/server/AppOpsService;->mProfileOwners:Landroid/util/SparseIntArray;
 
-    .line 4075
     monitor-exit v0
 
-    .line 4076
     return-void
 
-    .line 4075
     :catchall_0
     move-exception v1
 

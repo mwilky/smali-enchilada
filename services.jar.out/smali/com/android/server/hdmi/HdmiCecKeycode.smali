@@ -243,7 +243,6 @@
 .method static constructor <clinit>()V
     .locals 16
 
-    .line 239
     const/16 v0, 0x5d
 
     new-array v0, v0, [Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
@@ -972,7 +971,6 @@
 
     new-instance v1, Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 339
     invoke-static {v6}, Lcom/android/server/hdmi/HdmiCecKeycode;->intToSingleByteArray(I)[B
 
     move-result-object v12
@@ -995,7 +993,6 @@
 
     new-instance v1, Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 342
     const/16 v5, 0x60
 
     invoke-static {v5}, Lcom/android/server/hdmi/HdmiCecKeycode;->intToSingleByteArray(I)[B
@@ -1014,7 +1011,6 @@
 
     new-instance v1, Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 345
     const/16 v5, 0x80
 
     invoke-static {v5}, Lcom/android/server/hdmi/HdmiCecKeycode;->intToSingleByteArray(I)[B
@@ -1033,7 +1029,6 @@
 
     new-instance v1, Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 348
     const/16 v5, 0x90
 
     invoke-static {v5}, Lcom/android/server/hdmi/HdmiCecKeycode;->intToSingleByteArray(I)[B
@@ -1052,7 +1047,6 @@
 
     new-instance v1, Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 351
     invoke-static {v4}, Lcom/android/server/hdmi/HdmiCecKeycode;->intToSingleByteArray(I)[B
 
     move-result-object v12
@@ -1291,28 +1285,22 @@
 
     sput-object v0, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
-    .line 239
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 158
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
     return-void
 .end method
 
 .method static androidKeyToCecKey(I)[B
     .locals 2
-    .param p0, "keycode"    # I
 
-    .line 403
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     sget-object v1, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
@@ -1320,7 +1308,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 404
     sget-object v1, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
     aget-object v1, v1, v0
@@ -1329,22 +1316,15 @@
 
     move-result-object v1
 
-    .line 405
-    .local v1, "cecKeycodeAndParams":[B
     if-eqz v1, :cond_0
 
-    .line 406
     return-object v1
 
-    .line 403
-    .end local v1    # "cecKeycodeAndParams":[B
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 409
-    .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x0
 
@@ -1353,12 +1333,9 @@
 
 .method static cecKeycodeAndParamsToAndroidKey([B)I
     .locals 3
-    .param p0, "cecKeycodeAndParams"    # [B
 
-    .line 420
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     sget-object v1, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
@@ -1368,7 +1345,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 421
     sget-object v1, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
     aget-object v1, v1, v0
@@ -1377,31 +1353,22 @@
 
     move-result v1
 
-    .line 422
-    .local v1, "androidKey":I
     if-eq v1, v2, :cond_0
 
-    .line 423
     return v1
 
-    .line 420
-    .end local v1    # "androidKey":I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 426
-    .end local v0    # "i":I
     :cond_1
     return v2
 .end method
 
 .method public static getMuteKey(Z)I
     .locals 1
-    .param p0, "muting"    # Z
 
-    .line 465
     const/16 v0, 0x43
 
     return v0
@@ -1409,9 +1376,7 @@
 
 .method private static intToSingleByteArray(I)[B
     .locals 3
-    .param p0, "value"    # I
 
-    .line 233
     const/4 v0, 0x1
 
     new-array v0, v0, [B
@@ -1429,14 +1394,11 @@
 
 .method static isRepeatableKey(I)Z
     .locals 3
-    .param p0, "androidKeycode"    # I
 
-    .line 436
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     sget-object v2, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
@@ -1444,7 +1406,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 437
     sget-object v2, Lcom/android/server/hdmi/HdmiCecKeycode;->KEYCODE_ENTRIES:[Lcom/android/server/hdmi/HdmiCecKeycode$KeycodeEntry;
 
     aget-object v2, v2, v1
@@ -1453,35 +1414,26 @@
 
     move-result-object v2
 
-    .line 438
-    .local v2, "isRepeatable":Ljava/lang/Boolean;
     if-eqz v2, :cond_0
 
-    .line 439
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     return v0
 
-    .line 436
-    .end local v2    # "isRepeatable":Ljava/lang/Boolean;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 442
-    .end local v1    # "i":I
     :cond_1
     return v0
 .end method
 
 .method static isSupportedKeycode(I)Z
     .locals 1
-    .param p0, "androidKeycode"    # I
 
-    .line 449
     invoke-static {p0}, Lcom/android/server/hdmi/HdmiCecKeycode;->androidKeyToCecKey(I)[B
 
     move-result-object v0

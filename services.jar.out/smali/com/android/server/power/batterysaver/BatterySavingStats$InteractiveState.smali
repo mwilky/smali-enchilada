@@ -29,9 +29,7 @@
 # direct methods
 .method public static fromIndex(I)I
     .locals 1
-    .param p0, "index"    # I
 
-    .line 81
     shr-int/lit8 v0, p0, 0x1
 
     and-int/lit8 v0, v0, 0x1

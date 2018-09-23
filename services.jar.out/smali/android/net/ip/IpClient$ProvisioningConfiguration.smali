@@ -58,110 +58,84 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 432
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 417
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv4:Z
 
-    .line 418
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv6:Z
 
-    .line 419
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingMultinetworkPolicyTracker:Z
 
-    .line 420
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingIpReachabilityMonitor:Z
 
-    .line 425
     const v0, 0x8ca0
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mProvisioningTimeoutMs:I
 
-    .line 426
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mIPv6AddrGenMode:I
 
-    .line 429
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mNetwork:Landroid/net/Network;
 
-    .line 430
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDisplayName:Ljava/lang/String;
 
-    .line 432
     return-void
 .end method
 
 .method public constructor <init>(Landroid/net/ip/IpClient$ProvisioningConfiguration;)V
     .locals 1
-    .param p1, "other"    # Landroid/net/ip/IpClient$ProvisioningConfiguration;
 
-    .line 434
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 417
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv4:Z
 
-    .line 418
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv6:Z
 
-    .line 419
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingMultinetworkPolicyTracker:Z
 
-    .line 420
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingIpReachabilityMonitor:Z
 
-    .line 425
     const v0, 0x8ca0
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mProvisioningTimeoutMs:I
 
-    .line 426
     const/4 v0, 0x2
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mIPv6AddrGenMode:I
 
-    .line 429
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mNetwork:Landroid/net/Network;
 
-    .line 430
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDisplayName:Ljava/lang/String;
 
-    .line 435
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv4:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv4:Z
 
-    .line 436
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv6:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mEnableIPv6:Z
 
-    .line 437
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingMultinetworkPolicyTracker:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingMultinetworkPolicyTracker:Z
 
-    .line 438
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingIpReachabilityMonitor:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mUsingIpReachabilityMonitor:Z
 
-    .line 439
     iget v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mRequestedPreDhcpActionMs:I
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mRequestedPreDhcpActionMs:I
 
-    .line 440
     iget-object v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mInitialConfig:Landroid/net/ip/IpClient$InitialConfiguration;
 
     invoke-static {v0}, Landroid/net/ip/IpClient$InitialConfiguration;->copy(Landroid/net/ip/IpClient$InitialConfiguration;)Landroid/net/ip/IpClient$InitialConfiguration;
@@ -170,47 +144,38 @@
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mInitialConfig:Landroid/net/ip/IpClient$InitialConfiguration;
 
-    .line 441
     iget-object v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mStaticIpConfig:Landroid/net/StaticIpConfiguration;
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mStaticIpConfig:Landroid/net/StaticIpConfiguration;
 
-    .line 442
     iget-object v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mApfCapabilities:Landroid/net/apf/ApfCapabilities;
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mApfCapabilities:Landroid/net/apf/ApfCapabilities;
 
-    .line 443
     iget v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mProvisioningTimeoutMs:I
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mProvisioningTimeoutMs:I
 
-    .line 444
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mRapidCommit:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mRapidCommit:Z
 
-    .line 445
     iget-boolean v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDiscoverSent:Z
 
     iput-boolean v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDiscoverSent:Z
 
-    .line 446
     iget v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mIPv6AddrGenMode:I
 
     iput v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mIPv6AddrGenMode:I
 
-    .line 447
     iget-object v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mNetwork:Landroid/net/Network;
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mNetwork:Landroid/net/Network;
 
-    .line 448
     iget-object v0, p1, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDisplayName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mDisplayName:Ljava/lang/String;
 
-    .line 449
     return-void
 .end method
 
@@ -219,7 +184,6 @@
 .method public isValid()Z
     .locals 1
 
-    .line 470
     iget-object v0, p0, Landroid/net/ip/IpClient$ProvisioningConfiguration;->mInitialConfig:Landroid/net/ip/IpClient$InitialConfiguration;
 
     if-eqz v0, :cond_1
@@ -250,7 +214,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 453
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ", "
@@ -297,7 +260,6 @@
 
     move-result-object v1
 
-    .line 454
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -318,7 +280,6 @@
 
     move-result-object v1
 
-    .line 455
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -339,7 +300,6 @@
 
     move-result-object v1
 
-    .line 456
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -360,7 +320,6 @@
 
     move-result-object v1
 
-    .line 457
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -381,7 +340,6 @@
 
     move-result-object v1
 
-    .line 458
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -402,7 +360,6 @@
 
     move-result-object v1
 
-    .line 459
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -423,7 +380,6 @@
 
     move-result-object v1
 
-    .line 460
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -444,7 +400,6 @@
 
     move-result-object v1
 
-    .line 461
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -465,7 +420,6 @@
 
     move-result-object v1
 
-    .line 462
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -486,7 +440,6 @@
 
     move-result-object v1
 
-    .line 463
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -507,7 +460,6 @@
 
     move-result-object v1
 
-    .line 464
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
@@ -528,16 +480,13 @@
 
     move-result-object v1
 
-    .line 465
     invoke-virtual {v0, v1}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v0
 
-    .line 466
     invoke-virtual {v0}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 453
     return-object v0
 .end method

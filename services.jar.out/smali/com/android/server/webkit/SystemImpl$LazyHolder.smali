@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 70
     new-instance v0, Lcom/android/server/webkit/SystemImpl;
 
     const/4 v1, 0x0
@@ -37,7 +36,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +44,6 @@
 .method static synthetic access$100()Lcom/android/server/webkit/SystemImpl;
     .locals 1
 
-    .line 69
     sget-object v0, Lcom/android/server/webkit/SystemImpl$LazyHolder;->INSTANCE:Lcom/android/server/webkit/SystemImpl;
 
     return-object v0

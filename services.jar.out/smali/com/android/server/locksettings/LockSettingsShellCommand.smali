@@ -36,29 +36,21 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Lcom/android/internal/widget/LockPatternUtils;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lockPatternUtils"    # Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 48
     invoke-direct {p0}, Landroid/os/ShellCommand;-><init>()V
 
-    .line 45
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mOld:Ljava/lang/String;
 
-    .line 46
     const-string v0, ""
 
     iput-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
 
-    .line 49
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mContext:Landroid/content/Context;
 
-    .line 50
     iput-object p2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 51
     return-void
 .end method
 
@@ -70,7 +62,6 @@
         }
     .end annotation
 
-    .line 169
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
@@ -79,8 +70,6 @@
 
     move-result v0
 
-    .line 170
-    .local v0, "havePassword":Z
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
@@ -89,21 +78,17 @@
 
     move-result v1
 
-    .line 171
-    .local v1, "havePattern":Z
     if-nez v0, :cond_1
 
     if-eqz v1, :cond_0
 
     goto :goto_0
 
-    .line 196
     :cond_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 172
     :cond_1
     :goto_0
     iget-object v2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
@@ -118,7 +103,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 173
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v2
@@ -127,14 +111,11 @@
 
     invoke-virtual {v2, v4}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 174
     return v3
 
-    .line 179
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 180
     :try_start_0
     iget-object v2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -146,17 +127,13 @@
 
     move-result v2
 
-    .local v2, "result":Z
     goto :goto_1
 
-    .line 191
-    .end local v2    # "result":Z
     :catch_0
     move-exception v2
 
     goto :goto_2
 
-    .line 182
     :cond_3
     iget-object v2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
@@ -172,12 +149,9 @@
 
     move-result v2
 
-    .line 184
-    .restart local v2    # "result":Z
     :goto_1
     if-nez v2, :cond_5
 
-    .line 185
     iget-object v4, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v5, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
@@ -188,14 +162,12 @@
 
     if-nez v4, :cond_4
 
-    .line 186
     iget-object v4, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v5, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
 
     invoke-virtual {v4, v5}, Lcom/android/internal/widget/LockPatternUtils;->reportFailedPasswordAttempt(I)V
 
-    .line 188
     :cond_4
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
@@ -225,17 +197,12 @@
     :try_end_0
     .catch Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 190
     :cond_5
     return v2
 
-    .line 191
-    .end local v2    # "result":Z
     :goto_2
     nop
 
-    .line 192
-    .local v2, "e":Lcom/android/internal/widget/LockPatternUtils$RequestThrottledException;
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v4
@@ -244,14 +211,12 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 193
     return v3
 .end method
 
 .method private parseArgs()V
     .locals 4
 
-    .line 110
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getNextOption()Ljava/lang/String;
 
@@ -259,10 +224,8 @@
 
     move-object v1, v0
 
-    .local v1, "opt":Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 111
     const-string v0, "--old"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -271,7 +234,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 112
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getNextArgRequired()Ljava/lang/String;
 
     move-result-object v0
@@ -280,7 +242,6 @@
 
     goto :goto_0
 
-    .line 113
     :cond_0
     const-string v0, "--user"
 
@@ -290,7 +251,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 114
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getNextArgRequired()Ljava/lang/String;
 
     move-result-object v0
@@ -303,7 +263,6 @@
 
     goto :goto_0
 
-    .line 116
     :cond_1
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
@@ -325,14 +284,12 @@
 
     invoke-virtual {v0, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 117
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 120
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getNextArg()Ljava/lang/String;
 
@@ -340,19 +297,16 @@
 
     iput-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
 
-    .line 121
     return-void
 .end method
 
 .method private runChangeSp()V
     .locals 5
 
-    .line 124
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 125
     const-string v0, "1"
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
@@ -363,12 +317,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 126
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->enableSyntheticPassword()V
 
-    .line 127
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -379,7 +331,6 @@
 
     goto :goto_0
 
-    .line 128
     :cond_0
     const-string v0, "0"
 
@@ -391,12 +342,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 129
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternUtils;->disableSyntheticPassword()V
 
-    .line 130
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -405,7 +354,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 133
     :cond_1
     :goto_0
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
@@ -422,7 +370,6 @@
 
     iget-object v4, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 134
     invoke-virtual {v4}, Lcom/android/internal/widget/LockPatternUtils;->isSyntheticPasswordEnabled()Z
 
     move-result v4
@@ -433,14 +380,12 @@
 
     aput-object v4, v2, v3
 
-    .line 133
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 135
     return-void
 .end method
 
@@ -452,7 +397,6 @@
         }
     .end annotation
 
-    .line 153
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mOld:Ljava/lang/String;
@@ -461,7 +405,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->clearLock(Ljava/lang/String;I)V
 
-    .line 154
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -470,14 +413,12 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 155
     return-void
 .end method
 
 .method private runGetDisabled()V
     .locals 2
 
-    .line 164
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
@@ -486,15 +427,12 @@
 
     move-result v0
 
-    .line 165
-    .local v0, "isLockScreenDisabled":Z
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 166
     return-void
 .end method
 
@@ -506,22 +444,18 @@
         }
     .end annotation
 
-    .line 158
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 159
-    .local v0, "disabled":Z
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v2, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
 
     invoke-virtual {v1, v0, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLockScreenDisabled(ZI)V
 
-    .line 160
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v1
@@ -542,7 +476,6 @@
 
     invoke-virtual {v1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 161
     return-void
 .end method
 
@@ -554,7 +487,6 @@
         }
     .end annotation
 
-    .line 143
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
@@ -567,7 +499,6 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPassword(Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 144
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -594,7 +525,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 145
     return-void
 .end method
 
@@ -606,7 +536,6 @@
         }
     .end annotation
 
-    .line 138
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
@@ -621,7 +550,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;Ljava/lang/String;I)V
 
-    .line 139
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -648,7 +576,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 140
     return-void
 .end method
 
@@ -660,7 +587,6 @@
         }
     .end annotation
 
-    .line 148
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mNew:Ljava/lang/String;
@@ -673,7 +599,6 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPassword(Ljava/lang/String;Ljava/lang/String;II)V
 
-    .line 149
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -700,14 +625,12 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 150
     return-void
 .end method
 
 .method private runVerify()V
     .locals 2
 
-    .line 101
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getOutPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v0
@@ -716,7 +639,6 @@
 
     invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 102
     return-void
 .end method
 
@@ -724,9 +646,7 @@
 # virtual methods
 .method public onCommand(Ljava/lang/String;)I
     .locals 5
-    .param p1, "cmd"    # Ljava/lang/String;
 
-    .line 56
     const/4 v0, -0x1
 
     :try_start_0
@@ -742,20 +662,16 @@
 
     iput v1, p0, Lcom/android/server/locksettings/LockSettingsShellCommand;->mCurrentUserId:I
 
-    .line 58
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->parseArgs()V
 
-    .line 59
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->checkCredential()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 60
     return v0
 
-    .line 62
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
@@ -878,70 +794,52 @@
     :goto_1
     packed-switch v1, :pswitch_data_0
 
-    .line 88
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v1
 
     goto :goto_2
 
-    .line 85
     :pswitch_0
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runGetDisabled()V
 
-    .line 86
     goto :goto_3
 
-    .line 82
     :pswitch_1
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runVerify()V
 
-    .line 83
     goto :goto_3
 
-    .line 79
     :pswitch_2
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runSetDisabled()V
 
-    .line 80
     goto :goto_3
 
-    .line 76
     :pswitch_3
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runChangeSp()V
 
-    .line 77
     goto :goto_3
 
-    .line 73
     :pswitch_4
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runClear()V
 
-    .line 74
     goto :goto_3
 
-    .line 70
     :pswitch_5
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runSetPin()V
 
-    .line 71
     goto :goto_3
 
-    .line 67
     :pswitch_6
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runSetPassword()V
 
-    .line 68
     goto :goto_3
 
-    .line 64
     :pswitch_7
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->runSetPattern()V
 
-    .line 65
     goto :goto_3
 
-    .line 88
     :goto_2
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -961,16 +859,12 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 91
     :goto_3
     return v2
 
-    .line 92
     :catch_0
     move-exception v1
 
-    .line 93
-    .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v2
@@ -991,14 +885,12 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 94
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsShellCommand;->getErrPrintWriter()Ljava/io/PrintWriter;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/Exception;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    .line 95
     return v0
 
     nop
@@ -1031,6 +923,5 @@
 .method public onHelp()V
     .locals 0
 
-    .line 106
     return-void
 .end method

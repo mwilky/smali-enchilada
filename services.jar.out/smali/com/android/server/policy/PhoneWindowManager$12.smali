@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/PhoneWindowManager;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/policy/PhoneWindowManager;
 
-    .line 5169
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iput-boolean p2, p0, Lcom/android/server/policy/PhoneWindowManager$12;->val$awakenFromDreams:Z
@@ -37,16 +35,13 @@
 
 .method public static synthetic lambda$onDismissSucceeded$0(Lcom/android/server/policy/PhoneWindowManager$12;Z)V
     .locals 2
-    .param p1, "awakenFromDreams"    # Z
 
-    .line 5173
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1, p1}, Lcom/android/server/policy/PhoneWindowManager;->startDockOrHome(ZZ)V
 
-    .line 5174
     return-void
 .end method
 
@@ -60,7 +55,6 @@
         }
     .end annotation
 
-    .line 5172
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$12;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager;->mHandler:Landroid/os/Handler;
@@ -73,6 +67,5 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 5175
     return-void
 .end method

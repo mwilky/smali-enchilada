@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerService;ZI[Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 15045
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$9;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iput-boolean p2, p0, Lcom/android/server/pm/PackageManagerService$9;->val$suspended:Z
@@ -59,17 +57,13 @@
 .method public run()V
     .locals 14
 
-    .line 15049
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v0
 
-    .line 15050
-    .local v0, "am":Landroid/app/IActivityManager;
     if-nez v0, :cond_1
 
-    .line 15051
     const-string v1, "PackageManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -80,7 +74,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 15052
     iget-boolean v3, p0, Lcom/android/server/pm/PackageManagerService$9;->val$suspended:Z
 
     if-eqz v3, :cond_0
@@ -103,13 +96,10 @@
 
     move-result-object v2
 
-    .line 15051
     invoke-static {v1, v2}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 15053
     return-void
 
-    .line 15055
     :cond_1
     const/4 v1, 0x1
 
@@ -121,8 +111,6 @@
 
     aput v1, v9, v2
 
-    .line 15056
-    .local v9, "targetUserIds":[I
     iget-object v11, p0, Lcom/android/server/pm/PackageManagerService$9;->val$affectedPackages:[Ljava/lang/String;
 
     array-length v12, v11
@@ -134,8 +122,6 @@
 
     aget-object v7, v11, v13
 
-    .line 15057
-    .local v7, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$9;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v3, p0, Lcom/android/server/pm/PackageManagerService$9;->val$action:Ljava/lang/String;
@@ -156,23 +142,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 15056
-    .end local v7    # "packageName":Ljava/lang/String;
     add-int/lit8 v13, v13, 0x1
 
     goto :goto_1
 
-    .line 15063
-    .end local v0    # "am":Landroid/app/IActivityManager;
-    .end local v9    # "targetUserIds":[I
     :cond_2
     goto :goto_2
 
-    .line 15061
     :catch_0
     move-exception v0
 
-    .line 15064
     :goto_2
     return-void
 .end method

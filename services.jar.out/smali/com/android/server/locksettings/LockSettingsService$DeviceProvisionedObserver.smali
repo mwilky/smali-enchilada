@@ -28,15 +28,12 @@
 .method public constructor <init>(Lcom/android/server/locksettings/LockSettingsService;)V
     .locals 0
 
-    .line 2905
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
-    .line 2906
     const/4 p1, 0x0
 
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 2898
     const-string p1, "device_provisioned"
 
     invoke-static {p1}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -45,7 +42,6 @@
 
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mDeviceProvisionedUri:Landroid/net/Uri;
 
-    .line 2900
     const-string/jumbo p1, "user_setup_complete"
 
     invoke-static {p1}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -54,14 +50,12 @@
 
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mUserSetupCompleteUri:Landroid/net/Uri;
 
-    .line 2907
     return-void
 .end method
 
 .method private clearFrpCredentialIfOwnerNotSecure()V
     .locals 6
 
-    .line 2960
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0}, Lcom/android/server/locksettings/LockSettingsService;->access$400(Lcom/android/server/locksettings/LockSettingsService;)Landroid/os/UserManager;
@@ -72,8 +66,6 @@
 
     move-result-object v0
 
-    .line 2961
-    .local v0, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -91,8 +83,6 @@
 
     check-cast v2, Landroid/content/pm/UserInfo;
 
-    .line 2962
-    .local v2, "user":Landroid/content/pm/UserInfo;
     iget-object v3, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v3}, Lcom/android/server/locksettings/LockSettingsService;->access$1200(Lcom/android/server/locksettings/LockSettingsService;)Landroid/content/Context;
@@ -105,7 +95,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 2963
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     iget v3, v2, Landroid/content/pm/UserInfo;->id:I
@@ -116,7 +105,6 @@
 
     if-nez v1, :cond_0
 
-    .line 2964
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     iget-object v1, v1, Lcom/android/server/locksettings/LockSettingsService;->mStorage:Lcom/android/server/locksettings/LockSettingsStorage;
@@ -129,16 +117,12 @@
 
     invoke-virtual {v1, v5, v3, v5, v4}, Lcom/android/server/locksettings/LockSettingsStorage;->writePersistentDataBlock(III[B)V
 
-    .line 2967
     :cond_0
     return-void
 
-    .line 2969
-    .end local v2    # "user":Landroid/content/pm/UserInfo;
     :cond_1
     goto :goto_0
 
-    .line 2970
     :cond_2
     return-void
 .end method
@@ -146,7 +130,6 @@
 .method private isProvisioned()Z
     .locals 3
 
-    .line 2989
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0}, Lcom/android/server/locksettings/LockSettingsService;->access$1200(Lcom/android/server/locksettings/LockSettingsService;)Landroid/content/Context;
@@ -178,7 +161,6 @@
 .method private reportDeviceSetupComplete()V
     .locals 3
 
-    .line 2943
     :try_start_0
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
@@ -188,7 +170,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2944
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {v0}, Lcom/android/server/locksettings/LockSettingsService;->getGateKeeperService()Landroid/service/gatekeeper/IGateKeeperService;
@@ -199,24 +180,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2952
     :cond_0
     goto :goto_0
 
-    .line 2950
     :catch_0
     move-exception v0
 
-    .line 2951
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "LockSettingsService"
 
     const-string v2, "Failure reporting to IGateKeeperService"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2953
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -224,27 +199,21 @@
 .method private updateRegistration()V
     .locals 5
 
-    .line 2973
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->isProvisioned()Z
 
     move-result v0
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 2974
-    .local v0, "register":Z
     iget-boolean v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mRegistered:Z
 
     if-ne v0, v1, :cond_0
 
-    .line 2975
     return-void
 
-    .line 2977
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 2978
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v1}, Lcom/android/server/locksettings/LockSettingsService;->access$1200(Lcom/android/server/locksettings/LockSettingsService;)Landroid/content/Context;
@@ -261,7 +230,6 @@
 
     invoke-virtual {v1, v2, v3, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 2980
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v1}, Lcom/android/server/locksettings/LockSettingsService;->access$1200(Lcom/android/server/locksettings/LockSettingsService;)Landroid/content/Context;
@@ -280,7 +248,6 @@
 
     goto :goto_0
 
-    .line 2983
     :cond_1
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
@@ -294,11 +261,9 @@
 
     invoke-virtual {v1, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 2985
     :goto_0
     iput-boolean v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mRegistered:Z
 
-    .line 2986
     return-void
 .end method
 
@@ -306,11 +271,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 2
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 2911
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mDeviceProvisionedUri:Landroid/net/Uri;
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -319,32 +280,26 @@
 
     if-eqz v0, :cond_0
 
-    .line 2912
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->updateRegistration()V
 
-    .line 2914
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->isProvisioned()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 2915
     const-string v0, "LockSettingsService"
 
     const-string v1, "Reporting device setup complete to IGateKeeperService"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2916
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->reportDeviceSetupComplete()V
 
-    .line 2917
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->clearFrpCredentialIfOwnerNotSecure()V
 
     goto :goto_0
 
-    .line 2919
     :cond_0
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->mUserSetupCompleteUri:Landroid/net/Uri;
 
@@ -354,12 +309,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 2920
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0, p3}, Lcom/android/server/locksettings/LockSettingsService;->access$1100(Lcom/android/server/locksettings/LockSettingsService;I)V
 
-    .line 2922
     :cond_1
     :goto_0
     return-void
@@ -368,7 +321,6 @@
 .method public onSystemReady()V
     .locals 2
 
-    .line 2925
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0}, Lcom/android/server/locksettings/LockSettingsService;->access$1200(Lcom/android/server/locksettings/LockSettingsService;)Landroid/content/Context;
@@ -381,12 +333,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2926
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->updateRegistration()V
 
     goto :goto_0
 
-    .line 2931
     :cond_0
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->isProvisioned()Z
 
@@ -394,17 +344,14 @@
 
     if-nez v0, :cond_1
 
-    .line 2932
     const-string v0, "LockSettingsService"
 
     const-string v1, "FRP credential disabled, reporting device setup complete to Gatekeeper immediately"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2934
     invoke-direct {p0}, Lcom/android/server/locksettings/LockSettingsService$DeviceProvisionedObserver;->reportDeviceSetupComplete()V
 
-    .line 2937
     :cond_1
     :goto_0
     return-void

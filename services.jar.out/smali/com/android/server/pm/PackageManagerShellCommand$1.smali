@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/PackageManagerShellCommand;
 
-    .line 425
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerShellCommand$1;->this$0:Lcom/android/server/pm/PackageManagerShellCommand;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/content/pm/FeatureInfo;Landroid/content/pm/FeatureInfo;)I
     .locals 2
-    .param p1, "o1"    # Landroid/content/pm/FeatureInfo;
-    .param p2, "o2"    # Landroid/content/pm/FeatureInfo;
 
-    .line 427
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
     iget-object v1, p2, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
@@ -61,7 +56,6 @@
 
     return v0
 
-    .line 428
     :cond_0
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -71,7 +65,6 @@
 
     return v0
 
-    .line 429
     :cond_1
     iget-object v0, p2, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -81,7 +74,6 @@
 
     return v0
 
-    .line 430
     :cond_2
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -97,7 +89,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 425
     check-cast p1, Landroid/content/pm/FeatureInfo;
 
     check-cast p2, Landroid/content/pm/FeatureInfo;

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DeviceIdleController$MyHandler;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/DeviceIdleController$MyHandler;
 
-    .line 1444
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$MyHandler$1;->this$1:Lcom/android/server/DeviceIdleController$MyHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 6
 
-    .line 1447
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 1449
-    .local v0, "timespend":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$MyHandler$1;->this$1:Lcom/android/server/DeviceIdleController$MyHandler;
 
@@ -55,18 +50,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1453
     goto :goto_0
 
-    .line 1450
     :catch_0
     move-exception v2
 
-    .line 1451
-    .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 1452
     const-string v3, "DeviceIdleController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -85,8 +75,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1454
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -94,9 +82,6 @@
 
     sub-long/2addr v2, v0
 
-    .line 1455
-    .end local v0    # "timespend":J
-    .local v2, "timespend":J
     invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
 
     move-result v0
@@ -132,7 +117,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1456
     :cond_1
     return-void
 .end method

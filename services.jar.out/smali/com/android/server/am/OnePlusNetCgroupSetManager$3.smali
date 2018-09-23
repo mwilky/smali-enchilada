@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/OnePlusNetCgroupSetManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/OnePlusNetCgroupSetManager;
 
-    .line 261
     iput-object p1, p0, Lcom/android/server/am/OnePlusNetCgroupSetManager$3;->this$0:Lcom/android/server/am/OnePlusNetCgroupSetManager;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -35,49 +33,40 @@
 # virtual methods
 .method public onUidActive(I)V
     .locals 0
-    .param p1, "uid"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 279
     return-void
 .end method
 
 .method public onUidCachedChanged(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "cached"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 287
     return-void
 .end method
 
 .method public onUidGone(IZ)V
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 269
     iget-object v0, p0, Lcom/android/server/am/OnePlusNetCgroupSetManager$3;->this$0:Lcom/android/server/am/OnePlusNetCgroupSetManager;
 
     iget-object v0, v0, Lcom/android/server/am/OnePlusNetCgroupSetManager;->mRulesLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 270
     :try_start_0
     iget-object v1, p0, Lcom/android/server/am/OnePlusNetCgroupSetManager$3;->this$0:Lcom/android/server/am/OnePlusNetCgroupSetManager;
 
@@ -87,26 +76,19 @@
 
     move-result v1
 
-    .line 271
-    .local v1, "index":I
     if-ltz v1, :cond_0
 
-    .line 272
     iget-object v2, p0, Lcom/android/server/am/OnePlusNetCgroupSetManager$3;->this$0:Lcom/android/server/am/OnePlusNetCgroupSetManager;
 
     iget-object v2, v2, Lcom/android/server/am/OnePlusNetCgroupSetManager;->mUidPidState:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->removeAt(I)V
 
-    .line 274
-    .end local v1    # "index":I
     :cond_0
     monitor-exit v0
 
-    .line 275
     return-void
 
-    .line 274
     :catchall_0
     move-exception v1
 
@@ -119,29 +101,22 @@
 
 .method public onUidIdle(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 283
     return-void
 .end method
 
 .method public onUidStateChanged(IIJ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "procState"    # I
-    .param p3, "procStateSeq"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 264
     return-void
 .end method

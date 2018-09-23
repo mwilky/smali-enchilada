@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/net/watchlist/HarmfulDigests;Lcom/android/server/net/watchlist/HarmfulDigests;)V
     .locals 0
-    .param p1, "crc32Digests"    # Lcom/android/server/net/watchlist/HarmfulDigests;
-    .param p2, "sha256Digests"    # Lcom/android/server/net/watchlist/HarmfulDigests;
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     iput-object p1, p0, Lcom/android/server/net/watchlist/WatchlistConfig$CrcShaDigests;->crc32Digests:Lcom/android/server/net/watchlist/HarmfulDigests;
 
-    .line 74
     iput-object p2, p0, Lcom/android/server/net/watchlist/WatchlistConfig$CrcShaDigests;->sha256Digests:Lcom/android/server/net/watchlist/HarmfulDigests;
 
-    .line 75
     return-void
 .end method

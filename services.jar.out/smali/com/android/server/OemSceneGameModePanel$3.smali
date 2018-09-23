@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModePanel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModePanel;
 
-    .line 198
     iput-object p1, p0, Lcom/android/server/OemSceneGameModePanel$3;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 201
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanel$3;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-static {v0}, Lcom/android/server/OemSceneGameModePanel;->access$100(Lcom/android/server/OemSceneGameModePanel;)Lcom/android/server/OemSceneGameModeView;
@@ -46,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 202
     iget-object v0, p0, Lcom/android/server/OemSceneGameModePanel$3;->this$0:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-static {v0}, Lcom/android/server/OemSceneGameModePanel;->access$100(Lcom/android/server/OemSceneGameModePanel;)Lcom/android/server/OemSceneGameModeView;
@@ -57,7 +52,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/OemSceneGameModeView;->setVisibility(I)V
 
-    .line 204
     :cond_0
     return-void
 .end method

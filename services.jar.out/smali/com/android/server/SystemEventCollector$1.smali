@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/SystemEventCollector;Lcom/android/server/SystemEvent;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/SystemEventCollector;
 
-    .line 19
     iput-object p1, p0, Lcom/android/server/SystemEventCollector$1;->this$0:Lcom/android/server/SystemEventCollector;
 
     iput-object p2, p0, Lcom/android/server/SystemEventCollector$1;->val$event:Lcom/android/server/SystemEvent;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 22
     iget-object v0, p0, Lcom/android/server/SystemEventCollector$1;->this$0:Lcom/android/server/SystemEventCollector;
 
     invoke-static {v0}, Lcom/android/server/SystemEventCollector;->access$100(Lcom/android/server/SystemEventCollector;)Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -80,6 +77,5 @@
 
     invoke-virtual {v0, v1, v2}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    .line 23
     return-void
 .end method

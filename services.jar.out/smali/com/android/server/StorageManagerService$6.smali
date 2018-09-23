@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;Landroid/os/IVoldTaskListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
 
-    .line 1767
     iput-object p1, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     iput-object p2, p0, Lcom/android/server/StorageManagerService$6;->val$listener:Landroid/os/IVoldTaskListener;
@@ -39,57 +37,43 @@
 # virtual methods
 .method public onFinished(ILandroid/os/PersistableBundle;)V
     .locals 13
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 1775
     iget-object v0, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     iget-object v1, p0, Lcom/android/server/StorageManagerService$6;->val$listener:Landroid/os/IVoldTaskListener;
 
     invoke-static {v0, v1, p1, p2}, Lcom/android/server/StorageManagerService;->access$3400(Lcom/android/server/StorageManagerService;Landroid/os/IVoldTaskListener;ILandroid/os/PersistableBundle;)V
 
-    .line 1777
     const-string/jumbo v0, "path"
 
     invoke-virtual {p2, v0}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1778
-    .local v0, "path":Ljava/lang/String;
-    const-string/jumbo v1, "ident"
+    const-string v1, "ident"
 
     invoke-virtual {p2, v1}, Landroid/os/PersistableBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1779
-    .local v1, "ident":Ljava/lang/String;
     const-string v2, "create"
 
     invoke-virtual {p2, v2}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    .line 1780
-    .local v2, "create":J
     const-string/jumbo v4, "run"
 
     invoke-virtual {p2, v4}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v4
 
-    .line 1781
-    .local v4, "run":J
     const-string v6, "destroy"
 
     invoke-virtual {p2, v6}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v6
 
-    .line 1783
-    .local v6, "destroy":J
     iget-object v8, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v8}, Lcom/android/server/StorageManagerService;->access$1500(Lcom/android/server/StorageManagerService;)Landroid/content/Context;
@@ -104,8 +88,6 @@
 
     check-cast v8, Landroid/os/DropBoxManager;
 
-    .line 1784
-    .local v8, "dropBox":Landroid/os/DropBoxManager;
     const-string/jumbo v9, "storage_benchmark"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -150,7 +132,6 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/os/DropBoxManager;->addText(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1787
     iget-object v9, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v9}, Lcom/android/server/StorageManagerService;->access$2200(Lcom/android/server/StorageManagerService;)Ljava/lang/Object;
@@ -159,7 +140,6 @@
 
     monitor-enter v9
 
-    .line 1788
     :try_start_0
     iget-object v10, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
@@ -167,31 +147,23 @@
 
     move-result-object v10
 
-    .line 1789
-    .local v10, "rec":Landroid/os/storage/VolumeRecord;
     if-eqz v10, :cond_0
 
-    .line 1790
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v11
 
     iput-wide v11, v10, Landroid/os/storage/VolumeRecord;->lastBenchMillis:J
 
-    .line 1791
     iget-object v11, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v11}, Lcom/android/server/StorageManagerService;->access$3700(Lcom/android/server/StorageManagerService;)V
 
-    .line 1793
-    .end local v10    # "rec":Landroid/os/storage/VolumeRecord;
     :cond_0
     monitor-exit v9
 
-    .line 1794
     return-void
 
-    .line 1793
     :catchall_0
     move-exception v10
 
@@ -204,16 +176,12 @@
 
 .method public onStatus(ILandroid/os/PersistableBundle;)V
     .locals 2
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 1770
     iget-object v0, p0, Lcom/android/server/StorageManagerService$6;->this$0:Lcom/android/server/StorageManagerService;
 
     iget-object v1, p0, Lcom/android/server/StorageManagerService$6;->val$listener:Landroid/os/IVoldTaskListener;
 
     invoke-static {v0, v1, p1, p2}, Lcom/android/server/StorageManagerService;->access$3300(Lcom/android/server/StorageManagerService;Landroid/os/IVoldTaskListener;ILandroid/os/PersistableBundle;)V
 
-    .line 1771
     return-void
 .end method

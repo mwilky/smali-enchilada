@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 138
     new-instance v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
     const-string v1, "VALIDATED"
@@ -51,7 +50,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;->VALIDATED:Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
-    .line 139
     new-instance v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
     const-string v1, "CAPTIVE_PORTAL"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;->CAPTIVE_PORTAL:Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
-    .line 137
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
@@ -80,28 +77,22 @@
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
     .locals 0
-    .param p3, "isValidated"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
         }
     .end annotation
 
-    .line 141
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 142
     iput-boolean p3, p0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;->isValidated:Z
 
-    .line 143
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 137
     const-class v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -116,7 +107,6 @@
 .method public static values()[Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
     .locals 1
 
-    .line 137
     sget-object v0, Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;->$VALUES:[Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;
 
     invoke-virtual {v0}, [Lcom/android/server/connectivity/NetworkMonitor$EvaluationResult;->clone()Ljava/lang/Object;

@@ -26,43 +26,30 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 1301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1302
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mX:D
 
-    .line 1303
     iput-wide v0, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mY:D
 
-    .line 1304
     iput-wide v0, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mZ:D
 
-    .line 1305
     return-void
 .end method
 
 .method public constructor <init>(DDD)V
     .locals 0
-    .param p1, "x"    # D
-    .param p3, "y"    # D
-    .param p5, "z"    # D
 
-    .line 1307
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1308
     iput-wide p1, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mX:D
 
-    .line 1309
     iput-wide p3, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mY:D
 
-    .line 1310
     iput-wide p5, p0, Lcom/android/server/am/RestartProcessManager$CenterPoint;->mZ:D
 
-    .line 1311
     return-void
 .end method
 
@@ -71,7 +58,6 @@
 .method public dump()V
     .locals 4
 
-    .line 1314
     const-string v0, "RestartProcessManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -108,6 +94,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1315
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1629
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/am/RestartProcessManager$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/am/RestartProcessManager$1;
 
-    .line 1629
     invoke-direct {p0}, Lcom/android/server/am/RestartProcessManager$PackageInfoComparator;-><init>()V
 
     return-void
@@ -50,10 +47,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/am/RestartProcessManager$PackageRankInfo;Lcom/android/server/am/RestartProcessManager$PackageRankInfo;)I
     .locals 9
-    .param p1, "lhs"    # Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
-    .param p2, "rhs"    # Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
 
-    .line 1632
     new-instance v7, Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
     const-wide/16 v1, 0x0
@@ -74,8 +68,6 @@
 
     move-result-object v0
 
-    .line 1633
-    .local v0, "l1":Ljava/lang/Double;
     new-instance v8, Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
     const-wide/16 v2, 0x0
@@ -96,8 +88,6 @@
 
     move-result-object v1
 
-    .line 1634
-    .local v1, "l2":Ljava/lang/Double;
     invoke-virtual {v0, v1}, Ljava/lang/Double;->compareTo(Ljava/lang/Double;)I
 
     move-result v2
@@ -108,7 +98,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1629
     check-cast p1, Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
 
     check-cast p2, Lcom/android/server/am/RestartProcessManager$PackageRankInfo;

@@ -37,12 +37,10 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 12
     sget-boolean v0, Lcom/android/server/secrecy/SecrecyService;->DEBUG:Z
 
     sput-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->IS_DEBUGING:Z
 
-    .line 14
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->IS_DEBUGING:Z
 
     const/16 v1, 0x10
@@ -61,7 +59,6 @@
     :goto_0
     sput v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
-    .line 17
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->IS_DEBUGING:Z
 
     if-eqz v0, :cond_1
@@ -76,7 +73,6 @@
     :goto_1
     sput v0, Lcom/android/server/secrecy/policy/util/LogUtil;->FILE_LOG_LEVEL:I
 
-    .line 25
     sget v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
     const/4 v3, 0x0
@@ -95,7 +91,6 @@
     :goto_2
     sput-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->VERBOSE:Z
 
-    .line 26
     sget v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
     if-gt v0, v2, :cond_3
@@ -110,7 +105,6 @@
     :goto_3
     sput-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->DEBUG:Z
 
-    .line 27
     sget v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
     const/4 v2, 0x4
@@ -127,7 +121,6 @@
     :goto_4
     sput-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->INFO:Z
 
-    .line 28
     sget v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
     const/16 v2, 0x8
@@ -144,7 +137,6 @@
     :goto_5
     sput-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->WARN:Z
 
-    .line 29
     sget v0, Lcom/android/server/secrecy/policy/util/LogUtil;->LOGCAT_LEVEL:I
 
     if-gt v0, v1, :cond_6
@@ -162,7 +154,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -170,58 +161,41 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 60
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 61
     invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :cond_0
     return-void
 .end method
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 66
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 67
     invoke-static {p0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 69
     :cond_0
     return-void
 .end method
 
 .method public static dynamicallyConfigLog(Z)V
     .locals 3
-    .param p0, "on"    # Z
 
-    .line 108
     sput-boolean p0, Lcom/android/server/secrecy/policy/util/LogUtil;->VERBOSE:Z
 
-    .line 109
     sput-boolean p0, Lcom/android/server/secrecy/policy/util/LogUtil;->DEBUG:Z
 
-    .line 110
     sput-boolean p0, Lcom/android/server/secrecy/policy/util/LogUtil;->INFO:Z
 
-    .line 111
     sput-boolean p0, Lcom/android/server/secrecy/policy/util/LogUtil;->WARN:Z
 
-    .line 113
     const-string v0, "SecrecyService.LogUtil"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -240,43 +214,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 84
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->ERROR:Z
 
     if-eqz v0, :cond_0
 
-    .line 85
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     :cond_0
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 90
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->ERROR:Z
 
     if-eqz v0, :cond_0
 
-    .line 91
     invoke-static {p0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 93
     :cond_0
     return-void
 .end method
@@ -284,11 +246,8 @@
 .method public static getLevelString()Ljava/lang/String;
     .locals 3
 
-    .line 117
     const-string v0, "("
 
-    .line 118
-    .local v0, "levelString":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -307,7 +266,6 @@
 
     move-result-object v0
 
-    .line 119
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -326,7 +284,6 @@
 
     move-result-object v0
 
-    .line 120
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -345,7 +302,6 @@
 
     move-result-object v0
 
-    .line 121
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -364,7 +320,6 @@
 
     move-result-object v0
 
-    .line 122
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -383,7 +338,6 @@
 
     move-result-object v0
 
-    .line 123
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -398,43 +352,31 @@
 
     move-result-object v0
 
-    .line 124
     return-object v0
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 36
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->INFO:Z
 
     if-eqz v0, :cond_0
 
-    .line 37
     invoke-static {p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 39
     :cond_0
     return-void
 .end method
 
 .method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 42
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->INFO:Z
 
     if-eqz v0, :cond_0
 
-    .line 43
     invoke-static {p0, p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 45
     :cond_0
     return-void
 .end method
@@ -442,7 +384,6 @@
 .method public static isDebug()Z
     .locals 1
 
-    .line 32
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->IS_DEBUGING:Z
 
     return v0
@@ -450,111 +391,78 @@
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 48
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->VERBOSE:Z
 
     if-eqz v0, :cond_0
 
-    .line 49
     invoke-static {p0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     :cond_0
     return-void
 .end method
 
 .method public static v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 54
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->VERBOSE:Z
 
     if-eqz v0, :cond_0
 
-    .line 55
     invoke-static {p0, p1, p2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 57
     :cond_0
     return-void
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 72
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->WARN:Z
 
     if-eqz v0, :cond_0
 
-    .line 73
     invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     :cond_0
     return-void
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 78
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->WARN:Z
 
     if-eqz v0, :cond_0
 
-    .line 79
     invoke-static {p0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 81
     :cond_0
     return-void
 .end method
 
 .method public static wtf(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 96
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->ERROR:Z
 
     if-eqz v0, :cond_0
 
-    .line 97
     invoke-static {p0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     :cond_0
     return-void
 .end method
 
 .method public static wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "error"    # Ljava/lang/Throwable;
 
-    .line 102
     sget-boolean v0, Lcom/android/server/secrecy/policy/util/LogUtil;->ERROR:Z
 
     if-eqz v0, :cond_0
 
-    .line 103
     invoke-static {p0, p1, p2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 105
     :cond_0
     return-void
 .end method

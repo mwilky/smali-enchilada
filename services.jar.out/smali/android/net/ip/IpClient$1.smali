@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/os/INetworkManagementService;)V
     .locals 0
 
-    .line 699
     iput-object p1, p0, Landroid/net/ip/IpClient$1;->val$nwService:Landroid/os/INetworkManagementService;
 
     invoke-direct {p0}, Landroid/net/ip/IpClient$Dependencies;-><init>()V
@@ -35,7 +34,6 @@
 .method public getNMS()Landroid/os/INetworkManagementService;
     .locals 1
 
-    .line 701
     iget-object v0, p0, Landroid/net/ip/IpClient$1;->val$nwService:Landroid/os/INetworkManagementService;
 
     return-object v0

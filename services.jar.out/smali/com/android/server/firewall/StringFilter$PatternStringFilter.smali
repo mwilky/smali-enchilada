@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/firewall/StringFilter$ValueProvider;Ljava/lang/String;)V
     .locals 2
-    .param p1, "valueProvider"    # Lcom/android/server/firewall/StringFilter$ValueProvider;
-    .param p2, "attrValue"    # Ljava/lang/String;
 
-    .line 187
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/firewall/StringFilter;-><init>(Lcom/android/server/firewall/StringFilter$ValueProvider;Lcom/android/server/firewall/StringFilter$1;)V
 
-    .line 188
     new-instance v0, Landroid/os/PatternMatcher;
 
     const/4 v1, 0x2
@@ -38,7 +34,6 @@
 
     iput-object v0, p0, Lcom/android/server/firewall/StringFilter$PatternStringFilter;->mPattern:Landroid/os/PatternMatcher;
 
-    .line 189
     return-void
 .end method
 
@@ -46,9 +41,7 @@
 # virtual methods
 .method public matchesValue(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 193
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/server/firewall/StringFilter$PatternStringFilter;->mPattern:Landroid/os/PatternMatcher;

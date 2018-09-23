@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/DeviceIdleController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/DeviceIdleController;
 
-    .line 2873
     iput-object p1, p0, Lcom/android/server/DeviceIdleController$11;->this$0:Lcom/android/server/DeviceIdleController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,10 @@
 .method public run()V
     .locals 6
 
-    .line 2876
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 2878
-    .local v0, "timespend":J
     :try_start_0
     iget-object v2, p0, Lcom/android/server/DeviceIdleController$11;->this$0:Lcom/android/server/DeviceIdleController;
 
@@ -57,14 +52,12 @@
 
     invoke-interface {v2, v3}, Lcom/oem/os/IOemExService;->dumpLightBugreport(Ljava/lang/String;)V
 
-    .line 2879
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     sub-long v0, v2, v0
 
-    .line 2880
     invoke-static {}, Lcom/android/server/DeviceIdleController;->access$1300()Z
 
     move-result v2
@@ -102,19 +95,14 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2884
     :cond_1
     goto :goto_0
 
-    .line 2881
     :catch_0
     move-exception v2
 
-    .line 2882
-    .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2883
     const-string v3, "DeviceIdleController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -133,8 +121,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2885
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

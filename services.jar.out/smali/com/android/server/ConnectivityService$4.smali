@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ConnectivityService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/ConnectivityService;
 
-    .line 1642
     iput-object p1, p0, Lcom/android/server/ConnectivityService$4;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Lcom/android/server/net/BaseNetdEventCallback;-><init>()V
@@ -35,12 +33,7 @@
 # virtual methods
 .method public onPrivateDnsValidationEvent(ILjava/lang/String;Ljava/lang/String;Z)V
     .locals 5
-    .param p1, "netId"    # I
-    .param p2, "ipAddress"    # Ljava/lang/String;
-    .param p3, "hostname"    # Ljava/lang/String;
-    .param p4, "validated"    # Z
 
-    .line 1647
     :try_start_0
     iget-object v0, p0, Lcom/android/server/ConnectivityService$4;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -58,14 +51,12 @@
 
     new-instance v3, Lcom/android/server/connectivity/DnsManager$PrivateDnsValidationUpdate;
 
-    .line 1650
     invoke-static {p2}, Ljava/net/InetAddress;->parseNumericAddress(Ljava/lang/String;)Ljava/net/InetAddress;
 
     move-result-object v4
 
     invoke-direct {v3, p1, v4, p3, p4}, Lcom/android/server/connectivity/DnsManager$PrivateDnsValidationUpdate;-><init>(ILjava/net/InetAddress;Ljava/lang/String;Z)V
 
-    .line 1647
     invoke-virtual {v1, v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
@@ -74,21 +65,15 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1654
     goto :goto_0
 
-    .line 1652
     :catch_0
     move-exception v0
 
-    .line 1653
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     const-string v1, "Error parsing ip address in validation event"
 
     invoke-static {v1}, Lcom/android/server/ConnectivityService;->access$700(Ljava/lang/String;)V
 
-    .line 1655
-    .end local v0    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     return-void
 .end method

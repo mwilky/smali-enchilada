@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/MultipathPolicyTracker;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/MultipathPolicyTracker;
 
-    .line 501
     iput-object p1, p0, Lcom/android/server/connectivity/MultipathPolicyTracker$2;->this$0:Lcom/android/server/connectivity/MultipathPolicyTracker;
 
     invoke-direct {p0}, Landroid/net/NetworkPolicyManager$Listener;-><init>()V
@@ -34,7 +32,6 @@
 .method public static synthetic lambda$onMeteredIfacesChanged$0(Lcom/android/server/connectivity/MultipathPolicyTracker$2;)V
     .locals 1
 
-    .line 505
     iget-object v0, p0, Lcom/android/server/connectivity/MultipathPolicyTracker$2;->this$0:Lcom/android/server/connectivity/MultipathPolicyTracker;
 
     invoke-static {v0}, Lcom/android/server/connectivity/MultipathPolicyTracker;->access$1200(Lcom/android/server/connectivity/MultipathPolicyTracker;)V
@@ -46,9 +43,7 @@
 # virtual methods
 .method public onMeteredIfacesChanged([Ljava/lang/String;)V
     .locals 2
-    .param p1, "meteredIfaces"    # [Ljava/lang/String;
 
-    .line 505
     iget-object v0, p0, Lcom/android/server/connectivity/MultipathPolicyTracker$2;->this$0:Lcom/android/server/connectivity/MultipathPolicyTracker;
 
     invoke-static {v0}, Lcom/android/server/connectivity/MultipathPolicyTracker;->access$900(Lcom/android/server/connectivity/MultipathPolicyTracker;)Landroid/os/Handler;
@@ -61,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 506
     return-void
 .end method

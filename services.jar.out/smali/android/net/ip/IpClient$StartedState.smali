@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/IpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ip/IpClient;
 
-    .line 1527
     iput-object p1, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -36,7 +34,6 @@
 .method public enter()V
     .locals 4
 
-    .line 1530
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
@@ -45,7 +42,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/net/ip/IpClient;->access$702(Landroid/net/ip/IpClient;J)J
 
-    .line 1532
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$1000(Landroid/net/ip/IpClient;)Landroid/net/ip/IpClient$ProvisioningConfiguration;
@@ -56,14 +52,12 @@
 
     if-lez v0, :cond_0
 
-    .line 1533
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iget-object v2, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
-    .line 1534
     invoke-static {v2}, Landroid/net/ip/IpClient;->access$1000(Landroid/net/ip/IpClient;)Landroid/net/ip/IpClient$ProvisioningConfiguration;
 
     move-result-object v2
@@ -74,8 +68,6 @@
 
     add-long/2addr v0, v2
 
-    .line 1535
-    .local v0, "alarmTime":J
     iget-object v2, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v2}, Landroid/net/ip/IpClient;->access$2100(Landroid/net/ip/IpClient;)Lcom/android/internal/util/WakeupMessage;
@@ -84,8 +76,6 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/android/internal/util/WakeupMessage;->schedule(J)V
 
-    .line 1538
-    .end local v0    # "alarmTime":J
     :cond_0
     invoke-virtual {p0}, Landroid/net/ip/IpClient$StartedState;->readyToProceed()Z
 
@@ -93,7 +83,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1539
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v1, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
@@ -106,13 +95,11 @@
 
     goto :goto_0
 
-    .line 1544
     :cond_1
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$500(Landroid/net/ip/IpClient;)V
 
-    .line 1546
     :goto_0
     return-void
 .end method
@@ -120,7 +107,6 @@
 .method public exit()V
     .locals 1
 
-    .line 1550
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$2100(Landroid/net/ip/IpClient;)Lcom/android/internal/util/WakeupMessage;
@@ -129,15 +115,12 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/WakeupMessage;->cancel()V
 
-    .line 1551
     return-void
 .end method
 
 .method public processMessage(Landroid/os/Message;)Z
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1555
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x2
@@ -152,23 +135,19 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1577
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-virtual {v0, p1}, Landroid/net/ip/IpClient;->deferMessage(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 1568
     :cond_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$2400(Landroid/net/ip/IpClient;)V
 
-    .line 1569
     goto :goto_0
 
-    .line 1561
     :cond_1
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -176,14 +155,12 @@
 
     invoke-static {v0, v1}, Landroid/net/ip/IpClient;->access$1200(Landroid/net/ip/IpClient;Z)Z
 
-    .line 1562
     invoke-virtual {p0}, Landroid/net/ip/IpClient$StartedState;->readyToProceed()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 1563
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     iget-object v1, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
@@ -196,7 +173,6 @@
 
     goto :goto_0
 
-    .line 1557
     :cond_2
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
@@ -208,10 +184,8 @@
 
     invoke-virtual {v0, v1}, Landroid/net/ip/IpClient;->transitionTo(Lcom/android/internal/util/IState;)V
 
-    .line 1558
     nop
 
-    .line 1580
     :cond_3
     :goto_0
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
@@ -228,7 +202,6 @@
 
     invoke-virtual {v0, p0, v1}, Landroid/net/ip/IpClient$MessageHandlingLogger;->handled(Lcom/android/internal/util/State;Lcom/android/internal/util/IState;)V
 
-    .line 1581
     const/4 v0, 0x1
 
     return v0
@@ -237,7 +210,6 @@
 .method readyToProceed()Z
     .locals 1
 
-    .line 1585
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$2500(Landroid/net/ip/IpClient;)Landroid/net/LinkProperties;
@@ -252,7 +224,6 @@
 
     iget-object v0, p0, Landroid/net/ip/IpClient$StartedState;->this$0:Landroid/net/ip/IpClient;
 
-    .line 1586
     invoke-static {v0}, Landroid/net/ip/IpClient;->access$2500(Landroid/net/ip/IpClient;)Landroid/net/LinkProperties;
 
     move-result-object v0
@@ -270,7 +241,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1585
     :goto_0
     return v0
 .end method

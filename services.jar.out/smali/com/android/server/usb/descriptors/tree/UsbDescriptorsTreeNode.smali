@@ -14,7 +14,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,16 +23,12 @@
 # virtual methods
 .method public report(Lcom/android/server/usb/descriptors/report/ReportCanvas;)V
     .locals 0
-    .param p1, "canvas"    # Lcom/android/server/usb/descriptors/report/ReportCanvas;
 
-    .line 33
     return-void
 .end method
 
 .method public shortReport(Lcom/android/server/usb/descriptors/report/ReportCanvas;)V
     .locals 0
-    .param p1, "canvas"    # Lcom/android/server/usb/descriptors/report/ReportCanvas;
 
-    .line 40
     return-void
 .end method

@@ -25,22 +25,14 @@
 # direct methods
 .method constructor <init>(Landroid/net/Network;Ljava/lang/String;Landroid/util/LocalLog$ReadOnlyLocalLog;)V
     .locals 0
-    .param p1, "network"    # Landroid/net/Network;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "log"    # Landroid/util/LocalLog$ReadOnlyLocalLog;
 
-    .line 554
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 555
     iput-object p1, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mNetwork:Landroid/net/Network;
 
-    .line 556
     iput-object p2, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mName:Ljava/lang/String;
 
-    .line 557
     iput-object p3, p0, Lcom/android/server/ConnectivityService$ValidationLog;->mLog:Landroid/util/LocalLog$ReadOnlyLocalLog;
 
-    .line 558
     return-void
 .end method

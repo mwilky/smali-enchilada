@@ -24,14 +24,9 @@
 # direct methods
 .method public constructor <init>([I[I[I)V
     .locals 2
-    .param p1, "brightLevels"    # [I
-    .param p2, "darkLevels"    # [I
-    .param p3, "luxLevels"    # [I
 
-    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     array-length v0, p1
 
     array-length v1, p2
@@ -46,7 +41,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 54
     const/high16 v0, 0x447a0000    # 1000.0f
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/display/HysteresisLevels;->setArrayFormat([IF)[F
@@ -55,14 +49,12 @@
 
     iput-object v1, p0, Lcom/android/server/display/HysteresisLevels;->mBrightLevels:[F
 
-    .line 55
     invoke-direct {p0, p2, v0}, Lcom/android/server/display/HysteresisLevels;->setArrayFormat([IF)[F
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/display/HysteresisLevels;->mDarkLevels:[F
 
-    .line 56
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-direct {p0, p3, v0}, Lcom/android/server/display/HysteresisLevels;->setArrayFormat([IF)[F
@@ -71,10 +63,8 @@
 
     iput-object v0, p0, Lcom/android/server/display/HysteresisLevels;->mLuxLevels:[F
 
-    .line 57
     return-void
 
-    .line 52
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -87,14 +77,9 @@
 
 .method private getReferenceLevel(F[F)F
     .locals 2
-    .param p1, "lux"    # F
-    .param p2, "referenceLevels"    # [F
 
-    .line 90
     const/4 v0, 0x0
 
-    .line 91
-    .local v0, "index":I
     :goto_0
     iget-object v1, p0, Lcom/android/server/display/HysteresisLevels;->mLuxLevels:[F
 
@@ -110,12 +95,10 @@
 
     if-ltz v1, :cond_0
 
-    .line 92
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 94
     :cond_0
     aget v1, p2, v0
 
@@ -124,25 +107,18 @@
 
 .method private setArrayFormat([IF)[F
     .locals 3
-    .param p1, "configArray"    # [I
-    .param p2, "divideFactor"    # F
 
-    .line 101
     array-length v0, p1
 
     new-array v0, v0, [F
 
-    .line 102
-    .local v0, "levelArray":[F
     const/4 v1, 0x0
 
-    .local v1, "index":I
     :goto_0
     array-length v2, v0
 
     if-le v2, v1, :cond_0
 
-    .line 103
     aget v2, p1, v1
 
     int-to-float v2, v2
@@ -151,13 +127,10 @@
 
     aput v2, v0, v1
 
-    .line 102
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 105
-    .end local v1    # "index":I
     :cond_0
     return-object v0
 .end method
@@ -166,14 +139,11 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;)V
     .locals 2
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 109
     const-string v0, "HysteresisLevels"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 110
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,7 +166,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 111
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -219,7 +188,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 112
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -242,54 +210,41 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 113
     return-void
 .end method
 
 .method public getBrighteningThreshold(F)F
     .locals 2
-    .param p1, "lux"    # F
 
-    .line 63
     iget-object v0, p0, Lcom/android/server/display/HysteresisLevels;->mBrightLevels:[F
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/display/HysteresisLevels;->getReferenceLevel(F[F)F
 
     move-result v0
 
-    .line 64
-    .local v0, "brightConstant":F
     const/high16 v1, 0x3f800000    # 1.0f
 
     add-float/2addr v1, v0
 
     mul-float/2addr v1, p1
 
-    .line 69
-    .local v1, "brightThreshold":F
     return v1
 .end method
 
 .method public getDarkeningThreshold(F)F
     .locals 2
-    .param p1, "lux"    # F
 
-    .line 76
     iget-object v0, p0, Lcom/android/server/display/HysteresisLevels;->mDarkLevels:[F
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/display/HysteresisLevels;->getReferenceLevel(F[F)F
 
     move-result v0
 
-    .line 77
-    .local v0, "darkConstant":F
     const/high16 v1, 0x3f800000    # 1.0f
 
     sub-float/2addr v1, v0
 
     mul-float/2addr v1, p1
 
-    .line 82
-    .local v1, "darkThreshold":F
     return v1
 .end method

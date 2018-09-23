@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/devicepolicy/CertificateMonitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/devicepolicy/CertificateMonitor;
 
-    .line 133
     iput-object p1, p0, Lcom/android/server/devicepolicy/CertificateMonitor$1;->this$0:Lcom/android/server/devicepolicy/CertificateMonitor;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,20 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 136
     invoke-static {}, Landroid/os/storage/StorageManager;->inCryptKeeperBounce()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 137
     return-void
 
-    .line 139
     :cond_0
     const-string v0, "android.intent.extra.user_handle"
 
@@ -60,8 +53,6 @@
 
     move-result v0
 
-    .line 140
-    .local v0, "userId":I
     iget-object v1, p0, Lcom/android/server/devicepolicy/CertificateMonitor$1;->this$0:Lcom/android/server/devicepolicy/CertificateMonitor;
 
     invoke-static {v0}, Landroid/os/UserHandle;->of(I)Landroid/os/UserHandle;
@@ -70,6 +61,5 @@
 
     invoke-static {v1, v2}, Lcom/android/server/devicepolicy/CertificateMonitor;->access$000(Lcom/android/server/devicepolicy/CertificateMonitor;Landroid/os/UserHandle;)V
 
-    .line 141
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/job/controllers/ConnectivityController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/job/controllers/ConnectivityController;
 
-    .line 322
     iput-object p1, p0, Lcom/android/server/job/controllers/ConnectivityController$2;->this$0:Lcom/android/server/job/controllers/ConnectivityController;
 
     invoke-direct {p0}, Landroid/net/NetworkPolicyManager$Listener;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onUidRulesChanged(II)V
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "uidRules"    # I
 
-    .line 325
     invoke-static {}, Lcom/android/server/job/controllers/ConnectivityController;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 326
     const-string v0, "JobScheduler.Connectivity"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +58,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
     :cond_0
     iget-object v0, p0, Lcom/android/server/job/controllers/ConnectivityController$2;->this$0:Lcom/android/server/job/controllers/ConnectivityController;
 
@@ -72,6 +65,5 @@
 
     invoke-static {v0, p1, v1}, Lcom/android/server/job/controllers/ConnectivityController;->access$100(Lcom/android/server/job/controllers/ConnectivityController;ILandroid/net/Network;)V
 
-    .line 329
     return-void
 .end method

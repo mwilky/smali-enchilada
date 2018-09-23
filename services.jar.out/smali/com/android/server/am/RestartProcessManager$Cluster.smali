@@ -35,22 +35,17 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "id"    # I
 
-    .line 1250
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1251
     iput p1, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mId:I
 
-    .line 1252
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
-    .line 1253
     return-void
 .end method
 
@@ -58,40 +53,33 @@
 # virtual methods
 .method public addData(Lcom/android/server/am/RestartProcessManager$PackageRankInfo;)V
     .locals 1
-    .param p1, "point"    # Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
 
-    .line 1272
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1273
     return-void
 .end method
 
 .method public clear()V
     .locals 1
 
-    .line 1292
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1293
     return-void
 .end method
 
 .method public dump()V
     .locals 4
 
-    .line 1256
     const-string v0, "RestartProcessManager"
 
     const-string v1, "-----------------------------------------------------------------------"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1257
     const-string v0, "RestartProcessManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -112,12 +100,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1258
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mCenterPoint:Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
     invoke-virtual {v0}, Lcom/android/server/am/RestartProcessManager$CenterPoint;->dump()V
 
-    .line 1259
     const-string v0, "RestartProcessManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,14 +124,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1260
     const-string v0, "RestartProcessManager"
 
     const-string v1, "All data : "
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1261
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -165,15 +149,10 @@
 
     check-cast v1, Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
 
-    .line 1262
-    .local v1, "info":Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
     invoke-virtual {v1}, Lcom/android/server/am/RestartProcessManager$PackageRankInfo;->dump()V
 
-    .line 1263
-    .end local v1    # "info":Lcom/android/server/am/RestartProcessManager$PackageRankInfo;
     goto :goto_0
 
-    .line 1264
     :cond_0
     const-string v0, "RestartProcessManager"
 
@@ -181,14 +160,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1265
     return-void
 .end method
 
 .method public getCenterPoint()Lcom/android/server/am/RestartProcessManager$CenterPoint;
     .locals 1
 
-    .line 1280
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mCenterPoint:Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
     return-object v0
@@ -205,7 +182,6 @@
         }
     .end annotation
 
-    .line 1268
     iget-object v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
     return-object v0
@@ -214,7 +190,6 @@
 .method public getId()I
     .locals 1
 
-    .line 1288
     iget v0, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mId:I
 
     return v0
@@ -222,12 +197,9 @@
 
 .method public setCenterPoint(Lcom/android/server/am/RestartProcessManager$CenterPoint;)V
     .locals 0
-    .param p1, "centroid"    # Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
-    .line 1284
     iput-object p1, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mCenterPoint:Lcom/android/server/am/RestartProcessManager$CenterPoint;
 
-    .line 1285
     return-void
 .end method
 
@@ -242,10 +214,7 @@
         }
     .end annotation
 
-    .line 1276
-    .local p1, "points":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/am/RestartProcessManager$PackageRankInfo;>;"
     iput-object p1, p0, Lcom/android/server/am/RestartProcessManager$Cluster;->mDataList:Ljava/util/ArrayList;
 
-    .line 1277
     return-void
 .end method

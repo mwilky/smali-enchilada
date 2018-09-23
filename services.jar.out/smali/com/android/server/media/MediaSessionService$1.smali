@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/media/MediaSessionService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/media/MediaSessionService;
 
-    .line 464
     iput-object p1, p0, Lcom/android/server/media/MediaSessionService$1;->this$0:Lcom/android/server/media/MediaSessionService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 467
     const-string v0, "android.intent.extra.user_handle"
 
     const/16 v1, -0x2710
@@ -47,11 +42,8 @@
 
     move-result v0
 
-    .line 469
-    .local v0, "changeUserId":I
     if-ne v0, v1, :cond_0
 
-    .line 470
     const-string v1, "MediaSessionService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -70,10 +62,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
     return-void
 
-    .line 474
     :cond_0
     const-string v1, "android.intent.extra.REPLACING"
 
@@ -83,13 +73,10 @@
 
     move-result v1
 
-    .line 478
-    .local v1, "isReplacing":Z
     sget-boolean v3, Lcom/android/server/media/MediaSessionService;->DEBUG:Z
 
     if-eqz v3, :cond_1
 
-    .line 479
     const-string v3, "MediaSessionService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -108,7 +95,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 481
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -235,21 +221,17 @@
 
     goto :goto_2
 
-    .line 486
     :pswitch_0
     if-eqz v1, :cond_3
 
-    .line 499
     goto :goto_2
 
-    .line 506
     :cond_3
     :pswitch_1
     iget-object v2, p0, Lcom/android/server/media/MediaSessionService$1;->this$0:Lcom/android/server/media/MediaSessionService;
 
     invoke-static {v2}, Lcom/android/server/media/MediaSessionService;->access$1000(Lcom/android/server/media/MediaSessionService;)V
 
-    .line 508
     :goto_2
     return-void
 

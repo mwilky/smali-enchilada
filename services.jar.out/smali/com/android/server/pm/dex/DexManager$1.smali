@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/dex/DexManager;Landroid/os/Handler;Landroid/content/ContentResolver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/dex/DexManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 672
     iput-object p1, p0, Lcom/android/server/pm/dex/DexManager$1;->this$0:Lcom/android/server/pm/dex/DexManager;
 
     iput-object p3, p0, Lcom/android/server/pm/dex/DexManager$1;->val$resolver:Landroid/content/ContentResolver;
@@ -40,9 +37,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 3
-    .param p1, "selfChange"    # Z
 
-    .line 675
     iget-object v0, p0, Lcom/android/server/pm/dex/DexManager$1;->val$resolver:Landroid/content/ContentResolver;
 
     const-string/jumbo v1, "priv_app_oob_enabled"
@@ -53,11 +48,8 @@
 
     move-result v0
 
-    .line 676
-    .local v0, "oobEnabled":I
     const-string/jumbo v1, "pm.dexopt.priv-apps-oob"
 
-    .line 677
     const/4 v2, 0x1
 
     if-ne v0, v2, :cond_0
@@ -69,10 +61,8 @@
     :cond_0
     const-string v2, "false"
 
-    .line 676
     :goto_0
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 678
     return-void
 .end method

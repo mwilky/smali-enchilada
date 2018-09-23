@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService$Led;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/BatteryService$Led;
 
-    .line 1244
     iput-object p1, p0, Lcom/android/server/BatteryService$Led$1;->this$1:Lcom/android/server/BatteryService$Led;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1247
     iget-object v0, p0, Lcom/android/server/BatteryService$Led$1;->this$1:Lcom/android/server/BatteryService$Led;
 
     invoke-virtual {v0}, Lcom/android/server/BatteryService$Led;->updateLightsLocked()V
 
-    .line 1248
     return-void
 .end method

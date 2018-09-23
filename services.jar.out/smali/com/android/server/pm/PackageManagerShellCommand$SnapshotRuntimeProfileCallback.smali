@@ -28,25 +28,20 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 1393
     invoke-direct {p0}, Landroid/content/pm/dex/ISnapshotRuntimeProfileCallback$Stub;-><init>()V
 
-    .line 1395
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mSuccess:Z
 
-    .line 1396
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mErrCode:I
 
-    .line 1397
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mProfileReadFd:Landroid/os/ParcelFileDescriptor;
 
-    .line 1398
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -60,9 +55,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$1;
 
-    .line 1393
     invoke-direct {p0}, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;-><init>()V
 
     return-void
@@ -70,9 +63,7 @@
 
 .method static synthetic access$200(Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;
 
-    .line 1393
     iget v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mErrCode:I
 
     return v0
@@ -80,9 +71,7 @@
 
 .method static synthetic access$300(Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;)Landroid/os/ParcelFileDescriptor;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;
 
-    .line 1393
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mProfileReadFd:Landroid/os/ParcelFileDescriptor;
 
     return-object v0
@@ -92,35 +81,27 @@
 # virtual methods
 .method public onError(I)V
     .locals 1
-    .param p1, "errCode"    # I
 
-    .line 1416
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mSuccess:Z
 
-    .line 1417
     iput p1, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mErrCode:I
 
-    .line 1418
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mDoneSignal:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1419
     return-void
 .end method
 
 .method public onSuccess(Landroid/os/ParcelFileDescriptor;)V
     .locals 1
-    .param p1, "profileReadFd"    # Landroid/os/ParcelFileDescriptor;
 
-    .line 1402
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mSuccess:Z
 
-    .line 1407
     :try_start_0
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->dup()Landroid/os/ParcelFileDescriptor;
 
@@ -130,38 +111,28 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1410
     goto :goto_0
 
-    .line 1408
     :catch_0
     move-exception v0
 
-    .line 1409
-    .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    .line 1411
-    .end local v0    # "e":Ljava/io/IOException;
     :goto_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mDoneSignal:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1412
     return-void
 .end method
 
 .method waitTillDone()Z
     .locals 6
 
-    .line 1422
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 1426
-    .local v1, "done":Z
     :try_start_0
     iget-object v2, p0, Lcom/android/server/pm/PackageManagerShellCommand$SnapshotRuntimeProfileCallback;->mDoneSignal:Ljava/util/concurrent/CountDownLatch;
 
@@ -177,14 +148,11 @@
 
     move v1, v2
 
-    .line 1428
     goto :goto_0
 
-    .line 1427
     :catch_0
     move-exception v2
 
-    .line 1429
     :goto_0
     if-eqz v1, :cond_0
 

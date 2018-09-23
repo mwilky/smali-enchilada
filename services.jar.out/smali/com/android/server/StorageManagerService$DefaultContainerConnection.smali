@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/StorageManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/StorageManagerService;
 
-    .line 555
     iput-object p1, p0, Lcom/android/server/StorageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 4
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 560
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
     move-result-object v0
 
-    .line 561
-    .local v0, "imcs":Lcom/android/internal/app/IMediaContainerService;
     iget-object v1, p0, Lcom/android/server/StorageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/StorageManagerService;
 
     invoke-static {v1}, Lcom/android/server/StorageManagerService;->access$700(Lcom/android/server/StorageManagerService;)Lcom/android/server/StorageManagerService$ObbActionHandler;
@@ -68,14 +61,11 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/StorageManagerService$ObbActionHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 562
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 568
     return-void
 .end method

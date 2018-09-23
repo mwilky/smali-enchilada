@@ -44,26 +44,19 @@
 # direct methods
 .method constructor <init>(ILjava/lang/String;)V
     .locals 1
-    .param p1, "uid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 2038
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2036
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->filterStats:Landroid/util/ArrayMap;
 
-    .line 2039
     iput p1, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mUid:I
 
-    .line 2040
     iput-object p2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mPackageName:Ljava/lang/String;
 
-    .line 2041
     return-void
 .end method
 
@@ -72,7 +65,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 2045
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -146,67 +138,54 @@
 
 .method public writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
     .locals 6
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "fieldId"    # J
 
-    .line 2057
     invoke-virtual {p1, p2, p3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 2059
-    .local v0, "token":J
     iget v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mUid:I
 
     const-wide v3, 0x10500000001L
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 2060
     iget-object v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->mPackageName:Ljava/lang/String;
 
     const-wide v3, 0x10900000002L
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/util/proto/ProtoOutputStream;->write(JLjava/lang/String;)V
 
-    .line 2061
     iget-wide v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->aggregateTime:J
 
     const-wide v4, 0x10300000003L
 
     invoke-virtual {p1, v4, v5, v2, v3}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 2062
     iget v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->count:I
 
     const-wide v3, 0x10500000004L
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 2063
     iget v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->numWakeup:I
 
     const-wide v3, 0x10500000005L
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 2064
     iget-wide v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->startTime:J
 
     const-wide v4, 0x10300000006L
 
     invoke-virtual {p1, v4, v5, v2, v3}, Landroid/util/proto/ProtoOutputStream;->write(JJ)V
 
-    .line 2065
     iget v2, p0, Lcom/android/server/AlarmManagerService$BroadcastStats;->nesting:I
 
     const-wide v3, 0x10500000007L
 
     invoke-virtual {p1, v3, v4, v2}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 2067
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 2068
     return-void
 .end method

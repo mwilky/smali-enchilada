@@ -15,10 +15,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/notification/AlertRateLimiter;->mLastNotificationMillis:J
@@ -30,15 +28,11 @@
 # virtual methods
 .method shouldRateLimitAlert(J)Z
     .locals 4
-    .param p1, "now"    # J
 
-    .line 28
     iget-wide v0, p0, Lcom/android/server/notification/AlertRateLimiter;->mLastNotificationMillis:J
 
     sub-long v0, p1, v0
 
-    .line 29
-    .local v0, "millisSinceLast":J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
@@ -53,16 +47,13 @@
 
     goto :goto_0
 
-    .line 32
     :cond_0
     iput-wide p1, p0, Lcom/android/server/notification/AlertRateLimiter;->mLastNotificationMillis:J
 
-    .line 33
     const/4 v2, 0x0
 
     return v2
 
-    .line 30
     :cond_1
     :goto_0
     const/4 v2, 0x1

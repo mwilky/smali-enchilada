@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/UsageStatsService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usage/UsageStatsService;
 
-    .line 270
     iput-object p1, p0, Lcom/android/server/usage/UsageStatsService$2;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     invoke-direct {p0}, Landroid/app/IUidObserver$Stub;-><init>()V
@@ -35,53 +33,37 @@
 # virtual methods
 .method public onUidActive(I)V
     .locals 0
-    .param p1, "uid"    # I
 
-    .line 289
     return-void
 .end method
 
 .method public onUidCachedChanged(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "cached"    # Z
 
-    .line 292
     return-void
 .end method
 
 .method public onUidGone(IZ)V
     .locals 3
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
 
-    .line 283
     const/16 v0, 0x13
 
     const-wide/16 v1, 0x0
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lcom/android/server/usage/UsageStatsService$2;->onUidStateChanged(IIJ)V
 
-    .line 284
     return-void
 .end method
 
 .method public onUidIdle(IZ)V
     .locals 0
-    .param p1, "uid"    # I
-    .param p2, "disabled"    # Z
 
-    .line 279
     return-void
 .end method
 
 .method public onUidStateChanged(IIJ)V
     .locals 2
-    .param p1, "uid"    # I
-    .param p2, "procState"    # I
-    .param p3, "procStateSeq"    # J
 
-    .line 273
     iget-object v0, p0, Lcom/android/server/usage/UsageStatsService$2;->this$0:Lcom/android/server/usage/UsageStatsService;
 
     iget-object v0, v0, Lcom/android/server/usage/UsageStatsService;->mHandler:Landroid/os/Handler;
@@ -94,6 +76,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 274
     return-void
 .end method

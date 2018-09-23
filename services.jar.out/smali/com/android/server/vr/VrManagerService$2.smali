@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/vr/VrManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/vr/VrManagerService;
 
-    .line 307
     iput-object p1, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 310
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -46,7 +42,6 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 346
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,7 +64,6 @@
 
     throw v0
 
-    .line 332
     :pswitch_0
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -82,8 +76,6 @@
     :cond_0
     move v0, v1
 
-    .line 333
-    .local v0, "state":Z
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
     invoke-static {v1}, Lcom/android/server/vr/VrManagerService;->access$1000(Lcom/android/server/vr/VrManagerService;)Landroid/os/RemoteCallbackList;
@@ -94,15 +86,11 @@
 
     move-result v1
 
-    .line 334
-    .local v1, "i":I
     :goto_0
     if-lez v1, :cond_1
 
-    .line 335
     add-int/lit8 v1, v1, -0x1
 
-    .line 337
     :try_start_0
     iget-object v2, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -116,22 +104,18 @@
 
     check-cast v2, Landroid/service/vr/IPersistentVrStateCallbacks;
 
-    .line 338
     invoke-interface {v2, v0}, Landroid/service/vr/IPersistentVrStateCallbacks;->onPersistentVrStateChanged(Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
-    .line 339
     :catch_0
     move-exception v2
 
-    .line 341
     :goto_1
     goto :goto_0
 
-    .line 343
     :cond_1
     iget-object v2, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -141,12 +125,8 @@
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    .line 344
-    .end local v0    # "state":Z
-    .end local v1    # "i":I
     goto :goto_4
 
-    .line 325
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -156,7 +136,6 @@
 
     monitor-enter v0
 
-    .line 326
     :try_start_1
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -166,19 +145,15 @@
 
     if-eqz v1, :cond_2
 
-    .line 327
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
     invoke-static {v1}, Lcom/android/server/vr/VrManagerService;->access$900(Lcom/android/server/vr/VrManagerService;)V
 
-    .line 329
     :cond_2
     monitor-exit v0
 
-    .line 330
     goto :goto_4
 
-    .line 329
     :catchall_0
     move-exception v1
 
@@ -188,7 +163,6 @@
 
     throw v1
 
-    .line 312
     :pswitch_2
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -201,8 +175,6 @@
     :cond_3
     move v0, v1
 
-    .line 313
-    .restart local v0    # "state":Z
     iget-object v1, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
     invoke-static {v1}, Lcom/android/server/vr/VrManagerService;->access$700(Lcom/android/server/vr/VrManagerService;)Landroid/os/RemoteCallbackList;
@@ -213,15 +185,11 @@
 
     move-result v1
 
-    .line 314
-    .restart local v1    # "i":I
     :goto_2
     if-lez v1, :cond_4
 
-    .line 315
     add-int/lit8 v1, v1, -0x1
 
-    .line 317
     :try_start_2
     iget-object v2, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -241,15 +209,12 @@
 
     goto :goto_3
 
-    .line 318
     :catch_1
     move-exception v2
 
-    .line 320
     :goto_3
     goto :goto_2
 
-    .line 322
     :cond_4
     iget-object v2, p0, Lcom/android/server/vr/VrManagerService$2;->this$0:Lcom/android/server/vr/VrManagerService;
 
@@ -259,12 +224,8 @@
 
     invoke-virtual {v2}, Landroid/os/RemoteCallbackList;->finishBroadcast()V
 
-    .line 323
-    .end local v0    # "state":Z
-    .end local v1    # "i":I
     nop
 
-    .line 348
     :goto_4
     return-void
 

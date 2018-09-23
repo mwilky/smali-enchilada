@@ -30,13 +30,10 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 451
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 452
     invoke-virtual {p0}, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->reset()V
 
-    .line 453
     return-void
 .end method
 
@@ -44,15 +41,11 @@
 # virtual methods
 .method public accumulate(Lcom/android/server/AnyMotionDetector$Vector3;)V
     .locals 4
-    .param p1, "v"    # Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 467
     if-nez p1, :cond_0
 
-    .line 469
     return-void
 
-    .line 471
     :cond_0
     iget v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->sampleCount:I
 
@@ -60,7 +53,6 @@
 
     iput v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->sampleCount:I
 
-    .line 472
     iget-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->runningSum:Lcom/android/server/AnyMotionDetector$Vector3;
 
     invoke-virtual {v0, p1}, Lcom/android/server/AnyMotionDetector$Vector3;->plus(Lcom/android/server/AnyMotionDetector$Vector3;)Lcom/android/server/AnyMotionDetector$Vector3;
@@ -69,20 +61,16 @@
 
     iput-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->runningSum:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 473
     iget-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->currentVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
     iput-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->previousVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 474
     iput-object p1, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->currentVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 475
     iget-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->previousVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
     if-eqz v0, :cond_1
 
-    .line 476
     iget-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->currentVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
     iget-object v1, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->previousVector:Lcom/android/server/AnyMotionDetector$Vector3;
@@ -91,8 +79,6 @@
 
     move-result-object v0
 
-    .line 477
-    .local v0, "dv":Lcom/android/server/AnyMotionDetector$Vector3;
     iget v1, v0, Lcom/android/server/AnyMotionDetector$Vector3;->x:F
 
     iget v2, v0, Lcom/android/server/AnyMotionDetector$Vector3;->x:F
@@ -115,17 +101,12 @@
 
     add-float/2addr v1, v2
 
-    .line 478
-    .local v1, "incrementalEnergy":F
     iget v2, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->energy:F
 
     add-float/2addr v2, v1
 
     iput v2, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->energy:F
 
-    .line 484
-    .end local v0    # "dv":Lcom/android/server/AnyMotionDetector$Vector3;
-    .end local v1    # "incrementalEnergy":F
     :cond_1
     return-void
 .end method
@@ -133,7 +114,6 @@
 .method public getEnergy()F
     .locals 1
 
-    .line 494
     iget v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->energy:F
 
     return v0
@@ -142,12 +122,10 @@
 .method public getRunningAverage()Lcom/android/server/AnyMotionDetector$Vector3;
     .locals 3
 
-    .line 487
     iget v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->sampleCount:I
 
     if-lez v0, :cond_0
 
-    .line 488
     iget-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->runningSum:Lcom/android/server/AnyMotionDetector$Vector3;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -164,7 +142,6 @@
 
     return-object v0
 
-    .line 490
     :cond_0
     const/4 v0, 0x0
 
@@ -174,7 +151,6 @@
 .method public getSampleCount()I
     .locals 1
 
-    .line 498
     iget v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->sampleCount:I
 
     return v0
@@ -183,15 +159,12 @@
 .method public reset()V
     .locals 7
 
-    .line 456
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->previousVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 457
     iput-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->currentVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 458
     new-instance v0, Lcom/android/server/AnyMotionDetector$Vector3;
 
     const-wide/16 v2, 0x0
@@ -208,33 +181,26 @@
 
     iput-object v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->runningSum:Lcom/android/server/AnyMotionDetector$Vector3;
 
-    .line 459
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->energy:F
 
-    .line 460
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->sampleCount:I
 
-    .line 461
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 503
     const-string v0, ""
 
-    .line 504
-    .local v0, "msg":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->currentVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
     if-nez v1, :cond_0
 
-    .line 505
     const-string/jumbo v1, "null"
 
     goto :goto_0
@@ -246,14 +212,11 @@
 
     move-result-object v1
 
-    .line 506
-    .local v1, "currentVectorString":Ljava/lang/String;
     :goto_0
     iget-object v2, p0, Lcom/android/server/AnyMotionDetector$RunningSignalStats;->previousVector:Lcom/android/server/AnyMotionDetector$Vector3;
 
     if-nez v2, :cond_1
 
-    .line 507
     const-string/jumbo v2, "null"
 
     goto :goto_1
@@ -265,8 +228,6 @@
 
     move-result-object v2
 
-    .line 508
-    .local v2, "previousVectorString":Ljava/lang/String;
     :goto_1
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -284,7 +245,6 @@
 
     move-result-object v0
 
-    .line 509
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -301,7 +261,6 @@
 
     move-result-object v0
 
-    .line 510
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -320,7 +279,6 @@
 
     move-result-object v0
 
-    .line 511
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -339,6 +297,5 @@
 
     move-result-object v0
 
-    .line 512
     return-object v0
 .end method

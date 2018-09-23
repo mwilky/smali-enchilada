@@ -75,86 +75,63 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;ILcom/android/server/am/ActivityManagerService$GrantUri;)V
     .locals 2
-    .param p1, "sourcePkg"    # Ljava/lang/String;
-    .param p2, "targetPkg"    # Ljava/lang/String;
-    .param p3, "targetUid"    # I
-    .param p4, "uri"    # Lcom/android/server/am/ActivityManagerService$GrantUri;
 
-    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
 
-    .line 68
     iput v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 70
     iput v0, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
-    .line 72
     iput v0, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 75
     iput v0, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 81
     const-wide/high16 v0, -0x8000000000000000L
 
     iput-wide v0, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
-    .line 91
     invoke-static {p3}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->targetUserId:I
 
-    .line 92
     iput-object p1, p0, Lcom/android/server/am/UriPermission;->sourcePkg:Ljava/lang/String;
 
-    .line 93
     iput-object p2, p0, Lcom/android/server/am/UriPermission;->targetPkg:Ljava/lang/String;
 
-    .line 94
     iput p3, p0, Lcom/android/server/am/UriPermission;->targetUid:I
 
-    .line 95
     iput-object p4, p0, Lcom/android/server/am/UriPermission;->uri:Lcom/android/server/am/ActivityManagerService$GrantUri;
 
-    .line 96
     return-void
 .end method
 
 .method private addReadOwner(Lcom/android/server/am/UriPermissionOwner;)V
     .locals 1
-    .param p1, "owner"    # Lcom/android/server/am/UriPermissionOwner;
 
-    .line 257
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     if-nez v0, :cond_0
 
-    .line 258
     invoke-static {}, Lcom/google/android/collect/Sets;->newArraySet()Landroid/util/ArraySet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
-    .line 259
     iget v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 260
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 262
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
@@ -164,41 +141,33 @@
 
     if-eqz v0, :cond_1
 
-    .line 263
     invoke-virtual {p1, p0}, Lcom/android/server/am/UriPermissionOwner;->addReadPermission(Lcom/android/server/am/UriPermission;)V
 
-    .line 265
     :cond_1
     return-void
 .end method
 
 .method private addWriteOwner(Lcom/android/server/am/UriPermissionOwner;)V
     .locals 1
-    .param p1, "owner"    # Lcom/android/server/am/UriPermissionOwner;
 
-    .line 282
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
     if-nez v0, :cond_0
 
-    .line 283
     invoke-static {}, Lcom/google/android/collect/Sets;->newArraySet()Landroid/util/ArraySet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
-    .line 284
     iget v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 285
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 287
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
@@ -208,10 +177,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 288
     invoke-virtual {p1, p0}, Lcom/android/server/am/UriPermissionOwner;->addWritePermission(Lcom/android/server/am/UriPermission;)V
 
-    .line 290
     :cond_1
     return-void
 .end method
@@ -219,11 +186,8 @@
 .method private updateModeFlags()V
     .locals 4
 
-    .line 99
     iget v0, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
 
-    .line 100
-    .local v0, "oldModeFlags":I
     iget v1, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     iget v2, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
@@ -240,7 +204,6 @@
 
     iput v1, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
 
-    .line 102
     const-string v1, "UriPermission"
 
     const/4 v2, 0x2
@@ -255,7 +218,6 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 103
     const-string v1, "UriPermission"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -282,7 +244,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 105
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -295,7 +256,6 @@
 
     iget v3, p0, Lcom/android/server/am/UriPermission;->modeFlags:I
 
-    .line 106
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -306,7 +266,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 107
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v3
@@ -331,10 +290,8 @@
 
     invoke-direct {v3}, Ljava/lang/Throwable;-><init>()V
 
-    .line 103
     invoke-static {v1, v2, v3}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 110
     :cond_0
     return-void
 .end method
@@ -344,7 +301,6 @@
 .method public buildGrantedUriPermission()Landroid/app/GrantedUriPermission;
     .locals 3
 
-    .line 393
     new-instance v0, Landroid/app/GrantedUriPermission;
 
     iget-object v1, p0, Lcom/android/server/am/UriPermission;->uri:Lcom/android/server/am/ActivityManagerService$GrantUri;
@@ -361,7 +317,6 @@
 .method public buildPersistedPublicApiObject()Landroid/content/UriPermission;
     .locals 5
 
-    .line 389
     new-instance v0, Landroid/content/UriPermission;
 
     iget-object v1, p0, Lcom/android/server/am/UriPermission;->uri:Lcom/android/server/am/ActivityManagerService$GrantUri;
@@ -379,13 +334,9 @@
 
 .method dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 321
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 322
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -404,7 +355,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 323
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -423,7 +373,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 324
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -442,10 +391,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 326
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 327
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -468,7 +415,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 328
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -491,7 +437,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 329
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -514,7 +459,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 330
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -537,7 +481,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 331
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -560,7 +503,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 332
     iget-wide v0, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
     const-wide/high16 v2, -0x8000000000000000L
@@ -569,7 +511,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 333
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -588,24 +529,19 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 335
     :cond_0
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 337
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     if-eqz v0, :cond_1
 
-    .line 338
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 339
     const-string/jumbo v0, "readOwners:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 340
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->iterator()Ljava/util/Iterator;
@@ -625,11 +561,8 @@
 
     check-cast v1, Lcom/android/server/am/UriPermissionOwner;
 
-    .line 341
-    .local v1, "owner":Lcom/android/server/am/UriPermissionOwner;
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 342
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -646,25 +579,19 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 343
-    .end local v1    # "owner":Lcom/android/server/am/UriPermissionOwner;
     goto :goto_0
 
-    .line 345
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
     if-eqz v0, :cond_2
 
-    .line 346
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 347
     const-string/jumbo v0, "writeOwners:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 348
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v0}, Landroid/util/ArraySet;->iterator()Ljava/util/Iterator;
@@ -684,11 +611,8 @@
 
     check-cast v1, Lcom/android/server/am/UriPermissionOwner;
 
-    .line 349
-    .restart local v1    # "owner":Lcom/android/server/am/UriPermissionOwner;
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 350
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -705,35 +629,27 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 351
-    .end local v1    # "owner":Lcom/android/server/am/UriPermissionOwner;
     goto :goto_1
 
-    .line 353
     :cond_2
     return-void
 .end method
 
 .method public getStrength(I)I
     .locals 2
-    .param p1, "modeFlags"    # I
 
-    .line 243
     const/4 v0, 0x3
 
     and-int/2addr p1, v0
 
-    .line 245
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     and-int/2addr v1, p1
 
     if-ne v1, p1, :cond_0
 
-    .line 246
     return v0
 
-    .line 247
     :cond_0
     iget v0, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
@@ -741,12 +657,10 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 248
     const/4 v0, 0x2
 
     return v0
 
-    .line 249
     :cond_1
     iget v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
@@ -754,12 +668,10 @@
 
     if-ne v0, p1, :cond_2
 
-    .line 250
     const/4 v0, 0x1
 
     return v0
 
-    .line 252
     :cond_2
     const/4 v0, 0x0
 
@@ -768,10 +680,7 @@
 
 .method grantModes(ILcom/android/server/am/UriPermissionOwner;)V
     .locals 2
-    .param p1, "modeFlags"    # I
-    .param p2, "owner"    # Lcom/android/server/am/UriPermissionOwner;
 
-    .line 128
     and-int/lit8 v0, p1, 0x40
 
     if-eqz v0, :cond_0
@@ -783,26 +692,20 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 129
-    .local v0, "persistable":Z
     :goto_0
     and-int/lit8 p1, p1, 0x3
 
-    .line 132
     if-eqz v0, :cond_1
 
-    .line 133
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     or-int/2addr v1, p1
 
     iput v1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 136
     :cond_1
     if-nez p2, :cond_2
 
-    .line 137
     iget v1, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
     or-int/2addr v1, p1
@@ -811,69 +714,50 @@
 
     goto :goto_1
 
-    .line 139
     :cond_2
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_3
 
-    .line 140
     invoke-direct {p0, p2}, Lcom/android/server/am/UriPermission;->addReadOwner(Lcom/android/server/am/UriPermissionOwner;)V
 
-    .line 142
     :cond_3
     and-int/lit8 v1, p1, 0x2
 
     if-eqz v1, :cond_4
 
-    .line 143
     invoke-direct {p0, p2}, Lcom/android/server/am/UriPermission;->addWriteOwner(Lcom/android/server/am/UriPermissionOwner;)V
 
-    .line 147
     :cond_4
     :goto_1
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 148
     return-void
 .end method
 
 .method initPersistedModes(IJ)V
     .locals 0
-    .param p1, "modeFlags"    # I
-    .param p2, "createdTime"    # J
 
-    .line 117
     and-int/lit8 p1, p1, 0x3
 
-    .line 120
     iput p1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 121
     iput p1, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 122
     iput-wide p2, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
-    .line 124
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 125
     return-void
 .end method
 
 .method releasePersistableModes(I)Z
     .locals 3
-    .param p1, "modeFlags"    # I
 
-    .line 176
     and-int/lit8 p1, p1, 0x3
 
-    .line 179
     iget v0, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 181
-    .local v0, "before":I
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     not-int v2, p1
@@ -882,7 +766,6 @@
 
     iput v1, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 182
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     not-int v2, p1
@@ -891,21 +774,17 @@
 
     iput v1, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 184
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-nez v1, :cond_0
 
-    .line 185
     const-wide/high16 v1, -0x8000000000000000L
 
     iput-wide v1, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
-    .line 188
     :cond_0
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 189
     iget v1, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-eq v1, v0, :cond_1
@@ -923,9 +802,7 @@
 
 .method removeReadOwner(Lcom/android/server/am/UriPermissionOwner;)V
     .locals 3
-    .param p1, "owner"    # Lcom/android/server/am/UriPermissionOwner;
 
-    .line 271
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
@@ -934,7 +811,6 @@
 
     if-nez v0, :cond_0
 
-    .line 272
     const-string v0, "UriPermission"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -959,7 +835,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
@@ -969,31 +844,25 @@
 
     if-nez v0, :cond_1
 
-    .line 275
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
-    .line 276
     iget v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 277
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 279
     :cond_1
     return-void
 .end method
 
 .method removeWriteOwner(Lcom/android/server/am/UriPermissionOwner;)V
     .locals 3
-    .param p1, "owner"    # Lcom/android/server/am/UriPermissionOwner;
 
-    .line 296
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v0, p1}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
@@ -1002,7 +871,6 @@
 
     if-nez v0, :cond_0
 
-    .line 297
     const-string v0, "UriPermission"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1027,7 +895,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
@@ -1037,32 +904,25 @@
 
     if-nez v0, :cond_1
 
-    .line 300
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
-    .line 301
     iget v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 302
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 304
     :cond_1
     return-void
 .end method
 
 .method revokeModes(IZ)Z
     .locals 7
-    .param p1, "modeFlags"    # I
-    .param p2, "includingOwners"    # Z
 
-    .line 196
     and-int/lit8 v0, p1, 0x40
 
     const/4 v1, 0x0
@@ -1078,40 +938,31 @@
     :cond_0
     move v0, v1
 
-    .line 197
-    .local v0, "persistable":Z
     :goto_0
     and-int/lit8 p1, p1, 0x3
 
-    .line 200
     iget v3, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 202
-    .local v3, "before":I
     and-int/lit8 v4, p1, 0x1
 
     const/4 v5, 0x0
 
     if-eqz v4, :cond_3
 
-    .line 203
     if-eqz v0, :cond_1
 
-    .line 204
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     and-int/lit8 v4, v4, -0x2
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 205
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     and-int/lit8 v4, v4, -0x2
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 207
     :cond_1
     iget v4, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
@@ -1119,21 +970,18 @@
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
-    .line 208
     iget-object v4, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     if-eqz v4, :cond_3
 
     if-eqz p2, :cond_3
 
-    .line 209
     iget v4, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     and-int/lit8 v4, v4, -0x2
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 210
     iget-object v4, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v4}, Landroid/util/ArraySet;->iterator()Ljava/util/Iterator;
@@ -1153,42 +1001,32 @@
 
     check-cast v6, Lcom/android/server/am/UriPermissionOwner;
 
-    .line 211
-    .local v6, "r":Lcom/android/server/am/UriPermissionOwner;
     invoke-virtual {v6, p0}, Lcom/android/server/am/UriPermissionOwner;->removeReadPermission(Lcom/android/server/am/UriPermission;)V
 
-    .line 212
-    .end local v6    # "r":Lcom/android/server/am/UriPermissionOwner;
     goto :goto_1
 
-    .line 213
     :cond_2
     iput-object v5, p0, Lcom/android/server/am/UriPermission;->mReadOwners:Landroid/util/ArraySet;
 
-    .line 216
     :cond_3
     and-int/lit8 v4, p1, 0x2
 
     if-eqz v4, :cond_6
 
-    .line 217
     if-eqz v0, :cond_4
 
-    .line 218
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     and-int/lit8 v4, v4, -0x3
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 219
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     and-int/lit8 v4, v4, -0x3
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 221
     :cond_4
     iget v4, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
@@ -1196,21 +1034,18 @@
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->globalModeFlags:I
 
-    .line 222
     iget-object v4, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
     if-eqz v4, :cond_6
 
     if-eqz p2, :cond_6
 
-    .line 223
     iget v4, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
     and-int/lit8 v4, v4, -0x3
 
     iput v4, p0, Lcom/android/server/am/UriPermission;->ownedModeFlags:I
 
-    .line 224
     iget-object v4, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
     invoke-virtual {v4}, Landroid/util/ArraySet;->iterator()Ljava/util/Iterator;
@@ -1230,34 +1065,25 @@
 
     check-cast v6, Lcom/android/server/am/UriPermissionOwner;
 
-    .line 225
-    .restart local v6    # "r":Lcom/android/server/am/UriPermissionOwner;
     invoke-virtual {v6, p0}, Lcom/android/server/am/UriPermissionOwner;->removeWritePermission(Lcom/android/server/am/UriPermission;)V
 
-    .line 226
-    .end local v6    # "r":Lcom/android/server/am/UriPermissionOwner;
     goto :goto_2
 
-    .line 227
     :cond_5
     iput-object v5, p0, Lcom/android/server/am/UriPermission;->mWriteOwners:Landroid/util/ArraySet;
 
-    .line 231
     :cond_6
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-nez v4, :cond_7
 
-    .line 232
     const-wide/high16 v4, -0x8000000000000000L
 
     iput-wide v4, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
-    .line 235
     :cond_7
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 236
     iget v4, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-eq v4, v3, :cond_8
@@ -1273,7 +1099,6 @@
 .method public snapshot()Lcom/android/server/am/UriPermission$Snapshot;
     .locals 2
 
-    .line 385
     new-instance v0, Lcom/android/server/am/UriPermission$Snapshot;
 
     const/4 v1, 0x0
@@ -1285,12 +1110,9 @@
 
 .method takePersistableModes(I)Z
     .locals 4
-    .param p1, "modeFlags"    # I
 
-    .line 154
     and-int/lit8 p1, p1, 0x3
 
-    .line 157
     iget v0, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
     and-int/2addr v0, p1
@@ -1299,7 +1121,6 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 158
     const-string v0, "UriPermission"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1310,7 +1131,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 159
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1323,7 +1143,6 @@
 
     iget v3, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
 
-    .line 160
     invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1338,18 +1157,13 @@
 
     move-result-object v2
 
-    .line 158
     invoke-static {v0, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 161
     return v1
 
-    .line 164
     :cond_0
     iget v0, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 165
-    .local v0, "before":I
     iget v2, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     iget v3, p0, Lcom/android/server/am/UriPermission;->persistableModeFlags:I
@@ -1360,23 +1174,19 @@
 
     iput v2, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
-    .line 167
     iget v2, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-eqz v2, :cond_1
 
-    .line 168
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
-    .line 171
     :cond_1
     invoke-direct {p0}, Lcom/android/server/am/UriPermission;->updateModeFlags()V
 
-    .line 172
     iget v2, p0, Lcom/android/server/am/UriPermission;->persistedModeFlags:I
 
     if-eq v2, v0, :cond_2
@@ -1392,17 +1202,14 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 308
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->stringName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 309
     iget-object v0, p0, Lcom/android/server/am/UriPermission;->stringName:Ljava/lang/String;
 
     return-object v0
 
-    .line 311
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1410,13 +1217,10 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 312
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "UriPermission{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 313
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -1427,22 +1231,18 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 314
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 315
     iget-object v1, p0, Lcom/android/server/am/UriPermission;->uri:Lcom/android/server/am/ActivityManagerService$GrantUri;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 316
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 317
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

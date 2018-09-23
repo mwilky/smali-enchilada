@@ -12,19 +12,15 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/autofill/ui/OverlayControl;->mToken:Landroid/os/IBinder;
 
-    .line 38
     const-class v0, Landroid/app/AppOpsManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -35,20 +31,16 @@
 
     iput-object v0, p0, Lcom/android/server/autofill/ui/OverlayControl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
-    .line 39
     return-void
 .end method
 
 .method private setOverlayAllowed(Z)V
     .locals 13
-    .param p1, "allowed"    # Z
 
-    .line 50
     iget-object v0, p0, Lcom/android/server/autofill/ui/OverlayControl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
     if-eqz v0, :cond_0
 
-    .line 51
     iget-object v1, p0, Lcom/android/server/autofill/ui/OverlayControl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
     const/16 v2, 0x18
@@ -63,7 +55,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/app/AppOpsManager;->setUserRestrictionForUser(IZLandroid/os/IBinder;[Ljava/lang/String;I)V
 
-    .line 53
     iget-object v7, p0, Lcom/android/server/autofill/ui/OverlayControl;->mAppOpsManager:Landroid/app/AppOpsManager;
 
     const/16 v8, 0x2d
@@ -78,7 +69,6 @@
 
     invoke-virtual/range {v7 .. v12}, Landroid/app/AppOpsManager;->setUserRestrictionForUser(IZLandroid/os/IBinder;[Ljava/lang/String;I)V
 
-    .line 56
     :cond_0
     return-void
 .end method
@@ -88,23 +78,19 @@
 .method hideOverlays()V
     .locals 1
 
-    .line 42
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/autofill/ui/OverlayControl;->setOverlayAllowed(Z)V
 
-    .line 43
     return-void
 .end method
 
 .method showOverlays()V
     .locals 1
 
-    .line 46
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/server/autofill/ui/OverlayControl;->setOverlayAllowed(Z)V
 
-    .line 47
     return-void
 .end method

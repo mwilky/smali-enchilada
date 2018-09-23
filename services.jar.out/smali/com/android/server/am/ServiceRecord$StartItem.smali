@@ -41,35 +41,21 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ServiceRecord;ZILandroid/content/Intent;Lcom/android/server/am/ActivityManagerService$NeededUriGrants;I)V
     .locals 0
-    .param p1, "_sr"    # Lcom/android/server/am/ServiceRecord;
-    .param p2, "_taskRemoved"    # Z
-    .param p3, "_id"    # I
-    .param p4, "_intent"    # Landroid/content/Intent;
-    .param p5, "_neededGrants"    # Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
-    .param p6, "_callingId"    # I
 
-    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 143
     iput-object p1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
 
-    .line 144
     iput-boolean p2, p0, Lcom/android/server/am/ServiceRecord$StartItem;->taskRemoved:Z
 
-    .line 145
     iput p3, p0, Lcom/android/server/am/ServiceRecord$StartItem;->id:I
 
-    .line 146
     iput-object p4, p0, Lcom/android/server/am/ServiceRecord$StartItem;->intent:Landroid/content/Intent;
 
-    .line 147
     iput-object p5, p0, Lcom/android/server/am/ServiceRecord$StartItem;->neededGrants:Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
 
-    .line 148
     iput p6, p0, Lcom/android/server/am/ServiceRecord$StartItem;->callingId:I
 
-    .line 149
     return-void
 .end method
 
@@ -78,12 +64,10 @@
 .method getUriPermissionsLocked()Lcom/android/server/am/UriPermissionOwner;
     .locals 2
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     if-nez v0, :cond_0
 
-    .line 153
     new-instance v0, Lcom/android/server/am/UriPermissionOwner;
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
@@ -94,7 +78,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
-    .line 155
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
@@ -104,22 +87,18 @@
 .method removeUriPermissionsLocked()V
     .locals 1
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     if-eqz v0, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     invoke-virtual {v0}, Lcom/android/server/am/UriPermissionOwner;->removeUriPermissionsLocked()V
 
-    .line 161
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
-    .line 163
     :cond_0
     return-void
 .end method
@@ -127,17 +106,14 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 186
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->stringName:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 187
     iget-object v0, p0, Lcom/android/server/am/ServiceRecord$StartItem;->stringName:Ljava/lang/String;
 
     return-object v0
 
-    .line 189
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -145,15 +121,12 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 190
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "ServiceRecord{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
 
-    .line 191
     invoke-static {v1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -166,7 +139,6 @@
 
     const/16 v1, 0x20
 
-    .line 192
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->sr:Lcom/android/server/am/ServiceRecord;
@@ -177,10 +149,8 @@
 
     const-string v1, " StartItem "
 
-    .line 193
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 194
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -193,7 +163,6 @@
 
     const-string v1, " id="
 
-    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/am/ServiceRecord$StartItem;->id:I
@@ -204,7 +173,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 196
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -216,28 +184,21 @@
 
 .method public writeToProto(Landroid/util/proto/ProtoOutputStream;JJ)V
     .locals 12
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
-    .param p2, "fieldId"    # J
-    .param p4, "now"    # J
 
     move-object v0, p0
 
     move-object v9, p1
 
-    .line 166
     invoke-virtual {v9, p2, p3}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v10
 
-    .line 167
-    .local v10, "token":J
     iget v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->id:I
 
     const-wide v2, 0x10500000001L
 
     invoke-virtual {v9, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 168
     iget-wide v4, v0, Lcom/android/server/am/ServiceRecord$StartItem;->deliveredTime:J
 
     const-wide v2, 0x10b00000002L
@@ -248,26 +209,22 @@
 
     invoke-static/range {v1 .. v7}, Landroid/util/proto/ProtoUtils;->toDuration(Landroid/util/proto/ProtoOutputStream;JJJ)V
 
-    .line 170
     iget v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->deliveryCount:I
 
     const-wide v2, 0x10500000003L
 
     invoke-virtual {v9, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 171
     iget v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->doneExecutingCount:I
 
     const-wide v2, 0x10500000004L
 
     invoke-virtual {v9, v2, v3, v1}, Landroid/util/proto/ProtoOutputStream;->write(JI)V
 
-    .line 172
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->intent:Landroid/content/Intent;
 
     if-eqz v1, :cond_0
 
-    .line 173
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->intent:Landroid/content/Intent;
 
     const-wide v3, 0x10b00000005L
@@ -284,36 +241,30 @@
 
     invoke-virtual/range {v1 .. v8}, Landroid/content/Intent;->writeToProto(Landroid/util/proto/ProtoOutputStream;JZZZZ)V
 
-    .line 176
     :cond_0
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->neededGrants:Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
 
     if-eqz v1, :cond_1
 
-    .line 177
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->neededGrants:Lcom/android/server/am/ActivityManagerService$NeededUriGrants;
 
     const-wide v2, 0x10b00000006L
 
     invoke-virtual {v1, v9, v2, v3}, Lcom/android/server/am/ActivityManagerService$NeededUriGrants;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
 
-    .line 179
     :cond_1
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     if-eqz v1, :cond_2
 
-    .line 180
     iget-object v1, v0, Lcom/android/server/am/ServiceRecord$StartItem;->uriPermissions:Lcom/android/server/am/UriPermissionOwner;
 
     const-wide v2, 0x10b00000007L
 
     invoke-virtual {v1, v9, v2, v3}, Lcom/android/server/am/UriPermissionOwner;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
 
-    .line 182
     :cond_2
     invoke-virtual {v9, v10, v11}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 183
     return-void
 .end method

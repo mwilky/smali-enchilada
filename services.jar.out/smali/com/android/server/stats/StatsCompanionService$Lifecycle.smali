@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 1032
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 1033
     return-void
 .end method
 
@@ -34,22 +31,17 @@
 # virtual methods
 .method public onBootPhase(I)V
     .locals 1
-    .param p1, "phase"    # I
 
-    .line 1048
     invoke-super {p0, p1}, Lcom/android/server/SystemService;->onBootPhase(I)V
 
-    .line 1049
     const/16 v0, 0x258
 
     if-ne p1, v0, :cond_0
 
-    .line 1050
     iget-object v0, p0, Lcom/android/server/stats/StatsCompanionService$Lifecycle;->mStatsCompanionService:Lcom/android/server/stats/StatsCompanionService;
 
     invoke-static {v0}, Lcom/android/server/stats/StatsCompanionService;->access$600(Lcom/android/server/stats/StatsCompanionService;)V
 
-    .line 1052
     :cond_0
     return-void
 .end method
@@ -57,7 +49,6 @@
 .method public onStart()V
     .locals 3
 
-    .line 1037
     new-instance v0, Lcom/android/server/stats/StatsCompanionService;
 
     invoke-virtual {p0}, Lcom/android/server/stats/StatsCompanionService$Lifecycle;->getContext()Landroid/content/Context;
@@ -68,7 +59,6 @@
 
     iput-object v0, p0, Lcom/android/server/stats/StatsCompanionService$Lifecycle;->mStatsCompanionService:Lcom/android/server/stats/StatsCompanionService;
 
-    .line 1039
     :try_start_0
     const-string/jumbo v0, "statscompanion"
 
@@ -78,23 +68,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1043
     goto :goto_0
 
-    .line 1041
     :catch_0
     move-exception v0
 
-    .line 1042
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "StatsCompanionService"
 
     const-string v2, "Failed to publishBinderService"
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1044
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

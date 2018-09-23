@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 98
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "MATCH"
@@ -53,7 +52,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->MATCH:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 99
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "DROPPED"
@@ -64,7 +62,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->DROPPED:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 100
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "PARSE_ERROR"
@@ -75,7 +72,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->PARSE_ERROR:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 101
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "ZERO_LIFETIME"
@@ -86,7 +82,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->ZERO_LIFETIME:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 102
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "UPDATE_NEW_RA"
@@ -97,7 +92,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->UPDATE_NEW_RA:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 103
     new-instance v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     const-string v1, "UPDATE_EXPIRY"
@@ -108,7 +102,6 @@
 
     sput-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->UPDATE_EXPIRY:Landroid/net/apf/ApfFilter$ProcessRaResult;
 
-    .line 97
     const/4 v0, 0x6
 
     new-array v0, v0, [Landroid/net/apf/ApfFilter$ProcessRaResult;
@@ -150,7 +143,6 @@
         }
     .end annotation
 
-    .line 97
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -158,9 +150,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/apf/ApfFilter$ProcessRaResult;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 97
     const-class v0, Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -175,7 +165,6 @@
 .method public static values()[Landroid/net/apf/ApfFilter$ProcessRaResult;
     .locals 1
 
-    .line 97
     sget-object v0, Landroid/net/apf/ApfFilter$ProcessRaResult;->$VALUES:[Landroid/net/apf/ApfFilter$ProcessRaResult;
 
     invoke-virtual {v0}, [Landroid/net/apf/ApfFilter$ProcessRaResult;->clone()Ljava/lang/Object;

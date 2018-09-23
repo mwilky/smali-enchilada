@@ -32,7 +32,6 @@
 .method private constructor <init>(Lcom/android/server/fingerprint/FingerprintService;)V
     .locals 0
 
-    .line 134
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/fingerprint/FingerprintService;
-    .param p2, "x1"    # Lcom/android/server/fingerprint/FingerprintService$1;
 
-    .line 134
     invoke-direct {p0, p1}, Lcom/android/server/fingerprint/FingerprintService$PerformanceStats;-><init>(Lcom/android/server/fingerprint/FingerprintService;)V
 
     return-void

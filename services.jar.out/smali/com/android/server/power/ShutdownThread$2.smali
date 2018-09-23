@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 482
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void

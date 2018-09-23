@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/BatteryService;)V
     .locals 0
 
-    .line 1440
     iput-object p1, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/BatteryService;Lcom/android/server/BatteryService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/BatteryService;
-    .param p2, "x1"    # Lcom/android/server/BatteryService$1;
 
-    .line 1440
     invoke-direct {p0, p1}, Lcom/android/server/BatteryService$BinderService;-><init>(Lcom/android/server/BatteryService;)V
 
     return-void
@@ -45,11 +41,7 @@
 # virtual methods
 .method protected dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 2
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "pw"    # Ljava/io/PrintWriter;
-    .param p3, "args"    # [Ljava/lang/String;
 
-    .line 1442
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0}, Lcom/android/server/BatteryService;->access$1300(Lcom/android/server/BatteryService;)Landroid/content/Context;
@@ -68,7 +60,6 @@
 
     return-void
 
-    .line 1444
     :cond_0
     array-length v0, p3
 
@@ -86,34 +77,24 @@
 
     if-eqz v0, :cond_1
 
-    .line 1445
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0, p1}, Lcom/android/server/BatteryService;->access$2300(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;)V
 
     goto :goto_0
 
-    .line 1447
     :cond_1
     iget-object v0, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/BatteryService;->access$2400(Lcom/android/server/BatteryService;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 1449
     :goto_0
     return-void
 .end method
 
 .method public onShellCommand(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)V
     .locals 8
-    .param p1, "in"    # Ljava/io/FileDescriptor;
-    .param p2, "out"    # Ljava/io/FileDescriptor;
-    .param p3, "err"    # Ljava/io/FileDescriptor;
-    .param p4, "args"    # [Ljava/lang/String;
-    .param p5, "callback"    # Landroid/os/ShellCallback;
-    .param p6, "resultReceiver"    # Landroid/os/ResultReceiver;
 
-    .line 1454
     new-instance v0, Lcom/android/server/BatteryService$Shell;
 
     iget-object v1, p0, Lcom/android/server/BatteryService$BinderService;->this$0:Lcom/android/server/BatteryService;
@@ -136,6 +117,5 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/server/BatteryService$Shell;->exec(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)I
 
-    .line 1455
     return-void
 .end method

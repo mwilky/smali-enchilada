@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/server/OIMCTest;
-    .param p2, "arg"    # Lcom/oneplus/server/MsgObjectArg;
 
-    .line 239
     iput-object p1, p0, Lcom/oneplus/server/OIMCTest$4;->this$0:Lcom/oneplus/server/OIMCTest;
 
     invoke-direct {p0, p1, p2}, Lcom/oneplus/server/OIMCTest$checkSysInfo;-><init>(Lcom/oneplus/server/OIMCTest;Lcom/oneplus/server/MsgObjectArg;)V
@@ -37,7 +34,6 @@
 .method public run()V
     .locals 8
 
-    .line 242
     invoke-virtual {p0}, Lcom/oneplus/server/OIMCTest$4;->getArg()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v0
@@ -52,8 +48,6 @@
 
     move-result-object v0
 
-    .line 244
-    .local v0, "mtbl":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/oneplus/server/SceneMode;>;"
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -75,8 +69,6 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 245
-    .local v2, "name":Ljava/lang/String;
     const-string v3, "OIMCTestMode"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -101,7 +93,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 246
     :cond_0
     invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -117,13 +108,10 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 247
     invoke-static {}, Lcom/oneplus/server/MsgObjectArg;->obtain()Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v3
 
-    .line 248
-    .local v3, "iarg":Lcom/oneplus/server/MsgObjectArg;
     iget-object v5, p0, Lcom/oneplus/server/OIMCTest$4;->this$0:Lcom/oneplus/server/OIMCTest;
 
     invoke-static {v5}, Lcom/oneplus/server/OIMCTest;->access$100(Lcom/oneplus/server/OIMCTest;)Lcom/oneplus/server/OIMCService;
@@ -134,23 +122,17 @@
 
     move-result v4
 
-    .line 250
     invoke-virtual {v3, v2}, Lcom/oneplus/server/MsgObjectArg;->setArg1(Ljava/lang/Object;)Lcom/oneplus/server/MsgObjectArg;
 
     move-result-object v6
 
-    .line 248
     const/4 v7, 0x0
 
     invoke-virtual {v5, v4, v7, v7, v6}, Lcom/oneplus/server/OIMCService;->sendMessage(IIILjava/lang/Object;)Z
 
-    .line 252
-    .end local v2    # "name":Ljava/lang/String;
-    .end local v3    # "iarg":Lcom/oneplus/server/MsgObjectArg;
     :cond_1
     goto :goto_0
 
-    .line 253
     :cond_2
     return-void
 .end method

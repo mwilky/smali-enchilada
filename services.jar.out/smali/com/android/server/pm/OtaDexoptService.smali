@@ -59,7 +59,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 56
     const-string v0, "&"
 
     filled-new-array {v0}, [Ljava/lang/String;
@@ -73,26 +72,18 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "packageManagerService"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 94
     invoke-direct {p0}, Landroid/content/pm/IOtaDexopt$Stub;-><init>()V
 
-    .line 95
     iput-object p1, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
-    .line 96
     iput-object p2, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
-    .line 97
     return-void
 .end method
 
 .method private declared-synchronized generatePackageDexopts(Landroid/content/pm/PackageParser$Package;I)Ljava/util/List;
     .locals 10
-    .param p1, "pkg"    # Landroid/content/pm/PackageParser$Package;
-    .param p2, "compilationReason"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,14 +97,11 @@
 
     monitor-enter p0
 
-    .line 250
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 251
-    .local v0, "commands":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v1, Lcom/android/server/pm/OtaDexoptService$1;
 
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
@@ -122,8 +110,6 @@
 
     invoke-direct {v1, p0, v2, v3, v0}, Lcom/android/server/pm/OtaDexoptService$1;-><init>(Lcom/android/server/pm/OtaDexoptService;Landroid/content/Context;ZLjava/util/List;)V
 
-    .line 315
-    .local v1, "collectingInstaller":Lcom/android/server/pm/Installer;
     new-instance v2, Lcom/android/server/pm/OtaDexoptService$OTADexoptPackageDexOptimizer;
 
     iget-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
@@ -134,26 +120,18 @@
 
     invoke-direct {v2, v1, v3, v4}, Lcom/android/server/pm/OtaDexoptService$OTADexoptPackageDexOptimizer;-><init>(Lcom/android/server/pm/Installer;Ljava/lang/Object;Landroid/content/Context;)V
 
-    .line 318
-    .local v2, "optimizer":Lcom/android/server/pm/PackageDexOptimizer;
     iget-object v3, p1, Landroid/content/pm/PackageParser$Package;->usesLibraryFiles:[Ljava/lang/String;
 
-    .line 319
-    .local v3, "libraryDependencies":[Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/pm/PackageParser$Package;->isSystem()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 321
     sget-object v4, Lcom/android/server/pm/OtaDexoptService;->NO_LIBRARIES:[Ljava/lang/String;
 
     move-object v3, v4
 
-    .line 325
-    .end local v3    # "libraryDependencies":[Ljava/lang/String;
-    .local v9, "libraryDependencies":[Ljava/lang/String;
     :cond_0
     move-object v9, v3
 
@@ -163,7 +141,6 @@
 
     iget-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
-    .line 328
     invoke-virtual {v3}, Lcom/android/server/pm/PackageManagerService;->getDexManager()Lcom/android/server/pm/dex/DexManager;
 
     move-result-object v3
@@ -182,7 +159,6 @@
 
     invoke-direct {v8, v3, p2, v4}, Lcom/android/server/pm/dex/DexoptOptions;-><init>(Ljava/lang/String;II)V
 
-    .line 325
     move-object v3, p1
 
     move-object v4, v9
@@ -191,49 +167,33 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 332
     monitor-exit p0
 
     return-object v0
 
-    .line 249
-    .end local v0    # "commands":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v1    # "collectingInstaller":Lcom/android/server/pm/Installer;
-    .end local v2    # "optimizer":Lcom/android/server/pm/PackageDexOptimizer;
-    .end local v9    # "libraryDependencies":[Ljava/lang/String;
-    .end local p1    # "pkg":Landroid/content/pm/PackageParser$Package;
-    .end local p2    # "compilationReason":I
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw p1
 .end method
 
 .method private getAvailableSpace()J
     .locals 7
 
-    .line 236
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->getMainLowSpaceThreshold()J
 
     move-result-wide v0
 
-    .line 238
-    .local v0, "lowThreshold":J
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v2
 
-    .line 239
-    .local v2, "dataDir":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->getUsableSpace()J
 
     move-result-wide v3
 
-    .line 241
-    .local v3, "usableSpace":J
     sub-long v5, v3, v0
 
     return-wide v5
@@ -242,13 +202,10 @@
 .method private getMainLowSpaceThreshold()J
     .locals 5
 
-    .line 220
     invoke-static {}, Landroid/os/Environment;->getDataDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 222
-    .local v0, "dataDir":Ljava/io/File;
     iget-object v1, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/os/storage/StorageManager;->from(Landroid/content/Context;)Landroid/os/storage/StorageManager;
@@ -259,18 +216,14 @@
 
     move-result-wide v1
 
-    .line 223
-    .local v1, "lowThreshold":J
     const-wide/16 v3, 0x0
 
     cmp-long v3, v1, v3
 
     if-eqz v3, :cond_0
 
-    .line 226
     return-wide v1
 
-    .line 224
     :cond_0
     new-instance v3, Ljava/lang/IllegalStateException;
 
@@ -283,22 +236,17 @@
 
 .method private static inMegabytes(J)I
     .locals 5
-    .param p0, "value"    # J
 
-    .line 415
     const-wide/32 v0, 0x100000
 
     div-long v0, p0, v0
 
-    .line 416
-    .local v0, "in_mega_bytes":J
     const-wide/32 v2, 0x7fffffff
 
     cmp-long v2, v0, v2
 
     if-lez v2, :cond_0
 
-    .line 417
     const-string v2, "OTADexopt"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -321,12 +269,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 418
     const v2, 0x7fffffff
 
     return v2
 
-    .line 420
     :cond_0
     long-to-int v2, v0
 
@@ -335,41 +281,31 @@
 
 .method public static main(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;)Lcom/android/server/pm/OtaDexoptService;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "packageManagerService"    # Lcom/android/server/pm/PackageManagerService;
 
-    .line 101
     new-instance v0, Lcom/android/server/pm/OtaDexoptService;
 
     invoke-direct {v0, p0, p1}, Lcom/android/server/pm/OtaDexoptService;-><init>(Landroid/content/Context;Lcom/android/server/pm/PackageManagerService;)V
 
-    .line 102
-    .local v0, "ota":Lcom/android/server/pm/OtaDexoptService;
     const-string/jumbo v1, "otadexopt"
 
     invoke-static {v1, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 105
     iget-object v1, p1, Lcom/android/server/pm/PackageManagerService;->mInstaller:Lcom/android/server/pm/Installer;
 
     invoke-direct {v0, v1}, Lcom/android/server/pm/OtaDexoptService;->moveAbArtifacts(Lcom/android/server/pm/Installer;)V
 
-    .line 107
     return-object v0
 .end method
 
 .method private moveAbArtifacts(Lcom/android/server/pm/Installer;)V
     .locals 17
-    .param p1, "installer"    # Lcom/android/server/pm/Installer;
 
     move-object/from16 v1, p0
 
-    .line 341
     iget-object v0, v1, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     if-nez v0, :cond_9
 
-    .line 345
     iget-object v0, v1, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/pm/PackageManagerService;->isUpgrade()Z
@@ -378,17 +314,14 @@
 
     if-nez v0, :cond_0
 
-    .line 346
     const-string v0, "OTADexopt"
 
     const-string v2, "No upgrade, skipping A/B artifacts check."
 
     invoke-static {v0, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
     return-void
 
-    .line 351
     :cond_0
     iget-object v0, v1, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
@@ -396,16 +329,10 @@
 
     move-result-object v2
 
-    .line 352
-    .local v2, "pkgs":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/content/pm/PackageParser$Package;>;"
     const/4 v0, 0x0
 
-    .line 353
-    .local v0, "packagePaths":I
     const/4 v3, 0x0
 
-    .line 354
-    .local v3, "pathsSuccessful":I
     invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -423,23 +350,16 @@
 
     check-cast v5, Landroid/content/pm/PackageParser$Package;
 
-    .line 355
-    .local v5, "pkg":Landroid/content/pm/PackageParser$Package;
     if-nez v5, :cond_2
 
-    .line 356
     nop
 
-    .line 354
-    .end local v5    # "pkg":Landroid/content/pm/PackageParser$Package;
     :cond_1
     :goto_1
     move-object/from16 v1, p1
 
     goto/16 :goto_5
 
-    .line 360
-    .restart local v5    # "pkg":Landroid/content/pm/PackageParser$Package;
     :cond_2
     invoke-static {v5}, Lcom/android/server/pm/PackageDexOptimizer;->canOptimizePackage(Landroid/content/pm/PackageParser$Package;)Z
 
@@ -447,16 +367,13 @@
 
     if-nez v6, :cond_3
 
-    .line 361
     goto :goto_1
 
-    .line 363
     :cond_3
     iget-object v6, v5, Landroid/content/pm/PackageParser$Package;->codePath:Ljava/lang/String;
 
     if-nez v6, :cond_4
 
-    .line 364
     const-string v6, "OTADexopt"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -479,10 +396,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 365
     goto :goto_1
 
-    .line 370
     :cond_4
     iget-object v6, v5, Landroid/content/pm/PackageParser$Package;->codePath:Ljava/lang/String;
 
@@ -508,17 +423,14 @@
 
     const-string v7, "/product"
 
-    .line 371
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_5
 
-    .line 372
     goto :goto_1
 
-    .line 375
     :cond_5
     iget-object v6, v5, Landroid/content/pm/PackageParser$Package;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -526,20 +438,14 @@
 
     move-result-object v6
 
-    .line 376
-    .local v6, "instructionSets":[Ljava/lang/String;
     invoke-virtual {v5}, Landroid/content/pm/PackageParser$Package;->getAllCodePathsExcludingResourceOnly()Ljava/util/List;
 
     move-result-object v7
 
-    .line 377
-    .local v7, "paths":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {v6}, Lcom/android/server/pm/InstructionSets;->getDexCodeInstructionSets([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v8
 
-    .line 378
-    .local v8, "dexCodeInstructionSets":[Ljava/lang/String;
     array-length v9, v8
 
     const/4 v10, 0x0
@@ -549,8 +455,6 @@
 
     aget-object v11, v8, v10
 
-    .line 379
-    .local v11, "dexCodeInstructionSet":Ljava/lang/String;
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v12
@@ -568,8 +472,6 @@
 
     check-cast v13, Ljava/lang/String;
 
-    .line 380
-    .local v13, "path":Ljava/lang/String;
     new-instance v14, Ljava/io/File;
 
     iget-object v15, v5, Landroid/content/pm/PackageParser$Package;->codePath:Ljava/lang/String;
@@ -580,18 +482,12 @@
 
     move-result-object v14
 
-    .line 381
     invoke-virtual {v14}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v14
 
-    .line 385
-    .local v14, "oatDir":Ljava/lang/String;
     add-int/lit8 v15, v0, 0x1
 
-    .line 387
-    .end local v0    # "packagePaths":I
-    .local v15, "packagePaths":I
     move-object/from16 v1, p1
 
     :try_start_0
@@ -599,33 +495,22 @@
     :try_end_0
     .catch Lcom/android/server/pm/Installer$InstallerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 388
     add-int/lit8 v3, v3, 0x1
 
-    .line 390
     goto :goto_4
 
-    .line 389
     :catch_0
     move-exception v0
 
-    .line 391
-    .end local v13    # "path":Ljava/lang/String;
-    .end local v14    # "oatDir":Ljava/lang/String;
     :goto_4
     nop
 
-    .line 379
     move v0, v15
 
     move-object/from16 v1, p0
 
     goto :goto_3
 
-    .line 378
-    .end local v11    # "dexCodeInstructionSet":Ljava/lang/String;
-    .end local v15    # "packagePaths":I
-    .restart local v0    # "packagePaths":I
     :cond_6
     move-object/from16 v1, p1
 
@@ -635,21 +520,14 @@
 
     goto :goto_2
 
-    .line 393
-    .end local v5    # "pkg":Landroid/content/pm/PackageParser$Package;
-    .end local v6    # "instructionSets":[Ljava/lang/String;
-    .end local v7    # "paths":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v8    # "dexCodeInstructionSets":[Ljava/lang/String;
     :cond_7
     move-object/from16 v1, p1
 
-    .line 354
     :goto_5
     move-object/from16 v1, p0
 
     goto/16 :goto_0
 
-    .line 394
     :cond_8
     move-object/from16 v1, p1
 
@@ -677,13 +555,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 395
     return-void
 
-    .line 342
-    .end local v0    # "packagePaths":I
-    .end local v2    # "pkgs":Ljava/util/Collection;, "Ljava/util/Collection<Landroid/content/pm/PackageParser$Package;>;"
-    .end local v3    # "pathsSuccessful":I
     :cond_9
     move-object/from16 v1, p1
 
@@ -699,58 +572,46 @@
 .method private performMetricsLogging()V
     .locals 6
 
-    .line 424
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
-    .line 426
-    .local v0, "finalTime":J
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_available_space_before_mb"
 
     iget-wide v4, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceBefore:J
 
-    .line 427
     invoke-static {v4, v5}, Lcom/android/server/pm/OtaDexoptService;->inMegabytes(J)I
 
     move-result v4
 
-    .line 426
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 428
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_available_space_after_bulk_delete_mb"
 
     iget-wide v4, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceAfterBulkDelete:J
 
-    .line 429
     invoke-static {v4, v5}, Lcom/android/server/pm/OtaDexoptService;->inMegabytes(J)I
 
     move-result v4
 
-    .line 428
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 430
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_available_space_after_dexopt_mb"
 
     iget-wide v4, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceAfterDexopt:J
 
-    .line 431
     invoke-static {v4, v5}, Lcom/android/server/pm/OtaDexoptService;->inMegabytes(J)I
 
     move-result v4
 
-    .line 430
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 433
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_num_important_packages"
@@ -759,7 +620,6 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 435
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_num_other_packages"
@@ -768,7 +628,6 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 437
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_num_commands"
@@ -777,7 +636,6 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 438
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v3, "ota_dexopt_num_commands_executed"
@@ -786,57 +644,42 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 441
     sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
     iget-wide v3, p0, Lcom/android/server/pm/OtaDexoptService;->otaDexoptTimeStart:J
 
     sub-long v3, v0, v3
 
-    .line 442
     invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
     move-result-wide v2
 
     long-to-int v2, v2
 
-    .line 443
-    .local v2, "elapsedTimeSeconds":I
     iget-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mContext:Landroid/content/Context;
 
     const-string/jumbo v4, "ota_dexopt_time_s"
 
     invoke-static {v3, v4, v2}, Lcom/android/internal/logging/MetricsLogger;->histogram(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 444
     return-void
 .end method
 
 .method private prepareMetricsLogging(IIJJ)V
     .locals 2
-    .param p1, "important"    # I
-    .param p2, "others"    # I
-    .param p3, "spaceBegin"    # J
-    .param p5, "spaceBulk"    # J
 
-    .line 401
     iput-wide p3, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceBefore:J
 
-    .line 402
     iput-wide p5, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceAfterBulkDelete:J
 
-    .line 403
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceAfterDexopt:J
 
-    .line 405
     iput p1, p0, Lcom/android/server/pm/OtaDexoptService;->importantPackageCount:I
 
-    .line 406
     iput p2, p0, Lcom/android/server/pm/OtaDexoptService;->otherPackageCount:I
 
-    .line 408
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -845,19 +688,16 @@
 
     iput v0, p0, Lcom/android/server/pm/OtaDexoptService;->dexoptCommandCountTotal:I
 
-    .line 409
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/pm/OtaDexoptService;->dexoptCommandCountExecuted:I
 
-    .line 411
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/pm/OtaDexoptService;->otaDexoptTimeStart:J
 
-    .line 412
     return-void
 .end method
 
@@ -873,7 +713,6 @@
 
     monitor-enter p0
 
-    .line 165
     :try_start_0
     const-string v0, "OTADexopt"
 
@@ -881,35 +720,29 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 167
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
-    .line 168
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->getAvailableSpace()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/pm/OtaDexoptService;->availableSpaceAfterDexopt:J
 
-    .line 170
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->performMetricsLogging()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 171
     monitor-exit p0
 
     return-void
 
-    .line 164
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method
 
@@ -923,7 +756,6 @@
 
     monitor-enter p0
 
-    .line 337
     :try_start_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -938,7 +770,6 @@
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method
 
@@ -952,7 +783,6 @@
 
     monitor-enter p0
 
-    .line 185
     :try_start_0
     iget v0, p0, Lcom/android/server/pm/OtaDexoptService;->completeSize:I
     :try_end_0
@@ -960,14 +790,12 @@
 
     if-nez v0, :cond_0
 
-    .line 186
     const/high16 v0, 0x3f800000    # 1.0f
 
     monitor-exit p0
 
     return v0
 
-    .line 188
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
@@ -976,8 +804,6 @@
 
     move-result v0
 
-    .line 189
-    .local v0, "commandsLeft":I
     iget v1, p0, Lcom/android/server/pm/OtaDexoptService;->completeSize:I
 
     sub-int/2addr v1, v0
@@ -996,14 +822,11 @@
 
     return v1
 
-    .line 184
-    .end local v0    # "commandsLeft":I
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method
 
@@ -1017,13 +840,11 @@
 
     monitor-enter p0
 
-    .line 175
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 179
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1036,7 +857,6 @@
 
     return v0
 
-    .line 176
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1049,13 +869,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 174
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method
 
@@ -1069,13 +887,11 @@
 
     monitor-enter p0
 
-    .line 194
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     if-eqz v0, :cond_2
 
-    .line 198
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1084,7 +900,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 199
     const-string v0, "(all done)"
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1093,7 +908,6 @@
 
     return-object v0
 
-    .line 202
     :cond_0
     :try_start_1
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
@@ -1106,8 +920,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 204
-    .local v0, "next":Ljava/lang/String;
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->getAvailableSpace()J
 
     move-result-wide v1
@@ -1118,14 +930,12 @@
 
     if-lez v1, :cond_1
 
-    .line 205
     iget v1, p0, Lcom/android/server/pm/OtaDexoptService;->dexoptCommandCountExecuted:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/android/server/pm/OtaDexoptService;->dexoptCommandCountExecuted:I
 
-    .line 207
     const-string v1, "OTADexopt"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1146,12 +956,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 208
     monitor-exit p0
 
     return-object v0
 
-    .line 211
     :cond_1
     :try_start_2
     const-string v1, "OTADexopt"
@@ -1166,7 +974,6 @@
 
     iget-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
-    .line 212
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
@@ -1183,15 +990,12 @@
 
     move-result-object v2
 
-    .line 211
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
     iget-object v1, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 215
     const-string v1, "(no free space)"
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
@@ -1200,8 +1004,6 @@
 
     return-object v1
 
-    .line 195
-    .end local v0    # "next":Ljava/lang/String;
     :cond_2
     :try_start_3
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1214,26 +1016,17 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 193
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method
 
 .method public onShellCommand(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)V
     .locals 8
-    .param p1, "in"    # Ljava/io/FileDescriptor;
-    .param p2, "out"    # Ljava/io/FileDescriptor;
-    .param p3, "err"    # Ljava/io/FileDescriptor;
-    .param p4, "args"    # [Ljava/lang/String;
-    .param p5, "callback"    # Landroid/os/ShellCallback;
-    .param p6, "resultReceiver"    # Landroid/os/ResultReceiver;
 
-    .line 113
     new-instance v0, Lcom/android/server/pm/OtaDexoptShellCommand;
 
     invoke-direct {v0, p0}, Lcom/android/server/pm/OtaDexoptShellCommand;-><init>(Lcom/android/server/pm/OtaDexoptService;)V
@@ -1254,7 +1047,6 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/server/pm/OtaDexoptShellCommand;->exec(Landroid/os/Binder;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;[Ljava/lang/String;Landroid/os/ShellCallback;Landroid/os/ResultReceiver;)I
 
-    .line 115
     return-void
 .end method
 
@@ -1268,13 +1060,11 @@
 
     monitor-enter p0
 
-    .line 119
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     if-nez v0, :cond_4
 
-    .line 124
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v0, v0, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
@@ -1283,26 +1073,21 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 126
     :try_start_1
     iget-object v1, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v1, v1, Lcom/android/server/pm/PackageManagerService;->mPackages:Landroid/util/ArrayMap;
 
-    .line 127
     invoke-virtual {v1}, Landroid/util/ArrayMap;->values()Ljava/util/Collection;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
-    .line 126
     invoke-static {v1, v2}, Lcom/android/server/pm/PackageManagerServiceUtils;->getPackagesForDexopt(Ljava/util/Collection;Lcom/android/server/pm/PackageManagerService;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 129
-    .local v1, "important":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageParser$Package;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     iget-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
@@ -1315,11 +1100,8 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 130
-    .local v2, "others":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageParser$Package;>;"
     invoke-interface {v2, v1}, Ljava/util/List;->removeAll(Ljava/util/Collection;)Z
 
-    .line 133
     new-instance v3, Ljava/util/ArrayList;
 
     const/4 v4, 0x3
@@ -1340,12 +1122,10 @@
 
     iput-object v3, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
-    .line 134
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 136
     :try_start_2
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1364,8 +1144,6 @@
 
     check-cast v3, Landroid/content/pm/PackageParser$Package;
 
-    .line 137
-    .local v3, "p":Landroid/content/pm/PackageParser$Package;
     iget-object v4, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     const/4 v5, 0x4
@@ -1376,11 +1154,8 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 138
-    .end local v3    # "p":Landroid/content/pm/PackageParser$Package;
     goto :goto_0
 
-    .line 139
     :cond_0
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1399,31 +1174,22 @@
 
     check-cast v3, Landroid/content/pm/PackageParser$Package;
 
-    .line 141
-    .restart local v3    # "p":Landroid/content/pm/PackageParser$Package;
     iget-boolean v4, v3, Landroid/content/pm/PackageParser$Package;->coreApp:Z
 
     if-nez v4, :cond_1
 
-    .line 144
     iget-object v4, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
     const/4 v5, 0x0
 
-    .line 145
     invoke-direct {p0, v3, v5}, Lcom/android/server/pm/OtaDexoptService;->generatePackageDexopts(Landroid/content/pm/PackageParser$Package;I)Ljava/util/List;
 
     move-result-object v5
 
-    .line 144
     invoke-interface {v4, v5}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 146
-    .end local v3    # "p":Landroid/content/pm/PackageParser$Package;
     goto :goto_1
 
-    .line 142
-    .restart local v3    # "p":Landroid/content/pm/PackageParser$Package;
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -1433,8 +1199,6 @@
 
     throw v0
 
-    .line 147
-    .end local v3    # "p":Landroid/content/pm/PackageParser$Package;
     :cond_2
     iget-object v0, p0, Lcom/android/server/pm/OtaDexoptService;->mDexoptCommands:Ljava/util/List;
 
@@ -1444,20 +1208,16 @@
 
     iput v0, p0, Lcom/android/server/pm/OtaDexoptService;->completeSize:I
 
-    .line 149
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->getAvailableSpace()J
 
     move-result-wide v3
 
-    .line 150
-    .local v3, "spaceAvailable":J
     const-wide/32 v5, 0x40000000
 
     cmp-long v0, v3, v5
 
     if-gez v0, :cond_3
 
-    .line 151
     const-string v0, "OTADexopt"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1468,7 +1228,6 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 152
     invoke-static {v2}, Lcom/android/server/pm/PackageManagerServiceUtils;->packagesToString(Ljava/util/Collection;)Ljava/lang/String;
 
     move-result-object v6
@@ -1479,10 +1238,8 @@
 
     move-result-object v5
 
-    .line 151
     invoke-static {v0, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1500,26 +1257,19 @@
 
     check-cast v5, Landroid/content/pm/PackageParser$Package;
 
-    .line 154
-    .local v5, "pkg":Landroid/content/pm/PackageParser$Package;
     iget-object v6, p0, Lcom/android/server/pm/OtaDexoptService;->mPackageManagerService:Lcom/android/server/pm/PackageManagerService;
 
     iget-object v7, v5, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Lcom/android/server/pm/PackageManagerService;->deleteOatArtifactsOfPackage(Ljava/lang/String;)V
 
-    .line 155
-    .end local v5    # "pkg":Landroid/content/pm/PackageParser$Package;
     goto :goto_2
 
-    .line 157
     :cond_3
     invoke-direct {p0}, Lcom/android/server/pm/OtaDexoptService;->getAvailableSpace()J
 
     move-result-wide v10
 
-    .line 159
-    .local v10, "spaceAvailableNow":J
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v6
@@ -1536,16 +1286,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 160
     monitor-exit p0
 
     return-void
 
-    .line 134
-    .end local v1    # "important":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageParser$Package;>;"
-    .end local v2    # "others":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageParser$Package;>;"
-    .end local v3    # "spaceAvailable":J
-    .end local v10    # "spaceAvailableNow":J
     :catchall_0
     move-exception v1
 
@@ -1557,7 +1301,6 @@
     :try_start_4
     throw v1
 
-    .line 120
     :cond_4
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -1569,12 +1312,10 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 118
     :catchall_1
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/pm/OtaDexoptService;
     throw v0
 .end method

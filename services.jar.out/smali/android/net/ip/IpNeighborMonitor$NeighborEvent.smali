@@ -31,35 +31,21 @@
 # direct methods
 .method public constructor <init>(JSILjava/net/InetAddress;SLandroid/net/MacAddress;)V
     .locals 0
-    .param p1, "elapsedMs"    # J
-    .param p3, "msgType"    # S
-    .param p4, "ifindex"    # I
-    .param p5, "ip"    # Ljava/net/InetAddress;
-    .param p6, "nudState"    # S
-    .param p7, "macAddr"    # Landroid/net/MacAddress;
 
-    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 103
     iput-wide p1, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->elapsedMs:J
 
-    .line 104
     iput-short p3, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->msgType:S
 
-    .line 105
     iput p4, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->ifindex:I
 
-    .line 106
     iput-object p5, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->ip:Ljava/net/InetAddress;
 
-    .line 107
     iput-short p6, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->nudState:S
 
-    .line 108
     iput-object p7, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->macAddr:Landroid/net/MacAddress;
 
-    .line 109
     return-void
 .end method
 
@@ -68,7 +54,6 @@
 .method isConnected()Z
     .locals 2
 
-    .line 112
     iget-short v0, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->msgType:S
 
     const/16 v1, 0x1d
@@ -97,7 +82,6 @@
 .method isValid()Z
     .locals 2
 
-    .line 116
     iget-short v0, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->msgType:S
 
     const/16 v1, 0x1d
@@ -126,7 +110,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 121
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ","
@@ -137,8 +120,6 @@
 
     invoke-direct {v0, v1, v2, v3}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 122
-    .local v0, "j":Ljava/util/StringJoiner;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -161,7 +142,6 @@
 
     iget-short v2, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->msgType:S
 
-    .line 123
     invoke-static {v2}, Landroid/net/netlink/NetlinkConstants;->stringForNlMsgType(S)Ljava/lang/String;
 
     move-result-object v2
@@ -174,7 +154,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "if="
+    const-string v3, "if="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,14 +166,12 @@
 
     move-result-object v2
 
-    .line 124
     invoke-virtual {v1, v2}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v1
 
     iget-object v2, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->ip:Ljava/net/InetAddress;
 
-    .line 125
     invoke-virtual {v2}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 
     move-result-object v2
@@ -204,7 +182,6 @@
 
     iget-short v2, p0, Landroid/net/ip/IpNeighborMonitor$NeighborEvent;->nudState:S
 
-    .line 126
     invoke-static {v2}, Landroid/net/netlink/StructNdMsg;->stringForNudState(S)Ljava/lang/String;
 
     move-result-object v2
@@ -233,16 +210,13 @@
 
     move-result-object v2
 
-    .line 127
     invoke-virtual {v1, v2}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
     move-result-object v1
 
-    .line 128
     invoke-virtual {v1}, Ljava/util/StringJoiner;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 122
     return-object v1
 .end method

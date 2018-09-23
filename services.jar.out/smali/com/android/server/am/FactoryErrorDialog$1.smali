@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/FactoryErrorDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/FactoryErrorDialog;
 
-    .line 42
     iput-object p1, p0, Lcom/android/server/am/FactoryErrorDialog$1;->this$0:Lcom/android/server/am/FactoryErrorDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 44
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "Rebooting from failed factory test"

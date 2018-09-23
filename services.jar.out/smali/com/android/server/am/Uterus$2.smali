@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Uterus;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Uterus;
 
-    .line 488
     iput-object p1, p0, Lcom/android/server/am/Uterus$2;->this$0:Lcom/android/server/am/Uterus;
 
     iput-object p2, p0, Lcom/android/server/am/Uterus$2;->val$packageName:Ljava/lang/String;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 491
     iget-object v0, p0, Lcom/android/server/am/Uterus$2;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v0}, Lcom/android/server/am/Uterus;->access$500(Lcom/android/server/am/Uterus;)Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -56,27 +53,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 492
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 493
-    .local v0, "data":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const-string/jumbo v1, "pn"
 
     iget-object v2, p0, Lcom/android/server/am/Uterus$2;->val$packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 494
     const-string/jumbo v1, "pvn"
 
     iget-object v2, p0, Lcom/android/server/am/Uterus$2;->val$versionName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 495
     iget-object v1, p0, Lcom/android/server/am/Uterus$2;->this$0:Lcom/android/server/am/Uterus;
 
     invoke-static {v1}, Lcom/android/server/am/Uterus;->access$500(Lcom/android/server/am/Uterus;)Lnet/oneplus/odm/insight/tracker/OSTracker;
@@ -87,8 +79,6 @@
 
     invoke-virtual {v1, v2, v0}, Lnet/oneplus/odm/insight/tracker/OSTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    .line 497
-    .end local v0    # "data":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_0
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 355
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/am/UriPermission;Lcom/android/server/am/UriPermission;)I
     .locals 4
-    .param p1, "lhs"    # Lcom/android/server/am/UriPermission;
-    .param p2, "rhs"    # Lcom/android/server/am/UriPermission;
 
-    .line 358
     iget-wide v0, p1, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
 
     iget-wide v2, p2, Lcom/android/server/am/UriPermission;->persistedCreateTime:J
@@ -58,7 +54,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 355
     check-cast p1, Lcom/android/server/am/UriPermission;
 
     check-cast p2, Lcom/android/server/am/UriPermission;

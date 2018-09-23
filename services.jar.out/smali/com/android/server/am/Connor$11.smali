@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/Connor;[Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/am/Connor;
 
-    .line 864
     iput-object p1, p0, Lcom/android/server/am/Connor$11;->this$0:Lcom/android/server/am/Connor;
 
     iput-object p2, p0, Lcom/android/server/am/Connor$11;->val$predict:[Ljava/lang/String;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 867
     iget-object v0, p0, Lcom/android/server/am/Connor$11;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v0}, Lcom/android/server/am/Connor;->access$2100(Lcom/android/server/am/Connor;)Ljava/util/ArrayList;
@@ -52,10 +49,8 @@
 
     monitor-enter v0
 
-    .line 868
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     :try_start_0
     iget-object v2, p0, Lcom/android/server/am/Connor$11;->this$0:Lcom/android/server/am/Connor;
@@ -70,7 +65,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 869
     iget-object v2, p0, Lcom/android/server/am/Connor$11;->this$0:Lcom/android/server/am/Connor;
 
     invoke-static {v2}, Lcom/android/server/am/Connor;->access$2100(Lcom/android/server/am/Connor;)Ljava/util/ArrayList;
@@ -87,20 +81,15 @@
 
     invoke-interface {v2, v3}, Lcom/android/server/am/Connor$Callbacks;->onPredictUpdated([Ljava/lang/String;)V
 
-    .line 868
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 871
-    .end local v1    # "i":I
     :cond_0
     monitor-exit v0
 
-    .line 872
     return-void
 
-    .line 871
     :catchall_0
     move-exception v1
 

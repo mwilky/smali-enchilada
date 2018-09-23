@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/locksettings/LockSettingsService;)V
     .locals 0
 
-    .line 2994
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-direct {p0}, Lcom/android/internal/widget/LockSettingsInternal;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/locksettings/LockSettingsService;Lcom/android/server/locksettings/LockSettingsService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/locksettings/LockSettingsService;
-    .param p2, "x1"    # Lcom/android/server/locksettings/LockSettingsService$1;
 
-    .line 2994
     invoke-direct {p0, p1}, Lcom/android/server/locksettings/LockSettingsService$LocalService;-><init>(Lcom/android/server/locksettings/LockSettingsService;)V
 
     return-void
@@ -45,10 +41,7 @@
 # virtual methods
 .method public addEscrowToken([BI)J
     .locals 2
-    .param p1, "token"    # [B
-    .param p2, "userId"    # I
 
-    .line 2999
     :try_start_0
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
@@ -60,12 +53,9 @@
 
     return-wide v0
 
-    .line 3000
     :catch_0
     move-exception v0
 
-    .line 3001
-    .local v0, "re":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -75,10 +65,7 @@
 
 .method public isEscrowTokenActive(JI)Z
     .locals 1
-    .param p1, "handle"    # J
-    .param p3, "userId"    # I
 
-    .line 3012
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/locksettings/LockSettingsService;->access$1500(Lcom/android/server/locksettings/LockSettingsService;JI)Z
@@ -90,10 +77,7 @@
 
 .method public removeEscrowToken(JI)Z
     .locals 1
-    .param p1, "handle"    # J
-    .param p3, "userId"    # I
 
-    .line 3007
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0, p1, p2, p3}, Lcom/android/server/locksettings/LockSettingsService;->access$1400(Lcom/android/server/locksettings/LockSettingsService;JI)Z
@@ -105,14 +89,7 @@
 
 .method public setLockCredentialWithToken(Ljava/lang/String;IJ[BII)Z
     .locals 8
-    .param p1, "credential"    # Ljava/lang/String;
-    .param p2, "type"    # I
-    .param p3, "tokenHandle"    # J
-    .param p5, "token"    # [B
-    .param p6, "requestedQuality"    # I
-    .param p7, "userId"    # I
 
-    .line 3019
     :try_start_0
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
@@ -136,12 +113,9 @@
 
     return v0
 
-    .line 3021
     :catch_0
     move-exception v0
 
-    .line 3022
-    .local v0, "re":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1
@@ -151,11 +125,7 @@
 
 .method public unlockUserWithToken(J[BI)Z
     .locals 2
-    .param p1, "tokenHandle"    # J
-    .param p3, "token"    # [B
-    .param p4, "userId"    # I
 
-    .line 3029
     :try_start_0
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$LocalService;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
@@ -167,12 +137,9 @@
 
     return v0
 
-    .line 3030
     :catch_0
     move-exception v0
 
-    .line 3031
-    .local v0, "re":Landroid/os/RemoteException;
     invoke-virtual {v0}, Landroid/os/RemoteException;->rethrowFromSystemServer()Ljava/lang/RuntimeException;
 
     move-result-object v1

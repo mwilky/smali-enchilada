@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/audio/MediaFocusControl;Landroid/media/audiopolicy/IAudioPolicyCallback;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/audio/MediaFocusControl;
 
-    .line 562
     iput-object p1, p0, Lcom/android/server/audio/MediaFocusControl$1;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
     iput-object p2, p0, Lcom/android/server/audio/MediaFocusControl$1;->val$pcb2:Landroid/media/audiopolicy/IAudioPolicyCallback;
@@ -40,14 +38,12 @@
 .method public run()V
     .locals 5
 
-    .line 565
     invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->access$000()Ljava/lang/Object;
 
     move-result-object v0
 
     monitor-enter v0
 
-    .line 566
     :try_start_0
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$1;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
@@ -61,14 +57,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 567
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    .line 570
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$1;->val$pcb2:Landroid/media/audiopolicy/IAudioPolicyCallback;
@@ -96,15 +90,11 @@
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 576
     goto :goto_0
 
-    .line 573
     :catch_0
     move-exception v1
 
-    .line 574
-    .local v1, "e":Landroid/os/RemoteException;
     :try_start_2
     const-string v2, "MediaFocusControl"
 
@@ -118,7 +108,6 @@
 
     iget-object v4, p0, Lcom/android/server/audio/MediaFocusControl$1;->val$pcb2:Landroid/media/audiopolicy/IAudioPolicyCallback;
 
-    .line 575
     invoke-interface {v4}, Landroid/media/audiopolicy/IAudioPolicyCallback;->asBinder()Landroid/os/IBinder;
 
     move-result-object v4
@@ -129,18 +118,13 @@
 
     move-result-object v3
 
-    .line 574
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 577
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     monitor-exit v0
 
-    .line 578
     return-void
 
-    .line 577
     :catchall_0
     move-exception v1
 

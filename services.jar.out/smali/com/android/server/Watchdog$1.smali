@@ -25,10 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/Watchdog;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/Watchdog;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 605
     iput-object p1, p0, Lcom/android/server/Watchdog$1;->this$0:Lcom/android/server/Watchdog;
 
     iput-object p3, p0, Lcom/android/server/Watchdog$1;->val$subject:Ljava/lang/String;
@@ -45,7 +42,6 @@
 .method public run()V
     .locals 11
 
-    .line 607
     iget-object v0, p0, Lcom/android/server/Watchdog$1;->this$0:Lcom/android/server/Watchdog;
 
     iget-object v1, v0, Lcom/android/server/Watchdog;->mActivity:Lcom/android/server/am/ActivityManagerService;
@@ -70,6 +66,5 @@
 
     invoke-virtual/range {v1 .. v10}, Lcom/android/server/am/ActivityManagerService;->addErrorToDropBox(Ljava/lang/String;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Landroid/app/ApplicationErrorReport$CrashInfo;)V
 
-    .line 610
     return-void
 .end method

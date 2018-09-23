@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/am/ActivityManagerService$9;Landroid/app/Dialog;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/am/ActivityManagerService$9;
 
-    .line 7768
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$9$1;->this$1:Lcom/android/server/am/ActivityManagerService$9;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$9$1;->val$d:Landroid/app/Dialog;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 7771
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$9$1;->this$1:Lcom/android/server/am/ActivityManagerService$9;
 
     iget-object v0, v0, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -53,12 +50,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 7772
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$9$1;->val$d:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 7773
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$9$1;->this$1:Lcom/android/server/am/ActivityManagerService$9;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService$9;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -67,17 +62,14 @@
 
     iput-boolean v2, v1, Lcom/android/server/am/ActivityManagerService;->mLaunchWarningShown:Z
 
-    .line 7774
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 7775
     return-void
 
-    .line 7774
     :catchall_0
     move-exception v1
 

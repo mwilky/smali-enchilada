@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
-    .line 1886
     iput-object p1, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner$1;->this$1:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1889
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner$1;->this$1:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     iget-object v0, v0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->this$0:Lcom/android/server/connectivity/Vpn;
@@ -51,7 +46,6 @@
 
     return-void
 
-    .line 1891
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -65,7 +59,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1892
     const-string/jumbo v0, "networkType"
 
     const/4 v1, -0x1
@@ -76,7 +69,6 @@
 
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner$1;->this$1:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
-    .line 1893
     invoke-static {v1}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->access$1100(Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;)Ljava/util/concurrent/atomic/AtomicInteger;
 
     move-result-object v1
@@ -87,7 +79,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1894
     const-string/jumbo v0, "networkInfo"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getExtra(Ljava/lang/String;)Ljava/lang/Object;
@@ -96,8 +87,6 @@
 
     check-cast v0, Landroid/net/NetworkInfo;
 
-    .line 1896
-    .local v0, "info":Landroid/net/NetworkInfo;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnectedOrConnecting()Z
@@ -106,7 +95,6 @@
 
     if-nez v1, :cond_1
 
-    .line 1898
     :try_start_0
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner$1;->this$1:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
@@ -128,14 +116,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1899
     goto :goto_0
 
     :catch_0
     move-exception v1
 
-    .line 1903
-    .end local v0    # "info":Landroid/net/NetworkInfo;
     :cond_1
     :goto_0
     return-void

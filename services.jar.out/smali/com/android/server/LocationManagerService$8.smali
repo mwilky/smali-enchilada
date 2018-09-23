@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/LocationManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/LocationManagerService;
 
-    .line 429
     iput-object p1, p0, Lcom/android/server/LocationManagerService$8;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 432
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 433
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.USER_SWITCHED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -53,7 +46,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 434
     iget-object v1, p0, Lcom/android/server/LocationManagerService$8;->this$0:Lcom/android/server/LocationManagerService;
 
     const-string v2, "android.intent.extra.user_handle"
@@ -68,7 +60,6 @@
 
     goto :goto_1
 
-    .line 435
     :cond_0
     const-string v1, "android.intent.action.MANAGED_PROFILE_ADDED"
 
@@ -80,7 +71,6 @@
 
     const-string v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
-    .line 436
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -89,7 +79,6 @@
 
     goto :goto_0
 
-    .line 438
     :cond_1
     const-string v1, "android.intent.action.ACTION_SHUTDOWN"
 
@@ -99,7 +88,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 440
     sget-boolean v1, Lcom/android/server/LocationManagerService;->D:Z
 
     if-eqz v1, :cond_2
@@ -126,7 +114,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 441
     :cond_2
     invoke-virtual {p0}, Lcom/android/server/LocationManagerService$8;->getSendingUserId()I
 
@@ -136,14 +123,12 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 442
     iget-object v1, p0, Lcom/android/server/LocationManagerService$8;->this$0:Lcom/android/server/LocationManagerService;
 
     invoke-static {v1}, Lcom/android/server/LocationManagerService;->access$1000(Lcom/android/server/LocationManagerService;)V
 
     goto :goto_1
 
-    .line 437
     :cond_3
     :goto_0
     iget-object v1, p0, Lcom/android/server/LocationManagerService$8;->this$0:Lcom/android/server/LocationManagerService;
@@ -156,7 +141,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/LocationManagerService;->updateUserProfiles(I)V
 
-    .line 445
     :cond_4
     :goto_1
     return-void

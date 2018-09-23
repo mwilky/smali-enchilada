@@ -20,15 +20,11 @@
 # direct methods
 .method public constructor <init>(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     iput-wide p1, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 32
     return-void
 .end method
 
@@ -36,9 +32,7 @@
 # virtual methods
 .method public addDays(I)V
     .locals 6
-    .param p1, "val"    # I
 
-    .line 35
     iget-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
     int-to-long v2, p1
@@ -51,15 +45,12 @@
 
     iput-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 36
     return-void
 .end method
 
 .method public addMonths(I)V
     .locals 6
-    .param p1, "val"    # I
 
-    .line 43
     iget-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
     int-to-long v2, p1
@@ -72,15 +63,12 @@
 
     iput-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 44
     return-void
 .end method
 
 .method public addWeeks(I)V
     .locals 6
-    .param p1, "val"    # I
 
-    .line 39
     iget-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
     int-to-long v2, p1
@@ -93,15 +81,12 @@
 
     iput-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 40
     return-void
 .end method
 
 .method public addYears(I)V
     .locals 6
-    .param p1, "val"    # I
 
-    .line 47
     iget-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
     int-to-long v2, p1
@@ -114,14 +99,12 @@
 
     iput-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 48
     return-void
 .end method
 
 .method public getTimeInMillis()J
     .locals 2
 
-    .line 55
     iget-wide v0, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
     return-wide v0
@@ -129,11 +112,8 @@
 
 .method public setTimeInMillis(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 51
     iput-wide p1, p0, Lcom/android/server/usage/UnixCalendar;->mTime:J
 
-    .line 52
     return-void
 .end method

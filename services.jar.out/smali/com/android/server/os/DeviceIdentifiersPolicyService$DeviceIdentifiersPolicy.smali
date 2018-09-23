@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 51
     invoke-direct {p0}, Landroid/os/IDeviceIdentifiersPolicyService$Stub;-><init>()V
 
-    .line 52
     iput-object p1, p0, Lcom/android/server/os/DeviceIdentifiersPolicyService$DeviceIdentifiersPolicy;->mContext:Landroid/content/Context;
 
-    .line 53
     return-void
 .end method
 
@@ -43,7 +39,6 @@
         }
     .end annotation
 
-    .line 57
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -60,7 +55,6 @@
 
     const-string v1, "android.permission.READ_PHONE_STATE"
 
-    .line 58
     invoke-virtual {v0, v1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -71,7 +65,6 @@
 
     const-string v1, "android.permission.READ_PRIVILEGED_PHONE_STATE"
 
-    .line 61
     invoke-virtual {v0, v1}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -80,7 +73,6 @@
 
     goto :goto_0
 
-    .line 64
     :cond_0
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -90,7 +82,6 @@
 
     throw v0
 
-    .line 67
     :cond_1
     :goto_0
     const-string/jumbo v0, "ro.serialno"

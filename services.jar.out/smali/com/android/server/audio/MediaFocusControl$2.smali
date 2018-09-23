@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/audio/MediaFocusControl;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/audio/MediaFocusControl;
 
-    .line 1033
     iput-object p1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
     iput-boolean p2, p0, Lcom/android/server/audio/MediaFocusControl$2;->val$enteringRingOrCall:Z
@@ -40,12 +38,10 @@
 .method public run()V
     .locals 3
 
-    .line 1035
     iget-boolean v0, p0, Lcom/android/server/audio/MediaFocusControl$2;->val$enteringRingOrCall:Z
 
     if-eqz v0, :cond_0
 
-    .line 1037
     const-wide/16 v0, 0x64
 
     :try_start_0
@@ -53,19 +49,13 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1040
     goto :goto_0
 
-    .line 1038
     :catch_0
     move-exception v0
 
-    .line 1039
-    .local v0, "e":Ljava/lang/InterruptedException;
     invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    .line 1042
-    .end local v0    # "e":Ljava/lang/InterruptedException;
     :cond_0
     :goto_0
     invoke-static {}, Lcom/android/server/audio/MediaFocusControl;->access$000()Ljava/lang/Object;
@@ -74,7 +64,6 @@
 
     monitor-enter v0
 
-    .line 1045
     :try_start_1
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
@@ -84,7 +73,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 1046
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
     invoke-static {v1}, Lcom/android/server/audio/MediaFocusControl;->access$700(Lcom/android/server/audio/MediaFocusControl;)Lcom/android/server/audio/PlayerFocusEnforcer;
@@ -99,7 +87,6 @@
 
     goto :goto_1
 
-    .line 1048
     :cond_1
     iget-object v1, p0, Lcom/android/server/audio/MediaFocusControl$2;->this$0:Lcom/android/server/audio/MediaFocusControl;
 
@@ -109,14 +96,11 @@
 
     invoke-interface {v1}, Lcom/android/server/audio/PlayerFocusEnforcer;->unmutePlayersForCall()V
 
-    .line 1050
     :goto_1
     monitor-exit v0
 
-    .line 1051
     return-void
 
-    .line 1050
     :catchall_0
     move-exception v1
 

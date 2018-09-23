@@ -33,15 +33,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "status"    # I
 
-    .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 137
     iput p1, p0, Lcom/android/server/location/GnssNavigationMessageProvider$StatusChangedOperation;->mStatus:I
 
-    .line 138
     return-void
 .end method
 
@@ -49,19 +45,16 @@
 # virtual methods
 .method public execute(Landroid/location/IGnssNavigationMessageListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/location/IGnssNavigationMessageListener;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 142
     iget v0, p0, Lcom/android/server/location/GnssNavigationMessageProvider$StatusChangedOperation;->mStatus:I
 
     invoke-interface {p1, v0}, Landroid/location/IGnssNavigationMessageListener;->onStatusChanged(I)V
 
-    .line 143
     return-void
 .end method
 
@@ -73,7 +66,6 @@
         }
     .end annotation
 
-    .line 132
     check-cast p1, Landroid/location/IGnssNavigationMessageListener;
 
     invoke-virtual {p0, p1}, Lcom/android/server/location/GnssNavigationMessageProvider$StatusChangedOperation;->execute(Landroid/location/IGnssNavigationMessageListener;)V

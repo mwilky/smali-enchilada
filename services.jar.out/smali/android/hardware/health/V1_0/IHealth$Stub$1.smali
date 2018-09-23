@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/hardware/health/V1_0/IHealth$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/hardware/health/V1_0/IHealth$Stub;
 
-    .line 488
     iput-object p1, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->this$0:Landroid/hardware/health/V1_0/IHealth$Stub;
 
     iput-object p2, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,31 +40,24 @@
 # virtual methods
 .method public onValues(ZLandroid/hardware/health/V1_0/HealthInfo;)V
     .locals 2
-    .param p1, "skipLogging"    # Z
-    .param p2, "infoOut"    # Landroid/hardware/health/V1_0/HealthInfo;
 
-    .line 491
     iget-object v0, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 492
     iget-object v0, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeBool(Z)V
 
-    .line 493
     iget-object v0, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {p2, v0}, Landroid/hardware/health/V1_0/HealthInfo;->writeToParcel(Landroid/os/HwParcel;)V
 
-    .line 494
     iget-object v0, p0, Landroid/hardware/health/V1_0/IHealth$Stub$1;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 495
     return-void
 .end method

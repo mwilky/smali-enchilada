@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;
 
-    .line 1742
     iput-object p1, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification$1;->this$1:Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 5
 
-    .line 1746
     :try_start_0
     iget-object v0, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification$1;->this$1:Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;
 
@@ -61,8 +58,6 @@
 
     move-result-object v0
 
-    .line 1747
-    .local v0, "newService":Landroid/hardware/health/V2_0/IHealth;
     iget-object v1, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification$1;->this$1:Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;
 
     iget-object v1, v1, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
@@ -77,8 +72,6 @@
 
     check-cast v1, Landroid/hardware/health/V2_0/IHealth;
 
-    .line 1750
-    .local v1, "oldService":Landroid/hardware/health/V2_0/IHealth;
     invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -87,7 +80,6 @@
 
     return-void
 
-    .line 1752
     :cond_0
     const-string v2, "HealthServiceWrapper"
 
@@ -115,7 +107,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1753
     iget-object v2, p0, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification$1;->this$1:Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;
 
     iget-object v2, v2, Lcom/android/server/BatteryService$HealthServiceWrapper$Notification;->this$0:Lcom/android/server/BatteryService$HealthServiceWrapper;
@@ -137,17 +128,11 @@
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1757
-    .end local v0    # "newService":Landroid/hardware/health/V2_0/IHealth;
-    .end local v1    # "oldService":Landroid/hardware/health/V2_0/IHealth;
     goto :goto_0
 
-    .line 1754
     :catch_0
     move-exception v0
 
-    .line 1755
-    .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "HealthServiceWrapper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -172,7 +157,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1756
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v3
@@ -187,11 +171,8 @@
 
     move-result-object v2
 
-    .line 1755
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1758
-    .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/ConnectivityService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/ConnectivityService;
 
-    .line 971
     iput-object p1, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/TetheringDependencies;-><init>()V
@@ -36,7 +34,6 @@
 .method public isTetheringSupported()Z
     .locals 1
 
-    .line 974
     iget-object v0, p0, Lcom/android/server/ConnectivityService$2;->this$0:Lcom/android/server/ConnectivityService;
 
     invoke-static {v0}, Lcom/android/server/ConnectivityService;->access$400(Lcom/android/server/ConnectivityService;)Z

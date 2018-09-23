@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OnePlusStandbyAnalyzer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OnePlusStandbyAnalyzer;
 
-    .line 1066
     iput-object p1, p0, Lcom/android/server/OnePlusStandbyAnalyzer$2;->this$0:Lcom/android/server/OnePlusStandbyAnalyzer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;)I
     .locals 2
-    .param p1, "o1"    # Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;
-    .param p2, "o2"    # Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;
 
-    .line 1069
     iget v0, p2, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
 
     iget v1, p1, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;->mCount:I
@@ -65,7 +60,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1066
     check-cast p1, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;
 
     check-cast p2, Lcom/android/server/OnePlusStandbyAnalyzer$WiFiWakeUpInfo;

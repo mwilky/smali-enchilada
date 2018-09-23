@@ -29,26 +29,13 @@
 # direct methods
 .method public constructor <init>(ILcom/android/server/wm/TaskWindowContainerListener;Lcom/android/server/wm/StackWindowController;ILandroid/graphics/Rect;IZZZLandroid/app/ActivityManager$TaskDescription;)V
     .locals 12
-    .param p1, "taskId"    # I
-    .param p2, "listener"    # Lcom/android/server/wm/TaskWindowContainerListener;
-    .param p3, "stackController"    # Lcom/android/server/wm/StackWindowController;
-    .param p4, "userId"    # I
-    .param p5, "bounds"    # Landroid/graphics/Rect;
-    .param p6, "resizeMode"    # I
-    .param p7, "supportsPictureInPicture"    # Z
-    .param p8, "toTop"    # Z
-    .param p9, "showForAllUsers"    # Z
-    .param p10, "taskDescription"    # Landroid/app/ActivityManager$TaskDescription;
 
-    .line 55
     nop
 
-    .line 57
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->getInstance()Lcom/android/server/wm/WindowManagerService;
 
     move-result-object v11
 
-    .line 55
     move-object v0, p0
 
     move v1, p1
@@ -73,23 +60,11 @@
 
     invoke-direct/range {v0 .. v11}, Lcom/android/server/wm/TaskWindowContainerController;-><init>(ILcom/android/server/wm/TaskWindowContainerListener;Lcom/android/server/wm/StackWindowController;ILandroid/graphics/Rect;IZZZLandroid/app/ActivityManager$TaskDescription;Lcom/android/server/wm/WindowManagerService;)V
 
-    .line 58
     return-void
 .end method
 
 .method public constructor <init>(ILcom/android/server/wm/TaskWindowContainerListener;Lcom/android/server/wm/StackWindowController;ILandroid/graphics/Rect;IZZZLandroid/app/ActivityManager$TaskDescription;Lcom/android/server/wm/WindowManagerService;)V
     .locals 16
-    .param p1, "taskId"    # I
-    .param p2, "listener"    # Lcom/android/server/wm/TaskWindowContainerListener;
-    .param p3, "stackController"    # Lcom/android/server/wm/StackWindowController;
-    .param p4, "userId"    # I
-    .param p5, "bounds"    # Landroid/graphics/Rect;
-    .param p6, "resizeMode"    # I
-    .param p7, "supportsPictureInPicture"    # Z
-    .param p8, "toTop"    # Z
-    .param p9, "showForAllUsers"    # Z
-    .param p10, "taskDescription"    # Landroid/app/ActivityManager$TaskDescription;
-    .param p11, "service"    # Lcom/android/server/wm/WindowManagerService;
 
     move-object/from16 v8, p0
 
@@ -99,17 +74,14 @@
 
     move/from16 v11, p8
 
-    .line 64
     move-object/from16 v12, p11
 
     move-object/from16 v13, p2
 
     invoke-direct {v8, v13, v12}, Lcom/android/server/wm/WindowContainerController;-><init>(Lcom/android/server/wm/WindowContainerListener;Lcom/android/server/wm/WindowManagerService;)V
 
-    .line 65
     iput v9, v8, Lcom/android/server/wm/TaskWindowContainerController;->mTaskId:I
 
-    .line 66
     new-instance v0, Lcom/android/server/wm/TaskWindowContainerController$H;
 
     new-instance v1, Ljava/lang/ref/WeakReference;
@@ -126,7 +98,6 @@
 
     iput-object v0, v8, Lcom/android/server/wm/TaskWindowContainerController;->mHandler:Lcom/android/server/wm/TaskWindowContainerController$H;
 
-    .line 68
     iget-object v14, v8, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v14
@@ -134,7 +105,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 69
     sget-boolean v0, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_STACK:Z
 
     if-eqz v0, :cond_0
@@ -176,7 +146,6 @@
 
     goto :goto_0
 
-    .line 72
     :cond_0
     move-object/from16 v15, p5
 
@@ -185,11 +154,8 @@
 
     check-cast v0, Lcom/android/server/wm/TaskStack;
 
-    .line 73
-    .local v0, "stack":Lcom/android/server/wm/TaskStack;
     if-eqz v0, :cond_2
 
-    .line 77
     const/16 v1, 0x7919
 
     const/4 v2, 0x2
@@ -216,7 +182,6 @@
 
     invoke-static {v1, v2}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 78
     move-object v1, v8
 
     move v2, v9
@@ -237,8 +202,6 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 80
-    .local v1, "task":Lcom/android/server/wm/Task;
     if-eqz v11, :cond_1
 
     const v2, 0x7fffffff
@@ -248,29 +211,20 @@
     :cond_1
     const/high16 v2, -0x80000000
 
-    .line 83
-    .local v2, "position":I
     :goto_1
     move/from16 v3, p9
 
     :try_start_2
     invoke-virtual {v0, v1, v2, v3, v11}, Lcom/android/server/wm/TaskStack;->addTask(Lcom/android/server/wm/Task;IZZ)V
 
-    .line 84
-    .end local v0    # "stack":Lcom/android/server/wm/TaskStack;
-    .end local v1    # "task":Lcom/android/server/wm/Task;
-    .end local v2    # "position":I
     monitor-exit v14
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 85
     return-void
 
-    .line 74
-    .restart local v0    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_2
     move/from16 v3, p9
 
@@ -295,8 +249,6 @@
 
     throw v1
 
-    .line 84
-    .end local v0    # "stack":Lcom/android/server/wm/TaskStack;
     :catchall_0
     move-exception v0
 
@@ -330,7 +282,6 @@
 .method public cancelWindowTransition()V
     .locals 4
 
-    .line 193
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -338,12 +289,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 194
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-nez v1, :cond_0
 
-    .line 195
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,7 +317,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -377,7 +325,6 @@
 
     return-void
 
-    .line 198
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
@@ -386,17 +333,14 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/Task;->cancelTaskWindowTransition()V
 
-    .line 199
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 200
     return-void
 
-    .line 199
     :catchall_0
     move-exception v1
 
@@ -412,16 +356,9 @@
 
 .method createTask(ILcom/android/server/wm/TaskStack;IIZLandroid/app/ActivityManager$TaskDescription;)Lcom/android/server/wm/Task;
     .locals 11
-    .param p1, "taskId"    # I
-    .param p2, "stack"    # Lcom/android/server/wm/TaskStack;
-    .param p3, "userId"    # I
-    .param p4, "resizeMode"    # I
-    .param p5, "supportsPictureInPicture"    # Z
-    .param p6, "taskDescription"    # Landroid/app/ActivityManager$TaskDescription;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 90
     new-instance v9, Lcom/android/server/wm/Task;
 
     move-object v10, p0
@@ -451,9 +388,7 @@
 
 .method public getBounds(Landroid/graphics/Rect;)V
     .locals 2
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
-    .line 168
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -461,19 +396,16 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 169
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-eqz v1, :cond_0
 
-    .line 170
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/Task;
 
     invoke-virtual {v1, p1}, Lcom/android/server/wm/Task;->getBounds(Landroid/graphics/Rect;)V
 
-    .line 171
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -482,22 +414,18 @@
 
     return-void
 
-    .line 173
     :cond_0
     :try_start_1
     invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 174
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 175
     return-void
 
-    .line 174
     :catchall_0
     move-exception v1
 
@@ -514,7 +442,6 @@
 .method public bridge synthetic onOverrideConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    .line 45
     invoke-super {p0, p1}, Lcom/android/server/wm/WindowContainerController;->onOverrideConfigurationChanged(Landroid/content/res/Configuration;)V
 
     return-void
@@ -522,10 +449,7 @@
 
 .method public positionChildAt(Lcom/android/server/wm/AppWindowContainerController;I)V
     .locals 6
-    .param p1, "childController"    # Lcom/android/server/wm/AppWindowContainerController;
-    .param p2, "position"    # I
 
-    .line 111
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mService:Lcom/android/server/wm/WindowManagerService;
 
     iget-object v0, v0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
@@ -535,16 +459,12 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 112
     iget-object v1, p1, Lcom/android/server/wm/AppWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/AppWindowToken;
 
-    .line 113
-    .local v1, "aToken":Lcom/android/server/wm/AppWindowToken;
     if-nez v1, :cond_0
 
-    .line 114
     const-string v2, "WindowManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -563,7 +483,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -572,37 +491,26 @@
 
     return-void
 
-    .line 119
     :cond_0
     :try_start_1
     iget-object v2, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v2, Lcom/android/server/wm/Task;
 
-    .line 120
-    .local v2, "task":Lcom/android/server/wm/Task;
     if-eqz v2, :cond_1
 
-    .line 123
     const/4 v3, 0x0
 
     invoke-virtual {v2, p2, v1, v3}, Lcom/android/server/wm/Task;->positionChildAt(ILcom/android/server/wm/AppWindowToken;Z)V
 
-    .line 124
-    .end local v1    # "aToken":Lcom/android/server/wm/AppWindowToken;
-    .end local v2    # "task":Lcom/android/server/wm/Task;
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 125
     return-void
 
-    .line 121
-    .restart local v1    # "aToken":Lcom/android/server/wm/AppWindowToken;
-    .restart local v2    # "task":Lcom/android/server/wm/Task;
     :cond_1
     :try_start_2
     new-instance v3, Ljava/lang/IllegalArgumentException;
@@ -625,9 +533,6 @@
 
     throw v3
 
-    .line 124
-    .end local v1    # "aToken":Lcom/android/server/wm/AppWindowToken;
-    .end local v2    # "task":Lcom/android/server/wm/Task;
     :catchall_0
     move-exception v1
 
@@ -642,21 +547,17 @@
 
 .method public positionChildAtTop(Lcom/android/server/wm/AppWindowContainerController;)V
     .locals 1
-    .param p1, "childController"    # Lcom/android/server/wm/AppWindowContainerController;
 
-    .line 107
     const v0, 0x7fffffff
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/wm/TaskWindowContainerController;->positionChildAt(Lcom/android/server/wm/AppWindowContainerController;I)V
 
-    .line 108
     return-void
 .end method
 
 .method public removeContainer()V
     .locals 4
 
-    .line 96
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -664,12 +565,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 97
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-nez v1, :cond_1
 
-    .line 98
     sget-boolean v1, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_STACK:Z
 
     if-eqz v1, :cond_0
@@ -694,7 +593,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
     :cond_0
     monitor-exit v0
     :try_end_0
@@ -704,7 +602,6 @@
 
     return-void
 
-    .line 101
     :cond_1
     :try_start_1
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
@@ -713,20 +610,16 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/Task;->removeIfPossible()V
 
-    .line 102
     invoke-super {p0}, Lcom/android/server/wm/WindowContainerController;->removeContainer()V
 
-    .line 103
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 104
     return-void
 
-    .line 103
     :catchall_0
     move-exception v1
 
@@ -742,11 +635,7 @@
 
 .method public reparent(Lcom/android/server/wm/StackWindowController;IZ)V
     .locals 5
-    .param p1, "stackController"    # Lcom/android/server/wm/StackWindowController;
-    .param p2, "position"    # I
-    .param p3, "moveParents"    # Z
 
-    .line 128
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -754,7 +643,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 129
     sget-boolean v1, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_STACK:Z
 
     if-eqz v1, :cond_0
@@ -791,13 +679,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
     :cond_0
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-nez v1, :cond_2
 
-    .line 132
     sget-boolean v1, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_STACK:Z
 
     if-eqz v1, :cond_1
@@ -822,7 +708,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     :cond_1
     monitor-exit v0
     :try_end_0
@@ -832,25 +717,20 @@
 
     return-void
 
-    .line 136
     :cond_2
     :try_start_1
     iget-object v1, p1, Lcom/android/server/wm/StackWindowController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/TaskStack;
 
-    .line 137
-    .local v1, "stack":Lcom/android/server/wm/TaskStack;
     if-eqz v1, :cond_3
 
-    .line 141
     iget-object v2, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v2, Lcom/android/server/wm/Task;
 
     invoke-virtual {v2, v1, p2, p3}, Lcom/android/server/wm/Task;->reparent(Lcom/android/server/wm/TaskStack;IZ)V
 
-    .line 142
     iget-object v2, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v2, Lcom/android/server/wm/Task;
@@ -861,19 +741,14 @@
 
     invoke-virtual {v2}, Lcom/android/server/wm/DisplayContent;->layoutAndAssignWindowLayersIfNeeded()V
 
-    .line 143
-    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 144
     return-void
 
-    .line 138
-    .restart local v1    # "stack":Lcom/android/server/wm/TaskStack;
     :cond_3
     :try_start_2
     new-instance v2, Ljava/lang/IllegalArgumentException;
@@ -896,8 +771,6 @@
 
     throw v2
 
-    .line 143
-    .end local v1    # "stack":Lcom/android/server/wm/TaskStack;
     :catchall_0
     move-exception v1
 
@@ -912,9 +785,7 @@
 
 .method reportSnapshotChanged(Landroid/app/ActivityManager$TaskSnapshot;)V
     .locals 2
-    .param p1, "snapshot"    # Landroid/app/ActivityManager$TaskSnapshot;
 
-    .line 213
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mHandler:Lcom/android/server/wm/TaskWindowContainerController$H;
 
     const/4 v1, 0x0
@@ -925,16 +796,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 214
     return-void
 .end method
 
 .method requestResize(Landroid/graphics/Rect;I)V
     .locals 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
-    .param p2, "resizeMode"    # I
 
-    .line 217
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mHandler:Lcom/android/server/wm/TaskWindowContainerController$H;
 
     const/4 v1, 0x1
@@ -947,16 +814,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 218
     return-void
 .end method
 
 .method public resize(ZZ)V
     .locals 4
-    .param p1, "relayout"    # Z
-    .param p2, "forced"    # Z
 
-    .line 155
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -964,12 +827,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 156
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-eqz v1, :cond_1
 
-    .line 160
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/Task;
@@ -990,7 +851,6 @@
 
     if-eqz p1, :cond_0
 
-    .line 162
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/Task;
@@ -1001,7 +861,6 @@
 
     invoke-virtual {v1}, Lcom/android/server/wm/DisplayContent;->layoutAndAssignWindowLayersIfNeeded()V
 
-    .line 164
     :cond_0
     monitor-exit v0
     :try_end_0
@@ -1009,10 +868,8 @@
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 165
     return-void
 
-    .line 157
     :cond_1
     :try_start_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -1041,7 +898,6 @@
 
     throw v1
 
-    .line 164
     :catchall_0
     move-exception v1
 
@@ -1056,9 +912,7 @@
 
 .method public setResizeable(I)V
     .locals 2
-    .param p1, "resizeMode"    # I
 
-    .line 147
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -1066,19 +920,16 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 148
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-eqz v1, :cond_0
 
-    .line 149
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     check-cast v1, Lcom/android/server/wm/Task;
 
     invoke-virtual {v1, p1}, Lcom/android/server/wm/Task;->setResizeable(I)V
 
-    .line 151
     :cond_0
     monitor-exit v0
     :try_end_0
@@ -1086,10 +937,8 @@
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 152
     return-void
 
-    .line 151
     :catchall_0
     move-exception v1
 
@@ -1105,9 +954,7 @@
 
 .method public setTaskDescription(Landroid/app/ActivityManager$TaskDescription;)V
     .locals 4
-    .param p1, "taskDescription"    # Landroid/app/ActivityManager$TaskDescription;
 
-    .line 203
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -1115,12 +962,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 204
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-nez v1, :cond_0
 
-    .line 205
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1145,7 +990,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1154,7 +998,6 @@
 
     return-void
 
-    .line 208
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
@@ -1163,17 +1006,14 @@
 
     invoke-virtual {v1, p1}, Lcom/android/server/wm/Task;->setTaskDescription(Landroid/app/ActivityManager$TaskDescription;)V
 
-    .line 209
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 210
     return-void
 
-    .line 209
     :catchall_0
     move-exception v1
 
@@ -1189,9 +1029,7 @@
 
 .method public setTaskDockedResizing(Z)V
     .locals 4
-    .param p1, "resizing"    # Z
 
-    .line 183
     iget-object v0, p0, Lcom/android/server/wm/TaskWindowContainerController;->mWindowMap:Lcom/android/server/wm/WindowHashMap;
 
     monitor-enter v0
@@ -1199,12 +1037,10 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->boostPriorityForLockedSection()V
 
-    .line 184
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
 
     if-nez v1, :cond_0
 
-    .line 185
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1229,7 +1065,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 186
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1238,7 +1073,6 @@
 
     return-void
 
-    .line 188
     :cond_0
     :try_start_1
     iget-object v1, p0, Lcom/android/server/wm/TaskWindowContainerController;->mContainer:Lcom/android/server/wm/WindowContainer;
@@ -1249,17 +1083,14 @@
 
     invoke-virtual {v1, p1, v2}, Lcom/android/server/wm/Task;->setDragResizing(ZI)V
 
-    .line 189
     monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     invoke-static {}, Lcom/android/server/wm/WindowManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 190
     return-void
 
-    .line 189
     :catchall_0
     move-exception v1
 
@@ -1276,7 +1107,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 222
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

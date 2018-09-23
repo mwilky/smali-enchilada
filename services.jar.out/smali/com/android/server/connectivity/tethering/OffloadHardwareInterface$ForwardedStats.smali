@@ -24,18 +24,14 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->rxBytes:J
 
-    .line 76
     iput-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->txBytes:J
 
-    .line 77
     return-void
 .end method
 
@@ -43,9 +39,7 @@
 # virtual methods
 .method public add(Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;)V
     .locals 4
-    .param p1, "other"    # Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;
 
-    .line 80
     iget-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->rxBytes:J
 
     iget-wide v2, p1, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->rxBytes:J
@@ -54,7 +48,6 @@
 
     iput-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->rxBytes:J
 
-    .line 81
     iget-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->txBytes:J
 
     iget-wide v2, p1, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->txBytes:J
@@ -63,14 +56,12 @@
 
     iput-wide v0, p0, Lcom/android/server/connectivity/tethering/OffloadHardwareInterface$ForwardedStats;->txBytes:J
 
-    .line 82
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 85
     const-string/jumbo v0, "rx:%s tx:%s"
 
     const/4 v1, 0x2

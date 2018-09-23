@@ -82,7 +82,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 59
     const-string v0, "SnoozeHelper"
 
     const/4 v1, 0x3
@@ -93,7 +92,6 @@
 
     sput-boolean v0, Lcom/android/server/notification/SnoozeHelper;->DEBUG:Z
 
-    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -121,65 +119,51 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/notification/SnoozeHelper$Callback;Lcom/android/server/notification/ManagedServices$UserProfiles;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "callback"    # Lcom/android/server/notification/SnoozeHelper$Callback;
-    .param p3, "userProfiles"    # Lcom/android/server/notification/ManagedServices$UserProfiles;
 
-    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 76
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mPackages:Landroid/util/ArrayMap;
 
-    .line 78
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mUsers:Landroid/util/ArrayMap;
 
-    .line 372
     new-instance v0, Lcom/android/server/notification/SnoozeHelper$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/notification/SnoozeHelper$1;-><init>(Lcom/android/server/notification/SnoozeHelper;)V
 
     iput-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 83
     iput-object p1, p0, Lcom/android/server/notification/SnoozeHelper;->mContext:Landroid/content/Context;
 
-    .line 84
     new-instance v0, Landroid/content/IntentFilter;
 
     sget-object v1, Lcom/android/server/notification/SnoozeHelper;->REPOST_ACTION:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 85
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string/jumbo v1, "repost"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 86
     iget-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/server/notification/SnoozeHelper;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 87
     iget-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mContext:Landroid/content/Context;
 
     const-string v2, "alarm"
@@ -192,20 +176,16 @@
 
     iput-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mAm:Landroid/app/AlarmManager;
 
-    .line 88
     iput-object p2, p0, Lcom/android/server/notification/SnoozeHelper;->mCallback:Lcom/android/server/notification/SnoozeHelper$Callback;
 
-    .line 89
     iput-object p3, p0, Lcom/android/server/notification/SnoozeHelper;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
 
-    .line 90
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .line 57
     sget-boolean v0, Lcom/android/server/notification/SnoozeHelper;->DEBUG:Z
 
     return v0
@@ -214,7 +194,6 @@
 .method static synthetic access$100()Ljava/lang/String;
     .locals 1
 
-    .line 57
     sget-object v0, Lcom/android/server/notification/SnoozeHelper;->REPOST_ACTION:Ljava/lang/String;
 
     return-object v0
@@ -222,11 +201,7 @@
 
 .method private createPendingIntent(Ljava/lang/String;Ljava/lang/String;I)Landroid/app/PendingIntent;
     .locals 4
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 309
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mContext:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -241,7 +216,6 @@
 
     const-string/jumbo v3, "repost"
 
-    .line 312
     invoke-virtual {v2, v3}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v2
@@ -258,7 +232,6 @@
 
     move-result-object v1
 
-    .line 313
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
@@ -267,19 +240,16 @@
 
     const-string/jumbo v2, "key"
 
-    .line 314
     invoke-virtual {v1, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
     const-string/jumbo v2, "userId"
 
-    .line 315
     invoke-virtual {v1, v2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 309
     const/4 v2, 0x1
 
     const/high16 v3, 0x8000000
@@ -293,38 +263,26 @@
 
 .method private scheduleRepost(Ljava/lang/String;Ljava/lang/String;IJ)V
     .locals 8
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "userId"    # I
-    .param p4, "duration"    # J
 
-    .line 320
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 322
-    .local v0, "identity":J
     :try_start_0
     invoke-direct {p0, p1, p2, p3}, Lcom/android/server/notification/SnoozeHelper;->createPendingIntent(Ljava/lang/String;Ljava/lang/String;I)Landroid/app/PendingIntent;
 
     move-result-object v2
 
-    .line 323
-    .local v2, "pi":Landroid/app/PendingIntent;
     iget-object v3, p0, Lcom/android/server/notification/SnoozeHelper;->mAm:Landroid/app/AlarmManager;
 
     invoke-virtual {v3, v2}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    .line 324
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
     add-long/2addr v3, p4
 
-    .line 325
-    .local v3, "time":J
     sget-boolean v5, Lcom/android/server/notification/SnoozeHelper;->DEBUG:Z
 
     if-eqz v5, :cond_0
@@ -351,7 +309,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 326
     :cond_0
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mAm:Landroid/app/AlarmManager;
 
@@ -361,18 +318,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 328
-    .end local v2    # "pi":Landroid/app/PendingIntent;
-    .end local v3    # "time":J
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 329
     nop
 
-    .line 330
     return-void
 
-    .line 328
     :catchall_0
     move-exception v2
 
@@ -385,10 +336,7 @@
 # virtual methods
 .method protected cancel(ILjava/lang/String;)Z
     .locals 5
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
 
-    .line 206
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -403,7 +351,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 207
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -422,10 +369,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 208
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 209
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -442,23 +387,17 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 210
-    .local v0, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
 
-    .line 211
-    .local v2, "N":I
     nop
 
-    .local v1, "i":I
     :goto_0
     const/4 v3, 0x1
 
     if-ge v1, v2, :cond_0
 
-    .line 212
     invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -467,31 +406,20 @@
 
     iput-boolean v3, v4, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
-    .line 211
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 214
-    .end local v1    # "i":I
     :cond_0
     return v3
 
-    .line 217
-    .end local v0    # "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
-    .end local v2    # "N":I
     :cond_1
     return v1
 .end method
 
 .method protected cancel(ILjava/lang/String;Ljava/lang/String;I)Z
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
-    .param p3, "tag"    # Ljava/lang/String;
-    .param p4, "id"    # I
 
-    .line 161
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -504,10 +432,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 162
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 163
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -524,21 +450,14 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 164
-    .local v0, "recordsForPkg":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-eqz v0, :cond_1
 
-    .line 165
     invoke-virtual {v0}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
     move-result-object v1
 
-    .line 166
-    .local v1, "records":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     const/4 v2, 0x0
 
-    .line 167
-    .local v2, "key":Ljava/lang/String;
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -556,8 +475,6 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 168
-    .local v4, "record":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
@@ -566,8 +483,6 @@
 
     iget-object v5, v5, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
-    .line 169
-    .local v5, "sbn":Landroid/service/notification/StatusBarNotification;
     invoke-virtual {v5}, Landroid/service/notification/StatusBarNotification;->getTag()Ljava/lang/String;
 
     move-result-object v6
@@ -584,7 +499,6 @@
 
     if-ne v6, p4, :cond_0
 
-    .line 170
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -595,19 +509,11 @@
 
     iput-boolean v6, v3, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
-    .line 171
     return v6
 
-    .line 173
-    .end local v4    # "record":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
-    .end local v5    # "sbn":Landroid/service/notification/StatusBarNotification;
     :cond_0
     goto :goto_0
 
-    .line 176
-    .end local v0    # "recordsForPkg":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
-    .end local v1    # "records":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
-    .end local v2    # "key":Ljava/lang/String;
     :cond_1
     const/4 v0, 0x0
 
@@ -616,10 +522,7 @@
 
 .method protected cancel(IZ)Z
     .locals 12
-    .param p1, "userId"    # I
-    .param p2, "includeCurrentProfiles"    # Z
 
-    .line 180
     const/4 v0, 0x1
 
     new-array v1, v0, [I
@@ -628,35 +531,26 @@
 
     aput p1, v1, v2
 
-    .line 181
-    .local v1, "userIds":[I
     if-eqz p2, :cond_0
 
-    .line 182
     iget-object v3, p0, Lcom/android/server/notification/SnoozeHelper;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
 
     invoke-virtual {v3}, Lcom/android/server/notification/ManagedServices$UserProfiles;->getCurrentProfileIds()[I
 
     move-result-object v1
 
-    .line 184
     :cond_0
     array-length v3, v1
 
-    .line 185
-    .local v3, "N":I
     move v4, v2
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v3, :cond_4
 
-    .line 186
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     aget v6, v1, v4
 
-    .line 187
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -667,48 +561,34 @@
 
     check-cast v5, Landroid/util/ArrayMap;
 
-    .line 188
-    .local v5, "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-eqz v5, :cond_3
 
-    .line 189
     invoke-virtual {v5}, Landroid/util/ArrayMap;->size()I
 
     move-result v6
 
-    .line 190
-    .local v6, "M":I
     move v7, v2
 
-    .local v7, "j":I
     :goto_1
     if-ge v7, v6, :cond_2
 
-    .line 191
     invoke-virtual {v5, v7}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/util/ArrayMap;
 
-    .line 192
-    .local v8, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-eqz v8, :cond_1
 
-    .line 193
     invoke-virtual {v8}, Landroid/util/ArrayMap;->size()I
 
     move-result v9
 
-    .line 194
-    .local v9, "P":I
     move v10, v2
 
-    .local v10, "k":I
     :goto_2
     if-ge v10, v9, :cond_1
 
-    .line 195
     invoke-virtual {v8, v10}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -717,50 +597,34 @@
 
     iput-boolean v0, v11, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
-    .line 194
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_2
 
-    .line 190
-    .end local v8    # "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
-    .end local v9    # "P":I
-    .end local v10    # "k":I
     :cond_1
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
-    .line 199
-    .end local v7    # "j":I
     :cond_2
     return v0
 
-    .line 185
-    .end local v5    # "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
-    .end local v6    # "M":I
     :cond_3
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 202
-    .end local v4    # "i":I
     :cond_4
     return v2
 .end method
 
 .method public dump(Ljava/io/PrintWriter;Lcom/android/server/notification/NotificationManagerService$DumpFilter;)V
     .locals 9
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "filter"    # Lcom/android/server/notification/NotificationManagerService$DumpFilter;
 
-    .line 333
     const-string v0, "\n  Snoozed notifications:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 334
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
@@ -788,13 +652,10 @@
 
     move-result v1
 
-    .line 335
-    .local v1, "userId":I
     const-string v2, "    "
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 336
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -811,10 +672,8 @@
 
     invoke-virtual {p1, v2}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 337
     iget-object v2, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 338
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -825,8 +684,6 @@
 
     check-cast v2, Landroid/util/ArrayMap;
 
-    .line 339
-    .local v2, "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     invoke-virtual {v2}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
     move-result-object v3
@@ -848,18 +705,14 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 340
-    .local v4, "pkg":Ljava/lang/String;
     const-string v5, "    "
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 341
     const-string v5, "    "
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 342
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -876,7 +729,6 @@
 
     invoke-virtual {p1, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 343
     invoke-virtual {v2, v4}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
@@ -887,8 +739,6 @@
 
     move-result-object v5
 
-    .line 344
-    .local v5, "snoozedKeys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -906,50 +756,34 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 345
-    .local v7, "key":Ljava/lang/String;
     const-string v8, "    "
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 346
     const-string v8, "    "
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 347
     const-string v8, "    "
 
     invoke-virtual {p1, v8}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 348
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 349
-    .end local v7    # "key":Ljava/lang/String;
     goto :goto_2
 
-    .line 350
-    .end local v4    # "pkg":Ljava/lang/String;
-    .end local v5    # "snoozedKeys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     :cond_0
     goto :goto_1
 
-    .line 351
-    .end local v1    # "userId":I
-    .end local v2    # "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     :cond_1
     goto/16 :goto_0
 
-    .line 352
     :cond_2
     return-void
 .end method
 
 .method protected getSnoozed(ILjava/lang/String;)Ljava/util/Collection;
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -961,7 +795,6 @@
         }
     .end annotation
 
-    .line 99
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -976,7 +809,6 @@
 
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 100
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -993,7 +825,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1018,7 +849,6 @@
 
     return-object v0
 
-    .line 103
     :cond_0
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
@@ -1036,42 +866,31 @@
         }
     .end annotation
 
-    .line 107
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 108
-    .local v0, "snoozedForUser":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/notification/NotificationRecord;>;"
     iget-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mUserProfiles:Lcom/android/server/notification/ManagedServices$UserProfiles;
 
     invoke-virtual {v1}, Lcom/android/server/notification/ManagedServices$UserProfiles;->getCurrentProfileIds()[I
 
     move-result-object v1
 
-    .line 109
-    .local v1, "userIds":[I
     if-eqz v1, :cond_2
 
-    .line 110
     array-length v2, v1
 
-    .line 111
-    .local v2, "N":I
     const/4 v3, 0x0
 
     move v4, v3
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v2, :cond_2
 
-    .line 112
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     aget v6, v1, v4
 
-    .line 113
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -1082,71 +901,48 @@
 
     check-cast v5, Landroid/util/ArrayMap;
 
-    .line 114
-    .local v5, "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-eqz v5, :cond_1
 
-    .line 115
     invoke-virtual {v5}, Landroid/util/ArrayMap;->size()I
 
     move-result v6
 
-    .line 116
-    .local v6, "M":I
     move v7, v3
 
-    .local v7, "j":I
     :goto_1
     if-ge v7, v6, :cond_1
 
-    .line 117
     invoke-virtual {v5, v7}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Landroid/util/ArrayMap;
 
-    .line 118
-    .local v8, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-eqz v8, :cond_0
 
-    .line 119
     invoke-virtual {v8}, Landroid/util/ArrayMap;->values()Ljava/util/Collection;
 
     move-result-object v9
 
     invoke-interface {v0, v9}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 116
-    .end local v8    # "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     :cond_0
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
-    .line 111
-    .end local v5    # "snoozedPkgs":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
-    .end local v6    # "M":I
-    .end local v7    # "j":I
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 125
-    .end local v2    # "N":I
-    .end local v4    # "i":I
     :cond_2
     return-object v0
 .end method
 
 .method protected isSnoozed(ILjava/lang/String;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "pkg"    # Ljava/lang/String;
-    .param p3, "key"    # Ljava/lang/String;
 
-    .line 93
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1161,7 +957,6 @@
 
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 94
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1180,7 +975,6 @@
 
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 95
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1210,15 +1004,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 93
     :goto_0
     return v0
 .end method
 
 .method public readXml(Lorg/xmlpull/v1/XmlPullParser;Z)V
     .locals 0
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-    .param p2, "forRestore"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;,
@@ -1226,15 +1017,12 @@
         }
     .end annotation
 
-    .line 361
     return-void
 .end method
 
 .method protected repost(Ljava/lang/String;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 241
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mUsers:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1243,28 +1031,21 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 242
-    .local v0, "userId":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
-    .line 243
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     invoke-virtual {p0, p1, v1}, Lcom/android/server/notification/SnoozeHelper;->repost(Ljava/lang/String;I)V
 
-    .line 245
     :cond_0
     return-void
 .end method
 
 .method protected repost(Ljava/lang/String;I)V
     .locals 6
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 248
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1273,11 +1054,8 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 249
-    .local v0, "pkg":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 250
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1288,14 +1066,10 @@
 
     check-cast v1, Landroid/util/ArrayMap;
 
-    .line 251
-    .local v1, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-nez v1, :cond_0
 
-    .line 252
     return-void
 
-    .line 254
     :cond_0
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1303,14 +1077,10 @@
 
     check-cast v2, Landroid/util/ArrayMap;
 
-    .line 255
-    .local v2, "pkgRecords":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-nez v2, :cond_1
 
-    .line 256
     return-void
 
-    .line 258
     :cond_1
     invoke-virtual {v2, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1318,63 +1088,49 @@
 
     check-cast v3, Lcom/android/server/notification/NotificationRecord;
 
-    .line 259
-    .local v3, "record":Lcom/android/server/notification/NotificationRecord;
     iget-object v4, p0, Lcom/android/server/notification/SnoozeHelper;->mPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 260
     iget-object v4, p0, Lcom/android/server/notification/SnoozeHelper;->mUsers:Landroid/util/ArrayMap;
 
     invoke-virtual {v4, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 262
     if-eqz v3, :cond_2
 
     iget-boolean v4, v3, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
     if-nez v4, :cond_2
 
-    .line 263
     invoke-virtual {v3}, Lcom/android/server/notification/NotificationRecord;->getLogMaker()Landroid/metrics/LogMaker;
 
     move-result-object v4
 
     const/16 v5, 0x33f
 
-    .line 264
     invoke-virtual {v4, v5}, Landroid/metrics/LogMaker;->setCategory(I)Landroid/metrics/LogMaker;
 
     move-result-object v4
 
     const/4 v5, 0x1
 
-    .line 265
     invoke-virtual {v4, v5}, Landroid/metrics/LogMaker;->setType(I)Landroid/metrics/LogMaker;
 
     move-result-object v4
 
-    .line 263
     invoke-static {v4}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/metrics/LogMaker;)V
 
-    .line 266
     iget-object v4, p0, Lcom/android/server/notification/SnoozeHelper;->mCallback:Lcom/android/server/notification/SnoozeHelper$Callback;
 
     invoke-interface {v4, p2, v3}, Lcom/android/server/notification/SnoozeHelper$Callback;->repost(ILcom/android/server/notification/NotificationRecord;)V
 
-    .line 268
     :cond_2
     return-void
 .end method
 
 .method protected repostGroupSummary(Ljava/lang/String;ILjava/lang/String;)V
     .locals 7
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "groupKey"    # Ljava/lang/String;
 
-    .line 271
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1387,10 +1143,8 @@
 
     if-eqz v0, :cond_2
 
-    .line 272
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 273
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1401,8 +1155,6 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 275
-    .local v0, "keysByPackage":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-eqz v0, :cond_2
 
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -1411,43 +1163,31 @@
 
     if-eqz v1, :cond_2
 
-    .line 276
     invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/util/ArrayMap;
 
-    .line 278
-    .local v1, "recordsByKey":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-eqz v1, :cond_2
 
-    .line 279
     const/4 v2, 0x0
 
-    .line 280
-    .local v2, "groupSummaryKey":Ljava/lang/String;
     invoke-virtual {v1}, Landroid/util/ArrayMap;->size()I
 
     move-result v3
 
-    .line 281
-    .local v3, "N":I
     const/4 v4, 0x0
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v3, :cond_1
 
-    .line 282
     invoke-virtual {v1, v4}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/notification/NotificationRecord;
 
-    .line 283
-    .local v5, "potentialGroupSummary":Lcom/android/server/notification/NotificationRecord;
     iget-object v6, v5, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v6}, Landroid/service/notification/StatusBarNotification;->isGroup()Z
@@ -1456,7 +1196,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 284
     invoke-virtual {v5}, Lcom/android/server/notification/NotificationRecord;->getNotification()Landroid/app/Notification;
 
     move-result-object v6
@@ -1467,7 +1206,6 @@
 
     if-eqz v6, :cond_0
 
-    .line 285
     invoke-virtual {v5}, Lcom/android/server/notification/NotificationRecord;->getGroupKey()Ljava/lang/String;
 
     move-result-object v6
@@ -1478,107 +1216,80 @@
 
     if-eqz v6, :cond_0
 
-    .line 286
     invoke-virtual {v5}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 287
     goto :goto_1
 
-    .line 281
-    .end local v5    # "potentialGroupSummary":Lcom/android/server/notification/NotificationRecord;
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 291
-    .end local v4    # "i":I
     :cond_1
     :goto_1
     if-eqz v2, :cond_2
 
-    .line 292
     invoke-virtual {v1, v2}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/server/notification/NotificationRecord;
 
-    .line 293
-    .local v4, "record":Lcom/android/server/notification/NotificationRecord;
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {v5, v2}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 294
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mUsers:Landroid/util/ArrayMap;
 
     invoke-virtual {v5, v2}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 296
     if-eqz v4, :cond_2
 
     iget-boolean v5, v4, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
     if-nez v5, :cond_2
 
-    .line 297
     invoke-virtual {v4}, Lcom/android/server/notification/NotificationRecord;->getLogMaker()Landroid/metrics/LogMaker;
 
     move-result-object v5
 
     const/16 v6, 0x33f
 
-    .line 298
     invoke-virtual {v5, v6}, Landroid/metrics/LogMaker;->setCategory(I)Landroid/metrics/LogMaker;
 
     move-result-object v5
 
-    .line 299
     const/4 v6, 0x1
 
     invoke-virtual {v5, v6}, Landroid/metrics/LogMaker;->setType(I)Landroid/metrics/LogMaker;
 
     move-result-object v5
 
-    .line 297
     invoke-static {v5}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/metrics/LogMaker;)V
 
-    .line 300
     iget-object v5, p0, Lcom/android/server/notification/SnoozeHelper;->mCallback:Lcom/android/server/notification/SnoozeHelper$Callback;
 
     invoke-interface {v5, p2, v4}, Lcom/android/server/notification/SnoozeHelper$Callback;->repost(ILcom/android/server/notification/NotificationRecord;)V
 
-    .line 306
-    .end local v0    # "keysByPackage":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
-    .end local v1    # "recordsByKey":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
-    .end local v2    # "groupSummaryKey":Ljava/lang/String;
-    .end local v3    # "N":I
-    .end local v4    # "record":Lcom/android/server/notification/NotificationRecord;
     :cond_2
     return-void
 .end method
 
 .method setAlarmManager(Landroid/app/AlarmManager;)V
     .locals 0
-    .param p1, "am"    # Landroid/app/AlarmManager;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 365
     iput-object p1, p0, Lcom/android/server/notification/SnoozeHelper;->mAm:Landroid/app/AlarmManager;
 
-    .line 366
     return-void
 .end method
 
 .method protected snooze(Lcom/android/server/notification/NotificationRecord;)V
     .locals 6
-    .param p1, "record"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 140
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getUser()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -1587,13 +1298,10 @@
 
     move-result v0
 
-    .line 141
-    .local v0, "userId":I
     sget-boolean v1, Lcom/android/server/notification/SnoozeHelper;->DEBUG:Z
 
     if-eqz v1, :cond_0
 
-    .line 142
     const-string v1, "SnoozeHelper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1616,11 +1324,9 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 144
     :cond_0
     iget-object v1, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 145
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -1631,18 +1337,14 @@
 
     check-cast v1, Landroid/util/ArrayMap;
 
-    .line 146
-    .local v1, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-nez v1, :cond_1
 
-    .line 147
     new-instance v2, Landroid/util/ArrayMap;
 
     invoke-direct {v2}, Landroid/util/ArrayMap;-><init>()V
 
     move-object v1, v2
 
-    .line 149
     :cond_1
     iget-object v2, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -1656,18 +1358,14 @@
 
     check-cast v2, Landroid/util/ArrayMap;
 
-    .line 150
-    .local v2, "pkgRecords":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-nez v2, :cond_2
 
-    .line 151
     new-instance v3, Landroid/util/ArrayMap;
 
     invoke-direct {v3}, Landroid/util/ArrayMap;-><init>()V
 
     move-object v2, v3
 
-    .line 153
     :cond_2
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
@@ -1675,7 +1373,6 @@
 
     invoke-virtual {v2, v3, p1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 154
     iget-object v3, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v3}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
@@ -1684,7 +1381,6 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 155
     iget-object v3, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1693,7 +1389,6 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 156
     iget-object v3, p0, Lcom/android/server/notification/SnoozeHelper;->mPackages:Landroid/util/ArrayMap;
 
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
@@ -1708,7 +1403,6 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 157
     iget-object v3, p0, Lcom/android/server/notification/SnoozeHelper;->mUsers:Landroid/util/ArrayMap;
 
     invoke-virtual {p1}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
@@ -1721,19 +1415,14 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 158
     return-void
 .end method
 
 .method protected snooze(Lcom/android/server/notification/NotificationRecord;J)V
     .locals 7
-    .param p1, "record"    # Lcom/android/server/notification/NotificationRecord;
-    .param p2, "duration"    # J
 
-    .line 132
     invoke-virtual {p0, p1}, Lcom/android/server/notification/SnoozeHelper;->snooze(Lcom/android/server/notification/NotificationRecord;)V
 
-    .line 133
     iget-object v0, p1, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
     invoke-virtual {v0}, Landroid/service/notification/StatusBarNotification;->getPackageName()Ljava/lang/String;
@@ -1754,19 +1443,14 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/server/notification/SnoozeHelper;->scheduleRepost(Ljava/lang/String;Ljava/lang/String;IJ)V
 
-    .line 134
     return-void
 .end method
 
 .method protected update(ILcom/android/server/notification/NotificationRecord;)V
     .locals 4
-    .param p1, "userId"    # I
-    .param p2, "record"    # Lcom/android/server/notification/NotificationRecord;
 
-    .line 224
     iget-object v0, p0, Lcom/android/server/notification/SnoozeHelper;->mSnoozedNotifications:Landroid/util/ArrayMap;
 
-    .line 225
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1777,14 +1461,10 @@
 
     check-cast v0, Landroid/util/ArrayMap;
 
-    .line 226
-    .local v0, "records":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;>;"
     if-nez v0, :cond_0
 
-    .line 227
     return-void
 
-    .line 229
     :cond_0
     iget-object v1, p2, Lcom/android/server/notification/NotificationRecord;->sbn:Landroid/service/notification/StatusBarNotification;
 
@@ -1798,14 +1478,10 @@
 
     check-cast v1, Landroid/util/ArrayMap;
 
-    .line 230
-    .local v1, "pkgRecords":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/notification/NotificationRecord;>;"
     if-nez v1, :cond_1
 
-    .line 231
     return-void
 
-    .line 233
     :cond_1
     invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
@@ -1817,18 +1493,14 @@
 
     check-cast v2, Lcom/android/server/notification/NotificationRecord;
 
-    .line 234
-    .local v2, "existing":Lcom/android/server/notification/NotificationRecord;
     if-eqz v2, :cond_2
 
     iget-boolean v3, v2, Lcom/android/server/notification/NotificationRecord;->isCanceled:Z
 
     if-eqz v3, :cond_2
 
-    .line 235
     return-void
 
-    .line 237
     :cond_2
     invoke-virtual {p2}, Lcom/android/server/notification/NotificationRecord;->getKey()Ljava/lang/String;
 
@@ -1836,20 +1508,16 @@
 
     invoke-virtual {v1, v3, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 238
     return-void
 .end method
 
 .method protected writeXml(Lorg/xmlpull/v1/XmlSerializer;Z)V
     .locals 0
-    .param p1, "out"    # Lorg/xmlpull/v1/XmlSerializer;
-    .param p2, "forBackup"    # Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 356
     return-void
 .end method

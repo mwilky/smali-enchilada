@@ -42,15 +42,12 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/server/TelephonyRegistry$Record;->subId:I
 
-    .line 110
     iput v0, p0, Lcom/android/server/TelephonyRegistry$Record;->phoneId:I
 
     return-void
@@ -58,9 +55,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/TelephonyRegistry$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/TelephonyRegistry$1;
 
-    .line 91
     invoke-direct {p0}, Lcom/android/server/TelephonyRegistry$Record;-><init>()V
 
     return-void
@@ -71,7 +66,6 @@
 .method canReadCallLog()Z
     .locals 5
 
-    .line 122
     :try_start_0
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$Record;->context:Landroid/content/Context;
 
@@ -91,12 +85,9 @@
 
     return v0
 
-    .line 124
     :catch_0
     move-exception v0
 
-    .line 125
-    .local v0, "e":Ljava/lang/SecurityException;
     const/4 v1, 0x0
 
     return v1
@@ -105,7 +96,6 @@
 .method matchOnSubscriptionsChangedListener()Z
     .locals 1
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$Record;->onSubscriptionsChangedListenerCallback:Lcom/android/internal/telephony/IOnSubscriptionsChangedListener;
 
     if-eqz v0, :cond_0
@@ -123,9 +113,7 @@
 
 .method matchPhoneStateListenerEvent(I)Z
     .locals 1
-    .param p1, "events"    # I
 
-    .line 113
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$Record;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
     if-eqz v0, :cond_0
@@ -150,7 +138,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 131
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -217,7 +204,6 @@
 
     iget v1, p0, Lcom/android/server/TelephonyRegistry$Record;->events:I
 
-    .line 136
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -232,6 +218,5 @@
 
     move-result-object v0
 
-    .line 131
     return-object v0
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/NetworkPolicyManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 1244
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$8;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1249
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1250
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.extra.UID"
 
     const/4 v2, -0x1
@@ -53,13 +46,10 @@
 
     move-result v1
 
-    .line 1251
-    .local v1, "uid":I
     if-ne v1, v2, :cond_0
 
     return-void
 
-    .line 1253
     :cond_0
     const-string v2, "android.intent.action.PACKAGE_ADDED"
 
@@ -69,7 +59,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 1256
     invoke-static {}, Lcom/android/server/net/NetworkPolicyManagerService;->access$1600()Z
 
     move-result v2
@@ -94,7 +83,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1257
     :cond_1
     iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$8;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
@@ -102,13 +90,11 @@
 
     monitor-enter v2
 
-    .line 1258
     :try_start_0
     iget-object v3, p0, Lcom/android/server/net/NetworkPolicyManagerService$8;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-static {v3, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$1700(Lcom/android/server/net/NetworkPolicyManagerService;I)V
 
-    .line 1259
     monitor-exit v2
 
     goto :goto_0
@@ -122,7 +108,6 @@
 
     throw v3
 
-    .line 1261
     :cond_2
     :goto_0
     return-void

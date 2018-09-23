@@ -23,7 +23,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,39 +30,29 @@
 
 .method public static final dumpBitfield(I)Ljava/lang/String;
     .locals 4
-    .param p0, "o"    # I
 
-    .line 50
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 51
-    .local v0, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
-    .line 52
-    .local v1, "flipped":I
     const-string v2, "ACQUIRED_GOOD"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 53
     and-int/lit8 v2, p0, 0x1
 
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    .line 54
     const-string v2, "ACQUIRED_PARTIAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 55
     or-int/lit8 v1, v1, 0x1
 
-    .line 57
     :cond_0
     and-int/lit8 v2, p0, 0x2
 
@@ -71,15 +60,12 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 58
     const-string v2, "ACQUIRED_INSUFFICIENT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 59
     or-int/lit8 v1, v1, 0x2
 
-    .line 61
     :cond_1
     and-int/lit8 v2, p0, 0x3
 
@@ -87,15 +73,12 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 62
     const-string v2, "ACQUIRED_IMAGER_DIRTY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 63
     or-int/lit8 v1, v1, 0x3
 
-    .line 65
     :cond_2
     and-int/lit8 v2, p0, 0x4
 
@@ -103,15 +86,12 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 66
     const-string v2, "ACQUIRED_TOO_SLOW"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 67
     or-int/lit8 v1, v1, 0x4
 
-    .line 69
     :cond_3
     and-int/lit8 v2, p0, 0x5
 
@@ -119,15 +99,12 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 70
     const-string v2, "ACQUIRED_TOO_FAST"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 71
     or-int/lit8 v1, v1, 0x5
 
-    .line 73
     :cond_4
     and-int/lit8 v2, p0, 0x6
 
@@ -135,19 +112,15 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 74
     const-string v2, "ACQUIRED_VENDOR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 75
     or-int/lit8 v1, v1, 0x6
 
-    .line 77
     :cond_5
     if-eq p0, v1, :cond_6
 
-    .line 78
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -172,7 +145,6 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 80
     :cond_6
     const-string v2, " | "
 
@@ -185,83 +157,67 @@
 
 .method public static final toString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "o"    # I
 
-    .line 25
     if-nez p0, :cond_0
 
-    .line 26
     const-string v0, "ACQUIRED_GOOD"
 
     return-object v0
 
-    .line 28
     :cond_0
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_1
 
-    .line 29
     const-string v0, "ACQUIRED_PARTIAL"
 
     return-object v0
 
-    .line 31
     :cond_1
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_2
 
-    .line 32
     const-string v0, "ACQUIRED_INSUFFICIENT"
 
     return-object v0
 
-    .line 34
     :cond_2
     const/4 v0, 0x3
 
     if-ne p0, v0, :cond_3
 
-    .line 35
     const-string v0, "ACQUIRED_IMAGER_DIRTY"
 
     return-object v0
 
-    .line 37
     :cond_3
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_4
 
-    .line 38
     const-string v0, "ACQUIRED_TOO_SLOW"
 
     return-object v0
 
-    .line 40
     :cond_4
     const/4 v0, 0x5
 
     if-ne p0, v0, :cond_5
 
-    .line 41
     const-string v0, "ACQUIRED_TOO_FAST"
 
     return-object v0
 
-    .line 43
     :cond_5
     const/4 v0, 0x6
 
     if-ne p0, v0, :cond_6
 
-    .line 44
     const-string v0, "ACQUIRED_VENDOR"
 
     return-object v0
 
-    .line 46
     :cond_6
     new-instance v0, Ljava/lang/StringBuilder;
 

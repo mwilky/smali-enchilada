@@ -16,17 +16,9 @@
 # direct methods
 .method public constructor <init>(IIIIIILandroid/view/animation/Interpolator;)V
     .locals 10
-    .param p1, "fromT"    # I
-    .param p2, "fromB"    # I
-    .param p3, "toT"    # I
-    .param p4, "toB"    # I
-    .param p5, "fromTranslateY"    # I
-    .param p6, "toTranslateY"    # I
-    .param p7, "translateInterpolator"    # Landroid/view/animation/Interpolator;
 
     move-object v9, p0
 
-    .line 44
     const/4 v1, 0x0
 
     const/4 v3, 0x0
@@ -47,22 +39,18 @@
 
     invoke-direct/range {v0 .. v8}, Landroid/view/animation/ClipRectAnimation;-><init>(IIIIIIII)V
 
-    .line 45
     move v0, p5
 
     iput v0, v9, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mFromTranslateY:I
 
-    .line 46
     move/from16 v1, p6
 
     iput v1, v9, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mToTranslateY:I
 
-    .line 47
     move-object/from16 v2, p7
 
     iput-object v2, v9, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mTranslateInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 48
     return-void
 .end method
 
@@ -70,10 +58,7 @@
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 9
-    .param p1, "it"    # F
-    .param p2, "tr"    # Landroid/view/animation/Transformation;
 
-    .line 76
     iget-object v0, p0, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mTranslateInterpolator:Landroid/view/animation/Interpolator;
 
     iget v1, p0, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mNormalizedTime:F
@@ -82,8 +67,6 @@
 
     move-result v0
 
-    .line 77
-    .local v0, "translationT":F
     iget v1, p0, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mFromTranslateY:I
 
     int-to-float v1, v1
@@ -102,14 +85,10 @@
 
     float-to-int v1, v1
 
-    .line 79
-    .local v1, "translation":I
     invoke-virtual {p2}, Landroid/view/animation/Transformation;->getClipRect()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 80
-    .local v2, "oldClipRect":Landroid/graphics/Rect;
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     iget-object v4, p0, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mFromRect:Landroid/graphics/Rect;
@@ -164,35 +143,26 @@
 
     invoke-virtual {p2, v3, v4, v5, v6}, Landroid/view/animation/Transformation;->setClipRect(IIII)V
 
-    .line 84
     return-void
 .end method
 
 .method public getTransformation(JLandroid/view/animation/Transformation;)Z
     .locals 6
-    .param p1, "currentTime"    # J
-    .param p3, "outTransformation"    # Landroid/view/animation/Transformation;
 
-    .line 56
     invoke-virtual {p0}, Lcom/android/server/wm/animation/ClipRectTBAnimation;->getStartOffset()J
 
     move-result-wide v0
 
-    .line 57
-    .local v0, "startOffset":J
     invoke-virtual {p0}, Lcom/android/server/wm/animation/ClipRectTBAnimation;->getDuration()J
 
     move-result-wide v2
 
-    .line 59
-    .local v2, "duration":J
     const-wide/16 v4, 0x0
 
     cmp-long v4, v2, v4
 
     if-eqz v4, :cond_0
 
-    .line 60
     invoke-virtual {p0}, Lcom/android/server/wm/animation/ClipRectTBAnimation;->getStartTime()J
 
     move-result-wide v4
@@ -207,11 +177,8 @@
 
     div-float/2addr v4, v5
 
-    .local v4, "normalizedTime":F
     goto :goto_0
 
-    .line 64
-    .end local v4    # "normalizedTime":F
     :cond_0
     invoke-virtual {p0}, Lcom/android/server/wm/animation/ClipRectTBAnimation;->getStartTime()J
 
@@ -228,12 +195,9 @@
     :cond_1
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 66
-    .restart local v4    # "normalizedTime":F
     :goto_0
     iput v4, p0, Lcom/android/server/wm/animation/ClipRectTBAnimation;->mNormalizedTime:F
 
-    .line 67
     invoke-super {p0, p1, p2, p3}, Landroid/view/animation/ClipRectAnimation;->getTransformation(JLandroid/view/animation/Transformation;)Z
 
     move-result v5

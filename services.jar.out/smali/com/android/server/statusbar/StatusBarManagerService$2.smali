@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/statusbar/StatusBarManagerService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/statusbar/StatusBarManagerService;
 
-    .line 435
     iput-object p1, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public isGlobalActionsDisabled()Z
     .locals 1
 
-    .line 438
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$700(Lcom/android/server/statusbar/StatusBarManagerService;)I
@@ -63,14 +60,11 @@
 
 .method public setGlobalActionsListener(Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;
 
-    .line 443
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0, p1}, Lcom/android/server/statusbar/StatusBarManagerService;->access$802(Lcom/android/server/statusbar/StatusBarManagerService;Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;)Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;
 
-    .line 444
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$800(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;
@@ -95,14 +89,12 @@
     :goto_0
     invoke-interface {v0, v1}, Lcom/android/server/policy/GlobalActionsProvider$GlobalActionsListener;->onGlobalActionsAvailableChanged(Z)V
 
-    .line 445
     return-void
 .end method
 
 .method public showGlobalActions()V
     .locals 1
 
-    .line 449
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
     invoke-static {v0}, Lcom/android/server/statusbar/StatusBarManagerService;->access$100(Lcom/android/server/statusbar/StatusBarManagerService;)Lcom/android/internal/statusbar/IStatusBar;
@@ -111,7 +103,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 451
     :try_start_0
     iget-object v0, p0, Lcom/android/server/statusbar/StatusBarManagerService$2;->this$0:Lcom/android/server/statusbar/StatusBarManagerService;
 
@@ -123,13 +114,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 452
     goto :goto_0
 
     :catch_0
     move-exception v0
 
-    .line 454
     :cond_0
     :goto_0
     return-void

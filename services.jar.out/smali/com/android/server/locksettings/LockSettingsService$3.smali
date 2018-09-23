@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/locksettings/LockSettingsService;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/locksettings/LockSettingsService;
 
-    .line 1242
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$3;->this$0:Lcom/android/server/locksettings/LockSettingsService;
 
     iput-object p2, p0, Lcom/android/server/locksettings/LockSettingsService$3;->val$latch:Ljava/util/concurrent/CountDownLatch;
@@ -39,42 +37,33 @@
 # virtual methods
 .method public onFinished(ILandroid/os/Bundle;)V
     .locals 2
-    .param p1, "id"    # I
-    .param p2, "extras"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1255
     const-string v0, "LockSettingsService"
 
     const-string/jumbo v1, "unlockUser finished"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1256
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$3;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 1257
     return-void
 .end method
 
 .method public onProgress(IILandroid/os/Bundle;)V
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "progress"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1250
     const-string v0, "LockSettingsService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -93,27 +82,22 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1251
     return-void
 .end method
 
 .method public onStarted(ILandroid/os/Bundle;)V
     .locals 2
-    .param p1, "id"    # I
-    .param p2, "extras"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 1245
     const-string v0, "LockSettingsService"
 
     const-string/jumbo v1, "unlockUser started"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1246
     return-void
 .end method

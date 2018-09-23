@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/webkit/SystemImpl;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/webkit/SystemImpl;
 
-    .line 231
     iput-object p1, p0, Lcom/android/server/webkit/SystemImpl$1;->this$0:Lcom/android/server/webkit/SystemImpl;
 
     iput-object p2, p0, Lcom/android/server/webkit/SystemImpl$1;->val$context:Landroid/content/Context;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public packageDeleted(Ljava/lang/String;I)V
     .locals 3
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "returnCode"    # I
 
-    .line 233
     iget-object v0, p0, Lcom/android/server/webkit/SystemImpl$1;->this$0:Lcom/android/server/webkit/SystemImpl;
 
     iget-object v1, p0, Lcom/android/server/webkit/SystemImpl$1;->val$context:Landroid/content/Context;
@@ -51,6 +46,5 @@
 
     invoke-virtual {v0, v1, p1, v2}, Lcom/android/server/webkit/SystemImpl;->enablePackageForAllUsers(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 234
     return-void
 .end method

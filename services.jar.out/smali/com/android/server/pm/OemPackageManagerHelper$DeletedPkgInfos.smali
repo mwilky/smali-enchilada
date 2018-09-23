@@ -23,18 +23,12 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "code"    # I
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     iput-object p1, p0, Lcom/android/server/pm/OemPackageManagerHelper$DeletedPkgInfos;->packageName:Ljava/lang/String;
 
-    .line 37
     iput p2, p0, Lcom/android/server/pm/OemPackageManagerHelper$DeletedPkgInfos;->versionCode:I
 
-    .line 38
     return-void
 .end method

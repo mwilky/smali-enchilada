@@ -74,7 +74,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 54
     const-class v0, Lcom/android/server/connectivity/LingerMonitor;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -83,14 +82,12 @@
 
     sput-object v0, Lcom/android/server/connectivity/LingerMonitor;->TAG:Ljava/lang/String;
 
-    .line 59
     invoke-static {}, Lcom/android/server/connectivity/LingerMonitor;->makeTransportToNameMap()Ljava/util/HashMap;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/server/connectivity/LingerMonitor;->TRANSPORT_NAMES:Ljava/util/HashMap;
 
-    .line 61
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -109,7 +106,6 @@
 
     sput-object v0, Lcom/android/server/connectivity/LingerMonitor;->CELLULAR_SETTINGS:Landroid/content/Intent;
 
-    .line 69
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -137,49 +133,35 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/server/connectivity/NetworkNotificationManager;IJ)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "notifier"    # Lcom/android/server/connectivity/NetworkNotificationManager;
-    .param p3, "dailyLimit"    # I
-    .param p4, "rateLimitMillis"    # J
 
-    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
-    .line 85
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mEverNotified:Landroid/util/SparseBooleanArray;
 
-    .line 89
     iput-object p1, p0, Lcom/android/server/connectivity/LingerMonitor;->mContext:Landroid/content/Context;
 
-    .line 90
     iput-object p2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifier:Lcom/android/server/connectivity/NetworkNotificationManager;
 
-    .line 91
     iput p3, p0, Lcom/android/server/connectivity/LingerMonitor;->mDailyLimit:I
 
-    .line 92
     iput-wide p4, p0, Lcom/android/server/connectivity/LingerMonitor;->mRateLimitMillis:J
 
-    .line 93
     return-void
 .end method
 
 .method private everNotified(Lcom/android/server/connectivity/NetworkAgentInfo;)Z
     .locals 3
-    .param p1, "nai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 121
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mEverNotified:Landroid/util/SparseBooleanArray;
 
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -197,14 +179,11 @@
 
 .method private getNotificationSource(Lcom/android/server/connectivity/NetworkAgentInfo;)I
     .locals 4
-    .param p1, "toNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 112
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
@@ -214,7 +193,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 113
     iget-object v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseIntArray;->valueAt(I)I
@@ -227,7 +205,6 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 114
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, v1}, Landroid/util/SparseIntArray;->keyAt(I)I
@@ -236,24 +213,18 @@
 
     return v0
 
-    .line 112
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 117
-    .end local v1    # "i":I
     :cond_1
     return v0
 .end method
 
 .method private static hasTransport(Lcom/android/server/connectivity/NetworkAgentInfo;I)Z
     .locals 1
-    .param p0, "nai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p1, "transport"    # I
 
-    .line 108
     iget-object v0, p0, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
     invoke-virtual {v0, p1}, Landroid/net/NetworkCapabilities;->hasTransport(I)Z
@@ -265,9 +236,7 @@
 
 .method private isAboveDailyLimit(J)Z
     .locals 6
-    .param p1, "now"    # J
 
-    .line 290
     iget-wide v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mFirstNotificationMillis:J
 
     const-wide/16 v2, 0x0
@@ -276,17 +245,13 @@
 
     if-nez v0, :cond_0
 
-    .line 291
     iput-wide p1, p0, Lcom/android/server/connectivity/LingerMonitor;->mFirstNotificationMillis:J
 
-    .line 293
     :cond_0
     iget-wide v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mFirstNotificationMillis:J
 
     sub-long v0, p1, v0
 
-    .line 294
-    .local v0, "millisSinceFirst":J
     const-wide/32 v4, 0x5265c00
 
     cmp-long v4, v0, v4
@@ -295,13 +260,10 @@
 
     if-lez v4, :cond_1
 
-    .line 295
     iput v5, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotificationCounter:I
 
-    .line 296
     iput-wide v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mFirstNotificationMillis:J
 
-    .line 298
     :cond_1
     iget v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotificationCounter:I
 
@@ -311,10 +273,8 @@
 
     if-lt v2, v3, :cond_2
 
-    .line 299
     return v4
 
-    .line 301
     :cond_2
     iget v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotificationCounter:I
 
@@ -322,37 +282,29 @@
 
     iput v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotificationCounter:I
 
-    .line 302
     return v5
 .end method
 
 .method private isRateLimited(J)Z
     .locals 4
-    .param p1, "now"    # J
 
-    .line 281
     iget-wide v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mLastNotificationMillis:J
 
     sub-long v0, p1, v0
 
-    .line 282
-    .local v0, "millisSinceLast":J
     iget-wide v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mRateLimitMillis:J
 
     cmp-long v2, v0, v2
 
     if-gez v2, :cond_0
 
-    .line 283
     const/4 v2, 0x1
 
     return v2
 
-    .line 285
     :cond_0
     iput-wide p1, p0, Lcom/android/server/connectivity/LingerMonitor;->mLastNotificationMillis:J
 
-    .line 286
     const/4 v2, 0x0
 
     return v2
@@ -370,7 +322,6 @@
         }
     .end annotation
 
-    .line 96
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -391,17 +342,12 @@
 
     move-result-object v0
 
-    .line 98
-    .local v0, "numberToName":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Ljava/lang/String;>;"
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 99
-    .local v1, "nameToNumber":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Integer;>;"
     nop
 
-    .local v2, "i":I
     :goto_0
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
@@ -409,7 +355,6 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 102
     invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -426,55 +371,40 @@
 
     invoke-virtual {v1, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 104
-    .end local v2    # "i":I
     :cond_0
     return-object v1
 .end method
 
 .method private maybeStopNotifying(Lcom/android/server/connectivity/NetworkAgentInfo;)V
     .locals 2
-    .param p1, "nai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 164
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/LingerMonitor;->getNotificationSource(Lcom/android/server/connectivity/NetworkAgentInfo;)I
 
     move-result v0
 
-    .line 165
-    .local v0, "fromNetId":I
     if-eqz v0, :cond_0
 
-    .line 166
     iget-object v1, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 167
     iget-object v1, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifier:Lcom/android/server/connectivity/NetworkNotificationManager;
 
     invoke-virtual {v1, v0}, Lcom/android/server/connectivity/NetworkNotificationManager;->clearNotification(I)V
 
-    .line 170
     :cond_0
     return-void
 .end method
 
 .method private notify(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;Z)V
     .locals 7
-    .param p1, "fromNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p2, "toNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p3, "forceToast"    # Z
 
-    .line 174
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mContext:Landroid/content/Context;
 
-    .line 175
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -485,22 +415,17 @@
 
     move-result v0
 
-    .line 176
-    .local v0, "notifyType":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
     if-eqz p3, :cond_0
 
-    .line 177
     const/4 v0, 0x2
 
-    .line 184
     :cond_0
     packed-switch v0, :pswitch_data_0
 
-    .line 194
     sget-object v1, Lcom/android/server/connectivity/LingerMonitor;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -519,26 +444,20 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
     return-void
 
-    .line 191
     :pswitch_0
     iget-object v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifier:Lcom/android/server/connectivity/NetworkNotificationManager;
 
     invoke-virtual {v2, p1, p2}, Lcom/android/server/connectivity/NetworkNotificationManager;->showToast(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    .line 192
     goto :goto_0
 
-    .line 188
     :pswitch_1
     invoke-direct {p0, p1, p2}, Lcom/android/server/connectivity/LingerMonitor;->showNotification(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    .line 189
     nop
 
-    .line 199
     :goto_0
     sget-object v2, Lcom/android/server/connectivity/LingerMonitor;->TAG:Ljava/lang/String;
 
@@ -590,7 +509,6 @@
 
     move-result-object v5
 
-    .line 200
     invoke-virtual {v4, v0, v5}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -603,10 +521,8 @@
 
     move-result-object v3
 
-    .line 199
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
     iget-object v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
     iget-object v3, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -619,7 +535,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 204
     iget-object v2, p0, Lcom/android/server/connectivity/LingerMonitor;->mEverNotified:Landroid/util/SparseBooleanArray;
 
     iget-object v3, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -628,10 +543,8 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 205
     return-void
 
-    .line 186
     :pswitch_2
     return-void
 
@@ -649,10 +562,7 @@
 
 .method private showNotification(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)V
     .locals 7
-    .param p1, "fromNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p2, "toNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 152
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifier:Lcom/android/server/connectivity/NetworkNotificationManager;
 
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -661,12 +571,10 @@
 
     sget-object v2, Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;->NETWORK_SWITCH:Lcom/android/server/connectivity/NetworkNotificationManager$NotificationType;
 
-    .line 153
     invoke-virtual {p0}, Lcom/android/server/connectivity/LingerMonitor;->createNotificationIntent()Landroid/app/PendingIntent;
 
     move-result-object v5
 
-    .line 152
     const/4 v6, 0x1
 
     move-object v3, p1
@@ -675,7 +583,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/server/connectivity/NetworkNotificationManager;->showNotification(ILcom/android/server/connectivity/NetworkNotificationManager$NotificationType;Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;Landroid/app/PendingIntent;Z)V
 
-    .line 154
     return-void
 .end method
 
@@ -686,7 +593,6 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 158
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mContext:Landroid/content/Context;
 
     sget-object v2, Lcom/android/server/connectivity/LingerMonitor;->CELLULAR_SETTINGS:Landroid/content/Intent;
@@ -708,15 +614,11 @@
 
 .method public isNotificationEnabled(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)Z
     .locals 11
-    .param p1, "fromNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p2, "toNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 127
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mContext:Landroid/content/Context;
 
-    .line 128
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -727,8 +629,6 @@
 
     move-result-object v0
 
-    .line 134
-    .local v0, "notifySwitches":[Ljava/lang/String;
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -740,19 +640,14 @@
 
     aget-object v4, v0, v3
 
-    .line 135
-    .local v4, "notifySwitch":Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .end local v4    # "notifySwitch":Ljava/lang/String;
     goto :goto_1
 
-    .line 136
-    .restart local v4    # "notifySwitch":Ljava/lang/String;
     :cond_0
     const-string v5, "-"
 
@@ -762,13 +657,10 @@
 
     move-result-object v5
 
-    .line 137
-    .local v5, "transports":[Ljava/lang/String;
     array-length v7, v5
 
     if-eq v7, v6, :cond_1
 
-    .line 138
     sget-object v6, Lcom/android/server/connectivity/LingerMonitor;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -787,10 +679,8 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
     goto :goto_1
 
-    .line 141
     :cond_1
     sget-object v6, Lcom/android/server/connectivity/LingerMonitor;->TRANSPORT_NAMES:Ljava/util/HashMap;
 
@@ -820,8 +710,6 @@
 
     move-result v6
 
-    .line 142
-    .local v6, "fromTransport":I
     sget-object v7, Lcom/android/server/connectivity/LingerMonitor;->TRANSPORT_NAMES:Ljava/util/HashMap;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -852,8 +740,6 @@
 
     move-result v7
 
-    .line 143
-    .local v7, "toTransport":I
     invoke-static {p1, v6}, Lcom/android/server/connectivity/LingerMonitor;->hasTransport(Lcom/android/server/connectivity/NetworkAgentInfo;I)Z
 
     move-result v8
@@ -866,30 +752,21 @@
 
     if-eqz v8, :cond_2
 
-    .line 144
     return v9
 
-    .line 134
-    .end local v4    # "notifySwitch":Ljava/lang/String;
-    .end local v5    # "transports":[Ljava/lang/String;
-    .end local v6    # "fromTransport":I
-    .end local v7    # "toTransport":I
     :cond_2
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 148
     :cond_3
     return v2
 .end method
 
 .method public noteDisconnect(Lcom/android/server/connectivity/NetworkAgentInfo;)V
     .locals 2
-    .param p1, "nai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 274
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mNotifications:Landroid/util/SparseIntArray;
 
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -898,7 +775,6 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseIntArray;->delete(I)V
 
-    .line 275
     iget-object v0, p0, Lcom/android/server/connectivity/LingerMonitor;->mEverNotified:Landroid/util/SparseBooleanArray;
 
     iget-object v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->network:Landroid/net/Network;
@@ -907,29 +783,22 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseBooleanArray;->delete(I)V
 
-    .line 276
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/LingerMonitor;->maybeStopNotifying(Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    .line 278
     return-void
 .end method
 
 .method public noteLingerDefaultNetwork(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)V
     .locals 4
-    .param p1, "fromNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
-    .param p2, "toNai"    # Lcom/android/server/connectivity/NetworkAgentInfo;
 
-    .line 220
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/LingerMonitor;->maybeStopNotifying(Lcom/android/server/connectivity/NetworkAgentInfo;)V
 
-    .line 231
     iget-boolean v0, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->everValidated:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 247
     :cond_0
     iget-object v0, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->networkCapabilities:Landroid/net/NetworkCapabilities;
 
@@ -939,18 +808,14 @@
 
     move-result v0
 
-    .line 252
-    .local v0, "forceToast":Z
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/LingerMonitor;->everNotified(Lcom/android/server/connectivity/NetworkAgentInfo;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 256
     return-void
 
-    .line 263
     :cond_1
     iget-boolean v1, p1, Lcom/android/server/connectivity/NetworkAgentInfo;->lastValidated:Z
 
@@ -958,7 +823,6 @@
 
     return-void
 
-    .line 265
     :cond_2
     invoke-virtual {p0, p1, p2}, Lcom/android/server/connectivity/LingerMonitor;->isNotificationEnabled(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;)Z
 
@@ -968,14 +832,11 @@
 
     return-void
 
-    .line 267
     :cond_3
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
-    .line 268
-    .local v1, "now":J
     invoke-direct {p0, v1, v2}, Lcom/android/server/connectivity/LingerMonitor;->isRateLimited(J)Z
 
     move-result v3
@@ -990,14 +851,11 @@
 
     goto :goto_0
 
-    .line 270
     :cond_4
     invoke-direct {p0, p1, p2, v0}, Lcom/android/server/connectivity/LingerMonitor;->notify(Lcom/android/server/connectivity/NetworkAgentInfo;Lcom/android/server/connectivity/NetworkAgentInfo;Z)V
 
-    .line 271
     return-void
 
-    .line 268
     :cond_5
     :goto_0
     return-void

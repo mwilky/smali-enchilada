@@ -32,10 +32,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 378
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 381
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +45,6 @@
 
 .method static collect(JLandroid/util/SparseArray;)Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;
     .locals 4
-    .param p0, "timeMs"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -58,20 +55,14 @@
         }
     .end annotation
 
-    .line 384
-    .local p2, "networkMetrics":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/net/metrics/NetworkMetrics;>;"
     new-instance v0, Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;
 
     invoke-direct {v0}, Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;-><init>()V
 
-    .line 385
-    .local v0, "snapshot":Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;
     iput-wide p0, v0, Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;->timeMs:J
 
-    .line 386
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     invoke-virtual {p2}, Landroid/util/SparseArray;->size()I
 
@@ -79,7 +70,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 387
     invoke-virtual {p2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -90,24 +80,17 @@
 
     move-result-object v2
 
-    .line 388
-    .local v2, "s":Landroid/net/metrics/NetworkMetrics$Summary;
     if-eqz v2, :cond_0
 
-    .line 389
     iget-object v3, v0, Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;->stats:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 386
-    .end local v2    # "s":Landroid/net/metrics/NetworkMetrics$Summary;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 392
-    .end local v1    # "i":I
     :cond_1
     return-object v0
 .end method
@@ -117,15 +100,12 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    .line 397
     new-instance v0, Ljava/util/StringJoiner;
 
     const-string v1, ", "
 
     invoke-direct {v0, v1}, Ljava/util/StringJoiner;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 398
-    .local v0, "j":Ljava/util/StringJoiner;
     iget-object v1, p0, Lcom/android/server/connectivity/NetdEventListenerService$NetworkMetricsSnapshot;->stats:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -145,19 +125,14 @@
 
     check-cast v2, Landroid/net/metrics/NetworkMetrics$Summary;
 
-    .line 399
-    .local v2, "s":Landroid/net/metrics/NetworkMetrics$Summary;
     invoke-virtual {v2}, Landroid/net/metrics/NetworkMetrics$Summary;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/util/StringJoiner;->add(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;
 
-    .line 400
-    .end local v2    # "s":Landroid/net/metrics/NetworkMetrics$Summary;
     goto :goto_0
 
-    .line 401
     :cond_0
     const-string v1, "%tT.%tL: %s"
 

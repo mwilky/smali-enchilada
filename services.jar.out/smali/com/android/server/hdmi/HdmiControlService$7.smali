@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/hdmi/HdmiControlService;
 
-    .line 2356
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$7;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     iput p2, p0, Lcom/android/server/hdmi/HdmiControlService$7;->val$lastInput:I
@@ -39,20 +37,17 @@
 # virtual methods
 .method public onComplete(I)V
     .locals 2
-    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 2362
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$7;->this$0:Lcom/android/server/hdmi/HdmiControlService;
 
     iget v1, p0, Lcom/android/server/hdmi/HdmiControlService$7;->val$lastInput:I
 
     invoke-virtual {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->setLastInputForMhl(I)V
 
-    .line 2363
     return-void
 .end method

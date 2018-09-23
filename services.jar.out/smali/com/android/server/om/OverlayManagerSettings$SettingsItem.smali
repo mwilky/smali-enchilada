@@ -39,35 +39,19 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZZILjava/lang/String;)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "targetPackageName"    # Ljava/lang/String;
-    .param p4, "baseCodePath"    # Ljava/lang/String;
-    .param p5, "state"    # I
-    .param p6, "isEnabled"    # Z
-    .param p7, "isStatic"    # Z
-    .param p8, "priority"    # I
-    .param p9, "category"    # Ljava/lang/String;
 
-    .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 450
     iput-object p1, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPackageName:Ljava/lang/String;
 
-    .line 451
     iput p2, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mUserId:I
 
-    .line 452
     iput-object p3, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mTargetPackageName:Ljava/lang/String;
 
-    .line 453
     iput-object p4, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mBaseCodePath:Ljava/lang/String;
 
-    .line 454
     iput p5, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mState:I
 
-    .line 455
     if-nez p6, :cond_1
 
     if-eqz p7, :cond_0
@@ -86,35 +70,22 @@
     :goto_1
     iput-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsEnabled:Z
 
-    .line 456
     iput-object p9, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCategory:Ljava/lang/String;
 
-    .line 457
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCache:Landroid/content/om/OverlayInfo;
 
-    .line 458
     iput-boolean p7, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsStatic:Z
 
-    .line 459
     iput p8, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPriority:I
 
-    .line 460
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ZILjava/lang/String;)V
     .locals 10
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
-    .param p3, "targetPackageName"    # Ljava/lang/String;
-    .param p4, "baseCodePath"    # Ljava/lang/String;
-    .param p5, "isStatic"    # Z
-    .param p6, "priority"    # I
-    .param p7, "category"    # Ljava/lang/String;
 
-    .line 465
     const/4 v5, -0x1
 
     const/4 v6, 0x0
@@ -137,16 +108,12 @@
 
     invoke-direct/range {v0 .. v9}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IZZILjava/lang/String;)V
 
-    .line 467
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;Z)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
-    .param p1, "x1"    # Z
 
-    .line 434
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->setEnabled(Z)Z
 
     move-result v0
@@ -156,9 +123,7 @@
 
 .method static synthetic access$100(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsStatic:Z
 
     return v0
@@ -166,9 +131,7 @@
 
 .method static synthetic access$1000(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->getTargetPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -178,9 +141,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -188,9 +149,7 @@
 
 .method static synthetic access$1200(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->getBaseCodePath()Ljava/lang/String;
 
     move-result-object v0
@@ -200,9 +159,7 @@
 
 .method static synthetic access$1300(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->isStatic()Z
 
     move-result v0
@@ -212,9 +169,7 @@
 
 .method static synthetic access$1400(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCategory:Ljava/lang/String;
 
     return-object v0
@@ -222,9 +177,7 @@
 
 .method static synthetic access$1500(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mUserId:I
 
     return v0
@@ -232,9 +185,7 @@
 
 .method static synthetic access$1600(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mTargetPackageName:Ljava/lang/String;
 
     return-object v0
@@ -242,9 +193,7 @@
 
 .method static synthetic access$1700(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mBaseCodePath:Ljava/lang/String;
 
     return-object v0
@@ -252,9 +201,7 @@
 
 .method static synthetic access$1800(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mState:I
 
     return v0
@@ -262,9 +209,7 @@
 
 .method static synthetic access$1900(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsEnabled:Z
 
     return v0
@@ -272,9 +217,7 @@
 
 .method static synthetic access$200(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPriority:I
 
     return v0
@@ -282,9 +225,7 @@
 
 .method static synthetic access$300(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Landroid/content/om/OverlayInfo;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->getOverlayInfo()Landroid/content/om/OverlayInfo;
 
     move-result-object v0
@@ -294,10 +235,7 @@
 
 .method static synthetic access$400(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 434
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->setBaseCodePath(Ljava/lang/String;)Z
 
     move-result v0
@@ -307,10 +245,7 @@
 
 .method static synthetic access$500(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 434
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->setCategory(Ljava/lang/String;)Z
 
     move-result v0
@@ -320,9 +255,7 @@
 
 .method static synthetic access$600(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->isEnabled()Z
 
     move-result v0
@@ -332,9 +265,7 @@
 
 .method static synthetic access$700(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->getState()I
 
     move-result v0
@@ -344,10 +275,7 @@
 
 .method static synthetic access$800(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;I)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
-    .param p1, "x1"    # I
 
-    .line 434
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->setState(I)Z
 
     move-result v0
@@ -357,9 +285,7 @@
 
 .method static synthetic access$900(Lcom/android/server/om/OverlayManagerSettings$SettingsItem;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/om/OverlayManagerSettings$SettingsItem;
 
-    .line 434
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->getUserId()I
 
     move-result v0
@@ -370,7 +296,6 @@
 .method private getBaseCodePath()Ljava/lang/String;
     .locals 1
 
-    .line 478
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mBaseCodePath:Ljava/lang/String;
 
     return-object v0
@@ -379,12 +304,10 @@
 .method private getOverlayInfo()Landroid/content/om/OverlayInfo;
     .locals 10
 
-    .line 530
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCache:Landroid/content/om/OverlayInfo;
 
     if-nez v0, :cond_0
 
-    .line 531
     new-instance v0, Landroid/content/om/OverlayInfo;
 
     iget-object v2, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPackageName:Ljava/lang/String;
@@ -409,7 +332,6 @@
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCache:Landroid/content/om/OverlayInfo;
 
-    .line 534
     :cond_0
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCache:Landroid/content/om/OverlayInfo;
 
@@ -419,7 +341,6 @@
 .method private getPriority()I
     .locals 1
 
-    .line 546
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mPriority:I
 
     return v0
@@ -428,7 +349,6 @@
 .method private getState()I
     .locals 1
 
-    .line 491
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mState:I
 
     return v0
@@ -437,7 +357,6 @@
 .method private getTargetPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 470
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mTargetPackageName:Ljava/lang/String;
 
     return-object v0
@@ -446,7 +365,6 @@
 .method private getUserId()I
     .locals 1
 
-    .line 474
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mUserId:I
 
     return v0
@@ -455,19 +373,16 @@
 .method private invalidateCache()V
     .locals 1
 
-    .line 538
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCache:Landroid/content/om/OverlayInfo;
 
-    .line 539
     return-void
 .end method
 
 .method private isEnabled()Z
     .locals 1
 
-    .line 504
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsEnabled:Z
 
     return v0
@@ -476,7 +391,6 @@
 .method private isStatic()Z
     .locals 1
 
-    .line 542
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsStatic:Z
 
     return v0
@@ -484,9 +398,7 @@
 
 .method private setBaseCodePath(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "path"    # Ljava/lang/String;
 
-    .line 482
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mBaseCodePath:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -495,18 +407,14 @@
 
     if-nez v0, :cond_0
 
-    .line 483
     iput-object p1, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mBaseCodePath:Ljava/lang/String;
 
-    .line 484
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->invalidateCache()V
 
-    .line 485
     const/4 v0, 0x1
 
     return v0
 
-    .line 487
     :cond_0
     const/4 v0, 0x0
 
@@ -515,9 +423,7 @@
 
 .method private setCategory(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "category"    # Ljava/lang/String;
 
-    .line 521
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCategory:Ljava/lang/String;
 
     invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -526,22 +432,18 @@
 
     if-nez v0, :cond_0
 
-    .line 522
     invoke-virtual {p1}, Ljava/lang/String;->intern()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mCategory:Ljava/lang/String;
 
-    .line 523
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->invalidateCache()V
 
-    .line 524
     const/4 v0, 0x1
 
     return v0
 
-    .line 526
     :cond_0
     const/4 v0, 0x0
 
@@ -550,61 +452,47 @@
 
 .method private setEnabled(Z)Z
     .locals 2
-    .param p1, "enable"    # Z
 
-    .line 508
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsStatic:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 509
     return v1
 
-    .line 512
     :cond_0
     iget-boolean v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsEnabled:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 513
     iput-boolean p1, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mIsEnabled:Z
 
-    .line 514
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->invalidateCache()V
 
-    .line 515
     const/4 v0, 0x1
 
     return v0
 
-    .line 517
     :cond_1
     return v1
 .end method
 
 .method private setState(I)Z
     .locals 1
-    .param p1, "state"    # I
 
-    .line 495
     iget v0, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mState:I
 
     if-eq v0, p1, :cond_0
 
-    .line 496
     iput p1, p0, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->mState:I
 
-    .line 497
     invoke-direct {p0}, Lcom/android/server/om/OverlayManagerSettings$SettingsItem;->invalidateCache()V
 
-    .line 498
     const/4 v0, 0x1
 
     return v0
 
-    .line 500
     :cond_0
     const/4 v0, 0x0
 

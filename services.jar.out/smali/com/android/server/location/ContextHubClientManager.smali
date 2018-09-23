@@ -33,58 +33,43 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/hardware/contexthub/V1_0/IContexthub;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "contextHubProxy"    # Landroid/hardware/contexthub/V1_0/IContexthub;
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 65
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 71
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/location/ContextHubClientManager;->mNextHostEndpointId:I
 
-    .line 75
     iput-object p1, p0, Lcom/android/server/location/ContextHubClientManager;->mContext:Landroid/content/Context;
 
-    .line 76
     iput-object p2, p0, Lcom/android/server/location/ContextHubClientManager;->mContextHubProxy:Landroid/hardware/contexthub/V1_0/IContexthub;
 
-    .line 77
     return-void
 .end method
 
 .method private broadcastMessage(ILandroid/hardware/location/NanoAppMessage;)V
     .locals 1
-    .param p1, "contextHubId"    # I
-    .param p2, "message"    # Landroid/hardware/location/NanoAppMessage;
 
-    .line 222
     new-instance v0, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$f15OSYbsSONpkXn7GinnrBPeumw;
 
     invoke-direct {v0, p2}, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$f15OSYbsSONpkXn7GinnrBPeumw;-><init>(Landroid/hardware/location/NanoAppMessage;)V
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->forEachClientOfHub(ILjava/util/function/Consumer;)V
 
-    .line 223
     return-void
 .end method
 
 .method private declared-synchronized createNewClientBroker(Landroid/hardware/location/IContextHubClientCallback;I)Lcom/android/server/location/ContextHubClientBroker;
     .locals 13
-    .param p1, "clientCallback"    # Landroid/hardware/location/IContextHubClientCallback;
-    .param p2, "contextHubId"    # I
 
     monitor-enter p0
 
-    .line 194
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -96,29 +81,21 @@
 
     if-eq v0, v1, :cond_4
 
-    .line 198
     const/4 v0, 0x0
 
-    .line 199
-    .local v0, "broker":Lcom/android/server/location/ContextHubClientBroker;
     iget v1, p0, Lcom/android/server/location/ContextHubClientManager;->mNextHostEndpointId:I
 
-    .line 200
-    .local v1, "id":I
     const/4 v2, 0x0
 
     move v3, v1
 
     move v1, v2
 
-    .local v1, "i":I
-    .local v3, "id":I
     :goto_0
     const/16 v4, 0x7fff
 
     if-gt v1, v4, :cond_3
 
-    .line 201
     iget-object v5, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     int-to-short v6, v3
@@ -133,7 +110,6 @@
 
     if-nez v5, :cond_1
 
-    .line 202
     new-instance v5, Lcom/android/server/location/ContextHubClientBroker;
 
     iget-object v7, p0, Lcom/android/server/location/ContextHubClientManager;->mContext:Landroid/content/Context;
@@ -154,7 +130,6 @@
 
     move-object v0, v5
 
-    .line 204
     iget-object v5, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     int-to-short v6, v3
@@ -165,7 +140,6 @@
 
     invoke-virtual {v5, v6, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 205
     if-ne v3, v4, :cond_0
 
     goto :goto_1
@@ -178,10 +152,8 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 206
     goto :goto_3
 
-    .line 209
     :cond_1
     if-ne v3, v4, :cond_2
 
@@ -195,22 +167,16 @@
     :goto_2
     move v3, v4
 
-    .line 200
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 212
-    .end local v1    # "i":I
     :cond_3
     :goto_3
     monitor-exit p0
 
     return-object v0
 
-    .line 195
-    .end local v0    # "broker":Lcom/android/server/location/ContextHubClientBroker;
-    .end local v3    # "id":I
     :cond_4
     :try_start_1
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -223,21 +189,16 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 193
-    .end local p1    # "clientCallback":Landroid/hardware/location/IContextHubClientCallback;
-    .end local p2    # "contextHubId":I
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/server/location/ContextHubClientManager;
     throw p1
 .end method
 
 .method private forEachClientOfHub(ILjava/util/function/Consumer;)V
     .locals 3
-    .param p1, "contextHubId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -247,8 +208,6 @@
         }
     .end annotation
 
-    .line 232
-    .local p2, "callback":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Lcom/android/server/location/ContextHubClientBroker;>;"
     iget-object v0, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->values()Ljava/util/Collection;
@@ -272,33 +231,24 @@
 
     check-cast v1, Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 233
-    .local v1, "broker":Lcom/android/server/location/ContextHubClientBroker;
     invoke-virtual {v1}, Lcom/android/server/location/ContextHubClientBroker;->getAttachedContextHubId()I
 
     move-result v2
 
     if-ne v2, p1, :cond_0
 
-    .line 234
     invoke-interface {p2, v1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 236
-    .end local v1    # "broker":Lcom/android/server/location/ContextHubClientBroker;
     :cond_0
     goto :goto_0
 
-    .line 237
     :cond_1
     return-void
 .end method
 
 .method static synthetic lambda$broadcastMessage$4(Landroid/hardware/location/NanoAppMessage;Lcom/android/server/location/ContextHubClientBroker;)V
     .locals 0
-    .param p0, "message"    # Landroid/hardware/location/NanoAppMessage;
-    .param p1, "client"    # Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 222
     invoke-virtual {p1, p0}, Lcom/android/server/location/ContextHubClientBroker;->sendMessageToClient(Landroid/hardware/location/NanoAppMessage;)V
 
     return-void
@@ -306,9 +256,7 @@
 
 .method static synthetic lambda$onHubReset$2(Lcom/android/server/location/ContextHubClientBroker;)V
     .locals 0
-    .param p0, "client"    # Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 169
     invoke-virtual {p0}, Lcom/android/server/location/ContextHubClientBroker;->onHubReset()V
 
     return-void
@@ -316,11 +264,7 @@
 
 .method static synthetic lambda$onNanoAppAborted$3(JILcom/android/server/location/ContextHubClientBroker;)V
     .locals 0
-    .param p0, "nanoAppId"    # J
-    .param p2, "abortCode"    # I
-    .param p3, "client"    # Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 178
     invoke-virtual {p3, p0, p1, p2}, Lcom/android/server/location/ContextHubClientBroker;->onNanoAppAborted(JI)V
 
     return-void
@@ -328,10 +272,7 @@
 
 .method static synthetic lambda$onNanoAppLoaded$0(JLcom/android/server/location/ContextHubClientBroker;)V
     .locals 0
-    .param p0, "nanoAppId"    # J
-    .param p2, "client"    # Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 154
     invoke-virtual {p2, p0, p1}, Lcom/android/server/location/ContextHubClientBroker;->onNanoAppLoaded(J)V
 
     return-void
@@ -339,10 +280,7 @@
 
 .method static synthetic lambda$onNanoAppUnloaded$1(JLcom/android/server/location/ContextHubClientBroker;)V
     .locals 0
-    .param p0, "nanoAppId"    # J
-    .param p2, "client"    # Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 162
     invoke-virtual {p2, p0, p1}, Lcom/android/server/location/ContextHubClientBroker;->onNanoAppUnloaded(J)V
 
     return-void
@@ -352,29 +290,21 @@
 # virtual methods
 .method onHubReset(I)V
     .locals 1
-    .param p1, "contextHubId"    # I
 
-    .line 169
     sget-object v0, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$aRAV9Gn84ao-4XOiN6tFizfZjHo;->INSTANCE:Lcom/android/server/location/-$$Lambda$ContextHubClientManager$aRAV9Gn84ao-4XOiN6tFizfZjHo;
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->forEachClientOfHub(ILjava/util/function/Consumer;)V
 
-    .line 170
     return-void
 .end method
 
 .method onMessageFromNanoApp(ILandroid/hardware/contexthub/V1_0/ContextHubMsg;)V
     .locals 5
-    .param p1, "contextHubId"    # I
-    .param p2, "message"    # Landroid/hardware/contexthub/V1_0/ContextHubMsg;
 
-    .line 113
     invoke-static {p2}, Lcom/android/server/location/ContextHubServiceUtil;->createNanoAppMessage(Landroid/hardware/contexthub/V1_0/ContextHubMsg;)Landroid/hardware/location/NanoAppMessage;
 
     move-result-object v0
 
-    .line 116
-    .local v0, "clientMessage":Landroid/hardware/location/NanoAppMessage;
     const-string v1, "ContextHubClientManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -393,19 +323,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 119
     invoke-virtual {v0}, Landroid/hardware/location/NanoAppMessage;->isBroadcastMessage()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 120
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->broadcastMessage(ILandroid/hardware/location/NanoAppMessage;)V
 
     goto :goto_0
 
-    .line 122
     :cond_0
     iget-object v1, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -421,16 +348,12 @@
 
     check-cast v1, Lcom/android/server/location/ContextHubClientBroker;
 
-    .line 123
-    .local v1, "proxy":Lcom/android/server/location/ContextHubClientBroker;
     if-eqz v1, :cond_1
 
-    .line 124
     invoke-virtual {v1, v0}, Lcom/android/server/location/ContextHubClientBroker;->sendMessageToClient(Landroid/hardware/location/NanoAppMessage;)V
 
     goto :goto_0
 
-    .line 126
     :cond_1
     const-string v2, "ContextHubClientManager"
 
@@ -456,82 +379,60 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
-    .end local v1    # "proxy":Lcom/android/server/location/ContextHubClientBroker;
     :goto_0
     return-void
 .end method
 
 .method onNanoAppAborted(IJI)V
     .locals 1
-    .param p1, "contextHubId"    # I
-    .param p2, "nanoAppId"    # J
-    .param p4, "abortCode"    # I
 
-    .line 178
     new-instance v0, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$WHzSH2f-YJ3FaiF7JXPP-7oX9EE;
 
     invoke-direct {v0, p2, p3, p4}, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$WHzSH2f-YJ3FaiF7JXPP-7oX9EE;-><init>(JI)V
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->forEachClientOfHub(ILjava/util/function/Consumer;)V
 
-    .line 179
     return-void
 .end method
 
 .method onNanoAppLoaded(IJ)V
     .locals 1
-    .param p1, "contextHubId"    # I
-    .param p2, "nanoAppId"    # J
 
-    .line 154
     new-instance v0, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$VPD5ebhe8Z67S8QKuTR4KzeshK8;
 
     invoke-direct {v0, p2, p3}, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$VPD5ebhe8Z67S8QKuTR4KzeshK8;-><init>(J)V
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->forEachClientOfHub(ILjava/util/function/Consumer;)V
 
-    .line 155
     return-void
 .end method
 
 .method onNanoAppUnloaded(IJ)V
     .locals 1
-    .param p1, "contextHubId"    # I
-    .param p2, "nanoAppId"    # J
 
-    .line 162
     new-instance v0, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$gN_vRogwyzr9qBjrQpKwwHzrFAo;
 
     invoke-direct {v0, p2, p3}, Lcom/android/server/location/-$$Lambda$ContextHubClientManager$gN_vRogwyzr9qBjrQpKwwHzrFAo;-><init>(J)V
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/location/ContextHubClientManager;->forEachClientOfHub(ILjava/util/function/Consumer;)V
 
-    .line 163
     return-void
 .end method
 
 .method registerClient(Landroid/hardware/location/IContextHubClientCallback;I)Landroid/hardware/location/IContextHubClient;
     .locals 4
-    .param p1, "clientCallback"    # Landroid/hardware/location/IContextHubClientCallback;
-    .param p2, "contextHubId"    # I
 
-    .line 91
     invoke-direct {p0, p1, p2}, Lcom/android/server/location/ContextHubClientManager;->createNewClientBroker(Landroid/hardware/location/IContextHubClientCallback;I)Lcom/android/server/location/ContextHubClientBroker;
 
     move-result-object v0
 
-    .line 94
-    .local v0, "broker":Lcom/android/server/location/ContextHubClientBroker;
     :try_start_0
     invoke-virtual {v0}, Lcom/android/server/location/ContextHubClientBroker;->attachDeathRecipient()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 100
     nop
 
-    .line 102
     const-string v1, "ContextHubClientManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -554,29 +455,23 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
     invoke-static {v0}, Landroid/hardware/location/IContextHubClient$Stub;->asInterface(Landroid/os/IBinder;)Landroid/hardware/location/IContextHubClient;
 
     move-result-object v1
 
     return-object v1
 
-    .line 95
     :catch_0
     move-exception v1
 
-    .line 97
-    .local v1, "e":Landroid/os/RemoteException;
     const-string v2, "ContextHubClientManager"
 
     const-string v3, "Failed to attach death recipient to client"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
     invoke-virtual {v0}, Lcom/android/server/location/ContextHubClientBroker;->close()V
 
-    .line 99
     const/4 v2, 0x0
 
     return-object v2
@@ -584,9 +479,7 @@
 
 .method unregisterClient(S)V
     .locals 3
-    .param p1, "hostEndPointId"    # S
 
-    .line 141
     iget-object v0, p0, Lcom/android/server/location/ContextHubClientManager;->mHostEndPointIdToClientMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
@@ -599,7 +492,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 142
     const-string v0, "ContextHubClientManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -620,7 +512,6 @@
 
     goto :goto_0
 
-    .line 144
     :cond_0
     const-string v0, "ContextHubClientManager"
 
@@ -640,7 +531,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 147
     :goto_0
     return-void
 .end method

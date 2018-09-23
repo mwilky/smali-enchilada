@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 83
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 84
     return-void
 .end method
 
@@ -35,7 +32,6 @@
 .method public onStart()V
     .locals 2
 
-    .line 88
     new-instance v0, Lcom/android/server/usage/StorageStatsService;
 
     invoke-virtual {p0}, Lcom/android/server/usage/StorageStatsService$Lifecycle;->getContext()Landroid/content/Context;
@@ -46,13 +42,11 @@
 
     iput-object v0, p0, Lcom/android/server/usage/StorageStatsService$Lifecycle;->mService:Lcom/android/server/usage/StorageStatsService;
 
-    .line 89
     const-string/jumbo v0, "storagestats"
 
     iget-object v1, p0, Lcom/android/server/usage/StorageStatsService$Lifecycle;->mService:Lcom/android/server/usage/StorageStatsService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/usage/StorageStatsService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 90
     return-void
 .end method

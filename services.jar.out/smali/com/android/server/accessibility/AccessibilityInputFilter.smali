@@ -82,7 +82,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 48
     const-class v0, Lcom/android/server/accessibility/AccessibilityInputFilter;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -96,30 +95,23 @@
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/server/accessibility/AccessibilityManagerService;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "service"    # Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    .line 159
     invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/view/InputFilter;-><init>(Landroid/os/Looper;)V
 
-    .line 107
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/accessibility/AccessibilityInputFilter$1;-><init>(Lcom/android/server/accessibility/AccessibilityInputFilter;)V
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mProcessBatchedEventsRunnable:Ljava/lang/Runnable;
 
-    .line 160
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mContext:Landroid/content/Context;
 
-    .line 161
     iput-object p2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    .line 162
     const-string/jumbo v0, "power"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -130,22 +122,18 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mPm:Landroid/os/PowerManager;
 
-    .line 163
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mChoreographer:Landroid/view/Choreographer;
 
-    .line 164
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/accessibility/AccessibilityInputFilter;)Landroid/view/Choreographer;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/AccessibilityInputFilter;
 
-    .line 46
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mChoreographer:Landroid/view/Choreographer;
 
     return-object v0
@@ -153,10 +141,7 @@
 
 .method static synthetic access$100(Lcom/android/server/accessibility/AccessibilityInputFilter;J)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/accessibility/AccessibilityInputFilter;
-    .param p1, "x1"    # J
 
-    .line 46
     invoke-direct {p0, p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->processBatchedEvents(J)V
 
     return-void
@@ -164,9 +149,7 @@
 
 .method static synthetic access$200(Lcom/android/server/accessibility/AccessibilityInputFilter;)Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/accessibility/AccessibilityInputFilter;
 
-    .line 46
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     return-object v0
@@ -174,9 +157,7 @@
 
 .method static synthetic access$300(Lcom/android/server/accessibility/AccessibilityInputFilter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/accessibility/AccessibilityInputFilter;
 
-    .line 46
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->scheduleProcessBatchedEvents()V
 
     return-void
@@ -184,56 +165,43 @@
 
 .method private addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
     .locals 1
-    .param p1, "handler"    # Lcom/android/server/accessibility/EventStreamTransformation;
 
-    .line 463
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-eqz v0, :cond_0
 
-    .line 464
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {p1, v0}, Lcom/android/server/accessibility/EventStreamTransformation;->setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
     goto :goto_0
 
-    .line 466
     :cond_0
     invoke-interface {p1, p0}, Lcom/android/server/accessibility/EventStreamTransformation;->setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 468
     :goto_0
     iput-object p1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
-    .line 469
     return-void
 .end method
 
 .method private batchMotionEvent(Landroid/view/MotionEvent;I)V
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "policyFlags"    # I
 
-    .line 297
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     if-nez v0, :cond_0
 
-    .line 298
     invoke-static {p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->obtain(Landroid/view/MotionEvent;I)Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 299
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->scheduleProcessBatchedEvents()V
 
-    .line 300
     return-void
 
-    .line 302
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
@@ -245,142 +213,112 @@
 
     if-eqz v0, :cond_1
 
-    .line 303
     return-void
 
-    .line 305
     :cond_1
     invoke-static {p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->obtain(Landroid/view/MotionEvent;I)Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     move-result-object v0
 
-    .line 306
-    .local v0, "holder":Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     iput-object v1, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->next:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 307
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     iput-object v0, v1, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->previous:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 308
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 309
     return-void
 .end method
 
 .method private disableFeatures()V
     .locals 2
 
-    .line 474
     const-wide v0, 0x7fffffffffffffffL
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/accessibility/AccessibilityInputFilter;->processBatchedEvents(J)V
 
-    .line 475
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 476
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     invoke-virtual {v0, v1}, Lcom/android/server/accessibility/AccessibilityManagerService;->setMotionEventInjector(Lcom/android/server/accessibility/MotionEventInjector;)V
 
-    .line 477
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/MotionEventInjector;->onDestroy()V
 
-    .line 478
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
-    .line 480
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAutoclickController:Lcom/android/server/accessibility/AutoclickController;
 
     if-eqz v0, :cond_1
 
-    .line 481
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAutoclickController:Lcom/android/server/accessibility/AutoclickController;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/AutoclickController;->onDestroy()V
 
-    .line 482
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAutoclickController:Lcom/android/server/accessibility/AutoclickController;
 
-    .line 484
     :cond_1
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchExplorer:Lcom/android/server/accessibility/TouchExplorer;
 
     if-eqz v0, :cond_2
 
-    .line 485
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchExplorer:Lcom/android/server/accessibility/TouchExplorer;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/TouchExplorer;->onDestroy()V
 
-    .line 486
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchExplorer:Lcom/android/server/accessibility/TouchExplorer;
 
-    .line 488
     :cond_2
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     if-eqz v0, :cond_3
 
-    .line 489
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/MagnificationGestureHandler;->onDestroy()V
 
-    .line 490
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
-    .line 492
     :cond_3
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardInterceptor:Lcom/android/server/accessibility/KeyboardInterceptor;
 
     if-eqz v0, :cond_4
 
-    .line 493
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardInterceptor:Lcom/android/server/accessibility/KeyboardInterceptor;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/KeyboardInterceptor;->onDestroy()V
 
-    .line 494
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardInterceptor:Lcom/android/server/accessibility/KeyboardInterceptor;
 
-    .line 497
     :cond_4
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
-    .line 498
     invoke-virtual {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->resetStreamState()V
 
-    .line 499
     return-void
 .end method
 
 .method private enableFeatures()V
     .locals 5
 
-    .line 418
     invoke-virtual {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->resetStreamState()V
 
-    .line 420
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_0
 
-    .line 421
     new-instance v0, Lcom/android/server/accessibility/AutoclickController;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mContext:Landroid/content/Context;
@@ -391,12 +329,10 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAutoclickController:Lcom/android/server/accessibility/AutoclickController;
 
-    .line 422
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAutoclickController:Lcom/android/server/accessibility/AutoclickController;
 
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 425
     :cond_0
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -404,7 +340,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 426
     new-instance v0, Lcom/android/server/accessibility/TouchExplorer;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mContext:Landroid/content/Context;
@@ -415,12 +350,10 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchExplorer:Lcom/android/server/accessibility/TouchExplorer;
 
-    .line 427
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchExplorer:Lcom/android/server/accessibility/TouchExplorer;
 
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 430
     :cond_1
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -442,7 +375,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 433
     :cond_2
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -459,8 +391,6 @@
     :cond_3
     move v0, v2
 
-    .line 435
-    .local v0, "detectControlGestures":Z
     :goto_0
     iget v3, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -473,8 +403,6 @@
     :cond_4
     move v1, v2
 
-    .line 437
-    .local v1, "triggerable":Z
     :goto_1
     new-instance v2, Lcom/android/server/accessibility/MagnificationGestureHandler;
 
@@ -482,7 +410,6 @@
 
     iget-object v4, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
 
-    .line 438
     invoke-virtual {v4}, Lcom/android/server/accessibility/AccessibilityManagerService;->getMagnificationController()Lcom/android/server/accessibility/MagnificationController;
 
     move-result-object v4
@@ -491,14 +418,10 @@
 
     iput-object v2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
-    .line 440
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-direct {p0, v2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 443
-    .end local v0    # "detectControlGestures":Z
-    .end local v1    # "triggerable":Z
     :cond_5
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -506,7 +429,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 444
     new-instance v0, Lcom/android/server/accessibility/MotionEventInjector;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mContext:Landroid/content/Context;
@@ -519,19 +441,16 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
-    .line 445
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 446
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMotionEventInjector:Lcom/android/server/accessibility/MotionEventInjector;
 
     invoke-virtual {v0, v1}, Lcom/android/server/accessibility/AccessibilityManagerService;->setMotionEventInjector(Lcom/android/server/accessibility/MotionEventInjector;)V
 
-    .line 449
     :cond_6
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
@@ -539,14 +458,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 450
     new-instance v0, Lcom/android/server/accessibility/KeyboardInterceptor;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mAms:Lcom/android/server/accessibility/AccessibilityManagerService;
 
     const-class v2, Lcom/android/server/policy/WindowManagerPolicy;
 
-    .line 451
     invoke-static {v2}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
@@ -557,26 +474,21 @@
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardInterceptor:Lcom/android/server/accessibility/KeyboardInterceptor;
 
-    .line 452
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardInterceptor:Lcom/android/server/accessibility/KeyboardInterceptor;
 
     invoke-direct {p0, v0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->addFirstEventHandler(Lcom/android/server/accessibility/EventStreamTransformation;)V
 
-    .line 454
     :cond_7
     return-void
 .end method
 
 .method private getEventStreamState(Landroid/view/InputEvent;)Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
     .locals 1
-    .param p1, "event"    # Landroid/view/InputEvent;
 
-    .line 243
     instance-of v0, p1, Landroid/view/MotionEvent;
 
     if-eqz v0, :cond_3
 
-    .line 244
     const/16 v0, 0x1002
 
     invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
@@ -585,25 +497,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 245
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-nez v0, :cond_0
 
-    .line 246
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$TouchScreenEventStreamState;
 
     invoke-direct {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$TouchScreenEventStreamState;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    .line 248
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     return-object v0
 
-    .line 250
     :cond_1
     const/16 v0, 0x2002
 
@@ -613,31 +521,26 @@
 
     if-eqz v0, :cond_5
 
-    .line 251
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMouseStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-nez v0, :cond_2
 
-    .line 252
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MouseEventStreamState;
 
     invoke-direct {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$MouseEventStreamState;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMouseStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    .line 254
     :cond_2
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMouseStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     return-object v0
 
-    .line 256
     :cond_3
     instance-of v0, p1, Landroid/view/KeyEvent;
 
     if-eqz v0, :cond_5
 
-    .line 257
     const/16 v0, 0x101
 
     invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
@@ -646,25 +549,21 @@
 
     if-eqz v0, :cond_5
 
-    .line 258
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-nez v0, :cond_4
 
-    .line 259
     new-instance v0, Lcom/android/server/accessibility/AccessibilityInputFilter$KeyboardEventStreamState;
 
     invoke-direct {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$KeyboardEventStreamState;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
-    .line 261
     :cond_4
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     return-object v0
 
-    .line 264
     :cond_5
     const/4 v0, 0x0
 
@@ -673,15 +572,11 @@
 
 .method private handleMotionEvent(Landroid/view/MotionEvent;I)V
     .locals 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "policyFlags"    # I
 
-    .line 342
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-eqz v0, :cond_0
 
-    .line 343
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mPm:Landroid/os/PowerManager;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
@@ -692,66 +587,49 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    .line 344
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 345
-    .local v0, "transformedEvent":Landroid/view/MotionEvent;
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v1, v0, p1, p2}, Lcom/android/server/accessibility/EventStreamTransformation;->onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
 
-    .line 346
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 350
-    .end local v0    # "transformedEvent":Landroid/view/MotionEvent;
     :cond_0
     return-void
 .end method
 
 .method private processBatchedEvents(J)V
     .locals 4
-    .param p1, "frameNanos"    # J
 
-    .line 312
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 313
-    .local v0, "current":Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
     if-nez v0, :cond_0
 
-    .line 314
     return-void
 
-    .line 316
     :cond_0
     :goto_0
     iget-object v1, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->next:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     if-eqz v1, :cond_1
 
-    .line 317
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->next:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
     goto :goto_0
 
-    .line 320
     :cond_1
     :goto_1
     const/4 v1, 0x0
 
     if-nez v0, :cond_2
 
-    .line 321
     iput-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventQueue:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 322
     goto :goto_2
 
-    .line 324
     :cond_2
     iget-object v2, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->event:Landroid/view/MotionEvent;
 
@@ -763,17 +641,13 @@
 
     if-ltz v2, :cond_3
 
-    .line 326
     iput-object v1, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->next:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 327
     nop
 
-    .line 334
     :goto_2
     return-void
 
-    .line 329
     :cond_3
     iget-object v1, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->event:Landroid/view/MotionEvent;
 
@@ -781,57 +655,39 @@
 
     invoke-direct {p0, v1, v2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->handleMotionEvent(Landroid/view/MotionEvent;I)V
 
-    .line 330
     move-object v1, v0
 
-    .line 331
-    .local v1, "prior":Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
     iget-object v0, v0, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->previous:Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
 
-    .line 332
     invoke-virtual {v1}, Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;->recycle()V
 
-    .line 333
-    .end local v1    # "prior":Lcom/android/server/accessibility/AccessibilityInputFilter$MotionEventHolder;
     goto :goto_1
 .end method
 
 .method private processKeyEvent(Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;Landroid/view/KeyEvent;I)V
     .locals 1
-    .param p1, "state"    # Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
-    .param p2, "event"    # Landroid/view/KeyEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 281
     invoke-virtual {p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->shouldProcessKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 282
     invoke-super {p0, p2, p3}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 283
     return-void
 
-    .line 285
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v0, p2, p3}, Lcom/android/server/accessibility/EventStreamTransformation;->onKeyEvent(Landroid/view/KeyEvent;I)V
 
-    .line 286
     return-void
 .end method
 
 .method private processMotionEvent(Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;Landroid/view/MotionEvent;I)V
     .locals 2
-    .param p1, "state"    # Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
-    .param p2, "event"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 268
     invoke-virtual {p1}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->shouldProcessScroll()Z
 
     move-result v0
@@ -846,13 +702,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 269
     invoke-super {p0, p2, p3}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 270
     return-void
 
-    .line 273
     :cond_0
     invoke-virtual {p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->shouldProcessMotionEvent(Landroid/view/MotionEvent;)Z
 
@@ -860,21 +713,17 @@
 
     if-nez v0, :cond_1
 
-    .line 274
     return-void
 
-    .line 277
     :cond_1
     invoke-direct {p0, p2, p3}, Lcom/android/server/accessibility/AccessibilityInputFilter;->batchMotionEvent(Landroid/view/MotionEvent;I)V
 
-    .line 278
     return-void
 .end method
 
 .method private scheduleProcessBatchedEvents()V
     .locals 4
 
-    .line 289
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mChoreographer:Landroid/view/Choreographer;
 
     iget-object v1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mProcessBatchedEventsRunnable:Ljava/lang/Runnable;
@@ -885,7 +734,6 @@
 
     invoke-virtual {v0, v2, v1, v3}, Landroid/view/Choreographer;->postCallback(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 291
     return-void
 .end method
 
@@ -893,16 +741,13 @@
 # virtual methods
 .method public clearEvents(I)V
     .locals 0
-    .param p1, "inputSource"    # I
 
-    .line 383
     return-void
 .end method
 
 .method public getNext()Lcom/android/server/accessibility/EventStreamTransformation;
     .locals 1
 
-    .line 377
     const/4 v0, 0x0
 
     return-object v0
@@ -911,116 +756,88 @@
 .method notifyAccessibilityButtonClicked()V
     .locals 1
 
-    .line 410
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     if-eqz v0, :cond_0
 
-    .line 411
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMagnificationGestureHandler:Lcom/android/server/accessibility/MagnificationGestureHandler;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/MagnificationGestureHandler;->notifyShortcutTriggered()V
 
-    .line 413
     :cond_0
     return-void
 .end method
 
 .method notifyAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 404
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-eqz v0, :cond_0
 
-    .line 405
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v0, p1}, Lcom/android/server/accessibility/EventStreamTransformation;->onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 407
     :cond_0
     return-void
 .end method
 
 .method public onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 0
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 368
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 0
 
-    .line 516
     return-void
 .end method
 
 .method public onInputEvent(Landroid/view/InputEvent;I)V
     .locals 3
-    .param p1, "event"    # Landroid/view/InputEvent;
-    .param p2, "policyFlags"    # I
 
-    .line 194
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     if-nez v0, :cond_0
 
-    .line 196
     invoke-super {p0, p1, p2}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 197
     return-void
 
-    .line 200
     :cond_0
     invoke-direct {p0, p1}, Lcom/android/server/accessibility/AccessibilityInputFilter;->getEventStreamState(Landroid/view/InputEvent;)Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     move-result-object v0
 
-    .line 201
-    .local v0, "state":Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
     if-nez v0, :cond_1
 
-    .line 202
     invoke-super {p0, p1, p2}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 203
     return-void
 
-    .line 206
     :cond_1
     invoke-virtual {p1}, Landroid/view/InputEvent;->getSource()I
 
     move-result v1
 
-    .line 207
-    .local v1, "eventSource":I
     const/high16 v2, 0x40000000    # 2.0f
 
     and-int/2addr v2, p2
 
     if-nez v2, :cond_2
 
-    .line 208
     invoke-virtual {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->reset()V
 
-    .line 209
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v2, v1}, Lcom/android/server/accessibility/EventStreamTransformation;->clearEvents(I)V
 
-    .line 210
     invoke-super {p0, p1, p2}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 211
     return-void
 
-    .line 214
     :cond_2
     invoke-virtual {p1}, Landroid/view/InputEvent;->getDeviceId()I
 
@@ -1032,12 +849,10 @@
 
     if-eqz v2, :cond_3
 
-    .line 215
     iget-object v2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEventHandler:Lcom/android/server/accessibility/EventStreamTransformation;
 
     invoke-interface {v2, v1}, Lcom/android/server/accessibility/EventStreamTransformation;->clearEvents(I)V
 
-    .line 218
     :cond_3
     invoke-virtual {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->deviceIdValid()Z
 
@@ -1045,61 +860,45 @@
 
     if-nez v2, :cond_4
 
-    .line 219
     invoke-super {p0, p1, p2}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 220
     return-void
 
-    .line 223
     :cond_4
     instance-of v2, p1, Landroid/view/MotionEvent;
 
     if-eqz v2, :cond_6
 
-    .line 224
     iget v2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
     and-int/lit8 v2, v2, 0x5b
 
     if-eqz v2, :cond_5
 
-    .line 225
     move-object v2, p1
 
     check-cast v2, Landroid/view/MotionEvent;
 
-    .line 226
-    .local v2, "motionEvent":Landroid/view/MotionEvent;
     invoke-direct {p0, v0, v2, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->processMotionEvent(Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;Landroid/view/MotionEvent;I)V
 
-    .line 227
     return-void
 
-    .line 229
-    .end local v2    # "motionEvent":Landroid/view/MotionEvent;
     :cond_5
     invoke-super {p0, p1, p2}, Landroid/view/InputFilter;->onInputEvent(Landroid/view/InputEvent;I)V
 
     goto :goto_0
 
-    .line 231
     :cond_6
     instance-of v2, p1, Landroid/view/KeyEvent;
 
     if-eqz v2, :cond_7
 
-    .line 232
     move-object v2, p1
 
     check-cast v2, Landroid/view/KeyEvent;
 
-    .line 233
-    .local v2, "keyEvent":Landroid/view/KeyEvent;
     invoke-direct {p0, v0, v2, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->processKeyEvent(Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;Landroid/view/KeyEvent;I)V
 
-    .line 235
-    .end local v2    # "keyEvent":Landroid/view/KeyEvent;
     :cond_7
     :goto_0
     return-void
@@ -1108,121 +907,91 @@
 .method public onInstalled()V
     .locals 1
 
-    .line 171
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mInstalled:Z
 
-    .line 172
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->disableFeatures()V
 
-    .line 173
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->enableFeatures()V
 
-    .line 174
     invoke-super {p0}, Landroid/view/InputFilter;->onInstalled()V
 
-    .line 175
     return-void
 .end method
 
 .method public onKeyEvent(Landroid/view/KeyEvent;I)V
     .locals 0
-    .param p1, "event"    # Landroid/view/KeyEvent;
-    .param p2, "policyFlags"    # I
 
-    .line 360
     invoke-virtual {p0, p1, p2}, Lcom/android/server/accessibility/AccessibilityInputFilter;->sendInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 361
     return-void
 .end method
 
 .method public onMotionEvent(Landroid/view/MotionEvent;Landroid/view/MotionEvent;I)V
     .locals 0
-    .param p1, "transformedEvent"    # Landroid/view/MotionEvent;
-    .param p2, "rawEvent"    # Landroid/view/MotionEvent;
-    .param p3, "policyFlags"    # I
 
-    .line 355
     invoke-virtual {p0, p1, p3}, Lcom/android/server/accessibility/AccessibilityInputFilter;->sendInputEvent(Landroid/view/InputEvent;I)V
 
-    .line 356
     return-void
 .end method
 
 .method public onUninstalled()V
     .locals 1
 
-    .line 182
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mInstalled:Z
 
-    .line 183
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->disableFeatures()V
 
-    .line 184
     invoke-super {p0}, Landroid/view/InputFilter;->onUninstalled()V
 
-    .line 185
     return-void
 .end method
 
 .method resetStreamState()V
     .locals 1
 
-    .line 502
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-eqz v0, :cond_0
 
-    .line 503
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mTouchScreenStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->reset()V
 
-    .line 505
     :cond_0
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMouseStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-eqz v0, :cond_1
 
-    .line 506
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mMouseStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->reset()V
 
-    .line 508
     :cond_1
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     if-eqz v0, :cond_2
 
-    .line 509
     iget-object v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mKeyboardStreamState:Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;
 
     invoke-virtual {v0}, Lcom/android/server/accessibility/AccessibilityInputFilter$EventStreamState;->reset()V
 
-    .line 511
     :cond_2
     return-void
 .end method
 
 .method public setNext(Lcom/android/server/accessibility/EventStreamTransformation;)V
     .locals 0
-    .param p1, "sink"    # Lcom/android/server/accessibility/EventStreamTransformation;
 
-    .line 373
     return-void
 .end method
 
 .method setUserAndEnabledFeatures(II)V
     .locals 1
-    .param p1, "userId"    # I
-    .param p2, "enabledFeatures"    # I
 
-    .line 390
     iget v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
     if-ne v0, p2, :cond_0
@@ -1231,34 +1000,26 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 391
     return-void
 
-    .line 393
     :cond_0
     iget-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mInstalled:Z
 
     if-eqz v0, :cond_1
 
-    .line 394
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->disableFeatures()V
 
-    .line 396
     :cond_1
     iput p1, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mUserId:I
 
-    .line 397
     iput p2, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mEnabledFeatures:I
 
-    .line 398
     iget-boolean v0, p0, Lcom/android/server/accessibility/AccessibilityInputFilter;->mInstalled:Z
 
     if-eqz v0, :cond_2
 
-    .line 399
     invoke-direct {p0}, Lcom/android/server/accessibility/AccessibilityInputFilter;->enableFeatures()V
 
-    .line 401
     :cond_2
     return-void
 .end method

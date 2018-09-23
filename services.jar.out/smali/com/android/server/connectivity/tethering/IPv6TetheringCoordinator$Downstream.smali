@@ -25,22 +25,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;IS)V
     .locals 0
-    .param p1, "tism"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
-    .param p2, "mode"    # I
-    .param p3, "subnetId"    # S
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput-object p1, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->tism:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 60
     iput p2, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->mode:I
 
-    .line 61
     iput-short p3, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->subnetId:S
 
-    .line 62
     return-void
 .end method

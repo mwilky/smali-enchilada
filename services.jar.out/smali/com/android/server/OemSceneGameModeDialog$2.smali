@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneGameModeDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneGameModeDialog;
 
-    .line 113
     iput-object p1, p0, Lcom/android/server/OemSceneGameModeDialog$2;->this$0:Lcom/android/server/OemSceneGameModeDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +36,12 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 116
     iget-object v0, p0, Lcom/android/server/OemSceneGameModeDialog$2;->this$0:Lcom/android/server/OemSceneGameModeDialog;
 
     iget-object v0, v0, Lcom/android/server/OemSceneGameModeDialog;->mPanel:Lcom/android/server/OemSceneGameModePanel;
 
     invoke-virtual {v0}, Lcom/android/server/OemSceneGameModePanel;->hide()V
 
-    .line 117
     return-void
 .end method

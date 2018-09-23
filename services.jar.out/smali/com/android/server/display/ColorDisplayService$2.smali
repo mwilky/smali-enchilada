@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/display/ColorDisplayService;Lcom/android/server/display/DisplayTransformManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/display/ColorDisplayService;
 
-    .line 350
     iput-object p1, p0, Lcom/android/server/display/ColorDisplayService$2;->this$0:Lcom/android/server/display/ColorDisplayService;
 
     iput-object p2, p0, Lcom/android/server/display/ColorDisplayService$2;->val$dtm:Lcom/android/server/display/DisplayTransformManager;
@@ -42,23 +40,18 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/ValueAnimator;
 
-    .line 353
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [F
 
-    .line 354
-    .local v0, "value":[F
     iget-object v1, p0, Lcom/android/server/display/ColorDisplayService$2;->val$dtm:Lcom/android/server/display/DisplayTransformManager;
 
     const/16 v2, 0x64
 
     invoke-virtual {v1, v2, v0}, Lcom/android/server/display/DisplayTransformManager;->setColorMatrix(I[F)V
 
-    .line 355
     return-void
 .end method

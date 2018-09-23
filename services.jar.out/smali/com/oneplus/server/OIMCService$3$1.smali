@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/server/OIMCService$3;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/server/OIMCService$3;
 
-    .line 198
     iput-object p1, p0, Lcom/oneplus/server/OIMCService$3$1;->this$1:Lcom/oneplus/server/OIMCService$3;
 
     iput p2, p0, Lcom/oneplus/server/OIMCService$3$1;->val$userId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 201
     iget-object v0, p0, Lcom/oneplus/server/OIMCService$3$1;->this$1:Lcom/oneplus/server/OIMCService$3;
 
     iget-object v0, v0, Lcom/oneplus/server/OIMCService$3;->this$0:Lcom/oneplus/server/OIMCService;
@@ -52,6 +49,5 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/server/OIMCUtil;->adjustOIMCRulesForSwitch(Lcom/oneplus/server/OIMCService;I)V
 
-    .line 202
     return-void
 .end method

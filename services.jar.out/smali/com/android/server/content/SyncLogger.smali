@@ -23,10 +23,8 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     return-void
 .end method
 
@@ -37,13 +35,11 @@
 
     monitor-enter v0
 
-    .line 67
     :try_start_0
     sget-object v1, Lcom/android/server/content/SyncLogger;->sInstance:Lcom/android/server/content/SyncLogger;
 
     if-nez v1, :cond_3
 
-    .line 68
     sget-boolean v1, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-nez v1, :cond_1
@@ -52,7 +48,6 @@
 
     const-string v2, "debug.synclog"
 
-    .line 70
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -67,7 +62,6 @@
 
     const/4 v2, 0x2
 
-    .line 71
     invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v1
@@ -85,12 +79,9 @@
     :goto_0
     const/4 v1, 0x1
 
-    .line 72
-    .local v1, "enable":Z
     :goto_1
     if-eqz v1, :cond_2
 
-    .line 73
     new-instance v2, Lcom/android/server/content/SyncLogger$RotatingFileLogger;
 
     invoke-direct {v2}, Lcom/android/server/content/SyncLogger$RotatingFileLogger;-><init>()V
@@ -99,7 +90,6 @@
 
     goto :goto_2
 
-    .line 75
     :cond_2
     new-instance v2, Lcom/android/server/content/SyncLogger;
 
@@ -107,8 +97,6 @@
 
     sput-object v2, Lcom/android/server/content/SyncLogger;->sInstance:Lcom/android/server/content/SyncLogger;
 
-    .line 78
-    .end local v1    # "enable":Z
     :cond_3
     :goto_2
     sget-object v1, Lcom/android/server/content/SyncLogger;->sInstance:Lcom/android/server/content/SyncLogger;
@@ -119,7 +107,6 @@
 
     return-object v1
 
-    .line 66
     :catchall_0
     move-exception v1
 
@@ -132,16 +119,13 @@
 # virtual methods
 .method public dumpAll(Ljava/io/PrintWriter;)V
     .locals 0
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 103
     return-void
 .end method
 
 .method public enabled()Z
     .locals 1
 
-    .line 109
     const/4 v0, 0x0
 
     return v0
@@ -149,9 +133,7 @@
 
 .method public jobParametersToString(Landroid/app/job/JobParameters;)Ljava/lang/String;
     .locals 1
-    .param p1, "params"    # Landroid/app/job/JobParameters;
 
-    .line 96
     const-string v0, ""
 
     return-object v0
@@ -159,15 +141,12 @@
 
 .method public varargs log([Ljava/lang/Object;)V
     .locals 0
-    .param p1, "message"    # [Ljava/lang/Object;
 
-    .line 85
     return-void
 .end method
 
 .method public purgeOldLogs()V
     .locals 0
 
-    .line 92
     return-void
 .end method

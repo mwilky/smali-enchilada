@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/am/BatteryStatsService;)V
     .locals 0
 
-    .line 206
     iput-object p1, p0, Lcom/android/server/am/BatteryStatsService$LocalService;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     invoke-direct {p0}, Landroid/os/BatteryStatsInternal;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/am/BatteryStatsService;Lcom/android/server/am/BatteryStatsService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/am/BatteryStatsService;
-    .param p2, "x1"    # Lcom/android/server/am/BatteryStatsService$1;
 
-    .line 206
     invoke-direct {p0, p1}, Lcom/android/server/am/BatteryStatsService$LocalService;-><init>(Lcom/android/server/am/BatteryStatsService;)V
 
     return-void
@@ -46,7 +42,6 @@
 .method public getMobileIfaces()[Ljava/lang/String;
     .locals 1
 
-    .line 214
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$LocalService;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v0, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
@@ -67,7 +62,6 @@
 .method public getWifiIfaces()[Ljava/lang/String;
     .locals 1
 
-    .line 209
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$LocalService;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     iget-object v0, v0, Lcom/android/server/am/BatteryStatsService;->mStats:Lcom/android/internal/os/BatteryStatsImpl;
@@ -87,15 +81,10 @@
 
 .method public noteJobsDeferred(IIJ)V
     .locals 1
-    .param p1, "uid"    # I
-    .param p2, "numDeferred"    # I
-    .param p3, "sinceLast"    # J
 
-    .line 220
     iget-object v0, p0, Lcom/android/server/am/BatteryStatsService$LocalService;->this$0:Lcom/android/server/am/BatteryStatsService;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/server/am/BatteryStatsService;->noteJobsDeferred(IIJ)V
 
-    .line 221
     return-void
 .end method

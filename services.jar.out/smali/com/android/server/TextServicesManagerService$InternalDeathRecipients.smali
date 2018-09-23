@@ -29,15 +29,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;)V
     .locals 0
-    .param p1, "group"    # Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
 
-    .line 1030
     invoke-direct {p0}, Landroid/os/RemoteCallbackList;-><init>()V
 
-    .line 1031
     iput-object p1, p0, Lcom/android/server/TextServicesManagerService$InternalDeathRecipients;->mGroup:Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
 
-    .line 1032
     return-void
 .end method
 
@@ -46,7 +42,6 @@
 .method public bridge synthetic onCallbackDied(Landroid/os/IInterface;)V
     .locals 0
 
-    .line 1026
     check-cast p1, Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
     invoke-virtual {p0, p1}, Lcom/android/server/TextServicesManagerService$InternalDeathRecipients;->onCallbackDied(Lcom/android/internal/textservice/ISpellCheckerSessionListener;)V
@@ -56,13 +51,10 @@
 
 .method public onCallbackDied(Lcom/android/internal/textservice/ISpellCheckerSessionListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/internal/textservice/ISpellCheckerSessionListener;
 
-    .line 1036
     iget-object v0, p0, Lcom/android/server/TextServicesManagerService$InternalDeathRecipients;->mGroup:Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;
 
     invoke-virtual {v0, p1}, Lcom/android/server/TextServicesManagerService$SpellCheckerBindGroup;->removeListener(Lcom/android/internal/textservice/ISpellCheckerSessionListener;)V
 
-    .line 1037
     return-void
 .end method

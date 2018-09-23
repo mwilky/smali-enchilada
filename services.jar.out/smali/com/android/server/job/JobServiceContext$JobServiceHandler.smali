@@ -21,15 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/job/JobServiceContext;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 489
     iput-object p1, p0, Lcom/android/server/job/JobServiceContext$JobServiceHandler;->this$0:Lcom/android/server/job/JobServiceContext;
 
-    .line 490
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 491
     return-void
 .end method
 
@@ -37,14 +33,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 495
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-eqz v0, :cond_0
 
-    .line 516
     const-string v0, "JobServiceContext"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -65,7 +58,6 @@
 
     goto :goto_1
 
-    .line 497
     :cond_0
     iget-object v0, p0, Lcom/android/server/job/JobServiceContext$JobServiceHandler;->this$0:Lcom/android/server/job/JobServiceContext;
 
@@ -75,7 +67,6 @@
 
     monitor-enter v0
 
-    .line 498
     :try_start_0
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -87,44 +78,35 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 499
     iget-object v1, p0, Lcom/android/server/job/JobServiceContext$JobServiceHandler;->this$0:Lcom/android/server/job/JobServiceContext;
 
     invoke-static {v1}, Lcom/android/server/job/JobServiceContext;->access$200(Lcom/android/server/job/JobServiceContext;)V
 
     goto :goto_0
 
-    .line 501
     :cond_1
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/server/job/JobServiceContext$JobCallback;
 
-    .line 502
-    .local v1, "jc":Lcom/android/server/job/JobServiceContext$JobCallback;
     new-instance v2, Ljava/lang/StringBuilder;
 
     const/16 v3, 0x80
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 503
-    .local v2, "sb":Ljava/lang/StringBuilder;
     const-string v3, "Ignoring timeout of no longer active job"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 504
     iget-object v3, v1, Lcom/android/server/job/JobServiceContext$JobCallback;->mStoppedReason:Ljava/lang/String;
 
     if-eqz v3, :cond_2
 
-    .line 505
     const-string v3, ", stopped "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 506
     sget-object v3, Lcom/android/server/job/JobSchedulerService;->sElapsedRealtimeClock:Ljava/time/Clock;
 
     invoke-virtual {v3}, Ljava/time/Clock;->millis()J
@@ -137,17 +119,14 @@
 
     invoke-static {v3, v4, v2}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 508
     const-string v3, " because: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 509
     iget-object v3, v1, Lcom/android/server/job/JobServiceContext$JobCallback;->mStoppedReason:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 511
     :cond_2
     const-string v3, "JobServiceContext"
 
@@ -157,20 +136,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 513
-    .end local v1    # "jc":Lcom/android/server/job/JobServiceContext$JobCallback;
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
     :goto_0
     monitor-exit v0
 
-    .line 514
     nop
 
-    .line 518
     :goto_1
     return-void
 
-    .line 513
     :catchall_0
     move-exception v1
 

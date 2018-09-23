@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/hdmi/HdmiControlService$BinderService;Landroid/hardware/hdmi/IHdmiControlCallback;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
-    .line 1352
     iput-object p1, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$5;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iput-object p2, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$5;->val$callback:Landroid/hardware/hdmi/IHdmiControlCallback;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 1355
     iget-object v0, p0, Lcom/android/server/hdmi/HdmiControlService$BinderService$5;->this$1:Lcom/android/server/hdmi/HdmiControlService$BinderService;
 
     iget-object v0, v0, Lcom/android/server/hdmi/HdmiControlService$BinderService;->this$0:Lcom/android/server/hdmi/HdmiControlService;
@@ -52,6 +49,5 @@
 
     invoke-static {v0, v1}, Lcom/android/server/hdmi/HdmiControlService;->access$3200(Lcom/android/server/hdmi/HdmiControlService;Landroid/hardware/hdmi/IHdmiControlCallback;)V
 
-    .line 1356
     return-void
 .end method

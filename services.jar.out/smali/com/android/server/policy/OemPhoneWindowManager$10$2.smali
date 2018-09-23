@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/policy/OemPhoneWindowManager$10;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/policy/OemPhoneWindowManager$10;
 
-    .line 2790
     iput-object p1, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$2;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iput-object p2, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$2;->val$availableApps:Ljava/util/ArrayList;
@@ -42,13 +40,9 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 2792
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 2793
     iget-object v0, p0, Lcom/android/server/policy/OemPhoneWindowManager$10$2;->this$1:Lcom/android/server/policy/OemPhoneWindowManager$10;
 
     iget-object v0, v0, Lcom/android/server/policy/OemPhoneWindowManager$10;->this$0:Lcom/android/server/policy/OemPhoneWindowManager;
@@ -69,6 +63,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/policy/OemPhoneWindowManager;->access$1800(Lcom/android/server/policy/OemPhoneWindowManager;IZZ)V
 
-    .line 2794
     return-void
 .end method

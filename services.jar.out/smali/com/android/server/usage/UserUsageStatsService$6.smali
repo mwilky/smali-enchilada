@@ -39,9 +39,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usage/UserUsageStatsService;JJLjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usage/UserUsageStatsService;
 
-    .line 619
     iput-object p1, p0, Lcom/android/server/usage/UserUsageStatsService$6;->this$0:Lcom/android/server/usage/UserUsageStatsService;
 
     iput-wide p2, p0, Lcom/android/server/usage/UserUsageStatsService$6;->val$beginTime:J
@@ -59,8 +57,6 @@
 # virtual methods
 .method public combine(Lcom/android/server/usage/IntervalStats;ZLjava/util/List;)V
     .locals 7
-    .param p1, "stats"    # Lcom/android/server/usage/IntervalStats;
-    .param p2, "mutable"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,16 +68,12 @@
         }
     .end annotation
 
-    .line 623
-    .local p3, "accumulatedResult":Ljava/util/List;, "Ljava/util/List<Landroid/app/usage/UsageEvents$Event;>;"
     iget-object v0, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/EventList;
 
     if-nez v0, :cond_0
 
-    .line 624
     return-void
 
-    .line 627
     :cond_0
     iget-object v0, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/EventList;
 
@@ -91,23 +83,17 @@
 
     move-result v0
 
-    .line 628
-    .local v0, "startIndex":I
     iget-object v1, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/EventList;
 
     invoke-virtual {v1}, Landroid/app/usage/EventList;->size()I
 
     move-result v1
 
-    .line 629
-    .local v1, "size":I
     move v2, v0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_3
 
-    .line 630
     iget-object v3, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/EventList;
 
     invoke-virtual {v3, v2}, Landroid/app/usage/EventList;->get(I)Landroid/app/usage/UsageEvents$Event;
@@ -122,10 +108,8 @@
 
     if-ltz v3, :cond_1
 
-    .line 631
     return-void
 
-    .line 634
     :cond_1
     iget-object v3, p1, Lcom/android/server/usage/IntervalStats;->events:Landroid/app/usage/EventList;
 
@@ -133,8 +117,6 @@
 
     move-result-object v3
 
-    .line 635
-    .local v3, "event":Landroid/app/usage/UsageEvents$Event;
     iget-object v4, p0, Lcom/android/server/usage/UserUsageStatsService$6;->val$pkg:Ljava/lang/String;
 
     if-eqz v4, :cond_2
@@ -149,22 +131,16 @@
 
     if-nez v4, :cond_2
 
-    .line 636
     goto :goto_1
 
-    .line 638
     :cond_2
     invoke-interface {p3, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 629
-    .end local v3    # "event":Landroid/app/usage/UsageEvents$Event;
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 640
-    .end local v2    # "i":I
     :cond_3
     return-void
 .end method

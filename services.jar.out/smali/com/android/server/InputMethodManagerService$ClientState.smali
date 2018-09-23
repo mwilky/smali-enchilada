@@ -33,27 +33,17 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/view/IInputMethodClient;Lcom/android/internal/view/IInputContext;II)V
     .locals 5
-    .param p1, "_client"    # Lcom/android/internal/view/IInputMethodClient;
-    .param p2, "_inputContext"    # Lcom/android/internal/view/IInputContext;
-    .param p3, "_uid"    # I
-    .param p4, "_pid"    # I
 
-    .line 418
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$ClientState;->client:Lcom/android/internal/view/IInputMethodClient;
 
-    .line 420
     iput-object p2, p0, Lcom/android/server/InputMethodManagerService$ClientState;->inputContext:Lcom/android/internal/view/IInputContext;
 
-    .line 421
     iput p3, p0, Lcom/android/server/InputMethodManagerService$ClientState;->uid:I
 
-    .line 422
     iput p4, p0, Lcom/android/server/InputMethodManagerService$ClientState;->pid:I
 
-    .line 423
     new-instance v0, Landroid/view/inputmethod/InputBinding;
 
     iget-object v1, p0, Lcom/android/server/InputMethodManagerService$ClientState;->inputContext:Lcom/android/internal/view/IInputContext;
@@ -72,7 +62,6 @@
 
     iput-object v0, p0, Lcom/android/server/InputMethodManagerService$ClientState;->binding:Landroid/view/inputmethod/InputBinding;
 
-    .line 424
     return-void
 .end method
 
@@ -81,7 +70,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 412
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -90,12 +78,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 413
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 412
     invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v1

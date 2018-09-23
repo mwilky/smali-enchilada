@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/connectivity/Vpn;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/connectivity/Vpn;
 
-    .line 209
     iput-object p1, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 212
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 213
-    .local v0, "data":Landroid/net/Uri;
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
@@ -58,21 +51,16 @@
 
     move-result-object v2
 
-    .line 214
-    .local v2, "packageName":Ljava/lang/String;
     :goto_0
     if-nez v2, :cond_1
 
-    .line 215
     return-void
 
-    .line 218
     :cond_1
     iget-object v3, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
     monitor-enter v3
 
-    .line 220
     :try_start_0
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
@@ -86,19 +74,15 @@
 
     if-nez v4, :cond_2
 
-    .line 221
     monitor-exit v3
 
     return-void
 
-    .line 224
     :cond_2
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 225
-    .local v4, "action":Ljava/lang/String;
     const-string v5, "Vpn"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -123,7 +107,6 @@
 
     iget-object v7, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
-    .line 226
     invoke-static {v7}, Lcom/android/server/connectivity/Vpn;->access$000(Lcom/android/server/connectivity/Vpn;)I
 
     move-result v7
@@ -134,10 +117,8 @@
 
     move-result-object v6
 
-    .line 225
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
     const/4 v5, -0x1
 
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
@@ -186,11 +167,8 @@
     :goto_1
     packed-switch v5, :pswitch_data_0
 
-    .end local v4    # "action":Ljava/lang/String;
     goto :goto_2
 
-    .line 234
-    .restart local v4    # "action":Ljava/lang/String;
     :pswitch_0
     const-string v5, "android.intent.extra.REPLACING"
 
@@ -200,39 +178,27 @@
 
     xor-int/2addr v5, v8
 
-    .line 236
-    .local v5, "isPackageRemoved":Z
     if-eqz v5, :cond_6
 
-    .line 237
     iget-object v6, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
     invoke-virtual {v6, v1, v9}, Lcom/android/server/connectivity/Vpn;->setAlwaysOnPackage(Ljava/lang/String;Z)Z
 
-    .end local v4    # "action":Ljava/lang/String;
-    .end local v5    # "isPackageRemoved":Z
     goto :goto_2
 
-    .line 231
-    .restart local v4    # "action":Ljava/lang/String;
     :pswitch_1
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn$1;->this$0:Lcom/android/server/connectivity/Vpn;
 
     invoke-virtual {v1}, Lcom/android/server/connectivity/Vpn;->startAlwaysOnVpn()Z
 
-    .line 232
     nop
 
-    .line 241
-    .end local v4    # "action":Ljava/lang/String;
     :cond_6
     :goto_2
     monitor-exit v3
 
-    .line 242
     return-void
 
-    .line 241
     :catchall_0
     move-exception v1
 

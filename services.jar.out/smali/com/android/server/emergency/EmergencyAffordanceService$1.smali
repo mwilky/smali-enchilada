@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/emergency/EmergencyAffordanceService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/emergency/EmergencyAffordanceService;
 
-    .line 90
     iput-object p1, p0, Lcom/android/server/emergency/EmergencyAffordanceService$1;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -44,8 +42,6 @@
         }
     .end annotation
 
-    .line 93
-    .local p1, "cellInfo":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/CellInfo;>;"
     const-string v0, "EmergencyAffordanceService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -64,7 +60,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$1;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$000(Lcom/android/server/emergency/EmergencyAffordanceService;)Z
@@ -73,21 +68,17 @@
 
     if-nez v0, :cond_0
 
-    .line 95
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$1;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$100(Lcom/android/server/emergency/EmergencyAffordanceService;)V
 
-    .line 97
     :cond_0
     return-void
 .end method
 
 .method public onCellLocationChanged(Landroid/telephony/CellLocation;)V
     .locals 3
-    .param p1, "location"    # Landroid/telephony/CellLocation;
 
-    .line 101
     const-string v0, "EmergencyAffordanceService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -106,7 +97,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$1;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$000(Lcom/android/server/emergency/EmergencyAffordanceService;)Z
@@ -115,12 +105,10 @@
 
     if-nez v0, :cond_0
 
-    .line 103
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$1;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$100(Lcom/android/server/emergency/EmergencyAffordanceService;)V
 
-    .line 105
     :cond_0
     return-void
 .end method

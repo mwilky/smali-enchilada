@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "length"    # I
 
-    .line 232
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 233
     iput p1, p0, Lcom/android/server/hdmi/HdmiCecMessageValidator$FixedLengthValidator;->mLength:I
 
-    .line 234
     return-void
 .end method
 
@@ -40,9 +36,7 @@
 # virtual methods
 .method public isValid([B)I
     .locals 2
-    .param p1, "params"    # [B
 
-    .line 240
     array-length v0, p1
 
     iget v1, p0, Lcom/android/server/hdmi/HdmiCecMessageValidator$FixedLengthValidator;->mLength:I

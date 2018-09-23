@@ -40,61 +40,39 @@
 # direct methods
 .method private constructor <init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;Landroid/os/VibrationEffect;IILjava/lang/String;)V
     .locals 2
-    .param p2, "token"    # Landroid/os/IBinder;
-    .param p3, "effect"    # Landroid/os/VibrationEffect;
-    .param p4, "usageHint"    # I
-    .param p5, "uid"    # I
-    .param p6, "opPkg"    # Ljava/lang/String;
 
-    .line 184
     iput-object p1, p0, Lcom/android/server/VibratorService$Vibration;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
     iput-object p2, p0, Lcom/android/server/VibratorService$Vibration;->token:Landroid/os/IBinder;
 
-    .line 186
     iput-object p3, p0, Lcom/android/server/VibratorService$Vibration;->effect:Landroid/os/VibrationEffect;
 
-    .line 187
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/VibratorService$Vibration;->startTime:J
 
-    .line 188
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/VibratorService$Vibration;->startTimeDebug:J
 
-    .line 189
     iput p4, p0, Lcom/android/server/VibratorService$Vibration;->usageHint:I
 
-    .line 190
     iput p5, p0, Lcom/android/server/VibratorService$Vibration;->uid:I
 
-    .line 191
     iput-object p6, p0, Lcom/android/server/VibratorService$Vibration;->opPkg:Ljava/lang/String;
 
-    .line 192
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;Landroid/os/VibrationEffect;IILjava/lang/String;Lcom/android/server/VibratorService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/VibratorService;
-    .param p2, "x1"    # Landroid/os/IBinder;
-    .param p3, "x2"    # Landroid/os/VibrationEffect;
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
-    .param p6, "x5"    # Ljava/lang/String;
-    .param p7, "x6"    # Lcom/android/server/VibratorService$1;
 
-    .line 164
     invoke-direct/range {p0 .. p6}, Lcom/android/server/VibratorService$Vibration;-><init>(Lcom/android/server/VibratorService;Landroid/os/IBinder;Landroid/os/VibrationEffect;IILjava/lang/String;)V
 
     return-void
@@ -105,7 +83,6 @@
 .method public binderDied()V
     .locals 2
 
-    .line 195
     iget-object v0, p0, Lcom/android/server/VibratorService$Vibration;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->access$000(Lcom/android/server/VibratorService;)Ljava/lang/Object;
@@ -114,7 +91,6 @@
 
     monitor-enter v0
 
-    .line 196
     :try_start_0
     iget-object v1, p0, Lcom/android/server/VibratorService$Vibration;->this$0:Lcom/android/server/VibratorService;
 
@@ -124,19 +100,15 @@
 
     if-ne p0, v1, :cond_0
 
-    .line 197
     iget-object v1, p0, Lcom/android/server/VibratorService$Vibration;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$200(Lcom/android/server/VibratorService;)V
 
-    .line 199
     :cond_0
     monitor-exit v0
 
-    .line 200
     return-void
 
-    .line 199
     :catchall_0
     move-exception v1
 
@@ -149,17 +121,13 @@
 
 .method public hasTimeoutLongerThan(J)Z
     .locals 4
-    .param p1, "millis"    # J
 
-    .line 203
     iget-object v0, p0, Lcom/android/server/VibratorService$Vibration;->effect:Landroid/os/VibrationEffect;
 
     invoke-virtual {v0}, Landroid/os/VibrationEffect;->getDuration()J
 
     move-result-wide v0
 
-    .line 204
-    .local v0, "duration":J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
@@ -184,7 +152,6 @@
 .method public isFromSystem()Z
     .locals 2
 
-    .line 245
     iget v0, p0, Lcom/android/server/VibratorService$Vibration;->uid:I
 
     const/16 v1, 0x3e8
@@ -223,7 +190,6 @@
 .method public isHapticFeedback()Z
     .locals 7
 
-    .line 208
     iget-object v0, p0, Lcom/android/server/VibratorService$Vibration;->effect:Landroid/os/VibrationEffect;
 
     instance-of v0, v0, Landroid/os/VibrationEffect$Prebaked;
@@ -234,35 +200,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 209
     iget-object v0, p0, Lcom/android/server/VibratorService$Vibration;->effect:Landroid/os/VibrationEffect;
 
     check-cast v0, Landroid/os/VibrationEffect$Prebaked;
 
-    .line 210
-    .local v0, "prebaked":Landroid/os/VibrationEffect$Prebaked;
     invoke-virtual {v0}, Landroid/os/VibrationEffect$Prebaked;->getId()I
 
     move-result v3
 
     packed-switch v3, :pswitch_data_0
 
-    .line 219
     const-string v1, "VibratorService"
 
     const-string v3, "Unknown prebaked vibration effect, assuming it isn\'t haptic feedback."
 
     invoke-static {v1, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
     return v2
 
-    .line 217
     :pswitch_0
     return v1
 
-    .line 224
-    .end local v0    # "prebaked":Landroid/os/VibrationEffect$Prebaked;
     :cond_0
     iget-object v0, p0, Lcom/android/server/VibratorService$Vibration;->effect:Landroid/os/VibrationEffect;
 
@@ -270,8 +228,6 @@
 
     move-result-wide v3
 
-    .line 225
-    .local v3, "duration":J
     const-wide/16 v5, 0x0
 
     cmp-long v0, v3, v5
@@ -308,7 +264,6 @@
 .method public isNotification()Z
     .locals 2
 
-    .line 229
     iget v0, p0, Lcom/android/server/VibratorService$Vibration;->usageHint:I
 
     const/4 v1, 0x5
@@ -317,12 +272,10 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 236
     const/4 v0, 0x0
 
     return v0
 
-    .line 234
     :cond_0
     :pswitch_0
     const/4 v0, 0x1
@@ -340,7 +293,6 @@
 .method public isRingtone()Z
     .locals 2
 
-    .line 241
     iget v0, p0, Lcom/android/server/VibratorService$Vibration;->usageHint:I
 
     const/4 v1, 0x6
@@ -361,7 +313,6 @@
 .method public toInfo()Lcom/android/server/VibratorService$VibrationInfo;
     .locals 9
 
-    .line 249
     new-instance v8, Lcom/android/server/VibratorService$VibrationInfo;
 
     iget-wide v1, p0, Lcom/android/server/VibratorService$Vibration;->startTimeDebug:J

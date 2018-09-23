@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/net/watchlist/NetworkWatchlistService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
-    .line 143
     iput-object p1, p0, Lcom/android/server/net/watchlist/NetworkWatchlistService$1;->this$0:Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
     invoke-direct {p0}, Lcom/android/server/net/BaseNetdEventCallback;-><init>()V
@@ -35,12 +33,7 @@
 # virtual methods
 .method public onConnectEvent(Ljava/lang/String;IJI)V
     .locals 4
-    .param p1, "ipAddr"    # Ljava/lang/String;
-    .param p2, "port"    # I
-    .param p3, "timestamp"    # J
-    .param p5, "uid"    # I
 
-    .line 155
     iget-object v0, p0, Lcom/android/server/net/watchlist/NetworkWatchlistService$1;->this$0:Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
     invoke-static {v0}, Lcom/android/server/net/watchlist/NetworkWatchlistService;->access$300(Lcom/android/server/net/watchlist/NetworkWatchlistService;)Z
@@ -49,10 +42,8 @@
 
     if-nez v0, :cond_0
 
-    .line 156
     return-void
 
-    .line 158
     :cond_0
     iget-object v0, p0, Lcom/android/server/net/watchlist/NetworkWatchlistService$1;->this$0:Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
@@ -70,19 +61,12 @@
 
     invoke-virtual {v0, v1, v2, p5}, Lcom/android/server/net/watchlist/WatchlistLoggingHandler;->asyncNetworkEvent(Ljava/lang/String;[Ljava/lang/String;I)V
 
-    .line 159
     return-void
 .end method
 
 .method public onDnsEvent(Ljava/lang/String;[Ljava/lang/String;IJI)V
     .locals 1
-    .param p1, "hostname"    # Ljava/lang/String;
-    .param p2, "ipAddresses"    # [Ljava/lang/String;
-    .param p3, "ipAddressesCount"    # I
-    .param p4, "timestamp"    # J
-    .param p6, "uid"    # I
 
-    .line 147
     iget-object v0, p0, Lcom/android/server/net/watchlist/NetworkWatchlistService$1;->this$0:Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
     invoke-static {v0}, Lcom/android/server/net/watchlist/NetworkWatchlistService;->access$300(Lcom/android/server/net/watchlist/NetworkWatchlistService;)Z
@@ -91,10 +75,8 @@
 
     if-nez v0, :cond_0
 
-    .line 148
     return-void
 
-    .line 150
     :cond_0
     iget-object v0, p0, Lcom/android/server/net/watchlist/NetworkWatchlistService$1;->this$0:Lcom/android/server/net/watchlist/NetworkWatchlistService;
 
@@ -102,6 +84,5 @@
 
     invoke-virtual {v0, p1, p2, p6}, Lcom/android/server/net/watchlist/WatchlistLoggingHandler;->asyncNetworkEvent(Ljava/lang/String;[Ljava/lang/String;I)V
 
-    .line 151
     return-void
 .end method

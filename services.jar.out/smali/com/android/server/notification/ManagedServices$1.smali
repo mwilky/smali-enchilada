@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/ManagedServices;Ljava/lang/String;IZI)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/ManagedServices;
 
-    .line 972
     iput-object p1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iput-object p2, p0, Lcom/android/server/notification/ManagedServices$1;->val$servicesBindingTag:Ljava/lang/String;
@@ -56,9 +54,7 @@
 # virtual methods
 .method public onBindingDied(Landroid/content/ComponentName;)V
     .locals 5
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 1005
     iget-object v0, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iget-object v0, v0, Lcom/android/server/notification/ManagedServices;->TAG:Ljava/lang/String;
@@ -87,14 +83,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1006
     iget-object v0, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iget-object v0, v0, Lcom/android/server/notification/ManagedServices;->mMutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1007
     :try_start_0
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -108,7 +102,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1009
     :try_start_1
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -119,15 +112,11 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1012
     goto :goto_0
 
-    .line 1010
     :catch_0
     move-exception v1
 
-    .line 1011
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
     :try_start_2
     iget-object v2, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -149,8 +138,6 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1013
-    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -166,7 +153,6 @@
 
     if-nez v1, :cond_0
 
-    .line 1014
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-static {v1}, Lcom/android/server/notification/ManagedServices;->access$000(Lcom/android/server/notification/ManagedServices;)Landroid/util/ArraySet;
@@ -177,7 +163,6 @@
 
     invoke-virtual {v1, v2}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1015
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-static {v1}, Lcom/android/server/notification/ManagedServices;->access$600(Lcom/android/server/notification/ManagedServices;)Landroid/os/Handler;
@@ -194,7 +179,6 @@
 
     goto :goto_1
 
-    .line 1022
     :cond_0
     iget-object v1, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -224,14 +208,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1025
     :goto_1
     monitor-exit v0
 
-    .line 1026
     return-void
 
-    .line 1025
     :catchall_0
     move-exception v1
 
@@ -244,25 +225,17 @@
 
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 11
-    .param p1, "name"    # Landroid/content/ComponentName;
-    .param p2, "binder"    # Landroid/os/IBinder;
 
-    .line 977
     const/4 v0, 0x0
 
-    .line 978
-    .local v0, "added":Z
     const/4 v1, 0x0
 
-    .line 979
-    .local v1, "info":Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;
     iget-object v2, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iget-object v2, v2, Lcom/android/server/notification/ManagedServices;->mMutex:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 980
     :try_start_0
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -274,7 +247,6 @@
 
     invoke-virtual {v3, v4}, Landroid/util/ArraySet;->remove(Ljava/lang/Object;)Z
 
-    .line 981
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-static {v3}, Lcom/android/server/notification/ManagedServices;->access$100(Lcom/android/server/notification/ManagedServices;)Ljava/util/ArrayList;
@@ -287,7 +259,6 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 983
     :try_start_1
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
@@ -297,7 +268,6 @@
 
     iput-object v3, p0, Lcom/android/server/notification/ManagedServices$1;->mService:Landroid/os/IInterface;
 
-    .line 984
     iget-object v4, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iget-object v5, p0, Lcom/android/server/notification/ManagedServices$1;->mService:Landroid/os/IInterface;
@@ -318,12 +288,10 @@
 
     move-object v1, v3
 
-    .line 986
     const/4 v3, 0x0
 
     invoke-interface {p2, v1, v3}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 987
     iget-object v3, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-static {v3}, Lcom/android/server/notification/ManagedServices;->access$300(Lcom/android/server/notification/ManagedServices;)Ljava/util/ArrayList;
@@ -339,33 +307,26 @@
 
     move v0, v3
 
-    .line 990
     goto :goto_0
 
-    .line 988
     :catch_0
     move-exception v3
 
-    .line 991
     :goto_0
     :try_start_2
     monitor-exit v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 992
     if-eqz v0, :cond_0
 
-    .line 993
     iget-object v2, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-virtual {v2, v1}, Lcom/android/server/notification/ManagedServices;->onServiceAdded(Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;)V
 
-    .line 995
     :cond_0
     return-void
 
-    .line 991
     :catchall_0
     move-exception v3
 
@@ -379,9 +340,7 @@
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 3
-    .param p1, "name"    # Landroid/content/ComponentName;
 
-    .line 999
     iget-object v0, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     invoke-static {v0}, Lcom/android/server/notification/ManagedServices;->access$100(Lcom/android/server/notification/ManagedServices;)Ljava/util/ArrayList;
@@ -392,7 +351,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1000
     iget-object v0, p0, Lcom/android/server/notification/ManagedServices$1;->this$0:Lcom/android/server/notification/ManagedServices;
 
     iget-object v0, v0, Lcom/android/server/notification/ManagedServices;->TAG:Ljava/lang/String;
@@ -421,6 +379,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1001
     return-void
 .end method

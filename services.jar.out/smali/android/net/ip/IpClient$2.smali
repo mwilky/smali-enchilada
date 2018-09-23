@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/net/ip/IpClient;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/net/ip/IpClient;
 
-    .line 733
     iput-object p1, p0, Landroid/net/ip/IpClient$2;->this$0:Landroid/net/ip/IpClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public update()V
     .locals 2
 
-    .line 736
     iget-object v0, p0, Landroid/net/ip/IpClient$2;->this$0:Landroid/net/ip/IpClient;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Landroid/net/ip/IpClient;->sendMessage(I)V
 
-    .line 737
     return-void
 .end method

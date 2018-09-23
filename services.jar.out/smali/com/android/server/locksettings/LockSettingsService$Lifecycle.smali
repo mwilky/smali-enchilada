@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 225
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 226
     return-void
 .end method
 
@@ -34,46 +31,36 @@
 # virtual methods
 .method public onBootPhase(I)V
     .locals 1
-    .param p1, "phase"    # I
 
-    .line 237
     invoke-super {p0, p1}, Lcom/android/server/SystemService;->onBootPhase(I)V
 
-    .line 238
     const/16 v0, 0x226
 
     if-ne p1, v0, :cond_0
 
-    .line 239
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-static {v0}, Lcom/android/server/locksettings/LockSettingsService;->access$000(Lcom/android/server/locksettings/LockSettingsService;)V
 
-    .line 241
     :cond_0
     return-void
 .end method
 
 .method public onCleanupUser(I)V
     .locals 1
-    .param p1, "userHandle"    # I
 
-    .line 255
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/locksettings/LockSettingsService;->onCleanupUser(I)V
 
-    .line 256
     return-void
 .end method
 
 .method public onStart()V
     .locals 2
 
-    .line 230
     invoke-static {}, Landroid/security/keystore/AndroidKeyStoreProvider;->install()V
 
-    .line 231
     new-instance v0, Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {p0}, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->getContext()Landroid/content/Context;
@@ -84,39 +71,31 @@
 
     iput-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
-    .line 232
     const-string/jumbo v0, "lock_settings"
 
     iget-object v1, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 233
     return-void
 .end method
 
 .method public onStartUser(I)V
     .locals 1
-    .param p1, "userHandle"    # I
 
-    .line 245
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/locksettings/LockSettingsService;->onStartUser(I)V
 
-    .line 246
     return-void
 .end method
 
 .method public onUnlockUser(I)V
     .locals 1
-    .param p1, "userHandle"    # I
 
-    .line 250
     iget-object v0, p0, Lcom/android/server/locksettings/LockSettingsService$Lifecycle;->mLockSettingsService:Lcom/android/server/locksettings/LockSettingsService;
 
     invoke-virtual {v0, p1}, Lcom/android/server/locksettings/LockSettingsService;->onUnlockUser(I)V
 
-    .line 251
     return-void
 .end method

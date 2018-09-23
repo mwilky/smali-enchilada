@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OnePlusPowerController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OnePlusPowerController;
 
-    .line 407
     iput-object p1, p0, Lcom/android/server/OnePlusPowerController$1;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onAlarm()V
     .locals 4
 
-    .line 410
     iget-object v0, p0, Lcom/android/server/OnePlusPowerController$1;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-static {v0}, Lcom/android/server/OnePlusPowerController;->access$000(Lcom/android/server/OnePlusPowerController;)Ljava/lang/Object;
@@ -48,7 +45,6 @@
 
     monitor-enter v0
 
-    .line 411
     :try_start_0
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$1;->this$0:Lcom/android/server/OnePlusPowerController;
 
@@ -56,7 +52,6 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/server/OnePlusPowerController;->access$102(Lcom/android/server/OnePlusPowerController;J)J
 
-    .line 412
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$1;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-static {v1}, Lcom/android/server/OnePlusPowerController;->access$200(Lcom/android/server/OnePlusPowerController;)Z
@@ -67,19 +62,15 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 413
     iget-object v1, p0, Lcom/android/server/OnePlusPowerController$1;->this$0:Lcom/android/server/OnePlusPowerController;
 
     invoke-virtual {v1}, Lcom/android/server/OnePlusPowerController;->restrictNetwork()V
 
-    .line 415
     :cond_0
     monitor-exit v0
 
-    .line 416
     return-void
 
-    .line 415
     :catchall_0
     move-exception v1
 

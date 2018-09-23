@@ -17,7 +17,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 119
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     return-void

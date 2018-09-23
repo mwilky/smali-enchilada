@@ -26,15 +26,12 @@
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;)V
     .locals 3
 
-    .line 1468
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
-    .line 1469
     iget-object v0, p1, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 1465
     const-string v0, "font_scale"
 
     invoke-static {v0}, Landroid/provider/Settings$System;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -43,7 +40,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mFontScaleUri:Landroid/net/Uri;
 
-    .line 1466
     const-string v0, "hide_error_dialogs"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -52,15 +48,12 @@
 
     iput-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mHideErrorDialogsUri:Landroid/net/Uri;
 
-    .line 1470
     iget-object p1, p1, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p1
 
-    .line 1471
-    .local p1, "resolver":Landroid/content/ContentResolver;
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mFontScaleUri:Landroid/net/Uri;
 
     const/4 v1, -0x1
@@ -69,12 +62,10 @@
 
     invoke-virtual {p1, v0, v2, p0, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1472
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mHideErrorDialogsUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v0, v2, p0, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;I)V
 
-    .line 1474
     return-void
 .end method
 
@@ -82,11 +73,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 3
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 1478
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mFontScaleUri:Landroid/net/Uri;
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -95,14 +82,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1479
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-static {v0, p3}, Lcom/android/server/am/ActivityManagerService;->access$100(Lcom/android/server/am/ActivityManagerService;I)V
 
     goto :goto_0
 
-    .line 1480
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->mHideErrorDialogsUri:Landroid/net/Uri;
 
@@ -112,7 +97,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1481
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v0
@@ -120,7 +104,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 1482
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$FontScaleSettingObserver;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -131,7 +114,6 @@
 
     invoke-static {v1, v2}, Lcom/android/server/am/ActivityManagerService;->access$200(Lcom/android/server/am/ActivityManagerService;Landroid/content/res/Configuration;)V
 
-    .line 1483
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -152,7 +134,6 @@
 
     throw v1
 
-    .line 1485
     :cond_1
     :goto_0
     return-void

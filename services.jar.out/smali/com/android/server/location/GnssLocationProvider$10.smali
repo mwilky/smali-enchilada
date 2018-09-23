@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/GnssLocationProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/GnssLocationProvider;
 
-    .line 1141
     iput-object p1, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 6
 
-    .line 1144
     new-instance v0, Lcom/android/server/location/GpsXtraDownloader;
 
     iget-object v1, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
@@ -50,17 +47,12 @@
 
     invoke-direct {v0, v1}, Lcom/android/server/location/GpsXtraDownloader;-><init>(Ljava/util/Properties;)V
 
-    .line 1145
-    .local v0, "xtraDownloader":Lcom/android/server/location/GpsXtraDownloader;
     invoke-virtual {v0}, Lcom/android/server/location/GpsXtraDownloader;->downloadXtraData()[B
 
     move-result-object v1
 
-    .line 1146
-    .local v1, "data":[B
     if-eqz v1, :cond_1
 
-    .line 1147
     invoke-static {}, Lcom/android/server/location/GnssLocationProvider;->access$900()Z
 
     move-result v2
@@ -73,7 +65,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1148
     :cond_0
     iget-object v2, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
@@ -81,7 +72,6 @@
 
     invoke-static {v2, v1, v3}, Lcom/android/server/location/GnssLocationProvider;->access$2200(Lcom/android/server/location/GnssLocationProvider;[BI)V
 
-    .line 1149
     iget-object v2, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v2}, Lcom/android/server/location/GnssLocationProvider;->access$2300(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/server/location/ExponentialBackOff;
@@ -90,7 +80,6 @@
 
     invoke-virtual {v2}, Lcom/android/server/location/ExponentialBackOff;->reset()V
 
-    .line 1152
     :cond_1
     iget-object v2, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
@@ -102,10 +91,8 @@
 
     invoke-static {v2, v3, v4, v5}, Lcom/android/server/location/GnssLocationProvider;->access$700(Lcom/android/server/location/GnssLocationProvider;IILjava/lang/Object;)V
 
-    .line 1154
     if-nez v1, :cond_2
 
-    .line 1157
     iget-object v2, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
     invoke-static {v2}, Lcom/android/server/location/GnssLocationProvider;->access$2400(Lcom/android/server/location/GnssLocationProvider;)Landroid/os/Handler;
@@ -116,7 +103,6 @@
 
     iget-object v4, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
-    .line 1158
     invoke-static {v4}, Lcom/android/server/location/GnssLocationProvider;->access$2300(Lcom/android/server/location/GnssLocationProvider;)Lcom/android/server/location/ExponentialBackOff;
 
     move-result-object v4
@@ -125,10 +111,8 @@
 
     move-result-wide v4
 
-    .line 1157
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1163
     :cond_2
     iget-object v2, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
@@ -138,7 +122,6 @@
 
     monitor-enter v2
 
-    .line 1164
     :try_start_0
     iget-object v3, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
@@ -154,7 +137,6 @@
 
     if-eqz v3, :cond_4
 
-    .line 1168
     :try_start_1
     iget-object v3, p0, Lcom/android/server/location/GnssLocationProvider$10;->this$0:Lcom/android/server/location/GnssLocationProvider;
 
@@ -164,7 +146,6 @@
 
     invoke-virtual {v3}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 1169
     invoke-static {}, Lcom/android/server/location/GnssLocationProvider;->access$900()Z
 
     move-result v3
@@ -182,12 +163,9 @@
 
     goto :goto_0
 
-    .line 1170
     :catch_0
     move-exception v3
 
-    .line 1171
-    .local v3, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v4, "GnssLocationProvider"
 
@@ -195,13 +173,10 @@
 
     invoke-static {v4, v5, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1173
-    .end local v3    # "e":Ljava/lang/Exception;
     :cond_3
     :goto_0
     goto :goto_1
 
-    .line 1175
     :cond_4
     const-string v3, "GnssLocationProvider"
 
@@ -209,14 +184,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1178
     :goto_1
     monitor-exit v2
 
-    .line 1179
     return-void
 
-    .line 1178
     :catchall_0
     move-exception v3
 

@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/OnePlusProcessManager;Landroid/os/Handler;)V
     .locals 0
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 439
     iput-object p1, p0, Lcom/android/server/am/OnePlusProcessManager$SettingsObserver;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
-    .line 440
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 441
     return-void
 .end method
 
@@ -37,14 +33,10 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 445
     iget-object v0, p0, Lcom/android/server/am/OnePlusProcessManager$SettingsObserver;->this$0:Lcom/android/server/am/OnePlusProcessManager;
 
     invoke-static {v0}, Lcom/android/server/am/OnePlusProcessManager;->access$000(Lcom/android/server/am/OnePlusProcessManager;)V
 
-    .line 446
     return-void
 .end method

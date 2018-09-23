@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/accessibility/MagnificationController;FI)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/accessibility/MagnificationController;
 
-    .line 581
     iput-object p1, p0, Lcom/android/server/accessibility/MagnificationController$2;->this$0:Lcom/android/server/accessibility/MagnificationController;
 
     iput p2, p0, Lcom/android/server/accessibility/MagnificationController$2;->val$scale:F
@@ -54,7 +52,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 581
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/server/accessibility/MagnificationController$2;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -66,9 +63,7 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 3
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 584
     iget-object v0, p0, Lcom/android/server/accessibility/MagnificationController$2;->this$0:Lcom/android/server/accessibility/MagnificationController;
 
     invoke-static {v0}, Lcom/android/server/accessibility/MagnificationController;->access$300(Lcom/android/server/accessibility/MagnificationController;)Lcom/android/server/accessibility/MagnificationController$SettingsBridge;
@@ -81,7 +76,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/accessibility/MagnificationController$SettingsBridge;->putMagnificationScale(FI)V
 
-    .line 585
     const/4 v0, 0x0
 
     return-object v0

@@ -27,37 +27,29 @@
 # direct methods
 .method constructor <init>(Landroid/media/AudioPlaybackConfiguration;Z)V
     .locals 1
-    .param p1, "apc"    # Landroid/media/AudioPlaybackConfiguration;
-    .param p2, "skipRamp"    # Z
 
-    .line 834
     invoke-direct {p0}, Lcom/android/server/audio/AudioEventLogger$Event;-><init>()V
 
-    .line 835
     invoke-virtual {p1}, Landroid/media/AudioPlaybackConfiguration;->getPlayerInterfaceId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mPlayerIId:I
 
-    .line 836
     iput-boolean p2, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mSkipRamp:Z
 
-    .line 837
     invoke-virtual {p1}, Landroid/media/AudioPlaybackConfiguration;->getClientUid()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mClientUid:I
 
-    .line 838
     invoke-virtual {p1}, Landroid/media/AudioPlaybackConfiguration;->getClientPid()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mClientPid:I
 
-    .line 839
     return-void
 .end method
 
@@ -66,7 +58,6 @@
 .method public eventToString()Ljava/lang/String;
     .locals 2
 
-    .line 843
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "ducking player piid:"
@@ -79,7 +70,6 @@
 
     const-string v1, " uid/pid:"
 
-    .line 844
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mClientUid:I
@@ -96,7 +86,6 @@
 
     const-string v1, " skip ramp:"
 
-    .line 845
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/server/audio/PlaybackActivityMonitor$DuckEvent;->mSkipRamp:Z
@@ -107,6 +96,5 @@
 
     move-result-object v0
 
-    .line 843
     return-object v0
 .end method

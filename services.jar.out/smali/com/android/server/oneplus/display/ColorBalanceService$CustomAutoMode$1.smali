@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;Lcom/android/server/oneplus/display/ColorBalanceService;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;
 
-    .line 1431
     iput-object p1, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode$1;->this$1:Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;
 
     iput-object p2, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode$1;->val$this$0:Lcom/android/server/oneplus/display/ColorBalanceService;
@@ -39,14 +37,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1434
     iget-object v0, p0, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode$1;->this$1:Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;
 
     invoke-static {v0}, Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;->access$1200(Lcom/android/server/oneplus/display/ColorBalanceService$CustomAutoMode;)V
 
-    .line 1435
     return-void
 .end method

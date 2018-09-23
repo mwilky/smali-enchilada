@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/server/autofill/AutofillManagerService;)V
     .locals 0
 
-    .line 678
     iput-object p1, p0, Lcom/android/server/autofill/AutofillManagerService$LocalService;->this$0:Lcom/android/server/autofill/AutofillManagerService;
 
     invoke-direct {p0}, Landroid/view/autofill/AutofillManagerInternal;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/autofill/AutofillManagerService;Lcom/android/server/autofill/AutofillManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
-    .param p2, "x1"    # Lcom/android/server/autofill/AutofillManagerService$1;
 
-    .line 678
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService$LocalService;-><init>(Lcom/android/server/autofill/AutofillManagerService;)V
 
     return-void
@@ -45,11 +41,7 @@
 # virtual methods
 .method public isCompatibilityModeRequested(Ljava/lang/String;JI)Z
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "versionCode"    # J
-    .param p4, "userId"    # I
 
-    .line 688
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService$LocalService;->this$0:Lcom/android/server/autofill/AutofillManagerService;
 
     invoke-static {v0}, Lcom/android/server/autofill/AutofillManagerService;->access$700(Lcom/android/server/autofill/AutofillManagerService;)Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
@@ -66,7 +58,6 @@
 .method public onBackKeyPressed()V
     .locals 2
 
-    .line 681
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sDebug:Z
 
     if-eqz v0, :cond_0
@@ -77,7 +68,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 682
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService$LocalService;->this$0:Lcom/android/server/autofill/AutofillManagerService;
 
@@ -89,6 +79,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/autofill/ui/AutoFillUI;->hideAll(Lcom/android/server/autofill/ui/AutoFillUI$AutoFillUiCallback;)V
 
-    .line 683
     return-void
 .end method

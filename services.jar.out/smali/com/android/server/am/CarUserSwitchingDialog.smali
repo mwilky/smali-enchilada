@@ -18,18 +18,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;ZLjava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "oldUser"    # Landroid/content/pm/UserInfo;
-    .param p4, "newUser"    # Landroid/content/pm/UserInfo;
-    .param p5, "aboveSystem"    # Z
-    .param p6, "switchingFromSystemUserMessage"    # Ljava/lang/String;
-    .param p7, "switchingToSystemUserMessage"    # Ljava/lang/String;
 
-    .line 56
     invoke-direct/range {p0 .. p7}, Lcom/android/server/am/UserSwitchingDialog;-><init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;ZLjava/lang/String;Ljava/lang/String;)V
 
-    .line 59
     invoke-virtual {p0}, Lcom/android/server/am/CarUserSwitchingDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -42,7 +33,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 60
     return-void
 .end method
 
@@ -51,12 +41,10 @@
 .method inflateContent()V
     .locals 6
 
-    .line 65
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CarUserSwitchingDialog;->setCancelable(Z)V
 
-    .line 66
     invoke-virtual {p0}, Lcom/android/server/am/CarUserSwitchingDialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -65,8 +53,6 @@
 
     move-result-object v0
 
-    .line 68
-    .local v0, "res":Landroid/content/res/Resources;
     invoke-virtual {p0}, Lcom/android/server/am/CarUserSwitchingDialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -83,11 +69,8 @@
 
     move-result-object v1
 
-    .line 71
-    .local v1, "view":Landroid/view/View;
     nop
 
-    .line 72
     invoke-virtual {p0}, Lcom/android/server/am/CarUserSwitchingDialog;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -100,8 +83,6 @@
 
     check-cast v2, Landroid/os/UserManager;
 
-    .line 73
-    .local v2, "userManager":Landroid/os/UserManager;
     iget-object v3, p0, Lcom/android/server/am/CarUserSwitchingDialog;->mNewUser:Landroid/content/pm/UserInfo;
 
     iget v3, v3, Landroid/content/pm/UserInfo;->id:I
@@ -110,25 +91,18 @@
 
     move-result-object v3
 
-    .line 74
-    .local v3, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v3, :cond_0
 
-    .line 75
     const v4, 0x1050035
 
-    .line 76
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v4
 
-    .line 75
     invoke-static {v3, v4}, Lcom/android/server/am/CarUserSwitchingDialog$CircleFramedDrawable;->getInstance(Landroid/graphics/Bitmap;F)Lcom/android/server/am/CarUserSwitchingDialog$CircleFramedDrawable;
 
     move-result-object v4
 
-    .line 77
-    .local v4, "drawable":Lcom/android/server/am/CarUserSwitchingDialog$CircleFramedDrawable;
     const v5, 0x10204aa
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -137,11 +111,8 @@
 
     check-cast v5, Landroid/widget/ImageView;
 
-    .line 78
     invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 81
-    .end local v4    # "drawable":Lcom/android/server/am/CarUserSwitchingDialog$CircleFramedDrawable;
     :cond_0
     const v4, 0x10204a9
 
@@ -153,16 +124,13 @@
 
     const v5, 0x10400fb
 
-    .line 82
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 83
     invoke-virtual {p0, v1}, Lcom/android/server/am/CarUserSwitchingDialog;->setView(Landroid/view/View;)V
 
-    .line 84
     return-void
 .end method

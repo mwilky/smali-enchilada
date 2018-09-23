@@ -30,16 +30,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/NetworkScoreService;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NetworkScoreService;
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 1068
     iput-object p1, p0, Lcom/android/server/NetworkScoreService$ServiceHandler;->this$0:Lcom/android/server/NetworkScoreService;
 
-    .line 1069
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1070
     return-void
 .end method
 
@@ -47,16 +42,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1074
     iget v0, p1, Landroid/os/Message;->what:I
 
-    .line 1075
-    .local v0, "what":I
     packed-switch v0, :pswitch_data_0
 
-    .line 1082
     const-string v1, "NetworkScoreService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -77,16 +67,13 @@
 
     goto :goto_0
 
-    .line 1078
     :pswitch_0
     iget-object v1, p0, Lcom/android/server/NetworkScoreService$ServiceHandler;->this$0:Lcom/android/server/NetworkScoreService;
 
     invoke-static {v1}, Lcom/android/server/NetworkScoreService;->access$100(Lcom/android/server/NetworkScoreService;)V
 
-    .line 1079
     nop
 
-    .line 1084
     :goto_0
     return-void
 

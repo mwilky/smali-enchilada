@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 3346
     invoke-direct {p0}, Landroid/net/ConnectivityManager$OnStartTetheringCallback;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/OnePlusPowerController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/OnePlusPowerController$1;
 
-    .line 3346
     invoke-direct {p0}, Lcom/android/server/OnePlusPowerController$OnStartTetheringCallback;-><init>()V
 
     return-void
@@ -39,13 +36,11 @@
 .method public onTetheringFailed()V
     .locals 0
 
-    .line 3354
     return-void
 .end method
 
 .method public onTetheringStarted()V
     .locals 0
 
-    .line 3350
     return-void
 .end method

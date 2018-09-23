@@ -32,17 +32,14 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 2964
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2965
     new-instance v0, Ljava/util/concurrent/SynchronousQueue;
 
     invoke-direct {v0}, Ljava/util/concurrent/SynchronousQueue;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;->mResult:Ljava/util/concurrent/SynchronousQueue;
 
-    .line 2967
     new-instance v0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver$1;-><init>(Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;)V
@@ -54,9 +51,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/pm/PackageManagerShellCommand$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$1;
 
-    .line 2964
     invoke-direct {p0}, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;-><init>()V
 
     return-void
@@ -64,9 +59,7 @@
 
 .method static synthetic access$500(Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;)Ljava/util/concurrent/SynchronousQueue;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;
 
-    .line 2964
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;->mResult:Ljava/util/concurrent/SynchronousQueue;
 
     return-object v0
@@ -77,7 +70,6 @@
 .method public getIntentSender()Landroid/content/IntentSender;
     .locals 2
 
-    .line 2980
     new-instance v0, Landroid/content/IntentSender;
 
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;->mLocalSender:Landroid/content/IIntentSender$Stub;
@@ -90,7 +82,6 @@
 .method public getResult()Landroid/content/Intent;
     .locals 2
 
-    .line 2985
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/PackageManagerShellCommand$LocalIntentReceiver;->mResult:Ljava/util/concurrent/SynchronousQueue;
 
@@ -104,12 +95,9 @@
 
     return-object v0
 
-    .line 2986
     :catch_0
     move-exception v0
 
-    .line 2987
-    .local v0, "e":Ljava/lang/InterruptedException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

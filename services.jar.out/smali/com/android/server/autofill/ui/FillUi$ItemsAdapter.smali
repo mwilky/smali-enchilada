@@ -53,20 +53,16 @@
         }
     .end annotation
 
-    .line 771
-    .local p2, "items":Ljava/util/List;, "Ljava/util/List<Lcom/android/server/autofill/ui/FillUi$ViewItem;>;"
     iput-object p1, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->this$0:Lcom/android/server/autofill/ui/FillUi;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 769
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mFilteredItems:Ljava/util/List;
 
-    .line 772
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1, p2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
@@ -77,20 +73,16 @@
 
     iput-object p1, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mAllItems:Ljava/util/List;
 
-    .line 773
     iget-object p1, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mFilteredItems:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 774
     return-void
 .end method
 
 .method static synthetic access$700(Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;
 
-    .line 766
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mAllItems:Ljava/util/List;
 
     return-object v0
@@ -98,9 +90,7 @@
 
 .method static synthetic access$800(Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;
 
-    .line 766
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mFilteredItems:Ljava/util/List;
 
     return-object v0
@@ -111,7 +101,6 @@
 .method public getCount()I
     .locals 1
 
-    .line 812
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mFilteredItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -124,7 +113,6 @@
 .method public getFilter()Landroid/widget/Filter;
     .locals 1
 
-    .line 778
     new-instance v0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter$1;-><init>(Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;)V
@@ -134,9 +122,7 @@
 
 .method public getItem(I)Lcom/android/server/autofill/ui/FillUi$ViewItem;
     .locals 1
-    .param p1, "position"    # I
 
-    .line 817
     iget-object v0, p0, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->mFilteredItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -151,7 +137,6 @@
 .method public bridge synthetic getItem(I)Ljava/lang/Object;
     .locals 0
 
-    .line 766
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->getItem(I)Lcom/android/server/autofill/ui/FillUi$ViewItem;
 
     move-result-object p1
@@ -161,9 +146,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
 
-    .line 822
     int-to-long v0, p1
 
     return-wide v0
@@ -171,11 +154,7 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 1
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 827
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/ui/FillUi$ItemsAdapter;->getItem(I)Lcom/android/server/autofill/ui/FillUi$ViewItem;
 
     move-result-object v0
@@ -188,7 +167,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 832
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

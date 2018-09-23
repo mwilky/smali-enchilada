@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/fingerprint/FingerprintService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
 
-    .line 242
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$2;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 245
     const-string v0, "com.android.server.fingerprint.ACTION_LOCKOUT_RESET"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 246
     const-string/jumbo v0, "lockout_reset_user"
 
     const/4 v1, 0x0
@@ -60,14 +54,10 @@
 
     move-result v0
 
-    .line 247
-    .local v0, "user":I
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$2;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v2, v1, v0}, Lcom/android/server/fingerprint/FingerprintService;->resetFailedAttemptsForUser(ZI)V
 
-    .line 249
-    .end local v0    # "user":I
     :cond_0
     return-void
 .end method

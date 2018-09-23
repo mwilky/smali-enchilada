@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/autofill/ui/SaveUi;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/autofill/ui/SaveUi;
 
-    .line 283
     iput-object p1, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     iput p2, p0, Lcom/android/server/autofill/ui/SaveUi$1;->val$type:I
@@ -39,38 +37,27 @@
 # virtual methods
 .method public onClickHandler(Landroid/view/View;Landroid/app/PendingIntent;Landroid/content/Intent;)Z
     .locals 8
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "pendingIntent"    # Landroid/app/PendingIntent;
-    .param p3, "intent"    # Landroid/content/Intent;
 
-    .line 287
     iget-object v0, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     iget v1, p0, Lcom/android/server/autofill/ui/SaveUi$1;->val$type:I
 
-    .line 288
     const/16 v2, 0x46c
 
     invoke-static {v0, v2, v1}, Lcom/android/server/autofill/ui/SaveUi;->access$000(Lcom/android/server/autofill/ui/SaveUi;II)Landroid/metrics/LogMaker;
 
     move-result-object v0
 
-    .line 292
-    .local v0, "log":Landroid/metrics/LogMaker;
     invoke-static {p2, p3}, Lcom/android/server/autofill/ui/SaveUi;->access$100(Landroid/app/PendingIntent;Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 293
-    .local v1, "isValid":Z
     const/4 v2, 0x0
 
     if-nez v1, :cond_0
 
-    .line 294
     invoke-virtual {v0, v2}, Landroid/metrics/LogMaker;->setType(I)Landroid/metrics/LogMaker;
 
-    .line 295
     iget-object v3, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     invoke-static {v3}, Lcom/android/server/autofill/ui/SaveUi;->access$200(Lcom/android/server/autofill/ui/SaveUi;)Lcom/android/internal/logging/MetricsLogger;
@@ -79,10 +66,8 @@
 
     invoke-virtual {v3, v0}, Lcom/android/internal/logging/MetricsLogger;->write(Landroid/metrics/LogMaker;)V
 
-    .line 296
     return v2
 
-    .line 298
     :cond_0
     sget-boolean v3, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
@@ -94,7 +79,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 299
     :cond_1
     iget-object v3, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
@@ -106,13 +90,10 @@
 
     move-result-object v3
 
-    .line 300
-    .local v3, "token":Landroid/os/IBinder;
     const-string v4, "android.view.autofill.extra.RESTORE_SESSION_TOKEN"
 
     invoke-virtual {p3, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/IBinder;)Landroid/content/Intent;
 
-    .line 302
     :try_start_0
     iget-object v4, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
@@ -128,7 +109,6 @@
 
     invoke-interface {v4, v5, p3}, Landroid/view/autofill/IAutoFillManagerClient;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;)V
 
-    .line 304
     iget-object v4, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     invoke-static {v4}, Lcom/android/server/autofill/ui/SaveUi;->access$300(Lcom/android/server/autofill/ui/SaveUi;)Lcom/android/server/autofill/ui/PendingUi;
@@ -139,7 +119,6 @@
 
     invoke-virtual {v4, v5}, Lcom/android/server/autofill/ui/PendingUi;->setState(I)V
 
-    .line 305
     sget-boolean v4, Lcom/android/server/autofill/Helper;->sDebug:Z
 
     if-eqz v4, :cond_2
@@ -162,18 +141,15 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 306
     :cond_2
     iget-object v4, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     invoke-virtual {v4}, Lcom/android/server/autofill/ui/SaveUi;->hide()Lcom/android/server/autofill/ui/PendingUi;
 
-    .line 307
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4}, Landroid/metrics/LogMaker;->setType(I)Landroid/metrics/LogMaker;
 
-    .line 308
     iget-object v5, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     invoke-static {v5}, Lcom/android/server/autofill/ui/SaveUi;->access$200(Lcom/android/server/autofill/ui/SaveUi;)Lcom/android/internal/logging/MetricsLogger;
@@ -184,15 +160,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 309
     return v4
 
-    .line 310
     :catch_0
     move-exception v4
 
-    .line 311
-    .local v4, "e":Landroid/os/RemoteException;
     const-string v5, "AutofillSaveUi"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -211,12 +183,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 312
     const/16 v5, 0xb
 
     invoke-virtual {v0, v5}, Landroid/metrics/LogMaker;->setType(I)Landroid/metrics/LogMaker;
 
-    .line 313
     iget-object v5, p0, Lcom/android/server/autofill/ui/SaveUi$1;->this$0:Lcom/android/server/autofill/ui/SaveUi;
 
     invoke-static {v5}, Lcom/android/server/autofill/ui/SaveUi;->access$200(Lcom/android/server/autofill/ui/SaveUi;)Lcom/android/internal/logging/MetricsLogger;
@@ -225,6 +195,5 @@
 
     invoke-virtual {v5, v0}, Lcom/android/internal/logging/MetricsLogger;->write(Landroid/metrics/LogMaker;)V
 
-    .line 314
     return v2
 .end method

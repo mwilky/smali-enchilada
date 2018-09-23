@@ -25,10 +25,8 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 773
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 774
     new-instance v0, Landroid/util/AtomicFile;
 
     new-instance v1, Ljava/io/File;
@@ -43,7 +41,6 @@
 
     iput-object v0, p0, Lcom/android/server/display/PersistentDataStore$Injector;->mAtomicFile:Landroid/util/AtomicFile;
 
-    .line 776
     return-void
 .end method
 
@@ -51,42 +48,31 @@
 # virtual methods
 .method public finishWrite(Ljava/io/OutputStream;Z)V
     .locals 3
-    .param p1, "os"    # Ljava/io/OutputStream;
-    .param p2, "success"    # Z
 
-    .line 787
     instance-of v0, p1, Ljava/io/FileOutputStream;
 
     if-eqz v0, :cond_1
 
-    .line 790
     move-object v0, p1
 
     check-cast v0, Ljava/io/FileOutputStream;
 
-    .line 791
-    .local v0, "fos":Ljava/io/FileOutputStream;
     if-eqz p2, :cond_0
 
-    .line 792
     iget-object v1, p0, Lcom/android/server/display/PersistentDataStore$Injector;->mAtomicFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v1, v0}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
 
     goto :goto_0
 
-    .line 794
     :cond_0
     iget-object v1, p0, Lcom/android/server/display/PersistentDataStore$Injector;->mAtomicFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v1, v0}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 796
     :goto_0
     return-void
 
-    .line 788
-    .end local v0    # "fos":Ljava/io/FileOutputStream;
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -117,7 +103,6 @@
         }
     .end annotation
 
-    .line 779
     iget-object v0, p0, Lcom/android/server/display/PersistentDataStore$Injector;->mAtomicFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v0}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
@@ -135,7 +120,6 @@
         }
     .end annotation
 
-    .line 783
     iget-object v0, p0, Lcom/android/server/display/PersistentDataStore$Injector;->mAtomicFile:Landroid/util/AtomicFile;
 
     invoke-virtual {v0}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;

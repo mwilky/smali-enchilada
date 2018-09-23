@@ -44,8 +44,6 @@
 .method private constructor <init>(Lcom/android/server/wm/WindowContainer;)V
     .locals 0
 
-    .line 1057
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
     iput-object p1, p0, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->this$0:Lcom/android/server/wm/WindowContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,11 +53,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/WindowContainer;Lcom/android/server/wm/WindowContainer$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/WindowContainer;
-    .param p2, "x1"    # Lcom/android/server/wm/WindowContainer$1;
 
-    .line 1057
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
     invoke-direct {p0, p1}, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;-><init>(Lcom/android/server/wm/WindowContainer;)V
 
     return-void
@@ -69,15 +63,11 @@
 # virtual methods
 .method public apply(Lcom/android/server/wm/WindowState;)Z
     .locals 1
-    .param p1, "w"    # Lcom/android/server/wm/WindowState;
 
-    .line 1067
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
     iget-object v0, p0, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->mConsumer:Ljava/util/function/Consumer;
 
     invoke-interface {v0, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 1068
     const/4 v0, 0x0
 
     return v0
@@ -86,8 +76,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 1057
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
     check-cast p1, Lcom/android/server/wm/WindowState;
 
     invoke-virtual {p0, p1}, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->apply(Lcom/android/server/wm/WindowState;)Z
@@ -100,13 +88,10 @@
 .method release()V
     .locals 1
 
-    .line 1072
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->mConsumer:Ljava/util/function/Consumer;
 
-    .line 1073
     iget-object v0, p0, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->this$0:Lcom/android/server/wm/WindowContainer;
 
     invoke-static {v0}, Lcom/android/server/wm/WindowContainer;->access$100(Lcom/android/server/wm/WindowContainer;)Landroid/util/Pools$SynchronizedPool;
@@ -115,7 +100,6 @@
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SynchronizedPool;->release(Ljava/lang/Object;)Z
 
-    .line 1074
     return-void
 .end method
 
@@ -130,11 +114,7 @@
         }
     .end annotation
 
-    .line 1062
-    .local p0, "this":Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;, "Lcom/android/server/wm/WindowContainer<TE;>.ForAllWindowsConsumerWrapper;"
-    .local p1, "consumer":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<Lcom/android/server/wm/WindowState;>;"
     iput-object p1, p0, Lcom/android/server/wm/WindowContainer$ForAllWindowsConsumerWrapper;->mConsumer:Ljava/util/function/Consumer;
 
-    .line 1063
     return-void
 .end method

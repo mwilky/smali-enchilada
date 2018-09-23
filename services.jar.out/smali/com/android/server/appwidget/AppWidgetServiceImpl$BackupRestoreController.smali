@@ -70,26 +70,22 @@
 .method private constructor <init>(Lcom/android/server/appwidget/AppWidgetServiceImpl;)V
     .locals 0
 
-    .line 4323
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4335
     new-instance p1, Ljava/util/HashSet;
 
     invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mPrunedApps:Ljava/util/HashSet;
 
-    .line 4337
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByProvider:Ljava/util/HashMap;
 
-    .line 4339
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
@@ -101,10 +97,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/appwidget/AppWidgetServiceImpl;Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/appwidget/AppWidgetServiceImpl;
-    .param p2, "x1"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$1;
 
-    .line 4323
     invoke-direct {p0, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;-><init>(Lcom/android/server/appwidget/AppWidgetServiceImpl;)V
 
     return-void
@@ -112,8 +105,6 @@
 
 .method private alreadyStashed(Ljava/util/ArrayList;II)Z
     .locals 5
-    .param p2, "oldId"    # I
-    .param p3, "newId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -123,31 +114,23 @@
         }
     .end annotation
 
-    .line 4777
-    .local p1, "stash":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4778
-    .local v0, "N":I
     const/4 v1, 0x0
 
     move v2, v1
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 4779
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
 
-    .line 4780
-    .local v3, "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     iget v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->oldId:I
 
     if-ne v4, p2, :cond_0
@@ -156,20 +139,15 @@
 
     if-ne v4, p3, :cond_0
 
-    .line 4781
     const/4 v1, 0x1
 
     return v1
 
-    .line 4778
-    .end local v3    # "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4784
-    .end local v2    # "i":I
     :cond_1
     return v1
 .end method
@@ -185,59 +163,41 @@
         }
     .end annotation
 
-    .line 4894
-    .local p1, "updates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     const/4 v0, 0x0
 
-    .line 4895
-    .local v0, "pending":I
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 4896
-    .local v1, "N":I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 4897
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
 
-    .line 4898
-    .local v3, "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     iget-boolean v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->notified:Z
 
     if-nez v4, :cond_0
 
-    .line 4899
     add-int/lit8 v0, v0, 0x1
 
-    .line 4896
-    .end local v3    # "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4902
-    .end local v2    # "i":I
     :cond_1
     return v0
 .end method
 
 .method private findProviderLocked(Landroid/content/ComponentName;I)Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     .locals 4
-    .param p1, "componentName"    # Landroid/content/ComponentName;
-    .param p2, "userId"    # I
 
-    .line 4697
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -248,15 +208,11 @@
 
     move-result v0
 
-    .line 4698
-    .local v0, "providerCount":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 4699
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -269,8 +225,6 @@
 
     check-cast v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4700
-    .local v2, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     invoke-virtual {v2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->getUserId()I
 
     move-result v3
@@ -281,25 +235,19 @@
 
     iget-object v3, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->componentName:Landroid/content/ComponentName;
 
-    .line 4701
     invoke-virtual {v3, p1}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 4702
     return-object v2
 
-    .line 4698
-    .end local v2    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 4705
-    .end local v1    # "i":I
     :cond_1
     const/4 v1, 0x0
 
@@ -308,11 +256,7 @@
 
 .method private findRestoredWidgetLocked(ILcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;)Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     .locals 6
-    .param p1, "restoredId"    # I
-    .param p2, "host"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .param p3, "p"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4710
     const-string v0, "BackupRestoreController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -343,7 +287,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4714
     const/4 v0, 0x0
 
     if-eqz p3, :cond_3
@@ -352,7 +295,6 @@
 
     goto :goto_1
 
-    .line 4718
     :cond_0
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -364,15 +306,11 @@
 
     move-result v1
 
-    .line 4719
-    .local v1, "N":I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_2
 
-    .line 4720
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -385,8 +323,6 @@
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4721
-    .local v3, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     iget v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->restoredId:I
 
     if-ne v4, p1, :cond_1
@@ -397,7 +333,6 @@
 
     iget-object v5, p2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
-    .line 4722
     invoke-virtual {v4, v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -410,14 +345,12 @@
 
     iget-object v5, p3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
-    .line 4723
     invoke-virtual {v4, v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 4725
     const-string v0, "BackupRestoreController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -442,23 +375,16 @@
 
     invoke-static {v0, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4727
     return-object v3
 
-    .line 4719
-    .end local v3    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4730
-    .end local v2    # "i":I
     :cond_2
     return-object v0
 
-    .line 4715
-    .end local v1    # "N":I
     :cond_3
     :goto_1
     return-object v0
@@ -466,10 +392,7 @@
 
 .method private isProviderAndHostInUser(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;I)Z
     .locals 1
-    .param p1, "widget"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .param p2, "userId"    # I
 
-    .line 4859
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     invoke-virtual {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->getUserId()I
@@ -484,7 +407,6 @@
 
     iget-object v0, p1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4860
     invoke-virtual {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->getUserId()I
 
     move-result v0
@@ -499,17 +421,13 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 4859
     :goto_0
     return v0
 .end method
 
 .method private packageNeedsWidgetBackupLocked(Ljava/lang/String;I)Z
     .locals 7
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 4734
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -520,17 +438,13 @@
 
     move-result v0
 
-    .line 4735
-    .local v0, "N":I
     const/4 v1, 0x0
 
     move v2, v1
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_3
 
-    .line 4736
     iget-object v3, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -543,18 +457,14 @@
 
     check-cast v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4739
-    .local v3, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     invoke-direct {p0, v3, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->isProviderAndHostInUser(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;I)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 4740
     goto :goto_1
 
-    .line 4743
     :cond_0
     iget-object v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -566,15 +476,11 @@
 
     if-eqz v4, :cond_1
 
-    .line 4745
     return v5
 
-    .line 4748
     :cond_1
     iget-object v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4749
-    .local v4, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     if-eqz v4, :cond_2
 
     invoke-virtual {v4, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->isInPackageForUser(Ljava/lang/String;I)Z
@@ -583,35 +489,25 @@
 
     if-eqz v6, :cond_2
 
-    .line 4751
     return v5
 
-    .line 4735
-    .end local v3    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v4    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_2
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4754
-    .end local v2    # "i":I
     :cond_3
     return v1
 .end method
 
 .method private parseWidgetIdOptions(Lorg/xmlpull/v1/XmlPullParser;)Landroid/os/Bundle;
     .locals 9
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
 
-    .line 4864
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 4865
-    .local v0, "options":Landroid/os/Bundle;
     const-string/jumbo v1, "min_width"
 
     const/4 v2, 0x0
@@ -620,24 +516,18 @@
 
     move-result-object v1
 
-    .line 4866
-    .local v1, "minWidthString":Ljava/lang/String;
     const/16 v3, 0x10
 
     if-eqz v1, :cond_0
 
-    .line 4867
     const-string v4, "appWidgetMinWidth"
 
-    .line 4868
     invoke-static {v1, v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 4867
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4870
     :cond_0
     const-string/jumbo v4, "min_height"
 
@@ -645,22 +535,16 @@
 
     move-result-object v4
 
-    .line 4871
-    .local v4, "minHeightString":Ljava/lang/String;
     if-eqz v4, :cond_1
 
-    .line 4872
     const-string v5, "appWidgetMinHeight"
 
-    .line 4873
     invoke-static {v4, v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v6
 
-    .line 4872
     invoke-virtual {v0, v5, v6}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4875
     :cond_1
     const-string/jumbo v5, "max_width"
 
@@ -668,22 +552,16 @@
 
     move-result-object v5
 
-    .line 4876
-    .local v5, "maxWidthString":Ljava/lang/String;
     if-eqz v5, :cond_2
 
-    .line 4877
     const-string v6, "appWidgetMaxWidth"
 
-    .line 4878
     invoke-static {v5, v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 4877
     invoke-virtual {v0, v6, v7}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4880
     :cond_2
     const-string/jumbo v6, "max_height"
 
@@ -691,55 +569,40 @@
 
     move-result-object v6
 
-    .line 4881
-    .local v6, "maxHeightString":Ljava/lang/String;
     if-eqz v6, :cond_3
 
-    .line 4882
     const-string v7, "appWidgetMaxHeight"
 
-    .line 4883
     invoke-static {v6, v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v8
 
-    .line 4882
     invoke-virtual {v0, v7, v8}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4885
     :cond_3
-    const-string/jumbo v7, "host_category"
+    const-string v7, "host_category"
 
     invoke-interface {p1, v2, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4886
-    .local v2, "categoryString":Ljava/lang/String;
     if-eqz v2, :cond_4
 
-    .line 4887
     const-string v7, "appWidgetCategory"
 
-    .line 4888
     invoke-static {v2, v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v3
 
-    .line 4887
     invoke-virtual {v0, v7, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 4890
     :cond_4
     return-object v0
 .end method
 
 .method private pruneWidgetStateLocked(Ljava/lang/String;I)V
     .locals 5
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 4826
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mPrunedApps:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -748,7 +611,6 @@
 
     if-nez v0, :cond_3
 
-    .line 4828
     const-string v0, "BackupRestoreController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -767,7 +629,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4830
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -780,12 +641,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 4830
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_2
 
-    .line 4831
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -798,16 +656,10 @@
 
     check-cast v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4833
-    .local v1, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     iget-object v2, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 4834
-    .local v2, "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v3, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4836
-    .local v3, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     invoke-static {v2, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->access$3500(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/lang/String;I)Z
 
     move-result v4
@@ -816,45 +668,34 @@
 
     if-eqz v3, :cond_1
 
-    .line 4837
     invoke-virtual {v3, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->isInPackageForUser(Ljava/lang/String;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 4841
     :cond_0
     iget-object v4, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 4842
     iget-object v4, v3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 4845
     iget-object v4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v4, v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4200(Lcom/android/server/appwidget/AppWidgetServiceImpl;Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;)V
 
-    .line 4846
     iget-object v4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-virtual {v4, v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->removeWidgetLocked(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;)V
 
-    .line 4830
-    .end local v1    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v2    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .end local v3    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_1
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 4849
-    .end local v0    # "i":I
     :cond_2
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mPrunedApps:Ljava/util/HashSet;
 
@@ -862,7 +703,6 @@
 
     goto :goto_1
 
-    .line 4852
     :cond_3
     const-string v0, "BackupRestoreController"
 
@@ -886,69 +726,51 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4855
     :goto_1
     return-void
 .end method
 
 .method private sendWidgetRestoreBroadcastLocked(Ljava/lang/String;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;[I[ILandroid/os/UserHandle;)V
     .locals 3
-    .param p1, "action"    # Ljava/lang/String;
-    .param p2, "provider"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .param p3, "host"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .param p4, "oldIds"    # [I
-    .param p5, "newIds"    # [I
-    .param p6, "userHandle"    # Landroid/os/UserHandle;
 
-    .line 4806
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4807
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "appWidgetOldIds"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
 
-    .line 4808
     const-string v1, "appWidgetIds"
 
     invoke-virtual {v0, v1, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
 
-    .line 4809
     if-eqz p2, :cond_0
 
-    .line 4810
     iget-object v1, p2, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget-object v1, v1, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 4811
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v1, v0, p6}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4100(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 4813
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 4814
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 4815
     iget-object v1, p3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
     iget-object v1, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4816
-    const-string/jumbo v1, "hostId"
+    const-string v1, "hostId"
 
     iget-object v2, p3, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
@@ -956,23 +778,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 4817
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v1, v0, p6}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4100(Lcom/android/server/appwidget/AppWidgetServiceImpl;Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 4819
     :cond_1
     return-void
 .end method
 
 .method private stashHostRestoreUpdateLocked(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;II)V
     .locals 4
-    .param p1, "host"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .param p2, "oldId"    # I
-    .param p3, "newId"    # I
 
-    .line 4788
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByHost:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -981,25 +797,20 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4789
-    .local v0, "r":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     if-nez v0, :cond_0
 
-    .line 4790
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v0, v1
 
-    .line 4791
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByHost:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 4793
     :cond_0
     invoke-direct {p0, v0, p2, p3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->alreadyStashed(Ljava/util/ArrayList;II)Z
 
@@ -1007,7 +818,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 4795
     const-string v1, "BackupRestoreController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1038,10 +848,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4798
     return-void
 
-    .line 4801
     :cond_1
     :goto_0
     new-instance v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
@@ -1050,17 +858,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4802
     return-void
 .end method
 
 .method private stashProviderRestoreUpdateLocked(Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;II)V
     .locals 4
-    .param p1, "provider"    # Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .param p2, "oldId"    # I
-    .param p3, "newId"    # I
 
-    .line 4758
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1069,25 +872,20 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4759
-    .local v0, "r":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     if-nez v0, :cond_0
 
-    .line 4760
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move-object v0, v1
 
-    .line 4761
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 4764
     :cond_0
     invoke-direct {p0, v0, p2, p3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->alreadyStashed(Ljava/util/ArrayList;II)Z
 
@@ -1095,7 +893,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 4766
     const-string v1, "BackupRestoreController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1126,10 +923,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4769
     return-void
 
-    .line 4772
     :cond_1
     :goto_0
     new-instance v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
@@ -1138,7 +933,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4773
     return-void
 .end method
 
@@ -1146,7 +940,6 @@
 # virtual methods
 .method public getWidgetParticipants(I)Ljava/util/List;
     .locals 7
-    .param p1, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -1156,7 +949,6 @@
         }
     .end annotation
 
-    .line 4344
     const-string v0, "BackupRestoreController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1175,13 +967,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4347
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 4348
-    .local v0, "packages":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
@@ -1190,7 +979,6 @@
 
     monitor-enter v1
 
-    .line 4349
     :try_start_0
     iget-object v2, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -1202,15 +990,11 @@
 
     move-result v2
 
-    .line 4350
-    .local v2, "N":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_2
 
-    .line 4351
     iget-object v4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v4}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -1223,18 +1007,14 @@
 
     check-cast v4, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4354
-    .local v4, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     invoke-direct {p0, v4, p1}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->isProviderAndHostInUser(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;I)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 4355
     goto :goto_1
 
-    .line 4358
     :cond_0
     iget-object v5, v4, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -1244,14 +1024,10 @@
 
     invoke-virtual {v0, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 4359
     iget-object v5, v4, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4360
-    .local v5, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     if-eqz v5, :cond_1
 
-    .line 4361
     iget-object v6, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
     iget-object v6, v6, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;->componentName:Landroid/content/ComponentName;
@@ -1262,31 +1038,23 @@
 
     invoke-virtual {v0, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 4350
-    .end local v4    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v5    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_1
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 4364
-    .end local v2    # "N":I
-    .end local v3    # "i":I
     :cond_2
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4365
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     return-object v1
 
-    .line 4364
     :catchall_0
     move-exception v2
 
@@ -1300,10 +1068,7 @@
 
 .method public getWidgetState(Ljava/lang/String;I)[B
     .locals 10
-    .param p1, "backedupPackage"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 4370
     const-string v0, "BackupRestoreController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1322,13 +1087,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4373
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 4374
-    .local v0, "stream":Ljava/io/ByteArrayOutputStream;
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v1}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
@@ -1337,7 +1099,6 @@
 
     monitor-enter v1
 
-    .line 4377
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->packageNeedsWidgetBackupLocked(Ljava/lang/String;I)Z
 
@@ -1347,22 +1108,18 @@
 
     if-nez v2, :cond_0
 
-    .line 4378
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v3
 
-    .line 4382
     :cond_0
     :try_start_1
     new-instance v2, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v2}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 4383
-    .local v2, "out":Lorg/xmlpull/v1/XmlSerializer;
     sget-object v4, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v4}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -1371,7 +1128,6 @@
 
     invoke-interface {v2, v0, v4}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 4384
     const/4 v4, 0x1
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1380,12 +1136,10 @@
 
     invoke-interface {v2, v3, v4}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 4385
     const-string/jumbo v4, "ws"
 
     invoke-interface {v2, v3, v4}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4386
     const-string/jumbo v4, "version"
 
     const/4 v5, 0x2
@@ -1396,16 +1150,12 @@
 
     invoke-interface {v2, v3, v4, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4387
     const-string/jumbo v4, "pkg"
 
     invoke-interface {v2, v3, v4, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4392
     const/4 v4, 0x0
 
-    .line 4393
-    .local v4, "index":I
     iget-object v5, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -1416,21 +1166,15 @@
 
     move-result v5
 
-    .line 4394
-    .local v5, "N":I
     const/4 v6, 0x0
 
     move v7, v4
 
     move v4, v6
 
-    .line 4394
-    .local v4, "i":I
-    .local v7, "index":I
     :goto_0
     if-ge v4, v5, :cond_3
 
-    .line 4395
     iget-object v8, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -1443,47 +1187,36 @@
 
     check-cast v8, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4397
-    .local v8, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     invoke-virtual {v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->shouldBePersisted()Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    .line 4398
     invoke-virtual {v8, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->isInPackageForUser(Ljava/lang/String;I)Z
 
     move-result v9
 
     if-nez v9, :cond_1
 
-    .line 4399
     invoke-virtual {v8, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->hostedByPackageForUser(Ljava/lang/String;I)Z
 
     move-result v9
 
     if-eqz v9, :cond_2
 
-    .line 4400
     :cond_1
     iput v7, v8, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->tag:I
 
-    .line 4401
     invoke-static {v2, v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3300(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;)V
 
-    .line 4402
     add-int/lit8 v7, v7, 0x1
 
-    .line 4394
-    .end local v8    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 4406
-    .end local v4    # "i":I
     :cond_3
     iget-object v4, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -1495,25 +1228,15 @@
 
     move-result v4
 
-    .line 4407
-    .end local v5    # "N":I
-    .local v4, "N":I
     const/4 v5, 0x0
 
-    .line 4408
-    .end local v7    # "index":I
-    .local v5, "index":I
     move v7, v5
 
     move v5, v6
 
-    .line 4408
-    .local v5, "i":I
-    .restart local v7    # "index":I
     :goto_1
     if-ge v5, v4, :cond_6
 
-    .line 4409
     iget-object v8, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3400(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -1526,8 +1249,6 @@
 
     check-cast v8, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 4411
-    .local v8, "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v9, v8, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v9}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1536,39 +1257,30 @@
 
     if-nez v9, :cond_5
 
-    .line 4412
     invoke-virtual {v8, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->isInPackageForUser(Ljava/lang/String;I)Z
 
     move-result v9
 
     if-nez v9, :cond_4
 
-    .line 4413
     invoke-static {v8, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->access$3500(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/lang/String;I)Z
 
     move-result v9
 
     if-eqz v9, :cond_5
 
-    .line 4414
     :cond_4
     iput v7, v8, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->tag:I
 
-    .line 4415
     invoke-static {v2, v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3600(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;)V
 
-    .line 4416
     add-int/lit8 v7, v7, 0x1
 
-    .line 4408
-    .end local v8    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     :cond_5
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 4422
-    .end local v5    # "i":I
     :cond_6
     iget-object v5, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
@@ -1582,20 +1294,13 @@
 
     move v4, v5
 
-    .line 4423
     nop
 
-    .line 4423
-    .local v6, "i":I
     :goto_2
     move v5, v6
 
-    .line 4423
-    .end local v6    # "i":I
-    .restart local v5    # "i":I
     if-ge v5, v4, :cond_9
 
-    .line 4424
     iget-object v6, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v6}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3100(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -1608,12 +1313,8 @@
 
     check-cast v6, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
-    .line 4426
-    .local v6, "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     iget-object v8, v6, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4427
-    .local v8, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     iget-object v9, v6, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     invoke-virtual {v9, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->isInPackageForUser(Ljava/lang/String;I)Z
@@ -1624,66 +1325,46 @@
 
     if-eqz v8, :cond_8
 
-    .line 4429
     invoke-virtual {v8, p1, p2}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->isInPackageForUser(Ljava/lang/String;I)Z
 
     move-result v9
 
     if-eqz v9, :cond_8
 
-    .line 4430
     :cond_7
     invoke-static {v2, v6}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3700(Lorg/xmlpull/v1/XmlSerializer;Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;)V
 
-    .line 4423
-    .end local v6    # "widget":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v8    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_8
     add-int/lit8 v6, v5, 0x1
 
-    .line 4423
-    .end local v5    # "i":I
-    .local v6, "i":I
     goto :goto_2
 
-    .line 4434
-    .end local v6    # "i":I
     :cond_9
     const-string/jumbo v5, "ws"
 
     invoke-interface {v2, v3, v5}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 4435
     invoke-interface {v2}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 4439
-    .end local v2    # "out":Lorg/xmlpull/v1/XmlSerializer;
-    .end local v4    # "N":I
-    .end local v7    # "index":I
     nop
 
-    .line 4440
     :try_start_2
     monitor-exit v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4442
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v1
 
     return-object v1
 
-    .line 4436
     :catch_0
     move-exception v2
 
-    .line 4437
-    .local v2, "e":Ljava/io/IOException;
     :try_start_3
     const-string v4, "BackupRestoreController"
 
@@ -1703,13 +1384,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4438
     monitor-exit v1
 
     return-object v3
 
-    .line 4440
-    .end local v2    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v2
 
@@ -1722,11 +1400,9 @@
 
 .method public restoreFinished(I)V
     .locals 22
-    .param p1, "userId"    # I
 
     move-object/from16 v15, p0
 
-    .line 4620
     move/from16 v14, p1
 
     const-string v0, "BackupRestoreController"
@@ -1747,13 +1423,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4623
     new-instance v7, Landroid/os/UserHandle;
 
     invoke-direct {v7, v14}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 4624
-    .local v7, "userHandle":Landroid/os/UserHandle;
     iget-object v0, v15, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
@@ -1762,17 +1435,13 @@
 
     monitor-enter v16
 
-    .line 4626
     :try_start_0
     iget-object v0, v15, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByProvider:Ljava/util/HashMap;
 
-    .line 4627
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 4628
-    .local v0, "providerEntries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;>;"
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
@@ -1794,8 +1463,6 @@
 
     move-object v9, v1
 
-    .line 4630
-    .local v9, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;"
     invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1804,8 +1471,6 @@
 
     move-object v10, v1
 
-    .line 4631
-    .local v10, "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     invoke-interface {v9}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -1814,16 +1479,12 @@
 
     move-object v11, v1
 
-    .line 4632
-    .local v11, "updates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     invoke-direct {v15, v11}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->countPendingUpdates(Ljava/util/ArrayList;)I
 
     move-result v1
 
     move v12, v1
 
-    .line 4634
-    .local v12, "pending":I
     const-string v1, "BackupRestoreController"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1848,80 +1509,55 @@
 
     invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4636
     if-lez v12, :cond_2
 
-    .line 4637
     new-array v1, v12, [I
 
     move-object v13, v1
 
-    .line 4638
-    .local v13, "oldIds":[I
     new-array v1, v12, [I
 
     move-object/from16 v17, v1
 
-    .line 4639
-    .local v17, "newIds":[I
     invoke-virtual {v11}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     move v6, v1
 
-    .line 4640
-    .local v6, "N":I
     const/4 v1, 0x0
 
-    .line 4641
-    .local v1, "nextPending":I
     move/from16 v18, v1
 
     const/4 v2, 0x0
 
-    .line 4641
-    .end local v1    # "nextPending":I
-    .local v2, "i":I
-    .local v18, "nextPending":I
     :goto_1
     move v1, v2
 
-    .line 4641
-    .end local v2    # "i":I
-    .local v1, "i":I
     if-ge v1, v6, :cond_1
 
-    .line 4642
     invoke-virtual {v11, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
 
-    .line 4643
-    .local v2, "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     iget-boolean v4, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->notified:Z
 
     if-nez v4, :cond_0
 
-    .line 4644
     iput-boolean v3, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->notified:Z
 
-    .line 4645
     iget v4, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->oldId:I
 
     aput v4, v13, v18
 
-    .line 4646
     iget v4, v2, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->newId:I
 
     aput v4, v17, v18
 
-    .line 4647
     add-int/lit8 v18, v18, 0x1
 
-    .line 4649
     const-string v4, "BackupRestoreController"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1950,20 +1586,13 @@
 
     invoke-static {v4, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4641
-    .end local v2    # "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     :cond_0
     add-int/lit8 v2, v1, 0x1
 
-    .line 4641
-    .end local v1    # "i":I
-    .local v2, "i":I
     const/4 v3, 0x1
 
     goto :goto_1
 
-    .line 4653
-    .end local v2    # "i":I
     :cond_1
     const-string v2, "android.appwidget.action.APPWIDGET_RESTORED"
 
@@ -1979,34 +1608,18 @@
 
     move-object/from16 v6, v17
 
-    .line 4653
-    .end local v6    # "N":I
-    .local v19, "N":I
     invoke-direct/range {v1 .. v7}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->sendWidgetRestoreBroadcastLocked(Ljava/lang/String;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;[I[ILandroid/os/UserHandle;)V
 
-    .line 4657
-    .end local v9    # "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;"
-    .end local v10    # "provider":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .end local v11    # "updates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
-    .end local v12    # "pending":I
-    .end local v13    # "oldIds":[I
-    .end local v17    # "newIds":[I
-    .end local v18    # "nextPending":I
-    .end local v19    # "N":I
     :cond_2
     goto/16 :goto_0
 
-    .line 4660
     :cond_3
     iget-object v1, v15, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByHost:Ljava/util/HashMap;
 
-    .line 4661
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v1
 
-    .line 4662
-    .local v1, "hostEntries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;>;"
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -2024,16 +1637,12 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 4663
-    .local v4, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 4664
-    .local v5, "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     iget-object v6, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
     iget v6, v6, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;->uid:I
@@ -2042,23 +1651,18 @@
 
     if-eq v6, v8, :cond_6
 
-    .line 4665
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Ljava/util/ArrayList;
 
-    .line 4666
-    .local v6, "updates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
     invoke-direct {v15, v6}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->countPendingUpdates(Ljava/util/ArrayList;)I
 
     move-result v8
 
     move v13, v8
 
-    .line 4668
-    .local v13, "pending":I
     const-string v8, "BackupRestoreController"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -2083,76 +1687,55 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4670
     if-lez v13, :cond_6
 
-    .line 4671
     new-array v8, v13, [I
 
     move-object/from16 v17, v8
 
-    .line 4672
-    .local v17, "oldIds":[I
     new-array v8, v13, [I
 
     move-object/from16 v18, v8
 
-    .line 4673
-    .local v18, "newIds":[I
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v8
 
     move v12, v8
 
-    .line 4674
-    .local v12, "N":I
     const/4 v8, 0x0
 
-    .line 4675
-    .local v8, "nextPending":I
     move/from16 v20, v8
 
     const/4 v8, 0x0
 
-    .line 4675
-    .local v8, "i":I
-    .local v20, "nextPending":I
     :goto_3
     if-ge v8, v12, :cond_5
 
-    .line 4676
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
 
-    .line 4677
-    .local v9, "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     iget-boolean v10, v9, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->notified:Z
 
     if-nez v10, :cond_4
 
-    .line 4678
     const/4 v11, 0x1
 
     iput-boolean v11, v9, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->notified:Z
 
-    .line 4679
     iget v10, v9, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->oldId:I
 
     aput v10, v17, v20
 
-    .line 4680
     iget v10, v9, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;->newId:I
 
     aput v10, v18, v20
 
-    .line 4681
     add-int/lit8 v20, v20, 0x1
 
-    .line 4683
     const-string v10, "BackupRestoreController"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2181,15 +1764,11 @@
 
     invoke-static {v10, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4675
-    .end local v9    # "r":Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;
     :cond_4
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
-    .line 4687
-    .end local v8    # "i":I
     :cond_5
     const-string v9, "android.appwidget.action.APPWIDGET_HOST_RESTORED"
 
@@ -2205,51 +1784,29 @@
 
     move-object/from16 v12, v17
 
-    .line 4687
-    .end local v12    # "N":I
-    .restart local v19    # "N":I
     move/from16 v21, v13
 
     move-object/from16 v13, v18
 
-    .line 4687
-    .end local v13    # "pending":I
-    .local v21, "pending":I
     move-object v14, v7
 
     invoke-direct/range {v8 .. v14}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->sendWidgetRestoreBroadcastLocked(Ljava/lang/String;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;[I[ILandroid/os/UserHandle;)V
 
-    .line 4687
-    .end local v4    # "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;"
-    .end local v5    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .end local v6    # "updates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;"
-    .end local v17    # "oldIds":[I
-    .end local v18    # "newIds":[I
-    .end local v19    # "N":I
-    .end local v20    # "nextPending":I
-    .end local v21    # "pending":I
     goto :goto_4
 
-    .line 4692
     :cond_6
     const/4 v2, 0x1
 
-    .line 4662
     :goto_4
     move/from16 v14, p1
 
     goto/16 :goto_2
 
-    .line 4693
-    .end local v0    # "providerEntries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;>;"
-    .end local v1    # "hostEntries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController$RestoreUpdateRecord;>;>;>;"
     :cond_7
     monitor-exit v16
 
-    .line 4694
     return-void
 
-    .line 4693
     :catchall_0
     move-exception v0
 
@@ -2262,9 +1819,7 @@
 
 .method public restoreStarting(I)V
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 4447
     const-string v0, "BackupRestoreController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2283,7 +1838,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4450
     iget-object v0, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
@@ -2292,29 +1846,23 @@
 
     monitor-enter v0
 
-    .line 4454
     :try_start_0
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mPrunedApps:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Ljava/util/HashSet;->clear()V
 
-    .line 4455
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByProvider:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 4456
     iget-object v1, p0, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->mUpdatesByHost:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 4457
     monitor-exit v0
 
-    .line 4458
     return-void
 
-    .line 4457
     :catchall_0
     move-exception v1
 
@@ -2327,15 +1875,11 @@
 
 .method public restoreWidgetState(Ljava/lang/String;[BI)V
     .locals 22
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "restoredState"    # [B
-    .param p3, "userId"    # I
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
 
-    .line 4462
     move/from16 v3, p3
 
     const-string v0, "BackupRestoreController"
@@ -2362,7 +1906,6 @@
 
     invoke-static {v0, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4466
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     move-object/from16 v4, p2
@@ -2371,8 +1914,6 @@
 
     move-object v5, v0
 
-    .line 4469
-    .local v5, "stream":Ljava/io/ByteArrayInputStream;
     :try_start_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2380,24 +1921,18 @@
 
     move-object v6, v0
 
-    .line 4472
-    .local v6, "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     move-object v7, v0
 
-    .line 4474
-    .local v7, "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v0
 
     move-object v8, v0
 
-    .line 4475
-    .local v8, "parser":Lorg/xmlpull/v1/XmlPullParser;
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
     invoke-virtual {v0}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -2406,7 +1941,6 @@
 
     invoke-interface {v8, v5, v0}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 4477
     iget-object v0, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/lang/Object;
@@ -2419,26 +1953,20 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_7
 
-    .line 4480
     :goto_0
     :try_start_1
     invoke-interface {v8}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
 
-    .line 4481
-    .local v0, "type":I
     const/4 v11, 0x2
 
     if-ne v0, v11, :cond_c
 
-    .line 4482
     invoke-interface {v8}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 4483
-    .local v12, "tag":Ljava/lang/String;
     const-string/jumbo v13, "ws"
 
     invoke-virtual {v13, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2451,7 +1979,6 @@
 
     if-eqz v13, :cond_2
 
-    .line 4484
     :try_start_2
     const-string/jumbo v13, "version"
 
@@ -2459,17 +1986,12 @@
 
     move-result-object v13
 
-    .line 4486
-    .local v13, "version":Ljava/lang/String;
     invoke-static {v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v15
 
-    .line 4487
-    .local v15, "versionNumber":I
     if-le v15, v11, :cond_0
 
-    .line 4488
     const-string v10, "BackupRestoreController"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -2488,20 +2010,16 @@
 
     invoke-static {v10, v11}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4489
     monitor-exit v9
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 4611
     iget-object v9, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v9, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4000(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
 
-    .line 4489
     return-void
 
-    .line 4493
     :cond_0
     :try_start_3
     const-string/jumbo v11, "pkg"
@@ -2510,52 +2028,33 @@
 
     move-result-object v11
 
-    .line 4494
-    .local v11, "pkg":Ljava/lang/String;
     invoke-virtual {v2, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v14
 
     if-nez v14, :cond_1
 
-    .line 4495
     const-string v10, "BackupRestoreController"
 
     const-string v14, "Package mismatch in ws"
 
     invoke-static {v10, v14}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4496
     monitor-exit v9
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 4611
     iget-object v9, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v9, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4000(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
 
-    .line 4496
     return-void
 
-    .line 4498
-    .end local v11    # "pkg":Ljava/lang/String;
-    .end local v13    # "version":Ljava/lang/String;
-    .end local v15    # "versionNumber":I
     :cond_1
     nop
 
-    .line 4599
     move-object/from16 v17, v5
 
-    .line 4599
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .end local v12    # "tag":Ljava/lang/String;
-    .local v17, "stream":Ljava/io/ByteArrayInputStream;
-    .local v20, "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .local v21, "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :goto_1
     move-object/from16 v20, v6
 
@@ -2563,26 +2062,11 @@
 
     goto/16 :goto_6
 
-    .line 4607
-    .end local v0    # "type":I
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catchall_0
     move-exception v0
 
     move-object/from16 v17, v5
 
-    .line 4607
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :goto_2
     move-object/from16 v20, v6
 
@@ -2590,15 +2074,6 @@
 
     goto/16 :goto_7
 
-    .line 4498
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v0    # "type":I
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v12    # "tag":Ljava/lang/String;
     :cond_2
     :try_start_4
     const-string/jumbo v11, "p"
@@ -2611,7 +2086,6 @@
 
     if-eqz v11, :cond_4
 
-    .line 4499
     :try_start_5
     const-string/jumbo v11, "pkg"
 
@@ -2619,38 +2093,26 @@
 
     move-result-object v11
 
-    .line 4500
-    .restart local v11    # "pkg":Ljava/lang/String;
     const-string v13, "cl"
 
     invoke-interface {v8, v14, v13}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v13
 
-    .line 4508
-    .local v13, "cl":Ljava/lang/String;
     new-instance v15, Landroid/content/ComponentName;
 
     invoke-direct {v15, v11, v13}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4510
-    .local v15, "componentName":Landroid/content/ComponentName;
     invoke-direct {v1, v15, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->findProviderLocked(Landroid/content/ComponentName;I)Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
     move-result-object v16
 
-    .line 4511
-    .local v16, "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     if-nez v16, :cond_3
 
-    .line 4512
     new-instance v10, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
     invoke-direct {v10, v14}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;-><init>(Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
 
-    .line 4513
-    .end local v16    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .local v10, "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     new-instance v14, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
@@ -2664,29 +2126,22 @@
     :try_start_6
     invoke-direct {v14, v4, v15, v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;-><init>(ILandroid/content/ComponentName;Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
 
-    .line 4513
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     iput-object v14, v10, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
-    .line 4514
     new-instance v4, Landroid/appwidget/AppWidgetProviderInfo;
 
     invoke-direct {v4}, Landroid/appwidget/AppWidgetProviderInfo;-><init>()V
 
     iput-object v4, v10, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
-    .line 4515
     iget-object v4, v10, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->info:Landroid/appwidget/AppWidgetProviderInfo;
 
     iput-object v15, v4, Landroid/appwidget/AppWidgetProviderInfo;->provider:Landroid/content/ComponentName;
 
-    .line 4516
     const/4 v4, 0x1
 
     iput-boolean v4, v10, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->zombie:Z
 
-    .line 4517
     iget-object v4, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v4}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3200(Lcom/android/server/appwidget/AppWidgetServiceImpl;)Ljava/util/ArrayList;
@@ -2697,21 +2152,11 @@
 
     goto :goto_3
 
-    .line 4520
-    .end local v10    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v16    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :cond_3
     move-object/from16 v17, v5
 
     move-object/from16 v10, v16
 
-    .line 4520
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v16    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .restart local v10    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     :goto_3
     const-string v4, "BackupRestoreController"
 
@@ -2733,23 +2178,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4522
     invoke-virtual {v6, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 4523
-    .end local v10    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .end local v11    # "pkg":Ljava/lang/String;
-    .end local v13    # "cl":Ljava/lang/String;
-    .end local v15    # "componentName":Landroid/content/ComponentName;
     goto :goto_1
 
-    .line 4607
-    .end local v0    # "type":I
-    .end local v12    # "tag":Ljava/lang/String;
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
     :catchall_1
     move-exception v0
 
@@ -2759,22 +2193,11 @@
 
     move-object/from16 v21, v7
 
-    .line 4607
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     goto/16 :goto_7
 
-    .line 4523
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v0    # "type":I
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v12    # "tag":Ljava/lang/String;
     :cond_4
     move-object/from16 v17, v5
 
-    .line 4523
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     :try_start_7
     const-string v4, "h"
 
@@ -2788,7 +2211,6 @@
 
     if-eqz v4, :cond_5
 
-    .line 4527
     :try_start_8
     const-string/jumbo v4, "pkg"
 
@@ -2798,49 +2220,36 @@
 
     move-result-object v4
 
-    .line 4529
-    .local v4, "pkg":Ljava/lang/String;
     iget-object v10, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v10, v4, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$2300(Lcom/android/server/appwidget/AppWidgetServiceImpl;Ljava/lang/String;I)I
 
     move-result v10
 
-    .line 4530
-    .local v10, "uid":I
-    const-string/jumbo v11, "id"
+    const-string v11, "id"
 
-    .line 4531
     const/4 v13, 0x0
 
     invoke-interface {v8, v13, v11}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 4530
     invoke-static {v11, v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 4533
-    .local v5, "hostId":I
     new-instance v11, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
 
     invoke-direct {v11, v10, v5, v4}, Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;-><init>(IILjava/lang/String;)V
 
-    .line 4534
-    .local v11, "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
     iget-object v13, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v13, v11}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3800(Lcom/android/server/appwidget/AppWidgetServiceImpl;Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;)Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     move-result-object v13
 
-    .line 4535
-    .local v13, "h":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     invoke-virtual {v7, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4538
     const-string v14, "BackupRestoreController"
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -2851,9 +2260,6 @@
 
     const-string v4, "   host["
 
-    .line 4538
-    .end local v4    # "pkg":Ljava/lang/String;
-    .local v18, "pkg":Ljava/lang/String;
     invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
@@ -2882,25 +2288,13 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
-    .line 4541
-    .end local v5    # "hostId":I
-    .end local v10    # "uid":I
-    .end local v11    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
-    .end local v13    # "h":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .end local v18    # "pkg":Ljava/lang/String;
     goto/16 :goto_1
 
-    .line 4607
-    .end local v0    # "type":I
-    .end local v12    # "tag":Ljava/lang/String;
     :catchall_2
     move-exception v0
 
     goto/16 :goto_2
 
-    .line 4541
-    .restart local v0    # "type":I
-    .restart local v12    # "tag":Ljava/lang/String;
     :cond_5
     :try_start_9
     const-string v4, "g"
@@ -2911,51 +2305,38 @@
 
     if-eqz v4, :cond_b
 
-    .line 4542
-    const-string/jumbo v4, "id"
+    const-string v4, "id"
 
-    .line 4543
     const/4 v10, 0x0
 
     invoke-interface {v8, v10, v4}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 4542
     invoke-static {v4, v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v4
 
-    .line 4544
-    .local v4, "restoredId":I
     const-string v10, "h"
 
-    .line 4545
     const/4 v11, 0x0
 
     invoke-interface {v8, v11, v10}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 4544
     invoke-static {v10, v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v10
 
-    .line 4546
-    .local v10, "hostIndex":I
     invoke-virtual {v7, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
     check-cast v11, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 4547
-    .local v11, "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
     const/4 v13, 0x0
 
-    .line 4548
-    .local v13, "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     const-string/jumbo v14, "p"
 
     const/4 v15, 0x0
@@ -2966,18 +2347,13 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_4
 
-    .line 4549
-    .local v14, "prov":Ljava/lang/String;
     if-eqz v14, :cond_6
 
-    .line 4552
     :try_start_a
     invoke-static {v14, v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v5
 
-    .line 4553
-    .local v5, "which":I
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v15
@@ -2988,8 +2364,6 @@
 
     move-object v13, v15
 
-    .line 4559
-    .end local v5    # "which":I
     :cond_6
     :try_start_b
     iget-object v5, v11, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$HostId;
@@ -3000,10 +2374,8 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_4
 
-    .line 4560
     if-eqz v13, :cond_7
 
-    .line 4561
     :try_start_c
     iget-object v5, v13, Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;->id:Lcom/android/server/appwidget/AppWidgetServiceImpl$ProviderId;
 
@@ -3017,18 +2389,14 @@
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_2
 
-    .line 4566
     :cond_7
     :try_start_d
     invoke-direct {v1, v4, v11, v13}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->findRestoredWidgetLocked(ILcom/android/server/appwidget/AppWidgetServiceImpl$Host;Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;)Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
     move-result-object v5
 
-    .line 4567
-    .local v5, "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     if-nez v5, :cond_9
 
-    .line 4568
     new-instance v15, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
 
     move-object/from16 v19, v5
@@ -3037,14 +2405,8 @@
 
     invoke-direct {v15, v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;-><init>(Lcom/android/server/appwidget/AppWidgetServiceImpl$1;)V
 
-    .line 4568
-    .end local v5    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .local v19, "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     move-object v5, v15
 
-    .line 4569
-    .end local v19    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .restart local v5    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
     iget-object v15, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v15, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$3900(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)I
@@ -3053,37 +2415,30 @@
 
     iput v15, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->appWidgetId:I
 
-    .line 4570
     iput v4, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->restoredId:I
 
-    .line 4571
     invoke-direct {v1, v8}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->parseWidgetIdOptions(Lorg/xmlpull/v1/XmlPullParser;)Landroid/os/Bundle;
 
     move-result-object v15
 
     iput-object v15, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->options:Landroid/os/Bundle;
 
-    .line 4572
     iput-object v11, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
-    .line 4573
     iget-object v15, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
     iget-object v15, v15, Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;->widgets:Ljava/util/ArrayList;
 
     invoke-virtual {v15, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4574
     iput-object v13, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
-    .line 4575
     iget-object v15, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_4
 
     if-eqz v15, :cond_8
 
-    .line 4576
     :try_start_e
     iget-object v15, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
@@ -3093,7 +2448,6 @@
     :try_end_e
     .catchall {:try_start_e .. :try_end_e} :catchall_2
 
-    .line 4579
     :cond_8
     :try_start_f
     const-string v15, "BackupRestoreController"
@@ -3105,9 +2459,6 @@
     :try_start_10
     new-instance v6, Ljava/lang/StringBuilder;
 
-    .line 4579
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_3
@@ -3117,9 +2468,6 @@
     :try_start_11
     const-string v7, "New restored id "
 
-    .line 4579
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -3136,47 +2484,19 @@
 
     invoke-static {v15, v6}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4582
     iget-object v6, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-virtual {v6, v5}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->addWidgetLocked(Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;)V
 
     goto :goto_4
 
-    .line 4607
-    .end local v0    # "type":I
-    .end local v4    # "restoredId":I
-    .end local v5    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v10    # "hostIndex":I
-    .end local v11    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .end local v12    # "tag":Ljava/lang/String;
-    .end local v13    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .end local v14    # "prov":Ljava/lang/String;
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catchall_3
     move-exception v0
 
     move-object/from16 v21, v7
 
-    .line 4607
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     goto/16 :goto_7
 
-    .line 4584
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v0    # "type":I
-    .restart local v4    # "restoredId":I
-    .restart local v5    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v10    # "hostIndex":I
-    .restart local v11    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .restart local v12    # "tag":Ljava/lang/String;
-    .restart local v13    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .restart local v14    # "prov":Ljava/lang/String;
     :cond_9
     move-object/from16 v19, v5
 
@@ -3184,11 +2504,6 @@
 
     move-object/from16 v21, v7
 
-    .line 4584
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :goto_4
     iget-object v6, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
@@ -3200,7 +2515,6 @@
 
     if-eqz v6, :cond_a
 
-    .line 4585
     iget-object v6, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->provider:Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
 
     iget v7, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->appWidgetId:I
@@ -3209,7 +2523,6 @@
 
     goto :goto_5
 
-    .line 4588
     :cond_a
     const-string v6, "BackupRestoreController"
 
@@ -3229,7 +2542,6 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 4590
     :goto_5
     iget-object v6, v5, Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;->host:Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
 
@@ -3237,7 +2549,6 @@
 
     invoke-direct {v1, v6, v4, v7}, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->stashHostRestoreUpdateLocked(Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;II)V
 
-    .line 4593
     const-string v6, "BackupRestoreController"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3272,38 +2583,15 @@
 
     invoke-static {v6, v7}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v4    # "restoredId":I
-    .end local v5    # "id":Lcom/android/server/appwidget/AppWidgetServiceImpl$Widget;
-    .end local v10    # "hostIndex":I
-    .end local v11    # "host":Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;
-    .end local v12    # "tag":Ljava/lang/String;
-    .end local v13    # "p":Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;
-    .end local v14    # "prov":Ljava/lang/String;
     goto :goto_6
 
-    .line 4599
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :cond_b
     move-object/from16 v20, v6
 
     move-object/from16 v21, v7
 
-    .line 4599
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     goto :goto_6
 
-    .line 4607
-    .end local v0    # "type":I
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catchall_4
     move-exception v0
 
@@ -3311,21 +2599,8 @@
 
     move-object/from16 v21, v7
 
-    .line 4607
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     goto :goto_7
 
-    .line 4599
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v0    # "type":I
-    .local v5, "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :cond_c
     move-object/from16 v17, v5
 
@@ -3333,25 +2608,15 @@
 
     move-object/from16 v21, v7
 
-    .line 4599
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :goto_6
     const/4 v4, 0x1
 
     if-ne v0, v4, :cond_d
 
-    .line 4607
-    .end local v0    # "type":I
     monitor-exit v9
 
     goto :goto_9
 
-    .line 4480
     :cond_d
     move-object/from16 v5, v17
 
@@ -3363,13 +2628,6 @@
 
     goto/16 :goto_0
 
-    .line 4607
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catchall_5
     move-exception v0
 
@@ -3379,13 +2637,6 @@
 
     move-object/from16 v21, v7
 
-    .line 4607
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v6    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v7    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :goto_7
     monitor-exit v9
     :try_end_11
@@ -3398,52 +2649,28 @@
     .catch Ljava/io/IOException; {:try_start_12 .. :try_end_12} :catch_0
     .catchall {:try_start_12 .. :try_end_12} :catchall_8
 
-    .line 4608
-    .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catch_0
     move-exception v0
 
     goto :goto_8
 
-    .line 4607
-    .restart local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .restart local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .restart local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
     :catchall_6
     move-exception v0
 
     goto :goto_7
 
-    .line 4611
-    .end local v8    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .end local v20    # "restoredProviders":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Provider;>;"
-    .end local v21    # "restoredHosts":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/appwidget/AppWidgetServiceImpl$Host;>;"
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
     :catchall_7
     move-exception v0
 
     move-object/from16 v17, v5
 
-    .line 4611
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     goto :goto_a
 
-    .line 4608
-    .end local v17    # "stream":Ljava/io/ByteArrayInputStream;
-    .restart local v5    # "stream":Ljava/io/ByteArrayInputStream;
     :catch_1
     move-exception v0
 
     move-object/from16 v17, v5
 
-    .line 4609
-    .end local v5    # "stream":Ljava/io/ByteArrayInputStream;
-    .local v0, "e":Ljava/lang/Exception;
-    .restart local v17    # "stream":Ljava/io/ByteArrayInputStream;
     :goto_8
     :try_start_13
     const-string v4, "BackupRestoreController"
@@ -3466,20 +2693,15 @@
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_8
 
-    .line 4611
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_9
     iget-object v0, v1, Lcom/android/server/appwidget/AppWidgetServiceImpl$BackupRestoreController;->this$0:Lcom/android/server/appwidget/AppWidgetServiceImpl;
 
     invoke-static {v0, v3}, Lcom/android/server/appwidget/AppWidgetServiceImpl;->access$4000(Lcom/android/server/appwidget/AppWidgetServiceImpl;I)V
 
-    .line 4612
     nop
 
-    .line 4613
     return-void
 
-    .line 4611
     :catchall_8
     move-exception v0
 

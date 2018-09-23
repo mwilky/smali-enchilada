@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +31,6 @@
 .method public isNavigationMessageSupported()Z
     .locals 1
 
-    .line 149
     invoke-static {}, Lcom/android/server/location/GnssNavigationMessageProvider;->access$000()Z
 
     move-result v0
@@ -43,7 +41,6 @@
 .method public startNavigationMessageCollection()Z
     .locals 1
 
-    .line 153
     invoke-static {}, Lcom/android/server/location/GnssNavigationMessageProvider;->access$100()Z
 
     move-result v0
@@ -54,7 +51,6 @@
 .method public stopNavigationMessageCollection()Z
     .locals 1
 
-    .line 157
     invoke-static {}, Lcom/android/server/location/GnssNavigationMessageProvider;->access$200()Z
 
     move-result v0

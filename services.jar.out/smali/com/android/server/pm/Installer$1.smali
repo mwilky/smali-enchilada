@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/Installer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/Installer;
 
-    .line 122
     iput-object p1, p0, Lcom/android/server/pm/Installer$1;->this$0:Lcom/android/server/pm/Installer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,18 +37,15 @@
 .method public binderDied()V
     .locals 2
 
-    .line 125
     const-string v0, "Installer"
 
     const-string/jumbo v1, "installd died; reconnecting"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
     iget-object v0, p0, Lcom/android/server/pm/Installer$1;->this$0:Lcom/android/server/pm/Installer;
 
     invoke-static {v0}, Lcom/android/server/pm/Installer;->access$000(Lcom/android/server/pm/Installer;)V
 
-    .line 127
     return-void
 .end method

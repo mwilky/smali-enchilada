@@ -36,33 +36,25 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/wm/RemoteAnimationController;Lcom/android/server/wm/AppWindowToken;Landroid/graphics/Point;Landroid/graphics/Rect;)V
     .locals 2
-    .param p2, "appWindowToken"    # Lcom/android/server/wm/AppWindowToken;
-    .param p3, "position"    # Landroid/graphics/Point;
-    .param p4, "stackBounds"    # Landroid/graphics/Rect;
 
-    .line 295
     iput-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 290
     new-instance p1, Landroid/graphics/Point;
 
     invoke-direct {p1}, Landroid/graphics/Point;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mPosition:Landroid/graphics/Point;
 
-    .line 291
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mStackBounds:Landroid/graphics/Rect;
 
-    .line 296
     iput-object p2, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
-    .line 297
     iget-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mPosition:Landroid/graphics/Point;
 
     iget v0, p3, Landroid/graphics/Point;->x:I
@@ -71,20 +63,16 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 298
     iget-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mStackBounds:Landroid/graphics/Rect;
 
     invoke-virtual {p1, p4}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 299
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;)Lcom/android/server/wm/AppWindowToken;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;
 
-    .line 285
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
     return-object v0
@@ -92,9 +80,7 @@
 
 .method static synthetic access$100(Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;)Lcom/android/server/wm/SurfaceAnimator$OnAnimationFinishedCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;
 
-    .line 285
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mCapturedFinishCallback:Lcom/android/server/wm/SurfaceAnimator$OnAnimationFinishedCallback;
 
     return-object v0
@@ -103,7 +89,6 @@
 .method private getMode()I
     .locals 2
 
-    .line 319
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$400(Lcom/android/server/wm/RemoteAnimationController;)Lcom/android/server/wm/WindowManagerService;
@@ -120,12 +105,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 320
     const/4 v0, 0x0
 
     return v0
 
-    .line 322
     :cond_0
     const/4 v0, 0x1
 
@@ -137,7 +120,6 @@
 .method createRemoteAppAnimation()Landroid/view/RemoteAnimationTarget;
     .locals 17
 
-    .line 302
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
@@ -146,16 +128,12 @@
 
     move-result-object v1
 
-    .line 303
-    .local v1, "task":Lcom/android/server/wm/Task;
     iget-object v2, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
     invoke-virtual {v2}, Lcom/android/server/wm/AppWindowToken;->findMainWindow()Lcom/android/server/wm/WindowState;
 
     move-result-object v2
 
-    .line 304
-    .local v2, "mainWindow":Lcom/android/server/wm/WindowState;
     if-eqz v1, :cond_1
 
     if-eqz v2, :cond_1
@@ -170,7 +148,6 @@
 
     goto :goto_0
 
-    .line 308
     :cond_0
     new-instance v3, Landroid/graphics/Rect;
 
@@ -178,8 +155,6 @@
 
     invoke-direct {v3, v4}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    .line 309
-    .local v3, "insets":Landroid/graphics/Rect;
     iget-object v4, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
     invoke-virtual {v4}, Lcom/android/server/wm/AppWindowToken;->getLetterboxInsets()Landroid/graphics/Rect;
@@ -188,7 +163,6 @@
 
     invoke-static {v3, v4}, Lcom/android/server/wm/utils/InsetUtils;->addInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 310
     new-instance v4, Landroid/view/RemoteAnimationTarget;
 
     iget v6, v1, Lcom/android/server/wm/Task;->mTaskId:I
@@ -201,7 +175,6 @@
 
     iget-object v5, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
-    .line 311
     invoke-virtual {v5}, Lcom/android/server/wm/AppWindowToken;->fillsParent()Z
 
     move-result v5
@@ -214,7 +187,6 @@
 
     iget-object v5, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
-    .line 313
     invoke-virtual {v5}, Lcom/android/server/wm/AppWindowToken;->getPrefixOrderIndex()I
 
     move-result v12
@@ -223,7 +195,6 @@
 
     iget-object v14, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mStackBounds:Landroid/graphics/Rect;
 
-    .line 314
     invoke-virtual {v1}, Lcom/android/server/wm/Task;->getWindowConfiguration()Landroid/app/WindowConfiguration;
 
     move-result-object v15
@@ -238,13 +209,10 @@
 
     iput-object v4, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
-    .line 315
     iget-object v4, v0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
     return-object v4
 
-    .line 306
-    .end local v3    # "insets":Landroid/graphics/Rect;
     :cond_1
     :goto_0
     const/4 v3, 0x0
@@ -254,10 +222,7 @@
 
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 3
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 380
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string/jumbo v0, "token="
@@ -268,19 +233,16 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 381
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
     if-eqz v0, :cond_0
 
-    .line 382
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "Target:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 383
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -301,7 +263,6 @@
 
     goto :goto_0
 
-    .line 385
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -309,7 +270,6 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 387
     :goto_0
     return-void
 .end method
@@ -317,7 +277,6 @@
 .method public getBackgroundColor()I
     .locals 1
 
-    .line 338
     const/4 v0, 0x0
 
     return v0
@@ -326,7 +285,6 @@
 .method public getDetachWallpaper()Z
     .locals 1
 
-    .line 328
     const/4 v0, 0x0
 
     return v0
@@ -335,7 +293,6 @@
 .method public getDurationHint()J
     .locals 2
 
-    .line 369
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$1200(Lcom/android/server/wm/RemoteAnimationController;)Landroid/view/RemoteAnimationAdapter;
@@ -352,7 +309,6 @@
 .method public getShowWallpaper()Z
     .locals 1
 
-    .line 333
     const/4 v0, 0x0
 
     return v0
@@ -361,14 +317,12 @@
 .method public getStatusBarTransitionsStartTime()J
     .locals 4
 
-    .line 374
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iget-object v2, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
-    .line 375
     invoke-static {v2}, Lcom/android/server/wm/RemoteAnimationController;->access$1200(Lcom/android/server/wm/RemoteAnimationController;)Landroid/view/RemoteAnimationAdapter;
 
     move-result-object v2
@@ -379,15 +333,12 @@
 
     add-long/2addr v0, v2
 
-    .line 374
     return-wide v0
 .end method
 
 .method public onAnimationCancelled(Landroid/view/SurfaceControl;)V
     .locals 2
-    .param p1, "animationLeash"    # Landroid/view/SurfaceControl;
 
-    .line 358
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$600(Lcom/android/server/wm/RemoteAnimationController;)Ljava/util/ArrayList;
@@ -396,7 +347,6 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 359
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$600(Lcom/android/server/wm/RemoteAnimationController;)Ljava/util/ArrayList;
@@ -409,7 +359,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 360
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$800(Lcom/android/server/wm/RemoteAnimationController;)Landroid/os/Handler;
@@ -424,35 +373,27 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 361
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$900(Lcom/android/server/wm/RemoteAnimationController;)V
 
-    .line 362
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$1000(Lcom/android/server/wm/RemoteAnimationController;)V
 
-    .line 363
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/server/wm/RemoteAnimationController;->access$1100(Lcom/android/server/wm/RemoteAnimationController;Z)V
 
-    .line 365
     :cond_0
     return-void
 .end method
 
 .method public startAnimation(Landroid/view/SurfaceControl;Landroid/view/SurfaceControl$Transaction;Lcom/android/server/wm/SurfaceAnimator$OnAnimationFinishedCallback;)V
     .locals 2
-    .param p1, "animationLeash"    # Landroid/view/SurfaceControl;
-    .param p2, "t"    # Landroid/view/SurfaceControl$Transaction;
-    .param p3, "finishCallback"    # Lcom/android/server/wm/SurfaceAnimator$OnAnimationFinishedCallback;
 
-    .line 344
     sget-boolean v0, Lcom/android/server/wm/WindowManagerDebugConfig;->DEBUG_REMOTE_ANIMATIONS:Z
 
     if-eqz v0, :cond_0
@@ -465,7 +406,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 347
     :cond_0
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mAppWindowToken:Lcom/android/server/wm/AppWindowToken;
 
@@ -475,7 +415,6 @@
 
     invoke-virtual {p2, p1, v0}, Landroid/view/SurfaceControl$Transaction;->setLayer(Landroid/view/SurfaceControl;I)Landroid/view/SurfaceControl$Transaction;
 
-    .line 348
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mPosition:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -490,7 +429,6 @@
 
     invoke-virtual {p2, p1, v0, v1}, Landroid/view/SurfaceControl$Transaction;->setPosition(Landroid/view/SurfaceControl;FF)Landroid/view/SurfaceControl$Transaction;
 
-    .line 349
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$500(Lcom/android/server/wm/RemoteAnimationController;)Landroid/graphics/Rect;
@@ -501,7 +439,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 350
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$500(Lcom/android/server/wm/RemoteAnimationController;)Landroid/graphics/Rect;
@@ -512,7 +449,6 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Rect;->offsetTo(II)V
 
-    .line 351
     iget-object v0, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->this$0:Lcom/android/server/wm/RemoteAnimationController;
 
     invoke-static {v0}, Lcom/android/server/wm/RemoteAnimationController;->access$500(Lcom/android/server/wm/RemoteAnimationController;)Landroid/graphics/Rect;
@@ -521,44 +457,34 @@
 
     invoke-virtual {p2, p1, v0}, Landroid/view/SurfaceControl$Transaction;->setWindowCrop(Landroid/view/SurfaceControl;Landroid/graphics/Rect;)Landroid/view/SurfaceControl$Transaction;
 
-    .line 352
     iput-object p1, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mCapturedLeash:Landroid/view/SurfaceControl;
 
-    .line 353
     iput-object p3, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mCapturedFinishCallback:Lcom/android/server/wm/SurfaceAnimator$OnAnimationFinishedCallback;
 
-    .line 354
     return-void
 .end method
 
 .method public writeToProto(Landroid/util/proto/ProtoOutputStream;)V
     .locals 5
-    .param p1, "proto"    # Landroid/util/proto/ProtoOutputStream;
 
-    .line 391
     const-wide v0, 0x10b00000002L
 
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->start(J)J
 
     move-result-wide v0
 
-    .line 392
-    .local v0, "token":J
     iget-object v2, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
     if-eqz v2, :cond_0
 
-    .line 393
     iget-object v2, p0, Lcom/android/server/wm/RemoteAnimationController$RemoteAnimationAdapterWrapper;->mTarget:Landroid/view/RemoteAnimationTarget;
 
     const-wide v3, 0x10b00000001L
 
     invoke-virtual {v2, p1, v3, v4}, Landroid/view/RemoteAnimationTarget;->writeToProto(Landroid/util/proto/ProtoOutputStream;J)V
 
-    .line 395
     :cond_0
     invoke-virtual {p1, v0, v1}, Landroid/util/proto/ProtoOutputStream;->end(J)V
 
-    .line 396
     return-void
 .end method

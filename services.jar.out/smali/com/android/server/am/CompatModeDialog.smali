@@ -18,31 +18,23 @@
 # direct methods
 .method public constructor <init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Landroid/content/pm/ApplicationInfo;)V
     .locals 2
-    .param p1, "service"    # Lcom/android/server/am/ActivityManagerService;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "appInfo"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 41
     const v0, 0x1030070
 
     invoke-direct {p0, p2, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 42
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->setCancelable(Z)V
 
-    .line 43
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 44
     invoke-virtual {p0}, Lcom/android/server/am/CompatModeDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->requestFeature(I)Z
 
-    .line 45
     invoke-virtual {p0}, Lcom/android/server/am/CompatModeDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -51,7 +43,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setType(I)V
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/server/am/CompatModeDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -60,18 +51,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setGravity(I)V
 
-    .line 47
     iput-object p1, p0, Lcom/android/server/am/CompatModeDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
-    .line 48
     iput-object p3, p0, Lcom/android/server/am/CompatModeDialog;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 50
     const v0, 0x1090033
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->setContentView(I)V
 
-    .line 51
     const v0, 0x102020b
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
@@ -82,7 +69,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mCompatEnabled:Landroid/widget/Switch;
 
-    .line 52
     iget-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mCompatEnabled:Landroid/widget/Switch;
 
     new-instance v1, Lcom/android/server/am/CompatModeDialog$1;
@@ -91,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 64
     const v0, 0x10201b3
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
@@ -102,7 +87,6 @@
 
     iput-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mAlwaysShow:Landroid/widget/CheckBox;
 
-    .line 65
     iget-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mAlwaysShow:Landroid/widget/CheckBox;
 
     new-instance v1, Lcom/android/server/am/CompatModeDialog$2;
@@ -111,7 +95,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 75
     const v0, 0x10203a1
 
     invoke-virtual {p0, v0}, Lcom/android/server/am/CompatModeDialog;->findViewById(I)Landroid/view/View;
@@ -120,10 +103,8 @@
 
     iput-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mHint:Landroid/view/View;
 
-    .line 77
     invoke-virtual {p0}, Lcom/android/server/am/CompatModeDialog;->updateControls()V
 
-    .line 78
     return-void
 .end method
 
@@ -132,7 +113,6 @@
 .method updateControls()V
     .locals 5
 
-    .line 81
     iget-object v0, p0, Lcom/android/server/am/CompatModeDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v0
@@ -140,7 +120,6 @@
     :try_start_0
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->boostPriorityForLockedSection()V
 
-    .line 82
     iget-object v1, p0, Lcom/android/server/am/CompatModeDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mCompatModePackages:Lcom/android/server/am/CompatModePackages;
@@ -151,8 +130,6 @@
 
     move-result v1
 
-    .line 83
-    .local v1, "mode":I
     iget-object v2, p0, Lcom/android/server/am/CompatModeDialog;->mCompatEnabled:Landroid/widget/Switch;
 
     const/4 v3, 0x0
@@ -169,7 +146,6 @@
     :goto_0
     invoke-virtual {v2, v4}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 84
     iget-object v2, p0, Lcom/android/server/am/CompatModeDialog;->mService:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v2, v2, Lcom/android/server/am/ActivityManagerService;->mCompatModePackages:Lcom/android/server/am/CompatModePackages;
@@ -182,13 +158,10 @@
 
     move-result v2
 
-    .line 86
-    .local v2, "ask":Z
     iget-object v4, p0, Lcom/android/server/am/CompatModeDialog;->mAlwaysShow:Landroid/widget/CheckBox;
 
     invoke-virtual {v4, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 87
     iget-object v4, p0, Lcom/android/server/am/CompatModeDialog;->mHint:Landroid/view/View;
 
     if-eqz v2, :cond_1
@@ -200,19 +173,14 @@
     :cond_1
     invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 88
-    .end local v1    # "mode":I
-    .end local v2    # "ask":Z
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {}, Lcom/android/server/am/ActivityManagerService;->resetPriorityAfterLockedSection()V
 
-    .line 89
     return-void
 
-    .line 88
     :catchall_0
     move-exception v1
 

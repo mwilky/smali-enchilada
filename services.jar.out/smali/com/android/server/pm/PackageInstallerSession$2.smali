@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 276
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public accept(Ljava/io/File;)Z
     .locals 3
-    .param p1, "file"    # Ljava/io/File;
 
-    .line 279
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
@@ -44,7 +41,6 @@
 
     return v1
 
-    .line 280
     :cond_0
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -60,7 +56,6 @@
 
     return v1
 
-    .line 281
     :cond_1
     const/4 v0, 0x1
 

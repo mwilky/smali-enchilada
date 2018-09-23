@@ -6,9 +6,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/ComponentName;)V
     .locals 2
-    .param p1, "transportComponent"    # Landroid/content/ComponentName;
 
-    .line 38
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -29,15 +27,12 @@
 
     invoke-direct {p0, v0}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
 
-    .line 39
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
-    .param p1, "transportName"    # Ljava/lang/String;
 
-    .line 34
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -58,6 +53,5 @@
 
     invoke-direct {p0, v0}, Landroid/util/AndroidException;-><init>(Ljava/lang/String;)V
 
-    .line 35
     return-void
 .end method

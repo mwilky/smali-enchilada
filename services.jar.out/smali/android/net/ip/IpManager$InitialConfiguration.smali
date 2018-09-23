@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 111
     invoke-direct {p0}, Landroid/net/ip/IpClient$InitialConfiguration;-><init>()V
 
     return-void

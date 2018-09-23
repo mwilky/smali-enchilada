@@ -30,7 +30,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 184
     new-instance v0, Lcom/android/server/content/SyncStorageEngine$EndPoint;
 
     const/4 v1, 0x0
@@ -46,23 +45,15 @@
 
 .method public constructor <init>(Landroid/accounts/Account;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "account"    # Landroid/accounts/Account;
-    .param p2, "provider"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 191
     iput-object p1, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->account:Landroid/accounts/Account;
 
-    .line 192
     iput-object p2, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->provider:Ljava/lang/String;
 
-    .line 193
     iput p3, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->userId:I
 
-    .line 194
     return-void
 .end method
 
@@ -70,9 +61,7 @@
 # virtual methods
 .method public matchesSpec(Lcom/android/server/content/SyncStorageEngine$EndPoint;)Z
     .locals 4
-    .param p1, "spec"    # Lcom/android/server/content/SyncStorageEngine$EndPoint;
 
-    .line 203
     iget v0, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->userId:I
 
     iget v1, p1, Lcom/android/server/content/SyncStorageEngine$EndPoint;->userId:I
@@ -91,23 +80,17 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 206
     return v2
 
-    .line 209
     :cond_0
     iget-object v0, p1, Lcom/android/server/content/SyncStorageEngine$EndPoint;->account:Landroid/accounts/Account;
 
     if-nez v0, :cond_1
 
-    .line 210
     const/4 v0, 0x1
 
-    .local v0, "accountsMatch":Z
     goto :goto_0
 
-    .line 212
-    .end local v0    # "accountsMatch":Z
     :cond_1
     iget-object v0, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->account:Landroid/accounts/Account;
 
@@ -117,21 +100,15 @@
 
     move-result v0
 
-    .line 215
-    .restart local v0    # "accountsMatch":Z
     :goto_0
     iget-object v1, p1, Lcom/android/server/content/SyncStorageEngine$EndPoint;->provider:Ljava/lang/String;
 
     if-nez v1, :cond_2
 
-    .line 216
     const/4 v1, 0x1
 
-    .local v1, "providersMatch":Z
     goto :goto_1
 
-    .line 218
-    .end local v1    # "providersMatch":Z
     :cond_2
     iget-object v1, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->provider:Ljava/lang/String;
 
@@ -141,8 +118,6 @@
 
     move-result v1
 
-    .line 220
-    .restart local v1    # "providersMatch":Z
     :goto_1
     if-eqz v0, :cond_3
 
@@ -159,13 +134,10 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 224
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 225
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->account:Landroid/accounts/Account;
 
     if-nez v1, :cond_0
@@ -184,10 +156,8 @@
 
     const-string v1, "/"
 
-    .line 226
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 227
     iget-object v1, p0, Lcom/android/server/content/SyncStorageEngine$EndPoint;->provider:Ljava/lang/String;
 
     if-nez v1, :cond_1
@@ -202,7 +172,6 @@
     :goto_1
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 228
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -221,7 +190,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 229
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationUsageStats;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/notification/NotificationUsageStats;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 92
     iput-object p1, p0, Lcom/android/server/notification/NotificationUsageStats$1;->this$0:Lcom/android/server/notification/NotificationUsageStats;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 95
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 100
     const-string v0, "NotificationUsageStats"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,16 +62,13 @@
 
     goto :goto_0
 
-    .line 97
     :cond_0
     iget-object v0, p0, Lcom/android/server/notification/NotificationUsageStats$1;->this$0:Lcom/android/server/notification/NotificationUsageStats;
 
     invoke-virtual {v0}, Lcom/android/server/notification/NotificationUsageStats;->emit()V
 
-    .line 98
     nop
 
-    .line 103
     :goto_0
     return-void
 .end method

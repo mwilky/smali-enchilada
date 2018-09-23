@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/locksettings/LockSettingsService$Injector;Lcom/android/server/locksettings/LockSettingsStorage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/locksettings/LockSettingsService$Injector;
 
-    .line 361
     iput-object p1, p0, Lcom/android/server/locksettings/LockSettingsService$Injector$1;->this$0:Lcom/android/server/locksettings/LockSettingsService$Injector;
 
     iput-object p2, p0, Lcom/android/server/locksettings/LockSettingsService$Injector$1;->val$storage:Lcom/android/server/locksettings/LockSettingsStorage;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public initialize(Landroid/database/sqlite/SQLiteDatabase;)V
     .locals 5
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 365
     const-string/jumbo v0, "ro.lockscreen.disable.default"
 
     const/4 v1, 0x0
@@ -53,11 +49,8 @@
 
     move-result v0
 
-    .line 367
-    .local v0, "lockScreenDisable":Z
     if-eqz v0, :cond_0
 
-    .line 368
     iget-object v2, p0, Lcom/android/server/locksettings/LockSettingsService$Injector$1;->val$storage:Lcom/android/server/locksettings/LockSettingsStorage;
 
     const-string/jumbo v3, "lockscreen.disabled"
@@ -66,7 +59,6 @@
 
     invoke-virtual {v2, p1, v3, v4, v1}, Lcom/android/server/locksettings/LockSettingsStorage;->writeKeyValue(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 370
     :cond_0
     return-void
 .end method

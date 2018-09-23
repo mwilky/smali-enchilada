@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/om/OverlayManagerService;)V
     .locals 0
 
-    .line 693
     iput-object p1, p0, Lcom/android/server/om/OverlayManagerService$OverlayChangeListener;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/om/OverlayManagerService;Lcom/android/server/om/OverlayManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/om/OverlayManagerService;
-    .param p2, "x1"    # Lcom/android/server/om/OverlayManagerService$1;
 
-    .line 693
     invoke-direct {p0, p1}, Lcom/android/server/om/OverlayManagerService$OverlayChangeListener;-><init>(Lcom/android/server/om/OverlayManagerService;)V
 
     return-void
@@ -46,10 +42,7 @@
 
 .method public static synthetic lambda$onOverlaysChanged$0(Lcom/android/server/om/OverlayManagerService$OverlayChangeListener;ILjava/lang/String;)V
     .locals 18
-    .param p1, "userId"    # I
-    .param p2, "targetPackageName"    # Ljava/lang/String;
 
-    .line 699
     move-object/from16 v1, p2
 
     move-object/from16 v2, p0
@@ -60,14 +53,12 @@
 
     invoke-static {v0, v15, v1}, Lcom/android/server/om/OverlayManagerService;->access$700(Lcom/android/server/om/OverlayManagerService;ILjava/lang/String;)V
 
-    .line 701
     new-instance v0, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.OVERLAY_CHANGED"
 
     const-string/jumbo v4, "package"
 
-    .line 702
     const/4 v5, 0x0
 
     invoke-static {v4, v1, v5}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
@@ -78,13 +69,10 @@
 
     move-object v14, v0
 
-    .line 703
-    .local v14, "intent":Landroid/content/Intent;
     const/high16 v0, 0x4000000
 
     invoke-virtual {v14, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 710
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -120,8 +108,6 @@
 
     move v14, v0
 
-    .end local v14    # "intent":Landroid/content/Intent;
-    .local v17, "intent":Landroid/content/Intent;
     move/from16 v15, v16
 
     move/from16 v16, p1
@@ -131,26 +117,18 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 715
     goto :goto_0
 
-    .line 713
     :catch_0
     move-exception v0
 
     goto :goto_0
 
-    .line 713
-    .end local v17    # "intent":Landroid/content/Intent;
-    .restart local v14    # "intent":Landroid/content/Intent;
     :catch_1
     move-exception v0
 
     move-object/from16 v17, v14
 
-    .line 716
-    .end local v14    # "intent":Landroid/content/Intent;
-    .restart local v17    # "intent":Landroid/content/Intent;
     :goto_0
     return-void
 .end method
@@ -159,15 +137,11 @@
 # virtual methods
 .method public onOverlaysChanged(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "targetPackageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 697
     iget-object v0, p0, Lcom/android/server/om/OverlayManagerService$OverlayChangeListener;->this$0:Lcom/android/server/om/OverlayManagerService;
 
     invoke-static {v0}, Lcom/android/server/om/OverlayManagerService;->access$600(Lcom/android/server/om/OverlayManagerService;)V
 
-    .line 698
     invoke-static {}, Lcom/android/server/FgThread;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -178,6 +152,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 717
     return-void
 .end method

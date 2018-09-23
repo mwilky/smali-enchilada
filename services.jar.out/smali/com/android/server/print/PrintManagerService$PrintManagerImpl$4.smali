@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
-    .line 1007
     iput-object p1, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$4;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     iput p2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$4;->val$userId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 1010
     iget-object v0, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$4;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     invoke-static {v0}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->access$200(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Ljava/lang/Object;
@@ -52,7 +49,6 @@
 
     monitor-enter v0
 
-    .line 1011
     :try_start_0
     iget-object v1, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$4;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
@@ -68,14 +64,10 @@
 
     check-cast v1, Lcom/android/server/print/UserState;
 
-    .line 1012
-    .local v1, "userState":Lcom/android/server/print/UserState;
     if-eqz v1, :cond_0
 
-    .line 1013
     invoke-virtual {v1}, Lcom/android/server/print/UserState;->destroyLocked()V
 
-    .line 1014
     iget-object v2, p0, Lcom/android/server/print/PrintManagerService$PrintManagerImpl$4;->this$1:Lcom/android/server/print/PrintManagerService$PrintManagerImpl;
 
     invoke-static {v2}, Lcom/android/server/print/PrintManagerService$PrintManagerImpl;->access$300(Lcom/android/server/print/PrintManagerService$PrintManagerImpl;)Landroid/util/SparseArray;
@@ -86,15 +78,11 @@
 
     invoke-virtual {v2, v3}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1016
-    .end local v1    # "userState":Lcom/android/server/print/UserState;
     :cond_0
     monitor-exit v0
 
-    .line 1017
     return-void
 
-    .line 1016
     :catchall_0
     move-exception v1
 

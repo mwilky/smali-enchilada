@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/OemSceneModeController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/OemSceneModeController;
 
-    .line 828
     iput-object p1, p0, Lcom/android/server/OemSceneModeController$3;->this$0:Lcom/android/server/OemSceneModeController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 831
     invoke-static {}, Lcom/android/server/OemSceneModeController;->access$400()Z
 
     move-result v0
@@ -67,7 +62,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 832
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -81,7 +75,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 833
     iget-object v0, p0, Lcom/android/server/OemSceneModeController$3;->this$0:Lcom/android/server/OemSceneModeController;
 
     invoke-static {v0}, Lcom/android/server/OemSceneModeController;->access$100(Lcom/android/server/OemSceneModeController;)Landroid/content/ContentResolver;
@@ -96,7 +89,6 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
 
-    .line 835
     :cond_1
     return-void
 .end method

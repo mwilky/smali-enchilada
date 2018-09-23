@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbService;Landroid/net/wifi/WifiManager;J)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usb/UsbService;
 
-    .line 436
     iput-object p1, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iput-object p2, p0, Lcom/android/server/usb/UsbService$2;->val$mgr:Landroid/net/wifi/WifiManager;
@@ -44,10 +42,8 @@
 .method public run()V
     .locals 5
 
-    .line 438
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 439
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     new-instance v1, Landroid/app/AlertDialog$Builder;
@@ -62,7 +58,6 @@
 
     iget-object v2, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
-    .line 440
     invoke-static {v2}, Lcom/android/server/usb/UsbService;->access$300(Lcom/android/server/usb/UsbService;)Landroid/content/Context;
 
     move-result-object v2
@@ -83,7 +78,6 @@
 
     iget-object v2, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
-    .line 441
     invoke-static {v2}, Lcom/android/server/usb/UsbService;->access$300(Lcom/android/server/usb/UsbService;)Landroid/content/Context;
 
     move-result-object v2
@@ -104,7 +98,6 @@
 
     iget-object v2, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
-    .line 442
     invoke-static {v2}, Lcom/android/server/usb/UsbService;->access$300(Lcom/android/server/usb/UsbService;)Landroid/content/Context;
 
     move-result-object v2
@@ -127,21 +120,18 @@
 
     move-result-object v1
 
-    .line 451
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 452
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
 
-    .line 454
     iget-object v0, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iget-object v0, v0, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
@@ -154,7 +144,6 @@
 
     move-result-object v0
 
-    .line 455
     const v1, 0x1090032
 
     const/4 v3, 0x0
@@ -163,8 +152,6 @@
 
     move-result-object v0
 
-    .line 456
-    .local v0, "checkBoxPanel":Landroid/view/View;
     const v1, 0x10201a7
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -173,18 +160,14 @@
 
     check-cast v1, Landroid/widget/CheckBox;
 
-    .line 457
-    .local v1, "checkBox":Landroid/widget/CheckBox;
     new-instance v3, Lcom/android/server/usb/UsbService$2$2;
 
     invoke-direct {v3, p0}, Lcom/android/server/usb/UsbService$2$2;-><init>(Lcom/android/server/usb/UsbService$2;)V
 
     invoke-virtual {v1, v3}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 465
     invoke-virtual {v1, v2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 467
     iget-object v3, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     invoke-static {v3}, Lcom/android/server/usb/UsbService;->access$300(Lcom/android/server/usb/UsbService;)Landroid/content/Context;
@@ -203,21 +186,18 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
-    .line 468
     iget-object v3, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iget-object v3, v3, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v3, v0}, Landroid/app/AlertDialog;->setView(Landroid/view/View;)V
 
-    .line 469
     iget-object v3, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iget-object v3, v3, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v3, v2}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 470
     iget-object v2, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iget-object v2, v2, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
@@ -230,16 +210,13 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setType(I)V
 
-    .line 471
     iget-object v2, p0, Lcom/android/server/usb/UsbService$2;->this$0:Lcom/android/server/usb/UsbService;
 
     iget-object v2, v2, Lcom/android/server/usb/UsbService;->mDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
-    .line 472
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 473
     return-void
 .end method

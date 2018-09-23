@@ -26,15 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/RemoteListenerHelper;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/server/location/RemoteListenerHelper;
 
-    .line 211
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$1;, "Lcom/android/server/location/RemoteListenerHelper$1;"
     iput-object p1, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 212
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->registrationState:I
@@ -47,8 +43,6 @@
 .method public run()V
     .locals 2
 
-    .line 215
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$1;, "Lcom/android/server/location/RemoteListenerHelper$1;"
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-static {v0}, Lcom/android/server/location/RemoteListenerHelper;->access$000(Lcom/android/server/location/RemoteListenerHelper;)Z
@@ -57,7 +51,6 @@
 
     if-nez v0, :cond_1
 
-    .line 216
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-virtual {v0}, Lcom/android/server/location/RemoteListenerHelper;->registerWithService()I
@@ -66,7 +59,6 @@
 
     iput v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->registrationState:I
 
-    .line 217
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     iget v1, p0, Lcom/android/server/location/RemoteListenerHelper$1;->registrationState:I
@@ -83,7 +75,6 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/server/location/RemoteListenerHelper;->access$002(Lcom/android/server/location/RemoteListenerHelper;Z)Z
 
-    .line 219
     :cond_1
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
@@ -93,7 +84,6 @@
 
     if-nez v0, :cond_2
 
-    .line 221
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$1;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-static {v0}, Lcom/android/server/location/RemoteListenerHelper;->access$300(Lcom/android/server/location/RemoteListenerHelper;)Landroid/os/Handler;
@@ -106,7 +96,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 231
     :cond_2
     return-void
 .end method

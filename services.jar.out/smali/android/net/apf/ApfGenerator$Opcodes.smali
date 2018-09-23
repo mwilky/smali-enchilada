@@ -82,7 +82,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 40
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LABEL"
@@ -95,7 +94,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LABEL:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 41
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDB"
@@ -106,7 +104,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDB:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 42
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDH"
@@ -117,7 +114,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDH:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 43
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDW"
@@ -128,7 +124,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDW:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 44
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDBX"
@@ -139,7 +134,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDBX:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 45
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDHX"
@@ -150,7 +144,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDHX:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 46
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDWX"
@@ -161,7 +154,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDWX:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 47
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "ADD"
@@ -172,7 +164,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->ADD:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 48
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "MUL"
@@ -183,7 +174,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->MUL:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 49
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "DIV"
@@ -194,7 +184,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->DIV:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 50
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "AND"
@@ -205,7 +194,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->AND:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 51
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "OR"
@@ -216,7 +204,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->OR:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 52
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "SH"
@@ -227,7 +214,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->SH:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 53
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LI"
@@ -238,7 +224,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LI:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 54
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JMP"
@@ -249,7 +234,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JMP:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 55
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JEQ"
@@ -260,7 +244,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JEQ:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 56
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JNE"
@@ -273,7 +256,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JNE:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 57
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JGT"
@@ -286,7 +268,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JGT:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 58
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JLT"
@@ -299,7 +280,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JLT:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 59
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JSET"
@@ -312,7 +292,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JSET:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 60
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "JNEBS"
@@ -325,7 +304,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->JNEBS:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 61
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "EXT"
@@ -338,7 +316,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->EXT:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 62
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "LDDW"
@@ -351,7 +328,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->LDDW:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 63
     new-instance v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     const-string v1, "STDW"
@@ -364,7 +340,6 @@
 
     sput-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->STDW:Landroid/net/apf/ApfGenerator$Opcodes;
 
-    .line 39
     const/16 v0, 0x18
 
     new-array v0, v0, [Landroid/net/apf/ApfGenerator$Opcodes;
@@ -496,28 +471,22 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "value"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
         }
     .end annotation
 
-    .line 67
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 68
     iput p3, p0, Landroid/net/apf/ApfGenerator$Opcodes;->value:I
 
-    .line 69
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroid/net/apf/ApfGenerator$Opcodes;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 39
     const-class v0, Landroid/net/apf/ApfGenerator$Opcodes;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -532,7 +501,6 @@
 .method public static values()[Landroid/net/apf/ApfGenerator$Opcodes;
     .locals 1
 
-    .line 39
     sget-object v0, Landroid/net/apf/ApfGenerator$Opcodes;->$VALUES:[Landroid/net/apf/ApfGenerator$Opcodes;
 
     invoke-virtual {v0}, [Landroid/net/apf/ApfGenerator$Opcodes;->clone()Ljava/lang/Object;

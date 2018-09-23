@@ -26,7 +26,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,19 +33,7 @@
 
 .method private static createShortcutFromManifest(Lcom/android/server/pm/ShortcutService;ILjava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;IIIIIZ)Landroid/content/pm/ShortcutInfo;
     .locals 29
-    .param p0, "service"    # Lcom/android/server/pm/ShortcutService;
-    .param p1, "userId"    # I
-    .param p2, "id"    # Ljava/lang/String;
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "activityComponent"    # Landroid/content/ComponentName;
-    .param p5, "titleResId"    # I
-    .param p6, "textResId"    # I
-    .param p7, "disabledMessageResId"    # I
-    .param p8, "rank"    # I
-    .param p9, "iconResId"    # I
-    .param p10, "enabled"    # Z
 
-    .line 337
     if-eqz p10, :cond_0
 
     const/16 v0, 0x20
@@ -59,7 +46,6 @@
     :goto_0
     or-int/lit16 v0, v0, 0x100
 
-    .line 339
     const/4 v1, 0x0
 
     if-eqz p9, :cond_1
@@ -74,11 +60,8 @@
     :goto_1
     or-int/2addr v0, v2
 
-    .line 341
-    .local v0, "flags":I
     if-eqz p10, :cond_2
 
-    .line 342
     :goto_2
     move/from16 v27, v1
 
@@ -89,8 +72,6 @@
 
     goto :goto_2
 
-    .line 346
-    .local v27, "disabledReason":I
     :goto_3
     new-instance v1, Landroid/content/pm/ShortcutInfo;
 
@@ -114,7 +95,6 @@
 
     const/16 v20, 0x0
 
-    .line 365
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/pm/ShortcutService;->injectCurrentTimeMillis()J
 
     move-result-wide v21
@@ -147,16 +127,12 @@
 
     invoke-direct/range {v2 .. v27}, Landroid/content/pm/ShortcutInfo;-><init>(ILjava/lang/String;Ljava/lang/String;Landroid/content/ComponentName;Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/lang/CharSequence;ILjava/lang/String;Ljava/util/Set;[Landroid/content/Intent;ILandroid/os/PersistableBundle;JIILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 346
     return-object v1
 .end method
 
 .method private static parseCategories(Lcom/android/server/pm/ShortcutService;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 4
-    .param p0, "service"    # Lcom/android/server/pm/ShortcutService;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 273
     iget-object v0, p0, Lcom/android/server/pm/ShortcutService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -169,8 +145,6 @@
 
     move-result-object v0
 
-    .line 276
-    .local v0, "sa":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
     :try_start_0
@@ -182,20 +156,16 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 277
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getNonResourceString(I)Ljava/lang/String;
 
     move-result-object v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 283
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 277
     return-object v1
 
-    .line 279
     :cond_0
     :try_start_1
     const-string v1, "ShortcutService"
@@ -206,16 +176,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 280
     const/4 v1, 0x0
 
-    .line 283
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 280
     return-object v1
 
-    .line 283
     :catchall_0
     move-exception v1
 
@@ -226,16 +192,9 @@
 
 .method private static parseShortcutAttributes(Lcom/android/server/pm/ShortcutService;Landroid/util/AttributeSet;Ljava/lang/String;Landroid/content/ComponentName;II)Landroid/content/pm/ShortcutInfo;
     .locals 17
-    .param p0, "service"    # Lcom/android/server/pm/ShortcutService;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "activity"    # Landroid/content/ComponentName;
-    .param p4, "userId"    # I
-    .param p5, "rank"    # I
 
     move-object/from16 v12, p3
 
-    .line 290
     move-object/from16 v13, p0
 
     iget-object v0, v13, Lcom/android/server/pm/ShortcutService;->mContext:Landroid/content/Context;
@@ -254,8 +213,6 @@
 
     move-object v15, v0
 
-    .line 293
-    .local v15, "sa":Landroid/content/res/TypedArray;
     const/4 v0, 0x2
 
     :try_start_0
@@ -269,7 +226,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 294
     const-string v0, "ShortcutService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -290,71 +246,54 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 295
     nop
 
-    .line 327
     invoke-virtual {v15}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 295
     return-object v3
 
-    .line 297
     :cond_0
     :try_start_1
     invoke-virtual {v15, v0}, Landroid/content/res/TypedArray;->getNonResourceString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 298
-    .local v0, "id":Ljava/lang/String;
     const/4 v1, 0x1
 
     invoke-virtual {v15, v1, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v11
 
-    .line 299
-    .local v11, "enabled":Z
     const/4 v1, 0x0
 
     invoke-virtual {v15, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v10
 
-    .line 300
-    .local v10, "iconResId":I
     invoke-virtual {v15, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
     move/from16 v16, v2
 
-    .line 301
-    .local v16, "titleResId":I
     const/4 v2, 0x4
 
     invoke-virtual {v15, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v7
 
-    .line 302
-    .local v7, "textResId":I
     const/4 v2, 0x5
 
     invoke-virtual {v15, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v8
 
-    .line 305
-    .local v8, "disabledMessageResId":I
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 306
     const-string v1, "ShortcutService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -375,20 +314,15 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 307
     nop
 
-    .line 327
     invoke-virtual {v15}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 307
     return-object v3
 
-    .line 309
     :cond_1
     if-nez v16, :cond_2
 
-    .line 310
     :try_start_2
     const-string v1, "ShortcutService"
 
@@ -410,16 +344,12 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 311
     nop
 
-    .line 327
     invoke-virtual {v15}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 311
     return-object v3
 
-    .line 314
     :cond_2
     move-object v1, v13
 
@@ -442,19 +372,10 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 327
     invoke-virtual {v15}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 314
     return-object v1
 
-    .line 327
-    .end local v0    # "id":Ljava/lang/String;
-    .end local v7    # "textResId":I
-    .end local v8    # "disabledMessageResId":I
-    .end local v10    # "iconResId":I
-    .end local v11    # "enabled":Z
-    .end local v16    # "titleResId":I
     :catchall_0
     move-exception v0
 
@@ -465,9 +386,6 @@
 
 .method public static parseShortcuts(Lcom/android/server/pm/ShortcutService;Ljava/lang/String;I)Ljava/util/List;
     .locals 8
-    .param p0, "service"    # Lcom/android/server/pm/ShortcutService;
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -487,13 +405,10 @@
         }
     .end annotation
 
-    .line 66
     invoke-virtual {p0, p1, p2}, Lcom/android/server/pm/ShortcutService;->injectGetMainActivities(Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 67
-    .local v0, "activities":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     const/4 v1, 0x0
 
     if-eqz v0, :cond_4
@@ -506,26 +421,19 @@
 
     goto :goto_2
 
-    .line 71
     :cond_0
     move-object v2, v1
 
-    .line 74
-    .local v2, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :try_start_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    .line 75
-    .local v3, "size":I
     const/4 v4, 0x0
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v3, :cond_3
 
-    .line 76
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -534,32 +442,23 @@
 
     iget-object v5, v5, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 77
-    .local v5, "activityInfoNoMetadata":Landroid/content/pm/ActivityInfo;
     if-nez v5, :cond_1
 
-    .line 78
     goto :goto_1
 
-    .line 81
     :cond_1
     nop
 
-    .line 83
     invoke-virtual {v5}, Landroid/content/pm/ActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v6
 
-    .line 82
     invoke-virtual {p0, v6, p2}, Lcom/android/server/pm/ShortcutService;->getActivityInfoWithMetadata(Landroid/content/ComponentName;I)Landroid/content/pm/ActivityInfo;
 
     move-result-object v6
 
-    .line 84
-    .local v6, "activityInfoWithMetadata":Landroid/content/pm/ActivityInfo;
     if-eqz v6, :cond_2
 
-    .line 85
     invoke-static {p0, v6, p1, p2, v2}, Lcom/android/server/pm/ShortcutParser;->parseShortcutsOneFile(Lcom/android/server/pm/ShortcutService;Landroid/content/pm/ActivityInfo;Ljava/lang/String;ILjava/util/List;)Ljava/util/List;
 
     move-result-object v7
@@ -568,30 +467,20 @@
 
     move-object v2, v7
 
-    .line 75
-    .end local v5    # "activityInfoNoMetadata":Landroid/content/pm/ActivityInfo;
-    .end local v6    # "activityInfoWithMetadata":Landroid/content/pm/ActivityInfo;
     :cond_2
     :goto_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 95
-    .end local v3    # "size":I
-    .end local v4    # "i":I
     :cond_3
     nop
 
-    .line 96
     return-object v2
 
-    .line 89
     :catch_0
     move-exception v3
 
-    .line 92
-    .local v3, "e":Ljava/lang/RuntimeException;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -608,12 +497,8 @@
 
     invoke-virtual {p0, v4, v3}, Lcom/android/server/pm/ShortcutService;->wtf(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 94
     return-object v1
 
-    .line 68
-    .end local v2    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v3    # "e":Ljava/lang/RuntimeException;
     :cond_4
     :goto_2
     return-object v1
@@ -621,10 +506,6 @@
 
 .method private static parseShortcutsOneFile(Lcom/android/server/pm/ShortcutService;Landroid/content/pm/ActivityInfo;Ljava/lang/String;ILjava/util/List;)Ljava/util/List;
     .locals 22
-    .param p0, "service"    # Lcom/android/server/pm/ShortcutService;
-    .param p1, "activityInfo"    # Landroid/content/pm/ActivityInfo;
-    .param p2, "packageName"    # Ljava/lang/String;
-    .param p3, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -648,19 +529,14 @@
         }
     .end annotation
 
-    .line 108
-    .local p4, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     move-object/from16 v7, p0
 
     move-object/from16 v8, p1
 
-    .line 108
     const/4 v0, 0x0
 
     move-object v1, v0
 
-    .line 110
-    .local v1, "parser":Landroid/content/res/XmlResourceParser;
     :try_start_0
     const-string v0, "android.app.shortcuts"
 
@@ -672,25 +548,17 @@
 
     move-object v9, v0
 
-    .line 111
-    .end local v1    # "parser":Landroid/content/res/XmlResourceParser;
-    .local v9, "parser":Landroid/content/res/XmlResourceParser;
     if-nez v9, :cond_1
 
-    .line 112
     nop
 
-    .line 265
     if-eqz v9, :cond_0
 
-    .line 266
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 112
     :cond_0
     return-object p4
 
-    .line 115
     :cond_1
     :try_start_1
     new-instance v0, Landroid/content/ComponentName;
@@ -703,40 +571,26 @@
 
     move-object v11, v0
 
-    .line 117
-    .local v11, "activity":Landroid/content/ComponentName;
     invoke-static {v9}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v0
 
     move-object v12, v0
 
-    .line 121
-    .local v12, "attrs":Landroid/util/AttributeSet;
     const/4 v0, 0x0
 
-    .line 122
-    .local v0, "rank":I
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/pm/ShortcutService;->getMaxActivityShortcuts()I
 
     move-result v1
 
     move v13, v1
 
-    .line 123
-    .local v13, "maxShortcuts":I
     const/4 v1, 0x0
 
-    .line 127
-    .local v1, "numShortcuts":I
     const/4 v3, 0x0
 
-    .line 129
-    .local v3, "currentShortcut":Landroid/content/pm/ShortcutInfo;
     const/4 v4, 0x0
 
-    .line 130
-    .local v4, "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
@@ -753,16 +607,6 @@
 
     move-object/from16 v4, p4
 
-    .line 133
-    .end local v1    # "numShortcuts":I
-    .end local v3    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .end local p4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v0, "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .local v4, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v5, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .local v6, "numShortcuts":I
-    .local v14, "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .local v15, "rank":I
     :goto_0
     :try_start_2
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->next()I
@@ -773,8 +617,6 @@
 
     move v3, v1
 
-    .line 133
-    .local v3, "type":I
     const/4 v2, 0x1
 
     if-eq v1, v2, :cond_1d
@@ -783,7 +625,6 @@
 
     if-ne v3, v1, :cond_3
 
-    .line 134
     :try_start_3
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
@@ -795,16 +636,6 @@
 
     goto :goto_1
 
-    .line 265
-    .end local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .end local v3    # "type":I
-    .end local v5    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v6    # "numShortcuts":I
-    .end local v11    # "activity":Landroid/content/ComponentName;
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .end local v13    # "maxShortcuts":I
-    .end local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .end local v15    # "rank":I
     :cond_2
     move-object v12, v4
 
@@ -817,16 +648,6 @@
 
     goto/16 :goto_c
 
-    .line 135
-    .restart local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .restart local v3    # "type":I
-    .restart local v5    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v6    # "numShortcuts":I
-    .restart local v11    # "activity":Landroid/content/ComponentName;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v13    # "maxShortcuts":I
-    .restart local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .restart local v15    # "rank":I
     :cond_3
     :goto_1
     :try_start_4
@@ -836,8 +657,6 @@
 
     move/from16 v17, v16
 
-    .line 136
-    .local v17, "depth":I
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v16
@@ -846,8 +665,6 @@
 
     move-object/from16 v18, v16
 
-    .line 139
-    .local v18, "tag":Ljava/lang/String;
     const/4 v2, 0x2
 
     if-ne v3, v1, :cond_d
@@ -858,10 +675,6 @@
 
     if-ne v11, v2, :cond_c
 
-    .line 139
-    .end local v17    # "depth":I
-    .local v11, "depth":I
-    .local v19, "activity":Landroid/content/ComponentName;
     :try_start_5
     const-string/jumbo v1, "shortcut"
 
@@ -871,18 +684,12 @@
 
     move-result v1
 
-    .line 139
-    .end local v18    # "tag":Ljava/lang/String;
-    .local v2, "tag":Ljava/lang/String;
     if-eqz v1, :cond_b
 
-    .line 140
     if-nez v0, :cond_4
 
-    .line 142
     nop
 
-    .line 130
     move-object v8, v5
 
     move/from16 v17, v6
@@ -895,31 +702,23 @@
 
     goto/16 :goto_a
 
-    .line 144
     :cond_4
     move-object v1, v0
 
-    .line 145
-    .local v1, "si":Landroid/content/pm/ShortcutInfo;
     const/16 v16, 0x0
 
-    .line 147
-    .end local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .local v16, "currentShortcut":Landroid/content/pm/ShortcutInfo;
     invoke-virtual {v1}, Landroid/content/pm/ShortcutInfo;->isEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 148
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 149
     const-string v0, "ShortcutService"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -930,9 +729,6 @@
 
     const-string v12, "Shortcut "
 
-    .line 149
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .local v20, "attrs":Landroid/util/AttributeSet;
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
@@ -951,32 +747,18 @@
 
     invoke-static {v0, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 150
     goto/16 :goto_3
 
-    .line 158
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
     :cond_5
     move-object/from16 v20, v12
 
-    .line 158
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     goto :goto_2
 
-    .line 154
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
     :cond_6
     move-object/from16 v20, v12
 
-    .line 154
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 155
     new-instance v0, Landroid/content/Intent;
 
     const-string v10, "android.intent.action.VIEW"
@@ -985,11 +767,9 @@
 
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 158
     :goto_2
     if-lt v6, v13, :cond_8
 
-    .line 159
     const-string v0, "ShortcutService"
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -1006,7 +786,6 @@
 
     invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 160
     invoke-virtual/range {p1 .. p1}, Landroid/content/pm/ActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v12
@@ -1021,25 +800,19 @@
 
     move-result-object v10
 
-    .line 159
     invoke-static {v0, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 161
     nop
 
-    .line 265
     if-eqz v9, :cond_7
 
-    .line 266
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 161
     :cond_7
     return-object v4
 
-    .line 165
     :cond_8
     const/4 v0, 0x0
 
@@ -1056,7 +829,6 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 170
     :try_start_7
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -1075,83 +847,48 @@
     .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 177
     nop
 
-    .line 178
     :try_start_8
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 180
     if-eqz v14, :cond_9
 
-    .line 181
     invoke-virtual {v1, v14}, Landroid/content/pm/ShortcutInfo;->setCategories(Ljava/util/Set;)V
 
-    .line 182
     const/4 v0, 0x0
 
-    .line 185
-    .end local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .local v0, "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     move-object v14, v0
 
-    .line 185
-    .end local v0    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .restart local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     :cond_9
     if-nez v4, :cond_a
 
-    .line 186
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 188
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     move-object v4, v0
 
-    .line 188
-    .end local v0    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :cond_a
     invoke-interface {v4, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 189
     add-int/lit8 v6, v6, 0x1
 
-    .line 190
     add-int/lit8 v15, v15, 0x1
 
-    .line 194
     goto :goto_3
 
-    .line 171
     :catch_0
     move-exception v0
 
-    .line 175
-    .local v0, "e":Ljava/lang/RuntimeException;
     const-string v10, "ShortcutService"
 
     const-string v12, "Shortcut\'s extras contain un-persistable values. Skipping it."
 
     invoke-static {v10, v12}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 176
     nop
 
-    .line 130
-    .end local v1    # "si":Landroid/content/pm/ShortcutInfo;
-    .end local v2    # "tag":Ljava/lang/String;
-    .end local v3    # "type":I
-    .end local v16    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .local v0, "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .local v11, "activity":Landroid/content/ComponentName;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
     :goto_3
     move-object/from16 v0, v16
 
@@ -1163,44 +900,18 @@
 
     goto/16 :goto_0
 
-    .line 198
-    .restart local v2    # "tag":Ljava/lang/String;
-    .restart local v3    # "type":I
-    .local v11, "depth":I
-    .restart local v19    # "activity":Landroid/content/ComponentName;
     :cond_b
     move-object/from16 v20, v12
 
-    .line 198
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     goto :goto_4
 
-    .line 198
-    .end local v2    # "tag":Ljava/lang/String;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v18    # "tag":Ljava/lang/String;
     :cond_c
     move-object/from16 v20, v12
 
     move-object/from16 v2, v18
 
-    .line 198
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .end local v18    # "tag":Ljava/lang/String;
-    .restart local v2    # "tag":Ljava/lang/String;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     goto :goto_4
 
-    .line 198
-    .end local v2    # "tag":Ljava/lang/String;
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .local v11, "activity":Landroid/content/ComponentName;
-    .restart local v12    # "attrs":Landroid/util/AttributeSet;
-    .restart local v17    # "depth":I
-    .restart local v18    # "tag":Ljava/lang/String;
     :cond_d
     move-object/from16 v19, v11
 
@@ -1210,26 +921,13 @@
 
     move-object/from16 v2, v18
 
-    .line 198
-    .end local v12    # "attrs":Landroid/util/AttributeSet;
-    .end local v17    # "depth":I
-    .end local v18    # "tag":Ljava/lang/String;
-    .restart local v2    # "tag":Ljava/lang/String;
-    .local v11, "depth":I
-    .restart local v19    # "activity":Landroid/content/ComponentName;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     :goto_4
     const/4 v1, 0x2
 
     if-eq v3, v1, :cond_e
 
-    .line 199
     nop
 
-    .line 130
-    .end local v2    # "tag":Ljava/lang/String;
-    .end local v3    # "type":I
-    .end local v11    # "depth":I
     :goto_5
     move-object v12, v4
 
@@ -1244,10 +942,6 @@
 
     goto/16 :goto_a
 
-    .line 202
-    .restart local v2    # "tag":Ljava/lang/String;
-    .restart local v3    # "type":I
-    .restart local v11    # "depth":I
     :cond_e
     const/4 v10, 0x1
 
@@ -1263,10 +957,8 @@
 
     if-eqz v1, :cond_f
 
-    .line 203
     goto :goto_5
 
-    .line 205
     :cond_f
     const/4 v1, 0x2
 
@@ -1283,7 +975,6 @@
 
     if-eqz v1, :cond_13
 
-    .line 206
     move-object v1, v7
 
     move v12, v10
@@ -1292,54 +983,34 @@
 
     move-object/from16 v2, v20
 
-    .line 206
-    .end local v2    # "tag":Ljava/lang/String;
-    .local v10, "tag":Ljava/lang/String;
     move/from16 v16, v3
 
     move-object/from16 v3, p2
 
-    .line 206
-    .end local v3    # "type":I
-    .local v16, "type":I
     move-object v12, v4
 
     move-object/from16 v4, v19
 
-    .line 206
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v12, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     move-object v8, v5
 
     move/from16 v5, p3
 
-    .line 206
-    .end local v5    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .local v8, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
     move/from16 v17, v6
 
     move v6, v15
 
-    .line 206
-    .end local v6    # "numShortcuts":I
-    .local v17, "numShortcuts":I
     :try_start_a
     invoke-static/range {v1 .. v6}, Lcom/android/server/pm/ShortcutParser;->parseShortcutAttributes(Lcom/android/server/pm/ShortcutService;Landroid/util/AttributeSet;Ljava/lang/String;Landroid/content/ComponentName;II)Landroid/content/pm/ShortcutInfo;
 
     move-result-object v1
 
-    .line 208
-    .restart local v1    # "si":Landroid/content/pm/ShortcutInfo;
     if-nez v1, :cond_10
 
-    .line 210
     goto :goto_6
 
-    .line 215
     :cond_10
     if-eqz v12, :cond_12
 
-    .line 216
     invoke-interface {v12}, Ljava/util/List;->size()I
 
     move-result v2
@@ -1348,12 +1019,9 @@
 
     sub-int/2addr v2, v3
 
-    .line 216
-    .local v2, "i":I
     :goto_7
     if-ltz v2, :cond_12
 
-    .line 217
     invoke-virtual {v1}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v3
@@ -1374,34 +1042,26 @@
 
     if-eqz v3, :cond_11
 
-    .line 218
     const-string v3, "ShortcutService"
 
     const-string v4, "Duplicate shortcut ID detected. Skipping it."
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
     goto :goto_6
 
-    .line 216
     :cond_11
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_7
 
-    .line 223
-    .end local v2    # "i":I
     :cond_12
     move-object v0, v1
 
-    .line 224
     const/4 v14, 0x0
 
-    .line 225
     nop
 
-    .line 130
     move-object/from16 v10, p2
 
     move-object v5, v8
@@ -1418,18 +1078,6 @@
 
     goto/16 :goto_0
 
-    .line 227
-    .end local v1    # "si":Landroid/content/pm/ShortcutInfo;
-    .end local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v10    # "tag":Ljava/lang/String;
-    .end local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v16    # "type":I
-    .end local v17    # "numShortcuts":I
-    .local v2, "tag":Ljava/lang/String;
-    .restart local v3    # "type":I
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v5    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v6    # "numShortcuts":I
     :cond_13
     move-object v10, v2
 
@@ -1441,17 +1089,6 @@
 
     move/from16 v17, v6
 
-    .line 227
-    .end local v2    # "tag":Ljava/lang/String;
-    .end local v3    # "type":I
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v5    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v6    # "numShortcuts":I
-    .restart local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v10    # "tag":Ljava/lang/String;
-    .restart local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v16    # "type":I
-    .restart local v17    # "numShortcuts":I
     const/4 v1, 0x3
 
     if-ne v11, v1, :cond_17
@@ -1464,24 +1101,20 @@
 
     if-eqz v1, :cond_17
 
-    .line 228
     if-eqz v0, :cond_16
 
-    .line 229
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->isEnabled()Z
 
     move-result v1
 
     if-nez v1, :cond_14
 
-    .line 230
     move-object/from16 v5, v19
 
     move-object/from16 v2, v20
 
     goto :goto_8
 
-    .line 234
     :cond_14
     iget-object v1, v7, Lcom/android/server/pm/ShortcutService;->mContext:Landroid/content/Context;
 
@@ -1495,10 +1128,6 @@
 
     move-result-object v1
 
-    .line 236
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .local v1, "intent":Landroid/content/Intent;
-    .local v2, "attrs":Landroid/util/AttributeSet;
     invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
@@ -1509,7 +1138,6 @@
 
     if-eqz v3, :cond_15
 
-    .line 237
     const-string v3, "ShortcutService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1524,50 +1152,28 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .local v5, "activity":Landroid/content/ComponentName;
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
     const/4 v0, 0x0
 
-    .line 239
     goto :goto_9
 
-    .line 241
-    .end local v5    # "activity":Landroid/content/ComponentName;
-    .restart local v19    # "activity":Landroid/content/ComponentName;
     :cond_15
     move-object/from16 v5, v19
 
-    .line 241
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .restart local v5    # "activity":Landroid/content/ComponentName;
     invoke-virtual {v8, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 242
     goto/16 :goto_a
 
-    .line 230
-    .end local v1    # "intent":Landroid/content/Intent;
-    .end local v2    # "attrs":Landroid/util/AttributeSet;
-    .end local v5    # "activity":Landroid/content/ComponentName;
-    .restart local v19    # "activity":Landroid/content/ComponentName;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     :cond_16
     move-object/from16 v5, v19
 
     move-object/from16 v2, v20
 
-    .line 230
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v2    # "attrs":Landroid/util/AttributeSet;
-    .restart local v5    # "activity":Landroid/content/ComponentName;
     :goto_8
     const-string v1, "ShortcutService"
 
@@ -1575,48 +1181,18 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 231
     goto/16 :goto_a
 
-    .line 265
-    .end local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .end local v2    # "attrs":Landroid/util/AttributeSet;
-    .end local v5    # "activity":Landroid/content/ComponentName;
-    .end local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v10    # "tag":Ljava/lang/String;
-    .end local v11    # "depth":I
-    .end local v13    # "maxShortcuts":I
-    .end local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .end local v15    # "rank":I
-    .end local v16    # "type":I
-    .end local v17    # "numShortcuts":I
     :catchall_1
     move-exception v0
 
     goto/16 :goto_c
 
-    .line 244
-    .restart local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .restart local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v10    # "tag":Ljava/lang/String;
-    .restart local v11    # "depth":I
-    .restart local v13    # "maxShortcuts":I
-    .restart local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .restart local v15    # "rank":I
-    .restart local v16    # "type":I
-    .restart local v17    # "numShortcuts":I
-    .restart local v19    # "activity":Landroid/content/ComponentName;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     :cond_17
     move-object/from16 v5, v19
 
     move-object/from16 v2, v20
 
-    .line 244
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v2    # "attrs":Landroid/util/AttributeSet;
-    .restart local v5    # "activity":Landroid/content/ComponentName;
     const/4 v1, 0x3
 
     if-ne v11, v1, :cond_1b
@@ -1629,34 +1205,27 @@
 
     if-eqz v1, :cond_1b
 
-    .line 245
     if-eqz v0, :cond_1c
 
-    .line 246
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getCategories()Ljava/util/Set;
 
     move-result-object v1
 
     if-eqz v1, :cond_18
 
-    .line 247
     goto :goto_a
 
-    .line 249
     :cond_18
     invoke-static {v7, v2}, Lcom/android/server/pm/ShortcutParser;->parseCategories(Lcom/android/server/pm/ShortcutService;Landroid/util/AttributeSet;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 250
-    .local v1, "name":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_19
 
-    .line 251
     const-string v3, "ShortcutService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1675,44 +1244,22 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 252
     goto :goto_a
 
-    .line 255
     :cond_19
     if-nez v14, :cond_1a
 
-    .line 256
     new-instance v3, Landroid/util/ArraySet;
 
     invoke-direct {v3}, Landroid/util/ArraySet;-><init>()V
 
-    .line 258
-    .end local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .local v3, "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     move-object v14, v3
 
-    .line 258
-    .end local v3    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .restart local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     :cond_1a
     invoke-interface {v14, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 259
     nop
 
-    .line 130
-    .end local v1    # "name":Ljava/lang/String;
-    .end local v2    # "attrs":Landroid/util/AttributeSet;
-    .end local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v10    # "tag":Ljava/lang/String;
-    .end local v16    # "type":I
-    .end local v17    # "numShortcuts":I
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v5, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v6    # "numShortcuts":I
-    .local v11, "activity":Landroid/content/ComponentName;
-    .local v12, "attrs":Landroid/util/AttributeSet;
     :goto_9
     move-object/from16 v10, p2
 
@@ -1730,17 +1277,6 @@
 
     goto/16 :goto_0
 
-    .line 262
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v6    # "numShortcuts":I
-    .restart local v2    # "attrs":Landroid/util/AttributeSet;
-    .local v5, "activity":Landroid/content/ComponentName;
-    .restart local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v10    # "tag":Ljava/lang/String;
-    .local v11, "depth":I
-    .local v12, "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v16    # "type":I
-    .restart local v17    # "numShortcuts":I
     :cond_1b
     const-string v1, "ShortcutService"
 
@@ -1770,22 +1306,8 @@
     :try_end_a
     .catchall {:try_start_a .. :try_end_a} :catchall_1
 
-    .line 263
-    .end local v10    # "tag":Ljava/lang/String;
-    .end local v11    # "depth":I
     nop
 
-    .line 130
-    .end local v2    # "attrs":Landroid/util/AttributeSet;
-    .end local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v16    # "type":I
-    .end local v17    # "numShortcuts":I
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .local v5, "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v6    # "numShortcuts":I
-    .restart local v19    # "activity":Landroid/content/ComponentName;
-    .restart local v20    # "attrs":Landroid/util/AttributeSet;
     :cond_1c
     :goto_a
     move-object/from16 v10, p2
@@ -1802,61 +1324,26 @@
 
     move-object v12, v2
 
-    .line 130
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v6    # "numShortcuts":I
-    .end local v19    # "activity":Landroid/content/ComponentName;
-    .end local v20    # "attrs":Landroid/util/AttributeSet;
-    .restart local v2    # "attrs":Landroid/util/AttributeSet;
-    .local v5, "activity":Landroid/content/ComponentName;
-    .restart local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .restart local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v17    # "numShortcuts":I
     goto/16 :goto_0
 
-    .line 265
-    .end local v0    # "currentShortcut":Landroid/content/pm/ShortcutInfo;
-    .end local v2    # "attrs":Landroid/util/AttributeSet;
-    .end local v5    # "activity":Landroid/content/ComponentName;
-    .end local v8    # "intents":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/content/Intent;>;"
-    .end local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .end local v13    # "maxShortcuts":I
-    .end local v14    # "categories":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
-    .end local v15    # "rank":I
-    .end local v17    # "numShortcuts":I
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :cond_1d
     move-object v12, v4
 
-    .line 265
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :goto_b
     if-eqz v9, :cond_1e
 
-    .line 266
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 269
     :cond_1e
     return-object v12
 
-    .line 265
-    .end local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :catchall_2
     move-exception v0
 
     move-object v12, v4
 
-    .line 265
-    .end local v4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     goto :goto_c
 
-    .line 265
-    .end local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local p4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :catchall_3
     move-exception v0
 
@@ -1864,9 +1351,6 @@
 
     goto :goto_c
 
-    .line 265
-    .end local v9    # "parser":Landroid/content/res/XmlResourceParser;
-    .local v1, "parser":Landroid/content/res/XmlResourceParser;
     :catchall_4
     move-exception v0
 
@@ -1874,15 +1358,9 @@
 
     move-object v9, v1
 
-    .line 265
-    .end local v1    # "parser":Landroid/content/res/XmlResourceParser;
-    .end local p4    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
-    .restart local v9    # "parser":Landroid/content/res/XmlResourceParser;
-    .restart local v12    # "result":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     :goto_c
     if-eqz v9, :cond_1f
 
-    .line 266
     invoke-interface {v9}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_1f

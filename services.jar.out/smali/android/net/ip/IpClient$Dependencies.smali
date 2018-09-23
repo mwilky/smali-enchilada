@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 674
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method public getInterfaceParams(Ljava/lang/String;)Landroid/net/util/InterfaceParams;
     .locals 1
-    .param p1, "ifname"    # Ljava/lang/String;
 
-    .line 685
     invoke-static {p1}, Landroid/net/util/InterfaceParams;->getByName(Ljava/lang/String;)Landroid/net/util/InterfaceParams;
 
     move-result-object v0
@@ -41,15 +38,12 @@
 .method public getNMS()Landroid/os/INetworkManagementService;
     .locals 1
 
-    .line 676
     const-string/jumbo v0, "network_management"
 
-    .line 677
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
-    .line 676
     invoke-static {v0}, Landroid/os/INetworkManagementService$Stub;->asInterface(Landroid/os/IBinder;)Landroid/os/INetworkManagementService;
 
     move-result-object v0
@@ -60,7 +54,6 @@
 .method public getNetd()Landroid/net/INetd;
     .locals 1
 
-    .line 681
     invoke-static {}, Landroid/net/util/NetdService;->getInstance()Landroid/net/INetd;
 
     move-result-object v0

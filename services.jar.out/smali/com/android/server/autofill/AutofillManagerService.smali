@@ -78,33 +78,27 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 11
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 164
     invoke-direct {p0, p1}, Lcom/android/server/SystemService;-><init>(Landroid/content/Context;)V
 
-    .line 114
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
-    .line 123
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
-    .line 129
     new-instance v0, Landroid/util/SparseBooleanArray;
 
     invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
-    .line 132
     new-instance v0, Landroid/util/LocalLog;
 
     const/16 v1, 0x14
@@ -113,14 +107,12 @@
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mRequestsHistory:Landroid/util/LocalLog;
 
-    .line 133
     new-instance v0, Landroid/util/LocalLog;
 
     invoke-direct {v0, v1}, Landroid/util/LocalLog;-><init>(I)V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mUiLatencyHistory:Landroid/util/LocalLog;
 
-    .line 134
     new-instance v0, Landroid/util/LocalLog;
 
     const/16 v1, 0x32
@@ -129,14 +121,12 @@
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mWtfHistory:Landroid/util/LocalLog;
 
-    .line 136
     new-instance v0, Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
     invoke-direct {v0}, Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mAutofillCompatState:Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
-    .line 137
     new-instance v0, Lcom/android/server/autofill/AutofillManagerService$LocalService;
 
     const/4 v1, 0x0
@@ -145,17 +135,14 @@
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLocalService:Lcom/android/server/autofill/AutofillManagerService$LocalService;
 
-    .line 139
     new-instance v0, Lcom/android/server/autofill/AutofillManagerService$1;
 
     invoke-direct {v0, p0}, Lcom/android/server/autofill/AutofillManagerService$1;-><init>(Lcom/android/server/autofill/AutofillManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
-    .line 165
     iput-object p1, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
-    .line 166
     new-instance v0, Lcom/android/server/autofill/ui/AutoFillUI;
 
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
@@ -170,11 +157,8 @@
 
     iput-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mUi:Lcom/android/server/autofill/ui/AutoFillUI;
 
-    .line 168
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
-    .line 169
-    .local v0, "debug":Z
     const-string v2, "AutofillManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -193,21 +177,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
     invoke-direct {p0, v0}, Lcom/android/server/autofill/AutofillManagerService;->setDebugLocked(Z)V
 
-    .line 172
     new-instance v2, Landroid/content/IntentFilter;
 
     invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 173
-    .local v2, "filter":Landroid/content/IntentFilter;
     const-string v3, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 174
     iget-object v3, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Lcom/android/server/autofill/AutofillManagerService;->mBroadcastReceiver:Landroid/content/BroadcastReceiver;
@@ -218,7 +197,6 @@
 
     invoke-virtual {v3, v4, v2, v1, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 177
     const-class v1, Landroid/os/UserManager;
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -227,8 +205,6 @@
 
     check-cast v1, Landroid/os/UserManager;
 
-    .line 178
-    .local v1, "um":Landroid/os/UserManager;
     const-class v3, Landroid/os/UserManagerInternal;
 
     invoke-static {v3}, Lcom/android/server/LocalServices;->getService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -237,18 +213,12 @@
 
     check-cast v3, Landroid/os/UserManagerInternal;
 
-    .line 179
-    .local v3, "umi":Landroid/os/UserManagerInternal;
     invoke-virtual {v1}, Landroid/os/UserManager;->getUsers()Ljava/util/List;
 
     move-result-object v4
 
-    .line 180
-    .local v4, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     const/4 v5, 0x0
 
-    .line 180
-    .local v5, "i":I
     :goto_0
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -256,7 +226,6 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 181
     invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -265,22 +234,16 @@
 
     iget v6, v6, Landroid/content/pm/UserInfo;->id:I
 
-    .line 182
-    .local v6, "userId":I
     const-string/jumbo v7, "no_autofill"
 
     invoke-virtual {v3, v6, v7}, Landroid/os/UserManagerInternal;->getUserRestriction(ILjava/lang/String;)Z
 
     move-result v7
 
-    .line 183
-    .local v7, "disabled":Z
     if-eqz v7, :cond_1
 
-    .line 184
     if-eqz v7, :cond_0
 
-    .line 185
     const-string v8, "AutofillManagerService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -299,22 +262,16 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     :cond_0
     iget-object v8, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v8, v6, v7}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 180
-    .end local v6    # "userId":I
-    .end local v7    # "disabled":Z
     :cond_1
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 190
-    .end local v5    # "i":I
     :cond_2
     new-instance v5, Lcom/android/server/autofill/-$$Lambda$AutofillManagerService$Yt8ZUfnHlFcXzCNLhvGde5dPRDA;
 
@@ -322,18 +279,14 @@
 
     invoke-virtual {v3, v5}, Landroid/os/UserManagerInternal;->addUserRestrictionsListener(Landroid/os/UserManagerInternal$UserRestrictionsListener;)V
 
-    .line 207
     invoke-direct {p0}, Lcom/android/server/autofill/AutofillManagerService;->startTrackingPackageChanges()V
 
-    .line 208
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/server/autofill/AutofillManagerService;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     return-object v0
@@ -341,9 +294,7 @@
 
 .method static synthetic access$1000(Lcom/android/server/autofill/AutofillManagerService;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-boolean v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mAllowInstantService:Z
 
     return v0
@@ -351,9 +302,7 @@
 
 .method static synthetic access$1100(Lcom/android/server/autofill/AutofillManagerService;)Landroid/util/SparseBooleanArray;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
     return-object v0
@@ -361,10 +310,7 @@
 
 .method static synthetic access$1200(Lcom/android/server/autofill/AutofillManagerService;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
-    .param p1, "x1"    # Z
 
-    .line 100
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->setDebugLocked(Z)V
 
     return-void
@@ -372,9 +318,7 @@
 
 .method static synthetic access$1400(Lcom/android/server/autofill/AutofillManagerService;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     invoke-direct {p0}, Lcom/android/server/autofill/AutofillManagerService;->getWhitelistedCompatModePackagesFromSettings()Ljava/lang/String;
 
     move-result-object v0
@@ -384,9 +328,7 @@
 
 .method static synthetic access$1500(Lcom/android/server/autofill/AutofillManagerService;)Landroid/util/LocalLog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mRequestsHistory:Landroid/util/LocalLog;
 
     return-object v0
@@ -394,9 +336,7 @@
 
 .method static synthetic access$1600(Lcom/android/server/autofill/AutofillManagerService;)Landroid/util/LocalLog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mUiLatencyHistory:Landroid/util/LocalLog;
 
     return-object v0
@@ -404,9 +344,7 @@
 
 .method static synthetic access$1700(Lcom/android/server/autofill/AutofillManagerService;)Landroid/util/LocalLog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mWtfHistory:Landroid/util/LocalLog;
 
     return-object v0
@@ -414,9 +352,7 @@
 
 .method static synthetic access$200(Lcom/android/server/autofill/AutofillManagerService;)Landroid/util/SparseArray;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     return-object v0
@@ -424,9 +360,7 @@
 
 .method static synthetic access$300(Lcom/android/server/autofill/AutofillManagerService;)Lcom/android/server/autofill/ui/AutoFillUI;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mUi:Lcom/android/server/autofill/ui/AutoFillUI;
 
     return-object v0
@@ -434,10 +368,7 @@
 
 .method static synthetic access$400(Lcom/android/server/autofill/AutofillManagerService;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
-    .param p1, "x1"    # I
 
-    .line 100
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->updateCachedServiceLocked(I)V
 
     return-void
@@ -445,10 +376,7 @@
 
 .method static synthetic access$500(Lcom/android/server/autofill/AutofillManagerService;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
-    .param p1, "x1"    # I
 
-    .line 100
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->removeCachedServiceLocked(I)V
 
     return-void
@@ -456,9 +384,7 @@
 
 .method static synthetic access$600(Lcom/android/server/autofill/AutofillManagerService;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -466,9 +392,7 @@
 
 .method static synthetic access$700(Lcom/android/server/autofill/AutofillManagerService;)Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/autofill/AutofillManagerService;
 
-    .line 100
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mAutofillCompatState:Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
     return-object v0
@@ -476,24 +400,17 @@
 
 .method private addCompatibilityModeRequestsLocked(Lcom/android/server/autofill/AutofillManagerServiceImpl;I)V
     .locals 12
-    .param p1, "service"    # Lcom/android/server/autofill/AutofillManagerServiceImpl;
-    .param p2, "userId"    # I
 
-    .line 591
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mAutofillCompatState:Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
     invoke-virtual {v0, p2}, Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;->reset(I)V
 
-    .line 592
     nop
 
-    .line 593
     invoke-virtual {p1}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->getCompatibilityPackagesLocked()Landroid/util/ArrayMap;
 
     move-result-object v0
 
-    .line 594
-    .local v0, "compatPackages":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Ljava/lang/Long;>;"
     if-eqz v0, :cond_5
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->isEmpty()Z
@@ -504,35 +421,26 @@
 
     goto :goto_3
 
-    .line 598
     :cond_0
     invoke-direct {p0}, Lcom/android/server/autofill/AutofillManagerService;->getWhitelistedCompatModePackages()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 599
-    .local v1, "whiteListedPackages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;[Ljava/lang/String;>;"
     invoke-virtual {v0}, Landroid/util/ArrayMap;->size()I
 
     move-result v2
 
-    .line 600
-    .local v2, "compatPackageCount":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_4
 
-    .line 601
     invoke-virtual {v0, v3}, Landroid/util/ArrayMap;->keyAt(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 602
-    .local v4, "packageName":Ljava/lang/String;
     if-eqz v1, :cond_2
 
     invoke-interface {v1, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -543,7 +451,6 @@
 
     goto :goto_1
 
-    .line 606
     :cond_1
     invoke-virtual {v0, v3}, Landroid/util/ArrayMap;->valueAt(I)Ljava/lang/Object;
 
@@ -553,14 +460,10 @@
 
     check-cast v11, Ljava/lang/Long;
 
-    .line 607
-    .local v11, "maxVersionCode":Ljava/lang/Long;
     if-eqz v11, :cond_3
 
-    .line 608
     iget-object v5, p0, Lcom/android/server/autofill/AutofillManagerService;->mAutofillCompatState:Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
-    .line 609
     invoke-virtual {v11}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v7
@@ -573,19 +476,14 @@
 
     check-cast v9, [Ljava/lang/String;
 
-    .line 608
     move-object v6, v4
 
     move v10, p2
 
     invoke-virtual/range {v5 .. v10}, Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;->addCompatibilityModeRequest(Ljava/lang/String;J[Ljava/lang/String;I)V
 
-    .end local v4    # "packageName":Ljava/lang/String;
-    .end local v11    # "maxVersionCode":Ljava/lang/Long;
     goto :goto_2
 
-    .line 603
-    .restart local v4    # "packageName":Ljava/lang/String;
     :cond_2
     :goto_1
     const-string v5, "AutofillManagerService"
@@ -606,25 +504,17 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 604
     nop
 
-    .line 600
-    .end local v4    # "packageName":Ljava/lang/String;
     :cond_3
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 612
-    .end local v3    # "i":I
     :cond_4
     return-void
 
-    .line 595
-    .end local v1    # "whiteListedPackages":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;[Ljava/lang/String;>;"
-    .end local v2    # "compatPackageCount":I
     :cond_5
     :goto_3
     return-void
@@ -643,7 +533,6 @@
         }
     .end annotation
 
-    .line 622
     invoke-direct {p0}, Lcom/android/server/autofill/AutofillManagerService;->getWhitelistedCompatModePackagesFromSettings()Ljava/lang/String;
 
     move-result-object v0
@@ -657,7 +546,6 @@
 
 .method static getWhitelistedCompatModePackages(Ljava/lang/String;)Ljava/util/Map;
     .locals 11
-    .param p0, "setting"    # Ljava/lang/String;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
@@ -674,7 +562,6 @@
         }
     .end annotation
 
-    .line 628
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -683,28 +570,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 629
     return-object v1
 
-    .line 632
     :cond_0
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 633
-    .local v0, "compatPackages":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;[Ljava/lang/String;>;"
     new-instance v2, Landroid/text/TextUtils$SimpleStringSplitter;
 
     const/16 v3, 0x3a
 
     invoke-direct {v2, v3}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
 
-    .line 634
-    .local v2, "splitter":Landroid/text/TextUtils$SimpleStringSplitter;
     invoke-virtual {v2, p0}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
-    .line 635
     :goto_0
     invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -712,39 +592,26 @@
 
     if-eqz v3, :cond_6
 
-    .line 636
     invoke-virtual {v2}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 637
-    .local v3, "packageBlock":Ljava/lang/String;
     const/16 v4, 0x5b
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
 
-    .line 640
-    .local v4, "urlBlockIndex":I
     const/4 v5, -0x1
 
     if-ne v4, v5, :cond_1
 
-    .line 641
     move-object v5, v3
 
-    .line 642
-    .local v5, "packageName":Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 642
-    .local v6, "urlBarIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     goto/16 :goto_2
 
-    .line 644
-    .end local v5    # "packageName":Ljava/lang/String;
-    .end local v6    # "urlBarIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_1
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
@@ -760,7 +627,6 @@
 
     if-eq v5, v6, :cond_2
 
-    .line 646
     const-string v5, "AutofillManagerService"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -795,10 +661,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 649
     goto :goto_0
 
-    .line 651
     :cond_2
     const/4 v5, 0x0
 
@@ -806,17 +670,12 @@
 
     move-result-object v5
 
-    .line 652
-    .restart local v5    # "packageName":Ljava/lang/String;
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 653
-    .restart local v6    # "urlBarIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     add-int/lit8 v7, v4, 0x1
 
-    .line 654
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v8
@@ -827,13 +686,10 @@
 
     move-result-object v7
 
-    .line 655
-    .local v7, "urlBarIdsBlock":Ljava/lang/String;
     sget-boolean v8, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
     if-eqz v8, :cond_3
 
-    .line 656
     const-string v8, "AutofillManagerService"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -874,7 +730,6 @@
 
     invoke-static {v8, v9}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 659
     :cond_3
     new-instance v8, Landroid/text/TextUtils$SimpleStringSplitter;
 
@@ -882,11 +737,8 @@
 
     invoke-direct {v8, v9}, Landroid/text/TextUtils$SimpleStringSplitter;-><init>(C)V
 
-    .line 661
-    .local v8, "splitter2":Landroid/text/TextUtils$SimpleStringSplitter;
     invoke-virtual {v8, v7}, Landroid/text/TextUtils$SimpleStringSplitter;->setString(Ljava/lang/String;)V
 
-    .line 662
     :goto_1
     invoke-virtual {v8}, Landroid/text/TextUtils$SimpleStringSplitter;->hasNext()Z
 
@@ -894,32 +746,22 @@
 
     if-eqz v9, :cond_4
 
-    .line 663
     invoke-virtual {v8}, Landroid/text/TextUtils$SimpleStringSplitter;->next()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 664
-    .local v9, "urlBarId":Ljava/lang/String;
     invoke-interface {v6, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 665
-    .end local v9    # "urlBarId":Ljava/lang/String;
     goto :goto_1
 
-    .line 667
-    .end local v7    # "urlBarIdsBlock":Ljava/lang/String;
-    .end local v8    # "splitter2":Landroid/text/TextUtils$SimpleStringSplitter;
     :cond_4
     :goto_2
     if-nez v6, :cond_5
 
-    .line 668
     invoke-virtual {v0, v5, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 
-    .line 670
     :cond_5
     invoke-interface {v6}, Ljava/util/List;->size()I
 
@@ -927,23 +769,13 @@
 
     new-array v7, v7, [Ljava/lang/String;
 
-    .line 671
-    .local v7, "urlBarIdsArray":[Ljava/lang/String;
     invoke-interface {v6, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 672
     invoke-virtual {v0, v5, v7}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 674
-    .end local v3    # "packageBlock":Ljava/lang/String;
-    .end local v4    # "urlBlockIndex":I
-    .end local v5    # "packageName":Ljava/lang/String;
-    .end local v6    # "urlBarIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .end local v7    # "urlBarIdsArray":[Ljava/lang/String;
     :goto_3
     goto/16 :goto_0
 
-    .line 675
     :cond_6
     return-object v0
 .end method
@@ -951,17 +783,14 @@
 .method private getWhitelistedCompatModePackagesFromSettings()Ljava/lang/String;
     .locals 2
 
-    .line 615
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
-    .line 616
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     const-string v1, "autofill_compat_mode_allowed_packages"
 
-    .line 615
     invoke-static {v0, v1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -971,27 +800,19 @@
 
 .method public static synthetic lambda$new$0(Lcom/android/server/autofill/AutofillManagerService;ILandroid/os/Bundle;Landroid/os/Bundle;)V
     .locals 6
-    .param p1, "userId"    # I
-    .param p2, "newRestrictions"    # Landroid/os/Bundle;
-    .param p3, "prevRestrictions"    # Landroid/os/Bundle;
 
-    .line 191
     const-string/jumbo v0, "no_autofill"
 
-    .line 192
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 193
-    .local v0, "disabledNow":Z
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 194
     :try_start_0
     iget-object v2, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
@@ -999,16 +820,12 @@
 
     move-result v2
 
-    .line 195
-    .local v2, "disabledBefore":Z
     if-ne v2, v0, :cond_0
 
-    .line 197
     sget-boolean v3, Lcom/android/server/autofill/Helper;->sDebug:Z
 
     if-eqz v3, :cond_0
 
-    .line 198
     const-string v3, "AutofillManagerService"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1027,12 +844,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
     monitor-exit v1
 
     return-void
 
-    .line 202
     :cond_0
     const-string v3, "AutofillManagerService"
 
@@ -1058,22 +873,16 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
     iget-object v3, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v3, p1, v0}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 204
     invoke-direct {p0, p1, v0}, Lcom/android/server/autofill/AutofillManagerService;->updateCachedServiceLocked(IZ)V
 
-    .line 205
-    .end local v2    # "disabledBefore":Z
     monitor-exit v1
 
-    .line 206
     return-void
 
-    .line 205
     :catchall_0
     move-exception v2
 
@@ -1086,76 +895,57 @@
 
 .method private removeCachedServiceLocked(I)V
     .locals 2
-    .param p1, "userId"    # I
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
-    .line 556
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->peekServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
     move-result-object v0
 
-    .line 557
-    .local v0, "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     if-eqz v0, :cond_0
 
-    .line 558
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->delete(I)V
 
-    .line 559
     invoke-virtual {v0}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->destroyLocked()V
 
-    .line 560
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mAutofillCompatState:Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;
 
     invoke-virtual {v1, p1}, Lcom/android/server/autofill/AutofillManagerService$AutofillCompatState;->removeCompatibilityModeRequests(I)V
 
-    .line 562
     :cond_0
     return-void
 .end method
 
 .method private setDebugLocked(Z)V
     .locals 0
-    .param p1, "debug"    # Z
 
-    .line 542
     sput-boolean p1, Lcom/android/server/autofill/Helper;->sDebug:Z
 
-    .line 543
     sput-boolean p1, Landroid/view/autofill/Helper;->sDebug:Z
 
-    .line 544
     return-void
 .end method
 
 .method private setVerboseLocked(Z)V
     .locals 0
-    .param p1, "verbose"    # Z
 
-    .line 547
     sput-boolean p1, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
-    .line 548
     sput-boolean p1, Landroid/view/autofill/Helper;->sVerbose:Z
 
-    .line 549
     return-void
 .end method
 
 .method private startTrackingPackageChanges()V
     .locals 5
 
-    .line 211
     new-instance v0, Lcom/android/server/autofill/AutofillManagerService$2;
 
     invoke-direct {v0, p0}, Lcom/android/server/autofill/AutofillManagerService$2;-><init>(Lcom/android/server/autofill/AutofillManagerService;)V
 
-    .line 295
-    .local v0, "monitor":Lcom/android/internal/content/PackageMonitor;
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
@@ -1166,18 +956,15 @@
 
     invoke-virtual {v0, v1, v3, v2, v4}, Lcom/android/internal/content/PackageMonitor;->register(Landroid/content/Context;Landroid/os/Looper;Landroid/os/UserHandle;Z)V
 
-    .line 296
     return-void
 .end method
 
 .method private updateCachedServiceLocked(I)V
     .locals 1
-    .param p1, "userId"    # I
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
-    .line 569
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseBooleanArray;->get(I)Z
@@ -1186,50 +973,38 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/server/autofill/AutofillManagerService;->updateCachedServiceLocked(IZ)V
 
-    .line 570
     return-void
 .end method
 
 .method private updateCachedServiceLocked(IZ)V
     .locals 2
-    .param p1, "userId"    # I
-    .param p2, "disabled"    # Z
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
-    .line 577
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->getServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
     move-result-object v0
 
-    .line 578
-    .local v0, "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     if-eqz v0, :cond_1
 
-    .line 579
     invoke-virtual {v0}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->destroySessionsLocked()V
 
-    .line 580
     invoke-virtual {v0, p2}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->updateLocked(Z)V
 
-    .line 581
     invoke-virtual {v0}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->isEnabledLocked()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 582
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->removeCachedServiceLocked(I)V
 
     goto :goto_0
 
-    .line 584
     :cond_0
     invoke-direct {p0, v0, p1}, Lcom/android/server/autofill/AutofillManagerService;->addCompatibilityModeRequestsLocked(Lcom/android/server/autofill/AutofillManagerServiceImpl;I)V
 
-    .line 587
     :cond_1
     :goto_0
     return-void
@@ -1239,10 +1014,7 @@
 # virtual methods
 .method destroySessions(ILcom/android/internal/os/IResultReceiver;)V
     .locals 5
-    .param p1, "userId"    # I
-    .param p2, "receiver"    # Lcom/android/internal/os/IResultReceiver;
 
-    .line 367
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1261,7 +1033,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 368
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1270,43 +1041,33 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 370
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 371
     const/4 v1, -0x1
 
     const/4 v2, 0x0
 
     if-eq p1, v1, :cond_1
 
-    .line 372
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->peekServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
     move-result-object v1
 
-    .line 373
-    .local v1, "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     if-eqz v1, :cond_0
 
-    .line 374
     invoke-virtual {v1}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->destroySessionsLocked()V
 
-    .line 376
-    .end local v1    # "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     :cond_0
     goto :goto_1
 
-    .line 382
     :catchall_0
     move-exception v1
 
     goto :goto_3
 
-    .line 377
     :cond_1
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
@@ -1314,15 +1075,11 @@
 
     move-result v1
 
-    .line 378
-    .local v1, "size":I
     move v3, v2
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v1, :cond_2
 
-    .line 379
     iget-object v4, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v4, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1333,21 +1090,16 @@
 
     invoke-virtual {v4}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->destroySessionsLocked()V
 
-    .line 378
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 382
-    .end local v1    # "size":I
-    .end local v3    # "i":I
     :cond_2
     :goto_1
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 385
     :try_start_1
     new-instance v0, Landroid/os/Bundle;
 
@@ -1357,18 +1109,14 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 388
     goto :goto_2
 
-    .line 386
     :catch_0
     move-exception v0
 
-    .line 389
     :goto_2
     return-void
 
-    .line 382
     :goto_3
     :try_start_2
     monitor-exit v0
@@ -1381,7 +1129,6 @@
 .method getAllowInstantService()Z
     .locals 3
 
-    .line 526
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1390,12 +1137,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 527
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 528
     :try_start_0
     iget-boolean v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mAllowInstantService:Z
 
@@ -1403,7 +1148,6 @@
 
     return v1
 
-    .line 529
     :catchall_0
     move-exception v1
 
@@ -1417,7 +1161,6 @@
 .method getFullScreenMode()Ljava/lang/Boolean;
     .locals 3
 
-    .line 514
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1426,7 +1169,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 515
     sget-object v0, Lcom/android/server/autofill/Helper;->sFullScreenMode:Ljava/lang/Boolean;
 
     return-object v0
@@ -1435,7 +1177,6 @@
 .method getLogLevel()I
     .locals 3
 
-    .line 455
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1444,12 +1185,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 457
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 458
     :try_start_0
     sget-boolean v1, Lcom/android/server/autofill/Helper;->sVerbose:Z
 
@@ -1461,7 +1200,6 @@
 
     return v1
 
-    .line 459
     :cond_0
     sget-boolean v1, Lcom/android/server/autofill/Helper;->sDebug:Z
 
@@ -1473,7 +1211,6 @@
 
     return v1
 
-    .line 460
     :cond_1
     const/4 v1, 0x0
 
@@ -1481,7 +1218,6 @@
 
     return v1
 
-    .line 461
     :catchall_0
     move-exception v1
 
@@ -1495,7 +1231,6 @@
 .method getMaxPartitions()I
     .locals 3
 
-    .line 466
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1504,12 +1239,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 468
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 469
     :try_start_0
     sget v1, Lcom/android/server/autofill/Helper;->sPartitionMaxCount:I
 
@@ -1517,7 +1250,6 @@
 
     return v1
 
-    .line 470
     :catchall_0
     move-exception v1
 
@@ -1531,7 +1263,6 @@
 .method getMaxVisibleDatasets()I
     .locals 3
 
-    .line 484
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1540,12 +1271,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 486
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 487
     :try_start_0
     sget v1, Lcom/android/server/autofill/Helper;->sVisibleDatasetsMaxCount:I
 
@@ -1553,7 +1282,6 @@
 
     return v1
 
-    .line 488
     :catchall_0
     move-exception v1
 
@@ -1566,12 +1294,7 @@
 
 .method getScore(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/RemoteCallback;)V
     .locals 9
-    .param p1, "algorithmName"    # Ljava/lang/String;
-    .param p2, "value1"    # Ljava/lang/String;
-    .param p3, "value2"    # Ljava/lang/String;
-    .param p4, "callback"    # Landroid/os/RemoteCallback;
 
-    .line 503
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1580,7 +1303,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 505
     new-instance v3, Lcom/android/server/autofill/FieldClassificationStrategy;
 
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
@@ -1589,13 +1311,10 @@
 
     invoke-direct {v3, v0, v1}, Lcom/android/server/autofill/FieldClassificationStrategy;-><init>(Landroid/content/Context;I)V
 
-    .line 508
-    .local v3, "strategy":Lcom/android/server/autofill/FieldClassificationStrategy;
     const/4 v0, 0x1
 
     new-array v1, v0, [Landroid/view/autofill/AutofillValue;
 
-    .line 509
     invoke-static {p2}, Landroid/view/autofill/AutofillValue;->forText(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;
 
     move-result-object v2
@@ -1612,7 +1331,6 @@
 
     aput-object p3, v8, v4
 
-    .line 508
     const/4 v6, 0x0
 
     move-object v4, p4
@@ -1621,32 +1339,27 @@
 
     invoke-virtual/range {v3 .. v8}, Lcom/android/server/autofill/FieldClassificationStrategy;->getScores(Landroid/os/RemoteCallback;Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;[Ljava/lang/String;)V
 
-    .line 510
     return-void
 .end method
 
 .method getServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
     .locals 19
-    .param p1, "userId"    # I
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
     move-object/from16 v0, p0
 
-    .line 339
     move/from16 v8, p1
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v1
 
-    .line 340
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v2
 
-    .line 339
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -1661,8 +1374,6 @@
 
     move-result v1
 
-    .line 341
-    .local v1, "resolvedUserId":I
     iget-object v2, v0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1671,11 +1382,8 @@
 
     check-cast v2, Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
-    .line 342
-    .local v2, "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     if-nez v2, :cond_0
 
-    .line 343
     new-instance v3, Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
     iget-object v10, v0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
@@ -1694,7 +1402,6 @@
 
     iget-object v6, v0, Lcom/android/server/autofill/AutofillManagerService;->mDisabledUsers:Landroid/util/SparseBooleanArray;
 
-    .line 345
     invoke-virtual {v6, v1}, Landroid/util/SparseBooleanArray;->get(I)Z
 
     move-result v18
@@ -1711,25 +1418,19 @@
 
     move-object v2, v3
 
-    .line 346
     iget-object v3, v0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v8, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 347
     invoke-direct {v0, v2, v8}, Lcom/android/server/autofill/AutofillManagerService;->addCompatibilityModeRequestsLocked(Lcom/android/server/autofill/AutofillManagerServiceImpl;I)V
 
-    .line 349
     :cond_0
     return-object v2
 .end method
 
 .method listSessions(ILcom/android/internal/os/IResultReceiver;)V
     .locals 7
-    .param p1, "userId"    # I
-    .param p2, "receiver"    # Lcom/android/internal/os/IResultReceiver;
 
-    .line 393
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1748,7 +1449,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 394
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -1757,55 +1457,41 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 396
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 397
-    .local v0, "resultData":Landroid/os/Bundle;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 399
-    .local v1, "sessions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v2, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 400
     const/4 v3, -0x1
 
     const/4 v4, 0x0
 
     if-eq p1, v3, :cond_1
 
-    .line 401
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->peekServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
 
     move-result-object v3
 
-    .line 402
-    .local v3, "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     if-eqz v3, :cond_0
 
-    .line 403
     invoke-virtual {v3, v1}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->listSessionsLocked(Ljava/util/ArrayList;)V
 
-    .line 405
-    .end local v3    # "service":Lcom/android/server/autofill/AutofillManagerServiceImpl;
     :cond_0
     goto :goto_1
 
-    .line 411
     :catchall_0
     move-exception v3
 
     goto :goto_3
 
-    .line 406
     :cond_1
     iget-object v3, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
@@ -1813,16 +1499,11 @@
 
     move-result v3
 
-    .line 407
-    .local v3, "size":I
     move v5, v4
 
-    .line 407
-    .local v5, "i":I
     :goto_0
     if-ge v5, v3, :cond_2
 
-    .line 408
     iget-object v6, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v5}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1833,43 +1514,33 @@
 
     invoke-virtual {v6, v1}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->listSessionsLocked(Ljava/util/ArrayList;)V
 
-    .line 407
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 411
-    .end local v3    # "size":I
-    .end local v5    # "i":I
     :cond_2
     :goto_1
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 413
     const-string/jumbo v2, "sessions"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 415
     :try_start_1
     invoke-interface {p2, v4, v0}, Lcom/android/internal/os/IResultReceiver;->send(ILandroid/os/Bundle;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 418
     goto :goto_2
 
-    .line 416
     :catch_0
     move-exception v2
 
-    .line 419
     :goto_2
     return-void
 
-    .line 411
     :goto_3
     :try_start_2
     monitor-exit v2
@@ -1881,14 +1552,11 @@
 
 .method public onBootPhase(I)V
     .locals 2
-    .param p1, "phase"    # I
 
-    .line 306
     const/16 v0, 0x258
 
     if-ne p1, v0, :cond_0
 
-    .line 307
     new-instance v0, Lcom/android/server/autofill/AutofillManagerService$SettingsObserver;
 
     invoke-static {}, Lcom/android/internal/os/BackgroundThread;->getHandler()Landroid/os/Handler;
@@ -1897,31 +1565,24 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/server/autofill/AutofillManagerService$SettingsObserver;-><init>(Lcom/android/server/autofill/AutofillManagerService;Landroid/os/Handler;)V
 
-    .line 309
     :cond_0
     return-void
 .end method
 
 .method public onCleanupUser(I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 326
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 327
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->removeCachedServiceLocked(I)V
 
-    .line 328
     monitor-exit v0
 
-    .line 329
     return-void
 
-    .line 328
     :catchall_0
     move-exception v1
 
@@ -1935,7 +1596,6 @@
 .method public onStart()V
     .locals 2
 
-    .line 300
     const-string v0, "autofill"
 
     new-instance v1, Lcom/android/server/autofill/AutofillManagerService$AutoFillManagerServiceStub;
@@ -1944,22 +1604,18 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/autofill/AutofillManagerService;->publishBinderService(Ljava/lang/String;Landroid/os/IBinder;)V
 
-    .line 301
     const-class v0, Landroid/view/autofill/AutofillManagerInternal;
 
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mLocalService:Lcom/android/server/autofill/AutofillManagerService$LocalService;
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/autofill/AutofillManagerService;->publishLocalService(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 302
     return-void
 .end method
 
 .method public onSwitchUser(I)V
     .locals 2
-    .param p1, "userHandle"    # I
 
-    .line 320
     sget-boolean v0, Lcom/android/server/autofill/Helper;->sDebug:Z
 
     if-eqz v0, :cond_0
@@ -1970,7 +1626,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 321
     :cond_0
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mUi:Lcom/android/server/autofill/ui/AutoFillUI;
 
@@ -1978,30 +1633,23 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/autofill/ui/AutoFillUI;->hideAll(Lcom/android/server/autofill/ui/AutoFillUI$AutoFillUiCallback;)V
 
-    .line 322
     return-void
 .end method
 
 .method public onUnlockUser(I)V
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 313
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 314
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/server/autofill/AutofillManagerService;->updateCachedServiceLocked(I)V
 
-    .line 315
     monitor-exit v0
 
-    .line 316
     return-void
 
-    .line 315
     :catchall_0
     move-exception v1
 
@@ -2014,22 +1662,18 @@
 
 .method peekServiceForUserLocked(I)Lcom/android/server/autofill/AutofillManagerServiceImpl;
     .locals 7
-    .param p1, "userId"    # I
     .annotation build Lcom/android/internal/annotations/GuardedBy;
         value = "mLock"
     .end annotation
 
-    .line 360
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v0
 
-    .line 361
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v1
 
-    .line 360
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -2044,8 +1688,6 @@
 
     move-result v0
 
-    .line 362
-    .local v0, "resolvedUserId":I
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -2060,14 +1702,12 @@
 .method reset()V
     .locals 4
 
-    .line 423
     const-string v0, "AutofillManagerService"
 
     const-string/jumbo v1, "reset()"
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 424
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2076,12 +1716,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 426
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 427
     :try_start_0
     iget-object v1, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
@@ -2089,16 +1727,11 @@
 
     move-result v1
 
-    .line 428
-    .local v1, "size":I
     const/4 v2, 0x0
 
-    .line 428
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_0
 
-    .line 429
     iget-object v3, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2109,26 +1742,19 @@
 
     invoke-virtual {v3}, Lcom/android/server/autofill/AutofillManagerServiceImpl;->destroyLocked()V
 
-    .line 428
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 431
-    .end local v2    # "i":I
     :cond_0
     iget-object v2, p0, Lcom/android/server/autofill/AutofillManagerService;->mServicesCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2}, Landroid/util/SparseArray;->clear()V
 
-    .line 432
-    .end local v1    # "size":I
     monitor-exit v0
 
-    .line 433
     return-void
 
-    .line 432
     :catchall_0
     move-exception v1
 
@@ -2141,9 +1767,7 @@
 
 .method setAllowInstantService(Z)V
     .locals 3
-    .param p1, "mode"    # Z
 
-    .line 534
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2152,7 +1776,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 535
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2171,22 +1794,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 536
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 537
     :try_start_0
     iput-boolean p1, p0, Lcom/android/server/autofill/AutofillManagerService;->mAllowInstantService:Z
 
-    .line 538
     monitor-exit v0
 
-    .line 539
     return-void
 
-    .line 538
     :catchall_0
     move-exception v1
 
@@ -2199,9 +1817,7 @@
 
 .method setFullScreenMode(Ljava/lang/Boolean;)V
     .locals 3
-    .param p1, "mode"    # Ljava/lang/Boolean;
 
-    .line 520
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2210,18 +1826,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 521
     sput-object p1, Lcom/android/server/autofill/Helper;->sFullScreenMode:Ljava/lang/Boolean;
 
-    .line 522
     return-void
 .end method
 
 .method setLogLevel(I)V
     .locals 4
-    .param p1, "level"    # I
 
-    .line 437
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2240,7 +1852,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2249,20 +1860,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 440
     const/4 v0, 0x0
 
-    .line 441
-    .local v0, "debug":Z
     const/4 v1, 0x0
 
-    .line 442
-    .local v1, "verbose":Z
     const/4 v2, 0x4
 
     if-ne p1, v2, :cond_0
 
-    .line 443
     const/4 v2, 0x1
 
     move v1, v2
@@ -2271,36 +1876,28 @@
 
     goto :goto_0
 
-    .line 444
     :cond_0
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_1
 
-    .line 445
     const/4 v0, 0x1
 
-    .line 447
     :cond_1
     :goto_0
     iget-object v2, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 448
     :try_start_0
     invoke-direct {p0, v0}, Lcom/android/server/autofill/AutofillManagerService;->setDebugLocked(Z)V
 
-    .line 449
     invoke-direct {p0, v1}, Lcom/android/server/autofill/AutofillManagerService;->setVerboseLocked(Z)V
 
-    .line 450
     monitor-exit v2
 
-    .line 451
     return-void
 
-    .line 450
     :catchall_0
     move-exception v3
 
@@ -2313,9 +1910,7 @@
 
 .method setMaxPartitions(I)V
     .locals 3
-    .param p1, "max"    # I
 
-    .line 475
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2324,7 +1919,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 476
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2343,22 +1937,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 477
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 478
     :try_start_0
     sput p1, Lcom/android/server/autofill/Helper;->sPartitionMaxCount:I
 
-    .line 479
     monitor-exit v0
 
-    .line 480
     return-void
 
-    .line 479
     :catchall_0
     move-exception v1
 
@@ -2371,9 +1960,7 @@
 
 .method setMaxVisibleDatasets(I)V
     .locals 3
-    .param p1, "max"    # I
 
-    .line 493
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MANAGE_AUTO_FILL"
@@ -2382,7 +1969,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 494
     const-string v0, "AutofillManagerService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2401,22 +1987,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 495
     iget-object v0, p0, Lcom/android/server/autofill/AutofillManagerService;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 496
     :try_start_0
     sput p1, Lcom/android/server/autofill/Helper;->sVisibleDatasetsMaxCount:I
 
-    .line 497
     monitor-exit v0
 
-    .line 498
     return-void
 
-    .line 497
     :catchall_0
     move-exception v1
 

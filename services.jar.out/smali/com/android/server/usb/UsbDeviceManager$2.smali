@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/usb/UsbDeviceManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/usb/UsbDeviceManager;
 
-    .line 329
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$2;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 332
     const-string/jumbo v0, "plugged"
 
     const/4 v1, -0x1
@@ -47,8 +42,6 @@
 
     move-result v0
 
-    .line 333
-    .local v0, "chargePlug":I
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
@@ -60,8 +53,6 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 334
-    .local v1, "usbCharging":Z
     :goto_0
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager$2;->this$0:Lcom/android/server/usb/UsbDeviceManager;
 
@@ -73,6 +64,5 @@
 
     invoke-virtual {v2, v3, v1}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(IZ)V
 
-    .line 335
     return-void
 .end method

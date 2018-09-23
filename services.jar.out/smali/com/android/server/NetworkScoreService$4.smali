@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/NetworkScoreService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/NetworkScoreService;
 
-    .line 310
     iput-object p1, p0, Lcom/android/server/NetworkScoreService$4;->this$0:Lcom/android/server/NetworkScoreService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public getPackages(I)[Ljava/lang/String;
     .locals 3
-    .param p1, "userId"    # I
 
-    .line 313
     iget-object v0, p0, Lcom/android/server/NetworkScoreService$4;->this$0:Lcom/android/server/NetworkScoreService;
 
     invoke-static {v0}, Lcom/android/server/NetworkScoreService;->access$500(Lcom/android/server/NetworkScoreService;)Landroid/content/Context;
@@ -57,15 +53,12 @@
 
     move-result-object v0
 
-    .line 315
-    .local v0, "useOpenWifiPackage":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 316
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
@@ -76,7 +69,6 @@
 
     return-object v1
 
-    .line 318
     :cond_0
     const/4 v1, 0x0
 

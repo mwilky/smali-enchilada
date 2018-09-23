@@ -27,10 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/pm/BackgroundDexOptService;Ljava/lang/String;Landroid/app/job/JobParameters;Lcom/android/server/pm/PackageManagerService;Landroid/util/ArraySet;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/pm/BackgroundDexOptService;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 180
     iput-object p1, p0, Lcom/android/server/pm/BackgroundDexOptService$1;->this$0:Lcom/android/server/pm/BackgroundDexOptService;
 
     iput-object p3, p0, Lcom/android/server/pm/BackgroundDexOptService$1;->val$jobParams:Landroid/app/job/JobParameters;
@@ -49,7 +46,6 @@
 .method public run()V
     .locals 4
 
-    .line 183
     iget-object v0, p0, Lcom/android/server/pm/BackgroundDexOptService$1;->this$0:Lcom/android/server/pm/BackgroundDexOptService;
 
     iget-object v1, p0, Lcom/android/server/pm/BackgroundDexOptService$1;->val$jobParams:Landroid/app/job/JobParameters;
@@ -60,6 +56,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/server/pm/BackgroundDexOptService;->access$000(Lcom/android/server/pm/BackgroundDexOptService;Landroid/app/job/JobParameters;Lcom/android/server/pm/PackageManagerService;Landroid/util/ArraySet;)V
 
-    .line 184
     return-void
 .end method

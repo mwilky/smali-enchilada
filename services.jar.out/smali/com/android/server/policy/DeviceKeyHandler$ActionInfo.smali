@@ -30,7 +30,6 @@
 .method private constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;)V
     .locals 0
 
-    .line 354
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->this$0:Lcom/android/server/policy/DeviceKeyHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +39,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/policy/DeviceKeyHandler;Lcom/android/server/policy/DeviceKeyHandler$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/policy/DeviceKeyHandler;
-    .param p2, "x1"    # Lcom/android/server/policy/DeviceKeyHandler$1;
 
-    .line 354
     invoke-direct {p0, p1}, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;-><init>(Lcom/android/server/policy/DeviceKeyHandler;)V
 
     return-void
@@ -54,7 +50,6 @@
 .method public getAction()Ljava/lang/String;
     .locals 1
 
-    .line 381
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mActionName:Ljava/lang/String;
 
     return-object v0
@@ -63,7 +58,6 @@
 .method public getPackage()Ljava/lang/String;
     .locals 1
 
-    .line 385
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mPackageName:Ljava/lang/String;
 
     return-object v0
@@ -72,7 +66,6 @@
 .method public getShortcutId()Ljava/lang/String;
     .locals 1
 
-    .line 389
     iget-object v0, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mShortcutId:Ljava/lang/String;
 
     return-object v0
@@ -81,7 +74,6 @@
 .method public getUid()I
     .locals 1
 
-    .line 393
     iget v0, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mUid:I
 
     return v0
@@ -89,42 +81,31 @@
 
 .method public setActionName(Ljava/lang/String;)V
     .locals 0
-    .param p1, "actionName"    # Ljava/lang/String;
 
-    .line 361
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mActionName:Ljava/lang/String;
 
-    .line 362
     return-void
 .end method
 
 .method public setPackage(Ljava/lang/String;)V
     .locals 0
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 365
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mPackageName:Ljava/lang/String;
 
-    .line 366
     return-void
 .end method
 
 .method public setShortcutId(Ljava/lang/String;)V
     .locals 0
-    .param p1, "shortcutId"    # Ljava/lang/String;
 
-    .line 369
     iput-object p1, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mShortcutId:Ljava/lang/String;
 
-    .line 370
     return-void
 .end method
 
 .method public setUid(Ljava/lang/String;)V
     .locals 2
-    .param p1, "uid"    # Ljava/lang/String;
 
-    .line 374
     :try_start_0
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -134,21 +115,15 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 377
     goto :goto_0
 
-    .line 375
     :catch_0
     move-exception v0
 
-    .line 376
-    .local v0, "ex":Ljava/lang/NumberFormatException;
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/policy/DeviceKeyHandler$ActionInfo;->mUid:I
 
-    .line 378
-    .end local v0    # "ex":Ljava/lang/NumberFormatException;
     :goto_0
     return-void
 .end method
@@ -156,7 +131,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 398
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

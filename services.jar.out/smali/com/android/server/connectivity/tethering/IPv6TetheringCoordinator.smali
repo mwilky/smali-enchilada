@@ -53,7 +53,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 48
     const-class v0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -67,7 +66,6 @@
 
 .method public constructor <init>(Ljava/util/ArrayList;Landroid/net/util/SharedLog;)V
     .locals 1
-    .param p2, "log"    # Landroid/net/util/SharedLog;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,14 +77,10 @@
         }
     .end annotation
 
-    .line 78
-    .local p1, "notifyList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
     iput-object p1, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNotifyList:Ljava/util/ArrayList;
 
-    .line 80
     sget-object v0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->TAG:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/net/util/SharedLog;->forSubComponent(Ljava/lang/String;)Landroid/net/util/SharedLog;
@@ -95,81 +89,64 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mLog:Landroid/net/util/SharedLog;
 
-    .line 81
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
-    .line 82
     invoke-static {}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->generateUniqueLocalPrefix()[B
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUniqueLocalPrefix:[B
 
-    .line 83
     const/4 v0, 0x0
 
     iput-short v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNextSubnetId:S
 
-    .line 84
     return-void
 .end method
 
 .method private static generateUniqueLocalPrefix()[B
     .locals 4
 
-    .line 288
     const/4 v0, 0x6
 
     new-array v0, v0, [B
 
-    .line 289
-    .local v0, "ulp":[B
     new-instance v1, Ljava/util/Random;
 
     invoke-direct {v1}, Ljava/util/Random;-><init>()V
 
     invoke-virtual {v1, v0}, Ljava/util/Random;->nextBytes([B)V
 
-    .line 291
     const/16 v1, 0x10
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v1
 
-    .line 292
-    .local v1, "in6addr":[B
     const/4 v2, 0x0
 
     const/4 v3, -0x3
 
     aput-byte v3, v1, v2
 
-    .line 294
     return-object v1
 .end method
 
 .method private static getIPv6OnlyLinkProperties(Landroid/net/LinkProperties;)Landroid/net/LinkProperties;
     .locals 6
-    .param p0, "lp"    # Landroid/net/LinkProperties;
 
-    .line 210
     new-instance v0, Landroid/net/LinkProperties;
 
     invoke-direct {v0}, Landroid/net/LinkProperties;-><init>()V
 
-    .line 211
-    .local v0, "v6only":Landroid/net/LinkProperties;
     if-nez p0, :cond_0
 
-    .line 212
     return-object v0
 
-    .line 218
     :cond_0
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
@@ -177,14 +154,12 @@
 
     invoke-virtual {v0, v1}, Landroid/net/LinkProperties;->setInterfaceName(Ljava/lang/String;)V
 
-    .line 220
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getMtu()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/net/LinkProperties;->setMtu(I)V
 
-    .line 222
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getLinkAddresses()Ljava/util/List;
 
     move-result-object v1
@@ -208,8 +183,6 @@
 
     check-cast v2, Landroid/net/LinkAddress;
 
-    .line 223
-    .local v2, "linkAddr":Landroid/net/LinkAddress;
     invoke-virtual {v2}, Landroid/net/LinkAddress;->isGlobalPreferred()Z
 
     move-result v4
@@ -222,15 +195,11 @@
 
     if-ne v4, v3, :cond_1
 
-    .line 224
     invoke-virtual {v0, v2}, Landroid/net/LinkProperties;->addLinkAddress(Landroid/net/LinkAddress;)Z
 
-    .line 226
-    .end local v2    # "linkAddr":Landroid/net/LinkAddress;
     :cond_1
     goto :goto_0
 
-    .line 228
     :cond_2
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getRoutes()Ljava/util/List;
 
@@ -253,14 +222,10 @@
 
     check-cast v2, Landroid/net/RouteInfo;
 
-    .line 229
-    .local v2, "routeInfo":Landroid/net/RouteInfo;
     invoke-virtual {v2}, Landroid/net/RouteInfo;->getDestination()Landroid/net/IpPrefix;
 
     move-result-object v4
 
-    .line 230
-    .local v4, "destination":Landroid/net/IpPrefix;
     invoke-virtual {v4}, Landroid/net/IpPrefix;->getAddress()Ljava/net/InetAddress;
 
     move-result-object v5
@@ -269,23 +234,17 @@
 
     if-eqz v5, :cond_3
 
-    .line 231
     invoke-virtual {v4}, Landroid/net/IpPrefix;->getPrefixLength()I
 
     move-result v5
 
     if-gt v5, v3, :cond_3
 
-    .line 232
     invoke-virtual {v0, v2}, Landroid/net/LinkProperties;->addRoute(Landroid/net/RouteInfo;)Z
 
-    .line 234
-    .end local v2    # "routeInfo":Landroid/net/RouteInfo;
-    .end local v4    # "destination":Landroid/net/IpPrefix;
     :cond_3
     goto :goto_1
 
-    .line 236
     :cond_4
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getDnsServers()Ljava/util/List;
 
@@ -308,23 +267,17 @@
 
     check-cast v2, Ljava/net/InetAddress;
 
-    .line 237
-    .local v2, "dnsServer":Ljava/net/InetAddress;
     invoke-static {v2}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->isIPv6GlobalAddress(Ljava/net/InetAddress;)Z
 
     move-result v3
 
     if-eqz v3, :cond_5
 
-    .line 239
     invoke-virtual {v0, v2}, Landroid/net/LinkProperties;->addDnsServer(Ljava/net/InetAddress;)Z
 
-    .line 241
-    .end local v2    # "dnsServer":Ljava/net/InetAddress;
     :cond_5
     goto :goto_2
 
-    .line 243
     :cond_6
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getDomains()Ljava/lang/String;
 
@@ -332,15 +285,12 @@
 
     invoke-virtual {v0, v1}, Landroid/net/LinkProperties;->setDomains(Ljava/lang/String;)V
 
-    .line 245
     return-object v0
 .end method
 
 .method private getInterfaceIPv6LinkProperties(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/LinkProperties;
     .locals 5
-    .param p1, "sm"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 167
     invoke-virtual {p1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->interfaceType()I
 
     move-result v0
@@ -351,22 +301,17 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 169
     return-object v1
 
-    .line 172
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->findDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
 
     move-result-object v0
 
-    .line 173
-    .local v0, "ds":Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     if-nez v0, :cond_1
 
     return-object v1
 
-    .line 175
     :cond_1
     iget v2, v0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->mode:I
 
@@ -374,7 +319,6 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 177
     iget-object v1, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUniqueLocalPrefix:[B
 
     iget-short v2, v0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->subnetId:S
@@ -385,7 +329,6 @@
 
     return-object v1
 
-    .line 181
     :cond_2
     iget-object v2, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUpstreamNetworkState:Landroid/net/NetworkState;
 
@@ -399,7 +342,6 @@
 
     goto :goto_0
 
-    .line 190
     :cond_3
     iget-object v2, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
@@ -409,15 +351,12 @@
 
     check-cast v2, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
 
-    .line 191
-    .local v2, "currentActive":Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     if-eqz v2, :cond_4
 
     iget-object v3, v2, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->tism:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     if-ne v3, p1, :cond_4
 
-    .line 192
     iget-object v3, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUpstreamNetworkState:Landroid/net/NetworkState;
 
     iget-object v3, v3, Landroid/net/NetworkState;->linkProperties:Landroid/net/LinkProperties;
@@ -426,8 +365,6 @@
 
     move-result-object v3
 
-    .line 194
-    .local v3, "lp":Landroid/net/LinkProperties;
     invoke-virtual {v3}, Landroid/net/LinkProperties;->hasIPv6DefaultRoute()Z
 
     move-result v4
@@ -440,16 +377,11 @@
 
     if-eqz v4, :cond_4
 
-    .line 195
     return-object v3
 
-    .line 199
-    .end local v3    # "lp":Landroid/net/LinkProperties;
     :cond_4
     return-object v1
 
-    .line 182
-    .end local v2    # "currentActive":Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     :cond_5
     :goto_0
     return-object v1
@@ -457,16 +389,11 @@
 
 .method private static getUniqueLocalConfig([BS)Landroid/net/LinkProperties;
     .locals 6
-    .param p0, "ulp"    # [B
-    .param p1, "subnetId"    # S
 
-    .line 260
     new-instance v0, Landroid/net/LinkProperties;
 
     invoke-direct {v0}, Landroid/net/LinkProperties;-><init>()V
 
-    .line 262
-    .local v0, "lp":Landroid/net/LinkProperties;
     const/4 v1, 0x0
 
     const/16 v2, 0x30
@@ -475,8 +402,6 @@
 
     move-result-object v1
 
-    .line 263
-    .local v1, "local48":Landroid/net/IpPrefix;
     new-instance v2, Landroid/net/RouteInfo;
 
     const/4 v3, 0x0
@@ -485,15 +410,12 @@
 
     invoke-virtual {v0, v2}, Landroid/net/LinkProperties;->addRoute(Landroid/net/RouteInfo;)Z
 
-    .line 265
     const/16 v2, 0x40
 
     invoke-static {p0, p1, v2}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->makeUniqueLocalPrefix([BSI)Landroid/net/IpPrefix;
 
     move-result-object v3
 
-    .line 269
-    .local v3, "local64":Landroid/net/IpPrefix;
     new-instance v4, Landroid/net/LinkAddress;
 
     invoke-virtual {v3}, Landroid/net/IpPrefix;->getAddress()Ljava/net/InetAddress;
@@ -504,53 +426,44 @@
 
     invoke-virtual {v0, v4}, Landroid/net/LinkProperties;->addLinkAddress(Landroid/net/LinkAddress;)Z
 
-    .line 271
     const/16 v2, 0x5dc
 
     invoke-virtual {v0, v2}, Landroid/net/LinkProperties;->setMtu(I)V
 
-    .line 272
     return-object v0
 .end method
 
 .method private static isIPv6GlobalAddress(Ljava/net/InetAddress;)Z
     .locals 1
-    .param p0, "ip"    # Ljava/net/InetAddress;
 
-    .line 251
     instance-of v0, p0, Ljava/net/Inet6Address;
 
     if-eqz v0, :cond_0
 
-    .line 252
     invoke-virtual {p0}, Ljava/net/InetAddress;->isAnyLocalAddress()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 253
     invoke-virtual {p0}, Ljava/net/InetAddress;->isLoopbackAddress()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 254
     invoke-virtual {p0}, Ljava/net/InetAddress;->isLinkLocalAddress()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 255
     invoke-virtual {p0}, Ljava/net/InetAddress;->isSiteLocalAddress()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 256
     invoke-virtual {p0}, Ljava/net/InetAddress;->isMulticastAddress()Z
 
     move-result v0
@@ -564,26 +477,19 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 251
     :goto_0
     return v0
 .end method
 
 .method private static makeUniqueLocalPrefix([BSI)Landroid/net/IpPrefix;
     .locals 3
-    .param p0, "in6addr"    # [B
-    .param p1, "subnetId"    # S
-    .param p2, "prefixlen"    # I
 
-    .line 276
     array-length v0, p0
 
     invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v0
 
-    .line 277
-    .local v0, "bytes":[B
     shr-int/lit8 v1, p1, 0x8
 
     int-to-byte v1, v1
@@ -592,14 +498,12 @@
 
     aput-byte v1, v0, v2
 
-    .line 278
     int-to-byte v1, p1
 
     const/16 v2, 0x8
 
     aput-byte v1, v0, v2
 
-    .line 279
     new-instance v1, Landroid/net/IpPrefix;
 
     invoke-direct {v1, v0, p2}, Landroid/net/IpPrefix;-><init>([BI)V
@@ -609,19 +513,15 @@
 
 .method private setUpstreamNetworkState(Landroid/net/NetworkState;)V
     .locals 8
-    .param p1, "ns"    # Landroid/net/NetworkState;
 
-    .line 142
     if-nez p1, :cond_0
 
-    .line 143
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUpstreamNetworkState:Landroid/net/NetworkState;
 
     goto :goto_0
 
-    .line 146
     :cond_0
     new-instance v0, Landroid/net/NetworkState;
 
@@ -655,7 +555,6 @@
 
     iput-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUpstreamNetworkState:Landroid/net/NetworkState;
 
-    .line 155
     :goto_0
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mLog:Landroid/net/util/SharedLog;
 
@@ -681,15 +580,12 @@
 
     invoke-virtual {v0, v1}, Landroid/net/util/SharedLog;->log(Ljava/lang/String;)V
 
-    .line 156
     return-void
 .end method
 
 .method private static stopIPv6TetheringOn(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
     .locals 3
-    .param p0, "sm"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 308
     const/4 v0, 0x0
 
     const v1, 0x50071
@@ -698,14 +594,12 @@
 
     invoke-virtual {p0, v1, v0, v0, v2}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->sendMessage(IIILjava/lang/Object;)V
 
-    .line 309
     return-void
 .end method
 
 .method private stopIPv6TetheringOnAllInterfaces()V
     .locals 2
 
-    .line 136
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNotifyList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -725,32 +619,23 @@
 
     check-cast v1, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 137
-    .local v1, "sm":Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
     invoke-static {v1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->stopIPv6TetheringOn(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
 
-    .line 138
-    .end local v1    # "sm":Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
     goto :goto_0
 
-    .line 139
     :cond_0
     return-void
 .end method
 
 .method private static toDebugString(Landroid/net/NetworkState;)Ljava/lang/String;
     .locals 4
-    .param p0, "ns"    # Landroid/net/NetworkState;
 
-    .line 298
     if-nez p0, :cond_0
 
-    .line 299
     const-string v0, "NetworkState{null}"
 
     return-object v0
 
-    .line 301
     :cond_0
     const-string v0, "NetworkState{%s, %s, %s}"
 
@@ -786,7 +671,6 @@
 .method private updateIPv6TetheringInterfaces()V
     .locals 4
 
-    .line 159
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNotifyList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -805,26 +689,18 @@
 
     check-cast v0, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 160
-    .local v0, "sm":Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->getInterfaceIPv6LinkProperties(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Landroid/net/LinkProperties;
 
     move-result-object v1
 
-    .line 161
-    .local v1, "lp":Landroid/net/LinkProperties;
     const v2, 0x50071
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v2, v3, v3, v1}, Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;->sendMessage(IIILjava/lang/Object;)V
 
-    .line 162
     nop
 
-    .line 164
-    .end local v0    # "sm":Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
-    .end local v1    # "lp":Landroid/net/LinkProperties;
     :cond_0
     return-void
 .end method
@@ -833,17 +709,13 @@
 # virtual methods
 .method public addActiveDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;I)V
     .locals 3
-    .param p1, "downstream"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
-    .param p2, "mode"    # I
 
-    .line 87
     invoke-virtual {p0, p1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->findDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    .line 92
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
     new-instance v1, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
@@ -858,7 +730,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 95
     const/4 v0, 0x0
 
     iget-short v1, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNextSubnetId:S
@@ -873,20 +744,16 @@
 
     iput-short v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNextSubnetId:S
 
-    .line 97
     :cond_0
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->updateIPv6TetheringInterfaces()V
 
-    .line 99
     :cond_1
     return-void
 .end method
 
 .method findDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     .locals 3
-    .param p1, "tism"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 203
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -906,20 +773,15 @@
 
     check-cast v1, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
 
-    .line 204
-    .local v1, "ds":Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     iget-object v2, v1, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;->tism:Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
     if-ne v2, p1, :cond_0
 
     return-object v1
 
-    .line 205
-    .end local v1    # "ds":Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
     :cond_0
     goto :goto_0
 
-    .line 206
     :cond_1
     const/4 v0, 0x0
 
@@ -928,12 +790,9 @@
 
 .method public removeActiveDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
     .locals 2
-    .param p1, "downstream"    # Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;
 
-    .line 102
     invoke-static {p1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->stopIPv6TetheringOn(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)V
 
-    .line 103
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
     invoke-virtual {p0, p1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->findDownstream(Lcom/android/server/connectivity/tethering/TetherInterfaceStateMachine;)Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator$Downstream;
@@ -946,10 +805,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 104
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->updateIPv6TetheringInterfaces()V
 
-    .line 108
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNotifyList:Ljava/util/ArrayList;
 
@@ -959,7 +816,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 109
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mActiveDownstreams:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
@@ -968,47 +824,38 @@
 
     if-nez v0, :cond_1
 
-    .line 110
     sget-object v0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->TAG:Ljava/lang/String;
 
     const-string v1, "Tethering notify list empty, IPv6 downstreams non-empty."
 
     invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     :cond_1
     const/4 v0, 0x0
 
     iput-short v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mNextSubnetId:S
 
-    .line 114
     :cond_2
     return-void
 .end method
 
 .method public updateUpstreamNetworkState(Landroid/net/NetworkState;)V
     .locals 2
-    .param p1, "ns"    # Landroid/net/NetworkState;
 
-    .line 120
     invoke-static {p1}, Lcom/android/server/connectivity/tethering/TetheringInterfaceUtils;->getIPv6Interface(Landroid/net/NetworkState;)Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 121
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->stopIPv6TetheringOnAllInterfaces()V
 
-    .line 122
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->setUpstreamNetworkState(Landroid/net/NetworkState;)V
 
-    .line 123
     return-void
 
-    .line 126
     :cond_0
     iget-object v0, p0, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->mUpstreamNetworkState:Landroid/net/NetworkState;
 
@@ -1020,23 +867,18 @@
 
     iget-object v1, v1, Landroid/net/NetworkState;->network:Landroid/net/Network;
 
-    .line 127
     invoke-virtual {v0, v1}, Landroid/net/Network;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 128
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->stopIPv6TetheringOnAllInterfaces()V
 
-    .line 131
     :cond_1
     invoke-direct {p0, p1}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->setUpstreamNetworkState(Landroid/net/NetworkState;)V
 
-    .line 132
     invoke-direct {p0}, Lcom/android/server/connectivity/tethering/IPv6TetheringCoordinator;->updateIPv6TetheringInterfaces()V
 
-    .line 133
     return-void
 .end method

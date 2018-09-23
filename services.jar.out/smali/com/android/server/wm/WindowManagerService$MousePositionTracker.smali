@@ -29,7 +29,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 7496
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,9 +36,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/wm/WindowManagerService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/wm/WindowManagerService$1;
 
-    .line 7496
     invoke-direct {p0}, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;-><init>()V
 
     return-void
@@ -47,9 +44,7 @@
 
 .method static synthetic access$1700(Lcom/android/server/wm/WindowManagerService$MousePositionTracker;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService$MousePositionTracker;
 
-    .line 7496
     iget-boolean v0, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestEventWasMouse:Z
 
     return v0
@@ -57,9 +52,7 @@
 
 .method static synthetic access$1800(Lcom/android/server/wm/WindowManagerService$MousePositionTracker;)F
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService$MousePositionTracker;
 
-    .line 7496
     iget v0, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestMouseX:F
 
     return v0
@@ -67,9 +60,7 @@
 
 .method static synthetic access$1900(Lcom/android/server/wm/WindowManagerService$MousePositionTracker;)F
     .locals 1
-    .param p0, "x0"    # Lcom/android/server/wm/WindowManagerService$MousePositionTracker;
 
-    .line 7496
     iget v0, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestMouseY:F
 
     return v0
@@ -79,9 +70,7 @@
 # virtual methods
 .method public onPointerEvent(Landroid/view/MotionEvent;)V
     .locals 2
-    .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
-    .line 7511
     const/16 v0, 0x2002
 
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->isFromSource(I)Z
@@ -90,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 7512
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
@@ -103,24 +91,19 @@
 
     goto :goto_0
 
-    .line 7514
     :cond_0
     monitor-enter p0
 
-    .line 7515
     const/4 v0, 0x0
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestEventWasMouse:Z
 
-    .line 7516
     monitor-exit p0
 
-    .line 7518
     :goto_0
     return-void
 
-    .line 7516
     :catchall_0
     move-exception v0
 
@@ -133,31 +116,22 @@
 
 .method updatePosition(FF)V
     .locals 1
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
-    .line 7502
     monitor-enter p0
 
-    .line 7503
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestEventWasMouse:Z
 
-    .line 7504
     iput p1, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestMouseX:F
 
-    .line 7505
     iput p2, p0, Lcom/android/server/wm/WindowManagerService$MousePositionTracker;->mLatestMouseY:F
 
-    .line 7506
     monitor-exit p0
 
-    .line 7507
     return-void
 
-    .line 7506
     :catchall_0
     move-exception v0
 

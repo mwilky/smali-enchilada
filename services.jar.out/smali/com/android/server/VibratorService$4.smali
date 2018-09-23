@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/VibratorService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/VibratorService;
 
-    .line 1288
     iput-object p1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1291
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 1292
     iget-object v0, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v0}, Lcom/android/server/VibratorService;->access$000(Lcom/android/server/VibratorService;)Ljava/lang/Object;
@@ -60,7 +54,6 @@
 
     monitor-enter v0
 
-    .line 1300
     :try_start_0
     iget-object v1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
@@ -70,19 +63,16 @@
 
     if-nez v1, :cond_0
 
-    .line 1301
     const-string v1, "VibratorService"
 
     const-string/jumbo v2, "vibrate service don\'t cancel when lidState is close "
 
     invoke-static {v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1302
     monitor-exit v0
 
     return-void
 
-    .line 1306
     :cond_0
     iget-object v1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
@@ -94,7 +84,6 @@
 
     iget-object v1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
-    .line 1307
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$100(Lcom/android/server/VibratorService;)Lcom/android/server/VibratorService$Vibration;
 
     move-result-object v1
@@ -107,7 +96,6 @@
 
     iget-object v1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
-    .line 1308
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$100(Lcom/android/server/VibratorService;)Lcom/android/server/VibratorService$Vibration;
 
     move-result-object v1
@@ -118,13 +106,11 @@
 
     if-nez v1, :cond_2
 
-    .line 1309
     :cond_1
     iget-object v1, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     invoke-static {v1}, Lcom/android/server/VibratorService;->access$200(Lcom/android/server/VibratorService;)V
 
-    .line 1311
     :cond_2
     monitor-exit v0
 
@@ -139,7 +125,6 @@
 
     throw v1
 
-    .line 1314
     :cond_3
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -153,7 +138,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 1315
     iget-object v0, p0, Lcom/android/server/VibratorService$4;->this$0:Lcom/android/server/VibratorService;
 
     const-string/jumbo v1, "lidOpen"
@@ -166,7 +150,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/VibratorService;->access$1002(Lcom/android/server/VibratorService;I)I
 
-    .line 1318
     :cond_4
     :goto_0
     return-void

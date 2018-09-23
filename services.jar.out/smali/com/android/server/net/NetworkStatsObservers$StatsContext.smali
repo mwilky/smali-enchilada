@@ -49,10 +49,6 @@
 # direct methods
 .method constructor <init>(Landroid/net/NetworkStats;Landroid/net/NetworkStats;Landroid/util/ArrayMap;Landroid/util/ArrayMap;[Lcom/android/internal/net/VpnInfo;J)V
     .locals 0
-    .param p1, "xtSnapshot"    # Landroid/net/NetworkStats;
-    .param p2, "uidSnapshot"    # Landroid/net/NetworkStats;
-    .param p5, "vpnArray"    # [Lcom/android/internal/net/VpnInfo;
-    .param p6, "currentTime"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -71,29 +67,19 @@
         }
     .end annotation
 
-    .line 436
-    .local p3, "activeIfaces":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/net/NetworkIdentitySet;>;"
-    .local p4, "activeUidIfaces":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Lcom/android/server/net/NetworkIdentitySet;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 437
     iput-object p1, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mXtSnapshot:Landroid/net/NetworkStats;
 
-    .line 438
     iput-object p2, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mUidSnapshot:Landroid/net/NetworkStats;
 
-    .line 439
     iput-object p3, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mActiveIfaces:Landroid/util/ArrayMap;
 
-    .line 440
     iput-object p4, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mActiveUidIfaces:Landroid/util/ArrayMap;
 
-    .line 441
     iput-object p5, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mVpnArray:[Lcom/android/internal/net/VpnInfo;
 
-    .line 442
     iput-wide p6, p0, Lcom/android/server/net/NetworkStatsObservers$StatsContext;->mCurrentTime:J
 
-    .line 443
     return-void
 .end method

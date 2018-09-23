@@ -25,11 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/location/ContextHubTransactionManager;IIILandroid/hardware/location/IContextHubTransactionCallback;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/location/ContextHubTransactionManager;
-    .param p2, "id"    # I
-    .param p3, "type"    # I
 
-    .line 264
     iput-object p1, p0, Lcom/android/server/location/ContextHubTransactionManager$5;->this$0:Lcom/android/server/location/ContextHubTransactionManager;
 
     iput p4, p0, Lcom/android/server/location/ContextHubTransactionManager$5;->val$contextHubId:I
@@ -45,7 +41,6 @@
 # virtual methods
 .method onQueryResponse(ILjava/util/List;)V
     .locals 3
-    .param p1, "result"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -55,8 +50,6 @@
         }
     .end annotation
 
-    .line 284
-    .local p2, "nanoAppStateList":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/location/NanoAppState;>;"
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/ContextHubTransactionManager$5;->val$onCompleteCallback:Landroid/hardware/location/IContextHubTransactionCallback;
 
@@ -64,23 +57,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 287
     goto :goto_0
 
-    .line 285
     :catch_0
     move-exception v0
 
-    .line 286
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ContextHubTransactionManager"
 
     const-string v2, "RemoteException while calling client onQueryComplete"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 288
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -88,7 +75,6 @@
 .method onTransact()I
     .locals 3
 
-    .line 268
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/ContextHubTransactionManager$5;->this$0:Lcom/android/server/location/ContextHubTransactionManager;
 
@@ -106,19 +92,15 @@
 
     return v0
 
-    .line 269
     :catch_0
     move-exception v0
 
-    .line 270
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ContextHubTransactionManager"
 
     const-string v2, "RemoteException while trying to query for nanoapps"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 271
     const/4 v1, 0x1
 
     return v1
@@ -126,15 +108,12 @@
 
 .method onTransactionComplete(I)V
     .locals 1
-    .param p1, "result"    # I
 
-    .line 277
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/location/ContextHubTransactionManager$5;->onQueryResponse(ILjava/util/List;)V
 
-    .line 278
     return-void
 .end method

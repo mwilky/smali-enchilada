@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/notification/NotificationManagerService$11;Ljava/lang/String;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;[Landroid/service/notification/Condition;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/server/notification/NotificationManagerService$11;
 
-    .line 3283
     iput-object p1, p0, Lcom/android/server/notification/NotificationManagerService$11$1;->this$1:Lcom/android/server/notification/NotificationManagerService$11;
 
     iput-object p2, p0, Lcom/android/server/notification/NotificationManagerService$11$1;->val$pkg:Ljava/lang/String;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 3286
     iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$11$1;->this$1:Lcom/android/server/notification/NotificationManagerService$11;
 
     iget-object v0, v0, Lcom/android/server/notification/NotificationManagerService$11;->this$0:Lcom/android/server/notification/NotificationManagerService;
@@ -68,6 +65,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/server/notification/ConditionProviders;->notifyConditions(Ljava/lang/String;Lcom/android/server/notification/ManagedServices$ManagedServiceInfo;[Landroid/service/notification/Condition;)V
 
-    .line 3287
     return-void
 .end method

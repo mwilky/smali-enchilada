@@ -45,22 +45,16 @@
         }
     .end annotation
 
-    .line 274
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$LinkedListener;, "Lcom/android/server/location/RemoteListenerHelper<TTListener;>.LinkedListener;"
-    .local p2, "listener":Landroid/os/IInterface;, "TTListener;"
     iput-object p1, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 271
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mBlock:Z
 
-    .line 275
     iput-object p2, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mListener:Landroid/os/IInterface;
 
-    .line 276
     return-void
 .end method
 
@@ -69,8 +63,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 285
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$LinkedListener;, "Lcom/android/server/location/RemoteListenerHelper<TTListener;>.LinkedListener;"
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     invoke-static {v0}, Lcom/android/server/location/RemoteListenerHelper;->access$400(Lcom/android/server/location/RemoteListenerHelper;)Ljava/lang/String;
@@ -95,22 +87,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 286
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->this$0:Lcom/android/server/location/RemoteListenerHelper;
 
     iget-object v1, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mListener:Landroid/os/IInterface;
 
     invoke-virtual {v0, v1}, Lcom/android/server/location/RemoteListenerHelper;->removeListener(Landroid/os/IInterface;)V
 
-    .line 287
     return-void
 .end method
 
 .method public getUid()I
     .locals 1
 
-    .line 295
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$LinkedListener;, "Lcom/android/server/location/RemoteListenerHelper<TTListener;>.LinkedListener;"
     iget v0, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mUid:I
 
     return v0
@@ -125,8 +113,6 @@
         }
     .end annotation
 
-    .line 280
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$LinkedListener;, "Lcom/android/server/location/RemoteListenerHelper<TTListener;>.LinkedListener;"
     iget-object v0, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mListener:Landroid/os/IInterface;
 
     return-object v0
@@ -134,12 +120,8 @@
 
 .method public setUid(I)V
     .locals 0
-    .param p1, "uid"    # I
 
-    .line 291
-    .local p0, "this":Lcom/android/server/location/RemoteListenerHelper$LinkedListener;, "Lcom/android/server/location/RemoteListenerHelper<TTListener;>.LinkedListener;"
     iput p1, p0, Lcom/android/server/location/RemoteListenerHelper$LinkedListener;->mUid:I
 
-    .line 292
     return-void
 .end method

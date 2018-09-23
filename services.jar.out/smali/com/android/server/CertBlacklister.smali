@@ -29,7 +29,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 41
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -52,7 +51,6 @@
 
     sput-object v0, Lcom/android/server/CertBlacklister;->BLACKLIST_ROOT:Ljava/lang/String;
 
-    .line 43
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -71,7 +69,6 @@
 
     sput-object v0, Lcom/android/server/CertBlacklister;->PUBKEY_PATH:Ljava/lang/String;
 
-    .line 44
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -95,27 +92,21 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 109
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 110
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/android/server/CertBlacklister;->registerObservers(Landroid/content/ContentResolver;)V
 
-    .line 111
     return-void
 .end method
 
 .method private buildPubkeyObserver(Landroid/content/ContentResolver;)Lcom/android/server/CertBlacklister$BlacklistObserver;
     .locals 4
-    .param p1, "cr"    # Landroid/content/ContentResolver;
 
-    .line 114
     new-instance v0, Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     const-string/jumbo v1, "pubkey_blacklist"
@@ -131,9 +122,7 @@
 
 .method private buildSerialObserver(Landroid/content/ContentResolver;)Lcom/android/server/CertBlacklister$BlacklistObserver;
     .locals 4
-    .param p1, "cr"    # Landroid/content/ContentResolver;
 
-    .line 121
     new-instance v0, Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     const-string/jumbo v1, "serial_blacklist"
@@ -149,42 +138,32 @@
 
 .method private registerObservers(Landroid/content/ContentResolver;)V
     .locals 3
-    .param p1, "cr"    # Landroid/content/ContentResolver;
 
-    .line 129
     const-string/jumbo v0, "pubkey_blacklist"
 
-    .line 130
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 132
     invoke-direct {p0, p1}, Lcom/android/server/CertBlacklister;->buildPubkeyObserver(Landroid/content/ContentResolver;)Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     move-result-object v1
 
-    .line 129
     const/4 v2, 0x1
 
     invoke-virtual {p1, v0, v2, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 136
     const-string/jumbo v0, "serial_blacklist"
 
-    .line 137
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 139
     invoke-direct {p0, p1}, Lcom/android/server/CertBlacklister;->buildSerialObserver(Landroid/content/ContentResolver;)Lcom/android/server/CertBlacklister$BlacklistObserver;
 
     move-result-object v1
 
-    .line 136
     invoke-virtual {p1, v0, v2, v1}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 141
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/AppOpsService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/AppOpsService;
 
-    .line 830
     iput-object p1, p0, Lcom/android/server/AppOpsService$2;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 6
 
-    .line 832
     iget-object v0, p0, Lcom/android/server/AppOpsService$2;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-static {v0}, Lcom/android/server/AppOpsService;->access$200(Lcom/android/server/AppOpsService;)Lcom/oneplus/config/ConfigObserver;
@@ -48,7 +45,6 @@
 
     if-nez v0, :cond_0
 
-    .line 833
     iget-object v0, p0, Lcom/android/server/AppOpsService$2;->this$0:Lcom/android/server/AppOpsService;
 
     new-instance v1, Lcom/oneplus/config/ConfigObserver;
@@ -73,7 +69,6 @@
 
     invoke-static {v0, v1}, Lcom/android/server/AppOpsService;->access$202(Lcom/android/server/AppOpsService;Lcom/oneplus/config/ConfigObserver;)Lcom/oneplus/config/ConfigObserver;
 
-    .line 835
     iget-object v0, p0, Lcom/android/server/AppOpsService$2;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-static {v0}, Lcom/android/server/AppOpsService;->access$200(Lcom/android/server/AppOpsService;)Lcom/oneplus/config/ConfigObserver;
@@ -82,7 +77,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/config/ConfigObserver;->register()V
 
-    .line 837
     :cond_0
     new-instance v0, Lcom/oneplus/config/ConfigGrabber;
 
@@ -94,8 +88,6 @@
 
     invoke-direct {v0, v1, v2}, Lcom/oneplus/config/ConfigGrabber;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 838
-    .local v0, "configGrabber":Lcom/oneplus/config/ConfigGrabber;
     iget-object v1, p0, Lcom/android/server/AppOpsService$2;->this$0:Lcom/android/server/AppOpsService;
 
     invoke-virtual {v0}, Lcom/oneplus/config/ConfigGrabber;->grabConfig()Lorg/json/JSONArray;
@@ -104,6 +96,5 @@
 
     invoke-static {v1, v2}, Lcom/android/server/AppOpsService;->access$100(Lcom/android/server/AppOpsService;Lorg/json/JSONArray;)V
 
-    .line 839
     return-void
 .end method

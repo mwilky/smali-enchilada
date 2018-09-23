@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/server/display/ColorDisplayService;)V
     .locals 0
 
-    .line 437
     iput-object p1, p0, Lcom/android/server/display/ColorDisplayService$AutoMode;->this$0:Lcom/android/server/display/ColorDisplayService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/server/display/ColorDisplayService;Lcom/android/server/display/ColorDisplayService$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/server/display/ColorDisplayService;
-    .param p2, "x1"    # Lcom/android/server/display/ColorDisplayService$1;
 
-    .line 437
     invoke-direct {p0, p1}, Lcom/android/server/display/ColorDisplayService$AutoMode;-><init>(Lcom/android/server/display/ColorDisplayService;)V
 
     return-void

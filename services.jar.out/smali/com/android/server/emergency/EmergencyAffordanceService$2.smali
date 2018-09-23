@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/server/emergency/EmergencyAffordanceService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/server/emergency/EmergencyAffordanceService;
 
-    .line 107
     iput-object p1, p0, Lcom/android/server/emergency/EmergencyAffordanceService$2;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 110
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -53,29 +48,24 @@
 
     if-nez v0, :cond_0
 
-    .line 112
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$2;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$200(Lcom/android/server/emergency/EmergencyAffordanceService;)V
 
-    .line 113
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$2;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$100(Lcom/android/server/emergency/EmergencyAffordanceService;)V
 
-    .line 115
     const-string v0, "EmergencyAffordanceService"
 
     const-string/jumbo v1, "reset mPollingComplete, sent INITIALIZE_STATE msg"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$2;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0, v2}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$302(Lcom/android/server/emergency/EmergencyAffordanceService;I)I
 
-    .line 117
     iget-object v0, p0, Lcom/android/server/emergency/EmergencyAffordanceService$2;->this$0:Lcom/android/server/emergency/EmergencyAffordanceService;
 
     invoke-static {v0}, Lcom/android/server/emergency/EmergencyAffordanceService;->access$400(Lcom/android/server/emergency/EmergencyAffordanceService;)Lcom/android/server/emergency/EmergencyAffordanceService$MyHandler;
@@ -90,7 +80,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 120
     :cond_0
     return-void
 .end method

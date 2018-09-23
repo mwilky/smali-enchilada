@@ -20,23 +20,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 17
     invoke-direct {p0}, Lcom/oneplus/three_key/IThreeKeyPolicy$Stub;-><init>()V
 
-    .line 12
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->DEBUG:Z
 
-    .line 15
     iput-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mInit:Z
 
-    .line 18
     iput-object p1, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mContext:Landroid/content/Context;
 
-    .line 19
     iget-object v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "vibrator"
@@ -49,7 +43,6 @@
 
     iput-object v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mVibrator:Landroid/os/Vibrator;
 
-    .line 20
     return-void
 .end method
 
@@ -58,14 +51,12 @@
 .method public setDown()V
     .locals 2
 
-    .line 38
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mInit:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 39
     :cond_0
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->DEBUG:Z
 
@@ -77,33 +68,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 40
     :cond_1
     return-void
 .end method
 
 .method public setInitMode(Z)V
     .locals 0
-    .param p1, "isInit"    # Z
 
-    .line 44
     iput-boolean p1, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mInit:Z
 
-    .line 45
     return-void
 .end method
 
 .method public setMiddle()V
     .locals 3
 
-    .line 31
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mInit:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 32
     :cond_0
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->DEBUG:Z
 
@@ -115,7 +100,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 33
     :cond_1
     iget-object v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mVibrator:Landroid/os/Vibrator;
 
@@ -123,21 +107,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 34
     return-void
 .end method
 
 .method public setUp()V
     .locals 3
 
-    .line 24
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mInit:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 25
     :cond_0
     iget-boolean v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->DEBUG:Z
 
@@ -149,7 +130,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 26
     :cond_1
     iget-object v0, p0, Lcom/oneplus/threekey/ThreeKeyVibratorPolicy;->mVibrator:Landroid/os/Vibrator;
 
@@ -157,6 +137,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 27
     return-void
 .end method
