@@ -31,40 +31,27 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/location/LocationSettings;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "fragment"    # Lcom/android/settings/location/LocationSettings;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 91
     new-instance v0, Lcom/android/settingslib/location/RecentLocationApps;
 
     invoke-direct {v0, p1}, Lcom/android/settingslib/location/RecentLocationApps;-><init>(Landroid/content/Context;)V
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/android/settings/location/RecentLocationRequestPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settings/location/LocationSettings;Lcom/android/settingslib/core/lifecycle/Lifecycle;Lcom/android/settingslib/location/RecentLocationApps;)V
 
-    .line 92
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Lcom/android/settings/location/LocationSettings;Lcom/android/settingslib/core/lifecycle/Lifecycle;Lcom/android/settingslib/location/RecentLocationApps;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "fragment"    # Lcom/android/settings/location/LocationSettings;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
-    .param p4, "recentApps"    # Lcom/android/settingslib/location/RecentLocationApps;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 97
     invoke-direct {p0, p1, p3}, Lcom/android/settings/location/LocationBasePreferenceController;-><init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 98
     iput-object p2, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mFragment:Lcom/android/settings/location/LocationSettings;
 
-    .line 99
     iput-object p4, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mRecentLocationApps:Lcom/android/settingslib/location/RecentLocationApps;
 
-    .line 100
     return-void
 .end method
 
@@ -72,8 +59,6 @@
 # virtual methods
 .method createAppPreference(Landroid/content/Context;Lcom/android/settingslib/location/RecentLocationApps$Request;Ljava/util/List;)Landroid/support/v7/preference/Preference;
     .locals 10
-    .param p1, "prefContext"    # Landroid/content/Context;
-    .param p2, "request"    # Lcom/android/settingslib/location/RecentLocationApps$Request;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
@@ -89,14 +74,10 @@
         }
     .end annotation
 
-    .line 160
-    .local p3, "currentUsingGpsPkgs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v0, Lcom/oneplus/settings/ui/OPButtonPreference;
 
     invoke-direct {v0, p1}, Lcom/oneplus/settings/ui/OPButtonPreference;-><init>(Landroid/content/Context;)V
 
-    .line 161
-    .local v0, "pref":Lcom/oneplus/settings/ui/OPButtonPreference;
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v1
@@ -113,21 +94,16 @@
 
     move-result-object v1
 
-    .line 162
-    .local v1, "key":Ljava/lang/String;
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPButtonPreference;->setKey(Ljava/lang/String;)V
 
-    .line 163
     iget-object v2, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 164
     iget-object v2, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->label:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 165
     new-instance v2, Lcom/android/settings/location/RecentLocationRequestPreferenceController$PackageEntryClickedListener;
 
     iget-object v3, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mFragment:Lcom/android/settings/location/LocationSettings;
@@ -140,7 +116,6 @@
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
 
-    .line 167
     const/4 v2, 0x0
 
     if-eqz p3, :cond_2
@@ -157,15 +132,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 168
     iget-object v3, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->userHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v3}, Landroid/os/UserHandle;->getIdentifier()I
 
     move-result v3
 
-    .line 169
-    .local v3, "userId":I
     iget-object v4, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mState:Lcom/android/settingslib/applications/ApplicationsState;
 
     iget-object v5, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->packageName:Ljava/lang/String;
@@ -174,8 +146,6 @@
 
     move-result-object v4
 
-    .line 170
-    .local v4, "appEntry":Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
     const-string v5, "no_control_apps"
 
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
@@ -186,8 +156,6 @@
 
     move-result v5
 
-    .line 171
-    .local v5, "mAppsControlDisallowedBySystem":Z
     iget-object v6, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mDpm:Landroid/app/admin/DevicePolicyManager;
 
     iget-object v7, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->packageName:Ljava/lang/String;
@@ -196,30 +164,24 @@
 
     move-result v6
 
-    .line 172
-    .local v6, "packageHasActiveAdmins":Z
     if-nez v6, :cond_1
 
     if-eqz v5, :cond_0
 
     goto :goto_0
 
-    .line 178
     :cond_0
-    const v2, 0x7f120b57
+    const v2, 0x7f120b54
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setSummary(I)V
 
-    .line 179
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonVisible(Z)V
 
-    .line 180
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonEnable(Z)V
 
-    .line 181
-    const v2, 0x7f120cb8
+    const v2, 0x7f120cb1
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -227,24 +189,14 @@
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonString(Ljava/lang/String;)V
 
-    .line 182
     new-instance v2, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;
 
     invoke-direct {v2, p0, v4, v0}, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;-><init>(Lcom/android/settings/location/RecentLocationRequestPreferenceController;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/oneplus/settings/ui/OPButtonPreference;)V
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setOnButtonClickListener(Landroid/view/View$OnClickListener;)V
 
-    .end local v3    # "userId":I
-    .end local v4    # "appEntry":Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
-    .end local v5    # "mAppsControlDisallowedBySystem":Z
-    .end local v6    # "packageHasActiveAdmins":Z
     goto :goto_1
 
-    .line 173
-    .restart local v3    # "userId":I
-    .restart local v4    # "appEntry":Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
-    .restart local v5    # "mAppsControlDisallowedBySystem":Z
-    .restart local v6    # "packageHasActiveAdmins":Z
     :cond_1
     :goto_0
     const-string v7, "PrefControllerMixin"
@@ -271,41 +223,29 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonEnable(Z)V
 
-    .line 175
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonVisible(Z)V
 
-    .line 176
     iget-object v2, p2, Lcom/android/settingslib/location/RecentLocationApps$Request;->contentDescription:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 192
-    .end local v3    # "userId":I
-    .end local v4    # "appEntry":Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
-    .end local v5    # "mAppsControlDisallowedBySystem":Z
-    .end local v6    # "packageHasActiveAdmins":Z
     :goto_1
     goto :goto_2
 
-    .line 193
     :cond_2
     invoke-virtual {v0, v2}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonVisible(Z)V
 
-    .line 203
     :goto_2
     return-object v0
 .end method
 
 .method createAppPreference(Landroid/content/Context;)Lcom/android/settings/widget/AppPreference;
     .locals 1
-    .param p1, "prefContext"    # Landroid/content/Context;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 153
     new-instance v0, Lcom/android/settings/widget/AppPreference;
 
     invoke-direct {v0, p1}, Lcom/android/settings/widget/AppPreference;-><init>(Landroid/content/Context;)V
@@ -315,15 +255,11 @@
 
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 1
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 109
     invoke-super {p0, p1}, Lcom/android/settings/location/LocationBasePreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 110
     const-string v0, "recent_location_requests"
 
-    .line 111
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v0
@@ -332,7 +268,6 @@
 
     iput-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
-    .line 112
     const-string v0, "recent_location_requests_see_all_button"
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -341,14 +276,12 @@
 
     iput-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mSeeAllButton:Landroid/support/v7/preference/Preference;
 
-    .line 114
     return-void
 .end method
 
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 104
     const-string v0, "recent_location_requests"
 
     return-object v0
@@ -356,10 +289,7 @@
 
 .method public onLocationModeChanged(IZ)V
     .locals 2
-    .param p1, "mode"    # I
-    .param p2, "restricted"    # Z
 
-    .line 148
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
     iget-object v1, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mLocationEnabler:Lcom/android/settings/location/LocationEnabler;
@@ -370,27 +300,22 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceCategory;->setEnabled(Z)V
 
-    .line 149
     return-void
 .end method
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 7
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 118
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-virtual {v0}, Landroid/support/v7/preference/PreferenceCategory;->removeAll()V
 
-    .line 119
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mSeeAllButton:Landroid/support/v7/preference/Preference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setVisible(Z)V
 
-    .line 121
     if-nez p1, :cond_0
 
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mContext:Landroid/content/Context;
@@ -402,8 +327,6 @@
 
     move-result-object v0
 
-    .line 122
-    .local v0, "prefContext":Landroid/content/Context;
     :goto_0
     iget-object v2, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mRecentLocationApps:Lcom/android/settingslib/location/RecentLocationApps;
 
@@ -411,14 +334,10 @@
 
     move-result-object v2
 
-    .line 123
-    .local v2, "recentLocationRequests":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/location/RecentLocationApps$Request;>;"
     invoke-virtual {p0}, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->getCurrentUsingGpsListForUid()Ljava/util/List;
 
     move-result-object v3
 
-    .line 125
-    .local v3, "currentUsingGpsPkgs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v4
@@ -427,14 +346,11 @@
 
     if-le v4, v5, :cond_2
 
-    .line 127
     nop
 
-    .local v1, "i":I
     :goto_1
     if-ge v1, v5, :cond_1
 
-    .line 128
     iget-object v4, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -449,13 +365,10 @@
 
     invoke-virtual {v4, v6}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 127
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 131
-    .end local v1    # "i":I
     :cond_1
     iget-object v1, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mSeeAllButton:Landroid/support/v7/preference/Preference;
 
@@ -465,7 +378,6 @@
 
     goto :goto_3
 
-    .line 132
     :cond_2
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -473,7 +385,6 @@
 
     if-lez v4, :cond_3
 
-    .line 134
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -491,8 +402,6 @@
 
     check-cast v4, Lcom/android/settingslib/location/RecentLocationApps$Request;
 
-    .line 135
-    .local v4, "request":Lcom/android/settingslib/location/RecentLocationApps$Request;
     iget-object v5, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-virtual {p0, v0, v4, v3}, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->createAppPreference(Landroid/content/Context;Lcom/android/settingslib/location/RecentLocationApps$Request;Ljava/util/List;)Landroid/support/v7/preference/Preference;
@@ -501,32 +410,23 @@
 
     invoke-virtual {v5, v6}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 136
-    .end local v4    # "request":Lcom/android/settingslib/location/RecentLocationApps$Request;
     goto :goto_2
 
-    .line 139
     :cond_3
     invoke-virtual {p0, v0}, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->createAppPreference(Landroid/content/Context;)Lcom/android/settings/widget/AppPreference;
 
     move-result-object v4
 
-    .line 140
-    .local v4, "banner":Landroid/support/v7/preference/Preference;
     const v5, 0x7f120847
 
     invoke-virtual {v4, v5}, Landroid/support/v7/preference/Preference;->setTitle(I)V
 
-    .line 141
     invoke-virtual {v4, v1}, Landroid/support/v7/preference/Preference;->setSelectable(Z)V
 
-    .line 142
     iget-object v1, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->mCategoryRecentLocationRequests:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-virtual {v1, v4}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 144
-    .end local v4    # "banner":Landroid/support/v7/preference/Preference;
     :cond_4
     :goto_3
     return-void

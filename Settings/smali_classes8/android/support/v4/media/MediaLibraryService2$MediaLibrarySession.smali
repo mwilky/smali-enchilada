@@ -25,19 +25,9 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/VolumeProviderCompat;Landroid/app/PendingIntent;Ljava/util/concurrent/Executor;Landroid/support/v4/media/MediaSession2$SessionCallback;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "id"    # Ljava/lang/String;
-    .param p3, "player"    # Landroid/support/v4/media/BaseMediaPlayer;
-    .param p4, "playlistAgent"    # Landroid/support/v4/media/MediaPlaylistAgent;
-    .param p5, "volumeProvider"    # Landroid/support/v4/media/VolumeProviderCompat;
-    .param p6, "sessionActivity"    # Landroid/app/PendingIntent;
-    .param p7, "callbackExecutor"    # Ljava/util/concurrent/Executor;
-    .param p8, "callback"    # Landroid/support/v4/media/MediaSession2$SessionCallback;
 
-    .line 266
     invoke-direct/range {p0 .. p8}, Landroid/support/v4/media/MediaSession2;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/VolumeProviderCompat;Landroid/app/PendingIntent;Ljava/util/concurrent/Executor;Landroid/support/v4/media/MediaSession2$SessionCallback;)V
 
-    .line 268
     return-void
 .end method
 
@@ -45,16 +35,7 @@
 # virtual methods
 .method createImpl(Landroid/content/Context;Ljava/lang/String;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/VolumeProviderCompat;Landroid/app/PendingIntent;Ljava/util/concurrent/Executor;Landroid/support/v4/media/MediaSession2$SessionCallback;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
     .locals 11
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "id"    # Ljava/lang/String;
-    .param p3, "player"    # Landroid/support/v4/media/BaseMediaPlayer;
-    .param p4, "playlistAgent"    # Landroid/support/v4/media/MediaPlaylistAgent;
-    .param p5, "volumeProvider"    # Landroid/support/v4/media/VolumeProviderCompat;
-    .param p6, "sessionActivity"    # Landroid/app/PendingIntent;
-    .param p7, "callbackExecutor"    # Ljava/util/concurrent/Executor;
-    .param p8, "callback"    # Landroid/support/v4/media/MediaSession2$SessionCallback;
 
-    .line 275
     new-instance v10, Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     move-object v0, v10
@@ -85,7 +66,6 @@
 .method bridge synthetic createImpl(Landroid/content/Context;Ljava/lang/String;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/VolumeProviderCompat;Landroid/app/PendingIntent;Ljava/util/concurrent/Executor;Landroid/support/v4/media/MediaSession2$SessionCallback;)Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;
     .locals 0
 
-    .line 66
     invoke-virtual/range {p0 .. p8}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->createImpl(Landroid/content/Context;Ljava/lang/String;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/VolumeProviderCompat;Landroid/app/PendingIntent;Ljava/util/concurrent/Executor;Landroid/support/v4/media/MediaSession2$SessionCallback;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object p1
@@ -96,7 +76,6 @@
 .method getCallback()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$MediaLibrarySessionCallback;
     .locals 1
 
-    .line 332
     invoke-super {p0}, Landroid/support/v4/media/MediaSession2;->getCallback()Landroid/support/v4/media/MediaSession2$SessionCallback;
 
     move-result-object v0
@@ -109,7 +88,6 @@
 .method bridge synthetic getCallback()Landroid/support/v4/media/MediaSession2$SessionCallback;
     .locals 1
 
-    .line 66
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->getCallback()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$MediaLibrarySessionCallback;
 
     move-result-object v0
@@ -120,7 +98,6 @@
 .method getImpl()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
     .locals 1
 
-    .line 281
     invoke-super {p0}, Landroid/support/v4/media/MediaSession2;->getImpl()Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;
 
     move-result-object v0
@@ -133,7 +110,6 @@
 .method bridge synthetic getImpl()Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;
     .locals 1
 
-    .line 66
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->getImpl()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
@@ -143,77 +119,68 @@
 
 .method public notifyChildrenChanged(Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "controller"    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
+    .param p1    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "parentId"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "itemCount"    # I
-    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 299
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->getImpl()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;->notifyChildrenChanged(Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 300
     return-void
 .end method
 
 .method public notifyChildrenChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "parentId"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "itemCount"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
+    .param p3    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 314
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->getImpl()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2, p3}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;->notifyChildrenChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 315
     return-void
 .end method
 
 .method public notifySearchResultChanged(Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "controller"    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
+    .param p1    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "query"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "itemCount"    # I
-    .param p4, "extras"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 327
     invoke-virtual {p0}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;->getImpl()Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;->notifySearchResultChanged(Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 328
     return-void
 .end method

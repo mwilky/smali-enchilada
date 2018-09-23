@@ -46,17 +46,12 @@
         }
     .end annotation
 
-    .line 1176
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector<TK;>;"
-    .local p1, "delegate":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/reflect/TypeToken$TypeCollector;-><init>(Lcom/google/common/reflect/TypeToken$1;)V
 
-    .line 1177
     iput-object p1, p0, Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;->delegate:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
-    .line 1178
     return-void
 .end method
 
@@ -72,9 +67,6 @@
         }
     .end annotation
 
-    .line 1185
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector<TK;>;"
-    .local p1, "type":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;->delegate:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
     invoke-virtual {v0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getInterfaces(Ljava/lang/Object;)Ljava/lang/Iterable;
@@ -94,9 +86,6 @@
         }
     .end annotation
 
-    .line 1181
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector<TK;>;"
-    .local p1, "type":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;->delegate:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
     invoke-virtual {v0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getRawType(Ljava/lang/Object;)Ljava/lang/Class;
@@ -114,9 +103,6 @@
         }
     .end annotation
 
-    .line 1189
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector<TK;>;"
-    .local p1, "type":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$TypeCollector$ForwardingTypeCollector;->delegate:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
     invoke-virtual {v0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getSuperclass(Ljava/lang/Object;)Ljava/lang/Object;

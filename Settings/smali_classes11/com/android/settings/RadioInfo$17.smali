@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1335
     iput-object p1, p0, Lcom/android/settings/RadioInfo$17;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 1
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
 
-    .line 1338
     iget-object v0, p0, Lcom/android/settings/RadioInfo$17;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/RadioInfo;->setImsVolteProvisionedState(Z)V
 
-    .line 1339
     return-void
 .end method

@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 274
     invoke-static {}, Lcom/google/tagmanager/PreviewManager$PreviewMode;->values()[Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     move-result-object v0

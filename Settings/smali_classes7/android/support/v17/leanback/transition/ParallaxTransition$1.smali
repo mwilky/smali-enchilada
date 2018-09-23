@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/transition/ParallaxTransition;Landroid/support/v17/leanback/widget/Parallax;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/transition/ParallaxTransition;
 
-    .line 65
     iput-object p1, p0, Landroid/support/v17/leanback/transition/ParallaxTransition$1;->this$0:Landroid/support/v17/leanback/transition/ParallaxTransition;
 
     iput-object p2, p0, Landroid/support/v17/leanback/transition/ParallaxTransition$1;->val$source:Landroid/support/v17/leanback/widget/Parallax;
@@ -42,13 +40,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 68
     iget-object v0, p0, Landroid/support/v17/leanback/transition/ParallaxTransition$1;->val$source:Landroid/support/v17/leanback/widget/Parallax;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/Parallax;->updateValues()V
 
-    .line 69
     return-void
 .end method

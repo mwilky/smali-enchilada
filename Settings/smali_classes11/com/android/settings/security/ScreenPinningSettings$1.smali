@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/security/ScreenPinningSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/security/ScreenPinningSettings;
 
-    .line 204
     iput-object p1, p0, Lcom/android/settings/security/ScreenPinningSettings$1;->this$0:Lcom/android/settings/security/ScreenPinningSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 207
     iget-object v0, p0, Lcom/android/settings/security/ScreenPinningSettings$1;->this$0:Lcom/android/settings/security/ScreenPinningSettings;
 
     move-object v1, p2

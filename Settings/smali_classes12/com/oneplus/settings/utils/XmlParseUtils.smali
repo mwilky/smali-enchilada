@@ -25,7 +25,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 21
     const-string v0, "intent"
 
     const-string v1, "extra"
@@ -46,7 +45,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,36 +52,23 @@
 
 .method private static getData(Landroid/content/Context;Landroid/util/AttributeSet;[II)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "set"    # Landroid/util/AttributeSet;
-    .param p2, "attrs"    # [I
-    .param p3, "resId"    # I
 
-    .line 25
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 26
-    .local v0, "ta":Landroid/content/res/TypedArray;
     invoke-virtual {v0, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 27
-    .local v1, "data":Ljava/lang/String;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 28
     return-object v1
 .end method
 
 .method public static getDataKey(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 32
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/4 v1, 0x6
@@ -97,10 +82,7 @@
 
 .method public static getDataSummary(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 40
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/4 v1, 0x7
@@ -114,10 +96,7 @@
 
 .method public static getDataTitle(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 36
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/4 v1, 0x4
@@ -131,8 +110,6 @@
 
 .method public static parsePreferenceKeyFromResource(ILandroid/content/Context;)Ljava/util/List;
     .locals 11
-    .param p0, "xmlResId"    # I
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -144,17 +121,12 @@
         }
     .end annotation
 
-    .line 44
     const/4 v0, 0x0
 
-    .line 45
-    .local v0, "parser":Landroid/content/res/XmlResourceParser;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 47
-    .local v1, "keyList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -166,7 +138,6 @@
 
     move-object v0, v2
 
-    .line 49
     :goto_0
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->next()I
 
@@ -174,7 +145,6 @@
 
     move v3, v2
 
-    .local v3, "type":I
     const/4 v4, 0x1
 
     if-eq v2, v4, :cond_0
@@ -183,18 +153,13 @@
 
     if-eq v3, v2, :cond_0
 
-    .end local v3    # "type":I
     goto :goto_0
 
-    .line 53
-    .restart local v3    # "type":I
     :cond_0
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 54
-    .local v2, "nodeName":Ljava/lang/String;
     const-string v5, "PreferenceScreen"
 
     invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -213,7 +178,6 @@
 
     goto :goto_1
 
-    .line 55
     :cond_1
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -245,30 +209,22 @@
 
     throw v4
 
-    .line 58
     :cond_2
     :goto_1
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v5
 
-    .line 59
-    .local v5, "outerDepth":I
     invoke-static {v0}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v6
 
-    .line 60
-    .local v6, "attrs":Landroid/util/AttributeSet;
     invoke-static {p1, v6}, Lcom/oneplus/settings/utils/XmlParseUtils;->getDataKey(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 61
-    .local v7, "headerKey":Ljava/lang/String;
     invoke-interface {v1, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 63
     :cond_3
     :goto_2
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->next()I
@@ -283,14 +239,12 @@
 
     if-ne v3, v8, :cond_4
 
-    .line 64
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v9
 
     if-le v9, v5, :cond_7
 
-    .line 65
     :cond_4
     if-eq v3, v8, :cond_3
 
@@ -298,10 +252,8 @@
 
     if-ne v3, v8, :cond_5
 
-    .line 66
     goto :goto_2
 
-    .line 68
     :cond_5
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
@@ -309,7 +261,6 @@
 
     move-object v2, v8
 
-    .line 69
     sget-object v8, Lcom/oneplus/settings/utils/XmlParseUtils;->SKIP_NODES:Ljava/util/List;
 
     invoke-interface {v8, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -318,7 +269,6 @@
 
     if-eqz v8, :cond_6
 
-    .line 70
     const-string v8, "XmlParserUtils"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -337,53 +287,36 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     goto :goto_2
 
-    .line 73
     :cond_6
     invoke-static {p1, v6}, Lcom/oneplus/settings/utils/XmlParseUtils;->getDataKey(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 74
-    .local v8, "key":Ljava/lang/String;
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 75
-    .end local v8    # "key":Ljava/lang/String;
     goto :goto_2
 
-    .line 79
-    .end local v2    # "nodeName":Ljava/lang/String;
-    .end local v3    # "type":I
-    .end local v5    # "outerDepth":I
-    .end local v6    # "attrs":Landroid/util/AttributeSet;
-    .end local v7    # "headerKey":Ljava/lang/String;
     :cond_7
     if-eqz v0, :cond_8
 
-    .line 80
     :goto_3
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_4
 
-    .line 79
     :catchall_0
     move-exception v2
 
     goto :goto_5
 
-    .line 76
     :catch_0
     move-exception v2
 
-    .line 77
-    .local v2, "e":Ljava/lang/Exception;
     :try_start_1
     const-string v3, "XmlParserUtils"
 
@@ -409,22 +342,17 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 79
-    .end local v2    # "e":Ljava/lang/Exception;
     if-eqz v0, :cond_8
 
     goto :goto_3
 
-    .line 83
     :cond_8
     :goto_4
     return-object v1
 
-    .line 79
     :goto_5
     if-eqz v0, :cond_9
 
-    .line 80
     invoke-interface {v0}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_9

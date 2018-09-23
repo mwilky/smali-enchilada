@@ -85,27 +85,18 @@
         }
     .end annotation
 
-    .line 116
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "rootReference":Lcom/google/common/collect/TreeMultiset$Reference;, "Lcom/google/common/collect/TreeMultiset$Reference<Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;>;"
-    .local p2, "range":Lcom/google/common/collect/GeneralRange;, "Lcom/google/common/collect/GeneralRange<TE;>;"
-    .local p3, "endLink":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     invoke-virtual {p2}, Lcom/google/common/collect/GeneralRange;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSortedMultiset;-><init>(Ljava/util/Comparator;)V
 
-    .line 117
     iput-object p1, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
-    .line 118
     iput-object p2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
-    .line 119
     iput-object p3, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 120
     return-void
 .end method
 
@@ -119,19 +110,14 @@
         }
     .end annotation
 
-    .line 123
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;-><init>(Ljava/util/Comparator;)V
 
-    .line 124
     invoke-static {p1}, Lcom/google/common/collect/GeneralRange;->all(Ljava/util/Comparator;)Lcom/google/common/collect/GeneralRange;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
-    .line 125
     new-instance v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     const/4 v1, 0x0
@@ -142,29 +128,24 @@
 
     iput-object v0, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 126
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     invoke-static {v0, v2}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
-    .line 127
     new-instance v0, Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/TreeMultiset$Reference;-><init>(Lcom/google/common/collect/TreeMultiset$1;)V
 
     iput-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
-    .line 128
     return-void
 .end method
 
 .method static synthetic access$1200(Lcom/google/common/collect/TreeMultiset;)Lcom/google/common/collect/TreeMultiset$AvlNode;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset;
 
-    .line 59
     invoke-direct {p0}, Lcom/google/common/collect/TreeMultiset;->firstNode()Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v0
@@ -174,9 +155,7 @@
 
 .method static synthetic access$1300(Lcom/google/common/collect/TreeMultiset;)Lcom/google/common/collect/GeneralRange;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset;
 
-    .line 59
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     return-object v0
@@ -184,10 +163,7 @@
 
 .method static synthetic access$1400(Lcom/google/common/collect/TreeMultiset;Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/Multiset$Entry;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset;
-    .param p1, "x1"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 59
     invoke-direct {p0, p1}, Lcom/google/common/collect/TreeMultiset;->wrapEntry(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -197,9 +173,7 @@
 
 .method static synthetic access$1500(Lcom/google/common/collect/TreeMultiset;)Lcom/google/common/collect/TreeMultiset$AvlNode;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset;
 
-    .line 59
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     return-object v0
@@ -207,9 +181,7 @@
 
 .method static synthetic access$1600(Lcom/google/common/collect/TreeMultiset;)Lcom/google/common/collect/TreeMultiset$AvlNode;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset;
 
-    .line 59
     invoke-direct {p0}, Lcom/google/common/collect/TreeMultiset;->lastNode()Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v0
@@ -219,11 +191,7 @@
 
 .method static synthetic access$1700(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
     .locals 0
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
-    .param p1, "x1"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
-    .param p2, "x2"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 59
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
     return-void
@@ -231,10 +199,7 @@
 
 .method static synthetic access$1800(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
     .locals 0
-    .param p0, "x0"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
-    .param p1, "x1"    # Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 59
     invoke-static {p0, p1}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
     return-void
@@ -242,7 +207,6 @@
 
 .method private aggregateAboveRange(Lcom/google/common/collect/TreeMultiset$Aggregate;Lcom/google/common/collect/TreeMultiset$AvlNode;)J
     .locals 5
-    .param p1, "aggr"    # Lcom/google/common/collect/TreeMultiset$Aggregate;
     .param p2    # Lcom/google/common/collect/TreeMultiset$AvlNode;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
@@ -256,17 +220,12 @@
         }
     .end annotation
 
-    .line 196
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p2, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     if-nez p2, :cond_0
 
-    .line 197
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 199
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
@@ -286,11 +245,8 @@
 
     move-result v0
 
-    .line 200
-    .local v0, "cmp":I
     if-lez v0, :cond_1
 
-    .line 201
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$700(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v1
@@ -301,11 +257,9 @@
 
     return-wide v1
 
-    .line 202
     :cond_1
     if-nez v0, :cond_2
 
-    .line 203
     sget-object v1, Lcom/google/common/collect/TreeMultiset$4;->$SwitchMap$com$google$common$collect$BoundType:[I
 
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
@@ -322,14 +276,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 209
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1}, Ljava/lang/AssertionError;-><init>()V
 
     throw v1
 
-    .line 207
     :pswitch_0
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$700(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -341,7 +293,6 @@
 
     return-wide v1
 
-    .line 205
     :pswitch_1
     invoke-virtual {p1, p2}, Lcom/google/common/collect/TreeMultiset$Aggregate;->nodeAggregate(Lcom/google/common/collect/TreeMultiset$AvlNode;)I
 
@@ -361,7 +312,6 @@
 
     return-wide v1
 
-    .line 212
     :cond_2
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$700(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -379,7 +329,6 @@
 
     add-long/2addr v1, v3
 
-    .line 213
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$600(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v3
@@ -390,7 +339,6 @@
 
     add-long/2addr v1, v3
 
-    .line 212
     return-wide v1
 
     nop
@@ -404,7 +352,6 @@
 
 .method private aggregateBelowRange(Lcom/google/common/collect/TreeMultiset$Aggregate;Lcom/google/common/collect/TreeMultiset$AvlNode;)J
     .locals 5
-    .param p1, "aggr"    # Lcom/google/common/collect/TreeMultiset$Aggregate;
     .param p2    # Lcom/google/common/collect/TreeMultiset$AvlNode;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
@@ -418,17 +365,12 @@
         }
     .end annotation
 
-    .line 174
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p2, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     if-nez p2, :cond_0
 
-    .line 175
     const-wide/16 v0, 0x0
 
     return-wide v0
 
-    .line 177
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
@@ -448,11 +390,8 @@
 
     move-result v0
 
-    .line 178
-    .local v0, "cmp":I
     if-gez v0, :cond_1
 
-    .line 179
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$600(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v1
@@ -463,11 +402,9 @@
 
     return-wide v1
 
-    .line 180
     :cond_1
     if-nez v0, :cond_2
 
-    .line 181
     sget-object v1, Lcom/google/common/collect/TreeMultiset$4;->$SwitchMap$com$google$common$collect$BoundType:[I
 
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
@@ -484,14 +421,12 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 187
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1}, Ljava/lang/AssertionError;-><init>()V
 
     throw v1
 
-    .line 185
     :pswitch_0
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$600(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -503,7 +438,6 @@
 
     return-wide v1
 
-    .line 183
     :pswitch_1
     invoke-virtual {p1, p2}, Lcom/google/common/collect/TreeMultiset$Aggregate;->nodeAggregate(Lcom/google/common/collect/TreeMultiset$AvlNode;)I
 
@@ -523,7 +457,6 @@
 
     return-wide v1
 
-    .line 190
     :cond_2
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$600(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -541,7 +474,6 @@
 
     add-long/2addr v1, v3
 
-    .line 191
     invoke-static {p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$700(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v3
@@ -552,7 +484,6 @@
 
     add-long/2addr v1, v3
 
-    .line 190
     return-wide v1
 
     nop
@@ -566,10 +497,7 @@
 
 .method private aggregateForEntries(Lcom/google/common/collect/TreeMultiset$Aggregate;)J
     .locals 5
-    .param p1, "aggr"    # Lcom/google/common/collect/TreeMultiset$Aggregate;
 
-    .line 162
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -578,14 +506,10 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 163
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     invoke-virtual {p1, v0}, Lcom/google/common/collect/TreeMultiset$Aggregate;->treeAggregate(Lcom/google/common/collect/TreeMultiset$AvlNode;)J
 
     move-result-wide v1
 
-    .line 164
-    .local v1, "total":J
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v3}, Lcom/google/common/collect/GeneralRange;->hasLowerBound()Z
@@ -594,14 +518,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 165
     invoke-direct {p0, p1, v0}, Lcom/google/common/collect/TreeMultiset;->aggregateBelowRange(Lcom/google/common/collect/TreeMultiset$Aggregate;Lcom/google/common/collect/TreeMultiset$AvlNode;)J
 
     move-result-wide v3
 
     sub-long/2addr v1, v3
 
-    .line 167
     :cond_0
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -611,14 +533,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 168
     invoke-direct {p0, p1, v0}, Lcom/google/common/collect/TreeMultiset;->aggregateAboveRange(Lcom/google/common/collect/TreeMultiset$Aggregate;Lcom/google/common/collect/TreeMultiset$AvlNode;)J
 
     move-result-wide v3
 
     sub-long/2addr v1, v3
 
-    .line 170
     :cond_1
     return-wide v1
 .end method
@@ -635,7 +555,6 @@
         }
     .end annotation
 
-    .line 74
     new-instance v0, Lcom/google/common/collect/TreeMultiset;
 
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
@@ -661,17 +580,12 @@
         }
     .end annotation
 
-    .line 106
-    .local p0, "elements":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TE;>;"
     invoke-static {}, Lcom/google/common/collect/TreeMultiset;->create()Lcom/google/common/collect/TreeMultiset;
 
     move-result-object v0
 
-    .line 107
-    .local v0, "multiset":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-static {v0, p0}, Lcom/google/common/collect/Iterables;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 108
     return-object v0
 .end method
 
@@ -693,11 +607,8 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     if-nez p0, :cond_0
 
-    .line 92
     new-instance v0, Lcom/google/common/collect/TreeMultiset;
 
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
@@ -708,13 +619,11 @@
 
     goto :goto_0
 
-    .line 93
     :cond_0
     new-instance v0, Lcom/google/common/collect/TreeMultiset;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/TreeMultiset;-><init>(Ljava/util/Comparator;)V
 
-    .line 91
     :goto_0
     return-object v0
 .end method
@@ -733,8 +642,6 @@
         }
     .end annotation
 
-    .line 501
-    .local p0, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<*>;"
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -763,8 +670,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 357
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -773,16 +678,12 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 358
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 359
     return-object v1
 
-    .line 362
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -792,15 +693,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 363
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v2}, Lcom/google/common/collect/GeneralRange;->getLowerEndpoint()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 364
-    .local v2, "endpoint":Ljava/lang/Object;, "TE;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v3}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -817,14 +715,10 @@
 
     move-result-object v3
 
-    .line 365
-    .local v3, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     if-nez v3, :cond_1
 
-    .line 366
     return-object v1
 
-    .line 368
     :cond_1
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -836,7 +730,6 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 369
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v4
@@ -851,18 +744,13 @@
 
     if-nez v4, :cond_2
 
-    .line 370
     invoke-static {v3}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$900(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v3
 
-    .line 372
-    .end local v2    # "endpoint":Ljava/lang/Object;, "TE;"
     :cond_2
     goto :goto_0
 
-    .line 373
-    .end local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :cond_3
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -870,13 +758,9 @@
 
     move-result-object v3
 
-    .restart local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :goto_0
     move-object v2, v3
 
-    .line 375
-    .end local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
-    .local v2, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     if-eq v2, v3, :cond_5
@@ -918,8 +802,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 379
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -928,16 +810,12 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 380
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 381
     return-object v1
 
-    .line 384
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -947,15 +825,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 385
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v2}, Lcom/google/common/collect/GeneralRange;->getUpperEndpoint()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 386
-    .local v2, "endpoint":Ljava/lang/Object;, "TE;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v3}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -972,14 +847,10 @@
 
     move-result-object v3
 
-    .line 387
-    .local v3, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     if-nez v3, :cond_1
 
-    .line 388
     return-object v1
 
-    .line 390
     :cond_1
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -991,7 +862,6 @@
 
     if-ne v4, v5, :cond_2
 
-    .line 391
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v4
@@ -1006,18 +876,13 @@
 
     if-nez v4, :cond_2
 
-    .line 392
     invoke-static {v3}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$1100(Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     move-result-object v3
 
-    .line 394
-    .end local v2    # "endpoint":Ljava/lang/Object;, "TE;"
     :cond_2
     goto :goto_0
 
-    .line 395
-    .end local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :cond_3
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
@@ -1025,13 +890,9 @@
 
     move-result-object v3
 
-    .restart local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :goto_0
     move-object v2, v3
 
-    .line 397
-    .end local v3    # "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
-    .local v2, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     if-eq v2, v3, :cond_5
@@ -1062,7 +923,6 @@
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .locals 4
-    .param p1, "stream"    # Ljava/io/ObjectInputStream;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.io.ObjectInputStream"
     .end annotation
@@ -1074,19 +934,14 @@
         }
     .end annotation
 
-    .line 966
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 969
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Comparator;
 
-    .line 970
-    .local v0, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     const-class v1, Lcom/google/common/collect/AbstractSortedMultiset;
 
     const-string v2, "comparator"
@@ -1097,7 +952,6 @@
 
     invoke-virtual {v1, p0, v0}, Lcom/google/common/collect/Serialization$FieldSetter;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 971
     const-class v1, Lcom/google/common/collect/TreeMultiset;
 
     const-string v2, "range"
@@ -1106,15 +960,12 @@
 
     move-result-object v1
 
-    .line 973
     invoke-static {v0}, Lcom/google/common/collect/GeneralRange;->all(Ljava/util/Comparator;)Lcom/google/common/collect/GeneralRange;
 
     move-result-object v2
 
-    .line 971
     invoke-virtual {v1, p0, v2}, Lcom/google/common/collect/Serialization$FieldSetter;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 974
     const-class v1, Lcom/google/common/collect/TreeMultiset;
 
     const-string v2, "rootReference"
@@ -1131,15 +982,12 @@
 
     invoke-virtual {v1, p0, v2}, Lcom/google/common/collect/Serialization$FieldSetter;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 977
     new-instance v1, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     const/4 v2, 0x1
 
     invoke-direct {v1, v3, v2}, Lcom/google/common/collect/TreeMultiset$AvlNode;-><init>(Ljava/lang/Object;I)V
 
-    .line 978
-    .local v1, "header":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const-class v2, Lcom/google/common/collect/TreeMultiset;
 
     const-string v3, "header"
@@ -1150,13 +998,10 @@
 
     invoke-virtual {v2, p0, v1}, Lcom/google/common/collect/Serialization$FieldSetter;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 979
     invoke-static {v1, v1}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
-    .line 980
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->populateMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectInputStream;)V
 
-    .line 981
     return-void
 .end method
 
@@ -1174,15 +1019,10 @@
         }
     .end annotation
 
-    .line 938
-    .local p0, "a":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TT;>;"
-    .local p1, "b":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TT;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$902(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 939
     invoke-static {p1, p0}, Lcom/google/common/collect/TreeMultiset$AvlNode;->access$1102(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 940
     return-void
 .end method
 
@@ -1202,16 +1042,10 @@
         }
     .end annotation
 
-    .line 943
-    .local p0, "a":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TT;>;"
-    .local p1, "b":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TT;>;"
-    .local p2, "c":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TT;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
-    .line 944
     invoke-static {p1, p2}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
-    .line 945
     return-void
 .end method
 
@@ -1227,9 +1061,6 @@
         }
     .end annotation
 
-    .line 335
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "baseEntry":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     new-instance v0, Lcom/google/common/collect/TreeMultiset$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/TreeMultiset$1;-><init>(Lcom/google/common/collect/TreeMultiset;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
@@ -1239,7 +1070,6 @@
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
     .locals 1
-    .param p1, "stream"    # Ljava/io/ObjectOutputStream;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.io.ObjectOutputStream"
     .end annotation
@@ -1250,11 +1080,8 @@
         }
     .end annotation
 
-    .line 959
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 960
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->elementSet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -1265,10 +1092,8 @@
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 961
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectOutputStream;)V
 
-    .line 962
     return-void
 .end method
 
@@ -1280,31 +1105,24 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "occurrences"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;I)I"
         }
     .end annotation
 
-    .line 246
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     const-string v0, "occurrences"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 247
     if-nez p2, :cond_0
 
-    .line 248
     invoke-virtual {p0, p1}, Lcom/google/common/collect/TreeMultiset;->count(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 
-    .line 250
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
@@ -1314,7 +1132,6 @@
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 251
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -1323,49 +1140,37 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 252
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 253
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v2
 
     invoke-interface {v2, p1, p1}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    .line 254
     new-instance v2, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     invoke-direct {v2, p1, p2}, Lcom/google/common/collect/TreeMultiset$AvlNode;-><init>(Ljava/lang/Object;I)V
 
-    .line 255
-    .local v2, "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->header:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     invoke-static {v3, v2, v4}, Lcom/google/common/collect/TreeMultiset;->successor(Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
 
-    .line 256
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v3, v0, v2}, Lcom/google/common/collect/TreeMultiset$Reference;->checkAndSet(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 257
     return v1
 
-    .line 259
-    .end local v2    # "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :cond_1
     const/4 v2, 0x1
 
     new-array v2, v2, [I
 
-    .line 260
-    .local v2, "result":[I
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v3
@@ -1374,13 +1179,10 @@
 
     move-result-object v3
 
-    .line 261
-    .local v3, "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v4, v0, v3}, Lcom/google/common/collect/TreeMultiset$Reference;->checkAndSet(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 262
     aget v1, v2, v1
 
     return v1
@@ -1393,8 +1195,6 @@
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->add(Ljava/lang/Object;)Z
 
     move-result p1
@@ -1405,8 +1205,6 @@
 .method public bridge synthetic addAll(Ljava/util/Collection;)Z
     .locals 0
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->addAll(Ljava/util/Collection;)Z
 
     move-result p1
@@ -1417,8 +1215,6 @@
 .method public bridge synthetic clear()V
     .locals 0
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->clear()V
 
     return-void
@@ -1427,8 +1223,6 @@
 .method public bridge synthetic comparator()Ljava/util/Comparator;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
@@ -1443,8 +1237,6 @@
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->contains(Ljava/lang/Object;)Z
 
     move-result p1
@@ -1454,17 +1246,13 @@
 
 .method public count(Ljava/lang/Object;)I
     .locals 4
-    .param p1, "element"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 231
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     move-object v0, p1
 
-    .line 232
-    .local v0, "e":Ljava/lang/Object;, "TE;"
     const/4 v1, 0x0
 
     :try_start_0
@@ -1476,8 +1264,6 @@
 
     check-cast v2, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 233
-    .local v2, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v3, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v3, v0}, Lcom/google/common/collect/GeneralRange;->contains(Ljava/lang/Object;)Z
@@ -1490,7 +1276,6 @@
 
     goto :goto_0
 
-    .line 236
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
@@ -1505,28 +1290,18 @@
 
     return v3
 
-    .line 234
     :cond_1
     :goto_0
     return v1
 
-    .line 239
-    .end local v0    # "e":Ljava/lang/Object;, "TE;"
-    .end local v2    # "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     :catch_0
     move-exception v0
 
-    .line 240
-    .local v0, "e":Ljava/lang/NullPointerException;
     return v1
 
-    .line 237
-    .end local v0    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 238
-    .local v0, "e":Ljava/lang/ClassCastException;
     return v1
 .end method
 
@@ -1541,8 +1316,6 @@
         }
     .end annotation
 
-    .line 444
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/TreeMultiset$3;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/TreeMultiset$3;-><init>(Lcom/google/common/collect/TreeMultiset;)V
@@ -1553,8 +1326,6 @@
 .method public bridge synthetic descendingMultiset()Lcom/google/common/collect/SortedMultiset;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->descendingMultiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -1565,8 +1336,6 @@
 .method distinctElements()I
     .locals 2
 
-    .line 224
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     sget-object v0, Lcom/google/common/collect/TreeMultiset$Aggregate;->DISTINCT:Lcom/google/common/collect/TreeMultiset$Aggregate;
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/TreeMultiset;->aggregateForEntries(Lcom/google/common/collect/TreeMultiset$Aggregate;)J
@@ -1583,8 +1352,6 @@
 .method public bridge synthetic elementSet()Ljava/util/NavigableSet;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->elementSet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -1603,8 +1370,6 @@
         }
     .end annotation
 
-    .line 402
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/TreeMultiset$2;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/TreeMultiset$2;-><init>(Lcom/google/common/collect/TreeMultiset;)V
@@ -1615,8 +1380,6 @@
 .method public bridge synthetic entrySet()Ljava/util/Set;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -1631,8 +1394,6 @@
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -1643,8 +1404,6 @@
 .method public bridge synthetic firstEntry()Lcom/google/common/collect/Multiset$Entry;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->firstEntry()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -1655,8 +1414,6 @@
 .method public bridge synthetic hashCode()I
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->hashCode()I
 
     move-result v0
@@ -1670,7 +1427,6 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "boundType"    # Lcom/google/common/collect/BoundType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -1681,21 +1437,16 @@
         }
     .end annotation
 
-    .line 486
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "upperBound":Ljava/lang/Object;, "TE;"
     new-instance v0, Lcom/google/common/collect/TreeMultiset;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
-    .line 487
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v3
 
-    .line 486
     invoke-static {v3, p1, p2}, Lcom/google/common/collect/GeneralRange;->upTo(Ljava/util/Comparator;Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/GeneralRange;
 
     move-result-object v3
@@ -1714,8 +1465,6 @@
 .method public bridge synthetic isEmpty()Z
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->isEmpty()Z
 
     move-result v0
@@ -1726,8 +1475,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1738,8 +1485,6 @@
 .method public bridge synthetic lastEntry()Lcom/google/common/collect/Multiset$Entry;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->lastEntry()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -1750,8 +1495,6 @@
 .method public bridge synthetic pollFirstEntry()Lcom/google/common/collect/Multiset$Entry;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->pollFirstEntry()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -1762,8 +1505,6 @@
 .method public bridge synthetic pollLastEntry()Lcom/google/common/collect/Multiset$Entry;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->pollLastEntry()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -1773,29 +1514,23 @@
 
 .method public remove(Ljava/lang/Object;I)I
     .locals 5
-    .param p1, "element"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "occurrences"    # I
 
-    .line 267
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     const-string v0, "occurrences"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 268
     if-nez p2, :cond_0
 
-    .line 269
     invoke-virtual {p0, p1}, Lcom/google/common/collect/TreeMultiset;->count(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 
-    .line 271
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
@@ -1805,18 +1540,12 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 272
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const/4 v1, 0x1
 
     new-array v1, v1, [I
 
-    .line 276
-    .local v1, "result":[I
     move-object v2, p1
 
-    .line 277
-    .local v2, "e":Ljava/lang/Object;, "TE;"
     const/4 v3, 0x0
 
     :try_start_0
@@ -1832,7 +1561,6 @@
 
     goto :goto_0
 
-    .line 280
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
@@ -1845,48 +1573,32 @@
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .end local v2    # "e":Ljava/lang/Object;, "TE;"
     move-object v2, v4
 
-    .line 285
-    .local v2, "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     nop
 
-    .line 284
     nop
 
-    .line 286
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v4, v0, v2}, Lcom/google/common/collect/TreeMultiset$Reference;->checkAndSet(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 287
     aget v3, v1, v3
 
     return v3
 
-    .line 278
-    .local v2, "e":Ljava/lang/Object;, "TE;"
     :cond_2
     :goto_0
     return v3
 
-    .line 283
-    .end local v2    # "e":Ljava/lang/Object;, "TE;"
     :catch_0
     move-exception v2
 
-    .line 284
-    .local v2, "e":Ljava/lang/NullPointerException;
     return v3
 
-    .line 281
-    .end local v2    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v2
 
-    .line 282
-    .local v2, "e":Ljava/lang/ClassCastException;
     return v3
 .end method
 
@@ -1897,8 +1609,6 @@
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->remove(Ljava/lang/Object;)Z
 
     move-result p1
@@ -1909,8 +1619,6 @@
 .method public bridge synthetic removeAll(Ljava/util/Collection;)Z
     .locals 0
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->removeAll(Ljava/util/Collection;)Z
 
     move-result p1
@@ -1921,8 +1629,6 @@
 .method public bridge synthetic retainAll(Ljava/util/Collection;)Z
     .locals 0
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractSortedMultiset;->retainAll(Ljava/util/Collection;)Z
 
     move-result p1
@@ -1936,21 +1642,16 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "count"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;I)I"
         }
     .end annotation
 
-    .line 292
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     const-string v0, "count"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 293
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/GeneralRange;->contains(Ljava/lang/Object;)Z
@@ -1963,7 +1664,6 @@
 
     if-nez v0, :cond_1
 
-    .line 294
     if-nez p2, :cond_0
 
     goto :goto_0
@@ -1974,10 +1674,8 @@
     :goto_0
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 295
     return v2
 
-    .line 298
     :cond_1
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
@@ -1987,26 +1685,18 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 299
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     if-nez v0, :cond_3
 
-    .line 300
     if-lez p2, :cond_2
 
-    .line 301
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/TreeMultiset;->add(Ljava/lang/Object;I)I
 
-    .line 303
     :cond_2
     return v2
 
-    .line 305
     :cond_3
     new-array v1, v1, [I
 
-    .line 306
-    .local v1, "result":[I
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v3
@@ -2015,13 +1705,10 @@
 
     move-result-object v3
 
-    .line 307
-    .local v3, "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v4, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v4, v0, v3}, Lcom/google/common/collect/TreeMultiset$Reference;->checkAndSet(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 308
     aget v2, v1, v2
 
     return v2
@@ -2033,27 +1720,20 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "oldCount"    # I
-    .param p3, "newCount"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;II)Z"
         }
     .end annotation
 
-    .line 313
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     const-string v0, "newCount"
 
     invoke-static {p3, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 314
     const-string v0, "oldCount"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 315
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/GeneralRange;->contains(Ljava/lang/Object;)Z
@@ -2062,7 +1742,6 @@
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 317
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$Reference;->get()Ljava/lang/Object;
@@ -2071,37 +1750,27 @@
 
     check-cast v0, Lcom/google/common/collect/TreeMultiset$AvlNode;
 
-    .line 318
-    .local v0, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     const/4 v7, 0x0
 
     const/4 v8, 0x1
 
     if-nez v0, :cond_2
 
-    .line 319
     if-nez p2, :cond_1
 
-    .line 320
     if-lez p3, :cond_0
 
-    .line 321
     invoke-virtual {p0, p1, p3}, Lcom/google/common/collect/TreeMultiset;->add(Ljava/lang/Object;I)I
 
-    .line 323
     :cond_0
     return v8
 
-    .line 325
     :cond_1
     return v7
 
-    .line 328
     :cond_2
     new-array v9, v8, [I
 
-    .line 329
-    .local v9, "result":[I
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v2
@@ -2120,13 +1789,10 @@
 
     move-result-object v1
 
-    .line 330
-    .local v1, "newRoot":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<TE;>;"
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     invoke-virtual {v2, v0, v1}, Lcom/google/common/collect/TreeMultiset$Reference;->checkAndSet(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 331
     aget v2, v9, v7
 
     if-ne v2, p2, :cond_3
@@ -2142,8 +1808,6 @@
 .method public size()I
     .locals 2
 
-    .line 219
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     sget-object v0, Lcom/google/common/collect/TreeMultiset$Aggregate;->SIZE:Lcom/google/common/collect/TreeMultiset$Aggregate;
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/TreeMultiset;->aggregateForEntries(Lcom/google/common/collect/TreeMultiset$Aggregate;)J
@@ -2168,8 +1832,6 @@
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0, p1, p2, p3, p4}, Lcom/google/common/collect/AbstractSortedMultiset;->subMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/SortedMultiset;
 
     move-result-object p1
@@ -2183,7 +1845,6 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "boundType"    # Lcom/google/common/collect/BoundType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -2194,21 +1855,16 @@
         }
     .end annotation
 
-    .line 494
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
-    .local p1, "lowerBound":Ljava/lang/Object;, "TE;"
     new-instance v0, Lcom/google/common/collect/TreeMultiset;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeMultiset;->rootReference:Lcom/google/common/collect/TreeMultiset$Reference;
 
     iget-object v2, p0, Lcom/google/common/collect/TreeMultiset;->range:Lcom/google/common/collect/GeneralRange;
 
-    .line 495
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v3
 
-    .line 494
     invoke-static {v3, p1, p2}, Lcom/google/common/collect/GeneralRange;->downTo(Ljava/util/Comparator;Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/GeneralRange;
 
     move-result-object v3
@@ -2227,8 +1883,6 @@
 .method public bridge synthetic toString()Ljava/lang/String;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset;, "Lcom/google/common/collect/TreeMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->toString()Ljava/lang/String;
 
     move-result-object v0

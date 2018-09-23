@@ -26,24 +26,20 @@
 .method constructor <init>()V
     .locals 3
 
-    .line 25
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/PresenterSelector;-><init>()V
 
-    .line 27
     new-instance v0, Landroid/support/v17/leanback/widget/ActionPresenterSelector$OneLineActionPresenter;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/widget/ActionPresenterSelector$OneLineActionPresenter;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mOneLineActionPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 28
     new-instance v0, Landroid/support/v17/leanback/widget/ActionPresenterSelector$TwoLineActionPresenter;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/widget/ActionPresenterSelector$TwoLineActionPresenter;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mTwoLineActionPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 29
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/support/v17/leanback/widget/Presenter;
@@ -62,7 +58,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mPresenters:[Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 110
     return-void
 .end method
 
@@ -70,15 +65,11 @@
 # virtual methods
 .method public getPresenter(Ljava/lang/Object;)Landroid/support/v17/leanback/widget/Presenter;
     .locals 2
-    .param p1, "item"    # Ljava/lang/Object;
 
-    .line 34
     move-object v0, p1
 
     check-cast v0, Landroid/support/v17/leanback/widget/Action;
 
-    .line 35
-    .local v0, "action":Landroid/support/v17/leanback/widget/Action;
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/Action;->getLabel2()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -89,12 +80,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 36
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mOneLineActionPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v1
 
-    .line 38
     :cond_0
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mTwoLineActionPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
@@ -104,7 +93,6 @@
 .method public getPresenters()[Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
 
-    .line 44
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ActionPresenterSelector;->mPresenters:[Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v0

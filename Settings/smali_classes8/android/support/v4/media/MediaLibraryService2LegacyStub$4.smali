@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibraryService2LegacyStub;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 159
     iput-object p1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$4;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$4;->val$controller:Landroid/support/v4/media/MediaSession2$ControllerInfo;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 5
 
-    .line 162
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$4;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
@@ -64,7 +61,6 @@
 
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$4;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 163
     invoke-static {v1}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v1
@@ -79,9 +75,7 @@
 
     iget-object v4, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$4;->val$extras:Landroid/os/Bundle;
 
-    .line 162
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$MediaLibrarySessionCallback;->onSearch(Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 164
     return-void
 .end method

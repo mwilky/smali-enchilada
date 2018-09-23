@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 1046
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
     const-string v1, "None"
@@ -45,7 +44,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;->None:Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
-    .line 1047
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
     const-string v1, "NonScalingStroke"
@@ -56,7 +54,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;->NonScalingStroke:Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
-    .line 1044
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
@@ -77,7 +74,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 1044
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -86,7 +82,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -101,7 +96,6 @@
 .method public static values()[Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/SVG$Style$VectorEffect;->ENUM$VALUES:[Lcom/caverock/androidsvg/SVG$Style$VectorEffect;
 
     array-length v1, v0

@@ -45,43 +45,25 @@
 # direct methods
 .method constructor <init>(ILandroid/support/v4/media/AudioAttributesCompat;III)V
     .locals 0
-    .param p1, "playbackType"    # I
-    .param p2, "attrs"    # Landroid/support/v4/media/AudioAttributesCompat;
-    .param p3, "controlType"    # I
-    .param p4, "max"    # I
-    .param p5, "current"    # I
 
-    .line 1033
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1034
     iput p1, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mPlaybackType:I
 
-    .line 1035
     iput-object p2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mAudioAttrsCompat:Landroid/support/v4/media/AudioAttributesCompat;
 
-    .line 1036
     iput p3, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mControlType:I
 
-    .line 1037
     iput p4, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mMaxVolume:I
 
-    .line 1038
     iput p5, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mCurrentVolume:I
 
-    .line 1039
     return-void
 .end method
 
 .method static createPlaybackInfo(ILandroid/support/v4/media/AudioAttributesCompat;III)Landroid/support/v4/media/MediaController2$PlaybackInfo;
     .locals 7
-    .param p0, "playbackType"    # I
-    .param p1, "attrs"    # Landroid/support/v4/media/AudioAttributesCompat;
-    .param p2, "controlType"    # I
-    .param p3, "max"    # I
-    .param p4, "current"    # I
 
-    .line 1112
     new-instance v6, Landroid/support/v4/media/MediaController2$PlaybackInfo;
 
     move-object v0, v6
@@ -103,17 +85,13 @@
 
 .method static fromBundle(Landroid/os/Bundle;)Landroid/support/v4/media/MediaController2$PlaybackInfo;
     .locals 6
-    .param p0, "bundle"    # Landroid/os/Bundle;
 
-    .line 1116
     if-nez p0, :cond_0
 
-    .line 1117
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1119
     :cond_0
     const-string v0, "android.media.audio_info.playback_type"
 
@@ -121,46 +99,34 @@
 
     move-result v0
 
-    .line 1120
-    .local v0, "volumeType":I
     const-string v1, "android.media.audio_info.control_type"
 
     invoke-virtual {p0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 1121
-    .local v1, "volumeControl":I
     const-string v2, "android.media.audio_info.max_volume"
 
     invoke-virtual {p0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 1122
-    .local v2, "maxVolume":I
     const-string v3, "android.media.audio_info.current_volume"
 
     invoke-virtual {p0, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 1123
-    .local v3, "currentVolume":I
     const-string v4, "android.media.audio_info.audio_attrs"
 
-    .line 1124
     invoke-virtual {p0, v4}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v4
 
-    .line 1123
     invoke-static {v4}, Landroid/support/v4/media/AudioAttributesCompat;->fromBundle(Landroid/os/Bundle;)Landroid/support/v4/media/AudioAttributesCompat;
 
     move-result-object v4
 
-    .line 1125
-    .local v4, "attrs":Landroid/support/v4/media/AudioAttributesCompat;
     invoke-static {v0, v4, v1, v2, v3}, Landroid/support/v4/media/MediaController2$PlaybackInfo;->createPlaybackInfo(ILandroid/support/v4/media/AudioAttributesCompat;III)Landroid/support/v4/media/MediaController2$PlaybackInfo;
 
     move-result-object v5
@@ -173,7 +139,6 @@
 .method public getAudioAttributes()Landroid/support/v4/media/AudioAttributesCompat;
     .locals 1
 
-    .line 1063
     iget-object v0, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mAudioAttrsCompat:Landroid/support/v4/media/AudioAttributesCompat;
 
     return-object v0
@@ -182,7 +147,6 @@
 .method public getControlType()I
     .locals 1
 
-    .line 1077
     iget v0, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mControlType:I
 
     return v0
@@ -191,7 +155,6 @@
 .method public getCurrentVolume()I
     .locals 1
 
-    .line 1095
     iget v0, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mCurrentVolume:I
 
     return v0
@@ -200,7 +163,6 @@
 .method public getMaxVolume()I
     .locals 1
 
-    .line 1086
     iget v0, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mMaxVolume:I
 
     return v0
@@ -209,7 +171,6 @@
 .method public getPlaybackType()I
     .locals 1
 
-    .line 1051
     iget v0, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mPlaybackType:I
 
     return v0
@@ -218,46 +179,38 @@
 .method toBundle()Landroid/os/Bundle;
     .locals 3
 
-    .line 1099
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1100
-    .local v0, "bundle":Landroid/os/Bundle;
     const-string v1, "android.media.audio_info.playback_type"
 
     iget v2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mPlaybackType:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1101
     const-string v1, "android.media.audio_info.control_type"
 
     iget v2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mControlType:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1102
     const-string v1, "android.media.audio_info.max_volume"
 
     iget v2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mMaxVolume:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1103
     const-string v1, "android.media.audio_info.current_volume"
 
     iget v2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mCurrentVolume:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1104
     iget-object v1, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mAudioAttrsCompat:Landroid/support/v4/media/AudioAttributesCompat;
 
     if-eqz v1, :cond_0
 
-    .line 1105
     const-string v1, "android.media.audio_info.audio_attrs"
 
     iget-object v2, p0, Landroid/support/v4/media/MediaController2$PlaybackInfo;->mAudioAttrsCompat:Landroid/support/v4/media/AudioAttributesCompat;
@@ -268,7 +221,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1107
     :cond_0
     return-object v0
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/menu/CascadingMenuPopup;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
-    .line 90
     iput-object p1, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$2;->this$0:Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 0
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 93
     return-void
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 97
     iget-object v0, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$2;->this$0:Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
     invoke-static {v0}, Lcom/oneplus/lib/menu/CascadingMenuPopup;->access$000(Lcom/oneplus/lib/menu/CascadingMenuPopup;)Landroid/view/ViewTreeObserver;
@@ -57,7 +51,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 98
     iget-object v0, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$2;->this$0:Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
     invoke-static {v0}, Lcom/oneplus/lib/menu/CascadingMenuPopup;->access$000(Lcom/oneplus/lib/menu/CascadingMenuPopup;)Landroid/view/ViewTreeObserver;
@@ -70,7 +63,6 @@
 
     if-nez v0, :cond_0
 
-    .line 99
     iget-object v0, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$2;->this$0:Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
     invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -79,7 +71,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/menu/CascadingMenuPopup;->access$002(Lcom/oneplus/lib/menu/CascadingMenuPopup;Landroid/view/ViewTreeObserver;)Landroid/view/ViewTreeObserver;
 
-    .line 101
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$2;->this$0:Lcom/oneplus/lib/menu/CascadingMenuPopup;
 
@@ -95,10 +86,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 103
     :cond_1
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 104
     return-void
 .end method

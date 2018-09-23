@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/UserSettings;IZLandroid/content/SharedPreferences;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/UserSettings;
 
-    .line 603
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$6;->this$0:Lcom/android/settings/users/UserSettings;
 
     iput p2, p0, Lcom/android/settings/users/UserSettings$6;->val$userType:I
@@ -50,22 +48,17 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 605
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$6;->this$0:Lcom/android/settings/users/UserSettings;
 
     iget v1, p0, Lcom/android/settings/users/UserSettings$6;->val$userType:I
 
     invoke-static {v0, v1}, Lcom/android/settings/users/UserSettings;->access$1100(Lcom/android/settings/users/UserSettings;I)V
 
-    .line 606
     iget-boolean v0, p0, Lcom/android/settings/users/UserSettings$6;->val$longMessageDisplayed:Z
 
     if-nez v0, :cond_0
 
-    .line 607
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$6;->val$preferences:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -80,10 +73,8 @@
 
     move-result-object v0
 
-    .line 609
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 611
     :cond_0
     return-void
 .end method

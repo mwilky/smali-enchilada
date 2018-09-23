@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 83
     invoke-direct {p0}, Lcom/android/settings/development/qstile/DevelopmentTiles;-><init>()V
 
     return-void
@@ -29,15 +28,12 @@
 .method protected isEnabled()Z
     .locals 2
 
-    .line 87
     const-string v0, "debug.hwui.profile"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 88
-    .local v0, "value":Ljava/lang/String;
     const-string v1, "visual_bars"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -49,9 +45,7 @@
 
 .method protected setIsEnabled(Z)V
     .locals 2
-    .param p1, "isEnabled"    # Z
 
-    .line 93
     const-string v0, "debug.hwui.profile"
 
     if-eqz p1, :cond_0
@@ -66,6 +60,5 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 94
     return-void
 .end method

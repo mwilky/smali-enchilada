@@ -24,10 +24,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
     invoke-static {}, Lcom/google/common/collect/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v0
@@ -41,9 +39,7 @@
 # virtual methods
 .method public final varargs visit([Ljava/lang/reflect/Type;)V
     .locals 6
-    .param p1, "types"    # [Ljava/lang/reflect/Type;
 
-    .line 70
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -55,8 +51,6 @@
 
     aget-object v3, p1, v2
 
-    .line 71
-    .local v3, "type":Ljava/lang/reflect/Type;
     if-eqz v3, :cond_7
 
     iget-object v4, p0, Lcom/google/common/reflect/TypeVisitor;->visited:Ljava/util/Set;
@@ -67,21 +61,16 @@
 
     if-nez v4, :cond_0
 
-    .line 73
     goto :goto_2
 
-    .line 75
     :cond_0
     move v4, v1
 
-    .line 77
-    .local v4, "succeeded":Z
     :try_start_0
     instance-of v5, v3, Ljava/lang/reflect/TypeVariable;
 
     if-eqz v5, :cond_1
 
-    .line 78
     move-object v5, v3
 
     check-cast v5, Ljava/lang/reflect/TypeVariable;
@@ -90,13 +79,11 @@
 
     goto :goto_1
 
-    .line 79
     :cond_1
     instance-of v5, v3, Ljava/lang/reflect/WildcardType;
 
     if-eqz v5, :cond_2
 
-    .line 80
     move-object v5, v3
 
     check-cast v5, Ljava/lang/reflect/WildcardType;
@@ -105,13 +92,11 @@
 
     goto :goto_1
 
-    .line 81
     :cond_2
     instance-of v5, v3, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz v5, :cond_3
 
-    .line 82
     move-object v5, v3
 
     check-cast v5, Ljava/lang/reflect/ParameterizedType;
@@ -120,13 +105,11 @@
 
     goto :goto_1
 
-    .line 83
     :cond_3
     instance-of v5, v3, Ljava/lang/Class;
 
     if-eqz v5, :cond_4
 
-    .line 84
     move-object v5, v3
 
     check-cast v5, Ljava/lang/Class;
@@ -135,13 +118,11 @@
 
     goto :goto_1
 
-    .line 85
     :cond_4
     instance-of v5, v3, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v5, :cond_5
 
-    .line 86
     move-object v5, v3
 
     check-cast v5, Ljava/lang/reflect/GenericArrayType;
@@ -150,21 +131,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 90
     :goto_1
     const/4 v4, 0x1
 
-    .line 92
     if-nez v4, :cond_7
 
-    .line 93
     iget-object v5, p0, Lcom/google/common/reflect/TypeVisitor;->visited:Ljava/util/Set;
 
     invoke-interface {v5, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 88
     :cond_5
     :try_start_1
     new-instance v0, Ljava/lang/AssertionError;
@@ -189,13 +166,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 92
     :catchall_0
     move-exception v0
 
     if-nez v4, :cond_6
 
-    .line 93
     iget-object v1, p0, Lcom/google/common/reflect/TypeVisitor;->visited:Ljava/util/Set;
 
     invoke-interface {v1, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
@@ -203,16 +178,12 @@
     :cond_6
     throw v0
 
-    .line 70
-    .end local v3    # "type":Ljava/lang/reflect/Type;
-    .end local v4    # "succeeded":Z
     :cond_7
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 97
     :cond_8
     return-void
 .end method
@@ -227,24 +198,18 @@
         }
     .end annotation
 
-    .line 99
-    .local p1, "t":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     return-void
 .end method
 
 .method visitGenericArrayType(Ljava/lang/reflect/GenericArrayType;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/reflect/GenericArrayType;
 
-    .line 100
     return-void
 .end method
 
 .method visitParameterizedType(Ljava/lang/reflect/ParameterizedType;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/reflect/ParameterizedType;
 
-    .line 101
     return-void
 .end method
 
@@ -258,15 +223,11 @@
         }
     .end annotation
 
-    .line 102
-    .local p1, "t":Ljava/lang/reflect/TypeVariable;, "Ljava/lang/reflect/TypeVariable<*>;"
     return-void
 .end method
 
 .method visitWildcardType(Ljava/lang/reflect/WildcardType;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/reflect/WildcardType;
 
-    .line 103
     return-void
 .end method

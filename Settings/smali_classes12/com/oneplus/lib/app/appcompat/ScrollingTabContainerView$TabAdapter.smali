@@ -22,12 +22,10 @@
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;)V
     .locals 0
 
-    .line 531
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    .line 532
     return-void
 .end method
 
@@ -36,7 +34,6 @@
 .method public getCount()I
     .locals 1
 
-    .line 536
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
@@ -50,9 +47,7 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "position"    # I
 
-    .line 541
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;->mTabLayout:Landroid/widget/LinearLayout;
@@ -72,9 +67,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
 
-    .line 546
     int-to-long v0, p1
 
     return-wide v0
@@ -82,14 +75,9 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 551
     if-nez p2, :cond_0
 
-    .line 552
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabAdapter;->this$0:Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView;
 
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabAdapter;->getItem(I)Ljava/lang/Object;
@@ -106,7 +94,6 @@
 
     goto :goto_0
 
-    .line 554
     :cond_0
     move-object v0, p2
 
@@ -120,7 +107,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/app/appcompat/ScrollingTabContainerView$TabView;->bindTab(Lcom/oneplus/lib/app/appcompat/ActionBar$Tab;)V
 
-    .line 556
     :goto_0
     return-object p2
 .end method

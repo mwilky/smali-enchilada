@@ -36,8 +36,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 101
-    .local p0, "this":Lcom/google/common/collect/Tables$AbstractCell;, "Lcom/google/common/collect/Tables$AbstractCell<TR;TC;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,18 +45,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 104
-    .local p0, "this":Lcom/google/common/collect/Tables$AbstractCell;, "Lcom/google/common/collect/Tables$AbstractCell<TR;TC;TV;>;"
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 105
     return v0
 
-    .line 107
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/Table$Cell;
 
@@ -66,13 +59,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 108
     move-object v1, p1
 
     check-cast v1, Lcom/google/common/collect/Table$Cell;
 
-    .line 109
-    .local v1, "other":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<***>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Tables$AbstractCell;->getRowKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -87,7 +77,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 110
     invoke-virtual {p0}, Lcom/google/common/collect/Tables$AbstractCell;->getColumnKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -102,7 +91,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 111
     invoke-virtual {p0}, Lcom/google/common/collect/Tables$AbstractCell;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -119,15 +107,12 @@
 
     goto :goto_0
 
-    .line 109
     :cond_1
     move v0, v2
 
     :goto_0
     return v0
 
-    .line 113
-    .end local v1    # "other":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<***>;"
     :cond_2
     return v2
 .end method
@@ -135,8 +120,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 117
-    .local p0, "this":Lcom/google/common/collect/Tables$AbstractCell;, "Lcom/google/common/collect/Tables$AbstractCell<TR;TC;TV;>;"
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -175,8 +158,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 121
-    .local p0, "this":Lcom/google/common/collect/Tables$AbstractCell;, "Lcom/google/common/collect/Tables$AbstractCell<TR;TC;TV;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

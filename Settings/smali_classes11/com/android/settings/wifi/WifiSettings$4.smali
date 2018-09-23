@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiSettings;Lcom/android/settingslib/wifi/AccessPoint;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiSettings;
 
-    .line 1129
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$4;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WifiSettings$4;->val$accessPoint:Lcom/android/settingslib/wifi/AccessPoint;
@@ -43,25 +41,20 @@
 .method public run()V
     .locals 2
 
-    .line 1132
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$4;->val$accessPoint:Lcom/android/settingslib/wifi/AccessPoint;
 
     invoke-virtual {v0}, Lcom/android/settingslib/wifi/AccessPoint;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1133
-    .local v0, "tag":Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 1134
     move-object v1, v0
 
     check-cast v1, Lcom/android/settingslib/wifi/AccessPointPreference;
 
     invoke-virtual {v1}, Lcom/android/settingslib/wifi/AccessPointPreference;->refresh()V
 
-    .line 1136
     :cond_0
     return-void
 .end method

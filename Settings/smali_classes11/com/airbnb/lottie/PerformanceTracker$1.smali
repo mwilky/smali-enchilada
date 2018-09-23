@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/PerformanceTracker;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/PerformanceTracker;
 
-    .line 38
     iput-object p1, p0, Lcom/airbnb/lottie/PerformanceTracker$1;->this$0:Lcom/airbnb/lottie/PerformanceTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,9 +61,6 @@
         }
     .end annotation
 
-    .line 41
-    .local p1, "o1":Landroid/support/v4/util/Pair;, "Landroid/support/v4/util/Pair<Ljava/lang/String;Ljava/lang/Float;>;"
-    .local p2, "o2":Landroid/support/v4/util/Pair;, "Landroid/support/v4/util/Pair<Ljava/lang/String;Ljava/lang/Float;>;"
     iget-object v0, p1, Landroid/support/v4/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Float;
@@ -74,8 +69,6 @@
 
     move-result v0
 
-    .line 42
-    .local v0, "r1":F
     iget-object v1, p2, Landroid/support/v4/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/Float;
@@ -84,29 +77,23 @@
 
     move-result v1
 
-    .line 43
-    .local v1, "r2":F
     cmpl-float v2, v1, v0
 
     if-lez v2, :cond_0
 
-    .line 44
     const/4 v2, 0x1
 
     return v2
 
-    .line 45
     :cond_0
     cmpl-float v2, v0, v1
 
     if-lez v2, :cond_1
 
-    .line 46
     const/4 v2, -0x1
 
     return v2
 
-    .line 48
     :cond_1
     const/4 v2, 0x0
 
@@ -116,7 +103,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 38
     check-cast p1, Landroid/support/v4/util/Pair;
 
     check-cast p2, Landroid/support/v4/util/Pair;

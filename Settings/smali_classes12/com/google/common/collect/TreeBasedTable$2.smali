@@ -40,10 +40,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/TreeBasedTable;Ljava/util/Iterator;Ljava/util/Comparator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/TreeBasedTable;
 
-    .line 328
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$2;, "Lcom/google/common/collect/TreeBasedTable$2;"
     iput-object p1, p0, Lcom/google/common/collect/TreeBasedTable$2;->this$0:Lcom/google/common/collect/TreeBasedTable;
 
     iput-object p2, p0, Lcom/google/common/collect/TreeBasedTable$2;->val$merged:Ljava/util/Iterator;
@@ -65,8 +62,6 @@
         }
     .end annotation
 
-    .line 333
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$2;, "Lcom/google/common/collect/TreeBasedTable$2;"
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/TreeBasedTable$2;->val$merged:Ljava/util/Iterator;
 
@@ -76,15 +71,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 334
     iget-object v0, p0, Lcom/google/common/collect/TreeBasedTable$2;->val$merged:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 335
-    .local v0, "next":Ljava/lang/Object;, "TC;"
     iget-object v1, p0, Lcom/google/common/collect/TreeBasedTable$2;->lastValue:Ljava/lang/Object;
 
     if-eqz v1, :cond_0
@@ -93,7 +85,6 @@
 
     iget-object v2, p0, Lcom/google/common/collect/TreeBasedTable$2;->lastValue:Ljava/lang/Object;
 
-    .line 336
     invoke-interface {v1, v0, v2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v1
@@ -107,32 +98,23 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 339
-    .local v1, "duplicate":Z
     :goto_1
     if-nez v1, :cond_1
 
-    .line 340
     iput-object v0, p0, Lcom/google/common/collect/TreeBasedTable$2;->lastValue:Ljava/lang/Object;
 
-    .line 341
     iget-object v2, p0, Lcom/google/common/collect/TreeBasedTable$2;->lastValue:Ljava/lang/Object;
 
     return-object v2
 
-    .line 343
-    .end local v0    # "next":Ljava/lang/Object;, "TC;"
-    .end local v1    # "duplicate":Z
     :cond_1
     goto :goto_0
 
-    .line 345
     :cond_2
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/TreeBasedTable$2;->lastValue:Ljava/lang/Object;
 
-    .line 346
     invoke-virtual {p0}, Lcom/google/common/collect/TreeBasedTable$2;->endOfData()Ljava/lang/Object;
 
     move-result-object v0

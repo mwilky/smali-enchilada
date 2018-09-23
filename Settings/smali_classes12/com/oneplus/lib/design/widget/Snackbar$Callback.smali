@@ -38,7 +38,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 86
     invoke-direct {p0}, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$BaseCallback;-><init>()V
 
     return-void
@@ -48,17 +47,13 @@
 # virtual methods
 .method public onDismissed(Lcom/oneplus/lib/design/widget/Snackbar;I)V
     .locals 0
-    .param p1, "transientBottomBar"    # Lcom/oneplus/lib/design/widget/Snackbar;
-    .param p2, "event"    # I
 
-    .line 106
     return-void
 .end method
 
 .method public bridge synthetic onDismissed(Ljava/lang/Object;I)V
     .locals 0
 
-    .line 86
     check-cast p1, Lcom/oneplus/lib/design/widget/Snackbar;
 
     invoke-virtual {p0, p1, p2}, Lcom/oneplus/lib/design/widget/Snackbar$Callback;->onDismissed(Lcom/oneplus/lib/design/widget/Snackbar;I)V
@@ -68,16 +63,13 @@
 
 .method public onShown(Lcom/oneplus/lib/design/widget/Snackbar;)V
     .locals 0
-    .param p1, "sb"    # Lcom/oneplus/lib/design/widget/Snackbar;
 
-    .line 101
     return-void
 .end method
 
 .method public bridge synthetic onShown(Ljava/lang/Object;)V
     .locals 0
 
-    .line 86
     check-cast p1, Lcom/oneplus/lib/design/widget/Snackbar;
 
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/design/widget/Snackbar$Callback;->onShown(Lcom/oneplus/lib/design/widget/Snackbar;)V

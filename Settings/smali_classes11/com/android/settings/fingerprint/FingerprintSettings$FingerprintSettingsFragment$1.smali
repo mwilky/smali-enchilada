@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
-    .line 180
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onAuthenticationError(ILjava/lang/CharSequence;)V
     .locals 3
-    .param p1, "errMsgId"    # I
-    .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 195
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->access$000(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)Landroid/os/Handler;
@@ -56,17 +51,14 @@
 
     move-result-object v0
 
-    .line 196
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 197
     return-void
 .end method
 
 .method public onAuthenticationFailed()V
     .locals 2
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->access$000(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)Landroid/os/Handler;
@@ -81,16 +73,12 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 191
     return-void
 .end method
 
 .method public onAuthenticationHelp(ILjava/lang/CharSequence;)V
     .locals 3
-    .param p1, "helpMsgId"    # I
-    .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 201
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->access$000(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)Landroid/os/Handler;
@@ -105,18 +93,14 @@
 
     move-result-object v0
 
-    .line 202
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 203
     return-void
 .end method
 
 .method public onAuthenticationSucceeded(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V
     .locals 4
-    .param p1, "result"    # Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;
 
-    .line 184
     invoke-virtual {p1}, Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;->getFingerprint()Landroid/hardware/fingerprint/Fingerprint;
 
     move-result-object v0
@@ -125,8 +109,6 @@
 
     move-result v0
 
-    .line 185
-    .local v0, "fingerId":I
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment$1;->this$0:Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-static {v1}, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;->access$000(Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;)Landroid/os/Handler;
@@ -143,6 +125,5 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 186
     return-void
 .end method

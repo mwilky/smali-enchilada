@@ -31,8 +31,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 282
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,8 +50,6 @@
         }
     .end annotation
 
-    .line 290
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;->arrayListValues(I)Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;
@@ -65,7 +61,6 @@
 
 .method public arrayListValues(I)Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;
     .locals 1
-    .param p1, "expectedValuesPerKey"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -76,13 +71,10 @@
         }
     .end annotation
 
-    .line 300
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const-string v0, "expectedValuesPerKey"
 
     invoke-static {p1, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 301
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;I)V
@@ -118,14 +110,10 @@
         }
     .end annotation
 
-    .line 406
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
-    .local p1, "valueClass":Ljava/lang/Class;, "Ljava/lang/Class<TV0;>;"
     const-string v0, "valueClass"
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 407
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$6;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$6;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;Ljava/lang/Class;)V
@@ -145,8 +133,6 @@
         }
     .end annotation
 
-    .line 329
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;->hashSetValues(I)Lcom/google/common/collect/MultimapBuilder$SetMultimapBuilder;
@@ -158,7 +144,6 @@
 
 .method public hashSetValues(I)Lcom/google/common/collect/MultimapBuilder$SetMultimapBuilder;
     .locals 1
-    .param p1, "expectedValuesPerKey"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -169,13 +154,10 @@
         }
     .end annotation
 
-    .line 339
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const-string v0, "expectedValuesPerKey"
 
     invoke-static {p1, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 340
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$3;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$3;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;I)V
@@ -195,8 +177,6 @@
         }
     .end annotation
 
-    .line 354
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const/4 v0, 0x2
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;->linkedHashSetValues(I)Lcom/google/common/collect/MultimapBuilder$SetMultimapBuilder;
@@ -208,7 +188,6 @@
 
 .method public linkedHashSetValues(I)Lcom/google/common/collect/MultimapBuilder$SetMultimapBuilder;
     .locals 1
-    .param p1, "expectedValuesPerKey"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -219,13 +198,10 @@
         }
     .end annotation
 
-    .line 364
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     const-string v0, "expectedValuesPerKey"
 
     invoke-static {p1, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 365
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$4;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$4;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;I)V
@@ -245,8 +221,6 @@
         }
     .end annotation
 
-    .line 315
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$2;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$2;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;)V
@@ -266,8 +240,6 @@
         }
     .end annotation
 
-    .line 380
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -293,14 +265,10 @@
         }
     .end annotation
 
-    .line 390
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys<TK0;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<TV0;>;"
     const-string v0, "comparator"
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 391
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;-><init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;Ljava/util/Comparator;)V

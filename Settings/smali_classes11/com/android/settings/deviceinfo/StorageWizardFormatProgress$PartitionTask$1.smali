@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;Ljava/util/concurrent/CompletableFuture;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;
 
-    .line 96
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask$1;->val$result:Ljava/util/concurrent/CompletableFuture;
@@ -39,24 +37,17 @@
 # virtual methods
 .method public onFinished(ILandroid/os/PersistableBundle;)V
     .locals 1
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 105
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask$1;->val$result:Ljava/util/concurrent/CompletableFuture;
 
     invoke-virtual {v0, p2}, Ljava/util/concurrent/CompletableFuture;->complete(Ljava/lang/Object;)Z
 
-    .line 106
     return-void
 .end method
 
 .method public onStatus(ILandroid/os/PersistableBundle;)V
     .locals 4
-    .param p1, "status"    # I
-    .param p2, "extras"    # Landroid/os/PersistableBundle;
 
-    .line 100
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;
 
     const/4 v1, 0x1
@@ -81,6 +72,5 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;->access$100(Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$PartitionTask;[Ljava/lang/Object;)V
 
-    .line 101
     return-void
 .end method

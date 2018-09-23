@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
-    .local p1, "map":Lcom/google/common/collect/ImmutableMap;, "Lcom/google/common/collect/ImmutableMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 38
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMapKeySet;->map:Lcom/google/common/collect/ImmutableMap;
 
-    .line 39
     return-void
 .end method
 
@@ -65,13 +60,11 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMapKeySet;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->containsKey(Ljava/lang/Object;)Z
@@ -91,8 +84,6 @@
         }
     .end annotation
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMapKeySet;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
@@ -103,8 +94,6 @@
 
     move-result-object v0
 
-    .line 59
-    .local v0, "entryList":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v1, Lcom/google/common/collect/ImmutableMapKeySet$1;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ImmutableMapKeySet$1;-><init>(Lcom/google/common/collect/ImmutableMapKeySet;Lcom/google/common/collect/ImmutableList;)V
@@ -115,8 +104,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 76
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -132,8 +119,6 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMapKeySet;->asList()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -148,8 +133,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 33
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMapKeySet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -160,8 +143,6 @@
 .method public size()I
     .locals 1
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMapKeySet;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->size()I
@@ -177,8 +158,6 @@
         value = "serialization"
     .end annotation
 
-    .line 81
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapKeySet;, "Lcom/google/common/collect/ImmutableMapKeySet<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableMapKeySet$KeySetSerializedForm;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableMapKeySet;->map:Lcom/google/common/collect/ImmutableMap;

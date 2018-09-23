@@ -214,7 +214,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 187
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "CLASS"
@@ -225,7 +224,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->CLASS:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 188
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "clip"
@@ -236,7 +234,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->clip:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 189
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "clip_path"
@@ -247,7 +244,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->clip_path:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 190
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "clipPathUnits"
@@ -258,7 +254,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->clipPathUnits:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 191
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "clip_rule"
@@ -269,7 +264,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->clip_rule:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 192
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "color"
@@ -280,7 +274,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->color:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 193
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "cx"
@@ -301,7 +294,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->cy:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 194
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "direction"
@@ -312,7 +304,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->direction:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 195
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "dx"
@@ -333,7 +324,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->dy:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 196
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "fx"
@@ -354,7 +344,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->fy:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 197
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "d"
@@ -365,7 +354,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->d:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 198
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "display"
@@ -376,7 +364,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->display:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 199
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "fill"
@@ -387,7 +374,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->fill:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 200
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "fill_rule"
@@ -398,7 +384,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->fill_rule:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 201
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "fill_opacity"
@@ -409,7 +394,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->fill_opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 202
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "font"
@@ -420,7 +404,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->font:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 203
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "font_family"
@@ -431,7 +414,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->font_family:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 204
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "font_size"
@@ -442,7 +424,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->font_size:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 205
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "font_weight"
@@ -453,7 +434,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->font_weight:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 206
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "font_style"
@@ -464,7 +444,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->font_style:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 207
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "gradientTransform"
@@ -473,10 +452,8 @@
 
     invoke-direct {v0, v1, v15}, Lcom/caverock/androidsvg/SVGParser$SVGAttr;-><init>(Ljava/lang/String;I)V
 
-    .line 208
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->gradientTransform:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 209
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "gradientUnits"
@@ -487,7 +464,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->gradientUnits:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 210
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "height"
@@ -498,7 +474,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->height:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 211
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "href"
@@ -509,7 +484,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->href:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 212
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "id"
@@ -520,7 +494,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->id:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 213
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "marker"
@@ -531,7 +504,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->marker:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 214
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "marker_start"
@@ -562,7 +534,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->marker_end:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 215
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "markerHeight"
@@ -593,7 +564,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->markerWidth:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 216
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "mask"
@@ -604,7 +574,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->mask:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 217
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "maskContentUnits"
@@ -625,7 +594,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->maskUnits:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 218
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "media"
@@ -636,7 +604,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->media:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 219
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "offset"
@@ -647,7 +614,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->offset:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 220
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "opacity"
@@ -658,7 +624,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 221
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "orient"
@@ -669,7 +634,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->orient:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 222
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "overflow"
@@ -680,7 +644,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->overflow:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 223
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "pathLength"
@@ -691,7 +654,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->pathLength:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 224
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "patternContentUnits"
@@ -722,7 +684,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->patternUnits:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 225
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "points"
@@ -733,7 +694,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->points:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 226
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "preserveAspectRatio"
@@ -744,7 +704,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->preserveAspectRatio:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 227
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "r"
@@ -755,7 +714,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->r:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 228
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "refX"
@@ -766,7 +724,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->refX:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 229
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "refY"
@@ -777,7 +734,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->refY:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 230
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "requiredFeatures"
@@ -818,7 +774,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->requiredFonts:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 231
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "rx"
@@ -839,7 +794,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->ry:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 232
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "solid_color"
@@ -860,7 +814,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->solid_opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 233
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "spreadMethod"
@@ -871,7 +824,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->spreadMethod:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 234
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "startOffset"
@@ -882,7 +834,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->startOffset:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 235
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stop_color"
@@ -903,7 +854,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stop_opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 236
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke"
@@ -914,7 +864,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 237
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_dasharray"
@@ -925,7 +874,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_dasharray:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 238
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_dashoffset"
@@ -936,7 +884,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_dashoffset:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 239
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_linecap"
@@ -947,7 +894,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_linecap:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 240
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_linejoin"
@@ -958,7 +904,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_linejoin:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 241
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_miterlimit"
@@ -969,7 +914,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_miterlimit:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 242
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_opacity"
@@ -980,7 +924,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 243
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "stroke_width"
@@ -991,7 +934,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->stroke_width:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 244
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "style"
@@ -1002,7 +944,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->style:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 245
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "systemLanguage"
@@ -1013,7 +954,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->systemLanguage:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 246
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "text_anchor"
@@ -1024,7 +964,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->text_anchor:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 247
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "text_decoration"
@@ -1035,7 +974,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->text_decoration:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 248
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "transform"
@@ -1046,7 +984,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->transform:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 249
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "type"
@@ -1057,7 +994,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->type:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 250
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "vector_effect"
@@ -1068,7 +1004,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->vector_effect:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 251
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "version"
@@ -1079,7 +1014,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->version:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 252
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "viewBox"
@@ -1090,7 +1024,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->viewBox:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 253
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "width"
@@ -1101,7 +1034,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->width:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 254
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "x"
@@ -1122,7 +1054,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->y:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 255
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "x1"
@@ -1143,7 +1074,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->y1:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 256
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "x2"
@@ -1164,7 +1094,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->y2:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 257
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "viewport_fill"
@@ -1185,7 +1114,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->viewport_fill_opacity:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 258
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "visibility"
@@ -1196,7 +1124,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->visibility:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 259
     new-instance v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     const-string v1, "UNSUPPORTED"
@@ -1207,7 +1134,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->UNSUPPORTED:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
-    .line 185
     const/16 v0, 0x5c
 
     new-array v0, v0, [Lcom/caverock/androidsvg/SVGParser$SVGAttr;
@@ -1746,7 +1672,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 185
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -1754,9 +1679,7 @@
 
 .method public static fromString(Ljava/lang/String;)Lcom/caverock/androidsvg/SVGParser$SVGAttr;
     .locals 3
-    .param p0, "str"    # Ljava/lang/String;
 
-    .line 263
     const-string v0, "class"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1765,12 +1688,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 264
     sget-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->CLASS:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     return-object v0
 
-    .line 265
     :cond_0
     const/16 v0, 0x5f
 
@@ -1782,12 +1703,10 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 266
     sget-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->UNSUPPORTED:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     return-object v0
 
-    .line 269
     :cond_1
     const/16 v1, 0x2d
 
@@ -1804,12 +1723,9 @@
 
     return-object v0
 
-    .line 271
     :catch_0
     move-exception v0
 
-    .line 273
-    .local v0, "e":Ljava/lang/IllegalArgumentException;
     sget-object v1, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->UNSUPPORTED:Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     return-object v1
@@ -1818,7 +1734,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/SVGParser$SVGAttr;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1833,7 +1748,6 @@
 .method public static values()[Lcom/caverock/androidsvg/SVGParser$SVGAttr;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/SVGParser$SVGAttr;->ENUM$VALUES:[Lcom/caverock/androidsvg/SVGParser$SVGAttr;
 
     array-length v1, v0

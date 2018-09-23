@@ -28,7 +28,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 # virtual methods
 .method public compareTo(Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;)I
     .locals 2
-    .param p1, "other"    # Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;->component:Landroid/content/ComponentName;
 
     iget-object v1, p1, Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;->component:Landroid/content/ComponentName;
@@ -54,14 +51,11 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .line 65
     instance-of v0, p1, Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;
 
     if-eqz v0, :cond_0
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/security/trustagent/TrustAgentSettings$AgentInfo;->component:Landroid/content/ComponentName;
 
     move-object v1, p1
@@ -76,7 +70,6 @@
 
     return v0
 
-    .line 68
     :cond_0
     const/4 v0, 0x1
 

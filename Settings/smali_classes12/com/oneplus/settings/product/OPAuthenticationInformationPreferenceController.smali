@@ -25,15 +25,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 38
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 39
     iput-object p1, p0, Lcom/oneplus/settings/product/OPAuthenticationInformationPreferenceController;->mContext:Landroid/content/Context;
 
-    .line 40
     return-void
 .end method
 
@@ -42,7 +38,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 58
     const-string v0, "oneplus_authentication_information"
 
     return-object v0
@@ -51,7 +46,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 44
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     const-string v1, "ONEPLUS A5000"
@@ -66,7 +60,6 @@
 
     const-string v1, "ONEPLUS A5010"
 
-    .line 45
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -77,12 +70,11 @@
 
     const-string v1, "ONEPLUS A6003"
 
-    .line 46
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    const v1, 0x7f120b8e
+    const v1, 0x7f120b8a
 
     if-nez v0, :cond_0
 
@@ -100,7 +92,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 47
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/product/OPAuthenticationInformationPreferenceController;->mContext:Landroid/content/Context;
 
@@ -120,7 +111,6 @@
 
     const-string v2, "ONEPLUS A6003"
 
-    .line 49
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -141,13 +131,11 @@
 
     if-eqz v0, :cond_2
 
-    .line 50
     :cond_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 53
     :cond_2
     const/4 v0, 0x1
 

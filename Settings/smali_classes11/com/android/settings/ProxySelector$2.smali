@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/ProxySelector;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/ProxySelector;
 
-    .line 253
     iput-object p1, p0, Lcom/android/settings/ProxySelector$2;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 255
     iget-object v0, p0, Lcom/android/settings/ProxySelector$2;->this$0:Lcom/android/settings/ProxySelector;
 
     iget-object v0, v0, Lcom/android/settings/ProxySelector;->mHostnameField:Landroid/widget/EditText;
@@ -49,7 +45,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 256
     iget-object v0, p0, Lcom/android/settings/ProxySelector$2;->this$0:Lcom/android/settings/ProxySelector;
 
     iget-object v0, v0, Lcom/android/settings/ProxySelector;->mPortField:Landroid/widget/EditText;
@@ -58,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 257
     iget-object v0, p0, Lcom/android/settings/ProxySelector$2;->this$0:Lcom/android/settings/ProxySelector;
 
     iget-object v0, v0, Lcom/android/settings/ProxySelector;->mExclusionListField:Landroid/widget/EditText;
@@ -67,6 +61,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 258
     return-void
 .end method

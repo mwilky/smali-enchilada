@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/PowerUsageSummary;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
-    .line 141
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,8 +46,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 3
-    .param p1, "i"    # I
-    .param p2, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -62,7 +58,6 @@
         }
     .end annotation
 
-    .line 144
     new-instance v0, Lcom/android/settings/fuelgauge/DebugEstimatesLoader;
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
@@ -83,7 +78,6 @@
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 141
     check-cast p2, Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->onLoadFinished(Landroid/content/Loader;Ljava/util/List;)V
@@ -106,14 +100,10 @@
         }
     .end annotation
 
-    .line 150
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Ljava/util/List<Lcom/android/settings/fuelgauge/BatteryInfo;>;>;"
-    .local p2, "batteryInfos":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/fuelgauge/BatteryInfo;>;"
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$2;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->updateViews(Ljava/util/List;)V
 
-    .line 151
     return-void
 .end method
 
@@ -129,7 +119,5 @@
         }
     .end annotation
 
-    .line 155
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Ljava/util/List<Lcom/android/settings/fuelgauge/BatteryInfo;>;>;"
     return-void
 .end method

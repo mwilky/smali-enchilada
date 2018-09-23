@@ -241,12 +241,10 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 85
     const-string v0, "charset"
 
     sget-object v1, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 86
     invoke-virtual {v1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
 
     move-result-object v1
@@ -261,7 +259,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->UTF_8_CONSTANT_PARAMETERS:Lcom/google/common/collect/ImmutableListMultimap;
 
-    .line 89
     sget-object v0, Lcom/google/common/base/CharMatcher;->ASCII:Lcom/google/common/base/CharMatcher;
 
     sget-object v1, Lcom/google/common/base/CharMatcher;->JAVA_ISO_CONTROL:Lcom/google/common/base/CharMatcher;
@@ -274,7 +271,6 @@
 
     move-result-object v0
 
-    .line 90
     const/16 v1, 0x20
 
     invoke-static {v1}, Lcom/google/common/base/CharMatcher;->isNot(C)Lcom/google/common/base/CharMatcher;
@@ -287,7 +283,6 @@
 
     const-string v1, "()<>@,;:\\\"/[]?="
 
-    .line 91
     invoke-static {v1}, Lcom/google/common/base/CharMatcher;->noneOf(Ljava/lang/CharSequence;)Lcom/google/common/base/CharMatcher;
 
     move-result-object v1
@@ -298,12 +293,10 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
-    .line 92
     sget-object v0, Lcom/google/common/base/CharMatcher;->ASCII:Lcom/google/common/base/CharMatcher;
 
     const-string v1, "\"\\\r"
 
-    .line 93
     invoke-static {v1}, Lcom/google/common/base/CharMatcher;->noneOf(Ljava/lang/CharSequence;)Lcom/google/common/base/CharMatcher;
 
     move-result-object v1
@@ -314,7 +307,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->QUOTED_TEXT_MATCHER:Lcom/google/common/base/CharMatcher;
 
-    .line 98
     const-string v0, " \t\r\n"
 
     invoke-static {v0}, Lcom/google/common/base/CharMatcher;->anyOf(Ljava/lang/CharSequence;)Lcom/google/common/base/CharMatcher;
@@ -323,14 +315,12 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->LINEAR_WHITE_SPACE:Lcom/google/common/base/CharMatcher;
 
-    .line 109
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->KNOWN_TYPES:Ljava/util/Map;
 
-    .line 134
     const-string v0, "*"
 
     const-string v1, "*"
@@ -341,7 +331,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 135
     const-string v0, "text"
 
     const-string v1, "*"
@@ -352,7 +341,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_TEXT_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 136
     const-string v0, "image"
 
     const-string v1, "*"
@@ -363,7 +351,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_IMAGE_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 137
     const-string v0, "audio"
 
     const-string v1, "*"
@@ -374,7 +361,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_AUDIO_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 138
     const-string v0, "video"
 
     const-string v1, "*"
@@ -385,7 +371,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_VIDEO_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 139
     const-string v0, "application"
 
     const-string v1, "*"
@@ -396,19 +381,16 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ANY_APPLICATION_TYPE:Lcom/google/common/net/MediaType;
 
-    .line 142
     const-string v0, "text"
 
     const-string v1, "cache-manifest"
 
-    .line 143
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstantUtf8(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->CACHE_MANIFEST_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 144
     const-string v0, "text"
 
     const-string v1, "css"
@@ -419,7 +401,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->CSS_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 145
     const-string v0, "text"
 
     const-string v1, "csv"
@@ -430,7 +411,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->CSV_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 146
     const-string v0, "text"
 
     const-string v1, "html"
@@ -441,7 +421,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->HTML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 147
     const-string v0, "text"
 
     const-string v1, "calendar"
@@ -452,7 +431,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->I_CALENDAR_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 148
     const-string v0, "text"
 
     const-string v1, "plain"
@@ -463,7 +441,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->PLAIN_TEXT_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 154
     const-string v0, "text"
 
     const-string v1, "javascript"
@@ -474,7 +451,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->TEXT_JAVASCRIPT_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 161
     const-string v0, "text"
 
     const-string v1, "tab-separated-values"
@@ -485,7 +461,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->TSV_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 162
     const-string v0, "text"
 
     const-string v1, "vcard"
@@ -496,7 +471,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->VCARD_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 163
     const-string v0, "text"
 
     const-string v1, "vnd.wap.wml"
@@ -507,7 +481,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 169
     const-string v0, "text"
 
     const-string v1, "xml"
@@ -518,7 +491,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->XML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 172
     const-string v0, "image"
 
     const-string v1, "bmp"
@@ -529,7 +501,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->BMP:Lcom/google/common/net/MediaType;
 
-    .line 182
     const-string v0, "image"
 
     const-string v1, "x-canon-crw"
@@ -540,7 +511,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->CRW:Lcom/google/common/net/MediaType;
 
-    .line 183
     const-string v0, "image"
 
     const-string v1, "gif"
@@ -551,7 +521,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->GIF:Lcom/google/common/net/MediaType;
 
-    .line 184
     const-string v0, "image"
 
     const-string v1, "vnd.microsoft.icon"
@@ -562,7 +531,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ICO:Lcom/google/common/net/MediaType;
 
-    .line 185
     const-string v0, "image"
 
     const-string v1, "jpeg"
@@ -573,7 +541,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->JPEG:Lcom/google/common/net/MediaType;
 
-    .line 186
     const-string v0, "image"
 
     const-string v1, "png"
@@ -584,7 +551,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->PNG:Lcom/google/common/net/MediaType;
 
-    .line 203
     const-string v0, "image"
 
     const-string v1, "vnd.adobe.photoshop"
@@ -595,7 +561,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->PSD:Lcom/google/common/net/MediaType;
 
-    .line 204
     const-string v0, "image"
 
     const-string v1, "svg+xml"
@@ -606,7 +571,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->SVG_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 205
     const-string v0, "image"
 
     const-string v1, "tiff"
@@ -617,7 +581,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->TIFF:Lcom/google/common/net/MediaType;
 
-    .line 206
     const-string v0, "image"
 
     const-string v1, "webp"
@@ -628,7 +591,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WEBP:Lcom/google/common/net/MediaType;
 
-    .line 209
     const-string v0, "audio"
 
     const-string v1, "mp4"
@@ -639,7 +601,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MP4_AUDIO:Lcom/google/common/net/MediaType;
 
-    .line 210
     const-string v0, "audio"
 
     const-string v1, "mpeg"
@@ -650,7 +611,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MPEG_AUDIO:Lcom/google/common/net/MediaType;
 
-    .line 211
     const-string v0, "audio"
 
     const-string v1, "ogg"
@@ -661,7 +621,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OGG_AUDIO:Lcom/google/common/net/MediaType;
 
-    .line 212
     const-string v0, "audio"
 
     const-string v1, "webm"
@@ -672,7 +631,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WEBM_AUDIO:Lcom/google/common/net/MediaType;
 
-    .line 215
     const-string v0, "video"
 
     const-string v1, "mp4"
@@ -683,7 +641,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MP4_VIDEO:Lcom/google/common/net/MediaType;
 
-    .line 216
     const-string v0, "video"
 
     const-string v1, "mpeg"
@@ -694,7 +651,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MPEG_VIDEO:Lcom/google/common/net/MediaType;
 
-    .line 217
     const-string v0, "video"
 
     const-string v1, "ogg"
@@ -705,7 +661,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OGG_VIDEO:Lcom/google/common/net/MediaType;
 
-    .line 218
     const-string v0, "video"
 
     const-string v1, "quicktime"
@@ -716,7 +671,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->QUICKTIME:Lcom/google/common/net/MediaType;
 
-    .line 219
     const-string v0, "video"
 
     const-string v1, "webm"
@@ -727,7 +681,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WEBM_VIDEO:Lcom/google/common/net/MediaType;
 
-    .line 220
     const-string v0, "video"
 
     const-string v1, "x-ms-wmv"
@@ -738,7 +691,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WMV:Lcom/google/common/net/MediaType;
 
-    .line 228
     const-string v0, "application"
 
     const-string v1, "xml"
@@ -749,7 +701,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->APPLICATION_XML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 229
     const-string v0, "application"
 
     const-string v1, "atom+xml"
@@ -760,7 +711,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ATOM_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 230
     const-string v0, "application"
 
     const-string v1, "x-bzip2"
@@ -771,7 +721,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->BZIP2:Lcom/google/common/net/MediaType;
 
-    .line 240
     const-string v0, "application"
 
     const-string v1, "vnd.ms-fontobject"
@@ -782,7 +731,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->EOT:Lcom/google/common/net/MediaType;
 
-    .line 250
     const-string v0, "application"
 
     const-string v1, "epub+zip"
@@ -793,7 +741,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->EPUB:Lcom/google/common/net/MediaType;
 
-    .line 251
     const-string v0, "application"
 
     const-string v1, "x-www-form-urlencoded"
@@ -804,7 +751,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->FORM_DATA:Lcom/google/common/net/MediaType;
 
-    .line 260
     const-string v0, "application"
 
     const-string v1, "pkcs12"
@@ -815,7 +761,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->KEY_ARCHIVE:Lcom/google/common/net/MediaType;
 
-    .line 272
     const-string v0, "application"
 
     const-string v1, "binary"
@@ -826,7 +771,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->APPLICATION_BINARY:Lcom/google/common/net/MediaType;
 
-    .line 273
     const-string v0, "application"
 
     const-string v1, "x-gzip"
@@ -837,19 +781,16 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->GZIP:Lcom/google/common/net/MediaType;
 
-    .line 279
     const-string v0, "application"
 
     const-string v1, "javascript"
 
-    .line 280
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstantUtf8(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->JAVASCRIPT_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 281
     const-string v0, "application"
 
     const-string v1, "json"
@@ -860,7 +801,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->JSON_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 282
     const-string v0, "application"
 
     const-string v1, "vnd.google-earth.kml+xml"
@@ -871,7 +811,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->KML:Lcom/google/common/net/MediaType;
 
-    .line 283
     const-string v0, "application"
 
     const-string v1, "vnd.google-earth.kmz"
@@ -882,7 +821,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->KMZ:Lcom/google/common/net/MediaType;
 
-    .line 284
     const-string v0, "application"
 
     const-string v1, "mbox"
@@ -893,19 +831,16 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MBOX:Lcom/google/common/net/MediaType;
 
-    .line 292
     const-string v0, "application"
 
     const-string v1, "x-apple-aspen-config"
 
-    .line 293
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->APPLE_MOBILE_CONFIG:Lcom/google/common/net/MediaType;
 
-    .line 294
     const-string v0, "application"
 
     const-string v1, "vnd.ms-excel"
@@ -916,19 +851,16 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MICROSOFT_EXCEL:Lcom/google/common/net/MediaType;
 
-    .line 295
     const-string v0, "application"
 
     const-string v1, "vnd.ms-powerpoint"
 
-    .line 296
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->MICROSOFT_POWERPOINT:Lcom/google/common/net/MediaType;
 
-    .line 297
     const-string v0, "application"
 
     const-string v1, "msword"
@@ -939,7 +871,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->MICROSOFT_WORD:Lcom/google/common/net/MediaType;
 
-    .line 298
     const-string v0, "application"
 
     const-string v1, "octet-stream"
@@ -950,7 +881,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OCTET_STREAM:Lcom/google/common/net/MediaType;
 
-    .line 299
     const-string v0, "application"
 
     const-string v1, "ogg"
@@ -961,7 +891,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OGG_CONTAINER:Lcom/google/common/net/MediaType;
 
-    .line 300
     const-string v0, "application"
 
     const-string v1, "vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -972,7 +901,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OOXML_DOCUMENT:Lcom/google/common/net/MediaType;
 
-    .line 302
     const-string v0, "application"
 
     const-string v1, "vnd.openxmlformats-officedocument.presentationml.presentation"
@@ -983,67 +911,56 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->OOXML_PRESENTATION:Lcom/google/common/net/MediaType;
 
-    .line 304
     const-string v0, "application"
 
     const-string v1, "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
-    .line 305
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->OOXML_SHEET:Lcom/google/common/net/MediaType;
 
-    .line 306
     const-string v0, "application"
 
     const-string v1, "vnd.oasis.opendocument.graphics"
 
-    .line 307
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->OPENDOCUMENT_GRAPHICS:Lcom/google/common/net/MediaType;
 
-    .line 308
     const-string v0, "application"
 
     const-string v1, "vnd.oasis.opendocument.presentation"
 
-    .line 309
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->OPENDOCUMENT_PRESENTATION:Lcom/google/common/net/MediaType;
 
-    .line 310
     const-string v0, "application"
 
     const-string v1, "vnd.oasis.opendocument.spreadsheet"
 
-    .line 311
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->OPENDOCUMENT_SPREADSHEET:Lcom/google/common/net/MediaType;
 
-    .line 312
     const-string v0, "application"
 
     const-string v1, "vnd.oasis.opendocument.text"
 
-    .line 313
     invoke-static {v0, v1}, Lcom/google/common/net/MediaType;->createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/net/MediaType;->OPENDOCUMENT_TEXT:Lcom/google/common/net/MediaType;
 
-    .line 314
     const-string v0, "application"
 
     const-string v1, "pdf"
@@ -1054,7 +971,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->PDF:Lcom/google/common/net/MediaType;
 
-    .line 315
     const-string v0, "application"
 
     const-string v1, "postscript"
@@ -1065,7 +981,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->POSTSCRIPT:Lcom/google/common/net/MediaType;
 
-    .line 321
     const-string v0, "application"
 
     const-string v1, "protobuf"
@@ -1076,7 +991,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->PROTOBUF:Lcom/google/common/net/MediaType;
 
-    .line 322
     const-string v0, "application"
 
     const-string v1, "rdf+xml"
@@ -1087,7 +1001,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->RDF_XML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 323
     const-string v0, "application"
 
     const-string v1, "rtf"
@@ -1098,7 +1011,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->RTF_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 333
     const-string v0, "application"
 
     const-string v1, "font-sfnt"
@@ -1109,7 +1021,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->SFNT:Lcom/google/common/net/MediaType;
 
-    .line 334
     const-string v0, "application"
 
     const-string v1, "x-shockwave-flash"
@@ -1120,7 +1031,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->SHOCKWAVE_FLASH:Lcom/google/common/net/MediaType;
 
-    .line 336
     const-string v0, "application"
 
     const-string v1, "vnd.sketchup.skp"
@@ -1131,7 +1041,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->SKETCHUP:Lcom/google/common/net/MediaType;
 
-    .line 337
     const-string v0, "application"
 
     const-string v1, "x-tar"
@@ -1142,7 +1051,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->TAR:Lcom/google/common/net/MediaType;
 
-    .line 347
     const-string v0, "application"
 
     const-string v1, "font-woff"
@@ -1153,7 +1061,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->WOFF:Lcom/google/common/net/MediaType;
 
-    .line 348
     const-string v0, "application"
 
     const-string v1, "xhtml+xml"
@@ -1164,7 +1071,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->XHTML_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 356
     const-string v0, "application"
 
     const-string v1, "xrd+xml"
@@ -1175,7 +1081,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->XRD_UTF_8:Lcom/google/common/net/MediaType;
 
-    .line 357
     const-string v0, "application"
 
     const-string v1, "zip"
@@ -1186,7 +1091,6 @@
 
     sput-object v0, Lcom/google/common/net/MediaType;->ZIP:Lcom/google/common/net/MediaType;
 
-    .line 698
     const-string v0, "; "
 
     invoke-static {v0}, Lcom/google/common/base/Joiner;->on(Ljava/lang/String;)Lcom/google/common/base/Joiner;
@@ -1206,8 +1110,6 @@
 
 .method private constructor <init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableListMultimap;)V
     .locals 0
-    .param p1, "type"    # Ljava/lang/String;
-    .param p2, "subtype"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1220,27 +1122,20 @@
         }
     .end annotation
 
-    .line 364
-    .local p3, "parameters":Lcom/google/common/collect/ImmutableListMultimap;, "Lcom/google/common/collect/ImmutableListMultimap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 365
     iput-object p1, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
 
-    .line 366
     iput-object p2, p0, Lcom/google/common/net/MediaType;->subtype:Ljava/lang/String;
 
-    .line 367
     iput-object p3, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
-    .line 368
     return-void
 .end method
 
 .method static synthetic access$000()Lcom/google/common/base/CharMatcher;
     .locals 1
 
-    .line 83
     sget-object v0, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
     return-object v0
@@ -1248,9 +1143,7 @@
 
 .method static synthetic access$100(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Ljava/lang/String;
 
-    .line 83
     invoke-static {p0}, Lcom/google/common/net/MediaType;->escapeAndQuote(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1260,23 +1153,17 @@
 
 .method private static addKnownType(Lcom/google/common/net/MediaType;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "mediaType"    # Lcom/google/common/net/MediaType;
 
-    .line 120
     sget-object v0, Lcom/google/common/net/MediaType;->KNOWN_TYPES:Ljava/util/Map;
 
     invoke-interface {v0, p0, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 121
     return-object p0
 .end method
 
 .method public static create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "type"    # Ljava/lang/String;
-    .param p1, "subtype"    # Ljava/lang/String;
 
-    .line 514
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->of()Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -1290,8 +1177,6 @@
 
 .method private static create(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/Multimap;)Lcom/google/common/net/MediaType;
     .locals 7
-    .param p0, "type"    # Ljava/lang/String;
-    .param p1, "subtype"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1305,29 +1190,20 @@
         }
     .end annotation
 
-    .line 564
-    .local p2, "parameters":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 565
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 566
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 567
     invoke-static {p0}, Lcom/google/common/net/MediaType;->normalizeToken(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 568
-    .local v0, "normalizedType":Ljava/lang/String;
     invoke-static {p1}, Lcom/google/common/net/MediaType;->normalizeToken(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 569
-    .local v1, "normalizedSubtype":Ljava/lang/String;
     const-string v2, "*"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1360,13 +1236,10 @@
 
     invoke-static {v2, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 571
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->builder()Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
     move-result-object v2
 
-    .line 572
-    .local v2, "builder":Lcom/google/common/collect/ImmutableListMultimap$Builder;, "Lcom/google/common/collect/ImmutableListMultimap$Builder<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {p2}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
 
     move-result-object v3
@@ -1388,8 +1261,6 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 573
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
@@ -1400,8 +1271,6 @@
 
     move-result-object v5
 
-    .line 574
-    .local v5, "attribute":Ljava/lang/String;
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -1414,12 +1283,8 @@
 
     invoke-virtual {v2, v5, v6}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
-    .line 575
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    .end local v5    # "attribute":Ljava/lang/String;
     goto :goto_2
 
-    .line 576
     :cond_2
     new-instance v3, Lcom/google/common/net/MediaType;
 
@@ -1429,8 +1294,6 @@
 
     invoke-direct {v3, v0, v1, v4}, Lcom/google/common/net/MediaType;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableListMultimap;)V
 
-    .line 578
-    .local v3, "mediaType":Lcom/google/common/net/MediaType;
     sget-object v4, Lcom/google/common/net/MediaType;->KNOWN_TYPES:Ljava/util/Map;
 
     invoke-interface {v4, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1448,9 +1311,7 @@
 
 .method static createApplicationType(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "subtype"    # Ljava/lang/String;
 
-    .line 523
     const-string v0, "application"
 
     invoke-static {v0, p0}, Lcom/google/common/net/MediaType;->create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
@@ -1462,9 +1323,7 @@
 
 .method static createAudioType(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "subtype"    # Ljava/lang/String;
 
-    .line 532
     const-string v0, "audio"
 
     invoke-static {v0, p0}, Lcom/google/common/net/MediaType;->create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
@@ -1476,10 +1335,7 @@
 
 .method private static createConstant(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 2
-    .param p0, "type"    # Ljava/lang/String;
-    .param p1, "subtype"    # Ljava/lang/String;
 
-    .line 112
     new-instance v0, Lcom/google/common/net/MediaType;
 
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->of()Lcom/google/common/collect/ImmutableListMultimap;
@@ -1497,10 +1353,7 @@
 
 .method private static createConstantUtf8(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 2
-    .param p0, "type"    # Ljava/lang/String;
-    .param p1, "subtype"    # Ljava/lang/String;
 
-    .line 116
     new-instance v0, Lcom/google/common/net/MediaType;
 
     sget-object v1, Lcom/google/common/net/MediaType;->UTF_8_CONSTANT_PARAMETERS:Lcom/google/common/collect/ImmutableListMultimap;
@@ -1516,9 +1369,7 @@
 
 .method static createImageType(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "subtype"    # Ljava/lang/String;
 
-    .line 541
     const-string v0, "image"
 
     invoke-static {v0, p0}, Lcom/google/common/net/MediaType;->create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
@@ -1530,9 +1381,7 @@
 
 .method static createTextType(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "subtype"    # Ljava/lang/String;
 
-    .line 550
     const-string v0, "text"
 
     invoke-static {v0, p0}, Lcom/google/common/net/MediaType;->create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
@@ -1544,9 +1393,7 @@
 
 .method static createVideoType(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 1
-    .param p0, "subtype"    # Ljava/lang/String;
 
-    .line 559
     const-string v0, "video"
 
     invoke-static {v0, p0}, Lcom/google/common/net/MediaType;->create(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
@@ -1558,9 +1405,7 @@
 
 .method private static escapeAndQuote(Ljava/lang/String;)Ljava/lang/String;
     .locals 8
-    .param p0, "value"    # Ljava/lang/String;
 
-    .line 720
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -1577,8 +1422,6 @@
 
     move-result-object v0
 
-    .line 721
-    .local v0, "escaped":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v2
@@ -1592,8 +1435,6 @@
 
     aget-char v5, v2, v4
 
-    .line 722
-    .local v5, "ch":C
     const/16 v6, 0xd
 
     const/16 v7, 0x5c
@@ -1604,21 +1445,16 @@
 
     if-ne v5, v1, :cond_1
 
-    .line 723
     :cond_0
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 725
     :cond_1
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 721
-    .end local v5    # "ch":C
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 727
     :cond_2
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -1631,10 +1467,7 @@
 
 .method private static normalizeParameterValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "attribute"    # Ljava/lang/String;
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 587
     const-string v0, "charset"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1658,9 +1491,7 @@
 
 .method private static normalizeToken(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "token"    # Ljava/lang/String;
 
-    .line 582
     sget-object v0, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v0, p0}, Lcom/google/common/base/CharMatcher;->matchesAllOf(Ljava/lang/CharSequence;)Z
@@ -1669,7 +1500,6 @@
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 583
     invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1690,7 +1520,6 @@
         }
     .end annotation
 
-    .line 386
     iget-object v0, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableListMultimap;->asMap()Lcom/google/common/collect/ImmutableMap;
@@ -1710,18 +1539,13 @@
 
 .method public static parse(Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 9
-    .param p0, "input"    # Ljava/lang/String;
 
-    .line 596
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 597
     new-instance v0, Lcom/google/common/net/MediaType$Tokenizer;
 
     invoke-direct {v0, p0}, Lcom/google/common/net/MediaType$Tokenizer;-><init>(Ljava/lang/String;)V
 
-    .line 599
-    .local v0, "tokenizer":Lcom/google/common/net/MediaType$Tokenizer;
     :try_start_0
     sget-object v1, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
@@ -1729,27 +1553,20 @@
 
     move-result-object v1
 
-    .line 600
-    .local v1, "type":Ljava/lang/String;
     const/16 v2, 0x2f
 
     invoke-virtual {v0, v2}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 601
     sget-object v2, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v0, v2}, Lcom/google/common/net/MediaType$Tokenizer;->consumeToken(Lcom/google/common/base/CharMatcher;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 602
-    .local v2, "subtype":Ljava/lang/String;
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->builder()Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
     move-result-object v3
 
-    .line 603
-    .local v3, "parameters":Lcom/google/common/collect/ImmutableListMultimap$Builder;, "Lcom/google/common/collect/ImmutableListMultimap$Builder<Ljava/lang/String;Ljava/lang/String;>;"
     :goto_0
     invoke-virtual {v0}, Lcom/google/common/net/MediaType$Tokenizer;->hasMore()Z
 
@@ -1757,30 +1574,24 @@
 
     if-eqz v4, :cond_3
 
-    .line 604
     const/16 v4, 0x3b
 
     invoke-virtual {v0, v4}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 605
     sget-object v4, Lcom/google/common/net/MediaType;->LINEAR_WHITE_SPACE:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v0, v4}, Lcom/google/common/net/MediaType$Tokenizer;->consumeTokenIfPresent(Lcom/google/common/base/CharMatcher;)Ljava/lang/String;
 
-    .line 606
     sget-object v4, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v0, v4}, Lcom/google/common/net/MediaType$Tokenizer;->consumeToken(Lcom/google/common/base/CharMatcher;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 607
-    .local v4, "attribute":Ljava/lang/String;
     const/16 v5, 0x3d
 
     invoke-virtual {v0, v5}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 609
     invoke-virtual {v0}, Lcom/google/common/net/MediaType$Tokenizer;->previewChar()C
 
     move-result v5
@@ -1789,16 +1600,12 @@
 
     if-ne v6, v5, :cond_2
 
-    .line 610
     invoke-virtual {v0, v6}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 611
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 612
-    .local v5, "valueBuilder":Ljava/lang/StringBuilder;
     :goto_1
     invoke-virtual {v0}, Lcom/google/common/net/MediaType$Tokenizer;->previewChar()C
 
@@ -1806,7 +1613,6 @@
 
     if-eq v6, v7, :cond_1
 
-    .line 613
     invoke-virtual {v0}, Lcom/google/common/net/MediaType$Tokenizer;->previewChar()C
 
     move-result v7
@@ -1815,10 +1621,8 @@
 
     if-ne v8, v7, :cond_0
 
-    .line 614
     invoke-virtual {v0, v8}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 615
     sget-object v7, Lcom/google/common/base/CharMatcher;->ASCII:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v0, v7}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(Lcom/google/common/base/CharMatcher;)C
@@ -1829,7 +1633,6 @@
 
     goto :goto_1
 
-    .line 617
     :cond_0
     sget-object v7, Lcom/google/common/net/MediaType;->QUOTED_TEXT_MATCHER:Lcom/google/common/base/CharMatcher;
 
@@ -1841,22 +1644,15 @@
 
     goto :goto_1
 
-    .line 620
     :cond_1
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 621
-    .local v7, "value":Ljava/lang/String;
     invoke-virtual {v0, v6}, Lcom/google/common/net/MediaType$Tokenizer;->consumeCharacter(C)C
 
-    .line 622
-    .end local v5    # "valueBuilder":Ljava/lang/StringBuilder;
     goto :goto_2
 
-    .line 623
-    .end local v7    # "value":Ljava/lang/String;
     :cond_2
     sget-object v5, Lcom/google/common/net/MediaType;->TOKEN_MATCHER:Lcom/google/common/base/CharMatcher;
 
@@ -1864,21 +1660,13 @@
 
     move-result-object v7
 
-    .restart local v7    # "value":Ljava/lang/String;
     :goto_2
     move-object v5, v7
 
-    .line 625
-    .end local v7    # "value":Ljava/lang/String;
-    .local v5, "value":Ljava/lang/String;
     invoke-virtual {v3, v4, v5}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
-    .line 626
-    .end local v4    # "attribute":Ljava/lang/String;
-    .end local v5    # "value":Ljava/lang/String;
     goto :goto_0
 
-    .line 627
     :cond_3
     invoke-virtual {v3}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->build()Lcom/google/common/collect/ImmutableListMultimap;
 
@@ -1892,15 +1680,9 @@
 
     return-object v4
 
-    .line 628
-    .end local v1    # "type":Ljava/lang/String;
-    .end local v2    # "subtype":Ljava/lang/String;
-    .end local v3    # "parameters":Lcom/google/common/collect/ImmutableListMultimap$Builder;, "Lcom/google/common/collect/ImmutableListMultimap$Builder<Ljava/lang/String;Ljava/lang/String;>;"
     :catch_0
     move-exception v1
 
-    .line 629
-    .local v1, "e":Ljava/lang/IllegalStateException;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1939,7 +1721,6 @@
         }
     .end annotation
 
-    .line 403
     iget-object v0, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     const-string v1, "charset"
@@ -1952,15 +1733,12 @@
 
     move-result-object v0
 
-    .line 404
-    .local v0, "charsetValues":Lcom/google/common/collect/ImmutableSet;, "Lcom/google/common/collect/ImmutableSet<Ljava/lang/String;>;"
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet;->size()I
 
     move-result v1
 
     packed-switch v1, :pswitch_data_0
 
-    .line 410
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1981,7 +1759,6 @@
 
     throw v1
 
-    .line 408
     :pswitch_0
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->getOnlyElement(Ljava/lang/Iterable;)Ljava/lang/Object;
 
@@ -1999,7 +1776,6 @@
 
     return-object v1
 
-    .line 406
     :pswitch_1
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
 
@@ -2016,20 +1792,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 681
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 682
     return v0
 
-    .line 683
     :cond_0
     instance-of v1, p1, Lcom/google/common/net/MediaType;
 
@@ -2037,13 +1810,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 684
     move-object v1, p1
 
     check-cast v1, Lcom/google/common/net/MediaType;
 
-    .line 685
-    .local v1, "that":Lcom/google/common/net/MediaType;
     iget-object v3, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
 
     iget-object v4, v1, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
@@ -2058,14 +1828,12 @@
 
     iget-object v4, v1, Lcom/google/common/net/MediaType;->subtype:Ljava/lang/String;
 
-    .line 686
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 688
     invoke-direct {p0}, Lcom/google/common/net/MediaType;->parametersAsMap()Ljava/util/Map;
 
     move-result-object v3
@@ -2082,15 +1850,12 @@
 
     goto :goto_0
 
-    .line 685
     :cond_1
     move v0, v2
 
     :goto_0
     return v0
 
-    .line 690
-    .end local v1    # "that":Lcom/google/common/net/MediaType;
     :cond_2
     return v2
 .end method
@@ -2098,7 +1863,6 @@
 .method public hasWildcard()Z
     .locals 2
 
-    .line 472
     const-string v0, "*"
 
     iget-object v1, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
@@ -2137,7 +1901,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 695
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -2171,9 +1934,7 @@
 
 .method public is(Lcom/google/common/net/MediaType;)Z
     .locals 2
-    .param p1, "mediaTypeRange"    # Lcom/google/common/net/MediaType;
 
-    .line 502
     iget-object v0, p1, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
 
     const-string v1, "*"
@@ -2199,7 +1960,6 @@
 
     const-string v1, "*"
 
-    .line 503
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2219,7 +1979,6 @@
     :cond_1
     iget-object v0, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
-    .line 504
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableListMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
@@ -2243,7 +2002,6 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 502
     :goto_0
     return v0
 .end method
@@ -2260,7 +2018,6 @@
         }
     .end annotation
 
-    .line 382
     iget-object v0, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     return-object v0
@@ -2269,7 +2026,6 @@
 .method public subtype()Ljava/lang/String;
     .locals 1
 
-    .line 377
     iget-object v0, p0, Lcom/google/common/net/MediaType;->subtype:Ljava/lang/String;
 
     return-object v0
@@ -2278,7 +2034,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 705
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2297,8 +2052,6 @@
 
     move-result-object v0
 
-    .line 706
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableListMultimap;->isEmpty()Z
@@ -2307,12 +2060,10 @@
 
     if-nez v1, :cond_0
 
-    .line 707
     const-string v1, "; "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 708
     iget-object v1, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     new-instance v2, Lcom/google/common/net/MediaType$2;
@@ -2323,8 +2074,6 @@
 
     move-result-object v1
 
-    .line 714
-    .local v1, "quotedParameters":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<Ljava/lang/String;Ljava/lang/String;>;"
     sget-object v2, Lcom/google/common/net/MediaType;->PARAMETER_JOINER:Lcom/google/common/base/Joiner$MapJoiner;
 
     invoke-interface {v1}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
@@ -2333,8 +2082,6 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/google/common/base/Joiner$MapJoiner;->appendTo(Ljava/lang/StringBuilder;Ljava/lang/Iterable;)Ljava/lang/StringBuilder;
 
-    .line 716
-    .end local v1    # "quotedParameters":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2346,7 +2093,6 @@
 .method public type()Ljava/lang/String;
     .locals 1
 
-    .line 372
     iget-object v0, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
 
     return-object v0
@@ -2354,12 +2100,9 @@
 
 .method public withCharset(Ljava/nio/charset/Charset;)Lcom/google/common/net/MediaType;
     .locals 2
-    .param p1, "charset"    # Ljava/nio/charset/Charset;
 
-    .line 466
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 467
     const-string v0, "charset"
 
     invoke-virtual {p1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
@@ -2375,28 +2118,19 @@
 
 .method public withParameter(Ljava/lang/String;Ljava/lang/String;)Lcom/google/common/net/MediaType;
     .locals 6
-    .param p1, "attribute"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
-    .line 440
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 441
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 442
     invoke-static {p1}, Lcom/google/common/net/MediaType;->normalizeToken(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 443
-    .local v0, "normalizedAttribute":Ljava/lang/String;
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->builder()Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
     move-result-object v1
 
-    .line 444
-    .local v1, "builder":Lcom/google/common/collect/ImmutableListMultimap$Builder;, "Lcom/google/common/collect/ImmutableListMultimap$Builder<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v2, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableListMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
@@ -2420,36 +2154,27 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 445
-    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 446
-    .local v4, "key":Ljava/lang/String;
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 447
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v1, v4, v5}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
-    .line 449
-    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    .end local v4    # "key":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
-    .line 450
     :cond_1
     invoke-static {v0, p2}, Lcom/google/common/net/MediaType;->normalizeParameterValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2457,7 +2182,6 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
-    .line 451
     new-instance v2, Lcom/google/common/net/MediaType;
 
     iget-object v3, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
@@ -2470,8 +2194,6 @@
 
     invoke-direct {v2, v3, v4, v5}, Lcom/google/common/net/MediaType;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/common/collect/ImmutableListMultimap;)V
 
-    .line 453
-    .local v2, "mediaType":Lcom/google/common/net/MediaType;
     sget-object v3, Lcom/google/common/net/MediaType;->KNOWN_TYPES:Ljava/util/Map;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2500,8 +2222,6 @@
         }
     .end annotation
 
-    .line 428
-    .local p1, "parameters":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/google/common/net/MediaType;->type:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/google/common/net/MediaType;->subtype:Ljava/lang/String;
@@ -2516,7 +2236,6 @@
 .method public withoutParameters()Lcom/google/common/net/MediaType;
     .locals 2
 
-    .line 419
     iget-object v0, p0, Lcom/google/common/net/MediaType;->parameters:Lcom/google/common/collect/ImmutableListMultimap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableListMultimap;->isEmpty()Z

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
-    .line 185
     iput-object p1, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$1;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 188
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$1;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;->getOnItemViewClickedListener()Landroid/support/v17/leanback/widget/BaseOnItemViewClickedListener;
@@ -49,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 189
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$1;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;->getOnItemViewClickedListener()Landroid/support/v17/leanback/widget/BaseOnItemViewClickedListener;
@@ -60,17 +55,14 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$1;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
-    .line 190
     invoke-virtual {v2}, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;->getRowObject()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 189
     const/4 v3, 0x0
 
     invoke-interface {v0, v3, v3, v1, v2}, Landroid/support/v17/leanback/widget/BaseOnItemViewClickedListener;->onItemClicked(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
 
-    .line 192
     :cond_0
     return-void
 .end method

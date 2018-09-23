@@ -2907,8 +2907,6 @@ For å gå til hjemskjermen når du måtte ønske det, sveip oppover fra midten 
     <string name="oneplus_quick_clipboard_summary">Forbedre muligheten for kopiering og anbefal deretter den neste handlingen basert på kopien</string>
     <string name="oneplus_quick_gestures">Bevegelser</string>
     <string name="oneplus_quick_gestures_title">Hurtigbevegelser</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Rask aktivering av assistentapp</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Hold strømknappen i 0,5 sekunder for å aktivere assistentappen og 3 sekunder for å slå av</string>
     <string name="oneplus_quick_turn_on_camera">Slå på kameraet raskt</string>
     <string name="oneplus_quickpay">Hurtigbetaling</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Er du sikker på at du ønsker å endre langt trykk-funksjonen på hjemknappen fra \"%1$s\" til \"Hurtigbetaling\"?</string>

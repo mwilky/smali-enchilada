@@ -52,7 +52,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 54
     const-string v0, "Preference"
 
     const-string v1, "PreferenceCategory"
@@ -75,7 +74,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -83,9 +81,6 @@
 
 .method public static extractMetadata(Landroid/content/Context;II)Ljava/util/List;
     .locals 12
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "xmlResId"    # I
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,16 +99,12 @@
         }
     .end annotation
 
-    .line 177
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 178
-    .local v0, "metadata":Ljava/util/List;, "Ljava/util/List<Landroid/os/Bundle;>;"
     if-gtz p1, :cond_0
 
-    .line 179
     const-string v1, "PreferenceXmlParserUtil"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -132,10 +123,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 180
     return-object v0
 
-    .line 182
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -145,8 +134,6 @@
 
     move-result-object v1
 
-    .line 185
-    .local v1, "parser":Landroid/content/res/XmlResourceParser;
     :goto_0
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->next()I
 
@@ -154,7 +141,6 @@
 
     move v3, v2
 
-    .local v3, "type":I
     const/4 v4, 0x2
 
     const/4 v5, 0x1
@@ -163,32 +149,23 @@
 
     if-eq v3, v4, :cond_1
 
-    .end local v3    # "type":I
     goto :goto_0
 
-    .line 189
-    .restart local v3    # "type":I
     :cond_1
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v2
 
-    .line 192
-    .local v2, "outerDepth":I
     :cond_2
     if-eq v3, v4, :cond_3
 
-    .line 193
     goto/16 :goto_1
 
-    .line 195
     :cond_3
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 196
-    .local v6, "nodeName":Ljava/lang/String;
     invoke-static {p2, v5}, Lcom/android/settings/core/PreferenceXmlParserUtils;->hasFlag(II)Z
 
     move-result v7
@@ -197,17 +174,14 @@
 
     const-string v7, "PreferenceScreen"
 
-    .line 197
     invoke-static {v7, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v7
 
     if-eqz v7, :cond_4
 
-    .line 198
     goto/16 :goto_1
 
-    .line 200
     :cond_4
     sget-object v7, Lcom/android/settings/core/PreferenceXmlParserUtils;->SUPPORTED_PREF_TYPES:Ljava/util/List;
 
@@ -225,31 +199,23 @@
 
     if-nez v7, :cond_5
 
-    .line 201
     goto/16 :goto_1
 
-    .line 203
     :cond_5
     new-instance v7, Landroid/os/Bundle;
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
-    .line 204
-    .local v7, "preferenceMetadata":Landroid/os/Bundle;
     invoke-static {v1}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v8
 
-    .line 205
-    .local v8, "attrs":Landroid/util/AttributeSet;
     sget-object v9, Lcom/android/settings/R$styleable;->Preference:[I
 
     invoke-virtual {p0, v8, v9}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v9
 
-    .line 208
-    .local v9, "preferenceAttributes":Landroid/content/res/TypedArray;
     const/4 v10, 0x4
 
     invoke-static {p2, v10}, Lcom/android/settings/core/PreferenceXmlParserUtils;->hasFlag(II)Z
@@ -258,12 +224,10 @@
 
     if-eqz v10, :cond_6
 
-    .line 209
     const-string v10, "type"
 
     invoke-virtual {v7, v10, v6}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 211
     :cond_6
     invoke-static {p2, v4}, Lcom/android/settings/core/PreferenceXmlParserUtils;->hasFlag(II)Z
 
@@ -271,7 +235,6 @@
 
     if-eqz v10, :cond_7
 
-    .line 212
     const-string v10, "key"
 
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getKey(Landroid/content/res/TypedArray;)Ljava/lang/String;
@@ -280,7 +243,6 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 214
     :cond_7
     const/16 v10, 0x8
 
@@ -290,18 +252,14 @@
 
     if-eqz v10, :cond_8
 
-    .line 215
     const-string v10, "controller"
 
-    .line 216
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getController(Landroid/content/res/TypedArray;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 215
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 218
     :cond_8
     const/16 v10, 0x10
 
@@ -311,7 +269,6 @@
 
     if-eqz v10, :cond_9
 
-    .line 219
     const-string v10, "title"
 
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getTitle(Landroid/content/res/TypedArray;)Ljava/lang/String;
@@ -320,7 +277,6 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 221
     :cond_9
     const/16 v10, 0x20
 
@@ -330,7 +286,6 @@
 
     if-eqz v10, :cond_a
 
-    .line 222
     const-string v10, "summary"
 
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getSummary(Landroid/content/res/TypedArray;)Ljava/lang/String;
@@ -339,7 +294,6 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 224
     :cond_a
     const/16 v10, 0x40
 
@@ -349,7 +303,6 @@
 
     if-eqz v10, :cond_b
 
-    .line 225
     const-string v10, "icon"
 
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getIcon(Landroid/content/res/TypedArray;)I
@@ -358,7 +311,6 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 227
     :cond_b
     const/16 v10, 0x80
 
@@ -368,18 +320,14 @@
 
     if-eqz v10, :cond_c
 
-    .line 228
     const-string v10, "platform_slice"
 
-    .line 229
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getPlatformSlice(Landroid/content/res/TypedArray;)Z
 
     move-result v11
 
-    .line 228
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 231
     :cond_c
     const/16 v10, 0x100
 
@@ -389,7 +337,6 @@
 
     if-eqz v10, :cond_d
 
-    .line 232
     const-string v10, "keywords"
 
     invoke-static {v9}, Lcom/android/settings/core/PreferenceXmlParserUtils;->getKeywords(Landroid/content/res/TypedArray;)Ljava/lang/String;
@@ -398,18 +345,11 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 234
     :cond_d
     invoke-interface {v0, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 236
     invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 237
-    .end local v6    # "nodeName":Ljava/lang/String;
-    .end local v7    # "preferenceMetadata":Landroid/os/Bundle;
-    .end local v8    # "attrs":Landroid/util/AttributeSet;
-    .end local v9    # "preferenceAttributes":Landroid/content/res/TypedArray;
     :goto_1
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->next()I
 
@@ -423,29 +363,23 @@
 
     if-ne v3, v6, :cond_2
 
-    .line 238
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v6
 
     if-gt v6, v2, :cond_2
 
-    .line 239
     :cond_e
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
-    .line 240
     return-object v0
 .end method
 
 .method public static getController(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 152
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/16 v1, 0x12
@@ -459,9 +393,7 @@
 
 .method private static getController(Landroid/content/res/TypedArray;)Ljava/lang/String;
     .locals 1
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 303
     const/16 v0, 0x12
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -473,10 +405,7 @@
 
 .method public static getDataChildFragment(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 247
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/16 v1, 0xd
@@ -490,10 +419,7 @@
 
 .method public static getDataEntries(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 137
     sget-object v0, Lcom/android/internal/R$styleable;->ListPreference:[I
 
     const/4 v1, 0x0
@@ -507,31 +433,19 @@
 
 .method private static getDataEntries(Landroid/content/Context;Landroid/util/AttributeSet;[II)Ljava/lang/String;
     .locals 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "set"    # Landroid/util/AttributeSet;
-    .param p2, "attrs"    # [I
-    .param p3, "resId"    # I
 
-    .line 269
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 270
-    .local v0, "sa":Landroid/content/res/TypedArray;
     invoke-virtual {v0, p3}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v1
 
-    .line 271
-    .local v1, "tv":Landroid/util/TypedValue;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 272
     const/4 v2, 0x0
 
-    .line 273
-    .local v2, "data":[Ljava/lang/String;
     if-eqz v1, :cond_0
 
     iget v3, v1, Landroid/util/TypedValue;->type:I
@@ -540,12 +454,10 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 274
     iget v3, v1, Landroid/util/TypedValue;->resourceId:I
 
     if-eqz v3, :cond_0
 
-    .line 275
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -556,7 +468,6 @@
 
     move-result-object v2
 
-    .line 278
     :cond_0
     const/4 v3, 0x0
 
@@ -569,47 +480,35 @@
     :cond_1
     array-length v4, v2
 
-    .line 279
-    .local v4, "count":I
     :goto_0
     if-nez v4, :cond_2
 
-    .line 280
     const/4 v3, 0x0
 
     return-object v3
 
-    .line 282
     :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 283
-    .local v5, "result":Ljava/lang/StringBuilder;
     nop
 
-    .local v3, "n":I
     :goto_1
     if-ge v3, v4, :cond_3
 
-    .line 284
     aget-object v6, v2, v3
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 285
     const-string v6, "|"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 283
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 287
-    .end local v3    # "n":I
     :cond_3
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -620,42 +519,31 @@
 
 .method public static getDataIcon(Landroid/content/Context;Landroid/util/AttributeSet;)I
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 161
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
     invoke-virtual {p0, p1, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 163
-    .local v0, "ta":Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 164
-    .local v1, "dataIcon":I
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 165
     return v1
 .end method
 
 .method public static getDataKey(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 99
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
     const/4 v1, 0x6
@@ -669,10 +557,7 @@
 
 .method public static getDataKeywords(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 143
     sget-object v0, Lcom/android/settings/R$styleable;->Preference:[I
 
     const/16 v1, 0x1b
@@ -686,12 +571,9 @@
 
 .method public static getDataSummary(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 119
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
     const/4 v1, 0x7
@@ -705,10 +587,7 @@
 
 .method public static getDataSummaryOff(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 131
     sget-object v0, Lcom/android/internal/R$styleable;->CheckBoxPreference:[I
 
     const/4 v1, 0x1
@@ -722,10 +601,7 @@
 
 .method public static getDataSummaryOn(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 125
     sget-object v0, Lcom/android/internal/R$styleable;->CheckBoxPreference:[I
 
     const/4 v1, 0x0
@@ -739,12 +615,9 @@
 
 .method public static getDataTitle(Landroid/content/Context;Landroid/util/AttributeSet;)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 109
     sget-object v0, Lcom/android/internal/R$styleable;->Preference:[I
 
     const/4 v1, 0x4
@@ -758,9 +631,7 @@
 
 .method private static getIcon(Landroid/content/res/TypedArray;)I
     .locals 1
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 307
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -772,9 +643,7 @@
 
 .method private static getKey(Landroid/content/res/TypedArray;)Ljava/lang/String;
     .locals 1
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 291
     const/4 v0, 0x6
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -786,9 +655,7 @@
 
 .method private static getKeywords(Landroid/content/res/TypedArray;)Ljava/lang/String;
     .locals 1
-    .param p0, "styleAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 315
     const/16 v0, 0x1b
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -800,9 +667,7 @@
 
 .method private static getPlatformSlice(Landroid/content/res/TypedArray;)Z
     .locals 2
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 311
     const/16 v0, 0x20
 
     const/4 v1, 0x0
@@ -816,37 +681,25 @@
 
 .method private static getStringData(Landroid/content/Context;Landroid/util/AttributeSet;[II)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "set"    # Landroid/util/AttributeSet;
-    .param p2, "attrs"    # [I
-    .param p3, "resId"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 257
     invoke-virtual {p0, p1, p2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 258
-    .local v0, "ta":Landroid/content/res/TypedArray;
     invoke-virtual {v0, p3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 259
-    .local v1, "data":Ljava/lang/String;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 260
     return-object v1
 .end method
 
 .method private static getSummary(Landroid/content/res/TypedArray;)Ljava/lang/String;
     .locals 1
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 299
     const/4 v0, 0x7
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -858,9 +711,7 @@
 
 .method private static getTitle(Landroid/content/res/TypedArray;)Ljava/lang/String;
     .locals 1
-    .param p0, "styledAttributes"    # Landroid/content/res/TypedArray;
 
-    .line 295
     const/4 v0, 0x4
 
     invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
@@ -872,10 +723,7 @@
 
 .method private static hasFlag(II)Z
     .locals 1
-    .param p0, "flags"    # I
-    .param p1, "flag"    # I
 
-    .line 264
     and-int v0, p0, p1
 
     if-eqz v0, :cond_0

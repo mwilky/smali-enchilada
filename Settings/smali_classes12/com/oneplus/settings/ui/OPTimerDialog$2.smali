@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPTimerDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPTimerDialog;
 
-    .line 143
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 6
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 147
     iget v0, p1, Landroid/os/Message;->what:I
 
     const-wide/16 v1, 0x3e8
@@ -48,7 +44,6 @@
 
     goto/16 :goto_0
 
-    .line 149
     :pswitch_0
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -58,12 +53,10 @@
 
     if-lez v0, :cond_1
 
-    .line 150
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$110(Lcom/oneplus/settings/ui/OPTimerDialog;)I
 
-    .line 151
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$200(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -72,7 +65,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 152
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$200(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -85,8 +77,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 153
-    .local v0, "text":Ljava/lang/String;
     iget-object v3, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v3}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$200(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -107,8 +97,6 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 156
-    .end local v0    # "text":Ljava/lang/String;
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -122,7 +110,6 @@
 
     goto/16 :goto_0
 
-    .line 160
     :cond_1
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -132,7 +119,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 161
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$200(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -145,7 +131,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 162
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$200(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -156,7 +141,6 @@
 
     goto/16 :goto_0
 
-    .line 164
     :cond_2
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -168,7 +152,6 @@
 
     goto/16 :goto_0
 
-    .line 170
     :pswitch_1
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -178,12 +161,10 @@
 
     if-lez v0, :cond_4
 
-    .line 171
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$410(Lcom/oneplus/settings/ui/OPTimerDialog;)I
 
-    .line 172
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$500(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -192,7 +173,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 173
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$500(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -201,7 +181,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
-    .line 174
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -214,7 +193,6 @@
 
     iget-object v5, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
-    .line 175
     invoke-static {v5}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$400(Lcom/oneplus/settings/ui/OPTimerDialog;)I
 
     move-result v5
@@ -233,10 +211,8 @@
 
     move-result-object v4
 
-    .line 174
     invoke-virtual {v0, v4}, Lcom/oneplus/settings/ui/OPTimerDialog;->setMessage(Ljava/lang/String;)V
 
-    .line 177
     :cond_3
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -246,7 +222,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 178
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$300(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/os/Handler;
@@ -257,7 +232,6 @@
 
     goto :goto_0
 
-    .line 183
     :cond_4
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -275,7 +249,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 184
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$500(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -288,7 +261,6 @@
 
     if-eqz v0, :cond_5
 
-    .line 185
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPTimerDialog;->access$500(Lcom/oneplus/settings/ui/OPTimerDialog;)Landroid/widget/Button;
@@ -299,7 +271,6 @@
 
     goto :goto_0
 
-    .line 187
     :cond_5
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$2;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
@@ -309,7 +280,6 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 193
     :cond_6
     :goto_0
     return-void

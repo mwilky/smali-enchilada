@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/vpn2/AppManagementFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/vpn2/AppManagementFragment;
 
-    .line 85
     iput-object p1, p0, Lcom/android/settings/vpn2/AppManagementFragment$1;->this$0:Lcom/android/settings/vpn2/AppManagementFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public onCancel()V
     .locals 0
 
-    .line 99
     return-void
 .end method
 
 .method public onForget()V
     .locals 2
 
-    .line 89
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment$1;->this$0:Lcom/android/settings/vpn2/AppManagementFragment;
 
     invoke-static {v0}, Lcom/android/settings/vpn2/AppManagementFragment;->access$000(Lcom/android/settings/vpn2/AppManagementFragment;)Z
@@ -55,19 +51,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment$1;->this$0:Lcom/android/settings/vpn2/AppManagementFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1, v1}, Lcom/android/settings/vpn2/AppManagementFragment;->access$100(Lcom/android/settings/vpn2/AppManagementFragment;ZZ)Z
 
-    .line 93
     :cond_0
     iget-object v0, p0, Lcom/android/settings/vpn2/AppManagementFragment$1;->this$0:Lcom/android/settings/vpn2/AppManagementFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/vpn2/AppManagementFragment;->finish()V
 
-    .line 94
     return-void
 .end method

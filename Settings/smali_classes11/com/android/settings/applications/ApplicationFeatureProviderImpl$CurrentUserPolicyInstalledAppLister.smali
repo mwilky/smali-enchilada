@@ -21,17 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/wrapper/PackageManagerWrapper;Landroid/os/UserManager;Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;)V
     .locals 0
-    .param p1, "packageManager"    # Lcom/android/settingslib/wrapper/PackageManagerWrapper;
-    .param p2, "userManager"    # Landroid/os/UserManager;
-    .param p3, "callback"    # Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;
 
-    .line 184
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/InstalledAppLister;-><init>(Lcom/android/settingslib/wrapper/PackageManagerWrapper;Landroid/os/UserManager;)V
 
-    .line 185
     iput-object p3, p0, Lcom/android/settings/applications/ApplicationFeatureProviderImpl$CurrentUserPolicyInstalledAppLister;->mCallback:Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;
 
-    .line 186
     return-void
 .end method
 
@@ -48,12 +42,9 @@
         }
     .end annotation
 
-    .line 190
-    .local p1, "list":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/applications/UserAppInfo;>;"
     iget-object v0, p0, Lcom/android/settings/applications/ApplicationFeatureProviderImpl$CurrentUserPolicyInstalledAppLister;->mCallback:Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;
 
     invoke-interface {v0, p1}, Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;->onListOfAppsResult(Ljava/util/List;)V
 
-    .line 191
     return-void
 .end method

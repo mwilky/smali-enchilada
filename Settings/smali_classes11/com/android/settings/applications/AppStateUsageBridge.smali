@@ -27,7 +27,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 37
     const-string v0, "android.permission.PACKAGE_USAGE_STATS"
 
     filled-new-array {v0}, [Ljava/lang/String;
@@ -36,7 +35,6 @@
 
     sput-object v0, Lcom/android/settings/applications/AppStateUsageBridge;->PM_PERMISSION:[Ljava/lang/String;
 
-    .line 66
     new-instance v0, Lcom/android/settings/applications/AppStateUsageBridge$1;
 
     invoke-direct {v0}, Lcom/android/settings/applications/AppStateUsageBridge$1;-><init>()V
@@ -48,11 +46,7 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/applications/ApplicationsState;Lcom/android/settings/applications/AppStateBaseBridge$Callback;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "appState"    # Lcom/android/settingslib/applications/ApplicationsState;
-    .param p3, "callback"    # Lcom/android/settings/applications/AppStateBaseBridge$Callback;
 
-    .line 42
     sget-object v5, Lcom/android/settings/applications/AppStateUsageBridge;->PM_PERMISSION:[Ljava/lang/String;
 
     const/16 v4, 0x2b
@@ -67,7 +61,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/settings/applications/AppStateAppOpsBridge;-><init>(Landroid/content/Context;Lcom/android/settingslib/applications/ApplicationsState;Lcom/android/settings/applications/AppStateBaseBridge$Callback;I[Ljava/lang/String;)V
 
-    .line 43
     return-void
 .end method
 
@@ -75,16 +68,11 @@
 # virtual methods
 .method public getUsageInfo(Ljava/lang/String;I)Lcom/android/settings/applications/AppStateUsageBridge$UsageState;
     .locals 2
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "uid"    # I
 
-    .line 51
     invoke-super {p0, p1, p2}, Lcom/android/settings/applications/AppStateAppOpsBridge;->getPermissionInfo(Ljava/lang/String;I)Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;
 
     move-result-object v0
 
-    .line 52
-    .local v0, "permissionState":Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;
     new-instance v1, Lcom/android/settings/applications/AppStateUsageBridge$UsageState;
 
     invoke-direct {v1, v0}, Lcom/android/settings/applications/AppStateUsageBridge$UsageState;-><init>(Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;)V
@@ -94,17 +82,12 @@
 
 .method protected updateExtraInfo(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Ljava/lang/String;I)V
     .locals 1
-    .param p1, "app"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
-    .param p2, "pkg"    # Ljava/lang/String;
-    .param p3, "uid"    # I
 
-    .line 47
     invoke-virtual {p0, p2, p3}, Lcom/android/settings/applications/AppStateUsageBridge;->getUsageInfo(Ljava/lang/String;I)Lcom/android/settings/applications/AppStateUsageBridge$UsageState;
 
     move-result-object v0
 
     iput-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
 
-    .line 48
     return-void
 .end method

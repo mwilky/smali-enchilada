@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
-    .line 319
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$8;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/TransitionListener;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public onTransitionStart(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 322
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$8;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsSupportFragment;->onReturnTransitionStart()V
 
-    .line 323
     return-void
 .end method

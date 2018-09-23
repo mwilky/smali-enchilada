@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController;
 
-    .line 91
     iput-object p1, p0, Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController$1;->this$0:Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 95
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -77,7 +72,6 @@
 
     goto :goto_2
 
-    .line 97
     :cond_2
     const-string v0, "android.bluetooth.adapter.extra.STATE"
 
@@ -85,19 +79,13 @@
 
     move-result v0
 
-    .line 99
-    .local v0, "blueState":I
     packed-switch v0, :pswitch_data_0
 
-    .end local v0    # "blueState":I
     goto :goto_2
 
-    .line 106
-    .restart local v0    # "blueState":I
     :pswitch_0
     goto :goto_2
 
-    .line 103
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController$1;->this$0:Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController;
 
@@ -107,14 +95,11 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 104
     goto :goto_2
 
-    .line 101
     :pswitch_2
     goto :goto_2
 
-    .line 108
     :pswitch_3
     iget-object v1, p0, Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController$1;->this$0:Lcom/android/settings/bluetooth/OPBluetoothDiscoverablePreferenceController;
 
@@ -122,8 +107,6 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 113
-    .end local v0    # "blueState":I
     :goto_2
     return-void
 

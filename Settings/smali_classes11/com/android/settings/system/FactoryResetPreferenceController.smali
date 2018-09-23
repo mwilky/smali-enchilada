@@ -17,12 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 35
     const-string v0, "user"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -33,7 +30,6 @@
 
     iput-object v0, p0, Lcom/android/settings/system/FactoryResetPreferenceController;->mUm:Landroid/os/UserManager;
 
-    .line 36
     return-void
 .end method
 
@@ -42,7 +38,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 46
     const-string v0, "factory_reset"
 
     return-object v0
@@ -51,7 +46,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/system/FactoryResetPreferenceController;->mUm:Landroid/os/UserManager;
 
     invoke-virtual {v0}, Landroid/os/UserManager;->isAdminUser()Z

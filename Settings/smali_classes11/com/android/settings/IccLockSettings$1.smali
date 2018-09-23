@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/IccLockSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/IccLockSettings;
 
-    .line 121
     iput-object p1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 123
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 124
-    .local v0, "ar":Landroid/os/AsyncResult;
     iget v1, p1, Landroid/os/Message;->what:I
 
     const/4 v2, 0x0
@@ -54,7 +48,6 @@
 
     goto :goto_0
 
-    .line 132
     :pswitch_0
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -62,7 +55,6 @@
 
     goto :goto_0
 
-    .line 129
     :pswitch_1
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -79,10 +71,8 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/settings/IccLockSettings;->access$100(Lcom/android/settings/IccLockSettings;ZI)V
 
-    .line 130
     goto :goto_0
 
-    .line 126
     :pswitch_2
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$1;->this$0:Lcom/android/settings/IccLockSettings;
 
@@ -101,10 +91,8 @@
 
     invoke-static {v1, v2, v3, v4}, Lcom/android/settings/IccLockSettings;->access$000(Lcom/android/settings/IccLockSettings;ZILjava/lang/Throwable;)V
 
-    .line 127
     nop
 
-    .line 136
     :goto_0
     return-void
 

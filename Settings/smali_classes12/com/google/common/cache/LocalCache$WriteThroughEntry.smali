@@ -48,28 +48,20 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/LocalCache;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/cache/LocalCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)V"
         }
     .end annotation
 
-    .line 4385
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
-    .local p2, "key":Ljava/lang/Object;, "TK;"
-    .local p3, "value":Ljava/lang/Object;, "TV;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->this$0:Lcom/google/common/cache/LocalCache;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4386
     iput-object p2, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->key:Ljava/lang/Object;
 
-    .line 4387
     iput-object p3, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->value:Ljava/lang/Object;
 
-    .line 4388
     return-void
 .end method
 
@@ -77,26 +69,21 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 4403
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 4404
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 4405
-    .local v0, "that":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     iget-object v2, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->key:Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -128,8 +115,6 @@
     :cond_0
     return v1
 
-    .line 4407
-    .end local v0    # "that":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_1
     return v1
 .end method
@@ -142,8 +127,6 @@
         }
     .end annotation
 
-    .line 4392
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->key:Ljava/lang/Object;
 
     return-object v0
@@ -157,8 +140,6 @@
         }
     .end annotation
 
-    .line 4397
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->value:Ljava/lang/Object;
 
     return-object v0
@@ -167,8 +148,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 4413
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WriteThroughEntry;->key:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -194,9 +173,6 @@
         }
     .end annotation
 
-    .line 4418
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -207,8 +183,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 4425
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteThroughEntry;, "Lcom/google/common/cache/LocalCache<TK;TV;>.WriteThroughEntry;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

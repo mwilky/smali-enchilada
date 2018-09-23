@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/MapConstraints$2;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/MapConstraints$2;
 
-    .line 220
     iput-object p1, p0, Lcom/google/common/collect/MapConstraints$2$1;->this$0:Lcom/google/common/collect/MapConstraints$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,8 +50,6 @@
         }
     .end annotation
 
-    .line 223
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$2$1;->this$0:Lcom/google/common/collect/MapConstraints$2;
 
     iget-object v0, v0, Lcom/google/common/collect/MapConstraints$2;->val$constraint:Lcom/google/common/collect/MapConstraint;
@@ -66,6 +62,5 @@
 
     invoke-interface {v0, v1, p1}, Lcom/google/common/collect/MapConstraint;->checkKeyValue(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 224
     return-object p1
 .end method

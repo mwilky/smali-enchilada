@@ -26,17 +26,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/location/SettingsInjector;Lcom/android/settings/location/InjectedSetting;)V
     .locals 0
-    .param p2, "info"    # Lcom/android/settings/location/InjectedSetting;
 
-    .line 342
     iput-object p1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->this$0:Lcom/android/settings/location/SettingsInjector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 343
     iput-object p2, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->mInfo:Lcom/android/settings/location/InjectedSetting;
 
-    .line 344
     return-void
 .end method
 
@@ -44,15 +40,11 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 351
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 352
-    .local v0, "settingIntent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->mInfo:Lcom/android/settings/location/InjectedSetting;
 
     iget-object v1, v1, Lcom/android/settings/location/InjectedSetting;->packageName:Ljava/lang/String;
@@ -63,12 +55,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 363
     const v1, 0x10008000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 364
     iget-object v1, p0, Lcom/android/settings/location/SettingsInjector$ServiceSettingClickedListener;->this$0:Lcom/android/settings/location/SettingsInjector;
 
     invoke-static {v1}, Lcom/android/settings/location/SettingsInjector;->access$200(Lcom/android/settings/location/SettingsInjector;)Landroid/content/Context;
@@ -81,7 +71,6 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 365
     const/4 v1, 0x1
 
     return v1

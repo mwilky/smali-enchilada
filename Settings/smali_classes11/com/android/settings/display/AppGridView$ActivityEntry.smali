@@ -42,30 +42,21 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/ResolveInfo;Ljava/lang/String;Landroid/util/IconDrawableFactory;)V
     .locals 1
-    .param p1, "info"    # Landroid/content/pm/ResolveInfo;
-    .param p2, "label"    # Ljava/lang/String;
-    .param p3, "iconFactory"    # Landroid/util/IconDrawableFactory;
 
-    .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 140
     iput-object p1, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->info:Landroid/content/pm/ResolveInfo;
 
-    .line 141
     iput-object p2, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->label:Ljava/lang/String;
 
-    .line 142
     iput-object p3, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->mIconFactory:Landroid/util/IconDrawableFactory;
 
-    .line 143
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->mUserId:I
 
-    .line 144
     return-void
 .end method
 
@@ -73,9 +64,7 @@
 # virtual methods
 .method public compareTo(Lcom/android/settings/display/AppGridView$ActivityEntry;)I
     .locals 2
-    .param p1, "entry"    # Lcom/android/settings/display/AppGridView$ActivityEntry;
 
-    .line 148
     iget-object v0, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->label:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/settings/display/AppGridView$ActivityEntry;->label:Ljava/lang/String;
@@ -90,7 +79,6 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 131
     check-cast p1, Lcom/android/settings/display/AppGridView$ActivityEntry;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/display/AppGridView$ActivityEntry;->compareTo(Lcom/android/settings/display/AppGridView$ActivityEntry;)I
@@ -103,7 +91,6 @@
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .locals 4
 
-    .line 157
     iget-object v0, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->mIconFactory:Landroid/util/IconDrawableFactory;
 
     iget-object v1, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->info:Landroid/content/pm/ResolveInfo;
@@ -128,7 +115,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 153
     iget-object v0, p0, Lcom/android/settings/display/AppGridView$ActivityEntry;->label:Ljava/lang/String;
 
     return-object v0

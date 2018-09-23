@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 361
     iput-object p1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,22 +33,18 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 365
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    .line 397
     :pswitch_0
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto/16 :goto_0
 
-    .line 390
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -60,18 +54,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 391
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 392
-    .local v0, "ar":Landroid/os/AsyncResult;
     iget-object v1, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v1, :cond_2
 
-    .line 393
     iget-object v1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$2100(Lcom/android/settings/RadioInfo;)Landroid/widget/EditText;
@@ -84,20 +74,15 @@
 
     goto :goto_0
 
-    .line 382
-    .end local v0    # "ar":Landroid/os/AsyncResult;
     :pswitch_2
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 383
-    .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v1, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v1, :cond_0
 
-    .line 384
     iget-object v1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$2100(Lcom/android/settings/RadioInfo;)Landroid/widget/EditText;
@@ -110,7 +95,6 @@
 
     goto :goto_0
 
-    .line 386
     :cond_0
     iget-object v1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -124,23 +108,17 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 388
     goto :goto_0
 
-    .line 376
-    .end local v0    # "ar":Landroid/os/AsyncResult;
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 377
-    .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v1, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-eqz v1, :cond_2
 
-    .line 378
     iget-object v1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
     const-string v2, "Set preferred network type failed."
@@ -149,15 +127,11 @@
 
     goto :goto_0
 
-    .line 367
-    .end local v0    # "ar":Landroid/os/AsyncResult;
     :pswitch_4
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Landroid/os/AsyncResult;
 
-    .line 368
-    .restart local v0    # "ar":Landroid/os/AsyncResult;
     iget-object v2, v0, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
     if-nez v2, :cond_1
@@ -166,7 +140,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 369
     iget-object v1, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v2, v0, Landroid/os/AsyncResult;->result:Ljava/lang/Object;
@@ -181,7 +154,6 @@
 
     goto :goto_0
 
-    .line 372
     :cond_1
     iget-object v2, p0, Lcom/android/settings/RadioInfo$3;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -195,11 +167,8 @@
 
     invoke-static {v2, v3}, Lcom/android/settings/RadioInfo;->access$1900(Lcom/android/settings/RadioInfo;I)V
 
-    .line 374
     nop
 
-    .line 401
-    .end local v0    # "ar":Landroid/os/AsyncResult;
     :cond_2
     :goto_0
     return-void

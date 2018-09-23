@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeFormat;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
 
-    .line 69
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 72
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
@@ -53,8 +49,6 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 73
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.os.storage.extra.DISK_ID"
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
@@ -69,14 +63,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 74
     const-string v1, "format_private"
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 75
     const-string v1, "format_forget_uuid"
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
@@ -91,12 +83,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 76
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/deviceinfo/PrivateVolumeFormat;->startActivity(Landroid/content/Intent;)V
 
-    .line 77
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeFormat$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeFormat;
 
     invoke-virtual {v1}, Lcom/android/settings/deviceinfo/PrivateVolumeFormat;->getActivity()Landroid/app/Activity;
@@ -105,6 +95,5 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
-    .line 78
     return-void
 .end method

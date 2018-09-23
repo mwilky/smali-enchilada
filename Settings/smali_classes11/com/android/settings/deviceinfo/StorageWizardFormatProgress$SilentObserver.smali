@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 214
     invoke-direct {p0}, Landroid/content/pm/IPackageMoveObserver$Stub;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$1;
 
-    .line 214
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageWizardFormatProgress$SilentObserver;-><init>()V
 
     return-void
@@ -38,19 +35,12 @@
 # virtual methods
 .method public onCreated(ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "moveId"    # I
-    .param p2, "extras"    # Landroid/os/Bundle;
 
-    .line 218
     return-void
 .end method
 
 .method public onStatusChanged(IIJ)V
     .locals 0
-    .param p1, "moveId"    # I
-    .param p2, "status"    # I
-    .param p3, "estMillis"    # J
 
-    .line 223
     return-void
 .end method

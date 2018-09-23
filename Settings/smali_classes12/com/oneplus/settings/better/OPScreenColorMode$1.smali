@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/better/OPScreenColorMode;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/better/OPScreenColorMode;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 121
     iput-object p1, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 6
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 127
     iget-object v0, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v0}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$000(Lcom/oneplus/settings/better/OPScreenColorMode;)Landroid/content/ContentResolver;
@@ -65,8 +59,6 @@
     :cond_0
     move v0, v2
 
-    .line 128
-    .local v0, "nightmodeenabled":Z
     :goto_0
     iget-object v3, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
@@ -89,8 +81,6 @@
     :cond_1
     move v3, v2
 
-    .line 129
-    .local v3, "readingmodeenabled":Z
     :goto_1
     if-eqz v0, :cond_2
 
@@ -101,8 +91,6 @@
     :cond_2
     move v1, v2
 
-    .line 130
-    .local v1, "enabled":Z
     :goto_2
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
@@ -112,7 +100,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 131
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$300(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -121,7 +108,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 132
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$400(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -130,7 +116,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 133
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$500(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -139,7 +124,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 134
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$600(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -148,7 +132,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 135
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$700(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -157,7 +140,6 @@
 
     invoke-virtual {v2, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 136
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$800(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/oneplus/settings/ui/OPSeekBarPreference;
@@ -166,7 +148,6 @@
 
     invoke-virtual {v2, v1}, Lcom/oneplus/settings/ui/OPSeekBarPreference;->setEnabled(Z)V
 
-    .line 137
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$900(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/oneplus/settings/ui/OPScreenColorModeSummary;
@@ -175,10 +156,8 @@
 
     if-eqz v2, :cond_6
 
-    .line 138
     if-nez v0, :cond_3
 
-    .line 139
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$900(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/oneplus/settings/ui/OPScreenColorModeSummary;
@@ -187,7 +166,7 @@
 
     sget-object v4, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v5, 0x7f120c53
+    const v5, 0x7f120c51
 
     invoke-virtual {v4, v5}, Landroid/app/Application;->getText(I)Ljava/lang/CharSequence;
 
@@ -195,11 +174,9 @@
 
     invoke-virtual {v2, v4}, Lcom/oneplus/settings/ui/OPScreenColorModeSummary;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 141
     :cond_3
     if-nez v3, :cond_4
 
-    .line 142
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-static {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->access$900(Lcom/oneplus/settings/better/OPScreenColorMode;)Lcom/oneplus/settings/ui/OPScreenColorModeSummary;
@@ -208,7 +185,7 @@
 
     sget-object v4, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
-    const v5, 0x7f120c50
+    const v5, 0x7f120c4e
 
     invoke-virtual {v4, v5}, Landroid/app/Application;->getText(I)Ljava/lang/CharSequence;
 
@@ -216,11 +193,9 @@
 
     invoke-virtual {v2, v4}, Lcom/oneplus/settings/ui/OPScreenColorModeSummary;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 144
     :cond_4
     if-nez v1, :cond_5
 
-    .line 145
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
     invoke-virtual {v2}, Lcom/oneplus/settings/better/OPScreenColorMode;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
@@ -237,7 +212,6 @@
 
     goto :goto_3
 
-    .line 147
     :cond_5
     iget-object v2, p0, Lcom/oneplus/settings/better/OPScreenColorMode$1;->this$0:Lcom/oneplus/settings/better/OPScreenColorMode;
 
@@ -253,7 +227,6 @@
 
     invoke-virtual {v2, v4}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 150
     :cond_6
     :goto_3
     return-void

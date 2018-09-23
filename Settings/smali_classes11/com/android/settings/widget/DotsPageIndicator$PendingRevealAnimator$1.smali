@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator;Lcom/android/settings/widget/DotsPageIndicator;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator;
 
-    .line 858
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator$1;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator;
 
     iput-object p2, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator$1;->val$this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 862
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator$1;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRevealAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -55,7 +51,6 @@
 
     move-result v1
 
-    .line 863
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -66,9 +61,7 @@
 
     move-result v2
 
-    .line 862
     invoke-static {v0, v1, v2}, Lcom/android/settings/widget/DotsPageIndicator;->access$1600(Lcom/android/settings/widget/DotsPageIndicator;IF)V
 
-    .line 864
     return-void
 .end method

@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 58
     new-instance v0, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;
 
     invoke-direct {v0}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;-><init>()V
@@ -47,17 +46,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     return-void
 .end method
 
 .method static synthetic access$100()Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;
     .locals 1
 
-    .line 57
     sget-object v0, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;->INSTANCE:Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;
 
     return-object v0
@@ -67,10 +63,7 @@
 # virtual methods
 .method public valueFromObject(Ljava/lang/Object;F)Ljava/lang/Integer;
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
-    .param p2, "scale"    # F
 
-    .line 64
     invoke-static {p1}, Lcom/airbnb/lottie/utils/JsonUtils;->valueFromObject(Ljava/lang/Object;)F
 
     move-result v0
@@ -91,7 +84,6 @@
 .method public bridge synthetic valueFromObject(Ljava/lang/Object;F)Ljava/lang/Object;
     .locals 0
 
-    .line 57
     invoke-virtual {p0, p1, p2}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$ValueFactory;->valueFromObject(Ljava/lang/Object;F)Ljava/lang/Integer;
 
     move-result-object p1

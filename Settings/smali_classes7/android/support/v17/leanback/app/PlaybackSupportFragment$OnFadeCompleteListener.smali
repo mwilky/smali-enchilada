@@ -24,7 +24,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,13 +34,11 @@
 .method public onFadeInComplete()V
     .locals 0
 
-    .line 188
     return-void
 .end method
 
 .method public onFadeOutComplete()V
     .locals 0
 
-    .line 191
     return-void
 .end method

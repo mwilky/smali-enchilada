@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Lcom/google/common/cache/LocalCache$Strength;)V
     .locals 0
-    .param p1, "strength"    # Lcom/google/common/cache/LocalCache$Strength;
 
-    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 384
     iput-object p1, p0, Lcom/google/common/cache/CacheBuilderSpec$ValueStrengthParser;->strength:Lcom/google/common/cache/LocalCache$Strength;
 
-    .line 385
     return-void
 .end method
 
@@ -40,14 +36,11 @@
 # virtual methods
 .method public parse(Lcom/google/common/cache/CacheBuilderSpec;Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
-    .param p1, "spec"    # Lcom/google/common/cache/CacheBuilderSpec;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "value"    # Ljava/lang/String;
+    .param p3    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 389
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -70,7 +63,6 @@
 
     invoke-static {v2, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 390
     iget-object v2, p1, Lcom/google/common/cache/CacheBuilderSpec;->valueStrength:Lcom/google/common/cache/LocalCache$Strength;
 
     if-nez v2, :cond_1
@@ -97,11 +89,9 @@
 
     invoke-static {v2, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 393
     iget-object v0, p0, Lcom/google/common/cache/CacheBuilderSpec$ValueStrengthParser;->strength:Lcom/google/common/cache/LocalCache$Strength;
 
     iput-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->valueStrength:Lcom/google/common/cache/LocalCache$Strength;
 
-    .line 394
     return-void
 .end method

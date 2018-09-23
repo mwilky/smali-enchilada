@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/SpinnerPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/SpinnerPreference;
 
-    .line 76
     iput-object p1, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 7
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,8 +46,6 @@
         }
     .end annotation
 
-    .line 79
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     invoke-static {v0}, Lcom/android/settings/datausage/SpinnerPreference;->access$000(Lcom/android/settings/datausage/SpinnerPreference;)I
@@ -63,13 +56,11 @@
 
     return-void
 
-    .line 80
     :cond_0
     iget-object v0, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     invoke-static {v0, p3}, Lcom/android/settings/datausage/SpinnerPreference;->access$002(Lcom/android/settings/datausage/SpinnerPreference;I)I
 
-    .line 81
     iget-object v0, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     iget-object v1, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
@@ -84,7 +75,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/datausage/SpinnerPreference;->access$102(Lcom/android/settings/datausage/SpinnerPreference;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
     iget-object v0, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     invoke-static {v0}, Lcom/android/settings/datausage/SpinnerPreference;->access$300(Lcom/android/settings/datausage/SpinnerPreference;)Landroid/widget/AdapterView$OnItemSelectedListener;
@@ -101,7 +91,6 @@
 
     invoke-interface/range {v1 .. v6}, Landroid/widget/AdapterView$OnItemSelectedListener;->onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
 
-    .line 83
     return-void
 .end method
 
@@ -115,8 +104,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/datausage/SpinnerPreference$1;->this$0:Lcom/android/settings/datausage/SpinnerPreference;
 
     invoke-static {v0}, Lcom/android/settings/datausage/SpinnerPreference;->access$300(Lcom/android/settings/datausage/SpinnerPreference;)Landroid/widget/AdapterView$OnItemSelectedListener;
@@ -125,6 +112,5 @@
 
     invoke-interface {v0, p1}, Landroid/widget/AdapterView$OnItemSelectedListener;->onNothingSelected(Landroid/widget/AdapterView;)V
 
-    .line 88
     return-void
 .end method

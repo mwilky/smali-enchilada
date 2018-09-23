@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 15
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 16
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 20
     const-string v0, "app_level_permissions"
 
     return-object v0
@@ -36,7 +32,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 25
     iget-object v0, p0, Lcom/android/settings/location/AppLocationPermissionPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplBase;Landroid/support/v4/media/SessionCommandGroup2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplBase;
 
-    .line 1116
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplBase$17;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2ImplBase$17;->val$commands:Landroid/support/v4/media/SessionCommandGroup2;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1119
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$17;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplBase;->access$200(Landroid/support/v4/media/MediaController2ImplBase;)Landroid/support/v4/media/MediaController2$ControllerCallback;
@@ -60,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onAllowedCommandsChanged(Landroid/support/v4/media/MediaController2;Landroid/support/v4/media/SessionCommandGroup2;)V
 
-    .line 1120
     return-void
 .end method

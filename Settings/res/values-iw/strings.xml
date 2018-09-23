@@ -2905,8 +2905,6 @@ Battery נכבה אוטומטית כאשר המכשיר במצב טעינה."</s
     <string name="oneplus_quick_clipboard_summary">שפר את היכולת להעתיק ואז המלץ על הפעולה הבאה לפי העותק</string>
     <string name="oneplus_quick_gestures">מחוות</string>
     <string name="oneplus_quick_gestures_title">מחוות מהירות</string>
-    <string name="oneplus_quick_turn_on_assistant_app">הפעלה מהירה של אפליקציית העזרה</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">החזק את כפתור ההפעלה 0.5 שנייה על מנת להפעיל את אפליקציית העזרה, 3 שניות לכיבוי</string>
     <string name="oneplus_quick_turn_on_camera">הפעל במהירות את המצלמה</string>
     <string name="oneplus_quickpay">תשלום מהיר</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">האם אתה בטוח שברצונך לשנות את הפעולה עבור לחיצה ארוכה על לחצן הבית מ\"%1$s\" ל\"תשלום מהיר\"?</string>

@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,17 +23,14 @@
 .method public static ensureMainThread()V
     .locals 2
 
-    .line 55
     invoke-static {}, Lcom/android/settingslib/utils/ThreadUtils;->isMainThread()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 58
     return-void
 
-    .line 56
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -48,12 +44,10 @@
 .method public static getUiThreadHandler()Landroid/os/Handler;
     .locals 2
 
-    .line 44
     sget-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sMainThreadHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
-    .line 45
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -64,7 +58,6 @@
 
     sput-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sMainThreadHandler:Landroid/os/Handler;
 
-    .line 48
     :cond_0
     sget-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sMainThreadHandler:Landroid/os/Handler;
 
@@ -74,12 +67,10 @@
 .method public static isMainThread()Z
     .locals 2
 
-    .line 34
     sget-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sMainThread:Ljava/lang/Thread;
 
     if-nez v0, :cond_0
 
-    .line 35
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -90,7 +81,6 @@
 
     sput-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sMainThread:Ljava/lang/Thread;
 
-    .line 37
     :cond_0
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -113,41 +103,33 @@
 
 .method public static postOnBackgroundThread(Ljava/lang/Runnable;)V
     .locals 1
-    .param p0, "runnable"    # Ljava/lang/Runnable;
 
-    .line 64
     sget-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sSingleThreadExecutor:Ljava/util/concurrent/ExecutorService;
 
     if-nez v0, :cond_0
 
-    .line 65
     invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sSingleThreadExecutor:Ljava/util/concurrent/ExecutorService;
 
-    .line 67
     :cond_0
     sget-object v0, Lcom/android/settingslib/utils/ThreadUtils;->sSingleThreadExecutor:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v0, p0}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    .line 68
     return-void
 .end method
 
 .method public static postOnMainThread(Ljava/lang/Runnable;)V
     .locals 1
-    .param p0, "runnable"    # Ljava/lang/Runnable;
 
-    .line 74
     invoke-static {}, Lcom/android/settingslib/utils/ThreadUtils;->getUiThreadHandler()Landroid/os/Handler;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 75
     return-void
 .end method

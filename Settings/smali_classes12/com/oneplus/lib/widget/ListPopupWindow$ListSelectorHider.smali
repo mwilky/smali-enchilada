@@ -25,12 +25,10 @@
 .method constructor <init>(Lcom/oneplus/lib/widget/ListPopupWindow;)V
     .locals 0
 
-    .line 1334
     iput-object p1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ListSelectorHider;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1335
     return-void
 .end method
 
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 1339
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ListSelectorHider;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/ListPopupWindow;->clearListSelection()V
 
-    .line 1340
     return-void
 .end method

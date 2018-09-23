@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
-    .line 612
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$4;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 1
 
-    .line 614
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$4;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     iget-object v0, v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->mOPFingerPrintEnrollView:Lcom/oneplus/settings/opfinger/OPFingerPrintEnrollView;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/opfinger/OPFingerPrintEnrollView;->showContinueView()V
 
-    .line 615
     return-void
 .end method

@@ -39,21 +39,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/app/Activity;Landroid/app/Fragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "activity"    # Landroid/app/Activity;
-    .param p3, "fragment"    # Landroid/app/Fragment;
-    .param p4, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 70
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 71
     iput-object p2, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mActivity:Landroid/app/Activity;
 
-    .line 72
     iput-object p3, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mFragment:Landroid/app/Fragment;
 
-    .line 73
     const-string v0, "user"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -64,7 +56,6 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mUm:Landroid/os/UserManager;
 
-    .line 74
     invoke-static {p1}, Lcom/android/settings/overlay/FeatureFactory;->getFactory(Landroid/content/Context;)Lcom/android/settings/overlay/FeatureFactory;
 
     move-result-object v0
@@ -75,13 +66,10 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
-    .line 75
     if-eqz p4, :cond_0
 
-    .line 76
     invoke-virtual {p4, p0}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
 
-    .line 78
     :cond_0
     return-void
 .end method
@@ -89,36 +77,30 @@
 .method private enableDevelopmentSettings()V
     .locals 3
 
-    .line 231
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
-    .line 232
     iput-boolean v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mProcessingLastDevHit:Z
 
-    .line 233
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/settingslib/development/DevelopmentSettingsEnabler;->setDevelopmentSettingsEnabled(Landroid/content/Context;Z)V
 
-    .line 234
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     if-eqz v0, :cond_0
 
-    .line 235
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
-    .line 237
     :cond_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120fef
+    const v2, 0x7f120fe8
 
     invoke-static {v0, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -126,12 +108,10 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
-    .line 239
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 240
     return-void
 .end method
 
@@ -139,23 +119,17 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 3
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 82
     invoke-super {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 83
     const-string v0, "build_number"
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v0
 
-    .line 84
-    .local v0, "preference":Landroid/support/v7/preference/Preference;
     if-eqz v0, :cond_0
 
-    .line 86
     :try_start_0
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
@@ -169,28 +143,21 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 87
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 90
     goto :goto_0
 
-    .line 88
     :catch_0
     move-exception v1
 
-    .line 89
-    .local v1, "e":Ljava/lang/Exception;
     const v2, 0x7f120549
 
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
-    .line 92
-    .end local v1    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     return-void
@@ -199,7 +166,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 96
     const-string v0, "build_number"
 
     return-object v0
@@ -207,9 +173,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 10
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 117
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -224,10 +188,8 @@
 
     if-nez v0, :cond_0
 
-    .line 118
     return v1
 
-    .line 120
     :cond_0
     invoke-static {}, Lcom/android/settings/Utils;->isMonkeyRunning()Z
 
@@ -235,10 +197,8 @@
 
     if-eqz v0, :cond_1
 
-    .line 121
     return v1
 
-    .line 124
     :cond_1
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mUm:Landroid/os/UserManager;
 
@@ -258,7 +218,6 @@
 
     if-nez v0, :cond_2
 
-    .line 125
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
@@ -267,10 +226,8 @@
 
     invoke-virtual {v0, v3, v2, v4}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 127
     return v1
 
-    .line 131
     :cond_2
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
@@ -280,7 +237,6 @@
 
     if-nez v0, :cond_3
 
-    .line 132
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
@@ -289,10 +245,8 @@
 
     invoke-virtual {v0, v3, v2, v4}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 134
     return v1
 
-    .line 137
     :cond_3
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mUm:Landroid/os/UserManager;
 
@@ -304,7 +258,6 @@
 
     if-eqz v0, :cond_6
 
-    .line 138
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mUm:Landroid/os/UserManager;
 
     invoke-virtual {v0}, Landroid/os/UserManager;->isDemoUser()Z
@@ -313,23 +266,18 @@
 
     if-eqz v0, :cond_4
 
-    .line 140
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/Utils;->getDeviceOwnerComponent(Landroid/content/Context;)Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 141
-    .local v0, "componentName":Landroid/content/ComponentName;
     if-eqz v0, :cond_4
 
-    .line 142
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    .line 143
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -340,13 +288,10 @@
 
     const-string v4, "com.android.settings.action.REQUEST_DEBUG_FEATURES"
 
-    .line 144
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 145
-    .local v3, "requestDebugFeatures":Landroid/content/Intent;
     iget-object v4, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -357,22 +302,14 @@
 
     move-result-object v4
 
-    .line 147
-    .local v4, "resolveInfo":Landroid/content/pm/ResolveInfo;
     if-eqz v4, :cond_4
 
-    .line 148
     iget-object v2, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 149
     return v1
 
-    .line 153
-    .end local v0    # "componentName":Landroid/content/ComponentName;
-    .end local v3    # "requestDebugFeatures":Landroid/content/Intent;
-    .end local v4    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     :cond_4
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDebuggingFeaturesDisallowedAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
@@ -382,14 +319,12 @@
 
     if-nez v0, :cond_5
 
-    .line 155
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDebuggingFeaturesDisallowedAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     invoke-static {v0, v3}, Lcom/android/settingslib/RestrictedLockUtils;->sendShowAdminSupportDetailsIntent(Landroid/content/Context;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    .line 158
     :cond_5
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
@@ -399,10 +334,8 @@
 
     invoke-virtual {v0, v3, v2, v4}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 160
     return v1
 
-    .line 163
     :cond_6
     iget v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
@@ -412,14 +345,12 @@
 
     if-lez v0, :cond_b
 
-    .line 164
     iget v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
     sub-int/2addr v0, v4
 
     iput v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
-    .line 165
     iget v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
     if-nez v0, :cond_8
@@ -428,14 +359,12 @@
 
     if-nez v0, :cond_8
 
-    .line 167
     iget v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
     add-int/2addr v0, v4
 
     iput v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
-    .line 168
     new-instance v0, Lcom/android/settings/password/ChooseLockSettingsHelper;
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mActivity:Landroid/app/Activity;
@@ -444,35 +373,28 @@
 
     invoke-direct {v0, v5, v6}, Lcom/android/settings/password/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;Landroid/app/Fragment;)V
 
-    .line 170
-    .local v0, "helper":Lcom/android/settings/password/ChooseLockSettingsHelper;
     const/16 v5, 0x64
 
     iget-object v6, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f121243
+    const v7, 0x7f12123c
 
-    .line 172
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 170
     invoke-virtual {v0, v5, v6}, Lcom/android/settings/password/ChooseLockSettingsHelper;->launchConfirmationActivity(ILjava/lang/CharSequence;)Z
 
     move-result v5
 
     iput-boolean v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mProcessingLastDevHit:Z
 
-    .line 173
     iget-boolean v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mProcessingLastDevHit:Z
 
     if-nez v5, :cond_7
 
-    .line 174
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->enableDevelopmentSettings()V
 
-    .line 176
     :cond_7
     iget-object v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
@@ -480,12 +402,10 @@
 
     new-array v7, v4, [Landroid/util/Pair;
 
-    .line 178
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
-    .line 179
     iget-boolean v9, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mProcessingLastDevHit:Z
 
     xor-int/2addr v9, v4
@@ -494,18 +414,14 @@
 
     move-result-object v9
 
-    .line 178
     invoke-static {v8, v9}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v8
 
     aput-object v8, v7, v1
 
-    .line 176
     invoke-virtual {v5, v6, v2, v7}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 180
-    .end local v0    # "helper":Lcom/android/settings/password/ChooseLockSettingsHelper;
     goto :goto_0
 
     :cond_8
@@ -519,23 +435,19 @@
 
     if-ge v0, v5, :cond_a
 
-    .line 182
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     if-eqz v0, :cond_9
 
-    .line 183
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
-    .line 185
     :cond_9
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
-    .line 186
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -548,31 +460,26 @@
 
     iget v9, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
-    .line 188
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
     aput-object v9, v8, v1
 
-    .line 186
     invoke-virtual {v5, v6, v7, v8}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 185
     invoke-static {v0, v5, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 192
     :cond_a
     :goto_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
@@ -581,49 +488,41 @@
 
     new-array v6, v4, [Landroid/util/Pair;
 
-    .line 194
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 195
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 194
     invoke-static {v3, v7}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v3
 
     aput-object v3, v6, v1
 
-    .line 192
     invoke-virtual {v0, v5, v2, v6}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
     goto :goto_1
 
-    .line 196
     :cond_b
     iget v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
     if-gez v0, :cond_d
 
-    .line 197
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     if-eqz v0, :cond_c
 
-    .line 198
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
-    .line 200
     :cond_c
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f120fee
+    const v5, 0x7f120fe7
 
     invoke-static {v0, v5, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -631,39 +530,32 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
-    .line 202
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 203
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     iget-object v5, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     new-array v6, v4, [Landroid/util/Pair;
 
-    .line 205
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    .line 206
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 205
     invoke-static {v3, v7}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v3
 
     aput-object v3, v6, v1
 
-    .line 203
     invoke-virtual {v0, v5, v2, v6}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 208
     :cond_d
     :goto_1
     return v4
@@ -672,7 +564,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 101
     const/4 v0, 0x1
 
     return v0
@@ -680,34 +571,25 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)Z
     .locals 2
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
 
-    .line 217
     const/4 v0, 0x0
 
     const/16 v1, 0x64
 
     if-eq p1, v1, :cond_0
 
-    .line 218
     return v0
 
-    .line 220
     :cond_0
     const/4 v1, -0x1
 
     if-ne p2, v1, :cond_1
 
-    .line 221
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->enableDevelopmentSettings()V
 
-    .line 223
     :cond_1
     iput-boolean v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mProcessingLastDevHit:Z
 
-    .line 224
     const/4 v0, 0x1
 
     return v0
@@ -716,41 +598,34 @@
 .method public onResume()V
     .locals 3
 
-    .line 106
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     const-string v1, "no_debugging_features"
 
-    .line 107
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v2
 
-    .line 106
     invoke-static {v0, v1, v2}, Lcom/android/settingslib/RestrictedLockUtils;->checkIfRestrictionEnforced(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDebuggingFeaturesDisallowedAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
-    .line 108
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     const-string v1, "no_debugging_features"
 
-    .line 109
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v2
 
-    .line 108
     invoke-static {v0, v1, v2}, Lcom/android/settingslib/RestrictedLockUtils;->hasBaseUserRestriction(Landroid/content/Context;Ljava/lang/String;I)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDebuggingFeaturesDisallowedBySystem:Z
 
-    .line 110
     iget-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settingslib/development/DevelopmentSettingsEnabler;->isDevelopmentSettingsEnabled(Landroid/content/Context;)Z
@@ -759,7 +634,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
     const/4 v0, -0x1
 
     goto :goto_0
@@ -770,11 +644,9 @@
     :goto_0
     iput v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitCountdown:I
 
-    .line 112
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/BuildNumberPreferenceController;->mDevHitToast:Landroid/widget/Toast;
 
-    .line 113
     return-void
 .end method

@@ -28,7 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 60
     new-instance v0, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings$StatusBarCustomizeIndexProvider;
 
     invoke-direct {v0}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings$StatusBarCustomizeIndexProvider;-><init>()V
@@ -41,7 +40,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
     return-void
@@ -50,7 +48,6 @@
 .method private customizePreferences()V
     .locals 6
 
-    .line 35
     const/4 v0, 0x1
 
     new-array v1, v0, [I
@@ -65,8 +62,6 @@
 
     move-result v1
 
-    .line 36
-    .local v1, "hideVowifiiconOnStatusbar":Z
     new-array v4, v0, [I
 
     aput v2, v4, v3
@@ -75,8 +70,6 @@
 
     move-result v2
 
-    .line 39
-    .local v2, "hideVoLteiconOnStatusbar":Z
     new-array v4, v0, [I
 
     const/16 v5, 0x29
@@ -89,34 +82,26 @@
 
     xor-int/2addr v0, v3
 
-    .line 40
-    .local v0, "hideVolumeIconOnStatusbar":Z
     if-eqz v1, :cond_0
 
-    .line 41
     const-string v3, "vowifi"
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->removePreference(Ljava/lang/String;)Z
 
-    .line 44
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 45
     const-string v3, "volte"
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->removePreference(Ljava/lang/String;)Z
 
-    .line 48
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 49
     const-string v3, "volume"
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->removePreference(Ljava/lang/String;)Z
 
-    .line 51
     :cond_2
     return-void
 .end method
@@ -126,7 +111,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 56
     const/16 v0, 0x270f
 
     return v0
@@ -134,24 +118,19 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 25
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 26
     const v0, 0x7f160094
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->addPreferencesFromResource(I)V
 
-    .line 27
     invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->mContext:Landroid/content/Context;
 
-    .line 28
     invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -164,7 +143,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f1210ba
+    const v2, 0x7f1210b3
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -172,9 +151,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/SettingsActivity;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 29
     invoke-direct {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;->customizePreferences()V
 
-    .line 30
     return-void
 .end method

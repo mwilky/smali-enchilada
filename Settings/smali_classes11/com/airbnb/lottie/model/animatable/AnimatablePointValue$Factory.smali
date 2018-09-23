@@ -18,22 +18,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     return-void
 .end method
 
 .method public static newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
     .locals 5
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 34
     nop
 
-    .line 35
     invoke-virtual {p1}, Lcom/airbnb/lottie/LottieComposition;->getDpScale()F
 
     move-result v0
@@ -44,13 +38,10 @@
 
     move-result-object v0
 
-    .line 36
     invoke-virtual {v0}, Lcom/airbnb/lottie/model/animatable/AnimatableValueParser;->parseJson()Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;
 
     move-result-object v0
 
-    .line 37
-    .local v0, "result":Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;, "Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result<Landroid/graphics/PointF;>;"
     new-instance v1, Lcom/airbnb/lottie/model/animatable/AnimatablePointValue;
 
     iget-object v2, v0, Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;->keyframes:Ljava/util/List;

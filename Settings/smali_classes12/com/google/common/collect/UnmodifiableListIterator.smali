@@ -27,8 +27,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/UnmodifiableListIterator;, "Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
 
     return-void
@@ -47,9 +45,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/UnmodifiableListIterator;, "Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -68,9 +63,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/UnmodifiableListIterator;, "Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

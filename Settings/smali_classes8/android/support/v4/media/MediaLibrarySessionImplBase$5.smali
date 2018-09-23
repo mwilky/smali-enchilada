@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibrarySessionImplBase;Ljava/lang/String;Landroid/support/v4/media/MediaItem2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
-    .line 176
     iput-object p1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$5;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$5;->val$mediaId:Ljava/lang/String;
@@ -46,20 +44,17 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 2
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 179
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$5;->val$mediaId:Ljava/lang/String;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$5;->val$result:Landroid/support/v4/media/MediaItem2;
 
     invoke-virtual {p1, v0, v1}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onGetItemDone(Ljava/lang/String;Landroid/support/v4/media/MediaItem2;)V
 
-    .line 180
     return-void
 .end method

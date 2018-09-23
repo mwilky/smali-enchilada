@@ -40,17 +40,14 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 160
     new-instance v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
 
     invoke-direct {v0}, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;-><init>()V
 
     sput-object v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->INSTANCE:Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
 
-    .line 162
     nop
 
-    .line 163
     const-wide/high16 v0, -0x8000000000000000L
 
     invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
@@ -59,10 +56,8 @@
 
     sput-object v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->MIN_LONG:Ljava/math/BigInteger;
 
-    .line 164
     nop
 
-    .line 165
     const-wide v0, 0x7fffffffffffffffL
 
     invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
@@ -71,14 +66,12 @@
 
     sput-object v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->MAX_LONG:Ljava/math/BigInteger;
 
-    .line 164
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 158
     invoke-direct {p0}, Lcom/google/common/collect/DiscreteDomain;-><init>()V
 
     return-void
@@ -87,7 +80,6 @@
 .method static synthetic access$200()Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
     .locals 1
 
-    .line 158
     sget-object v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->INSTANCE:Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
 
     return-object v0
@@ -96,7 +88,6 @@
 .method private readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 180
     sget-object v0, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->INSTANCE:Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
 
     return-object v0
@@ -107,7 +98,6 @@
 .method public bridge synthetic distance(Ljava/lang/Comparable;Ljava/lang/Comparable;)J
     .locals 0
 
-    .line 158
     check-cast p1, Ljava/math/BigInteger;
 
     check-cast p2, Ljava/math/BigInteger;
@@ -121,10 +111,7 @@
 
 .method public distance(Ljava/math/BigInteger;Ljava/math/BigInteger;)J
     .locals 2
-    .param p1, "start"    # Ljava/math/BigInteger;
-    .param p2, "end"    # Ljava/math/BigInteger;
 
-    .line 176
     invoke-virtual {p2, p1}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     move-result-object v0
@@ -151,7 +138,6 @@
 .method public bridge synthetic next(Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 0
 
-    .line 158
     check-cast p1, Ljava/math/BigInteger;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->next(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -163,9 +149,7 @@
 
 .method public next(Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 1
-    .param p1, "value"    # Ljava/math/BigInteger;
 
-    .line 168
     sget-object v0, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
 
     invoke-virtual {p1, v0}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -178,7 +162,6 @@
 .method public bridge synthetic previous(Ljava/lang/Comparable;)Ljava/lang/Comparable;
     .locals 0
 
-    .line 158
     check-cast p1, Ljava/math/BigInteger;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->previous(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -190,9 +173,7 @@
 
 .method public previous(Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 1
-    .param p1, "value"    # Ljava/math/BigInteger;
 
-    .line 172
     sget-object v0, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
 
     invoke-virtual {p1, v0}, Ljava/math/BigInteger;->subtract(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -205,7 +186,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 185
     const-string v0, "DiscreteDomain.bigIntegers()"
 
     return-object v0

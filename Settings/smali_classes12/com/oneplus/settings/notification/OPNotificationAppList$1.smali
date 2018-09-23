@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/notification/OPNotificationAppList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/notification/OPNotificationAppList;
 
-    .line 87
     iput-object p1, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public run()V
     .locals 3
 
-    .line 90
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$002(Lcom/oneplus/settings/notification/OPNotificationAppList;Z)Z
 
-    .line 91
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-static {v0}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$100(Lcom/oneplus/settings/notification/OPNotificationAppList;)Landroid/view/View;
@@ -55,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
@@ -66,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/notification/OPNotificationAppList;->setEmptyView(Landroid/view/View;)V
 
-    .line 94
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$1;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
@@ -76,6 +70,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$202(Lcom/oneplus/settings/notification/OPNotificationAppList;J)J
 
-    .line 95
     return-void
 .end method

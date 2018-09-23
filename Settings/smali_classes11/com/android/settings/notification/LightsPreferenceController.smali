@@ -14,13 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/notification/NotificationBackend;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "backend"    # Lcom/android/settings/notification/NotificationBackend;
 
-    .line 37
     invoke-direct {p0, p1, p2}, Lcom/android/settings/notification/NotificationPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settings/notification/NotificationBackend;)V
 
-    .line 38
     return-void
 .end method
 
@@ -29,14 +25,12 @@
 .method canPulseLight()Z
     .locals 3
 
-    .line 78
     iget-object v0, p0, Lcom/android/settings/notification/LightsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 79
     const v1, 0x112007c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -47,10 +41,8 @@
 
     if-nez v0, :cond_0
 
-    .line 80
     return v1
 
-    .line 82
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/LightsPreferenceController;->mContext:Landroid/content/Context;
 
@@ -79,7 +71,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 42
     const-string v0, "lights"
 
     return-object v0
@@ -88,7 +79,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 47
     invoke-super {p0}, Lcom/android/settings/notification/NotificationPreferenceController;->isAvailable()Z
 
     move-result v0
@@ -97,19 +87,15 @@
 
     if-nez v0, :cond_0
 
-    .line 48
     return v1
 
-    .line 50
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/LightsPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     if-nez v0, :cond_1
 
-    .line 51
     return v1
 
-    .line 53
     :cond_1
     const/4 v0, 0x3
 
@@ -119,14 +105,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 54
     invoke-virtual {p0}, Lcom/android/settings/notification/LightsPreferenceController;->canPulseLight()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 55
     invoke-virtual {p0}, Lcom/android/settings/notification/LightsPreferenceController;->isDefaultChannel()Z
 
     move-result v0
@@ -137,22 +121,17 @@
 
     nop
 
-    .line 53
     :cond_2
     return v1
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 69
     iget-object v0, p0, Lcom/android/settings/notification/LightsPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     if-eqz v0, :cond_0
 
-    .line 70
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -161,17 +140,12 @@
 
     move-result v0
 
-    .line 71
-    .local v0, "lights":Z
     iget-object v1, p0, Lcom/android/settings/notification/LightsPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     invoke-virtual {v1, v0}, Landroid/app/NotificationChannel;->enableLights(Z)V
 
-    .line 72
     invoke-virtual {p0}, Lcom/android/settings/notification/LightsPreferenceController;->saveChannel()V
 
-    .line 74
-    .end local v0    # "lights":Z
     :cond_0
     const/4 v0, 0x1
 
@@ -180,25 +154,19 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 59
     iget-object v0, p0, Lcom/android/settings/notification/LightsPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     if-eqz v0, :cond_1
 
-    .line 60
     move-object v0, p1
 
     check-cast v0, Lcom/android/settingslib/RestrictedSwitchPreference;
 
-    .line 61
-    .local v0, "pref":Lcom/android/settingslib/RestrictedSwitchPreference;
     iget-object v1, p0, Lcom/android/settings/notification/LightsPreferenceController;->mAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setDisabledByAdmin(Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    .line 62
     invoke-virtual {p0}, Lcom/android/settings/notification/LightsPreferenceController;->isChannelConfigurable()Z
 
     move-result v1
@@ -221,7 +189,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setEnabled(Z)V
 
-    .line 63
     iget-object v1, p0, Lcom/android/settings/notification/LightsPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     invoke-virtual {v1}, Landroid/app/NotificationChannel;->shouldShowLights()Z
@@ -230,8 +197,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setChecked(Z)V
 
-    .line 65
-    .end local v0    # "pref":Lcom/android/settingslib/RestrictedSwitchPreference;
     :cond_1
     return-void
 .end method

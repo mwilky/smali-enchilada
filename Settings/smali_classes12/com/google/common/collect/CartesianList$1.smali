@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/CartesianList;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/CartesianList;
 
-    .line 76
-    .local p0, "this":Lcom/google/common/collect/CartesianList$1;, "Lcom/google/common/collect/CartesianList$1;"
     iput-object p1, p0, Lcom/google/common/collect/CartesianList$1;->this$0:Lcom/google/common/collect/CartesianList;
 
     iput p2, p0, Lcom/google/common/collect/CartesianList$1;->val$index:I
@@ -47,22 +44,18 @@
 # virtual methods
 .method public get(I)Ljava/lang/Object;
     .locals 2
-    .param p1, "axis"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
         }
     .end annotation
 
-    .line 85
-    .local p0, "this":Lcom/google/common/collect/CartesianList$1;, "Lcom/google/common/collect/CartesianList$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/CartesianList$1;->size()I
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 86
     iget-object v0, p0, Lcom/google/common/collect/CartesianList$1;->this$0:Lcom/google/common/collect/CartesianList;
 
     iget v1, p0, Lcom/google/common/collect/CartesianList$1;->val$index:I
@@ -71,8 +64,6 @@
 
     move-result v0
 
-    .line 87
-    .local v0, "axisIndex":I
     iget-object v1, p0, Lcom/google/common/collect/CartesianList$1;->this$0:Lcom/google/common/collect/CartesianList;
 
     invoke-static {v1}, Lcom/google/common/collect/CartesianList;->access$000(Lcom/google/common/collect/CartesianList;)Lcom/google/common/collect/ImmutableList;
@@ -95,8 +86,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 92
-    .local p0, "this":Lcom/google/common/collect/CartesianList$1;, "Lcom/google/common/collect/CartesianList$1;"
     const/4 v0, 0x1
 
     return v0
@@ -105,8 +94,6 @@
 .method public size()I
     .locals 1
 
-    .line 80
-    .local p0, "this":Lcom/google/common/collect/CartesianList$1;, "Lcom/google/common/collect/CartesianList$1;"
     iget-object v0, p0, Lcom/google/common/collect/CartesianList$1;->this$0:Lcom/google/common/collect/CartesianList;
 
     invoke-static {v0}, Lcom/google/common/collect/CartesianList;->access$000(Lcom/google/common/collect/CartesianList;)Lcom/google/common/collect/ImmutableList;

@@ -13,7 +13,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Lcom/android/settings/utils/VoiceSettingsActivity;-><init>()V
 
     return-void
@@ -21,32 +20,21 @@
 
 .method private getChangeSummary(II)Ljava/lang/CharSequence;
     .locals 18
-    .param p1, "mode"    # I
-    .param p2, "minutes"    # I
 
     move-object/from16 v0, p0
 
     move/from16 v1, p1
 
-    .line 89
     move/from16 v2, p2
 
     const/4 v3, -0x1
 
-    .line 90
-    .local v3, "indefinite":I
     const/4 v4, -0x1
 
-    .line 91
-    .local v4, "byMinute":I
     const/4 v5, -0x1
 
-    .line 92
-    .local v5, "byHour":I
     const/4 v6, -0x1
 
-    .line 94
-    .local v6, "byTime":I
     if-eqz v1, :cond_1
 
     const/4 v7, 0x3
@@ -55,27 +43,20 @@
 
     goto :goto_0
 
-    .line 96
     :cond_0
-    const v3, 0x7f1215c9
+    const v3, 0x7f1215c2
 
-    .line 97
     const v4, 0x7f10004a
 
-    .line 98
     const v5, 0x7f100049
 
-    .line 99
-    const v6, 0x7f1215c8
+    const v6, 0x7f1215c1
 
-    .line 100
     goto :goto_0
 
-    .line 102
     :cond_1
-    const v3, 0x7f1215ca
+    const v3, 0x7f1215c3
 
-    .line 106
     :goto_0
     if-ltz v2, :cond_6
 
@@ -83,7 +64,6 @@
 
     goto :goto_2
 
-    .line 110
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -97,8 +77,6 @@
 
     add-long/2addr v7, v9
 
-    .line 111
-    .local v7, "time":J
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v9
@@ -116,8 +94,6 @@
     :cond_3
     const-string v9, "hma"
 
-    .line 112
-    .local v9, "skeleton":Ljava/lang/String;
     :goto_1
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -127,20 +103,14 @@
 
     move-result-object v10
 
-    .line 113
-    .local v10, "pattern":Ljava/lang/String;
     invoke-static {v10, v7, v8}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;
 
     move-result-object v11
 
-    .line 114
-    .local v11, "formattedTime":Ljava/lang/CharSequence;
     invoke-virtual/range {p0 .. p0}, Lcom/android/settings/notification/ZenModeVoiceActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v12
 
-    .line 116
-    .local v12, "res":Landroid/content/res/Resources;
     const/4 v13, 0x2
 
     const/4 v15, 0x0
@@ -149,7 +119,6 @@
 
     if-ge v2, v14, :cond_4
 
-    .line 117
     new-array v13, v13, [Ljava/lang/Object;
 
     invoke-static/range {p2 .. p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -168,7 +137,6 @@
 
     return-object v13
 
-    .line 118
     :cond_4
     const/4 v14, 0x1
 
@@ -176,7 +144,6 @@
 
     if-eqz v16, :cond_5
 
-    .line 119
     new-array v13, v14, [Ljava/lang/Object;
 
     aput-object v11, v13, v15
@@ -187,12 +154,9 @@
 
     return-object v13
 
-    .line 121
     :cond_5
     div-int/lit8 v14, v2, 0x3c
 
-    .line 122
-    .local v14, "hours":I
     new-array v13, v13, [Ljava/lang/Object;
 
     invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -211,13 +175,6 @@
 
     return-object v13
 
-    .line 107
-    .end local v7    # "time":J
-    .end local v9    # "skeleton":Ljava/lang/String;
-    .end local v10    # "pattern":Ljava/lang/String;
-    .end local v11    # "formattedTime":Ljava/lang/CharSequence;
-    .end local v12    # "res":Landroid/content/res/Resources;
-    .end local v14    # "hours":I
     :cond_6
     :goto_2
     invoke-virtual {v0, v3}, Lcom/android/settings/notification/ZenModeVoiceActivity;->getString(I)Ljava/lang/String;
@@ -229,13 +186,9 @@
 
 .method private setZenModeConfig(ILandroid/service/notification/Condition;)V
     .locals 3
-    .param p1, "mode"    # I
-    .param p2, "condition"    # Landroid/service/notification/Condition;
 
-    .line 78
     if-eqz p2, :cond_0
 
-    .line 79
     invoke-static {p0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
 
     move-result-object v0
@@ -248,7 +201,6 @@
 
     goto :goto_0
 
-    .line 81
     :cond_0
     invoke-static {p0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
 
@@ -260,7 +212,6 @@
 
     invoke-virtual {v0, p1, v1, v2}, Landroid/app/NotificationManager;->setZenMode(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 83
     :goto_0
     return-void
 .end method
@@ -269,9 +220,7 @@
 # virtual methods
 .method protected onVoiceSettingInteraction(Landroid/content/Intent;)Z
     .locals 7
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 49
     const-string v0, "android.settings.extra.do_not_disturb_mode_enabled"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -282,7 +231,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 50
     const-string v0, "android.settings.extra.do_not_disturb_mode_minutes"
 
     const/4 v2, -0x1
@@ -291,16 +239,10 @@
 
     move-result v0
 
-    .line 51
-    .local v0, "minutes":I
     const/4 v2, 0x0
 
-    .line 52
-    .local v2, "condition":Landroid/service/notification/Condition;
     const/4 v3, 0x0
 
-    .line 54
-    .local v3, "mode":I
     const-string v4, "android.settings.extra.do_not_disturb_mode_enabled"
 
     invoke-virtual {p1, v4, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -309,10 +251,8 @@
 
     if-eqz v4, :cond_1
 
-    .line 55
     if-lez v0, :cond_0
 
-    .line 56
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v4
@@ -321,15 +261,12 @@
 
     move-result-object v2
 
-    .line 58
     :cond_0
     const/4 v3, 0x3
 
-    .line 60
     :cond_1
     invoke-direct {p0, v3, v2}, Lcom/android/settings/notification/ZenModeVoiceActivity;->setZenModeConfig(ILandroid/service/notification/Condition;)V
 
-    .line 62
     const-string v4, "audio"
 
     invoke-virtual {p0, v4}, Lcom/android/settings/notification/ZenModeVoiceActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -338,18 +275,14 @@
 
     check-cast v4, Landroid/media/AudioManager;
 
-    .line 63
-    .local v4, "audioManager":Landroid/media/AudioManager;
     if-eqz v4, :cond_2
 
-    .line 65
     const/4 v5, 0x5
 
     const/4 v6, 0x1
 
     invoke-virtual {v4, v5, v1, v6}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    .line 69
     :cond_2
     invoke-direct {p0, v3, v0}, Lcom/android/settings/notification/ZenModeVoiceActivity;->getChangeSummary(II)Ljava/lang/CharSequence;
 
@@ -357,14 +290,8 @@
 
     invoke-virtual {p0, v5}, Lcom/android/settings/notification/ZenModeVoiceActivity;->notifySuccess(Ljava/lang/CharSequence;)V
 
-    .line 70
-    .end local v0    # "minutes":I
-    .end local v2    # "condition":Landroid/service/notification/Condition;
-    .end local v3    # "mode":I
-    .end local v4    # "audioManager":Landroid/media/AudioManager;
     goto :goto_0
 
-    .line 71
     :cond_3
     const-string v0, "ZenModeVoiceActivity"
 
@@ -372,10 +299,8 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeVoiceActivity;->finish()V
 
-    .line 74
     :goto_0
     return v1
 .end method

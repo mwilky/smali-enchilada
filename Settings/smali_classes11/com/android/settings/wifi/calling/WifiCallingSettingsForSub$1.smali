@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
-    .line 92
     iput-object p1, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 11
-    .param p1, "state"    # I
-    .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->getActivity()Landroid/app/Activity;
@@ -47,8 +42,6 @@
 
     check-cast v0, Lcom/android/settings/SettingsActivity;
 
-    .line 102
-    .local v0, "activity":Lcom/android/settings/SettingsActivity;
     iget-object v1, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
     invoke-static {v1}, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->access$000(Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;)Lcom/android/ims/ImsManager;
@@ -59,8 +52,6 @@
 
     move-result v1
 
-    .line 103
-    .local v1, "isNonTtyOrTtyOnVolteEnabled":Z
     iget-object v2, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
     invoke-static {v2}, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->access$100(Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;)Lcom/android/settings/widget/SwitchBar;
@@ -86,8 +77,6 @@
     :cond_0
     move v2, v3
 
-    .line 106
-    .local v2, "isWfcEnabled":Z
     :goto_0
     iget-object v5, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
@@ -109,29 +98,20 @@
     :goto_1
     invoke-virtual {v5, v6}, Lcom/android/settings/widget/SwitchBar;->setEnabled(Z)V
 
-    .line 109
     const/4 v5, 0x1
 
-    .line 110
-    .local v5, "isWfcModeEditable":Z
     const/4 v6, 0x0
 
-    .line 111
-    .local v6, "isWfcRoamingModeEditable":Z
     const-string v7, "carrier_config"
 
-    .line 112
     invoke-virtual {v0, v7}, Lcom/android/settings/SettingsActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Landroid/telephony/CarrierConfigManager;
 
-    .line 113
-    .local v7, "configManager":Landroid/telephony/CarrierConfigManager;
     if-eqz v7, :cond_2
 
-    .line 114
     iget-object v8, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->mSubId:Ljava/lang/Integer;
 
     invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
@@ -142,26 +122,20 @@
 
     move-result-object v8
 
-    .line 115
-    .local v8, "b":Landroid/os/PersistableBundle;
     if-eqz v8, :cond_2
 
-    .line 116
     const-string v9, "editable_wfc_mode_bool"
 
     invoke-virtual {v8, v9}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v5
 
-    .line 118
     const-string v9, "editable_wfc_roaming_mode_bool"
 
     invoke-virtual {v8, v9}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v6
 
-    .line 123
-    .end local v8    # "b":Landroid/os/PersistableBundle;
     :cond_2
     iget-object v8, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
@@ -175,11 +149,8 @@
 
     move-result-object v8
 
-    .line 124
-    .local v8, "pref":Landroid/support/v7/preference/Preference;
     if-eqz v8, :cond_4
 
-    .line 125
     if-eqz v2, :cond_3
 
     if-eqz v5, :cond_3
@@ -196,11 +167,9 @@
     :goto_2
     invoke-virtual {v8, v9}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 128
     :cond_4
     iget-object v9, p0, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;
 
-    .line 129
     invoke-virtual {v9}, Lcom/android/settings/wifi/calling/WifiCallingSettingsForSub;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
     move-result-object v9
@@ -211,11 +180,8 @@
 
     move-result-object v9
 
-    .line 130
-    .local v9, "pref_roam":Landroid/support/v7/preference/Preference;
     if-eqz v9, :cond_6
 
-    .line 131
     if-eqz v2, :cond_5
 
     if-eqz v6, :cond_5
@@ -229,7 +195,6 @@
     :cond_5
     invoke-virtual {v9, v3}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 134
     :cond_6
     return-void
 .end method

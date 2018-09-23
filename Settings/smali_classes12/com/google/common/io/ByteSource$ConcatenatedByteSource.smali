@@ -40,11 +40,8 @@
         }
     .end annotation
 
-    .line 578
-    .local p1, "sources":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+Lcom/google/common/io/ByteSource;>;"
     invoke-direct {p0}, Lcom/google/common/io/ByteSource;-><init>()V
 
-    .line 579
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -53,7 +50,6 @@
 
     iput-object v0, p0, Lcom/google/common/io/ByteSource$ConcatenatedByteSource;->sources:Ljava/lang/Iterable;
 
-    .line 580
     return-void
 .end method
 
@@ -67,7 +63,6 @@
         }
     .end annotation
 
-    .line 589
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ConcatenatedByteSource;->sources:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -87,25 +82,19 @@
 
     check-cast v1, Lcom/google/common/io/ByteSource;
 
-    .line 590
-    .local v1, "source":Lcom/google/common/io/ByteSource;
     invoke-virtual {v1}, Lcom/google/common/io/ByteSource;->isEmpty()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 591
     const/4 v0, 0x0
 
     return v0
 
-    .line 593
-    .end local v1    # "source":Lcom/google/common/io/ByteSource;
     :cond_0
     goto :goto_0
 
-    .line 594
     :cond_1
     const/4 v0, 0x1
 
@@ -120,7 +109,6 @@
         }
     .end annotation
 
-    .line 584
     new-instance v0, Lcom/google/common/io/MultiInputStream;
 
     iget-object v1, p0, Lcom/google/common/io/ByteSource$ConcatenatedByteSource;->sources:Ljava/lang/Iterable;
@@ -142,11 +130,8 @@
         }
     .end annotation
 
-    .line 599
     const-wide/16 v0, 0x0
 
-    .line 600
-    .local v0, "result":J
     iget-object v2, p0, Lcom/google/common/io/ByteSource$ConcatenatedByteSource;->sources:Ljava/lang/Iterable;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -166,19 +151,14 @@
 
     check-cast v3, Lcom/google/common/io/ByteSource;
 
-    .line 601
-    .local v3, "source":Lcom/google/common/io/ByteSource;
     invoke-virtual {v3}, Lcom/google/common/io/ByteSource;->size()J
 
     move-result-wide v4
 
     add-long/2addr v0, v4
 
-    .line 602
-    .end local v3    # "source":Lcom/google/common/io/ByteSource;
     goto :goto_0
 
-    .line 603
     :cond_0
     return-wide v0
 .end method
@@ -186,7 +166,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 608
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

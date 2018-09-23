@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
-    .line 140
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$1;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 144
     iget-object v0, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$1;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->updateSelected()V
 
-    .line 145
     return-void
 .end method

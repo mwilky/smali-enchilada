@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 68
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;
 
     invoke-direct {p0, p2}, Lcom/android/settings/deviceinfo/MigrateEstimateTask;-><init>(Landroid/content/Context;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onPostExecute(Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p1, "size"    # Ljava/lang/String;
-    .param p2, "time"    # Ljava/lang/String;
 
-    .line 71
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;
 
     const/4 v1, 0x3
@@ -48,7 +42,6 @@
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;
 
-    .line 72
     invoke-virtual {v2}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->getDiskDescription()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -65,11 +58,9 @@
 
     aput-object p2, v1, v2
 
-    .line 71
-    const v2, 0x7f121124
+    const v2, 0x7f12111d
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/StorageWizardMigrateConfirm;->setBodyText(I[Ljava/lang/CharSequence;)V
 
-    .line 73
     return-void
 .end method

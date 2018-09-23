@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 151
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -28,13 +27,9 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 154
     const-string v0, "android.app.action.INTERRUPTION_FILTER_CHANGED_INTERNAL"
 
-    .line 155
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -45,10 +40,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 156
     nop
 
-    .line 157
     invoke-static {p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->get(Landroid/content/Context;)Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     move-result-object v0
@@ -59,15 +52,10 @@
 
     move-result-object v0
 
-    .line 158
-    .local v0, "condition":Lcom/android/settings/dashboard/conditional/Condition;
     if-eqz v0, :cond_0
 
-    .line 159
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/Condition;->refreshState()V
 
-    .line 162
-    .end local v0    # "condition":Lcom/android/settings/dashboard/conditional/Condition;
     :cond_0
     return-void
 .end method

@@ -86,9 +86,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 207
     new-instance v0, Landroid/util/KeyValueListParser;
 
     const/16 v1, 0x2c
@@ -97,24 +95,18 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;-><init>(Landroid/content/Context;Landroid/util/KeyValueListParser;)V
 
-    .line 208
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/util/KeyValueListParser;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parser"    # Landroid/util/KeyValueListParser;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 212
     iput-object p2, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
-    .line 213
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -125,8 +117,6 @@
 
     move-result-object v0
 
-    .line 217
-    .local v0, "value":Ljava/lang/String;
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
@@ -134,23 +124,17 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 220
     goto :goto_0
 
-    .line 218
     :catch_0
     move-exception v1
 
-    .line 219
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
     const-string v2, "BatteryTipPolicy"
 
     const-string v3, "Bad battery tip constants"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
-    .end local v1    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
@@ -164,7 +148,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->batteryTipEnabled:Z
 
-    .line 223
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "summary_enabled"
@@ -175,7 +158,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->summaryEnabled:Z
 
-    .line 224
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "battery_saver_tip_enabled"
@@ -186,7 +168,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->batterySaverTipEnabled:Z
 
-    .line 225
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "high_usage_enabled"
@@ -197,7 +178,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->highUsageEnabled:Z
 
-    .line 226
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "high_usage_app_count"
@@ -210,14 +190,12 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->highUsageAppCount:I
 
-    .line 227
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "high_usage_period_ms"
 
     const-wide/16 v5, 0x2
 
-    .line 228
     invoke-static {v5, v6}, Ljava/time/Duration;->ofHours(J)Ljava/time/Duration;
 
     move-result-object v5
@@ -226,14 +204,12 @@
 
     move-result-wide v5
 
-    .line 227
     invoke-virtual {v1, v2, v5, v6}, Landroid/util/KeyValueListParser;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->highUsagePeriodMs:J
 
-    .line 229
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "high_usage_battery_draining"
@@ -246,7 +222,6 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->highUsageBatteryDraining:I
 
-    .line 230
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "app_restriction_enabled"
@@ -257,7 +232,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->appRestrictionEnabled:Z
 
-    .line 231
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "reduced_battery_enabled"
@@ -270,7 +244,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->reducedBatteryEnabled:Z
 
-    .line 232
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "reduced_battery_percent"
@@ -283,7 +256,6 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->reducedBatteryPercent:I
 
-    .line 233
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "low_battery_enabled"
@@ -294,7 +266,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->lowBatteryEnabled:Z
 
-    .line 234
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "low_battery_hour"
@@ -305,7 +276,6 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->lowBatteryHour:I
 
-    .line 235
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "data_history_retain_day"
@@ -318,7 +288,6 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->dataHistoryRetainDay:I
 
-    .line 236
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "excessive_bg_drain_percentage"
@@ -331,7 +300,6 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->excessiveBgDrainPercentage:I
 
-    .line 238
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "test_battery_saver_tip"
@@ -342,7 +310,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->testBatterySaverTip:Z
 
-    .line 239
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "test_high_usage_tip"
@@ -353,7 +320,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->testHighUsageTip:Z
 
-    .line 240
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "test_smart_battery_tip"
@@ -364,7 +330,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->testSmartBatteryTip:Z
 
-    .line 241
     iget-object v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->mParser:Landroid/util/KeyValueListParser;
 
     const-string v2, "test_low_battery_tip"
@@ -375,6 +340,5 @@
 
     iput-boolean v1, p0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;->testLowBatteryTip:Z
 
-    .line 242
     return-void
 .end method

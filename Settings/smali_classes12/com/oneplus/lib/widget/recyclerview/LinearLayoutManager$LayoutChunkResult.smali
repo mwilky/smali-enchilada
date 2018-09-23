@@ -28,7 +28,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 2194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,20 +38,15 @@
 .method resetInternal()V
     .locals 1
 
-    .line 2201
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/oneplus/lib/widget/recyclerview/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 2202
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 2203
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 2204
     iput-boolean v0, p0, Lcom/oneplus/lib/widget/recyclerview/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
 
-    .line 2205
     return-void
 .end method

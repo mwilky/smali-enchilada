@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/DotsPageIndicator;
 
-    .line 637
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$5;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     iput p2, p0, Lcom/android/settings/widget/DotsPageIndicator$5;->val$leftJoiningDot:I
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 640
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$5;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     iget v1, p0, Lcom/android/settings/widget/DotsPageIndicator$5;->val$leftJoiningDot:I
@@ -55,6 +51,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/widget/DotsPageIndicator;->access$600(Lcom/android/settings/widget/DotsPageIndicator;IF)V
 
-    .line 641
     return-void
 .end method

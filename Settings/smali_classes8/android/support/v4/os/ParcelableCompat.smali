@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,8 +40,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 41
-    .local p0, "callbacks":Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;, "Landroid/support/v4/os/ParcelableCompatCreatorCallbacks<TT;>;"
     new-instance v0, Landroid/support/v4/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;
 
     invoke-direct {v0, p0}, Landroid/support/v4/os/ParcelableCompat$ParcelableCompatCreatorHoneycombMR2;-><init>(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)V

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/FragmentTransitionCompat21;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/app/FragmentTransitionCompat21;
 
-    .line 305
     iput-object p1, p0, Landroid/support/v4/app/FragmentTransitionCompat21$4;->this$0:Landroid/support/v4/app/FragmentTransitionCompat21;
 
     iput-object p2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$4;->val$epicenter:Landroid/graphics/Rect;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
     .locals 1
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 308
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$4;->val$epicenter:Landroid/graphics/Rect;
 
     if-eqz v0, :cond_1
@@ -56,13 +52,11 @@
 
     goto :goto_0
 
-    .line 311
     :cond_0
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$4;->val$epicenter:Landroid/graphics/Rect;
 
     return-object v0
 
-    .line 309
     :cond_1
     :goto_0
     const/4 v0, 0x0

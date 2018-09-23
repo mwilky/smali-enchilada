@@ -10,42 +10,31 @@
 # direct methods
 .method public constructor <init>(Landroidx/slice/Slice;)V
     .locals 2
-    .param p1, "s"    # Landroidx/slice/Slice;
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 43
-    .local v0, "str":Ljava/lang/StringBuilder;
     invoke-static {p1, v0}, Landroidx/slice/SliceStructure;->getStructure(Landroidx/slice/Slice;Ljava/lang/StringBuilder;)V
 
-    .line 44
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Landroidx/slice/SliceStructure;->mStructure:Ljava/lang/String;
 
-    .line 45
     return-void
 .end method
 
 .method private static getStructure(Landroidx/slice/Slice;Ljava/lang/StringBuilder;)V
     .locals 2
-    .param p0, "s"    # Landroidx/slice/Slice;
-    .param p1, "str"    # Ljava/lang/StringBuilder;
 
-    .line 60
     const-string v0, "s{"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 61
     invoke-virtual {p0}, Landroidx/slice/Slice;->getItems()Ljava/util/List;
 
     move-result-object v0
@@ -67,30 +56,21 @@
 
     check-cast v1, Landroidx/slice/SliceItem;
 
-    .line 62
-    .local v1, "item":Landroidx/slice/SliceItem;
     invoke-static {v1, p1}, Landroidx/slice/SliceStructure;->getStructure(Landroidx/slice/SliceItem;Ljava/lang/StringBuilder;)V
 
-    .line 63
-    .end local v1    # "item":Landroidx/slice/SliceItem;
     goto :goto_0
 
-    .line 64
     :cond_0
     const-string v0, "}"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 65
     return-void
 .end method
 
 .method private static getStructure(Landroidx/slice/SliceItem;Ljava/lang/StringBuilder;)V
     .locals 2
-    .param p0, "item"    # Landroidx/slice/SliceItem;
-    .param p1, "str"    # Ljava/lang/StringBuilder;
 
-    .line 68
     invoke-virtual {p0}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v0
@@ -216,41 +196,33 @@
 
     goto :goto_2
 
-    .line 80
     :pswitch_0
     const/16 v0, 0x69
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 81
     goto :goto_2
 
-    .line 77
     :pswitch_1
     const/16 v0, 0x74
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 78
     goto :goto_2
 
-    .line 73
     :pswitch_2
     const/16 v0, 0x61
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 74
     invoke-virtual {p0}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
 
     move-result-object v0
 
     invoke-static {v0, p1}, Landroidx/slice/SliceStructure;->getStructure(Landroidx/slice/Slice;Ljava/lang/StringBuilder;)V
 
-    .line 75
     goto :goto_2
 
-    .line 70
     :pswitch_3
     invoke-virtual {p0}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
 
@@ -258,10 +230,8 @@
 
     invoke-static {v0, p1}, Landroidx/slice/SliceStructure;->getStructure(Landroidx/slice/Slice;Ljava/lang/StringBuilder;)V
 
-    .line 71
     nop
 
-    .line 90
     :goto_2
     return-void
 
@@ -292,9 +262,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 54
     instance-of v0, p1, Landroidx/slice/SliceStructure;
 
     if-nez v0, :cond_0
@@ -303,14 +271,11 @@
 
     return v0
 
-    .line 55
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/slice/SliceStructure;
 
-    .line 56
-    .local v0, "other":Landroidx/slice/SliceStructure;
     iget-object v1, p0, Landroidx/slice/SliceStructure;->mStructure:Ljava/lang/String;
 
     iget-object v2, v0, Landroidx/slice/SliceStructure;->mStructure:Ljava/lang/String;
@@ -325,7 +290,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 49
     iget-object v0, p0, Landroidx/slice/SliceStructure;->mStructure:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I

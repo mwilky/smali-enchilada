@@ -27,8 +27,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 60
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
     return-void
@@ -38,29 +36,23 @@
 # virtual methods
 .method public add(ILjava/lang/Object;)V
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)V"
         }
     .end annotation
 
-    .line 66
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
-    .local p2, "element":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 67
     return-void
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -69,9 +61,6 @@
         }
     .end annotation
 
-    .line 71
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
-    .local p2, "elements":Ljava/util/Collection;, "Ljava/util/Collection<+TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -86,8 +75,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 54
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -98,8 +85,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 54
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -119,13 +104,11 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 115
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     if-eq p1, p0, :cond_1
 
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
@@ -155,15 +138,12 @@
 
 .method public get(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
         }
     .end annotation
 
-    .line 76
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -178,8 +158,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 119
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -193,10 +171,7 @@
 
 .method public indexOf(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
 
-    .line 81
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -210,10 +185,7 @@
 
 .method public lastIndexOf(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
 
-    .line 86
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -235,8 +207,6 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -250,7 +220,6 @@
 
 .method public listIterator(I)Ljava/util/ListIterator;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -259,8 +228,6 @@
         }
     .end annotation
 
-    .line 96
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -274,15 +241,12 @@
 
 .method public remove(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
         }
     .end annotation
 
-    .line 101
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -296,16 +260,12 @@
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)TE;"
         }
     .end annotation
 
-    .line 106
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
-    .local p2, "element":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0
@@ -325,16 +285,12 @@
         }
     .end annotation
 
-    .line 131
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->size()I
 
     move-result v0
 
     invoke-virtual {p0, v0, p1}, Lcom/google/common/collect/ForwardingList;->add(ILjava/lang/Object;)V
 
-    .line 132
     const/4 v0, 0x1
 
     return v0
@@ -342,7 +298,6 @@
 
 .method protected standardAddAll(ILjava/lang/Iterable;)Z
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -351,9 +306,6 @@
         }
     .end annotation
 
-    .line 145
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
-    .local p2, "elements":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TE;>;"
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/Lists;->addAllImpl(Ljava/util/List;ILjava/lang/Iterable;)Z
 
     move-result v0
@@ -363,15 +315,13 @@
 
 .method protected standardEquals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
 
-    .line 226
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->equalsImpl(Ljava/util/List;Ljava/lang/Object;)Z
 
     move-result v0
@@ -384,8 +334,6 @@
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
 
-    .line 237
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Lists;->hashCodeImpl(Ljava/util/List;)I
 
     move-result v0
@@ -395,13 +343,11 @@
 
 .method protected standardIndexOf(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 156
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->indexOfImpl(Ljava/util/List;Ljava/lang/Object;)I
 
     move-result v0
@@ -419,8 +365,6 @@
         }
     .end annotation
 
-    .line 179
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->listIterator()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -430,13 +374,11 @@
 
 .method protected standardLastIndexOf(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 168
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->lastIndexOfImpl(Ljava/util/List;Ljava/lang/Object;)I
 
     move-result v0
@@ -454,8 +396,6 @@
         }
     .end annotation
 
-    .line 191
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/ForwardingList;->listIterator(I)Ljava/util/ListIterator;
@@ -467,7 +407,6 @@
 
 .method protected standardListIterator(I)Ljava/util/ListIterator;
     .locals 1
-    .param p1, "start"    # I
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
 
@@ -479,8 +418,6 @@
         }
     .end annotation
 
-    .line 204
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->listIteratorImpl(Ljava/util/List;I)Ljava/util/ListIterator;
 
     move-result-object v0
@@ -490,8 +427,6 @@
 
 .method protected standardSubList(II)Ljava/util/List;
     .locals 1
-    .param p1, "fromIndex"    # I
-    .param p2, "toIndex"    # I
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
 
@@ -503,8 +438,6 @@
         }
     .end annotation
 
-    .line 215
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/Lists;->subListImpl(Ljava/util/List;II)Ljava/util/List;
 
     move-result-object v0
@@ -514,8 +447,6 @@
 
 .method public subList(II)Ljava/util/List;
     .locals 1
-    .param p1, "fromIndex"    # I
-    .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -524,8 +455,6 @@
         }
     .end annotation
 
-    .line 111
-    .local p0, "this":Lcom/google/common/collect/ForwardingList;, "Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
     move-result-object v0

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;Landroid/app/FragmentManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
-    .line 250
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$1;->val$mgr:Landroid/app/FragmentManager;
@@ -42,20 +40,15 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 253
     new-instance v0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$TimePickerFragment;
 
     invoke-direct {v0}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$TimePickerFragment;-><init>()V
 
-    .line 254
-    .local v0, "frag":Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$TimePickerFragment;
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
     iput-object v1, v0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$TimePickerFragment;->pref:Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
 
-    .line 255
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$1;->val$mgr:Landroid/app/FragmentManager;
 
     const-class v2, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference;
@@ -66,7 +59,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$TimePickerPreference$TimePickerFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 256
     const/4 v1, 0x1
 
     return v1

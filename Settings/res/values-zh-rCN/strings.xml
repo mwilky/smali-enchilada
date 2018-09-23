@@ -2614,7 +2614,6 @@
     <string name="oneplus_disable_aosp_face_lock_message">使用一加人脸解锁需要禁用Smart Lock中的人脸解锁功能，要禁用么？</string>
     <string name="oneplus_disconnected">断开</string>
     <string name="oneplus_display_dashboard_summary">状态栏、主动显示、壁纸、主题</string>
-    <string name="oneplus_display_dashboard_summary_801">状态栏、息屏显示、壁纸、主题</string>
     <string name="oneplus_display_size_adaption">全屏应用设置</string>
     <string name="oneplus_display_size_adaption_full_screen">全屏模式</string>
     <string name="oneplus_display_size_adaption_original_size">兼容模式(16:9)</string>
@@ -2644,7 +2643,6 @@
     <string name="oneplus_earphone_mode">耳机模式</string>
     <string name="oneplus_emergency_rescue_settings">紧急救援</string>
     <string name="oneplus_emergency_rescue_settings_summary">连续按多次电源键快速进行呼救</string>
-    <string name="oneplus_enroll_fingerprint_tips_title">指纹录入提示</string>
     <string name="oneplus_enter_your_fingerprint">· 录入您的指纹</string>
     <string name="oneplus_experience_improvement_programs">体验改进计划</string>
     <string name="oneplus_face_auto_unlock_while_screen_on_sumary">亮屏幕后无需向上滑动，立刻使用人脸解锁</string>
@@ -2668,7 +2666,6 @@
     <string name="oneplus_finger_input_error_tips">指纹录入错误，请返回重试</string>
     <string name="oneplus_finger_input_fail_tips">录入失败，请调整姿势重新录入</string>
     <string name="oneplus_fingerprint">指纹</string>
-    <string name="oneplus_fingerprint_acquired_too_similar">指纹特征重复，请稍微移动手指，录入不同部位的指纹</string>
     <string name="oneplus_fingerprint_bind_save_list">指纹绑定记录保存</string>
     <string name="oneplus_fingerprint_check_oneplus_account">指纹验证一加账号</string>
     <string name="oneplus_fingerprint_delete_confirm_message">确认要删除该指纹吗？</string>
@@ -2924,9 +2921,9 @@
     <string name="oneplus_quick_gestures">快捷手势</string>
     <string name="oneplus_quick_gestures_title">快捷手势</string>
     <string name="oneplus_quick_startup">快速启动</string>
-    <string name="oneplus_quick_turn_on_assistant_app">快速开启助手应用</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">长按电源键0.5秒开启助手应用，长按3秒关机</string>
     <string name="oneplus_quick_turn_on_camera">快速开启相机</string>
+    <string name="oneplus_quick_turn_on_voice_assistant">快速开启语音助手</string>
+    <string name="oneplus_quick_turn_on_voice_assistant_summary">长按电源按钮0.5秒即可打开语音助手</string>
     <string name="oneplus_quickpay">快捷支付</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">将长按Home键由 “%1$s” 改为 “快捷支付”，确定改变此操作吗？</string>
     <string name="oneplus_quickpay_entry_summary">@string/oneplus_quickpay_unlock_swtch_summary</string>
@@ -3036,8 +3033,6 @@
     <string name="oneplus_security_lock_settings_title">安全和隐私</string>
     <string name="oneplus_security_settings_fingerprint_enroll_error_dialog_title">录入失败</string>
     <string name="oneplus_security_settings_fingerprint_exists_dialog_message">此指纹已经存在，请尝试使用其它手指录入。</string>
-    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_1">“双击亮屏”已开启,\"轻触屏幕显示”将被关闭</string>
-    <string name="oneplus_security_settings_fingerprint_toggle_two_toast_2">“轻触屏幕显示”已开启,“双击亮屏”将被关闭</string>
     <string name="oneplus_set_none_password">正在清除密码，请稍候...</string>
     <string name="oneplus_set_time">指定时间开启</string>
     <string name="oneplus_setting_ringtone">设置铃声</string>
@@ -3092,7 +3087,7 @@
     <string name="oneplus_timer_shutdown_title">关机提醒</string>
     <string name="oneplus_timer_shuttingdown">正在关机</string>
     <string name="oneplus_to_select_assistant_app_dialog">请选择您想要激活的助手应用</string>
-    <string name="oneplus_tools_summary">游戏模式、应用锁、应用双开</string>
+    <string name="oneplus_tools_summary">游戏模式、快捷支付、应用锁、应用双开</string>
     <string name="oneplus_tools_summary_U30">游戏模式、口袋模式、定时开关机</string>
     <string name="oneplus_tools_title">工具箱</string>
     <string name="oneplus_top_notification">置顶通知</string>

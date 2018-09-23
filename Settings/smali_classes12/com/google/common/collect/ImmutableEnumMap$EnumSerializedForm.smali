@@ -55,15 +55,10 @@
         }
     .end annotation
 
-    .line 143
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm;, "Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm<TK;TV;>;"
-    .local p1, "delegate":Ljava/util/EnumMap;, "Ljava/util/EnumMap<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 144
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm;->delegate:Ljava/util/EnumMap;
 
-    .line 145
     return-void
 .end method
 
@@ -72,8 +67,6 @@
 .method readResolve()Ljava/lang/Object;
     .locals 3
 
-    .line 147
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm;, "Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableEnumMap;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableEnumMap$EnumSerializedForm;->delegate:Ljava/util/EnumMap;

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/SearchSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/SearchSupportFragment;
 
-    .line 123
     iput-object p1, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$1;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/ObjectAdapter$DataObserver;-><init>()V
@@ -36,7 +34,6 @@
 .method public onChanged()V
     .locals 2
 
-    .line 128
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$1;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mHandler:Landroid/os/Handler;
@@ -47,7 +44,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 129
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$1;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mHandler:Landroid/os/Handler;
@@ -58,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 130
     return-void
 .end method

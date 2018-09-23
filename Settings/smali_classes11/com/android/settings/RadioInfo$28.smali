@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1504
     iput-object p1, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 4
-    .param p1, "parent"    # Landroid/widget/AdapterView;
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "pos"    # I
-    .param p4, "id"    # J
 
-    .line 1507
     iget-object v0, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$4200(Lcom/android/settings/RadioInfo;)I
@@ -54,7 +47,6 @@
 
     if-ltz p3, :cond_1
 
-    .line 1508
     invoke-static {}, Lcom/android/settings/RadioInfo;->access$2000()[Ljava/lang/String;
 
     move-result-object v0
@@ -65,12 +57,10 @@
 
     if-gt p3, v0, :cond_1
 
-    .line 1509
     iget-object v0, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0, p3}, Lcom/android/settings/RadioInfo;->access$4202(Lcom/android/settings/RadioInfo;I)I
 
-    .line 1517
     iget-object v0, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -81,15 +71,12 @@
 
     move-result v0
 
-    .line 1518
-    .local v0, "subId":I
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isUsableSubIdValue(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1519
     iget-object v1, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -120,15 +107,12 @@
 
     iget-object v3, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
-    .line 1520
     invoke-static {v3}, Lcom/android/settings/RadioInfo;->access$4200(Lcom/android/settings/RadioInfo;)I
 
     move-result v3
 
-    .line 1519
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 1522
     :cond_0
     iget-object v1, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -158,7 +142,6 @@
 
     invoke-static {v1, v2}, Lcom/android/settings/RadioInfo;->access$1000(Lcom/android/settings/RadioInfo;Ljava/lang/String;)V
 
-    .line 1523
     iget-object v1, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$2700(Lcom/android/settings/RadioInfo;)Landroid/os/Handler;
@@ -171,8 +154,6 @@
 
     move-result-object v1
 
-    .line 1524
-    .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lcom/android/settings/RadioInfo$28;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -187,17 +168,12 @@
 
     invoke-virtual {v2, v3, v1}, Lcom/android/internal/telephony/Phone;->setPreferredNetworkType(ILandroid/os/Message;)V
 
-    .line 1526
-    .end local v0    # "subId":I
-    .end local v1    # "msg":Landroid/os/Message;
     :cond_1
     return-void
 .end method
 
 .method public onNothingSelected(Landroid/widget/AdapterView;)V
     .locals 0
-    .param p1, "parent"    # Landroid/widget/AdapterView;
 
-    .line 1529
     return-void
 .end method

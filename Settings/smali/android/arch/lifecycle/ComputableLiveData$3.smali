@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/arch/lifecycle/ComputableLiveData;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/arch/lifecycle/ComputableLiveData;
 
-    .line 123
-    .local p0, "this":Landroid/arch/lifecycle/ComputableLiveData$3;, "Landroid/arch/lifecycle/ComputableLiveData$3;"
     iput-object p1, p0, Landroid/arch/lifecycle/ComputableLiveData$3;->this$0:Landroid/arch/lifecycle/ComputableLiveData;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,8 +39,6 @@
     .annotation build Landroid/support/annotation/MainThread;
     .end annotation
 
-    .line 127
-    .local p0, "this":Landroid/arch/lifecycle/ComputableLiveData$3;, "Landroid/arch/lifecycle/ComputableLiveData$3;"
     iget-object v0, p0, Landroid/arch/lifecycle/ComputableLiveData$3;->this$0:Landroid/arch/lifecycle/ComputableLiveData;
 
     invoke-static {v0}, Landroid/arch/lifecycle/ComputableLiveData;->access$300(Landroid/arch/lifecycle/ComputableLiveData;)Landroid/arch/lifecycle/LiveData;
@@ -54,8 +49,6 @@
 
     move-result v0
 
-    .line 128
-    .local v0, "isActive":Z
     iget-object v1, p0, Landroid/arch/lifecycle/ComputableLiveData$3;->this$0:Landroid/arch/lifecycle/ComputableLiveData;
 
     invoke-static {v1}, Landroid/arch/lifecycle/ComputableLiveData;->access$200(Landroid/arch/lifecycle/ComputableLiveData;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -72,10 +65,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 129
     if-eqz v0, :cond_0
 
-    .line 130
     iget-object v1, p0, Landroid/arch/lifecycle/ComputableLiveData$3;->this$0:Landroid/arch/lifecycle/ComputableLiveData;
 
     invoke-static {v1}, Landroid/arch/lifecycle/ComputableLiveData;->access$000(Landroid/arch/lifecycle/ComputableLiveData;)Ljava/util/concurrent/Executor;
@@ -88,7 +79,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 133
     :cond_0
     return-void
 .end method

@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 13
     new-instance v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     const-string v1, "NONE"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;->NONE:Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
-    .line 14
     new-instance v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     const-string v1, "CONTAINER"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;->CONTAINER:Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
-    .line 16
     new-instance v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     const-string v1, "CONTAINER_DEBUG"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;->CONTAINER_DEBUG:Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
-    .line 12
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/tagmanager/PreviewManager$PreviewMode;
@@ -99,7 +95,6 @@
         }
     .end annotation
 
-    .line 12
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/PreviewManager$PreviewMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 12
     const-class v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,7 +117,6 @@
 .method public static values()[Lcom/google/tagmanager/PreviewManager$PreviewMode;
     .locals 1
 
-    .line 12
     sget-object v0, Lcom/google/tagmanager/PreviewManager$PreviewMode;->$VALUES:[Lcom/google/tagmanager/PreviewManager$PreviewMode;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/PreviewManager$PreviewMode;->clone()Ljava/lang/Object;

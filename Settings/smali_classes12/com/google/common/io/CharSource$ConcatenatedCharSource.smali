@@ -40,11 +40,8 @@
         }
     .end annotation
 
-    .line 424
-    .local p1, "sources":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+Lcom/google/common/io/CharSource;>;"
     invoke-direct {p0}, Lcom/google/common/io/CharSource;-><init>()V
 
-    .line 425
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -53,7 +50,6 @@
 
     iput-object v0, p0, Lcom/google/common/io/CharSource$ConcatenatedCharSource;->sources:Ljava/lang/Iterable;
 
-    .line 426
     return-void
 .end method
 
@@ -67,7 +63,6 @@
         }
     .end annotation
 
-    .line 435
     iget-object v0, p0, Lcom/google/common/io/CharSource$ConcatenatedCharSource;->sources:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -87,25 +82,19 @@
 
     check-cast v1, Lcom/google/common/io/CharSource;
 
-    .line 436
-    .local v1, "source":Lcom/google/common/io/CharSource;
     invoke-virtual {v1}, Lcom/google/common/io/CharSource;->isEmpty()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 437
     const/4 v0, 0x0
 
     return v0
 
-    .line 439
-    .end local v1    # "source":Lcom/google/common/io/CharSource;
     :cond_0
     goto :goto_0
 
-    .line 440
     :cond_1
     const/4 v0, 0x1
 
@@ -120,7 +109,6 @@
         }
     .end annotation
 
-    .line 430
     new-instance v0, Lcom/google/common/io/MultiReader;
 
     iget-object v1, p0, Lcom/google/common/io/CharSource$ConcatenatedCharSource;->sources:Ljava/lang/Iterable;
@@ -137,7 +125,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 445
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

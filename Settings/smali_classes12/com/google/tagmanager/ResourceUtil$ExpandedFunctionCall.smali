@@ -32,7 +32,6 @@
 # direct methods
 .method private constructor <init>(Ljava/util/Map;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
     .locals 0
-    .param p2, "pushAfterEvaluate"    # Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,27 +44,18 @@
         }
     .end annotation
 
-    .line 79
-    .local p1, "propertiesMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
     iput-object p1, p0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;->mPropertiesMap:Ljava/util/Map;
 
-    .line 81
     iput-object p2, p0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;->mPushAfterEvaluate:Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 82
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Map;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;Lcom/google/tagmanager/ResourceUtil$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/Map;
-    .param p2, "x1"    # Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
-    .param p3, "x2"    # Lcom/google/tagmanager/ResourceUtil$1;
 
-    .line 73
     invoke-direct {p0, p1, p2}, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;-><init>(Ljava/util/Map;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
 
     return-void
@@ -74,7 +64,6 @@
 .method public static newBuilder()Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCallBuilder;
     .locals 2
 
-    .line 85
     new-instance v0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCallBuilder;
 
     const/4 v1, 0x0
@@ -98,7 +87,6 @@
         }
     .end annotation
 
-    .line 101
     iget-object v0, p0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;->mPropertiesMap:Ljava/util/Map;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
@@ -111,7 +99,6 @@
 .method public getPushAfterEvaluate()Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     .locals 1
 
-    .line 108
     iget-object v0, p0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;->mPushAfterEvaluate:Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
     return-object v0
@@ -120,7 +107,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 113
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -152,14 +138,10 @@
 
 .method public updateCacheableProperty(Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "v"    # Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 94
     iget-object v0, p0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;->mPropertiesMap:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
     return-void
 .end method

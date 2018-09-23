@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/model/layer/BaseLayer;Lcom/airbnb/lottie/animation/keyframe/FloatKeyframeAnimation;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/model/layer/BaseLayer;
 
-    .line 140
     iput-object p1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer$1;->this$0:Lcom/airbnb/lottie/model/layer/BaseLayer;
 
     iput-object p2, p0, Lcom/airbnb/lottie/model/layer/BaseLayer$1;->val$inOutAnimation:Lcom/airbnb/lottie/animation/keyframe/FloatKeyframeAnimation;
@@ -43,7 +41,6 @@
 .method public onValueChanged()V
     .locals 3
 
-    .line 142
     iget-object v0, p0, Lcom/airbnb/lottie/model/layer/BaseLayer$1;->this$0:Lcom/airbnb/lottie/model/layer/BaseLayer;
 
     iget-object v1, p0, Lcom/airbnb/lottie/model/layer/BaseLayer$1;->val$inOutAnimation:Lcom/airbnb/lottie/animation/keyframe/FloatKeyframeAnimation;
@@ -74,6 +71,5 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/airbnb/lottie/model/layer/BaseLayer;->access$000(Lcom/airbnb/lottie/model/layer/BaseLayer;Z)V
 
-    .line 143
     return-void
 .end method

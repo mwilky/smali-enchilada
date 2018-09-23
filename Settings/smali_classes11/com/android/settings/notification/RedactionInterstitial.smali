@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 51
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void
@@ -23,10 +22,7 @@
 
 .method public static createStartIntent(Landroid/content/Context;I)Landroid/content/Intent;
     .locals 3
-    .param p0, "ctx"    # Landroid/content/Context;
-    .param p1, "userId"    # I
 
-    .line 86
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/settings/notification/RedactionInterstitial;
@@ -35,7 +31,6 @@
 
     const-string v1, ":settings:show_fragment_title_resid"
 
-    .line 88
     invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v2
@@ -46,16 +41,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 89
     const v2, 0x7f12086e
 
     goto :goto_0
 
-    .line 90
     :cond_0
     const v2, 0x7f12086d
 
-    .line 87
     :goto_0
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
@@ -63,12 +55,10 @@
 
     const-string v1, "android.intent.extra.USER_ID"
 
-    .line 91
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 86
     return-object v0
 .end method
 
@@ -77,7 +67,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 3
 
-    .line 55
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -86,8 +75,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 56
-    .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
     const-class v2, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
@@ -98,15 +85,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 57
     return-object v0
 .end method
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "fragmentName"    # Ljava/lang/String;
 
-    .line 68
     const-class v0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -122,12 +106,9 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "savedInstance"    # Landroid/os/Bundle;
 
-    .line 73
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 74
     const v0, 0x7f0a012d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/notification/RedactionInterstitial;->findViewById(I)Landroid/view/View;
@@ -136,12 +117,9 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 76
-    .local v0, "layout":Landroid/widget/LinearLayout;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setFitsSystemWindows(Z)V
 
-    .line 78
     return-void
 .end method

@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 564
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -26,35 +25,25 @@
 
 .method public static newConfirmStop(ILandroid/content/ComponentName;)Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
     .locals 3
-    .param p0, "id"    # I
-    .param p1, "comp"    # Landroid/content/ComponentName;
 
-    .line 567
     new-instance v0, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
 
     invoke-direct {v0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;-><init>()V
 
-    .line 568
-    .local v0, "frag":Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 569
-    .local v1, "args":Landroid/os/Bundle;
     const-string v2, "id"
 
     invoke-virtual {v1, v2, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 570
     const-string v2, "comp"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 571
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 572
     return-object v0
 .end method
 
@@ -63,7 +52,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 610
     const/16 v0, 0x218
 
     return v0
@@ -72,7 +60,6 @@
 .method getOwner()Lcom/android/settings/applications/RunningServiceDetails;
     .locals 1
 
-    .line 576
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v0
@@ -84,9 +71,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 6
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 581
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -97,13 +82,10 @@
 
     move-result v0
 
-    .line 582
-    .local v0, "id":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 584
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -116,8 +98,6 @@
 
     check-cast v1, Landroid/content/ComponentName;
 
-    .line 585
-    .local v1, "comp":Landroid/content/ComponentName;
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/RunningServiceDetails;
 
     move-result-object v2
@@ -130,10 +110,8 @@
 
     if-nez v2, :cond_0
 
-    .line 586
     return-object v3
 
-    .line 589
     :cond_0
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -143,12 +121,11 @@
 
     invoke-direct {v2, v4}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 590
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
 
-    const v5, 0x7f120f0f
+    const v5, 0x7f120f08
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -158,12 +135,11 @@
 
     move-result-object v2
 
-    .line 591
     invoke-virtual {p0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
 
-    const v5, 0x7f120f0e
+    const v5, 0x7f120f07
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -179,28 +155,22 @@
 
     invoke-direct {v5, p0, v1}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment$1;-><init>(Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;Landroid/content/ComponentName;)V
 
-    .line 592
     invoke-virtual {v2, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
     const v4, 0x7f12058e
 
-    .line 601
     invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    .line 602
     invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2
 
-    .line 589
     return-object v2
 
-    .line 605
-    .end local v1    # "comp":Landroid/content/ComponentName;
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 

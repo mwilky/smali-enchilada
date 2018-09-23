@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
-    .line 144
     iput-object p1, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$1;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onTagDiscovered(Landroid/nfc/Tag;)V
     .locals 1
-    .param p1, "tag"    # Landroid/nfc/Tag;
 
-    .line 147
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$1;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-static {v0, p1}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->access$000(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;Landroid/nfc/Tag;)V
 
-    .line 148
     return-void
 .end method

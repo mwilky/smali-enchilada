@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
 .method public bridge synthetic forConstantValue(Ljava/lang/annotation/Annotation;Ljava/lang/Object;)Ljavax/annotation/meta/When;
     .locals 0
 
-    .line 18
     check-cast p1, Ljavax/annotation/Nonnegative;
 
     invoke-virtual {p0, p1, p2}, Ljavax/annotation/Nonnegative$Checker;->forConstantValue(Ljavax/annotation/Nonnegative;Ljava/lang/Object;)Ljavax/annotation/meta/When;
@@ -53,27 +51,20 @@
 
 .method public forConstantValue(Ljavax/annotation/Nonnegative;Ljava/lang/Object;)Ljavax/annotation/meta/When;
     .locals 8
-    .param p1, "annotation"    # Ljavax/annotation/Nonnegative;
-    .param p2, "v"    # Ljava/lang/Object;
 
-    .line 21
     instance-of v0, p2, Ljava/lang/Number;
 
     if-nez v0, :cond_0
 
-    .line 22
     sget-object v0, Ljavax/annotation/meta/When;->NEVER:Ljavax/annotation/meta/When;
 
     return-object v0
 
-    .line 24
     :cond_0
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Number;
 
-    .line 25
-    .local v0, "value":Ljava/lang/Number;
     instance-of v1, v0, Ljava/lang/Long;
 
     const/4 v2, 0x0
@@ -82,7 +73,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 26
     invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v4
@@ -100,18 +90,14 @@
     :cond_1
     move v1, v2
 
-    .local v1, "isNegative":Z
     :goto_0
     goto :goto_1
 
-    .line 27
-    .end local v1    # "isNegative":Z
     :cond_2
     instance-of v1, v0, Ljava/lang/Double;
 
     if-eqz v1, :cond_4
 
-    .line 28
     invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
 
     move-result-wide v4
@@ -131,13 +117,11 @@
 
     goto :goto_0
 
-    .line 29
     :cond_4
     instance-of v1, v0, Ljava/lang/Float;
 
     if-eqz v1, :cond_6
 
-    .line 30
     invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
 
     move-result v1
@@ -157,7 +141,6 @@
 
     goto :goto_0
 
-    .line 32
     :cond_6
     invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
 
@@ -172,17 +155,13 @@
     :cond_7
     move v1, v2
 
-    .line 34
-    .restart local v1    # "isNegative":Z
     :goto_1
     if-eqz v1, :cond_8
 
-    .line 35
     sget-object v2, Ljavax/annotation/meta/When;->NEVER:Ljavax/annotation/meta/When;
 
     return-object v2
 
-    .line 37
     :cond_8
     sget-object v2, Ljavax/annotation/meta/When;->ALWAYS:Ljavax/annotation/meta/When;
 

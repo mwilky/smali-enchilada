@@ -40,7 +40,6 @@
 .method constructor <init>(Landroid/content/Context;Landroid/support/v4/provider/FontRequest;ILjava/lang/String;)V
     .locals 0
 
-    .line 256
     iput-object p1, p0, Landroid/support/v4/provider/FontsContractCompat$1;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Landroid/support/v4/provider/FontsContractCompat$1;->val$request:Landroid/support/v4/provider/FontRequest;
@@ -64,7 +63,6 @@
         }
     .end annotation
 
-    .line 259
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/support/v4/provider/FontsContractCompat$1;->val$request:Landroid/support/v4/provider/FontRequest;
@@ -75,13 +73,10 @@
 
     move-result-object v0
 
-    .line 260
-    .local v0, "typeface":Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;
     iget-object v1, v0, Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
 
     if-eqz v1, :cond_0
 
-    .line 261
     sget-object v1, Landroid/support/v4/provider/FontsContractCompat;->sTypefaceCache:Landroid/support/v4/util/LruCache;
 
     iget-object v2, p0, Landroid/support/v4/provider/FontsContractCompat$1;->val$id:Ljava/lang/String;
@@ -90,7 +85,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/support/v4/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 263
     :cond_0
     return-object v0
 .end method
@@ -103,7 +97,6 @@
         }
     .end annotation
 
-    .line 256
     invoke-virtual {p0}, Landroid/support/v4/provider/FontsContractCompat$1;->call()Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;
 
     move-result-object v0

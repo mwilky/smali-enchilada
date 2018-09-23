@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
-    .line 216
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 219
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$2;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-virtual {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->cancelEnrollment()Z
 
-    .line 220
     return-void
 .end method

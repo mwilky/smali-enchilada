@@ -49,22 +49,14 @@
         }
     .end annotation
 
-    .line 1279
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
-    .local p1, "input":Ljava/util/Set;, "Ljava/util/Set<TE;>;"
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    .line 1280
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ImmutableMap$Builder;
 
     move-result-object v0
 
-    .line 1281
-    .local v0, "builder":Lcom/google/common/collect/ImmutableMap$Builder;, "Lcom/google/common/collect/ImmutableMap$Builder<TE;Ljava/lang/Integer;>;"
     const/4 v1, 0x0
 
-    .line 1282
-    .local v1, "i":I
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -86,30 +78,20 @@
 
     move-result-object v3
 
-    .line 1283
-    .local v3, "e":Ljava/lang/Object;, "TE;"
     add-int/lit8 v4, v1, 0x1
 
-    .local v4, "i":I
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .end local v1    # "i":I
     invoke-virtual {v0, v3, v1}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    .line 1284
-    .end local v3    # "e":Ljava/lang/Object;, "TE;"
     nop
 
-    .line 1282
     move v1, v4
 
     goto :goto_0
 
-    .line 1285
-    .end local v4    # "i":I
-    .restart local v1    # "i":I
     :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
 
@@ -117,7 +99,6 @@
 
     iput-object v2, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
-    .line 1286
     iget-object v2, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMap;->size()I
@@ -146,7 +127,6 @@
 
     iget-object v6, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
-    .line 1287
     invoke-virtual {v6}, Lcom/google/common/collect/ImmutableMap;->size()I
 
     move-result v6
@@ -157,10 +137,8 @@
 
     aput-object v6, v5, v4
 
-    .line 1286
     invoke-static {v2, v3, v5}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1288
     return-void
 .end method
 
@@ -168,24 +146,19 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 1307
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_0
 
-    .line 1308
     move-object v0, p1
 
     check-cast v0, Ljava/util/Set;
 
-    .line 1309
-    .local v0, "set":Ljava/util/Set;, "Ljava/util/Set<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
@@ -198,8 +171,6 @@
 
     return v1
 
-    .line 1311
-    .end local v0    # "set":Ljava/util/Set;, "Ljava/util/Set<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -208,24 +179,19 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 1315
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     instance-of v0, p1, Lcom/google/common/collect/Sets$PowerSet;
 
     if-eqz v0, :cond_0
 
-    .line 1316
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/Sets$PowerSet;
 
-    .line 1317
-    .local v0, "that":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
     iget-object v2, v0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
@@ -236,8 +202,6 @@
 
     return v1
 
-    .line 1319
-    .end local v0    # "that":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<*>;"
     :cond_0
     invoke-super {p0, p1}, Ljava/util/AbstractSet;->equals(Ljava/lang/Object;)Z
 
@@ -249,8 +213,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 1328
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
@@ -277,8 +239,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 1295
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -295,8 +255,6 @@
         }
     .end annotation
 
-    .line 1299
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     new-instance v0, Lcom/google/common/collect/Sets$PowerSet$1;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$PowerSet;->size()I
@@ -311,8 +269,6 @@
 .method public size()I
     .locals 2
 
-    .line 1291
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->size()I
@@ -329,8 +285,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1332
-    .local p0, "this":Lcom/google/common/collect/Sets$PowerSet;, "Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

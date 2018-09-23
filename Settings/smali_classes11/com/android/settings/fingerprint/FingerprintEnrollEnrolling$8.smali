@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
-    .line 1045
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$8;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1061
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1055
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$8;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->access$600(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)Landroid/widget/ProgressBar;
@@ -63,7 +57,6 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 1056
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$8;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->access$600(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)Landroid/widget/ProgressBar;
@@ -80,23 +73,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1058
     :cond_0
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1051
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 1048
     return-void
 .end method

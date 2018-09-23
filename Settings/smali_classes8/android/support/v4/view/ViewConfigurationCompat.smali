@@ -13,14 +13,12 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 39
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
 
     if-ne v0, v1, :cond_0
 
-    .line 41
     :try_start_0
     const-class v0, Landroid/view/ViewConfiguration;
 
@@ -30,7 +28,6 @@
 
     new-array v2, v2, [Ljava/lang/Class;
 
-    .line 42
     invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
@@ -39,23 +36,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 45
     goto :goto_0
 
-    .line 43
     :catch_0
     move-exception v0
 
-    .line 44
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ViewConfigCompat"
 
     const-string v2, "Could not find method getScaledScrollFactor() on ViewConfiguration"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     return-void
@@ -64,7 +55,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -72,10 +62,7 @@
 
 .method private static getLegacyScrollFactor(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
     .locals 4
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 106
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
@@ -86,7 +73,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 108
     :try_start_0
     sget-object v0, Landroid/support/v4/view/ViewConfigurationCompat;->sGetScaledScrollFactorMethod:Ljava/lang/reflect/Method;
 
@@ -110,27 +96,20 @@
 
     return v0
 
-    .line 109
     :catch_0
     move-exception v0
 
-    .line 110
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ViewConfigCompat"
 
     const-string v2, "Could not find method getScaledScrollFactor() on ViewConfiguration"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 115
-    .local v0, "outValue":Landroid/util/TypedValue;
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -145,7 +124,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 117
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -160,7 +138,6 @@
 
     return v1
 
-    .line 119
     :cond_1
     const/4 v1, 0x0
 
@@ -169,30 +146,27 @@
 
 .method public static getScaledHorizontalScrollFactor(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
     .locals 2
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
+    .param p0    # Landroid/view/ViewConfiguration;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 81
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
     if-lt v0, v1, :cond_0
 
-    .line 82
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHorizontalScrollFactor()F
 
     move-result v0
 
     return v0
 
-    .line 84
     :cond_0
     invoke-static {p0, p1}, Landroid/support/v4/view/ViewConfigurationCompat;->getLegacyScrollFactor(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
 
@@ -203,23 +177,19 @@
 
 .method public static getScaledHoverSlop(Landroid/view/ViewConfiguration;)I
     .locals 2
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
 
-    .line 128
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     if-lt v0, v1, :cond_0
 
-    .line 129
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHoverSlop()I
 
     move-result v0
 
     return v0
 
-    .line 131
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
@@ -232,11 +202,9 @@
 
 .method public static getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
     .locals 1
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 57
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
 
     move-result v0
@@ -246,30 +214,27 @@
 
 .method public static getScaledVerticalScrollFactor(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
     .locals 2
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
+    .param p0    # Landroid/view/ViewConfiguration;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 98
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
     if-lt v0, v1, :cond_0
 
-    .line 99
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledVerticalScrollFactor()F
 
     move-result v0
 
     return v0
 
-    .line 101
     :cond_0
     invoke-static {p0, p1}, Landroid/support/v4/view/ViewConfigurationCompat;->getLegacyScrollFactor(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
 
@@ -280,11 +245,9 @@
 
 .method public static hasPermanentMenuKey(Landroid/view/ViewConfiguration;)Z
     .locals 1
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 68
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
 
     move-result v0
@@ -294,34 +257,28 @@
 
 .method public static shouldShowMenuShortcutsWhenKeyboardPresent(Landroid/view/ViewConfiguration;Landroid/content/Context;)Z
     .locals 4
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 141
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
     if-lt v0, v1, :cond_0
 
-    .line 142
     invoke-virtual {p0}, Landroid/view/ViewConfiguration;->shouldShowMenuShortcutsWhenKeyboardPresent()Z
 
     move-result v0
 
     return v0
 
-    .line 144
     :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 145
-    .local v0, "res":Landroid/content/res/Resources;
     const-string v1, "config_showMenuShortcutsWhenKeyboardPresent"
 
     const-string v2, "bool"
@@ -332,8 +289,6 @@
 
     move-result v1
 
-    .line 147
-    .local v1, "platformResId":I
     if-eqz v1, :cond_1
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z

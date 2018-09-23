@@ -36,7 +36,6 @@
 .method constructor <init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
     .locals 0
 
-    .line 123
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableTable$1;->val$rowComparator:Ljava/util/Comparator;
 
     iput-object p2, p0, Lcom/google/common/collect/RegularImmutableTable$1;->val$columnComparator:Ljava/util/Comparator;
@@ -60,16 +59,12 @@
         }
     .end annotation
 
-    .line 125
-    .local p1, "cell1":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;"
-    .local p2, "cell2":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableTable$1;->val$rowComparator:Ljava/util/Comparator;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 126
     move v0, v1
 
     goto :goto_0
@@ -89,15 +84,11 @@
 
     move-result v0
 
-    .line 127
-    .local v0, "rowCompare":I
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 128
     return v0
 
-    .line 130
     :cond_1
     iget-object v2, p0, Lcom/google/common/collect/RegularImmutableTable$1;->val$columnComparator:Ljava/util/Comparator;
 
@@ -105,7 +96,6 @@
 
     goto :goto_1
 
-    .line 131
     :cond_2
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableTable$1;->val$columnComparator:Ljava/util/Comparator;
 
@@ -121,7 +111,6 @@
 
     move-result v1
 
-    .line 130
     :goto_1
     return v1
 .end method
@@ -129,7 +118,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 123
     check-cast p1, Lcom/google/common/collect/Table$Cell;
 
     check-cast p2, Lcom/google/common/collect/Table$Cell;

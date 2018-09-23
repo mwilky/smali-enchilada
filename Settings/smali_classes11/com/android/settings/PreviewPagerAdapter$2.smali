@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/PreviewPagerAdapter;Landroid/view/View;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 171
     iput-object p1, p0, Lcom/android/settings/PreviewPagerAdapter$2;->this$0:Lcom/android/settings/PreviewPagerAdapter;
 
     iput-object p2, p0, Lcom/android/settings/PreviewPagerAdapter$2;->val$view:Landroid/view/View;
@@ -47,13 +45,11 @@
 .method public run()V
     .locals 2
 
-    .line 174
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter$2;->val$view:Landroid/view/View;
 
     iget v1, p0, Lcom/android/settings/PreviewPagerAdapter$2;->val$visibility:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 175
     return-void
 .end method

@@ -25,10 +25,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -44,9 +42,7 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$1;
 
-    .line 122
     invoke-direct {p0}, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$Builder$MainThreadExecutor;-><init>()V
 
     return-void
@@ -56,16 +52,14 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
-    .param p1, "command"    # Ljava/lang/Runnable;
+    .param p1    # Ljava/lang/Runnable;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 126
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncDifferConfig$Builder$MainThreadExecutor;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 127
     return-void
 .end method

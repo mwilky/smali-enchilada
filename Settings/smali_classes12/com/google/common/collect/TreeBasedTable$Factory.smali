@@ -59,15 +59,10 @@
         }
     .end annotation
 
-    .line 85
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$Factory;, "Lcom/google/common/collect/TreeBasedTable$Factory<TC;TV;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TC;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
     iput-object p1, p0, Lcom/google/common/collect/TreeBasedTable$Factory;->comparator:Ljava/util/Comparator;
 
-    .line 87
     return-void
 .end method
 
@@ -76,8 +71,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 82
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$Factory;, "Lcom/google/common/collect/TreeBasedTable$Factory<TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/TreeBasedTable$Factory;->get()Ljava/util/TreeMap;
 
     move-result-object v0
@@ -95,8 +88,6 @@
         }
     .end annotation
 
-    .line 90
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$Factory;, "Lcom/google/common/collect/TreeBasedTable$Factory<TC;TV;>;"
     new-instance v0, Ljava/util/TreeMap;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeBasedTable$Factory;->comparator:Ljava/util/Comparator;

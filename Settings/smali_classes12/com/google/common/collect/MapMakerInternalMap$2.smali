@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 868
     invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
         }
     .end annotation
 
-    .line 891
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -55,9 +53,7 @@
 
 .method public offer(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 871
     const/4 v0, 0x1
 
     return v0
@@ -66,7 +62,6 @@
 .method public peek()Ljava/lang/Object;
     .locals 1
 
-    .line 876
     const/4 v0, 0x0
 
     return-object v0
@@ -75,7 +70,6 @@
 .method public poll()Ljava/lang/Object;
     .locals 1
 
-    .line 881
     const/4 v0, 0x0
 
     return-object v0
@@ -84,7 +78,6 @@
 .method public size()I
     .locals 1
 
-    .line 886
     const/4 v0, 0x0
 
     return v0

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/HeadersSupportFragment$1;Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/app/HeadersSupportFragment$1;
 
-    .line 132
     iput-object p1, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->this$1:Landroid/support/v17/leanback/app/HeadersSupportFragment$1;
 
     iput-object p2, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->val$viewHolder:Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 135
     iget-object v0, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->this$1:Landroid/support/v17/leanback/app/HeadersSupportFragment$1;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1;->this$0:Landroid/support/v17/leanback/app/HeadersSupportFragment;
@@ -53,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 136
     iget-object v0, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->this$1:Landroid/support/v17/leanback/app/HeadersSupportFragment$1;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1;->this$0:Landroid/support/v17/leanback/app/HeadersSupportFragment;
@@ -62,7 +57,6 @@
 
     iget-object v1, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->val$viewHolder:Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;
 
-    .line 137
     invoke-virtual {v1}, Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;->getViewHolder()Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
 
     move-result-object v1
@@ -71,17 +65,14 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/app/HeadersSupportFragment$1$1;->val$viewHolder:Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;
 
-    .line 138
     invoke-virtual {v2}, Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;->getItem()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/support/v17/leanback/widget/Row;
 
-    .line 136
     invoke-interface {v0, v1, v2}, Landroid/support/v17/leanback/app/HeadersSupportFragment$OnHeaderClickedListener;->onHeaderClicked(Landroid/support/v17/leanback/widget/RowHeaderPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V
 
-    .line 140
     :cond_0
     return-void
 .end method

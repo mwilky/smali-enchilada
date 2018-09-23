@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ServiceManagerImpl;)V
     .locals 0
 
-    .line 186
     iput-object p1, p0, Lcom/google/tagmanager/ServiceManagerImpl$3;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public run()V
     .locals 1
 
-    .line 189
     iget-object v0, p0, Lcom/google/tagmanager/ServiceManagerImpl$3;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-static {v0}, Lcom/google/tagmanager/ServiceManagerImpl;->access$500(Lcom/google/tagmanager/ServiceManagerImpl;)Lcom/google/tagmanager/HitStore;
@@ -47,6 +45,5 @@
 
     invoke-interface {v0}, Lcom/google/tagmanager/HitStore;->dispatch()V
 
-    .line 190
     return-void
 .end method

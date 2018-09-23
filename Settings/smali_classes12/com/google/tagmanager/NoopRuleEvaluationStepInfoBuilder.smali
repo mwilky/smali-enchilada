@@ -10,7 +10,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
 .method public createResolvedRuleBuilder()Lcom/google/tagmanager/ResolvedRuleBuilder;
     .locals 1
 
-    .line 19
     new-instance v0, Lcom/google/tagmanager/NoopResolvedRuleBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopResolvedRuleBuilder;-><init>()V
@@ -40,7 +38,5 @@
         }
     .end annotation
 
-    .line 15
-    .local p1, "enabledFunctions":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;>;"
     return-void
 .end method

@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 108
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 111
     const-string v0, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -44,7 +40,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 112
     invoke-static {p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->get(Landroid/content/Context;)Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     move-result-object v0
@@ -57,10 +52,8 @@
 
     check-cast v0, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;
 
-    .line 113
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;->refreshState()V
 
-    .line 115
     :cond_0
     return-void
 .end method

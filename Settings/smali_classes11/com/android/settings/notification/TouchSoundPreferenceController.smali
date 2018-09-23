@@ -10,14 +10,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parent"    # Lcom/android/settings/SettingsPreferenceFragment;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 36
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/notification/SettingPrefController;-><init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 37
     new-instance v7, Lcom/android/settings/notification/TouchSoundPreferenceController$1;
 
     const-string v3, "touch_sounds"
@@ -40,7 +35,6 @@
 
     iput-object v7, p0, Lcom/android/settings/notification/TouchSoundPreferenceController;->mPreference:Lcom/android/settings/notification/SettingPref;
 
-    .line 56
     return-void
 .end method
 
@@ -49,7 +43,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 60
     iget-object v0, p0, Lcom/android/settings/notification/TouchSoundPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

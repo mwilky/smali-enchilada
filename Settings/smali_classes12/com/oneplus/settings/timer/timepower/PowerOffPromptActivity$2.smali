@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
-    .line 64
     iput-object p1, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$2;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,18 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 67
     const-string v0, "state"
 
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 69
-    .local v0, "state":Ljava/lang/String;
     sget-object v1, Landroid/telephony/TelephonyManager;->EXTRA_STATE_IDLE:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -57,7 +50,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 70
     iget-object v1, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$2;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
     invoke-static {v1}, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;->access$100(Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;)Landroid/os/Handler;
@@ -68,7 +60,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 74
     :cond_0
     sget-object v1, Landroid/telephony/TelephonyManager;->EXTRA_STATE_RINGING:Ljava/lang/String;
 
@@ -80,14 +71,12 @@
 
     sget-object v1, Landroid/telephony/TelephonyManager;->EXTRA_STATE_OFFHOOK:Ljava/lang/String;
 
-    .line 75
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 76
     :cond_1
     iget-object v1, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$2;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
@@ -97,7 +86,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 78
     :cond_2
     return-void
 .end method

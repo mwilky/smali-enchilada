@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 32
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 41
     const-string v0, "manual"
 
     return-object v0
@@ -36,7 +32,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 36
     iget-object v0, p0, Lcom/android/settings/deviceinfo/ManualPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

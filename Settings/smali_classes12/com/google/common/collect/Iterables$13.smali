@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
 
-    .line 957
     iput-object p1, p0, Lcom/google/common/collect/Iterables$13;->val$iterable:Ljava/lang/Iterable;
 
     invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
@@ -49,7 +48,6 @@
         }
     .end annotation
 
-    .line 960
     iget-object v0, p0, Lcom/google/common/collect/Iterables$13;->val$iterable:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -66,7 +64,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 965
     const-string v0, "Iterables.consumingIterable(...)"
 
     return-object v0

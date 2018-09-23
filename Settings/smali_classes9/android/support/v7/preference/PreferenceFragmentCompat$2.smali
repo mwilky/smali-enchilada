@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/PreferenceFragmentCompat;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/PreferenceFragmentCompat;
 
-    .line 150
     iput-object p1, p0, Landroid/support/v7/preference/PreferenceFragmentCompat$2;->this$0:Landroid/support/v7/preference/PreferenceFragmentCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 153
     iget-object v0, p0, Landroid/support/v7/preference/PreferenceFragmentCompat$2;->this$0:Landroid/support/v7/preference/PreferenceFragmentCompat;
 
     invoke-static {v0}, Landroid/support/v7/preference/PreferenceFragmentCompat;->access$200(Landroid/support/v7/preference/PreferenceFragmentCompat;)Landroid/support/v7/widget/RecyclerView;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->focusableViewAvailable(Landroid/view/View;)V
 
-    .line 154
     return-void
 .end method

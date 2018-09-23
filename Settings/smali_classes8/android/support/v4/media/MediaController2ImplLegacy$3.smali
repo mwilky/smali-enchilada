@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplLegacy;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 845
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-direct {p0, p2}, Landroid/os/ResultReceiver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method protected onReceiveResult(ILandroid/os/Bundle;)V
     .locals 2
-    .param p1, "resultCode"    # I
-    .param p2, "resultData"    # Landroid/os/Bundle;
 
-    .line 848
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplLegacy;->access$300(Landroid/support/v4/media/MediaController2ImplLegacy;)Landroid/os/HandlerThread;
@@ -52,25 +46,20 @@
 
     if-nez v0, :cond_0
 
-    .line 849
     return-void
 
-    .line 851
     :cond_0
     packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 853
     :pswitch_0
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-virtual {v0, p2}, Landroid/support/v4/media/MediaController2ImplLegacy;->onConnectedNotLocked(Landroid/os/Bundle;)V
 
-    .line 854
     goto :goto_0
 
-    .line 856
     :pswitch_1
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
@@ -84,12 +73,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 862
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$3;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaController2ImplLegacy;->close()V
 
-    .line 865
     :goto_0
     return-void
 

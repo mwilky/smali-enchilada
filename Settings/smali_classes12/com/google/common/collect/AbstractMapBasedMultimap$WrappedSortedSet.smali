@@ -51,17 +51,10 @@
         }
     .end annotation
 
-    .line 632
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
-    .local p2, "key":Ljava/lang/Object;, "TK;"
-    .local p3, "delegate":Ljava/util/SortedSet;, "Ljava/util/SortedSet<TV;>;"
-    .local p4, "ancestor":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedCollection;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 633
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/lang/Object;Ljava/util/Collection;Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;)V
 
-    .line 634
     return-void
 .end method
 
@@ -77,8 +70,6 @@
         }
     .end annotation
 
-    .line 642
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getSortedSetDelegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -98,11 +89,8 @@
         }
     .end annotation
 
-    .line 647
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->refreshIfEmpty()V
 
-    .line 648
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getSortedSetDelegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -124,8 +112,6 @@
         }
     .end annotation
 
-    .line 637
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getDelegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -145,17 +131,12 @@
         }
     .end annotation
 
-    .line 659
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
-    .local p1, "toElement":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->refreshIfEmpty()V
 
-    .line 660
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 661
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -168,7 +149,6 @@
 
     move-result-object v3
 
-    .line 662
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getAncestor()Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;
 
     move-result-object v4
@@ -187,7 +167,6 @@
     :goto_0
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;)V
 
-    .line 660
     return-object v0
 .end method
 
@@ -199,11 +178,8 @@
         }
     .end annotation
 
-    .line 653
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->refreshIfEmpty()V
 
-    .line 654
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getSortedSetDelegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -225,18 +201,12 @@
         }
     .end annotation
 
-    .line 667
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TV;"
-    .local p2, "toElement":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->refreshIfEmpty()V
 
-    .line 668
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 669
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -249,7 +219,6 @@
 
     move-result-object v3
 
-    .line 670
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getAncestor()Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;
 
     move-result-object v4
@@ -268,7 +237,6 @@
     :goto_0
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;)V
 
-    .line 668
     return-object v0
 .end method
 
@@ -282,17 +250,12 @@
         }
     .end annotation
 
-    .line 675
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedSortedSet;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->refreshIfEmpty()V
 
-    .line 676
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 677
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -305,7 +268,6 @@
 
     move-result-object v3
 
-    .line 678
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;->getAncestor()Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;
 
     move-result-object v4
@@ -324,6 +286,5 @@
     :goto_0
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedSortedSet;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/lang/Object;Ljava/util/SortedSet;Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;)V
 
-    .line 676
     return-object v0
 .end method

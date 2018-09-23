@@ -50,17 +50,12 @@
         }
     .end annotation
 
-    .line 219
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture<TV;TX;>;"
-    .local p1, "thrown":Ljava/lang/Exception;, "TX;"
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/util/concurrent/Futures$ImmediateFuture;-><init>(Lcom/google/common/util/concurrent/Futures$1;)V
 
-    .line 220
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;->thrown:Ljava/lang/Exception;
 
-    .line 221
     return-void
 .end method
 
@@ -80,8 +75,6 @@
         }
     .end annotation
 
-    .line 230
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture<TV;TX;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;->thrown:Ljava/lang/Exception;
 
     throw v0
@@ -89,8 +82,6 @@
 
 .method public checkedGet(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
     .locals 1
-    .param p1, "timeout"    # J
-    .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -105,11 +96,8 @@
         }
     .end annotation
 
-    .line 235
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture<TV;TX;>;"
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 236
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;->thrown:Ljava/lang/Exception;
 
     throw v0
@@ -129,8 +117,6 @@
         }
     .end annotation
 
-    .line 225
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture<TV;TX;>;"
     new-instance v0, Ljava/util/concurrent/ExecutionException;
 
     iget-object v1, p0, Lcom/google/common/util/concurrent/Futures$ImmediateFailedCheckedFuture;->thrown:Ljava/lang/Exception;

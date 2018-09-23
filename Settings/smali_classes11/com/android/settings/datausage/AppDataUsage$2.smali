@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/AppDataUsage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/AppDataUsage;
 
-    .line 493
     iput-object p1, p0, Lcom/android/settings/datausage/AppDataUsage$2;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,8 +45,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "args"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -60,7 +56,6 @@
         }
     .end annotation
 
-    .line 496
     new-instance v0, Lcom/android/settingslib/net/ChartDataLoader;
 
     iget-object v1, p0, Lcom/android/settings/datausage/AppDataUsage$2;->this$0:Lcom/android/settings/datausage/AppDataUsage;
@@ -82,7 +77,6 @@
 
 .method public onLoadFinished(Landroid/content/Loader;Lcom/android/settingslib/net/ChartData;)V
     .locals 3
-    .param p2, "data"    # Lcom/android/settingslib/net/ChartData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,13 +88,10 @@
         }
     .end annotation
 
-    .line 501
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settingslib/net/ChartData;>;"
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$2;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-static {v0, p2}, Lcom/android/settings/datausage/AppDataUsage;->access$302(Lcom/android/settings/datausage/AppDataUsage;Lcom/android/settingslib/net/ChartData;)Lcom/android/settingslib/net/ChartData;
 
-    .line 502
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$2;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-static {v0}, Lcom/android/settings/datausage/AppDataUsage;->access$500(Lcom/android/settings/datausage/AppDataUsage;)Lcom/android/settings/datausage/CycleAdapter;
@@ -121,19 +112,16 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/datausage/CycleAdapter;->updateCycleList(Landroid/net/NetworkPolicy;Lcom/android/settingslib/net/ChartData;)Z
 
-    .line 503
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$2;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-static {v0}, Lcom/android/settings/datausage/AppDataUsage;->access$100(Lcom/android/settings/datausage/AppDataUsage;)V
 
-    .line 504
     return-void
 .end method
 
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 493
     check-cast p2, Lcom/android/settingslib/net/ChartData;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/datausage/AppDataUsage$2;->onLoadFinished(Landroid/content/Loader;Lcom/android/settingslib/net/ChartData;)V
@@ -152,7 +140,5 @@
         }
     .end annotation
 
-    .line 508
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settingslib/net/ChartData;>;"
     return-void
 .end method

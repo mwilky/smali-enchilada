@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 202
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/applications/ProcStatsPackageEntry;Lcom/android/settings/applications/ProcStatsPackageEntry;)I
     .locals 6
-    .param p1, "lhs"    # Lcom/android/settings/applications/ProcStatsPackageEntry;
-    .param p2, "rhs"    # Lcom/android/settings/applications/ProcStatsPackageEntry;
 
-    .line 205
     iget-wide v0, p2, Lcom/android/settings/applications/ProcStatsPackageEntry;->mMaxBgMem:J
 
     iget-wide v2, p2, Lcom/android/settings/applications/ProcStatsPackageEntry;->mMaxRunMem:J
@@ -54,8 +50,6 @@
 
     long-to-double v0, v0
 
-    .line 206
-    .local v0, "rhsMax":D
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsPackageEntry;->mMaxBgMem:J
 
     iget-wide v4, p1, Lcom/android/settings/applications/ProcStatsPackageEntry;->mMaxRunMem:J
@@ -66,18 +60,14 @@
 
     long-to-double v2, v2
 
-    .line 207
-    .local v2, "lhsMax":D
     cmpl-double v4, v2, v0
 
     if-nez v4, :cond_0
 
-    .line 208
     const/4 v4, 0x0
 
     return v4
 
-    .line 210
     :cond_0
     cmpg-double v4, v2, v0
 
@@ -97,7 +87,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 202
     check-cast p1, Lcom/android/settings/applications/ProcStatsPackageEntry;
 
     check-cast p2, Lcom/android/settings/applications/ProcStatsPackageEntry;

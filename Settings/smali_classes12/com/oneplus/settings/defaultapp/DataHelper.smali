@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,10 +18,7 @@
 
 .method public static getDefaultAppPackageName(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "ctx"    # Landroid/content/Context;
-    .param p1, "appType"    # Ljava/lang/String;
 
-    .line 19
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -36,9 +32,7 @@
 
 .method public static isDefaultAppInited(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "ctx"    # Landroid/content/Context;
 
-    .line 30
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -51,8 +45,6 @@
 
     move-result v0
 
-    .line 31
-    .local v0, "isInited":I
     if-eqz v0, :cond_0
 
     const/4 v2, 0x1
@@ -65,9 +57,7 @@
 
 .method public static setDefaultAppInited(Landroid/content/Context;)V
     .locals 3
-    .param p0, "ctx"    # Landroid/content/Context;
 
-    .line 39
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -78,23 +68,17 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 40
     return-void
 .end method
 
 .method public static setDefaultAppPackageName(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "ctx"    # Landroid/content/Context;
-    .param p1, "appType"    # Ljava/lang/String;
-    .param p2, "pkgName"    # Ljava/lang/String;
 
-    .line 24
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 25
     return-void
 .end method

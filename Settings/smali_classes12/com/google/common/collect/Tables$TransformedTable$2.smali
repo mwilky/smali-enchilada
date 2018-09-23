@@ -35,10 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Tables$TransformedTable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Tables$TransformedTable;
 
-    .line 419
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$2;, "Lcom/google/common/collect/Tables$TransformedTable$2;"
     iput-object p1, p0, Lcom/google/common/collect/Tables$TransformedTable$2;->this$0:Lcom/google/common/collect/Tables$TransformedTable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,8 +48,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 419
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$2;, "Lcom/google/common/collect/Tables$TransformedTable$2;"
     check-cast p1, Ljava/util/Map;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Tables$TransformedTable$2;->apply(Ljava/util/Map;)Ljava/util/Map;
@@ -74,9 +69,6 @@
         }
     .end annotation
 
-    .line 421
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$2;, "Lcom/google/common/collect/Tables$TransformedTable$2;"
-    .local p1, "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV1;>;"
     iget-object v0, p0, Lcom/google/common/collect/Tables$TransformedTable$2;->this$0:Lcom/google/common/collect/Tables$TransformedTable;
 
     iget-object v0, v0, Lcom/google/common/collect/Tables$TransformedTable;->function:Lcom/google/common/base/Function;

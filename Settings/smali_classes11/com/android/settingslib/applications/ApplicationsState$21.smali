@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1801
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,16 +30,12 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 3
-    .param p1, "entry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1808
     monitor-enter p1
 
-    .line 1809
     :try_start_0
     sget-object v0, Lcom/android/settingslib/applications/ApplicationsState;->FILTER_AUDIO:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    .line 1810
     invoke-interface {v0, p1}, Lcom/android/settingslib/applications/ApplicationsState$AppFilter;->filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
 
     move-result v0
@@ -53,7 +48,6 @@
 
     sget-object v0, Lcom/android/settingslib/applications/ApplicationsState;->FILTER_GAMES:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    .line 1811
     invoke-interface {v0, p1}, Lcom/android/settingslib/applications/ApplicationsState$AppFilter;->filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
 
     move-result v0
@@ -62,7 +56,6 @@
 
     sget-object v0, Lcom/android/settingslib/applications/ApplicationsState;->FILTER_MOVIES:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    .line 1812
     invoke-interface {v0, p1}, Lcom/android/settingslib/applications/ApplicationsState$AppFilter;->filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
 
     move-result v0
@@ -71,7 +64,6 @@
 
     sget-object v0, Lcom/android/settingslib/applications/ApplicationsState;->FILTER_PHOTOS:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    .line 1813
     invoke-interface {v0, p1}, Lcom/android/settingslib/applications/ApplicationsState$AppFilter;->filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
 
     move-result v0
@@ -89,12 +81,9 @@
     :goto_0
     move v0, v1
 
-    .line 1814
-    .local v0, "isCategorized":Z
     :goto_1
     monitor-exit p1
 
-    .line 1815
     if-nez v0, :cond_2
 
     goto :goto_2
@@ -105,8 +94,6 @@
     :goto_2
     return v1
 
-    .line 1814
-    .end local v0    # "isCategorized":Z
     :catchall_0
     move-exception v0
 
@@ -120,6 +107,5 @@
 .method public init()V
     .locals 0
 
-    .line 1803
     return-void
 .end method

@@ -37,9 +37,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/better/OPGameAndReadPickAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/better/OPGameAndReadPickAdapter;
 
-    .line 154
     iput-object p1, p0, Lcom/oneplus/settings/better/OPGameAndReadPickAdapter$ItemViewHolder;->this$0:Lcom/oneplus/settings/better/OPGameAndReadPickAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

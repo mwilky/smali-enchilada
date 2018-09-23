@@ -64,7 +64,6 @@
 .method public bridge synthetic setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
     .locals 0
 
-    .line 37
     invoke-interface {p0, p1}, Lcom/oneplus/lib/menu/SupportMenuItem;->setContentDescription(Ljava/lang/CharSequence;)Lcom/oneplus/lib/menu/SupportMenuItem;
 
     move-result-object p1
@@ -99,7 +98,6 @@
 .method public bridge synthetic setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
     .locals 0
 
-    .line 37
     invoke-interface {p0, p1}, Lcom/oneplus/lib/menu/SupportMenuItem;->setTooltipText(Ljava/lang/CharSequence;)Lcom/oneplus/lib/menu/SupportMenuItem;
 
     move-result-object p1

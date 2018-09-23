@@ -26,19 +26,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 136
     iput-object p1, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mContext:Landroid/content/Context;
 
-    .line 137
     iput-object p2, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 138
     return-void
 .end method
 
@@ -46,12 +40,9 @@
 # virtual methods
 .method public setListening(Z)V
     .locals 9
-    .param p1, "listening"    # Z
 
-    .line 142
     if-eqz p1, :cond_0
 
-    .line 143
     new-instance v0, Lcom/android/settings/applications/ProcStatsData;
 
     iget-object v1, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mContext:Landroid/content/Context;
@@ -60,21 +51,16 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/applications/ProcStatsData;-><init>(Landroid/content/Context;Z)V
 
-    .line 144
-    .local v0, "statsManager":Lcom/android/settings/applications/ProcStatsData;
     sget-object v1, Lcom/android/settings/applications/ProcessStatsBase;->sDurations:[J
 
     aget-wide v3, v1, v2
 
     invoke-virtual {v0, v3, v4}, Lcom/android/settings/applications/ProcStatsData;->setDuration(J)V
 
-    .line 145
     invoke-virtual {v0}, Lcom/android/settings/applications/ProcStatsData;->getMemInfo()Lcom/android/settings/applications/ProcStatsData$MemInfo;
 
     move-result-object v1
 
-    .line 146
-    .local v1, "memInfo":Lcom/android/settings/applications/ProcStatsData$MemInfo;
     iget-object v3, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mContext:Landroid/content/Context;
 
     iget-wide v4, v1, Lcom/android/settings/applications/ProcStatsData$MemInfo;->realUsedRam:D
@@ -85,8 +71,6 @@
 
     move-result-object v3
 
-    .line 148
-    .local v3, "usedResult":Ljava/lang/String;
     iget-object v4, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mContext:Landroid/content/Context;
 
     iget-wide v5, v1, Lcom/android/settings/applications/ProcStatsData$MemInfo;->realTotalRam:D
@@ -97,8 +81,6 @@
 
     move-result-object v4
 
-    .line 150
-    .local v4, "totalResult":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     iget-object v6, p0, Lcom/android/settings/applications/ProcessStatsSummary$SummaryProvider;->mContext:Landroid/content/Context;
@@ -121,11 +103,6 @@
 
     invoke-virtual {v5, p0, v2}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 153
-    .end local v0    # "statsManager":Lcom/android/settings/applications/ProcStatsData;
-    .end local v1    # "memInfo":Lcom/android/settings/applications/ProcStatsData$MemInfo;
-    .end local v3    # "usedResult":Ljava/lang/String;
-    .end local v4    # "totalResult":Ljava/lang/String;
     :cond_0
     return-void
 .end method

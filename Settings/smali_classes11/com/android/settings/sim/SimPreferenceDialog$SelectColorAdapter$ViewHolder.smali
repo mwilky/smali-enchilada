@@ -28,7 +28,6 @@
 .method private constructor <init>(Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;)V
     .locals 0
 
-    .line 253
     iput-object p1, p0, Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter$ViewHolder;->this$1:Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;Lcom/android/settings/sim/SimPreferenceDialog$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;
-    .param p2, "x1"    # Lcom/android/settings/sim/SimPreferenceDialog$1;
 
-    .line 253
     invoke-direct {p0, p1}, Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter$ViewHolder;-><init>(Lcom/android/settings/sim/SimPreferenceDialog$SelectColorAdapter;)V
 
     return-void

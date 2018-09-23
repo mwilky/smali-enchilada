@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
-    .line 327
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$5;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$5;->val$this$0:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;
@@ -40,7 +38,6 @@
 .method public onAccessibilitySeekBackward()Z
     .locals 1
 
-    .line 335
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$5;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->onBackward()Z
@@ -53,7 +50,6 @@
 .method public onAccessibilitySeekForward()Z
     .locals 1
 
-    .line 330
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$5;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->onForward()Z

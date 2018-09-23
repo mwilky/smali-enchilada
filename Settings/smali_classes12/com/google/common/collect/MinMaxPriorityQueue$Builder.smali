@@ -56,22 +56,16 @@
         }
     .end annotation
 
-    .line 166
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 163
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->expectedSize:I
 
-    .line 164
     const v0, 0x7fffffff
 
     iput v0, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->maximumSize:I
 
-    .line 167
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -80,17 +74,12 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->comparator:Ljava/util/Comparator;
 
-    .line 168
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Comparator;Lcom/google/common/collect/MinMaxPriorityQueue$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/Comparator;
-    .param p2, "x1"    # Lcom/google/common/collect/MinMaxPriorityQueue$1;
 
-    .line 155
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;-><init>(Ljava/util/Comparator;)V
 
     return-void
@@ -98,9 +87,7 @@
 
 .method static synthetic access$200(Lcom/google/common/collect/MinMaxPriorityQueue$Builder;)Lcom/google/common/collect/Ordering;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/MinMaxPriorityQueue$Builder;
 
-    .line 155
     invoke-direct {p0}, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->ordering()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -110,9 +97,7 @@
 
 .method static synthetic access$300(Lcom/google/common/collect/MinMaxPriorityQueue$Builder;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/MinMaxPriorityQueue$Builder;
 
-    .line 155
     iget v0, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->maximumSize:I
 
     return v0
@@ -128,8 +113,6 @@
         }
     .end annotation
 
-    .line 216
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
     iget-object v0, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->comparator:Ljava/util/Comparator;
 
     invoke-static {v0}, Lcom/google/common/collect/Ordering;->from(Ljava/util/Comparator;)Lcom/google/common/collect/Ordering;
@@ -151,8 +134,6 @@
         }
     .end annotation
 
-    .line 197
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
@@ -176,16 +157,12 @@
         }
     .end annotation
 
-    .line 206
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
-    .local p1, "initialContents":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TT;>;"
     new-instance v0, Lcom/google/common/collect/MinMaxPriorityQueue;
 
     iget v1, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->expectedSize:I
 
     iget v2, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->maximumSize:I
 
-    .line 207
     invoke-static {v1, v2, p1}, Lcom/google/common/collect/MinMaxPriorityQueue;->initialQueueSize(IILjava/lang/Iterable;)I
 
     move-result v1
@@ -194,8 +171,6 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/google/common/collect/MinMaxPriorityQueue;-><init>(Lcom/google/common/collect/MinMaxPriorityQueue$Builder;ILcom/google/common/collect/MinMaxPriorityQueue$1;)V
 
-    .line 208
-    .local v0, "queue":Lcom/google/common/collect/MinMaxPriorityQueue;, "Lcom/google/common/collect/MinMaxPriorityQueue<TT;>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -211,22 +186,16 @@
 
     move-result-object v2
 
-    .line 209
-    .local v2, "element":Ljava/lang/Object;, "TT;"
     invoke-virtual {v0, v2}, Lcom/google/common/collect/MinMaxPriorityQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 210
-    .end local v2    # "element":Ljava/lang/Object;, "TT;"
     goto :goto_0
 
-    .line 211
     :cond_0
     return-object v0
 .end method
 
 .method public expectedSize(I)Lcom/google/common/collect/MinMaxPriorityQueue$Builder;
     .locals 1
-    .param p1, "expectedSize"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -235,8 +204,6 @@
         }
     .end annotation
 
-    .line 175
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
     if-ltz p1, :cond_0
 
     const/4 v0, 0x1
@@ -249,16 +216,13 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 176
     iput p1, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->expectedSize:I
 
-    .line 177
     return-object p0
 .end method
 
 .method public maximumSize(I)Lcom/google/common/collect/MinMaxPriorityQueue$Builder;
     .locals 1
-    .param p1, "maximumSize"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -267,8 +231,6 @@
         }
     .end annotation
 
-    .line 187
-    .local p0, "this":Lcom/google/common/collect/MinMaxPriorityQueue$Builder;, "Lcom/google/common/collect/MinMaxPriorityQueue$Builder<TB;>;"
     if-lez p1, :cond_0
 
     const/4 v0, 0x1
@@ -281,9 +243,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 188
     iput p1, p0, Lcom/google/common/collect/MinMaxPriorityQueue$Builder;->maximumSize:I
 
-    .line 189
     return-object p0
 .end method

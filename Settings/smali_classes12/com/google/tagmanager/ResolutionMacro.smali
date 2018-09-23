@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 23
     sget-object v0, Lcom/google/analytics/containertag/common/FunctionType;->RESOLUTION:Lcom/google/analytics/containertag/common/FunctionType;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/FunctionType;->toString()Ljava/lang/String;
@@ -29,9 +28,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 32
     sget-object v0, Lcom/google/tagmanager/ResolutionMacro;->ID:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -40,17 +37,14 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/tagmanager/FunctionCallImplementation;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 33
     iput-object p1, p0, Lcom/google/tagmanager/ResolutionMacro;->mContext:Landroid/content/Context;
 
-    .line 34
     return-void
 .end method
 
 .method public static getFunctionId()Ljava/lang/String;
     .locals 1
 
-    .line 28
     sget-object v0, Lcom/google/tagmanager/ResolutionMacro;->ID:Ljava/lang/String;
 
     return-object v0
@@ -71,14 +65,10 @@
         }
     .end annotation
 
-    .line 41
-    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 42
-    .local v0, "displayMetrics":Landroid/util/DisplayMetrics;
     iget-object v1, p0, Lcom/google/tagmanager/ResolutionMacro;->mContext:Landroid/content/Context;
 
     const-string v2, "window"
@@ -95,15 +85,10 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 45
     iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 46
-    .local v1, "screenWidth":I
     iget v2, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 47
-    .local v2, "screenHeight":I
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -130,7 +115,6 @@
 .method public isCacheable()Z
     .locals 1
 
-    .line 37
     const/4 v0, 0x1
 
     return v0

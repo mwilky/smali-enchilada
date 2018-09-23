@@ -13,19 +13,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 39
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 40
     return-void
 .end method
 
 .method private avoidBadWifiConfig()Z
     .locals 2
 
-    .line 79
     iget-object v0, p0, Lcom/android/settings/wifi/CellularFallbackPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -54,7 +50,6 @@
 .method private avoidBadWifiCurrentSettings()Z
     .locals 3
 
-    .line 84
     const-string v0, "1"
 
     iget-object v1, p0, Lcom/android/settings/wifi/CellularFallbackPreferenceController;->mContext:Landroid/content/Context;
@@ -81,7 +76,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 49
     const-string v0, "wifi_cellular_data_fallback"
 
     return-object v0
@@ -89,9 +83,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 54
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -106,31 +98,24 @@
 
     if-nez v0, :cond_0
 
-    .line 55
     return v1
 
-    .line 57
     :cond_0
     instance-of v0, p1, Landroid/support/v14/preference/SwitchPreference;
 
     if-nez v0, :cond_1
 
-    .line 58
     return v1
 
-    .line 61
     :cond_1
     const-string v0, "network_avoid_bad_wifi"
 
-    .line 62
-    .local v0, "settingName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/wifi/CellularFallbackPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 63
     move-object v2, p1
 
     check-cast v2, Landroid/support/v14/preference/SwitchPreference;
@@ -148,11 +133,9 @@
     :cond_2
     const/4 v2, 0x0
 
-    .line 62
     :goto_0
     invoke-static {v1, v0, v2}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 64
     const/4 v1, 0x1
 
     return v1
@@ -161,7 +144,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 44
     invoke-direct {p0}, Lcom/android/settings/wifi/CellularFallbackPreferenceController;->avoidBadWifiConfig()Z
 
     move-result v0
@@ -173,28 +155,19 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 69
     invoke-direct {p0}, Lcom/android/settings/wifi/CellularFallbackPreferenceController;->avoidBadWifiCurrentSettings()Z
 
     move-result v0
 
-    .line 72
-    .local v0, "currentSetting":Z
     if-eqz p1, :cond_0
 
-    .line 73
     move-object v1, p1
 
     check-cast v1, Landroid/support/v14/preference/SwitchPreference;
 
-    .line 74
-    .local v1, "pref":Landroid/support/v14/preference/SwitchPreference;
     invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 76
-    .end local v1    # "pref":Landroid/support/v14/preference/SwitchPreference;
     :cond_0
     return-void
 .end method

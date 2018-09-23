@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/PowerUsageSummary;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
-    .line 120
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,8 +45,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 3
-    .param p1, "i"    # I
-    .param p2, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -60,7 +56,6 @@
         }
     .end annotation
 
-    .line 124
     new-instance v0, Lcom/android/settings/fuelgauge/BatteryInfoLoader;
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
@@ -80,7 +75,6 @@
 
 .method public onLoadFinished(Landroid/content/Loader;Lcom/android/settings/fuelgauge/BatteryInfo;)V
     .locals 1
-    .param p2, "batteryInfo"    # Lcom/android/settings/fuelgauge/BatteryInfo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,32 +86,26 @@
         }
     .end annotation
 
-    .line 129
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settings/fuelgauge/BatteryInfo;>;"
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v0, v0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryHeaderPreferenceController:Lcom/android/settings/fuelgauge/BatteryHeaderPreferenceController;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/fuelgauge/BatteryHeaderPreferenceController;->updateHeaderPreference(Lcom/android/settings/fuelgauge/BatteryInfo;)V
 
-    .line 130
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iput-object p2, v0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryInfo:Lcom/android/settings/fuelgauge/BatteryInfo;
 
-    .line 131
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-virtual {v0}, Lcom/android/settings/fuelgauge/PowerUsageSummary;->updateLastFullChargePreference()V
 
-    .line 132
     return-void
 .end method
 
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 120
     check-cast p2, Lcom/android/settings/fuelgauge/BatteryInfo;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/fuelgauge/PowerUsageSummary$1;->onLoadFinished(Landroid/content/Loader;Lcom/android/settings/fuelgauge/BatteryInfo;)V
@@ -136,7 +124,5 @@
         }
     .end annotation
 
-    .line 137
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/settings/fuelgauge/BatteryInfo;>;"
     return-void
 .end method

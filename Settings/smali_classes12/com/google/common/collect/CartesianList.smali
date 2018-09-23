@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
-    .local p1, "axes":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Ljava/util/List<TE;>;>;"
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 54
     iput-object p1, p0, Lcom/google/common/collect/CartesianList;->axes:Lcom/google/common/collect/ImmutableList;
 
-    .line 55
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v0
@@ -68,15 +63,12 @@
 
     new-array v0, v0, [I
 
-    .line 56
-    .local v0, "axesSizeProduct":[I
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v2
 
     aput v1, v0, v2
 
-    .line 58
     :try_start_0
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
@@ -84,20 +76,15 @@
 
     sub-int/2addr v2, v1
 
-    .local v2, "i":I
     :goto_0
     move v1, v2
 
-    .end local v2    # "i":I
-    .local v1, "i":I
     if-ltz v1, :cond_0
 
-    .line 59
     add-int/lit8 v2, v1, 0x1
 
     aget v2, v0, v2
 
-    .line 60
     invoke-virtual {p1, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -116,30 +103,20 @@
     :try_end_0
     .catch Ljava/lang/ArithmeticException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 58
     add-int/lit8 v2, v1, -0x1
 
-    .end local v1    # "i":I
-    .restart local v2    # "i":I
     goto :goto_0
 
-    .line 65
-    .end local v2    # "i":I
     :cond_0
     nop
 
-    .line 66
     iput-object v0, p0, Lcom/google/common/collect/CartesianList;->axesSizeProduct:[I
 
-    .line 67
     return-void
 
-    .line 62
     :catch_0
     move-exception v1
 
-    .line 63
-    .local v1, "e":Ljava/lang/ArithmeticException;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "Cartesian product too large; must have size at most Integer.MAX_VALUE"
@@ -151,9 +128,7 @@
 
 .method static synthetic access$000(Lcom/google/common/collect/CartesianList;)Lcom/google/common/collect/ImmutableList;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/CartesianList;
 
-    .line 35
     iget-object v0, p0, Lcom/google/common/collect/CartesianList;->axes:Lcom/google/common/collect/ImmutableList;
 
     return-object v0
@@ -161,11 +136,7 @@
 
 .method static synthetic access$100(Lcom/google/common/collect/CartesianList;II)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/CartesianList;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
 
-    .line 35
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/CartesianList;->getAxisIndexForProductIndex(II)I
 
     move-result v0
@@ -190,19 +161,14 @@
         }
     .end annotation
 
-    .line 41
-    .local p0, "lists":Ljava/util/List;, "Ljava/util/List<+Ljava/util/List<+TE;>;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 42
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableList$Builder;-><init>(I)V
 
-    .line 43
-    .local v0, "axesBuilder":Lcom/google/common/collect/ImmutableList$Builder;, "Lcom/google/common/collect/ImmutableList$Builder<Ljava/util/List<TE;>;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -220,37 +186,27 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 44
-    .local v2, "list":Ljava/util/List;, "Ljava/util/List<+TE;>;"
     invoke-static {v2}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v3
 
-    .line 45
-    .local v3, "copy":Ljava/util/List;, "Ljava/util/List<TE;>;"
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 46
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v1
 
     return-object v1
 
-    .line 48
     :cond_0
     invoke-virtual {v0, v3}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 49
-    .end local v2    # "list":Ljava/util/List;, "Ljava/util/List<+TE;>;"
-    .end local v3    # "copy":Ljava/util/List;, "Ljava/util/List<TE;>;"
     goto :goto_0
 
-    .line 50
     :cond_1
     new-instance v1, Lcom/google/common/collect/CartesianList;
 
@@ -265,11 +221,7 @@
 
 .method private getAxisIndexForProductIndex(II)I
     .locals 2
-    .param p1, "index"    # I
-    .param p2, "axis"    # I
 
-    .line 70
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/CartesianList;->axesSizeProduct:[I
 
     add-int/lit8 v1, p2, 0x1
@@ -299,30 +251,24 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 6
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 104
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
     instance-of v0, p1, Ljava/util/List;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 105
     return v1
 
-    .line 107
     :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/List;
 
-    .line 108
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<*>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -335,17 +281,13 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 109
     return v1
 
-    .line 111
     :cond_1
     invoke-interface {v0}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
 
     move-result-object v2
 
-    .line 112
-    .local v2, "itr":Ljava/util/ListIterator;, "Ljava/util/ListIterator<*>;"
     :goto_0
     invoke-interface {v2}, Ljava/util/ListIterator;->hasNext()Z
 
@@ -353,13 +295,10 @@
 
     if-eqz v3, :cond_3
 
-    .line 113
     invoke-interface {v2}, Ljava/util/ListIterator;->nextIndex()I
 
     move-result v3
 
-    .line 114
-    .local v3, "index":I
     iget-object v4, p0, Lcom/google/common/collect/CartesianList;->axes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v4, v3}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -378,15 +317,11 @@
 
     if-nez v4, :cond_2
 
-    .line 115
     return v1
 
-    .line 117
-    .end local v3    # "index":I
     :cond_2
     goto :goto_0
 
-    .line 118
     :cond_3
     const/4 v1, 0x1
 
@@ -395,7 +330,6 @@
 
 .method public get(I)Lcom/google/common/collect/ImmutableList;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -404,15 +338,12 @@
         }
     .end annotation
 
-    .line 75
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/CartesianList;->size()I
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 76
     new-instance v0, Lcom/google/common/collect/CartesianList$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/CartesianList$1;-><init>(Lcom/google/common/collect/CartesianList;I)V
@@ -423,8 +354,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/CartesianList;->get(I)Lcom/google/common/collect/ImmutableList;
 
     move-result-object p1
@@ -435,8 +364,6 @@
 .method public size()I
     .locals 2
 
-    .line 99
-    .local p0, "this":Lcom/google/common/collect/CartesianList;, "Lcom/google/common/collect/CartesianList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/CartesianList;->axesSizeProduct:[I
 
     const/4 v1, 0x0

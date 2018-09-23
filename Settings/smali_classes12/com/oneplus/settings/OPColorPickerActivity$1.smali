@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/OPColorPickerActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/OPColorPickerActivity;
 
-    .line 79
     iput-object p1, p0, Lcom/oneplus/settings/OPColorPickerActivity$1;->this$0:Lcom/oneplus/settings/OPColorPickerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .line 83
     const/4 v0, 0x1
 
     return v0

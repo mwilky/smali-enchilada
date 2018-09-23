@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/tts/TextToSpeechSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/tts/TextToSpeechSettings;
 
-    .line 518
     iput-object p1, p0, Lcom/android/settings/tts/TextToSpeechSettings$4;->this$0:Lcom/android/settings/tts/TextToSpeechSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,9 +61,6 @@
         }
     .end annotation
 
-    .line 521
-    .local p1, "lhs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/util/Locale;>;"
-    .local p2, "rhs":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/String;Ljava/util/Locale;>;"
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
@@ -84,7 +79,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 518
     check-cast p1, Landroid/util/Pair;
 
     check-cast p2, Landroid/util/Pair;

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/PointerSpeedPreference;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/PointerSpeedPreference;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 41
     iput-object p1, p0, Lcom/android/settings/PointerSpeedPreference$1;->this$0:Lcom/android/settings/PointerSpeedPreference;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 44
     iget-object v0, p0, Lcom/android/settings/PointerSpeedPreference$1;->this$0:Lcom/android/settings/PointerSpeedPreference;
 
     invoke-static {v0}, Lcom/android/settings/PointerSpeedPreference;->access$000(Lcom/android/settings/PointerSpeedPreference;)V
 
-    .line 45
     return-void
 .end method

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,6 @@
 # virtual methods
 .method public onAction(Landroidx/slice/SliceItem;Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "item"    # Landroidx/slice/SliceItem;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "intent"    # Landroid/content/Intent;
 
-    .line 160
     return-void
 .end method

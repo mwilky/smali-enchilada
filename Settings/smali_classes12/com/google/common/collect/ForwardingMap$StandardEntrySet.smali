@@ -31,10 +31,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ForwardingMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ForwardingMap;
 
-    .line 258
-    .local p0, "this":Lcom/google/common/collect/ForwardingMap$StandardEntrySet;, "Lcom/google/common/collect/ForwardingMap<TK;TV;>.StandardEntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/ForwardingMap$StandardEntrySet;->this$0:Lcom/google/common/collect/ForwardingMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -54,8 +51,6 @@
         }
     .end annotation
 
-    .line 262
-    .local p0, "this":Lcom/google/common/collect/ForwardingMap$StandardEntrySet;, "Lcom/google/common/collect/ForwardingMap<TK;TV;>.StandardEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/ForwardingMap$StandardEntrySet;->this$0:Lcom/google/common/collect/ForwardingMap;
 
     return-object v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/NotificationSwitchBarPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
-    .line 42
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
     invoke-static {v0}, Lcom/android/settings/notification/NotificationSwitchBarPreference;->access$000(Lcom/android/settings/notification/NotificationSwitchBarPreference;)Lcom/android/settings/widget/ToggleSwitch;
@@ -53,10 +49,8 @@
 
     if-nez v0, :cond_0
 
-    .line 46
     return-void
 
-    .line 48
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
@@ -70,7 +64,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/notification/NotificationSwitchBarPreference;->access$102(Lcom/android/settings/notification/NotificationSwitchBarPreference;Z)Z
 
-    .line 49
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
@@ -81,7 +74,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationSwitchBarPreference;->setChecked(Z)V
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
@@ -100,7 +92,6 @@
 
     if-nez v0, :cond_1
 
-    .line 51
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSwitchBarPreference$1;->this$0:Lcom/android/settings/notification/NotificationSwitchBarPreference;
@@ -113,7 +104,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationSwitchBarPreference;->setChecked(Z)V
 
-    .line 53
     :cond_1
     return-void
 .end method

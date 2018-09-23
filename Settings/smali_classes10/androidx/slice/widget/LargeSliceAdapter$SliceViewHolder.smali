@@ -27,16 +27,11 @@
 # direct methods
 .method public constructor <init>(Landroidx/slice/widget/LargeSliceAdapter;Landroid/view/View;)V
     .locals 1
-    .param p1, "this$0"    # Landroidx/slice/widget/LargeSliceAdapter;
-    .param p2, "itemView"    # Landroid/view/View;
 
-    .line 235
     iput-object p1, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
-    .line 236
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 237
     instance-of v0, p2, Landroidx/slice/widget/SliceChildView;
 
     if-eqz v0, :cond_0
@@ -53,7 +48,6 @@
     :goto_0
     iput-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
-    .line 238
     return-void
 .end method
 
@@ -61,10 +55,7 @@
 # virtual methods
 .method bind(Landroidx/slice/SliceItem;I)V
     .locals 11
-    .param p1, "item"    # Landroidx/slice/SliceItem;
-    .param p2, "position"    # I
 
-    .line 241
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     if-eqz v0, :cond_8
@@ -73,18 +64,15 @@
 
     goto/16 :goto_6
 
-    .line 245
     :cond_0
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     invoke-virtual {v0, p0}, Landroidx/slice/widget/SliceChildView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 247
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     invoke-virtual {v0, p0}, Landroidx/slice/widget/SliceChildView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 249
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -98,8 +86,6 @@
     :cond_1
     move v2, v0
 
-    .line 250
-    .local v2, "isHeader":Z
     :goto_0
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
@@ -129,13 +115,10 @@
     :goto_1
     move v10, v3
 
-    .line 251
-    .local v10, "mode":I
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     invoke-virtual {v3, v10}, Landroidx/slice/widget/SliceChildView;->setMode(I)V
 
-    .line 252
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     iget-object v4, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
@@ -146,7 +129,6 @@
 
     invoke-virtual {v3, v4}, Landroidx/slice/widget/SliceChildView;->setTint(I)V
 
-    .line 253
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     iget-object v4, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
@@ -169,7 +151,6 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroidx/slice/widget/SliceChildView;->setStyle(Landroid/util/AttributeSet;II)V
 
-    .line 254
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     iget-object v4, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
@@ -192,7 +173,6 @@
 
     invoke-virtual/range {v3 .. v8}, Landroidx/slice/widget/SliceChildView;->setSliceItem(Landroidx/slice/SliceItem;ZIILandroidx/slice/widget/SliceView$OnSliceActionListener;)V
 
-    .line 255
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     if-eqz v2, :cond_3
@@ -211,7 +191,6 @@
     :goto_2
     invoke-virtual {v3, v4}, Landroidx/slice/widget/SliceChildView;->setSliceActions(Ljava/util/List;)V
 
-    .line 256
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     if-eqz v2, :cond_4
@@ -230,7 +209,6 @@
     :goto_3
     invoke-virtual {v3, v4, v5}, Landroidx/slice/widget/SliceChildView;->setLastUpdated(J)V
 
-    .line 257
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     if-eqz v2, :cond_5
@@ -253,14 +231,12 @@
     :goto_4
     invoke-virtual {v3, v4}, Landroidx/slice/widget/SliceChildView;->setShowLastUpdated(Z)V
 
-    .line 258
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     instance-of v3, v3, Landroidx/slice/widget/RowView;
 
     if-eqz v3, :cond_7
 
-    .line 259
     iget-object v3, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     check-cast v3, Landroidx/slice/widget/RowView;
@@ -283,12 +259,9 @@
     :goto_5
     invoke-virtual {v3, v4}, Landroidx/slice/widget/RowView;->setSingleItem(Z)V
 
-    .line 261
     :cond_7
     new-array v3, v9, [I
 
-    .line 262
-    .local v3, "info":[I
     iget-object v4, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v4}, Landroidx/slice/widget/LargeSliceAdapter;->access$1300(Landroidx/slice/widget/LargeSliceAdapter;)Landroid/content/Context;
@@ -307,21 +280,14 @@
 
     aput v4, v3, v0
 
-    .line 263
     aput p2, v3, v1
 
-    .line 264
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->mSliceChildView:Landroidx/slice/widget/SliceChildView;
 
     invoke-virtual {v0, v3}, Landroidx/slice/widget/SliceChildView;->setTag(Ljava/lang/Object;)V
 
-    .line 265
     return-void
 
-    .line 242
-    .end local v2    # "isHeader":Z
-    .end local v3    # "info":[I
-    .end local v10    # "mode":I
     :cond_8
     :goto_6
     return-void
@@ -329,9 +295,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 269
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v0}, Landroidx/slice/widget/LargeSliceAdapter;->access$400(Landroidx/slice/widget/LargeSliceAdapter;)Landroidx/slice/widget/SliceView;
@@ -340,7 +304,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 270
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v0}, Landroidx/slice/widget/LargeSliceAdapter;->access$400(Landroidx/slice/widget/LargeSliceAdapter;)Landroidx/slice/widget/SliceView;
@@ -355,7 +318,6 @@
 
     invoke-virtual {v0, v1}, Landroidx/slice/widget/SliceView;->setClickInfo([I)V
 
-    .line 271
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v0}, Landroidx/slice/widget/LargeSliceAdapter;->access$400(Landroidx/slice/widget/LargeSliceAdapter;)Landroidx/slice/widget/SliceView;
@@ -364,17 +326,13 @@
 
     invoke-virtual {v0}, Landroidx/slice/widget/SliceView;->performClick()Z
 
-    .line 273
     :cond_0
     return-void
 .end method
 
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
 
-    .line 277
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v0}, Landroidx/slice/widget/LargeSliceAdapter;->access$1400(Landroidx/slice/widget/LargeSliceAdapter;)Landroidx/slice/widget/LargeTemplateView;
@@ -383,7 +341,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 278
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$SliceViewHolder;->this$0:Landroidx/slice/widget/LargeSliceAdapter;
 
     invoke-static {v0}, Landroidx/slice/widget/LargeSliceAdapter;->access$1400(Landroidx/slice/widget/LargeSliceAdapter;)Landroidx/slice/widget/LargeTemplateView;
@@ -392,7 +349,6 @@
 
     invoke-virtual {v0, p2}, Landroidx/slice/widget/LargeTemplateView;->onForegroundActivated(Landroid/view/MotionEvent;)V
 
-    .line 280
     :cond_0
     const/4 v0, 0x0
 

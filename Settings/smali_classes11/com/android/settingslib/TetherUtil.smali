@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,22 +14,17 @@
 
 .method static isEntitlementCheckRequired(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 27
     const-string v0, "carrier_config"
 
-    .line 28
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/telephony/CarrierConfigManager;
 
-    .line 29
-    .local v0, "configManager":Landroid/telephony/CarrierConfigManager;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/telephony/CarrierConfigManager;->getConfig()Landroid/os/PersistableBundle;
@@ -41,7 +35,6 @@
 
     goto :goto_0
 
-    .line 33
     :cond_0
     invoke-virtual {v0}, Landroid/telephony/CarrierConfigManager;->getConfig()Landroid/os/PersistableBundle;
 
@@ -55,7 +48,6 @@
 
     return v1
 
-    .line 31
     :cond_1
     :goto_0
     const/4 v1, 0x1
@@ -65,9 +57,7 @@
 
 .method public static isProvisioningNeeded(Landroid/content/Context;)Z
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 40
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -78,8 +68,6 @@
 
     move-result-object v0
 
-    .line 42
-    .local v0, "provisionApp":[Ljava/lang/String;
     const-string v1, "net.tethering.noprovisioning"
 
     const/4 v2, 0x0
@@ -94,7 +82,6 @@
 
     goto :goto_0
 
-    .line 47
     :cond_0
     invoke-static {p0}, Lcom/android/settingslib/TetherUtil;->isEntitlementCheckRequired(Landroid/content/Context;)Z
 
@@ -102,10 +89,8 @@
 
     if-nez v1, :cond_1
 
-    .line 48
     return v2
 
-    .line 50
     :cond_1
     array-length v1, v0
 
@@ -120,7 +105,6 @@
     :cond_2
     return v2
 
-    .line 44
     :cond_3
     :goto_0
     return v2

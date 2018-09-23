@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Splitter$3;Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;Ljava/util/regex/Matcher;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/base/Splitter$3;
-    .param p2, "splitter"    # Lcom/google/common/base/Splitter;
-    .param p3, "toSplit"    # Ljava/lang/CharSequence;
 
-    .line 224
     iput-object p1, p0, Lcom/google/common/base/Splitter$3$1;->this$0:Lcom/google/common/base/Splitter$3;
 
     iput-object p4, p0, Lcom/google/common/base/Splitter$3$1;->val$matcher:Ljava/util/regex/Matcher;
@@ -41,9 +37,7 @@
 # virtual methods
 .method public separatorEnd(I)I
     .locals 1
-    .param p1, "separatorPosition"    # I
 
-    .line 230
     iget-object v0, p0, Lcom/google/common/base/Splitter$3$1;->val$matcher:Ljava/util/regex/Matcher;
 
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
@@ -55,9 +49,7 @@
 
 .method public separatorStart(I)I
     .locals 1
-    .param p1, "start"    # I
 
-    .line 226
     iget-object v0, p0, Lcom/google/common/base/Splitter$3$1;->val$matcher:Ljava/util/regex/Matcher;
 
     invoke-virtual {v0, p1}, Ljava/util/regex/Matcher;->find(I)Z

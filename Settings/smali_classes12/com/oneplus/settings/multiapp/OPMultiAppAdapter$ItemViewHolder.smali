@@ -37,9 +37,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/multiapp/OPMultiAppAdapter;
 
-    .line 140
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppAdapter$ItemViewHolder;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

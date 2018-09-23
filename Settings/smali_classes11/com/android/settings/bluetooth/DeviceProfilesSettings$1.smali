@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/bluetooth/DeviceProfilesSettings;Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
-    .line 310
     iput-object p1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->this$0:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
     iput-object p2, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$device:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
@@ -46,22 +44,17 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 314
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 315
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$device:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$profile:Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->disconnect(Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)V
 
-    .line 316
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$profile:Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
 
     iget-object v1, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$device:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
@@ -74,7 +67,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;->setPreferred(Landroid/bluetooth/BluetoothDevice;Z)V
 
-    .line 317
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$profile:Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
 
     instance-of v0, v0, Lcom/android/settingslib/bluetooth/MapProfile;
@@ -83,12 +75,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 318
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$device:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->setMessagePermissionChoice(I)V
 
-    .line 320
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$profile:Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;
 
@@ -96,12 +86,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 321
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->val$device:Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;->setPhonebookPermissionChoice(I)V
 
-    .line 324
     :cond_1
     iget-object v0, p0, Lcom/android/settings/bluetooth/DeviceProfilesSettings$1;->this$0:Lcom/android/settings/bluetooth/DeviceProfilesSettings;
 
@@ -121,6 +109,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/bluetooth/DeviceProfilesSettings;->access$100(Lcom/android/settings/bluetooth/DeviceProfilesSettings;Landroid/widget/CheckBox;Lcom/android/settingslib/bluetooth/LocalBluetoothProfile;)V
 
-    .line 325
     return-void
 .end method

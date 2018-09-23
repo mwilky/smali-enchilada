@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 88
     const-string v0, "android.permission.ACCESS_COARSE_LOCATION"
 
     const-string v1, "android.permission.ACCESS_FINE_LOCATION"
@@ -29,7 +28,6 @@
 
     invoke-direct {p0, v0}, Lcom/android/settings/enterprise/ApplicationListFragment$AdminGrantedPermission;-><init>([Ljava/lang/String;)V
 
-    .line 90
     return-void
 .end method
 
@@ -38,7 +36,6 @@
 .method public bridge synthetic buildApplicationList(Landroid/content/Context;Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;)V
     .locals 0
 
-    .line 86
     invoke-super {p0, p1, p2}, Lcom/android/settings/enterprise/ApplicationListFragment$AdminGrantedPermission;->buildApplicationList(Landroid/content/Context;Lcom/android/settings/applications/ApplicationFeatureProvider$ListOfAppsCallback;)V
 
     return-void
@@ -47,7 +44,6 @@
 .method public bridge synthetic getMetricsCategory()I
     .locals 1
 
-    .line 86
     invoke-super {p0}, Lcom/android/settings/enterprise/ApplicationListFragment$AdminGrantedPermission;->getMetricsCategory()I
 
     move-result v0

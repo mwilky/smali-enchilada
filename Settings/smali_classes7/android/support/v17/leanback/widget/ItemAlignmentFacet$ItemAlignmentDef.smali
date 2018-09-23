@@ -32,28 +32,22 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mViewId:I
 
-    .line 49
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mFocusViewId:I
 
-    .line 50
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffset:I
 
-    .line 51
     const/high16 v1, 0x42480000    # 50.0f
 
     iput v1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetPercent:F
 
-    .line 52
     iput-boolean v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetWithPadding:Z
 
     return-void
@@ -64,7 +58,6 @@
 .method public final getItemAlignmentFocusViewId()I
     .locals 2
 
-    .line 167
     iget v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mFocusViewId:I
 
     const/4 v1, -0x1
@@ -85,7 +78,6 @@
 .method public final getItemAlignmentOffset()I
     .locals 1
 
-    .line 71
     iget v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffset:I
 
     return v0
@@ -94,7 +86,6 @@
 .method public final getItemAlignmentOffsetPercent()F
     .locals 1
 
-    .line 121
     iget v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetPercent:F
 
     return v0
@@ -103,7 +94,6 @@
 .method public final getItemAlignmentViewId()I
     .locals 1
 
-    .line 150
     iget v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mViewId:I
 
     return v0
@@ -112,7 +102,6 @@
 .method public isAlignedToTextViewBaseLine()Z
     .locals 1
 
-    .line 183
     iget-boolean v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mAlignToBaseline:Z
 
     return v0
@@ -121,7 +110,6 @@
 .method public final isItemAlignmentOffsetWithPadding()Z
     .locals 1
 
-    .line 99
     iget-boolean v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetWithPadding:Z
 
     return v0
@@ -129,42 +117,31 @@
 
 .method public final setAlignedToTextViewBaseline(Z)V
     .locals 0
-    .param p1, "alignToBaseline"    # Z
 
-    .line 176
     iput-boolean p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mAlignToBaseline:Z
 
-    .line 177
     return-void
 .end method
 
 .method public final setItemAlignmentFocusViewId(I)V
     .locals 0
-    .param p1, "viewId"    # I
 
-    .line 159
     iput p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mFocusViewId:I
 
-    .line 160
     return-void
 .end method
 
 .method public final setItemAlignmentOffset(I)V
     .locals 0
-    .param p1, "offset"    # I
 
-    .line 61
     iput p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffset:I
 
-    .line 62
     return-void
 .end method
 
 .method public final setItemAlignmentOffsetPercent(F)V
     .locals 1
-    .param p1, "percent"    # F
 
-    .line 108
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
@@ -184,14 +161,11 @@
 
     if-nez v0, :cond_2
 
-    .line 112
     :cond_1
     iput p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetPercent:F
 
-    .line 113
     return-void
 
-    .line 110
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -202,22 +176,16 @@
 
 .method public final setItemAlignmentOffsetWithPadding(Z)V
     .locals 0
-    .param p1, "withPadding"    # Z
 
-    .line 85
     iput-boolean p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetWithPadding:Z
 
-    .line 86
     return-void
 .end method
 
 .method public final setItemAlignmentViewId(I)V
     .locals 0
-    .param p1, "viewId"    # I
 
-    .line 136
     iput p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mViewId:I
 
-    .line 137
     return-void
 .end method

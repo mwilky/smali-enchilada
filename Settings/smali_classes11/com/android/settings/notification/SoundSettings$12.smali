@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1280
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 1293
     const/4 v0, 0x0
 
     invoke-static {p1, v0, v0}, Lcom/android/settings/notification/SoundSettings;->access$2000(Landroid/content/Context;Lcom/android/settings/notification/SoundSettings;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
@@ -52,7 +49,6 @@
 
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,55 +60,44 @@
         }
     .end annotation
 
-    .line 1299
     invoke-super {p0, p1}, Lcom/android/settings/search/BaseSearchIndexProvider;->getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1302
-    .local v0, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p1}, Lcom/android/settings/Utils;->isVoiceCapable(Landroid/content/Context;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1303
     const-string v1, "notification_volume"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 1305
     :cond_0
     const-string v1, "ring_volume"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1306
     const-string v1, "ringtone"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1307
     const-string v1, "vibrate_when_ringing"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1310
     :goto_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 1311
-    .local v1, "pm":Landroid/content/pm/PackageManager;
     const-string v2, "user"
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 1314
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -123,11 +108,8 @@
 
     move-result v2
 
-    .line 1317
-    .local v2, "isCellBroadcastAppLinkEnabled":Z
     if-eqz v2, :cond_1
 
-    .line 1318
     :try_start_0
     const-string v3, "com.android.cellbroadcastreceiver"
 
@@ -141,28 +123,21 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1320
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 1323
     :catch_0
     move-exception v3
 
-    .line 1324
-    .local v3, "ignored":Ljava/lang/IllegalArgumentException;
     const/4 v2, 0x0
 
-    .end local v3    # "ignored":Ljava/lang/IllegalArgumentException;
     goto :goto_2
 
-    .line 1325
     :cond_1
     :goto_1
     nop
 
-    .line 1327
     :goto_2
     const-string v3, "com.oneplus.dirac.simplemanager"
 
@@ -172,12 +147,10 @@
 
     if-nez v3, :cond_2
 
-    .line 1328
     const-string v3, "sound_direct"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1331
     :cond_2
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -191,7 +164,6 @@
 
     invoke-static {v3}, Lcom/android/settings/notification/SoundSettings;->access$2102(Z)Z
 
-    .line 1332
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v3
@@ -204,33 +176,27 @@
 
     if-nez v3, :cond_4
 
-    .line 1333
     :cond_3
     const-string v3, "vibrate"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1334
     const-string v3, "vibrate_when_ringing_for_vibrate"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1335
     const-string v3, "incoming_call_vibrate_mode"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1336
     const-string v3, "vibrate_on_touch_for_vibrate"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1337
     const-string v3, "vibrate_intensity"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1341
     :cond_4
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportSocTriState()Z
 
@@ -238,43 +204,35 @@
 
     if-nez v3, :cond_5
 
-    .line 1342
     const-string v3, "do_not_disturb_settings"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1344
     :cond_5
     const-string v3, "volume_keys_adjust"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1347
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOpBluetoothHeadset()Z
 
     move-result v3
 
     if-nez v3, :cond_6
 
-    .line 1348
     const-string v3, "earphone"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1349
     const-string v3, "earphone_mode"
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1351
     :cond_6
     return-object v0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -286,18 +244,14 @@
         }
     .end annotation
 
-    .line 1284
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 1286
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f1600bc
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 1287
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

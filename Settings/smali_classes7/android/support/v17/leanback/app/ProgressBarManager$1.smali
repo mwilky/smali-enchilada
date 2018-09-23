@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/ProgressBarManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/ProgressBarManager;
 
-    .line 28
     iput-object p1, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 5
 
-    .line 31
     iget-object v0, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     iget-boolean v0, v0, Landroid/support/v17/leanback/app/ProgressBarManager;->mEnableProgressBar:Z
@@ -60,7 +57,6 @@
 
     goto :goto_1
 
-    .line 35
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
@@ -68,14 +64,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 36
     iget-object v0, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/ProgressBarManager;->mProgressBarView:Landroid/view/View;
 
     if-nez v0, :cond_1
 
-    .line 37
     iget-object v0, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     new-instance v1, Landroid/widget/ProgressBar;
@@ -84,7 +78,6 @@
 
     iget-object v2, v2, Landroid/support/v17/leanback/app/ProgressBarManager;->rootView:Landroid/view/ViewGroup;
 
-    .line 38
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -97,20 +90,16 @@
 
     iput-object v1, v0, Landroid/support/v17/leanback/app/ProgressBarManager;->mProgressBarView:Landroid/view/View;
 
-    .line 39
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     const/4 v1, -0x2
 
     invoke-direct {v0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 42
-    .local v0, "progressBarParams":Landroid/widget/FrameLayout$LayoutParams;
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 43
     iget-object v1, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/ProgressBarManager;->rootView:Landroid/view/ViewGroup;
@@ -121,8 +110,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 44
-    .end local v0    # "progressBarParams":Landroid/widget/FrameLayout$LayoutParams;
     goto :goto_0
 
     :cond_1
@@ -132,7 +119,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 45
     iget-object v0, p0, Landroid/support/v17/leanback/app/ProgressBarManager$1;->this$0:Landroid/support/v17/leanback/app/ProgressBarManager;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/ProgressBarManager;->mProgressBarView:Landroid/view/View;
@@ -141,12 +127,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 48
     :cond_2
     :goto_0
     return-void
 
-    .line 32
     :cond_3
     :goto_1
     return-void

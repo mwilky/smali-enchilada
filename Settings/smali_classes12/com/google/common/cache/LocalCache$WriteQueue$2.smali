@@ -29,11 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/LocalCache$WriteQueue;Lcom/google/common/cache/LocalCache$ReferenceEntry;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/cache/LocalCache$WriteQueue;
 
-    .line 3710
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteQueue$2;, "Lcom/google/common/cache/LocalCache$WriteQueue$2;"
-    .local p2, "firstOrNull":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WriteQueue$2;->this$0:Lcom/google/common/cache/LocalCache$WriteQueue;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractSequentialIterator;-><init>(Ljava/lang/Object;)V
@@ -55,15 +51,10 @@
         }
     .end annotation
 
-    .line 3713
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteQueue$2;, "Lcom/google/common/cache/LocalCache$WriteQueue$2;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-interface {p1}, Lcom/google/common/cache/LocalCache$ReferenceEntry;->getNextInWriteQueue()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v0
 
-    .line 3714
-    .local v0, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/cache/LocalCache$WriteQueue$2;->this$0:Lcom/google/common/cache/LocalCache$WriteQueue;
 
     iget-object v1, v1, Lcom/google/common/cache/LocalCache$WriteQueue;->head:Lcom/google/common/cache/LocalCache$ReferenceEntry;
@@ -84,8 +75,6 @@
 .method protected bridge synthetic computeNext(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 3710
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WriteQueue$2;, "Lcom/google/common/cache/LocalCache$WriteQueue$2;"
     check-cast p1, Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/cache/LocalCache$WriteQueue$2;->computeNext(Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ReferenceEntry;

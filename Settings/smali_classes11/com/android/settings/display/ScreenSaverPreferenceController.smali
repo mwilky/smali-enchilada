@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 29
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 30
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 40
     const-string v0, "screensaver"
 
     return-object v0
@@ -36,7 +32,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 34
     iget-object v0, p0, Lcom/android/settings/display/ScreenSaverPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -54,9 +49,7 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/display/ScreenSaverPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/dream/DreamSettings;->getSummaryTextWithDreamName(Landroid/content/Context;)Ljava/lang/CharSequence;
@@ -65,6 +58,5 @@
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 46
     return-void
 .end method

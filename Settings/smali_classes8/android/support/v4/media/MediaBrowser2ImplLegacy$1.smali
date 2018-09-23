@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy;Landroid/os/Bundle;Landroid/support/v4/media/MediaBrowserCompat;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
-    .line 79
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$1;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$1;->val$extras:Landroid/os/Bundle;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 5
 
-    .line 82
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$1;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2ImplLegacy;->getCallback()Landroid/support/v4/media/MediaBrowser2$BrowserCallback;
@@ -64,7 +61,6 @@
 
     iget-object v3, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$1;->val$browser:Landroid/support/v4/media/MediaBrowserCompat;
 
-    .line 83
     invoke-virtual {v3}, Landroid/support/v4/media/MediaBrowserCompat;->getRoot()Ljava/lang/String;
 
     move-result-object v3
@@ -75,9 +71,7 @@
 
     move-result-object v4
 
-    .line 82
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaBrowser2$BrowserCallback;->onGetLibraryRootDone(Landroid/support/v4/media/MediaBrowser2;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 84
     return-void
 .end method

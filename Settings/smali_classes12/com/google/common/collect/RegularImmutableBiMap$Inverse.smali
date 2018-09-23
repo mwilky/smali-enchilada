@@ -35,8 +35,6 @@
 .method private constructor <init>(Lcom/google/common/collect/RegularImmutableBiMap;)V
     .locals 0
 
-    .line 250
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableBiMap;-><init>()V
@@ -46,11 +44,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/RegularImmutableBiMap;Lcom/google/common/collect/RegularImmutableBiMap$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/RegularImmutableBiMap;
-    .param p2, "x1"    # Lcom/google/common/collect/RegularImmutableBiMap$1;
 
-    .line 250
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;-><init>(Lcom/google/common/collect/RegularImmutableBiMap;)V
 
     return-void
@@ -69,8 +63,6 @@
         }
     .end annotation
 
-    .line 279
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;-><init>(Lcom/google/common/collect/RegularImmutableBiMap$Inverse;)V
@@ -80,7 +72,7 @@
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
-    .param p1, "value"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -92,16 +84,12 @@
         }
     .end annotation
 
-    .line 264
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 265
     return-object v0
 
-    .line 267
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -119,8 +107,6 @@
 
     and-int/2addr v1, v2
 
-    .line 268
-    .local v1, "bucket":I
     iget-object v2, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     invoke-static {v2}, Lcom/google/common/collect/RegularImmutableBiMap;->access$400(Lcom/google/common/collect/RegularImmutableBiMap;)[Lcom/google/common/collect/ImmutableMapEntry;
@@ -129,11 +115,9 @@
 
     aget-object v2, v2, v1
 
-    .local v2, "entry":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
     :goto_0
     if-eqz v2, :cond_2
 
-    .line 270
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMapEntry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -144,14 +128,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 271
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMapEntry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 
-    .line 269
     :cond_1
     invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMapEntry;->getNextInValueBucket()Lcom/google/common/collect/ImmutableMapEntry;
 
@@ -159,8 +141,6 @@
 
     goto :goto_0
 
-    .line 274
-    .end local v2    # "entry":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
     :cond_2
     return-object v0
 .end method
@@ -168,8 +148,6 @@
 .method public bridge synthetic inverse()Lcom/google/common/collect/BiMap;
     .locals 1
 
-    .line 250
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -187,8 +165,6 @@
         }
     .end annotation
 
-    .line 259
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     return-object v0
@@ -197,8 +173,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 322
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     const/4 v0, 0x0
 
     return v0
@@ -207,8 +181,6 @@
 .method public size()I
     .locals 1
 
-    .line 254
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -223,8 +195,6 @@
 .method writeReplace()Ljava/lang/Object;
     .locals 2
 
-    .line 327
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse;, "Lcom/google/common/collect/RegularImmutableBiMap<TK;TV;>.Inverse;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap$InverseSerializedForm;
 
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;

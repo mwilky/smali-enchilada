@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibraryService2LegacyStub;Landroid/os/Bundle;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;Landroid/support/v4/media/MediaBrowserServiceCompat$Result;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 84
     iput-object p1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$options:Landroid/os/Bundle;
@@ -55,12 +53,10 @@
 .method public run()V
     .locals 9
 
-    .line 87
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$options:Landroid/os/Bundle;
 
     if-eqz v0, :cond_1
 
-    .line 88
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$options:Landroid/os/Bundle;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
@@ -79,7 +75,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    .line 90
     :try_start_0
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$options:Landroid/os/Bundle;
 
@@ -89,8 +84,6 @@
 
     move-result v0
 
-    .line 91
-    .local v0, "page":I
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$options:Landroid/os/Bundle;
 
     const-string v2, "android.media.browse.extra.PAGE_SIZE"
@@ -101,13 +94,10 @@
 
     move v8, v1
 
-    .line 92
-    .local v8, "pageSize":I
     if-lez v0, :cond_0
 
     if-lez v8, :cond_0
 
-    .line 94
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
@@ -120,7 +110,6 @@
 
     iget-object v2, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 95
     invoke-static {v2}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v2
@@ -143,8 +132,6 @@
 
     move-result-object v1
 
-    .line 97
-    .local v1, "children":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
     iget-object v2, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$result:Landroid/support/v4/media/MediaBrowserServiceCompat$Result;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaUtils2;->convertToMediaItemList(Ljava/util/List;)Ljava/util/List;
@@ -155,21 +142,14 @@
     :try_end_0
     .catch Landroid/os/BadParcelableException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 98
     return-void
 
-    .line 105
-    .end local v0    # "page":I
-    .end local v1    # "children":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
-    .end local v8    # "pageSize":I
     :cond_0
     goto :goto_0
 
-    .line 103
     :catch_0
     move-exception v0
 
-    .line 108
     :cond_1
     :goto_0
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
@@ -184,7 +164,6 @@
 
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 109
     invoke-static {v0}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
@@ -207,8 +186,6 @@
 
     move-result-object v0
 
-    .line 112
-    .local v0, "children":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$1;->val$result:Landroid/support/v4/media/MediaBrowserServiceCompat$Result;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaUtils2;->convertToMediaItemList(Ljava/util/List;)Ljava/util/List;
@@ -217,6 +194,5 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->sendResult(Ljava/lang/Object;)V
 
-    .line 113
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
-    .line 213
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper$4;->this$0:Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,39 +36,30 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 225
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 220
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper$4;->this$0:Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;->access$202(Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 221
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 229
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 216
     return-void
 .end method

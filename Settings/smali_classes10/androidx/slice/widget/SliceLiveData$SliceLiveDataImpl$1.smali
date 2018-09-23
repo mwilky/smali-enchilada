@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
-    .line 273
     iput-object p1, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 276
     iget-object v0, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-static {v0}, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;->access$1500(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;)Landroid/net/Uri;
@@ -69,7 +66,6 @@
     :cond_0
     iget-object v0, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
-    .line 277
     invoke-static {v0}, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;->access$1600(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;)Landroidx/slice/SliceViewManager;
 
     move-result-object v0
@@ -84,8 +80,6 @@
 
     move-result-object v0
 
-    .line 278
-    .local v0, "s":Landroidx/slice/Slice;
     :goto_0
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
@@ -97,7 +91,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 279
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-virtual {v0}, Landroidx/slice/Slice;->getUri()Landroid/net/Uri;
@@ -106,7 +99,6 @@
 
     invoke-static {v1, v2}, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;->access$1502(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 280
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-static {v1}, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;->access$1600(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;)Landroidx/slice/SliceViewManager;
@@ -127,12 +119,10 @@
 
     invoke-virtual {v1, v2, v3}, Landroidx/slice/SliceViewManager;->registerSliceCallback(Landroid/net/Uri;Landroidx/slice/SliceViewManager$SliceCallback;)V
 
-    .line 282
     :cond_1
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-static {v1, v0}, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;->access$1900(Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;Ljava/lang/Object;)V
 
-    .line 283
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/dashboard/DashboardAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/dashboard/DashboardAdapter;
 
-    .line 91
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardAdapter$1;->this$0:Lcom/android/settings/dashboard/DashboardAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 95
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter$1;->this$0:Lcom/android/settings/dashboard/DashboardAdapter;
 
     invoke-static {v0}, Lcom/android/settings/dashboard/DashboardAdapter;->access$100(Lcom/android/settings/dashboard/DashboardAdapter;)Lcom/android/settings/dashboard/DashboardFeatureProvider;
@@ -63,6 +59,5 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/settings/dashboard/DashboardFeatureProvider;->openTileIntent(Landroid/app/Activity;Lcom/android/settingslib/drawer/Tile;)V
 
-    .line 96
     return-void
 .end method

@@ -37,7 +37,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 449
     new-instance v0, Lcom/google/common/primitives/Shorts$LexicographicalComparator;
 
     const-string v1, "INSTANCE"
@@ -48,7 +47,6 @@
 
     sput-object v0, Lcom/google/common/primitives/Shorts$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/Shorts$LexicographicalComparator;
 
-    .line 448
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/primitives/Shorts$LexicographicalComparator;
@@ -70,7 +68,6 @@
         }
     .end annotation
 
-    .line 448
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -78,9 +75,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/primitives/Shorts$LexicographicalComparator;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 448
     const-class v0, Lcom/google/common/primitives/Shorts$LexicographicalComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -95,7 +90,6 @@
 .method public static values()[Lcom/google/common/primitives/Shorts$LexicographicalComparator;
     .locals 1
 
-    .line 448
     sget-object v0, Lcom/google/common/primitives/Shorts$LexicographicalComparator;->$VALUES:[Lcom/google/common/primitives/Shorts$LexicographicalComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/Shorts$LexicographicalComparator;->clone()Ljava/lang/Object;
@@ -112,7 +106,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 448
     check-cast p1, [S
 
     check-cast p2, [S
@@ -126,10 +119,7 @@
 
 .method public compare([S[S)I
     .locals 4
-    .param p1, "left"    # [S
-    .param p2, "right"    # [S
 
-    .line 453
     array-length v0, p1
 
     array-length v1, p2
@@ -138,15 +128,11 @@
 
     move-result v0
 
-    .line 454
-    .local v0, "minLength":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 455
     aget-short v2, p1, v1
 
     aget-short v3, p2, v1
@@ -155,22 +141,15 @@
 
     move-result v2
 
-    .line 456
-    .local v2, "result":I
     if-eqz v2, :cond_0
 
-    .line 457
     return v2
 
-    .line 454
-    .end local v2    # "result":I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 460
-    .end local v1    # "i":I
     :cond_1
     array-length v1, p1
 

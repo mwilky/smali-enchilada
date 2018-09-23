@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;
 
-    .line 173
     iput-object p1, p0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$2;->this$0:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 176
     iget-object v0, p0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$2;->this$0:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;->startPostponedEnterTransitionInternal()V
 
-    .line 177
     return-void
 .end method

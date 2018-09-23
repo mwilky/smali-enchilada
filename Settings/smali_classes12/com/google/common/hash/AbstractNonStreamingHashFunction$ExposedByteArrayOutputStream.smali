@@ -17,12 +17,9 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "expectedInputSize"    # I
 
-    .line 152
     invoke-direct {p0, p1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    .line 153
     return-void
 .end method
 
@@ -31,7 +28,6 @@
 .method byteArray()[B
     .locals 1
 
-    .line 155
     iget-object v0, p0, Lcom/google/common/hash/AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream;->buf:[B
 
     return-object v0
@@ -40,7 +36,6 @@
 .method length()I
     .locals 1
 
-    .line 158
     iget v0, p0, Lcom/google/common/hash/AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream;->count:I
 
     return v0

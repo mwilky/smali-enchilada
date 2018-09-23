@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/util/Map$Entry;)V
     .locals 0
 
-    .line 1235
     iput-object p1, p0, Lcom/google/common/collect/Maps$6;->val$entry:Ljava/util/Map$Entry;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMapEntry;-><init>()V
@@ -47,7 +46,6 @@
         }
     .end annotation
 
-    .line 1237
     iget-object v0, p0, Lcom/google/common/collect/Maps$6;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -65,7 +63,6 @@
         }
     .end annotation
 
-    .line 1241
     iget-object v0, p0, Lcom/google/common/collect/Maps$6;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;

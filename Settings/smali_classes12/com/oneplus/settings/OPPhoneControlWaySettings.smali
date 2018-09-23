@@ -62,10 +62,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 76
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 97
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -77,9 +75,7 @@
 
 .method static synthetic access$000(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
-    .line 76
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     return-object v0
@@ -87,9 +83,7 @@
 
 .method static synthetic access$100(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
-    .line 76
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     return-object v0
@@ -97,9 +91,7 @@
 
 .method static synthetic access$200(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
-    .line 76
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     return-object v0
@@ -107,9 +99,7 @@
 
 .method static synthetic access$300(Lcom/oneplus/settings/OPPhoneControlWaySettings;)V
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
-    .line 76
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->updateUI()V
 
     return-void
@@ -118,24 +108,20 @@
 .method private delayHideNavkey()V
     .locals 4
 
-    .line 215
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 216
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 217
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 218
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;
@@ -146,14 +132,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 227
     return-void
 .end method
 
 .method private getNavigationType()I
     .locals 3
 
-    .line 236
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -182,37 +166,30 @@
         }
     .end annotation
 
-    .line 293
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 294
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v1, "buttons_enable_on_screen_navkeys"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 295
     const-string v1, "buttons_swap_navkeys"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 297
     return-object v0
 .end method
 
 .method private hideNavbar()V
     .locals 0
 
-    .line 212
     return-void
 .end method
 
 .method private initPref()V
     .locals 1
 
-    .line 123
     const-string v0, "always_show_navigation_bar"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -223,7 +200,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    .line 124
     const-string v0, "hide_navigation_bar"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -234,7 +210,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    .line 125
     const-string v0, "gesture_navigation_bar"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -245,22 +220,18 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
-    .line 126
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/ui/RadioButtonPreference;->setOnClickListener(Lcom/android/settings/ui/RadioButtonPreference$OnClickListener;)V
 
-    .line 127
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/ui/RadioButtonPreference;->setOnClickListener(Lcom/android/settings/ui/RadioButtonPreference$OnClickListener;)V
 
-    .line 128
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, p0}, Lcom/android/settings/ui/RadioButtonPreference;->setOnClickListener(Lcom/android/settings/ui/RadioButtonPreference$OnClickListener;)V
 
-    .line 129
     const-string v0, "phone_control_way"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -271,15 +242,12 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
-    .line 130
     return-void
 .end method
 
 .method private setNavigationType(I)V
     .locals 2
-    .param p1, "type"    # I
 
-    .line 230
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -290,31 +258,26 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 231
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->setViewType(I)V
 
-    .line 232
     const-string v0, "op_fullscreen_gesture_enabled"
 
     invoke-static {v0, p1}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;I)V
 
-    .line 233
     return-void
 .end method
 
 .method private showNavbar()V
     .locals 0
 
-    .line 202
     return-void
 .end method
 
 .method private updateUI()V
     .locals 5
 
-    .line 161
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -329,8 +292,6 @@
 
     move-result v0
 
-    .line 162
-    .local v0, "value":I
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     const/4 v3, 0x0
@@ -347,7 +308,6 @@
     :goto_0
     invoke-virtual {v1, v4}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 163
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     const/4 v4, 0x2
@@ -364,7 +324,6 @@
     :goto_1
     invoke-virtual {v1, v4}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 164
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     const/4 v4, 0x3
@@ -378,22 +337,18 @@
     :cond_2
     invoke-virtual {v1, v3}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 165
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 166
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 167
     iget-object v1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 168
     return-void
 .end method
 
@@ -402,7 +357,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 110
     const/16 v0, 0x270f
 
     return v0
@@ -410,22 +364,17 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 115
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 116
     const v0, 0x7f160088
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->addPreferencesFromResource(I)V
 
-    .line 117
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mContext:Landroid/content/Context;
 
-    .line 118
     invoke-virtual {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -436,30 +385,24 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mWindow:Landroid/view/Window;
 
-    .line 119
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->initPref()V
 
-    .line 120
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 1
 
-    .line 154
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onDestroy()V
 
-    .line 155
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     if-eqz v0, :cond_0
 
-    .line 156
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->releaseAnim()V
 
-    .line 158
     :cond_0
     return-void
 .end method
@@ -467,30 +410,23 @@
 .method public onPause()V
     .locals 1
 
-    .line 145
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
-    .line 146
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     if-eqz v0, :cond_0
 
-    .line 147
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->stopAnim()V
 
-    .line 149
     :cond_0
     return-void
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 241
     const/4 v0, 0x0
 
     return v0
@@ -498,9 +434,7 @@
 
 .method public onRadioButtonClicked(Lcom/android/settings/ui/RadioButtonPreference;)V
     .locals 3
-    .param p1, "pref"    # Lcom/android/settings/ui/RadioButtonPreference;
 
-    .line 171
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     const/4 v1, 0x1
@@ -509,88 +443,70 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 172
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 173
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 174
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 175
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->showNavbar()V
 
-    .line 176
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->delayHideNavkey()V
 
-    .line 177
     invoke-direct {p0, v1}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->setNavigationType(I)V
 
     goto :goto_0
 
-    .line 178
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     if-ne p1, v0, :cond_1
 
-    .line 179
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 180
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 181
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 182
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->showNavbar()V
 
-    .line 183
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->delayHideNavkey()V
 
-    .line 184
     const/4 v0, 0x2
 
     invoke-direct {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->setNavigationType(I)V
 
     goto :goto_0
 
-    .line 185
     :cond_1
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     if-ne p1, v0, :cond_2
 
-    .line 186
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mAlwaysShowNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 187
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mLeftButtonNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v2}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 188
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mGestureNavigationBar:Lcom/android/settings/ui/RadioButtonPreference;
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setChecked(Z)V
 
-    .line 189
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -601,15 +517,12 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 191
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->delayHideNavkey()V
 
-    .line 192
     const/4 v0, 0x3
 
     invoke-direct {p0, v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->setNavigationType(I)V
 
-    .line 194
     :cond_2
     :goto_0
     return-void
@@ -618,23 +531,18 @@
 .method public onResume()V
     .locals 1
 
-    .line 135
     invoke-direct {p0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->updateUI()V
 
-    .line 136
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 137
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     if-eqz v0, :cond_0
 
-    .line 138
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings;->mOPPhoneControlWayCategory:Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/ui/OPPhoneControlWayCategory;->startAnim()V
 
-    .line 140
     :cond_0
     return-void
 .end method

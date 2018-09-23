@@ -31,12 +31,8 @@
         }
     .end annotation
 
-    .line 38
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 39
     return-void
 .end method
 
@@ -52,8 +48,6 @@
         }
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -63,13 +57,11 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "target"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 51
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -85,9 +77,6 @@
         }
     .end annotation
 
-    .line 55
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
-    .local p1, "targets":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -97,11 +86,7 @@
 
 .method copyIntoArray([Ljava/lang/Object;I)I
     .locals 0
-    .param p1, "dst"    # [Ljava/lang/Object;
-    .param p2, "offset"    # I
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     return p2
 .end method
 
@@ -115,8 +100,6 @@
         }
     .end annotation
 
-    .line 128
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     new-instance v0, Lcom/google/common/collect/EmptyImmutableSortedSet;
 
     iget-object v1, p0, Lcom/google/common/collect/EmptyImmutableSortedSet;->comparator:Ljava/util/Comparator;
@@ -148,8 +131,6 @@
         }
     .end annotation
 
-    .line 64
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -163,8 +144,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSortedSet;->descendingIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -174,32 +153,25 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 81
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_0
 
-    .line 82
     move-object v0, p1
 
     check-cast v0, Ljava/util/Set;
 
-    .line 83
-    .local v0, "that":Ljava/util/Set;, "Ljava/util/Set<*>;"
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
     return v1
 
-    .line 85
-    .end local v0    # "that":Ljava/util/Set;, "Ljava/util/Set<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -214,8 +186,6 @@
         }
     .end annotation
 
-    .line 98
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -226,8 +196,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 89
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -235,7 +203,6 @@
 
 .method headSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -244,21 +211,16 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     return-object p0
 .end method
 
 .method indexOf(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "target"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 123
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, -0x1
 
     return v0
@@ -267,8 +229,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 47
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, 0x1
 
     return v0
@@ -277,8 +237,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -294,8 +252,6 @@
         }
     .end annotation
 
-    .line 59
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -306,8 +262,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableSortedSet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -323,8 +277,6 @@
         }
     .end annotation
 
-    .line 103
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -335,8 +287,6 @@
 .method public size()I
     .locals 1
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -344,8 +294,6 @@
 
 .method subSetImpl(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;ZTE;Z)",
@@ -354,16 +302,11 @@
         }
     .end annotation
 
-    .line 114
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p3, "toElement":Ljava/lang/Object;, "TE;"
     return-object p0
 .end method
 
 .method tailSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -372,17 +315,12 @@
         }
     .end annotation
 
-    .line 119
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     return-object p0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 93
-    .local p0, "this":Lcom/google/common/collect/EmptyImmutableSortedSet;, "Lcom/google/common/collect/EmptyImmutableSortedSet<TE;>;"
     const-string v0, "[]"
 
     return-object v0

@@ -19,12 +19,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 40
     invoke-direct {p0, p1}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 41
     return-void
 .end method
 
@@ -35,7 +32,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 79
     iget-object v0, p0, Lcom/android/settings/development/CoolColorTemperaturePreferenceController;->mContext:Landroid/content/Context;
 
     const v1, 0x7f1203f0
@@ -48,14 +44,12 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 80
     return-void
 .end method
 
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 50
     const-string v0, "color_temperature"
 
     return-object v0
@@ -64,7 +58,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/development/CoolColorTemperaturePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -83,10 +76,8 @@
 .method protected onDeveloperOptionsSwitchDisabled()V
     .locals 3
 
-    .line 72
     invoke-super {p0}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;->onDeveloperOptionsSwitchDisabled()V
 
-    .line 73
     const-string v0, "persist.sys.debug.color_temp"
 
     const/4 v1, 0x0
@@ -97,23 +88,18 @@
 
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 74
     iget-object v0, p0, Lcom/android/settings/development/CoolColorTemperaturePreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
     check-cast v0, Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 75
     return-void
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 55
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -122,29 +108,22 @@
 
     move-result v0
 
-    .line 56
-    .local v0, "isColorTemperatureEnabled":Z
     const-string v1, "persist.sys.debug.color_temp"
 
-    .line 57
     invoke-static {v0}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 56
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 58
     invoke-static {}, Lcom/android/settingslib/development/SystemPropPoker;->getInstance()Lcom/android/settingslib/development/SystemPropPoker;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/settingslib/development/SystemPropPoker;->poke()V
 
-    .line 59
     invoke-virtual {p0}, Lcom/android/settings/development/CoolColorTemperaturePreferenceController;->displayColorTemperatureToast()V
 
-    .line 60
     const/4 v1, 0x1
 
     return v1
@@ -152,9 +131,7 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 65
     const-string v0, "persist.sys.debug.color_temp"
 
     const/4 v1, 0x0
@@ -163,14 +140,11 @@
 
     move-result v0
 
-    .line 67
-    .local v0, "enableColorTemperature":Z
     iget-object v1, p0, Lcom/android/settings/development/CoolColorTemperaturePreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
     check-cast v1, Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 68
     return-void
 .end method

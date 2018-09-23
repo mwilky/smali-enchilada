@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackFragment;
 
-    .line 293
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackFragment$5;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 296
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackFragment$5;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-static {v0, p1}, Landroid/support/v17/leanback/app/PlaybackFragment;->access$200(Landroid/support/v17/leanback/app/PlaybackFragment;Landroid/view/InputEvent;)Z

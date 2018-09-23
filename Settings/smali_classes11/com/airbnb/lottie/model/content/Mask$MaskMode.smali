@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 11
     new-instance v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     const-string v1, "MaskModeAdd"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeAdd:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 12
     new-instance v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     const-string v1, "MaskModeSubtract"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeSubtract:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 13
     new-instance v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     const-string v1, "MaskModeIntersect"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeIntersect:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 14
     new-instance v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     const-string v1, "MaskModeUnknown"
@@ -82,7 +78,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeUnknown:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 10
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/airbnb/lottie/model/content/Mask$MaskMode;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 10
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 10
     const-class v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     .locals 1
 
-    .line 10
     sget-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->$VALUES:[Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/Mask$MaskMode;->clone()Ljava/lang/Object;

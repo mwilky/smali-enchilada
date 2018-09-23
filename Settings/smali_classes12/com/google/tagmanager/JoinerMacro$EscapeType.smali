@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 24
     new-instance v0, Lcom/google/tagmanager/JoinerMacro$EscapeType;
 
     const-string v1, "NONE"
@@ -96,7 +95,6 @@
         }
     .end annotation
 
-    .line 24
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -104,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/JoinerMacro$EscapeType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 24
     const-class v0, Lcom/google/tagmanager/JoinerMacro$EscapeType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -121,7 +117,6 @@
 .method public static values()[Lcom/google/tagmanager/JoinerMacro$EscapeType;
     .locals 1
 
-    .line 24
     sget-object v0, Lcom/google/tagmanager/JoinerMacro$EscapeType;->$VALUES:[Lcom/google/tagmanager/JoinerMacro$EscapeType;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/JoinerMacro$EscapeType;->clone()Ljava/lang/Object;

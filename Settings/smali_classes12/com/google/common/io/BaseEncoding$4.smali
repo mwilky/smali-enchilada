@@ -31,7 +31,6 @@
 .method constructor <init>(ILjava/lang/String;Lcom/google/common/io/GwtWorkarounds$CharOutput;)V
     .locals 0
 
-    .line 781
     iput p1, p0, Lcom/google/common/io/BaseEncoding$4;->val$afterEveryChars:I
 
     iput-object p2, p0, Lcom/google/common/io/BaseEncoding$4;->val$separator:Ljava/lang/String;
@@ -40,7 +39,6 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 782
     iget p1, p0, Lcom/google/common/io/BaseEncoding$4;->val$afterEveryChars:I
 
     iput p1, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
@@ -58,12 +56,10 @@
         }
     .end annotation
 
-    .line 803
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharOutput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$CharOutput;->close()V
 
-    .line 804
     return-void
 .end method
 
@@ -75,33 +71,27 @@
         }
     .end annotation
 
-    .line 798
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharOutput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$CharOutput;->flush()V
 
-    .line 799
     return-void
 .end method
 
 .method public write(C)V
     .locals 3
-    .param p1, "c"    # C
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 786
     iget v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
     if-nez v0, :cond_1
 
-    .line 787
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$4;->val$separator:Ljava/lang/String;
 
@@ -111,7 +101,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 788
     iget-object v1, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharOutput;
 
     iget-object v2, p0, Lcom/google/common/io/BaseEncoding$4;->val$separator:Ljava/lang/String;
@@ -122,31 +111,25 @@
 
     invoke-interface {v1, v2}, Lcom/google/common/io/GwtWorkarounds$CharOutput;->write(C)V
 
-    .line 787
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 790
-    .end local v0    # "i":I
     :cond_0
     iget v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$afterEveryChars:I
 
     iput v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
-    .line 792
     :cond_1
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$4;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharOutput;
 
     invoke-interface {v0, p1}, Lcom/google/common/io/GwtWorkarounds$CharOutput;->write(C)V
 
-    .line 793
     iget v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/google/common/io/BaseEncoding$4;->charsUntilSeparator:I
 
-    .line 794
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/VerticalGridFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/VerticalGridFragment;
 
-    .line 118
     iput-object p1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,7 @@
 # virtual methods
 .method public onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V
     .locals 2
-    .param p1, "itemViewHolder"    # Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
-    .param p2, "item"    # Ljava/lang/Object;
-    .param p3, "rowViewHolder"    # Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;
-    .param p4, "row"    # Landroid/support/v17/leanback/widget/Row;
 
-    .line 122
     iget-object v0, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/VerticalGridFragment;->mGridViewHolder:Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;
@@ -56,27 +49,22 @@
 
     move-result v0
 
-    .line 124
-    .local v0, "position":I
     iget-object v1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     invoke-virtual {v1, v0}, Landroid/support/v17/leanback/app/VerticalGridFragment;->gridOnItemSelected(I)V
 
-    .line 125
     iget-object v1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/VerticalGridFragment;->mOnItemViewSelectedListener:Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;
 
     if-eqz v1, :cond_0
 
-    .line 126
     iget-object v1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/VerticalGridFragment;->mOnItemViewSelectedListener:Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;
 
     invoke-interface {v1, p1, p2, p3, p4}, Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;->onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
 
-    .line 129
     :cond_0
     return-void
 .end method
@@ -84,7 +72,6 @@
 .method public bridge synthetic onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 118
     check-cast p4, Landroid/support/v17/leanback/widget/Row;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/support/v17/leanback/app/VerticalGridFragment$2;->onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V

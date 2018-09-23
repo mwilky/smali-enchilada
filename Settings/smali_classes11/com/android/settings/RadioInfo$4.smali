@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1092
     iput-object p1, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 1094
     iget-object v0, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
@@ -50,7 +47,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$2400(Lcom/android/settings/RadioInfo;Ljava/util/List;)V
 
-    .line 1095
     iget-object v0, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
@@ -61,7 +57,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$500(Lcom/android/settings/RadioInfo;Landroid/telephony/CellLocation;)V
 
-    .line 1096
     iget-object v0, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$4;->this$0:Lcom/android/settings/RadioInfo;
@@ -72,6 +67,5 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$1200(Lcom/android/settings/RadioInfo;Ljava/util/List;)V
 
-    .line 1097
     return-void
 .end method

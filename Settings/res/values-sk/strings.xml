@@ -2907,8 +2907,6 @@ Počet zostávajúcich pokusov: %d."</string>
     <string name="oneplus_quick_clipboard_summary">Rozšíri možnosť kopírovania a odporúča ďalší krok podľa kopírovanej položky</string>
     <string name="oneplus_quick_gestures">Gestá</string>
     <string name="oneplus_quick_gestures_title">Rýchle gestá</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Rýchla aktivácia aplikácie Asistent</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Na rýchlu aktiváciu aplikácie Asistent podržte stlačené tlačidlo napájania 0,5 s a na jej vypnutie 3 s</string>
     <string name="oneplus_quick_turn_on_camera">Rýchle zapnutie fotoaparátu</string>
     <string name="oneplus_quickpay">Rýchla platba</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Určite chcete zmeniť akciu na dlhé stlačenie tlačidla Domov z „%1$s“ na operáciu „Rýchla platba“?</string>

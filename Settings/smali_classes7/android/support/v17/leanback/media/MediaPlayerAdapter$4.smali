@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
-    .line 72
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$4;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onBufferingUpdate(Landroid/media/MediaPlayer;I)V
     .locals 5
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "percent"    # I
 
-    .line 75
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$4;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     iget-object v1, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$4;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
@@ -60,7 +55,6 @@
 
     iput-wide v1, v0, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->mBufferedProgress:J
 
-    .line 76
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$4;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->getCallback()Landroid/support/v17/leanback/media/PlayerAdapter$Callback;
@@ -71,6 +65,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/media/PlayerAdapter$Callback;->onBufferedPositionChanged(Landroid/support/v17/leanback/media/PlayerAdapter;)V
 
-    .line 77
     return-void
 .end method

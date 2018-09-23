@@ -32,7 +32,6 @@
 .method constructor <init>(Lcom/google/tagmanager/DebugResolvedRuleBuilder$DebugResolvedFunctionCallListTranslator;)V
     .locals 0
 
-    .line 101
     iput-object p1, p0, Lcom/google/tagmanager/DebugResolvedRuleBuilder$DebugResolvedFunctionCallListTranslator$Type;->this$1:Lcom/google/tagmanager/DebugResolvedRuleBuilder$DebugResolvedFunctionCallListTranslator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

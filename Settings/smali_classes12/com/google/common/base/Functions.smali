@@ -25,7 +25,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,9 +50,6 @@
         }
     .end annotation
 
-    .line 202
-    .local p0, "g":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<TB;TC;>;"
-    .local p1, "f":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<TA;+TB;>;"
     new-instance v0, Lcom/google/common/base/Functions$FunctionComposition;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/base/Functions$FunctionComposition;-><init>(Lcom/google/common/base/Function;Lcom/google/common/base/Function;)V
@@ -78,8 +74,6 @@
         }
     .end annotation
 
-    .line 287
-    .local p0, "value":Ljava/lang/Object;, "TE;"
     new-instance v0, Lcom/google/common/base/Functions$ConstantFunction;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Functions$ConstantFunction;-><init>(Ljava/lang/Object;)V
@@ -103,8 +97,6 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
     new-instance v0, Lcom/google/common/base/Functions$FunctionForMapNoDefault;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Functions$FunctionForMapNoDefault;-><init>(Ljava/util/Map;)V
@@ -132,9 +124,6 @@
         }
     .end annotation
 
-    .line 155
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<TK;+TV;>;"
-    .local p1, "defaultValue":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/base/Functions$ForMapWithDefault;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/base/Functions$ForMapWithDefault;-><init>(Ljava/util/Map;Ljava/lang/Object;)V
@@ -158,8 +147,6 @@
         }
     .end annotation
 
-    .line 245
-    .local p0, "predicate":Lcom/google/common/base/Predicate;, "Lcom/google/common/base/Predicate<TT;>;"
     new-instance v0, Lcom/google/common/base/Functions$PredicateFunction;
 
     const/4 v1, 0x0
@@ -187,8 +174,6 @@
         }
     .end annotation
 
-    .line 329
-    .local p0, "supplier":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<TT;>;"
     new-instance v0, Lcom/google/common/base/Functions$SupplierFunction;
 
     const/4 v1, 0x0
@@ -210,7 +195,6 @@
         }
     .end annotation
 
-    .line 80
     sget-object v0, Lcom/google/common/base/Functions$IdentityFunction;->INSTANCE:Lcom/google/common/base/Functions$IdentityFunction;
 
     return-object v0
@@ -228,7 +212,6 @@
         }
     .end annotation
 
-    .line 56
     sget-object v0, Lcom/google/common/base/Functions$ToStringFunction;->INSTANCE:Lcom/google/common/base/Functions$ToStringFunction;
 
     return-object v0

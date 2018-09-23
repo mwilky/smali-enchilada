@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 183
     new-instance v0, Lcom/android/settings/tts/TtsEnginePreferenceFragment$2;
 
     invoke-direct {v0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment$2;-><init>()V
@@ -48,18 +47,14 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 24
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 47
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 48
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginesHelper:Landroid/speech/tts/TtsEngines;
 
-    .line 114
     new-instance v0, Lcom/android/settings/tts/TtsEnginePreferenceFragment$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment$1;-><init>(Lcom/android/settings/tts/TtsEnginePreferenceFragment;)V
@@ -72,12 +67,10 @@
 .method private initSettings()V
     .locals 6
 
-    .line 79
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     if-eqz v0, :cond_0
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->getCurrentEngine()Ljava/lang/String;
@@ -86,29 +79,23 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentEngine:Ljava/lang/String;
 
-    .line 83
     :cond_0
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginePreferenceCategory:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-virtual {v0}, Landroid/support/v7/preference/PreferenceCategory;->removeAll()V
 
-    .line 85
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/settings/SettingsActivity;
 
-    .line 87
-    .local v0, "activity":Lcom/android/settings/SettingsActivity;
     iget-object v1, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginesHelper:Landroid/speech/tts/TtsEngines;
 
     invoke-virtual {v1}, Landroid/speech/tts/TtsEngines;->getEngines()Ljava/util/List;
 
     move-result-object v1
 
-    .line 88
-    .local v1, "engines":Ljava/util/List;, "Ljava/util/List<Landroid/speech/tts/TextToSpeech$EngineInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -126,38 +113,27 @@
 
     check-cast v3, Landroid/speech/tts/TextToSpeech$EngineInfo;
 
-    .line 89
-    .local v3, "engine":Landroid/speech/tts/TextToSpeech$EngineInfo;
     new-instance v4, Lcom/android/settings/tts/TtsEnginePreference;
 
-    .line 90
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getPrefContext()Landroid/content/Context;
 
     move-result-object v5
 
     invoke-direct {v4, v5, v3, p0, v0}, Lcom/android/settings/tts/TtsEnginePreference;-><init>(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$EngineInfo;Lcom/android/settings/tts/TtsEnginePreference$RadioButtonGroupState;Lcom/android/settings/SettingsActivity;)V
 
-    .line 91
-    .local v4, "enginePref":Lcom/android/settings/tts/TtsEnginePreference;
     iget-object v5, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginePreferenceCategory:Landroid/support/v7/preference/PreferenceCategory;
 
     invoke-virtual {v5, v4}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 92
-    .end local v3    # "engine":Landroid/speech/tts/TextToSpeech$EngineInfo;
-    .end local v4    # "enginePref":Lcom/android/settings/tts/TtsEnginePreference;
     goto :goto_0
 
-    .line 93
     :cond_1
     return-void
 .end method
 
 .method private updateDefaultEngine(Ljava/lang/String;)V
     .locals 4
-    .param p1, "engine"    # Ljava/lang/String;
 
-    .line 123
     const-string v0, "TtsEnginePrefFragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -176,7 +152,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->getCurrentEngine()Ljava/lang/String;
@@ -185,40 +160,32 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mPreviousEngine:Ljava/lang/String;
 
-    .line 133
     const-string v0, "TtsEnginePrefFragment"
 
     const-string v1, "Shutting down current tts engine"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     if-eqz v0, :cond_0
 
-    .line 136
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
 
-    .line 137
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 140
     goto :goto_0
 
-    .line 138
     :catch_0
     move-exception v0
 
-    .line 139
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "TtsEnginePrefFragment"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -237,8 +204,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     const-string v0, "TtsEnginePrefFragment"
@@ -259,7 +224,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 147
     new-instance v0, Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -276,14 +240,12 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 148
     const-string v0, "TtsEnginePrefFragment"
 
     const-string v1, "Success"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
     return-void
 .end method
 
@@ -292,7 +254,6 @@
 .method public getCurrentChecked()Landroid/widget/Checkable;
     .locals 1
 
-    .line 97
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentChecked:Landroid/widget/Checkable;
 
     return-object v0
@@ -301,7 +262,6 @@
 .method public getCurrentKey()Ljava/lang/String;
     .locals 1
 
-    .line 102
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentEngine:Ljava/lang/String;
 
     return-object v0
@@ -310,7 +270,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 66
     const/16 v0, 0x5d
 
     return v0
@@ -318,20 +277,15 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 52
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 53
     const v0, 0x7f1600cb
 
     invoke-virtual {p0, v0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->addPreferencesFromResource(I)V
 
-    .line 55
     const-string v0, "tts_engine_preference_category"
 
-    .line 56
     invoke-virtual {p0, v0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v0
@@ -340,7 +294,6 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginePreferenceCategory:Landroid/support/v7/preference/PreferenceCategory;
 
-    .line 57
     new-instance v0, Landroid/speech/tts/TtsEngines;
 
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -355,7 +308,6 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mEnginesHelper:Landroid/speech/tts/TtsEngines;
 
-    .line 59
     new-instance v0, Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -372,47 +324,37 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 61
     invoke-direct {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->initSettings()V
 
-    .line 62
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 1
 
-    .line 71
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onDestroy()V
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     if-eqz v0, :cond_0
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
     invoke-virtual {v0}, Landroid/speech/tts/TextToSpeech;->shutdown()V
 
-    .line 74
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 76
     :cond_0
     return-void
 .end method
 
 .method public onUpdateEngine(I)V
     .locals 4
-    .param p1, "status"    # I
 
-    .line 157
     if-nez p1, :cond_0
 
-    .line 158
     const-string v0, "TtsEnginePrefFragment"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -425,7 +367,6 @@
 
     iget-object v2, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 161
     invoke-virtual {v2}, Landroid/speech/tts/TextToSpeech;->getCurrentEngine()Ljava/lang/String;
 
     move-result-object v2
@@ -436,13 +377,10 @@
 
     move-result-object v1
 
-    .line 158
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
     nop
 
-    .line 163
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -455,12 +393,10 @@
 
     move-result-object v2
 
-    .line 162
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
     goto :goto_0
 
-    .line 165
     :cond_0
     const-string v0, "TtsEnginePrefFragment"
 
@@ -468,17 +404,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 166
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mPreviousEngine:Ljava/lang/String;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 169
     new-instance v0, Landroid/speech/tts/TextToSpeech;
 
-    .line 171
     invoke-virtual {p0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -493,38 +426,29 @@
 
     iput-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mTts:Landroid/speech/tts/TextToSpeech;
 
-    .line 173
     :cond_1
     iput-object v1, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mPreviousEngine:Ljava/lang/String;
 
-    .line 175
     :goto_0
     return-void
 .end method
 
 .method public setCurrentChecked(Landroid/widget/Checkable;)V
     .locals 0
-    .param p1, "current"    # Landroid/widget/Checkable;
 
-    .line 107
     iput-object p1, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentChecked:Landroid/widget/Checkable;
 
-    .line 108
     return-void
 .end method
 
 .method public setCurrentKey(Ljava/lang/String;)V
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 179
     iput-object p1, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentEngine:Ljava/lang/String;
 
-    .line 180
     iget-object v0, p0, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->mCurrentEngine:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/android/settings/tts/TtsEnginePreferenceFragment;->updateDefaultEngine(Ljava/lang/String;)V
 
-    .line 181
     return-void
 .end method

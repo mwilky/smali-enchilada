@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/network/ApnSettings;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/network/ApnSettings;
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .line 828
     iput-object p1, p0, Lcom/android/settings/network/ApnSettings$2;->this$0:Lcom/android/settings/network/ApnSettings;
 
     invoke-direct {p0, p2}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 830
     const/4 v0, 0x1
 
     return v0

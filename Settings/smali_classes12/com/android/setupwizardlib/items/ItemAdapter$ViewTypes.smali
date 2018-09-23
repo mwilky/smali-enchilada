@@ -24,17 +24,14 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 133
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
-    .line 134
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->nextPosition:I
@@ -44,9 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/setupwizardlib/items/ItemAdapter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/setupwizardlib/items/ItemAdapter$1;
 
-    .line 132
     invoke-direct {p0}, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;-><init>()V
 
     return-void
@@ -56,9 +51,7 @@
 # virtual methods
 .method public add(I)I
     .locals 2
-    .param p1, "id"    # I
 
-    .line 137
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -67,21 +60,18 @@
 
     if-gez v0, :cond_0
 
-    .line 138
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
     iget v1, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->nextPosition:I
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 139
     iget v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->nextPosition:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->nextPosition:I
 
-    .line 141
     :cond_0
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
@@ -94,9 +84,7 @@
 
 .method public get(I)I
     .locals 1
-    .param p1, "id"    # I
 
-    .line 149
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -109,7 +97,6 @@
 .method public size()I
     .locals 1
 
-    .line 145
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ItemAdapter$ViewTypes;->mPositionMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->size()I

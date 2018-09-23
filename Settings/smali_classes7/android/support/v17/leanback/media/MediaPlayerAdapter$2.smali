@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
-    .line 51
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$2;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,17 @@
 # virtual methods
 .method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 2
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 54
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$2;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->mInitialized:Z
 
-    .line 55
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$2;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->notifyBufferingStartEnd()V
 
-    .line 56
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$2;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     iget-object v0, v0, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->mSurfaceHolderGlueHost:Landroid/support/v17/leanback/media/SurfaceHolderGlueHost;
@@ -65,7 +59,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 57
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$2;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
@@ -77,7 +70,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/media/PlayerAdapter$Callback;->onPreparedStateChanged(Landroid/support/v17/leanback/media/PlayerAdapter;)V
 
-    .line 59
     :cond_1
     return-void
 .end method

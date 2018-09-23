@@ -38,63 +38,50 @@
 .method public constructor <init>(Lcom/oneplus/lib/widget/RadialTimePickerView;)V
     .locals 0
 
-    .line 1122
     iput-object p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
-    .line 1123
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/ExploreByTouchHelper;-><init>(Landroid/view/View;)V
 
-    .line 1108
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
-    .line 1110
     const/4 p1, 0x1
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->TYPE_HOUR:I
 
-    .line 1111
     const/4 p1, 0x2
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->TYPE_MINUTE:I
 
-    .line 1113
     const/4 p1, 0x0
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->SHIFT_TYPE:I
 
-    .line 1114
     const/16 p1, 0xf
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->MASK_TYPE:I
 
-    .line 1116
     const/16 p1, 0x8
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->SHIFT_VALUE:I
 
-    .line 1117
     const/16 p1, 0xff
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->MASK_VALUE:I
 
-    .line 1120
     const/4 p1, 0x5
 
     iput p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->MINUTE_INCREMENT:I
 
-    .line 1124
     return-void
 .end method
 
 .method private adjustPicker(I)V
     .locals 7
-    .param p1, "step"    # I
 
-    .line 1157
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$100(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -103,19 +90,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1158
     const/4 v0, 0x1
 
-    .line 1160
-    .local v0, "stepSize":I
     iget-object v1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->getCurrentHour()I
 
     move-result v1
 
-    .line 1161
-    .local v1, "currentHour24":I
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -124,57 +106,31 @@
 
     if-eqz v2, :cond_0
 
-    .line 1162
     move v2, v1
 
-    .line 1163
-    .local v2, "initialStep":I
     const/4 v3, 0x0
 
-    .line 1164
-    .local v3, "minValue":I
     const/16 v4, 0x17
 
-    .local v4, "maxValue":I
     goto :goto_0
 
-    .line 1166
-    .end local v2    # "initialStep":I
-    .end local v3    # "minValue":I
-    .end local v4    # "maxValue":I
     :cond_0
     invoke-direct {p0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->hour24To12(I)I
 
     move-result v2
 
-    .line 1167
-    .restart local v2    # "initialStep":I
     const/4 v3, 0x1
 
-    .line 1168
-    .restart local v3    # "minValue":I
     const/16 v4, 0xc
 
-    .end local v1    # "currentHour24":I
-    .restart local v4    # "maxValue":I
     :goto_0
     move v1, v4
 
-    .line 1170
-    .end local v4    # "maxValue":I
-    .local v1, "maxValue":I
     goto :goto_1
 
-    .line 1171
-    .end local v0    # "stepSize":I
-    .end local v1    # "maxValue":I
-    .end local v2    # "initialStep":I
-    .end local v3    # "minValue":I
     :cond_1
     const/4 v0, 0x5
 
-    .line 1172
-    .restart local v0    # "stepSize":I
     iget-object v1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->getCurrentMinute()I
@@ -183,29 +139,19 @@
 
     div-int v2, v1, v0
 
-    .line 1173
-    .restart local v2    # "initialStep":I
     const/4 v3, 0x0
 
-    .line 1174
-    .restart local v3    # "minValue":I
     const/16 v1, 0x37
 
-    .line 1177
-    .restart local v1    # "maxValue":I
     :goto_1
     add-int v4, v2, p1
 
     mul-int/2addr v4, v0
 
-    .line 1178
-    .local v4, "nextValue":I
     invoke-static {v4, v3, v1}, Lcom/oneplus/lib/util/MathUtils;->constrain(III)I
 
     move-result v5
 
-    .line 1179
-    .local v5, "clampedValue":I
     iget-object v6, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v6}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$100(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -214,60 +160,46 @@
 
     if-eqz v6, :cond_2
 
-    .line 1180
     iget-object v6, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v6, v5}, Lcom/oneplus/lib/widget/RadialTimePickerView;->setCurrentHour(I)V
 
     goto :goto_2
 
-    .line 1182
     :cond_2
     iget-object v6, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v6, v5}, Lcom/oneplus/lib/widget/RadialTimePickerView;->setCurrentMinute(I)V
 
-    .line 1184
     :goto_2
     return-void
 .end method
 
 .method private getBoundsForVirtualView(ILandroid/graphics/Rect;)V
     .locals 13
-    .param p1, "virtualViewId"    # I
-    .param p2, "bounds"    # Landroid/graphics/Rect;
 
-    .line 1354
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v0
 
-    .line 1355
-    .local v0, "type":I
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v1
 
-    .line 1358
-    .local v1, "value":I
     const/4 v2, 0x2
 
     const/4 v3, 0x1
 
     if-ne v0, v3, :cond_1
 
-    .line 1359
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$900(Lcom/oneplus/lib/widget/RadialTimePickerView;I)Z
 
     move-result v3
 
-    .line 1360
-    .local v3, "innerCircle":Z
     if-eqz v3, :cond_0
 
-    .line 1361
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1000(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -286,8 +218,6 @@
 
     int-to-float v2, v4
 
-    .line 1362
-    .local v2, "centerRadius":F
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1200(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -296,12 +226,8 @@
 
     int-to-float v4, v4
 
-    .local v4, "radius":F
     goto :goto_0
 
-    .line 1364
-    .end local v2    # "centerRadius":F
-    .end local v4    # "radius":F
     :cond_0
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
@@ -323,8 +249,6 @@
 
     int-to-float v2, v2
 
-    .line 1365
-    .restart local v2    # "centerRadius":F
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1200(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -333,8 +257,6 @@
 
     int-to-float v4, v4
 
-    .line 1368
-    .restart local v4    # "radius":F
     :goto_0
     iget-object v5, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
@@ -344,17 +266,11 @@
 
     int-to-float v3, v5
 
-    .line 1369
-    .local v3, "degrees":F
     goto :goto_1
 
-    .end local v2    # "centerRadius":F
-    .end local v3    # "degrees":F
-    .end local v4    # "radius":F
     :cond_1
     if-ne v0, v2, :cond_2
 
-    .line 1370
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1000(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -373,8 +289,6 @@
 
     int-to-float v2, v2
 
-    .line 1371
-    .restart local v2    # "centerRadius":F
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1400(Lcom/oneplus/lib/widget/RadialTimePickerView;I)I
@@ -383,8 +297,6 @@
 
     int-to-float v3, v3
 
-    .line 1372
-    .restart local v3    # "degrees":F
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1200(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -393,26 +305,15 @@
 
     int-to-float v4, v4
 
-    .restart local v4    # "radius":F
     goto :goto_1
 
-    .line 1375
-    .end local v2    # "centerRadius":F
-    .end local v3    # "degrees":F
-    .end local v4    # "radius":F
     :cond_2
     const/4 v2, 0x0
 
-    .line 1376
-    .restart local v2    # "centerRadius":F
     const/4 v3, 0x0
 
-    .line 1377
-    .restart local v3    # "degrees":F
     const/4 v4, 0x0
 
-    .line 1380
-    .restart local v4    # "radius":F
     :goto_1
     float-to-double v5, v3
 
@@ -420,8 +321,6 @@
 
     move-result-wide v5
 
-    .line 1381
-    .local v5, "radians":D
     iget-object v7, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v7}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1500(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -440,8 +339,6 @@
 
     add-float/2addr v7, v8
 
-    .line 1382
-    .local v7, "xCenter":F
     iget-object v8, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v8}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$1600(Lcom/oneplus/lib/widget/RadialTimePickerView;)I
@@ -460,8 +357,6 @@
 
     sub-float/2addr v8, v9
 
-    .line 1384
-    .local v8, "yCenter":F
     sub-float v9, v7, v4
 
     float-to-int v9, v9
@@ -480,29 +375,20 @@
 
     invoke-virtual {p2, v9, v10, v11, v12}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1386
     return-void
 .end method
 
 .method private getCircularDiff(III)I
     .locals 3
-    .param p1, "first"    # I
-    .param p2, "second"    # I
-    .param p3, "max"    # I
 
-    .line 1230
     sub-int v0, p1, p2
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
 
-    .line 1231
-    .local v0, "diff":I
     div-int/lit8 v1, p3, 0x2
 
-    .line 1232
-    .local v1, "midpoint":I
     if-le v0, v1, :cond_0
 
     sub-int v2, p3, v0
@@ -518,9 +404,7 @@
 
 .method private getTypeFromId(I)I
     .locals 1
-    .param p1, "id"    # I
 
-    .line 1415
     ushr-int/lit8 v0, p1, 0x0
 
     and-int/lit8 v0, v0, 0xf
@@ -530,9 +414,7 @@
 
 .method private getValueFromId(I)I
     .locals 1
-    .param p1, "id"    # I
 
-    .line 1419
     ushr-int/lit8 v0, p1, 0x8
 
     and-int/lit16 v0, v0, 0xff
@@ -542,10 +424,7 @@
 
 .method private getVirtualViewDescription(II)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "type"    # I
-    .param p2, "value"    # I
 
-    .line 1390
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_1
@@ -556,43 +435,32 @@
 
     goto :goto_0
 
-    .line 1393
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 1391
     :cond_1
     :goto_0
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1393
-    .local v0, "description":Ljava/lang/CharSequence;
     :goto_1
     nop
 
-    .line 1395
     return-object v0
 .end method
 
 .method private getVirtualViewIdAfter(II)I
     .locals 4
-    .param p1, "type"    # I
-    .param p2, "value"    # I
 
-    .line 1292
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_2
 
-    .line 1293
     add-int/lit8 v0, p2, 0x1
 
-    .line 1294
-    .local v0, "nextValue":I
     iget-object v1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -608,21 +476,15 @@
     :cond_0
     const/16 v1, 0xc
 
-    .line 1295
-    .local v1, "max":I
     :goto_0
     if-gt v0, v1, :cond_1
 
-    .line 1296
     invoke-direct {p0, p1, v0}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v2
 
     return v2
 
-    .line 1298
-    .end local v0    # "nextValue":I
-    .end local v1    # "max":I
     :cond_1
     goto :goto_1
 
@@ -631,53 +493,39 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 1299
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/RadialTimePickerView;->getCurrentMinute()I
 
     move-result v0
 
-    .line 1300
-    .local v0, "current":I
     rem-int/lit8 v1, p2, 0x5
 
     sub-int v1, p2, v1
 
-    .line 1301
-    .local v1, "snapValue":I
     add-int/lit8 v2, v1, 0x5
 
-    .line 1302
-    .local v2, "nextValue":I
     if-ge p2, v0, :cond_3
 
     if-le v2, v0, :cond_3
 
-    .line 1304
     invoke-direct {p0, p1, v0}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v3
 
     return v3
 
-    .line 1305
     :cond_3
     const/16 v3, 0x3c
 
     if-ge v2, v3, :cond_4
 
-    .line 1306
     invoke-direct {p0, p1, v2}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v3
 
     return v3
 
-    .line 1309
-    .end local v0    # "current":I
-    .end local v1    # "snapValue":I
-    .end local v2    # "nextValue":I
     :cond_4
     :goto_1
     const/high16 v0, -0x80000000
@@ -687,36 +535,26 @@
 
 .method private hour12To24(II)I
     .locals 2
-    .param p1, "hour12"    # I
-    .param p2, "amOrPm"    # I
 
-    .line 1331
     move v0, p1
 
-    .line 1332
-    .local v0, "hour24":I
     const/16 v1, 0xc
 
     if-ne p1, v1, :cond_0
 
-    .line 1333
     if-nez p2, :cond_1
 
-    .line 1334
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 1336
     :cond_0
     const/4 v1, 0x1
 
     if-ne p2, v1, :cond_1
 
-    .line 1337
     add-int/lit8 v0, v0, 0xc
 
-    .line 1339
     :cond_1
     :goto_0
     return v0
@@ -724,43 +562,33 @@
 
 .method private hour24To12(I)I
     .locals 1
-    .param p1, "hour24"    # I
 
-    .line 1343
     const/16 v0, 0xc
 
     if-nez p1, :cond_0
 
-    .line 1344
     return v0
 
-    .line 1345
     :cond_0
     if-le p1, v0, :cond_1
 
-    .line 1346
     add-int/lit8 v0, p1, -0xc
 
     return v0
 
-    .line 1348
     :cond_1
     return p1
 .end method
 
 .method private isVirtualViewSelected(II)Z
     .locals 3
-    .param p1, "type"    # I
-    .param p2, "value"    # I
 
-    .line 1400
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_1
 
-    .line 1401
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->getCurrentHour()I
@@ -773,19 +601,15 @@
 
     nop
 
-    .local v0, "selected":Z
     :cond_0
     :goto_0
     goto :goto_1
 
-    .line 1402
-    .end local v0    # "selected":Z
     :cond_1
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_3
 
-    .line 1403
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->getCurrentMinute()I
@@ -801,22 +625,16 @@
     :cond_2
     goto :goto_0
 
-    .line 1405
     :cond_3
     nop
 
-    .line 1407
-    .restart local v0    # "selected":Z
     :goto_1
     return v0
 .end method
 
 .method private makeId(II)I
     .locals 2
-    .param p1, "type"    # I
-    .param p2, "value"    # I
 
-    .line 1411
     shl-int/lit8 v0, p1, 0x0
 
     shl-int/lit8 v1, p2, 0x8
@@ -830,10 +648,7 @@
 # virtual methods
 .method protected getVirtualViewAt(FF)I
     .locals 9
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
-    .line 1189
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     const/4 v1, 0x1
@@ -842,13 +657,10 @@
 
     move-result v0
 
-    .line 1190
-    .local v0, "degrees":I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_3
 
-    .line 1191
     const/4 v2, 0x0
 
     invoke-static {v0, v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$400(II)I
@@ -857,8 +669,6 @@
 
     rem-int/lit16 v2, v2, 0x168
 
-    .line 1192
-    .local v2, "snapDegrees":I
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$100(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -867,23 +677,18 @@
 
     if-eqz v3, :cond_1
 
-    .line 1193
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3, p1, p2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$500(Lcom/oneplus/lib/widget/RadialTimePickerView;FF)Z
 
     move-result v3
 
-    .line 1194
-    .local v3, "isOnInnerCircle":Z
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4, v2, v3}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$600(Lcom/oneplus/lib/widget/RadialTimePickerView;IZ)I
 
     move-result v4
 
-    .line 1195
-    .local v4, "hour24":I
     iget-object v5, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v5}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -901,22 +706,13 @@
 
     move-result v5
 
-    .line 1196
-    .local v5, "hour":I
     :goto_0
     invoke-direct {p0, v1, v5}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v1
 
-    .line 1197
-    .end local v3    # "isOnInnerCircle":Z
-    .end local v4    # "hour24":I
-    .end local v5    # "hour":I
-    .local v1, "id":I
     goto :goto_2
 
-    .line 1198
-    .end local v1    # "id":I
     :cond_1
     iget-object v1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
@@ -924,53 +720,37 @@
 
     move-result v1
 
-    .line 1199
-    .local v1, "current":I
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3, v0}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$700(Lcom/oneplus/lib/widget/RadialTimePickerView;I)I
 
     move-result v3
 
-    .line 1200
-    .local v3, "touched":I
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v4, v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$700(Lcom/oneplus/lib/widget/RadialTimePickerView;I)I
 
     move-result v4
 
-    .line 1204
-    .local v4, "snapped":I
     const/16 v5, 0x3c
 
     invoke-direct {p0, v1, v3, v5}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getCircularDiff(III)I
 
     move-result v6
 
-    .line 1205
-    .local v6, "currentOffset":I
     invoke-direct {p0, v4, v3, v5}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getCircularDiff(III)I
 
     move-result v5
 
-    .line 1207
-    .local v5, "snappedOffset":I
     if-ge v6, v5, :cond_2
 
-    .line 1208
     move v7, v1
 
-    .local v7, "minute":I
     goto :goto_1
 
-    .line 1210
-    .end local v7    # "minute":I
     :cond_2
     move v7, v4
 
-    .line 1212
-    .restart local v7    # "minute":I
     :goto_1
     const/4 v8, 0x2
 
@@ -978,33 +758,19 @@
 
     move-result v1
 
-    .line 1214
-    .end local v2    # "snapDegrees":I
-    .end local v3    # "touched":I
-    .end local v4    # "snapped":I
-    .end local v5    # "snappedOffset":I
-    .end local v6    # "currentOffset":I
-    .end local v7    # "minute":I
-    .local v1, "id":I
     :goto_2
     goto :goto_3
 
-    .line 1215
-    .end local v1    # "id":I
     :cond_3
     const/high16 v1, -0x80000000
 
-    .line 1218
-    .restart local v1    # "id":I
     :goto_3
     return v1
 .end method
 
 .method protected getVisibleVirtualViews(Lcom/oneplus/lib/widget/IntArray;)V
     .locals 5
-    .param p1, "virtualViewIds"    # Lcom/oneplus/lib/widget/IntArray;
 
-    .line 1237
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$100(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -1013,7 +779,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 1238
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -1024,8 +789,6 @@
 
     xor-int/2addr v0, v1
 
-    .line 1239
-    .local v0, "min":I
     iget-object v2, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -1041,35 +804,25 @@
     :cond_0
     const/16 v2, 0xc
 
-    .line 1240
-    .local v2, "max":I
     :goto_0
     move v3, v0
 
-    .local v3, "i":I
     :goto_1
     if-gt v3, v2, :cond_1
 
-    .line 1241
     invoke-direct {p0, v1, v3}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Lcom/oneplus/lib/widget/IntArray;->add(I)V
 
-    .line 1240
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1243
-    .end local v0    # "min":I
-    .end local v2    # "max":I
-    .end local v3    # "i":I
     :cond_1
     goto :goto_3
 
-    .line 1244
     :cond_2
     iget-object v0, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
@@ -1077,17 +830,13 @@
 
     move-result v0
 
-    .line 1245
-    .local v0, "current":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_2
     const/16 v2, 0x3c
 
     if-ge v1, v2, :cond_4
 
-    .line 1246
     const/4 v2, 0x2
 
     invoke-direct {p0, v2, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
@@ -1096,29 +845,23 @@
 
     invoke-virtual {p1, v3}, Lcom/oneplus/lib/widget/IntArray;->add(I)V
 
-    .line 1250
     if-le v0, v1, :cond_3
 
     add-int/lit8 v3, v1, 0x5
 
     if-ge v0, v3, :cond_3
 
-    .line 1251
     invoke-direct {p0, v2, v0}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->makeId(II)I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Lcom/oneplus/lib/widget/IntArray;->add(I)V
 
-    .line 1245
     :cond_3
     add-int/lit8 v1, v1, 0x5
 
     goto :goto_2
 
-    .line 1255
-    .end local v0    # "current":I
-    .end local v1    # "i":I
     :cond_4
     :goto_3
     return-void
@@ -1126,55 +869,39 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    .line 1128
     invoke-super {p0, p1, p2}, Lcom/oneplus/lib/widget/ExploreByTouchHelper;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1130
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_FORWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1131
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_BACKWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1132
     return-void
 .end method
 
 .method protected onPerformActionForVirtualView(IILandroid/os/Bundle;)Z
     .locals 5
-    .param p1, "virtualViewId"    # I
-    .param p2, "action"    # I
-    .param p3, "arguments"    # Landroid/os/Bundle;
 
-    .line 1315
     const/16 v0, 0x10
 
     if-ne p2, v0, :cond_2
 
-    .line 1316
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v0
 
-    .line 1317
-    .local v0, "type":I
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v1
 
-    .line 1318
-    .local v1, "value":I
     const/4 v2, 0x1
 
     if-ne v0, v2, :cond_1
 
-    .line 1319
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-static {v3}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$200(Lcom/oneplus/lib/widget/RadialTimePickerView;)Z
@@ -1198,34 +925,24 @@
 
     move-result v3
 
-    .line 1320
-    .local v3, "hour":I
     :goto_0
     iget-object v4, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v4, v3}, Lcom/oneplus/lib/widget/RadialTimePickerView;->setCurrentHour(I)V
 
-    .line 1321
     return v2
 
-    .line 1322
-    .end local v3    # "hour":I
     :cond_1
     const/4 v3, 0x2
 
     if-ne v0, v3, :cond_2
 
-    .line 1323
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {v3, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->setCurrentMinute(I)V
 
-    .line 1324
     return v2
 
-    .line 1327
-    .end local v0    # "type":I
-    .end local v1    # "value":I
     :cond_2
     const/4 v0, 0x0
 
@@ -1234,10 +951,7 @@
 
 .method protected onPopulateEventForVirtualView(ILandroid/view/accessibility/AccessibilityEvent;)V
     .locals 3
-    .param p1, "virtualViewId"    # I
-    .param p2, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 1259
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1248,37 +962,26 @@
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1261
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v0
 
-    .line 1262
-    .local v0, "type":I
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v1
 
-    .line 1263
-    .local v1, "value":I
     invoke-direct {p0, v0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewDescription(II)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 1264
-    .local v2, "description":Ljava/lang/CharSequence;
     invoke-virtual {p2, v2}, Landroid/view/accessibility/AccessibilityEvent;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1265
     return-void
 .end method
 
 .method protected onPopulateNodeForVirtualView(ILandroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
-    .param p1, "virtualViewId"    # I
-    .param p2, "node"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    .line 1269
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1289,86 +992,63 @@
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1270
     sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CLICK:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 1272
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getTypeFromId(I)I
 
     move-result v0
 
-    .line 1273
-    .local v0, "type":I
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getValueFromId(I)I
 
     move-result v1
 
-    .line 1274
-    .local v1, "value":I
     invoke-direct {p0, v0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewDescription(II)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 1275
-    .local v2, "description":Ljava/lang/CharSequence;
     invoke-virtual {p2, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1277
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, p1, v3}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getBoundsForVirtualView(ILandroid/graphics/Rect;)V
 
-    .line 1278
     iget-object v3, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 1280
     invoke-direct {p0, v0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->isVirtualViewSelected(II)Z
 
     move-result v3
 
-    .line 1281
-    .local v3, "selected":Z
     invoke-virtual {p2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
-    .line 1283
     invoke-direct {p0, v0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->getVirtualViewIdAfter(II)I
 
     move-result v4
 
-    .line 1284
-    .local v4, "nextId":I
     const/high16 v5, -0x80000000
 
     if-eq v4, v5, :cond_0
 
-    .line 1285
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x16
 
     if-lt v5, v6, :cond_0
 
-    .line 1286
     iget-object v5, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {p2, v5, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTraversalBefore(Landroid/view/View;I)V
 
-    .line 1289
     :cond_0
     return-void
 .end method
 
 .method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .locals 2
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "action"    # I
-    .param p3, "arguments"    # Landroid/os/Bundle;
 
-    .line 1136
     invoke-super {p0, p1, p2, p3}, Lcom/oneplus/lib/widget/ExploreByTouchHelper;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
 
     move-result v0
@@ -1377,10 +1057,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1137
     return v1
 
-    .line 1140
     :cond_0
     const/16 v0, 0x1000
 
@@ -1390,24 +1068,19 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 1149
     const/4 v0, 0x0
 
     return v0
 
-    .line 1145
     :cond_1
     const/4 v0, -0x1
 
     invoke-direct {p0, v0}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->adjustPicker(I)V
 
-    .line 1146
     return v1
 
-    .line 1142
     :cond_2
     invoke-direct {p0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView$RadialPickerTouchHelper;->adjustPicker(I)V
 
-    .line 1143
     return v1
 .end method

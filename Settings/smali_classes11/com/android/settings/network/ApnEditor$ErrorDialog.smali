@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1330
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -26,20 +25,15 @@
 
 .method public static showError(Lcom/android/settings/network/ApnEditor;)V
     .locals 3
-    .param p0, "editor"    # Lcom/android/settings/network/ApnEditor;
 
-    .line 1333
     new-instance v0, Lcom/android/settings/network/ApnEditor$ErrorDialog;
 
     invoke-direct {v0}, Lcom/android/settings/network/ApnEditor$ErrorDialog;-><init>()V
 
-    .line 1334
-    .local v0, "dialog":Lcom/android/settings/network/ApnEditor$ErrorDialog;
     const/4 v1, 0x0
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/network/ApnEditor$ErrorDialog;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 1335
     invoke-virtual {p0}, Lcom/android/settings/network/ApnEditor;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
@@ -48,7 +42,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/network/ApnEditor$ErrorDialog;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 1336
     return-void
 .end method
 
@@ -57,7 +50,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 1351
     const/16 v0, 0x212
 
     return v0
@@ -65,9 +57,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 1340
     invoke-virtual {p0}, Lcom/android/settings/network/ApnEditor$ErrorDialog;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v0
@@ -78,8 +68,6 @@
 
     move-result-object v0
 
-    .line 1342
-    .local v0, "msg":Ljava/lang/String;
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/network/ApnEditor$ErrorDialog;->getContext()Landroid/content/Context;
@@ -88,14 +76,12 @@
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1343
     const v2, 0x7f120629
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 1344
     const v2, 0x104000a
 
     const/4 v3, 0x0
@@ -104,16 +90,13 @@
 
     move-result-object v1
 
-    .line 1345
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 1346
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 1342
     return-object v1
 .end method

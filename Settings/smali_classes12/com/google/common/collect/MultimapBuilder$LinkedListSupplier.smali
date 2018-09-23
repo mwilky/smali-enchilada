@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 204
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
 
     const-string v1, "INSTANCE"
@@ -50,7 +49,6 @@
 
     sput-object v0, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;->INSTANCE:Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
 
-    .line 203
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
@@ -72,7 +70,6 @@
         }
     .end annotation
 
-    .line 203
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -91,19 +88,14 @@
         }
     .end annotation
 
-    .line 209
     sget-object v0, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;->INSTANCE:Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
 
-    .line 210
-    .local v0, "result":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<Ljava/util/List<TV;>;>;"
     return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 203
     const-class v0, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,7 +110,6 @@
 .method public static values()[Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
     .locals 1
 
-    .line 203
     sget-object v0, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;->$VALUES:[Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;->clone()Ljava/lang/Object;
@@ -135,7 +126,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 203
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$LinkedListSupplier;->get()Ljava/util/List;
 
     move-result-object v0
@@ -154,7 +144,6 @@
         }
     .end annotation
 
-    .line 215
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V

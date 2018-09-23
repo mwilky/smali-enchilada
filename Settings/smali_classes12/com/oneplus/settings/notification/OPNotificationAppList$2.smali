@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/notification/OPNotificationAppList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/notification/OPNotificationAppList;
 
-    .line 106
     iput-object p1, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$2;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 109
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$2;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-static {v0}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$100(Lcom/oneplus/settings/notification/OPNotificationAppList;)Landroid/view/View;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 110
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$2;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-static {v0}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$100(Lcom/oneplus/settings/notification/OPNotificationAppList;)Landroid/view/View;
@@ -59,12 +55,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 112
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$2;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-static {v0}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$300(Lcom/oneplus/settings/notification/OPNotificationAppList;)V
 
-    .line 113
     return-void
 .end method

@@ -34,10 +34,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 212
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -51,10 +49,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/notification/ZenRuleInfo;Lcom/android/settings/notification/ZenRuleInfo;)I
     .locals 4
-    .param p1, "lhs"    # Lcom/android/settings/notification/ZenRuleInfo;
-    .param p2, "rhs"    # Lcom/android/settings/notification/ZenRuleInfo;
 
-    .line 216
     iget-object v0, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$3;->mCollator:Ljava/text/Collator;
 
     iget-object v1, p1, Lcom/android/settings/notification/ZenRuleInfo;->packageLabel:Ljava/lang/CharSequence;
@@ -65,14 +60,10 @@
 
     move-result v0
 
-    .line 217
-    .local v0, "byAppName":I
     if-eqz v0, :cond_0
 
-    .line 218
     return v0
 
-    .line 220
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$3;->mCollator:Ljava/text/Collator;
 
@@ -90,7 +81,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 211
     check-cast p1, Lcom/android/settings/notification/ZenRuleInfo;
 
     check-cast p2, Lcom/android/settings/notification/ZenRuleInfo;

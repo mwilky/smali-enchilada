@@ -36,7 +36,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
@@ -46,22 +45,17 @@
 # virtual methods
 .method protected finish(Landroid/content/Intent;)V
     .locals 3
-    .param p1, "resultData"    # Landroid/content/Intent;
 
-    .line 99
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mFinished:Z
 
-    .line 100
     iput-object p1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mResultData:Landroid/content/Intent;
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mListener:Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
     if-eqz v0, :cond_0
 
-    .line 102
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mListener:Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
     iget-boolean v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mWasSecureBefore:Z
@@ -70,48 +64,33 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;->onChosenLockSaveFinished(ZLandroid/content/Intent;)V
 
-    .line 104
     :cond_0
     return-void
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 48
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 49
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/SaveChosenLockWorkerBase;->setRetainInstance(Z)V
 
-    .line 50
     return-void
 .end method
 
 .method protected prepare(Lcom/android/internal/widget/LockPatternUtils;ZZJI)V
     .locals 3
-    .param p1, "utils"    # Lcom/android/internal/widget/LockPatternUtils;
-    .param p2, "credentialRequired"    # Z
-    .param p3, "hasChallenge"    # Z
-    .param p4, "challenge"    # J
-    .param p6, "userId"    # I
 
-    .line 65
     iput-object p1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mUtils:Lcom/android/internal/widget/LockPatternUtils;
 
-    .line 66
     iput p6, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mUserId:I
 
-    .line 68
     iput-boolean p3, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mHasChallenge:Z
 
-    .line 69
     iput-wide p4, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mChallenge:J
 
-    .line 71
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     iget v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mUserId:I
@@ -122,13 +101,10 @@
 
     iput-boolean v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mWasSecureBefore:Z
 
-    .line 73
     invoke-virtual {p0}, Lcom/android/settings/password/SaveChosenLockWorkerBase;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 76
-    .local v0, "context":Landroid/content/Context;
     if-eqz v0, :cond_0
 
     invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -147,24 +123,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 77
     :cond_0
     iget-object v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mUtils:Lcom/android/internal/widget/LockPatternUtils;
 
     invoke-virtual {v1, p2}, Lcom/android/internal/widget/LockPatternUtils;->setCredentialRequiredToDecrypt(Z)V
 
-    .line 80
     :cond_1
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mFinished:Z
 
-    .line 81
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mResultData:Landroid/content/Intent;
 
-    .line 82
     return-void
 .end method
 
@@ -173,32 +145,24 @@
 
 .method public setBlocking(Z)V
     .locals 0
-    .param p1, "blocking"    # Z
 
-    .line 107
     iput-boolean p1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mBlocking:Z
 
-    .line 108
     return-void
 .end method
 
 .method public setListener(Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;)V
     .locals 3
-    .param p1, "listener"    # Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
-    .line 53
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mListener:Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
     if-ne v0, p1, :cond_0
 
-    .line 54
     return-void
 
-    .line 57
     :cond_0
     iput-object p1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mListener:Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
-    .line 58
     iget-boolean v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mFinished:Z
 
     if-eqz v0, :cond_1
@@ -207,7 +171,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 59
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mListener:Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;
 
     iget-boolean v1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mWasSecureBefore:Z
@@ -216,7 +179,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Listener;->onChosenLockSaveFinished(ZLandroid/content/Intent;)V
 
-    .line 61
     :cond_1
     return-void
 .end method
@@ -224,12 +186,10 @@
 .method protected start()V
     .locals 2
 
-    .line 85
     iget-boolean v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase;->mBlocking:Z
 
     if-eqz v0, :cond_0
 
-    .line 86
     invoke-virtual {p0}, Lcom/android/settings/password/SaveChosenLockWorkerBase;->saveAndVerifyInBackground()Landroid/content/Intent;
 
     move-result-object v0
@@ -238,7 +198,6 @@
 
     goto :goto_0
 
-    .line 88
     :cond_0
     new-instance v0, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;
 
@@ -252,7 +211,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 90
     :goto_0
     return-void
 .end method

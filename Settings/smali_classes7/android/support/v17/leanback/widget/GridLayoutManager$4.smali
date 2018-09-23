@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GridLayoutManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GridLayoutManager;
 
-    .line 2724
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GridLayoutManager$4;->this$0:Landroid/support/v17/leanback/widget/GridLayoutManager;
 
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/GridLayoutManager$GridLinearSmoothScroller;-><init>(Landroid/support/v17/leanback/widget/GridLayoutManager;)V
@@ -35,21 +33,17 @@
 # virtual methods
 .method public computeScrollVectorForPosition(I)Landroid/graphics/PointF;
     .locals 6
-    .param p1, "targetPosition"    # I
 
-    .line 2727
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GridLayoutManager$4;->getChildCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 2728
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2730
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GridLayoutManager$4;->this$0:Landroid/support/v17/leanback/widget/GridLayoutManager;
 
@@ -65,8 +59,6 @@
 
     move-result v0
 
-    .line 2733
-    .local v0, "firstChildPos":I
     iget-object v1, p0, Landroid/support/v17/leanback/widget/GridLayoutManager$4;->this$0:Landroid/support/v17/leanback/widget/GridLayoutManager;
 
     iget v1, v1, Landroid/support/v17/leanback/widget/GridLayoutManager;->mFlag:I
@@ -97,8 +89,6 @@
     :goto_1
     move v1, v2
 
-    .line 2736
-    .local v1, "isStart":Z
     if-eqz v1, :cond_3
 
     const/4 v3, -0x1
@@ -108,8 +98,6 @@
     :cond_3
     move v2, v3
 
-    .line 2737
-    .local v2, "direction":I
     iget-object v3, p0, Landroid/support/v17/leanback/widget/GridLayoutManager$4;->this$0:Landroid/support/v17/leanback/widget/GridLayoutManager;
 
     iget v3, v3, Landroid/support/v17/leanback/widget/GridLayoutManager;->mOrientation:I
@@ -118,7 +106,6 @@
 
     if-nez v3, :cond_4
 
-    .line 2738
     new-instance v3, Landroid/graphics/PointF;
 
     int-to-float v5, v2
@@ -127,7 +114,6 @@
 
     return-object v3
 
-    .line 2740
     :cond_4
     new-instance v3, Landroid/graphics/PointF;
 

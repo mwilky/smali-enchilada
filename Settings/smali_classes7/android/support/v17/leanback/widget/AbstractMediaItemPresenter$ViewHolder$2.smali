@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
-    .line 194
     iput-object p1, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$2;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 4
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "hasFocus"    # Z
 
-    .line 197
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$2;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder$2;->this$0:Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;
@@ -60,6 +55,5 @@
 
     iput-object v1, v0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$ViewHolder;->mFocusViewAnimator:Landroid/animation/ValueAnimator;
 
-    .line 199
     return-void
 .end method

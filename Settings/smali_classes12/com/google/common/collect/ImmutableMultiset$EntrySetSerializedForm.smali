@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 418
-    .local p0, "this":Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;, "Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm<TE;>;"
-    .local p1, "multiset":Lcom/google/common/collect/ImmutableMultiset;, "Lcom/google/common/collect/ImmutableMultiset<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 419
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;->multiset:Lcom/google/common/collect/ImmutableMultiset;
 
-    .line 420
     return-void
 .end method
 
@@ -66,8 +61,6 @@
 .method readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 423
-    .local p0, "this":Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;, "Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;->multiset:Lcom/google/common/collect/ImmutableMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset;->entrySet()Lcom/google/common/collect/ImmutableSet;

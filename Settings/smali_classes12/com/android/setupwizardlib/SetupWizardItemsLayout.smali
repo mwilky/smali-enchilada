@@ -11,26 +11,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 33
     invoke-direct {p0, p1, p2}, Lcom/android/setupwizardlib/SetupWizardListLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 34
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
-    .line 37
     invoke-direct {p0, p1, p2, p3}, Lcom/android/setupwizardlib/SetupWizardListLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 38
     return-void
 .end method
 
@@ -41,7 +32,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 29
     invoke-virtual {p0}, Lcom/android/setupwizardlib/SetupWizardItemsLayout;->getAdapter()Lcom/android/setupwizardlib/items/ItemAdapter;
 
     move-result-object v0
@@ -54,25 +44,20 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 43
     invoke-super {p0}, Lcom/android/setupwizardlib/SetupWizardListLayout;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    .line 44
-    .local v0, "adapter":Landroid/widget/ListAdapter;
     instance-of v1, v0, Lcom/android/setupwizardlib/items/ItemAdapter;
 
     if-eqz v1, :cond_0
 
-    .line 45
     move-object v1, v0
 
     check-cast v1, Lcom/android/setupwizardlib/items/ItemAdapter;
 
     return-object v1
 
-    .line 47
     :cond_0
     const/4 v1, 0x0
 

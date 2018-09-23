@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1018
     invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
 
     return-void
@@ -45,7 +44,6 @@
         }
     .end annotation
 
-    .line 1041
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -59,9 +57,7 @@
 
 .method public offer(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 1021
     const/4 v0, 0x1
 
     return v0
@@ -70,7 +66,6 @@
 .method public peek()Ljava/lang/Object;
     .locals 1
 
-    .line 1026
     const/4 v0, 0x0
 
     return-object v0
@@ -79,7 +74,6 @@
 .method public poll()Ljava/lang/Object;
     .locals 1
 
-    .line 1031
     const/4 v0, 0x0
 
     return-object v0
@@ -88,7 +82,6 @@
 .method public size()I
     .locals 1
 
-    .line 1036
     const/4 v0, 0x0
 
     return v0

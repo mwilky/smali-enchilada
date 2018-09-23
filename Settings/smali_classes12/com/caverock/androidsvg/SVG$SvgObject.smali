@@ -24,7 +24,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1362
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +34,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 1369
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0

@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 44
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 45
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 75
     const-string v0, "phone_language_h2os"
 
     return-object v0
@@ -35,9 +31,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 80
     const-string v0, "phone_language_h2os"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -50,12 +44,10 @@
 
     if-nez v0, :cond_0
 
-    .line 81
     const/4 v0, 0x0
 
     return v0
 
-    .line 83
     :cond_0
     new-instance v0, Lcom/android/settings/core/SubSettingLauncher;
 
@@ -65,7 +57,6 @@
 
     const-class v1, Lcom/android/settings/localepicker/OPLocalePicker;
 
-    .line 84
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -76,22 +67,18 @@
 
     const/16 v1, 0x2ee
 
-    .line 85
     invoke-virtual {v0, v1}, Lcom/android/settings/core/SubSettingLauncher;->setSourceMetricsCategory(I)Lcom/android/settings/core/SubSettingLauncher;
 
     move-result-object v0
 
-    const v1, 0x7f120dfc
+    const v1, 0x7f120df5
 
-    .line 86
     invoke-virtual {v0, v1}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
     move-result-object v0
 
-    .line 87
     invoke-virtual {v0}, Lcom/android/settings/core/SubSettingLauncher;->launch()V
 
-    .line 88
     const/4 v0, 0x1
 
     return v0
@@ -100,7 +87,6 @@
 .method public isAvailable()Z
     .locals 7
 
-    .line 49
     iget-object v0, p0, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -113,8 +99,6 @@
 
     move-result v0
 
-    .line 50
-    .local v0, "config_show_phone_language":Z
     iget-object v1, p0, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -129,14 +113,10 @@
 
     int-to-long v1, v1
 
-    .line 51
-    .local v1, "length":J
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
 
     move-result v3
 
-    .line 52
-    .local v3, "isO2":Z
     const-string v4, "OPPhoneLanguageH2PreferenceController"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -167,7 +147,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
     if-eqz v0, :cond_0
 
     const-wide/16 v4, 0x1
@@ -200,29 +179,22 @@
         }
     .end annotation
 
-    .line 70
-    .local p1, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;->getPreferenceKey()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 71
     return-void
 .end method
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 58
     if-nez p1, :cond_0
 
-    .line 59
     return-void
 
-    .line 61
     :cond_0
     iget-object v0, p0, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;->mContext:Landroid/content/Context;
 
@@ -230,7 +202,6 @@
 
     move-result-object v0
 
-    .line 62
     invoke-virtual {v0}, Lcom/android/settings/overlay/FeatureFactory;->getLocaleFeatureProvider()Lcom/android/settings/localepicker/LocaleFeatureProvider;
 
     move-result-object v0
@@ -239,10 +210,7 @@
 
     move-result-object v0
 
-    .line 63
-    .local v0, "localeNames":Ljava/lang/String;
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 64
     return-void
 .end method

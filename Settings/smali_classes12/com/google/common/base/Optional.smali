@@ -30,8 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 98
-    .local p0, "this":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +47,6 @@
         }
     .end annotation
 
-    .line 78
     invoke-static {}, Lcom/google/common/base/Absent;->withType()Lcom/google/common/base/Optional;
 
     move-result-object v0
@@ -73,24 +70,19 @@
         }
     .end annotation
 
-    .line 93
-    .local p0, "nullableReference":Ljava/lang/Object;, "TT;"
     if-nez p0, :cond_0
 
-    .line 94
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 95
     :cond_0
     new-instance v0, Lcom/google/common/base/Present;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Present;-><init>(Ljava/lang/Object;)V
 
-    .line 93
     :goto_0
     return-object v0
 .end method
@@ -107,8 +99,6 @@
         }
     .end annotation
 
-    .line 85
-    .local p0, "reference":Ljava/lang/Object;, "TT;"
     new-instance v0, Lcom/google/common/base/Present;
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -139,11 +129,8 @@
         }
     .end annotation
 
-    .line 218
-    .local p0, "optionals":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+Lcom/google/common/base/Optional<+TT;>;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 219
     new-instance v0, Lcom/google/common/base/Optional$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Optional$1;-><init>(Ljava/lang/Iterable;)V

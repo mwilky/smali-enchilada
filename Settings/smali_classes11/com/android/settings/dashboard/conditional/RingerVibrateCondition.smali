@@ -6,12 +6,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
     .locals 0
-    .param p1, "manager"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 29
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/AbnormalRingerConditionBase;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
-    .line 30
     return-void
 .end method
 
@@ -20,7 +17,6 @@
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -39,7 +35,6 @@
 .method public getMetricsConstant()I
     .locals 1
 
-    .line 40
     const/16 v0, 0x559
 
     return v0
@@ -48,7 +43,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 55
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -67,7 +61,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -86,7 +79,6 @@
 .method public refreshState()V
     .locals 3
 
-    .line 34
     const-string v0, "RingerVibrateCondition"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -111,7 +103,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 35
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;->mAudioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v0}, Landroid/media/AudioManager;->getRingerModeInternal()I
@@ -130,6 +121,5 @@
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;->setActive(Z)V
 
-    .line 36
     return-void
 .end method

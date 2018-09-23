@@ -7,7 +7,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,7 +24,6 @@
         }
     .end annotation
 
-    .line 40
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
@@ -49,8 +47,6 @@
         }
     .end annotation
 
-    .line 50
-    .local p0, "initialValue":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0, p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
@@ -60,7 +56,6 @@
 
 .method public static newReferenceArray(I)Ljava/util/concurrent/atomic/AtomicReferenceArray;
     .locals 1
-    .param p0, "length"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -71,7 +66,6 @@
         }
     .end annotation
 
-    .line 60
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-direct {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
@@ -91,8 +85,6 @@
         }
     .end annotation
 
-    .line 71
-    .local p0, "array":[Ljava/lang/Object;, "[TE;"
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-direct {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>([Ljava/lang/Object;)V

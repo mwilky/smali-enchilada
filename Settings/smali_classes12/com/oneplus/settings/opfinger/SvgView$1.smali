@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/opfinger/SvgView;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/opfinger/SvgView;
 
-    .line 159
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
     iput p2, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->val$w:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 6
 
-    .line 162
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/SvgView;->access$100(Lcom/oneplus/settings/opfinger/SvgView;)Lcom/oneplus/settings/opfinger/SvgHelper;
@@ -68,7 +65,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/oneplus/settings/opfinger/SvgHelper;->load(Landroid/content/Context;I)V
 
-    .line 163
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/SvgView;->access$200(Lcom/oneplus/settings/opfinger/SvgView;)Ljava/lang/Object;
@@ -77,7 +73,6 @@
 
     monitor-enter v0
 
-    .line 164
     :try_start_0
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
@@ -99,7 +94,6 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
-    .line 165
     invoke-virtual {v4}, Lcom/oneplus/settings/opfinger/SvgView;->getPaddingRight()I
 
     move-result v4
@@ -118,32 +112,26 @@
 
     iget-object v5, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
-    .line 166
     invoke-virtual {v5}, Lcom/oneplus/settings/opfinger/SvgView;->getPaddingBottom()I
 
     move-result v5
 
     sub-int/2addr v4, v5
 
-    .line 164
     invoke-virtual {v2, v3, v4}, Lcom/oneplus/settings/opfinger/SvgHelper;->getPathsForViewport(II)Ljava/util/List;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Lcom/oneplus/settings/opfinger/SvgView;->access$302(Lcom/oneplus/settings/opfinger/SvgView;Ljava/util/List;)Ljava/util/List;
 
-    .line 167
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/SvgView$1;->this$0:Lcom/oneplus/settings/opfinger/SvgView;
 
     invoke-static {v1}, Lcom/oneplus/settings/opfinger/SvgView;->access$400(Lcom/oneplus/settings/opfinger/SvgView;)V
 
-    .line 168
     monitor-exit v0
 
-    .line 169
     return-void
 
-    .line 168
     :catchall_0
     move-exception v1
 

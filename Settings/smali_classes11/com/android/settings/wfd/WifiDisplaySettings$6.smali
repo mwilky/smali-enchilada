@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wfd/WifiDisplaySettings;
 
-    .line 458
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 461
     move-object v0, p2
 
     check-cast v0, Ljava/lang/String;
@@ -50,8 +45,6 @@
 
     move-result v0
 
-    .line 462
-    .local v0, "channel":I
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$800(Lcom/android/settings/wfd/WifiDisplaySettings;)I
@@ -60,12 +53,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 463
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v1, v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$802(Lcom/android/settings/wfd/WifiDisplaySettings;I)I
 
-    .line 464
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-virtual {v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->getActivity()Landroid/app/Activity;
@@ -74,7 +65,6 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
-    .line 465
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v2, p0, Lcom/android/settings/wfd/WifiDisplaySettings$6;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -91,7 +81,6 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$900(Lcom/android/settings/wfd/WifiDisplaySettings;II)V
 
-    .line 467
     :cond_0
     const/4 v1, 0x1
 

@@ -2907,8 +2907,6 @@ Ha bármikor a kezdőképernyőre kíván lépni, legyintsen felfelé a képerny
     <string name="oneplus_quick_clipboard_summary">Kibővíti a másolás lehetőségeit, és másolt elem alapján felkínálja a következő műveletet</string>
     <string name="oneplus_quick_gestures">Mozdulatok</string>
     <string name="oneplus_quick_gestures_title">Gyors gesztusok</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Segédalkalmazás gyors aktiválása</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Tartsa nyomva a bekapcsológombot 0,5 másodpercig, hogy aktiválja a segédalkalmazást, majd 3 másodpercig, hogy kikapcsolja</string>
     <string name="oneplus_quick_turn_on_camera">Kamera gyors bekapcsolása</string>
     <string name="oneplus_quickpay">Gyors fizetés</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Biztosan a Home gomb hosszú lenyomásával indított „%1$s” műveletet „Gyors fizetés” műveletre kívánja változtatni?</string>

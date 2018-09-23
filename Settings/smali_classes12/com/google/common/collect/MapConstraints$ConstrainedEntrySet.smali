@@ -46,13 +46,8 @@
         }
     .end annotation
 
-    .line 624
-    .local p0, "this":Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet;, "Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet<TK;TV;>;"
-    .local p1, "entries":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
-    .local p2, "constraint":Lcom/google/common/collect/MapConstraint;, "Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/MapConstraints$ConstrainedEntries;-><init>(Ljava/util/Collection;Lcom/google/common/collect/MapConstraint;)V
 
-    .line 625
     return-void
 .end method
 
@@ -60,13 +55,11 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 630
-    .local p0, "this":Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet;, "Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet<TK;TV;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Sets;->equalsImpl(Ljava/util/Set;Ljava/lang/Object;)Z
 
     move-result v0
@@ -77,8 +70,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 634
-    .local p0, "this":Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet;, "Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
 
     move-result v0

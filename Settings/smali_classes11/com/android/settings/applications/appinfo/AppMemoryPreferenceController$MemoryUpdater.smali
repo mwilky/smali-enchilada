@@ -32,7 +32,6 @@
 .method private constructor <init>(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)V
     .locals 0
 
-    .line 49
     iput-object p1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -42,10 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
-    .param p2, "x1"    # Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$1;
 
-    .line 49
     invoke-direct {p0, p1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;-><init>(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)V
 
     return-void
@@ -55,9 +51,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/settings/applications/ProcStatsPackageEntry;
     .locals 9
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 53
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$000(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
@@ -68,16 +62,12 @@
 
     move-result-object v0
 
-    .line 54
-    .local v0, "activity":Landroid/app/Activity;
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 55
     return-object v1
 
-    .line 57
     :cond_0
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
@@ -89,14 +79,10 @@
 
     move-result-object v2
 
-    .line 58
-    .local v2, "packageInfo":Landroid/content/pm/PackageInfo;
     if-nez v2, :cond_1
 
-    .line 59
     return-object v1
 
-    .line 61
     :cond_1
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
@@ -106,7 +92,6 @@
 
     if-nez v3, :cond_2
 
-    .line 62
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     new-instance v4, Lcom/android/settings/applications/ProcStatsData;
@@ -117,7 +102,6 @@
 
     invoke-static {v3, v4}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$102(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;Lcom/android/settings/applications/ProcStatsData;)Lcom/android/settings/applications/ProcStatsData;
 
-    .line 63
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v3}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$100(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Lcom/android/settings/applications/ProcStatsData;
@@ -130,7 +114,6 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/android/settings/applications/ProcStatsData;->setDuration(J)V
 
-    .line 65
     :cond_2
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
@@ -142,7 +125,6 @@
 
     invoke-virtual {v3, v4}, Lcom/android/settings/applications/ProcStatsData;->refreshStats(Z)V
 
-    .line 66
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v3}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$100(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Lcom/android/settings/applications/ProcStatsData;
@@ -170,8 +152,6 @@
 
     check-cast v4, Lcom/android/settings/applications/ProcStatsPackageEntry;
 
-    .line 67
-    .local v4, "pkgEntry":Lcom/android/settings/applications/ProcStatsPackageEntry;
     invoke-virtual {v4}, Lcom/android/settings/applications/ProcStatsPackageEntry;->getEntries()Ljava/util/ArrayList;
 
     move-result-object v5
@@ -193,8 +173,6 @@
 
     check-cast v6, Lcom/android/settings/applications/ProcStatsEntry;
 
-    .line 68
-    .local v6, "entry":Lcom/android/settings/applications/ProcStatsEntry;
     invoke-virtual {v6}, Lcom/android/settings/applications/ProcStatsEntry;->getUid()I
 
     move-result v7
@@ -205,23 +183,16 @@
 
     if-ne v7, v8, :cond_3
 
-    .line 69
     invoke-virtual {v4}, Lcom/android/settings/applications/ProcStatsPackageEntry;->updateMetrics()V
 
-    .line 70
     return-object v4
 
-    .line 72
-    .end local v6    # "entry":Lcom/android/settings/applications/ProcStatsEntry;
     :cond_3
     goto :goto_1
 
-    .line 73
-    .end local v4    # "pkgEntry":Lcom/android/settings/applications/ProcStatsPackageEntry;
     :cond_4
     goto :goto_0
 
-    .line 74
     :cond_5
     return-object v1
 .end method
@@ -229,7 +200,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 49
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->doInBackground([Ljava/lang/Void;)Lcom/android/settings/applications/ProcStatsPackageEntry;
@@ -241,9 +211,7 @@
 
 .method protected onPostExecute(Lcom/android/settings/applications/ProcStatsPackageEntry;)V
     .locals 10
-    .param p1, "entry"    # Lcom/android/settings/applications/ProcStatsPackageEntry;
 
-    .line 79
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$000(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
@@ -256,21 +224,17 @@
 
     if-nez v0, :cond_0
 
-    .line 80
     return-void
 
-    .line 82
     :cond_0
     const/4 v0, 0x0
 
     if-eqz p1, :cond_1
 
-    .line 83
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v1, p1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$202(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;Lcom/android/settings/applications/ProcStatsPackageEntry;)Lcom/android/settings/applications/ProcStatsPackageEntry;
 
-    .line 84
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$300(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Landroid/support/v7/preference/Preference;
@@ -281,7 +245,6 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 85
     invoke-virtual {p1}, Lcom/android/settings/applications/ProcStatsPackageEntry;->getRunWeight()D
 
     move-result-wide v3
@@ -296,7 +259,6 @@
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
-    .line 86
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$100(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Lcom/android/settings/applications/ProcStatsData;
 
     move-result-object v1
@@ -311,8 +273,6 @@
 
     mul-double/2addr v3, v5
 
-    .line 87
-    .local v3, "amount":D
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$300(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Landroid/support/v7/preference/Preference;
@@ -331,7 +291,6 @@
 
     iget-object v7, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
-    .line 88
     invoke-static {v7}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$400(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Landroid/content/Context;
 
     move-result-object v7
@@ -344,18 +303,14 @@
 
     aput-object v7, v2, v0
 
-    .line 87
     invoke-virtual {v5, v6, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 89
-    .end local v3    # "amount":D
     goto :goto_0
 
-    .line 90
     :cond_1
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
@@ -365,7 +320,6 @@
 
     invoke-virtual {v1, v0}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 91
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->this$0:Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;->access$300(Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController;)Landroid/support/v7/preference/Preference;
@@ -386,7 +340,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 93
     :goto_0
     return-void
 .end method
@@ -394,7 +347,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 49
     check-cast p1, Lcom/android/settings/applications/ProcStatsPackageEntry;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/appinfo/AppMemoryPreferenceController$MemoryUpdater;->onPostExecute(Lcom/android/settings/applications/ProcStatsPackageEntry;)V

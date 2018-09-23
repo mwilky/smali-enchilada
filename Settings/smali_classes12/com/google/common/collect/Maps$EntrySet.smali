@@ -31,8 +31,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 3732
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
 
     return-void
@@ -43,43 +41,32 @@
 .method public clear()V
     .locals 1
 
-    .line 3741
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 3742
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 3745
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 3746
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 3747
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 3748
-    .local v2, "key":Ljava/lang/Object;
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v3
@@ -88,8 +75,6 @@
 
     move-result-object v3
 
-    .line 3749
-    .local v3, "value":Ljava/lang/Object;, "TV;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -102,7 +87,6 @@
 
     if-nez v3, :cond_0
 
-    .line 3750
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v4
@@ -118,14 +102,9 @@
 
     nop
 
-    .line 3749
     :cond_1
     return v1
 
-    .line 3752
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
-    .end local v2    # "key":Ljava/lang/Object;
-    .end local v3    # "value":Ljava/lang/Object;, "TV;"
     :cond_2
     return v1
 .end method
@@ -133,8 +112,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 3756
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v0
@@ -158,23 +135,17 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 3760
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$EntrySet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3761
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 3762
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v1
@@ -193,8 +164,6 @@
 
     return v1
 
-    .line 3764
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -211,9 +180,6 @@
         }
     .end annotation
 
-    .line 3769
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     :try_start_0
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -229,12 +195,9 @@
 
     return v0
 
-    .line 3770
     :catch_0
     move-exception v0
 
-    .line 3772
-    .local v0, "e":Ljava/lang/UnsupportedOperationException;
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -256,9 +219,6 @@
         }
     .end annotation
 
-    .line 3778
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     :try_start_0
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -274,12 +234,9 @@
 
     return v0
 
-    .line 3779
     :catch_0
     move-exception v0
 
-    .line 3781
-    .local v0, "e":Ljava/lang/UnsupportedOperationException;
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     move-result v1
@@ -288,8 +245,6 @@
 
     move-result-object v1
 
-    .line 3782
-    .local v1, "keys":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Object;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -305,34 +260,25 @@
 
     move-result-object v3
 
-    .line 3783
-    .local v3, "o":Ljava/lang/Object;
     invoke-virtual {p0, v3}, Lcom/google/common/collect/Maps$EntrySet;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 3784
     move-object v4, v3
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 3785
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 3787
-    .end local v3    # "o":Ljava/lang/Object;
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_0
     goto :goto_0
 
-    .line 3788
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
@@ -352,8 +298,6 @@
 .method public size()I
     .locals 1
 
-    .line 3737
-    .local p0, "this":Lcom/google/common/collect/Maps$EntrySet;, "Lcom/google/common/collect/Maps$EntrySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$EntrySet;->map()Ljava/util/Map;
 
     move-result-object v0

@@ -31,7 +31,6 @@
 .method constructor <init>(Lcom/google/tagmanager/HitSendingThreadImpl;Lcom/google/tagmanager/HitSendingThread;JLjava/lang/String;)V
     .locals 0
 
-    .line 71
     iput-object p1, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->this$0:Lcom/google/tagmanager/HitSendingThreadImpl;
 
     iput-object p2, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->val$thread:Lcom/google/tagmanager/HitSendingThread;
@@ -50,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 74
     iget-object v0, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->this$0:Lcom/google/tagmanager/HitSendingThreadImpl;
 
     invoke-static {v0}, Lcom/google/tagmanager/HitSendingThreadImpl;->access$000(Lcom/google/tagmanager/HitSendingThreadImpl;)Lcom/google/tagmanager/HitStore;
@@ -59,13 +57,10 @@
 
     if-nez v0, :cond_0
 
-    .line 75
     invoke-static {}, Lcom/google/tagmanager/ServiceManagerImpl;->getInstance()Lcom/google/tagmanager/ServiceManagerImpl;
 
     move-result-object v0
 
-    .line 76
-    .local v0, "instance":Lcom/google/tagmanager/ServiceManagerImpl;
     iget-object v1, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->this$0:Lcom/google/tagmanager/HitSendingThreadImpl;
 
     invoke-static {v1}, Lcom/google/tagmanager/HitSendingThreadImpl;->access$100(Lcom/google/tagmanager/HitSendingThreadImpl;)Landroid/content/Context;
@@ -76,7 +71,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/tagmanager/ServiceManagerImpl;->initialize(Landroid/content/Context;Lcom/google/tagmanager/HitSendingThread;)V
 
-    .line 77
     iget-object v1, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->this$0:Lcom/google/tagmanager/HitSendingThreadImpl;
 
     invoke-virtual {v0}, Lcom/google/tagmanager/ServiceManagerImpl;->getStore()Lcom/google/tagmanager/HitStore;
@@ -85,8 +79,6 @@
 
     invoke-static {v1, v2}, Lcom/google/tagmanager/HitSendingThreadImpl;->access$002(Lcom/google/tagmanager/HitSendingThreadImpl;Lcom/google/tagmanager/HitStore;)Lcom/google/tagmanager/HitStore;
 
-    .line 79
-    .end local v0    # "instance":Lcom/google/tagmanager/ServiceManagerImpl;
     :cond_0
     iget-object v0, p0, Lcom/google/tagmanager/HitSendingThreadImpl$1;->this$0:Lcom/google/tagmanager/HitSendingThreadImpl;
 
@@ -100,6 +92,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/tagmanager/HitStore;->putHit(JLjava/lang/String;)V
 
-    .line 80
     return-void
 .end method

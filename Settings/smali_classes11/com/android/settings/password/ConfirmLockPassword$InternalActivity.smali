@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 68
     invoke-direct {p0}, Lcom/android/settings/password/ConfirmLockPassword;-><init>()V
 
     return-void

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/LottieDrawable;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/LottieDrawable;
 
-    .line 400
     iput-object p1, p0, Lcom/airbnb/lottie/LottieDrawable$3;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     iput p2, p0, Lcom/airbnb/lottie/LottieDrawable$3;->val$startFrame:I
@@ -46,9 +44,7 @@
 # virtual methods
 .method public run(Lcom/airbnb/lottie/LottieComposition;)V
     .locals 3
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 402
     iget-object v0, p0, Lcom/airbnb/lottie/LottieDrawable$3;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     iget v1, p0, Lcom/airbnb/lottie/LottieDrawable$3;->val$startFrame:I
@@ -57,6 +53,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/airbnb/lottie/LottieDrawable;->playAnimation(II)V
 
-    .line 403
     return-void
 .end method

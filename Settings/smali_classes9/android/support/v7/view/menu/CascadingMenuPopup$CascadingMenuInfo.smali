@@ -25,29 +25,23 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v7/widget/MenuPopupWindow;Landroid/support/v7/view/menu/MenuBuilder;I)V
     .locals 0
-    .param p1, "window"    # Landroid/support/v7/widget/MenuPopupWindow;
+    .param p1    # Landroid/support/v7/widget/MenuPopupWindow;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
+    .param p2    # Landroid/support/v7/view/menu/MenuBuilder;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "position"    # I
 
-    .line 798
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 799
     iput-object p1, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;->window:Landroid/support/v7/widget/MenuPopupWindow;
 
-    .line 800
     iput-object p2, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 801
     iput p3, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;->position:I
 
-    .line 802
     return-void
 .end method
 
@@ -56,7 +50,6 @@
 .method public getListView()Landroid/widget/ListView;
     .locals 1
 
-    .line 805
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;->window:Landroid/support/v7/widget/MenuPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/MenuPopupWindow;->getListView()Landroid/widget/ListView;

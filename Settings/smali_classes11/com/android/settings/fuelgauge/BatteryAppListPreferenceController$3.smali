@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
-    .line 611
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController$3;->this$0:Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,22 +36,17 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 614
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 615
-    .local v0, "o":Ljava/lang/Object;
     if-eqz v0, :cond_0
 
     instance-of v1, v0, Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 616
     iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController$3;->this$0:Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;->access$200(Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;)Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
@@ -66,7 +59,6 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;->stopApp(Ljava/lang/String;)V
 
-    .line 617
     iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController$3;->this$0:Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;->access$200(Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;)Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
@@ -75,7 +67,6 @@
 
     invoke-virtual {v1}, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;->update()V
 
-    .line 619
     :cond_0
     return-void
 .end method

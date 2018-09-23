@@ -50,16 +50,12 @@
         }
     .end annotation
 
-    .line 17
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
-    .local p1, "initialValue":Ljava/lang/Object;, "TV;"
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     invoke-direct {p0, v0, p1}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;-><init>(Ljava/util/List;Ljava/lang/Object;)V
 
-    .line 18
     return-void
 .end method
 
@@ -74,19 +70,12 @@
         }
     .end annotation
 
-    .line 20
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
-    .local p1, "keyframes":Ljava/util/List;, "Ljava/util/List<Lcom/airbnb/lottie/animation/Keyframe<TV;>;>;"
-    .local p2, "initialValue":Ljava/lang/Object;, "TV;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
     iput-object p1, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
 
-    .line 22
     iput-object p2, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->initialValue:Ljava/lang/Object;
 
-    .line 23
     return-void
 .end method
 
@@ -100,9 +89,6 @@
         }
     .end annotation
 
-    .line 31
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     return-object p1
 .end method
 
@@ -114,8 +100,6 @@
         }
     .end annotation
 
-    .line 40
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
     iget-object v0, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->initialValue:Ljava/lang/Object;
 
     invoke-virtual {p0, v0}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->convertType(Ljava/lang/Object;)Ljava/lang/Object;
@@ -128,8 +112,6 @@
 .method public hasAnimation()Z
     .locals 1
 
-    .line 36
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
     iget-object v0, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -144,14 +126,10 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 44
-    .local p0, "this":Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;, "Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue<TV;TO;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 45
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "parseInitialValue="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -160,7 +138,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 46
     iget-object v1, p0, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;->keyframes:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
@@ -169,7 +146,6 @@
 
     if-nez v1, :cond_0
 
-    .line 47
     const-string v1, ", values="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -186,7 +162,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 49
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

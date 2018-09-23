@@ -20,19 +20,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 38
     invoke-direct {p0, p1}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 40
     if-eqz p2, :cond_0
 
-    .line 41
     invoke-virtual {p2, p0}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
 
-    .line 43
     :cond_0
     return-void
 .end method
@@ -41,12 +35,9 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 1
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 57
     invoke-super {p0, p1}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 58
     invoke-virtual {p0}, Lcom/android/settings/development/PictureColorModePreferenceController;->getPreferenceKey()Ljava/lang/String;
 
     move-result-object v0
@@ -59,17 +50,14 @@
 
     iput-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
-    .line 59
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     if-eqz v0, :cond_0
 
-    .line 60
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     invoke-virtual {v0}, Lcom/android/settings/development/ColorModePreference;->updateCurrentAndSupported()V
 
-    .line 62
     :cond_0
     return-void
 .end method
@@ -79,7 +67,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 88
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/development/ColorModePreference;->getColorModeDescriptions(Landroid/content/Context;)Ljava/util/List;
@@ -96,7 +83,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 52
     const-string v0, "picture_color_mode"
 
     return-object v0
@@ -105,7 +91,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 47
     invoke-virtual {p0}, Lcom/android/settings/development/PictureColorModePreferenceController;->getColorModeDescriptionsSize()I
 
     move-result v0
@@ -134,7 +119,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 83
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -155,46 +139,37 @@
 .method public onPause()V
     .locals 1
 
-    .line 75
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     if-nez v0, :cond_0
 
-    .line 76
     return-void
 
-    .line 78
     :cond_0
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     invoke-virtual {v0}, Lcom/android/settings/development/ColorModePreference;->stopListening()V
 
-    .line 79
     return-void
 .end method
 
 .method public onResume()V
     .locals 1
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     if-nez v0, :cond_0
 
-    .line 67
     return-void
 
-    .line 69
     :cond_0
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     invoke-virtual {v0}, Lcom/android/settings/development/ColorModePreference;->startListening()V
 
-    .line 70
     iget-object v0, p0, Lcom/android/settings/development/PictureColorModePreferenceController;->mPreference:Lcom/android/settings/development/ColorModePreference;
 
     invoke-virtual {v0}, Lcom/android/settings/development/ColorModePreference;->updateCurrentAndSupported()V
 
-    .line 71
     return-void
 .end method

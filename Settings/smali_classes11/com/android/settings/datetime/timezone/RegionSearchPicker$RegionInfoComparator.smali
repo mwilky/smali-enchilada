@@ -33,15 +33,11 @@
 # direct methods
 .method constructor <init>(Landroid/icu/text/Collator;)V
     .locals 0
-    .param p1, "collator"    # Landroid/icu/text/Collator;
 
-    .line 180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
     iput-object p1, p0, Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionInfoComparator;->mCollator:Landroid/icu/text/Collator;
 
-    .line 182
     return-void
 .end method
 
@@ -49,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;)I
     .locals 3
-    .param p1, "r1"    # Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;
-    .param p2, "r2"    # Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;
 
-    .line 186
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionInfoComparator;->mCollator:Landroid/icu/text/Collator;
 
     invoke-virtual {p1}, Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;->getTitle()Ljava/lang/CharSequence;
@@ -73,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 177
     check-cast p1, Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;
 
     check-cast p2, Lcom/android/settings/datetime/timezone/RegionSearchPicker$RegionItem;

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/SearchSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/SearchSupportFragment;
 
-    .line 135
     iput-object p1, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 139
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
@@ -50,7 +47,6 @@
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
 
-    .line 140
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/RowsSupportFragment;->getAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
 
     move-result-object v0
@@ -61,7 +57,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 141
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
@@ -82,7 +77,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 142
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
@@ -94,7 +88,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setAdapter(Landroid/support/v17/leanback/widget/ObjectAdapter;)V
 
-    .line 143
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
@@ -103,13 +96,11 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setSelectedPosition(I)V
 
-    .line 146
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/SearchSupportFragment;->updateSearchBarVisibility()V
 
-    .line 147
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget v1, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mStatus:I
@@ -118,7 +109,6 @@
 
     iput v1, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mStatus:I
 
-    .line 148
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mStatus:I
@@ -127,17 +117,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 149
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/SearchSupportFragment;->updateFocus()V
 
-    .line 151
     :cond_2
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/SearchSupportFragment;->updateSearchBarNextFocusId()V
 
-    .line 152
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;
 
-    .line 224
     iput-object p1, p0, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference$1;->this$1:Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 227
     iget-object v0, p0, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference$1;->this$1:Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;
 
     iget-object v0, v0, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;->this$0:Lcom/android/settings/applications/PremiumSmsAccess;
@@ -56,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/applications/ApplicationsState;->ensureIcon(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
 
-    .line 228
     iget-object v0, p0, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference$1;->this$1:Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;
 
     iget-object v1, p0, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference$1;->this$1:Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;
@@ -69,6 +65,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/PremiumSmsAccess$PremiumSmsPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 229
     return-void
 .end method

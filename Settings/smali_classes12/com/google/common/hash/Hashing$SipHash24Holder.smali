@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 162
     new-instance v7, Lcom/google/common/hash/SipHashFunction;
 
     const/4 v1, 0x2
@@ -45,7 +44,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

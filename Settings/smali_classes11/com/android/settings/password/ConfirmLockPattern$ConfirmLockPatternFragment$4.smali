@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;JJ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
-    .param p2, "x0"    # J
-    .param p4, "x1"    # J
 
-    .line 557
     iput-object p1, p0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment$4;->this$0:Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -38,30 +34,24 @@
 .method public onFinish()V
     .locals 2
 
-    .line 569
     iget-object v0, p0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment$4;->this$0:Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     sget-object v1, Lcom/android/settings/password/ConfirmLockPattern$Stage;->NeedToUnlock:Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     invoke-static {v0, v1}, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->access$800(Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;Lcom/android/settings/password/ConfirmLockPattern$Stage;)V
 
-    .line 570
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 6
-    .param p1, "millisUntilFinished"    # J
 
-    .line 561
     const-wide/16 v0, 0x3e8
 
     div-long v0, p1, v0
 
     long-to-int v0, v0
 
-    .line 562
-    .local v0, "secondsCountdown":I
     iget-object v1, p0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment$4;->this$0:Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     iget-object v1, v1, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->mErrorTextView:Landroid/widget/TextView;
@@ -72,7 +62,6 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 564
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -81,7 +70,6 @@
 
     aput-object v4, v3, v5
 
-    .line 562
     const v4, 0x7f1208de
 
     invoke-virtual {v2, v4, v3}, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
@@ -90,6 +78,5 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 565
     return-void
 .end method

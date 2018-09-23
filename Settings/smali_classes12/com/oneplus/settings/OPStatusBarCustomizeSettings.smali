@@ -54,7 +54,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 115
     new-instance v0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings$StatusBarCustomizeIndexProvider;
 
     invoke-direct {v0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings$StatusBarCustomizeIndexProvider;-><init>()V
@@ -67,7 +66,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
     return-void
@@ -75,14 +73,11 @@
 
 .method private updateBatteryStylePreferenceDescription(I)V
     .locals 3
-    .param p1, "batteryStyle"    # I
 
-    .line 95
     iget-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     if-eqz v0, :cond_1
 
-    .line 100
     iget-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-virtual {v0}, Landroid/support/v7/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -93,7 +88,6 @@
 
     if-lt p1, v0, :cond_0
 
-    .line 101
     iget-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-virtual {v0}, Landroid/support/v7/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -104,7 +98,6 @@
 
     add-int/lit8 p1, v0, -0x1
 
-    .line 104
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
@@ -112,16 +105,12 @@
 
     move-result-object v0
 
-    .line 105
-    .local v0, "entries":[Ljava/lang/CharSequence;
     iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     aget-object v2, v0, p1
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 107
-    .end local v0    # "entries":[Ljava/lang/CharSequence;
     :cond_1
     return-void
 .end method
@@ -131,7 +120,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 111
     const/16 v0, 0x270f
 
     return v0
@@ -139,24 +127,19 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 47
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 48
     const v0, 0x7f160095
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->addPreferencesFromResource(I)V
 
-    .line 49
     invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
 
-    .line 50
     const-string v0, "battery_style"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -167,7 +150,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
-    .line 51
     iget-object v0, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -182,8 +164,6 @@
 
     move-result v0
 
-    .line 53
-    .local v0, "selectedStyle":I
     iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -192,15 +172,12 @@
 
     invoke-virtual {v1, v3}, Landroid/support/v7/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 54
     invoke-direct {p0, v0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->updateBatteryStylePreferenceDescription(I)V
 
-    .line 55
     iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mBatteryStylePreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-virtual {v1, p0}, Landroid/support/v7/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 57
     const-string v1, "enable_show_statusbar"
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -211,7 +188,6 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mShowBatteryPercentPreference:Landroid/support/v14/preference/SwitchPreference;
 
-    .line 58
     const-string v1, "clock"
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -222,7 +198,6 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mClockPreference:Landroid/support/v7/preference/ListPreference;
 
-    .line 59
     const-string v1, "status_bar_icon_manager"
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -231,12 +206,10 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mStatusBarIconMangerPreference:Landroid/support/v7/preference/Preference;
 
-    .line 60
     iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mStatusBarIconMangerPreference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v1, p0}, Landroid/support/v7/preference/Preference;->setOnPreferenceClickListener(Landroid/support/v7/preference/Preference$OnPreferenceClickListener;)V
 
-    .line 62
     iget-object v1, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -249,8 +222,6 @@
 
     move-result v1
 
-    .line 64
-    .local v1, "showPercetn":I
     iget-object v3, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mShowBatteryPercentPreference:Landroid/support/v14/preference/SwitchPreference;
 
     const/4 v4, 0x1
@@ -264,12 +235,10 @@
     :cond_0
     invoke-virtual {v3, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 65
     iget-object v2, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mShowBatteryPercentPreference:Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v2, p0}, Landroid/support/v14/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 67
     invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -278,12 +247,8 @@
 
     move-result-object v2
 
-    .line 68
-    .local v2, "intent":Landroid/content/Intent;
     const/4 v3, 0x1
 
-    .line 69
-    .local v3, "showPowerPercentInStatusBar":Z
     if-eqz v2, :cond_1
 
     const-string v5, "show_power_percent_in_statusbar_title"
@@ -294,17 +259,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 70
     const-string v5, "show_power_percent_in_statusbar_title"
 
     invoke-virtual {v2, v5, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v3
 
-    .line 71
     if-nez v3, :cond_1
 
-    .line 72
     invoke-virtual {p0}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
     move-result-object v4
@@ -313,23 +275,17 @@
 
     invoke-virtual {v4, v5}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 75
     :cond_1
     return-void
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "objValue"    # Ljava/lang/Object;
 
-    .line 79
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 80
-    .local v0, "key":Ljava/lang/String;
     const-string v1, "battery_style"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -340,7 +296,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 81
     move-object v1, p2
 
     check-cast v1, Ljava/lang/String;
@@ -349,8 +304,6 @@
 
     move-result v1
 
-    .line 82
-    .local v1, "batteryStyle":I
     iget-object v3, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -361,14 +314,10 @@
 
     invoke-static {v3, v4, v1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 84
     invoke-direct {p0, v1}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->updateBatteryStylePreferenceDescription(I)V
 
-    .line 85
     return v2
 
-    .line 86
-    .end local v1    # "batteryStyle":I
     :cond_0
     const-string v1, "enable_show_statusbar"
 
@@ -378,7 +327,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 87
     move-object v1, p2
 
     check-cast v1, Ljava/lang/Boolean;
@@ -387,8 +335,6 @@
 
     move-result v1
 
-    .line 88
-    .local v1, "value":Z
     iget-object v3, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -399,26 +345,19 @@
 
     invoke-static {v3, v4, v1}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 89
     return v2
 
-    .line 91
-    .end local v1    # "value":Z
     :cond_1
     return v2
 .end method
 
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 9
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 120
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 121
-    .local v0, "key":Ljava/lang/String;
     const-string v1, "status_bar_icon_manager"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -427,7 +366,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 122
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->mContext:Landroid/content/Context;
@@ -436,8 +374,6 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 123
-    .local v1, "intent":Landroid/content/Intent;
     const-class v2, Lcom/oneplus/settings/OPStatusBarCustomizeIconSettings;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -456,13 +392,10 @@
 
     invoke-virtual/range {v3 .. v8}, Lcom/oneplus/settings/OPStatusBarCustomizeSettings;->startFragment(Landroid/app/Fragment;Ljava/lang/String;IILandroid/os/Bundle;)Z
 
-    .line 124
     const/4 v2, 0x1
 
     return v2
 
-    .line 126
-    .end local v1    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v1, 0x0
 

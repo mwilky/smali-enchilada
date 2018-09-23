@@ -27,13 +27,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "index"    # I
 
-    .line 68
     invoke-direct {p0, p1, p2}, Landroid/support/v17/leanback/widget/Parallax$IntProperty;-><init>(Ljava/lang/String;I)V
 
-    .line 69
     return-void
 .end method
 
@@ -41,30 +37,23 @@
 # virtual methods
 .method public adapterPosition(I)Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;
     .locals 0
-    .param p1, "adapterPosition"    # I
 
-    .line 78
     iput p1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mAdapterPosition:I
 
-    .line 79
     return-object p0
 .end method
 
 .method public fraction(F)Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;
     .locals 0
-    .param p1, "fraction"    # F
 
-    .line 113
     iput p1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mFraction:F
 
-    .line 114
     return-object p0
 .end method
 
 .method public getAdapterPosition()I
     .locals 1
 
-    .line 121
     iget v0, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mAdapterPosition:I
 
     return v0
@@ -73,7 +62,6 @@
 .method public getFraction()F
     .locals 1
 
-    .line 144
     iget v0, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mFraction:F
 
     return v0
@@ -82,7 +70,6 @@
 .method public getOffset()I
     .locals 1
 
-    .line 135
     iget v0, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mOffset:I
 
     return v0
@@ -91,7 +78,6 @@
 .method public getViewId()I
     .locals 1
 
-    .line 128
     iget v0, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mViewId:I
 
     return v0
@@ -99,24 +85,17 @@
 
 .method public offset(I)Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;
     .locals 0
-    .param p1, "offset"    # I
 
-    .line 100
     iput p1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mOffset:I
 
-    .line 101
     return-object p0
 .end method
 
 .method updateValue(Landroid/support/v17/leanback/widget/RecyclerViewParallax;)V
     .locals 10
-    .param p1, "source"    # Landroid/support/v17/leanback/widget/RecyclerViewParallax;
 
-    .line 148
     iget-object v0, p1, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->mRecylerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 149
-    .local v0, "recyclerView":Landroid/support/v7/widget/RecyclerView;
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -126,19 +105,15 @@
     :cond_0
     iget v1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mAdapterPosition:I
 
-    .line 150
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     move-result-object v1
 
-    .line 151
-    .local v1, "viewHolder":Landroid/support/v7/widget/RecyclerView$ViewHolder;
     :goto_0
     const/4 v2, 0x0
 
     if-nez v1, :cond_4
 
-    .line 152
     const v3, 0x7fffffff
 
     if-eqz v0, :cond_3
@@ -155,7 +130,6 @@
 
     goto :goto_2
 
-    .line 156
     :cond_1
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getLayoutManager()Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
@@ -165,25 +139,18 @@
 
     move-result-object v2
 
-    .line 157
-    .local v2, "firstChild":Landroid/view/View;
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     move-result-object v4
 
-    .line 158
-    .local v4, "vh":Landroid/support/v7/widget/RecyclerView$ViewHolder;
     invoke-virtual {v4}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v5
 
-    .line 159
-    .local v5, "firstPosition":I
     iget v6, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mAdapterPosition:I
 
     if-ge v5, v6, :cond_2
 
-    .line 160
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->getIndex()I
 
     move-result v6
@@ -192,7 +159,6 @@
 
     goto :goto_1
 
-    .line 162
     :cond_2
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->getIndex()I
 
@@ -202,14 +168,9 @@
 
     invoke-virtual {p1, v3, v6}, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->setIntPropertyValue(II)V
 
-    .line 164
-    .end local v2    # "firstChild":Landroid/view/View;
-    .end local v4    # "vh":Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .end local v5    # "firstPosition":I
     :goto_1
     goto/16 :goto_4
 
-    .line 153
     :cond_3
     :goto_2
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->getIndex()I
@@ -218,10 +179,8 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->setIntPropertyValue(II)V
 
-    .line 154
     return-void
 
-    .line 165
     :cond_4
     iget-object v3, v1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -231,18 +190,13 @@
 
     move-result-object v3
 
-    .line 166
-    .local v3, "trackingView":Landroid/view/View;
     if-nez v3, :cond_5
 
-    .line 167
     return-void
 
-    .line 170
     :cond_5
     new-instance v4, Landroid/graphics/Rect;
 
-    .line 171
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v5
@@ -255,24 +209,17 @@
 
     move-object v2, v4
 
-    .line 172
-    .local v2, "rect":Landroid/graphics/Rect;
     invoke-virtual {v0, v3, v2}, Landroid/support/v7/widget/RecyclerView;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 175
     const/4 v4, 0x0
 
-    .local v4, "tx":F
     const/4 v5, 0x0
 
-    .line 176
-    .local v5, "ty":F
     :goto_3
     if-eq v3, v0, :cond_8
 
     if-eqz v3, :cond_8
 
-    .line 181
     invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
@@ -285,7 +232,6 @@
 
     if-nez v6, :cond_7
 
-    .line 182
     :cond_6
     invoke-virtual {v3}, Landroid/view/View;->getTranslationX()F
 
@@ -293,14 +239,12 @@
 
     add-float/2addr v4, v6
 
-    .line 183
     invoke-virtual {v3}, Landroid/view/View;->getTranslationY()F
 
     move-result v6
 
     add-float/2addr v5, v6
 
-    .line 185
     :cond_7
     invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -312,7 +256,6 @@
 
     goto :goto_3
 
-    .line 187
     :cond_8
     float-to-int v6, v4
 
@@ -320,12 +263,10 @@
 
     invoke-virtual {v2, v6, v7}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 188
     iget-boolean v6, p1, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->mIsVertical:Z
 
     if-eqz v6, :cond_9
 
-    .line 189
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->getIndex()I
 
     move-result v6
@@ -338,7 +279,6 @@
 
     iget v8, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mFraction:F
 
-    .line 190
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
     move-result v9
@@ -351,12 +291,10 @@
 
     add-int/2addr v7, v8
 
-    .line 189
     invoke-virtual {p1, v6, v7}, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->setIntPropertyValue(II)V
 
     goto :goto_4
 
-    .line 192
     :cond_9
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->getIndex()I
 
@@ -370,7 +308,6 @@
 
     iget v8, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mFraction:F
 
-    .line 193
     invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
     move-result v9
@@ -383,25 +320,16 @@
 
     add-int/2addr v7, v8
 
-    .line 192
     invoke-virtual {p1, v6, v7}, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->setIntPropertyValue(II)V
 
-    .line 196
-    .end local v2    # "rect":Landroid/graphics/Rect;
-    .end local v3    # "trackingView":Landroid/view/View;
-    .end local v4    # "tx":F
-    .end local v5    # "ty":F
     :goto_4
     return-void
 .end method
 
 .method public viewId(I)Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;
     .locals 0
-    .param p1, "viewId"    # I
 
-    .line 89
     iput p1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$ChildPositionProperty;->mViewId:I
 
-    .line 90
     return-object p0
 .end method

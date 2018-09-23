@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/ChartDataUsageView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/ChartDataUsageView;
 
-    .line 94
     iput-object p1, p0, Lcom/android/settings/widget/ChartDataUsageView$1;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,31 +33,24 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 97
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/settings/widget/ChartSweepView;
 
-    .line 98
-    .local v0, "sweep":Lcom/android/settings/widget/ChartSweepView;
     iget-object v1, p0, Lcom/android/settings/widget/ChartDataUsageView$1;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-static {v1, v0}, Lcom/android/settings/widget/ChartDataUsageView;->access$000(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;)V
 
-    .line 99
     iget-object v1, p0, Lcom/android/settings/widget/ChartDataUsageView$1;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     invoke-static {v1}, Lcom/android/settings/widget/ChartDataUsageView;->access$100(Lcom/android/settings/widget/ChartDataUsageView;)V
 
-    .line 102
     iget-object v1, p0, Lcom/android/settings/widget/ChartDataUsageView$1;->this$0:Lcom/android/settings/widget/ChartDataUsageView;
 
     const/4 v2, 0x1
 
     invoke-static {v1, v0, v2}, Lcom/android/settings/widget/ChartDataUsageView;->access$200(Lcom/android/settings/widget/ChartDataUsageView;Lcom/android/settings/widget/ChartSweepView;Z)V
 
-    .line 103
     return-void
 .end method

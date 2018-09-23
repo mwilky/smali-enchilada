@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
-    .line 205
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper$3;->this$0:Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,13 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 208
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper$3;->this$0:Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;
 
     invoke-static {v0}, Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;->access$100(Landroid/support/v17/leanback/app/DetailsBackgroundVideoHelper;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 209
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -64,9 +59,7 @@
 
     float-to-int v1, v1
 
-    .line 208
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 210
     return-void
 .end method

@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multisets$1;Ljava/util/Iterator;Ljava/util/Iterator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Multisets$1;
 
-    .line 413
     iput-object p1, p0, Lcom/google/common/collect/Multisets$1$1;->this$0:Lcom/google/common/collect/Multisets$1;
 
     iput-object p2, p0, Lcom/google/common/collect/Multisets$1$1;->val$iterator1:Ljava/util/Iterator;
@@ -59,7 +57,6 @@
         }
     .end annotation
 
-    .line 416
     iget-object v0, p0, Lcom/google/common/collect/Multisets$1$1;->val$iterator1:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -68,7 +65,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 417
     iget-object v0, p0, Lcom/google/common/collect/Multisets$1$1;->val$iterator1:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -77,14 +73,10 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 418
-    .local v0, "entry1":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 419
-    .local v1, "element":Ljava/lang/Object;, "TE;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v2
@@ -101,18 +93,12 @@
 
     move-result v2
 
-    .line 420
-    .local v2, "count":I
     invoke-static {v1, v2}, Lcom/google/common/collect/Multisets;->immutableEntry(Ljava/lang/Object;I)Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v3
 
     return-object v3
 
-    .line 422
-    .end local v0    # "entry1":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<+TE;>;"
-    .end local v1    # "element":Ljava/lang/Object;, "TE;"
-    .end local v2    # "count":I
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/Multisets$1$1;->val$iterator2:Ljava/util/Iterator;
@@ -123,7 +109,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 423
     iget-object v0, p0, Lcom/google/common/collect/Multisets$1$1;->val$iterator2:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -132,14 +117,10 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 424
-    .local v0, "entry2":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 425
-    .restart local v1    # "element":Ljava/lang/Object;, "TE;"
     iget-object v2, p0, Lcom/google/common/collect/Multisets$1$1;->this$0:Lcom/google/common/collect/Multisets$1;
 
     iget-object v2, v2, Lcom/google/common/collect/Multisets$1;->val$multiset1:Lcom/google/common/collect/Multiset;
@@ -150,7 +131,6 @@
 
     if-nez v2, :cond_1
 
-    .line 426
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v2
@@ -161,13 +141,9 @@
 
     return-object v2
 
-    .line 428
-    .end local v0    # "entry2":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<+TE;>;"
-    .end local v1    # "element":Ljava/lang/Object;, "TE;"
     :cond_1
     goto :goto_0
 
-    .line 429
     :cond_2
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$1$1;->endOfData()Ljava/lang/Object;
 
@@ -181,7 +157,6 @@
 .method protected bridge synthetic computeNext()Ljava/lang/Object;
     .locals 1
 
-    .line 413
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$1$1;->computeNext()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0

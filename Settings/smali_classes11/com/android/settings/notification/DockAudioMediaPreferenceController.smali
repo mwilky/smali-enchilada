@@ -16,14 +16,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parent"    # Lcom/android/settings/SettingsPreferenceFragment;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 39
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/notification/SettingPrefController;-><init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 40
     new-instance v7, Lcom/android/settings/notification/DockAudioMediaPreferenceController$1;
 
     const-string v3, "dock_audio_media"
@@ -48,7 +43,6 @@
 
     iput-object v7, p0, Lcom/android/settings/notification/DockAudioMediaPreferenceController;->mPreference:Lcom/android/settings/notification/SettingPref;
 
-    .line 63
     return-void
 
     nop

@@ -21,14 +21,7 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/notification/VibrateOnTouchPreferenceController;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/settings/notification/VibrateOnTouchPreferenceController;
-    .param p2, "type"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "setting"    # Ljava/lang/String;
-    .param p5, "def"    # I
-    .param p6, "values"    # [I
 
-    .line 35
     iput-object p1, p0, Lcom/android/settings/notification/VibrateOnTouchPreferenceController$1;->this$0:Lcom/android/settings/notification/VibrateOnTouchPreferenceController;
 
     move-object v0, p0
@@ -52,9 +45,7 @@
 # virtual methods
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 38
     invoke-static {p1}, Lcom/android/settings/notification/VibrateOnTouchPreferenceController;->access$000(Landroid/content/Context;)Z
 
     move-result v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
-    .line 72
     iput-object p1, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$1;->this$1:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p1, "mediaPlayer"    # Landroid/media/MediaPlayer;
 
-    .line 75
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/media/MediaPlayer;->setLooping(Z)V
 
-    .line 76
     return-void
 .end method

@@ -51,7 +51,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 59
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.app.slice.BASIC"
@@ -62,7 +61,6 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->OLD_BASIC:Landroidx/slice/SliceSpec;
 
-    .line 65
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.app.slice.LIST"
@@ -71,7 +69,6 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->OLD_LIST:Landroidx/slice/SliceSpec;
 
-    .line 71
     new-instance v0, Landroid/support/v4/util/ArraySet;
 
     const/4 v1, 0x4
@@ -100,7 +97,6 @@
 
     aput-object v2, v1, v3
 
-    .line 72
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -109,27 +105,24 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->SUPPORTED_SPECS:Ljava/util/Set;
 
-    .line 71
     return-void
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    .line 295
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 296
     return-void
 .end method
 
 .method public static fromIntent(Landroid/content/Context;Landroid/content/Intent;)Landroid/arch/lifecycle/LiveData;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
+    .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "intent"    # Landroid/content/Intent;
+    .param p1    # Landroid/content/Intent;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -148,7 +141,6 @@
         }
     .end annotation
 
-    .line 88
     new-instance v0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -164,16 +156,14 @@
 
 .method public static fromStream(Landroid/content/Context;Landroidx/slice/SliceViewManager;Ljava/io/InputStream;Landroidx/slice/widget/SliceLiveData$OnErrorListener;)Landroid/arch/lifecycle/LiveData;
     .locals 7
-    .param p0, "context"    # Landroid/content/Context;
+    .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "manager"    # Landroidx/slice/SliceViewManager;
-    .param p2, "input"    # Ljava/io/InputStream;
+    .param p2    # Ljava/io/InputStream;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "listener"    # Landroidx/slice/widget/SliceLiveData$OnErrorListener;
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
@@ -197,7 +187,6 @@
         }
     .end annotation
 
-    .line 112
     new-instance v6, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     const/4 v5, 0x0
@@ -219,15 +208,14 @@
 
 .method public static fromStream(Landroid/content/Context;Ljava/io/InputStream;Landroidx/slice/widget/SliceLiveData$OnErrorListener;)Landroid/arch/lifecycle/LiveData;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
+    .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "input"    # Ljava/io/InputStream;
+    .param p1    # Ljava/io/InputStream;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "listener"    # Landroidx/slice/widget/SliceLiveData$OnErrorListener;
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
@@ -244,7 +232,6 @@
         }
     .end annotation
 
-    .line 101
     invoke-static {p0}, Landroidx/slice/SliceViewManager;->getInstance(Landroid/content/Context;)Landroidx/slice/SliceViewManager;
 
     move-result-object v0
@@ -258,11 +245,11 @@
 
 .method public static fromUri(Landroid/content/Context;Landroid/net/Uri;)Landroid/arch/lifecycle/LiveData;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
+    .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -281,7 +268,6 @@
         }
     .end annotation
 
-    .line 79
     new-instance v0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;

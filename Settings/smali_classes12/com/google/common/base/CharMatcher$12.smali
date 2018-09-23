@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;CC)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/String;
 
-    .line 521
     iput-char p2, p0, Lcom/google/common/base/CharMatcher$12;->val$match1:C
 
     iput-char p3, p0, Lcom/google/common/base/CharMatcher$12;->val$match2:C
@@ -39,9 +37,7 @@
 # virtual methods
 .method public matches(C)Z
     .locals 1
-    .param p1, "c"    # C
 
-    .line 523
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$12;->val$match1:C
 
     if-eq p1, v0, :cond_1
@@ -67,21 +63,17 @@
 
 .method setBits(Ljava/util/BitSet;)V
     .locals 1
-    .param p1, "table"    # Ljava/util/BitSet;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.util.BitSet"
     .end annotation
 
-    .line 528
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$12;->val$match1:C
 
     invoke-virtual {p1, v0}, Ljava/util/BitSet;->set(I)V
 
-    .line 529
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$12;->val$match2:C
 
     invoke-virtual {p1, v0}, Ljava/util/BitSet;->set(I)V
 
-    .line 530
     return-void
 .end method

@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 409
     new-instance v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
     const-string v1, "CA_CERTIFICATE"
@@ -57,7 +56,6 @@
 
     sput-object v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;->CA_CERTIFICATE:Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
-    .line 410
     new-instance v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
     const-string v1, "USER_CERTIFICATE"
@@ -74,7 +72,6 @@
 
     sput-object v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;->USER_CERTIFICATE:Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
-    .line 411
     new-instance v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
     const-string v1, "USER_KEY"
@@ -93,7 +90,6 @@
 
     sput-object v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;->USER_KEY:Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
-    .line 408
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/UserCredentialsSettings$Credential$Type;
@@ -117,7 +113,6 @@
 
 .method private varargs constructor <init>(Ljava/lang/String;I[Ljava/lang/String;)V
     .locals 0
-    .param p3, "prefix"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -126,21 +121,16 @@
         }
     .end annotation
 
-    .line 415
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 416
     iput-object p3, p0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;->prefix:[Ljava/lang/String;
 
-    .line 417
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/UserCredentialsSettings$Credential$Type;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 408
     const-class v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -155,7 +145,6 @@
 .method public static values()[Lcom/android/settings/UserCredentialsSettings$Credential$Type;
     .locals 1
 
-    .line 408
     sget-object v0, Lcom/android/settings/UserCredentialsSettings$Credential$Type;->$VALUES:[Lcom/android/settings/UserCredentialsSettings$Credential$Type;
 
     invoke-virtual {v0}, [Lcom/android/settings/UserCredentialsSettings$Credential$Type;->clone()Ljava/lang/Object;

@@ -29,22 +29,14 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "t"    # Ljava/lang/String;
-    .param p3, "is"    # Z
 
-    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtoneAdapter$RingtoneData;->mUri:Landroid/net/Uri;
 
-    .line 83
     iput-object p2, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtoneAdapter$RingtoneData;->title:Ljava/lang/String;
 
-    .line 84
     iput-boolean p3, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtoneAdapter$RingtoneData;->isCheck:Z
 
-    .line 85
     return-void
 .end method

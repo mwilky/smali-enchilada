@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;)V
     .locals 0
-    .param p1, "this$1"    # Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;
 
-    .line 123
     iput-object p1, p0, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl$1;->this$1:Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,10 @@
 .method public run()V
     .locals 3
 
-    .line 126
     iget-object v0, p0, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl$1;->this$1:Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;
 
     invoke-static {v0}, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;->access$000(Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;)V
 
-    .line 127
     iget-object v0, p0, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl$1;->this$1:Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;
 
     iget-object v0, v0, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;->this$0:Landroidx/slice/SliceViewManagerBase;
@@ -63,8 +59,6 @@
 
     move-result-object v0
 
-    .line 128
-    .local v0, "s":Landroidx/slice/Slice;
     iget-object v1, p0, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl$1;->this$1:Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;
 
     invoke-static {v1}, Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;->access$300(Landroidx/slice/SliceViewManagerBase$SliceListenerImpl;)Ljava/util/concurrent/Executor;
@@ -77,6 +71,5 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 134
     return-void
 .end method

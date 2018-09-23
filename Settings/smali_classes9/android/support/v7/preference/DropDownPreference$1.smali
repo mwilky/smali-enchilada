@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/DropDownPreference;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/DropDownPreference;
 
-    .line 134
     iput-object p1, p0, Landroid/support/v7/preference/DropDownPreference$1;->this$0:Landroid/support/v7/preference/DropDownPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,11 +46,8 @@
         }
     .end annotation
 
-    .line 137
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     if-ltz p3, :cond_0
 
-    .line 138
     iget-object v0, p0, Landroid/support/v7/preference/DropDownPreference$1;->this$0:Landroid/support/v7/preference/DropDownPreference;
 
     invoke-virtual {v0}, Landroid/support/v7/preference/DropDownPreference;->getEntryValues()[Ljava/lang/CharSequence;
@@ -68,8 +60,6 @@
 
     move-result-object v0
 
-    .line 139
-    .local v0, "value":Ljava/lang/String;
     iget-object v1, p0, Landroid/support/v7/preference/DropDownPreference$1;->this$0:Landroid/support/v7/preference/DropDownPreference;
 
     invoke-virtual {v1}, Landroid/support/v7/preference/DropDownPreference;->getValue()Ljava/lang/String;
@@ -90,13 +80,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 140
     iget-object v1, p0, Landroid/support/v7/preference/DropDownPreference$1;->this$0:Landroid/support/v7/preference/DropDownPreference;
 
     invoke-virtual {v1, v0}, Landroid/support/v7/preference/DropDownPreference;->setValue(Ljava/lang/String;)V
 
-    .line 143
-    .end local v0    # "value":Ljava/lang/String;
     :cond_0
     return-void
 .end method
@@ -111,7 +98,5 @@
         }
     .end annotation
 
-    .line 148
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

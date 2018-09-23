@@ -26,7 +26,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 104
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -52,21 +51,16 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 100
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    .line 101
     return-void
 .end method
 
 .method private getEnabledCategories(Landroid/app/NotificationManager$Policy;Ljava/util/function/Predicate;)Ljava/util/List;
     .locals 8
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,14 +74,10 @@
         }
     .end annotation
 
-    .line 252
-    .local p2, "filteredCategories":Ljava/util/function/Predicate;, "Ljava/util/function/Predicate<Ljava/lang/Integer;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 253
-    .local v0, "enabledCategories":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     sget-object v1, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->ALL_PRIORITY_CATEGORIES:[I
 
     array-length v2, v1
@@ -99,8 +89,6 @@
 
     aget v4, v1, v3
 
-    .line 254
-    .local v4, "category":I
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -117,15 +105,13 @@
 
     if-eqz v5, :cond_a
 
-    .line 255
     const/16 v5, 0x20
 
     if-ne v4, v5, :cond_0
 
-    .line 256
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f121542
+    const v6, 0x7f12153b
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -135,16 +121,14 @@
 
     goto/16 :goto_1
 
-    .line 257
     :cond_0
     const/16 v5, 0x40
 
     if-ne v4, v5, :cond_1
 
-    .line 258
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f121588
+    const v6, 0x7f121581
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -154,146 +138,11 @@
 
     goto/16 :goto_1
 
-    .line 260
     :cond_1
     const/16 v5, 0x80
 
     if-ne v4, v5, :cond_2
 
-    .line 261
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f1215cc
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_1
-
-    .line 263
-    :cond_2
-    const/4 v5, 0x4
-
-    if-ne v4, v5, :cond_4
-
-    .line 264
-    iget v5, p1, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
-
-    if-nez v5, :cond_3
-
-    .line 265
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f121545
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_1
-
-    .line 268
-    :cond_3
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f1215b8
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_1
-
-    .line 271
-    :cond_4
-    const/4 v5, 0x2
-
-    if-ne v4, v5, :cond_5
-
-    .line 272
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f121582
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 273
-    :cond_5
-    const/4 v5, 0x1
-
-    if-ne v4, v5, :cond_6
-
-    .line 274
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f121593
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 275
-    :cond_6
-    const/16 v6, 0x8
-
-    const v7, 0x7f121544
-
-    if-ne v4, v6, :cond_9
-
-    .line 276
-    iget v6, p1, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
-
-    if-nez v6, :cond_7
-
-    .line 277
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v5, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 279
-    :cond_7
-    iget v6, p1, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
-
-    if-ne v6, v5, :cond_8
-
-    .line 280
-    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
-
-    const v6, 0x7f12156d
-
-    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 283
-    :cond_8
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     const v6, 0x7f1215c5
@@ -304,15 +153,132 @@
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    goto/16 :goto_1
+
+    :cond_2
+    const/4 v5, 0x4
+
+    if-ne v4, v5, :cond_4
+
+    iget v5, p1, Landroid/app/NotificationManager$Policy;->priorityMessageSenders:I
+
+    if-nez v5, :cond_3
+
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f12153e
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :cond_3
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f1215b1
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :cond_4
+    const/4 v5, 0x2
+
+    if-ne v4, v5, :cond_5
+
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f12157b
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
     goto :goto_1
 
-    .line 286
+    :cond_5
+    const/4 v5, 0x1
+
+    if-ne v4, v5, :cond_6
+
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f12158c
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_6
+    const/16 v6, 0x8
+
+    const v7, 0x7f12153d
+
+    if-ne v4, v6, :cond_9
+
+    iget v6, p1, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
+
+    if-nez v6, :cond_7
+
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v5, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_7
+    iget v6, p1, Landroid/app/NotificationManager$Policy;->priorityCallSenders:I
+
+    if-ne v6, v5, :cond_8
+
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f121566
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_8
+    iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
+
+    const v6, 0x7f1215be
+
+    invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
     :cond_9
     const/16 v5, 0x10
 
     if-ne v4, v5, :cond_a
 
-    .line 287
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -325,10 +291,9 @@
 
     if-nez v5, :cond_a
 
-    .line 289
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f121595
+    const v6, 0x7f12158e
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -336,25 +301,19 @@
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 253
-    .end local v4    # "category":I
     :cond_a
     :goto_1
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
-    .line 295
     :cond_b
     return-object v0
 .end method
 
 .method private isCategoryEnabled(Landroid/app/NotificationManager$Policy;I)Z
     .locals 1
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
-    .param p2, "categoryType"    # I
 
-    .line 299
     iget v0, p1, Landroid/app/NotificationManager$Policy;->priorityCategories:I
 
     and-int/2addr v0, p2
@@ -374,9 +333,7 @@
 
 .method static synthetic lambda$getCallsSettingSummary$1(Ljava/lang/Integer;)Z
     .locals 2
-    .param p0, "category"    # Ljava/lang/Integer;
 
-    .line 142
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -387,7 +344,6 @@
 
     const/16 v0, 0x10
 
-    .line 143
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -405,16 +361,13 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 142
     :goto_1
     return v0
 .end method
 
 .method static synthetic lambda$getMsgEventReminderSettingSummary$2(Ljava/lang/Integer;)Z
     .locals 3
-    .param p0, "category"    # Ljava/lang/Integer;
 
-    .line 159
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -425,7 +378,6 @@
 
     if-eq v2, v0, :cond_1
 
-    .line 160
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -434,7 +386,6 @@
 
     const/4 v0, 0x4
 
-    .line 161
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -448,7 +399,6 @@
 
     nop
 
-    .line 159
     :cond_1
     :goto_0
     return v1
@@ -456,9 +406,7 @@
 
 .method static synthetic lambda$getSoundSettingSummary$0(Ljava/lang/Integer;)Z
     .locals 2
-    .param p0, "category"    # Ljava/lang/Integer;
 
-    .line 117
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -469,7 +417,6 @@
 
     const/16 v0, 0x40
 
-    .line 118
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -478,7 +425,6 @@
 
     const/16 v0, 0x80
 
-    .line 119
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -496,7 +442,6 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 117
     :goto_1
     return v0
 .end method
@@ -506,18 +451,15 @@
 .method getAutomaticRulesSummary()Ljava/lang/String;
     .locals 6
 
-    .line 228
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->getEnabledAutomaticRulesCount()I
 
     move-result v0
 
-    .line 229
-    .local v0, "count":I
     if-nez v0, :cond_0
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1215be
+    const v2, 0x7f1215b7
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -525,7 +467,6 @@
 
     goto :goto_0
 
-    .line 230
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
@@ -541,40 +482,34 @@
 
     const/4 v4, 0x0
 
-    .line 231
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v3, v4
 
-    .line 230
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 229
     :goto_0
     return-object v1
 .end method
 
 .method getBlockedEffectsSummary(Landroid/app/NotificationManager$Policy;)Ljava/lang/String;
     .locals 2
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
 
-    .line 215
     iget v0, p1, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
     if-nez v0, :cond_0
 
-    .line 216
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f1215a3
+    const v1, 0x7f12159c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -582,7 +517,6 @@
 
     return-object v0
 
-    .line 218
     :cond_0
     iget v0, p1, Landroid/app/NotificationManager$Policy;->suppressedVisualEffects:I
 
@@ -592,14 +526,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 219
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f1215a2
+    const v1, 0x7f12159b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -607,7 +540,6 @@
 
     return-object v0
 
-    .line 222
     :cond_1
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
@@ -615,7 +547,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1215a1
+    const v1, 0x7f12159a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -626,29 +558,22 @@
 
 .method getCallsSettingSummary(Landroid/app/NotificationManager$Policy;)Ljava/lang/String;
     .locals 8
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
 
-    .line 141
     sget-object v0, Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$_Gea8GbwXN997GXaupRdGPPi1FA;->INSTANCE:Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$_Gea8GbwXN997GXaupRdGPPi1FA;
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->getEnabledCategories(Landroid/app/NotificationManager$Policy;Ljava/util/function/Predicate;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 144
-    .local v0, "enabledCategories":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 145
-    .local v1, "numCategories":I
     if-nez v1, :cond_0
 
-    .line 146
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f12158d
+    const v3, 0x7f121586
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -656,7 +581,6 @@
 
     return-object v2
 
-    .line 147
     :cond_0
     const/4 v2, 0x0
 
@@ -664,14 +588,12 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 148
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f121569
+    const v5, 0x7f121562
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 149
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -684,24 +606,21 @@
 
     aput-object v6, v3, v2
 
-    .line 148
     invoke-virtual {v4, v5, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 151
     :cond_1
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f12156a
+    const v5, 0x7f121563
 
     const/4 v6, 0x2
 
     new-array v6, v6, [Ljava/lang/Object;
 
-    .line 152
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -714,7 +633,6 @@
 
     aput-object v7, v6, v2
 
-    .line 153
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -727,7 +645,6 @@
 
     aput-object v2, v6, v3
 
-    .line 151
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -740,14 +657,10 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 236
     const/4 v0, 0x0
 
-    .line 237
-    .local v0, "count":I
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    .line 238
     invoke-static {v1}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
 
     move-result-object v1
@@ -756,11 +669,8 @@
 
     move-result-object v1
 
-    .line 239
-    .local v1, "ruleMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Landroid/app/AutomaticZenRule;>;"
     if-eqz v1, :cond_1
 
-    .line 240
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -782,16 +692,12 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 241
-    .local v3, "ruleEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/app/AutomaticZenRule;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/app/AutomaticZenRule;
 
-    .line 242
-    .local v4, "rule":Landroid/app/AutomaticZenRule;
     if-eqz v4, :cond_0
 
     invoke-virtual {v4}, Landroid/app/AutomaticZenRule;->isEnabled()Z
@@ -800,45 +706,33 @@
 
     if-eqz v5, :cond_0
 
-    .line 243
     add-int/lit8 v0, v0, 0x1
 
-    .line 245
-    .end local v3    # "ruleEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Landroid/app/AutomaticZenRule;>;"
-    .end local v4    # "rule":Landroid/app/AutomaticZenRule;
     :cond_0
     goto :goto_0
 
-    .line 247
     :cond_1
     return v0
 .end method
 
 .method getMsgEventReminderSettingSummary(Landroid/app/NotificationManager$Policy;)Ljava/lang/String;
     .locals 8
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
 
-    .line 158
     sget-object v0, Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$Ydm8DmhkL6wV0O584-hfIH59p1A;->INSTANCE:Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$Ydm8DmhkL6wV0O584-hfIH59p1A;
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->getEnabledCategories(Landroid/app/NotificationManager$Policy;Ljava/util/function/Predicate;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 162
-    .local v0, "enabledCategories":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 163
-    .local v1, "numCategories":I
     if-nez v1, :cond_0
 
-    .line 164
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f12158d
+    const v3, 0x7f121586
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -846,7 +740,6 @@
 
     return-object v2
 
-    .line 165
     :cond_0
     const/4 v2, 0x0
 
@@ -854,7 +747,6 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 166
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -863,13 +755,11 @@
 
     return-object v2
 
-    .line 167
     :cond_1
     const/4 v4, 0x2
 
     if-ne v1, v4, :cond_2
 
-    .line 168
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     const v6, 0x7f120784
@@ -882,7 +772,6 @@
 
     aput-object v7, v4, v2
 
-    .line 169
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -895,26 +784,21 @@
 
     aput-object v2, v4, v3
 
-    .line 168
     invoke-virtual {v5, v6, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 170
     :cond_2
     const/4 v5, 0x3
 
     if-ne v1, v5, :cond_3
 
-    .line 171
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 172
-    .local v5, "summaries":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -923,7 +807,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 173
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -936,7 +819,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 174
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -949,7 +831,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 176
     invoke-static {}, Landroid/icu/text/ListFormatter;->getInstance()Landroid/icu/text/ListFormatter;
 
     move-result-object v2
@@ -960,15 +841,11 @@
 
     return-object v2
 
-    .line 178
-    .end local v5    # "summaries":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_3
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 179
-    .restart local v5    # "summaries":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -977,7 +854,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 180
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -990,7 +866,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 181
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1003,10 +878,9 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 182
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f121591
+    const v3, 0x7f12158a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1014,7 +888,6 @@
 
     invoke-interface {v5, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 184
     invoke-static {}, Landroid/icu/text/ListFormatter;->getInstance()Landroid/icu/text/ListFormatter;
 
     move-result-object v2
@@ -1028,29 +901,22 @@
 
 .method getSoundSettingSummary(Landroid/app/NotificationManager$Policy;)Ljava/lang/String;
     .locals 9
-    .param p1, "policy"    # Landroid/app/NotificationManager$Policy;
 
-    .line 116
     sget-object v0, Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$-hUbn9epxyVxqc9qNo66a-LO5Ug;->INSTANCE:Lcom/android/settings/notification/-$$Lambda$ZenModeSettings$SummaryBuilder$-hUbn9epxyVxqc9qNo66a-LO5Ug;
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->getEnabledCategories(Landroid/app/NotificationManager$Policy;Ljava/util/function/Predicate;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 120
-    .local v0, "enabledCategories":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 121
-    .local v1, "numCategories":I
     if-nez v1, :cond_0
 
-    .line 122
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1215e7
+    const v3, 0x7f1215e0
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1058,7 +924,6 @@
 
     return-object v2
 
-    .line 123
     :cond_0
     const/4 v2, 0x0
 
@@ -1066,14 +931,12 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 124
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1215eb
+    const v5, 0x7f1215e4    # 1.9418095E38f
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 125
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1086,27 +949,23 @@
 
     aput-object v6, v3, v2
 
-    .line 124
     invoke-virtual {v4, v5, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 126
     :cond_1
     const/4 v4, 0x2
 
     if-ne v1, v4, :cond_2
 
-    .line 127
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f1215ee
+    const v6, 0x7f1215e7
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 128
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v7
@@ -1119,7 +978,6 @@
 
     aput-object v7, v4, v2
 
-    .line 129
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1132,27 +990,23 @@
 
     aput-object v2, v4, v3
 
-    .line 127
     invoke-virtual {v5, v6, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 130
     :cond_2
     const/4 v5, 0x3
 
     if-ne v1, v5, :cond_3
 
-    .line 131
     iget-object v6, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v7, 0x7f1215ec
+    const v7, 0x7f1215e5
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    .line 132
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -1165,7 +1019,6 @@
 
     aput-object v8, v5, v2
 
-    .line 133
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1178,7 +1031,6 @@
 
     aput-object v2, v5, v3
 
-    .line 134
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1191,18 +1043,16 @@
 
     aput-object v2, v5, v4
 
-    .line 131
     invoke-virtual {v6, v7, v5}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     return-object v2
 
-    .line 136
     :cond_3
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v3, 0x7f1215ea
+    const v3, 0x7f1215e3
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1214,7 +1064,6 @@
 .method getSoundSummary()Ljava/lang/String;
     .locals 10
 
-    .line 189
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -1225,15 +1074,12 @@
 
     move-result v0
 
-    .line 191
-    .local v0, "zenMode":I
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 192
     iget-object v3, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -1244,22 +1090,17 @@
 
     move-result-object v3
 
-    .line 193
-    .local v3, "config":Landroid/service/notification/ZenModeConfig;
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
     invoke-static {v4, v2, v3, v1}, Landroid/service/notification/ZenModeConfig;->getDescription(Landroid/content/Context;ZLandroid/service/notification/ZenModeConfig;Z)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 195
-    .local v4, "description":Ljava/lang/String;
     if-nez v4, :cond_0
 
-    .line 196
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1215c3
+    const v2, 0x7f1215bc
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1267,11 +1108,10 @@
 
     return-object v1
 
-    .line 198
     :cond_0
     iget-object v5, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v6, 0x7f1215c4
+    const v6, 0x7f1215bd
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -1283,28 +1123,21 @@
 
     return-object v1
 
-    .line 202
-    .end local v3    # "config":Landroid/service/notification/ZenModeConfig;
-    .end local v4    # "description":Ljava/lang/String;
     :cond_1
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->getEnabledAutomaticRulesCount()I
 
     move-result v3
 
-    .line 203
-    .local v3, "count":I
     if-lez v3, :cond_2
 
-    .line 204
     iget-object v4, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v5, 0x7f1215c2
+    const v5, 0x7f1215bb
 
     new-array v6, v2, [Ljava/lang/Object;
 
     iget-object v7, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    .line 205
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v7
@@ -1313,32 +1146,28 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 207
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
     aput-object v9, v2, v1
 
-    .line 205
     invoke-virtual {v7, v8, v3, v2}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
     aput-object v2, v6, v1
 
-    .line 204
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 210
     :cond_2
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeSettings$SummaryBuilder;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f1215c1
+    const v2, 0x7f1215ba
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

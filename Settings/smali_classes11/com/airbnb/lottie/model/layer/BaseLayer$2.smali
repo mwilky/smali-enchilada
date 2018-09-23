@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 265
     invoke-static {}, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->values()[Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     move-result-object v0
@@ -118,7 +117,6 @@
     :catch_3
     move-exception v4
 
-    .line 40
     :goto_3
     invoke-static {}, Lcom/airbnb/lottie/model/layer/Layer$LayerType;->values()[Lcom/airbnb/lottie/model/layer/Layer$LayerType;
 

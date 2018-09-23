@@ -6,23 +6,17 @@
 # direct methods
 .method public static unregisterReceiver(Landroid/app/Activity;Landroid/content/BroadcastReceiver;)V
     .locals 2
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "receiver"    # Landroid/content/BroadcastReceiver;
 
-    .line 86
     if-eqz p0, :cond_0
 
-    .line 90
     invoke-static {p0}, Landroid/support/v4/content/LocalBroadcastManager;->getInstance(Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/support/v4/content/LocalBroadcastManager;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 91
     return-void
 
-    .line 87
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 

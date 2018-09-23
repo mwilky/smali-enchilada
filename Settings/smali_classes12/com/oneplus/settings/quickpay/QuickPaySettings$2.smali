@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/quickpay/QuickPaySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
-    .line 412
     iput-object p1, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$2;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,8 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 415
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 416
     return-void
 .end method

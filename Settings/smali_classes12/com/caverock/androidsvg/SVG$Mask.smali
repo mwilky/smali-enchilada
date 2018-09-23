@@ -35,7 +35,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1835
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgConditionalContainer;-><init>()V
 
     return-void

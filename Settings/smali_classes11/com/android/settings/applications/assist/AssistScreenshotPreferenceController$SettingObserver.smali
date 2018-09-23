@@ -25,34 +25,27 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;
 
-    .line 120
     iput-object p1, p0, Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;
 
     invoke-direct {p0}, Lcom/android/settings/applications/assist/AssistSettingObserver;-><init>()V
 
-    .line 122
     const-string v0, "assist_screenshot_enabled"
 
-    .line 123
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController$SettingObserver;->URI:Landroid/net/Uri;
 
-    .line 124
     const-string v0, "assist_structure_enabled"
 
-    .line 125
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController$SettingObserver;->CONTEXT_URI:Landroid/net/Uri;
 
-    .line 124
     return-void
 .end method
 
@@ -69,7 +62,6 @@
         }
     .end annotation
 
-    .line 129
     const/4 v0, 0x2
 
     new-array v0, v0, [Landroid/net/Uri;
@@ -96,11 +88,9 @@
 .method public onSettingChange()V
     .locals 1
 
-    .line 134
     iget-object v0, p0, Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;->access$000(Lcom/android/settings/applications/assist/AssistScreenshotPreferenceController;)V
 
-    .line 135
     return-void
 .end method

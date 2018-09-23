@@ -44,7 +44,6 @@
 .method constructor <init>(Landroid/arch/core/util/Function;Landroid/arch/lifecycle/MediatorLiveData;)V
     .locals 0
 
-    .line 128
     iput-object p1, p0, Landroid/arch/lifecycle/Transformations$2;->val$func:Landroid/arch/core/util/Function;
 
     iput-object p2, p0, Landroid/arch/lifecycle/Transformations$2;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
@@ -68,8 +67,6 @@
         }
     .end annotation
 
-    .line 133
-    .local p1, "x":Ljava/lang/Object;, "TX;"
     iget-object v0, p0, Landroid/arch/lifecycle/Transformations$2;->val$func:Landroid/arch/core/util/Function;
 
     invoke-interface {v0, p1}, Landroid/arch/core/util/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -78,38 +75,30 @@
 
     check-cast v0, Landroid/arch/lifecycle/LiveData;
 
-    .line 134
-    .local v0, "newLiveData":Landroid/arch/lifecycle/LiveData;, "Landroid/arch/lifecycle/LiveData<TY;>;"
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
 
     if-ne v1, v0, :cond_0
 
-    .line 135
     return-void
 
-    .line 137
     :cond_0
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
 
     if-eqz v1, :cond_1
 
-    .line 138
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$2;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
 
     iget-object v2, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
 
     invoke-virtual {v1, v2}, Landroid/arch/lifecycle/MediatorLiveData;->removeSource(Landroid/arch/lifecycle/LiveData;)V
 
-    .line 140
     :cond_1
     iput-object v0, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
 
-    .line 141
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
 
     if-eqz v1, :cond_2
 
-    .line 142
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$2;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
 
     iget-object v2, p0, Landroid/arch/lifecycle/Transformations$2;->mSource:Landroid/arch/lifecycle/LiveData;
@@ -120,7 +109,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/arch/lifecycle/MediatorLiveData;->addSource(Landroid/arch/lifecycle/LiveData;Landroid/arch/lifecycle/Observer;)V
 
-    .line 149
     :cond_2
     return-void
 .end method

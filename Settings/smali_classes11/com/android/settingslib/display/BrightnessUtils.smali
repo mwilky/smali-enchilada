@@ -19,7 +19,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,11 +26,7 @@
 
 .method public static final convertGammaToLinear(III)I
     .locals 5
-    .param p0, "val"    # I
-    .param p1, "min"    # I
-    .param p2, "max"    # I
 
-    .line 54
     int-to-float v0, p0
 
     const/4 v1, 0x0
@@ -42,26 +37,20 @@
 
     move-result v0
 
-    .line 56
-    .local v0, "normalizedVal":F
     const/high16 v1, 0x3f000000    # 0.5f
 
     cmpg-float v2, v0, v1
 
     if-gtz v2, :cond_0
 
-    .line 57
     div-float v1, v0, v1
 
     invoke-static {v1}, Landroid/util/MathUtils;->sq(F)F
 
     move-result v1
 
-    .local v1, "ret":F
     goto :goto_0
 
-    .line 59
-    .end local v1    # "ret":F
     :cond_0
     const v1, 0x3f0f564f
 
@@ -79,8 +68,6 @@
 
     add-float/2addr v1, v2
 
-    .line 64
-    .restart local v1    # "ret":F
     :goto_0
     int-to-float v2, p1
 
@@ -103,11 +90,7 @@
 
 .method public static final convertLinearToGamma(III)I
     .locals 4
-    .param p0, "val"    # I
-    .param p1, "min"    # I
-    .param p2, "max"    # I
 
-    .line 91
     int-to-float v0, p1
 
     int-to-float v1, p2
@@ -122,15 +105,12 @@
 
     mul-float/2addr v0, v1
 
-    .line 93
-    .local v0, "normalizedVal":F
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpg-float v1, v0, v1
 
     if-gtz v1, :cond_0
 
-    .line 94
     invoke-static {v0}, Landroid/util/MathUtils;->sqrt(F)F
 
     move-result v1
@@ -139,11 +119,8 @@
 
     mul-float/2addr v1, v2
 
-    .local v1, "ret":F
     goto :goto_0
 
-    .line 96
-    .end local v1    # "ret":F
     :cond_0
     const v1, 0x3e371ff0
 
@@ -161,8 +138,6 @@
 
     add-float/2addr v1, v2
 
-    .line 99
-    .restart local v1    # "ret":F
     :goto_0
     const/4 v2, 0x0
 

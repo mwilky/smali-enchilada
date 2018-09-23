@@ -21,14 +21,7 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/notification/DockAudioMediaPreferenceController;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/settings/notification/DockAudioMediaPreferenceController;
-    .param p2, "type"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "setting"    # Ljava/lang/String;
-    .param p5, "def"    # I
-    .param p6, "values"    # [I
 
-    .line 42
     iput-object p1, p0, Lcom/android/settings/notification/DockAudioMediaPreferenceController$1;->this$0:Lcom/android/settings/notification/DockAudioMediaPreferenceController;
 
     move-object v0, p0
@@ -52,20 +45,15 @@
 # virtual methods
 .method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
     .locals 1
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "value"    # I
 
-    .line 51
     packed-switch p2, :pswitch_data_0
 
-    .line 59
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 56
     :pswitch_0
     const v0, 0x7f12059d
 
@@ -75,7 +63,6 @@
 
     return-object v0
 
-    .line 53
     :pswitch_1
     const v0, 0x7f12059c
 
@@ -96,9 +83,7 @@
 
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 45
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0

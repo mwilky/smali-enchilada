@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeEventRuleSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeEventRuleSettings;
 
-    .line 147
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeEventRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeEventRuleSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 150
     move-object v0, p2
 
     check-cast v0, Ljava/lang/String;
@@ -50,8 +45,6 @@
 
     move-result v0
 
-    .line 151
-    .local v0, "reply":I
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeEventRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeEventRuleSettings;
 
     invoke-static {v1}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->access$000(Lcom/android/settings/notification/ZenModeEventRuleSettings;)Landroid/service/notification/ZenModeConfig$EventInfo;
@@ -66,7 +59,6 @@
 
     return v1
 
-    .line 152
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeEventRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeEventRuleSettings;
 
@@ -76,7 +68,6 @@
 
     iput v0, v1, Landroid/service/notification/ZenModeConfig$EventInfo;->reply:I
 
-    .line 153
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeEventRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeEventRuleSettings;
 
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeEventRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeEventRuleSettings;
@@ -91,7 +82,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/notification/ZenModeEventRuleSettings;->updateRule(Landroid/net/Uri;)V
 
-    .line 154
     const/4 v1, 0x1
 
     return v1

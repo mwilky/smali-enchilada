@@ -25,12 +25,10 @@
 .method constructor <init>(Landroid/support/v7/widget/ShareActionProvider;)V
     .locals 0
 
-    .line 397
     iput-object p1, p0, Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0:Landroid/support/v7/widget/ShareActionProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 398
     return-void
 .end method
 
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onChooseActivity(Landroid/support/v7/widget/ActivityChooserModel;Landroid/content/Intent;)Z
     .locals 2
-    .param p1, "host"    # Landroid/support/v7/widget/ActivityChooserModel;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 402
     iget-object v0, p0, Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0:Landroid/support/v7/widget/ShareActionProvider;
 
     iget-object v0, v0, Landroid/support/v7/widget/ShareActionProvider;->mOnShareTargetSelectedListener:Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
 
     if-eqz v0, :cond_0
 
-    .line 403
     iget-object v0, p0, Landroid/support/v7/widget/ShareActionProvider$ShareActivityChooserModelPolicy;->this$0:Landroid/support/v7/widget/ShareActionProvider;
 
     iget-object v0, v0, Landroid/support/v7/widget/ShareActionProvider;->mOnShareTargetSelectedListener:Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;
@@ -57,7 +51,6 @@
 
     invoke-interface {v0, v1, p2}, Landroid/support/v7/widget/ShareActionProvider$OnShareTargetSelectedListener;->onShareTargetSelected(Landroid/support/v7/widget/ShareActionProvider;Landroid/content/Intent;)Z
 
-    .line 406
     :cond_0
     const/4 v0, 0x0
 

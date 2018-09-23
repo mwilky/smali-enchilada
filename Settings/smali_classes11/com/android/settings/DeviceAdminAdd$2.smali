@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/DeviceAdminAdd;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/DeviceAdminAdd;
 
-    .line 317
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,15 +37,12 @@
 .method public onGlobalLayout()V
     .locals 4
 
-    .line 320
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     invoke-virtual {v0}, Lcom/android/settings/DeviceAdminAdd;->getEllipsizedLines()I
 
     move-result v0
 
-    .line 322
-    .local v0, "maxLines":I
     iget-object v1, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v1, v1, Lcom/android/settings/DeviceAdminAdd;->mAddMsg:Landroid/widget/TextView;
@@ -67,8 +62,6 @@
     :cond_0
     move v1, v2
 
-    .line 323
-    .local v1, "hideMsgExpander":Z
     :goto_0
     iget-object v3, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
@@ -83,10 +76,8 @@
     :cond_1
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 324
     if-eqz v1, :cond_2
 
-    .line 325
     iget-object v2, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v2, v2, Lcom/android/settings/DeviceAdminAdd;->mAddMsg:Landroid/widget/TextView;
@@ -95,7 +86,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 326
     iget-object v2, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
     iget-object v2, v2, Lcom/android/settings/DeviceAdminAdd;->mAddMsgExpander:Landroid/widget/ImageView;
@@ -108,7 +98,6 @@
 
     invoke-virtual {v2}, Landroid/view/View;->invalidate()V
 
-    .line 328
     :cond_2
     iget-object v2, p0, Lcom/android/settings/DeviceAdminAdd$2;->this$0:Lcom/android/settings/DeviceAdminAdd;
 
@@ -120,6 +109,5 @@
 
     invoke-virtual {v2, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 329
     return-void
 .end method

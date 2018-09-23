@@ -17,13 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "userRestriction"    # Ljava/lang/String;
 
-    .line 35
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 36
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -34,7 +30,6 @@
 
     iput-object v0, p0, Lcom/android/settings/security/RestrictedEncryptionPreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 37
     const-string v0, "user"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -45,10 +40,8 @@
 
     iput-object v0, p0, Lcom/android/settings/security/RestrictedEncryptionPreferenceController;->mUserManager:Landroid/os/UserManager;
 
-    .line 38
     iput-object p2, p0, Lcom/android/settings/security/RestrictedEncryptionPreferenceController;->mUserRestriction:Ljava/lang/String;
 
-    .line 39
     return-void
 .end method
 
@@ -57,7 +50,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 43
     iget-object v0, p0, Lcom/android/settings/security/RestrictedEncryptionPreferenceController;->mUserManager:Landroid/os/UserManager;
 
     iget-object v1, p0, Lcom/android/settings/security/RestrictedEncryptionPreferenceController;->mUserRestriction:Ljava/lang/String;

@@ -27,15 +27,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 35
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 36
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/PasswordRequirementAdapter;->setHasStableIds(Z)V
 
-    .line 37
     return-void
 .end method
 
@@ -44,7 +41,6 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 48
     iget-object v0, p0, Lcom/android/settings/password/PasswordRequirementAdapter;->mRequirements:[Ljava/lang/String;
 
     array-length v0, v0
@@ -54,9 +50,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
 
-    .line 58
     iget-object v0, p0, Lcom/android/settings/password/PasswordRequirementAdapter;->mRequirements:[Ljava/lang/String;
 
     aget-object v0, v0, p1
@@ -73,7 +67,6 @@
 .method public bridge synthetic onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
     .locals 0
 
-    .line 31
     check-cast p1, Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/password/PasswordRequirementAdapter;->onBindViewHolder(Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;I)V
@@ -83,10 +76,7 @@
 
 .method public onBindViewHolder(Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;I)V
     .locals 2
-    .param p1, "holder"    # Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;
-    .param p2, "position"    # I
 
-    .line 63
     invoke-static {p1}, Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;->access$000(Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;)Landroid/widget/TextView;
 
     move-result-object v0
@@ -97,14 +87,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 64
     return-void
 .end method
 
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 31
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/password/PasswordRequirementAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;
 
     move-result-object p1
@@ -114,10 +102,7 @@
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;
     .locals 3
-    .param p1, "parent"    # Landroid/view/ViewGroup;
-    .param p2, "viewType"    # I
 
-    .line 41
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -126,8 +111,7 @@
 
     move-result-object v0
 
-    .line 42
-    const v1, 0x7f0d01d2
+    const v1, 0x7f0d01d1
 
     const/4 v2, 0x0
 
@@ -135,8 +119,6 @@
 
     move-result-object v0
 
-    .line 43
-    .local v0, "v":Landroid/view/View;
     new-instance v1, Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;
 
     invoke-direct {v1, v0}, Lcom/android/settings/password/PasswordRequirementAdapter$PasswordRequirementViewHolder;-><init>(Landroid/view/View;)V
@@ -146,14 +128,10 @@
 
 .method public setRequirements([Ljava/lang/String;)V
     .locals 0
-    .param p1, "requirements"    # [Ljava/lang/String;
 
-    .line 52
     iput-object p1, p0, Lcom/android/settings/password/PasswordRequirementAdapter;->mRequirements:[Ljava/lang/String;
 
-    .line 53
     invoke-virtual {p0}, Lcom/android/settings/password/PasswordRequirementAdapter;->notifyDataSetChanged()V
 
-    .line 54
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 494
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onInterceptKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 497
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -49,7 +45,6 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 498
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v0
@@ -60,14 +55,12 @@
 
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 499
     invoke-static {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->access$000(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)Landroid/support/v17/leanback/widget/GuidedAction;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 500
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-static {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->access$000(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)Landroid/support/v17/leanback/widget/GuidedAction;
@@ -82,7 +75,6 @@
 
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 501
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->isBackKeyToCollapseSubActions()Z
 
     move-result v0
@@ -92,7 +84,6 @@
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 502
     invoke-static {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->access$000(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)Landroid/support/v17/leanback/widget/GuidedAction;
 
     move-result-object v0
@@ -105,23 +96,19 @@
 
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 503
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->isBackKeyToCollapseActivatorView()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 504
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$1;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->collapseAction(Z)V
 
-    .line 505
     return v1
 
-    .line 508
     :cond_2
     const/4 v0, 0x0
 

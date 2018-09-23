@@ -31,10 +31,8 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 619
     const-class v0, Lcom/google/common/reflect/Types$NativeTypeVariableEquals;
 
-    .line 620
     invoke-virtual {v0}, Ljava/lang/Class;->getTypeParameters()[Ljava/lang/reflect/TypeVariable;
 
     move-result-object v0
@@ -49,12 +47,10 @@
 
     new-array v1, v1, [Ljava/lang/reflect/Type;
 
-    .line 621
     invoke-static {v2, v3, v1}, Lcom/google/common/reflect/Types;->newArtificialTypeVariable(Ljava/lang/reflect/GenericDeclaration;Ljava/lang/String;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/TypeVariable;
 
     move-result-object v1
 
-    .line 620
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -63,15 +59,12 @@
 
     sput-boolean v0, Lcom/google/common/reflect/Types$NativeTypeVariableEquals;->NATIVE_TYPE_VARIABLE_ONLY:Z
 
-    .line 619
     return-void
 .end method
 
 .method constructor <init>()V
     .locals 0
 
-    .line 618
-    .local p0, "this":Lcom/google/common/reflect/Types$NativeTypeVariableEquals;, "Lcom/google/common/reflect/Types$NativeTypeVariableEquals<TX;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

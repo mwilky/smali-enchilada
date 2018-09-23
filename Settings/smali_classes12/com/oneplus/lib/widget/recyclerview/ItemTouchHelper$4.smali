@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
-    .line 653
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->val$anim:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 656
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->access$300(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
@@ -78,7 +75,6 @@
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$RecoverAnimation;->mViewHolder:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;
 
-    .line 658
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
@@ -87,7 +83,6 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 659
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->access$300(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;)Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
@@ -98,8 +93,6 @@
 
     move-result-object v0
 
-    .line 663
-    .local v0, "animator":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ItemAnimator;
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
@@ -113,14 +106,12 @@
     :cond_0
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
-    .line 664
     invoke-static {v1}, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->access$1800(Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 665
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
     iget-object v1, v1, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;->mCallback:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$Callback;
@@ -135,7 +126,6 @@
 
     goto :goto_0
 
-    .line 667
     :cond_1
     iget-object v1, p0, Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper$4;->this$0:Lcom/oneplus/lib/widget/recyclerview/ItemTouchHelper;
 
@@ -145,8 +135,6 @@
 
     invoke-virtual {v1, p0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->post(Ljava/lang/Runnable;)Z
 
-    .line 670
-    .end local v0    # "animator":Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ItemAnimator;
     :cond_2
     :goto_0
     return-void

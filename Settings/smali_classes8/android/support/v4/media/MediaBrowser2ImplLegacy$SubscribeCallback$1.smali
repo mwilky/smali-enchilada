@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback;
 
-    .line 358
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback$1;->val$parentId:Ljava/lang/String;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 5
 
-    .line 361
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$SubscribeCallback;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
@@ -76,6 +73,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaBrowser2$BrowserCallback;->onChildrenChanged(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 363
     return-void
 .end method

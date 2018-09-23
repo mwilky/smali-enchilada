@@ -52,38 +52,32 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 2174
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$Style;-><init>()V
 
-    .line 2168
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
-    .line 2174
     return-void
 .end method
 
 .method public constructor <init>(Landroid/support/v4/app/Person;)V
     .locals 2
-    .param p1, "user"    # Landroid/support/v4/app/Person;
+    .param p1    # Landroid/support/v4/app/Person;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 2196
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$Style;-><init>()V
 
-    .line 2168
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
-    .line 2197
     invoke-virtual {p1}, Landroid/support/v4/app/Person;->getName()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -94,13 +88,10 @@
 
     if-nez v0, :cond_0
 
-    .line 2200
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
-    .line 2201
     return-void
 
-    .line 2198
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -113,24 +104,21 @@
 
 .method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "userDisplayName"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 2184
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$Style;-><init>()V
 
-    .line 2168
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
-    .line 2185
     new-instance v0, Landroid/support/v4/app/Person$Builder;
 
     invoke-direct {v0}, Landroid/support/v4/app/Person$Builder;-><init>()V
@@ -145,30 +133,24 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
-    .line 2186
     return-void
 .end method
 
 .method public static extractMessagingStyleFromNotification(Landroid/app/Notification;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 3
-    .param p0, "notification"    # Landroid/app/Notification;
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 2359
     invoke-static {p0}, Landroid/support/v4/app/NotificationCompat;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 2360
-    .local v0, "extras":Landroid/os/Bundle;
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
     const-string v2, "android.selfDisplayName"
 
-    .line 2361
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
@@ -177,39 +159,29 @@
 
     const-string v2, "android.messagingStyleUser"
 
-    .line 2362
     invoke-virtual {v0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2363
     return-object v1
 
-    .line 2367
     :cond_0
     :try_start_0
     new-instance v2, Landroid/support/v4/app/NotificationCompat$MessagingStyle;
 
     invoke-direct {v2}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;-><init>()V
 
-    .line 2368
-    .local v2, "style":Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     invoke-virtual {v2, v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->restoreFromCompatExtras(Landroid/os/Bundle;)V
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2369
     return-object v2
 
-    .line 2370
-    .end local v2    # "style":Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     :catch_0
     move-exception v2
 
-    .line 2371
-    .local v2, "e":Ljava/lang/ClassCastException;
     return-object v1
 .end method
 
@@ -218,7 +190,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 2481
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -227,11 +198,9 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 2482
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -240,15 +209,12 @@
 
     check-cast v1, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2484
-    .local v1, "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 2485
     invoke-virtual {v1}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v2
@@ -263,18 +229,13 @@
 
     if-nez v2, :cond_0
 
-    .line 2486
     return-object v1
 
-    .line 2481
-    .end local v1    # "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 2489
-    .end local v0    # "i":I
     :cond_1
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
@@ -284,7 +245,6 @@
 
     if-nez v0, :cond_2
 
-    .line 2491
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
@@ -303,7 +263,6 @@
 
     return-object v0
 
-    .line 2493
     :cond_2
     const/4 v0, 0x0
 
@@ -313,7 +272,6 @@
 .method private hasMessagesWithoutSender()Z
     .locals 4
 
-    .line 2497
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -324,11 +282,9 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 2498
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -337,8 +293,6 @@
 
     check-cast v2, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2499
-    .local v2, "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     invoke-virtual {v2}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v3
@@ -355,18 +309,13 @@
 
     if-nez v3, :cond_0
 
-    .line 2500
     return v1
 
-    .line 2497
-    .end local v2    # "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 2503
-    .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x0
 
@@ -375,11 +324,9 @@
 
 .method private makeFontColorSpan(I)Landroid/text/style/TextAppearanceSpan;
     .locals 7
-    .param p1, "color"    # I
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 2532
     new-instance v6, Landroid/text/style/TextAppearanceSpan;
 
     invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
@@ -403,21 +350,15 @@
 
 .method private makeMessageLine(Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;)Ljava/lang/CharSequence;
     .locals 10
-    .param p1, "message"    # Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2507
     invoke-static {}, Landroid/support/v4/text/BidiFormatter;->getInstance()Landroid/support/v4/text/BidiFormatter;
 
     move-result-object v0
 
-    .line 2508
-    .local v0, "bidi":Landroid/support/v4/text/BidiFormatter;
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 2509
-    .local v1, "sb":Landroid/text/SpannableStringBuilder;
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
@@ -431,8 +372,6 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 2510
-    .local v2, "afterLollipop":Z
     :goto_0
     if-eqz v2, :cond_1
 
@@ -443,12 +382,9 @@
     :cond_1
     const/4 v3, -0x1
 
-    .line 2511
-    .local v3, "color":I
     :goto_1
     nop
 
-    .line 2512
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v4
@@ -468,8 +404,6 @@
 
     move-result-object v4
 
-    .line 2513
-    .local v4, "replyName":Ljava/lang/CharSequence;
     :goto_2
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -477,14 +411,12 @@
 
     if-eqz v5, :cond_4
 
-    .line 2514
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
     invoke-virtual {v5}, Landroid/support/v4/app/Person;->getName()Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    .line 2515
     if-eqz v2, :cond_3
 
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
@@ -497,7 +429,6 @@
 
     iget-object v5, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
-    .line 2516
     invoke-virtual {v5}, Landroid/support/v4/app/NotificationCompat$Builder;->getColor()I
 
     move-result v5
@@ -510,22 +441,17 @@
     :goto_3
     move v3, v5
 
-    .line 2519
     :cond_4
     invoke-virtual {v0, v4}, Landroid/support/v4/text/BidiFormatter;->unicodeWrap(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v5
 
-    .line 2520
-    .local v5, "senderText":Ljava/lang/CharSequence;
     invoke-virtual {v1, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2521
     invoke-direct {p0, v3}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->makeFontColorSpan(I)Landroid/text/style/TextAppearanceSpan;
 
     move-result-object v6
 
-    .line 2522
     invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v7
@@ -536,17 +462,14 @@
 
     sub-int/2addr v7, v8
 
-    .line 2523
     invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v8
 
     const/16 v9, 0x21
 
-    .line 2521
     invoke-virtual {v1, v6, v7, v8, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 2525
     invoke-virtual {p1}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getText()Ljava/lang/CharSequence;
 
     move-result-object v6
@@ -562,8 +485,6 @@
 
     move-result-object v6
 
-    .line 2526
-    .local v6, "text":Ljava/lang/CharSequence;
     :goto_4
     const-string v7, "  "
 
@@ -577,7 +498,6 @@
 
     invoke-virtual {v7, v8}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2527
     return-object v1
 .end method
 
@@ -585,12 +505,9 @@
 # virtual methods
 .method public addCompatExtras(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 2537
     invoke-super {p0, p1}, Landroid/support/v4/app/NotificationCompat$Style;->addCompatExtras(Landroid/os/Bundle;)V
 
-    .line 2538
     const-string v0, "android.selfDisplayName"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
@@ -601,7 +518,6 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2539
     const-string v0, "android.messagingStyleUser"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
@@ -612,14 +528,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2541
     const-string v0, "android.hiddenConversationTitle"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2542
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
@@ -632,14 +546,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2543
     const-string v0, "android.conversationTitle"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 2545
     :cond_0
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
@@ -649,26 +561,21 @@
 
     if-nez v0, :cond_1
 
-    .line 2546
     const-string v0, "android.messages"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
-    .line 2547
     invoke-static {v1}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getBundleArrayForMessages(Ljava/util/List;)[Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 2546
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
-    .line 2549
     :cond_1
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_2
 
-    .line 2550
     const-string v0, "android.isGroupConversation"
 
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
@@ -679,21 +586,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 2552
     :cond_2
     return-void
 .end method
 
 .method public addMessage(Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 2
-    .param p1, "message"    # Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2293
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2294
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -704,44 +607,33 @@
 
     if-le v0, v1, :cond_0
 
-    .line 2295
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2297
     :cond_0
     return-object p0
 .end method
 
 .method public addMessage(Ljava/lang/CharSequence;JLandroid/support/v4/app/Person;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 1
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "timestamp"    # J
-    .param p4, "person"    # Landroid/support/v4/app/Person;
 
-    .line 2281
     new-instance v0, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
     invoke-direct {v0, p1, p2, p3, p4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;-><init>(Ljava/lang/CharSequence;JLandroid/support/v4/app/Person;)V
 
     invoke-virtual {p0, v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->addMessage(Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
 
-    .line 2282
     return-object p0
 .end method
 
 .method public addMessage(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 3
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "timestamp"    # J
-    .param p4, "sender"    # Ljava/lang/CharSequence;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 2264
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     new-instance v1, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
@@ -750,7 +642,6 @@
 
     invoke-direct {v2}, Landroid/support/v4/app/Person$Builder;-><init>()V
 
-    .line 2265
     invoke-virtual {v2, p4}, Landroid/support/v4/app/Person$Builder;->setName(Ljava/lang/CharSequence;)Landroid/support/v4/app/Person$Builder;
 
     move-result-object v2
@@ -761,10 +652,8 @@
 
     invoke-direct {v1, p1, p2, p3, v2}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;-><init>(Ljava/lang/CharSequence;JLandroid/support/v4/app/Person;)V
 
-    .line 2264
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2266
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -775,35 +664,30 @@
 
     if-le v0, v1, :cond_0
 
-    .line 2267
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2269
     :cond_0
     return-object p0
 .end method
 
 .method public apply(Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;)V
     .locals 11
-    .param p1, "builder"    # Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 2385
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->isGroupConversation()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->setGroupConversation(Z)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
 
-    .line 2387
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -812,14 +696,12 @@
 
     if-lt v0, v2, :cond_9
 
-    .line 2389
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1c
 
     if-lt v0, v2, :cond_0
 
-    .line 2390
     new-instance v0, Landroid/app/Notification$MessagingStyle;
 
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
@@ -830,11 +712,8 @@
 
     invoke-direct {v0, v3}, Landroid/app/Notification$MessagingStyle;-><init>(Landroid/app/Person;)V
 
-    .local v0, "frameworkStyle":Landroid/app/Notification$MessagingStyle;
     goto :goto_0
 
-    .line 2392
-    .end local v0    # "frameworkStyle":Landroid/app/Notification$MessagingStyle;
     :cond_0
     new-instance v0, Landroid/app/Notification$MessagingStyle;
 
@@ -846,8 +725,6 @@
 
     invoke-direct {v0, v3}, Landroid/app/Notification$MessagingStyle;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 2401
-    .restart local v0    # "frameworkStyle":Landroid/app/Notification$MessagingStyle;
     :goto_0
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
@@ -861,19 +738,16 @@
 
     if-lt v3, v2, :cond_2
 
-    .line 2403
     :cond_1
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v3}, Landroid/app/Notification$MessagingStyle;->setConversationTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
 
-    .line 2408
     :cond_2
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v3, v2, :cond_3
 
-    .line 2409
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
     invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
@@ -882,7 +756,6 @@
 
     invoke-virtual {v0, v3}, Landroid/app/Notification$MessagingStyle;->setGroupConversation(Z)Landroid/app/Notification$MessagingStyle;
 
-    .line 2412
     :cond_3
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
@@ -903,34 +776,26 @@
 
     check-cast v4, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2416
-    .local v4, "compatMessage":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v5, v2, :cond_5
 
-    .line 2417
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v5
 
-    .line 2418
-    .local v5, "compatMessagePerson":Landroid/support/v4/app/Person;
     new-instance v6, Landroid/app/Notification$MessagingStyle$Message;
 
-    .line 2419
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getText()Ljava/lang/CharSequence;
 
     move-result-object v7
 
-    .line 2420
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getTimestamp()J
 
     move-result-wide v8
 
     if-nez v5, :cond_4
 
-    .line 2423
     move-object v10, v1
 
     goto :goto_2
@@ -943,27 +808,19 @@
     :goto_2
     invoke-direct {v6, v7, v8, v9, v10}, Landroid/app/Notification$MessagingStyle$Message;-><init>(Ljava/lang/CharSequence;JLandroid/app/Person;)V
 
-    .end local v5    # "compatMessagePerson":Landroid/support/v4/app/Person;
     move-object v5, v6
 
-    .line 2424
-    .local v5, "frameworkMessage":Landroid/app/Notification$MessagingStyle$Message;
     goto :goto_3
 
-    .line 2425
-    .end local v5    # "frameworkMessage":Landroid/app/Notification$MessagingStyle$Message;
     :cond_5
     const/4 v5, 0x0
 
-    .line 2426
-    .local v5, "name":Ljava/lang/CharSequence;
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v6
 
     if-eqz v6, :cond_6
 
-    .line 2427
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v6
@@ -972,11 +829,9 @@
 
     move-result-object v5
 
-    .line 2429
     :cond_6
     new-instance v6, Landroid/app/Notification$MessagingStyle$Message;
 
-    .line 2430
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getText()Ljava/lang/CharSequence;
 
     move-result-object v7
@@ -987,11 +842,8 @@
 
     invoke-direct {v6, v7, v8, v9, v5}, Landroid/app/Notification$MessagingStyle$Message;-><init>(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V
 
-    .end local v5    # "name":Ljava/lang/CharSequence;
     move-object v5, v6
 
-    .line 2433
-    .local v5, "frameworkMessage":Landroid/app/Notification$MessagingStyle$Message;
     :goto_3
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getDataMimeType()Ljava/lang/String;
 
@@ -999,10 +851,8 @@
 
     if-eqz v6, :cond_7
 
-    .line 2434
     nop
 
-    .line 2435
     invoke-virtual {v4}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getDataMimeType()Ljava/lang/String;
 
     move-result-object v6
@@ -1011,19 +861,13 @@
 
     move-result-object v7
 
-    .line 2434
     invoke-virtual {v5, v6, v7}, Landroid/app/Notification$MessagingStyle$Message;->setData(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;
 
-    .line 2437
     :cond_7
     invoke-virtual {v0, v5}, Landroid/app/Notification$MessagingStyle;->addMessage(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
 
-    .line 2438
-    .end local v4    # "compatMessage":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
-    .end local v5    # "frameworkMessage":Landroid/app/Notification$MessagingStyle$Message;
     goto :goto_1
 
-    .line 2439
     :cond_8
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
@@ -1031,18 +875,13 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$MessagingStyle;->setBuilder(Landroid/app/Notification$Builder;)V
 
-    .line 2440
-    .end local v0    # "frameworkStyle":Landroid/app/Notification$MessagingStyle;
     goto/16 :goto_a
 
-    .line 2441
     :cond_9
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->findLatestIncomingMessage()Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
     move-result-object v0
 
-    .line 2443
-    .local v0, "latestIncomingMessage":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     iget-object v2, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     if-eqz v2, :cond_a
@@ -1055,7 +894,6 @@
 
     if-eqz v2, :cond_a
 
-    .line 2444
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
     move-result-object v2
@@ -1066,11 +904,9 @@
 
     goto :goto_4
 
-    .line 2445
     :cond_a
     if-eqz v0, :cond_b
 
-    .line 2446
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
     move-result-object v2
@@ -1079,19 +915,16 @@
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    .line 2447
     invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v2
 
     if-eqz v2, :cond_b
 
-    .line 2448
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
     move-result-object v2
 
-    .line 2449
     invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getPerson()Landroid/support/v4/app/Person;
 
     move-result-object v3
@@ -1100,15 +933,12 @@
 
     move-result-object v3
 
-    .line 2448
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    .line 2453
     :cond_b
     :goto_4
     if-eqz v0, :cond_d
 
-    .line 2454
     invoke-interface {p1}, Landroid/support/v4/app/NotificationBuilderWithBuilderAccessor;->getBuilder()Landroid/app/Notification$Builder;
 
     move-result-object v2
@@ -1117,24 +947,20 @@
 
     if-eqz v3, :cond_c
 
-    .line 2455
     invoke-direct {p0, v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->makeMessageLine(Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;)Ljava/lang/CharSequence;
 
     move-result-object v3
 
     goto :goto_5
 
-    .line 2456
     :cond_c
     invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 2454
     :goto_5
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    .line 2459
     :cond_d
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1142,13 +968,10 @@
 
     if-lt v2, v3, :cond_13
 
-    .line 2460
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 2461
-    .local v2, "completeMessage":Landroid/text/SpannableStringBuilder;
     iget-object v3, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     const/4 v4, 0x1
@@ -1157,7 +980,6 @@
 
     if-nez v3, :cond_f
 
-    .line 2462
     invoke-direct {p0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->hasMessagesWithoutSender()Z
 
     move-result v3
@@ -1175,8 +997,6 @@
     :goto_6
     move v3, v4
 
-    .line 2463
-    .local v3, "showNames":Z
     :goto_7
     iget-object v6, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
@@ -1186,11 +1006,9 @@
 
     sub-int/2addr v6, v4
 
-    .local v6, "i":I
     :goto_8
     if-ltz v6, :cond_12
 
-    .line 2464
     iget-object v7, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1199,8 +1017,6 @@
 
     check-cast v7, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
 
-    .line 2466
-    .local v7, "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
     if-eqz v3, :cond_10
 
     invoke-direct {p0, v7}, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->makeMessageLine(Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;)Ljava/lang/CharSequence;
@@ -1214,8 +1030,6 @@
 
     move-result-object v8
 
-    .line 2467
-    .local v8, "line":Ljava/lang/CharSequence;
     :goto_9
     iget-object v9, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
@@ -1227,24 +1041,17 @@
 
     if-eq v6, v9, :cond_11
 
-    .line 2468
     const-string v9, "\n"
 
     invoke-virtual {v2, v5, v9}, Landroid/text/SpannableStringBuilder;->insert(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2470
     :cond_11
     invoke-virtual {v2, v5, v8}, Landroid/text/SpannableStringBuilder;->insert(ILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 2463
-    .end local v7    # "message":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
-    .end local v8    # "line":Ljava/lang/CharSequence;
     add-int/lit8 v6, v6, -0x1
 
     goto :goto_8
 
-    .line 2472
-    .end local v6    # "i":I
     :cond_12
     new-instance v4, Landroid/app/Notification$BigTextStyle;
 
@@ -1254,18 +1061,12 @@
 
     invoke-direct {v4, v5}, Landroid/app/Notification$BigTextStyle;-><init>(Landroid/app/Notification$Builder;)V
 
-    .line 2473
     invoke-virtual {v4, v1}, Landroid/app/Notification$BigTextStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
     move-result-object v1
 
-    .line 2474
     invoke-virtual {v1, v2}, Landroid/app/Notification$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
-    .line 2477
-    .end local v0    # "latestIncomingMessage":Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;
-    .end local v2    # "completeMessage":Landroid/text/SpannableStringBuilder;
-    .end local v3    # "showNames":Z
     :cond_13
     :goto_a
     return-void
@@ -1276,7 +1077,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 2241
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -1293,7 +1093,6 @@
         }
     .end annotation
 
-    .line 2304
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     return-object v0
@@ -1302,7 +1101,6 @@
 .method public getUser()Landroid/support/v4/app/Person;
     .locals 1
 
-    .line 2215
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
     return-object v0
@@ -1313,7 +1111,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 2210
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
     invoke-virtual {v0}, Landroid/support/v4/app/Person;->getName()Ljava/lang/CharSequence;
@@ -1326,7 +1123,6 @@
 .method public isGroupConversation()Z
     .locals 3
 
-    .line 2336
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mBuilder:Landroid/support/v4/app/NotificationCompat$Builder;
 
     const/4 v1, 0x0
@@ -1337,7 +1133,6 @@
 
     iget-object v0, v0, Landroid/support/v4/app/NotificationCompat$Builder;->mContext:Landroid/content/Context;
 
-    .line 2337
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
@@ -1352,7 +1147,6 @@
 
     if-nez v0, :cond_1
 
-    .line 2340
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
@@ -1364,7 +1158,6 @@
     :cond_0
     return v1
 
-    .line 2344
     :cond_1
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
@@ -1384,19 +1177,16 @@
 
 .method protected restoreFromCompatExtras(Landroid/os/Bundle;)V
     .locals 3
-    .param p1, "extras"    # Landroid/os/Bundle;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 2560
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 2562
     const-string v0, "android.messagingStyleUser"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
@@ -1405,7 +1195,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 2564
     const-string v0, "android.messagingStyleUser"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
@@ -1420,7 +1209,6 @@
 
     goto :goto_0
 
-    .line 2567
     :cond_0
     new-instance v0, Landroid/support/v4/app/Person$Builder;
 
@@ -1428,7 +1216,6 @@
 
     const-string v1, "android.selfDisplayName"
 
-    .line 2568
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -1437,14 +1224,12 @@
 
     move-result-object v0
 
-    .line 2569
     invoke-virtual {v0}, Landroid/support/v4/app/Person$Builder;->build()Landroid/support/v4/app/Person;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mUser:Landroid/support/v4/app/Person;
 
-    .line 2572
     :goto_0
     const-string v0, "android.conversationTitle"
 
@@ -1454,12 +1239,10 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
-    .line 2573
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_1
 
-    .line 2574
     const-string v0, "android.hiddenConversationTitle"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -1468,7 +1251,6 @@
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
-    .line 2576
     :cond_1
     const-string v0, "android.messages"
 
@@ -1476,11 +1258,8 @@
 
     move-result-object v0
 
-    .line 2577
-    .local v0, "parcelables":[Landroid/os/Parcelable;
     if-eqz v0, :cond_2
 
-    .line 2578
     iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mMessages:Ljava/util/List;
 
     invoke-static {v0}, Landroid/support/v4/app/NotificationCompat$MessagingStyle$Message;->getMessagesFromBundleArray([Landroid/os/Parcelable;)Ljava/util/List;
@@ -1489,7 +1268,6 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 2580
     :cond_2
     const-string v1, "android.isGroupConversation"
 
@@ -1499,7 +1277,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 2581
     const-string v1, "android.isGroupConversation"
 
     invoke-virtual {p1, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1512,36 +1289,30 @@
 
     iput-object v1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
-    .line 2583
     :cond_3
     return-void
 .end method
 
 .method public setConversationTitle(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 0
-    .param p1, "conversationTitle"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 2232
     iput-object p1, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mConversationTitle:Ljava/lang/CharSequence;
 
-    .line 2233
     return-object p0
 .end method
 
 .method public setGroupConversation(Z)Landroid/support/v4/app/NotificationCompat$MessagingStyle;
     .locals 1
-    .param p1, "isGroupConversation"    # Z
 
-    .line 2314
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v4/app/NotificationCompat$MessagingStyle;->mIsGroupConversation:Ljava/lang/Boolean;
 
-    .line 2315
     return-object p0
 .end method

@@ -30,13 +30,9 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/DenseImmutableTable;I)V
     .locals 0
-    .param p2, "columnIndex"    # I
 
-    .line 179
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$Column;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.Column;"
     iput-object p1, p0, Lcom/google/common/collect/DenseImmutableTable$Column;->this$0:Lcom/google/common/collect/DenseImmutableTable;
 
-    .line 180
     invoke-static {p1}, Lcom/google/common/collect/DenseImmutableTable;->access$500(Lcom/google/common/collect/DenseImmutableTable;)[I
 
     move-result-object p1
@@ -45,10 +41,8 @@
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap;-><init>(I)V
 
-    .line 181
     iput p2, p0, Lcom/google/common/collect/DenseImmutableTable$Column;->columnIndex:I
 
-    .line 182
     return-void
 .end method
 
@@ -56,15 +50,12 @@
 # virtual methods
 .method getValue(I)Ljava/lang/Object;
     .locals 2
-    .param p1, "keyIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TV;"
         }
     .end annotation
 
-    .line 191
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$Column;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.Column;"
     iget-object v0, p0, Lcom/google/common/collect/DenseImmutableTable$Column;->this$0:Lcom/google/common/collect/DenseImmutableTable;
 
     invoke-static {v0}, Lcom/google/common/collect/DenseImmutableTable;->access$400(Lcom/google/common/collect/DenseImmutableTable;)[[Ljava/lang/Object;
@@ -83,8 +74,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 196
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$Column;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.Column;"
     const/4 v0, 0x1
 
     return v0
@@ -102,8 +91,6 @@
         }
     .end annotation
 
-    .line 186
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$Column;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.Column;"
     iget-object v0, p0, Lcom/google/common/collect/DenseImmutableTable$Column;->this$0:Lcom/google/common/collect/DenseImmutableTable;
 
     invoke-static {v0}, Lcom/google/common/collect/DenseImmutableTable;->access$600(Lcom/google/common/collect/DenseImmutableTable;)Lcom/google/common/collect/ImmutableMap;

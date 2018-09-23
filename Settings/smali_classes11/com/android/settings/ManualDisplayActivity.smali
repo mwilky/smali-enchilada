@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 35
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -24,8 +23,7 @@
 .method private showErrorAndFinish()V
     .locals 2
 
-    .line 81
-    const v0, 0x7f120fcf
+    const v0, 0x7f120fc8
 
     const/4 v1, 0x1
 
@@ -33,13 +31,10 @@
 
     move-result-object v0
 
-    .line 82
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 83
     invoke-virtual {p0}, Lcom/android/settings/ManualDisplayActivity;->finish()V
 
-    .line 84
     return-void
 .end method
 
@@ -47,18 +42,13 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 43
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 44
     invoke-virtual {p0}, Lcom/android/settings/ManualDisplayActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 46
-    .local v0, "resources":Landroid/content/res/Resources;
     const v1, 0x7f050029
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -67,10 +57,8 @@
 
     if-nez v1, :cond_0
 
-    .line 47
     invoke-virtual {p0}, Lcom/android/settings/ManualDisplayActivity;->finish()V
 
-    .line 50
     :cond_0
     const-string v1, "ro.config.manual_path"
 
@@ -80,35 +68,27 @@
 
     move-result-object v1
 
-    .line 51
-    .local v1, "path":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 52
     const-string v2, "SettingsManualActivity"
 
     const-string v3, "The system property for the manual is empty"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
     invoke-direct {p0}, Lcom/android/settings/ManualDisplayActivity;->showErrorAndFinish()V
 
-    .line 54
     return-void
 
-    .line 57
     :cond_1
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 58
-    .local v2, "file":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -127,7 +107,6 @@
 
     goto :goto_1
 
-    .line 64
     :cond_2
     new-instance v3, Landroid/content/Intent;
 
@@ -135,8 +114,6 @@
 
     invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 65
-    .local v3, "intent":Landroid/content/Intent;
     invoke-static {v2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object v4
@@ -145,10 +122,9 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 67
     const-string v4, "android.intent.extra.TITLE"
 
-    const v5, 0x7f120fce
+    const v5, 0x7f120fc7
 
     invoke-virtual {p0, v5}, Lcom/android/settings/ManualDisplayActivity;->getString(I)Ljava/lang/String;
 
@@ -156,50 +132,37 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 68
     const-string v4, "android.intent.category.DEFAULT"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 69
     const-string v4, "com.android.htmlviewer"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 72
     :try_start_0
     invoke-virtual {p0, v3}, Lcom/android/settings/ManualDisplayActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 73
     invoke-virtual {p0}, Lcom/android/settings/ManualDisplayActivity;->finish()V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 77
     goto :goto_0
 
-    .line 74
     :catch_0
     move-exception v4
 
-    .line 75
-    .local v4, "e":Landroid/content/ActivityNotFoundException;
     const-string v5, "SettingsManualActivity"
 
     const-string v6, "Failed to find viewer"
 
     invoke-static {v5, v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 76
     invoke-direct {p0}, Lcom/android/settings/ManualDisplayActivity;->showErrorAndFinish()V
 
-    .line 78
-    .end local v4    # "e":Landroid/content/ActivityNotFoundException;
     :goto_0
     return-void
 
-    .line 59
-    .end local v3    # "intent":Landroid/content/Intent;
     :cond_3
     :goto_1
     const-string v3, "SettingsManualActivity"
@@ -224,9 +187,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 60
     invoke-direct {p0}, Lcom/android/settings/ManualDisplayActivity;->showErrorAndFinish()V
 
-    .line 61
     return-void
 .end method

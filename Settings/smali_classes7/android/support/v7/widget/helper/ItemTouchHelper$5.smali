@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/helper/ItemTouchHelper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/helper/ItemTouchHelper;
 
-    .line 1276
     iput-object p1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$5;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onGetChildDrawingOrder(II)I
     .locals 3
-    .param p1, "childCount"    # I
-    .param p2, "i"    # I
 
-    .line 1279
     iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$5;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$1900(Landroid/support/v7/widget/helper/ItemTouchHelper;)Landroid/view/View;
@@ -50,10 +45,8 @@
 
     if-nez v0, :cond_0
 
-    .line 1280
     return p2
 
-    .line 1282
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$5;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
@@ -61,13 +54,10 @@
 
     move-result v0
 
-    .line 1283
-    .local v0, "childPosition":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_1
 
-    .line 1284
     iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$5;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     invoke-static {v1}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$400(Landroid/support/v7/widget/helper/ItemTouchHelper;)Landroid/support/v7/widget/RecyclerView;
@@ -84,21 +74,17 @@
 
     move-result v0
 
-    .line 1285
     iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$5;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     invoke-static {v1, v0}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$2202(Landroid/support/v7/widget/helper/ItemTouchHelper;I)I
 
-    .line 1287
     :cond_1
     add-int/lit8 v1, p1, -0x1
 
     if-ne p2, v1, :cond_2
 
-    .line 1288
     return v0
 
-    .line 1290
     :cond_2
     if-ge p2, v0, :cond_3
 

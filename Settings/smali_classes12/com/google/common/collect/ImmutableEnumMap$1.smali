@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableEnumMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableEnumMap;
 
-    .line 59
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumMap$1;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
@@ -43,10 +40,7 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$1;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableEnumMap;->access$000(Lcom/google/common/collect/ImmutableEnumMap;)Ljava/util/EnumMap;
@@ -63,8 +57,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 78
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     const/4 v0, 0x1
 
     return v0
@@ -80,8 +72,6 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$1;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableEnumMap;->access$000(Lcom/google/common/collect/ImmutableEnumMap;)Ljava/util/EnumMap;
@@ -106,8 +96,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 59
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableEnumMap$1;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -118,8 +106,6 @@
 .method public size()I
     .locals 1
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$1;, "Lcom/google/common/collect/ImmutableEnumMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$1;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableEnumMap;->size()I

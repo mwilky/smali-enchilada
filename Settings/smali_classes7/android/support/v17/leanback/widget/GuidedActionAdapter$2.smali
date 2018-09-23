@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionAdapter;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
-    .line 188
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->val$oldActions:Ljava/util/List;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public areContentsTheSame(II)Z
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 207
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->mDiffCallback:Landroid/support/v17/leanback/widget/DiffCallback;
@@ -55,7 +50,6 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
-    .line 208
     invoke-static {v2}, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->access$100(Landroid/support/v17/leanback/widget/GuidedActionAdapter;)Ljava/util/List;
 
     move-result-object v2
@@ -64,7 +58,6 @@
 
     move-result-object v2
 
-    .line 207
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -74,10 +67,7 @@
 
 .method public areItemsTheSame(II)Z
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 201
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->mDiffCallback:Landroid/support/v17/leanback/widget/DiffCallback;
@@ -90,7 +80,6 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
-    .line 202
     invoke-static {v2}, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->access$100(Landroid/support/v17/leanback/widget/GuidedActionAdapter;)Ljava/util/List;
 
     move-result-object v2
@@ -99,7 +88,6 @@
 
     move-result-object v2
 
-    .line 201
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -109,12 +97,9 @@
 
 .method public getChangePayload(II)Ljava/lang/Object;
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 214
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->mDiffCallback:Landroid/support/v17/leanback/widget/DiffCallback;
@@ -127,7 +112,6 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
-    .line 215
     invoke-static {v2}, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->access$100(Landroid/support/v17/leanback/widget/GuidedActionAdapter;)Ljava/util/List;
 
     move-result-object v2
@@ -136,7 +120,6 @@
 
     move-result-object v2
 
-    .line 214
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->getChangePayload(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -147,7 +130,6 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 196
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     invoke-static {v0}, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->access$100(Landroid/support/v17/leanback/widget/GuidedActionAdapter;)Ljava/util/List;
@@ -164,7 +146,6 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 191
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionAdapter$2;->val$oldActions:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

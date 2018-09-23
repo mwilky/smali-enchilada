@@ -42,20 +42,16 @@
 .method private constructor <init>(Lcom/google/common/collect/StandardTable$Column;)V
     .locals 0
 
-    .line 491
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySetIterator;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 492
     iget-object p1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object p1, p1, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
 
     iget-object p1, p1, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;
 
-    .line 493
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -66,17 +62,12 @@
 
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->iterator:Ljava/util/Iterator;
 
-    .line 492
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/collect/StandardTable$Column;Lcom/google/common/collect/StandardTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/StandardTable$Column;
-    .param p2, "x1"    # Lcom/google/common/collect/StandardTable$1;
 
-    .line 491
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySetIterator;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;-><init>(Lcom/google/common/collect/StandardTable$Column;)V
 
     return-void
@@ -87,8 +78,6 @@
 .method protected bridge synthetic computeNext()Ljava/lang/Object;
     .locals 1
 
-    .line 491
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySetIterator;"
     invoke-virtual {p0}, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->computeNext()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -106,8 +95,6 @@
         }
     .end annotation
 
-    .line 495
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySetIterator;"
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->iterator:Ljava/util/Iterator;
 
@@ -117,7 +104,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 496
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -126,8 +112,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 497
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TR;Ljava/util/Map<TC;TV;>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -144,19 +128,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 498
     new-instance v1, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;-><init>(Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;Ljava/util/Map$Entry;)V
 
     return-object v1
 
-    .line 510
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TR;Ljava/util/Map<TC;TV;>;>;"
     :cond_0
     goto :goto_0
 
-    .line 511
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;->endOfData()Ljava/lang/Object;
 

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wfd/WifiDisplaySettings;
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .line 372
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/support/v14/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
@@ -37,7 +34,6 @@
 .method protected onClick()V
     .locals 2
 
-    .line 375
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -50,7 +46,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$102(Lcom/android/settings/wfd/WifiDisplaySettings;Z)Z
 
-    .line 376
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -61,7 +56,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$200(Lcom/android/settings/wfd/WifiDisplaySettings;Z)V
 
-    .line 377
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$2;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$100(Lcom/android/settings/wfd/WifiDisplaySettings;)Z
@@ -70,6 +64,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wfd/WifiDisplaySettings$2;->setChecked(Z)V
 
-    .line 378
     return-void
 .end method

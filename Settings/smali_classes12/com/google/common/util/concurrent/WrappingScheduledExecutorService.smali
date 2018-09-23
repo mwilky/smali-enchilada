@@ -13,15 +13,11 @@
 # direct methods
 .method protected constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 0
-    .param p1, "delegate"    # Ljava/util/concurrent/ScheduledExecutorService;
 
-    .line 36
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/WrappingExecutorService;-><init>(Ljava/util/concurrent/ExecutorService;)V
 
-    .line 37
     iput-object p1, p0, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->delegate:Ljava/util/concurrent/ScheduledExecutorService;
 
-    .line 38
     return-void
 .end method
 
@@ -29,9 +25,6 @@
 # virtual methods
 .method public final schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
     .locals 2
-    .param p1, "command"    # Ljava/lang/Runnable;
-    .param p2, "delay"    # J
-    .param p4, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +37,6 @@
         }
     .end annotation
 
-    .line 42
     iget-object v0, p0, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->delegate:Ljava/util/concurrent/ScheduledExecutorService;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->wrapTask(Ljava/lang/Runnable;)Ljava/lang/Runnable;
@@ -60,8 +52,6 @@
 
 .method public final schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
     .locals 2
-    .param p2, "delay"    # J
-    .param p4, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -76,8 +66,6 @@
         }
     .end annotation
 
-    .line 47
-    .local p1, "task":Ljava/util/concurrent/Callable;, "Ljava/util/concurrent/Callable<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->delegate:Ljava/util/concurrent/ScheduledExecutorService;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->wrapTask(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
@@ -93,10 +81,6 @@
 
 .method public final scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
     .locals 7
-    .param p1, "command"    # Ljava/lang/Runnable;
-    .param p2, "initialDelay"    # J
-    .param p4, "period"    # J
-    .param p6, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,7 +93,6 @@
         }
     .end annotation
 
-    .line 53
     iget-object v0, p0, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->delegate:Ljava/util/concurrent/ScheduledExecutorService;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->wrapTask(Ljava/lang/Runnable;)Ljava/lang/Runnable;
@@ -131,10 +114,6 @@
 
 .method public final scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
     .locals 7
-    .param p1, "command"    # Ljava/lang/Runnable;
-    .param p2, "initialDelay"    # J
-    .param p4, "delay"    # J
-    .param p6, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,7 +126,6 @@
         }
     .end annotation
 
-    .line 59
     iget-object v0, p0, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->delegate:Ljava/util/concurrent/ScheduledExecutorService;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/WrappingScheduledExecutorService;->wrapTask(Ljava/lang/Runnable;)Ljava/lang/Runnable;

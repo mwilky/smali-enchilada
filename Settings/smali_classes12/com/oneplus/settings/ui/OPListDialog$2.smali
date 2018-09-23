@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPListDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPListDialog;
 
-    .line 100
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPListDialog$2;->this$0:Lcom/oneplus/settings/ui/OPListDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 104
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPListDialog$2;->this$0:Lcom/oneplus/settings/ui/OPListDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPListDialog;->access$100(Lcom/oneplus/settings/ui/OPListDialog;)Lcom/oneplus/settings/ui/OPListDialog$OnDialogListItemClickListener;
@@ -50,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 105
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPListDialog$2;->this$0:Lcom/oneplus/settings/ui/OPListDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPListDialog;->access$100(Lcom/oneplus/settings/ui/OPListDialog;)Lcom/oneplus/settings/ui/OPListDialog$OnDialogListItemClickListener;
@@ -65,10 +59,8 @@
 
     invoke-interface {v0, v1}, Lcom/oneplus/settings/ui/OPListDialog$OnDialogListItemClickListener;->OnDialogListConfirmClick(I)V
 
-    .line 107
     :cond_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 108
     return-void
 .end method

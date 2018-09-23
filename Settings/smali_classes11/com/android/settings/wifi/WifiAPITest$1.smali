@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiAPITest;Landroid/widget/EditText;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiAPITest;
 
-    .line 115
     iput-object p1, p0, Lcom/android/settings/wifi/WifiAPITest$1;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WifiAPITest$1;->val$input:Landroid/widget/EditText;
@@ -42,18 +40,13 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "whichButton"    # I
 
-    .line 117
     iget-object v0, p0, Lcom/android/settings/wifi/WifiAPITest$1;->val$input:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
 
-    .line 119
-    .local v0, "value":Landroid/text/Editable;
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/wifi/WifiAPITest$1;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
@@ -69,10 +62,8 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 124
     nop
 
-    .line 125
     iget-object v1, p0, Lcom/android/settings/wifi/WifiAPITest$1;->this$0:Lcom/android/settings/wifi/WifiAPITest;
 
     invoke-static {v1}, Lcom/android/settings/wifi/WifiAPITest;->access$100(Lcom/android/settings/wifi/WifiAPITest;)Landroid/net/wifi/WifiManager;
@@ -87,17 +78,12 @@
 
     invoke-virtual {v1, v2}, Landroid/net/wifi/WifiManager;->disableNetwork(I)Z
 
-    .line 126
     return-void
 
-    .line 120
     :catch_0
     move-exception v1
 
-    .line 122
-    .local v1, "e":Ljava/lang/NumberFormatException;
     invoke-virtual {v1}, Ljava/lang/NumberFormatException;->printStackTrace()V
 
-    .line 123
     return-void
 .end method

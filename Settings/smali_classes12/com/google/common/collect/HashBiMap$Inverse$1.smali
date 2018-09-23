@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/HashBiMap$Inverse;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/HashBiMap$Inverse;
 
-    .line 576
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$Inverse$1;, "Lcom/google/common/collect/HashBiMap$Inverse$1;"
     iput-object p1, p0, Lcom/google/common/collect/HashBiMap$Inverse$1;->this$1:Lcom/google/common/collect/HashBiMap$Inverse;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -52,8 +49,6 @@
         }
     .end annotation
 
-    .line 585
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$Inverse$1;, "Lcom/google/common/collect/HashBiMap$Inverse$1;"
     new-instance v0, Lcom/google/common/collect/HashBiMap$Inverse$1$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/HashBiMap$Inverse$1$1;-><init>(Lcom/google/common/collect/HashBiMap$Inverse$1;)V
@@ -71,8 +66,6 @@
         }
     .end annotation
 
-    .line 580
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$Inverse$1;, "Lcom/google/common/collect/HashBiMap$Inverse$1;"
     iget-object v0, p0, Lcom/google/common/collect/HashBiMap$Inverse$1;->this$1:Lcom/google/common/collect/HashBiMap$Inverse;
 
     return-object v0

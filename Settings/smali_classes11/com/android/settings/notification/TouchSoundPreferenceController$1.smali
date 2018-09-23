@@ -21,14 +21,7 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/notification/TouchSoundPreferenceController;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/settings/notification/TouchSoundPreferenceController;
-    .param p2, "type"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "setting"    # Ljava/lang/String;
-    .param p5, "def"    # I
-    .param p6, "values"    # [I
 
-    .line 38
     iput-object p1, p0, Lcom/android/settings/notification/TouchSoundPreferenceController$1;->this$0:Lcom/android/settings/notification/TouchSoundPreferenceController;
 
     move-object v0, p0
@@ -52,17 +45,13 @@
 # virtual methods
 .method protected setSetting(Landroid/content/Context;I)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "value"    # I
 
-    .line 41
     new-instance v0, Lcom/android/settings/notification/TouchSoundPreferenceController$1$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/settings/notification/TouchSoundPreferenceController$1$1;-><init>(Lcom/android/settings/notification/TouchSoundPreferenceController$1;Landroid/content/Context;I)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 53
     invoke-super {p0, p1, p2}, Lcom/android/settings/notification/SettingPref;->setSetting(Landroid/content/Context;I)Z
 
     move-result v0

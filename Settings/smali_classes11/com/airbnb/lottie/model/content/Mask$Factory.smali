@@ -18,19 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     return-void
 .end method
 
 .method public static newMask(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/Mask;
     .locals 6
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 33
     const-string v0, "mode"
 
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
@@ -101,73 +96,50 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 44
     sget-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeUnknown:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
     goto :goto_2
 
-    .line 41
     :pswitch_0
     sget-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeIntersect:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 42
-    .local v0, "maskMode":Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     goto :goto_2
 
-    .line 38
-    .end local v0    # "maskMode":Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     :pswitch_1
     sget-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeSubtract:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 39
-    .restart local v0    # "maskMode":Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     goto :goto_2
 
-    .line 35
-    .end local v0    # "maskMode":Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     :pswitch_2
     sget-object v0, Lcom/airbnb/lottie/model/content/Mask$MaskMode;->MaskModeAdd:Lcom/airbnb/lottie/model/content/Mask$MaskMode;
 
-    .line 36
-    .restart local v0    # "maskMode":Lcom/airbnb/lottie/model/content/Mask$MaskMode;
     nop
 
-    .line 44
     :goto_2
     nop
 
-    .line 47
     const-string v1, "pt"
 
-    .line 48
     invoke-virtual {p0, v1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    .line 47
     invoke-static {v1, p1}, Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue;
 
     move-result-object v1
 
-    .line 49
-    .local v1, "maskPath":Lcom/airbnb/lottie/model/animatable/AnimatableShapeValue;
     const-string v2, "o"
 
     invoke-virtual {p0, v2}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 50
-    .local v2, "opacityJson":Lorg/json/JSONObject;
     nop
 
-    .line 51
     invoke-static {v2, p1}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v3
 
-    .line 52
-    .local v3, "opacity":Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
     new-instance v4, Lcom/airbnb/lottie/model/content/Mask;
 
     const/4 v5, 0x0

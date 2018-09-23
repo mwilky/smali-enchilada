@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;Lcom/android/ims/ImsManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;
 
-    .line 168
     iput-object p1, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper$1;->this$0:Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;
 
     iput-object p2, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper$1;->val$imsManager:Lcom/android/ims/ImsManager;
@@ -52,7 +50,6 @@
 .method public call()Ljava/lang/Boolean;
     .locals 1
 
-    .line 171
     iget-object v0, p0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper$1;->val$imsManager:Lcom/android/ims/ImsManager;
 
     invoke-virtual {v0}, Lcom/android/ims/ImsManager;->isWfcEnabledByUser()Z
@@ -74,7 +71,6 @@
         }
     .end annotation
 
-    .line 168
     invoke-virtual {p0}, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper$1;->call()Ljava/lang/Boolean;
 
     move-result-object v0

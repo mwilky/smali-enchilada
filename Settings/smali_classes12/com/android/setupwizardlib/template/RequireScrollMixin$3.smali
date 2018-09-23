@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/setupwizardlib/template/RequireScrollMixin;Landroid/widget/Button;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
-    .line 199
     iput-object p1, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$3;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     iput-object p2, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$3;->val$button:Landroid/widget/Button;
@@ -50,9 +48,7 @@
 # virtual methods
 .method public onRequireScrollStateChanged(Z)V
     .locals 2
-    .param p1, "scrollNeeded"    # Z
 
-    .line 202
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$3;->val$button:Landroid/widget/Button;
 
     if-eqz p1, :cond_0
@@ -67,6 +63,5 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 203
     return-void
 .end method

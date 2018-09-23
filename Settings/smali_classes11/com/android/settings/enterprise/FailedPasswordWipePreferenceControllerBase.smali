@@ -13,24 +13,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 32
     invoke-static {p1}, Lcom/android/settings/overlay/FeatureFactory;->getFactory(Landroid/content/Context;)Lcom/android/settings/overlay/FeatureFactory;
 
     move-result-object v0
 
-    .line 33
     invoke-virtual {v0, p1}, Lcom/android/settings/overlay/FeatureFactory;->getEnterprisePrivacyFeatureProvider(Landroid/content/Context;)Lcom/android/settings/enterprise/EnterprisePrivacyFeatureProvider;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/enterprise/FailedPasswordWipePreferenceControllerBase;->mFeatureProvider:Lcom/android/settings/enterprise/EnterprisePrivacyFeatureProvider;
 
-    .line 34
     return-void
 .end method
 
@@ -42,7 +37,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 48
     invoke-virtual {p0}, Lcom/android/settings/enterprise/FailedPasswordWipePreferenceControllerBase;->getMaximumFailedPasswordsBeforeWipe()I
 
     move-result v0
@@ -62,15 +56,11 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 5
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 40
     invoke-virtual {p0}, Lcom/android/settings/enterprise/FailedPasswordWipePreferenceControllerBase;->getMaximumFailedPasswordsBeforeWipe()I
 
     move-result v0
 
-    .line 41
-    .local v0, "failedPasswordsBeforeWipe":I
     iget-object v1, p0, Lcom/android/settings/enterprise/FailedPasswordWipePreferenceControllerBase;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -81,7 +71,6 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 43
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -90,7 +79,6 @@
 
     aput-object v3, v2, v4
 
-    .line 41
     const v3, 0x7f100018
 
     invoke-virtual {v1, v3, v0, v2}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
@@ -99,6 +87,5 @@
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 44
     return-void
 .end method

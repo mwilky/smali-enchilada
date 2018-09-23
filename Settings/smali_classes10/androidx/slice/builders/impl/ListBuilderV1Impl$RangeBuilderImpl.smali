@@ -40,35 +40,27 @@
 # direct methods
 .method public constructor <init>(Landroidx/slice/Slice$Builder;)V
     .locals 2
-    .param p1, "sb"    # Landroidx/slice/Slice$Builder;
 
-    .line 186
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Landroidx/slice/builders/impl/TemplateBuilderImpl;-><init>(Landroidx/slice/Slice$Builder;Landroidx/slice/SliceSpec;)V
 
-    .line 175
     const/4 v0, 0x0
 
     iput v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMin:I
 
-    .line 176
     const/16 v1, 0x64
 
     iput v1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMax:I
 
-    .line 177
     iput v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValue:I
 
-    .line 178
     iput-boolean v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValueSet:Z
 
-    .line 183
     const/4 v0, -0x1
 
     iput v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mLayoutDir:I
 
-    .line 187
     return-void
 .end method
 
@@ -76,19 +68,15 @@
 # virtual methods
 .method public apply(Landroidx/slice/Slice$Builder;)V
     .locals 5
-    .param p1, "builder"    # Landroidx/slice/Slice$Builder;
 
-    .line 232
     iget-boolean v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValueSet:Z
 
     if-nez v0, :cond_0
 
-    .line 234
     iget v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMin:I
 
     iput v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValue:I
 
-    .line 236
     :cond_0
     iget v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMin:I
 
@@ -108,14 +96,12 @@
 
     if-ge v0, v1, :cond_6
 
-    .line 242
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mTitle:Ljava/lang/CharSequence;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 243
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mTitle:Ljava/lang/CharSequence;
 
     const-string v2, "title"
@@ -126,7 +112,6 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroidx/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 245
     :cond_1
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mSubtitle:Ljava/lang/CharSequence;
 
@@ -134,20 +119,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 246
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mSubtitle:Ljava/lang/CharSequence;
 
     new-array v3, v2, [Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1, v3}, Landroidx/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 248
     :cond_2
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_3
 
-    .line 249
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
     const-string v3, "content_description"
@@ -156,16 +138,13 @@
 
     invoke-virtual {p1, v0, v3, v4}, Landroidx/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 251
     :cond_3
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
     if-eqz v0, :cond_4
 
-    .line 252
     new-instance v0, Landroidx/slice/Slice$Builder;
 
-    .line 253
     invoke-virtual {p0}, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->getBuilder()Landroidx/slice/Slice$Builder;
 
     move-result-object v3
@@ -184,8 +163,6 @@
 
     move-result-object v0
 
-    .line 254
-    .local v0, "sb":Landroidx/slice/Slice$Builder;
     iget-object v3, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
     invoke-virtual {v3, v0}, Landroidx/slice/builders/SliceAction;->buildSlice(Landroidx/slice/Slice$Builder;)Landroidx/slice/Slice;
@@ -194,8 +171,6 @@
 
     invoke-virtual {p1, v3, v1}, Landroidx/slice/Slice$Builder;->addSubSlice(Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 256
-    .end local v0    # "sb":Landroidx/slice/Slice$Builder;
     :cond_4
     iget v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mLayoutDir:I
 
@@ -203,7 +178,6 @@
 
     if-eq v0, v1, :cond_5
 
-    .line 257
     iget v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mLayoutDir:I
 
     const-string v1, "layout_direction"
@@ -212,7 +186,6 @@
 
     invoke-virtual {p1, v0, v1, v3}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 259
     :cond_5
     const-string v0, "list_item"
 
@@ -230,7 +203,6 @@
 
     new-array v4, v2, [Ljava/lang/String;
 
-    .line 260
     invoke-virtual {v0, v1, v3, v4}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
     move-result-object v0
@@ -241,7 +213,6 @@
 
     new-array v4, v2, [Ljava/lang/String;
 
-    .line 261
     invoke-virtual {v0, v1, v3, v4}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
     move-result-object v0
@@ -252,13 +223,10 @@
 
     new-array v2, v2, [Ljava/lang/String;
 
-    .line 262
     invoke-virtual {v0, v1, v3, v2}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 263
     return-void
 
-    .line 237
     :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -305,105 +273,84 @@
 
 .method public setContentDescription(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 222
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
-    .line 223
     return-void
 .end method
 
 .method public setLayoutDirection(I)V
     .locals 0
-    .param p1, "layoutDirection"    # I
 
-    .line 227
     iput p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mLayoutDir:I
 
-    .line 228
     return-void
 .end method
 
 .method public setMax(I)V
     .locals 0
-    .param p1, "max"    # I
 
-    .line 196
     iput p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMax:I
 
-    .line 197
     return-void
 .end method
 
 .method public setMin(I)V
     .locals 0
-    .param p1, "min"    # I
 
-    .line 191
     iput p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mMin:I
 
-    .line 192
     return-void
 .end method
 
 .method public setPrimaryAction(Landroidx/slice/builders/SliceAction;)V
     .locals 0
-    .param p1, "action"    # Landroidx/slice/builders/SliceAction;
+    .param p1    # Landroidx/slice/builders/SliceAction;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 217
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
-    .line 218
     return-void
 .end method
 
 .method public setSubtitle(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "title"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 212
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mSubtitle:Ljava/lang/CharSequence;
 
-    .line 213
     return-void
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "title"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 207
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mTitle:Ljava/lang/CharSequence;
 
-    .line 208
     return-void
 .end method
 
 .method public setValue(I)V
     .locals 1
-    .param p1, "value"    # I
 
-    .line 201
     iput p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValue:I
 
-    .line 202
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$RangeBuilderImpl;->mValueSet:Z
 
-    .line 203
     return-void
 .end method

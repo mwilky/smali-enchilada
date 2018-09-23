@@ -30,29 +30,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/accessibility/VibrationPreferenceFragment;Ljava/lang/String;II)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/settings/accessibility/VibrationPreferenceFragment;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "labelId"    # I
-    .param p4, "intensity"    # I
 
-    .line 191
     iput-object p1, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->this$0:Lcom/android/settings/accessibility/VibrationPreferenceFragment;
 
-    .line 192
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/settingslib/widget/CandidateInfo;-><init>(Z)V
 
-    .line 193
     iput-object p2, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->mKey:Ljava/lang/String;
 
-    .line 194
     iput p3, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->mLabelId:I
 
-    .line 195
     iput p4, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->mIntensity:I
 
-    .line 196
     return-void
 .end method
 
@@ -61,7 +51,6 @@
 .method public getIntensity()I
     .locals 1
 
-    .line 214
     iget v0, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->mIntensity:I
 
     return v0
@@ -70,7 +59,6 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 210
     iget-object v0, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->mKey:Ljava/lang/String;
 
     return-object v0
@@ -79,7 +67,6 @@
 .method public loadIcon()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 205
     const/4 v0, 0x0
 
     return-object v0
@@ -88,7 +75,6 @@
 .method public loadLabel()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 200
     iget-object v0, p0, Lcom/android/settings/accessibility/VibrationPreferenceFragment$VibrationIntensityCandidateInfo;->this$0:Lcom/android/settings/accessibility/VibrationPreferenceFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/accessibility/VibrationPreferenceFragment;->getContext()Landroid/content/Context;

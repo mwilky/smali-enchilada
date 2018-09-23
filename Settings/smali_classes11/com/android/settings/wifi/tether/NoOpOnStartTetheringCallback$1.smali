@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Landroid/net/ConnectivityManager$OnStartTetheringCallback;-><init>()V
 
     return-void

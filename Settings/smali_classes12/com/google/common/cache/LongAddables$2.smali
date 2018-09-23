@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
 .method public get()Lcom/google/common/cache/LongAddable;
     .locals 2
 
-    .line 48
     new-instance v0, Lcom/google/common/cache/LongAddables$PureJavaLongAddable;
 
     const/4 v1, 0x0
@@ -54,7 +52,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 45
     invoke-virtual {p0}, Lcom/google/common/cache/LongAddables$2;->get()Lcom/google/common/cache/LongAddable;
 
     move-result-object v0

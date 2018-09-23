@@ -11,7 +11,6 @@
 .method public getHelpResource()I
     .locals 1
 
-    .line 34
     const v0, 0x7f1206f4
 
     return v0

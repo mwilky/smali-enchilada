@@ -28,21 +28,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/accounts/AccountTypePreferenceLoader;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "title"    # I
 
-    .line 227
     iput-object p1, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 228
     iput-object p2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->mClass:Ljava/lang/String;
 
-    .line 229
     iput p3, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->mTitleRes:I
 
-    .line 230
     return-void
 .end method
 
@@ -50,9 +44,7 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 234
     iget-object v0, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     invoke-static {v0}, Lcom/android/settings/accounts/AccountTypePreferenceLoader;->access$200(Lcom/android/settings/accounts/AccountTypePreferenceLoader;)Landroid/support/v14/preference/PreferenceFragment;
@@ -63,7 +55,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 235
     iget-object v0, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     invoke-static {v0}, Lcom/android/settings/accounts/AccountTypePreferenceLoader;->access$200(Lcom/android/settings/accounts/AccountTypePreferenceLoader;)Landroid/support/v14/preference/PreferenceFragment;
@@ -78,12 +69,9 @@
 
     goto :goto_0
 
-    .line 236
     :cond_0
     const/4 v0, 0x0
 
-    .line 237
-    .local v0, "metricsCategory":I
     :goto_0
     new-instance v1, Lcom/android/settings/core/SubSettingLauncher;
 
@@ -95,27 +83,22 @@
 
     iget v2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->mTitleRes:I
 
-    .line 238
     invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setTitle(I)Lcom/android/settings/core/SubSettingLauncher;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->mClass:Ljava/lang/String;
 
-    .line 239
     invoke-virtual {v1, v2}, Lcom/android/settings/core/SubSettingLauncher;->setDestination(Ljava/lang/String;)Lcom/android/settings/core/SubSettingLauncher;
 
     move-result-object v1
 
-    .line 240
     invoke-virtual {v1, v0}, Lcom/android/settings/core/SubSettingLauncher;->setSourceMetricsCategory(I)Lcom/android/settings/core/SubSettingLauncher;
 
     move-result-object v1
 
-    .line 241
     invoke-virtual {v1}, Lcom/android/settings/core/SubSettingLauncher;->launch()V
 
-    .line 245
     iget-object v1, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->mClass:Ljava/lang/String;
 
     const-class v2, Lcom/android/settings/location/LocationSettings;
@@ -130,15 +113,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 246
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.android.settings.accounts.LAUNCHING_LOCATION_SETTINGS"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 247
-    .local v1, "intent":Landroid/content/Intent;
     iget-object v2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$FragmentStarter;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     invoke-static {v2}, Lcom/android/settings/accounts/AccountTypePreferenceLoader;->access$200(Lcom/android/settings/accounts/AccountTypePreferenceLoader;)Landroid/support/v14/preference/PreferenceFragment;
@@ -153,8 +133,6 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/app/Activity;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 250
-    .end local v1    # "intent":Landroid/content/Intent;
     :cond_1
     const/4 v1, 0x1
 

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wfd/WifiDisplaySettings;
-    .param p2, "x0"    # Landroid/content/Context;
 
-    .line 385
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0, p2}, Landroid/support/v14/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
@@ -37,7 +34,6 @@
 .method protected onClick()V
     .locals 2
 
-    .line 388
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
@@ -50,7 +46,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$302(Lcom/android/settings/wfd/WifiDisplaySettings;Z)Z
 
-    .line 389
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$300(Lcom/android/settings/wfd/WifiDisplaySettings;)Z
@@ -59,20 +54,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 390
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$400(Lcom/android/settings/wfd/WifiDisplaySettings;)V
 
     goto :goto_0
 
-    .line 392
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$500(Lcom/android/settings/wfd/WifiDisplaySettings;)V
 
-    .line 394
     :goto_0
     iget-object v0, p0, Lcom/android/settings/wfd/WifiDisplaySettings$3;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
@@ -82,6 +74,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wfd/WifiDisplaySettings$3;->setChecked(Z)V
 
-    .line 395
     return-void
 .end method

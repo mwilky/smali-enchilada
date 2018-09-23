@@ -30,11 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/FilteredEntryMultimap$AsMap;Ljava/util/Map;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
-    .line 219
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;"
-    .local p2, "map":Ljava/util/Map;, "Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/Maps$KeySet;-><init>(Ljava/util/Map;)V
@@ -46,13 +42,11 @@
 # virtual methods
 .method public remove(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 232
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->remove(Ljava/lang/Object;)Ljava/util/Collection;
@@ -82,9 +76,6 @@
         }
     .end annotation
 
-    .line 222
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;
@@ -114,9 +105,6 @@
         }
     .end annotation
 
-    .line 227
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;

@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/storage/StorageAsyncLoader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/storage/StorageAsyncLoader;
 
-    .line 78
     iput-object p1, p0, Lcom/android/settings/deviceinfo/storage/StorageAsyncLoader$1;->this$0:Lcom/android/settings/deviceinfo/storage/StorageAsyncLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/content/pm/UserInfo;Landroid/content/pm/UserInfo;)I
     .locals 2
-    .param p1, "userInfo"    # Landroid/content/pm/UserInfo;
-    .param p2, "otherUser"    # Landroid/content/pm/UserInfo;
 
-    .line 81
     iget v0, p1, Landroid/content/pm/UserInfo;->id:I
 
     iget v1, p2, Landroid/content/pm/UserInfo;->id:I
@@ -65,7 +60,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 78
     check-cast p1, Landroid/content/pm/UserInfo;
 
     check-cast p2, Landroid/content/pm/UserInfo;

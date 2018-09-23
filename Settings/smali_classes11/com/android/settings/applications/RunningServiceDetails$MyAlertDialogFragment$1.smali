@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
 
-    .line 593
     iput-object p1, p0, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment$1;->this$0:Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
 
     iput-object p2, p0, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment$1;->val$comp:Landroid/content/ComponentName;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 595
     iget-object v0, p0, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment$1;->this$0:Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/RunningServiceDetails$MyAlertDialogFragment;->getOwner()Lcom/android/settings/applications/RunningServiceDetails;
@@ -58,16 +53,12 @@
 
     move-result-object v0
 
-    .line 596
-    .local v0, "ad":Lcom/android/settings/applications/RunningServiceDetails$ActiveDetail;
     if-eqz v0, :cond_0
 
-    .line 597
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/RunningServiceDetails$ActiveDetail;->stopActiveService(Z)V
 
-    .line 599
     :cond_0
     return-void
 .end method

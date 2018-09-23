@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x1"    # Ljava/lang/String;
 
-    .line 218
-    .local p1, "x0":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Integer;>;"
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -39,9 +36,7 @@
 # virtual methods
 .method public get(Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;)Ljava/lang/Integer;
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;
 
-    .line 226
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->getVerticalOffset()I
 
     move-result v0
@@ -56,7 +51,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 218
     check-cast p1, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;
 
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$1;->get(Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;)Ljava/lang/Integer;
@@ -68,24 +62,19 @@
 
 .method public set(Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;Ljava/lang/Integer;)V
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;
-    .param p2, "value"    # Ljava/lang/Integer;
 
-    .line 221
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->setVerticalOffset(I)V
 
-    .line 222
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 218
     check-cast p1, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;
 
     check-cast p2, Ljava/lang/Integer;

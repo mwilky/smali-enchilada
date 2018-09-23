@@ -56,15 +56,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 3474
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     invoke-static {}, Lcom/google/common/cache/LocalCache;->unset()Lcom/google/common/cache/LocalCache$ValueReference;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/cache/LocalCache$LoadingValueReference;-><init>(Lcom/google/common/cache/LocalCache$ValueReference;)V
 
-    .line 3475
     return-void
 .end method
 
@@ -78,35 +75,27 @@
         }
     .end annotation
 
-    .line 3477
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
-    .local p1, "oldValue":Lcom/google/common/cache/LocalCache$ValueReference;, "Lcom/google/common/cache/LocalCache$ValueReference<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3470
     invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->futureValue:Lcom/google/common/util/concurrent/SettableFuture;
 
-    .line 3471
     invoke-static {}, Lcom/google/common/base/Stopwatch;->createUnstarted()Lcom/google/common/base/Stopwatch;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->stopwatch:Lcom/google/common/base/Stopwatch;
 
-    .line 3478
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
-    .line 3479
     return-void
 .end method
 
 .method private fullyFailedFuture(Ljava/lang/Throwable;)Lcom/google/common/util/concurrent/ListenableFuture;
     .locals 1
-    .param p1, "t"    # Ljava/lang/Throwable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,8 +106,6 @@
         }
     .end annotation
 
-    .line 3505
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     invoke-static {p1}, Lcom/google/common/util/concurrent/Futures;->immediateFailedFuture(Ljava/lang/Throwable;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -146,19 +133,12 @@
         }
     .end annotation
 
-    .line 3577
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
 .method public elapsedNanos()J
     .locals 2
 
-    .line 3552
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->stopwatch:Lcom/google/common/base/Stopwatch;
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -178,8 +158,6 @@
         }
     .end annotation
 
-    .line 3562
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
     invoke-interface {v0}, Lcom/google/common/cache/LocalCache$ValueReference;->get()Ljava/lang/Object;
@@ -199,8 +177,6 @@
         }
     .end annotation
 
-    .line 3571
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -216,8 +192,6 @@
         }
     .end annotation
 
-    .line 3566
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
     return-object v0
@@ -226,8 +200,6 @@
 .method public getWeight()I
     .locals 1
 
-    .line 3493
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
     invoke-interface {v0}, Lcom/google/common/cache/LocalCache$ValueReference;->getWeight()I
@@ -240,8 +212,6 @@
 .method public isActive()Z
     .locals 1
 
-    .line 3488
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
     invoke-interface {v0}, Lcom/google/common/cache/LocalCache$ValueReference;->isActive()Z
@@ -254,8 +224,6 @@
 .method public isLoading()Z
     .locals 1
 
-    .line 3483
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -273,33 +241,23 @@
         }
     .end annotation
 
-    .line 3523
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "loader":Lcom/google/common/cache/CacheLoader;, "Lcom/google/common/cache/CacheLoader<-TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->stopwatch:Lcom/google/common/base/Stopwatch;
 
     invoke-virtual {v0}, Lcom/google/common/base/Stopwatch;->start()Lcom/google/common/base/Stopwatch;
 
-    .line 3524
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
     invoke-interface {v0}, Lcom/google/common/cache/LocalCache$ValueReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 3526
-    .local v0, "previousValue":Ljava/lang/Object;, "TV;"
     if-nez v0, :cond_1
 
-    .line 3527
     :try_start_0
     invoke-virtual {p2, p1}, Lcom/google/common/cache/CacheLoader;->load(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 3528
-    .local v1, "newValue":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0, v1}, Lcom/google/common/cache/LocalCache$LoadingValueReference;->set(Ljava/lang/Object;)Z
 
     move-result v2
@@ -318,24 +276,18 @@
     :goto_0
     return-object v2
 
-    .line 3543
-    .end local v1    # "newValue":Ljava/lang/Object;, "TV;"
     :catch_0
     move-exception v1
 
     goto :goto_1
 
-    .line 3530
     :cond_1
     invoke-virtual {p2, p1, v0}, Lcom/google/common/cache/CacheLoader;->reload(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v1
 
-    .line 3531
-    .local v1, "newValue":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<TV;>;"
     if-nez v1, :cond_2
 
-    .line 3532
     const/4 v2, 0x0
 
     invoke-static {v2}, Lcom/google/common/util/concurrent/Futures;->immediateFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -344,7 +296,6 @@
 
     return-object v2
 
-    .line 3536
     :cond_2
     new-instance v2, Lcom/google/common/cache/LocalCache$LoadingValueReference$1;
 
@@ -358,25 +309,19 @@
 
     return-object v2
 
-    .line 3543
-    .end local v1    # "newValue":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<TV;>;"
     :goto_1
     nop
 
-    .line 3544
-    .local v1, "t":Ljava/lang/Throwable;
     instance-of v2, v1, Ljava/lang/InterruptedException;
 
     if-eqz v2, :cond_3
 
-    .line 3545
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
 
-    .line 3547
     :cond_3
     invoke-virtual {p0, v1}, Lcom/google/common/cache/LocalCache$LoadingValueReference;->setException(Ljava/lang/Throwable;)Z
 
@@ -409,17 +354,12 @@
         }
     .end annotation
 
-    .line 3510
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     if-eqz p1, :cond_0
 
-    .line 3513
     invoke-virtual {p0, p1}, Lcom/google/common/cache/LocalCache$LoadingValueReference;->set(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 3516
     :cond_0
     invoke-static {}, Lcom/google/common/cache/LocalCache;->unset()Lcom/google/common/cache/LocalCache$ValueReference;
 
@@ -427,7 +367,6 @@
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->oldValue:Lcom/google/common/cache/LocalCache$ValueReference;
 
-    .line 3520
     :goto_0
     return-void
 .end method
@@ -444,9 +383,6 @@
         }
     .end annotation
 
-    .line 3497
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->futureValue:Lcom/google/common/util/concurrent/SettableFuture;
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/SettableFuture;->set(Ljava/lang/Object;)Z
@@ -458,10 +394,7 @@
 
 .method public setException(Ljava/lang/Throwable;)Z
     .locals 1
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 3501
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->futureValue:Lcom/google/common/util/concurrent/SettableFuture;
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/SettableFuture;->setException(Ljava/lang/Throwable;)Z
@@ -485,8 +418,6 @@
         }
     .end annotation
 
-    .line 3557
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingValueReference;, "Lcom/google/common/cache/LocalCache$LoadingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingValueReference;->futureValue:Lcom/google/common/util/concurrent/SettableFuture;
 
     invoke-static {v0}, Lcom/google/common/util/concurrent/Uninterruptibles;->getUninterruptibly(Ljava/util/concurrent/Future;)Ljava/lang/Object;

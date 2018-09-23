@@ -27,7 +27,6 @@
 .method constructor <init>(Lcom/google/common/io/GwtWorkarounds$CharInput;Lcom/google/common/base/CharMatcher;)V
     .locals 0
 
-    .line 759
     iput-object p1, p0, Lcom/google/common/io/BaseEncoding$3;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
     iput-object p2, p0, Lcom/google/common/io/BaseEncoding$3;->val$toIgnore:Lcom/google/common/base/CharMatcher;
@@ -47,12 +46,10 @@
         }
     .end annotation
 
-    .line 771
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$3;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$CharInput;->close()V
 
-    .line 772
     return-void
 .end method
 
@@ -64,7 +61,6 @@
         }
     .end annotation
 
-    .line 764
     :cond_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$3;->val$delegate:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
@@ -72,8 +68,6 @@
 
     move-result v0
 
-    .line 765
-    .local v0, "readChar":I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_1
@@ -88,7 +82,6 @@
 
     if-nez v1, :cond_0
 
-    .line 766
     :cond_1
     return v0
 .end method

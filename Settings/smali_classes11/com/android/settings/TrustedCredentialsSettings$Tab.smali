@@ -48,7 +48,6 @@
 .method static constructor <clinit>()V
     .locals 19
 
-    .line 102
     new-instance v9, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     const-string v1, "SYSTEM"
@@ -57,13 +56,13 @@
 
     const/4 v2, 0x0
 
-    const v4, 0x7f1211df
+    const v4, 0x7f1211d8
 
-    const v5, 0x7f0a0536
+    const v5, 0x7f0a0534
 
-    const v6, 0x7f0a0532
+    const v6, 0x7f0a0530
 
-    const v7, 0x7f0a052c
+    const v7, 0x7f0a052a
 
     const/4 v8, 0x1
 
@@ -73,7 +72,6 @@
 
     sput-object v9, Lcom/android/settings/TrustedCredentialsSettings$Tab;->SYSTEM:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 108
     new-instance v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     const-string v11, "USER"
@@ -82,13 +80,13 @@
 
     const/4 v12, 0x1
 
-    const v14, 0x7f1211e1
+    const v14, 0x7f1211da
 
-    const v15, 0x7f0a0595
+    const v15, 0x7f0a0593
 
-    const v16, 0x7f0a0594
+    const v16, 0x7f0a0592
 
-    const v17, 0x7f0a0588
+    const v17, 0x7f0a0586
 
     const/16 v18, 0x0
 
@@ -98,7 +96,6 @@
 
     sput-object v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->USER:Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/settings/TrustedCredentialsSettings$Tab;
@@ -120,12 +117,6 @@
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;IIIIZ)V
     .locals 0
-    .param p3, "tag"    # Ljava/lang/String;
-    .param p4, "label"    # I
-    .param p5, "view"    # I
-    .param p6, "progress"    # I
-    .param p7, "contentView"    # I
-    .param p8, "withSwitch"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,36 +125,26 @@
         }
     .end annotation
 
-    .line 123
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 124
     iput-object p3, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mTag:Ljava/lang/String;
 
-    .line 125
     iput p4, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mLabel:I
 
-    .line 126
     iput p5, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mView:I
 
-    .line 127
     iput p6, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mProgress:I
 
-    .line 128
     iput p7, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mContentView:I
 
-    .line 129
     iput-boolean p8, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mSwitch:Z
 
-    .line 130
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/settings/TrustedCredentialsSettings$Tab;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mTag:Ljava/lang/String;
 
     return-object v0
@@ -171,9 +152,7 @@
 
 .method static synthetic access$1900(Lcom/android/settings/TrustedCredentialsSettings$Tab;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget-boolean v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mSwitch:Z
 
     return v0
@@ -181,9 +160,7 @@
 
 .method static synthetic access$200(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mView:I
 
     return v0
@@ -191,9 +168,7 @@
 
 .method static synthetic access$2500(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mProgress:I
 
     return v0
@@ -201,15 +176,12 @@
 
 .method static synthetic access$2700(Lcom/android/settings/TrustedCredentialsSettings$Tab;Landroid/security/IKeyChainService;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p1, "x1"    # Landroid/security/IKeyChainService;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 101
     invoke-direct {p0, p1}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->getAliases(Landroid/security/IKeyChainService;)Ljava/util/List;
 
     move-result-object v0
@@ -219,9 +191,7 @@
 
 .method static synthetic access$300(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mLabel:I
 
     return v0
@@ -229,16 +199,12 @@
 
 .method static synthetic access$3400(Lcom/android/settings/TrustedCredentialsSettings$Tab;Landroid/security/IKeyChainService;Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
-    .param p1, "x1"    # Landroid/security/IKeyChainService;
-    .param p2, "x2"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 101
     invoke-direct {p0, p1, p2}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->deleted(Landroid/security/IKeyChainService;Ljava/lang/String;)Z
 
     move-result v0
@@ -248,9 +214,7 @@
 
 .method static synthetic access$500(Lcom/android/settings/TrustedCredentialsSettings$Tab;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
-    .line 101
     iget v0, p0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->mContentView:I
 
     return v0
@@ -258,15 +222,12 @@
 
 .method private deleted(Landroid/security/IKeyChainService;Ljava/lang/String;)Z
     .locals 2
-    .param p1, "service"    # Landroid/security/IKeyChainService;
-    .param p2, "alias"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 143
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$3;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -277,20 +238,17 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 149
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 147
     :pswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 145
     :pswitch_1
     invoke-interface {p1, p2}, Landroid/security/IKeyChainService;->containsCaAlias(Ljava/lang/String;)Z
 
@@ -309,7 +267,6 @@
 
 .method private getAliases(Landroid/security/IKeyChainService;)Ljava/util/List;
     .locals 2
-    .param p1, "service"    # Landroid/security/IKeyChainService;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -327,7 +284,6 @@
         }
     .end annotation
 
-    .line 133
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$3;->$SwitchMap$com$android$settings$TrustedCredentialsSettings$Tab:[I
 
     invoke-virtual {p0}, Lcom/android/settings/TrustedCredentialsSettings$Tab;->ordinal()I
@@ -338,14 +294,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 140
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 138
     :pswitch_0
     invoke-interface {p1}, Landroid/security/IKeyChainService;->getUserCaAliases()Landroid/content/pm/StringParceledListSlice;
 
@@ -357,7 +311,6 @@
 
     return-object v0
 
-    .line 135
     :pswitch_1
     invoke-interface {p1}, Landroid/security/IKeyChainService;->getSystemCaAliases()Landroid/content/pm/StringParceledListSlice;
 
@@ -380,9 +333,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/TrustedCredentialsSettings$Tab;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 101
     const-class v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -397,7 +348,6 @@
 .method public static values()[Lcom/android/settings/TrustedCredentialsSettings$Tab;
     .locals 1
 
-    .line 101
     sget-object v0, Lcom/android/settings/TrustedCredentialsSettings$Tab;->$VALUES:[Lcom/android/settings/TrustedCredentialsSettings$Tab;
 
     invoke-virtual {v0}, [Lcom/android/settings/TrustedCredentialsSettings$Tab;->clone()Ljava/lang/Object;

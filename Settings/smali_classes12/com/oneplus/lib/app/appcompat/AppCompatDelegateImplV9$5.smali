@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
-    .line 764
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 767
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModePopup:Landroid/widget/PopupWindow;
@@ -54,12 +51,10 @@
 
     invoke-virtual {v0, v1, v3, v2, v2}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 770
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->endOnGoingFadeAnimation()V
 
-    .line 772
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->shouldAnimateActionModeView()Z
@@ -70,7 +65,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 773
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
@@ -79,7 +73,6 @@
 
     invoke-static {v0, v2}, Landroid/support/v4/view/ViewCompat;->setAlpha(Landroid/view/View;F)V
 
-    .line 774
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v2, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
@@ -96,7 +89,6 @@
 
     iput-object v1, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mFadeAnim:Landroid/view/ViewPropertyAnimator;
 
-    .line 775
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mFadeAnim:Landroid/view/ViewPropertyAnimator;
@@ -109,7 +101,6 @@
 
     goto :goto_0
 
-    .line 799
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
@@ -117,14 +108,12 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setAlpha(Landroid/view/View;F)V
 
-    .line 800
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9$5;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;->mActionModeView:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
 
     invoke-virtual {v0, v2}, Lcom/oneplus/lib/app/appcompat/ActionBarContextView;->setVisibility(I)V
 
-    .line 802
     :goto_0
     return-void
 .end method

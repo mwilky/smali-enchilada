@@ -69,8 +69,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 3794
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMap;-><init>()V
 
     return-void
@@ -90,8 +88,6 @@
         }
     .end annotation
 
-    .line 3822
-    .local p0, "forward":Ljava/util/Comparator;, "Ljava/util/Comparator<TT;>;"
     invoke-static {p0}, Lcom/google/common/collect/Ordering;->from(Ljava/util/Comparator;)Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -115,9 +111,6 @@
         }
     .end annotation
 
-    .line 3857
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -137,9 +130,6 @@
         }
     .end annotation
 
-    .line 3862
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -161,15 +151,10 @@
         }
     .end annotation
 
-    .line 3809
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$DescendingMap;->comparator:Ljava/util/Comparator;
 
-    .line 3810
-    .local v0, "result":Ljava/util/Comparator;, "Ljava/util/Comparator<-TK;>;"
     if-nez v0, :cond_1
 
-    .line 3811
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v1
@@ -178,16 +163,12 @@
 
     move-result-object v1
 
-    .line 3812
-    .local v1, "forwardCmp":Ljava/util/Comparator;, "Ljava/util/Comparator<-TK;>;"
     if-nez v1, :cond_0
 
-    .line 3813
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v1
 
-    .line 3815
     :cond_0
     invoke-static {v1}, Lcom/google/common/collect/Maps$DescendingMap;->reverse(Ljava/util/Comparator;)Lcom/google/common/collect/Ordering;
 
@@ -197,8 +178,6 @@
 
     move-object v0, v2
 
-    .line 3817
-    .end local v1    # "forwardCmp":Ljava/util/Comparator;, "Ljava/util/Comparator<-TK;>;"
     :cond_1
     return-object v0
 .end method
@@ -214,8 +193,6 @@
         }
     .end annotation
 
-    .line 3911
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$DescendingMap$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$DescendingMap$1;-><init>(Lcom/google/common/collect/Maps$DescendingMap;)V
@@ -226,8 +203,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 3793
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->delegate()Ljava/util/Map;
 
     move-result-object v0
@@ -245,8 +220,6 @@
         }
     .end annotation
 
-    .line 3801
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -264,8 +237,6 @@
         }
     .end annotation
 
-    .line 3939
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -287,8 +258,6 @@
         }
     .end annotation
 
-    .line 3897
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -318,12 +287,8 @@
         }
     .end annotation
 
-    .line 3904
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$DescendingMap;->entrySet:Ljava/util/Set;
 
-    .line 3905
-    .local v0, "result":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->createEntrySet()Ljava/util/Set;
@@ -351,8 +316,6 @@
         }
     .end annotation
 
-    .line 3877
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -372,8 +335,6 @@
         }
     .end annotation
 
-    .line 3827
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -395,9 +356,6 @@
         }
     .end annotation
 
-    .line 3847
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -417,9 +375,6 @@
         }
     .end annotation
 
-    .line 3852
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -443,7 +398,6 @@
 
 .method public headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -452,9 +406,6 @@
         }
     .end annotation
 
-    .line 3951
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -480,9 +431,6 @@
         }
     .end annotation
 
-    .line 3966
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Maps$DescendingMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -502,9 +450,6 @@
         }
     .end annotation
 
-    .line 3867
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -524,9 +469,6 @@
         }
     .end annotation
 
-    .line 3872
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -548,8 +490,6 @@
         }
     .end annotation
 
-    .line 3926
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->navigableKeySet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -567,8 +507,6 @@
         }
     .end annotation
 
-    .line 3882
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -588,8 +526,6 @@
         }
     .end annotation
 
-    .line 3832
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -611,9 +547,6 @@
         }
     .end annotation
 
-    .line 3837
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -633,9 +566,6 @@
         }
     .end annotation
 
-    .line 3842
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -657,12 +587,8 @@
         }
     .end annotation
 
-    .line 3933
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$DescendingMap;->navigableKeySet:Ljava/util/NavigableSet;
 
-    .line 3934
-    .local v0, "result":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TK;>;"
     if-nez v0, :cond_0
 
     new-instance v1, Lcom/google/common/collect/Maps$NavigableKeySet;
@@ -690,8 +616,6 @@
         }
     .end annotation
 
-    .line 3887
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -713,8 +637,6 @@
         }
     .end annotation
 
-    .line 3892
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -728,8 +650,6 @@
 
 .method public subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;ZTK;Z)",
@@ -738,10 +658,6 @@
         }
     .end annotation
 
-    .line 3946
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p3, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -767,10 +683,6 @@
         }
     .end annotation
 
-    .line 3961
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p2, "toKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -784,7 +696,6 @@
 
 .method public tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -793,9 +704,6 @@
         }
     .end annotation
 
-    .line 3956
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->forward()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -821,9 +729,6 @@
         }
     .end annotation
 
-    .line 3971
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Maps$DescendingMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -836,8 +741,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 3981
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$DescendingMap;->standardToString()Ljava/lang/String;
 
     move-result-object v0
@@ -855,8 +758,6 @@
         }
     .end annotation
 
-    .line 3976
-    .local p0, "this":Lcom/google/common/collect/Maps$DescendingMap;, "Lcom/google/common/collect/Maps$DescendingMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$Values;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$Values;-><init>(Ljava/util/Map;)V

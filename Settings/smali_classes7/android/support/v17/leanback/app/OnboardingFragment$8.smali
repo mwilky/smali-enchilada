@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/OnboardingFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/OnboardingFragment;
 
-    .line 956
     iput-object p1, p0, Landroid/support/v17/leanback/app/OnboardingFragment$8;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 959
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$8;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/OnboardingFragment;->mStartButton:Landroid/view/View;
@@ -46,6 +42,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 960
     return-void
 .end method

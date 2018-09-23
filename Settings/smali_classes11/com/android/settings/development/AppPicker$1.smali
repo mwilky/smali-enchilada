@@ -34,10 +34,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 178
     invoke-static {}, Ljava/text/Collator;->getInstance()Ljava/text/Collator;
 
     move-result-object v0
@@ -51,10 +49,7 @@
 # virtual methods
 .method public final compare(Lcom/android/settings/development/AppPicker$MyApplicationInfo;Lcom/android/settings/development/AppPicker$MyApplicationInfo;)I
     .locals 3
-    .param p1, "a"    # Lcom/android/settings/development/AppPicker$MyApplicationInfo;
-    .param p2, "b"    # Lcom/android/settings/development/AppPicker$MyApplicationInfo;
 
-    .line 175
     iget-object v0, p0, Lcom/android/settings/development/AppPicker$1;->collator:Ljava/text/Collator;
 
     iget-object v1, p1, Lcom/android/settings/development/AppPicker$MyApplicationInfo;->label:Ljava/lang/CharSequence;
@@ -71,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 172
     check-cast p1, Lcom/android/settings/development/AppPicker$MyApplicationInfo;
 
     check-cast p2, Lcom/android/settings/development/AppPicker$MyApplicationInfo;

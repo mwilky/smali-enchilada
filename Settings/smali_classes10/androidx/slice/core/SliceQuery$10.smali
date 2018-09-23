@@ -34,7 +34,6 @@
 .method constructor <init>(Landroid/net/Uri;)V
     .locals 0
 
-    .line 333
     iput-object p1, p0, Landroidx/slice/core/SliceQuery$10;->val$uri:Landroid/net/Uri;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,9 +45,7 @@
 # virtual methods
 .method public filter(Landroidx/slice/SliceItem;)Z
     .locals 2
-    .param p1, "input"    # Landroidx/slice/SliceItem;
 
-    .line 336
     const-string v0, "action"
 
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
@@ -63,12 +60,10 @@
 
     const-string v0, "slice"
 
-    .line 337
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 336
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -77,13 +72,11 @@
 
     goto :goto_0
 
-    .line 340
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 338
     :cond_1
     :goto_0
     iget-object v0, p0, Landroidx/slice/core/SliceQuery$10;->val$uri:Landroid/net/Uri;
@@ -106,7 +99,6 @@
 .method public bridge synthetic filter(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 333
     check-cast p1, Landroidx/slice/SliceItem;
 
     invoke-virtual {p0, p1}, Landroidx/slice/core/SliceQuery$10;->filter(Landroidx/slice/SliceItem;)Z

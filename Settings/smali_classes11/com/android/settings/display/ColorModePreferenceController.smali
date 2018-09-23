@@ -28,21 +28,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 38
     const-string v0, "color_mode"
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/core/BasePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 39
     new-instance v0, Lcom/android/settings/display/ColorModePreferenceController$ConfigurationWrapper;
 
     invoke-direct {v0}, Lcom/android/settings/display/ColorModePreferenceController$ConfigurationWrapper;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/display/ColorModePreferenceController;->mConfigWrapper:Lcom/android/settings/display/ColorModePreferenceController$ConfigurationWrapper;
 
-    .line 40
     return-void
 .end method
 
@@ -51,17 +47,14 @@
 .method public getAvailabilityStatus()I
     .locals 1
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/display/ColorModePreferenceController;->mConfigWrapper:Lcom/android/settings/display/ColorModePreferenceController$ConfigurationWrapper;
 
-    .line 44
     invoke-virtual {v0}, Lcom/android/settings/display/ColorModePreferenceController$ConfigurationWrapper;->isScreenWideColorGamut()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 45
     invoke-virtual {p0}, Lcom/android/settings/display/ColorModePreferenceController;->getColorDisplayController()Lcom/android/internal/app/ColorDisplayController;
 
     move-result-object v0
@@ -72,7 +65,6 @@
 
     if-nez v0, :cond_0
 
-    .line 46
     const/4 v0, 0x0
 
     goto :goto_0
@@ -80,7 +72,6 @@
     :cond_0
     const/4 v0, 0x3
 
-    .line 44
     :goto_0
     return v0
 .end method
@@ -90,12 +81,10 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/display/ColorModePreferenceController;->mColorDisplayController:Lcom/android/internal/app/ColorDisplayController;
 
     if-nez v0, :cond_0
 
-    .line 67
     new-instance v0, Lcom/android/internal/app/ColorDisplayController;
 
     iget-object v1, p0, Lcom/android/settings/display/ColorModePreferenceController;->mContext:Landroid/content/Context;
@@ -104,7 +93,6 @@
 
     iput-object v0, p0, Lcom/android/settings/display/ColorModePreferenceController;->mColorDisplayController:Lcom/android/internal/app/ColorDisplayController;
 
-    .line 69
     :cond_0
     iget-object v0, p0, Lcom/android/settings/display/ColorModePreferenceController;->mColorDisplayController:Lcom/android/internal/app/ColorDisplayController;
 
@@ -114,7 +102,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 3
 
-    .line 51
     invoke-virtual {p0}, Lcom/android/settings/display/ColorModePreferenceController;->getColorDisplayController()Lcom/android/internal/app/ColorDisplayController;
 
     move-result-object v0
@@ -123,13 +110,10 @@
 
     move-result v0
 
-    .line 52
-    .local v0, "colorMode":I
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 
-    .line 53
     iget-object v1, p0, Lcom/android/settings/display/ColorModePreferenceController;->mContext:Landroid/content/Context;
 
     const v2, 0x7f1203de
@@ -140,13 +124,11 @@
 
     return-object v1
 
-    .line 55
     :cond_0
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 56
     iget-object v1, p0, Lcom/android/settings/display/ColorModePreferenceController;->mContext:Landroid/content/Context;
 
     const v2, 0x7f1203e1
@@ -157,13 +139,11 @@
 
     return-object v1
 
-    .line 58
     :cond_1
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_2
 
-    .line 59
     iget-object v1, p0, Lcom/android/settings/display/ColorModePreferenceController;->mContext:Landroid/content/Context;
 
     const v2, 0x7f1203df
@@ -174,7 +154,6 @@
 
     return-object v1
 
-    .line 61
     :cond_2
     iget-object v1, p0, Lcom/android/settings/display/ColorModePreferenceController;->mContext:Landroid/content/Context;
 

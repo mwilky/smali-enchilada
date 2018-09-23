@@ -25,43 +25,37 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Application;)V
     .locals 0
-    .param p1, "application"    # Landroid/app/Application;
+    .param p1    # Landroid/app/Application;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 190
     invoke-direct {p0}, Landroid/arch/lifecycle/ViewModelProvider$NewInstanceFactory;-><init>()V
 
-    .line 191
     iput-object p1, p0, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;->mApplication:Landroid/app/Application;
 
-    .line 192
     return-void
 .end method
 
 .method public static getInstance(Landroid/app/Application;)Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;
     .locals 1
-    .param p0, "application"    # Landroid/app/Application;
+    .param p0    # Landroid/app/Application;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 177
     sget-object v0, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;->sInstance:Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;
 
     if-nez v0, :cond_0
 
-    .line 178
     new-instance v0, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;
 
     invoke-direct {v0, p0}, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;-><init>(Landroid/app/Application;)V
 
     sput-object v0, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;->sInstance:Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;
 
-    .line 180
     :cond_0
     sget-object v0, Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;->sInstance:Landroid/arch/lifecycle/ViewModelProvider$AndroidViewModelFactory;
 
@@ -89,8 +83,6 @@
         }
     .end annotation
 
-    .line 197
-    .local p1, "modelClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     const-class v0, Landroid/arch/lifecycle/AndroidViewModel;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -99,7 +91,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 200
     const/4 v0, 0x1
 
     :try_start_0
@@ -134,12 +125,9 @@
 
     return-object v0
 
-    .line 207
     :catch_0
     move-exception v0
 
-    .line 208
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -160,13 +148,9 @@
 
     throw v1
 
-    .line 205
-    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v0
 
-    .line 206
-    .local v0, "e":Ljava/lang/InstantiationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -187,13 +171,9 @@
 
     throw v1
 
-    .line 203
-    .end local v0    # "e":Ljava/lang/InstantiationException;
     :catch_2
     move-exception v0
 
-    .line 204
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -214,13 +194,9 @@
 
     throw v1
 
-    .line 201
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v0
 
-    .line 202
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -241,8 +217,6 @@
 
     throw v1
 
-    .line 211
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :cond_0
     invoke-super {p0, p1}, Landroid/arch/lifecycle/ViewModelProvider$NewInstanceFactory;->create(Ljava/lang/Class;)Landroid/arch/lifecycle/ViewModel;
 

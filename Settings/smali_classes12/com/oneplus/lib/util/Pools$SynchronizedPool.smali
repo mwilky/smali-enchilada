@@ -31,20 +31,15 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "maxPoolSize"    # I
 
-    .line 148
-    .local p0, "this":Lcom/oneplus/lib/util/Pools$SynchronizedPool;, "Lcom/oneplus/lib/util/Pools$SynchronizedPool<TT;>;"
     invoke-direct {p0, p1}, Lcom/oneplus/lib/util/Pools$SimplePool;-><init>(I)V
 
-    .line 138
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/lib/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
-    .line 149
     return-void
 .end method
 
@@ -58,13 +53,10 @@
         }
     .end annotation
 
-    .line 153
-    .local p0, "this":Lcom/oneplus/lib/util/Pools$SynchronizedPool;, "Lcom/oneplus/lib/util/Pools$SynchronizedPool<TT;>;"
     iget-object v0, p0, Lcom/oneplus/lib/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 154
     :try_start_0
     invoke-super {p0}, Lcom/oneplus/lib/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
 
@@ -74,7 +66,6 @@
 
     return-object v1
 
-    .line 155
     :catchall_0
     move-exception v1
 
@@ -93,14 +84,10 @@
         }
     .end annotation
 
-    .line 160
-    .local p0, "this":Lcom/oneplus/lib/util/Pools$SynchronizedPool;, "Lcom/oneplus/lib/util/Pools$SynchronizedPool<TT;>;"
-    .local p1, "element":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/oneplus/lib/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 161
     :try_start_0
     invoke-super {p0, p1}, Lcom/oneplus/lib/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
@@ -110,7 +97,6 @@
 
     return v1
 
-    .line 162
     :catchall_0
     move-exception v1
 

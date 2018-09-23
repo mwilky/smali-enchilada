@@ -14,12 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 30
     invoke-direct {p0, p1}, Lcom/android/settings/applications/defaultapps/DefaultPhonePreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 31
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserManager:Landroid/os/UserManager;
 
     invoke-static {v0}, Lcom/android/settings/Utils;->getManagedProfile(Landroid/os/UserManager;)Landroid/os/UserHandle;
@@ -28,12 +25,10 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 32
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     if-eqz v0, :cond_0
 
-    .line 33
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v0}, Landroid/os/UserHandle;->getIdentifier()I
@@ -42,7 +37,6 @@
 
     iput v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserId:I
 
-    .line 35
     :cond_0
     return-void
 .end method
@@ -52,7 +46,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 47
     const-string v0, "work_default_phone_app"
 
     return-object v0
@@ -61,17 +54,14 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 39
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkPhonePreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     if-nez v0, :cond_0
 
-    .line 40
     const/4 v0, 0x0
 
     return v0
 
-    .line 42
     :cond_0
     invoke-super {p0}, Lcom/android/settings/applications/defaultapps/DefaultPhonePreferenceController;->isAvailable()Z
 

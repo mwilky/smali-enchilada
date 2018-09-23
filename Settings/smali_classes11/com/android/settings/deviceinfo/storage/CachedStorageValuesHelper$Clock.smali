@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 167
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method public getCurrentTime()J
     .locals 2
 
-    .line 169
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0

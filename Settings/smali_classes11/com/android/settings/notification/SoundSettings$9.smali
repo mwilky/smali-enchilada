@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/SoundSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/SoundSettings;
 
-    .line 695
     iput-object p1, p0, Lcom/android/settings/notification/SoundSettings$9;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 698
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -50,13 +45,10 @@
 
     move-result v0
 
-    .line 700
-    .local v0, "val":Z
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings$9;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-static {v1, v0}, Lcom/android/settings/notification/SoundSettings;->access$1102(Lcom/android/settings/notification/SoundSettings;I)I
 
-    .line 701
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings$9;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-static {v1}, Lcom/android/settings/notification/SoundSettings;->access$700(Lcom/android/settings/notification/SoundSettings;)Lcom/android/settings/notification/SoundSettings$H;
@@ -71,7 +63,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/notification/SoundSettings$H;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 702
     iget-object v1, p0, Lcom/android/settings/notification/SoundSettings$9;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-static {v1}, Lcom/android/settings/notification/SoundSettings;->access$700(Lcom/android/settings/notification/SoundSettings;)Lcom/android/settings/notification/SoundSettings$H;
@@ -88,7 +79,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/settings/notification/SoundSettings$H;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 704
     const/4 v1, 0x1
 
     return v1

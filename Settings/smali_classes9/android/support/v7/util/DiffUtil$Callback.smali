@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,12 +33,9 @@
 
 .method public getChangePayload(II)Ljava/lang/Object;
     .locals 1
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 353
     const/4 v0, 0x0
 
     return-object v0

@@ -9,13 +9,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 31
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/PreferenceCategory;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 32
     return-void
 .end method
 
@@ -23,9 +19,7 @@
 # virtual methods
 .method public isAvailable(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 36
     invoke-static {p1}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v0

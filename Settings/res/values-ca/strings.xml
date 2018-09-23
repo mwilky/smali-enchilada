@@ -2907,8 +2907,6 @@ Per anar a la pantalla d'inici en qualsevol moment, feu lliscar el dit cap amunt
     <string name="oneplus_quick_clipboard_summary">"Millora la capacitat de còpia i després recomana l'acció següent en funció de la còpia"</string>
     <string name="oneplus_quick_gestures">Gestos</string>
     <string name="oneplus_quick_gestures_title">Gestos ràpids</string>
-    <string name="oneplus_quick_turn_on_assistant_app">"Activeu ràpidament l'aplicació de l'assistent"</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">"Mateniu premut el botó d'encesa durante 0,5 s per activar l'aplicació de l'assistent i 3 s per apagar"</string>
     <string name="oneplus_quick_turn_on_camera">Activació ràpida de la càmera</string>
     <string name="oneplus_quickpay">Pagament ràpid</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">"Segur que voleu canviar l'acció de mantenir premut el botó d'inici de \"%1$s\" a \"Pagament ràpid\"?"</string>

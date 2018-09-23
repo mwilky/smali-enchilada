@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
-    .line 682
     iput-object p1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$2;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 685
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
@@ -47,8 +42,6 @@
 
     move-result-object v0
 
-    .line 686
-    .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$2;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;->access$1600(Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;)Z
@@ -71,7 +64,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 687
     iget-object v1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$2;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;->access$400(Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;)Lcom/android/settings/SettingsActivity;
@@ -80,7 +72,6 @@
 
     invoke-virtual {v1}, Lcom/android/settings/SettingsActivity;->finishAndRemoveTask()V
 
-    .line 689
     :cond_0
     return-void
 .end method

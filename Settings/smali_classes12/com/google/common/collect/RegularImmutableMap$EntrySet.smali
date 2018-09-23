@@ -29,8 +29,6 @@
 .method private constructor <init>(Lcom/google/common/collect/RegularImmutableMap;)V
     .locals 0
 
-    .line 189
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMapEntrySet;-><init>()V
@@ -40,11 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/RegularImmutableMap;Lcom/google/common/collect/RegularImmutableMap$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/RegularImmutableMap;
-    .param p2, "x1"    # Lcom/google/common/collect/RegularImmutableMap$1;
 
-    .line 189
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
 
     return-void
@@ -63,8 +57,6 @@
         }
     .end annotation
 
-    .line 201
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableAsList;
 
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
@@ -89,8 +81,6 @@
         }
     .end annotation
 
-    .line 196
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->asList()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -105,8 +95,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 188
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -124,8 +112,6 @@
         }
     .end annotation
 
-    .line 191
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$EntrySet;, "Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
 
     return-object v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplBase;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplBase;
 
-    .line 152
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplBase$1;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public binderDied()V
     .locals 1
 
-    .line 155
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$1;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplBase;->access$000(Landroid/support/v4/media/MediaController2ImplBase;)Landroid/support/v4/media/MediaController2;
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaController2;->close()V
 
-    .line 156
     return-void
 .end method

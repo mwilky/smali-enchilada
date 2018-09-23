@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 52
     invoke-direct {p0}, Lcom/android/settings/Settings$NightDisplaySettingsActivity;-><init>()V
 
     return-void

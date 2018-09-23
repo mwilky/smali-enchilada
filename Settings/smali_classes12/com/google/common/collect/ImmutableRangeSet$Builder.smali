@@ -38,18 +38,14 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 548
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$Builder;, "Lcom/google/common/collect/ImmutableRangeSet$Builder<TC;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 549
     invoke-static {}, Lcom/google/common/collect/TreeRangeSet;->create()Lcom/google/common/collect/TreeRangeSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$Builder;->rangeSet:Lcom/google/common/collect/RangeSet;
 
-    .line 550
     return-void
 .end method
 
@@ -67,16 +63,12 @@
         }
     .end annotation
 
-    .line 560
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$Builder;, "Lcom/google/common/collect/ImmutableRangeSet$Builder<TC;>;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     invoke-virtual {p1}, Lcom/google/common/collect/Range;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 562
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$Builder;->rangeSet:Lcom/google/common/collect/RangeSet;
 
     invoke-interface {v0}, Lcom/google/common/collect/RangeSet;->complement()Lcom/google/common/collect/RangeSet;
@@ -89,7 +81,6 @@
 
     if-nez v0, :cond_3
 
-    .line 563
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$Builder;->rangeSet:Lcom/google/common/collect/RangeSet;
 
     invoke-interface {v0}, Lcom/google/common/collect/RangeSet;->asRanges()Ljava/util/Set;
@@ -113,11 +104,8 @@
 
     check-cast v1, Lcom/google/common/collect/Range;
 
-    .line 564
-    .local v1, "currentRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     nop
 
-    .line 565
     invoke-virtual {v1, p1}, Lcom/google/common/collect/Range;->isConnected(Lcom/google/common/collect/Range;)Z
 
     move-result v2
@@ -160,14 +148,10 @@
 
     aput-object p1, v6, v3
 
-    .line 564
     invoke-static {v2, v5, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 567
-    .end local v1    # "currentRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     goto :goto_0
 
-    .line 568
     :cond_2
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -177,16 +161,13 @@
 
     throw v0
 
-    .line 570
     :cond_3
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$Builder;->rangeSet:Lcom/google/common/collect/RangeSet;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/RangeSet;->add(Lcom/google/common/collect/Range;)V
 
-    .line 571
     return-object p0
 
-    .line 561
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -221,9 +202,6 @@
         }
     .end annotation
 
-    .line 579
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$Builder;, "Lcom/google/common/collect/ImmutableRangeSet$Builder<TC;>;"
-    .local p1, "ranges":Lcom/google/common/collect/RangeSet;, "Lcom/google/common/collect/RangeSet<TC;>;"
     invoke-interface {p1}, Lcom/google/common/collect/RangeSet;->asRanges()Ljava/util/Set;
 
     move-result-object v0
@@ -245,15 +223,10 @@
 
     check-cast v1, Lcom/google/common/collect/Range;
 
-    .line 580
-    .local v1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     invoke-virtual {p0, v1}, Lcom/google/common/collect/ImmutableRangeSet$Builder;->add(Lcom/google/common/collect/Range;)Lcom/google/common/collect/ImmutableRangeSet$Builder;
 
-    .line 581
-    .end local v1    # "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     goto :goto_0
 
-    .line 582
     :cond_0
     return-object p0
 .end method
@@ -268,8 +241,6 @@
         }
     .end annotation
 
-    .line 589
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$Builder;, "Lcom/google/common/collect/ImmutableRangeSet$Builder<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$Builder;->rangeSet:Lcom/google/common/collect/RangeSet;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableRangeSet;->copyOf(Lcom/google/common/collect/RangeSet;)Lcom/google/common/collect/ImmutableRangeSet;

@@ -29,12 +29,10 @@
 .method private constructor <init>(Landroid/support/v17/leanback/app/PlaybackSupportFragment;)V
     .locals 0
 
-    .line 116
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 118
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$SetSelectionRunnable;->mSmooth:Z
@@ -44,10 +42,7 @@
 
 .method synthetic constructor <init>(Landroid/support/v17/leanback/app/PlaybackSupportFragment;Landroid/support/v17/leanback/app/PlaybackSupportFragment$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/support/v17/leanback/app/PlaybackSupportFragment;
-    .param p2, "x1"    # Landroid/support/v17/leanback/app/PlaybackSupportFragment$1;
 
-    .line 116
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/app/PlaybackSupportFragment$SetSelectionRunnable;-><init>(Landroid/support/v17/leanback/app/PlaybackSupportFragment;)V
 
     return-void
@@ -58,17 +53,14 @@
 .method public run()V
     .locals 3
 
-    .line 122
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
 
     if-nez v0, :cond_0
 
-    .line 123
     return-void
 
-    .line 125
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
@@ -80,6 +72,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setSelectedPosition(IZ)V
 
-    .line 126
     return-void
 .end method

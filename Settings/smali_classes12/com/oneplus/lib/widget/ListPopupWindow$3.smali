@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/ListPopupWindow;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/ListPopupWindow;
 
-    .line 1159
     iput-object p1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$3;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,28 +46,20 @@
         }
     .end annotation
 
-    .line 1164
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     const/4 v0, -0x1
 
     if-eq p3, v0, :cond_0
 
-    .line 1165
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$3;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/ListPopupWindow;->mDropDownList:Lcom/oneplus/lib/widget/DropDownListView;
 
-    .line 1167
-    .local v0, "dropDownList":Lcom/oneplus/lib/widget/DropDownListView;
     if-eqz v0, :cond_0
 
-    .line 1168
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/DropDownListView;->setListSelectionHidden(Z)V
 
-    .line 1171
-    .end local v0    # "dropDownList":Lcom/oneplus/lib/widget/DropDownListView;
     :cond_0
     return-void
 .end method
@@ -87,7 +74,5 @@
         }
     .end annotation
 
-    .line 1175
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

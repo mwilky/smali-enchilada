@@ -21,14 +21,10 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "row"    # I
 
-    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 125
     iput p1, p0, Landroid/support/v17/leanback/widget/Grid$Location;->row:I
 
-    .line 126
     return-void
 .end method

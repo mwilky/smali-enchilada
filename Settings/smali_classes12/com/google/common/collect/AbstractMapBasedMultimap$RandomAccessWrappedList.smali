@@ -51,16 +51,9 @@
         }
     .end annotation
 
-    .line 906
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$RandomAccessWrappedList;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.RandomAccessWrappedList;"
-    .local p2, "key":Ljava/lang/Object;, "TK;"
-    .local p3, "delegate":Ljava/util/List;, "Ljava/util/List<TV;>;"
-    .local p4, "ancestor":Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.WrappedCollection;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$RandomAccessWrappedList;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 907
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedList;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/lang/Object;Ljava/util/List;Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedCollection;)V
 
-    .line 908
     return-void
 .end method

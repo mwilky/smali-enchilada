@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/OnboardingSupportFragment;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/OnboardingSupportFragment;
 
-    .line 618
     iput-object p1, p0, Landroid/support/v17/leanback/app/OnboardingSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/OnboardingSupportFragment;
 
     iput-object p2, p0, Landroid/support/v17/leanback/app/OnboardingSupportFragment$4;->val$context:Landroid/content/Context;
@@ -39,26 +37,21 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 621
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingSupportFragment$4;->val$context:Landroid/content/Context;
 
     if-eqz v0, :cond_0
 
-    .line 622
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/OnboardingSupportFragment;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v17/leanback/app/OnboardingSupportFragment;->mLogoAnimationFinished:Z
 
-    .line 623
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingSupportFragment$4;->this$0:Landroid/support/v17/leanback/app/OnboardingSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingSupportFragment;->onLogoAnimationFinished()V
 
-    .line 625
     :cond_0
     return-void
 .end method

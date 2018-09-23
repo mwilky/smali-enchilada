@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;
 
-    .line 75
     iput-object p1, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController$1;->this$0:Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 78
     invoke-virtual {p0}, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController$1;->getResultCode()I
 
     move-result v0
@@ -52,8 +47,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 79
-    .local v0, "enabled":Z
     :goto_0
     const-string v1, "AppActionButtonControl"
 
@@ -67,7 +60,6 @@
 
     iget-object v3, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController$1;->this$0:Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;
 
-    .line 80
     invoke-static {v3}, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->access$000(Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;)Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     move-result-object v3
@@ -92,14 +84,11 @@
 
     move-result-object v2
 
-    .line 79
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController$1;->this$0:Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;
 
     invoke-static {v1, v0}, Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;->access$100(Lcom/android/settings/applications/appinfo/AppActionButtonPreferenceController;Z)V
 
-    .line 82
     return-void
 .end method

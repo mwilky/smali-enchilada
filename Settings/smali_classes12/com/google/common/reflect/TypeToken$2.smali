@@ -28,11 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/reflect/TypeToken;Ljava/lang/reflect/Constructor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/reflect/TypeToken;
 
-    .line 524
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
-    .local p2, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     iput-object p1, p0, Lcom/google/common/reflect/TypeToken$2;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-direct {p0, p2}, Lcom/google/common/reflect/Invokable$ConstructorInvokable;-><init>(Ljava/lang/reflect/Constructor;)V
@@ -45,8 +41,6 @@
 .method getGenericExceptionTypes()[Ljava/lang/reflect/Type;
     .locals 2
 
-    .line 532
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$2;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-super {p0}, Lcom/google/common/reflect/Invokable$ConstructorInvokable;->getGenericExceptionTypes()[Ljava/lang/reflect/Type;
@@ -63,8 +57,6 @@
 .method getGenericParameterTypes()[Ljava/lang/reflect/Type;
     .locals 2
 
-    .line 529
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$2;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-super {p0}, Lcom/google/common/reflect/Invokable$ConstructorInvokable;->getGenericParameterTypes()[Ljava/lang/reflect/Type;
@@ -81,8 +73,6 @@
 .method getGenericReturnType()Ljava/lang/reflect/Type;
     .locals 2
 
-    .line 526
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$2;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-super {p0}, Lcom/google/common/reflect/Invokable$ConstructorInvokable;->getGenericReturnType()Ljava/lang/reflect/Type;
@@ -110,8 +100,6 @@
         }
     .end annotation
 
-    .line 535
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$2;->this$0:Lcom/google/common/reflect/TypeToken;
 
     return-object v0
@@ -120,8 +108,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 538
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$2;, "Lcom/google/common/reflect/TypeToken$2;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 111
     invoke-static {}, Lcom/google/analytics/tracking/android/GAServiceProxy$ConnectState;->values()[Lcom/google/analytics/tracking/android/GAServiceProxy$ConnectState;
 
     move-result-object v0

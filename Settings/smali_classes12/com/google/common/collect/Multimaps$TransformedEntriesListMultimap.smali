@@ -46,13 +46,8 @@
         }
     .end annotation
 
-    .line 1389
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
-    .local p1, "fromMultimap":Lcom/google/common/collect/ListMultimap;, "Lcom/google/common/collect/ListMultimap<TK;TV1;>;"
-    .local p2, "transformer":Lcom/google/common/collect/Maps$EntryTransformer;, "Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/collect/Maps$EntryTransformer;)V
 
-    .line 1390
     return-void
 .end method
 
@@ -61,8 +56,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/util/Collection;
     .locals 0
 
-    .line 1383
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->get(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -80,9 +73,6 @@
         }
     .end annotation
 
-    .line 1397
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->fromMultimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Multimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
@@ -99,8 +89,6 @@
 .method public bridge synthetic removeAll(Ljava/lang/Object;)Ljava/util/Collection;
     .locals 0
 
-    .line 1383
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -110,7 +98,6 @@
 
 .method public removeAll(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,8 +108,6 @@
         }
     .end annotation
 
-    .line 1402
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->fromMultimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Multimap;->removeAll(Ljava/lang/Object;)Ljava/util/Collection;
@@ -139,8 +124,6 @@
 .method public bridge synthetic replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
     .locals 0
 
-    .line 1383
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p1
@@ -160,10 +143,6 @@
         }
     .end annotation
 
-    .line 1407
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TV2;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -174,8 +153,6 @@
 .method bridge synthetic transform(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
     .locals 0
 
-    .line 1383
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;->transform(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object p1
@@ -195,10 +172,6 @@
         }
     .end annotation
 
-    .line 1393
-    .local p0, "this":Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;, "Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap<TK;TV1;TV2;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/util/Collection;, "Ljava/util/Collection<TV1;>;"
     move-object v0, p2
 
     check-cast v0, Ljava/util/List;

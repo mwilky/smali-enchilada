@@ -18,7 +18,6 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    .line 497
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/cache/LocalCache$EntryFactory;-><init>(Ljava/lang/String;ILcom/google/common/cache/LocalCache$1;)V
@@ -30,7 +29,6 @@
 # virtual methods
 .method newEntry(Lcom/google/common/cache/LocalCache$Segment;Ljava/lang/Object;ILcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ReferenceEntry;
     .locals 2
-    .param p3, "hash"    # I
     .param p4    # Lcom/google/common/cache/LocalCache$ReferenceEntry;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
@@ -51,10 +49,6 @@
         }
     .end annotation
 
-    .line 501
-    .local p1, "segment":Lcom/google/common/cache/LocalCache$Segment;, "Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
-    .local p2, "key":Ljava/lang/Object;, "TK;"
-    .local p4, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/LocalCache$WeakEntry;
 
     iget-object v1, p1, Lcom/google/common/cache/LocalCache$Segment;->keyReferenceQueue:Ljava/lang/ref/ReferenceQueue;

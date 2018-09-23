@@ -46,11 +46,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 43
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMap;-><init>()V
 
-    .line 46
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
@@ -73,9 +70,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 99
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<TT;>;"
     iget-object v0, p0, Lcom/google/common/reflect/MutableTypeToInstanceMap;->backingMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -102,10 +96,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 93
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<TT;>;"
-    .local p2, "value":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/google/common/reflect/MutableTypeToInstanceMap;->backingMap:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -120,8 +110,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 42
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
     invoke-virtual {p0}, Lcom/google/common/reflect/MutableTypeToInstanceMap;->delegate()Ljava/util/Map;
 
     move-result-object v0
@@ -140,8 +128,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
     iget-object v0, p0, Lcom/google/common/reflect/MutableTypeToInstanceMap;->backingMap:Ljava/util/Map;
 
     return-object v0
@@ -159,8 +145,6 @@
         }
     .end annotation
 
-    .line 83
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
     invoke-super {p0}, Lcom/google/common/collect/ForwardingMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -185,9 +169,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<TT;>;"
     invoke-virtual {p1}, Lcom/google/common/reflect/TypeToken;->rejectTypeVariables()Lcom/google/common/reflect/TypeToken;
 
     move-result-object v0
@@ -212,9 +193,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 51
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-static {p1}, Lcom/google/common/reflect/TypeToken;->of(Ljava/lang/Class;)Lcom/google/common/reflect/TypeToken;
 
     move-result-object v0
@@ -236,10 +214,6 @@
         }
     .end annotation
 
-    .line 74
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "key":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<+TB;>;"
-    .local p2, "value":Ljava/lang/Object;, "TB;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Please use putInstance() instead."
@@ -252,8 +226,6 @@
 .method public bridge synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
     check-cast p1, Lcom/google/common/reflect/TypeToken;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/reflect/MutableTypeToInstanceMap;->put(Lcom/google/common/reflect/TypeToken;Ljava/lang/Object;)Ljava/lang/Object;
@@ -275,9 +247,6 @@
         }
     .end annotation
 
-    .line 79
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "map":Ljava/util/Map;, "Ljava/util/Map<+Lcom/google/common/reflect/TypeToken<+TB;>;+TB;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "Please use putInstance() instead."
@@ -304,10 +273,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<TT;>;"
-    .local p2, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p1}, Lcom/google/common/reflect/TypeToken;->rejectTypeVariables()Lcom/google/common/reflect/TypeToken;
 
     move-result-object v0
@@ -336,10 +301,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 57
-    .local p0, "this":Lcom/google/common/reflect/MutableTypeToInstanceMap;, "Lcom/google/common/reflect/MutableTypeToInstanceMap<TB;>;"
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "value":Ljava/lang/Object;, "TT;"
     invoke-static {p1}, Lcom/google/common/reflect/TypeToken;->of(Ljava/lang/Class;)Lcom/google/common/reflect/TypeToken;
 
     move-result-object v0

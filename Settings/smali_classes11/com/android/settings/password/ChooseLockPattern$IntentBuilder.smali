@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 97
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/settings/password/ChooseLockPattern;
@@ -35,7 +32,6 @@
 
     iput-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
-    .line 98
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "extra_require_password"
@@ -44,21 +40,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "confirm_credentials"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 100
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "has_challenge"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 101
     return-void
 .end method
 
@@ -67,7 +60,6 @@
 .method public build()Landroid/content/Intent;
     .locals 1
 
-    .line 125
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     return-object v0
@@ -75,9 +67,7 @@
 
 .method public setChallenge(J)Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;
     .locals 3
-    .param p1, "challenge"    # J
 
-    .line 109
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "has_challenge"
@@ -86,58 +76,47 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 110
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "challenge"
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 111
     return-object p0
 .end method
 
 .method public setForFingerprint(Z)Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;
     .locals 2
-    .param p1, "forFingerprint"    # Z
 
-    .line 120
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "for_fingerprint"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 121
     return-object p0
 .end method
 
 .method public setPattern(Ljava/lang/String;)Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;
     .locals 2
-    .param p1, "pattern"    # Ljava/lang/String;
 
-    .line 115
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "password"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 116
     return-object p0
 .end method
 
 .method public setUserId(I)Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;
     .locals 2
-    .param p1, "userId"    # I
 
-    .line 104
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$IntentBuilder;->mIntent:Landroid/content/Intent;
 
     const-string v1, "android.intent.extra.USER_ID"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 105
     return-object p0
 .end method

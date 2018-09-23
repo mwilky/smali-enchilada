@@ -23,19 +23,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
     iput-object p1, p0, Lcom/google/tagmanager/DataLayer$KeyValue;->mKey:Ljava/lang/String;
 
-    .line 102
     iput-object p2, p0, Lcom/google/tagmanager/DataLayer$KeyValue;->mValue:Ljava/lang/Object;
 
-    .line 103
     return-void
 .end method
 
@@ -43,26 +37,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 117
     instance-of v0, p1, Lcom/google/tagmanager/DataLayer$KeyValue;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 118
     return v1
 
-    .line 120
     :cond_0
     move-object v0, p1
 
     check-cast v0, Lcom/google/tagmanager/DataLayer$KeyValue;
 
-    .line 121
-    .local v0, "other":Lcom/google/tagmanager/DataLayer$KeyValue;
     iget-object v2, p0, Lcom/google/tagmanager/DataLayer$KeyValue;->mKey:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/google/tagmanager/DataLayer$KeyValue;->mKey:Ljava/lang/String;
@@ -94,7 +82,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 112
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Integer;
@@ -137,7 +124,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 107
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

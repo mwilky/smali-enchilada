@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/settings/sound/AudioSwitchPreferenceController;)V
     .locals 0
 
-    .line 409
     iput-object p1, p0, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;->this$0:Lcom/android/settings/sound/AudioSwitchPreferenceController;
 
     invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/sound/AudioSwitchPreferenceController;Lcom/android/settings/sound/AudioSwitchPreferenceController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/sound/AudioSwitchPreferenceController;
-    .param p2, "x1"    # Lcom/android/settings/sound/AudioSwitchPreferenceController$1;
 
-    .line 409
     invoke-direct {p0, p1}, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;-><init>(Lcom/android/settings/sound/AudioSwitchPreferenceController;)V
 
     return-void
@@ -45,9 +41,7 @@
 # virtual methods
 .method public onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
     .locals 2
-    .param p1, "addedDevices"    # [Landroid/media/AudioDeviceInfo;
 
-    .line 412
     iget-object v0, p0, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;->this$0:Lcom/android/settings/sound/AudioSwitchPreferenceController;
 
     iget-object v1, p0, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;->this$0:Lcom/android/settings/sound/AudioSwitchPreferenceController;
@@ -56,15 +50,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/sound/AudioSwitchPreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
 
-    .line 413
     return-void
 .end method
 
 .method public onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
     .locals 2
-    .param p1, "devices"    # [Landroid/media/AudioDeviceInfo;
 
-    .line 417
     iget-object v0, p0, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;->this$0:Lcom/android/settings/sound/AudioSwitchPreferenceController;
 
     iget-object v1, p0, Lcom/android/settings/sound/AudioSwitchPreferenceController$AudioManagerAudioDeviceCallback;->this$0:Lcom/android/settings/sound/AudioSwitchPreferenceController;
@@ -73,6 +64,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/sound/AudioSwitchPreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
 
-    .line 418
     return-void
 .end method

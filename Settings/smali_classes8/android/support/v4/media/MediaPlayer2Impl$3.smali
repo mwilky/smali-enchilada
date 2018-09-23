@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;IZ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
-    .param p2, "mediaCallType"    # I
-    .param p3, "needToWaitForEventToComplete"    # Z
 
-    .line 262
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$3;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/media/MediaPlayer2Impl$Task;-><init>(Landroid/support/v4/media/MediaPlayer2Impl;IZ)V
@@ -43,7 +39,6 @@
         }
     .end annotation
 
-    .line 265
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$3;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaPlayer2Impl;->access$100(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
@@ -52,6 +47,5 @@
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;->prepareAsync()V
 
-    .line 266
     return-void
 .end method

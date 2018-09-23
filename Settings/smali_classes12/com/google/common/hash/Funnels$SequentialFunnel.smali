@@ -53,12 +53,8 @@
         }
     .end annotation
 
-    .line 168
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
-    .local p1, "elementFunnel":Lcom/google/common/hash/Funnel;, "Lcom/google/common/hash/Funnel<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 169
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -67,7 +63,6 @@
 
     iput-object v0, p0, Lcom/google/common/hash/Funnels$SequentialFunnel;->elementFunnel:Lcom/google/common/hash/Funnel;
 
-    .line 170
     return-void
 .end method
 
@@ -75,24 +70,19 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 183
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
     instance-of v0, p1, Lcom/google/common/hash/Funnels$SequentialFunnel;
 
     if-eqz v0, :cond_0
 
-    .line 184
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/hash/Funnels$SequentialFunnel;
 
-    .line 185
-    .local v0, "funnel":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<*>;"
     iget-object v1, p0, Lcom/google/common/hash/Funnels$SequentialFunnel;->elementFunnel:Lcom/google/common/hash/Funnel;
 
     iget-object v2, v0, Lcom/google/common/hash/Funnels$SequentialFunnel;->elementFunnel:Lcom/google/common/hash/Funnel;
@@ -103,8 +93,6 @@
 
     return v1
 
-    .line 187
-    .end local v0    # "funnel":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -113,7 +101,6 @@
 
 .method public funnel(Ljava/lang/Iterable;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 3
-    .param p2, "into"    # Lcom/google/common/hash/PrimitiveSink;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,9 +111,6 @@
         }
     .end annotation
 
-    .line 173
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
-    .local p1, "from":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TE;>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -142,17 +126,12 @@
 
     move-result-object v1
 
-    .line 174
-    .local v1, "e":Ljava/lang/Object;, "TE;"
     iget-object v2, p0, Lcom/google/common/hash/Funnels$SequentialFunnel;->elementFunnel:Lcom/google/common/hash/Funnel;
 
     invoke-interface {v2, v1, p2}, Lcom/google/common/hash/Funnel;->funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
 
-    .line 175
-    .end local v1    # "e":Ljava/lang/Object;, "TE;"
     goto :goto_0
 
-    .line 176
     :cond_0
     return-void
 .end method
@@ -160,8 +139,6 @@
 .method public bridge synthetic funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
 
-    .line 165
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
     check-cast p1, Ljava/lang/Iterable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/Funnels$SequentialFunnel;->funnel(Ljava/lang/Iterable;Lcom/google/common/hash/PrimitiveSink;)V
@@ -172,8 +149,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 191
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
     const-class v0, Lcom/google/common/hash/Funnels$SequentialFunnel;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -194,8 +169,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 179
-    .local p0, "this":Lcom/google/common/hash/Funnels$SequentialFunnel;, "Lcom/google/common/hash/Funnels$SequentialFunnel<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

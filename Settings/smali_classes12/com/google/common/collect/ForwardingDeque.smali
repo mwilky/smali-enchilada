@@ -24,8 +24,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 41
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingQueue;-><init>()V
 
     return-void
@@ -41,16 +39,12 @@
         }
     .end annotation
 
-    .line 47
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
 
-    .line 48
     return-void
 .end method
 
@@ -62,24 +56,18 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
 
-    .line 53
     return-void
 .end method
 
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -90,8 +78,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -112,8 +98,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Queue;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -131,8 +115,6 @@
         }
     .end annotation
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -152,8 +134,6 @@
         }
     .end annotation
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -173,8 +153,6 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -194,9 +172,6 @@
         }
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -216,9 +191,6 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -238,8 +210,6 @@
         }
     .end annotation
 
-    .line 82
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -259,8 +229,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -280,8 +248,6 @@
         }
     .end annotation
 
-    .line 92
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -301,8 +267,6 @@
         }
     .end annotation
 
-    .line 97
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -322,8 +286,6 @@
         }
     .end annotation
 
-    .line 102
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -343,16 +305,12 @@
         }
     .end annotation
 
-    .line 107
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
 
-    .line 108
     return-void
 .end method
 
@@ -364,8 +322,6 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -379,10 +335,7 @@
 
 .method public removeFirstOccurrence(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 122
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -402,8 +355,6 @@
         }
     .end annotation
 
-    .line 117
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0
@@ -417,10 +368,7 @@
 
 .method public removeLastOccurrence(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 127
-    .local p0, "this":Lcom/google/common/collect/ForwardingDeque;, "Lcom/google/common/collect/ForwardingDeque<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingDeque;->delegate()Ljava/util/Deque;
 
     move-result-object v0

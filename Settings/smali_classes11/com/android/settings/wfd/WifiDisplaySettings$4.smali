@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wfd/WifiDisplaySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wfd/WifiDisplaySettings;
 
-    .line 403
     iput-object p1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 406
     move-object v0, p2
 
     check-cast v0, Ljava/lang/String;
@@ -50,8 +45,6 @@
 
     move-result v0
 
-    .line 407
-    .local v0, "wpsConfig":I
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$600(Lcom/android/settings/wfd/WifiDisplaySettings;)I
@@ -60,12 +53,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 408
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-static {v1, v0}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$602(Lcom/android/settings/wfd/WifiDisplaySettings;I)I
 
-    .line 409
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-virtual {v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->getActivity()Landroid/app/Activity;
@@ -74,7 +65,6 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
-    .line 410
     iget-object v1, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
     invoke-virtual {v1}, Lcom/android/settings/wfd/WifiDisplaySettings;->getActivity()Landroid/app/Activity;
@@ -89,15 +79,12 @@
 
     iget-object v3, p0, Lcom/android/settings/wfd/WifiDisplaySettings$4;->this$0:Lcom/android/settings/wfd/WifiDisplaySettings;
 
-    .line 411
     invoke-static {v3}, Lcom/android/settings/wfd/WifiDisplaySettings;->access$600(Lcom/android/settings/wfd/WifiDisplaySettings;)I
 
     move-result v3
 
-    .line 410
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 413
     :cond_0
     const/4 v1, 0x1
 

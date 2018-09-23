@@ -19,7 +19,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,40 +28,30 @@
 # virtual methods
 .method public onTransitionCancel(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 36
     return-void
 .end method
 
 .method public onTransitionEnd(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 33
     return-void
 .end method
 
 .method public onTransitionPause(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 39
     return-void
 .end method
 
 .method public onTransitionResume(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 42
     return-void
 .end method
 
 .method public onTransitionStart(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 30
     return-void
 .end method

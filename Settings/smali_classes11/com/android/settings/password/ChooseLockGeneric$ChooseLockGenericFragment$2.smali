@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;
 
-    .line 775
     iput-object p1, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment$2;->this$0:Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;
 
     iput p2, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment$2;->val$userId:I
@@ -39,11 +37,7 @@
 # virtual methods
 .method public onRemovalError(Landroid/hardware/fingerprint/Fingerprint;ILjava/lang/CharSequence;)V
     .locals 5
-    .param p1, "fp"    # Landroid/hardware/fingerprint/Fingerprint;
-    .param p2, "errMsgId"    # I
-    .param p3, "errString"    # Ljava/lang/CharSequence;
 
-    .line 779
     const-string v0, "ChooseLockGenericFragment"
 
     const-string v1, "Can\'t remove fingerprint %d in group %d. Reason: %s"
@@ -52,7 +46,6 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 781
     invoke-virtual {p1}, Landroid/hardware/fingerprint/Fingerprint;->getFingerId()I
 
     move-result v3
@@ -81,33 +74,26 @@
 
     aput-object p3, v2, v3
 
-    .line 779
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 784
     return-void
 .end method
 
 .method public onRemovalSucceeded(Landroid/hardware/fingerprint/Fingerprint;I)V
     .locals 2
-    .param p1, "fp"    # Landroid/hardware/fingerprint/Fingerprint;
-    .param p2, "remaining"    # I
 
-    .line 788
     if-nez p2, :cond_0
 
-    .line 789
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment$2;->this$0:Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;
 
     iget v1, p0, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment$2;->val$userId:I
 
     invoke-static {v0, v1}, Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;->access$100(Lcom/android/settings/password/ChooseLockGeneric$ChooseLockGenericFragment;I)V
 
-    .line 791
     :cond_0
     return-void
 .end method

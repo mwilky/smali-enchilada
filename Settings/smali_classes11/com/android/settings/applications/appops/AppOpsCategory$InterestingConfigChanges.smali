@@ -24,10 +24,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 68
     new-instance v0, Landroid/content/res/Configuration;
 
     invoke-direct {v0}, Landroid/content/res/Configuration;-><init>()V
@@ -41,9 +39,7 @@
 # virtual methods
 .method applyNewConfig(Landroid/content/res/Resources;)Z
     .locals 5
-    .param p1, "res"    # Landroid/content/res/Resources;
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/applications/appops/AppOpsCategory$InterestingConfigChanges;->mLastConfiguration:Landroid/content/res/Configuration;
 
     invoke-virtual {p1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
@@ -54,8 +50,6 @@
 
     move-result v0
 
-    .line 73
-    .local v0, "configChanges":I
     iget v1, p0, Lcom/android/settings/applications/appops/AppOpsCategory$InterestingConfigChanges;->mLastDensity:I
 
     invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -77,8 +71,6 @@
     :cond_0
     move v1, v3
 
-    .line 74
-    .local v1, "densityChanged":Z
     :goto_0
     if-nez v1, :cond_2
 
@@ -88,11 +80,9 @@
 
     goto :goto_1
 
-    .line 79
     :cond_1
     return v3
 
-    .line 76
     :cond_2
     :goto_1
     invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -103,6 +93,5 @@
 
     iput v2, p0, Lcom/android/settings/applications/appops/AppOpsCategory$InterestingConfigChanges;->mLastDensity:I
 
-    .line 77
     return v4
 .end method

@@ -28,12 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableList;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableList;
-    .param p2, "size"    # I
-    .param p3, "position"    # I
 
-    .line 348
-    .local p0, "this":Lcom/google/common/collect/ImmutableList$1;, "Lcom/google/common/collect/ImmutableList$1;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableList$1;->this$0:Lcom/google/common/collect/ImmutableList;
 
     invoke-direct {p0, p2, p3}, Lcom/google/common/collect/AbstractIndexedListIterator;-><init>(II)V
@@ -45,15 +40,12 @@
 # virtual methods
 .method protected get(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
         }
     .end annotation
 
-    .line 351
-    .local p0, "this":Lcom/google/common/collect/ImmutableList$1;, "Lcom/google/common/collect/ImmutableList$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$1;->this$0:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;

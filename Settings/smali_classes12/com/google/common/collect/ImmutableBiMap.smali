@@ -50,7 +50,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 214
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/util/Map$Entry;
@@ -63,8 +62,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 216
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
     return-void
@@ -84,7 +81,6 @@
         }
     .end annotation
 
-    .line 108
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
@@ -108,30 +104,22 @@
         }
     .end annotation
 
-    .line 192
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<+TK;+TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/ImmutableBiMap;
 
     if-eqz v0, :cond_0
 
-    .line 194
     move-object v0, p0
 
     check-cast v0, Lcom/google/common/collect/ImmutableBiMap;
 
-    .line 197
-    .local v0, "bimap":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->isPartialView()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 198
     return-object v0
 
-    .line 201
-    .end local v0    # "bimap":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -145,27 +133,21 @@
 
     check-cast v0, [Ljava/util/Map$Entry;
 
-    .line 202
-    .local v0, "entries":[Ljava/util/Map$Entry;, "[Ljava/util/Map$Entry<**>;"
     array-length v1, v0
 
     packed-switch v1, :pswitch_data_0
 
-    .line 210
     new-instance v1, Lcom/google/common/collect/RegularImmutableBiMap;
 
     invoke-direct {v1, v0}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>([Ljava/util/Map$Entry;)V
 
     return-object v1
 
-    .line 207
     :pswitch_0
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
 
-    .line 208
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -180,8 +162,6 @@
 
     return-object v2
 
-    .line 204
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     :pswitch_1
     invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->of()Lcom/google/common/collect/ImmutableBiMap;
 
@@ -212,7 +192,6 @@
         }
     .end annotation
 
-    .line 50
     sget-object v0, Lcom/google/common/collect/EmptyImmutableBiMap;->INSTANCE:Lcom/google/common/collect/EmptyImmutableBiMap;
 
     return-object v0
@@ -232,9 +211,6 @@
         }
     .end annotation
 
-    .line 57
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/SingletonImmutableBiMap;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/SingletonImmutableBiMap;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -256,11 +232,6 @@
         }
     .end annotation
 
-    .line 66
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
 
     const/4 v1, 0x2
@@ -302,13 +273,6 @@
         }
     .end annotation
 
-    .line 76
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
 
     const/4 v1, 0x3
@@ -358,15 +322,6 @@
         }
     .end annotation
 
-    .line 86
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
-    .local p6, "k4":Ljava/lang/Object;, "TK;"
-    .local p7, "v4":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
 
     const/4 v1, 0x4
@@ -397,7 +352,6 @@
 
     aput-object v2, v1, v3
 
-    .line 87
     invoke-static {p6, p7}, Lcom/google/common/collect/ImmutableBiMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;
 
     move-result-object v2
@@ -408,7 +362,6 @@
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>([Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;)V
 
-    .line 86
     return-object v0
 .end method
 
@@ -426,17 +379,6 @@
         }
     .end annotation
 
-    .line 97
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
-    .local p6, "k4":Ljava/lang/Object;, "TK;"
-    .local p7, "v4":Ljava/lang/Object;, "TV;"
-    .local p8, "k5":Ljava/lang/Object;, "TK;"
-    .local p9, "v5":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
 
     const/4 v1, 0x5
@@ -467,7 +409,6 @@
 
     aput-object v2, v1, v3
 
-    .line 98
     invoke-static {p6, p7}, Lcom/google/common/collect/ImmutableBiMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;
 
     move-result-object v2
@@ -486,7 +427,6 @@
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>([Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;)V
 
-    .line 97
     return-object v0
 .end method
 
@@ -503,10 +443,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 244
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -517,8 +453,6 @@
 .method public bridge synthetic inverse()Lcom/google/common/collect/BiMap;
     .locals 1
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -539,8 +473,6 @@
 .method public bridge synthetic values()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -558,8 +490,6 @@
         }
     .end annotation
 
-    .line 232
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -574,8 +504,6 @@
 .method public bridge synthetic values()Ljava/util/Collection;
     .locals 1
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -586,8 +514,6 @@
 .method public bridge synthetic values()Ljava/util/Set;
     .locals 1
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -598,8 +524,6 @@
 .method writeReplace()Ljava/lang/Object;
     .locals 1
 
-    .line 268
-    .local p0, "this":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableBiMap;)V

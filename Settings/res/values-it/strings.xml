@@ -2907,8 +2907,6 @@ Per andare alla schermata home in qualsiasi momento, scorri verso l'alto dal bor
     <string name="oneplus_quick_clipboard_summary">"Migliora la capacità di copiare consigliando l'azione successiva in funzione del contenuto della copia"</string>
     <string name="oneplus_quick_gestures">Gesti</string>
     <string name="oneplus_quick_gestures_title">Gesti rapidi</string>
-    <string name="oneplus_quick_turn_on_assistant_app">"Attivare rapidamente l'app assistente"</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">"Tenere premuto il pulsante di accensione per 0, 5 s per attivare l'applicazione assistente e 3 s per spegnere il telefono"</string>
     <string name="oneplus_quick_turn_on_camera">Attiva rapidamente la fotocamera</string>
     <string name="oneplus_quickpay">Pagamento rapido</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">"Modificare l'azione di pressione prolungata del tasto Home da \"%1$s\" a \"Pagamento rapido\"?"</string>

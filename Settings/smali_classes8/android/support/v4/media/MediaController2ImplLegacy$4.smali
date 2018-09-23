@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplLegacy;
 
-    .line 871
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$4;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public run()V
     .locals 8
 
-    .line 874
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$4;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 875
     :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$4;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
@@ -82,7 +78,6 @@
 
     invoke-static {v1, v2}, Landroid/support/v4/media/MediaController2ImplLegacy;->access$502(Landroid/support/v4/media/MediaController2ImplLegacy;Landroid/support/v4/media/MediaBrowserCompat;)Landroid/support/v4/media/MediaBrowserCompat;
 
-    .line 877
     iget-object v1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$4;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaController2ImplLegacy;->access$500(Landroid/support/v4/media/MediaController2ImplLegacy;)Landroid/support/v4/media/MediaBrowserCompat;
@@ -91,13 +86,10 @@
 
     invoke-virtual {v1}, Landroid/support/v4/media/MediaBrowserCompat;->connect()V
 
-    .line 878
     monitor-exit v0
 
-    .line 879
     return-void
 
-    .line 878
     :catchall_0
     move-exception v1
 

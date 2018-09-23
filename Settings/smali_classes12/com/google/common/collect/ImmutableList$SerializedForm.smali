@@ -28,15 +28,11 @@
 # direct methods
 .method constructor <init>([Ljava/lang/Object;)V
     .locals 0
-    .param p1, "elements"    # [Ljava/lang/Object;
 
-    .line 588
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 589
     iput-object p1, p0, Lcom/google/common/collect/ImmutableList$SerializedForm;->elements:[Ljava/lang/Object;
 
-    .line 590
     return-void
 .end method
 
@@ -45,7 +41,6 @@
 .method readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 592
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$SerializedForm;->elements:[Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableList;->copyOf([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;

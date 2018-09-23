@@ -25,23 +25,15 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/lib/menu/MenuPopupWindow;Lcom/oneplus/lib/menu/MenuBuilder;I)V
     .locals 0
-    .param p1, "window"    # Lcom/oneplus/lib/menu/MenuPopupWindow;
-    .param p2, "menu"    # Lcom/oneplus/lib/menu/MenuBuilder;
-    .param p3, "position"    # I
 
-    .line 769
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 770
     iput-object p1, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$CascadingMenuInfo;->window:Lcom/oneplus/lib/menu/MenuPopupWindow;
 
-    .line 771
     iput-object p2, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$CascadingMenuInfo;->menu:Lcom/oneplus/lib/menu/MenuBuilder;
 
-    .line 772
     iput p3, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$CascadingMenuInfo;->position:I
 
-    .line 773
     return-void
 .end method
 
@@ -50,7 +42,6 @@
 .method public getListView()Landroid/widget/ListView;
     .locals 1
 
-    .line 776
     iget-object v0, p0, Lcom/oneplus/lib/menu/CascadingMenuPopup$CascadingMenuInfo;->window:Lcom/oneplus/lib/menu/MenuPopupWindow;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/menu/MenuPopupWindow;->getListView()Landroid/widget/ListView;

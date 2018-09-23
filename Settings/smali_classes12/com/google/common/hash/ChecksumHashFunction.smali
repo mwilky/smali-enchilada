@@ -38,8 +38,6 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Supplier;ILjava/lang/String;)V
     .locals 5
-    .param p2, "bits"    # I
-    .param p3, "toString"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,11 +50,8 @@
         }
     .end annotation
 
-    .line 36
-    .local p1, "checksumSupplier":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<+Ljava/util/zip/Checksum;>;"
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 37
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -65,7 +60,6 @@
 
     iput-object v0, p0, Lcom/google/common/hash/ChecksumHashFunction;->checksumSupplier:Lcom/google/common/base/Supplier;
 
-    .line 38
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -102,10 +96,8 @@
 
     invoke-static {v2, v3, v0}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 39
     iput p2, p0, Lcom/google/common/hash/ChecksumHashFunction;->bits:I
 
-    .line 40
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -114,15 +106,12 @@
 
     iput-object v0, p0, Lcom/google/common/hash/ChecksumHashFunction;->toString:Ljava/lang/String;
 
-    .line 41
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/google/common/hash/ChecksumHashFunction;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/hash/ChecksumHashFunction;
 
-    .line 30
     iget v0, p0, Lcom/google/common/hash/ChecksumHashFunction;->bits:I
 
     return v0
@@ -133,7 +122,6 @@
 .method public bits()I
     .locals 1
 
-    .line 45
     iget v0, p0, Lcom/google/common/hash/ChecksumHashFunction;->bits:I
 
     return v0
@@ -142,7 +130,6 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 3
 
-    .line 50
     new-instance v0, Lcom/google/common/hash/ChecksumHashFunction$ChecksumHasher;
 
     iget-object v1, p0, Lcom/google/common/hash/ChecksumHashFunction;->checksumSupplier:Lcom/google/common/base/Supplier;
@@ -163,7 +150,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 55
     iget-object v0, p0, Lcom/google/common/hash/ChecksumHashFunction;->toString:Ljava/lang/String;
 
     return-object v0

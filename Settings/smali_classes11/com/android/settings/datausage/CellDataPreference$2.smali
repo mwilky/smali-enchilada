@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/CellDataPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/CellDataPreference;
 
-    .line 199
     iput-object p1, p0, Lcom/android/settings/datausage/CellDataPreference$2;->this$0:Lcom/android/settings/datausage/CellDataPreference;
 
     invoke-direct {p0}, Lcom/android/settings/datausage/CellDataPreference$DataStateListener;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 202
     iget-object v0, p0, Lcom/android/settings/datausage/CellDataPreference$2;->this$0:Lcom/android/settings/datausage/CellDataPreference;
 
     invoke-static {v0}, Lcom/android/settings/datausage/CellDataPreference;->access$100(Lcom/android/settings/datausage/CellDataPreference;)V
 
-    .line 203
     return-void
 .end method

@@ -24,22 +24,18 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 16
     new-instance v0, Lcom/airbnb/lottie/model/ScaleXY;
 
     invoke-direct {v0}, Lcom/airbnb/lottie/model/ScaleXY;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;-><init>(Ljava/lang/Object;)V
 
-    .line 17
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue$1;
 
-    .line 14
     invoke-direct {p0}, Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue;-><init>()V
 
     return-void
@@ -47,7 +43,6 @@
 
 .method constructor <init>(Ljava/util/List;Lcom/airbnb/lottie/model/ScaleXY;)V
     .locals 0
-    .param p2, "initialValue"    # Lcom/airbnb/lottie/model/ScaleXY;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,11 +55,8 @@
         }
     .end annotation
 
-    .line 20
-    .local p1, "keyframes":Ljava/util/List;, "Ljava/util/List<Lcom/airbnb/lottie/animation/Keyframe<Lcom/airbnb/lottie/model/ScaleXY;>;>;"
     invoke-direct {p0, p1, p2}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;-><init>(Ljava/util/List;Ljava/lang/Object;)V
 
-    .line 21
     return-void
 .end method
 
@@ -82,14 +74,12 @@
         }
     .end annotation
 
-    .line 24
     invoke-virtual {p0}, Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue;->hasAnimation()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 25
     new-instance v0, Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;
 
     iget-object v1, p0, Lcom/airbnb/lottie/model/animatable/AnimatableScaleValue;->initialValue:Ljava/lang/Object;
@@ -98,7 +88,6 @@
 
     return-object v0
 
-    .line 27
     :cond_0
     new-instance v0, Lcom/airbnb/lottie/animation/keyframe/ScaleKeyframeAnimation;
 

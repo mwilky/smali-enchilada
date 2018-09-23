@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibrarySessionImplBase;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
-    .line 240
     iput-object p1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$7;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$7;->val$query:Ljava/lang/String;
@@ -58,14 +56,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 6
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 243
     iget-object v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$7;->val$query:Ljava/lang/String;
 
     iget v2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$7;->val$page:I
@@ -80,6 +76,5 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onGetSearchResultDone(Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
 
-    .line 244
     return-void
 .end method

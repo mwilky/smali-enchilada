@@ -22,7 +22,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 44
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/ControlBarPresenter$BoundData;-><init>()V
 
     return-void

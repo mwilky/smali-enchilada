@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 12
     sget-object v0, Lcom/google/analytics/containertag/common/Key;->ARG0:Lcom/google/analytics/containertag/common/Key;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/Key;->toString()Ljava/lang/String;
@@ -22,7 +21,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Predicate;->ARG0:Ljava/lang/String;
 
-    .line 13
     sget-object v0, Lcom/google/analytics/containertag/common/Key;->ARG1:Lcom/google/analytics/containertag/common/Key;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/Key;->toString()Ljava/lang/String;
@@ -36,9 +34,7 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 3
-    .param p1, "functionId"    # Ljava/lang/String;
 
-    .line 28
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -57,14 +53,12 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/tagmanager/FunctionCallImplementation;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 29
     return-void
 .end method
 
 .method public static getArg0Key()Ljava/lang/String;
     .locals 1
 
-    .line 16
     sget-object v0, Lcom/google/tagmanager/Predicate;->ARG0:Ljava/lang/String;
 
     return-object v0
@@ -73,7 +67,6 @@
 .method public static getArg1Key()Ljava/lang/String;
     .locals 1
 
-    .line 20
     sget-object v0, Lcom/google/tagmanager/Predicate;->ARG1:Ljava/lang/String;
 
     return-object v0
@@ -94,8 +87,6 @@
         }
     .end annotation
 
-    .line 37
-    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
@@ -104,7 +95,6 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -120,15 +110,12 @@
 
     check-cast v1, Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 38
-    .local v1, "v":Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     invoke-static {}, Lcom/google/tagmanager/Types;->getDefaultValue()Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
     move-result-object v3
 
     if-ne v1, v3, :cond_0
 
-    .line 39
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
@@ -139,13 +126,9 @@
 
     return-object v2
 
-    .line 41
-    .end local v1    # "v":Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     :cond_0
     goto :goto_0
 
-    .line 42
-    .end local v0    # "i$":Ljava/util/Iterator;
     :cond_1
     sget-object v0, Lcom/google/tagmanager/Predicate;->ARG0:Ljava/lang/String;
 
@@ -155,8 +138,6 @@
 
     check-cast v0, Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 43
-    .local v0, "arg0":Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     sget-object v1, Lcom/google/tagmanager/Predicate;->ARG1:Ljava/lang/String;
 
     invoke-interface {p1, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -165,8 +146,6 @@
 
     check-cast v1, Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 44
-    .local v1, "arg1":Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     if-eqz v0, :cond_3
 
     if-nez v1, :cond_2
@@ -180,8 +159,6 @@
 
     nop
 
-    .line 47
-    .local v2, "result":Z
     :cond_3
     :goto_1
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -212,7 +189,6 @@
 .method public isCacheable()Z
     .locals 1
 
-    .line 55
     const/4 v0, 0x1
 
     return v0

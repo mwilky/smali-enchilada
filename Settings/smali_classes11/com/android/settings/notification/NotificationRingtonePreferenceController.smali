@@ -10,12 +10,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 29
     invoke-direct {p0, p1}, Lcom/android/settings/notification/RingtonePreferenceControllerBase;-><init>(Landroid/content/Context;)V
 
-    .line 30
     return-void
 .end method
 
@@ -24,7 +21,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 39
     const-string v0, "notification_ringtone"
 
     return-object v0
@@ -33,7 +29,6 @@
 .method public getRingtoneType()I
     .locals 1
 
-    .line 44
     const/4 v0, 0x2
 
     return v0
@@ -42,7 +37,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 34
     iget-object v0, p0, Lcom/android/settings/notification/NotificationRingtonePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

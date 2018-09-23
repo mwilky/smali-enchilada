@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/inputmethod/SpellCheckersSettings;Landroid/view/textservice/SpellCheckerInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
-    .line 213
     iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->val$currentSci:Landroid/view/textservice/SpellCheckerInfo;
@@ -42,27 +40,18 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "item"    # I
 
-    .line 217
     if-nez p2, :cond_0
 
-    .line 218
     const/4 v0, 0x0
 
-    .local v0, "subtypeId":I
     goto :goto_0
 
-    .line 220
-    .end local v0    # "subtypeId":I
     :cond_0
     invoke-static {p2}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$000(I)I
 
     move-result v0
 
-    .line 221
-    .local v0, "index":I
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->val$currentSci:Landroid/view/textservice/SpellCheckerInfo;
 
     invoke-virtual {v1, v0}, Landroid/view/textservice/SpellCheckerInfo;->getSubtypeAt(I)Landroid/view/textservice/SpellCheckerSubtype;
@@ -73,8 +62,6 @@
 
     move-result v0
 
-    .line 224
-    .local v0, "subtypeId":I
     :goto_0
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
@@ -86,14 +73,11 @@
 
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 233
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 234
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$1;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     invoke-static {v1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$200(Lcom/android/settings/inputmethod/SpellCheckersSettings;)V
 
-    .line 235
     return-void
 .end method

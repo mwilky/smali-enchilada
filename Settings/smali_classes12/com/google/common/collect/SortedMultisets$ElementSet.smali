@@ -51,15 +51,10 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
-    .local p1, "multiset":Lcom/google/common/collect/SortedMultiset;, "Lcom/google/common/collect/SortedMultiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Multisets$ElementSet;-><init>()V
 
-    .line 53
     iput-object p1, p0, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset:Lcom/google/common/collect/SortedMultiset;
 
-    .line 54
     return-void
 .end method
 
@@ -75,8 +70,6 @@
         }
     .end annotation
 
-    .line 61
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -96,8 +89,6 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -123,9 +114,6 @@
         }
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -151,8 +139,6 @@
         }
     .end annotation
 
-    .line 81
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -171,8 +157,6 @@
 .method bridge synthetic multiset()Lcom/google/common/collect/Multiset;
     .locals 1
 
-    .line 48
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -190,8 +174,6 @@
         }
     .end annotation
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset:Lcom/google/common/collect/SortedMultiset;
 
     return-object v0
@@ -207,10 +189,6 @@
         }
     .end annotation
 
-    .line 65
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p2, "toElement":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -240,9 +218,6 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/SortedMultisets$ElementSet;, "Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0

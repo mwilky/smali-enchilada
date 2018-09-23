@@ -56,7 +56,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 42
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -75,7 +74,6 @@
 
     sput-object v0, Lcom/android/setupwizardlib/items/ReflectionInflater;->CONSTRUCTOR_SIGNATURE:[Ljava/lang/Class;
 
-    .line 45
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -87,30 +85,25 @@
 
 .method protected constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 66
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/android/setupwizardlib/items/SimpleInflater;-><init>(Landroid/content/res/Resources;)V
 
-    .line 51
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
 
-    .line 67
     iput-object p1, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mContext:Landroid/content/Context;
 
-    .line 68
     return-void
 .end method
 
@@ -118,9 +111,6 @@
 # virtual methods
 .method public final createItem(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Ljava/lang/Object;
     .locals 7
-    .param p1, "tagName"    # Ljava/lang/String;
-    .param p2, "prefix"    # Ljava/lang/String;
-    .param p3, "attrs"    # Landroid/util/AttributeSet;
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
@@ -134,12 +124,8 @@
         }
     .end annotation
 
-    .line 86
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     move-object v0, p1
 
-    .line 87
-    .local v0, "qualifiedName":Ljava/lang/String;
     if-eqz p2, :cond_0
 
     const/16 v1, 0x2e
@@ -152,33 +138,26 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 88
     invoke-virtual {p2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 91
     :cond_0
     sget-object v1, Lcom/android/setupwizardlib/items/ReflectionInflater;->sConstructorMap:Ljava/util/HashMap;
 
-    .line 92
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/reflect/Constructor;
 
-    .line 95
-    .local v1, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<+TT;>;"
     const/4 v2, 0x1
 
     if-nez v1, :cond_1
 
-    .line 98
     :try_start_0
     iget-object v3, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mContext:Landroid/content/Context;
 
-    .line 99
     invoke-virtual {v3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v3
@@ -187,8 +166,6 @@
 
     move-result-object v3
 
-    .line 100
-    .local v3, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
     sget-object v4, Lcom/android/setupwizardlib/items/ReflectionInflater;->CONSTRUCTOR_SIGNATURE:[Ljava/lang/Class;
 
     invoke-virtual {v3, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
@@ -197,24 +174,19 @@
 
     move-object v1, v4
 
-    .line 101
     invoke-virtual {v1, v2}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
-    .line 102
     sget-object v4, Lcom/android/setupwizardlib/items/ReflectionInflater;->sConstructorMap:Ljava/util/HashMap;
 
     invoke-virtual {v4, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .end local v3    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
     goto :goto_0
 
-    .line 111
     :catch_0
     move-exception v2
 
     goto :goto_1
 
-    .line 105
     :cond_1
     :goto_0
     iget-object v3, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
@@ -225,43 +197,33 @@
 
     aput-object v4, v3, v5
 
-    .line 106
     iget-object v3, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
 
     aput-object p3, v3, v2
 
-    .line 107
     iget-object v3, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
 
     invoke-virtual {v1, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 108
-    .local v3, "item":Ljava/lang/Object;, "TT;"
     iget-object v4, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
 
     const/4 v6, 0x0
 
     aput-object v6, v4, v5
 
-    .line 109
     iget-object v4, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mTempConstructorArgs:[Ljava/lang/Object;
 
     aput-object v6, v4, v2
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 110
     return-object v3
 
-    .line 111
-    .end local v3    # "item":Ljava/lang/Object;, "TT;"
     :goto_1
     nop
 
-    .line 112
-    .local v2, "e":Ljava/lang/Exception;
     new-instance v3, Landroid/view/InflateException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -294,8 +256,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -306,8 +266,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 141
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mDefaultPackage:Ljava/lang/String;
 
     return-object v0
@@ -315,8 +273,6 @@
 
 .method protected onCreateItem(Ljava/lang/String;Landroid/util/AttributeSet;)Ljava/lang/Object;
     .locals 1
-    .param p1, "tagName"    # Ljava/lang/String;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -326,8 +282,6 @@
         }
     .end annotation
 
-    .line 119
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     iget-object v0, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mDefaultPackage:Ljava/lang/String;
 
     invoke-virtual {p0, p1, v0, p2}, Lcom/android/setupwizardlib/items/ReflectionInflater;->createItem(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Ljava/lang/Object;
@@ -339,15 +293,12 @@
 
 .method public setDefaultPackage(Ljava/lang/String;)V
     .locals 0
-    .param p1, "defaultPackage"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 130
-    .local p0, "this":Lcom/android/setupwizardlib/items/ReflectionInflater;, "Lcom/android/setupwizardlib/items/ReflectionInflater<TT;>;"
     iput-object p1, p0, Lcom/android/setupwizardlib/items/ReflectionInflater;->mDefaultPackage:Ljava/lang/String;
 
-    .line 131
     return-void
 .end method

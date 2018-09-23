@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/better/OPReadingMode;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/better/OPReadingMode;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 141
     iput-object p1, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 4
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 147
     iget-object v0, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
     invoke-static {v0}, Lcom/oneplus/settings/better/OPReadingMode;->access$500(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/content/ContentResolver;
@@ -56,8 +50,6 @@
 
     move-result v0
 
-    .line 148
-    .local v0, "value":I
     iget-object v1, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
     invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
@@ -66,7 +58,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 149
     iget-object v1, p0, Lcom/oneplus/settings/better/OPReadingMode$2;->this$0:Lcom/oneplus/settings/better/OPReadingMode;
 
     invoke-static {v1}, Lcom/oneplus/settings/better/OPReadingMode;->access$600(Lcom/oneplus/settings/better/OPReadingMode;)Landroid/support/v14/preference/SwitchPreference;
@@ -82,7 +73,6 @@
     :cond_0
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 151
     :cond_1
     return-void
 .end method

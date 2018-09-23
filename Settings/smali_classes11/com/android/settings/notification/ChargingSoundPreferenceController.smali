@@ -10,14 +10,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parent"    # Lcom/android/settings/SettingsPreferenceFragment;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 34
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/notification/SettingPrefController;-><init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 35
     new-instance v6, Lcom/android/settings/notification/SettingPref;
 
     const-string v2, "charging_sounds"
@@ -38,7 +33,6 @@
 
     iput-object v6, p0, Lcom/android/settings/notification/ChargingSoundPreferenceController;->mPreference:Lcom/android/settings/notification/SettingPref;
 
-    .line 37
     return-void
 .end method
 
@@ -47,7 +41,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/notification/ChargingSoundPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

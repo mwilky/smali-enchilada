@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/quickpay/QuickPaySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
-    .line 526
     iput-object p1, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$AppInstallAndUninstallReceiver;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "ctx"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 529
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 530
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.PACKAGE_REMOVED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -61,7 +54,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 531
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -71,18 +63,14 @@
 
     move-result-object v1
 
-    .line 532
-    .local v1, "packageName":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 533
     return-void
 
-    .line 535
     :cond_1
     const-string v2, "com.tencent.mm"
 
@@ -94,7 +82,6 @@
 
     const-string v2, "com.eg.android.AlipayGphone"
 
-    .line 536
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -103,21 +90,17 @@
 
     const-string v2, "net.one97.paytm"
 
-    .line 537
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    .line 538
     :cond_2
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$AppInstallAndUninstallReceiver;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     invoke-static {v2}, Lcom/oneplus/settings/quickpay/QuickPaySettings;->access$200(Lcom/oneplus/settings/quickpay/QuickPaySettings;)V
 
-    .line 541
-    .end local v1    # "packageName":Ljava/lang/String;
     :cond_3
     return-void
 .end method

@@ -26,10 +26,9 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 52
     const v0, 0x7f12050b
 
-    const v1, 0x7f120f69
+    const v1, 0x7f120f62
 
     const/4 v2, 0x1
 
@@ -37,7 +36,6 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker;-><init>(IIZZ)V
 
-    .line 53
     return-void
 .end method
 
@@ -45,7 +43,6 @@
 # virtual methods
 .method public getAllTimeZoneInfos(Lcom/android/settings/datetime/timezone/model/TimeZoneData;)Ljava/util/List;
     .locals 5
-    .param p1, "timeZoneData"    # Lcom/android/settings/datetime/timezone/model/TimeZoneData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,35 +54,30 @@
         }
     .end annotation
 
-    .line 87
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 88
     const-string v0, "RegionZoneSearchPicker"
 
     const-string v1, "getArguments() == null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 90
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     return-object v0
 
-    .line 92
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getArguments()Landroid/os/Bundle;
 
@@ -97,17 +89,12 @@
 
     move-result-object v0
 
-    .line 94
-    .local v0, "regionId":Ljava/lang/String;
     invoke-virtual {p1, v0}, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->lookupCountryTimeZones(Ljava/lang/String;)Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
 
     move-result-object v1
 
-    .line 96
-    .local v1, "filteredCountryTimeZones":Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
     if-nez v1, :cond_1
 
-    .line 97
     const-string v2, "RegionZoneSearchPicker"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -126,21 +113,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/app/Activity;->finish()V
 
-    .line 99
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v2
 
     return-object v2
 
-    .line 105
     :cond_1
     invoke-virtual {v1}, Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;->getTimeZoneIds()Ljava/util/List;
 
@@ -158,7 +142,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/RegionZonePicker;->mRegionName:Ljava/lang/String;
 
     return-object v0
@@ -167,7 +150,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 57
     const/16 v0, 0x54c
 
     return v0
@@ -187,8 +169,6 @@
         }
     .end annotation
 
-    .line 116
-    .local p1, "timeZoneIds":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/String;>;"
     new-instance v0, Lcom/android/settings/datetime/timezone/TimeZoneInfo$Formatter;
 
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getLocale()Ljava/util/Locale;
@@ -201,13 +181,10 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/settings/datetime/timezone/TimeZoneInfo$Formatter;-><init>(Ljava/util/Locale;Ljava/util/Date;)V
 
-    .line 118
-    .local v0, "formatter":Lcom/android/settings/datetime/timezone/TimeZoneInfo$Formatter;
     new-instance v1, Ljava/util/TreeSet;
 
     new-instance v2, Lcom/android/settings/datetime/timezone/RegionZonePicker$TimeZoneInfoComparator;
 
-    .line 119
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getLocale()Ljava/util/Locale;
 
     move-result-object v3
@@ -224,8 +201,6 @@
 
     invoke-direct {v1, v2}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 122
-    .local v1, "timeZoneInfos":Ljava/util/TreeSet;, "Ljava/util/TreeSet<Lcom/android/settings/datetime/timezone/TimeZoneInfo;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -243,14 +218,10 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 123
-    .local v3, "timeZoneId":Ljava/lang/String;
     invoke-static {v3}, Landroid/icu/util/TimeZone;->getFrozenTimeZone(Ljava/lang/String;)Landroid/icu/util/TimeZone;
 
     move-result-object v4
 
-    .line 125
-    .local v4, "timeZone":Landroid/icu/util/TimeZone;
     invoke-virtual {v4}, Landroid/icu/util/TimeZone;->getID()Ljava/lang/String;
 
     move-result-object v5
@@ -263,10 +234,8 @@
 
     if-eqz v5, :cond_0
 
-    .line 126
     goto :goto_0
 
-    .line 128
     :cond_0
     invoke-virtual {v0, v4}, Lcom/android/settings/datetime/timezone/TimeZoneInfo$Formatter;->format(Landroid/icu/util/TimeZone;)Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
@@ -274,12 +243,8 @@
 
     invoke-virtual {v1, v5}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    .line 129
-    .end local v3    # "timeZoneId":Ljava/lang/String;
-    .end local v4    # "timeZone":Landroid/icu/util/TimeZone;
     goto :goto_0
 
-    .line 130
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
@@ -294,12 +259,9 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 62
     invoke-super {p0, p1}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker;->onCreate(Landroid/os/Bundle;)V
 
-    .line 64
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getLocale()Ljava/util/Locale;
 
     move-result-object v0
@@ -308,8 +270,6 @@
 
     move-result-object v0
 
-    .line 66
-    .local v0, "localeDisplayNames":Landroid/icu/text/LocaleDisplayNames;
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -333,8 +293,6 @@
 
     move-result-object v1
 
-    .line 67
-    .local v1, "regionId":Ljava/lang/String;
     :goto_0
     if-nez v1, :cond_1
 
@@ -348,21 +306,16 @@
     :goto_1
     iput-object v2, p0, Lcom/android/settings/datetime/timezone/RegionZonePicker;->mRegionName:Ljava/lang/String;
 
-    .line 68
     return-void
 .end method
 
 .method protected prepareResultData(Lcom/android/settings/datetime/timezone/TimeZoneInfo;)Landroid/content/Intent;
     .locals 4
-    .param p1, "selectedTimeZoneInfo"    # Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
-    .line 80
     invoke-super {p0, p1}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker;->prepareResultData(Lcom/android/settings/datetime/timezone/TimeZoneInfo;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 81
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.settings.datetime.timezone.result_region_id"
 
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/RegionZonePicker;->getArguments()Landroid/os/Bundle;
@@ -377,6 +330,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 82
     return-object v0
 .end method

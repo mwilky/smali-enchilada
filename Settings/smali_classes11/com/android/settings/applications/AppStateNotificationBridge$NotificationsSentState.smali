@@ -34,23 +34,18 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 318
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentDaily:I
 
-    .line 319
     iput v0, p0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->avgSentWeekly:I
 
-    .line 320
     const-wide/16 v1, 0x0
 
     iput-wide v1, p0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->lastSent:J
 
-    .line 321
     iput v0, p0, Lcom/android/settings/applications/AppStateNotificationBridge$NotificationsSentState;->sentCount:I
 
     return-void

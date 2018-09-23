@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/AbstractScheduledService$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/util/concurrent/AbstractScheduledService$1;
 
-    .line 191
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractScheduledService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractScheduledService$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +46,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 191
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractScheduledService$1$2;->get()Ljava/lang/String;
 
     move-result-object v0
@@ -59,7 +56,6 @@
 .method public get()Ljava/lang/String;
     .locals 2
 
-    .line 193
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

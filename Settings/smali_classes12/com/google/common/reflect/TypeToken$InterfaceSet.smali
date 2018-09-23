@@ -59,25 +59,18 @@
         }
     .end annotation
 
-    .line 595
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
-    .local p2, "allTypes":Lcom/google/common/reflect/TypeToken$TypeSet;, "Lcom/google/common/reflect/TypeToken<TT;>.TypeSet;"
     iput-object p1, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-direct {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeSet;-><init>(Lcom/google/common/reflect/TypeToken;)V
 
-    .line 596
     iput-object p2, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->allTypes:Lcom/google/common/reflect/TypeToken$TypeSet;
 
-    .line 597
     return-void
 .end method
 
 .method private readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 633
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->this$0:Lcom/google/common/reflect/TypeToken;
 
     invoke-virtual {v0}, Lcom/google/common/reflect/TypeToken;->getTypes()Lcom/google/common/reflect/TypeToken$TypeSet;
@@ -103,8 +96,6 @@
         }
     .end annotation
 
-    .line 629
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "interfaces().classes() not supported."
@@ -117,8 +108,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 590
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     invoke-virtual {p0}, Lcom/google/common/reflect/TypeToken$InterfaceSet;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -129,8 +118,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 590
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     invoke-virtual {p0}, Lcom/google/common/reflect/TypeToken$InterfaceSet;->delegate()Ljava/util/Set;
 
     move-result-object v0
@@ -149,15 +136,10 @@
         }
     .end annotation
 
-    .line 600
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     iget-object v0, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->interfaces:Lcom/google/common/collect/ImmutableSet;
 
-    .line 601
-    .local v0, "result":Lcom/google/common/collect/ImmutableSet;, "Lcom/google/common/collect/ImmutableSet<Lcom/google/common/reflect/TypeToken<-TT;>;>;"
     if-nez v0, :cond_0
 
-    .line 602
     iget-object v1, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->allTypes:Lcom/google/common/reflect/TypeToken$TypeSet;
 
     invoke-static {v1}, Lcom/google/common/collect/FluentIterable;->from(Ljava/lang/Iterable;)Lcom/google/common/collect/FluentIterable;
@@ -166,22 +148,18 @@
 
     sget-object v2, Lcom/google/common/reflect/TypeToken$TypeFilter;->INTERFACE_ONLY:Lcom/google/common/reflect/TypeToken$TypeFilter;
 
-    .line 603
     invoke-virtual {v1, v2}, Lcom/google/common/collect/FluentIterable;->filter(Lcom/google/common/base/Predicate;)Lcom/google/common/collect/FluentIterable;
 
     move-result-object v1
 
-    .line 604
     invoke-virtual {v1}, Lcom/google/common/collect/FluentIterable;->toSet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->interfaces:Lcom/google/common/collect/ImmutableSet;
 
-    .line 602
     return-object v1
 
-    .line 606
     :cond_0
     return-object v0
 .end method
@@ -196,8 +174,6 @@
         }
     .end annotation
 
-    .line 611
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     return-object p0
 .end method
 
@@ -212,13 +188,10 @@
         }
     .end annotation
 
-    .line 617
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$InterfaceSet;, "Lcom/google/common/reflect/TypeToken<TT;>.InterfaceSet;"
     sget-object v0, Lcom/google/common/reflect/TypeToken$TypeCollector;->FOR_RAW_TYPE:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
     iget-object v1, p0, Lcom/google/common/reflect/TypeToken$InterfaceSet;->this$0:Lcom/google/common/reflect/TypeToken;
 
-    .line 618
     invoke-static {v1}, Lcom/google/common/reflect/TypeToken;->access$200(Lcom/google/common/reflect/TypeToken;)Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v1
@@ -227,8 +200,6 @@
 
     move-result-object v0
 
-    .line 619
-    .local v0, "collectedTypes":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Ljava/lang/Class<-TT;>;>;"
     invoke-static {v0}, Lcom/google/common/collect/FluentIterable;->from(Ljava/lang/Iterable;)Lcom/google/common/collect/FluentIterable;
 
     move-result-object v1
@@ -237,16 +208,13 @@
 
     invoke-direct {v2, p0}, Lcom/google/common/reflect/TypeToken$InterfaceSet$1;-><init>(Lcom/google/common/reflect/TypeToken$InterfaceSet;)V
 
-    .line 620
     invoke-virtual {v1, v2}, Lcom/google/common/collect/FluentIterable;->filter(Lcom/google/common/base/Predicate;)Lcom/google/common/collect/FluentIterable;
 
     move-result-object v1
 
-    .line 625
     invoke-virtual {v1}, Lcom/google/common/collect/FluentIterable;->toSet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v1
 
-    .line 619
     return-object v1
 .end method

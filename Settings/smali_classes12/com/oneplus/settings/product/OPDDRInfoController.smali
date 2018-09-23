@@ -17,15 +17,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 18
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 19
     iput-object p1, p0, Lcom/oneplus/settings/product/OPDDRInfoController;->mContext:Landroid/content/Context;
 
-    .line 20
     return-void
 .end method
 
@@ -34,7 +30,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 25
     const-string v0, "oneplus_ddr_memory_capacity"
 
     return-object v0
@@ -43,7 +38,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 39
     const/4 v0, 0x1
 
     return v0
@@ -51,9 +45,7 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 31
     :try_start_0
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->showROMStorage()Ljava/lang/String;
 
@@ -63,15 +55,11 @@
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 34
     goto :goto_0
 
-    .line 32
     :catch_0
     move-exception v0
 
-    .line 33
-    .local v0, "e":Ljava/lang/RuntimeException;
     iget-object v1, p0, Lcom/oneplus/settings/product/OPDDRInfoController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -86,8 +74,6 @@
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 35
-    .end local v0    # "e":Ljava/lang/RuntimeException;
     :goto_0
     return-void
 .end method

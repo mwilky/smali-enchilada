@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/EntityHeaderController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/EntityHeaderController;
 
-    .line 356
     iput-object p1, p0, Lcom/android/settings/widget/EntityHeaderController$2;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 359
     iget-object v0, p0, Lcom/android/settings/widget/EntityHeaderController$2;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
     invoke-static {v0}, Lcom/android/settings/widget/EntityHeaderController;->access$400(Lcom/android/settings/widget/EntityHeaderController;)Landroid/content/Context;
@@ -57,7 +53,6 @@
 
     iget-object v1, p0, Lcom/android/settings/widget/EntityHeaderController$2;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
-    .line 360
     invoke-static {v1}, Lcom/android/settings/widget/EntityHeaderController;->access$400(Lcom/android/settings/widget/EntityHeaderController;)Landroid/content/Context;
 
     move-result-object v1
@@ -72,7 +67,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->actionWithSource(Landroid/content/Context;II)V
 
-    .line 362
     iget-object v0, p0, Lcom/android/settings/widget/EntityHeaderController$2;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
     invoke-static {v0}, Lcom/android/settings/widget/EntityHeaderController;->access$200(Lcom/android/settings/widget/EntityHeaderController;)Landroid/app/Fragment;
@@ -87,6 +81,5 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Fragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 363
     return-void
 .end method

@@ -24,10 +24,8 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 31
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/PresenterSelector;-><init>()V
 
-    .line 33
     new-instance v0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector$ControlButtonPresenter;
 
     sget v1, Landroid/support/v17/leanback/R$layout;->lb_control_button_primary:I
@@ -36,7 +34,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mPrimaryPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 35
     new-instance v0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector$ControlButtonPresenter;
 
     sget v1, Landroid/support/v17/leanback/R$layout;->lb_control_button_secondary:I
@@ -45,7 +42,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mSecondaryPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 37
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/support/v17/leanback/widget/Presenter;
@@ -58,7 +54,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mPresenters:[Landroid/support/v17/leanback/widget/Presenter;
 
-    .line 79
     return-void
 .end method
 
@@ -66,9 +61,7 @@
 # virtual methods
 .method public getPresenter(Ljava/lang/Object;)Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
-    .param p1, "item"    # Ljava/lang/Object;
 
-    .line 58
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mPrimaryPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v0
@@ -77,7 +70,6 @@
 .method public getPresenters()[Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
 
-    .line 63
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mPresenters:[Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v0
@@ -86,7 +78,6 @@
 .method public getPrimaryPresenter()Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
 
-    .line 43
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mPrimaryPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v0
@@ -95,7 +86,6 @@
 .method public getSecondaryPresenter()Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
 
-    .line 50
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector;->mSecondaryPresenter:Landroid/support/v17/leanback/widget/Presenter;
 
     return-object v0

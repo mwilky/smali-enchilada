@@ -21,13 +21,9 @@
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "userRestriction"    # Ljava/lang/String;
 
-    .line 167
     invoke-direct {p0, p1, p2}, Lcom/android/settings/widget/RestrictedAppPreference;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 168
     invoke-static {}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$000()Ldalvik/system/DexClassLoader;
 
     move-result-object v0
@@ -36,7 +32,6 @@
 
     new-array v2, v1, [Ljava/lang/Class;
 
-    .line 169
     invoke-static {}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$100()Ljava/lang/Class;
 
     move-result-object v3
@@ -49,13 +44,10 @@
 
     invoke-direct {v3, p0}, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference$1;-><init>(Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;)V
 
-    .line 168
     invoke-static {v0, v2, v3}, Ljava/lang/reflect/Proxy;->newProxyInstance(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 186
-    .local v0, "notifier":Ljava/lang/Object;
     :try_start_0
     invoke-static {}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$400()Ljava/lang/reflect/Method;
 
@@ -75,8 +67,6 @@
 
     move-result-object v1
 
-    .line 187
-    .local v1, "xt":Ljava/lang/Object;
     invoke-static {}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$500()Ljava/lang/reflect/Method;
 
     move-result-object v2
@@ -100,31 +90,20 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/ExceptionInInitializerError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 191
-    .end local v1    # "xt":Ljava/lang/Object;
     goto :goto_0
 
-    .line 188
     :catch_0
     move-exception v1
 
-    .line 190
-    .local v1, "e":Ljava/lang/Throwable;
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 192
-    .end local v1    # "e":Ljava/lang/Throwable;
     :goto_0
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/settings/location/DimmableIZatIconPreference$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/content/Context;
-    .param p2, "x1"    # Ljava/lang/String;
-    .param p3, "x2"    # Lcom/android/settings/location/DimmableIZatIconPreference$1;
 
-    .line 164
     invoke-direct {p0, p1, p2}, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
@@ -132,9 +111,7 @@
 
 .method static synthetic access$600(Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;
 
-    .line 164
     iget-boolean v0, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;->mChecked:Z
 
     return v0
@@ -142,10 +119,7 @@
 
 .method static synthetic access$602(Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;
-    .param p1, "x1"    # Z
 
-    .line 164
     iput-boolean p1, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;->mChecked:Z
 
     return p1
@@ -155,12 +129,9 @@
 # virtual methods
 .method public onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 1
-    .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
-    .line 196
     invoke-super {p0, p1}, Lcom/android/settings/widget/RestrictedAppPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    .line 197
     invoke-virtual {p0}, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;->isEnabled()Z
 
     move-result v0
@@ -185,6 +156,5 @@
     :goto_1
     invoke-static {p0, v0}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$300(Lcom/android/settings/widget/AppPreference;Z)V
 
-    .line 198
     return-void
 .end method

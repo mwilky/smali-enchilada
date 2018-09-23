@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/io/CharSource$CharSequenceCharSource;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/io/CharSource$CharSequenceCharSource;
 
-    .line 357
     iput-object p1, p0, Lcom/google/common/io/CharSource$CharSequenceCharSource$1;->this$0:Lcom/google/common/io/CharSource$CharSequenceCharSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +54,6 @@
         }
     .end annotation
 
-    .line 360
     new-instance v0, Lcom/google/common/io/CharSource$CharSequenceCharSource$1$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/io/CharSource$CharSequenceCharSource$1$1;-><init>(Lcom/google/common/io/CharSource$CharSequenceCharSource$1;)V

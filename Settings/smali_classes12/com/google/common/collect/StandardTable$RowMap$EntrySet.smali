@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/StandardTable$RowMap;)V
     .locals 2
-    .param p1, "this$1"    # Lcom/google/common/collect/StandardTable$RowMap;
 
-    .line 720
-    .local p0, "this":Lcom/google/common/collect/StandardTable$RowMap$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowMap.EntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$RowMap$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$RowMap;
 
     iget-object v0, p1, Lcom/google/common/collect/StandardTable$RowMap;->this$0:Lcom/google/common/collect/StandardTable;
@@ -51,30 +48,23 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 735
-    .local p0, "this":Lcom/google/common/collect/StandardTable$RowMap$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowMap.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 736
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 737
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 738
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -89,7 +79,6 @@
 
     iget-object v2, v2, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;
 
-    .line 739
     invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -104,12 +93,9 @@
 
     nop
 
-    .line 737
     :cond_0
     return v1
 
-    .line 741
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_1
     return v1
 .end method
@@ -127,8 +113,6 @@
         }
     .end annotation
 
-    .line 722
-    .local p0, "this":Lcom/google/common/collect/StandardTable$RowMap$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowMap.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$RowMap$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$RowMap;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$RowMap;->this$0:Lcom/google/common/collect/StandardTable;
@@ -152,30 +136,23 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 745
-    .local p0, "this":Lcom/google/common/collect/StandardTable$RowMap$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowMap.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 746
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 747
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 748
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -190,7 +167,6 @@
 
     iget-object v2, v2, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;
 
-    .line 749
     invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -205,12 +181,9 @@
 
     nop
 
-    .line 747
     :cond_0
     return v1
 
-    .line 751
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_1
     return v1
 .end method
@@ -218,8 +191,6 @@
 .method public size()I
     .locals 1
 
-    .line 731
-    .local p0, "this":Lcom/google/common/collect/StandardTable$RowMap$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowMap.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$RowMap$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$RowMap;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$RowMap;->this$0:Lcom/google/common/collect/StandardTable;

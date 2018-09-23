@@ -25,15 +25,11 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "seed"    # I
 
-    .line 47
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 48
     iput p1, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
 
-    .line 49
     return-void
 .end method
 
@@ -42,7 +38,6 @@
 .method public bits()I
     .locals 1
 
-    .line 52
     const/16 v0, 0x80
 
     return v0
@@ -50,25 +45,21 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 66
     instance-of v0, p1, Lcom/google/common/hash/Murmur3_128HashFunction;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 67
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/hash/Murmur3_128HashFunction;
 
-    .line 68
-    .local v0, "other":Lcom/google/common/hash/Murmur3_128HashFunction;
     iget v2, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
 
     iget v3, v0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
@@ -82,8 +73,6 @@
     :cond_0
     return v1
 
-    .line 70
-    .end local v0    # "other":Lcom/google/common/hash/Murmur3_128HashFunction;
     :cond_1
     return v1
 .end method
@@ -91,7 +80,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 75
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -110,7 +98,6 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 2
 
-    .line 56
     new-instance v0, Lcom/google/common/hash/Murmur3_128HashFunction$Murmur3_128Hasher;
 
     iget v1, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
@@ -123,7 +110,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 61
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

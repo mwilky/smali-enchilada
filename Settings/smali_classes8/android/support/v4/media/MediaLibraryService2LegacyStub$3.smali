@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibraryService2LegacyStub;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;IILandroid/os/Bundle;Landroid/support/v4/media/MediaBrowserServiceCompat$Result;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 145
     iput-object p1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->val$controller:Landroid/support/v4/media/MediaSession2$ControllerInfo;
@@ -63,7 +61,6 @@
 .method public run()V
     .locals 8
 
-    .line 148
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
@@ -76,7 +73,6 @@
 
     iget-object v0, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->this$0:Landroid/support/v4/media/MediaLibraryService2LegacyStub;
 
-    .line 149
     invoke-static {v0}, Landroid/support/v4/media/MediaLibraryService2LegacyStub;->access$000(Landroid/support/v4/media/MediaLibraryService2LegacyStub;)Landroid/support/v4/media/MediaLibraryService2$MediaLibrarySession$SupportLibraryImpl;
 
     move-result-object v0
@@ -99,21 +95,16 @@
 
     move-result-object v0
 
-    .line 151
-    .local v0, "searchResult":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaItem2;>;"
     if-nez v0, :cond_0
 
-    .line 152
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->val$result:Landroid/support/v4/media/MediaBrowserServiceCompat$Result;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->sendResult(Ljava/lang/Object;)V
 
-    .line 153
     return-void
 
-    .line 155
     :cond_0
     iget-object v1, p0, Landroid/support/v4/media/MediaLibraryService2LegacyStub$3;->val$result:Landroid/support/v4/media/MediaBrowserServiceCompat$Result;
 
@@ -123,6 +114,5 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/media/MediaBrowserServiceCompat$Result;->sendResult(Ljava/lang/Object;)V
 
-    .line 156
     return-void
 .end method

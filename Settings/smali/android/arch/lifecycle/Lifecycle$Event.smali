@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 119
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_CREATE"
@@ -55,7 +54,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_CREATE:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 123
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_START"
@@ -66,7 +64,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_START:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 127
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_RESUME"
@@ -77,7 +74,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_RESUME:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 131
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_PAUSE"
@@ -88,7 +84,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_PAUSE:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 135
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_STOP"
@@ -99,7 +94,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_STOP:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 139
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_DESTROY"
@@ -110,7 +104,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 143
     new-instance v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     const-string v1, "ON_ANY"
@@ -121,7 +114,6 @@
 
     sput-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->ON_ANY:Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 114
     const/4 v0, 0x7
 
     new-array v0, v0, [Landroid/arch/lifecycle/Lifecycle$Event;
@@ -167,7 +159,6 @@
         }
     .end annotation
 
-    .line 115
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -175,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Landroid/arch/lifecycle/Lifecycle$Event;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 114
     const-class v0, Landroid/arch/lifecycle/Lifecycle$Event;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +181,6 @@
 .method public static values()[Landroid/arch/lifecycle/Lifecycle$Event;
     .locals 1
 
-    .line 114
     sget-object v0, Landroid/arch/lifecycle/Lifecycle$Event;->$VALUES:[Landroid/arch/lifecycle/Lifecycle$Event;
 
     invoke-virtual {v0}, [Landroid/arch/lifecycle/Lifecycle$Event;->clone()Ljava/lang/Object;

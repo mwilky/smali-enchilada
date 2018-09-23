@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +46,6 @@
 .method public getTag()Ljava/lang/Object;
     .locals 1
 
-    .line 68
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionMode;->mTag:Ljava/lang/Object;
 
     return-object v0
@@ -59,7 +57,6 @@
 .method public getTitleOptionalHint()Z
     .locals 1
 
-    .line 142
     iget-boolean v0, p0, Lcom/oneplus/lib/app/appcompat/ActionMode;->mTitleOptionalHint:Z
 
     return v0
@@ -71,7 +68,6 @@
 .method public isTitleOptional()Z
     .locals 1
 
-    .line 150
     const/4 v0, 0x0
 
     return v0
@@ -80,7 +76,6 @@
 .method public isUiFocusable()Z
     .locals 1
 
-    .line 221
     const/4 v0, 0x1
 
     return v0
@@ -97,12 +92,9 @@
 
 .method public setTag(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "tag"    # Ljava/lang/Object;
 
-    .line 54
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/ActionMode;->mTag:Ljava/lang/Object;
 
-    .line 55
     return-void
 .end method
 
@@ -114,11 +106,8 @@
 
 .method public setTitleOptionalHint(Z)V
     .locals 0
-    .param p1, "titleOptional"    # Z
 
-    .line 131
     iput-boolean p1, p0, Lcom/oneplus/lib/app/appcompat/ActionMode;->mTitleOptionalHint:Z
 
-    .line 132
     return-void
 .end method

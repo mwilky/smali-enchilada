@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 38
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "NO_SAVED_CONTAINER"
@@ -53,7 +52,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->NO_SAVED_CONTAINER:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 40
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "IO_ERROR"
@@ -64,7 +62,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->IO_ERROR:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 42
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "NO_NETWORK"
@@ -75,7 +72,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->NO_NETWORK:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 44
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "NETWORK_ERROR"
@@ -86,7 +82,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->NETWORK_ERROR:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 46
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "SERVER_ERROR"
@@ -97,7 +92,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->SERVER_ERROR:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 48
     new-instance v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     const-string v1, "UNKNOWN_ERROR"
@@ -108,7 +102,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->UNKNOWN_ERROR:Lcom/google/tagmanager/Container$RefreshFailure;
 
-    .line 36
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/tagmanager/Container$RefreshFailure;
@@ -150,7 +143,6 @@
         }
     .end annotation
 
-    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -158,9 +150,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/Container$RefreshFailure;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 36
     const-class v0, Lcom/google/tagmanager/Container$RefreshFailure;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -175,7 +165,6 @@
 .method public static values()[Lcom/google/tagmanager/Container$RefreshFailure;
     .locals 1
 
-    .line 36
     sget-object v0, Lcom/google/tagmanager/Container$RefreshFailure;->$VALUES:[Lcom/google/tagmanager/Container$RefreshFailure;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/Container$RefreshFailure;->clone()Ljava/lang/Object;

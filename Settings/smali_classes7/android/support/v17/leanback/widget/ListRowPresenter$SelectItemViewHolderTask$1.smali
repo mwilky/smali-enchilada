@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask;
 
-    .line 212
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask$1;->this$0:Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 213
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask$1;->this$0:Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask;->mItemTask:Landroid/support/v17/leanback/widget/Presenter$ViewHolderTask;
@@ -47,15 +44,11 @@
 # virtual methods
 .method public run(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
     .locals 3
-    .param p1, "rvh"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 216
     move-object v0, p1
 
     check-cast v0, Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;
 
-    .line 217
-    .local v0, "ibvh":Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$SelectItemViewHolderTask$1;->itemTask:Landroid/support/v17/leanback/widget/Presenter$ViewHolderTask;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/ItemBridgeAdapter$ViewHolder;->getViewHolder()Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
@@ -64,6 +57,5 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v17/leanback/widget/Presenter$ViewHolderTask;->run(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;)V
 
-    .line 218
     return-void
 .end method

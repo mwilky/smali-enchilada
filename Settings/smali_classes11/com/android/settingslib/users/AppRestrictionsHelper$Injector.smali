@@ -26,19 +26,13 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/os/UserHandle;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "user"    # Landroid/os/UserHandle;
 
-    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 395
     iput-object p1, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
-    .line 396
     iput-object p2, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mUser:Landroid/os/UserHandle;
 
-    .line 397
     return-void
 .end method
 
@@ -47,7 +41,6 @@
 .method getContext()Landroid/content/Context;
     .locals 1
 
-    .line 400
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -56,7 +49,6 @@
 .method getIPackageManager()Landroid/content/pm/IPackageManager;
     .locals 1
 
-    .line 412
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
@@ -75,7 +67,6 @@
         }
     .end annotation
 
-    .line 420
     invoke-virtual {p0}, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -88,8 +79,6 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 422
-    .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
     invoke-virtual {v0}, Landroid/view/inputmethod/InputMethodManager;->getInputMethodList()Ljava/util/List;
 
     move-result-object v1
@@ -100,7 +89,6 @@
 .method getPackageManager()Landroid/content/pm/PackageManager;
     .locals 1
 
-    .line 408
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -113,7 +101,6 @@
 .method getUser()Landroid/os/UserHandle;
     .locals 1
 
-    .line 404
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mUser:Landroid/os/UserHandle;
 
     return-object v0
@@ -122,7 +109,6 @@
 .method getUserManager()Landroid/os/UserManager;
     .locals 2
 
-    .line 416
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/UserManager;

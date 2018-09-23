@@ -32,13 +32,10 @@
 .method constructor <init>()V
     .locals 2
 
-    .line 198
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture<TV;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/util/concurrent/Futures$ImmediateFuture;-><init>(Lcom/google/common/util/concurrent/Futures$1;)V
 
-    .line 199
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
     const-string v1, "Immediate cancelled future."
@@ -47,7 +44,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture;->thrown:Ljava/util/concurrent/CancellationException;
 
-    .line 200
     return-void
 .end method
 
@@ -61,8 +57,6 @@
         }
     .end annotation
 
-    .line 209
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture;->thrown:Ljava/util/concurrent/CancellationException;
 
     const-string v1, "Task was cancelled."
@@ -77,8 +71,6 @@
 .method public isCancelled()Z
     .locals 1
 
-    .line 204
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture;, "Lcom/google/common/util/concurrent/Futures$ImmediateCancelledFuture<TV;>;"
     const/4 v0, 0x1
 
     return v0

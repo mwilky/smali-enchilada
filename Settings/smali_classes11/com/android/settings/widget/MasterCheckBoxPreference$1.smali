@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/MasterCheckBoxPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/MasterCheckBoxPreference;
 
-    .line 66
     iput-object p1, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 69
     iget-object v0, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
     invoke-static {v0}, Lcom/android/settings/widget/MasterCheckBoxPreference;->access$000(Lcom/android/settings/widget/MasterCheckBoxPreference;)Landroid/widget/CheckBox;
@@ -61,10 +57,8 @@
 
     if-nez v0, :cond_0
 
-    .line 70
     return-void
 
-    .line 72
     :cond_0
     iget-object v0, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/MasterCheckBoxPreference;->setChecked(Z)V
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
@@ -97,7 +90,6 @@
 
     if-nez v0, :cond_1
 
-    .line 74
     iget-object v0, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
@@ -112,7 +104,6 @@
 
     goto :goto_0
 
-    .line 76
     :cond_1
     iget-object v0, p0, Lcom/android/settings/widget/MasterCheckBoxPreference$1;->this$0:Lcom/android/settings/widget/MasterCheckBoxPreference;
 
@@ -124,7 +115,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/MasterCheckBoxPreference;->access$200(Lcom/android/settings/widget/MasterCheckBoxPreference;Z)Z
 
-    .line 78
     :goto_0
     return-void
 .end method

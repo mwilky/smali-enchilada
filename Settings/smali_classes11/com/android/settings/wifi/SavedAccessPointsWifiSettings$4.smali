@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;
 
-    .line 92
     iput-object p1, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings$4;->this$0:Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,16 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
-    .param p1, "reason"    # I
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings$4;->this$0:Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 100
-    .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
-    .line 101
-    const v1, 0x7f121413
+    const v1, 0x7f12140c
 
     const/4 v2, 0x0
 
@@ -60,10 +53,8 @@
 
     move-result-object v1
 
-    .line 103
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 105
     :cond_0
     return-void
 .end method
@@ -71,11 +62,9 @@
 .method public onSuccess()V
     .locals 1
 
-    .line 95
     iget-object v0, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings$4;->this$0:Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;
 
     invoke-static {v0}, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;->access$000(Lcom/android/settings/wifi/SavedAccessPointsWifiSettings;)V
 
-    .line 96
     return-void
 .end method

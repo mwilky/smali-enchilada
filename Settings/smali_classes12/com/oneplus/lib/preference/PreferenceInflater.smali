@@ -29,23 +29,16 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/oneplus/lib/preference/PreferenceManager;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "preferenceManager"    # Lcom/oneplus/lib/preference/PreferenceManager;
 
-    .line 46
     invoke-direct {p0, p1}, Lcom/oneplus/lib/preference/GenericInflater;-><init>(Landroid/content/Context;)V
 
-    .line 47
     invoke-direct {p0, p2}, Lcom/oneplus/lib/preference/PreferenceInflater;->init(Lcom/oneplus/lib/preference/PreferenceManager;)V
 
-    .line 48
     return-void
 .end method
 
 .method constructor <init>(Lcom/oneplus/lib/preference/GenericInflater;Lcom/oneplus/lib/preference/PreferenceManager;Landroid/content/Context;)V
     .locals 0
-    .param p2, "preferenceManager"    # Lcom/oneplus/lib/preference/PreferenceManager;
-    .param p3, "newContext"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,30 +52,22 @@
         }
     .end annotation
 
-    .line 51
-    .local p1, "original":Lcom/oneplus/lib/preference/GenericInflater;, "Lcom/oneplus/lib/preference/GenericInflater<Lcom/oneplus/lib/preference/Preference;Lcom/oneplus/lib/preference/PreferenceGroup;>;"
     invoke-direct {p0, p1, p3}, Lcom/oneplus/lib/preference/GenericInflater;-><init>(Lcom/oneplus/lib/preference/GenericInflater;Landroid/content/Context;)V
 
-    .line 52
     invoke-direct {p0, p2}, Lcom/oneplus/lib/preference/PreferenceInflater;->init(Lcom/oneplus/lib/preference/PreferenceManager;)V
 
-    .line 53
     return-void
 .end method
 
 .method private init(Lcom/oneplus/lib/preference/PreferenceManager;)V
     .locals 1
-    .param p1, "preferenceManager"    # Lcom/oneplus/lib/preference/PreferenceManager;
 
-    .line 61
     iput-object p1, p0, Lcom/oneplus/lib/preference/PreferenceInflater;->mPreferenceManager:Lcom/oneplus/lib/preference/PreferenceManager;
 
-    .line 62
     const-string v0, "com.oneplus.lib.preference."
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/preference/PreferenceInflater;->setDefaultPackage(Ljava/lang/String;)V
 
-    .line 63
     return-void
 .end method
 
@@ -90,7 +75,6 @@
 # virtual methods
 .method public cloneInContext(Landroid/content/Context;)Lcom/oneplus/lib/preference/GenericInflater;
     .locals 2
-    .param p1, "newContext"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +87,6 @@
         }
     .end annotation
 
-    .line 57
     new-instance v0, Lcom/oneplus/lib/preference/PreferenceInflater;
 
     iget-object v1, p0, Lcom/oneplus/lib/preference/PreferenceInflater;->mPreferenceManager:Lcom/oneplus/lib/preference/PreferenceManager;
@@ -115,22 +98,16 @@
 
 .method protected onCreateCustomFromTag(Lorg/xmlpull/v1/XmlPullParser;Lcom/oneplus/lib/preference/Preference;Landroid/util/AttributeSet;)Z
     .locals 5
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-    .param p2, "parentPreference"    # Lcom/oneplus/lib/preference/Preference;
-    .param p3, "attrs"    # Landroid/util/AttributeSet;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
         }
     .end annotation
 
-    .line 68
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 70
-    .local v0, "tag":Ljava/lang/String;
     const-string v1, "intent"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -141,11 +118,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 71
     const/4 v1, 0x0
 
-    .line 74
-    .local v1, "intent":Landroid/content/Intent;
     :try_start_0
     invoke-virtual {p0}, Lcom/oneplus/lib/preference/PreferenceInflater;->getContext()Landroid/content/Context;
 
@@ -163,42 +137,28 @@
 
     move-object v1, v3
 
-    .line 80
     nop
 
-    .line 82
     if-eqz v1, :cond_0
 
-    .line 83
     invoke-virtual {p2, v1}, Lcom/oneplus/lib/preference/Preference;->setIntent(Landroid/content/Intent;)V
 
-    .line 86
     :cond_0
     return v2
 
-    .line 75
     :catch_0
     move-exception v2
 
-    .line 76
-    .local v2, "e":Ljava/io/IOException;
     new-instance v3, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v4, "Error parsing preference"
 
     invoke-direct {v3, v4}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
-    .line 78
-    .local v3, "ex":Lorg/xmlpull/v1/XmlPullParserException;
     invoke-virtual {v3, v2}, Lorg/xmlpull/v1/XmlPullParserException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 79
     throw v3
 
-    .line 87
-    .end local v1    # "intent":Landroid/content/Intent;
-    .end local v2    # "e":Ljava/io/IOException;
-    .end local v3    # "ex":Lorg/xmlpull/v1/XmlPullParserException;
     :cond_1
     const-string v1, "extra"
 
@@ -208,7 +168,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 88
     invoke-virtual {p0}, Lcom/oneplus/lib/preference/PreferenceInflater;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -219,48 +178,34 @@
 
     const-string v3, "extra"
 
-    .line 89
     invoke-virtual {p2}, Lcom/oneplus/lib/preference/Preference;->getExtras()Landroid/os/Bundle;
 
     move-result-object v4
 
-    .line 88
     invoke-virtual {v1, v3, p3, v4}, Landroid/content/res/Resources;->parseBundleExtra(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
 
-    .line 91
     :try_start_1
     invoke-static {p1}, Lcom/oneplus/lib/util/XmlUtils;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 97
     nop
 
-    .line 98
     return v2
 
-    .line 92
     :catch_1
     move-exception v1
 
-    .line 93
-    .local v1, "e":Ljava/io/IOException;
     new-instance v2, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string v3, "Error parsing preference"
 
     invoke-direct {v2, v3}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
 
-    .line 95
-    .local v2, "ex":Lorg/xmlpull/v1/XmlPullParserException;
     invoke-virtual {v2, v1}, Lorg/xmlpull/v1/XmlPullParserException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 96
     throw v2
 
-    .line 101
-    .end local v1    # "e":Ljava/io/IOException;
-    .end local v2    # "ex":Lorg/xmlpull/v1/XmlPullParserException;
     :cond_2
     const/4 v1, 0x0
 
@@ -275,7 +220,6 @@
         }
     .end annotation
 
-    .line 38
     check-cast p2, Lcom/oneplus/lib/preference/Preference;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/oneplus/lib/preference/PreferenceInflater;->onCreateCustomFromTag(Lorg/xmlpull/v1/XmlPullParser;Lcom/oneplus/lib/preference/Preference;Landroid/util/AttributeSet;)Z
@@ -288,7 +232,6 @@
 .method protected bridge synthetic onMergeRoots(Lcom/oneplus/lib/preference/GenericInflater$Parent;ZLcom/oneplus/lib/preference/GenericInflater$Parent;)Lcom/oneplus/lib/preference/GenericInflater$Parent;
     .locals 0
 
-    .line 38
     check-cast p1, Lcom/oneplus/lib/preference/PreferenceGroup;
 
     check-cast p3, Lcom/oneplus/lib/preference/PreferenceGroup;
@@ -302,22 +245,15 @@
 
 .method protected onMergeRoots(Lcom/oneplus/lib/preference/PreferenceGroup;ZLcom/oneplus/lib/preference/PreferenceGroup;)Lcom/oneplus/lib/preference/PreferenceGroup;
     .locals 1
-    .param p1, "givenRoot"    # Lcom/oneplus/lib/preference/PreferenceGroup;
-    .param p2, "attachToGivenRoot"    # Z
-    .param p3, "xmlRoot"    # Lcom/oneplus/lib/preference/PreferenceGroup;
 
-    .line 109
     if-nez p1, :cond_0
 
-    .line 110
     iget-object v0, p0, Lcom/oneplus/lib/preference/PreferenceInflater;->mPreferenceManager:Lcom/oneplus/lib/preference/PreferenceManager;
 
     invoke-virtual {p3, v0}, Lcom/oneplus/lib/preference/PreferenceGroup;->onAttachedToHierarchy(Lcom/oneplus/lib/preference/PreferenceManager;)V
 
-    .line 111
     return-object p3
 
-    .line 113
     :cond_0
     return-object p1
 .end method

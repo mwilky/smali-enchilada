@@ -34,10 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet;
 
-    .line 793
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;, "Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;->this$2:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,8 +47,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 793
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;, "Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;->apply(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object p1
@@ -69,9 +64,6 @@
         }
     .end annotation
 
-    .line 796
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;, "Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;"
-    .local p1, "columnKey":Ljava/lang/Object;, "TC;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet$1;->this$2:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapEntrySet;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlaylistAgent;
 
-    .line 207
     iput-object p1, p0, Landroid/support/v4/media/MediaPlaylistAgent$3;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlaylistAgent$3;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
@@ -43,21 +41,17 @@
 .method public run()V
     .locals 3
 
-    .line 210
     iget-object v0, p0, Landroid/support/v4/media/MediaPlaylistAgent$3;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlaylistAgent$3;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
     iget-object v2, p0, Landroid/support/v4/media/MediaPlaylistAgent$3;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
-    .line 211
     invoke-virtual {v2}, Landroid/support/v4/media/MediaPlaylistAgent;->getShuffleMode()I
 
     move-result v2
 
-    .line 210
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;->onShuffleModeChanged(Landroid/support/v4/media/MediaPlaylistAgent;I)V
 
-    .line 212
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
-    .line 601
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController$2;->this$0:Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 604
     iget-object v0, p0, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController$2;->this$0:Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;->access$500(Lcom/android/settings/fuelgauge/BatteryAppListPreferenceController;)Lcom/android/settings/core/InstrumentedPreferenceFragment;
@@ -48,11 +45,9 @@
 
     check-cast v0, Lcom/android/settings/fuelgauge/PowerUsageAdvanced;
 
-    .line 605
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fuelgauge/PowerUsageAdvanced;->restartBatteryStatsLoader(I)V
 
-    .line 606
     return-void
 .end method

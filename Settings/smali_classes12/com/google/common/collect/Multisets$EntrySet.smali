@@ -29,8 +29,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 964
-    .local p0, "this":Lcom/google/common/collect/Multisets$EntrySet;, "Lcom/google/common/collect/Multisets$EntrySet<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
 
     return-void
@@ -41,50 +39,40 @@
 .method public clear()V
     .locals 1
 
-    .line 1002
-    .local p0, "this":Lcom/google/common/collect/Multisets$EntrySet;, "Lcom/google/common/collect/Multisets$EntrySet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$EntrySet;->multiset()Lcom/google/common/collect/Multiset;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/google/common/collect/Multiset;->clear()V
 
-    .line 1003
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 968
-    .local p0, "this":Lcom/google/common/collect/Multisets$EntrySet;, "Lcom/google/common/collect/Multisets$EntrySet<TE;>;"
     instance-of v0, p1, Lcom/google/common/collect/Multiset$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_2
 
-    .line 973
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 974
-    .local v0, "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v2
 
     if-gtz v2, :cond_0
 
-    .line 975
     return v1
 
-    .line 977
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$EntrySet;->multiset()Lcom/google/common/collect/Multiset;
 
@@ -98,8 +86,6 @@
 
     move-result v2
 
-    .line 978
-    .local v2, "count":I
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v3
@@ -113,9 +99,6 @@
     :cond_1
     return v1
 
-    .line 981
-    .end local v0    # "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<*>;"
-    .end local v2    # "count":I
     :cond_2
     return v1
 .end method
@@ -132,55 +115,37 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 987
-    .local p0, "this":Lcom/google/common/collect/Multisets$EntrySet;, "Lcom/google/common/collect/Multisets$EntrySet<TE;>;"
     instance-of v0, p1, Lcom/google/common/collect/Multiset$Entry;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 988
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 989
-    .local v0, "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 990
-    .local v2, "element":Ljava/lang/Object;
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v3
 
-    .line 991
-    .local v3, "entryCount":I
     if-eqz v3, :cond_0
 
-    .line 994
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$EntrySet;->multiset()Lcom/google/common/collect/Multiset;
 
     move-result-object v4
 
-    .line 995
-    .local v4, "multiset":Lcom/google/common/collect/Multiset;, "Lcom/google/common/collect/Multiset<Ljava/lang/Object;>;"
     invoke-interface {v4, v2, v3, v1}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;II)Z
 
     move-result v1
 
     return v1
 
-    .line 998
-    .end local v0    # "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<*>;"
-    .end local v2    # "element":Ljava/lang/Object;
-    .end local v3    # "entryCount":I
-    .end local v4    # "multiset":Lcom/google/common/collect/Multiset;, "Lcom/google/common/collect/Multiset<Ljava/lang/Object;>;"
     :cond_0
     return v1
 .end method

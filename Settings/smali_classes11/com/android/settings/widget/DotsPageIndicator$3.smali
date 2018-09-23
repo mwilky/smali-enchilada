@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/DotsPageIndicator;
 
-    .line 601
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$3;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 605
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$3;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,7 +51,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$302(Lcom/android/settings/widget/DotsPageIndicator;F)F
 
-    .line 606
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$3;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-static {v0}, Lcom/android/settings/widget/DotsPageIndicator;->access$400(Lcom/android/settings/widget/DotsPageIndicator;)Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
@@ -70,11 +65,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->startIfNecessary(F)V
 
-    .line 607
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$3;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/DotsPageIndicator;->postInvalidateOnAnimation()V
 
-    .line 608
     return-void
 .end method

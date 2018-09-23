@@ -41,12 +41,9 @@
 # direct methods
 .method constructor <init>(Ljava/nio/charset/Charset;)V
     .locals 1
-    .param p1, "charset"    # Ljava/nio/charset/Charset;
 
-    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -55,7 +52,6 @@
 
     iput-object v0, p0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->charset:Ljava/nio/charset/Charset;
 
-    .line 93
     return-void
 .end method
 
@@ -63,23 +59,19 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 104
     instance-of v0, p1, Lcom/google/common/hash/Funnels$StringCharsetFunnel;
 
     if-eqz v0, :cond_0
 
-    .line 105
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;
 
-    .line 106
-    .local v0, "funnel":Lcom/google/common/hash/Funnels$StringCharsetFunnel;
     iget-object v1, p0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->charset:Ljava/nio/charset/Charset;
 
     iget-object v2, v0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->charset:Ljava/nio/charset/Charset;
@@ -90,8 +82,6 @@
 
     return v1
 
-    .line 108
-    .end local v0    # "funnel":Lcom/google/common/hash/Funnels$StringCharsetFunnel;
     :cond_0
     const/4 v0, 0x0
 
@@ -100,22 +90,17 @@
 
 .method public funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 1
-    .param p1, "from"    # Ljava/lang/CharSequence;
-    .param p2, "into"    # Lcom/google/common/hash/PrimitiveSink;
 
-    .line 96
     iget-object v0, p0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->charset:Ljava/nio/charset/Charset;
 
     invoke-interface {p2, p1, v0}, Lcom/google/common/hash/PrimitiveSink;->putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 97
     return-void
 .end method
 
 .method public bridge synthetic funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
 
-    .line 88
     check-cast p1, Ljava/lang/CharSequence;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
@@ -126,7 +111,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 112
     const-class v0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -147,7 +131,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 100
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -178,7 +161,6 @@
 .method writeReplace()Ljava/lang/Object;
     .locals 2
 
-    .line 116
     new-instance v0, Lcom/google/common/hash/Funnels$StringCharsetFunnel$SerializedForm;
 
     iget-object v1, p0, Lcom/google/common/hash/Funnels$StringCharsetFunnel;->charset:Ljava/nio/charset/Charset;

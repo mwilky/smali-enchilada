@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 30
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.ANY_DATA_STATE"
@@ -37,19 +36,15 @@
 
 .method public constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
     .locals 1
-    .param p1, "manager"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/Condition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
-    .line 35
     new-instance v0, Lcom/android/settings/dashboard/conditional/CellularDataCondition$Receiver;
 
     invoke-direct {v0}, Lcom/android/settings/dashboard/conditional/CellularDataCondition$Receiver;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mReceiver:Lcom/android/settings/dashboard/conditional/CellularDataCondition$Receiver;
 
-    .line 36
     return-void
 .end method
 
@@ -58,7 +53,6 @@
 .method public getActions()[Ljava/lang/CharSequence;
     .locals 3
 
-    .line 78
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/CharSequence;
@@ -85,7 +79,6 @@
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 63
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -104,7 +97,6 @@
 .method protected getIntentFilter()Landroid/content/IntentFilter;
     .locals 1
 
-    .line 58
     sget-object v0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->DATA_CONNECTION_FILTER:Landroid/content/IntentFilter;
 
     return-object v0
@@ -113,7 +105,6 @@
 .method public getMetricsConstant()I
     .locals 1
 
-    .line 101
     const/16 v0, 0x17c
 
     return v0
@@ -122,7 +113,6 @@
 .method protected getReceiver()Landroid/content/BroadcastReceiver;
     .locals 1
 
-    .line 53
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mReceiver:Lcom/android/settings/dashboard/conditional/CellularDataCondition$Receiver;
 
     return-object v0
@@ -131,7 +121,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -150,7 +139,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 68
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -168,12 +156,9 @@
 
 .method public onActionClick(I)V
     .locals 3
-    .param p1, "index"    # I
 
-    .line 89
     if-nez p1, :cond_0
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -188,25 +173,18 @@
 
     check-cast v0, Landroid/telephony/TelephonyManager;
 
-    .line 92
-    .local v0, "telephony":Landroid/telephony/TelephonyManager;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/telephony/TelephonyManager;->setDataEnabled(Z)V
 
-    .line 93
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->setActive(Z)V
 
-    .line 94
-    .end local v0    # "telephony":Landroid/telephony/TelephonyManager;
     nop
 
-    .line 97
     return-void
 
-    .line 95
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -232,7 +210,6 @@
 .method public onPrimaryClick()V
     .locals 4
 
-    .line 83
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -251,24 +228,20 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 84
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 83
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 85
     return-void
 .end method
 
 .method public refreshState()V
     .locals 5
 
-    .line 40
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -283,8 +256,6 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 42
-    .local v0, "connectivity":Landroid/net/ConnectivityManager;
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -299,8 +270,6 @@
 
     check-cast v1, Landroid/telephony/TelephonyManager;
 
-    .line 43
-    .local v1, "telephony":Landroid/telephony/TelephonyManager;
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->isNetworkSupported(I)Z
@@ -309,7 +278,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 44
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getSimState()I
 
     move-result v3
@@ -320,7 +288,6 @@
 
     goto :goto_0
 
-    .line 48
     :cond_0
     invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->isDataEnabled()Z
 
@@ -330,14 +297,11 @@
 
     invoke-virtual {p0, v2}, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->setActive(Z)V
 
-    .line 49
     return-void
 
-    .line 45
     :cond_1
     :goto_0
     invoke-virtual {p0, v2}, Lcom/android/settings/dashboard/conditional/CellularDataCondition;->setActive(Z)V
 
-    .line 46
     return-void
 .end method

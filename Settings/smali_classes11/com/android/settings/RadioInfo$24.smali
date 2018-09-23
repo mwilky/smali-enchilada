@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1469
     iput-object p1, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 1471
     iget-object v0, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$2200(Lcom/android/settings/RadioInfo;)Landroid/widget/Button;
@@ -51,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 1472
     iget-object v0, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -74,7 +69,6 @@
 
     iget-object v2, p0, Lcom/android/settings/RadioInfo$24;->this$0:Lcom/android/settings/RadioInfo;
 
-    .line 1473
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$2700(Lcom/android/settings/RadioInfo;)Landroid/os/Handler;
 
     move-result-object v2
@@ -85,9 +79,7 @@
 
     move-result-object v2
 
-    .line 1472
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/Phone;->setSmscAddress(Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 1474
     return-void
 .end method

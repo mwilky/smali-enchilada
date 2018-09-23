@@ -34,8 +34,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 840
-    .local p0, "this":Landroid/support/v7/util/SortedList$Callback;, "Landroid/support/v7/util/SortedList$Callback<TT2;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -79,10 +77,6 @@
         }
     .end annotation
 
-    .line 920
-    .local p0, "this":Landroid/support/v7/util/SortedList$Callback;, "Landroid/support/v7/util/SortedList$Callback<TT2;>;"
-    .local p1, "item1":Ljava/lang/Object;, "TT2;"
-    .local p2, "item2":Ljava/lang/Object;, "TT2;"
     const/4 v0, 0x0
 
     return-object v0
@@ -93,14 +87,8 @@
 
 .method public onChanged(IILjava/lang/Object;)V
     .locals 0
-    .param p1, "position"    # I
-    .param p2, "count"    # I
-    .param p3, "payload"    # Ljava/lang/Object;
 
-    .line 866
-    .local p0, "this":Landroid/support/v7/util/SortedList$Callback;, "Landroid/support/v7/util/SortedList$Callback<TT2;>;"
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->onChanged(II)V
 
-    .line 867
     return-void
 .end method

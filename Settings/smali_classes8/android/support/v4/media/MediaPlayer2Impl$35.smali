@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1625
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$35;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$35;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onTimedMetaDataAvailable(Landroid/media/MediaPlayer;Landroid/media/TimedMetaData;)V
     .locals 2
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "data"    # Landroid/media/TimedMetaData;
 
-    .line 1628
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$35;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     new-instance v1, Landroid/support/v4/media/MediaPlayer2Impl$35$1;
@@ -54,6 +49,5 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$300(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;)V
 
-    .line 1635
     return-void
 .end method

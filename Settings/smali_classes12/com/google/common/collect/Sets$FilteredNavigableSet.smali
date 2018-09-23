@@ -46,13 +46,8 @@
         }
     .end annotation
 
-    .line 926
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "unfiltered":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TE;>;"
-    .local p2, "predicate":Lcom/google/common/base/Predicate;, "Lcom/google/common/base/Predicate<-TE;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Sets$FilteredSortedSet;-><init>(Ljava/util/SortedSet;Lcom/google/common/base/Predicate;)V
 
-    .line 927
     return-void
 .end method
 
@@ -66,9 +61,6 @@
         }
     .end annotation
 
-    .line 947
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -94,8 +86,6 @@
         }
     .end annotation
 
-    .line 972
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -123,8 +113,6 @@
         }
     .end annotation
 
-    .line 967
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -153,9 +141,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 942
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -177,7 +162,6 @@
 
 .method public headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 2
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -186,9 +170,6 @@
         }
     .end annotation
 
-    .line 989
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -214,9 +195,6 @@
         }
     .end annotation
 
-    .line 952
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -240,8 +218,6 @@
         }
     .end annotation
 
-    .line 977
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->descendingIterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -264,9 +240,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 936
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -294,8 +267,6 @@
         }
     .end annotation
 
-    .line 957
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -317,8 +288,6 @@
         }
     .end annotation
 
-    .line 962
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -338,8 +307,6 @@
 
 .method public subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 2
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;ZTE;Z)",
@@ -348,13 +315,8 @@
         }
     .end annotation
 
-    .line 983
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p3, "toElement":Ljava/lang/Object;, "TE;"
     nop
 
-    .line 984
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -365,7 +327,6 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Sets$FilteredNavigableSet;->predicate:Lcom/google/common/base/Predicate;
 
-    .line 983
     invoke-static {v0, v1}, Lcom/google/common/collect/Sets;->filter(Ljava/util/NavigableSet;Lcom/google/common/base/Predicate;)Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -375,7 +336,6 @@
 
 .method public tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 2
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -384,9 +344,6 @@
         }
     .end annotation
 
-    .line 994
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -414,8 +371,6 @@
         }
     .end annotation
 
-    .line 930
-    .local p0, "this":Lcom/google/common/collect/Sets$FilteredNavigableSet;, "Lcom/google/common/collect/Sets$FilteredNavigableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$FilteredNavigableSet;->unfiltered:Ljava/util/Collection;
 
     check-cast v0, Ljava/util/NavigableSet;

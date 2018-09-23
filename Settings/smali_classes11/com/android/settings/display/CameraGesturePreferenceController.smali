@@ -14,12 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 33
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 34
     return-void
 .end method
 
@@ -28,7 +25,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 38
     const-string v0, "camera_gesture"
 
     return-object v0
@@ -37,7 +33,6 @@
 .method public isAvailable()Z
     .locals 4
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/display/CameraGesturePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -65,14 +60,11 @@
     :cond_0
     move v0, v2
 
-    .line 52
-    .local v0, "configSet":Z
     :goto_0
     if-eqz v0, :cond_1
 
     const-string v3, "gesture.disable_camera_launch"
 
-    .line 53
     invoke-static {v3, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v3
@@ -81,7 +73,6 @@
 
     goto :goto_1
 
-    .line 52
     :cond_1
     move v1, v2
 
@@ -91,10 +82,7 @@
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 58
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -103,8 +91,6 @@
 
     move-result v0
 
-    .line 59
-    .local v0, "value":Z
     iget-object v1, p0, Lcom/android/settings/display/CameraGesturePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -113,15 +99,12 @@
 
     const-string v2, "camera_gesture_disabled"
 
-    .line 60
     nop
 
-    .line 59
     xor-int/lit8 v3, v0, 0x1
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 61
     const/4 v1, 0x1
 
     return v1
@@ -129,9 +112,7 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 43
     iget-object v0, p0, Lcom/android/settings/display/CameraGesturePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -146,8 +127,6 @@
 
     move-result v0
 
-    .line 45
-    .local v0, "value":I
     move-object v1, p1
 
     check-cast v1, Landroid/support/v14/preference/SwitchPreference;
@@ -161,6 +140,5 @@
     :cond_0
     invoke-virtual {v1, v2}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 46
     return-void
 .end method

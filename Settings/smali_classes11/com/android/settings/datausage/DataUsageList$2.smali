@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/DataUsageList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/DataUsageList;
 
-    .line 194
     iput-object p1, p0, Lcom/android/settings/datausage/DataUsageList$2;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public getSelectedItem()Ljava/lang/Object;
     .locals 1
 
-    .line 207
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$2;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$100(Lcom/android/settings/datausage/DataUsageList;)Landroid/widget/Spinner;
@@ -55,9 +52,7 @@
 
 .method public setAdapter(Lcom/android/settings/datausage/CycleAdapter;)V
     .locals 1
-    .param p1, "cycleAdapter"    # Lcom/android/settings/datausage/CycleAdapter;
 
-    .line 197
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$2;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$100(Lcom/android/settings/datausage/DataUsageList;)Landroid/widget/Spinner;
@@ -66,15 +61,12 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 198
     return-void
 .end method
 
 .method public setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/widget/AdapterView$OnItemSelectedListener;
 
-    .line 202
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$2;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$100(Lcom/android/settings/datausage/DataUsageList;)Landroid/widget/Spinner;
@@ -83,15 +75,12 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Spinner;->setOnItemSelectedListener(Landroid/widget/AdapterView$OnItemSelectedListener;)V
 
-    .line 203
     return-void
 .end method
 
 .method public setSelection(I)V
     .locals 1
-    .param p1, "position"    # I
 
-    .line 212
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$2;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$100(Lcom/android/settings/datausage/DataUsageList;)Landroid/widget/Spinner;
@@ -100,6 +89,5 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 213
     return-void
 .end method

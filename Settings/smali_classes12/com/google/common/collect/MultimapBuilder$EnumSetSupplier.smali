@@ -53,12 +53,8 @@
         }
     .end annotation
 
-    .line 262
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier<TV;>;"
-    .local p1, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 263
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -67,7 +63,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;->clazz:Ljava/lang/Class;
 
-    .line 264
     return-void
 .end method
 
@@ -76,8 +71,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 258
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;->get()Ljava/util/Set;
 
     move-result-object v0
@@ -95,8 +88,6 @@
         }
     .end annotation
 
-    .line 268
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier<TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MultimapBuilder$EnumSetSupplier;->clazz:Ljava/lang/Class;
 
     invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;

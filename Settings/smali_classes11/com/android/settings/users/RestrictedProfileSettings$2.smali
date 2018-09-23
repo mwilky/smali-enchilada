@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/RestrictedProfileSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/RestrictedProfileSettings;
 
-    .line 150
     iput-object p1, p0, Lcom/android/settings/users/RestrictedProfileSettings$2;->this$0:Lcom/android/settings/users/RestrictedProfileSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 152
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings$2;->this$0:Lcom/android/settings/users/RestrictedProfileSettings;
 
     iget-object v0, v0, Lcom/android/settings/users/RestrictedProfileSettings;->mUserManager:Landroid/os/UserManager;
@@ -54,11 +51,9 @@
 
     invoke-virtual {v0, v1}, Landroid/os/UserManager;->removeUser(I)Z
 
-    .line 153
     iget-object v0, p0, Lcom/android/settings/users/RestrictedProfileSettings$2;->this$0:Lcom/android/settings/users/RestrictedProfileSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/users/RestrictedProfileSettings;->finishFragment()V
 
-    .line 154
     return-void
 .end method

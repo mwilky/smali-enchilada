@@ -526,8 +526,6 @@
     <string name="oneplus_quick_clipboard_summary">कॉपी करण्याची क्षमता वाढवा आणि नंतर कॉपीच्या अनुसार पुढील कृतीची शिफारस करा</string>
     <string name="oneplus_quick_gestures">हावभाव</string>
     <string name="oneplus_quick_gestures_title">जलद हावभाव</string>
-    <string name="oneplus_quick_turn_on_assistant_app">सहाय्यक अॅपला त्वरित सक्रिय करा</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">सहाय्यक अॅप सक्रिय करण्यासाठी 0.5s आणि बंद करण्यासाठी 3s साठी पॉवर बटण धरून ठेवा</string>
     <string name="oneplus_quick_turn_on_camera">पटकन कॅमेरा चालू करा</string>
     <string name="oneplus_quickpay">जलद पैसे द्या</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">आपल्याला खात्री आहे का की %1$sआपण पासून \"जलद पैसे द्या\" वर होम बटणाची दीर्घ प्रेस कारवाई बदलू इच्छिता?</string>

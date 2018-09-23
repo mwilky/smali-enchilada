@@ -34,7 +34,6 @@
 .method constructor <init>(Lcom/google/common/base/Predicate;)V
     .locals 0
 
-    .line 3034
     iput-object p1, p0, Lcom/google/common/collect/Maps$FilteredEntryBiMap$1;->val$forwardPredicate:Lcom/google/common/base/Predicate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +46,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 3034
     check-cast p1, Ljava/util/Map$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$FilteredEntryBiMap$1;->apply(Ljava/util/Map$Entry;)Z
@@ -67,11 +65,8 @@
         }
     .end annotation
 
-    .line 3037
-    .local p1, "input":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TV;TK;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryBiMap$1;->val$forwardPredicate:Lcom/google/common/base/Predicate;
 
-    .line 3038
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -84,7 +79,6 @@
 
     move-result-object v1
 
-    .line 3037
     invoke-interface {v0, v1}, Lcom/google/common/base/Predicate;->apply(Ljava/lang/Object;)Z
 
     move-result v0

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 1346
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$7;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/TransitionListener;-><init>()V
@@ -35,15 +33,12 @@
 # virtual methods
 .method public onTransitionEnd(Ljava/lang/Object;)V
     .locals 2
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 1349
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$7;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->mExpandTransition:Ljava/lang/Object;
 
-    .line 1350
     return-void
 .end method

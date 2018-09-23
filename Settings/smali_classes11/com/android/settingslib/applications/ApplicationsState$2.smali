@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1474
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)I
     .locals 4
-    .param p1, "object1"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
-    .param p2, "object2"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1477
     iget-wide v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->size:J
 
     iget-wide v2, p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->size:J
@@ -56,7 +52,6 @@
 
     return v0
 
-    .line 1478
     :cond_0
     iget-wide v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->size:J
 
@@ -70,7 +65,6 @@
 
     return v0
 
-    .line 1479
     :cond_1
     sget-object v0, Lcom/android/settingslib/applications/ApplicationsState;->ALPHA_COMPARATOR:Ljava/util/Comparator;
 
@@ -84,7 +78,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 1474
     check-cast p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
     check-cast p2, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;

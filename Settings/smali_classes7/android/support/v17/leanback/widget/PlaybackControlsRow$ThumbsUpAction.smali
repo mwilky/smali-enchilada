@@ -17,9 +17,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 444
     sget v0, Landroid/support/v17/leanback/R$id;->lb_control_thumbs_up:I
 
     sget v1, Landroid/support/v17/leanback/R$styleable;->lbPlaybackControlsActionIcons_thumb_up:I
@@ -28,15 +26,12 @@
 
     invoke-direct {p0, v0, p1, v1, v2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ThumbsAction;-><init>(ILandroid/content/Context;II)V
 
-    .line 447
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ThumbsUpAction;->getActionCount()I
 
     move-result v0
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 448
-    .local v0, "labels":[Ljava/lang/String;
     sget v1, Landroid/support/v17/leanback/R$string;->lb_playback_controls_thumb_up:I
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -47,7 +42,6 @@
 
     aput-object v1, v0, v2
 
-    .line 449
     sget v1, Landroid/support/v17/leanback/R$string;->lb_playback_controls_thumb_up_outline:I
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -58,9 +52,7 @@
 
     aput-object v1, v0, v2
 
-    .line 451
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ThumbsUpAction;->setLabels([Ljava/lang/String;)V
 
-    .line 452
     return-void
 .end method

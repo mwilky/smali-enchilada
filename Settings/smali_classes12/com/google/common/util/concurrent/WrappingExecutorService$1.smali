@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/WrappingExecutorService;Ljava/util/concurrent/Callable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/WrappingExecutorService;
 
-    .line 67
     iput-object p1, p0, Lcom/google/common/util/concurrent/WrappingExecutorService$1;->this$0:Lcom/google/common/util/concurrent/WrappingExecutorService;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/WrappingExecutorService$1;->val$wrapped:Ljava/util/concurrent/Callable;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 1
 
-    .line 70
     :try_start_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/WrappingExecutorService$1;->val$wrapped:Ljava/util/concurrent/Callable;
 
@@ -51,19 +48,13 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 73
     goto :goto_0
 
-    .line 71
     :catch_0
     move-exception v0
 
-    .line 72
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/google/common/base/Throwables;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
-    .line 74
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

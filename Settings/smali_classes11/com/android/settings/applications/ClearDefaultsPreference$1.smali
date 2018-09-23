@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/ClearDefaultsPreference;Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/ClearDefaultsPreference;
 
-    .line 94
     iput-object p1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     iput-object p2, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->val$view:Landroid/support/v7/preference/PreferenceViewHolder;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 97
     iget-object v0, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     invoke-static {v0}, Lcom/android/settings/applications/ClearDefaultsPreference;->access$000(Lcom/android/settings/applications/ClearDefaultsPreference;)Landroid/hardware/usb/IUsbManager;
@@ -53,13 +49,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 98
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
-    .line 99
-    .local v0, "userId":I
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     invoke-static {v1}, Lcom/android/settings/applications/ClearDefaultsPreference;->access$200(Lcom/android/settings/applications/ClearDefaultsPreference;)Landroid/content/pm/PackageManager;
@@ -74,7 +67,6 @@
 
     invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->clearPackagePreferredActivities(Ljava/lang/String;)V
 
-    .line 100
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     iget-object v2, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
@@ -89,7 +81,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 101
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     invoke-static {v1}, Lcom/android/settings/applications/ClearDefaultsPreference;->access$200(Lcom/android/settings/applications/ClearDefaultsPreference;)Landroid/content/pm/PackageManager;
@@ -100,7 +91,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/pm/PackageManager;->setDefaultBrowserPackageNameAsUser(Ljava/lang/String;I)Z
 
-    .line 104
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
@@ -119,23 +109,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 107
     goto :goto_0
 
-    .line 105
     :catch_0
     move-exception v1
 
-    .line 106
-    .local v1, "e":Landroid/os/RemoteException;
     sget-object v2, Lcom/android/settings/applications/ClearDefaultsPreference;->TAG:Ljava/lang/String;
 
     const-string v3, "mUsbManager.clearDefaults"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 108
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
@@ -153,7 +137,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/appwidget/AppWidgetManager;->setBindAppWidgetPermission(Ljava/lang/String;Z)V
 
-    .line 109
     iget-object v1, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->val$view:Landroid/support/v7/preference/PreferenceViewHolder;
 
     const v2, 0x7f0a0080
@@ -164,15 +147,10 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 110
-    .local v1, "autoLaunchView":Landroid/widget/TextView;
     iget-object v2, p0, Lcom/android/settings/applications/ClearDefaultsPreference$1;->this$0:Lcom/android/settings/applications/ClearDefaultsPreference;
 
     invoke-static {v2, v1}, Lcom/android/settings/applications/ClearDefaultsPreference;->access$500(Lcom/android/settings/applications/ClearDefaultsPreference;Landroid/widget/TextView;)V
 
-    .line 112
-    .end local v0    # "userId":I
-    .end local v1    # "autoLaunchView":Landroid/widget/TextView;
     :cond_1
     return-void
 .end method

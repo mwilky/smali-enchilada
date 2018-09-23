@@ -10,14 +10,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parent"    # Lcom/android/settings/SettingsPreferenceFragment;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 33
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/notification/SettingPrefController;-><init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 34
     new-instance v7, Lcom/android/settings/notification/VibrateOnTouchPreferenceController$1;
 
     const-string v3, "vibrate_on_touch"
@@ -40,15 +35,12 @@
 
     iput-object v7, p0, Lcom/android/settings/notification/VibrateOnTouchPreferenceController;->mPreference:Lcom/android/settings/notification/SettingPref;
 
-    .line 42
     return-void
 .end method
 
 .method static synthetic access$000(Landroid/content/Context;)Z
     .locals 1
-    .param p0, "x0"    # Landroid/content/Context;
 
-    .line 27
     invoke-static {p0}, Lcom/android/settings/notification/VibrateOnTouchPreferenceController;->hasHaptic(Landroid/content/Context;)Z
 
     move-result v0
@@ -58,9 +50,7 @@
 
 .method private static hasHaptic(Landroid/content/Context;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 45
     const-string v0, "vibrator"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -69,8 +59,6 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 46
-    .local v0, "vibrator":Landroid/os/Vibrator;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/os/Vibrator;->hasVibrator()Z

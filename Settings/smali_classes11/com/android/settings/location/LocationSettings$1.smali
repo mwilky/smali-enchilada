@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Landroid/support/v7/preference/Preference;Landroid/support/v7/preference/Preference;)I
     .locals 2
-    .param p1, "lhs"    # Landroid/support/v7/preference/Preference;
-    .param p2, "rhs"    # Landroid/support/v7/preference/Preference;
 
-    .line 113
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -70,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 110
     check-cast p1, Landroid/support/v7/preference/Preference;
 
     check-cast p2, Landroid/support/v7/preference/Preference;

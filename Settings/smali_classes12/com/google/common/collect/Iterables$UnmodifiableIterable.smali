@@ -46,25 +46,16 @@
         }
     .end annotation
 
-    .line 88
-    .local p0, "this":Lcom/google/common/collect/Iterables$UnmodifiableIterable;, "Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
-    .local p1, "iterable":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
 
-    .line 89
     iput-object p1, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
 
-    .line 90
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/Iterable;Lcom/google/common/collect/Iterables$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Iterable;
-    .param p2, "x1"    # Lcom/google/common/collect/Iterables$1;
 
-    .line 85
-    .local p0, "this":Lcom/google/common/collect/Iterables$UnmodifiableIterable;, "Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Iterables$UnmodifiableIterable;-><init>(Ljava/lang/Iterable;)V
 
     return-void
@@ -82,8 +73,6 @@
         }
     .end annotation
 
-    .line 94
-    .local p0, "this":Lcom/google/common/collect/Iterables$UnmodifiableIterable;, "Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -100,8 +89,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 99
-    .local p0, "this":Lcom/google/common/collect/Iterables$UnmodifiableIterable;, "Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;

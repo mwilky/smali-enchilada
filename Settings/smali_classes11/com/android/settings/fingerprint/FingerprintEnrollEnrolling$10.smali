@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
-    .line 1073
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$10;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
     .locals 2
-    .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
-    .line 1076
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$10;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->access$900(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)Z
@@ -46,10 +42,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1077
     return-void
 
-    .line 1081
     :cond_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$10;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
@@ -63,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->post(Ljava/lang/Runnable;)Z
 
-    .line 1087
     return-void
 .end method

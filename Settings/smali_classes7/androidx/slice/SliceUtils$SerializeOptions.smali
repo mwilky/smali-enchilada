@@ -40,31 +40,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 289
     const/4 v0, 0x0
 
     iput v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mActionMode:I
 
-    .line 290
     iput v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mImageMode:I
 
-    .line 291
     const/16 v0, 0x3e8
 
     iput v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxWidth:I
 
-    .line 292
     iput v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxHeight:I
 
-    .line 294
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     iput-object v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 295
     const/16 v0, 0x64
 
     iput v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mQuality:I
@@ -76,14 +69,12 @@
 # virtual methods
 .method public checkThrow(Ljava/lang/String;)V
     .locals 3
-    .param p1, "format"    # Ljava/lang/String;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 302
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -148,10 +139,8 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 311
     return-void
 
-    .line 308
     :pswitch_0
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mImageMode:I
 
@@ -159,7 +148,6 @@
 
     return-void
 
-    .line 305
     :pswitch_1
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mActionMode:I
 
@@ -167,7 +155,6 @@
 
     return-void
 
-    .line 313
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -205,7 +192,6 @@
         }
     .end annotation
 
-    .line 321
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mActionMode:I
 
     return v0
@@ -219,7 +205,6 @@
         }
     .end annotation
 
-    .line 353
     iget-object v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mFormat:Landroid/graphics/Bitmap$CompressFormat;
 
     return-object v0
@@ -233,7 +218,6 @@
         }
     .end annotation
 
-    .line 329
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mImageMode:I
 
     return v0
@@ -247,7 +231,6 @@
         }
     .end annotation
 
-    .line 345
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxHeight:I
 
     return v0
@@ -261,7 +244,6 @@
         }
     .end annotation
 
-    .line 337
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxWidth:I
 
     return v0
@@ -275,7 +257,6 @@
         }
     .end annotation
 
-    .line 361
     iget v0, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mQuality:I
 
     return v0
@@ -283,59 +264,42 @@
 
 .method public setActionMode(I)Landroidx/slice/SliceUtils$SerializeOptions;
     .locals 0
-    .param p1, "mode"    # I
 
-    .line 371
     iput p1, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mActionMode:I
 
-    .line 372
     return-object p0
 .end method
 
 .method public setImageConversionFormat(Landroid/graphics/Bitmap$CompressFormat;I)Landroidx/slice/SliceUtils$SerializeOptions;
     .locals 0
-    .param p1, "format"    # Landroid/graphics/Bitmap$CompressFormat;
-    .param p2, "quality"    # I
 
-    .line 420
     iput-object p1, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mFormat:Landroid/graphics/Bitmap$CompressFormat;
 
-    .line 421
     iput p2, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mQuality:I
 
-    .line 422
     return-object p0
 .end method
 
 .method public setImageMode(I)Landroidx/slice/SliceUtils$SerializeOptions;
     .locals 0
-    .param p1, "mode"    # I
 
-    .line 382
     iput p1, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mImageMode:I
 
-    .line 383
     return-object p0
 .end method
 
 .method public setMaxImageHeight(I)Landroidx/slice/SliceUtils$SerializeOptions;
     .locals 0
-    .param p1, "height"    # I
 
-    .line 406
     iput p1, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxHeight:I
 
-    .line 407
     return-object p0
 .end method
 
 .method public setMaxImageWidth(I)Landroidx/slice/SliceUtils$SerializeOptions;
     .locals 0
-    .param p1, "width"    # I
 
-    .line 394
     iput p1, p0, Landroidx/slice/SliceUtils$SerializeOptions;->mMaxWidth:I
 
-    .line 395
     return-object p0
 .end method

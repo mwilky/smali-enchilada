@@ -51,15 +51,10 @@
         }
     .end annotation
 
-    .line 596
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$SerializedForm;, "Lcom/google/common/collect/ImmutableRangeSet$SerializedForm<TC;>;"
-    .local p1, "ranges":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/collect/Range<TC;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 597
     iput-object p1, p0, Lcom/google/common/collect/ImmutableRangeSet$SerializedForm;->ranges:Lcom/google/common/collect/ImmutableList;
 
-    .line 598
     return-void
 .end method
 
@@ -68,8 +63,6 @@
 .method readResolve()Ljava/lang/Object;
     .locals 2
 
-    .line 601
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeSet$SerializedForm;, "Lcom/google/common/collect/ImmutableRangeSet$SerializedForm<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$SerializedForm;->ranges:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
@@ -78,14 +71,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 602
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeSet;->of()Lcom/google/common/collect/ImmutableRangeSet;
 
     move-result-object v0
 
     return-object v0
 
-    .line 603
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeSet$SerializedForm;->ranges:Lcom/google/common/collect/ImmutableList;
 
@@ -103,14 +94,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 604
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeSet;->all()Lcom/google/common/collect/ImmutableRangeSet;
 
     move-result-object v0
 
     return-object v0
 
-    .line 606
     :cond_1
     new-instance v0, Lcom/google/common/collect/ImmutableRangeSet;
 

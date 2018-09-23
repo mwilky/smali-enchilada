@@ -29,7 +29,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36
     invoke-direct {p0}, Landroid/support/v4/graphics/TypefaceCompatApi26Impl;-><init>()V
 
     return-void
@@ -39,9 +38,7 @@
 # virtual methods
 .method protected createFromFamiliesWithDefault(Ljava/lang/Object;)Landroid/graphics/Typeface;
     .locals 7
-    .param p1, "family"    # Ljava/lang/Object;
 
-    .line 51
     :try_start_0
     iget-object v0, p0, Landroid/support/v4/graphics/TypefaceCompatApi28Impl;->mFontFamily:Ljava/lang/Class;
 
@@ -51,13 +48,10 @@
 
     move-result-object v0
 
-    .line 52
-    .local v0, "familyArray":Ljava/lang/Object;
     const/4 v2, 0x0
 
     invoke-static {v0, v2, p1}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 53
     iget-object v3, p0, Landroid/support/v4/graphics/TypefaceCompatApi28Impl;->mCreateFromFamiliesWithDefault:Ljava/lang/reflect/Method;
 
     const/4 v4, 0x0
@@ -74,7 +68,6 @@
 
     const/4 v1, 0x2
 
-    .line 54
     const/4 v2, -0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -91,7 +84,6 @@
 
     aput-object v2, v5, v1
 
-    .line 53
     invoke-virtual {v3, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -103,13 +95,9 @@
 
     return-object v1
 
-    .line 55
-    .end local v0    # "familyArray":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 56
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -119,22 +107,18 @@
 
 .method protected obtainCreateFromFamiliesWithDefaultMethod(Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 7
-    .param p1, "fontFamily"    # Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NoSuchMethodException;
         }
     .end annotation
 
-    .line 63
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 64
-    .local v1, "familyArray":Ljava/lang/Object;
     const-class v2, Landroid/graphics/Typeface;
 
     const-string v3, "createFromFamiliesWithDefault"
@@ -143,7 +127,6 @@
 
     new-array v4, v4, [Ljava/lang/Class;
 
-    .line 65
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v5
@@ -168,15 +151,11 @@
 
     aput-object v5, v4, v6
 
-    .line 64
     invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v2
 
-    .line 66
-    .local v2, "m":Ljava/lang/reflect/Method;
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 67
     return-object v2
 .end method

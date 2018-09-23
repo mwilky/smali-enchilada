@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,8 +47,6 @@
         }
     .end annotation
 
-    .line 152
-    .local p1, "modelClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
@@ -62,12 +59,9 @@
 
     return-object v0
 
-    .line 155
     :catch_0
     move-exception v0
 
-    .line 156
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -88,13 +82,9 @@
 
     throw v1
 
-    .line 153
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_1
     move-exception v0
 
-    .line 154
-    .local v0, "e":Ljava/lang/InstantiationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;

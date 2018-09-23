@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsFragment;
 
-    .line 631
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsFragment$12;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 634
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$12;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsFragment;->getView()Landroid/view/View;
@@ -48,12 +45,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 635
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$12;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsFragment;->switchToVideo()V
 
-    .line 637
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$12;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
@@ -61,6 +56,5 @@
 
     iput-boolean v1, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mPendingFocusOnVideo:Z
 
-    .line 638
     return-void
 .end method

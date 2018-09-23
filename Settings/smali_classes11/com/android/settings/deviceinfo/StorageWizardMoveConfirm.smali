@@ -17,7 +17,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageWizardBase;-><init>()V
 
     return-void
@@ -27,28 +26,21 @@
 # virtual methods
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
 
-    .line 108
     const/16 v0, 0x64
 
     if-ne p1, v0, :cond_1
 
-    .line 109
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 112
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->onNavigateNext(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 117
     :cond_0
     const-string v0, "StorageSettings"
 
@@ -58,40 +50,31 @@
 
     goto :goto_0
 
-    .line 120
     :cond_1
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 122
     :goto_0
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 6
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 49
     invoke-super {p0, p1}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onCreate(Landroid/os/Bundle;)V
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->mVolume:Landroid/os/storage/VolumeInfo;
 
     if-nez v0, :cond_0
 
-    .line 51
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->finish()V
 
-    .line 52
     return-void
 
-    .line 54
     :cond_0
-    const v0, 0x7f0d025b
+    const v0, 0x7f0d025a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setContentView(I)V
 
-    .line 57
     :try_start_0
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getIntent()Landroid/content/Intent;
 
@@ -105,7 +88,6 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->mPackageName:Ljava/lang/String;
 
-    .line 58
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -122,13 +104,10 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 62
     nop
 
-    .line 65
     nop
 
-    .line 66
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -145,10 +124,8 @@
 
     move-result v0
 
-    .line 65
     invoke-static {v0}, Lcom/android/internal/util/Preconditions;->checkState(Z)V
 
-    .line 68
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -163,8 +140,6 @@
 
     move-result-object v0
 
-    .line 69
-    .local v0, "appName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->mStorage:Landroid/os/storage/StorageManager;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->mVolume:Landroid/os/storage/VolumeInfo;
@@ -173,14 +148,11 @@
 
     move-result-object v1
 
-    .line 71
-    .local v1, "volumeName":Ljava/lang/String;
     const v3, 0x7f08023e
 
     invoke-virtual {p0, v3}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setIcon(I)V
 
-    .line 72
-    const v3, 0x7f12112d
+    const v3, 0x7f121126
 
     const/4 v4, 0x1
 
@@ -190,8 +162,7 @@
 
     invoke-virtual {p0, v3, v5}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setHeaderText(I[Ljava/lang/CharSequence;)V
 
-    .line 73
-    const v3, 0x7f12112c
+    const v3, 0x7f121125
 
     const/4 v5, 0x2
 
@@ -203,42 +174,31 @@
 
     invoke-virtual {p0, v3, v5}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setBodyText(I[Ljava/lang/CharSequence;)V
 
-    .line 75
     const v3, 0x7f120960
 
     new-array v2, v2, [Ljava/lang/CharSequence;
 
     invoke-virtual {p0, v3, v2}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->setNextButtonText(I[Ljava/lang/CharSequence;)V
 
-    .line 76
     return-void
 
-    .line 59
-    .end local v0    # "appName":Ljava/lang/String;
-    .end local v1    # "volumeName":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 60
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->finish()V
 
-    .line 61
     return-void
 .end method
 
 .method public onNavigateNext(Landroid/view/View;)V
     .locals 11
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 81
     invoke-static {}, Landroid/os/storage/StorageManager;->isFileEncryptedNativeOrEmulated()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 82
     const-class v0, Landroid/os/UserManager;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -268,8 +228,6 @@
 
     check-cast v1, Landroid/content/pm/UserInfo;
 
-    .line 83
-    .local v1, "user":Landroid/content/pm/UserInfo;
     iget v2, v1, Landroid/content/pm/UserInfo;->id:I
 
     invoke-static {v2}, Landroid/os/storage/StorageManager;->isUserKeyUnlocked(I)Z
@@ -278,7 +236,6 @@
 
     if-nez v2, :cond_0
 
-    .line 84
     const-string v0, "StorageSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -303,10 +260,8 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
-    const v0, 0x7f121131
+    const v0, 0x7f12112a
 
-    .line 86
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -321,13 +276,10 @@
 
     aput-object v4, v2, v3
 
-    .line 85
     invoke-static {v0, v2}, Landroid/text/TextUtils;->expandTemplate(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 87
-    .local v0, "description":Ljava/lang/CharSequence;
     new-instance v5, Lcom/android/settings/password/ChooseLockSettingsHelper;
 
     invoke-direct {v5, p0}, Lcom/android/settings/password/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
@@ -344,16 +296,11 @@
 
     invoke-virtual/range {v5 .. v10}, Lcom/android/settings/password/ChooseLockSettingsHelper;->launchConfirmationActivityForAnyUser(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)Z
 
-    .line 89
     return-void
 
-    .line 91
-    .end local v0    # "description":Ljava/lang/CharSequence;
-    .end local v1    # "user":Landroid/content/pm/UserInfo;
     :cond_0
     goto :goto_0
 
-    .line 95
     :cond_1
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -369,8 +316,6 @@
 
     move-result-object v0
 
-    .line 96
-    .local v0, "appName":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -383,26 +328,20 @@
 
     move-result v1
 
-    .line 98
-    .local v1, "moveId":I
     new-instance v2, Landroid/content/Intent;
 
     const-class v3, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
     invoke-direct {v2, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 99
-    .local v2, "intent":Landroid/content/Intent;
     const-string v3, "android.content.pm.extra.MOVE_ID"
 
     invoke-virtual {v2, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 100
     const-string v3, "android.intent.extra.TITLE"
 
     invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 101
     const-string v3, "android.os.storage.extra.VOLUME_ID"
 
     iget-object v4, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->mVolume:Landroid/os/storage/VolumeInfo;
@@ -413,12 +352,9 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 102
     invoke-virtual {p0, v2}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->startActivity(Landroid/content/Intent;)V
 
-    .line 103
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveConfirm;->finishAffinity()V
 
-    .line 104
     return-void
 .end method

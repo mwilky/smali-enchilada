@@ -36,7 +36,6 @@
 .method constructor <init>(Lcom/google/tagmanager/Runtime;)V
     .locals 0
 
-    .line 193
     iput-object p1, p0, Lcom/google/tagmanager/Runtime$1;->this$0:Lcom/google/tagmanager/Runtime;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +47,6 @@
 # virtual methods
 .method public sizeOf(Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;Lcom/google/tagmanager/ObjectAndStatic;)I
     .locals 1
-    .param p1, "key"    # Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,8 +57,6 @@
         }
     .end annotation
 
-    .line 198
-    .local p2, "value":Lcom/google/tagmanager/ObjectAndStatic;, "Lcom/google/tagmanager/ObjectAndStatic<Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     invoke-virtual {p2}, Lcom/google/tagmanager/ObjectAndStatic;->getObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -76,10 +72,7 @@
 
 .method public bridge synthetic sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
 
-    .line 193
     move-object v0, p1
 
     check-cast v0, Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;

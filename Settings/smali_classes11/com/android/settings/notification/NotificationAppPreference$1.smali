@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/NotificationAppPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationAppPreference;
 
-    .line 65
     iput-object p1, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 68
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
     invoke-static {v0}, Lcom/android/settings/notification/NotificationAppPreference;->access$000(Lcom/android/settings/notification/NotificationAppPreference;)Lcom/oneplus/lib/widget/button/OPSwitch;
@@ -61,10 +57,8 @@
 
     if-nez v0, :cond_0
 
-    .line 69
     return-void
 
-    .line 71
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/NotificationAppPreference;->setChecked(Z)V
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
@@ -97,7 +90,6 @@
 
     if-nez v0, :cond_1
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
     iget-object v1, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
@@ -112,7 +104,6 @@
 
     goto :goto_0
 
-    .line 75
     :cond_1
     iget-object v0, p0, Lcom/android/settings/notification/NotificationAppPreference$1;->this$0:Lcom/android/settings/notification/NotificationAppPreference;
 
@@ -124,7 +115,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/notification/NotificationAppPreference;->access$200(Lcom/android/settings/notification/NotificationAppPreference;Z)Z
 
-    .line 77
     :goto_0
     return-void
 .end method

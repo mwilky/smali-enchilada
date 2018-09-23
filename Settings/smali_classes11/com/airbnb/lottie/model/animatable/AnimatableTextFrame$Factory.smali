@@ -18,19 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     return-void
 .end method
 
 .method public static newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;
     .locals 4
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 27
     if-eqz p0, :cond_0
 
     const-string v0, "x"
@@ -41,16 +36,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 28
     const-string v0, "Lottie doesn\'t support expressions."
 
     invoke-virtual {p1, v0}, Lcom/airbnb/lottie/LottieComposition;->addWarning(Ljava/lang/String;)V
 
-    .line 30
     :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 31
     invoke-static {}, Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame$ValueFactory;->access$000()Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame$ValueFactory;
 
     move-result-object v1
@@ -59,13 +51,10 @@
 
     move-result-object v0
 
-    .line 32
     invoke-virtual {v0}, Lcom/airbnb/lottie/model/animatable/AnimatableValueParser;->parseJson()Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;
 
     move-result-object v0
 
-    .line 33
-    .local v0, "result":Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;, "Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result<Lcom/airbnb/lottie/model/DocumentData;>;"
     new-instance v1, Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;
 
     iget-object v2, v0, Lcom/airbnb/lottie/model/animatable/AnimatableValueParser$Result;->keyframes:Ljava/util/List;

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/ActionBarContextView;Lcom/oneplus/lib/app/appcompat/ActionMode;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
 
-    .line 154
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/ActionBarContextView$1;->this$0:Lcom/oneplus/lib/app/appcompat/ActionBarContextView;
 
     iput-object p2, p0, Lcom/oneplus/lib/app/appcompat/ActionBarContextView$1;->val$mode:Lcom/oneplus/lib/app/appcompat/ActionMode;
@@ -42,13 +40,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 156
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/ActionBarContextView$1;->val$mode:Lcom/oneplus/lib/app/appcompat/ActionMode;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/ActionMode;->finish()V
 
-    .line 157
     return-void
 .end method

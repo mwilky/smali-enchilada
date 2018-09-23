@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 68
     new-instance v0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb$NotificationAndNotdisturbSearchIndexProvider;
 
     invoke-direct {v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb$NotificationAndNotdisturbSearchIndexProvider;-><init>()V
@@ -57,7 +56,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
     return-void
@@ -68,7 +66,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 63
     const/16 v0, 0x270f
 
     return v0
@@ -76,17 +73,13 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "icicle"    # Landroid/os/Bundle;
 
-    .line 39
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 40
     const v0, 0x7f160087
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->addPreferencesFromResource(I)V
 
-    .line 41
     const-string v0, "ring_settings"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -95,7 +88,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mRingSettings:Landroid/support/v7/preference/Preference;
 
-    .line 42
     const-string v0, "silent_settings"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -104,7 +96,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mSilentSettings:Landroid/support/v7/preference/Preference;
 
-    .line 43
     const-string v0, "vibration_settings"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -113,7 +104,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mVibrationSettings:Landroid/support/v7/preference/Preference;
 
-    .line 44
     const-string v0, "do_not_disturb_settings"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -122,25 +112,20 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mDonotdisturbSetings:Landroid/support/v7/preference/Preference;
 
-    .line 45
     const-string v0, "mode_settings_category"
 
-    .line 46
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/preference/PreferenceGroup;
 
-    .line 47
-    .local v0, "modeSettingsCategory":Landroid/support/v7/preference/PreferenceGroup;
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuestMode()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 48
     const-string v1, "ring_settings"
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -149,7 +134,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 50
     :cond_0
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportSocTriState()Z
 
@@ -159,13 +143,11 @@
 
     goto :goto_0
 
-    .line 56
     :cond_1
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPNotificationAndNotdisturb;->mVibrationSettings:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceGroup;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 59
     :goto_0
     return-void
 .end method

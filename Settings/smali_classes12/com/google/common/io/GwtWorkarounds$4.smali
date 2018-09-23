@@ -22,7 +22,6 @@
 .method constructor <init>(Lcom/google/common/io/GwtWorkarounds$ByteOutput;)V
     .locals 0
 
-    .line 155
     iput-object p1, p0, Lcom/google/common/io/GwtWorkarounds$4;->val$output:Lcom/google/common/io/GwtWorkarounds$ByteOutput;
 
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
@@ -40,12 +39,10 @@
         }
     .end annotation
 
-    .line 168
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$4;->val$output:Lcom/google/common/io/GwtWorkarounds$ByteOutput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$ByteOutput;->close()V
 
-    .line 169
     return-void
 .end method
 
@@ -57,31 +54,26 @@
         }
     .end annotation
 
-    .line 163
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$4;->val$output:Lcom/google/common/io/GwtWorkarounds$ByteOutput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$ByteOutput;->flush()V
 
-    .line 164
     return-void
 .end method
 
 .method public write(I)V
     .locals 2
-    .param p1, "b"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 158
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$4;->val$output:Lcom/google/common/io/GwtWorkarounds$ByteOutput;
 
     int-to-byte v1, p1
 
     invoke-interface {v0, v1}, Lcom/google/common/io/GwtWorkarounds$ByteOutput;->write(B)V
 
-    .line 159
     return-void
 .end method

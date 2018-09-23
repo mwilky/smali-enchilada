@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/tagmanager/LRUCache;ILcom/google/tagmanager/CacheFactory$CacheSizeManager;)V
     .locals 0
-    .param p2, "x0"    # I
 
-    .line 26
-    .local p0, "this":Lcom/google/tagmanager/LRUCache$1;, "Lcom/google/tagmanager/LRUCache.1;"
     iput-object p1, p0, Lcom/google/tagmanager/LRUCache$1;->this$0:Lcom/google/tagmanager/LRUCache;
 
     iput-object p3, p0, Lcom/google/tagmanager/LRUCache$1;->val$sizeManager:Lcom/google/tagmanager/CacheFactory$CacheSizeManager;
@@ -53,10 +50,6 @@
         }
     .end annotation
 
-    .line 29
-    .local p0, "this":Lcom/google/tagmanager/LRUCache$1;, "Lcom/google/tagmanager/LRUCache.1;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/tagmanager/LRUCache$1;->val$sizeManager:Lcom/google/tagmanager/CacheFactory$CacheSizeManager;
 
     invoke-interface {v0, p1, p2}, Lcom/google/tagmanager/CacheFactory$CacheSizeManager;->sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I

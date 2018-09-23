@@ -28,14 +28,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 7
-    .param p1, "algorithmName"    # Ljava/lang/String;
-    .param p2, "bytes"    # I
-    .param p3, "toString"    # Ljava/lang/String;
 
-    .line 46
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 47
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -44,22 +39,18 @@
 
     iput-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->toString:Ljava/lang/String;
 
-    .line 48
     invoke-static {p1}, Lcom/google/common/hash/MessageDigestHashFunction;->getMessageDigest(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;
 
-    .line 49
     iget-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;
 
     invoke-virtual {v0}, Ljava/security/MessageDigest;->getDigestLength()I
 
     move-result v0
 
-    .line 50
-    .local v0, "maxLength":I
     const/4 v1, 0x0
 
     const/4 v2, 0x1
@@ -84,7 +75,6 @@
 
     new-array v5, v5, [Ljava/lang/Object;
 
-    .line 51
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -97,39 +87,30 @@
 
     aput-object v1, v5, v2
 
-    .line 50
     invoke-static {v3, v4, v5}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 52
     iput p2, p0, Lcom/google/common/hash/MessageDigestHashFunction;->bytes:I
 
-    .line 53
     invoke-direct {p0}, Lcom/google/common/hash/MessageDigestHashFunction;->supportsClone()Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/google/common/hash/MessageDigestHashFunction;->supportsClone:Z
 
-    .line 54
     return-void
 .end method
 
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p1, "algorithmName"    # Ljava/lang/String;
-    .param p2, "toString"    # Ljava/lang/String;
 
-    .line 39
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 40
     invoke-static {p1}, Lcom/google/common/hash/MessageDigestHashFunction;->getMessageDigest(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;
 
-    .line 41
     iget-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;
 
     invoke-virtual {v0}, Ljava/security/MessageDigest;->getDigestLength()I
@@ -138,7 +119,6 @@
 
     iput v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->bytes:I
 
-    .line 42
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -147,22 +127,18 @@
 
     iput-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->toString:Ljava/lang/String;
 
-    .line 43
     invoke-direct {p0}, Lcom/google/common/hash/MessageDigestHashFunction;->supportsClone()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->supportsClone:Z
 
-    .line 44
     return-void
 .end method
 
 .method private static getMessageDigest(Ljava/lang/String;)Ljava/security/MessageDigest;
     .locals 2
-    .param p0, "algorithmName"    # Ljava/lang/String;
 
-    .line 75
     :try_start_0
     invoke-static {p0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
@@ -172,12 +148,9 @@
 
     return-object v0
 
-    .line 76
     :catch_0
     move-exception v0
 
-    .line 77
-    .local v0, "e":Ljava/security/NoSuchAlgorithmException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -188,7 +161,6 @@
 .method private supportsClone()Z
     .locals 2
 
-    .line 58
     :try_start_0
     iget-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;
 
@@ -196,17 +168,13 @@
     :try_end_0
     .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 59
     const/4 v0, 0x1
 
     return v0
 
-    .line 60
     :catch_0
     move-exception v0
 
-    .line 61
-    .local v0, "e":Ljava/lang/CloneNotSupportedException;
     const/4 v1, 0x0
 
     return v1
@@ -217,7 +185,6 @@
 .method public bits()I
     .locals 1
 
-    .line 66
     iget v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->bytes:I
 
     mul-int/lit8 v0, v0, 0x8
@@ -228,14 +195,12 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 4
 
-    .line 82
     iget-boolean v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->supportsClone:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 84
     :try_start_0
     new-instance v0, Lcom/google/common/hash/MessageDigestHashFunction$MessageDigestHasher;
 
@@ -255,11 +220,9 @@
 
     return-object v0
 
-    .line 85
     :catch_0
     move-exception v0
 
-    .line 89
     :cond_0
     new-instance v0, Lcom/google/common/hash/MessageDigestHashFunction$MessageDigestHasher;
 
@@ -283,7 +246,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 70
     iget-object v0, p0, Lcom/google/common/hash/MessageDigestHashFunction;->toString:Ljava/lang/String;
 
     return-object v0
@@ -292,7 +254,6 @@
 .method writeReplace()Ljava/lang/Object;
     .locals 5
 
-    .line 111
     new-instance v0, Lcom/google/common/hash/MessageDigestHashFunction$SerializedForm;
 
     iget-object v1, p0, Lcom/google/common/hash/MessageDigestHashFunction;->prototype:Ljava/security/MessageDigest;

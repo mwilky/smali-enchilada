@@ -22,7 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 238
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -30,35 +29,25 @@
 
 .method public static newInstance(II)Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;
     .locals 3
-    .param p0, "id"    # I
-    .param p1, "errorCode"    # I
 
-    .line 259
     new-instance v0, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;
 
     invoke-direct {v0}, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;-><init>()V
 
-    .line 260
-    .local v0, "dialogFragment":Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 261
-    .local v1, "args":Landroid/os/Bundle;
     const-string v2, "id"
 
     invoke-virtual {v1, v2, p0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 262
     const-string v2, "moveError"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 263
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 264
     return-object v0
 .end method
 
@@ -67,7 +56,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 244
     const/16 v0, 0x22e
 
     return v0
@@ -75,9 +63,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 6
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 249
     invoke-virtual {p0}, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -88,8 +74,6 @@
 
     move-result v0
 
-    .line 250
-    .local v0, "id":I
     invoke-virtual {p0}, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -100,8 +84,6 @@
 
     move-result v1
 
-    .line 251
-    .local v1, "errorCode":I
     invoke-virtual {p0}, Lcom/android/settings/applications/AppInfoBase$MyAlertDialogFragment;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v2
@@ -112,14 +94,10 @@
 
     move-result-object v2
 
-    .line 252
-    .local v2, "dialog":Landroid/app/Dialog;
     if-eqz v2, :cond_0
 
-    .line 255
     return-object v2
 
-    .line 253
     :cond_0
     new-instance v3, Ljava/lang/IllegalArgumentException;
 

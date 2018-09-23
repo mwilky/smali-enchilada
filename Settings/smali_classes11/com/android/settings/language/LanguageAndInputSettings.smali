@@ -33,12 +33,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 168
     sget-object v0, Lcom/android/settings/language/-$$Lambda$LanguageAndInputSettings$VvwbgRiPWoRSuoMu5QPyPqZ5AEc;->INSTANCE:Lcom/android/settings/language/-$$Lambda$LanguageAndInputSettings$VvwbgRiPWoRSuoMu5QPyPqZ5AEc;
 
     sput-object v0, Lcom/android/settings/language/LanguageAndInputSettings;->SUMMARY_PROVIDER_FACTORY:Lcom/android/settings/dashboard/SummaryLoader$SummaryProviderFactory;
 
-    .line 171
     new-instance v0, Lcom/android/settings/language/LanguageAndInputSettings$1;
 
     invoke-direct {v0}, Lcom/android/settings/language/LanguageAndInputSettings$1;-><init>()V
@@ -51,7 +49,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
@@ -59,10 +56,7 @@
 
 .method static synthetic access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Landroid/content/Context;
-    .param p1, "x1"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 50
     invoke-static {p0, p1}, Lcom/android/settings/language/LanguageAndInputSettings;->buildPreferenceControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
 
     move-result-object v0
@@ -72,11 +66,11 @@
 
 .method private static buildPreferenceControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
     .locals 10
-    .param p0, "context"    # Landroid/content/Context;
+    .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p1, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
+    .param p1    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -92,45 +86,34 @@
         }
     .end annotation
 
-    .line 95
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 97
-    .local v0, "controllers":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/core/AbstractPreferenceController;>;"
     new-instance v1, Lcom/android/settings/language/PhoneLanguagePreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/language/PhoneLanguagePreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 100
     new-instance v1, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/language/OPPhoneLanguageH2PreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 104
     new-instance v1, Lcom/android/settings/inputmethod/VirtualKeyboardPreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/inputmethod/VirtualKeyboardPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 106
-    .local v1, "virtualKeyboardPreferenceController":Lcom/android/settings/inputmethod/VirtualKeyboardPreferenceController;
     new-instance v2, Lcom/android/settings/inputmethod/PhysicalKeyboardPreferenceController;
 
     invoke-direct {v2, p0, p1}, Lcom/android/settings/inputmethod/PhysicalKeyboardPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 108
-    .local v2, "physicalKeyboardPreferenceController":Lcom/android/settings/inputmethod/PhysicalKeyboardPreferenceController;
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 109
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 110
     new-instance v3, Lcom/android/settings/widget/PreferenceCategoryController;
 
     const-string v4, "keyboards_category"
@@ -149,20 +132,16 @@
 
     aput-object v2, v5, v7
 
-    .line 112
     invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 111
     invoke-virtual {v3, v5}, Lcom/android/settings/widget/PreferenceCategoryController;->setChildren(Ljava/util/List;)Lcom/android/settings/widget/PreferenceCategoryController;
 
     move-result-object v3
 
-    .line 110
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 116
     new-instance v3, Lcom/android/settings/language/TtsPreferenceController;
 
     new-instance v5, Landroid/speech/tts/TtsEngines;
@@ -171,20 +150,14 @@
 
     invoke-direct {v3, p0, v5}, Lcom/android/settings/language/TtsPreferenceController;-><init>(Landroid/content/Context;Landroid/speech/tts/TtsEngines;)V
 
-    .line 118
-    .local v3, "ttsPreferenceController":Lcom/android/settings/language/TtsPreferenceController;
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 119
     new-instance v5, Lcom/android/settings/language/PointerSpeedController;
 
     invoke-direct {v5, p0}, Lcom/android/settings/language/PointerSpeedController;-><init>(Landroid/content/Context;)V
 
-    .line 120
-    .local v5, "pointerController":Lcom/android/settings/language/PointerSpeedController;
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 121
     new-instance v8, Lcom/android/settings/widget/PreferenceCategoryController;
 
     const-string v9, "pointer_and_tts_category"
@@ -197,50 +170,40 @@
 
     aput-object v3, v4, v7
 
-    .line 123
     invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 122
     invoke-virtual {v8, v4}, Lcom/android/settings/widget/PreferenceCategoryController;->setChildren(Ljava/util/List;)Lcom/android/settings/widget/PreferenceCategoryController;
 
     move-result-object v4
 
-    .line 121
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 126
     new-instance v4, Lcom/android/settings/inputmethod/SpellCheckerPreferenceController;
 
     invoke-direct {v4, p0}, Lcom/android/settings/inputmethod/SpellCheckerPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 127
     new-instance v4, Lcom/android/settings/applications/defaultapps/DefaultAutofillPreferenceController;
 
     invoke-direct {v4, p0}, Lcom/android/settings/applications/defaultapps/DefaultAutofillPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 128
     new-instance v4, Lcom/android/settings/language/UserDictionaryPreferenceController;
 
     invoke-direct {v4, p0}, Lcom/android/settings/language/UserDictionaryPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 130
     return-object v0
 .end method
 
 .method static synthetic lambda$static$0(Landroid/app/Activity;Lcom/android/settings/dashboard/SummaryLoader;)Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;
     .locals 1
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 169
     new-instance v0, Lcom/android/settings/language/LanguageAndInputSettings$SummaryProvider;
 
     invoke-direct {v0, p0, p1}, Lcom/android/settings/language/LanguageAndInputSettings$SummaryProvider;-><init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
@@ -252,7 +215,6 @@
 # virtual methods
 .method protected createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -264,7 +226,6 @@
         }
     .end annotation
 
-    .line 90
     invoke-virtual {p0}, Lcom/android/settings/language/LanguageAndInputSettings;->getLifecycle()Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
     move-result-object v0
@@ -279,7 +240,6 @@
 .method protected getLogTag()Ljava/lang/String;
     .locals 1
 
-    .line 67
     const-string v0, "LangAndInputSettings"
 
     return-object v0
@@ -288,7 +248,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 62
     const/16 v0, 0x2ee
 
     return v0
@@ -297,7 +256,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 85
     const v0, 0x7f160060
 
     return v0
@@ -306,27 +264,20 @@
 .method public onResume()V
     .locals 2
 
-    .line 72
     invoke-super {p0}, Lcom/android/settings/dashboard/DashboardFragment;->onResume()V
 
-    .line 76
     invoke-virtual {p0}, Lcom/android/settings/language/LanguageAndInputSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 77
-    .local v0, "activity":Landroid/app/Activity;
     if-nez v0, :cond_0
 
-    .line 78
     return-void
 
-    .line 80
     :cond_0
     const v1, 0x7f1207e4
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
-    .line 81
     return-void
 .end method

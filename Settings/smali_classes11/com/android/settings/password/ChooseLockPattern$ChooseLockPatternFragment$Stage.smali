@@ -60,7 +60,6 @@
 .method static constructor <clinit>()V
     .locals 21
 
-    .line 351
     new-instance v10, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v1, "Introduction"
@@ -87,7 +86,6 @@
 
     sput-object v10, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->Introduction:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 357
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v12, "HelpScreen"
@@ -114,7 +112,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->HelpScreen:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 360
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v2, "ChoiceTooShort"
@@ -141,7 +138,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->ChoiceTooShort:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 366
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v12, "FirstChoiceValid"
@@ -164,7 +160,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->FirstChoiceValid:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 371
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v2, "NeedToConfirm"
@@ -187,7 +182,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->NeedToConfirm:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 375
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v12, "ConfirmWrong"
@@ -212,7 +206,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->ConfirmWrong:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 379
     new-instance v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     const-string v2, "ChoiceConfirmed"
@@ -233,7 +226,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->ChoiceConfirmed:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
-    .line 349
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
@@ -287,13 +279,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IIIILcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$LeftButtonMode;Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;IZ)V
     .locals 0
-    .param p3, "messageForFingerprint"    # I
-    .param p4, "message"    # I
-    .param p5, "headerMessage"    # I
-    .param p6, "leftMode"    # Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$LeftButtonMode;
-    .param p7, "rightMode"    # Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
-    .param p8, "footerMessage"    # I
-    .param p9, "patternEnabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
@@ -303,39 +288,28 @@
         }
     .end annotation
 
-    .line 397
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 398
     iput p5, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->headerMessage:I
 
-    .line 399
     iput p3, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->messageForFingerprint:I
 
-    .line 400
     iput p4, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->message:I
 
-    .line 401
     iput-object p6, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->leftMode:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$LeftButtonMode;
 
-    .line 402
     iput-object p7, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->rightMode:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$RightButtonMode;
 
-    .line 403
     iput p8, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->footerMessage:I
 
-    .line 404
     iput-boolean p9, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->patternEnabled:Z
 
-    .line 405
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 349
     const-class v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -350,7 +324,6 @@
 .method public static values()[Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
     .locals 1
 
-    .line 349
     sget-object v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->$VALUES:[Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$Stage;->clone()Ljava/lang/Object;

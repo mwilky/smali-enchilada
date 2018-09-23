@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;
 
-    .line 149
     iput-object p1, p0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1$1;->this$1:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/TransitionListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onTransitionEnd(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 157
     iget-object v0, p0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1$1;->this$1:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;->this$0:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;
@@ -54,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 158
     iget-object v0, p0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1$1;->this$1:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper$1;->this$0:Landroid/support/v17/leanback/widget/FullWidthDetailsOverviewSharedElementHelper;
@@ -67,10 +62,8 @@
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->requestFocus()Z
 
-    .line 160
     :cond_0
     invoke-static {p1, p0}, Landroid/support/v17/leanback/transition/TransitionHelper;->removeTransitionListener(Ljava/lang/Object;Landroid/support/v17/leanback/transition/TransitionListener;)V
 
-    .line 161
     return-void
 .end method

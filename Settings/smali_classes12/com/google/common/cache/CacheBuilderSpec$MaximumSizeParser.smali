@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 330
     invoke-direct {p0}, Lcom/google/common/cache/CacheBuilderSpec$LongParser;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method protected parseLong(Lcom/google/common/cache/CacheBuilderSpec;J)V
     .locals 6
-    .param p1, "spec"    # Lcom/google/common/cache/CacheBuilderSpec;
-    .param p2, "value"    # J
 
-    .line 333
     iget-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->maximumSize:Ljava/lang/Long;
 
     const/4 v1, 0x0
@@ -58,7 +54,6 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 335
     iget-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->maximumWeight:Ljava/lang/Long;
 
     if-nez v0, :cond_1
@@ -81,13 +76,11 @@
 
     invoke-static {v0, v3, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 337
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
     iput-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->maximumSize:Ljava/lang/Long;
 
-    .line 338
     return-void
 .end method

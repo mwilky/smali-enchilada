@@ -58,13 +58,10 @@
 .method private constructor <init>(Lcom/google/common/collect/StandardTable;)V
     .locals 0
 
-    .line 656
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnKeyIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnKeyIterator;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->this$0:Lcom/google/common/collect/StandardTable;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 659
     iget-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->this$0:Lcom/google/common/collect/StandardTable;
 
     iget-object p1, p1, Lcom/google/common/collect/StandardTable;->factory:Lcom/google/common/base/Supplier;
@@ -77,7 +74,6 @@
 
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->seen:Ljava/util/Map;
 
-    .line 660
     iget-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->this$0:Lcom/google/common/collect/StandardTable;
 
     iget-object p1, p1, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;
@@ -92,7 +88,6 @@
 
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->mapIterator:Ljava/util/Iterator;
 
-    .line 661
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object p1
@@ -104,11 +99,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/StandardTable;Lcom/google/common/collect/StandardTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/StandardTable;
-    .param p2, "x1"    # Lcom/google/common/collect/StandardTable$1;
 
-    .line 656
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnKeyIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnKeyIterator;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;-><init>(Lcom/google/common/collect/StandardTable;)V
 
     return-void
@@ -124,8 +115,6 @@
         }
     .end annotation
 
-    .line 665
-    .local p0, "this":Lcom/google/common/collect/StandardTable$ColumnKeyIterator;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnKeyIterator;"
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->entryIterator:Ljava/util/Iterator;
 
@@ -135,7 +124,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 666
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -144,8 +132,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 667
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TC;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->seen:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -158,7 +144,6 @@
 
     if-nez v1, :cond_0
 
-    .line 668
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->seen:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -171,15 +156,12 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 669
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 671
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TC;TV;>;"
     :cond_0
     goto :goto_0
 
@@ -192,7 +174,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 672
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->mapIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -213,7 +194,6 @@
 
     goto :goto_0
 
-    .line 674
     :cond_2
     invoke-virtual {p0}, Lcom/google/common/collect/StandardTable$ColumnKeyIterator;->endOfData()Ljava/lang/Object;
 

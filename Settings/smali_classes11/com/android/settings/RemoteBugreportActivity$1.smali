@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RemoteBugreportActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RemoteBugreportActivity;
 
-    .line 59
     iput-object p1, p0, Lcom/android/settings/RemoteBugreportActivity$1;->this$0:Lcom/android/settings/RemoteBugreportActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 62
     iget-object v0, p0, Lcom/android/settings/RemoteBugreportActivity$1;->this$0:Lcom/android/settings/RemoteBugreportActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/RemoteBugreportActivity;->finish()V
 
-    .line 63
     return-void
 .end method

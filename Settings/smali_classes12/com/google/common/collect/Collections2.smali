@@ -27,7 +27,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 323
     const-string v0, ", "
 
     invoke-static {v0}, Lcom/google/common/base/Joiner;->on(Ljava/lang/String;)Lcom/google/common/base/Joiner;
@@ -48,7 +47,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,9 +54,7 @@
 
 .method static synthetic access$000(J)Z
     .locals 1
-    .param p0, "x0"    # J
 
-    .line 56
     invoke-static {p0, p1}, Lcom/google/common/collect/Collections2;->isPositiveInt(J)Z
 
     move-result v0
@@ -68,10 +64,7 @@
 
 .method static synthetic access$100(Ljava/util/List;Ljava/util/List;)Z
     .locals 1
-    .param p0, "x0"    # Ljava/util/List;
-    .param p1, "x1"    # Ljava/util/List;
 
-    .line 56
     invoke-static {p0, p1}, Lcom/google/common/collect/Collections2;->isPermutation(Ljava/util/List;Ljava/util/List;)Z
 
     move-result v0
@@ -93,8 +86,6 @@
         }
     .end annotation
 
-    .line 320
-    .local p0, "iterable":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TT;>;"
     move-object v0, p0
 
     check-cast v0, Ljava/util/Collection;
@@ -114,9 +105,6 @@
         }
     .end annotation
 
-    .line 290
-    .local p0, "self":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
@@ -144,14 +132,10 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "unfiltered":Ljava/util/Collection;, "Ljava/util/Collection<TE;>;"
-    .local p1, "predicate":Lcom/google/common/base/Predicate;, "Lcom/google/common/base/Predicate<-TE;>;"
     instance-of v0, p0, Lcom/google/common/collect/Collections2$FilteredCollection;
 
     if-eqz v0, :cond_0
 
-    .line 94
     move-object v0, p0
 
     check-cast v0, Lcom/google/common/collect/Collections2$FilteredCollection;
@@ -162,11 +146,9 @@
 
     return-object v0
 
-    .line 97
     :cond_0
     new-instance v0, Lcom/google/common/collect/Collections2$FilteredCollection;
 
-    .line 98
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -181,7 +163,6 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/Collections2$FilteredCollection;-><init>(Ljava/util/Collection;Lcom/google/common/base/Predicate;)V
 
-    .line 97
     return-object v0
 .end method
 
@@ -197,9 +178,6 @@
         }
     .end annotation
 
-    .line 663
-    .local p0, "first":Ljava/util/List;, "Ljava/util/List<*>;"
-    .local p1, "second":Ljava/util/List;, "Ljava/util/List<*>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -210,25 +188,19 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 664
     const/4 v0, 0x0
 
     return v0
 
-    .line 666
     :cond_0
     invoke-static {p0}, Lcom/google/common/collect/HashMultiset;->create(Ljava/lang/Iterable;)Lcom/google/common/collect/HashMultiset;
 
     move-result-object v0
 
-    .line 667
-    .local v0, "firstMultiset":Lcom/google/common/collect/Multiset;, "Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p1}, Lcom/google/common/collect/HashMultiset;->create(Ljava/lang/Iterable;)Lcom/google/common/collect/HashMultiset;
 
     move-result-object v1
 
-    .line 668
-    .local v1, "secondMultiset":Lcom/google/common/collect/Multiset;, "Lcom/google/common/collect/Multiset<*>;"
     invoke-interface {v0, v1}, Lcom/google/common/collect/Multiset;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -238,9 +210,7 @@
 
 .method private static isPositiveInt(J)Z
     .locals 2
-    .param p0, "n"    # J
 
-    .line 672
     const-wide/16 v0, 0x0
 
     cmp-long v0, p0, v0
@@ -266,14 +236,11 @@
 
 .method static newStringBuilderForCollection(I)Ljava/lang/StringBuilder;
     .locals 5
-    .param p0, "size"    # I
 
-    .line 312
     const-string v0, "size"
 
     invoke-static {p0, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 313
     new-instance v0, Ljava/lang/StringBuilder;
 
     int-to-long v1, p0
@@ -313,8 +280,6 @@
         }
     .end annotation
 
-    .line 354
-    .local p0, "elements":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TE;>;"
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -346,9 +311,6 @@
         }
     .end annotation
 
-    .line 406
-    .local p0, "elements":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TE;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     new-instance v0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;-><init>(Ljava/lang/Iterable;Ljava/util/Comparator;)V
@@ -374,8 +336,6 @@
         }
     .end annotation
 
-    .line 559
-    .local p0, "elements":Ljava/util/Collection;, "Ljava/util/Collection<TE;>;"
     new-instance v0, Lcom/google/common/collect/Collections2$PermutationCollection;
 
     invoke-static {p0}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
@@ -389,7 +349,7 @@
 
 .method static safeContains(Ljava/util/Collection;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -403,11 +363,8 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 110
     const/4 v0, 0x0
 
     :try_start_0
@@ -420,27 +377,20 @@
 
     return v1
 
-    .line 113
     :catch_0
     move-exception v1
 
-    .line 114
-    .local v1, "e":Ljava/lang/NullPointerException;
     return v0
 
-    .line 111
-    .end local v1    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v1
 
-    .line 112
-    .local v1, "e":Ljava/lang/ClassCastException;
     return v0
 .end method
 
 .method static safeRemove(Ljava/util/Collection;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -454,11 +404,8 @@
         }
     .end annotation
 
-    .line 124
-    .local p0, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
     const/4 v0, 0x0
 
     :try_start_0
@@ -471,21 +418,14 @@
 
     return v1
 
-    .line 129
     :catch_0
     move-exception v1
 
-    .line 130
-    .local v1, "e":Ljava/lang/NullPointerException;
     return v0
 
-    .line 127
-    .end local v1    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v1
 
-    .line 128
-    .local v1, "e":Ljava/lang/ClassCastException;
     return v0
 .end method
 
@@ -500,11 +440,8 @@
         }
     .end annotation
 
-    .line 297
-    .local p0, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     nop
 
-    .line 298
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v0
@@ -519,23 +456,18 @@
 
     move-result-object v0
 
-    .line 299
-    .local v0, "sb":Ljava/lang/StringBuilder;
     sget-object v1, Lcom/google/common/collect/Collections2;->STANDARD_JOINER:Lcom/google/common/base/Joiner;
 
     new-instance v2, Lcom/google/common/collect/Collections2$1;
 
     invoke-direct {v2, p0}, Lcom/google/common/collect/Collections2$1;-><init>(Ljava/util/Collection;)V
 
-    .line 300
     invoke-static {p0, v2}, Lcom/google/common/collect/Iterables;->transform(Ljava/lang/Iterable;Lcom/google/common/base/Function;)Ljava/lang/Iterable;
 
     move-result-object v2
 
-    .line 299
     invoke-virtual {v1, v0, v2}, Lcom/google/common/base/Joiner;->appendTo(Ljava/lang/StringBuilder;Ljava/lang/Iterable;)Ljava/lang/StringBuilder;
 
-    .line 305
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -565,9 +497,6 @@
         }
     .end annotation
 
-    .line 247
-    .local p0, "fromCollection":Ljava/util/Collection;, "Ljava/util/Collection<TF;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TF;TT;>;"
     new-instance v0, Lcom/google/common/collect/Collections2$TransformedCollection;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Collections2$TransformedCollection;-><init>(Ljava/util/Collection;Lcom/google/common/base/Function;)V

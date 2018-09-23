@@ -29,7 +29,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -41,23 +40,17 @@
 
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 51
     invoke-direct {p0, p1, p2}, Lcom/android/settings/core/TogglePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 40
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->ON:I
 
-    .line 41
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->OFF:I
 
-    .line 52
     invoke-static {p1}, Lcom/android/settings/overlay/FeatureFactory;->getFactory(Landroid/content/Context;)Lcom/android/settings/overlay/FeatureFactory;
 
     move-result-object v0
@@ -68,7 +61,6 @@
 
     iput-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
-    .line 53
     return-void
 .end method
 
@@ -77,12 +69,10 @@
 .method public getAvailabilityStatus()I
     .locals 2
 
-    .line 87
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     if-nez v0, :cond_0
 
-    .line 88
     new-instance v0, Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     iget-object v1, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mContext:Landroid/content/Context;
@@ -91,7 +81,6 @@
 
     iput-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
-    .line 90
     :cond_0
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
@@ -115,12 +104,10 @@
 .method public getResultPayload()Lcom/android/settings/search/ResultPayload;
     .locals 11
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mContext:Landroid/content/Context;
 
     const-class v1, Lcom/android/settings/display/AmbientDisplaySettings;
 
-    .line 102
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -129,25 +116,20 @@
 
     iget-object v3, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mContext:Landroid/content/Context;
 
-    .line 103
     const v4, 0x7f120104
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 101
     invoke-static {v0, v1, v2, v3}, Lcom/android/settings/search/DatabaseIndexingUtils;->buildSearchResultPageIntent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 105
-    .local v0, "intent":Landroid/content/Intent;
     new-instance v1, Lcom/android/settings/search/InlineSwitchPayload;
 
     const-string v5, "doze_enabled"
 
-    .line 106
     invoke-virtual {p0}, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->isAvailable()Z
 
     move-result v9
@@ -164,15 +146,12 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/android/settings/search/InlineSwitchPayload;-><init>(Ljava/lang/String;IILandroid/content/Intent;ZI)V
 
-    .line 105
     return-object v1
 .end method
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 5
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 68
     const-string v0, "ambient_display_notification"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -187,7 +166,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 69
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     iget-object v2, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mContext:Landroid/content/Context;
@@ -198,7 +176,6 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 71
     :cond_0
     return v1
 .end method
@@ -206,7 +183,6 @@
 .method public isChecked()Z
     .locals 2
 
-    .line 76
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     sget v1, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->MY_USER:I
@@ -221,7 +197,6 @@
 .method public isSliceable()Z
     .locals 2
 
-    .line 95
     invoke-virtual {p0}, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->getPreferenceKey()Ljava/lang/String;
 
     move-result-object v0
@@ -237,9 +212,7 @@
 
 .method public setChecked(Z)Z
     .locals 2
-    .param p1, "isChecked"    # Z
 
-    .line 81
     iget-object v0, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -250,7 +223,6 @@
 
     invoke-static {v0, v1, p1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 82
     const/4 v0, 0x1
 
     return v0
@@ -258,11 +230,8 @@
 
 .method public setConfig(Lcom/android/internal/hardware/AmbientDisplayConfiguration;)Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;
     .locals 0
-    .param p1, "config"    # Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
-    .line 62
     iput-object p1, p0, Lcom/android/settings/display/AmbientDisplayNotificationsPreferenceController;->mConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
-    .line 63
     return-object p0
 .end method

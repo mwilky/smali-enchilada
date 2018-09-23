@@ -9,13 +9,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 33
     invoke-direct {p0, p1, p2}, Lcom/android/settingslib/deviceinfo/AbstractIpAddressPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 34
     return-void
 .end method
 
@@ -24,7 +20,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 38
     iget-object v0, p0, Lcom/android/settings/deviceinfo/IpAddressPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

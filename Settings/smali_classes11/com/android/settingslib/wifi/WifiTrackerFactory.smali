@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,26 +18,19 @@
 
 .method public static create(Landroid/content/Context;Lcom/android/settingslib/wifi/WifiTracker$WifiListener;Lcom/android/settingslib/core/lifecycle/Lifecycle;ZZ)Lcom/android/settingslib/wifi/WifiTracker;
     .locals 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "wifiListener"    # Lcom/android/settingslib/wifi/WifiTracker$WifiListener;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
+    .param p2    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "includeSaved"    # Z
-    .param p4, "includeScans"    # Z
 
-    .line 38
     sget-object v0, Lcom/android/settingslib/wifi/WifiTrackerFactory;->sTestingWifiTracker:Lcom/android/settingslib/wifi/WifiTracker;
 
     if-eqz v0, :cond_0
 
-    .line 39
     sget-object v0, Lcom/android/settingslib/wifi/WifiTrackerFactory;->sTestingWifiTracker:Lcom/android/settingslib/wifi/WifiTracker;
 
     return-object v0
 
-    .line 41
     :cond_0
     new-instance v0, Lcom/android/settingslib/wifi/WifiTracker;
 
@@ -61,13 +53,10 @@
 
 .method public static setTestingWifiTracker(Lcom/android/settingslib/wifi/WifiTracker;)V
     .locals 0
-    .param p0, "tracker"    # Lcom/android/settingslib/wifi/WifiTracker;
     .annotation build Landroid/support/annotation/Keep;
     .end annotation
 
-    .line 32
     sput-object p0, Lcom/android/settingslib/wifi/WifiTrackerFactory;->sTestingWifiTracker:Lcom/android/settingslib/wifi/WifiTracker;
 
-    .line 33
     return-void
 .end method

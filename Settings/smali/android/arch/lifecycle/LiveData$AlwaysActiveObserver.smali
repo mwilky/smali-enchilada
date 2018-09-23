@@ -36,15 +36,10 @@
         }
     .end annotation
 
-    .line 425
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$AlwaysActiveObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.AlwaysActiveObserver;"
-    .local p2, "observer":Landroid/arch/lifecycle/Observer;, "Landroid/arch/lifecycle/Observer<-TT;>;"
     iput-object p1, p0, Landroid/arch/lifecycle/LiveData$AlwaysActiveObserver;->this$0:Landroid/arch/lifecycle/LiveData;
 
-    .line 426
     invoke-direct {p0, p1, p2}, Landroid/arch/lifecycle/LiveData$ObserverWrapper;-><init>(Landroid/arch/lifecycle/LiveData;Landroid/arch/lifecycle/Observer;)V
 
-    .line 427
     return-void
 .end method
 
@@ -53,8 +48,6 @@
 .method shouldBeActive()Z
     .locals 1
 
-    .line 431
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$AlwaysActiveObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.AlwaysActiveObserver;"
     const/4 v0, 0x1
 
     return v0

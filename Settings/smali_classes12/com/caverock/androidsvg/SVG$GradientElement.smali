@@ -41,17 +41,14 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 1739
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgElementBase;-><init>()V
 
-    .line 1741
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$GradientElement;->children:Ljava/util/List;
 
-    .line 1739
     return-void
 .end method
 
@@ -59,27 +56,22 @@
 # virtual methods
 .method public addChild(Lcom/caverock/androidsvg/SVG$SvgObject;)V
     .locals 3
-    .param p1, "elem"    # Lcom/caverock/androidsvg/SVG$SvgObject;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
-    .line 1757
     instance-of v0, p1, Lcom/caverock/androidsvg/SVG$Stop;
 
     if-eqz v0, :cond_0
 
-    .line 1758
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$GradientElement;->children:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1761
     return-void
 
-    .line 1760
     :cond_0
     new-instance v0, Lorg/xml/sax/SAXException;
 
@@ -115,7 +107,6 @@
         }
     .end annotation
 
-    .line 1751
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$GradientElement;->children:Ljava/util/List;
 
     return-object v0

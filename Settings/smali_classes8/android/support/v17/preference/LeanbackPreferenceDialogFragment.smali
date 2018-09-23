@@ -15,20 +15,16 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 31
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
-    .line 32
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 33
     invoke-static {p0}, Landroid/support/v17/preference/LeanbackPreferenceFragmentTransitionHelperApi21;->addTransitions(Landroid/app/Fragment;)V
 
-    .line 35
     :cond_0
     return-void
 .end method
@@ -38,12 +34,10 @@
 .method public getPreference()Landroid/support/v7/preference/DialogPreference;
     .locals 3
 
-    .line 49
     iget-object v0, p0, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->mPreference:Landroid/support/v7/preference/DialogPreference;
 
     if-nez v0, :cond_0
 
-    .line 50
     invoke-virtual {p0}, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -54,19 +48,14 @@
 
     move-result-object v0
 
-    .line 51
-    .local v0, "key":Ljava/lang/String;
     nop
 
-    .line 52
     invoke-virtual {p0}, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v7/preference/DialogPreference$TargetFragment;
 
-    .line 53
-    .local v1, "fragment":Landroid/support/v7/preference/DialogPreference$TargetFragment;
     invoke-interface {v1, v0}, Landroid/support/v7/preference/DialogPreference$TargetFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v2
@@ -75,9 +64,6 @@
 
     iput-object v2, p0, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->mPreference:Landroid/support/v7/preference/DialogPreference;
 
-    .line 55
-    .end local v0    # "key":Ljava/lang/String;
-    .end local v1    # "fragment":Landroid/support/v7/preference/DialogPreference$TargetFragment;
     :cond_0
     iget-object v0, p0, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->mPreference:Landroid/support/v7/preference/DialogPreference;
 
@@ -86,26 +72,19 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 39
     invoke-super {p0, p1}, Landroid/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 41
     invoke-virtual {p0}, Landroid/support/v17/preference/LeanbackPreferenceDialogFragment;->getTargetFragment()Landroid/app/Fragment;
 
     move-result-object v0
 
-    .line 42
-    .local v0, "rawFragment":Landroid/app/Fragment;
     instance-of v1, v0, Landroid/support/v7/preference/DialogPreference$TargetFragment;
 
     if-eqz v1, :cond_0
 
-    .line 46
     return-void
 
-    .line 43
     :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 

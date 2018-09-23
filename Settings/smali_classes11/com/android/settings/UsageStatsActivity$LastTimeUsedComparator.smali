@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public final compare(Landroid/app/usage/UsageStats;Landroid/app/usage/UsageStats;)I
     .locals 4
-    .param p1, "a"    # Landroid/app/usage/UsageStats;
-    .param p2, "b"    # Landroid/app/usage/UsageStats;
 
-    .line 78
     invoke-virtual {p2}, Landroid/app/usage/UsageStats;->getLastTimeUsed()J
 
     move-result-wide v0
@@ -62,7 +58,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 74
     check-cast p1, Landroid/app/usage/UsageStats;
 
     check-cast p2, Landroid/app/usage/UsageStats;

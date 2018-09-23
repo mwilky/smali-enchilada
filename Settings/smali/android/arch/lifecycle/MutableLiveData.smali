@@ -19,8 +19,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
-    .local p0, "this":Landroid/arch/lifecycle/MutableLiveData;, "Landroid/arch/lifecycle/MutableLiveData<TT;>;"
     invoke-direct {p0}, Landroid/arch/lifecycle/LiveData;-><init>()V
 
     return-void
@@ -36,12 +34,8 @@
         }
     .end annotation
 
-    .line 28
-    .local p0, "this":Landroid/arch/lifecycle/MutableLiveData;, "Landroid/arch/lifecycle/MutableLiveData<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-super {p0, p1}, Landroid/arch/lifecycle/LiveData;->postValue(Ljava/lang/Object;)V
 
-    .line 29
     return-void
 .end method
 
@@ -53,11 +47,7 @@
         }
     .end annotation
 
-    .line 33
-    .local p0, "this":Landroid/arch/lifecycle/MutableLiveData;, "Landroid/arch/lifecycle/MutableLiveData<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-super {p0, p1}, Landroid/arch/lifecycle/LiveData;->setValue(Ljava/lang/Object;)V
 
-    .line 34
     return-void
 .end method

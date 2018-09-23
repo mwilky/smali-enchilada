@@ -28,25 +28,21 @@
 # direct methods
 .method public constructor <init>(Lcom/android/setupwizardlib/template/RequireScrollMixin;Landroid/widget/ListView;)V
     .locals 0
-    .param p1, "requireScrollMixin"    # Lcom/android/setupwizardlib/template/RequireScrollMixin;
+    .param p1    # Lcom/android/setupwizardlib/template/RequireScrollMixin;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "listView"    # Landroid/widget/ListView;
+    .param p2    # Landroid/widget/ListView;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput-object p1, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mRequireScrollMixin:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
-    .line 49
     iput-object p2, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
-    .line 50
     return-void
 .end method
 
@@ -54,17 +50,11 @@
 # virtual methods
 .method public onScroll(Landroid/widget/AbsListView;III)V
     .locals 2
-    .param p1, "view"    # Landroid/widget/AbsListView;
-    .param p2, "firstVisibleItem"    # I
-    .param p3, "visibleItemCount"    # I
-    .param p4, "totalItemCount"    # I
 
-    .line 81
     add-int v0, p2, p3
 
     if-lt v0, p4, :cond_0
 
-    .line 82
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mRequireScrollMixin:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     const/4 v1, 0x0
@@ -73,7 +63,6 @@
 
     goto :goto_0
 
-    .line 84
     :cond_0
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mRequireScrollMixin:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
@@ -81,45 +70,35 @@
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->notifyScrollabilityChange(Z)V
 
-    .line 86
     :goto_0
     return-void
 .end method
 
 .method public onScrollStateChanged(Landroid/widget/AbsListView;I)V
     .locals 0
-    .param p1, "view"    # Landroid/widget/AbsListView;
-    .param p2, "scrollState"    # I
 
-    .line 76
     return-void
 .end method
 
 .method public pageScrollDown()V
     .locals 3
 
-    .line 68
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     if-eqz v0, :cond_0
 
-    .line 69
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getHeight()I
 
     move-result v0
 
-    .line 70
-    .local v0, "height":I
     iget-object v1, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     const/16 v2, 0x1f4
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/ListView;->smoothScrollBy(II)V
 
-    .line 72
-    .end local v0    # "height":I
     :cond_0
     return-void
 .end method
@@ -127,25 +106,20 @@
 .method public startListening()V
     .locals 3
 
-    .line 54
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     if-eqz v0, :cond_1
 
-    .line 55
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v0, p0}, Landroid/widget/ListView;->setOnScrollListener(Landroid/widget/AbsListView$OnScrollListener;)V
 
-    .line 57
     iget-object v0, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    .line 58
-    .local v0, "adapter":Landroid/widget/ListAdapter;
     iget-object v1, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mListView:Landroid/widget/ListView;
 
     invoke-virtual {v1}, Landroid/widget/ListView;->getLastVisiblePosition()I
@@ -158,19 +132,15 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 59
     iget-object v1, p0, Lcom/android/setupwizardlib/template/ListViewScrollHandlingDelegate;->mRequireScrollMixin:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->notifyScrollabilityChange(Z)V
 
-    .line 61
-    .end local v0    # "adapter":Landroid/widget/ListAdapter;
     :cond_0
     goto :goto_0
 
-    .line 62
     :cond_1
     const-string v0, "ListViewDelegate"
 
@@ -178,7 +148,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     :goto_0
     return-void
 .end method

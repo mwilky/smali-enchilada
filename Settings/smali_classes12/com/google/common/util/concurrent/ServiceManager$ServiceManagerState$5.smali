@@ -31,10 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;Ljava/lang/String;Lcom/google/common/util/concurrent/Service;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;
-    .param p2, "methodCall"    # Ljava/lang/String;
 
-    .line 690
     iput-object p1, p0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$5;->this$0:Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;
 
     iput-object p3, p0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$5;->val$service:Lcom/google/common/util/concurrent/Service;
@@ -48,21 +45,17 @@
 # virtual methods
 .method call(Lcom/google/common/util/concurrent/ServiceManager$Listener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/google/common/util/concurrent/ServiceManager$Listener;
 
-    .line 692
     iget-object v0, p0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$5;->val$service:Lcom/google/common/util/concurrent/Service;
 
     invoke-virtual {p1, v0}, Lcom/google/common/util/concurrent/ServiceManager$Listener;->failure(Lcom/google/common/util/concurrent/Service;)V
 
-    .line 693
     return-void
 .end method
 
 .method bridge synthetic call(Ljava/lang/Object;)V
     .locals 0
 
-    .line 690
     check-cast p1, Lcom/google/common/util/concurrent/ServiceManager$Listener;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$5;->call(Lcom/google/common/util/concurrent/ServiceManager$Listener;)V

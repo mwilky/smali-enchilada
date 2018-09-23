@@ -33,7 +33,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;I)V
     .locals 0
-    .param p4, "weight"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,17 +43,10 @@
         }
     .end annotation
 
-    .line 1727
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;, "Lcom/google/common/cache/LocalCache$WeightedWeakValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "referent":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/google/common/cache/LocalCache$WeakValueReference;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;)V
 
-    .line 1728
     iput p4, p0, Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;->weight:I
 
-    .line 1729
     return-void
 .end method
 
@@ -74,11 +66,6 @@
         }
     .end annotation
 
-    .line 1739
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;, "Lcom/google/common/cache/LocalCache$WeightedWeakValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;
 
     iget v1, p0, Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;->weight:I
@@ -91,8 +78,6 @@
 .method public getWeight()I
     .locals 1
 
-    .line 1733
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;, "Lcom/google/common/cache/LocalCache$WeightedWeakValueReference<TK;TV;>;"
     iget v0, p0, Lcom/google/common/cache/LocalCache$WeightedWeakValueReference;->weight:I
 
     return v0

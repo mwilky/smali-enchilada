@@ -42,8 +42,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 10
-    .local p0, "this":Lcom/airbnb/lottie/model/MutablePair;, "Lcom/airbnb/lottie/model/MutablePair<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,10 +49,7 @@
 
 .method private static objectsEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "a"    # Ljava/lang/Object;
-    .param p1, "b"    # Ljava/lang/Object;
 
-    .line 37
     if-eq p0, p1, :cond_1
 
     if-eqz p0, :cond_0
@@ -84,27 +79,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 29
-    .local p0, "this":Lcom/airbnb/lottie/model/MutablePair;, "Lcom/airbnb/lottie/model/MutablePair<TT;>;"
     instance-of v0, p1, Landroid/support/v4/util/Pair;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 30
     return v1
 
-    .line 32
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/util/Pair;
 
-    .line 33
-    .local v0, "p":Landroid/support/v4/util/Pair;, "Landroid/support/v4/util/Pair<**>;"
     iget-object v2, v0, Landroid/support/v4/util/Pair;->first:Ljava/lang/Object;
 
     iget-object v3, p0, Lcom/airbnb/lottie/model/MutablePair;->first:Ljava/lang/Object;
@@ -136,8 +124,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 47
-    .local p0, "this":Lcom/airbnb/lottie/model/MutablePair;, "Lcom/airbnb/lottie/model/MutablePair<TT;>;"
     iget-object v0, p0, Lcom/airbnb/lottie/model/MutablePair;->first:Ljava/lang/Object;
 
     const/4 v1, 0x0
@@ -183,24 +169,16 @@
         }
     .end annotation
 
-    .line 15
-    .local p0, "this":Lcom/airbnb/lottie/model/MutablePair;, "Lcom/airbnb/lottie/model/MutablePair<TT;>;"
-    .local p1, "first":Ljava/lang/Object;, "TT;"
-    .local p2, "second":Ljava/lang/Object;, "TT;"
     iput-object p1, p0, Lcom/airbnb/lottie/model/MutablePair;->first:Ljava/lang/Object;
 
-    .line 16
     iput-object p2, p0, Lcom/airbnb/lottie/model/MutablePair;->second:Ljava/lang/Object;
 
-    .line 17
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 52
-    .local p0, "this":Lcom/airbnb/lottie/model/MutablePair;, "Lcom/airbnb/lottie/model/MutablePair<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

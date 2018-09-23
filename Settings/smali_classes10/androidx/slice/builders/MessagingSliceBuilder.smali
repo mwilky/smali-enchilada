@@ -28,27 +28,23 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
+    .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "uri"    # Landroid/net/Uri;
+    .param p2    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 58
     invoke-direct {p0, p1, p2}, Landroidx/slice/builders/TemplateSliceBuilder;-><init>(Landroid/content/Context;Landroid/net/Uri;)V
 
-    .line 59
     return-void
 .end method
 
 .method static synthetic access$100(Landroidx/slice/builders/MessagingSliceBuilder;)Landroidx/slice/builders/impl/MessagingBuilder;
     .locals 1
-    .param p0, "x0"    # Landroidx/slice/builders/MessagingSliceBuilder;
 
-    .line 44
     iget-object v0, p0, Landroidx/slice/builders/MessagingSliceBuilder;->mBuilder:Landroidx/slice/builders/impl/MessagingBuilder;
 
     return-object v0
@@ -68,17 +64,12 @@
         }
     .end annotation
 
-    .line 73
-    .local p1, "c":Landroid/support/v4/util/Consumer;, "Landroid/support/v4/util/Consumer<Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;>;"
     new-instance v0, Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;
 
     invoke-direct {v0, p0}, Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;-><init>(Landroidx/slice/builders/MessagingSliceBuilder;)V
 
-    .line 74
-    .local v0, "b":Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;
     invoke-interface {p1, v0}, Landroid/support/v4/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 75
     invoke-virtual {p0, v0}, Landroidx/slice/builders/MessagingSliceBuilder;->add(Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;)Landroidx/slice/builders/MessagingSliceBuilder;
 
     move-result-object v1
@@ -88,9 +79,7 @@
 
 .method public add(Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;)Landroidx/slice/builders/MessagingSliceBuilder;
     .locals 2
-    .param p1, "builder"    # Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;
 
-    .line 65
     iget-object v0, p0, Landroidx/slice/builders/MessagingSliceBuilder;->mBuilder:Landroidx/slice/builders/impl/MessagingBuilder;
 
     invoke-static {p1}, Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;->access$000(Landroidx/slice/builders/MessagingSliceBuilder$MessageBuilder;)Landroidx/slice/builders/impl/MessagingBuilder$MessageBuilder;
@@ -101,7 +90,6 @@
 
     invoke-interface {v0, v1}, Landroidx/slice/builders/impl/MessagingBuilder;->add(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
 
-    .line 66
     return-object p0
 .end method
 
@@ -113,7 +101,6 @@
         }
     .end annotation
 
-    .line 89
     sget-object v0, Landroidx/slice/SliceSpecs;->MESSAGING:Landroidx/slice/SliceSpec;
 
     invoke-virtual {p0, v0}, Landroidx/slice/builders/MessagingSliceBuilder;->checkCompatible(Landroidx/slice/SliceSpec;)Z
@@ -122,7 +109,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
     new-instance v0, Landroidx/slice/builders/impl/MessagingV1Impl;
 
     invoke-virtual {p0}, Landroidx/slice/builders/MessagingSliceBuilder;->getBuilder()Landroidx/slice/Slice$Builder;
@@ -135,7 +121,6 @@
 
     return-object v0
 
-    .line 91
     :cond_0
     sget-object v0, Landroidx/slice/SliceSpecs;->LIST:Landroidx/slice/SliceSpec;
 
@@ -145,7 +130,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 92
     new-instance v0, Landroidx/slice/builders/impl/MessagingListV1Impl;
 
     invoke-virtual {p0}, Landroidx/slice/builders/MessagingSliceBuilder;->getBuilder()Landroidx/slice/Slice$Builder;
@@ -158,7 +142,6 @@
 
     return-object v0
 
-    .line 93
     :cond_1
     sget-object v0, Landroidx/slice/SliceSpecs;->BASIC:Landroidx/slice/SliceSpec;
 
@@ -168,7 +151,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 94
     new-instance v0, Landroidx/slice/builders/impl/MessagingBasicImpl;
 
     invoke-virtual {p0}, Landroidx/slice/builders/MessagingSliceBuilder;->getBuilder()Landroidx/slice/Slice$Builder;
@@ -181,7 +163,6 @@
 
     return-object v0
 
-    .line 96
     :cond_2
     const/4 v0, 0x0
 
@@ -190,15 +171,12 @@
 
 .method setImpl(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
     .locals 1
-    .param p1, "impl"    # Landroidx/slice/builders/impl/TemplateBuilderImpl;
 
-    .line 80
     move-object v0, p1
 
     check-cast v0, Landroidx/slice/builders/impl/MessagingBuilder;
 
     iput-object v0, p0, Landroidx/slice/builders/MessagingSliceBuilder;->mBuilder:Landroidx/slice/builders/impl/MessagingBuilder;
 
-    .line 81
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BackgroundManager;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BackgroundManager;
 
-    .line 439
     iput-object p1, p0, Landroid/support/v17/leanback/app/BackgroundManager$2;->this$0:Landroid/support/v17/leanback/app/BackgroundManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 442
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 443
-    .local v0, "fadeInAlpha":I
     iget-object v1, p0, Landroid/support/v17/leanback/app/BackgroundManager$2;->this$0:Landroid/support/v17/leanback/app/BackgroundManager;
 
     iget v1, v1, Landroid/support/v17/leanback/app/BackgroundManager;->mImageInWrapperIndex:I
@@ -61,7 +55,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 444
     iget-object v1, p0, Landroid/support/v17/leanback/app/BackgroundManager$2;->this$0:Landroid/support/v17/leanback/app/BackgroundManager;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/BackgroundManager;->mLayerDrawable:Landroid/support/v17/leanback/app/BackgroundManager$TranslucentLayerDrawable;
@@ -72,7 +65,6 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v17/leanback/app/BackgroundManager$TranslucentLayerDrawable;->setWrapperAlpha(II)V
 
-    .line 446
     :cond_0
     return-void
 .end method

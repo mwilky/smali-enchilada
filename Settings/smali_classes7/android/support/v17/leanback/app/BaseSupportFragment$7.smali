@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BaseSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BaseSupportFragment;
 
-    .line 303
     iput-object p1, p0, Landroid/support/v17/leanback/app/BaseSupportFragment$7;->this$0:Landroid/support/v17/leanback/app/BaseSupportFragment;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/TransitionListener;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public onTransitionEnd(Ljava/lang/Object;)V
     .locals 2
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 306
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseSupportFragment$7;->this$0:Landroid/support/v17/leanback/app/BaseSupportFragment;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v17/leanback/app/BaseSupportFragment;->mEntranceTransition:Ljava/lang/Object;
 
-    .line 307
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseSupportFragment$7;->this$0:Landroid/support/v17/leanback/app/BaseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BaseSupportFragment;->mStateMachine:Landroid/support/v17/leanback/util/StateMachine;
@@ -55,6 +50,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 308
     return-void
 .end method

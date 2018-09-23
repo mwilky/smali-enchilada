@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 30
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
-    .local p1, "ordering":Lcom/google/common/collect/Ordering;, "Lcom/google/common/collect/Ordering<-TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 31
     iput-object p1, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    .line 32
     return-void
 .end method
 
@@ -79,36 +74,26 @@
         }
     .end annotation
 
-    .line 35
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
-    .local p1, "left":Ljava/lang/Object;, "TT;"
-    .local p2, "right":Ljava/lang/Object;, "TT;"
     if-ne p1, p2, :cond_0
 
-    .line 36
     const/4 v0, 0x0
 
     return v0
 
-    .line 38
     :cond_0
     if-nez p1, :cond_1
 
-    .line 39
     const/4 v0, 0x1
 
     return v0
 
-    .line 41
     :cond_1
     if-nez p2, :cond_2
 
-    .line 42
     const/4 v0, -0x1
 
     return v0
 
-    .line 44
     :cond_2
     iget-object v0, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -121,33 +106,26 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     if-ne p1, p0, :cond_0
 
-    .line 63
     const/4 v0, 0x1
 
     return v0
 
-    .line 65
     :cond_0
     instance-of v0, p1, Lcom/google/common/collect/NullsLastOrdering;
 
     if-eqz v0, :cond_1
 
-    .line 66
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/NullsLastOrdering;
 
-    .line 67
-    .local v0, "that":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
     iget-object v2, v0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
@@ -158,8 +136,6 @@
 
     return v1
 
-    .line 69
-    .end local v0    # "that":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<*>;"
     :cond_1
     const/4 v0, 0x0
 
@@ -169,8 +145,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -194,8 +168,6 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Ordering;->nullsFirst()Lcom/google/common/collect/Ordering;
@@ -215,8 +187,6 @@
         }
     .end annotation
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     return-object p0
 .end method
 
@@ -230,8 +200,6 @@
         }
     .end annotation
 
-    .line 49
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsLastOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Ordering;->reverse()Lcom/google/common/collect/Ordering;
@@ -248,8 +216,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/NullsLastOrdering;, "Lcom/google/common/collect/NullsLastOrdering<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/tether/TetherService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/tether/TetherService;
 
-    .line 346
     iput-object p1, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 349
     invoke-static {}, Lcom/android/settings/wifi/tether/TetherService;->access$000()Z
 
     move-result v0
@@ -63,7 +58,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 350
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
@@ -77,8 +71,6 @@
 
     move-result-object v0
 
-    .line 353
-    .local v0, "provisionResponse":Ljava/lang/String;
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
@@ -89,7 +81,6 @@
 
     if-eqz v1, :cond_4
 
-    .line 354
     iget-object v1, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-static {v1}, Lcom/android/settings/wifi/tether/TetherService;->access$100(Lcom/android/settings/wifi/tether/TetherService;)Z
@@ -98,7 +89,6 @@
 
     if-nez v1, :cond_1
 
-    .line 355
     const-string v1, "TetherService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,10 +107,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
     return-void
 
-    .line 358
     :cond_1
     iget-object v1, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
@@ -144,42 +132,33 @@
 
     move-result v1
 
-    .line 359
-    .local v1, "checkType":I
     iget-object v2, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Lcom/android/settings/wifi/tether/TetherService;->access$102(Lcom/android/settings/wifi/tether/TetherService;Z)Z
 
-    .line 360
     const-string v2, "EntitlementResult"
 
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 361
-    .local v2, "result":I
     const/4 v3, -0x1
 
     if-eq v2, v3, :cond_2
 
-    .line 362
     packed-switch v1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 367
     :pswitch_0
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-static {v3}, Lcom/android/settings/wifi/tether/TetherService;->access$500(Lcom/android/settings/wifi/tether/TetherService;)V
 
-    .line 368
     goto :goto_0
 
-    .line 370
     :pswitch_1
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
@@ -187,23 +166,19 @@
 
     goto :goto_0
 
-    .line 364
     :pswitch_2
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-static {v3}, Lcom/android/settings/wifi/tether/TetherService;->access$400(Lcom/android/settings/wifi/tether/TetherService;)V
 
-    .line 365
     nop
 
-    .line 374
     :cond_2
     :goto_0
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-static {v3, v1, v2}, Lcom/android/settings/wifi/tether/TetherService;->access$700(Lcom/android/settings/wifi/tether/TetherService;II)V
 
-    .line 376
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-static {v3}, Lcom/android/settings/wifi/tether/TetherService;->access$204(Lcom/android/settings/wifi/tether/TetherService;)I
@@ -222,14 +197,12 @@
 
     if-lt v3, v4, :cond_3
 
-    .line 378
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     invoke-virtual {v3}, Lcom/android/settings/wifi/tether/TetherService;->stopSelf()V
 
     goto :goto_1
 
-    .line 381
     :cond_3
     iget-object v3, p0, Lcom/android/settings/wifi/tether/TetherService$2;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
@@ -241,9 +214,6 @@
 
     invoke-static {v3, v4}, Lcom/android/settings/wifi/tether/TetherService;->access$800(Lcom/android/settings/wifi/tether/TetherService;I)V
 
-    .line 384
-    .end local v1    # "checkType":I
-    .end local v2    # "result":I
     :cond_4
     :goto_1
     return-void

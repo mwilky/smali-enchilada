@@ -33,7 +33,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 16
     const-wide/16 v0, 0x2710
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -47,66 +46,53 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    .line 20
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mZenMode:I
 
-    .line 21
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->DateTime:Ljava/util/Date;
 
-    .line 23
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mHandler:Landroid/os/Handler;
 
-    .line 24
     new-instance v0, Lcom/oneplus/settings/utils/OPZenModeUtils$1;
 
     invoke-direct {v0, p0}, Lcom/oneplus/settings/utils/OPZenModeUtils$1;-><init>(Lcom/oneplus/settings/utils/OPZenModeUtils;)V
 
     iput-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mRun:Ljava/lang/Runnable;
 
-    .line 34
     iput-object p1, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mContext:Landroid/content/Context;
 
-    .line 35
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/oneplus/settings/utils/OPZenModeUtils;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 38
     sget-object v0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mOPZenModeUtils:Lcom/oneplus/settings/utils/OPZenModeUtils;
 
     if-nez v0, :cond_0
 
-    .line 39
     new-instance v0, Lcom/oneplus/settings/utils/OPZenModeUtils;
 
     invoke-direct {v0, p0}, Lcom/oneplus/settings/utils/OPZenModeUtils;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mOPZenModeUtils:Lcom/oneplus/settings/utils/OPZenModeUtils;
 
-    .line 41
     :cond_0
     sget-object v0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mOPZenModeUtils:Lcom/oneplus/settings/utils/OPZenModeUtils;
 
@@ -118,7 +104,6 @@
 .method public sendAppTracker()V
     .locals 5
 
-    .line 50
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mContext:Landroid/content/Context;
 
     const-string v1, "App_Tracker"
@@ -131,23 +116,18 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mSharedPreferences:Landroid/content/SharedPreferences;
 
-    .line 51
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mSharedPreferences:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 52
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     const-string v2, "yyyy-MM-dd  HH:mm:ss"
 
     invoke-direct {v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 53
-    .local v1, "sDateFormat":Ljava/text/SimpleDateFormat;
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
@@ -156,8 +136,6 @@
 
     move-result-object v2
 
-    .line 54
-    .local v2, "date":Ljava/lang/String;
     iget-object v3, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mContext:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -170,21 +148,18 @@
 
     iput v3, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mZenMode:I
 
-    .line 55
     iget v3, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mZenMode:I
 
     const/4 v4, 0x3
 
     if-ne v3, v4, :cond_0
 
-    .line 56
     const-string v3, "zen_mode_alarms"
 
     invoke-static {v3, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 57
     :cond_0
     iget v3, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mZenMode:I
 
@@ -192,25 +167,21 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 58
     const-string v3, "zen_mode_important_interruptions"
 
     invoke-static {v3, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 59
     :cond_1
     iget v3, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mZenMode:I
 
     if-nez v3, :cond_2
 
-    .line 60
     const-string v3, "zen_mode_off"
 
     invoke-static {v3, v2}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 62
     :cond_2
     :goto_0
     const-string v3, "zen_mode"
@@ -219,24 +190,20 @@
 
     invoke-interface {v0, v3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 63
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 64
     return-void
 .end method
 
 .method public sendAppTrackerDelay()V
     .locals 4
 
-    .line 45
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mRun:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 46
     iget-object v0, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/oneplus/settings/utils/OPZenModeUtils;->mRun:Ljava/lang/Runnable;
@@ -249,6 +216,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 47
     return-void
 .end method

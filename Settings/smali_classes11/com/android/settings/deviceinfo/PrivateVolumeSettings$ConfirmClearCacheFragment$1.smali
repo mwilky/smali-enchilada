@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment;
 
-    .line 874
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 13
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 877
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -54,16 +49,12 @@
 
     check-cast v0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
-    .line 878
-    .local v0, "target":Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 879
-    .local v1, "pm":Landroid/content/pm/PackageManager;
     iget-object v2, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
 
     const-class v3, Landroid/os/UserManager;
@@ -74,8 +65,6 @@
 
     check-cast v2, Landroid/os/UserManager;
 
-    .line 881
-    .local v2, "um":Landroid/os/UserManager;
     iget-object v3, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ConfirmClearCacheFragment$1;->val$context:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getUserId()I
@@ -97,25 +86,18 @@
 
     aget v7, v3, v6
 
-    .line 882
-    .local v7, "userId":I
     invoke-virtual {v1, v5, v7}, Landroid/content/pm/PackageManager;->getInstalledPackagesAsUser(II)Ljava/util/List;
 
     move-result-object v8
 
-    .line 883
-    .local v8, "infos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
     new-instance v9, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ClearCacheObserver;
 
-    .line 884
     invoke-interface {v8}, Ljava/util/List;->size()I
 
     move-result v10
 
     invoke-direct {v9, v0, v10}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ClearCacheObserver;-><init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;I)V
 
-    .line 885
-    .local v9, "observer":Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ClearCacheObserver;
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
@@ -133,26 +115,17 @@
 
     check-cast v11, Landroid/content/pm/PackageInfo;
 
-    .line 886
-    .local v11, "info":Landroid/content/pm/PackageInfo;
     iget-object v12, v11, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1, v12, v7, v9}, Landroid/content/pm/PackageManager;->deleteApplicationCacheFilesAsUser(Ljava/lang/String;ILandroid/content/pm/IPackageDataObserver;)V
 
-    .line 888
-    .end local v11    # "info":Landroid/content/pm/PackageInfo;
     goto :goto_1
 
-    .line 881
-    .end local v7    # "userId":I
-    .end local v8    # "infos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/PackageInfo;>;"
-    .end local v9    # "observer":Lcom/android/settings/deviceinfo/PrivateVolumeSettings$ClearCacheObserver;
     :cond_0
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 890
     :cond_1
     return-void
 .end method

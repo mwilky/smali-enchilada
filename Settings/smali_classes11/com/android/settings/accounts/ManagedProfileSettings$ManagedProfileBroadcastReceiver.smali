@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/settings/accounts/ManagedProfileSettings;)V
     .locals 0
 
-    .line 152
     iput-object p1, p0, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/ManagedProfileSettings;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/accounts/ManagedProfileSettings;Lcom/android/settings/accounts/ManagedProfileSettings$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/accounts/ManagedProfileSettings;
-    .param p2, "x1"    # Lcom/android/settings/accounts/ManagedProfileSettings$1;
 
-    .line 152
     invoke-direct {p0, p1}, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;-><init>(Lcom/android/settings/accounts/ManagedProfileSettings;)V
 
     return-void
@@ -45,16 +41,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 156
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 157
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "ManagedProfileSettings"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -73,7 +64,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
     const-string v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -84,7 +74,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 159
     const-string v1, "android.intent.extra.user_handle"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -93,7 +82,6 @@
 
     iget-object v2, p0, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/ManagedProfileSettings;
 
-    .line 160
     invoke-static {v2}, Lcom/android/settings/accounts/ManagedProfileSettings;->access$100(Lcom/android/settings/accounts/ManagedProfileSettings;)Landroid/os/UserHandle;
 
     move-result-object v2
@@ -104,7 +92,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 161
     iget-object v1, p0, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/ManagedProfileSettings;
 
     invoke-virtual {v1}, Lcom/android/settings/accounts/ManagedProfileSettings;->getActivity()Landroid/app/Activity;
@@ -113,11 +100,9 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
-    .line 163
     :cond_0
     return-void
 
-    .line 166
     :cond_1
     const-string v1, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
@@ -129,7 +114,6 @@
 
     const-string v1, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
-    .line 167
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -138,7 +122,6 @@
 
     goto :goto_0
 
-    .line 174
     :cond_2
     const-string v1, "ManagedProfileSettings"
 
@@ -162,10 +145,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
     return-void
 
-    .line 168
     :cond_3
     :goto_0
     const-string v1, "android.intent.extra.user_handle"
@@ -176,7 +157,6 @@
 
     iget-object v2, p0, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/ManagedProfileSettings;
 
-    .line 169
     invoke-static {v2}, Lcom/android/settings/accounts/ManagedProfileSettings;->access$100(Lcom/android/settings/accounts/ManagedProfileSettings;)Landroid/os/UserHandle;
 
     move-result-object v2
@@ -187,55 +167,42 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 170
     iget-object v1, p0, Lcom/android/settings/accounts/ManagedProfileSettings$ManagedProfileBroadcastReceiver;->this$0:Lcom/android/settings/accounts/ManagedProfileSettings;
 
     invoke-static {v1}, Lcom/android/settings/accounts/ManagedProfileSettings;->access$200(Lcom/android/settings/accounts/ManagedProfileSettings;)V
 
-    .line 172
     :cond_4
     return-void
 .end method
 
 .method public register(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 179
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 180
-    .local v0, "intentFilter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 181
     const-string v1, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 182
     const-string v1, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 183
     invoke-virtual {p1, p0, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 184
     return-void
 .end method
 
 .method public unregister(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 187
     invoke-virtual {p1, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 188
     return-void
 .end method

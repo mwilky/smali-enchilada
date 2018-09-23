@@ -28,12 +28,9 @@
 # direct methods
 .method constructor <init>([B)V
     .locals 1
-    .param p1, "bytes"    # [B
 
-    .line 260
     invoke-direct {p0}, Lcom/google/common/hash/HashCode;-><init>()V
 
-    .line 261
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -42,7 +39,6 @@
 
     iput-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
-    .line 262
     return-void
 .end method
 
@@ -51,7 +47,6 @@
 .method public asBytes()[B
     .locals 1
 
-    .line 271
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
@@ -66,7 +61,6 @@
 .method public asInt()I
     .locals 6
 
-    .line 276
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     array-length v0, v0
@@ -95,17 +89,14 @@
 
     array-length v5, v5
 
-    .line 277
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v4, v1
 
-    .line 276
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 278
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     aget-byte v0, v0, v1
@@ -152,7 +143,6 @@
 .method public asLong()J
     .locals 5
 
-    .line 286
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     array-length v0, v0
@@ -181,17 +171,14 @@
 
     array-length v4, v4
 
-    .line 287
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     aput-object v4, v2, v1
 
-    .line 286
     invoke-static {v0, v3, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 288
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode$BytesHashCode;->padToLong()J
 
     move-result-wide v0
@@ -202,7 +189,6 @@
 .method public bits()I
     .locals 1
 
-    .line 266
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     array-length v0, v0
@@ -214,9 +200,7 @@
 
 .method equalsSameBits(Lcom/google/common/hash/HashCode;)Z
     .locals 2
-    .param p1, "that"    # Lcom/google/common/hash/HashCode;
 
-    .line 312
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     invoke-virtual {p1}, Lcom/google/common/hash/HashCode;->getBytesInternal()[B
@@ -233,7 +217,6 @@
 .method getBytesInternal()[B
     .locals 1
 
-    .line 307
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     return-object v0
@@ -242,7 +225,6 @@
 .method public padToLong()J
     .locals 7
 
-    .line 293
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     const/4 v1, 0x0
@@ -253,11 +235,8 @@
 
     int-to-long v0, v0
 
-    .line 294
-    .local v0, "retVal":J
     const/4 v2, 0x1
 
-    .local v2, "i":I
     :goto_0
     iget-object v3, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
@@ -271,7 +250,6 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 295
     iget-object v3, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     aget-byte v3, v3, v2
@@ -288,30 +266,22 @@
 
     or-long/2addr v0, v3
 
-    .line 294
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 297
-    .end local v2    # "i":I
     :cond_0
     return-wide v0
 .end method
 
 .method writeBytesToImpl([BII)V
     .locals 2
-    .param p1, "dest"    # [B
-    .param p2, "offset"    # I
-    .param p3, "maxLength"    # I
 
-    .line 302
     iget-object v0, p0, Lcom/google/common/hash/HashCode$BytesHashCode;->bytes:[B
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 303
     return-void
 .end method

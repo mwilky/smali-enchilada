@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 42
     new-instance v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     const-string v1, "None"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;->None:Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
-    .line 43
     new-instance v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     const-string v1, "Add"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;->Add:Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
-    .line 44
     new-instance v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     const-string v1, "Invert"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;->Invert:Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
-    .line 45
     new-instance v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     const-string v1, "Unknown"
@@ -82,7 +78,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;->Unknown:Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
-    .line 41
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/airbnb/lottie/model/layer/Layer$MatteType;
@@ -116,7 +111,6 @@
         }
     .end annotation
 
-    .line 41
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -124,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/model/layer/Layer$MatteType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 41
     const-class v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -141,7 +133,6 @@
 .method public static values()[Lcom/airbnb/lottie/model/layer/Layer$MatteType;
     .locals 1
 
-    .line 41
     sget-object v0, Lcom/airbnb/lottie/model/layer/Layer$MatteType;->$VALUES:[Lcom/airbnb/lottie/model/layer/Layer$MatteType;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/layer/Layer$MatteType;->clone()Ljava/lang/Object;

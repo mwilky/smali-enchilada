@@ -6,17 +6,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 30
     invoke-direct {p0, p1}, Landroid/support/v14/preference/SwitchPreference;-><init>(Landroid/content/Context;)V
 
-    .line 31
-    const v0, 0x7f0d01d7
+    const v0, 0x7f0d01d6
 
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/AppSwitchPreference;->setLayoutResource(I)V
 
-    .line 32
     return-void
 .end method
 
@@ -24,19 +20,15 @@
 # virtual methods
 .method public onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 2
-    .param p1, "view"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
-    .line 36
     invoke-super {p0, p1}, Landroid/support/v14/preference/SwitchPreference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    .line 38
-    const v0, 0x7f0a04fd
+    const v0, 0x7f0a04fb
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 39
     invoke-virtual {p0}, Lcom/android/settings/widget/AppSwitchPreference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -57,6 +49,5 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 40
     return-void
 .end method

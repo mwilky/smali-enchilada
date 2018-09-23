@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 99
     new-instance v0, Lcom/google/common/collect/Interners$WeakInterner$Dummy;
 
     const-string v1, "VALUE"
@@ -64,7 +63,6 @@
         }
     .end annotation
 
-    .line 99
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -72,9 +70,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/collect/Interners$WeakInterner$Dummy;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 99
     const-class v0, Lcom/google/common/collect/Interners$WeakInterner$Dummy;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -89,7 +85,6 @@
 .method public static values()[Lcom/google/common/collect/Interners$WeakInterner$Dummy;
     .locals 1
 
-    .line 99
     sget-object v0, Lcom/google/common/collect/Interners$WeakInterner$Dummy;->$VALUES:[Lcom/google/common/collect/Interners$WeakInterner$Dummy;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/Interners$WeakInterner$Dummy;->clone()Ljava/lang/Object;

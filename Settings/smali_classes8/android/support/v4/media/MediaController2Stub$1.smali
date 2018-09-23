@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2Stub;Landroid/support/v4/media/MediaBrowser2;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2Stub;
 
-    .line 334
     iput-object p1, p0, Landroid/support/v4/media/MediaController2Stub$1;->this$0:Landroid/support/v4/media/MediaController2Stub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2Stub$1;->val$browser:Landroid/support/v4/media/MediaBrowser2;
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 5
 
-    .line 337
     iget-object v0, p0, Landroid/support/v4/media/MediaController2Stub$1;->val$browser:Landroid/support/v4/media/MediaBrowser2;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaBrowser2;->getCallback()Landroid/support/v4/media/MediaBrowser2$BrowserCallback;
@@ -72,6 +69,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaBrowser2$BrowserCallback;->onGetLibraryRootDone(Landroid/support/v4/media/MediaBrowser2;Landroid/os/Bundle;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 339
     return-void
 .end method

@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(ZZ)V
     .locals 0
-    .param p1, "isDataSaverWhitelisted"    # Z
-    .param p2, "isDataSaverBlacklisted"    # Z
 
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
     iput-boolean p1, p0, Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;->isDataSaverWhitelisted:Z
 
-    .line 57
     iput-boolean p2, p0, Lcom/android/settings/datausage/AppStateDataUsageBridge$DataUsageState;->isDataSaverBlacklisted:Z
 
-    .line 58
     return-void
 .end method

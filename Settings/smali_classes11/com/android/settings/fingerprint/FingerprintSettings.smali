@@ -32,7 +32,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 83
     invoke-direct {p0}, Lcom/android/settings/SubSettings;-><init>()V
 
     return-void
@@ -43,7 +42,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 3
 
-    .line 117
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SubSettings;->getIntent()Landroid/content/Intent;
@@ -52,8 +50,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 118
-    .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
     const-class v2, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
@@ -64,15 +60,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 119
     return-object v0
 .end method
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "fragmentName"    # Ljava/lang/String;
 
-    .line 124
     const-class v0, Lcom/android/settings/fingerprint/FingerprintSettings$FingerprintSettingsFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -89,7 +82,6 @@
 
     return v0
 
-    .line 125
     :cond_0
     const/4 v0, 0x0
 
@@ -98,22 +90,16 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 130
     invoke-super {p0, p1}, Lcom/android/settings/SubSettings;->onCreate(Landroid/os/Bundle;)V
 
-    .line 131
-    const v0, 0x7f120f9d
+    const v0, 0x7f120f96
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintSettings;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 132
-    .local v0, "msg":Ljava/lang/CharSequence;
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintSettings;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 133
     return-void
 .end method

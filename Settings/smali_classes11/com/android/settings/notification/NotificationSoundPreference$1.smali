@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/NotificationSoundPreference;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationSoundPreference;
 
-    .line 63
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
     iput-object p2, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->val$uri:Landroid/net/Uri;
@@ -49,14 +47,11 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 4
-    .param p1, "params"    # [Ljava/lang/Object;
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->val$uri:Landroid/net/Uri;
 
     if-nez v0, :cond_0
 
-    .line 67
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSoundPreference;->getContext()Landroid/content/Context;
@@ -71,7 +66,6 @@
 
     return-object v0
 
-    .line 68
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->val$uri:Landroid/net/Uri;
 
@@ -81,7 +75,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 69
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSoundPreference;->getContext()Landroid/content/Context;
@@ -96,7 +89,6 @@
 
     return-object v0
 
-    .line 70
     :cond_1
     const-string v0, "android.resource"
 
@@ -112,7 +104,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 71
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSoundPreference;->getContext()Landroid/content/Context;
@@ -127,7 +118,6 @@
 
     return-object v0
 
-    .line 73
     :cond_2
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
@@ -151,7 +141,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 63
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationSoundPreference$1;->doInBackground([Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -161,21 +150,17 @@
 
 .method protected onPostExecute(Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/CharSequence;
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSoundPreference$1;->this$0:Lcom/android/settings/notification/NotificationSoundPreference;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/notification/NotificationSoundPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 81
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 63
     check-cast p1, Ljava/lang/CharSequence;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/notification/NotificationSoundPreference$1;->onPostExecute(Ljava/lang/CharSequence;)V

@@ -30,16 +30,11 @@
 # direct methods
 .method private constructor <init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;)V
     .locals 1
-    .param p1, "outerSplitter"    # Lcom/google/common/base/Splitter;
-    .param p2, "entrySplitter"    # Lcom/google/common/base/Splitter;
 
-    .line 479
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 480
     iput-object p1, p0, Lcom/google/common/base/Splitter$MapSplitter;->outerSplitter:Lcom/google/common/base/Splitter;
 
-    .line 481
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -48,17 +43,12 @@
 
     iput-object v0, p0, Lcom/google/common/base/Splitter$MapSplitter;->entrySplitter:Lcom/google/common/base/Splitter;
 
-    .line 482
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/base/Splitter;
-    .param p2, "x1"    # Lcom/google/common/base/Splitter;
-    .param p3, "x2"    # Lcom/google/common/base/Splitter$1;
 
-    .line 473
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Splitter$MapSplitter;-><init>(Lcom/google/common/base/Splitter;Lcom/google/common/base/Splitter;)V
 
     return-void
@@ -68,7 +58,6 @@
 # virtual methods
 .method public split(Ljava/lang/CharSequence;)Ljava/util/Map;
     .locals 10
-    .param p1, "sequence"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,13 +70,10 @@
         }
     .end annotation
 
-    .line 500
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 501
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/google/common/base/Splitter$MapSplitter;->outerSplitter:Lcom/google/common/base/Splitter;
 
     invoke-virtual {v1, p1}, Lcom/google/common/base/Splitter;->split(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
@@ -111,16 +97,12 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 502
-    .local v2, "entry":Ljava/lang/String;
     iget-object v3, p0, Lcom/google/common/base/Splitter$MapSplitter;->entrySplitter:Lcom/google/common/base/Splitter;
 
     invoke-static {v3, v2}, Lcom/google/common/base/Splitter;->access$000(Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)Ljava/util/Iterator;
 
     move-result-object v3
 
-    .line 504
-    .local v3, "entryFields":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
@@ -137,15 +119,12 @@
 
     invoke-static {v4, v5, v7}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 505
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 506
-    .local v4, "key":Ljava/lang/String;
     invoke-interface {v0, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v5
@@ -160,7 +139,6 @@
 
     invoke-static {v5, v7, v9}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 508
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -173,18 +151,14 @@
 
     invoke-static {v5, v7, v9}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 509
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Ljava/lang/String;
 
-    .line 510
-    .local v5, "value":Ljava/lang/String;
     invoke-interface {v0, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 512
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
@@ -199,14 +173,8 @@
 
     invoke-static {v7, v9, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 513
-    .end local v2    # "entry":Ljava/lang/String;
-    .end local v3    # "entryFields":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
-    .end local v4    # "key":Ljava/lang/String;
-    .end local v5    # "value":Ljava/lang/String;
     goto :goto_0
 
-    .line 514
     :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 

@@ -31,14 +31,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 203
     const-string v0, "assisted_gps"
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/core/BasePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 204
     return-void
 .end method
 
@@ -46,15 +43,11 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 1
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 220
     invoke-super {p0, p1}, Lcom/android/settings/core/BasePreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 221
     const-string v0, "assisted_gps"
 
-    .line 222
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
 
     move-result-object v0
@@ -63,14 +56,12 @@
 
     iput-object v0, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mAgpsPreference:Landroid/support/v7/preference/CheckBoxPreference;
 
-    .line 223
     return-void
 .end method
 
 .method public getAvailabilityStatus()I
     .locals 2
 
-    .line 213
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -85,16 +76,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 214
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 215
     :cond_0
     const/4 v0, 0x2
 
-    .line 213
     :goto_0
     return v0
 .end method
@@ -102,7 +90,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 208
     const-string v0, "assisted_gps"
 
     return-object v0
@@ -110,9 +97,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 8
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 235
     const-string v0, "assisted_gps"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -125,26 +110,20 @@
 
     if-eqz v0, :cond_3
 
-    .line 236
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 237
-    .local v0, "cr":Landroid/content/ContentResolver;
     iget-object v1, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mAgpsPreference:Landroid/support/v7/preference/CheckBoxPreference;
 
     invoke-virtual {v1}, Landroid/support/v7/preference/CheckBoxPreference;->isChecked()Z
 
     move-result v1
 
-    .line 238
-    .local v1, "switchState":Z
     if-eqz v1, :cond_2
 
-    .line 239
     const-string v2, "assisted_gps_supl_host"
 
     invoke-static {v0, v2}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
@@ -155,80 +134,61 @@
 
     const-string v2, "assisted_gps_supl_port"
 
-    .line 241
     invoke-static {v0, v2}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     if-nez v2, :cond_2
 
-    .line 242
     :cond_0
     const/4 v2, 0x0
 
     move-object v3, v2
 
-    .line 244
-    .local v3, "stream":Ljava/io/FileInputStream;
     :try_start_0
     new-instance v4, Ljava/util/Properties;
 
     invoke-direct {v4}, Ljava/util/Properties;-><init>()V
 
-    .line 245
-    .local v4, "properties":Ljava/util/Properties;
     new-instance v5, Ljava/io/File;
 
     const-string v6, "/etc/gps.conf"
 
     invoke-direct {v5, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 246
-    .local v5, "file":Ljava/io/File;
     new-instance v6, Ljava/io/FileInputStream;
 
     invoke-direct {v6, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
     move-object v3, v6
 
-    .line 247
     invoke-virtual {v4, v3}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
 
-    .line 248
     const-string v6, "assisted_gps_supl_host"
 
     const-string v7, "SUPL_HOST"
 
-    .line 249
     invoke-virtual {v4, v7, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 248
     invoke-static {v0, v6, v7}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 250
     const-string v6, "assisted_gps_supl_port"
 
     const-string v7, "SUPL_PORT"
 
-    .line 251
     invoke-virtual {v4, v7, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 250
     invoke-static {v0, v6, v2}, Landroid/provider/Settings$Global;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 256
-    .end local v4    # "properties":Ljava/util/Properties;
-    .end local v5    # "file":Ljava/io/File;
     nop
 
-    .line 258
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -236,18 +196,14 @@
 
     goto :goto_0
 
-    .line 256
     :catchall_0
     move-exception v2
 
     goto :goto_1
 
-    .line 252
     :catch_0
     move-exception v2
 
-    .line 253
-    .local v2, "e":Ljava/io/IOException;
     :try_start_2
     const-string v4, "LocationSettings"
 
@@ -269,70 +225,50 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 256
-    .end local v2    # "e":Ljava/io/IOException;
     if-eqz v3, :cond_2
 
-    .line 258
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 260
-    .end local v3    # "stream":Ljava/io/FileInputStream;
     :goto_0
     goto :goto_3
 
-    .line 259
-    .restart local v3    # "stream":Ljava/io/FileInputStream;
     :catch_1
     move-exception v2
 
     goto :goto_0
 
-    .line 256
     :goto_1
     if-eqz v3, :cond_1
 
-    .line 258
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 260
     goto :goto_2
 
-    .line 259
     :catch_2
     move-exception v4
 
-    .line 260
     :cond_1
     :goto_2
     throw v2
 
-    .line 265
-    .end local v3    # "stream":Ljava/io/FileInputStream;
     :cond_2
     :goto_3
     const-string v2, "assisted_gps_enabled"
 
-    .line 266
     nop
 
-    .line 265
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 267
     const/4 v2, 0x1
 
     return v2
 
-    .line 269
-    .end local v0    # "cr":Landroid/content/ContentResolver;
-    .end local v1    # "switchState":Z
     :cond_3
     const/4 v0, 0x0
 
@@ -341,26 +277,21 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 227
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mAgpsPreference:Landroid/support/v7/preference/CheckBoxPreference;
 
     if-eqz v0, :cond_1
 
-    .line 228
     iget-object v0, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mAgpsPreference:Landroid/support/v7/preference/CheckBoxPreference;
 
     iget-object v1, p0, Lcom/android/settings/location/LocationSettings$AgpsPreferenceController;->mContext:Landroid/content/Context;
 
-    .line 229
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
     const-string v2, "assisted_gps_enabled"
 
-    .line 228
     const/4 v3, 0x0
 
     invoke-static {v1, v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -379,7 +310,6 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/support/v7/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 231
     :cond_1
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 97
     const-class v0, Lcom/google/common/util/concurrent/AbstractScheduledService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -49,24 +48,20 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
     new-instance v0, Lcom/google/common/util/concurrent/AbstractScheduledService$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/util/concurrent/AbstractScheduledService$1;-><init>(Lcom/google/common/util/concurrent/AbstractScheduledService;)V
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
-    .line 242
     return-void
 .end method
 
 .method static synthetic access$200()Ljava/util/logging/Logger;
     .locals 1
 
-    .line 96
     sget-object v0, Lcom/google/common/util/concurrent/AbstractScheduledService;->logger:Ljava/util/logging/Logger;
 
     return-object v0
@@ -74,9 +69,7 @@
 
 .method static synthetic access$400(Lcom/google/common/util/concurrent/AbstractScheduledService;)Lcom/google/common/util/concurrent/AbstractService;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/util/concurrent/AbstractScheduledService;
 
-    .line 96
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     return-object v0
@@ -86,84 +79,67 @@
 # virtual methods
 .method public final addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
     .locals 1
-    .param p1, "listener"    # Lcom/google/common/util/concurrent/Service$Listener;
-    .param p2, "executor"    # Ljava/util/concurrent/Executor;
 
-    .line 335
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/util/concurrent/AbstractService;->addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
 
-    .line 336
     return-void
 .end method
 
 .method public final awaitRunning()V
     .locals 1
 
-    .line 365
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->awaitRunning()V
 
-    .line 366
     return-void
 .end method
 
 .method public final awaitRunning(JLjava/util/concurrent/TimeUnit;)V
     .locals 1
-    .param p1, "timeout"    # J
-    .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
-    .line 372
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/common/util/concurrent/AbstractService;->awaitRunning(JLjava/util/concurrent/TimeUnit;)V
 
-    .line 373
     return-void
 .end method
 
 .method public final awaitTerminated()V
     .locals 1
 
-    .line 379
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->awaitTerminated()V
 
-    .line 380
     return-void
 .end method
 
 .method public final awaitTerminated(JLjava/util/concurrent/TimeUnit;)V
     .locals 1
-    .param p1, "timeout"    # J
-    .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/util/concurrent/TimeoutException;
         }
     .end annotation
 
-    .line 386
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/common/util/concurrent/AbstractService;->awaitTerminated(JLjava/util/concurrent/TimeUnit;)V
 
-    .line 387
     return-void
 .end method
 
 .method protected executor()Ljava/util/concurrent/ScheduledExecutorService;
     .locals 3
 
-    .line 287
     new-instance v0, Lcom/google/common/util/concurrent/AbstractScheduledService$2;
 
     invoke-direct {v0, p0}, Lcom/google/common/util/concurrent/AbstractScheduledService$2;-><init>(Lcom/google/common/util/concurrent/AbstractScheduledService;)V
@@ -172,28 +148,22 @@
 
     move-result-object v0
 
-    .line 298
-    .local v0, "executor":Ljava/util/concurrent/ScheduledExecutorService;
     new-instance v1, Lcom/google/common/util/concurrent/AbstractScheduledService$3;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/util/concurrent/AbstractScheduledService$3;-><init>(Lcom/google/common/util/concurrent/AbstractScheduledService;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    .line 305
     invoke-static {}, Lcom/google/common/util/concurrent/MoreExecutors;->directExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v2
 
-    .line 298
     invoke-virtual {p0, v1, v2}, Lcom/google/common/util/concurrent/AbstractScheduledService;->addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
 
-    .line 306
     return-object v0
 .end method
 
 .method public final failureCause()Ljava/lang/Throwable;
     .locals 1
 
-    .line 342
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->failureCause()Ljava/lang/Throwable;
@@ -206,7 +176,6 @@
 .method public final isRunning()Z
     .locals 1
 
-    .line 324
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->isRunning()Z
@@ -230,7 +199,6 @@
 .method protected serviceName()Ljava/lang/String;
     .locals 1
 
-    .line 316
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -250,19 +218,16 @@
         }
     .end annotation
 
-    .line 263
     return-void
 .end method
 
 .method public final startAsync()Lcom/google/common/util/concurrent/Service;
     .locals 1
 
-    .line 349
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->startAsync()Lcom/google/common/util/concurrent/Service;
 
-    .line 350
     return-object p0
 .end method
 
@@ -274,14 +239,12 @@
         }
     .end annotation
 
-    .line 256
     return-void
 .end method
 
 .method public final state()Lcom/google/common/util/concurrent/Service$State;
     .locals 1
 
-    .line 328
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->state()Lcom/google/common/util/concurrent/Service$State;
@@ -294,19 +257,16 @@
 .method public final stopAsync()Lcom/google/common/util/concurrent/Service;
     .locals 1
 
-    .line 357
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractScheduledService;->delegate:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->stopAsync()Lcom/google/common/util/concurrent/Service;
 
-    .line 358
     return-object p0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 320
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

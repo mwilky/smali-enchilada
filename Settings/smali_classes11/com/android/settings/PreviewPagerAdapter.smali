@@ -35,14 +35,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/settings/PreviewPagerAdapter;->FADE_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    .line 48
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
@@ -54,25 +52,17 @@
 
 .method public constructor <init>(Landroid/content/Context;Z[I[Landroid/content/res/Configuration;)V
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "isLayoutRtl"    # Z
-    .param p3, "previewSampleResIds"    # [I
-    .param p4, "configurations"    # [Landroid/content/res/Configuration;
 
-    .line 61
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 62
     iput-boolean p2, p0, Lcom/android/settings/PreviewPagerAdapter;->mIsLayoutRtl:Z
 
-    .line 63
     array-length v0, p3
 
     new-array v0, v0, [Landroid/widget/FrameLayout;
 
     iput-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
-    .line 64
     array-length v0, p3
 
     array-length v1, p4
@@ -91,18 +81,15 @@
 
     iput-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mViewStubInflated:[[Z
 
-    .line 66
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, p3
 
     if-ge v1, v2, :cond_2
 
-    .line 67
     iget-boolean v2, p0, Lcom/android/settings/PreviewPagerAdapter;->mIsLayoutRtl:Z
 
     if-eqz v2, :cond_0
@@ -118,8 +105,6 @@
     :cond_0
     move v2, v1
 
-    .line 68
-    .local v2, "p":I
     :goto_1
     iget-object v3, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
@@ -129,7 +114,6 @@
 
     aput-object v4, v3, v2
 
-    .line 69
     iget-object v3, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v3, v3, v2
@@ -142,24 +126,19 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 73
     move v3, v0
 
-    .local v3, "j":I
     :goto_2
     array-length v4, p4
 
     if-ge v3, v4, :cond_1
 
-    .line 76
     aget-object v4, p4, v3
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
 
     move-result-object v4
 
-    .line 77
-    .local v4, "configContext":Landroid/content/Context;
     invoke-virtual {v4}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v5
@@ -170,73 +149,50 @@
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
 
-    .line 79
     invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v5
 
-    .line 80
-    .local v5, "configInflater":Landroid/view/LayoutInflater;
     new-instance v6, Landroid/view/ViewStub;
 
     invoke-direct {v6, v4}, Landroid/view/ViewStub;-><init>(Landroid/content/Context;)V
 
-    .line 81
-    .local v6, "sampleViewStub":Landroid/view/ViewStub;
     aget v7, p3, v1
 
     invoke-virtual {v6, v7}, Landroid/view/ViewStub;->setLayoutResource(I)V
 
-    .line 82
     move v7, v1
 
-    .local v7, "fi":I
     move v8, v3
 
-    .line 83
-    .local v8, "fj":I
     new-instance v9, Lcom/android/settings/PreviewPagerAdapter$1;
 
     invoke-direct {v9, p0, v7, v8}, Lcom/android/settings/PreviewPagerAdapter$1;-><init>(Lcom/android/settings/PreviewPagerAdapter;II)V
 
     invoke-virtual {v6, v9}, Landroid/view/ViewStub;->setOnInflateListener(Landroid/view/ViewStub$OnInflateListener;)V
 
-    .line 91
     iget-object v9, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v9, v9, v2
 
     invoke-virtual {v9, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 73
-    .end local v4    # "configContext":Landroid/content/Context;
-    .end local v5    # "configInflater":Landroid/view/LayoutInflater;
-    .end local v6    # "sampleViewStub":Landroid/view/ViewStub;
-    .end local v7    # "fi":I
-    .end local v8    # "fj":I
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 66
-    .end local v2    # "p":I
-    .end local v3    # "j":I
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 94
-    .end local v1    # "i":I
     :cond_2
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/settings/PreviewPagerAdapter;)[[Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 39
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mViewStubInflated:[[Z
 
     return-object v0
@@ -244,9 +200,7 @@
 
 .method static synthetic access$208(Lcom/android/settings/PreviewPagerAdapter;)I
     .locals 2
-    .param p0, "x0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 39
     iget v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationCounter:I
 
     add-int/lit8 v1, v0, 0x1
@@ -258,9 +212,7 @@
 
 .method static synthetic access$210(Lcom/android/settings/PreviewPagerAdapter;)I
     .locals 2
-    .param p0, "x0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 39
     iget v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationCounter:I
 
     add-int/lit8 v1, v0, -0x1
@@ -272,9 +224,7 @@
 
 .method static synthetic access$300(Lcom/android/settings/PreviewPagerAdapter;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 39
     invoke-direct {p0}, Lcom/android/settings/PreviewPagerAdapter;->runAnimationEndAction()V
 
     return-void
@@ -283,7 +233,6 @@
 .method private runAnimationEndAction()V
     .locals 1
 
-    .line 195
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationEndAction:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
@@ -294,28 +243,21 @@
 
     if-nez v0, :cond_0
 
-    .line 196
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationEndAction:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 197
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationEndAction:Ljava/lang/Runnable;
 
-    .line 199
     :cond_0
     return-void
 .end method
 
 .method private setVisibility(Landroid/view/View;IZ)V
     .locals 7
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "visibility"    # I
-    .param p3, "animate"    # Z
 
-    .line 157
     if-nez p2, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -325,20 +267,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 158
-    .local v0, "alpha":F
     :goto_0
     if-nez p3, :cond_1
 
-    .line 159
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 160
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_2
 
-    .line 162
     :cond_1
     if-nez p2, :cond_2
 
@@ -346,12 +283,9 @@
 
     goto :goto_1
 
-    .line 163
     :cond_2
     sget-object v1, Lcom/android/settings/PreviewPagerAdapter;->FADE_OUT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    .line 164
-    .local v1, "interpolator":Landroid/view/animation/Interpolator;
     :goto_1
     const/4 v2, 0x0
 
@@ -359,24 +293,20 @@
 
     if-nez p2, :cond_3
 
-    .line 166
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
-    .line 167
     invoke-virtual {v5, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
     sget-object v6, Lcom/android/settings/PreviewPagerAdapter;->FADE_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    .line 168
     invoke-virtual {v5, v6}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
-    .line 169
     invoke-virtual {v5, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -385,7 +315,6 @@
 
     invoke-direct {v4, p0, v2}, Lcom/android/settings/PreviewPagerAdapter$PreviewFrameAnimatorListener;-><init>(Lcom/android/settings/PreviewPagerAdapter;Lcom/android/settings/PreviewPagerAdapter$1;)V
 
-    .line 170
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
@@ -394,30 +323,25 @@
 
     invoke-direct {v3, p0, p1, p2}, Lcom/android/settings/PreviewPagerAdapter$2;-><init>(Lcom/android/settings/PreviewPagerAdapter;Landroid/view/View;I)V
 
-    .line 171
     invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     goto :goto_2
 
-    .line 179
     :cond_3
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
-    .line 180
     invoke-virtual {v5, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
     sget-object v6, Lcom/android/settings/PreviewPagerAdapter;->FADE_OUT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    .line 181
     invoke-virtual {v5, v6}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
-    .line 182
     invoke-virtual {v5, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -426,7 +350,6 @@
 
     invoke-direct {v4, p0, v2}, Lcom/android/settings/PreviewPagerAdapter$PreviewFrameAnimatorListener;-><init>(Lcom/android/settings/PreviewPagerAdapter;Lcom/android/settings/PreviewPagerAdapter$1;)V
 
-    .line 183
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
@@ -435,11 +358,8 @@
 
     invoke-direct {v3, p0, p1, p2}, Lcom/android/settings/PreviewPagerAdapter$3;-><init>(Lcom/android/settings/PreviewPagerAdapter;Landroid/view/View;I)V
 
-    .line 184
     invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 192
-    .end local v1    # "interpolator":Landroid/view/animation/Interpolator;
     :goto_2
     return-void
 .end method
@@ -448,25 +368,19 @@
 # virtual methods
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 1
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 98
     move-object v0, p3
 
     check-cast v0, Landroid/view/View;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 99
     return-void
 .end method
 
 .method public getCount()I
     .locals 1
 
-    .line 103
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     array-length v0, v0
@@ -476,17 +390,13 @@
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 1
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
 
-    .line 108
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v0, v0, p2
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 109
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v0, v0, p2
@@ -497,7 +407,6 @@
 .method isAnimating()Z
     .locals 1
 
-    .line 118
     iget v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationCounter:I
 
     if-lez v0, :cond_0
@@ -515,10 +424,7 @@
 
 .method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "object"    # Ljava/lang/Object;
 
-    .line 114
     if-ne p1, p2, :cond_0
 
     const/4 v0, 0x1
@@ -534,23 +440,15 @@
 
 .method setAnimationEndAction(Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "action"    # Ljava/lang/Runnable;
 
-    .line 122
     iput-object p1, p0, Lcom/android/settings/PreviewPagerAdapter;->mAnimationEndAction:Ljava/lang/Runnable;
 
-    .line 123
     return-void
 .end method
 
 .method setPreviewLayer(IIIZ)V
     .locals 8
-    .param p1, "newLayerIndex"    # I
-    .param p2, "currentLayerIndex"    # I
-    .param p3, "currentFrameIndex"    # I
-    .param p4, "animate"    # Z
 
-    .line 127
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     array-length v1, v0
@@ -564,17 +462,12 @@
 
     aget-object v4, v0, v3
 
-    .line 128
-    .local v4, "previewFrame":Landroid/widget/FrameLayout;
     if-ltz p2, :cond_1
 
-    .line 129
     invoke-virtual {v4, p2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 130
-    .local v5, "lastLayer":Landroid/view/View;
     iget-object v6, p0, Lcom/android/settings/PreviewPagerAdapter;->mViewStubInflated:[[Z
 
     aget-object v6, v6, p3
@@ -583,7 +476,6 @@
 
     if-eqz v6, :cond_1
 
-    .line 133
     iget-object v6, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v6, v6, p3
@@ -592,32 +484,25 @@
 
     if-ne v4, v6, :cond_0
 
-    .line 134
     invoke-direct {p0, v5, v7, p4}, Lcom/android/settings/PreviewPagerAdapter;->setVisibility(Landroid/view/View;IZ)V
 
     goto :goto_1
 
-    .line 136
     :cond_0
     invoke-direct {p0, v5, v7, v2}, Lcom/android/settings/PreviewPagerAdapter;->setVisibility(Landroid/view/View;IZ)V
 
-    .line 142
-    .end local v5    # "lastLayer":Landroid/view/View;
     :cond_1
     :goto_1
     invoke-virtual {v4, p1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 143
-    .local v5, "nextLayer":Landroid/view/View;
     iget-object v6, p0, Lcom/android/settings/PreviewPagerAdapter;->mPreviewFrames:[Landroid/widget/FrameLayout;
 
     aget-object v6, v6, p3
 
     if-ne v4, v6, :cond_3
 
-    .line 145
     iget-object v6, p0, Lcom/android/settings/PreviewPagerAdapter;->mViewStubInflated:[[Z
 
     aget-object v6, v6, p3
@@ -626,7 +511,6 @@
 
     if-nez v6, :cond_2
 
-    .line 146
     move-object v6, v5
 
     check-cast v6, Landroid/view/ViewStub;
@@ -635,30 +519,23 @@
 
     move-result-object v5
 
-    .line 147
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 149
     :cond_2
     invoke-direct {p0, v5, v2, p4}, Lcom/android/settings/PreviewPagerAdapter;->setVisibility(Landroid/view/View;IZ)V
 
     goto :goto_2
 
-    .line 151
     :cond_3
     invoke-direct {p0, v5, v2, v2}, Lcom/android/settings/PreviewPagerAdapter;->setVisibility(Landroid/view/View;IZ)V
 
-    .line 127
-    .end local v4    # "previewFrame":Landroid/widget/FrameLayout;
-    .end local v5    # "nextLayer":Landroid/view/View;
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 154
     :cond_4
     return-void
 .end method

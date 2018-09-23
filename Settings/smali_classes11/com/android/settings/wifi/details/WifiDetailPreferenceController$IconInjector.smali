@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 582
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 583
     iput-object p1, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$IconInjector;->mContext:Landroid/content/Context;
 
-    .line 584
     return-void
 .end method
 
@@ -40,9 +36,7 @@
 # virtual methods
 .method public getIcon(I)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1, "level"    # I
 
-    .line 587
     iget-object v0, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$IconInjector;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/android/settings/Utils;->getWifiIconResource(I)I

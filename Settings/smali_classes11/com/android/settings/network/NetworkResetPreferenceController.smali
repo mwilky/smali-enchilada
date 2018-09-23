@@ -13,19 +13,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 30
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 31
     new-instance v0, Lcom/android/settings/network/NetworkResetRestrictionChecker;
 
     invoke-direct {v0, p1}, Lcom/android/settings/network/NetworkResetRestrictionChecker;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/settings/network/NetworkResetPreferenceController;->mRestrictionChecker:Lcom/android/settings/network/NetworkResetRestrictionChecker;
 
-    .line 32
     return-void
 .end method
 
@@ -34,7 +30,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 41
     const-string v0, "network_reset_pref"
 
     return-object v0
@@ -43,7 +38,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 36
     iget-object v0, p0, Lcom/android/settings/network/NetworkResetPreferenceController;->mRestrictionChecker:Lcom/android/settings/network/NetworkResetRestrictionChecker;
 
     invoke-virtual {v0}, Lcom/android/settings/network/NetworkResetRestrictionChecker;->hasUserRestriction()Z

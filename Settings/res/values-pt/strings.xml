@@ -2909,8 +2909,6 @@ Para ir para o ecrã inicial a qualquer momento, deslize para cima a partir do c
     <string name="oneplus_quick_clipboard_summary">Melhora a capacidade de copiar, recomendando em seguida a ação seguinte em função da cópia</string>
     <string name="oneplus_quick_gestures">Gestos</string>
     <string name="oneplus_quick_gestures_title">Gestos rápidos</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Ativar rapidamente a aplicação de assistência</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Mantenha o botão ligar/desligar premido durante 0,5 s para ativar a aplicação de assistência e durante 3 s para desligar</string>
     <string name="oneplus_quick_turn_on_camera">Ligar rapidamente a câmara</string>
     <string name="oneplus_quickpay">Pagamento rápido</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Tem certeza que deseja alterar a acção de Premir demoradamente do botão Home de \"%1$s\" para \"Pagamento rápido\"?</string>

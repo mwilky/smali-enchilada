@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/VerticalGridPresenter;Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/VerticalGridPresenter;
 
-    .line 292
     iput-object p1, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$1;->this$0:Landroid/support/v17/leanback/widget/VerticalGridPresenter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$1;->val$gridViewHolder:Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;
@@ -42,18 +40,12 @@
 # virtual methods
 .method public onChildSelected(Landroid/view/ViewGroup;Landroid/view/View;IJ)V
     .locals 2
-    .param p1, "parent"    # Landroid/view/ViewGroup;
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
-    .line 295
     iget-object v0, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$1;->this$0:Landroid/support/v17/leanback/widget/VerticalGridPresenter;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$1;->val$gridViewHolder:Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;
 
     invoke-virtual {v0, v1, p2}, Landroid/support/v17/leanback/widget/VerticalGridPresenter;->selectChildView(Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;Landroid/view/View;)V
 
-    .line 296
     return-void
 .end method

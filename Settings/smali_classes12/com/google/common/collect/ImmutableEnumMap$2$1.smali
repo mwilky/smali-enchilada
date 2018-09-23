@@ -39,15 +39,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableEnumMap$2;)V
     .locals 1
-    .param p1, "this$1"    # Lcom/google/common/collect/ImmutableEnumMap$2;
 
-    .line 109
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2$1;, "Lcom/google/common/collect/ImmutableEnumMap$2$1;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumMap$2$1;->this$1:Lcom/google/common/collect/ImmutableEnumMap$2;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
 
-    .line 110
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$2$1;->this$1:Lcom/google/common/collect/ImmutableEnumMap$2;
 
     iget-object v0, v0, Lcom/google/common/collect/ImmutableEnumMap$2;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
@@ -74,8 +70,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 114
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2$1;, "Lcom/google/common/collect/ImmutableEnumMap$2$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$2$1;->backingIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -88,8 +82,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 109
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2$1;, "Lcom/google/common/collect/ImmutableEnumMap$2$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableEnumMap$2$1;->next()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -107,8 +99,6 @@
         }
     .end annotation
 
-    .line 119
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2$1;, "Lcom/google/common/collect/ImmutableEnumMap$2$1;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$2$1;->backingIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -117,8 +107,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 120
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1

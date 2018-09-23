@@ -38,17 +38,13 @@
 # direct methods
 .method protected constructor <init>(Lcom/google/common/util/concurrent/Monitor;)V
     .locals 1
-    .param p1, "monitor"    # Lcom/google/common/util/concurrent/Monitor;
 
-    .line 303
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 296
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/common/util/concurrent/Monitor$Guard;->waiterCount:I
 
-    .line 304
     const-string v0, "monitor"
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -59,7 +55,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/Monitor$Guard;->monitor:Lcom/google/common/util/concurrent/Monitor;
 
-    .line 305
     invoke-static {p1}, Lcom/google/common/util/concurrent/Monitor;->access$000(Lcom/google/common/util/concurrent/Monitor;)Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v0
@@ -70,7 +65,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/Monitor$Guard;->condition:Ljava/util/concurrent/locks/Condition;
 
-    .line 306
     return-void
 .end method
 

@@ -54,7 +54,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 310
     const-class v0, Lcom/google/common/collect/ImmutableMultimap;
 
     const-string v1, "map"
@@ -65,7 +64,6 @@
 
     sput-object v0, Lcom/google/common/collect/ImmutableMultimap$FieldSettersHolder;->MAP_FIELD_SETTER:Lcom/google/common/collect/Serialization$FieldSetter;
 
-    .line 313
     const-class v0, Lcom/google/common/collect/ImmutableMultimap;
 
     const-string v1, "size"
@@ -76,7 +74,6 @@
 
     sput-object v0, Lcom/google/common/collect/ImmutableMultimap$FieldSettersHolder;->SIZE_FIELD_SETTER:Lcom/google/common/collect/Serialization$FieldSetter;
 
-    .line 316
     const-class v0, Lcom/google/common/collect/ImmutableSetMultimap;
 
     const-string v1, "emptySet"
@@ -93,7 +90,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 308
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

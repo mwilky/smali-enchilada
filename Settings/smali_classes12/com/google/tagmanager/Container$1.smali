@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/Container;)V
     .locals 0
 
-    .line 385
     iput-object p1, p0, Lcom/google/tagmanager/Container$1;->this$0:Lcom/google/tagmanager/Container;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public currentTimeMillis()J
     .locals 2
 
-    .line 388
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0

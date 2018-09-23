@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/GuidedStepFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/GuidedStepFragment;
 
-    .line 1105
     iput-object p1, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
     .locals 2
-    .param p1, "action"    # Landroid/support/v17/leanback/widget/GuidedAction;
 
-    .line 1108
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/GuidedStepFragment;->onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
 
-    .line 1109
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/GuidedStepFragment;->isExpanded()Z
@@ -56,14 +51,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1110
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/GuidedStepFragment;->collapseAction(Z)V
 
     goto :goto_0
 
-    .line 1111
     :cond_0
     invoke-virtual {p1}, Landroid/support/v17/leanback/widget/GuidedAction;->hasSubActions()Z
 
@@ -77,13 +70,11 @@
 
     if-eqz v0, :cond_2
 
-    .line 1112
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v17/leanback/app/GuidedStepFragment;->expandAction(Landroid/support/v17/leanback/widget/GuidedAction;Z)V
 
-    .line 1114
     :cond_2
     :goto_0
     return-void

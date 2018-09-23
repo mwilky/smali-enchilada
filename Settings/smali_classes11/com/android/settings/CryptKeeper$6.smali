@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/CryptKeeper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/CryptKeeper;
 
-    .line 716
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,15 +45,12 @@
         }
     .end annotation
 
-    .line 740
-    .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     return-void
 .end method
 
 .method public onPatternCleared()V
     .locals 0
 
-    .line 725
     return-void
 .end method
 
@@ -70,8 +65,6 @@
         }
     .end annotation
 
-    .line 729
-    .local p1, "pattern":Ljava/util/List;, "Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->access$100(Lcom/android/settings/CryptKeeper;)Lcom/android/internal/widget/LockPatternView;
@@ -82,7 +75,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->setEnabled(Z)V
 
-    .line 730
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -91,7 +83,6 @@
 
     if-lt v0, v2, :cond_0
 
-    .line 731
     new-instance v0, Lcom/android/settings/CryptKeeper$DecryptTask;
 
     iget-object v2, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
@@ -114,7 +105,6 @@
 
     goto :goto_0
 
-    .line 734
     :cond_0
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
@@ -126,7 +116,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/CryptKeeper;->access$1900(Lcom/android/settings/CryptKeeper;Landroid/view/View;)V
 
-    .line 736
     :goto_0
     return-void
 .end method
@@ -134,7 +123,6 @@
 .method public onPatternStart()V
     .locals 2
 
-    .line 720
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$6;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-static {v0}, Lcom/android/settings/CryptKeeper;->access$100(Lcom/android/settings/CryptKeeper;)Lcom/android/internal/widget/LockPatternView;
@@ -149,6 +137,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/widget/LockPatternView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 721
     return-void
 .end method

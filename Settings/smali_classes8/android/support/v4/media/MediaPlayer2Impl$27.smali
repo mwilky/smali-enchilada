@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;Landroid/media/MediaPlayer$OnCompletionListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1460
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 2
 
-    .line 1463
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaPlayer2Impl;->access$100(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
@@ -62,10 +59,8 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1464
     return-void
 
-    .line 1466
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -75,7 +70,6 @@
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;->pause()V
 
-    .line 1467
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->val$completionListener:Landroid/media/MediaPlayer$OnCompletionListener;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$27;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -84,6 +78,5 @@
 
     invoke-interface {v0, v1}, Landroid/media/MediaPlayer$OnCompletionListener;->onCompletion(Landroid/media/MediaPlayer;)V
 
-    .line 1468
     return-void
 .end method

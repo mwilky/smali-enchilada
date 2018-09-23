@@ -40,12 +40,11 @@
 # direct methods
 .method public constructor <init>(Landroidx/slice/builders/ListBuilder;)V
     .locals 1
-    .param p1, "parent"    # Landroidx/slice/builders/ListBuilder;
+    .param p1    # Landroidx/slice/builders/ListBuilder;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 75
     invoke-virtual {p1}, Landroidx/slice/builders/ListBuilder;->getImpl()Landroidx/slice/builders/impl/ListBuilder;
 
     move-result-object v0
@@ -56,15 +55,12 @@
 
     invoke-direct {p0, v0}, Landroidx/slice/builders/TemplateSliceBuilder;-><init>(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
 
-    .line 76
     return-void
 .end method
 
 .method static synthetic access$100(Landroidx/slice/builders/GridBuilder;)Landroidx/slice/builders/impl/GridRowBuilder;
     .locals 1
-    .param p0, "x0"    # Landroidx/slice/builders/GridBuilder;
 
-    .line 43
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     return-object v0
@@ -91,17 +87,12 @@
         }
     .end annotation
 
-    .line 97
-    .local p1, "c":Landroid/support/v4/util/Consumer;, "Landroid/support/v4/util/Consumer<Landroidx/slice/builders/GridBuilder$CellBuilder;>;"
     new-instance v0, Landroidx/slice/builders/GridBuilder$CellBuilder;
 
     invoke-direct {v0, p0}, Landroidx/slice/builders/GridBuilder$CellBuilder;-><init>(Landroidx/slice/builders/GridBuilder;)V
 
-    .line 98
-    .local v0, "b":Landroidx/slice/builders/GridBuilder$CellBuilder;
     invoke-interface {p1, v0}, Landroid/support/v4/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 99
     invoke-virtual {p0, v0}, Landroidx/slice/builders/GridBuilder;->addCell(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/GridBuilder;
 
     move-result-object v1
@@ -111,14 +102,13 @@
 
 .method public addCell(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/GridBuilder;
     .locals 2
-    .param p1, "builder"    # Landroidx/slice/builders/GridBuilder$CellBuilder;
+    .param p1    # Landroidx/slice/builders/GridBuilder$CellBuilder;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 88
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     invoke-static {p1}, Landroidx/slice/builders/GridBuilder$CellBuilder;->access$000(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/impl/GridRowBuilder$CellBuilder;
@@ -129,38 +119,32 @@
 
     invoke-interface {v0, v1}, Landroidx/slice/builders/impl/GridRowBuilder;->addCell(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
 
-    .line 89
     return-object p0
 .end method
 
 .method public addSeeMoreAction(Landroid/app/PendingIntent;)Landroidx/slice/builders/GridBuilder;
     .locals 2
-    .param p1, "intent"    # Landroid/app/PendingIntent;
+    .param p1    # Landroid/app/PendingIntent;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 161
     iget-boolean v0, p0, Landroidx/slice/builders/GridBuilder;->mHasSeeMore:Z
 
     if-nez v0, :cond_0
 
-    .line 165
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     invoke-interface {v0, p1}, Landroidx/slice/builders/impl/GridRowBuilder;->setSeeMoreAction(Landroid/app/PendingIntent;)V
 
-    .line 166
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroidx/slice/builders/GridBuilder;->mHasSeeMore:Z
 
-    .line 167
     return-object p0
 
-    .line 162
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -190,17 +174,12 @@
         }
     .end annotation
 
-    .line 145
-    .local p1, "c":Landroid/support/v4/util/Consumer;, "Landroid/support/v4/util/Consumer<Landroidx/slice/builders/GridBuilder$CellBuilder;>;"
     new-instance v0, Landroidx/slice/builders/GridBuilder$CellBuilder;
 
     invoke-direct {v0, p0}, Landroidx/slice/builders/GridBuilder$CellBuilder;-><init>(Landroidx/slice/builders/GridBuilder;)V
 
-    .line 146
-    .local v0, "b":Landroidx/slice/builders/GridBuilder$CellBuilder;
     invoke-interface {p1, v0}, Landroid/support/v4/util/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 147
     invoke-virtual {p0, v0}, Landroidx/slice/builders/GridBuilder;->addSeeMoreCell(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/GridBuilder;
 
     move-result-object v1
@@ -210,19 +189,17 @@
 
 .method public addSeeMoreCell(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/GridBuilder;
     .locals 2
-    .param p1, "builder"    # Landroidx/slice/builders/GridBuilder$CellBuilder;
+    .param p1    # Landroidx/slice/builders/GridBuilder$CellBuilder;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 119
     iget-boolean v0, p0, Landroidx/slice/builders/GridBuilder;->mHasSeeMore:Z
 
     if-nez v0, :cond_0
 
-    .line 123
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     invoke-static {p1}, Landroidx/slice/builders/GridBuilder$CellBuilder;->access$000(Landroidx/slice/builders/GridBuilder$CellBuilder;)Landroidx/slice/builders/impl/GridRowBuilder$CellBuilder;
@@ -233,15 +210,12 @@
 
     invoke-interface {v0, v1}, Landroidx/slice/builders/impl/GridRowBuilder;->setSeeMoreCell(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
 
-    .line 124
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroidx/slice/builders/GridBuilder;->mHasSeeMore:Z
 
-    .line 125
     return-object p0
 
-    .line 120
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -260,7 +234,6 @@
         }
     .end annotation
 
-    .line 193
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     return-object v0
@@ -268,51 +241,44 @@
 
 .method public setContentDescription(Ljava/lang/CharSequence;)Landroidx/slice/builders/GridBuilder;
     .locals 1
-    .param p1, "description"    # Ljava/lang/CharSequence;
+    .param p1    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 184
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     invoke-interface {v0, p1}, Landroidx/slice/builders/impl/GridRowBuilder;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 185
     return-object p0
 .end method
 
 .method setImpl(Landroidx/slice/builders/impl/TemplateBuilderImpl;)V
     .locals 1
-    .param p1, "impl"    # Landroidx/slice/builders/impl/TemplateBuilderImpl;
 
-    .line 80
     move-object v0, p1
 
     check-cast v0, Landroidx/slice/builders/impl/GridRowBuilder;
 
     iput-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
-    .line 81
     return-void
 .end method
 
 .method public setPrimaryAction(Landroidx/slice/builders/SliceAction;)Landroidx/slice/builders/GridBuilder;
     .locals 1
-    .param p1, "action"    # Landroidx/slice/builders/SliceAction;
+    .param p1    # Landroidx/slice/builders/SliceAction;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 175
     iget-object v0, p0, Landroidx/slice/builders/GridBuilder;->mImpl:Landroidx/slice/builders/impl/GridRowBuilder;
 
     invoke-interface {v0, p1}, Landroidx/slice/builders/impl/GridRowBuilder;->setPrimaryAction(Landroidx/slice/builders/SliceAction;)V
 
-    .line 176
     return-object p0
 .end method

@@ -48,26 +48,20 @@
         }
     .end annotation
 
-    .line 102
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/BinaryTreeTraverser<TT;>.PreOrderIterator;"
-    .local p2, "root":Ljava/lang/Object;, "TT;"
     iput-object p1, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->this$0:Lcom/google/common/collect/BinaryTreeTraverser;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
 
-    .line 103
     new-instance p1, Ljava/util/ArrayDeque;
 
     invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object p1, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
-    .line 104
     iget-object p1, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {p1, p2}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
 
-    .line 105
     return-void
 .end method
 
@@ -76,8 +70,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 109
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/BinaryTreeTraverser<TT;>.PreOrderIterator;"
     iget-object v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
@@ -97,16 +89,12 @@
         }
     .end annotation
 
-    .line 114
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/BinaryTreeTraverser<TT;>.PreOrderIterator;"
     iget-object v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->removeLast()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 115
-    .local v0, "result":Ljava/lang/Object;, "TT;"
     iget-object v1, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     iget-object v2, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->this$0:Lcom/google/common/collect/BinaryTreeTraverser;
@@ -117,7 +105,6 @@
 
     invoke-static {v1, v2}, Lcom/google/common/collect/BinaryTreeTraverser;->access$000(Ljava/util/Deque;Lcom/google/common/base/Optional;)V
 
-    .line 116
     iget-object v1, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     iget-object v2, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->this$0:Lcom/google/common/collect/BinaryTreeTraverser;
@@ -128,7 +115,6 @@
 
     invoke-static {v1, v2}, Lcom/google/common/collect/BinaryTreeTraverser;->access$000(Ljava/util/Deque;Lcom/google/common/base/Optional;)V
 
-    .line 117
     return-object v0
 .end method
 
@@ -140,8 +126,6 @@
         }
     .end annotation
 
-    .line 122
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/BinaryTreeTraverser<TT;>.PreOrderIterator;"
     iget-object v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->getLast()Ljava/lang/Object;

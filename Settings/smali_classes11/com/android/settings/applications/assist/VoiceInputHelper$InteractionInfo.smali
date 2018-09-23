@@ -21,10 +21,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;Landroid/service/voice/VoiceInteractionServiceInfo;)V
     .locals 2
-    .param p1, "pm"    # Landroid/content/pm/PackageManager;
-    .param p2, "_service"    # Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 82
     invoke-virtual {p2}, Landroid/service/voice/VoiceInteractionServiceInfo;->getServiceInfo()Landroid/content/pm/ServiceInfo;
 
     move-result-object v0
@@ -35,9 +32,7 @@
 
     invoke-direct {p0, p1, v0, v1}, Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;-><init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;Ljava/lang/String;)V
 
-    .line 83
     iput-object p2, p0, Lcom/android/settings/applications/assist/VoiceInputHelper$InteractionInfo;->serviceInfo:Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 84
     return-void
 .end method

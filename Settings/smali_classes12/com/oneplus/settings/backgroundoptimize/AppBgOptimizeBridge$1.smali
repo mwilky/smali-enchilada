@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 3
-    .param p1, "appEntry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 74
     const/4 v0, 0x0
 
     if-eqz p1, :cond_3
@@ -52,7 +49,6 @@
 
     goto :goto_0
 
-    .line 78
     :cond_0
     sget-object v1, Lcom/oneplus/settings/utils/OPUtils;->bgServiceApplist:Ljava/util/List;
 
@@ -66,10 +62,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 79
     return v0
 
-    .line 82
     :cond_1
     iget-object v1, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -88,7 +82,6 @@
     :cond_2
     return v0
 
-    .line 75
     :cond_3
     :goto_0
     return v0
@@ -97,6 +90,5 @@
 .method public init()V
     .locals 0
 
-    .line 69
     return-void
 .end method

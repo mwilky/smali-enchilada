@@ -45,19 +45,13 @@
 # direct methods
 .method public constructor <init>(ZI)V
     .locals 0
-    .param p1, "isProcess"    # Z
-    .param p2, "userId"    # I
 
-    .line 356
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 357
     iput-boolean p1, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mIsProcess:Z
 
-    .line 358
     iput p2, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mUserId:I
 
-    .line 359
     return-void
 .end method
 
@@ -65,15 +59,11 @@
 # virtual methods
 .method public loadIcon(Landroid/content/Context;Lcom/android/settings/applications/RunningState;)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "state"    # Lcom/android/settings/applications/RunningState;
 
-    .line 362
     iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
     if-eqz v0, :cond_0
 
-    .line 363
     iget-object v0, p0, Lcom/android/settings/applications/RunningState$BaseItem;->mPackageInfo:Landroid/content/pm/PackageItemInfo;
 
     iget-object v1, p2, Lcom/android/settings/applications/RunningState;->mPm:Landroid/content/pm/PackageManager;
@@ -82,8 +72,6 @@
 
     move-result-object v0
 
-    .line 364
-    .local v0, "unbadgedIcon":Landroid/graphics/drawable/Drawable;
     iget-object v1, p2, Lcom/android/settings/applications/RunningState;->mPm:Landroid/content/pm/PackageManager;
 
     new-instance v2, Landroid/os/UserHandle;
@@ -96,13 +84,8 @@
 
     move-result-object v1
 
-    .line 365
-    .local v1, "icon":Landroid/graphics/drawable/Drawable;
     return-object v1
 
-    .line 367
-    .end local v0    # "unbadgedIcon":Landroid/graphics/drawable/Drawable;
-    .end local v1    # "icon":Landroid/graphics/drawable/Drawable;
     :cond_0
     const/4 v0, 0x0
 

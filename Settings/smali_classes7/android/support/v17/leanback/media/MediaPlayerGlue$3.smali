@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerGlue;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
-    .line 369
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerGlue$3;->this$0:Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onCompletion(Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p1, "mediaPlayer"    # Landroid/media/MediaPlayer;
 
-    .line 372
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerGlue$3;->this$0:Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerGlue;->play()V
 
-    .line 373
     return-void
 .end method

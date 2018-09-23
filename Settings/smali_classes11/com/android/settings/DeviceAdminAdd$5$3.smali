@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/DeviceAdminAdd$5;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/DeviceAdminAdd$5;
 
-    .line 408
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$5$3;->this$1:Lcom/android/settings/DeviceAdminAdd$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 410
     iget-object v0, p0, Lcom/android/settings/DeviceAdminAdd$5$3;->this$1:Lcom/android/settings/DeviceAdminAdd$5;
 
     iget-object v0, v0, Lcom/android/settings/DeviceAdminAdd$5;->this$0:Lcom/android/settings/DeviceAdminAdd;
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/DeviceAdminAdd;->continueRemoveAction(Ljava/lang/CharSequence;)V
 
-    .line 411
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;
 
-    .line 78
     iput-object p1, p0, Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController$1;->this$0:Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 81
     iget-object v0, p0, Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController$1;->this$0:Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;->access$000(Lcom/android/settings/notification/ZenAutomaticRuleHeaderPreferenceController;)Landroid/support/v14/preference/PreferenceFragment;
@@ -67,6 +63,5 @@
 
     invoke-static {v0, v1, v3, v2}, Lcom/android/settings/notification/ZenRuleNameDialog;->show(Landroid/app/Fragment;Ljava/lang/String;Landroid/net/Uri;Lcom/android/settings/notification/ZenRuleNameDialog$PositiveClickListener;)V
 
-    .line 83
     return-void
 .end method

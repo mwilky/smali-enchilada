@@ -187,7 +187,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 87
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -196,54 +195,44 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG;->EMPTY_CHILD_LIST:Ljava/util/List;
 
-    .line 929
     return-void
 .end method
 
 .method protected constructor <init>()V
     .locals 2
 
-    .line 128
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 90
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
-    .line 93
     const-string v1, ""
 
     iput-object v1, p0, Lcom/caverock/androidsvg/SVG;->title:Ljava/lang/String;
 
-    .line 94
     const-string v1, ""
 
     iput-object v1, p0, Lcom/caverock/androidsvg/SVG;->desc:Ljava/lang/String;
 
-    .line 97
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG;->fileResolver:Lcom/caverock/androidsvg/SVGExternalFileResolver;
 
-    .line 100
     const/high16 v0, 0x42c00000    # 96.0f
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
-    .line 103
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/CSSParser$Ruleset;-><init>()V
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG;->cssRules:Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
-    .line 130
     return-void
 .end method
 
 .method static synthetic access$0()Ljava/util/List;
     .locals 1
 
-    .line 87
     sget-object v0, Lcom/caverock/androidsvg/SVG;->EMPTY_CHILD_LIST:Ljava/util/List;
 
     return-object v0
@@ -251,21 +240,15 @@
 
 .method private getDocumentDimensions(F)Lcom/caverock/androidsvg/SVG$Box;
     .locals 6
-    .param p1, "dpi"    # F
 
-    .line 795
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 796
-    .local v0, "w":Lcom/caverock/androidsvg/SVG$Length;
     iget-object v1, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v1, v1, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 798
-    .local v1, "h":Lcom/caverock/androidsvg/SVG$Length;
     const/high16 v2, -0x40800000    # -1.0f
 
     if-eqz v0, :cond_5
@@ -296,17 +279,13 @@
 
     goto :goto_2
 
-    .line 801
     :cond_0
     invoke-virtual {v0, p1}, Lcom/caverock/androidsvg/SVG$Length;->floatValue(F)F
 
     move-result v3
 
-    .line 804
-    .local v3, "wOut":F
     if-eqz v1, :cond_3
 
-    .line 805
     invoke-virtual {v1}, Lcom/caverock/androidsvg/SVG$Length;->isZero()Z
 
     move-result v4
@@ -333,18 +312,13 @@
 
     goto :goto_0
 
-    .line 808
     :cond_1
     invoke-virtual {v1, p1}, Lcom/caverock/androidsvg/SVG$Length;->floatValue(F)F
 
     move-result v2
 
-    .line 809
-    .local v2, "hOut":F
     goto :goto_1
 
-    .line 806
-    .end local v2    # "hOut":F
     :cond_2
     :goto_0
     new-instance v4, Lcom/caverock/androidsvg/SVG$Box;
@@ -353,7 +327,6 @@
 
     return-object v4
 
-    .line 812
     :cond_3
     iget-object v2, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -361,7 +334,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 813
     iget-object v2, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v2, v2, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
@@ -378,17 +350,11 @@
 
     div-float/2addr v2, v4
 
-    .line 814
-    .restart local v2    # "hOut":F
     goto :goto_1
 
-    .line 815
-    .end local v2    # "hOut":F
     :cond_4
     move v2, v3
 
-    .line 818
-    .restart local v2    # "hOut":F
     :goto_1
     new-instance v4, Lcom/caverock/androidsvg/SVG$Box;
 
@@ -398,9 +364,6 @@
 
     return-object v4
 
-    .line 799
-    .end local v2    # "hOut":F
-    .end local v3    # "wOut":F
     :cond_5
     :goto_2
     new-instance v3, Lcom/caverock/androidsvg/SVG$Box;
@@ -412,16 +375,11 @@
 
 .method private getElementById(Lcom/caverock/androidsvg/SVG$SvgContainer;Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$SvgElementBase;
     .locals 5
-    .param p1, "obj"    # Lcom/caverock/androidsvg/SVG$SvgContainer;
-    .param p2, "id"    # Ljava/lang/String;
 
-    .line 2031
     move-object v0, p1
 
     check-cast v0, Lcom/caverock/androidsvg/SVG$SvgElementBase;
 
-    .line 2032
-    .local v0, "elem":Lcom/caverock/androidsvg/SVG$SvgElementBase;
     iget-object v1, v0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->id:Ljava/lang/String;
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -430,10 +388,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 2033
     return-object v0
 
-    .line 2034
     :cond_0
     invoke-interface {p1}, Lcom/caverock/androidsvg/SVG$SvgContainer;->getChildren()Ljava/util/List;
 
@@ -451,12 +407,10 @@
 
     if-nez v2, :cond_2
 
-    .line 2048
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 2034
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -464,23 +418,17 @@
 
     check-cast v2, Lcom/caverock/androidsvg/SVG$SvgObject;
 
-    .line 2036
-    .local v2, "child":Lcom/caverock/androidsvg/SVG$SvgObject;
     instance-of v3, v2, Lcom/caverock/androidsvg/SVG$SvgElementBase;
 
     if-nez v3, :cond_3
 
-    .line 2037
     goto :goto_0
 
-    .line 2038
     :cond_3
     move-object v3, v2
 
     check-cast v3, Lcom/caverock/androidsvg/SVG$SvgElementBase;
 
-    .line 2039
-    .local v3, "childElem":Lcom/caverock/androidsvg/SVG$SvgElementBase;
     iget-object v4, v3, Lcom/caverock/androidsvg/SVG$SvgElementBase;->id:Ljava/lang/String;
 
     invoke-virtual {p2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -489,16 +437,13 @@
 
     if-eqz v4, :cond_4
 
-    .line 2040
     return-object v3
 
-    .line 2041
     :cond_4
     instance-of v4, v2, Lcom/caverock/androidsvg/SVG$SvgContainer;
 
     if-eqz v4, :cond_1
 
-    .line 2043
     move-object v4, v2
 
     check-cast v4, Lcom/caverock/androidsvg/SVG$SvgContainer;
@@ -507,18 +452,13 @@
 
     move-result-object v4
 
-    .line 2044
-    .local v4, "found":Lcom/caverock/androidsvg/SVG$SvgElementBase;
     if-eqz v4, :cond_1
 
-    .line 2045
     return-object v4
 .end method
 
 .method private getElementsByTagName(Lcom/caverock/androidsvg/SVG$SvgContainer;Ljava/lang/Class;)Ljava/util/List;
     .locals 4
-    .param p1, "obj"    # Lcom/caverock/androidsvg/SVG$SvgContainer;
-    .param p2, "clazz"    # Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -531,27 +471,22 @@
         }
     .end annotation
 
-    .line 2063
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2065
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Lcom/caverock/androidsvg/SVG$SvgObject;>;"
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
     if-ne v1, p2, :cond_0
 
-    .line 2066
     move-object v1, p1
 
     check-cast v1, Lcom/caverock/androidsvg/SVG$SvgObject;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2067
     :cond_0
     invoke-interface {p1}, Lcom/caverock/androidsvg/SVG$SvgContainer;->getChildren()Ljava/util/List;
 
@@ -569,10 +504,8 @@
 
     if-nez v2, :cond_2
 
-    .line 2074
     return-object v0
 
-    .line 2067
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -580,38 +513,30 @@
 
     check-cast v2, Lcom/caverock/androidsvg/SVG$SvgObject;
 
-    .line 2069
-    .local v2, "child":Lcom/caverock/androidsvg/SVG$SvgObject;
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
 
     if-ne v3, p2, :cond_3
 
-    .line 2070
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2071
     :cond_3
     instance-of v3, v2, Lcom/caverock/androidsvg/SVG$SvgContainer;
 
     if-eqz v3, :cond_1
 
-    .line 2072
     move-object v3, v2
 
     check-cast v3, Lcom/caverock/androidsvg/SVG$SvgContainer;
 
     invoke-direct {p0, v3, p2}, Lcom/caverock/androidsvg/SVG;->getElementsByTagName(Lcom/caverock/androidsvg/SVG$SvgContainer;Ljava/lang/Class;)Ljava/util/List;
 
-    .end local v2    # "child":Lcom/caverock/androidsvg/SVG$SvgObject;
     goto :goto_0
 .end method
 
 .method public static getFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Lcom/caverock/androidsvg/SVG;
     .locals 3
-    .param p0, "assetManager"    # Landroid/content/res/AssetManager;
-    .param p1, "filename"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;,
@@ -619,47 +544,35 @@
         }
     .end annotation
 
-    .line 187
     new-instance v0, Lcom/caverock/androidsvg/SVGParser;
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/SVGParser;-><init>()V
 
-    .line 188
-    .local v0, "parser":Lcom/caverock/androidsvg/SVGParser;
     invoke-virtual {p0, p1}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 189
-    .local v1, "is":Ljava/io/InputStream;
     invoke-virtual {v0, v1}, Lcom/caverock/androidsvg/SVGParser;->parse(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
 
     move-result-object v2
 
-    .line 190
-    .local v2, "svg":Lcom/caverock/androidsvg/SVG;
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
-    .line 191
     return-object v2
 .end method
 
 .method public static getFromInputStream(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
     .locals 2
-    .param p0, "is"    # Ljava/io/InputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;
         }
     .end annotation
 
-    .line 142
     new-instance v0, Lcom/caverock/androidsvg/SVGParser;
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/SVGParser;-><init>()V
 
-    .line 143
-    .local v0, "parser":Lcom/caverock/androidsvg/SVGParser;
     invoke-virtual {v0, p0}, Lcom/caverock/androidsvg/SVGParser;->parse(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
 
     move-result-object v1
@@ -669,21 +582,16 @@
 
 .method public static getFromResource(Landroid/content/Context;I)Lcom/caverock/androidsvg/SVG;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "resourceId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;
         }
     .end annotation
 
-    .line 171
     new-instance v0, Lcom/caverock/androidsvg/SVGParser;
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/SVGParser;-><init>()V
 
-    .line 172
-    .local v0, "parser":Lcom/caverock/androidsvg/SVGParser;
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -701,20 +609,16 @@
 
 .method public static getFromString(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG;
     .locals 3
-    .param p0, "svg"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;
         }
     .end annotation
 
-    .line 156
     new-instance v0, Lcom/caverock/androidsvg/SVGParser;
 
     invoke-direct {v0}, Lcom/caverock/androidsvg/SVGParser;-><init>()V
 
-    .line 157
-    .local v0, "parser":Lcom/caverock/androidsvg/SVGParser;
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
     invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
@@ -734,14 +638,11 @@
 # virtual methods
 .method protected addCSSRules(Lcom/caverock/androidsvg/CSSParser$Ruleset;)V
     .locals 1
-    .param p1, "ruleset"    # Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
-    .line 828
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->cssRules:Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
     invoke-virtual {v0, p1}, Lcom/caverock/androidsvg/CSSParser$Ruleset;->addAll(Lcom/caverock/androidsvg/CSSParser$Ruleset;)V
 
-    .line 829
     return-void
 .end method
 
@@ -756,7 +657,6 @@
         }
     .end annotation
 
-    .line 834
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->cssRules:Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/CSSParser$Ruleset;->getRules()Ljava/util/List;
@@ -769,24 +669,18 @@
 .method public getDocumentAspectRatio()F
     .locals 5
 
-    .line 740
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_4
 
-    .line 743
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 744
-    .local v0, "w":Lcom/caverock/androidsvg/SVG$Length;
     iget-object v1, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v1, v1, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 747
-    .local v1, "h":Lcom/caverock/androidsvg/SVG$Length;
     const/high16 v2, -0x40800000    # -1.0f
 
     if-eqz v0, :cond_2
@@ -805,7 +699,6 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 749
     invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG$Length;->isZero()Z
 
     move-result v3
@@ -820,7 +713,6 @@
 
     goto :goto_0
 
-    .line 751
     :cond_0
     iget v2, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
@@ -838,12 +730,10 @@
 
     return v2
 
-    .line 750
     :cond_1
     :goto_0
     return v2
 
-    .line 755
     :cond_2
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -873,7 +763,6 @@
 
     if-eqz v3, :cond_3
 
-    .line 756
     iget-object v2, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v2, v2, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
@@ -890,13 +779,9 @@
 
     return v2
 
-    .line 760
     :cond_3
     return v2
 
-    .line 741
-    .end local v0    # "w":Lcom/caverock/androidsvg/SVG$Length;
-    .end local v1    # "h":Lcom/caverock/androidsvg/SVG$Length;
     :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -910,17 +795,14 @@
 .method public getDocumentDescription()Ljava/lang/String;
     .locals 2
 
-    .line 477
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 480
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->desc:Ljava/lang/String;
 
     return-object v0
 
-    .line 478
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -934,12 +816,10 @@
 .method public getDocumentHeight()F
     .locals 2
 
-    .line 599
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 602
     iget v0, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-direct {p0, v0}, Lcom/caverock/androidsvg/SVG;->getDocumentDimensions(F)Lcom/caverock/androidsvg/SVG$Box;
@@ -950,7 +830,6 @@
 
     return v0
 
-    .line 600
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -964,24 +843,20 @@
 .method public getDocumentPreserveAspectRatio()Lcom/caverock/androidsvg/PreserveAspectRatio;
     .locals 2
 
-    .line 715
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_1
 
-    .line 718
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->preserveAspectRatio:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
     if-nez v0, :cond_0
 
-    .line 719
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 721
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -989,7 +864,6 @@
 
     return-object v0
 
-    .line 716
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1003,19 +877,16 @@
 .method public getDocumentSVGVersion()Ljava/lang/String;
     .locals 2
 
-    .line 492
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 495
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->version:Ljava/lang/String;
 
     return-object v0
 
-    .line 493
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1029,17 +900,14 @@
 .method public getDocumentTitle()Ljava/lang/String;
     .locals 2
 
-    .line 462
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 465
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->title:Ljava/lang/String;
 
     return-object v0
 
-    .line 463
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1053,24 +921,20 @@
 .method public getDocumentViewBox()Landroid/graphics/RectF;
     .locals 2
 
-    .line 678
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_1
 
-    .line 681
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     if-nez v0, :cond_0
 
-    .line 682
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 684
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -1082,7 +946,6 @@
 
     return-object v0
 
-    .line 679
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1096,12 +959,10 @@
 .method public getDocumentWidth()F
     .locals 2
 
-    .line 541
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 544
     iget v0, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-direct {p0, v0}, Lcom/caverock/androidsvg/SVG;->getDocumentDimensions(F)Lcom/caverock/androidsvg/SVG$Box;
@@ -1112,7 +973,6 @@
 
     return v0
 
-    .line 542
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1125,9 +985,7 @@
 
 .method protected getElementById(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$SvgObject;
     .locals 1
-    .param p1, "id"    # Ljava/lang/String;
 
-    .line 2021
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->id:Ljava/lang/String;
@@ -1138,12 +996,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2022
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     return-object v0
 
-    .line 2025
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -1156,7 +1012,6 @@
 
 .method protected getElementsByTagName(Ljava/lang/Class;)Ljava/util/List;
     .locals 1
-    .param p1, "clazz"    # Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1168,7 +1023,6 @@
         }
     .end annotation
 
-    .line 2056
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     invoke-direct {p0, v0, p1}, Lcom/caverock/androidsvg/SVG;->getElementsByTagName(Lcom/caverock/androidsvg/SVG$SvgContainer;Ljava/lang/Class;)Ljava/util/List;
@@ -1181,7 +1035,6 @@
 .method protected getFileResolver()Lcom/caverock/androidsvg/SVGExternalFileResolver;
     .locals 1
 
-    .line 1878
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->fileResolver:Lcom/caverock/androidsvg/SVGExternalFileResolver;
 
     return-object v0
@@ -1190,7 +1043,6 @@
 .method public getRenderDPI()F
     .locals 1
 
-    .line 231
     iget v0, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     return v0
@@ -1199,7 +1051,6 @@
 .method protected getRootElement()Lcom/caverock/androidsvg/SVG$Svg;
     .locals 1
 
-    .line 770
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     return-object v0
@@ -1208,7 +1059,6 @@
 .method public getVersion()Ljava/lang/String;
     .locals 1
 
-    .line 450
     const-string v0, "1.2.0"
 
     return-object v0
@@ -1225,20 +1075,16 @@
         }
     .end annotation
 
-    .line 509
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_2
 
-    .line 512
     const-class v0, Lcom/caverock/androidsvg/SVG$View;
 
     invoke-virtual {p0, v0}, Lcom/caverock/androidsvg/SVG;->getElementsByTagName(Ljava/lang/Class;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 514
-    .local v0, "viewElems":Ljava/util/List;, "Ljava/util/List<Lcom/caverock/androidsvg/SVG$SvgObject;>;"
     new-instance v1, Ljava/util/HashSet;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1247,8 +1093,6 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 515
-    .local v1, "viewIds":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1260,10 +1104,8 @@
 
     if-nez v3, :cond_0
 
-    .line 523
     return-object v1
 
-    .line 515
     :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1271,26 +1113,20 @@
 
     check-cast v3, Lcom/caverock/androidsvg/SVG$SvgObject;
 
-    .line 517
-    .local v3, "elem":Lcom/caverock/androidsvg/SVG$SvgObject;
     move-object v4, v3
 
     check-cast v4, Lcom/caverock/androidsvg/SVG$View;
 
-    .line 518
-    .local v4, "view":Lcom/caverock/androidsvg/SVG$View;
     iget-object v5, v4, Lcom/caverock/androidsvg/SVG$View;->id:Ljava/lang/String;
 
     if-eqz v5, :cond_1
 
-    .line 519
     iget-object v5, v4, Lcom/caverock/androidsvg/SVG$View;->id:Ljava/lang/String;
 
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 521
     :cond_1
     const-string v5, "AndroidSVG"
 
@@ -1298,13 +1134,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v3    # "elem":Lcom/caverock/androidsvg/SVG$SvgObject;
-    .end local v4    # "view":Lcom/caverock/androidsvg/SVG$View;
     goto :goto_0
 
-    .line 510
-    .end local v0    # "viewElems":Ljava/util/List;, "Ljava/util/List<Lcom/caverock/androidsvg/SVG$SvgObject;>;"
-    .end local v1    # "viewIds":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1318,7 +1149,6 @@
 .method protected hasCSSRules()Z
     .locals 1
 
-    .line 840
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->cssRules:Lcom/caverock/androidsvg/CSSParser$Ruleset;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/CSSParser$Ruleset;->isEmpty()Z
@@ -1332,37 +1162,27 @@
 
 .method public registerExternalFileResolver(Lcom/caverock/androidsvg/SVGExternalFileResolver;)V
     .locals 0
-    .param p1, "fileResolver"    # Lcom/caverock/androidsvg/SVGExternalFileResolver;
 
-    .line 206
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG;->fileResolver:Lcom/caverock/androidsvg/SVGExternalFileResolver;
 
-    .line 207
     return-void
 .end method
 
 .method public renderToCanvas(Landroid/graphics/Canvas;)V
     .locals 1
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 351
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/caverock/androidsvg/SVG;->renderToCanvas(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
 
-    .line 352
     return-void
 .end method
 
 .method public renderToCanvas(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
     .locals 4
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-    .param p2, "viewPort"    # Landroid/graphics/RectF;
 
-    .line 365
     if-eqz p2, :cond_0
 
-    .line 366
     iget v0, p2, Landroid/graphics/RectF;->left:F
 
     iget v1, p2, Landroid/graphics/RectF;->top:F
@@ -1375,12 +1195,8 @@
 
     move-result-object v0
 
-    .line 367
-    .local v0, "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     goto :goto_0
 
-    .line 368
-    .end local v0    # "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     :cond_0
     new-instance v0, Lcom/caverock/androidsvg/SVG$Box;
 
@@ -1400,8 +1216,6 @@
 
     invoke-direct {v0, v3, v3, v1, v2}, Lcom/caverock/androidsvg/SVG$Box;-><init>(FFFF)V
 
-    .line 371
-    .restart local v0    # "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     :goto_0
     new-instance v1, Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
@@ -1409,48 +1223,36 @@
 
     invoke-direct {v1, p1, v0, v2}, Lcom/caverock/androidsvg/SVGAndroidRenderer;-><init>(Landroid/graphics/Canvas;Lcom/caverock/androidsvg/SVG$Box;F)V
 
-    .line 373
-    .local v1, "renderer":Lcom/caverock/androidsvg/SVGAndroidRenderer;
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, p0, v3, v3, v2}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->renderDocument(Lcom/caverock/androidsvg/SVG;Lcom/caverock/androidsvg/SVG$Box;Lcom/caverock/androidsvg/PreserveAspectRatio;Z)V
 
-    .line 374
     return-void
 .end method
 
 .method public renderToPicture()Landroid/graphics/Picture;
     .locals 7
 
-    .line 250
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v0, v0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 251
-    .local v0, "width":Lcom/caverock/androidsvg/SVG$Length;
     if-eqz v0, :cond_2
 
-    .line 253
     iget v1, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-virtual {v0, v1}, Lcom/caverock/androidsvg/SVG$Length;->floatValue(F)F
 
     move-result v1
 
-    .line 255
-    .local v1, "w":F
     iget-object v2, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v2, v2, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
-    .line 257
-    .local v2, "rootViewBox":Lcom/caverock/androidsvg/SVG$Box;
     if-eqz v2, :cond_0
 
-    .line 258
     iget v3, v2, Lcom/caverock/androidsvg/SVG$Box;->height:F
 
     mul-float/2addr v3, v1
@@ -1459,44 +1261,30 @@
 
     div-float/2addr v3, v4
 
-    .line 259
-    .local v3, "h":F
     goto :goto_0
 
-    .line 260
-    .end local v3    # "h":F
     :cond_0
     iget-object v3, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iget-object v3, v3, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 261
-    .local v3, "height":Lcom/caverock/androidsvg/SVG$Length;
     if-eqz v3, :cond_1
 
-    .line 262
     iget v4, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-virtual {v3, v4}, Lcom/caverock/androidsvg/SVG$Length;->floatValue(F)F
 
     move-result v4
 
-    .line 263
-    .local v4, "h":F
     nop
 
-    .line 264
     move v3, v4
 
     goto :goto_0
 
-    .end local v3    # "height":Lcom/caverock/androidsvg/SVG$Length;
-    .end local v4    # "h":F
     :cond_1
     move v3, v1
 
-    .line 267
-    .local v3, "h":F
     :goto_0
     float-to-double v4, v1
 
@@ -1520,10 +1308,6 @@
 
     return-object v4
 
-    .line 271
-    .end local v1    # "w":F
-    .end local v2    # "rootViewBox":Lcom/caverock/androidsvg/SVG$Box;
-    .end local v3    # "h":F
     :cond_2
     const/16 v1, 0x200
 
@@ -1536,22 +1320,15 @@
 
 .method public renderToPicture(II)Landroid/graphics/Picture;
     .locals 6
-    .param p1, "widthInPixels"    # I
-    .param p2, "heightInPixels"    # I
 
-    .line 285
     new-instance v0, Landroid/graphics/Picture;
 
     invoke-direct {v0}, Landroid/graphics/Picture;-><init>()V
 
-    .line 286
-    .local v0, "picture":Landroid/graphics/Picture;
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Picture;->beginRecording(II)Landroid/graphics/Canvas;
 
     move-result-object v1
 
-    .line 287
-    .local v1, "canvas":Landroid/graphics/Canvas;
     new-instance v2, Lcom/caverock/androidsvg/SVG$Box;
 
     int-to-float v3, p1
@@ -1562,97 +1339,71 @@
 
     invoke-direct {v2, v5, v5, v3, v4}, Lcom/caverock/androidsvg/SVG$Box;-><init>(FFFF)V
 
-    .line 289
-    .local v2, "viewPort":Lcom/caverock/androidsvg/SVG$Box;
     new-instance v3, Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     iget v4, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-direct {v3, v1, v2, v4}, Lcom/caverock/androidsvg/SVGAndroidRenderer;-><init>(Landroid/graphics/Canvas;Lcom/caverock/androidsvg/SVG$Box;F)V
 
-    .line 291
-    .local v3, "renderer":Lcom/caverock/androidsvg/SVGAndroidRenderer;
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     invoke-virtual {v3, p0, v4, v4, v5}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->renderDocument(Lcom/caverock/androidsvg/SVG;Lcom/caverock/androidsvg/SVG$Box;Lcom/caverock/androidsvg/PreserveAspectRatio;Z)V
 
-    .line 293
     invoke-virtual {v0}, Landroid/graphics/Picture;->endRecording()V
 
-    .line 294
     return-object v0
 .end method
 
 .method public renderViewToCanvas(Ljava/lang/String;Landroid/graphics/Canvas;)V
     .locals 1
-    .param p1, "viewId"    # Ljava/lang/String;
-    .param p2, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 392
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/caverock/androidsvg/SVG;->renderViewToCanvas(Ljava/lang/String;Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
 
-    .line 393
     return-void
 .end method
 
 .method public renderViewToCanvas(Ljava/lang/String;Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
     .locals 7
-    .param p1, "viewId"    # Ljava/lang/String;
-    .param p2, "canvas"    # Landroid/graphics/Canvas;
-    .param p3, "viewPort"    # Landroid/graphics/RectF;
 
-    .line 412
     invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVG;->getElementById(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$SvgObject;
 
     move-result-object v0
 
-    .line 413
-    .local v0, "obj":Lcom/caverock/androidsvg/SVG$SvgObject;
     if-nez v0, :cond_0
 
-    .line 414
     return-void
 
-    .line 415
     :cond_0
     instance-of v1, v0, Lcom/caverock/androidsvg/SVG$View;
 
     if-nez v1, :cond_1
 
-    .line 416
     return-void
 
-    .line 418
     :cond_1
     move-object v1, v0
 
     check-cast v1, Lcom/caverock/androidsvg/SVG$View;
 
-    .line 420
-    .local v1, "view":Lcom/caverock/androidsvg/SVG$View;
     iget-object v2, v1, Lcom/caverock/androidsvg/SVG$View;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     if-nez v2, :cond_2
 
-    .line 421
     const-string v2, "AndroidSVG"
 
     const-string v3, "View element is missing a viewBox attribute."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 422
     return-void
 
-    .line 427
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 428
     iget v2, p3, Landroid/graphics/RectF;->left:F
 
     iget v3, p3, Landroid/graphics/RectF;->top:F
@@ -1665,12 +1416,8 @@
 
     move-result-object v2
 
-    .line 429
-    .local v2, "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     goto :goto_0
 
-    .line 430
-    .end local v2    # "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     :cond_3
     new-instance v2, Lcom/caverock/androidsvg/SVG$Box;
 
@@ -1690,8 +1437,6 @@
 
     invoke-direct {v2, v5, v5, v3, v4}, Lcom/caverock/androidsvg/SVG$Box;-><init>(FFFF)V
 
-    .line 433
-    .restart local v2    # "svgViewPort":Lcom/caverock/androidsvg/SVG$Box;
     :goto_0
     new-instance v3, Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
@@ -1699,8 +1444,6 @@
 
     invoke-direct {v3, p2, v2, v4}, Lcom/caverock/androidsvg/SVGAndroidRenderer;-><init>(Landroid/graphics/Canvas;Lcom/caverock/androidsvg/SVG$Box;F)V
 
-    .line 435
-    .local v3, "renderer":Lcom/caverock/androidsvg/SVGAndroidRenderer;
     iget-object v4, v1, Lcom/caverock/androidsvg/SVG$View;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     iget-object v5, v1, Lcom/caverock/androidsvg/SVG$View;->preserveAspectRatio:Lcom/caverock/androidsvg/PreserveAspectRatio;
@@ -1709,75 +1452,55 @@
 
     invoke-virtual {v3, p0, v4, v5, v6}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->renderDocument(Lcom/caverock/androidsvg/SVG;Lcom/caverock/androidsvg/SVG$Box;Lcom/caverock/androidsvg/PreserveAspectRatio;Z)V
 
-    .line 436
     return-void
 .end method
 
 .method public renderViewToPicture(Ljava/lang/String;II)Landroid/graphics/Picture;
     .locals 9
-    .param p1, "viewId"    # Ljava/lang/String;
-    .param p2, "widthInPixels"    # I
-    .param p3, "heightInPixels"    # I
 
-    .line 313
     invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVG;->getElementById(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$SvgObject;
 
     move-result-object v0
 
-    .line 314
-    .local v0, "obj":Lcom/caverock/androidsvg/SVG$SvgObject;
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 315
     return-object v1
 
-    .line 316
     :cond_0
     instance-of v2, v0, Lcom/caverock/androidsvg/SVG$View;
 
     if-nez v2, :cond_1
 
-    .line 317
     return-object v1
 
-    .line 319
     :cond_1
     move-object v2, v0
 
     check-cast v2, Lcom/caverock/androidsvg/SVG$View;
 
-    .line 321
-    .local v2, "view":Lcom/caverock/androidsvg/SVG$View;
     iget-object v3, v2, Lcom/caverock/androidsvg/SVG$View;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     if-nez v3, :cond_2
 
-    .line 322
     const-string v3, "AndroidSVG"
 
     const-string v4, "View element is missing a viewBox attribute."
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 323
     return-object v1
 
-    .line 326
     :cond_2
     new-instance v1, Landroid/graphics/Picture;
 
     invoke-direct {v1}, Landroid/graphics/Picture;-><init>()V
 
-    .line 327
-    .local v1, "picture":Landroid/graphics/Picture;
     invoke-virtual {v1, p2, p3}, Landroid/graphics/Picture;->beginRecording(II)Landroid/graphics/Canvas;
 
     move-result-object v3
 
-    .line 328
-    .local v3, "canvas":Landroid/graphics/Canvas;
     new-instance v4, Lcom/caverock/androidsvg/SVG$Box;
 
     int-to-float v5, p2
@@ -1788,16 +1511,12 @@
 
     invoke-direct {v4, v7, v7, v5, v6}, Lcom/caverock/androidsvg/SVG$Box;-><init>(FFFF)V
 
-    .line 330
-    .local v4, "viewPort":Lcom/caverock/androidsvg/SVG$Box;
     new-instance v5, Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     iget v6, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
     invoke-direct {v5, v3, v4, v6}, Lcom/caverock/androidsvg/SVGAndroidRenderer;-><init>(Landroid/graphics/Canvas;Lcom/caverock/androidsvg/SVG$Box;F)V
 
-    .line 332
-    .local v5, "renderer":Lcom/caverock/androidsvg/SVGAndroidRenderer;
     iget-object v6, v2, Lcom/caverock/androidsvg/SVG$View;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
     iget-object v7, v2, Lcom/caverock/androidsvg/SVG$View;->preserveAspectRatio:Lcom/caverock/androidsvg/PreserveAspectRatio;
@@ -1806,26 +1525,20 @@
 
     invoke-virtual {v5, p0, v6, v7, v8}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->renderDocument(Lcom/caverock/androidsvg/SVG;Lcom/caverock/androidsvg/SVG$Box;Lcom/caverock/androidsvg/PreserveAspectRatio;Z)V
 
-    .line 334
     invoke-virtual {v1}, Landroid/graphics/Picture;->endRecording()V
 
-    .line 335
     return-object v1
 .end method
 
 .method protected resolveIRI(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$SvgObject;
     .locals 3
-    .param p1, "iri"    # Ljava/lang/String;
 
-    .line 782
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 783
     return-object v0
 
-    .line 785
     :cond_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -1843,7 +1556,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 787
     invoke-virtual {p1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1854,32 +1566,25 @@
 
     return-object v0
 
-    .line 789
     :cond_1
     return-object v0
 .end method
 
 .method protected setDesc(Ljava/lang/String;)V
     .locals 0
-    .param p1, "desc"    # Ljava/lang/String;
 
-    .line 1872
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG;->desc:Ljava/lang/String;
 
-    .line 1873
     return-void
 .end method
 
 .method public setDocumentHeight(F)V
     .locals 2
-    .param p1, "pixels"    # F
 
-    .line 615
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 618
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     new-instance v1, Lcom/caverock/androidsvg/SVG$Length;
@@ -1888,10 +1593,8 @@
 
     iput-object v1, v0, Lcom/caverock/androidsvg/SVG$Svg;->height:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 619
     return-void
 
-    .line 616
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1904,19 +1607,16 @@
 
 .method public setDocumentHeight(Ljava/lang/String;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;
         }
     .end annotation
 
-    .line 632
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 636
     :try_start_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -1928,18 +1628,13 @@
     :try_end_0
     .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 637
     nop
 
-    .line 640
     return-void
 
-    .line 637
     :catch_0
     move-exception v0
 
-    .line 638
-    .local v0, "e":Lorg/xml/sax/SAXException;
     new-instance v1, Lcom/caverock/androidsvg/SVGParseException;
 
     invoke-virtual {v0}, Lorg/xml/sax/SAXException;->getMessage()Ljava/lang/String;
@@ -1950,8 +1645,6 @@
 
     throw v1
 
-    .line 633
-    .end local v0    # "e":Lorg/xml/sax/SAXException;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1964,22 +1657,17 @@
 
 .method public setDocumentPreserveAspectRatio(Lcom/caverock/androidsvg/PreserveAspectRatio;)V
     .locals 2
-    .param p1, "preserveAspectRatio"    # Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    .line 699
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 702
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     iput-object p1, v0, Lcom/caverock/androidsvg/SVG$Svg;->preserveAspectRatio:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    .line 703
     return-void
 
-    .line 700
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1992,17 +1680,11 @@
 
 .method public setDocumentViewBox(FFFF)V
     .locals 2
-    .param p1, "minX"    # F
-    .param p2, "minY"    # F
-    .param p3, "width"    # F
-    .param p4, "height"    # F
 
-    .line 663
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 666
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     new-instance v1, Lcom/caverock/androidsvg/SVG$Box;
@@ -2011,10 +1693,8 @@
 
     iput-object v1, v0, Lcom/caverock/androidsvg/SVG$Svg;->viewBox:Lcom/caverock/androidsvg/SVG$Box;
 
-    .line 667
     return-void
 
-    .line 664
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2027,14 +1707,11 @@
 
 .method public setDocumentWidth(F)V
     .locals 2
-    .param p1, "pixels"    # F
 
-    .line 557
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 560
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     new-instance v1, Lcom/caverock/androidsvg/SVG$Length;
@@ -2043,10 +1720,8 @@
 
     iput-object v1, v0, Lcom/caverock/androidsvg/SVG$Svg;->width:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 561
     return-void
 
-    .line 558
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2059,19 +1734,16 @@
 
 .method public setDocumentWidth(Ljava/lang/String;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/caverock/androidsvg/SVGParseException;
         }
     .end annotation
 
-    .line 574
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
     if-eqz v0, :cond_0
 
-    .line 578
     :try_start_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
@@ -2083,18 +1755,13 @@
     :try_end_0
     .catch Lorg/xml/sax/SAXException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 579
     nop
 
-    .line 582
     return-void
 
-    .line 579
     :catch_0
     move-exception v0
 
-    .line 580
-    .local v0, "e":Lorg/xml/sax/SAXException;
     new-instance v1, Lcom/caverock/androidsvg/SVGParseException;
 
     invoke-virtual {v0}, Lorg/xml/sax/SAXException;->getMessage()Ljava/lang/String;
@@ -2105,8 +1772,6 @@
 
     throw v1
 
-    .line 575
-    .end local v0    # "e":Lorg/xml/sax/SAXException;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2119,33 +1784,24 @@
 
 .method public setRenderDPI(F)V
     .locals 0
-    .param p1, "dpi"    # F
 
-    .line 221
     iput p1, p0, Lcom/caverock/androidsvg/SVG;->renderDPI:F
 
-    .line 222
     return-void
 .end method
 
 .method protected setRootElement(Lcom/caverock/androidsvg/SVG$Svg;)V
     .locals 0
-    .param p1, "rootElement"    # Lcom/caverock/androidsvg/SVG$Svg;
 
-    .line 776
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG;->rootElement:Lcom/caverock/androidsvg/SVG$Svg;
 
-    .line 777
     return-void
 .end method
 
 .method protected setTitle(Ljava/lang/String;)V
     .locals 0
-    .param p1, "title"    # Ljava/lang/String;
 
-    .line 1866
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG;->title:Ljava/lang/String;
 
-    .line 1867
     return-void
 .end method

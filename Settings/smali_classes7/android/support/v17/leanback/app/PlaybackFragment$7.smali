@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackFragment;
 
-    .line 516
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackFragment$7;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "arg0"    # Landroid/animation/ValueAnimator;
 
-    .line 519
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackFragment$7;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,6 +51,5 @@
 
     invoke-static {v0, v1}, Landroid/support/v17/leanback/app/PlaybackFragment;->access$300(Landroid/support/v17/leanback/app/PlaybackFragment;I)V
 
-    .line 520
     return-void
 .end method

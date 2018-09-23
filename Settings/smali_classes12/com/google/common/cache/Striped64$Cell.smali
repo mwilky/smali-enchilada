@@ -62,27 +62,22 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 107
     const-class v0, Lcom/google/common/cache/Striped64$Cell;
 
     const-string v1, "value"
 
-    .line 108
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/cache/Striped64$Cell;->valueUpdater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    .line 107
     return-void
 .end method
 
 .method constructor <init>(J)V
     .locals 0
-    .param p1, "x"    # J
 
-    .line 101
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-wide p1, p0, Lcom/google/common/cache/Striped64$Cell;->value:J
@@ -94,10 +89,7 @@
 # virtual methods
 .method final cas(JJ)Z
     .locals 6
-    .param p1, "cmp"    # J
-    .param p3, "val"    # J
 
-    .line 104
     sget-object v0, Lcom/google/common/cache/Striped64$Cell;->valueUpdater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-object v1, p0

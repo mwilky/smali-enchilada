@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
-    .line 301
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;"
     iput-object p1, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;->this$0:Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
     iput p2, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;->val$expectedValuesPerKey:I
@@ -59,11 +56,8 @@
         }
     .end annotation
 
-    .line 304
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;"
     iget-object v0, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;->this$0:Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
-    .line 305
     invoke-virtual {v0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;->createMap()Ljava/util/Map;
 
     move-result-object v0
@@ -74,7 +68,6 @@
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/MultimapBuilder$ArrayListSupplier;-><init>(I)V
 
-    .line 304
     invoke-static {v0, v1}, Lcom/google/common/collect/Multimaps;->newListMultimap(Ljava/util/Map;Lcom/google/common/base/Supplier;)Lcom/google/common/collect/ListMultimap;
 
     move-result-object v0
@@ -85,8 +78,6 @@
 .method public bridge synthetic build()Lcom/google/common/collect/Multimap;
     .locals 1
 
-    .line 301
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$1;->build()Lcom/google/common/collect/ListMultimap;
 
     move-result-object v0

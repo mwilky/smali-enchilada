@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionAdapter;Lcom/android/settings/dashboard/conditional/Condition;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/dashboard/conditional/ConditionAdapter;
 
-    .line 168
     iput-object p1, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter$3;->this$0:Lcom/android/settings/dashboard/conditional/ConditionAdapter;
 
     iput-object p2, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter$3;->val$condition:Lcom/android/settings/dashboard/conditional/Condition;
@@ -46,15 +44,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 171
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 172
-    .local v0, "context":Landroid/content/Context;
     invoke-static {v0}, Lcom/android/settings/overlay/FeatureFactory;->getFactory(Landroid/content/Context;)Lcom/android/settings/overlay/FeatureFactory;
 
     move-result-object v1
@@ -65,23 +59,19 @@
 
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter$3;->val$condition:Lcom/android/settings/dashboard/conditional/Condition;
 
-    .line 174
     invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/Condition;->getMetricsConstant()I
 
     move-result v2
 
-    .line 173
     const/16 v3, 0x178
 
     invoke-virtual {v1, v0, v3, v2}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;II)V
 
-    .line 175
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter$3;->val$condition:Lcom/android/settings/dashboard/conditional/Condition;
 
     iget v2, p0, Lcom/android/settings/dashboard/conditional/ConditionAdapter$3;->val$index:I
 
     invoke-virtual {v1, v2}, Lcom/android/settings/dashboard/conditional/Condition;->onActionClick(I)V
 
-    .line 176
     return-void
 .end method

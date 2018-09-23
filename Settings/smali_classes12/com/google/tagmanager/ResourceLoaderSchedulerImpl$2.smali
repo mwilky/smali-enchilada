@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ResourceLoaderSchedulerImpl;)V
     .locals 0
 
-    .line 71
     iput-object p1, p0, Lcom/google/tagmanager/ResourceLoaderSchedulerImpl$2;->this$0:Lcom/google/tagmanager/ResourceLoaderSchedulerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +36,7 @@
 # virtual methods
 .method public createResourceLoader(Lcom/google/tagmanager/CtfeHost;)Lcom/google/tagmanager/ResourceLoader;
     .locals 3
-    .param p1, "ctfeHost"    # Lcom/google/tagmanager/CtfeHost;
 
-    .line 74
     new-instance v0, Lcom/google/tagmanager/ResourceLoader;
 
     iget-object v1, p0, Lcom/google/tagmanager/ResourceLoaderSchedulerImpl$2;->this$0:Lcom/google/tagmanager/ResourceLoaderSchedulerImpl;

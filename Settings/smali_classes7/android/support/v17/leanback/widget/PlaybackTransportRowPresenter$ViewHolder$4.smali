@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
-    .line 278
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->val$this$0:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 5
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "keyEvent"    # Landroid/view/KeyEvent;
 
-    .line 283
     const/4 v0, 0x4
 
     const/4 v1, 0x0
@@ -75,10 +69,8 @@
 
     packed-switch p2, :pswitch_data_1
 
-    .line 324
     return v1
 
-    .line 287
     :pswitch_0
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
@@ -86,7 +78,6 @@
 
     return v0
 
-    .line 298
     :cond_0
     :pswitch_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
@@ -95,16 +86,13 @@
 
     if-nez v0, :cond_1
 
-    .line 299
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->onForward()Z
 
-    .line 301
     :cond_1
     return v2
 
-    .line 291
     :cond_2
     :pswitch_2
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
@@ -113,16 +101,13 @@
 
     if-nez v0, :cond_3
 
-    .line 292
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->onBackward()Z
 
-    .line 294
     :cond_3
     return v2
 
-    .line 304
     :cond_4
     :pswitch_3
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
@@ -131,10 +116,8 @@
 
     if-nez v0, :cond_5
 
-    .line 305
     return v1
 
-    .line 307
     :cond_5
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -142,16 +125,13 @@
 
     if-ne v0, v2, :cond_6
 
-    .line 308
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->stopSeek(Z)V
 
-    .line 310
     :cond_6
     return v2
 
-    .line 313
     :cond_7
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
@@ -159,10 +139,8 @@
 
     if-nez v0, :cond_8
 
-    .line 314
     return v1
 
-    .line 316
     :cond_8
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -170,7 +148,6 @@
 
     if-ne v0, v2, :cond_b
 
-    .line 319
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$4;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -183,7 +160,6 @@
 
     iget-object v3, v3, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->mProgressBar:Landroid/support/v17/leanback/widget/SeekBar;
 
-    .line 320
     invoke-virtual {v3}, Landroid/support/v17/leanback/widget/SeekBar;->isAccessibilityFocused()Z
 
     move-result v3
@@ -195,7 +171,6 @@
     :cond_9
     goto :goto_1
 
-    .line 319
     :cond_a
     :goto_0
     move v1, v2
@@ -203,7 +178,6 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->stopSeek(Z)V
 
-    .line 322
     :cond_b
     return v2
 

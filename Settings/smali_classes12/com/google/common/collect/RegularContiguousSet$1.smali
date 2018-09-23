@@ -36,16 +36,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/RegularContiguousSet;Ljava/lang/Comparable;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/google/common/collect/RegularContiguousSet;
 
-    .line 75
-    .local p0, "this":Lcom/google/common/collect/RegularContiguousSet$1;, "Lcom/google/common/collect/RegularContiguousSet$1;"
-    .local p2, "firstOrNull":Ljava/lang/Comparable;, "TC;"
     iput-object p1, p0, Lcom/google/common/collect/RegularContiguousSet$1;->this$0:Lcom/google/common/collect/RegularContiguousSet;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractSequentialIterator;-><init>(Ljava/lang/Object;)V
 
-    .line 76
     iget-object v0, p0, Lcom/google/common/collect/RegularContiguousSet$1;->this$0:Lcom/google/common/collect/RegularContiguousSet;
 
     invoke-virtual {v0}, Lcom/google/common/collect/RegularContiguousSet;->last()Ljava/lang/Comparable;
@@ -67,9 +62,6 @@
         }
     .end annotation
 
-    .line 80
-    .local p0, "this":Lcom/google/common/collect/RegularContiguousSet$1;, "Lcom/google/common/collect/RegularContiguousSet$1;"
-    .local p1, "previous":Ljava/lang/Comparable;, "TC;"
     iget-object v0, p0, Lcom/google/common/collect/RegularContiguousSet$1;->last:Ljava/lang/Comparable;
 
     invoke-static {p1, v0}, Lcom/google/common/collect/RegularContiguousSet;->access$000(Ljava/lang/Comparable;Ljava/lang/Comparable;)Z
@@ -98,8 +90,6 @@
 .method protected bridge synthetic computeNext(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 75
-    .local p0, "this":Lcom/google/common/collect/RegularContiguousSet$1;, "Lcom/google/common/collect/RegularContiguousSet$1;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularContiguousSet$1;->computeNext(Ljava/lang/Comparable;)Ljava/lang/Comparable;

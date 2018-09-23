@@ -21,16 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/app/Fragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parent"    # Landroid/app/Fragment;
-    .param p3, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 42
     const-string v0, "zen_automatic_rule_switch"
 
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/app/Fragment;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 43
     return-void
 .end method
 
@@ -38,12 +33,9 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 3
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 57
     invoke-super {p0, p1}, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 58
     const-string v0, "zen_automatic_rule_switch"
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -52,9 +44,7 @@
 
     check-cast v0, Lcom/android/settings/applications/LayoutPreference;
 
-    .line 59
-    .local v0, "pref":Lcom/android/settings/applications/LayoutPreference;
-    const v1, 0x7f0a0521
+    const v1, 0x7f0a051f
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/LayoutPreference;->findViewById(I)Landroid/view/View;
 
@@ -64,19 +54,16 @@
 
     iput-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    .line 61
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     if-eqz v1, :cond_0
 
-    .line 62
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
-    const v2, 0x7f1215ce
+    const v2, 0x7f1215c7
 
     invoke-virtual {v1, v2, v2}, Lcom/android/settings/widget/SwitchBar;->setSwitchBarText(II)V
 
-    .line 65
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
@@ -84,20 +71,16 @@
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 68
     goto :goto_0
 
-    .line 66
     :catch_0
     move-exception v1
 
-    .line 69
     :goto_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     invoke-virtual {v1}, Lcom/android/settings/widget/SwitchBar;->show()V
 
-    .line 71
     :cond_0
     return-void
 .end method
@@ -105,7 +88,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 47
     const-string v0, "zen_automatic_rule_switch"
 
     return-object v0
@@ -114,7 +96,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 52
     iget-object v0, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
 
     if-eqz v0, :cond_0
@@ -136,29 +117,19 @@
 
 .method public onResume(Landroid/app/AutomaticZenRule;Ljava/lang/String;)V
     .locals 0
-    .param p1, "rule"    # Landroid/app/AutomaticZenRule;
-    .param p2, "id"    # Ljava/lang/String;
 
-    .line 75
     iput-object p1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
 
-    .line 76
     iput-object p2, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mId:Ljava/lang/String;
 
-    .line 77
     return-void
 .end method
 
 .method public onSwitchChanged(Landroid/widget/Switch;Z)V
     .locals 4
-    .param p1, "switchView"    # Landroid/widget/Switch;
-    .param p2, "isChecked"    # Z
 
-    .line 87
     move v0, p2
 
-    .line 88
-    .local v0, "enabled":Z
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
 
     invoke-virtual {v1}, Landroid/app/AutomaticZenRule;->isEnabled()Z
@@ -169,13 +140,11 @@
 
     return-void
 
-    .line 89
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
 
     invoke-virtual {v1, v0}, Landroid/app/AutomaticZenRule;->setEnabled(Z)V
 
-    .line 90
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
 
     iget-object v2, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mId:Ljava/lang/String;
@@ -184,20 +153,16 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/notification/ZenModeBackend;->setZenRule(Ljava/lang/String;Landroid/app/AutomaticZenRule;)Z
 
-    .line 91
     return-void
 .end method
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
 
     if-eqz v0, :cond_0
 
-    .line 81
     iget-object v0, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mSwitchBar:Lcom/android/settings/widget/SwitchBar;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenAutomaticRuleSwitchPreferenceController;->mRule:Landroid/app/AutomaticZenRule;
@@ -208,7 +173,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/SwitchBar;->setChecked(Z)V
 
-    .line 83
     :cond_0
     return-void
 .end method

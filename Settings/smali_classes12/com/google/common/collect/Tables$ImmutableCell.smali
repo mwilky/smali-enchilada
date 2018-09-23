@@ -83,23 +83,14 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/Tables$ImmutableCell;, "Lcom/google/common/collect/Tables$ImmutableCell<TR;TC;TV;>;"
-    .local p1, "rowKey":Ljava/lang/Object;, "TR;"
-    .local p2, "columnKey":Ljava/lang/Object;, "TC;"
-    .local p3, "value":Ljava/lang/Object;, "TV;"
     invoke-direct {p0}, Lcom/google/common/collect/Tables$AbstractCell;-><init>()V
 
-    .line 78
     iput-object p1, p0, Lcom/google/common/collect/Tables$ImmutableCell;->rowKey:Ljava/lang/Object;
 
-    .line 79
     iput-object p2, p0, Lcom/google/common/collect/Tables$ImmutableCell;->columnKey:Ljava/lang/Object;
 
-    .line 80
     iput-object p3, p0, Lcom/google/common/collect/Tables$ImmutableCell;->value:Ljava/lang/Object;
 
-    .line 81
     return-void
 .end method
 
@@ -113,8 +104,6 @@
         }
     .end annotation
 
-    .line 89
-    .local p0, "this":Lcom/google/common/collect/Tables$ImmutableCell;, "Lcom/google/common/collect/Tables$ImmutableCell<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Tables$ImmutableCell;->columnKey:Ljava/lang/Object;
 
     return-object v0
@@ -128,8 +117,6 @@
         }
     .end annotation
 
-    .line 85
-    .local p0, "this":Lcom/google/common/collect/Tables$ImmutableCell;, "Lcom/google/common/collect/Tables$ImmutableCell<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Tables$ImmutableCell;->rowKey:Ljava/lang/Object;
 
     return-object v0
@@ -143,8 +130,6 @@
         }
     .end annotation
 
-    .line 93
-    .local p0, "this":Lcom/google/common/collect/Tables$ImmutableCell;, "Lcom/google/common/collect/Tables$ImmutableCell<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Tables$ImmutableCell;->value:Ljava/lang/Object;
 
     return-object v0

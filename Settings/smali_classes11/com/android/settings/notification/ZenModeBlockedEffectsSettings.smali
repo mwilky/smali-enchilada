@@ -14,7 +14,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 97
     new-instance v0, Lcom/android/settings/notification/ZenModeBlockedEffectsSettings$1;
 
     invoke-direct {v0}, Lcom/android/settings/notification/ZenModeBlockedEffectsSettings$1;-><init>()V
@@ -27,7 +26,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42
     invoke-direct {p0}, Lcom/android/settings/notification/ZenModeSettingsBase;-><init>()V
 
     return-void
@@ -35,10 +33,7 @@
 
 .method static synthetic access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Landroid/content/Context;
-    .param p1, "x1"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
-    .line 42
     invoke-static {p0, p1}, Lcom/android/settings/notification/ZenModeBlockedEffectsSettings;->buildPreferenceControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
 
     move-result-object v0
@@ -48,8 +43,6 @@
 
 .method private static buildPreferenceControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
     .locals 16
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,13 +55,10 @@
         }
     .end annotation
 
-    .line 58
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 59
-    .local v0, "controllers":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/core/AbstractPreferenceController;>;"
     new-instance v8, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v4, "zen_effect_intent"
@@ -89,7 +79,6 @@
 
     invoke-interface {v0, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 62
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v12, "zen_effect_light"
@@ -110,7 +99,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 65
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v5, "zen_effect_peek"
@@ -131,7 +119,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 68
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v12, "zen_effect_status"
@@ -156,7 +143,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 72
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v5, "zen_effect_badge"
@@ -173,7 +159,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 75
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v12, "zen_effect_ambient"
@@ -190,7 +175,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 78
     new-instance v1, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;
 
     const-string v5, "zen_effect_list"
@@ -205,7 +189,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 81
     return-object v0
 .end method
 
@@ -213,7 +196,6 @@
 # virtual methods
 .method protected createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -225,7 +207,6 @@
         }
     .end annotation
 
-    .line 53
     invoke-virtual {p0}, Lcom/android/settings/notification/ZenModeBlockedEffectsSettings;->getLifecycle()Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
     move-result-object v0
@@ -240,7 +221,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 91
     const/16 v0, 0x53b
 
     return v0
@@ -249,7 +229,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 86
     const v0, 0x7f1600ea
 
     return v0
@@ -257,22 +236,18 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "icicle"    # Landroid/os/Bundle;
 
-    .line 46
     invoke-super {p0, p1}, Lcom/android/settings/notification/ZenModeSettingsBase;->onCreate(Landroid/os/Bundle;)V
 
-    .line 47
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeBlockedEffectsSettings;->mFooterPreferenceMixin:Lcom/android/settingslib/widget/FooterPreferenceMixin;
 
     invoke-virtual {v0}, Lcom/android/settingslib/widget/FooterPreferenceMixin;->createFooterPreference()Lcom/android/settingslib/widget/FooterPreference;
 
     move-result-object v0
 
-    const v1, 0x7f121564
+    const v1, 0x7f12155d
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/widget/FooterPreference;->setTitle(I)V
 
-    .line 49
     return-void
 .end method

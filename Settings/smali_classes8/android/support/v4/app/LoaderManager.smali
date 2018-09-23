@@ -15,21 +15,16 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     return-void
 .end method
 
 .method public static enableDebugLogging(Z)V
     .locals 0
-    .param p0, "enabled"    # Z
 
-    .line 235
     sput-boolean p0, Landroid/support/v4/app/LoaderManagerImpl;->DEBUG:Z
 
-    .line 236
     return-void
 .end method
 
@@ -53,8 +48,6 @@
         }
     .end annotation
 
-    .line 128
-    .local p0, "owner":Landroid/arch/lifecycle/LifecycleOwner;, "TT;"
     new-instance v0, Landroid/support/v4/app/LoaderManagerImpl;
 
     move-object v1, p0
@@ -100,7 +93,6 @@
 .method public hasRunningLoaders()Z
     .locals 1
 
-    .line 242
     const/4 v0, 0x0
 
     return v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/TetherSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/TetherSettings;
 
-    .line 477
     iput-object p1, p0, Lcom/android/settings/TetherSettings$2;->this$0:Lcom/android/settings/TetherSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
     .locals 2
-    .param p1, "profile"    # I
-    .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
-    .line 479
     iget-object v0, p0, Lcom/android/settings/TetherSettings$2;->this$0:Lcom/android/settings/TetherSettings;
 
     invoke-static {v0}, Lcom/android/settings/TetherSettings;->access$700(Lcom/android/settings/TetherSettings;)Ljava/util/concurrent/atomic/AtomicReference;
@@ -54,15 +49,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 480
     return-void
 .end method
 
 .method public onServiceDisconnected(I)V
     .locals 2
-    .param p1, "profile"    # I
 
-    .line 484
     iget-object v0, p0, Lcom/android/settings/TetherSettings$2;->this$0:Lcom/android/settings/TetherSettings;
 
     iget-object v1, p0, Lcom/android/settings/TetherSettings$2;->this$0:Lcom/android/settings/TetherSettings;
@@ -79,7 +71,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/TetherSettings;->access$802(Lcom/android/settings/TetherSettings;Landroid/bluetooth/BluetoothPan;)Landroid/bluetooth/BluetoothPan;
 
-    .line 485
     iget-object v0, p0, Lcom/android/settings/TetherSettings$2;->this$0:Lcom/android/settings/TetherSettings;
 
     invoke-static {v0}, Lcom/android/settings/TetherSettings;->access$700(Lcom/android/settings/TetherSettings;)Ljava/util/concurrent/atomic/AtomicReference;
@@ -90,6 +81,5 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 486
     return-void
 .end method

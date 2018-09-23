@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 67
     invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method public matches(C)Z
     .locals 3
-    .param p1, "c"    # C
 
-    .line 70
     const/16 v0, 0x20
 
     const/4 v1, 0x1
@@ -63,7 +60,6 @@
 
     packed-switch p1, :pswitch_data_1
 
-    .line 87
     const/16 v0, 0x2000
 
     if-lt p1, v0, :cond_0
@@ -80,11 +76,9 @@
     :goto_0
     return v1
 
-    .line 85
     :cond_1
     return v2
 
-    .line 83
     :cond_2
     :pswitch_0
     return v1
@@ -110,7 +104,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 93
     const-string v0, "CharMatcher.BREAKING_WHITESPACE"
 
     return-object v0

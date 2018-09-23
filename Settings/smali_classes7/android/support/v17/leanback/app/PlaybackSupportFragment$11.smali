@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
-    .line 1070
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;-><init>()V
@@ -36,7 +34,6 @@
 .method public getPlaybackSeekDataProvider()Landroid/support/v17/leanback/widget/PlaybackSeekDataProvider;
     .locals 1
 
-    .line 1086
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
@@ -63,7 +60,6 @@
 .method public isSeekEnabled()Z
     .locals 1
 
-    .line 1073
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
@@ -89,23 +85,19 @@
 
 .method public onSeekFinished(Z)V
     .locals 2
-    .param p1, "cancelled"    # Z
 
-    .line 1098
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     if-eqz v0, :cond_0
 
-    .line 1099
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;->onSeekFinished(Z)V
 
-    .line 1101
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
@@ -113,29 +105,24 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->setSeekMode(Z)V
 
-    .line 1102
     return-void
 .end method
 
 .method public onSeekPositionChanged(J)V
     .locals 1
-    .param p1, "pos"    # J
 
-    .line 1091
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     if-eqz v0, :cond_0
 
-    .line 1092
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;->onSeekPositionChanged(J)V
 
-    .line 1094
     :cond_0
     return-void
 .end method
@@ -143,21 +130,18 @@
 .method public onSeekStarted()V
     .locals 2
 
-    .line 1078
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     if-eqz v0, :cond_0
 
-    .line 1079
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->mSeekUiClient:Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackSeekUi$Client;->onSeekStarted()V
 
-    .line 1081
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$11;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
@@ -165,6 +149,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->setSeekMode(Z)V
 
-    .line 1082
     return-void
 .end method

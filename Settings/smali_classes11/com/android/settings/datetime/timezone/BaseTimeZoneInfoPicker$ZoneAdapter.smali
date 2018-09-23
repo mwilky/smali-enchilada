@@ -25,9 +25,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/util/List;Lcom/android/settings/datetime/timezone/BaseTimeZonePicker$OnListItemClickListener;Ljava/util/Locale;Ljava/lang/CharSequence;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p4, "locale"    # Ljava/util/Locale;
-    .param p5, "headerText"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,9 +41,6 @@
         }
     .end annotation
 
-    .line 79
-    .local p2, "timeZones":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/datetime/timezone/TimeZoneInfo;>;"
-    .local p3, "onListItemClickListener":Lcom/android/settings/datetime/timezone/BaseTimeZonePicker$OnListItemClickListener;, "Lcom/android/settings/datetime/timezone/BaseTimeZonePicker$OnListItemClickListener<Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;>;"
     invoke-static {p1, p2, p4}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$ZoneAdapter;->createTimeZoneInfoItems(Landroid/content/Context;Ljava/util/List;Ljava/util/Locale;)Ljava/util/List;
 
     move-result-object v1
@@ -63,14 +57,11 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/settings/datetime/timezone/BaseTimeZoneAdapter;-><init>(Ljava/util/List;Lcom/android/settings/datetime/timezone/BaseTimeZonePicker$OnListItemClickListener;Ljava/util/Locale;ZLjava/lang/CharSequence;)V
 
-    .line 82
     return-void
 .end method
 
 .method private static createTimeZoneInfoItems(Landroid/content/Context;Ljava/util/List;Ljava/util/Locale;)Ljava/util/List;
     .locals 15
-    .param p0, "context"    # Landroid/content/Context;
-    .param p2, "locale"    # Ljava/util/Locale;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,11 +77,8 @@
         }
     .end annotation
 
-    .line 86
-    .local p1, "timeZones":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/datetime/timezone/TimeZoneInfo;>;"
     new-instance v5, Landroid/icu/text/SimpleDateFormat;
 
-    .line 87
     invoke-static {p0}, Landroid/text/format/DateFormat;->getTimeFormatString(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -99,8 +87,6 @@
 
     invoke-direct {v5, v0, v7}, Landroid/icu/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    .line 88
-    .local v5, "currentTimeFormat":Landroid/icu/text/DateFormat;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
@@ -111,26 +97,18 @@
 
     move-object v8, v0
 
-    .line 89
-    .local v8, "results":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
-    .line 90
-    .local v9, "resources":Landroid/content/res/Resources;
     const-wide/16 v0, 0x0
 
-    .line 91
-    .local v0, "i":J
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
     move-wide v1, v0
 
-    .end local v0    # "i":J
-    .local v1, "i":J
     :goto_0
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
@@ -146,20 +124,16 @@
 
     check-cast v11, Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
-    .line 92
-    .local v11, "timeZone":Lcom/android/settings/datetime/timezone/TimeZoneInfo;
     new-instance v12, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;
 
     const-wide/16 v3, 0x1
 
     add-long v13, v1, v3
 
-    .local v13, "i":J
     const/4 v6, 0x0
 
     move-object v0, v12
 
-    .end local v1    # "i":J
     move-object v3, v11
 
     move-object v4, v9
@@ -168,18 +142,12 @@
 
     invoke-virtual {v8, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 93
-    .end local v11    # "timeZone":Lcom/android/settings/datetime/timezone/TimeZoneInfo;
     nop
 
-    .line 91
     move-wide v1, v13
 
     goto :goto_0
 
-    .line 94
-    .end local v13    # "i":J
-    .restart local v1    # "i":J
     :cond_0
     return-object v8
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiNoInternetDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiNoInternetDialog;
 
-    .line 88
     iput-object p1, p0, Lcom/android/settings/wifi/WifiNoInternetDialog$1;->this$0:Lcom/android/settings/wifi/WifiNoInternetDialog;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onCapabilitiesChanged(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V
     .locals 3
-    .param p1, "network"    # Landroid/net/Network;
-    .param p2, "nc"    # Landroid/net/NetworkCapabilities;
 
-    .line 100
     iget-object v0, p0, Lcom/android/settings/wifi/WifiNoInternetDialog$1;->this$0:Lcom/android/settings/wifi/WifiNoInternetDialog;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiNoInternetDialog;->access$000(Lcom/android/settings/wifi/WifiNoInternetDialog;)Landroid/net/Network;
@@ -59,7 +54,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     const-string v0, "WifiNoInternetDialog"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -88,21 +82,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     iget-object v0, p0, Lcom/android/settings/wifi/WifiNoInternetDialog$1;->this$0:Lcom/android/settings/wifi/WifiNoInternetDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiNoInternetDialog;->finish()V
 
-    .line 104
     :cond_0
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 3
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 92
     iget-object v0, p0, Lcom/android/settings/wifi/WifiNoInternetDialog$1;->this$0:Lcom/android/settings/wifi/WifiNoInternetDialog;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiNoInternetDialog;->access$000(Lcom/android/settings/wifi/WifiNoInternetDialog;)Landroid/net/Network;
@@ -115,7 +105,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 93
     const-string v0, "WifiNoInternetDialog"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -144,12 +133,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
     iget-object v0, p0, Lcom/android/settings/wifi/WifiNoInternetDialog$1;->this$0:Lcom/android/settings/wifi/WifiNoInternetDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiNoInternetDialog;->finish()V
 
-    .line 96
     :cond_0
     return-void
 .end method

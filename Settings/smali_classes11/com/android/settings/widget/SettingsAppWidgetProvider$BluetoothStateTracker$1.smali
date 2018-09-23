@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker;
 
-    .line 469
     iput-object p1, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker$1;->this$0:Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker;
 
     iput-boolean p2, p0, Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker$1;->val$desiredState:Z
@@ -50,7 +48,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 469
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/widget/SettingsAppWidgetProvider$BluetoothStateTracker$1;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -62,9 +59,7 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 2
-    .param p1, "args"    # [Ljava/lang/Void;
 
-    .line 472
     invoke-static {}, Lcom/android/settings/widget/SettingsAppWidgetProvider;->access$800()Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;
 
     move-result-object v0
@@ -73,7 +68,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/bluetooth/LocalBluetoothAdapter;->setBluetoothEnabled(Z)Z
 
-    .line 473
     const/4 v0, 0x0
 
     return-object v0

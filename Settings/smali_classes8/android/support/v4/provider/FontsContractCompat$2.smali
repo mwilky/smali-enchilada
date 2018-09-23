@@ -36,7 +36,6 @@
 .method constructor <init>(Landroid/support/v4/content/res/ResourcesCompat$FontCallback;Landroid/os/Handler;)V
     .locals 0
 
-    .line 275
     iput-object p1, p0, Landroid/support/v4/provider/FontsContractCompat$2;->val$fontCallback:Landroid/support/v4/content/res/ResourcesCompat$FontCallback;
 
     iput-object p2, p0, Landroid/support/v4/provider/FontsContractCompat$2;->val$handler:Landroid/os/Handler;
@@ -50,12 +49,9 @@
 # virtual methods
 .method public onReply(Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;)V
     .locals 3
-    .param p1, "typeface"    # Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;
 
-    .line 278
     if-nez p1, :cond_0
 
-    .line 279
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$2;->val$fontCallback:Landroid/support/v4/content/res/ResourcesCompat$FontCallback;
 
     const/4 v1, 0x1
@@ -66,13 +62,11 @@
 
     goto :goto_0
 
-    .line 281
     :cond_0
     iget v0, p1, Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;->mResult:I
 
     if-nez v0, :cond_1
 
-    .line 282
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$2;->val$fontCallback:Landroid/support/v4/content/res/ResourcesCompat$FontCallback;
 
     iget-object v1, p1, Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;->mTypeface:Landroid/graphics/Typeface;
@@ -83,7 +77,6 @@
 
     goto :goto_0
 
-    .line 284
     :cond_1
     iget-object v0, p0, Landroid/support/v4/provider/FontsContractCompat$2;->val$fontCallback:Landroid/support/v4/content/res/ResourcesCompat$FontCallback;
 
@@ -93,7 +86,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/content/res/ResourcesCompat$FontCallback;->callbackFailAsync(ILandroid/os/Handler;)V
 
-    .line 286
     :goto_0
     return-void
 .end method
@@ -101,7 +93,6 @@
 .method public bridge synthetic onReply(Ljava/lang/Object;)V
     .locals 0
 
-    .line 275
     check-cast p1, Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;
 
     invoke-virtual {p0, p1}, Landroid/support/v4/provider/FontsContractCompat$2;->onReply(Landroid/support/v4/provider/FontsContractCompat$TypefaceResult;)V

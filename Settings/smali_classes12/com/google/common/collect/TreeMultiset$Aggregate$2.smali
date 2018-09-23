@@ -18,7 +18,6 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    .line 145
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/TreeMultiset$Aggregate;-><init>(Ljava/lang/String;ILcom/google/common/collect/TreeMultiset$1;)V
@@ -38,8 +37,6 @@
         }
     .end annotation
 
-    .line 148
-    .local p1, "node":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<*>;"
     const/4 v0, 0x1
 
     return v0
@@ -59,8 +56,6 @@
         }
     .end annotation
 
-    .line 153
-    .local p1, "root":Lcom/google/common/collect/TreeMultiset$AvlNode;, "Lcom/google/common/collect/TreeMultiset$AvlNode<*>;"
     if-nez p1, :cond_0
 
     const-wide/16 v0, 0x0

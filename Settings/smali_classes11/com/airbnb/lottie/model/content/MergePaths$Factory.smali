@@ -18,18 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     return-void
 .end method
 
 .method static newInstance(Lorg/json/JSONObject;)Lcom/airbnb/lottie/model/content/MergePaths;
     .locals 4
-    .param p0, "json"    # Lorg/json/JSONObject;
 
-    .line 76
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths;
 
     const-string v1, "nm"

@@ -39,7 +39,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 14
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -48,7 +47,6 @@
 .method private setCmiitID()V
     .locals 6
 
-    .line 55
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -59,8 +57,6 @@
 
     move-result-object v0
 
-    .line 56
-    .local v0, "cmiitid":Ljava/lang/String;
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     const-string v2, "oneplus A3000"
@@ -75,7 +71,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 57
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -92,7 +87,6 @@
 
     goto/16 :goto_1
 
-    .line 58
     :cond_0
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -104,7 +98,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 59
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -121,7 +114,6 @@
 
     goto/16 :goto_1
 
-    .line 60
     :cond_1
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -133,7 +125,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 61
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -150,7 +141,6 @@
 
     goto/16 :goto_1
 
-    .line 62
     :cond_2
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -162,7 +152,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 63
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -179,7 +168,6 @@
 
     goto :goto_1
 
-    .line 64
     :cond_3
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
@@ -193,12 +181,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 65
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mAuthenticationImage:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 66
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -215,11 +201,10 @@
 
     goto :goto_1
 
-    .line 67
     :cond_4
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120b8d
+    const v5, 0x7f120b89
 
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;
 
@@ -233,9 +218,8 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const v5, 0x7f120b8e
+    const v5, 0x7f120b8a
 
-    .line 68
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getString(I)Ljava/lang/String;
 
     move-result-object v5
@@ -248,7 +232,6 @@
 
     goto :goto_0
 
-    .line 72
     :cond_5
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
@@ -264,14 +247,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 73
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mAuthenticationImage:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_1
 
-    .line 69
     :cond_6
     :goto_0
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
@@ -292,12 +273,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 70
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mAuthenticationImage:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 75
     :goto_1
     return-void
 .end method
@@ -305,7 +284,6 @@
 .method private setDeviceType()V
     .locals 5
 
-    .line 49
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -316,8 +294,6 @@
 
     move-result-object v0
 
-    .line 51
-    .local v0, "deviceModel":Ljava/lang/String;
     iget-object v1, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mModelTextView:Landroid/widget/TextView;
 
     const/4 v2, 0x1
@@ -336,7 +312,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 52
     return-void
 .end method
 
@@ -344,12 +319,9 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 33
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 34
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
@@ -358,7 +330,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    .line 35
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
@@ -367,12 +338,10 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
-    .line 36
     const v0, 0x7f0d0142
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->setContentView(I)V
 
-    .line 37
     const v0, 0x7f0a007e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->findViewById(I)Landroid/view/View;
@@ -383,7 +352,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mModelTextView:Landroid/widget/TextView;
 
-    .line 38
     const v0, 0x7f0a007a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->findViewById(I)Landroid/view/View;
@@ -394,7 +362,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mCmiitIdView:Landroid/widget/TextView;
 
-    .line 39
     const v0, 0x7f0a007c
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->findViewById(I)Landroid/view/View;
@@ -405,7 +372,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->mAuthenticationImage:Landroid/widget/ImageView;
 
-    .line 40
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -416,7 +382,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 41
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -429,22 +394,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 44
     :cond_0
     invoke-direct {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->setDeviceType()V
 
-    .line 45
     invoke-direct {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->setCmiitID()V
 
-    .line 46
     return-void
 .end method
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 80
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -453,15 +413,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 81
     invoke-virtual {p0}, Lcom/oneplus/settings/OPAuthenticationInformationSettings;->finish()V
 
-    .line 82
     const/4 v0, 0x1
 
     return v0
 
-    .line 84
     :cond_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 

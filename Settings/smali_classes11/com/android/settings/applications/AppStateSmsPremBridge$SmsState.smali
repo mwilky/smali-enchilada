@@ -22,7 +22,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
 .method public isGranted()Z
     .locals 2
 
-    .line 81
     iget v0, p0, Lcom/android/settings/applications/AppStateSmsPremBridge$SmsState;->smsState:I
 
     const/4 v1, 0x3

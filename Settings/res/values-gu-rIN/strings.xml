@@ -526,8 +526,6 @@
     <string name="oneplus_quick_clipboard_summary">કોપી કરવાની શંમતા વધારો અને પછી કોપી પ્રમાણે આગામી કર્યા કરવાની ભલામણ કરો</string>
     <string name="oneplus_quick_gestures">હાવભાવ</string>
     <string name="oneplus_quick_gestures_title">ઝડપી સંકેતો</string>
-    <string name="oneplus_quick_turn_on_assistant_app">આસિસ્ટન્ટ એપ્લિકેશન ઝડપથી સક્રિય કરો</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">આસિસ્ટન્ટ એપ્લિકેશનને સક્રિય કરવા માટે 0.5 સેં. અને પાવર ઑફ કરવા માટે 3 સેં. માટે પાવર બટન દબાવી રાખો</string>
     <string name="oneplus_quick_turn_on_camera">કૅમેરાને ઝડપથી ચાલુ કરો</string>
     <string name="oneplus_quickpay">ક્વિક પે</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">શું તમે ખરેખર હોમ બટનની લાંબી પ્રેસ ક્રિયાને \"%1$s\" માંથી \"ક્વિક પે\" પર બદલવા માંગો છો?</string>

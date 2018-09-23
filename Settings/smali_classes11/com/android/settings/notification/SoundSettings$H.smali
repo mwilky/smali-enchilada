@@ -38,26 +38,20 @@
 .method private constructor <init>(Lcom/android/settings/notification/SoundSettings;)V
     .locals 0
 
-    .line 805
     iput-object p1, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
-    .line 806
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 807
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/settings/notification/SoundSettings;Lcom/android/settings/notification/SoundSettings$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/notification/SoundSettings;
-    .param p2, "x1"    # Lcom/android/settings/notification/SoundSettings$1;
 
-    .line 795
     invoke-direct {p0, p1}, Lcom/android/settings/notification/SoundSettings$H;-><init>(Lcom/android/settings/notification/SoundSettings;)V
 
     return-void
@@ -67,16 +61,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 811
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 820
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
@@ -90,10 +81,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 821
     goto :goto_0
 
-    .line 833
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
@@ -109,25 +98,20 @@
 
     goto :goto_0
 
-    .line 830
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/SoundSettings;->access$1900(Lcom/android/settings/notification/SoundSettings;)V
 
-    .line 831
     goto :goto_0
 
-    .line 827
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/SoundSettings;->access$1800(Lcom/android/settings/notification/SoundSettings;)V
 
-    .line 828
     goto :goto_0
 
-    .line 824
     :pswitch_4
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
@@ -135,10 +119,8 @@
 
     invoke-virtual {v0}, Lcom/android/settings/notification/SoundSettings$VolumePreferenceCallback;->stopSample()V
 
-    .line 825
     goto :goto_0
 
-    .line 816
     :pswitch_5
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
@@ -152,10 +134,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 817
     goto :goto_0
 
-    .line 813
     :pswitch_6
     iget-object v0, p0, Lcom/android/settings/notification/SoundSettings$H;->this$0:Lcom/android/settings/notification/SoundSettings;
 
@@ -169,10 +149,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 814
     nop
 
-    .line 836
     :goto_0
     return-void
 

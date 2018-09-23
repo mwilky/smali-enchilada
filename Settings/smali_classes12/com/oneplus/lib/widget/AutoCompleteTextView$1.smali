@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/AutoCompleteTextView;Lcom/oneplus/lib/widget/AutoCompleteTextView$OnDismissListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/AutoCompleteTextView;
 
-    .line 697
     iput-object p1, p0, Lcom/oneplus/lib/widget/AutoCompleteTextView$1;->this$0:Lcom/oneplus/lib/widget/AutoCompleteTextView;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/AutoCompleteTextView$1;->val$dismissListener:Lcom/oneplus/lib/widget/AutoCompleteTextView$OnDismissListener;
@@ -43,11 +41,9 @@
 .method public onDismiss()V
     .locals 1
 
-    .line 699
     iget-object v0, p0, Lcom/oneplus/lib/widget/AutoCompleteTextView$1;->val$dismissListener:Lcom/oneplus/lib/widget/AutoCompleteTextView$OnDismissListener;
 
     invoke-interface {v0}, Lcom/oneplus/lib/widget/AutoCompleteTextView$OnDismissListener;->onDismiss()V
 
-    .line 700
     return-void
 .end method

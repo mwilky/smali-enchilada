@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/quickpay/QuickPaySettings;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
-    .line 404
     iput-object p1, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$1;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     iput-boolean p2, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$1;->val$state:Z
@@ -42,17 +40,13 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 407
     iget-object v0, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$1;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     iget-boolean v1, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$1;->val$state:Z
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/quickpay/QuickPaySettings;->access$000(Lcom/oneplus/settings/quickpay/QuickPaySettings;Z)V
 
-    .line 408
     iget-object v0, p0, Lcom/oneplus/settings/quickpay/QuickPaySettings$1;->this$0:Lcom/oneplus/settings/quickpay/QuickPaySettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/quickpay/QuickPaySettings;->access$100(Lcom/oneplus/settings/quickpay/QuickPaySettings;)Landroid/support/v14/preference/SwitchPreference;
@@ -63,9 +57,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 409
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 410
     return-void
 .end method

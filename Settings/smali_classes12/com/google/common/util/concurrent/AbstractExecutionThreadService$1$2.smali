@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
-    .line 51
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 5
 
-    .line 55
     :try_start_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
@@ -47,12 +44,10 @@
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService;->startUp()V
 
-    .line 56
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;->notifyStarted()V
 
-    .line 58
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;->isRunning()Z
@@ -63,7 +58,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 60
     :try_start_1
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
@@ -73,15 +67,11 @@
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 70
     goto :goto_1
 
-    .line 61
     :catch_0
     move-exception v0
 
-    .line 63
-    .local v0, "t":Ljava/lang/Throwable;
     :try_start_2
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
@@ -92,15 +82,11 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 68
     goto :goto_0
 
-    .line 64
     :catch_1
     move-exception v1
 
-    .line 65
-    .local v1, "ignored":Ljava/lang/Exception;
     :try_start_3
     invoke-static {}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService;->access$000()Ljava/util/logging/Logger;
 
@@ -112,13 +98,9 @@
 
     invoke-virtual {v2, v3, v4, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 69
-    .end local v1    # "ignored":Ljava/lang/Exception;
     :goto_0
     throw v0
 
-    .line 73
-    .end local v0    # "t":Ljava/lang/Throwable;
     :cond_0
     :goto_1
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
@@ -127,30 +109,23 @@
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService;->shutDown()V
 
-    .line 74
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;->notifyStopped()V
     :try_end_3
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 78
     nop
 
-    .line 79
     return-void
 
-    .line 75
     :catch_2
     move-exception v0
 
-    .line 76
-    .restart local v0    # "t":Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1$2;->this$1:Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;
 
     invoke-virtual {v1, v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$1;->notifyFailed(Ljava/lang/Throwable;)V
 
-    .line 77
     invoke-static {v0}, Lcom/google/common/base/Throwables;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v1

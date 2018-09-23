@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist;Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 1041
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$3;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$3;->val$vh:Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 1044
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$3;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->isInExpandTransition()Z
@@ -53,7 +49,6 @@
 
     if-nez v0, :cond_0
 
-    .line 1045
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$3;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->getActionsGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
@@ -68,10 +63,8 @@
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$3;->val$vh:Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
-    .line 1046
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->performOnActionClick(Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;)V
 
-    .line 1048
     :cond_0
     return-void
 .end method

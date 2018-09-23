@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 35
     const/16 v0, 0x506
 
     return v0
@@ -26,12 +24,9 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 29
     new-instance v0, Lcom/android/settingslib/notification/EnableZenModeDialog;
 
-    .line 30
     invoke-virtual {p0}, Lcom/android/settings/notification/SettingsEnableZenModeDialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -42,6 +37,5 @@
 
     move-result-object v0
 
-    .line 29
     return-object v0
 .end method

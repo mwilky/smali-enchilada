@@ -31,11 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/LinkedListMultimap$3;Ljava/util/ListIterator;Lcom/google/common/collect/LinkedListMultimap$NodeIterator;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/LinkedListMultimap$3;
 
-    .line 724
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$3$1;, "Lcom/google/common/collect/LinkedListMultimap$3$1;"
-    .local p2, "backingIterator":Ljava/util/ListIterator;, "Ljava/util/ListIterator<+Ljava/util/Map$Entry<TK;TV;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$3$1;->this$1:Lcom/google/common/collect/LinkedListMultimap$3;
 
     iput-object p3, p0, Lcom/google/common/collect/LinkedListMultimap$3$1;->val$nodeItr:Lcom/google/common/collect/LinkedListMultimap$NodeIterator;
@@ -55,22 +51,16 @@
         }
     .end annotation
 
-    .line 732
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$3$1;, "Lcom/google/common/collect/LinkedListMultimap$3$1;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$3$1;->val$nodeItr:Lcom/google/common/collect/LinkedListMultimap$NodeIterator;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap$NodeIterator;->setValue(Ljava/lang/Object;)V
 
-    .line 733
     return-void
 .end method
 
 .method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 724
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$3$1;, "Lcom/google/common/collect/LinkedListMultimap$3$1;"
     check-cast p1, Ljava/util/Map$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/LinkedListMultimap$3$1;->transform(Ljava/util/Map$Entry;)Ljava/lang/Object;
@@ -90,9 +80,6 @@
         }
     .end annotation
 
-    .line 727
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$3$1;, "Lcom/google/common/collect/LinkedListMultimap$3$1;"
-    .local p1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0

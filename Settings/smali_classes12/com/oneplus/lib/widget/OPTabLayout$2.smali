@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/OPTabLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/OPTabLayout;
 
-    .line 737
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$2;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 740
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$2;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,6 +53,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/oneplus/lib/widget/OPTabLayout;->scrollTo(II)V
 
-    .line 741
     return-void
 .end method

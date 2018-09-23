@@ -37,9 +37,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/gestures/OPGestureAppAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/gestures/OPGestureAppAdapter;
 
-    .line 147
     iput-object p1, p0, Lcom/oneplus/settings/gestures/OPGestureAppAdapter$ItemViewHolder;->this$0:Lcom/oneplus/settings/gestures/OPGestureAppAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

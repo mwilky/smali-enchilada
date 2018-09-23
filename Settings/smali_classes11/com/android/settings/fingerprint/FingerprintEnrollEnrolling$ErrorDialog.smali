@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1135
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -26,35 +25,25 @@
 
 .method static newInstance(Ljava/lang/CharSequence;I)Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;
     .locals 3
-    .param p0, "msg"    # Ljava/lang/CharSequence;
-    .param p1, "msgId"    # I
 
-    .line 1145
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;
 
     invoke-direct {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;-><init>()V
 
-    .line 1146
-    .local v0, "dlg":Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1147
-    .local v1, "args":Landroid/os/Bundle;
     const-string v2, "error_msg"
 
     invoke-virtual {v1, v2, p0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    .line 1148
     const-string v2, "error_id"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1149
     invoke-virtual {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;->setArguments(Landroid/os/Bundle;)V
 
-    .line 1150
     return-object v0
 .end method
 
@@ -63,7 +52,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 1182
     const/16 v0, 0x239
 
     return v0
@@ -71,9 +59,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 7
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 1155
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;->getActivity()Landroid/app/Activity;
@@ -82,8 +68,6 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1156
-    .local v0, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -94,8 +78,6 @@
 
     move-result-object v1
 
-    .line 1157
-    .local v1, "errorString":Ljava/lang/CharSequence;
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;->getArguments()Landroid/os/Bundle;
 
     move-result-object v2
@@ -106,20 +88,16 @@
 
     move-result v2
 
-    .line 1158
-    .local v2, "errMsgId":I
-    const v3, 0x7f120c90
+    const v3, 0x7f120c8e
 
     invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    .line 1159
     invoke-virtual {v3, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v3
 
-    .line 1160
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
@@ -130,20 +108,15 @@
 
     invoke-direct {v5, p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog$1;-><init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$ErrorDialog;I)V
 
-    .line 1161
-    const v6, 0x7f120f7a
+    const v6, 0x7f120f73
 
     invoke-virtual {v3, v6, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 1175
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v3
 
-    .line 1176
-    .local v3, "dialog":Landroid/app/AlertDialog;
     invoke-virtual {v3, v4}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 1177
     return-object v3
 .end method

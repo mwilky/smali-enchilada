@@ -29,8 +29,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 42
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
     return-void
@@ -40,10 +38,7 @@
 # virtual methods
 .method public cancel(Z)Z
     .locals 1
-    .param p1, "mayInterruptIfRunning"    # Z
 
-    .line 48
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0
@@ -58,8 +53,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 38
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0
@@ -92,8 +85,6 @@
         }
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0
@@ -107,8 +98,6 @@
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
     .locals 1
-    .param p1, "timeout"    # J
-    .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -125,8 +114,6 @@
         }
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0
@@ -141,8 +128,6 @@
 .method public isCancelled()Z
     .locals 1
 
-    .line 53
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0
@@ -157,8 +142,6 @@
 .method public isDone()Z
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/util/concurrent/ForwardingFuture;, "Lcom/google/common/util/concurrent/ForwardingFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;->delegate()Ljava/util/concurrent/Future;
 
     move-result-object v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;
 
-    .line 441
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onBatteryInfoLoaded(Lcom/android/settings/fuelgauge/BatteryInfo;)V
     .locals 3
-    .param p1, "info"    # Lcom/android/settings/fuelgauge/BatteryInfo;
 
-    .line 444
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider$1;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;
 
     invoke-static {v0}, Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;->access$100(Lcom/android/settings/fuelgauge/PowerUsageSummary$SummaryProvider;)Lcom/android/settings/dashboard/SummaryLoader;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 445
     return-void
 .end method

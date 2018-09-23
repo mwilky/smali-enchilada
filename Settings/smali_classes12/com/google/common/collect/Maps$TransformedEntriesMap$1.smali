@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Maps$TransformedEntriesMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
-    .line 1923
-    .local p0, "this":Lcom/google/common/collect/Maps$TransformedEntriesMap$1;, "Lcom/google/common/collect/Maps$TransformedEntriesMap$1;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -52,8 +49,6 @@
         }
     .end annotation
 
-    .line 1929
-    .local p0, "this":Lcom/google/common/collect/Maps$TransformedEntriesMap$1;, "Lcom/google/common/collect/Maps$TransformedEntriesMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
     iget-object v0, v0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
@@ -70,12 +65,10 @@
 
     iget-object v1, v1, Lcom/google/common/collect/Maps$TransformedEntriesMap;->transformer:Lcom/google/common/collect/Maps$EntryTransformer;
 
-    .line 1930
     invoke-static {v1}, Lcom/google/common/collect/Maps;->asEntryToEntryFunction(Lcom/google/common/collect/Maps$EntryTransformer;)Lcom/google/common/base/Function;
 
     move-result-object v1
 
-    .line 1929
     invoke-static {v0, v1}, Lcom/google/common/collect/Iterators;->transform(Ljava/util/Iterator;Lcom/google/common/base/Function;)Ljava/util/Iterator;
 
     move-result-object v0
@@ -93,8 +86,6 @@
         }
     .end annotation
 
-    .line 1925
-    .local p0, "this":Lcom/google/common/collect/Maps$TransformedEntriesMap$1;, "Lcom/google/common/collect/Maps$TransformedEntriesMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
     return-object v0

@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 52
     new-instance v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     const-string v1, "None"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->None:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
-    .line 53
     new-instance v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     const-string v1, "Weak"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->Weak:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
-    .line 54
     new-instance v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     const-string v1, "Strong"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->Strong:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
-    .line 51
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
@@ -99,7 +95,6 @@
         }
     .end annotation
 
-    .line 51
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 51
     const-class v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,7 +117,6 @@
 .method public static values()[Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
     .locals 1
 
-    .line 51
     sget-object v0, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->$VALUES:[Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->clone()Ljava/lang/Object;

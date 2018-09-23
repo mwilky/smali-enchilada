@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;
 
-    .line 232
-    .local p0, "this":Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;, "Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;"
     iput-object p1, p0, Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;->this$1:Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;
 
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
@@ -55,8 +52,6 @@
         }
     .end annotation
 
-    .line 237
-    .local p0, "this":Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;, "Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;->this$1:Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;
 
     iget-object v0, v0, Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;->this$0:Lcom/google/common/collect/TreeRangeMap;
@@ -79,8 +74,6 @@
 .method public size()I
     .locals 1
 
-    .line 242
-    .local p0, "this":Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;, "Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges$1;->this$1:Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;
 
     iget-object v0, v0, Lcom/google/common/collect/TreeRangeMap$AsMapOfRanges;->this$0:Lcom/google/common/collect/TreeRangeMap;

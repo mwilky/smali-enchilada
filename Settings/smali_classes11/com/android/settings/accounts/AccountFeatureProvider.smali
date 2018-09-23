@@ -12,9 +12,7 @@
 
 .method public isAboutPhoneV2Enabled(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 32
     const-string v0, "settings_about_phone_v2"
 
     invoke-static {p1, v0}, Landroid/util/FeatureFlagUtils;->isEnabled(Landroid/content/Context;Ljava/lang/String;)Z

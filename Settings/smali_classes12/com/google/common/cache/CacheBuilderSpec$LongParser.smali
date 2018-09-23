@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 304
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,11 +30,7 @@
 # virtual methods
 .method public parse(Lcom/google/common/cache/CacheBuilderSpec;Ljava/lang/String;Ljava/lang/String;)V
     .locals 5
-    .param p1, "spec"    # Lcom/google/common/cache/CacheBuilderSpec;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "value"    # Ljava/lang/String;
 
-    .line 309
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -64,7 +59,6 @@
 
     invoke-static {v2, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 311
     :try_start_0
     invoke-static {p3}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -74,18 +68,13 @@
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 315
     nop
 
-    .line 316
     return-void
 
-    .line 312
     :catch_0
     move-exception v2
 
-    .line 313
-    .local v2, "e":Ljava/lang/NumberFormatException;
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     const/4 v4, 0x2
@@ -96,7 +85,6 @@
 
     aput-object p3, v4, v1
 
-    .line 314
     const-string v0, "key %s value set to %s, must be integer"
 
     invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;
 
-    .line 408
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback$1;->val$parentId:Ljava/lang/String;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 9
 
-    .line 411
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;->this$0:Landroid/support/v4/media/MediaBrowser2ImplLegacy;
@@ -60,14 +57,10 @@
 
     move-result-object v0
 
-    .line 412
-    .local v0, "browser":Landroid/support/v4/media/MediaBrowserCompat;
     if-nez v0, :cond_0
 
-    .line 413
     return-void
 
-    .line 415
     :cond_0
     iget-object v1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;
 
@@ -105,7 +98,6 @@
 
     invoke-virtual/range {v2 .. v8}, Landroid/support/v4/media/MediaBrowser2$BrowserCallback;->onGetChildrenDone(Landroid/support/v4/media/MediaBrowser2;Ljava/lang/String;IILjava/util/List;Landroid/os/Bundle;)V
 
-    .line 417
     iget-object v1, p0, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback$1;->this$1:Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;->access$600(Landroid/support/v4/media/MediaBrowser2ImplLegacy$GetChildrenCallback;)Ljava/lang/String;
@@ -116,6 +108,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaBrowserCompat;->unsubscribe(Ljava/lang/String;Landroid/support/v4/media/MediaBrowserCompat$SubscriptionCallback;)V
 
-    .line 418
     return-void
 .end method

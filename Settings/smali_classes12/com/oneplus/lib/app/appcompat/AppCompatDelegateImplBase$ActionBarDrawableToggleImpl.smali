@@ -25,12 +25,10 @@
 .method constructor <init>(Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;)V
     .locals 0
 
-    .line 194
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 195
     return-void
 .end method
 
@@ -39,7 +37,6 @@
 .method public getActionBarThemedContext()Landroid/content/Context;
     .locals 1
 
-    .line 208
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;->getActionBarThemedContext()Landroid/content/Context;
@@ -52,7 +49,6 @@
 .method public getThemeUpIndicator()Landroid/graphics/drawable/Drawable;
     .locals 4
 
-    .line 199
     invoke-virtual {p0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->getActionBarThemedContext()Landroid/content/Context;
 
     move-result-object v0
@@ -73,32 +69,24 @@
 
     move-result-object v0
 
-    .line 201
-    .local v0, "a":Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 202
-    .local v1, "result":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 203
     return-object v1
 .end method
 
 .method public isNavigationVisible()Z
     .locals 2
 
-    .line 213
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;->getSupportActionBar()Lcom/oneplus/lib/app/appcompat/ActionBar;
 
     move-result-object v0
 
-    .line 214
-    .local v0, "ab":Lcom/oneplus/lib/app/appcompat/ActionBar;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/ActionBar;->getDisplayOptions()I
@@ -122,50 +110,36 @@
 
 .method public setActionBarDescription(I)V
     .locals 1
-    .param p1, "contentDescRes"    # I
 
-    .line 228
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;->getSupportActionBar()Lcom/oneplus/lib/app/appcompat/ActionBar;
 
     move-result-object v0
 
-    .line 229
-    .local v0, "ab":Lcom/oneplus/lib/app/appcompat/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 230
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/app/appcompat/ActionBar;->setHomeActionContentDescription(I)V
 
-    .line 232
     :cond_0
     return-void
 .end method
 
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
     .locals 1
-    .param p1, "upDrawable"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "contentDescRes"    # I
 
-    .line 219
     iget-object v0, p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase$ActionBarDrawableToggleImpl;->this$0:Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplBase;->getSupportActionBar()Lcom/oneplus/lib/app/appcompat/ActionBar;
 
     move-result-object v0
 
-    .line 220
-    .local v0, "ab":Lcom/oneplus/lib/app/appcompat/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 221
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/app/appcompat/ActionBar;->setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
 
-    .line 222
     invoke-virtual {v0, p2}, Lcom/oneplus/lib/app/appcompat/ActionBar;->setHomeActionContentDescription(I)V
 
-    .line 224
     :cond_0
     return-void
 .end method

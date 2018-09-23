@@ -46,25 +46,16 @@
         }
     .end annotation
 
-    .line 973
-    .local p0, "this":Lcom/google/common/collect/Iterables$ConsumingQueueIterator;, "Lcom/google/common/collect/Iterables$ConsumingQueueIterator<TT;>;"
-    .local p1, "queue":Ljava/util/Queue;, "Ljava/util/Queue<TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 974
     iput-object p1, p0, Lcom/google/common/collect/Iterables$ConsumingQueueIterator;->queue:Ljava/util/Queue;
 
-    .line 975
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Queue;Lcom/google/common/collect/Iterables$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/Queue;
-    .param p2, "x1"    # Lcom/google/common/collect/Iterables$1;
 
-    .line 970
-    .local p0, "this":Lcom/google/common/collect/Iterables$ConsumingQueueIterator;, "Lcom/google/common/collect/Iterables$ConsumingQueueIterator<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Iterables$ConsumingQueueIterator;-><init>(Ljava/util/Queue;)V
 
     return-void
@@ -80,8 +71,6 @@
         }
     .end annotation
 
-    .line 979
-    .local p0, "this":Lcom/google/common/collect/Iterables$ConsumingQueueIterator;, "Lcom/google/common/collect/Iterables$ConsumingQueueIterator<TT;>;"
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/Iterables$ConsumingQueueIterator;->queue:Ljava/util/Queue;
 
@@ -93,12 +82,9 @@
 
     return-object v0
 
-    .line 980
     :catch_0
     move-exception v0
 
-    .line 981
-    .local v0, "e":Ljava/util/NoSuchElementException;
     invoke-virtual {p0}, Lcom/google/common/collect/Iterables$ConsumingQueueIterator;->endOfData()Ljava/lang/Object;
 
     move-result-object v1

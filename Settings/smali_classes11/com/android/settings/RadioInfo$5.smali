@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1100
     iput-object p1, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     iput-object p2, p0, Lcom/android/settings/RadioInfo$5;->val$updateAllCellInfoResults:Ljava/lang/Runnable;
@@ -40,7 +38,6 @@
 .method public run()V
     .locals 2
 
-    .line 1103
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
@@ -55,7 +52,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$1102(Lcom/android/settings/RadioInfo;Ljava/util/List;)Ljava/util/List;
 
-    .line 1104
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
@@ -70,7 +66,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$2502(Lcom/android/settings/RadioInfo;Landroid/telephony/CellLocation;)Landroid/telephony/CellLocation;
 
-    .line 1105
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     iget-object v1, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
@@ -85,7 +80,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/RadioInfo;->access$2302(Lcom/android/settings/RadioInfo;Ljava/util/List;)Ljava/util/List;
 
-    .line 1107
     iget-object v0, p0, Lcom/android/settings/RadioInfo$5;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$2700(Lcom/android/settings/RadioInfo;)Landroid/os/Handler;
@@ -96,6 +90,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1108
     return-void
 .end method

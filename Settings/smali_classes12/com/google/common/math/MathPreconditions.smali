@@ -12,7 +12,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,15 +19,11 @@
 
 .method static checkInRange(Z)V
     .locals 2
-    .param p0, "condition"    # Z
 
-    .line 86
     if-eqz p0, :cond_0
 
-    .line 89
     return-void
 
-    .line 87
     :cond_0
     new-instance v0, Ljava/lang/ArithmeticException;
 
@@ -41,15 +36,11 @@
 
 .method static checkNoOverflow(Z)V
     .locals 2
-    .param p0, "condition"    # Z
 
-    .line 92
     if-eqz p0, :cond_0
 
-    .line 95
     return-void
 
-    .line 93
     :cond_0
     new-instance v0, Ljava/lang/ArithmeticException;
 
@@ -62,23 +53,19 @@
 
 .method static checkNonNegative(Ljava/lang/String;D)D
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # D
 
-    .line 73
     const-wide/16 v0, 0x0
 
     cmpl-double v0, p1, v0
 
     if-ltz v0, :cond_0
 
-    .line 76
     return-wide p1
 
-    .line 74
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -109,19 +96,15 @@
 
 .method static checkNonNegative(Ljava/lang/String;I)I
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # I
 
-    .line 52
     if-ltz p1, :cond_0
 
-    .line 55
     return p1
 
-    .line 53
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -152,23 +135,19 @@
 
 .method static checkNonNegative(Ljava/lang/String;J)J
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # J
 
-    .line 59
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-ltz v0, :cond_0
 
-    .line 62
     return-wide p1
 
-    .line 60
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -199,23 +178,19 @@
 
 .method static checkNonNegative(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # Ljava/math/BigInteger;
 
-    .line 66
     invoke-virtual {p1}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
 
     if-ltz v0, :cond_0
 
-    .line 69
     return-object p1
 
-    .line 67
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -246,19 +221,15 @@
 
 .method static checkPositive(Ljava/lang/String;I)I
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # I
 
-    .line 31
     if-lez p1, :cond_0
 
-    .line 34
     return p1
 
-    .line 32
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -289,23 +260,19 @@
 
 .method static checkPositive(Ljava/lang/String;J)J
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # J
 
-    .line 38
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-lez v0, :cond_0
 
-    .line 41
     return-wide p1
 
-    .line 39
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -336,23 +303,19 @@
 
 .method static checkPositive(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 3
-    .param p0, "role"    # Ljava/lang/String;
+    .param p0    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "x"    # Ljava/math/BigInteger;
 
-    .line 45
     invoke-virtual {p1}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 48
     return-object p1
 
-    .line 46
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -383,15 +346,11 @@
 
 .method static checkRoundingUnnecessary(Z)V
     .locals 2
-    .param p0, "condition"    # Z
 
-    .line 80
     if-eqz p0, :cond_0
 
-    .line 83
     return-void
 
-    .line 81
     :cond_0
     new-instance v0, Ljava/lang/ArithmeticException;
 

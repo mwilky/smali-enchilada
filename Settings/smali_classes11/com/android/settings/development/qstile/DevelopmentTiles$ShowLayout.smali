@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 67
     invoke-direct {p0}, Lcom/android/settings/development/qstile/DevelopmentTiles;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method protected isEnabled()Z
     .locals 2
 
-    .line 71
     const-string v0, "debug.layout"
 
     const/4 v1, 0x0
@@ -43,9 +41,7 @@
 
 .method protected setIsEnabled(Z)V
     .locals 2
-    .param p1, "isEnabled"    # Z
 
-    .line 76
     const-string v0, "debug.layout"
 
     if-eqz p1, :cond_0
@@ -60,6 +56,5 @@
     :goto_0
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 77
     return-void
 .end method

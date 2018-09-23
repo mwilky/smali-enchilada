@@ -29,10 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/RadialTimePickerView;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/RadialTimePickerView;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 123
     iput-object p1, p0, Lcom/oneplus/lib/widget/RadialTimePickerView$1;->this$0:Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-direct {p0, p2}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
@@ -44,9 +41,7 @@
 # virtual methods
 .method public get(Lcom/oneplus/lib/widget/RadialTimePickerView;)Ljava/lang/Float;
     .locals 1
-    .param p1, "radialTimePickerView"    # Lcom/oneplus/lib/widget/RadialTimePickerView;
 
-    .line 126
     invoke-static {p1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$000(Lcom/oneplus/lib/widget/RadialTimePickerView;)F
 
     move-result v0
@@ -61,7 +56,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 123
     check-cast p1, Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/widget/RadialTimePickerView$1;->get(Lcom/oneplus/lib/widget/RadialTimePickerView;)Ljava/lang/Float;
@@ -73,23 +67,17 @@
 
 .method public setValue(Lcom/oneplus/lib/widget/RadialTimePickerView;F)V
     .locals 0
-    .param p1, "object"    # Lcom/oneplus/lib/widget/RadialTimePickerView;
-    .param p2, "value"    # F
 
-    .line 131
     invoke-static {p1, p2}, Lcom/oneplus/lib/widget/RadialTimePickerView;->access$002(Lcom/oneplus/lib/widget/RadialTimePickerView;F)F
 
-    .line 132
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->invalidate()V
 
-    .line 133
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 123
     check-cast p1, Lcom/oneplus/lib/widget/RadialTimePickerView;
 
     invoke-virtual {p0, p1, p2}, Lcom/oneplus/lib/widget/RadialTimePickerView$1;->setValue(Lcom/oneplus/lib/widget/RadialTimePickerView;F)V

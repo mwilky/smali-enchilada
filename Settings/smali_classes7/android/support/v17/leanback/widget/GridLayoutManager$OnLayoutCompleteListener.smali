@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2069
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,8 +30,6 @@
 # virtual methods
 .method public onLayoutCompleted(Landroid/support/v7/widget/RecyclerView$State;)V
     .locals 0
-    .param p1, "state"    # Landroid/support/v7/widget/RecyclerView$State;
 
-    .line 2071
     return-void
 .end method

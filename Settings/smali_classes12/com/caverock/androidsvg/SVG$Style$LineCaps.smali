@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 1003
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
     const-string v1, "Butt"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;->Butt:Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
-    .line 1004
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
     const-string v1, "Round"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;->Round:Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
-    .line 1005
     new-instance v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
     const-string v1, "Square"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;->Square:Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
-    .line 1001
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Style$LineCaps;
@@ -94,7 +90,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 1001
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +98,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$Style$LineCaps;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -118,7 +112,6 @@
 .method public static values()[Lcom/caverock/androidsvg/SVG$Style$LineCaps;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/SVG$Style$LineCaps;->ENUM$VALUES:[Lcom/caverock/androidsvg/SVG$Style$LineCaps;
 
     array-length v1, v0

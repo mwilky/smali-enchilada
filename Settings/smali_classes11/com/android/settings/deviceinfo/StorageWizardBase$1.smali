@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageWizardBase;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageWizardBase;
 
-    .line 252
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageWizardBase$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardBase;
 
     invoke-direct {p0}, Landroid/os/storage/StorageEventListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onDiskDestroyed(Landroid/os/storage/DiskInfo;)V
     .locals 2
-    .param p1, "disk"    # Landroid/os/storage/DiskInfo;
 
-    .line 256
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardBase$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardBase;
 
     iget-object v0, v0, Lcom/android/settings/deviceinfo/StorageWizardBase;->mDisk:Landroid/os/storage/DiskInfo;
@@ -52,12 +48,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 257
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardBase$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardBase;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->finish()V
 
-    .line 259
     :cond_0
     return-void
 .end method

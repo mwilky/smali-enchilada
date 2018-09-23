@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/details/WifiDetailPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/details/WifiDetailPreferenceController;
 
-    .line 149
     iput-object p1, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$1;->this$0:Lcom/android/settings/wifi/details/WifiDetailPreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 152
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -111,7 +106,6 @@
 
     goto :goto_2
 
-    .line 154
     :pswitch_0
     const-string v0, "multipleChanges"
 
@@ -121,18 +115,14 @@
 
     if-nez v0, :cond_4
 
-    .line 157
     const-string v0, "wifiConfiguration"
 
-    .line 158
     invoke-virtual {p2, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 159
-    .local v0, "wifiConfiguration":Landroid/net/wifi/WifiConfiguration;
     iget-object v1, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$1;->this$0:Lcom/android/settings/wifi/details/WifiDetailPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->access$000(Lcom/android/settings/wifi/details/WifiDetailPreferenceController;)Lcom/android/settingslib/wifi/AccessPoint;
@@ -145,20 +135,16 @@
 
     if-eqz v1, :cond_4
 
-    .line 160
     iget-object v1, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$1;->this$0:Lcom/android/settings/wifi/details/WifiDetailPreferenceController;
 
     invoke-static {v1, v0}, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->access$102(Lcom/android/settings/wifi/details/WifiDetailPreferenceController;Landroid/net/wifi/WifiConfiguration;)Landroid/net/wifi/WifiConfiguration;
 
-    .line 166
-    .end local v0    # "wifiConfiguration":Landroid/net/wifi/WifiConfiguration;
     :cond_4
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/wifi/details/WifiDetailPreferenceController$1;->this$0:Lcom/android/settings/wifi/details/WifiDetailPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/wifi/details/WifiDetailPreferenceController;->access$200(Lcom/android/settings/wifi/details/WifiDetailPreferenceController;)V
 
-    .line 169
     :goto_2
     return-void
 

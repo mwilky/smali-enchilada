@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/print/PrintServiceSettingsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/print/PrintServiceSettingsFragment;
 
-    .line 276
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 8
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,8 +46,6 @@
         }
     .end annotation
 
-    .line 279
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->access$100(Lcom/android/settings/print/PrintServiceSettingsFragment;)Lcom/android/settings/print/PrintServiceSettingsFragment$PrintersAdapter;
@@ -65,15 +58,12 @@
 
     check-cast v0, Landroid/print/PrinterInfo;
 
-    .line 281
-    .local v0, "printer":Landroid/print/PrinterInfo;
     invoke-virtual {v0}, Landroid/print/PrinterInfo;->getInfoIntent()Landroid/app/PendingIntent;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 283
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$3;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
@@ -101,23 +91,17 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 287
     goto :goto_0
 
-    .line 285
     :catch_0
     move-exception v1
 
-    .line 286
-    .local v1, "e":Landroid/content/IntentSender$SendIntentException;
     const-string v2, "PrintServiceSettingsFragment"
 
     const-string v3, "Could not execute info intent: %s"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 289
-    .end local v1    # "e":Landroid/content/IntentSender$SendIntentException;
     :cond_0
     :goto_0
     return-void

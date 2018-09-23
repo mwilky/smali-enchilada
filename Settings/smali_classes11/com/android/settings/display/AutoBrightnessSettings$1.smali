@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 63
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,8 +27,6 @@
 # virtual methods
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,18 +38,14 @@
         }
     .end annotation
 
-    .line 67
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 68
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f16001e
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 69
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

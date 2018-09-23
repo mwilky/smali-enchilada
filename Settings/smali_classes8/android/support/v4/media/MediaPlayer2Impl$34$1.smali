@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl$34;J)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaPlayer2Impl$34;
 
-    .line 1614
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$34;
 
     iput-wide p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$34$1;->val$seekPos:J
@@ -42,9 +40,7 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;)V
     .locals 3
-    .param p1, "cb"    # Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;
 
-    .line 1619
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$34;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
@@ -57,6 +53,5 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/media/BaseMediaPlayer$PlayerEventCallback;->onSeekCompleted(Landroid/support/v4/media/BaseMediaPlayer;J)V
 
-    .line 1620
     return-void
 .end method

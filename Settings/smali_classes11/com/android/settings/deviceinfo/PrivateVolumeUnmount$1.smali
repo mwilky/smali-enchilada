@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;
 
-    .line 64
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeUnmount$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 67
     new-instance v0, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeUnmount$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;
@@ -63,7 +59,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageSettings$UnmountTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 68
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeUnmount$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeUnmount;->getActivity()Landroid/app/Activity;
@@ -72,6 +67,5 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 69
     return-void
 .end method

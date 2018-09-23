@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/location/SettingsInjector$Setting;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/location/SettingsInjector$Setting;
 
-    .line 540
     iput-object p1, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,15 +33,11 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 6
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 543
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 544
-    .local v0, "bundle":Landroid/os/Bundle;
     const-string v1, "enabled"
 
     const/4 v2, 0x1
@@ -52,8 +46,6 @@
 
     move-result v1
 
-    .line 545
-    .local v1, "enabled":Z
     const-string v2, "SettingsInjector"
 
     const/4 v3, 0x3
@@ -64,7 +56,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 546
     const-string v2, "SettingsInjector"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -95,7 +86,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 548
     :cond_0
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
@@ -105,14 +95,12 @@
 
     invoke-virtual {v2, v3}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 549
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     iget-object v2, v2, Lcom/android/settings/location/SettingsInjector$Setting;->preference:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 550
     iget-object v2, p0, Lcom/android/settings/location/SettingsInjector$Setting$1;->this$1:Lcom/android/settings/location/SettingsInjector$Setting;
 
     iget-object v2, v2, Lcom/android/settings/location/SettingsInjector$Setting;->this$0:Lcom/android/settings/location/SettingsInjector;
@@ -125,7 +113,6 @@
 
     iget-object v3, v3, Lcom/android/settings/location/SettingsInjector$Setting;->this$0:Lcom/android/settings/location/SettingsInjector;
 
-    .line 551
     invoke-static {v3}, Lcom/android/settings/location/SettingsInjector;->access$400(Lcom/android/settings/location/SettingsInjector;)Landroid/os/Handler;
 
     move-result-object v3
@@ -138,9 +125,7 @@
 
     move-result-object v3
 
-    .line 550
     invoke-virtual {v2, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 552
     return-void
 .end method

@@ -156,7 +156,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 32
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "MAP_BUILDER_SET"
@@ -167,7 +166,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->MAP_BUILDER_SET:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 33
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "MAP_BUILDER_SET_ALL"
@@ -178,7 +176,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->MAP_BUILDER_SET_ALL:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 34
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "MAP_BUILDER_GET"
@@ -189,7 +186,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->MAP_BUILDER_GET:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 35
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "MAP_BUILDER_SET_CAMPAIGN_PARAMS"
@@ -200,7 +196,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->MAP_BUILDER_SET_CAMPAIGN_PARAMS:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 36
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_04"
@@ -211,7 +206,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_04:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 37
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_05"
@@ -222,7 +216,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_05:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 38
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_06"
@@ -233,7 +226,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_06:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 39
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_07"
@@ -244,7 +236,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_07:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 40
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_08"
@@ -255,7 +246,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_08:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 41
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET"
@@ -266,7 +256,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 42
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET"
@@ -277,7 +266,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 43
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SEND"
@@ -288,7 +276,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SEND:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 44
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_12"
@@ -299,7 +286,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_12:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 45
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_13"
@@ -310,7 +296,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_13:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 46
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_14"
@@ -321,7 +306,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_14:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 47
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_15"
@@ -332,7 +316,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_15:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 48
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_16"
@@ -343,7 +326,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_16:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 49
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_17"
@@ -354,7 +336,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_17:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 50
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_18"
@@ -365,7 +346,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_18:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 51
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_19"
@@ -376,7 +356,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_19:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 52
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_20"
@@ -387,7 +366,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_20:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 53
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_21"
@@ -398,7 +376,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_21:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 54
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_22"
@@ -409,7 +386,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_22:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 55
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_23"
@@ -420,7 +396,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_23:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 56
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_24"
@@ -431,7 +406,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_24:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 57
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_25"
@@ -442,7 +416,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_25:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 58
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_26"
@@ -453,7 +426,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_26:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 59
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_27"
@@ -464,7 +436,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_27:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 60
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_28"
@@ -475,7 +446,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_28:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 61
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_29"
@@ -486,7 +456,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_29:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 62
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_EXCEPTION_PARSER"
@@ -497,7 +466,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_EXCEPTION_PARSER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 63
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_EXCEPTION_PARSER"
@@ -508,7 +476,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_EXCEPTION_PARSER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 64
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_TRANSACTION"
@@ -519,7 +486,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_TRANSACTION:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 65
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_EXCEPTION"
@@ -530,7 +496,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_EXCEPTION:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 66
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_RAW_EXCEPTION"
@@ -541,7 +506,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_RAW_EXCEPTION:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 67
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_TIMING"
@@ -552,7 +516,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_TIMING:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 68
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_SOCIAL"
@@ -563,7 +526,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_SOCIAL:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 69
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_37"
@@ -574,7 +536,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_37:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 70
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_38"
@@ -585,7 +546,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_38:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 71
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_TRACKER"
@@ -596,7 +556,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_TRACKER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 72
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_DEFAULT_TRACKER"
@@ -607,7 +566,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_DEFAULT_TRACKER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 73
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_DEFAULT_TRACKER"
@@ -618,7 +576,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_DEFAULT_TRACKER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 74
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_APP_OPT_OUT"
@@ -629,7 +586,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_APP_OPT_OUT:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 75
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_APP_OPT_OUT"
@@ -640,7 +596,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_APP_OPT_OUT:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 76
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "DISPATCH"
@@ -651,7 +606,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->DISPATCH:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 77
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_DISPATCH_PERIOD"
@@ -662,7 +616,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_DISPATCH_PERIOD:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 78
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_46"
@@ -673,7 +626,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_46:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 79
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "REPORT_UNCAUGHT_EXCEPTIONS"
@@ -684,7 +636,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->REPORT_UNCAUGHT_EXCEPTIONS:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 80
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_AUTO_ACTIVITY_TRACKING"
@@ -695,7 +646,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_AUTO_ACTIVITY_TRACKING:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 81
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_SESSION_TIMEOUT"
@@ -706,7 +656,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_SESSION_TIMEOUT:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 82
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_EVENT"
@@ -717,7 +666,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_EVENT:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 83
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_ITEM"
@@ -728,7 +676,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_ITEM:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 84
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_52"
@@ -739,7 +686,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_52:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 85
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "BLANK_53"
@@ -750,7 +696,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->BLANK_53:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 86
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_DRY_RUN"
@@ -761,7 +706,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_DRY_RUN:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 87
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_DRY_RUN"
@@ -772,7 +716,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_DRY_RUN:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 88
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_LOGGER"
@@ -783,7 +726,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_LOGGER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 89
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "SET_FORCE_LOCAL_DISPATCH"
@@ -794,7 +736,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->SET_FORCE_LOCAL_DISPATCH:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 90
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "GET_TRACKER_NAME"
@@ -805,7 +746,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->GET_TRACKER_NAME:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 91
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CLOSE_TRACKER"
@@ -816,7 +756,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CLOSE_TRACKER:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 92
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "EASY_TRACKER_ACTIVITY_START"
@@ -827,7 +766,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->EASY_TRACKER_ACTIVITY_START:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 93
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "EASY_TRACKER_ACTIVITY_STOP"
@@ -838,7 +776,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->EASY_TRACKER_ACTIVITY_STOP:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 94
     new-instance v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     const-string v1, "CONSTRUCT_APP_VIEW"
@@ -849,7 +786,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->CONSTRUCT_APP_VIEW:Lcom/google/analytics/tracking/android/GAUsage$Field;
 
-    .line 31
     const/16 v0, 0x3f
 
     new-array v0, v0, [Lcom/google/analytics/tracking/android/GAUsage$Field;
@@ -1219,7 +1155,6 @@
         }
     .end annotation
 
-    .line 31
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -1227,9 +1162,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/analytics/tracking/android/GAUsage$Field;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 31
     const-class v0, Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1244,7 +1177,6 @@
 .method public static values()[Lcom/google/analytics/tracking/android/GAUsage$Field;
     .locals 1
 
-    .line 31
     sget-object v0, Lcom/google/analytics/tracking/android/GAUsage$Field;->$VALUES:[Lcom/google/analytics/tracking/android/GAUsage$Field;
 
     invoke-virtual {v0}, [Lcom/google/analytics/tracking/android/GAUsage$Field;->clone()Ljava/lang/Object;

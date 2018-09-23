@@ -30,11 +30,8 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 27
-    .local p0, "this":Landroid/support/v7/util/MessageThreadUtil;, "Landroid/support/v7/util/MessageThreadUtil<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 231
     return-void
 .end method
 
@@ -52,9 +49,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Landroid/support/v7/util/MessageThreadUtil;, "Landroid/support/v7/util/MessageThreadUtil<TT;>;"
-    .local p1, "callback":Landroid/support/v7/util/ThreadUtil$BackgroundCallback;, "Landroid/support/v7/util/ThreadUtil$BackgroundCallback<TT;>;"
     new-instance v0, Landroid/support/v7/util/MessageThreadUtil$2;
 
     invoke-direct {v0, p0, p1}, Landroid/support/v7/util/MessageThreadUtil$2;-><init>(Landroid/support/v7/util/MessageThreadUtil;Landroid/support/v7/util/ThreadUtil$BackgroundCallback;)V
@@ -74,9 +68,6 @@
         }
     .end annotation
 
-    .line 31
-    .local p0, "this":Landroid/support/v7/util/MessageThreadUtil;, "Landroid/support/v7/util/MessageThreadUtil<TT;>;"
-    .local p1, "callback":Landroid/support/v7/util/ThreadUtil$MainThreadCallback;, "Landroid/support/v7/util/ThreadUtil$MainThreadCallback<TT;>;"
     new-instance v0, Landroid/support/v7/util/MessageThreadUtil$1;
 
     invoke-direct {v0, p0, p1}, Landroid/support/v7/util/MessageThreadUtil$1;-><init>(Landroid/support/v7/util/MessageThreadUtil;Landroid/support/v7/util/ThreadUtil$MainThreadCallback;)V

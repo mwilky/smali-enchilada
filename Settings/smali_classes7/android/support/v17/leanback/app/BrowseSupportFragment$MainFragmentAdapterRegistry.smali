@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 656
     new-instance v0, Landroid/support/v17/leanback/app/BrowseSupportFragment$ListRowFragmentFactory;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment$ListRowFragmentFactory;-><init>()V
@@ -48,24 +47,20 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 658
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 655
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->mItemToFragmentFactoryMapping:Ljava/util/Map;
 
-    .line 659
     const-class v0, Landroid/support/v17/leanback/widget/ListRow;
 
     sget-object v1, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->sDefaultFragmentFactory:Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->registerFragment(Ljava/lang/Class;Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;)V
 
-    .line 660
     return-void
 .end method
 
@@ -73,9 +68,7 @@
 # virtual methods
 .method public createFragment(Ljava/lang/Object;)Landroid/support/v4/app/Fragment;
     .locals 2
-    .param p1, "item"    # Ljava/lang/Object;
 
-    .line 667
     if-nez p1, :cond_0
 
     sget-object v0, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->sDefaultFragmentFactory:Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
@@ -85,7 +78,6 @@
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->mItemToFragmentFactoryMapping:Ljava/util/Map;
 
-    .line 668
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -96,8 +88,6 @@
 
     check-cast v0, Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
 
-    .line 669
-    .local v0, "fragmentFactory":Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
     :goto_0
     if-nez v0, :cond_1
 
@@ -105,10 +95,8 @@
 
     if-nez v1, :cond_1
 
-    .line 670
     sget-object v0, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->sDefaultFragmentFactory:Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
 
-    .line 673
     :cond_1
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;->createFragment(Ljava/lang/Object;)Landroid/support/v4/app/Fragment;
 
@@ -119,14 +107,10 @@
 
 .method public registerFragment(Ljava/lang/Class;Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;)V
     .locals 1
-    .param p1, "rowClass"    # Ljava/lang/Class;
-    .param p2, "factory"    # Landroid/support/v17/leanback/app/BrowseSupportFragment$FragmentFactory;
 
-    .line 663
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapterRegistry;->mItemToFragmentFactoryMapping:Ljava/util/Map;
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 664
     return-void
 .end method

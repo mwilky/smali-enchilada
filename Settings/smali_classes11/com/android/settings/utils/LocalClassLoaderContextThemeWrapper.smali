@@ -10,17 +10,11 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Landroid/content/Context;I)V
     .locals 0
-    .param p1, "clazz"    # Ljava/lang/Class;
-    .param p2, "base"    # Landroid/content/Context;
-    .param p3, "themeResId"    # I
 
-    .line 33
     invoke-direct {p0, p2, p3}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    .line 34
     iput-object p1, p0, Lcom/android/settings/utils/LocalClassLoaderContextThemeWrapper;->mLocalClass:Ljava/lang/Class;
 
-    .line 35
     return-void
 .end method
 
@@ -29,7 +23,6 @@
 .method public getClassLoader()Ljava/lang/ClassLoader;
     .locals 1
 
-    .line 39
     iget-object v0, p0, Lcom/android/settings/utils/LocalClassLoaderContextThemeWrapper;->mLocalClass:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;

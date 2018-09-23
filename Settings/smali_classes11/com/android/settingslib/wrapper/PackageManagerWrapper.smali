@@ -10,15 +10,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/PackageManager;)V
     .locals 0
-    .param p1, "pm"    # Landroid/content/pm/PackageManager;
 
-    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
     iput-object p1, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 44
     return-void
 .end method
 
@@ -26,25 +22,17 @@
 # virtual methods
 .method public deletePackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;II)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "observer"    # Landroid/content/pm/IPackageDeleteObserver;
-    .param p3, "flags"    # I
-    .param p4, "userId"    # I
 
-    .line 199
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/pm/PackageManager;->deletePackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;II)V
 
-    .line 200
     return-void
 .end method
 
 .method public getApplicationEnabledSetting(Ljava/lang/String;)I
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 221
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getApplicationEnabledSetting(Ljava/lang/String;)I
@@ -56,15 +44,12 @@
 
 .method public getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
         }
     .end annotation
 
-    .line 236
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
@@ -76,16 +61,12 @@
 
 .method public getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "i"    # I
-    .param p3, "userId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
         }
     .end annotation
 
-    .line 101
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->getApplicationInfoAsUser(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo;
@@ -97,9 +78,7 @@
 
 .method public getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "info"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 243
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
@@ -111,9 +90,7 @@
 
 .method public getDefaultBrowserPackageNameAsUser(I)Ljava/lang/String;
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 115
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getDefaultBrowserPackageNameAsUser(I)Ljava/lang/String;
@@ -135,8 +112,6 @@
         }
     .end annotation
 
-    .line 122
-    .local p1, "homeActivities":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getHomeActivities(Ljava/util/List;)Landroid/content/ComponentName;
@@ -148,10 +123,7 @@
 
 .method public getInstallReason(Ljava/lang/String;Landroid/os/UserHandle;)I
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "user"    # Landroid/os/UserHandle;
 
-    .line 93
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getInstallReason(Ljava/lang/String;Landroid/os/UserHandle;)I
@@ -163,8 +135,6 @@
 
 .method public getInstalledApplicationsAsUser(II)Ljava/util/List;
     .locals 1
-    .param p1, "flags"    # I
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -174,7 +144,6 @@
         }
     .end annotation
 
-    .line 59
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getInstalledApplicationsAsUser(II)Ljava/util/List;
@@ -186,8 +155,6 @@
 
 .method public getInstalledPackagesAsUser(II)Ljava/util/List;
     .locals 1
-    .param p1, "flags"    # I
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -197,7 +164,6 @@
         }
     .end annotation
 
-    .line 66
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getInstalledPackagesAsUser(II)Ljava/util/List;
@@ -209,15 +175,12 @@
 
 .method public getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "i"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
         }
     .end annotation
 
-    .line 156
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
@@ -230,7 +193,6 @@
 .method public getPackageManager()Landroid/content/pm/PackageManager;
     .locals 1
 
-    .line 50
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     return-object v0
@@ -238,15 +200,12 @@
 
 .method public getPackageUidAsUser(Ljava/lang/String;I)I
     .locals 1
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/pm/PackageManager$NameNotFoundException;
         }
     .end annotation
 
-    .line 207
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->getPackageUidAsUser(Ljava/lang/String;I)I
@@ -259,7 +218,6 @@
 .method public getPrimaryStorageCurrentVolume()Landroid/os/storage/VolumeInfo;
     .locals 1
 
-    .line 191
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0}, Landroid/content/pm/PackageManager;->getPrimaryStorageCurrentVolume()Landroid/os/storage/VolumeInfo;
@@ -271,9 +229,7 @@
 
 .method public getUserBadgedIcon(Landroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1, "info"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 166
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     iget-object v1, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
@@ -286,14 +242,12 @@
 
     iget v3, p1, Landroid/content/pm/ApplicationInfo;->uid:I
 
-    .line 167
     invoke-static {v3}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v3
 
     invoke-direct {v2, v3}, Landroid/os/UserHandle;-><init>(I)V
 
-    .line 166
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getUserBadgedIcon(Landroid/graphics/drawable/Drawable;Landroid/os/UserHandle;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -303,9 +257,7 @@
 
 .method public hasSystemFeature(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 75
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
@@ -317,9 +269,7 @@
 
 .method public loadLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "app"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 177
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {p1, v0}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -331,8 +281,6 @@
 
 .method public queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -344,7 +292,6 @@
         }
     .end annotation
 
-    .line 250
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
@@ -356,8 +303,6 @@
 
 .method public queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -369,7 +314,6 @@
         }
     .end annotation
 
-    .line 184
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
@@ -381,9 +325,6 @@
 
 .method public queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "flags"    # I
-    .param p3, "userId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -395,7 +336,6 @@
         }
     .end annotation
 
-    .line 84
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->queryIntentActivitiesAsUser(Landroid/content/Intent;II)Ljava/util/List;
@@ -407,8 +347,6 @@
 
 .method public queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "i"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -420,7 +358,6 @@
         }
     .end annotation
 
-    .line 136
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->queryIntentServices(Landroid/content/Intent;I)Ljava/util/List;
@@ -432,9 +369,6 @@
 
 .method public queryIntentServicesAsUser(Landroid/content/Intent;II)Ljava/util/List;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "i"    # I
-    .param p3, "user"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -446,7 +380,6 @@
         }
     .end annotation
 
-    .line 129
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->queryIntentServicesAsUser(Landroid/content/Intent;II)Ljava/util/List;
@@ -458,56 +391,37 @@
 
 .method public replacePreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
     .locals 1
-    .param p1, "homeFilter"    # Landroid/content/IntentFilter;
-    .param p2, "matchCategoryEmpty"    # I
-    .param p3, "componentNames"    # [Landroid/content/ComponentName;
-    .param p4, "component"    # Landroid/content/ComponentName;
 
-    .line 144
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/pm/PackageManager;->replacePreferredActivity(Landroid/content/IntentFilter;I[Landroid/content/ComponentName;Landroid/content/ComponentName;)V
 
-    .line 145
     return-void
 .end method
 
 .method public setApplicationEnabledSetting(Ljava/lang/String;II)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "newState"    # I
-    .param p3, "flags"    # I
 
-    .line 214
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->setApplicationEnabledSetting(Ljava/lang/String;II)V
 
-    .line 215
     return-void
 .end method
 
 .method public setComponentEnabledSetting(Landroid/content/ComponentName;II)V
     .locals 1
-    .param p1, "componentName"    # Landroid/content/ComponentName;
-    .param p2, "newState"    # I
-    .param p3, "flags"    # I
 
-    .line 228
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
 
-    .line 229
     return-void
 .end method
 
 .method public setDefaultBrowserPackageNameAsUser(Ljava/lang/String;I)Z
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 108
     iget-object v0, p0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->mPm:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/PackageManager;->setDefaultBrowserPackageNameAsUser(Ljava/lang/String;I)Z

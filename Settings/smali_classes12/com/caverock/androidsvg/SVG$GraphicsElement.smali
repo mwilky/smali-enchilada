@@ -25,7 +25,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1538
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;-><init>()V
 
     return-void
@@ -35,9 +34,7 @@
 # virtual methods
 .method public setTransform(Landroid/graphics/Matrix;)V
     .locals 0
-    .param p1, "transform"    # Landroid/graphics/Matrix;
 
-    .line 1543
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$GraphicsElement;->transform:Landroid/graphics/Matrix;
 
     return-void

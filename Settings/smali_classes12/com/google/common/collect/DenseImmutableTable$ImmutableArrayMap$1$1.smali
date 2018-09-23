@@ -33,20 +33,15 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;)V
     .locals 1
-    .param p1, "this$1"    # Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;
 
-    .line 132
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;, "Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->this$1:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 133
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->index:I
 
-    .line 134
     iget-object v0, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->this$1:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;
 
     iget-object v0, v0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;->this$0:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap;
@@ -69,8 +64,6 @@
 .method protected bridge synthetic computeNext()Ljava/lang/Object;
     .locals 1
 
-    .line 132
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;, "Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->computeNext()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -88,8 +81,6 @@
         }
     .end annotation
 
-    .line 138
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;, "Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;"
     iget v0, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->index:I
 
     :goto_0
@@ -103,7 +94,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 139
     iget-object v0, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->this$1:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;
 
     iget-object v0, v0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;->this$0:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap;
@@ -114,11 +104,8 @@
 
     move-result-object v0
 
-    .line 140
-    .local v0, "value":Ljava/lang/Object;, "TV;"
     if-eqz v0, :cond_0
 
-    .line 141
     iget-object v1, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->this$1:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;
 
     iget-object v1, v1, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1;->this$0:Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap;
@@ -135,14 +122,11 @@
 
     return-object v1
 
-    .line 138
-    .end local v0    # "value":Ljava/lang/Object;, "TV;"
     :cond_0
     iget v0, p0, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->index:I
 
     goto :goto_0
 
-    .line 144
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap$1$1;->endOfData()Ljava/lang/Object;
 

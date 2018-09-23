@@ -25,12 +25,10 @@
 .method constructor <init>(Lcom/oneplus/lib/widget/ListPopupWindow;)V
     .locals 0
 
-    .line 1344
     iput-object p1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ResizePopupRunnable;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1345
     return-void
 .end method
 
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 1349
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ResizePopupRunnable;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/ListPopupWindow;->mDropDownList:Lcom/oneplus/lib/widget/DropDownListView;
@@ -60,7 +57,6 @@
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/ListPopupWindow;->mDropDownList:Lcom/oneplus/lib/widget/DropDownListView;
 
-    .line 1350
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/DropDownListView;->getCount()I
 
     move-result v0
@@ -79,7 +75,6 @@
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/ListPopupWindow;->mDropDownList:Lcom/oneplus/lib/widget/DropDownListView;
 
-    .line 1351
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/DropDownListView;->getChildCount()I
 
     move-result v0
@@ -90,7 +85,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 1352
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ResizePopupRunnable;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
@@ -99,12 +93,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 1353
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$ResizePopupRunnable;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/ListPopupWindow;->show()V
 
-    .line 1355
     :cond_0
     return-void
 .end method

@@ -15,15 +15,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 29
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/RowPresenter;-><init>()V
 
-    .line 30
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/InvisibleRowPresenter;->setHeaderPresenter(Landroid/support/v17/leanback/widget/RowHeaderPresenter;)V
 
-    .line 31
     return-void
 .end method
 
@@ -31,9 +28,7 @@
 # virtual methods
 .method protected createRowViewHolder(Landroid/view/ViewGroup;)Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;
     .locals 3
-    .param p1, "parent"    # Landroid/view/ViewGroup;
 
-    .line 35
     new-instance v0, Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -42,8 +37,6 @@
 
     invoke-direct {v0, v1}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;)V
 
-    .line 36
-    .local v0, "root":Landroid/widget/RelativeLayout;
     new-instance v1, Landroid/widget/RelativeLayout$LayoutParams;
 
     const/4 v2, 0x0
@@ -52,7 +45,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 37
     new-instance v1, Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;
 
     invoke-direct {v1, v0}, Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;-><init>(Landroid/view/View;)V

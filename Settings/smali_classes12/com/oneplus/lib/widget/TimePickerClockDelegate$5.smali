@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
-    .line 957
     iput-object p1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$5;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onValueChanged(II)V
     .locals 3
-    .param p1, "pickerType"    # I
-    .param p2, "newValue"    # I
 
-    .line 960
     const/4 v0, 0x2
 
     packed-switch p1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 968
     :pswitch_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$5;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
@@ -56,16 +50,13 @@
 
     goto :goto_0
 
-    .line 965
     :pswitch_1
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$5;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v1, p2, v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$1300(Lcom/oneplus/lib/widget/TimePickerClockDelegate;II)V
 
-    .line 966
     goto :goto_0
 
-    .line 962
     :pswitch_2
     iget-object v1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$5;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
@@ -73,10 +64,8 @@
 
     invoke-static {v1, p2, v0, v2}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$900(Lcom/oneplus/lib/widget/TimePickerClockDelegate;IIZ)V
 
-    .line 963
     nop
 
-    .line 971
     :goto_0
     return-void
 

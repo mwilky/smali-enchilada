@@ -33,7 +33,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 980
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,8 +54,6 @@
         }
     .end annotation
 
-    .line 982
-    .local p1, "input":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<Ljava/lang/Object;>;"
     return-object p1
 .end method
 
@@ -68,7 +65,6 @@
         }
     .end annotation
 
-    .line 980
     check-cast p1, Lcom/google/common/util/concurrent/ListenableFuture;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/Futures$4;->apply(Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;

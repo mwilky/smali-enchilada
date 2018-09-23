@@ -26,29 +26,19 @@
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "loader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 222
     iput-object p1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    .line 223
     iput-object p2, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 224
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;Lcom/oneplus/settings/OPButtonsAndGesturesSettings$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/content/Context;
-    .param p2, "x1"    # Lcom/android/settings/dashboard/SummaryLoader;
-    .param p3, "x2"    # Lcom/oneplus/settings/OPButtonsAndGesturesSettings$1;
 
-    .line 217
     invoke-direct {p0, p1, p2}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;-><init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
 
     return-void
@@ -57,7 +47,6 @@
 .method private updateSummary()V
     .locals 3
 
-    .line 234
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     iget-object v1, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->mContext:Landroid/content/Context;
@@ -70,7 +59,6 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 235
     return-void
 .end method
 
@@ -78,15 +66,11 @@
 # virtual methods
 .method public setListening(Z)V
     .locals 0
-    .param p1, "listening"    # Z
 
-    .line 228
     if-eqz p1, :cond_0
 
-    .line 229
     invoke-direct {p0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings$SummaryProvider;->updateSummary()V
 
-    .line 231
     :cond_0
     return-void
 .end method

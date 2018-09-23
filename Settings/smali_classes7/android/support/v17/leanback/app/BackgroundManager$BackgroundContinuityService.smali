@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 456
     new-instance v0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;-><init>()V
@@ -59,20 +58,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 466
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 467
     invoke-direct {p0}, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->reset()V
 
-    .line 468
     return-void
 .end method
 
 .method public static getInstance()Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;
     .locals 3
 
-    .line 476
     sget-object v0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->sService:Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;
 
     iget v1, v0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mCount:I
@@ -83,8 +78,6 @@
 
     move v0, v1
 
-    .line 478
-    .local v0, "count":I
     sget-object v1, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->sService:Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;
 
     return-object v1
@@ -93,17 +86,14 @@
 .method private reset()V
     .locals 1
 
-    .line 471
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mColor:I
 
-    .line 472
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 473
     return-void
 .end method
 
@@ -112,7 +102,6 @@
 .method public getColor()I
     .locals 1
 
-    .line 489
     iget v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mColor:I
 
     return v0
@@ -121,7 +110,6 @@
 .method public getDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 492
     iget-object v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -129,14 +117,9 @@
 
 .method public getThemeDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "themeDrawableId"    # I
 
-    .line 502
     const/4 v0, 0x0
 
-    .line 503
-    .local v0, "drawable":Landroid/graphics/drawable/Drawable;
     iget-object v1, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mLastThemeDrawableState:Ljava/lang/ref/WeakReference;
 
     if-eqz v1, :cond_0
@@ -145,7 +128,6 @@
 
     if-ne v1, p2, :cond_0
 
-    .line 504
     iget-object v1, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mLastThemeDrawableState:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -154,29 +136,21 @@
 
     check-cast v1, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 506
-    .local v1, "drawableState":Landroid/graphics/drawable/Drawable$ConstantState;
     if-eqz v1, :cond_0
 
-    .line 507
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 510
-    .end local v1    # "drawableState":Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_0
     if-nez v0, :cond_1
 
-    .line 511
     invoke-static {p1, p2}, Landroid/support/v4/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 513
     new-instance v1, Ljava/lang/ref/WeakReference;
 
-    .line 514
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v2
@@ -185,50 +159,39 @@
 
     iput-object v1, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mLastThemeDrawableState:Ljava/lang/ref/WeakReference;
 
-    .line 515
     iput p2, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mLastThemeDrawableId:I
 
-    .line 518
     :cond_1
     return-object v0
 .end method
 
 .method public setColor(I)V
     .locals 1
-    .param p1, "color"    # I
 
-    .line 495
     iput p1, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mColor:I
 
-    .line 496
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 497
     return-void
 .end method
 
 .method public setDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 499
     iput-object p1, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 500
     return-void
 .end method
 
 .method public unref()V
     .locals 3
 
-    .line 482
     iget v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mCount:I
 
     if-lez v0, :cond_1
 
-    .line 483
     iget v0, p0, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->mCount:I
 
     add-int/lit8 v0, v0, -0x1
@@ -237,14 +200,11 @@
 
     if-nez v0, :cond_0
 
-    .line 485
     invoke-direct {p0}, Landroid/support/v17/leanback/app/BackgroundManager$BackgroundContinuityService;->reset()V
 
-    .line 487
     :cond_0
     return-void
 
-    .line 482
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 

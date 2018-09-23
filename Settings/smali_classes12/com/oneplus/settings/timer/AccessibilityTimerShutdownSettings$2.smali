@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
-    .line 148
     iput-object p1, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onTimeSet(Landroid/widget/TimePicker;II)V
     .locals 8
-    .param p1, "view"    # Landroid/widget/TimePicker;
-    .param p2, "hourOfDay"    # I
-    .param p3, "minute"    # I
 
-    .line 151
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
@@ -55,7 +49,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 152
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
@@ -66,7 +59,6 @@
 
     invoke-virtual {v0, v1, p2}, Ljava/util/Calendar;->set(II)V
 
-    .line 153
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
@@ -77,7 +69,6 @@
 
     invoke-virtual {v0, v1, p3}, Ljava/util/Calendar;->set(II)V
 
-    .line 154
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
@@ -90,7 +81,6 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 155
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
@@ -101,7 +91,6 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 156
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     new-instance v2, Landroid/content/Intent;
@@ -112,7 +101,6 @@
 
     invoke-static {v0, v2}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$102(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;Landroid/content/Intent;)Landroid/content/Intent;
 
-    .line 158
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$100(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/content/Intent;
@@ -123,7 +111,6 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 160
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     iget-object v2, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
@@ -134,19 +121,16 @@
 
     iget-object v3, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
-    .line 161
     invoke-static {v3}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$100(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 160
     invoke-static {v2, v1, v3, v1}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v2
 
     invoke-static {v0, v2}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$202(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;Landroid/app/PendingIntent;)Landroid/app/PendingIntent;
 
-    .line 162
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     iget-object v2, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
@@ -161,7 +145,6 @@
 
     invoke-static {v0, v2}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$302(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;Landroid/app/AlarmManager;)Landroid/app/AlarmManager;
 
-    .line 163
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$300(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/app/AlarmManager;
@@ -180,15 +163,12 @@
 
     iget-object v4, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
-    .line 164
     invoke-static {v4}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$200(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/app/PendingIntent;
 
     move-result-object v4
 
-    .line 163
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
 
-    .line 165
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$300(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/app/AlarmManager;
@@ -197,7 +177,6 @@
 
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
-    .line 166
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$000(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Ljava/util/Calendar;
 
     move-result-object v0
@@ -212,14 +191,12 @@
 
     move-result-object v7
 
-    .line 165
     const/4 v2, 0x0
 
     const-wide/16 v5, 0x2710
 
     invoke-virtual/range {v1 .. v7}, Landroid/app/AlarmManager;->setRepeating(IJJLandroid/app/PendingIntent;)V
 
-    .line 167
     iget-object v0, p0, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings$2;->this$0:Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;->access$500(Lcom/oneplus/settings/timer/AccessibilityTimerShutdownSettings;)Landroid/support/v7/preference/Preference;
@@ -248,6 +225,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 172
     return-void
 .end method

@@ -2907,8 +2907,6 @@ Quedan%dintentos."</string>
     <string name="oneplus_quick_clipboard_summary">Mejora la capacidad de copia y después recomienda la siguiente acción en función de la copia</string>
     <string name="oneplus_quick_gestures">Gestos</string>
     <string name="oneplus_quick_gestures_title">Gestos rápidos</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Activación rápida de la aplicación de asistente</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Mantén presionado el botón de encendido durante 0,5 segundos para activar la aplicación de asistente y durante 3 segundos para apagar</string>
     <string name="oneplus_quick_turn_on_camera">Activación rápida de la cámara</string>
     <string name="oneplus_quickpay">Pago rápido</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">¿Seguro que desea cambiar la acción de mantener presionado el botón de inicio de \"%1$s\" a \"Pago rápido\"?</string>

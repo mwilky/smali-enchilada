@@ -19,7 +19,6 @@
 .method static constructor <clinit>()V
     .locals 13
 
-    .line 29
     const-string v0, "docid"
 
     const-string v1, "data_title"
@@ -58,7 +57,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

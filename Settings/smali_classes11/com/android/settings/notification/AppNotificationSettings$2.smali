@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/AppNotificationSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/AppNotificationSettings;
 
-    .line 223
     iput-object p1, p0, Lcom/android/settings/notification/AppNotificationSettings$2;->this$0:Lcom/android/settings/notification/AppNotificationSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Landroid/app/NotificationChannelGroup;Landroid/app/NotificationChannelGroup;)I
     .locals 2
-    .param p1, "left"    # Landroid/app/NotificationChannelGroup;
-    .param p2, "right"    # Landroid/app/NotificationChannelGroup;
 
-    .line 228
     invoke-virtual {p1}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
 
     move-result-object v0
@@ -63,12 +58,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 229
     const/4 v0, 0x1
 
     return v0
 
-    .line 230
     :cond_0
     invoke-virtual {p2}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
 
@@ -82,12 +75,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 231
     const/4 v0, -0x1
 
     return v0
 
-    .line 233
     :cond_1
     invoke-virtual {p1}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
 
@@ -107,7 +98,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 223
     check-cast p1, Landroid/app/NotificationChannelGroup;
 
     check-cast p2, Landroid/app/NotificationChannelGroup;

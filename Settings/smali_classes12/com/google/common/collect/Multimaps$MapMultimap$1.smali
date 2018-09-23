@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multimaps$MapMultimap;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Multimaps$MapMultimap;
 
-    .line 957
-    .local p0, "this":Lcom/google/common/collect/Multimaps$MapMultimap$1;, "Lcom/google/common/collect/Multimaps$MapMultimap$1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
     iput-object p2, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->val$key:Ljava/lang/Object;
@@ -55,8 +52,6 @@
         }
     .end annotation
 
-    .line 959
-    .local p0, "this":Lcom/google/common/collect/Multimaps$MapMultimap$1;, "Lcom/google/common/collect/Multimaps$MapMultimap$1;"
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap$1$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Multimaps$MapMultimap$1$1;-><init>(Lcom/google/common/collect/Multimaps$MapMultimap$1;)V
@@ -67,8 +62,6 @@
 .method public size()I
     .locals 2
 
-    .line 986
-    .local p0, "this":Lcom/google/common/collect/Multimaps$MapMultimap$1;, "Lcom/google/common/collect/Multimaps$MapMultimap$1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
     iget-object v0, v0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;

@@ -33,8 +33,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 56
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingSortedMap;-><init>()V
 
     return-void
@@ -52,9 +50,6 @@
         }
     .end annotation
 
-    .line 119
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -74,9 +69,6 @@
         }
     .end annotation
 
-    .line 133
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -91,8 +83,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -103,8 +93,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Map;
     .locals 1
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -125,8 +113,6 @@
 .method protected bridge synthetic delegate()Ljava/util/SortedMap;
     .locals 1
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -144,8 +130,6 @@
         }
     .end annotation
 
-    .line 340
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -167,8 +151,6 @@
         }
     .end annotation
 
-    .line 258
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -190,8 +172,6 @@
         }
     .end annotation
 
-    .line 175
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -213,9 +193,6 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -235,9 +212,6 @@
         }
     .end annotation
 
-    .line 105
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -251,7 +225,6 @@
 
 .method public headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -260,9 +233,6 @@
         }
     .end annotation
 
-    .line 373
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -284,9 +254,6 @@
         }
     .end annotation
 
-    .line 147
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -306,9 +273,6 @@
         }
     .end annotation
 
-    .line 161
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -330,8 +294,6 @@
         }
     .end annotation
 
-    .line 203
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -353,9 +315,6 @@
         }
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -375,9 +334,6 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -399,8 +355,6 @@
         }
     .end annotation
 
-    .line 319
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -422,8 +376,6 @@
         }
     .end annotation
 
-    .line 230
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -445,8 +397,6 @@
         }
     .end annotation
 
-    .line 244
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -468,9 +418,6 @@
         }
     .end annotation
 
-    .line 128
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -492,9 +439,6 @@
         }
     .end annotation
 
-    .line 142
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingNavigableMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -519,8 +463,6 @@
         }
     .end annotation
 
-    .line 352
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->descendingMap()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -542,8 +484,6 @@
         }
     .end annotation
 
-    .line 184
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -567,24 +507,18 @@
         }
     .end annotation
 
-    .line 193
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->firstEntry()Ljava/util/Map$Entry;
 
     move-result-object v0
 
-    .line 194
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     if-eqz v0, :cond_0
 
-    .line 197
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 195
     :cond_0
     new-instance v1, Ljava/util/NoSuchElementException;
 
@@ -603,9 +537,6 @@
         }
     .end annotation
 
-    .line 100
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -627,9 +558,6 @@
         }
     .end annotation
 
-    .line 114
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingNavigableMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -651,9 +579,6 @@
         }
     .end annotation
 
-    .line 387
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -673,9 +598,6 @@
         }
     .end annotation
 
-    .line 156
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -697,9 +619,6 @@
         }
     .end annotation
 
-    .line 170
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingNavigableMap;->higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -721,8 +640,6 @@
         }
     .end annotation
 
-    .line 212
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->descendingMap()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -750,24 +667,18 @@
         }
     .end annotation
 
-    .line 220
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->lastEntry()Ljava/util/Map$Entry;
 
     move-result-object v0
 
-    .line 221
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     if-eqz v0, :cond_0
 
-    .line 224
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 222
     :cond_0
     new-instance v1, Ljava/util/NoSuchElementException;
 
@@ -786,9 +697,6 @@
         }
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -810,9 +718,6 @@
         }
     .end annotation
 
-    .line 86
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingNavigableMap;->lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -834,8 +739,6 @@
         }
     .end annotation
 
-    .line 239
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -863,8 +766,6 @@
         }
     .end annotation
 
-    .line 253
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->descendingMap()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -896,10 +797,6 @@
         }
     .end annotation
 
-    .line 363
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p2, "toKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -921,9 +818,6 @@
         }
     .end annotation
 
-    .line 396
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingNavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
@@ -935,8 +829,6 @@
 
 .method public subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;ZTK;Z)",
@@ -945,10 +837,6 @@
         }
     .end annotation
 
-    .line 368
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p3, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -962,7 +850,6 @@
 
 .method public tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -971,9 +858,6 @@
         }
     .end annotation
 
-    .line 378
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingNavigableMap;->delegate()Ljava/util/NavigableMap;
 
     move-result-object v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
-    .line 85
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 88
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->access$000(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)V
 
-    .line 89
     const/4 v0, 0x1
 
     return v0

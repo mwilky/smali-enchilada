@@ -37,7 +37,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 273
     new-instance v0, Lcom/google/common/primitives/Doubles$DoubleConverter;
 
     invoke-direct {v0}, Lcom/google/common/primitives/Doubles$DoubleConverter;-><init>()V
@@ -50,7 +49,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 271
     invoke-direct {p0}, Lcom/google/common/base/Converter;-><init>()V
 
     return-void
@@ -59,7 +57,6 @@
 .method private readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 291
     sget-object v0, Lcom/google/common/primitives/Doubles$DoubleConverter;->INSTANCE:Lcom/google/common/primitives/Doubles$DoubleConverter;
 
     return-object v0
@@ -70,7 +67,6 @@
 .method protected bridge synthetic doBackward(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 271
     check-cast p1, Ljava/lang/Double;
 
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Doubles$DoubleConverter;->doBackward(Ljava/lang/Double;)Ljava/lang/String;
@@ -82,9 +78,7 @@
 
 .method protected doBackward(Ljava/lang/Double;)Ljava/lang/String;
     .locals 1
-    .param p1, "value"    # Ljava/lang/Double;
 
-    .line 282
     invoke-virtual {p1}, Ljava/lang/Double;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -94,9 +88,7 @@
 
 .method protected doForward(Ljava/lang/String;)Ljava/lang/Double;
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 277
     invoke-static {p1}, Ljava/lang/Double;->valueOf(Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v0
@@ -107,7 +99,6 @@
 .method protected bridge synthetic doForward(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 271
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/google/common/primitives/Doubles$DoubleConverter;->doForward(Ljava/lang/String;)Ljava/lang/Double;
@@ -120,7 +111,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 287
     const-string v0, "Doubles.stringConverter()"
 
     return-object v0

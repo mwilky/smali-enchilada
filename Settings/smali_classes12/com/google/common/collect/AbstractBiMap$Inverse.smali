@@ -47,26 +47,16 @@
         }
     .end annotation
 
-    .line 355
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
-    .local p1, "backward":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
-    .local p2, "forward":Lcom/google/common/collect/AbstractBiMap;, "Lcom/google/common/collect/AbstractBiMap<TV;TK;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;Lcom/google/common/collect/AbstractBiMap$1;)V
 
-    .line 356
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;Lcom/google/common/collect/AbstractBiMap$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/Map;
-    .param p2, "x1"    # Lcom/google/common/collect/AbstractBiMap;
-    .param p3, "x2"    # Lcom/google/common/collect/AbstractBiMap$1;
 
-    .line 353
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractBiMap$Inverse;-><init>(Ljava/util/Map;Lcom/google/common/collect/AbstractBiMap;)V
 
     return-void
@@ -74,7 +64,6 @@
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .locals 1
-    .param p1, "stream"    # Ljava/io/ObjectInputStream;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.io.ObjectInputStream"
     .end annotation
@@ -86,11 +75,8 @@
         }
     .end annotation
 
-    .line 390
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 391
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -99,13 +85,11 @@
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->setInverse(Lcom/google/common/collect/AbstractBiMap;)V
 
-    .line 392
     return-void
 .end method
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
     .locals 1
-    .param p1, "stream"    # Ljava/io/ObjectOutputStream;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.io.ObjectOuputStream"
     .end annotation
@@ -116,18 +100,14 @@
         }
     .end annotation
 
-    .line 382
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 383
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/BiMap;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 384
     return-void
 .end method
 
@@ -141,9 +121,6 @@
         }
     .end annotation
 
-    .line 369
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/AbstractBiMap;->checkValue(Ljava/lang/Object;)Ljava/lang/Object;
@@ -161,9 +138,6 @@
         }
     .end annotation
 
-    .line 374
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/AbstractBiMap;->checkKey(Ljava/lang/Object;)Ljava/lang/Object;
@@ -179,8 +153,6 @@
         value = "Not needed in the emulated source."
     .end annotation
 
-    .line 396
-    .local p0, "this":Lcom/google/common/collect/AbstractBiMap$Inverse;, "Lcom/google/common/collect/AbstractBiMap$Inverse<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$Inverse;->inverse()Lcom/google/common/collect/BiMap;
 
     move-result-object v0

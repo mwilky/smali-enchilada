@@ -55,17 +55,10 @@
         }
     .end annotation
 
-    .line 1583
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "referent":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0, p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
-    .line 1584
     iput-object p3, p0, Lcom/google/common/cache/LocalCache$WeakValueReference;->entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1585
     return-void
 .end method
 
@@ -85,11 +78,6 @@
         }
     .end annotation
 
-    .line 1603
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/LocalCache$WeakValueReference;
 
     invoke-direct {v0, p1, p2, p3}, Lcom/google/common/cache/LocalCache$WeakValueReference;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;)V
@@ -107,8 +95,6 @@
         }
     .end annotation
 
-    .line 1594
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WeakValueReference;->entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -117,8 +103,6 @@
 .method public getWeight()I
     .locals 1
 
-    .line 1589
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -127,8 +111,6 @@
 .method public isActive()Z
     .locals 1
 
-    .line 1613
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -137,8 +119,6 @@
 .method public isLoading()Z
     .locals 1
 
-    .line 1608
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return v0
@@ -152,9 +132,6 @@
         }
     .end annotation
 
-    .line 1598
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     return-void
 .end method
 
@@ -166,8 +143,6 @@
         }
     .end annotation
 
-    .line 1618
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakValueReference;, "Lcom/google/common/cache/LocalCache$WeakValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$WeakValueReference;->get()Ljava/lang/Object;
 
     move-result-object v0

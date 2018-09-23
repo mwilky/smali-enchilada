@@ -17,16 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/wrapper/PackageManagerWrapper;Landroid/content/pm/PackageItemInfo;Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pm"    # Lcom/android/settingslib/wrapper/PackageManagerWrapper;
-    .param p3, "packageItemInfo"    # Landroid/content/pm/PackageItemInfo;
-    .param p4, "summary"    # Ljava/lang/String;
-    .param p5, "enabled"    # Z
 
-    .line 124
     invoke-direct/range {p0 .. p5}, Lcom/android/settingslib/applications/DefaultAppInfo;-><init>(Landroid/content/Context;Lcom/android/settingslib/wrapper/PackageManagerWrapper;Landroid/content/pm/PackageItemInfo;Ljava/lang/String;Z)V
 
-    .line 125
     return-void
 .end method
 
@@ -35,11 +28,8 @@
 .method public loadLabel()Ljava/lang/CharSequence;
     .locals 5
 
-    .line 129
     const-string v0, ""
 
-    .line 131
-    .local v0, "versionName":Ljava/lang/String;
     const/4 v1, 0x0
 
     :try_start_0
@@ -53,7 +43,6 @@
 
     iget-object v3, v3, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
 
-    .line 132
     invoke-virtual {v2, v3, v1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v2
@@ -64,14 +53,11 @@
 
     move-object v0, v2
 
-    .line 134
     goto :goto_0
 
-    .line 133
     :catch_0
     move-exception v2
 
-    .line 135
     :goto_0
     const-string v2, "%s %s"
 

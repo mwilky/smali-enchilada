@@ -37,12 +37,8 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;, "Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry<TK;TV;>;"
-    .local p1, "contents":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableMapEntry;-><init>(Lcom/google/common/collect/ImmutableMapEntry;)V
 
-    .line 54
     return-void
 .end method
 
@@ -54,13 +50,8 @@
         }
     .end annotation
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;, "Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/ImmutableMapEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 58
     return-void
 .end method
 
@@ -79,8 +70,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;, "Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -99,8 +88,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry;, "Lcom/google/common/collect/ImmutableMapEntry$TerminalEntry<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0

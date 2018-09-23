@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
-    .line 846
     iput-object p1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$4;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 849
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
@@ -47,8 +42,6 @@
 
     move-result-object v0
 
-    .line 850
-    .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$4;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;->access$600(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;)Z
@@ -77,7 +70,6 @@
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$4;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
-    .line 851
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;->access$100(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;)Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
     move-result-object v1
@@ -92,13 +84,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 852
     :cond_0
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$4;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     invoke-static {v1}, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;->access$700(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;)V
 
-    .line 854
     :cond_1
     return-void
 .end method

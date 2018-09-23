@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/AppRestrictionsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/AppRestrictionsFragment;
 
-    .line 125
     iput-object p1, p0, Lcom/android/settings/users/AppRestrictionsFragment$2;->this$0:Lcom/android/settings/users/AppRestrictionsFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,14 +33,10 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 128
     iget-object v0, p0, Lcom/android/settings/users/AppRestrictionsFragment$2;->this$0:Lcom/android/settings/users/AppRestrictionsFragment;
 
     invoke-static {v0, p2}, Lcom/android/settings/users/AppRestrictionsFragment;->access$200(Lcom/android/settings/users/AppRestrictionsFragment;Landroid/content/Intent;)V
 
-    .line 129
     return-void
 .end method

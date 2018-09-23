@@ -30,25 +30,17 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;Landroid/content/pm/PackageManager;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "pm"    # Landroid/content/pm/PackageManager;
-    .param p3, "packageName"    # Ljava/lang/String;
-    .param p4, "state"    # I
 
-    .line 667
     iput-object p1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 668
     iput-object p2, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 669
     iput-object p3, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->mPackageName:Ljava/lang/String;
 
-    .line 670
     iput p4, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->mState:I
 
-    .line 671
     return-void
 .end method
 
@@ -57,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 675
     iget-object v0, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->mPm:Landroid/content/pm/PackageManager;
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$DisableChangerRunnable;->mPackageName:Ljava/lang/String;
@@ -68,6 +59,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/pm/PackageManager;->setApplicationEnabledSetting(Ljava/lang/String;II)V
 
-    .line 676
     return-void
 .end method

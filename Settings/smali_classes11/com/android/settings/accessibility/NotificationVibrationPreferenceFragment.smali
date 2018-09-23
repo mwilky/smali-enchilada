@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Lcom/android/settings/accessibility/VibrationPreferenceFragment;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
 .method protected getDefaultVibrationIntensity()I
     .locals 2
 
-    .line 55
     invoke-virtual {p0}, Lcom/android/settings/accessibility/NotificationVibrationPreferenceFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -31,8 +29,6 @@
 
     check-cast v0, Landroid/os/Vibrator;
 
-    .line 56
-    .local v0, "vibrator":Landroid/os/Vibrator;
     invoke-virtual {v0}, Landroid/os/Vibrator;->getDefaultNotificationVibrationIntensity()I
 
     move-result v1
@@ -43,7 +39,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 32
     const/16 v0, 0x50d
 
     return v0
@@ -52,7 +47,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 37
     const v0, 0x7f160004
 
     return v0
@@ -61,7 +55,6 @@
 .method protected getPreviewVibrationAudioAttributesUsage()I
     .locals 1
 
-    .line 50
     const/4 v0, 0x5
 
     return v0
@@ -70,7 +63,6 @@
 .method protected getVibrationIntensitySetting()Ljava/lang/String;
     .locals 1
 
-    .line 45
     const-string v0, "notification_vibration_intensity"
 
     return-object v0

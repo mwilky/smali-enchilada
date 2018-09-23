@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/TitleHelper;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/TitleHelper;
 
-    .line 43
     iput-object p1, p0, Landroid/support/v17/leanback/widget/TitleHelper$1;->this$0:Landroid/support/v17/leanback/widget/TitleHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onFocusSearch(Landroid/view/View;I)Landroid/view/View;
     .locals 3
-    .param p1, "focused"    # Landroid/view/View;
-    .param p2, "direction"    # I
 
-    .line 46
     iget-object v0, p0, Landroid/support/v17/leanback/widget/TitleHelper$1;->this$0:Landroid/support/v17/leanback/widget/TitleHelper;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/TitleHelper;->mTitleView:Landroid/view/View;
@@ -52,14 +47,12 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 47
     iget-object v0, p0, Landroid/support/v17/leanback/widget/TitleHelper$1;->this$0:Landroid/support/v17/leanback/widget/TitleHelper;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/TitleHelper;->mTitleView:Landroid/view/View;
 
     return-object v0
 
-    .line 49
     :cond_0
     invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
@@ -77,8 +70,6 @@
     :goto_0
     move v0, v1
 
-    .line 51
-    .local v0, "isRtl":Z
     if-eqz v0, :cond_2
 
     const/16 v1, 0x11
@@ -88,8 +79,6 @@
     :cond_2
     const/16 v1, 0x42
 
-    .line 52
-    .local v1, "forward":I
     :goto_1
     iget-object v2, p0, Landroid/support/v17/leanback/widget/TitleHelper$1;->this$0:Landroid/support/v17/leanback/widget/TitleHelper;
 
@@ -107,7 +96,6 @@
 
     if-ne p2, v1, :cond_4
 
-    .line 53
     :cond_3
     iget-object v2, p0, Landroid/support/v17/leanback/widget/TitleHelper$1;->this$0:Landroid/support/v17/leanback/widget/TitleHelper;
 
@@ -115,7 +103,6 @@
 
     return-object v2
 
-    .line 55
     :cond_4
     const/4 v2, 0x0
 

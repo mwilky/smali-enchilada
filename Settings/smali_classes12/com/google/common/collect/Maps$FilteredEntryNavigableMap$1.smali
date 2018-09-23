@@ -28,11 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;Ljava/util/NavigableMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
-    .line 2909
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;, "Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;"
-    .local p2, "map":Ljava/util/NavigableMap;, "Ljava/util/NavigableMap<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;->this$0:Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/Maps$NavigableKeySet;-><init>(Ljava/util/NavigableMap;)V
@@ -52,9 +48,6 @@
         }
     .end annotation
 
-    .line 2912
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;, "Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;->this$0:Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
     invoke-static {v0}, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;->access$700(Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;)Ljava/util/NavigableMap;
@@ -71,7 +64,6 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;->this$0:Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
-    .line 2913
     invoke-static {v1}, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;->access$600(Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;)Lcom/google/common/base/Predicate;
 
     move-result-object v1
@@ -88,7 +80,6 @@
 
     move-result-object v1
 
-    .line 2912
     invoke-static {v0, v1}, Lcom/google/common/collect/Iterators;->removeIf(Ljava/util/Iterator;Lcom/google/common/base/Predicate;)Z
 
     move-result v0
@@ -106,9 +97,6 @@
         }
     .end annotation
 
-    .line 2918
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;, "Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;->this$0:Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
     invoke-static {v0}, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;->access$700(Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;)Ljava/util/NavigableMap;
@@ -125,7 +113,6 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap$1;->this$0:Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;
 
-    .line 2919
     invoke-static {v1}, Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;->access$600(Lcom/google/common/collect/Maps$FilteredEntryNavigableMap;)Lcom/google/common/base/Predicate;
 
     move-result-object v1
@@ -142,7 +129,6 @@
 
     move-result-object v2
 
-    .line 2918
     invoke-static {v1, v2}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
 
     move-result-object v1

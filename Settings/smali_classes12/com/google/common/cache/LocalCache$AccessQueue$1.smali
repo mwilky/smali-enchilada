@@ -46,18 +46,13 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/LocalCache$AccessQueue;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/cache/LocalCache$AccessQueue;
 
-    .line 3732
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->this$0:Lcom/google/common/cache/LocalCache$AccessQueue;
 
     invoke-direct {p0}, Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;-><init>()V
 
-    .line 3742
     iput-object p0, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 3754
     iput-object p0, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-void
@@ -68,8 +63,6 @@
 .method public getAccessTime()J
     .locals 2
 
-    .line 3736
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
     const-wide v0, 0x7fffffffffffffffL
 
     return-wide v0
@@ -85,8 +78,6 @@
         }
     .end annotation
 
-    .line 3746
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -102,8 +93,6 @@
         }
     .end annotation
 
-    .line 3758
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -111,10 +100,7 @@
 
 .method public setAccessTime(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 3740
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
     return-void
 .end method
 
@@ -128,12 +114,8 @@
         }
     .end annotation
 
-    .line 3751
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 3752
     return-void
 .end method
 
@@ -147,11 +129,7 @@
         }
     .end annotation
 
-    .line 3763
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AccessQueue$1;, "Lcom/google/common/cache/LocalCache$AccessQueue$1;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$AccessQueue$1;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 3764
     return-void
 .end method

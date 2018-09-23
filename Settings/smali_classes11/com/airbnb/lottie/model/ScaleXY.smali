@@ -21,30 +21,22 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 17
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-direct {p0, v0, v0}, Lcom/airbnb/lottie/model/ScaleXY;-><init>(FF)V
 
-    .line 18
     return-void
 .end method
 
 .method public constructor <init>(FF)V
     .locals 0
-    .param p1, "sx"    # F
-    .param p2, "sy"    # F
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 12
     iput p1, p0, Lcom/airbnb/lottie/model/ScaleXY;->scaleX:F
 
-    .line 13
     iput p2, p0, Lcom/airbnb/lottie/model/ScaleXY;->scaleY:F
 
-    .line 14
     return-void
 .end method
 
@@ -53,7 +45,6 @@
 .method public getScaleX()F
     .locals 1
 
-    .line 21
     iget v0, p0, Lcom/airbnb/lottie/model/ScaleXY;->scaleX:F
 
     return v0
@@ -62,7 +53,6 @@
 .method public getScaleY()F
     .locals 1
 
-    .line 25
     iget v0, p0, Lcom/airbnb/lottie/model/ScaleXY;->scaleY:F
 
     return v0
@@ -71,7 +61,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 29
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

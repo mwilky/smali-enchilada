@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/AbstractMultiset;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/AbstractMultiset;
 
-    .line 153
-    .local p0, "this":Lcom/google/common/collect/AbstractMultiset$ElementSet;, "Lcom/google/common/collect/AbstractMultiset<TE;>.ElementSet;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMultiset$ElementSet;->this$0:Lcom/google/common/collect/AbstractMultiset;
 
     invoke-direct {p0}, Lcom/google/common/collect/Multisets$ElementSet;-><init>()V
@@ -51,8 +48,6 @@
         }
     .end annotation
 
-    .line 156
-    .local p0, "this":Lcom/google/common/collect/AbstractMultiset$ElementSet;, "Lcom/google/common/collect/AbstractMultiset<TE;>.ElementSet;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMultiset$ElementSet;->this$0:Lcom/google/common/collect/AbstractMultiset;
 
     return-object v0

@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 106
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 128
     invoke-static {p1}, Lcom/android/settings/applications/DefaultAppSettings;->access$000(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -50,7 +47,6 @@
 
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,35 +58,27 @@
         }
     .end annotation
 
-    .line 117
     invoke-super {p0, p1}, Lcom/android/settings/search/BaseSearchIndexProvider;->getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 118
-    .local v0, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v1, "assist_and_voice_input"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 120
     const-string v1, "work_default_phone_app"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 121
     const-string v1, "work_default_browser"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 122
     return-object v0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,18 +90,14 @@
         }
     .end annotation
 
-    .line 110
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 111
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f160014
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 112
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

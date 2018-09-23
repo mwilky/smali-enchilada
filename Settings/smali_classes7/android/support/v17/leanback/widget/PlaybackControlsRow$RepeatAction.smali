@@ -40,49 +40,35 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 516
     invoke-static {p1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getIconHighlightColor(Landroid/content/Context;)I
 
     move-result v0
 
     invoke-direct {p0, p1, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$RepeatAction;-><init>(Landroid/content/Context;I)V
 
-    .line 517
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "highlightColor"    # I
 
-    .line 525
     invoke-direct {p0, p1, p2, p2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$RepeatAction;-><init>(Landroid/content/Context;II)V
 
-    .line 526
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;II)V
     .locals 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "repeatAllColor"    # I
-    .param p3, "repeatOneColor"    # I
 
-    .line 535
     sget v0, Landroid/support/v17/leanback/R$id;->lb_control_repeat:I
 
     invoke-direct {p0, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$MultiAction;-><init>(I)V
 
-    .line 536
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/graphics/drawable/Drawable;
 
-    .line 537
-    .local v0, "drawables":[Landroid/graphics/drawable/Drawable;
     sget v1, Landroid/support/v17/leanback/R$styleable;->lbPlaybackControlsActionIcons_repeat:I
 
     invoke-static {p1, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getStyledDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -91,8 +77,6 @@
 
     check-cast v1, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 539
-    .local v1, "repeatDrawable":Landroid/graphics/drawable/BitmapDrawable;
     sget v2, Landroid/support/v17/leanback/R$styleable;->lbPlaybackControlsActionIcons_repeat_one:I
 
     invoke-static {p1, v2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getStyledDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -101,32 +85,25 @@
 
     check-cast v2, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 541
-    .local v2, "repeatOneDrawable":Landroid/graphics/drawable/BitmapDrawable;
     const/4 v3, 0x0
 
     aput-object v1, v0, v3
 
-    .line 542
     const/4 v4, 0x0
 
     if-nez v1, :cond_0
 
-    .line 544
     move-object v5, v4
 
     goto :goto_0
 
-    .line 542
     :cond_0
     new-instance v5, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 543
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
-    .line 544
     invoke-virtual {v1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v7
@@ -142,7 +119,6 @@
 
     aput-object v5, v0, v6
 
-    .line 545
     if-nez v2, :cond_1
 
     goto :goto_1
@@ -150,12 +126,10 @@
     :cond_1
     new-instance v4, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 546
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 547
     invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v7
@@ -171,16 +145,12 @@
 
     aput-object v4, v0, v5
 
-    .line 548
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$RepeatAction;->setDrawables([Landroid/graphics/drawable/Drawable;)V
 
-    .line 550
     array-length v4, v0
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 552
-    .local v4, "labels":[Ljava/lang/String;
     sget v7, Landroid/support/v17/leanback/R$string;->lb_playback_controls_repeat_all:I
 
     invoke-virtual {p1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -189,7 +159,6 @@
 
     aput-object v7, v4, v3
 
-    .line 553
     sget v3, Landroid/support/v17/leanback/R$string;->lb_playback_controls_repeat_one:I
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -198,7 +167,6 @@
 
     aput-object v3, v4, v6
 
-    .line 554
     sget v3, Landroid/support/v17/leanback/R$string;->lb_playback_controls_repeat_none:I
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -207,9 +175,7 @@
 
     aput-object v3, v4, v5
 
-    .line 555
     invoke-virtual {p0, v4}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$RepeatAction;->setLabels([Ljava/lang/String;)V
 
-    .line 556
     return-void
 .end method

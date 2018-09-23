@@ -29,17 +29,14 @@
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsSupportFragment;)V
     .locals 0
 
-    .line 286
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 284
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$SetSelectionRunnable;->mSmooth:Z
 
-    .line 287
     return-void
 .end method
 
@@ -48,17 +45,14 @@
 .method public run()V
     .locals 3
 
-    .line 291
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsSupportFragment;->mRowsSupportFragment:Landroid/support/v17/leanback/app/RowsSupportFragment;
 
     if-nez v0, :cond_0
 
-    .line 292
     return-void
 
-    .line 294
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$SetSelectionRunnable;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
@@ -70,6 +64,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setSelectedPosition(IZ)V
 
-    .line 295
     return-void
 .end method

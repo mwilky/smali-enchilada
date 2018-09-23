@@ -32,8 +32,6 @@
 .method private constructor <init>(Lcom/google/common/collect/StandardTable;)V
     .locals 0
 
-    .line 197
-    .local p0, "this":Lcom/google/common/collect/StandardTable$TableSet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableSet<TT;>;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$TableSet;->this$0:Lcom/google/common/collect/StandardTable;
 
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
@@ -43,11 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/StandardTable;Lcom/google/common/collect/StandardTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/StandardTable;
-    .param p2, "x1"    # Lcom/google/common/collect/StandardTable$1;
 
-    .line 197
-    .local p0, "this":Lcom/google/common/collect/StandardTable$TableSet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableSet<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$TableSet;-><init>(Lcom/google/common/collect/StandardTable;)V
 
     return-void
@@ -58,23 +52,18 @@
 .method public clear()V
     .locals 1
 
-    .line 203
-    .local p0, "this":Lcom/google/common/collect/StandardTable$TableSet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableSet<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$TableSet;->this$0:Lcom/google/common/collect/StandardTable;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 204
     return-void
 .end method
 
 .method public isEmpty()Z
     .locals 1
 
-    .line 199
-    .local p0, "this":Lcom/google/common/collect/StandardTable$TableSet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableSet<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$TableSet;->this$0:Lcom/google/common/collect/StandardTable;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable;->backingMap:Ljava/util/Map;

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/DotsPageIndicator;
 
-    .line 180
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$2;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -36,7 +34,6 @@
 .method public onChanged()V
     .locals 2
 
-    .line 183
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$2;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     iget-object v1, p0, Lcom/android/settings/widget/DotsPageIndicator$2;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -55,6 +52,5 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$200(Lcom/android/settings/widget/DotsPageIndicator;I)V
 
-    .line 184
     return-void
 .end method

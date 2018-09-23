@@ -28,10 +28,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/settings/security/trustagent/TrustAgentManager$TrustAgentComponentInfo;->admin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;

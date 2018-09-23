@@ -29,8 +29,6 @@
 .method private constructor <init>(Lcom/google/common/collect/StandardTable$Row;)V
     .locals 0
 
-    .line 336
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Row.RowEntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;->this$1:Lcom/google/common/collect/StandardTable$Row;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -40,11 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/StandardTable$Row;Lcom/google/common/collect/StandardTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/StandardTable$Row;
-    .param p2, "x1"    # Lcom/google/common/collect/StandardTable$1;
 
-    .line 336
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Row.RowEntrySet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;-><init>(Lcom/google/common/collect/StandardTable$Row;)V
 
     return-void
@@ -63,26 +57,20 @@
         }
     .end annotation
 
-    .line 350
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Row.RowEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;->this$1:Lcom/google/common/collect/StandardTable$Row;
 
     invoke-virtual {v0}, Lcom/google/common/collect/StandardTable$Row;->backingRowMap()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 351
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     if-nez v0, :cond_0
 
-    .line 352
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyModifiableIterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     return-object v1
 
-    .line 354
     :cond_0
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -92,8 +80,6 @@
 
     move-result-object v1
 
-    .line 355
-    .local v1, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TC;TV;>;>;"
     new-instance v2, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;
 
     invoke-direct {v2, p0, v1}, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;-><init>(Lcom/google/common/collect/StandardTable$Row$RowEntrySet;Ljava/util/Iterator;)V
@@ -111,8 +97,6 @@
         }
     .end annotation
 
-    .line 339
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Row.RowEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;->this$1:Lcom/google/common/collect/StandardTable$Row;
 
     return-object v0
@@ -121,16 +105,12 @@
 .method public size()I
     .locals 2
 
-    .line 344
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Row.RowEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;->this$1:Lcom/google/common/collect/StandardTable$Row;
 
     invoke-virtual {v0}, Lcom/google/common/collect/StandardTable$Row;->backingRowMap()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 345
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     if-nez v0, :cond_0
 
     const/4 v1, 0x0

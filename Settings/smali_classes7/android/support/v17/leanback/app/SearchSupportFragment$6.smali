@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/SearchSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/SearchSupportFragment;
 
-    .line 298
     iput-object p1, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,55 +36,44 @@
 # virtual methods
 .method public onKeyboardDismiss(Ljava/lang/String;)V
     .locals 1
-    .param p1, "query"    # Ljava/lang/String;
 
-    .line 319
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/SearchSupportFragment;->queryComplete()V
 
-    .line 320
     return-void
 .end method
 
 .method public onSearchQueryChange(Ljava/lang/String;)V
     .locals 1
-    .param p1, "query"    # Ljava/lang/String;
 
-    .line 303
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mProvider:Landroid/support/v17/leanback/app/SearchSupportFragment$SearchResultProvider;
 
     if-eqz v0, :cond_0
 
-    .line 304
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/SearchSupportFragment;->retrieveResults(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 306
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     iput-object p1, v0, Landroid/support/v17/leanback/app/SearchSupportFragment;->mPendingQuery:Ljava/lang/String;
 
-    .line 308
     :goto_0
     return-void
 .end method
 
 .method public onSearchQuerySubmit(Ljava/lang/String;)V
     .locals 1
-    .param p1, "query"    # Ljava/lang/String;
 
-    .line 313
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/SearchSupportFragment;->submitQuery(Ljava/lang/String;)V
 
-    .line 314
     return-void
 .end method

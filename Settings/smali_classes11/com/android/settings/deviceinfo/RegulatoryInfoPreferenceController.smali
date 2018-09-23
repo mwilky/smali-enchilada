@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 30
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.SHOW_REGULATORY_INFO"
@@ -38,12 +37,9 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 39
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 40
     return-void
 .end method
 
@@ -52,7 +48,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 53
     const-string v0, "regulatory_info"
 
     return-object v0
@@ -61,7 +56,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 46
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
     const-string v1, "ONEPLUS"
@@ -89,7 +83,6 @@
 
     const-string v2, "ONEPLUS A5000"
 
-    .line 47
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
@@ -133,7 +126,6 @@
 
     nop
 
-    .line 46
     :cond_2
     :goto_0
     return v1

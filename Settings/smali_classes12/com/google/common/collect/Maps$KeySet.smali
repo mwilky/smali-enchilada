@@ -48,12 +48,8 @@
         }
     .end annotation
 
-    .line 3484
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
-    .local p1, "map":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
 
-    .line 3485
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -62,7 +58,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$KeySet;->map:Ljava/util/Map;
 
-    .line 3486
     return-void
 .end method
 
@@ -71,24 +66,18 @@
 .method public clear()V
     .locals 1
 
-    .line 3517
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 3518
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 3505
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
@@ -103,8 +92,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 3501
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
@@ -126,8 +113,6 @@
         }
     .end annotation
 
-    .line 3493
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
@@ -157,8 +142,6 @@
         }
     .end annotation
 
-    .line 3489
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$KeySet;->map:Ljava/util/Map;
 
     return-object v0
@@ -166,29 +149,23 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 3509
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$KeySet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3510
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3511
     const/4 v0, 0x1
 
     return v0
 
-    .line 3513
     :cond_0
     const/4 v0, 0x0
 
@@ -198,8 +175,6 @@
 .method public size()I
     .locals 1
 
-    .line 3497
-    .local p0, "this":Lcom/google/common/collect/Maps$KeySet;, "Lcom/google/common/collect/Maps$KeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0

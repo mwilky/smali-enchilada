@@ -31,9 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/UserSettings;
 
-    .line 410
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$4;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -46,7 +44,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 410
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/UserSettings$4;->doInBackground([Ljava/lang/Void;)Ljava/lang/String;
@@ -58,9 +55,7 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/String;
     .locals 3
-    .param p1, "values"    # [Ljava/lang/Void;
 
-    .line 418
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$4;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$600(Lcom/android/settings/users/UserSettings;)Landroid/os/UserManager;
@@ -75,8 +70,6 @@
 
     move-result-object v0
 
-    .line 419
-    .local v0, "user":Landroid/content/pm/UserInfo;
     iget-object v1, v0, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -91,7 +84,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 421
     :cond_0
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$4;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -101,7 +93,6 @@
 
     invoke-static {v1, v0}, Lcom/android/settings/users/UserSettings;->copyMeProfilePhoto(Landroid/content/Context;Landroid/content/pm/UserInfo;)V
 
-    .line 423
     :cond_1
     iget-object v1, v0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
@@ -111,7 +102,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 410
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/UserSettings$4;->onPostExecute(Ljava/lang/String;)V
@@ -121,13 +111,10 @@
 
 .method protected onPostExecute(Ljava/lang/String;)V
     .locals 1
-    .param p1, "result"    # Ljava/lang/String;
 
-    .line 413
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$4;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v0, p1}, Lcom/android/settings/users/UserSettings;->access$900(Lcom/android/settings/users/UserSettings;Ljava/lang/String;)V
 
-    .line 414
     return-void
 .end method

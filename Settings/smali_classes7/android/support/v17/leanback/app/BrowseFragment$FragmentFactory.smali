@@ -30,8 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 651
-    .local p0, "this":Landroid/support/v17/leanback/app/BrowseFragment$FragmentFactory;, "Landroid/support/v17/leanback/app/BrowseFragment$FragmentFactory<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

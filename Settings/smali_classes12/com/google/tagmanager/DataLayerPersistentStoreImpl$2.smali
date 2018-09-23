@@ -29,7 +29,6 @@
 .method constructor <init>(Lcom/google/tagmanager/DataLayerPersistentStoreImpl;Ljava/util/List;J)V
     .locals 0
 
-    .line 78
     iput-object p1, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$2;->this$0:Lcom/google/tagmanager/DataLayerPersistentStoreImpl;
 
     iput-object p2, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$2;->val$serializedKeysAndValues:Ljava/util/List;
@@ -46,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 81
     iget-object v0, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$2;->this$0:Lcom/google/tagmanager/DataLayerPersistentStoreImpl;
 
     iget-object v1, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$2;->val$serializedKeysAndValues:Ljava/util/List;
@@ -55,6 +53,5 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/google/tagmanager/DataLayerPersistentStoreImpl;->access$000(Lcom/google/tagmanager/DataLayerPersistentStoreImpl;Ljava/util/List;J)V
 
-    .line 82
     return-void
 .end method

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibrarySessionImplBase;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
-    .line 139
     iput-object p1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$3;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$3;->val$query:Ljava/lang/String;
@@ -50,14 +48,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 3
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 142
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$3;->val$query:Ljava/lang/String;
 
     iget v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$3;->val$itemCount:I
@@ -66,6 +62,5 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onSearchResultChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 143
     return-void
 .end method

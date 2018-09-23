@@ -35,8 +35,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 61
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMap;-><init>()V
 
     return-void
@@ -44,20 +42,13 @@
 
 .method private unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 2
-    .param p1, "k1"    # Ljava/lang/Object;
-    .param p2, "k2"    # Ljava/lang/Object;
 
-    .line 113
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
-    .line 114
-    .local v0, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TK;>;"
     if-nez v0, :cond_0
 
-    .line 115
     move-object v1, p1
 
     check-cast v1, Ljava/lang/Comparable;
@@ -68,7 +59,6 @@
 
     return v1
 
-    .line 117
     :cond_0
     invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
@@ -89,8 +79,6 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -105,8 +93,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 55
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -117,8 +103,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Map;
     .locals 1
 
-    .line 55
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -144,8 +128,6 @@
         }
     .end annotation
 
-    .line 72
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -167,9 +149,6 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -189,8 +168,6 @@
         }
     .end annotation
 
-    .line 82
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -204,19 +181,15 @@
 
 .method protected standardContainsKey(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
 
-    .line 133
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     move-object v0, p0
 
-    .line 134
-    .local v0, "self":Ljava/util/SortedMap;, "Ljava/util/SortedMap<Ljava/lang/Object;TV;>;"
     const/4 v1, 0x0
 
     :try_start_0
@@ -228,8 +201,6 @@
 
     move-result-object v2
 
-    .line 135
-    .local v2, "ceilingKey":Ljava/lang/Object;
     invoke-direct {p0, v2, p1}, Lcom/google/common/collect/ForwardingSortedMap;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v3
@@ -247,32 +218,19 @@
     :cond_0
     return v1
 
-    .line 140
-    .end local v0    # "self":Ljava/util/SortedMap;, "Ljava/util/SortedMap<Ljava/lang/Object;TV;>;"
-    .end local v2    # "ceilingKey":Ljava/lang/Object;
     :catch_0
     move-exception v0
 
-    .line 141
-    .local v0, "e":Ljava/lang/NullPointerException;
     return v1
 
-    .line 138
-    .end local v0    # "e":Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 139
-    .local v0, "e":Ljava/util/NoSuchElementException;
     return v1
 
-    .line 136
-    .end local v0    # "e":Ljava/util/NoSuchElementException;
     :catch_2
     move-exception v0
 
-    .line 137
-    .local v0, "e":Ljava/lang/ClassCastException;
     return v1
 .end method
 
@@ -289,10 +247,6 @@
         }
     .end annotation
 
-    .line 154
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p2, "toKey":Ljava/lang/Object;, "TK;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/ForwardingSortedMap;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v0
@@ -311,7 +265,6 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 155
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingSortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
 
     move-result-object v0
@@ -333,10 +286,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p2, "toKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -358,9 +307,6 @@
         }
     .end annotation
 
-    .line 92
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
     move-result-object v0

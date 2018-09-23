@@ -32,7 +32,6 @@
 .method private constructor <init>(Lcom/android/settings/password/SaveChosenLockWorkerBase;)V
     .locals 0
 
-    .line 110
     iput-object p1, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->this$0:Lcom/android/settings/password/SaveChosenLockWorkerBase;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -42,10 +41,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/password/SaveChosenLockWorkerBase;Lcom/android/settings/password/SaveChosenLockWorkerBase$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/password/SaveChosenLockWorkerBase;
-    .param p2, "x1"    # Lcom/android/settings/password/SaveChosenLockWorkerBase$1;
 
-    .line 110
     invoke-direct {p0, p1}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;-><init>(Lcom/android/settings/password/SaveChosenLockWorkerBase;)V
 
     return-void
@@ -55,9 +51,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/content/Intent;
     .locals 1
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 113
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->this$0:Lcom/android/settings/password/SaveChosenLockWorkerBase;
 
     invoke-virtual {v0}, Lcom/android/settings/password/SaveChosenLockWorkerBase;->saveAndVerifyInBackground()Landroid/content/Intent;
@@ -70,7 +64,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 110
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->doInBackground([Ljava/lang/Void;)Landroid/content/Intent;
@@ -82,21 +75,17 @@
 
 .method protected onPostExecute(Landroid/content/Intent;)V
     .locals 1
-    .param p1, "resultData"    # Landroid/content/Intent;
 
-    .line 118
     iget-object v0, p0, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->this$0:Lcom/android/settings/password/SaveChosenLockWorkerBase;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/password/SaveChosenLockWorkerBase;->finish(Landroid/content/Intent;)V
 
-    .line 119
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 110
     check-cast p1, Landroid/content/Intent;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/password/SaveChosenLockWorkerBase$Task;->onPostExecute(Landroid/content/Intent;)V

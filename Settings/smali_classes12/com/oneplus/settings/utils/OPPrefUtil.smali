@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,10 +18,7 @@
 
 .method public static getBoolean(Ljava/lang/String;Z)Z
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "defaultValue"    # Z
 
-    .line 52
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -36,10 +32,7 @@
 
 .method public static getInt(Ljava/lang/String;I)I
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "defaultValue"    # I
 
-    .line 32
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -53,10 +46,7 @@
 
 .method public static getLong(Ljava/lang/String;J)J
     .locals 2
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "defaultValue"    # J
 
-    .line 42
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -71,7 +61,6 @@
 .method private static getSharedPreferences()Landroid/content/SharedPreferences;
     .locals 3
 
-    .line 18
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     const-string v1, "OPSettingsPrefs"
@@ -88,7 +77,6 @@
 .method private static getSharedPreferencesEditor()Landroid/content/SharedPreferences$Editor;
     .locals 3
 
-    .line 22
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     const-string v1, "OPSettingsPrefs"
@@ -108,10 +96,7 @@
 
 .method public static getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "defaultValue"    # Ljava/lang/String;
 
-    .line 62
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -125,84 +110,56 @@
 
 .method public static putBoolean(Ljava/lang/String;Z)V
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "value"    # Z
 
-    .line 46
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferencesEditor()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 47
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 48
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 49
     return-void
 .end method
 
 .method public static putInt(Ljava/lang/String;I)V
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "value"    # I
 
-    .line 26
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferencesEditor()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 27
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 28
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 29
     return-void
 .end method
 
 .method public static putLong(Ljava/lang/String;J)V
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "value"    # J
 
-    .line 36
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferencesEditor()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 37
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0, p0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 38
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 39
     return-void
 .end method
 
 .method public static putString(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 56
     invoke-static {}, Lcom/oneplus/settings/utils/OPPrefUtil;->getSharedPreferencesEditor()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 57
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 58
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 59
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/SearchBar;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/SearchBar;
 
-    .line 797
     iput-object p1, p0, Landroid/support/v17/leanback/widget/SearchBar$10;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
 
     iput p2, p0, Landroid/support/v17/leanback/widget/SearchBar$10;->val$resId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 9
 
-    .line 800
     iget-object v0, p0, Landroid/support/v17/leanback/widget/SearchBar$10;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/SearchBar;->mSoundMap:Landroid/util/SparseIntArray;
@@ -54,8 +51,6 @@
 
     move-result v0
 
-    .line 801
-    .local v0, "sound":I
     iget-object v1, p0, Landroid/support/v17/leanback/widget/SearchBar$10;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
 
     iget-object v2, v1, Landroid/support/v17/leanback/widget/SearchBar;->mSoundPool:Landroid/media/SoundPool;
@@ -74,6 +69,5 @@
 
     invoke-virtual/range {v2 .. v8}, Landroid/media/SoundPool;->play(IFFIIF)I
 
-    .line 803
     return-void
 .end method

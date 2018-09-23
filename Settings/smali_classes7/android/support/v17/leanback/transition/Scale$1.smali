@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/transition/Scale;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/transition/Scale;
 
-    .line 64
     iput-object p1, p0, Landroid/support/v17/leanback/transition/Scale$1;->this$0:Landroid/support/v17/leanback/transition/Scale;
 
     iput-object p2, p0, Landroid/support/v17/leanback/transition/Scale$1;->val$view:Landroid/view/View;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 67
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -55,17 +51,13 @@
 
     move-result v0
 
-    .line 68
-    .local v0, "scale":F
     iget-object v1, p0, Landroid/support/v17/leanback/transition/Scale$1;->val$view:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 69
     iget-object v1, p0, Landroid/support/v17/leanback/transition/Scale$1;->val$view:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 70
     return-void
 .end method

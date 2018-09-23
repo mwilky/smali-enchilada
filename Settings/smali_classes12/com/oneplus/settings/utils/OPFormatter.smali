@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 157
     new-instance v0, Landroid/icu/text/UnicodeSetSpanner;
 
     new-instance v1, Landroid/icu/text/UnicodeSet;
@@ -45,7 +44,6 @@
 
     invoke-direct {v1, v2}, Landroid/icu/text/UnicodeSet;-><init>(Ljava/lang/String;)V
 
-    .line 158
     invoke-virtual {v1}, Landroid/icu/text/UnicodeSet;->freeze()Landroid/icu/text/UnicodeSet;
 
     move-result-object v1
@@ -54,7 +52,6 @@
 
     sput-object v0, Lcom/oneplus/settings/utils/OPFormatter;->SPACES_AND_CONTROLS:Landroid/icu/text/UnicodeSetSpanner;
 
-    .line 199
     invoke-static {}, Lcom/oneplus/settings/utils/OPFormatter;->createPetaByte()Landroid/icu/util/MeasureUnit;
 
     move-result-object v0
@@ -67,7 +64,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -76,7 +72,6 @@
 .method static synthetic access$000()Landroid/icu/util/MeasureUnit;
     .locals 1
 
-    .line 43
     sget-object v0, Lcom/oneplus/settings/utils/OPFormatter;->PETABYTE:Landroid/icu/util/MeasureUnit;
 
     return-object v0
@@ -84,16 +79,11 @@
 
 .method private static bidiWrap(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "source"    # Ljava/lang/String;
 
-    .line 73
     invoke-static {p0}, Lcom/oneplus/settings/utils/OPFormatter;->localeFromContext(Landroid/content/Context;)Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 74
-    .local v0, "locale":Ljava/util/Locale;
     invoke-static {v0}, Landroid/text/TextUtils;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
 
     move-result v1
@@ -102,7 +92,6 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 75
     invoke-static {v2}, Landroid/text/BidiFormatter;->getInstance(Z)Landroid/text/BidiFormatter;
 
     move-result-object v1
@@ -113,7 +102,6 @@
 
     return-object v1
 
-    .line 77
     :cond_0
     return-object p1
 .end method
@@ -121,7 +109,6 @@
 .method private static createPetaByte()Landroid/icu/util/MeasureUnit;
     .locals 6
 
-    .line 211
     :try_start_0
     const-class v0, Landroid/icu/util/MeasureUnit;
 
@@ -141,16 +128,12 @@
 
     aput-object v3, v2, v5
 
-    .line 212
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
-    .line 213
-    .local v0, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<Landroid/icu/util/MeasureUnit;>;"
     invoke-virtual {v0, v5}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
-    .line 214
     new-array v1, v1, [Ljava/lang/Object;
 
     const-string v2, "digital"
@@ -171,13 +154,9 @@
 
     return-object v1
 
-    .line 215
-    .end local v0    # "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<Landroid/icu/util/MeasureUnit;>;"
     :catch_0
     move-exception v0
 
-    .line 216
-    .local v0, "e":Ljava/lang/ReflectiveOperationException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "Failed to create petabyte MeasureUnit"
@@ -189,24 +168,17 @@
 
 .method private static deleteFirstFromString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
-    .param p0, "source"    # Ljava/lang/String;
-    .param p1, "toDelete"    # Ljava/lang/String;
 
-    .line 141
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 142
-    .local v0, "location":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 143
     return-object p0
 
-    .line 145
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -220,7 +192,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 146
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -241,23 +212,16 @@
 
     move-result-object v1
 
-    .line 145
     return-object v1
 .end method
 
 .method public static formatBytes(Landroid/content/res/Resources;JI)Lcom/oneplus/settings/utils/OPFormatter$BytesResult;
     .locals 8
-    .param p0, "res"    # Landroid/content/res/Resources;
-    .param p1, "sizeBytes"    # J
-    .param p3, "flags"    # I
 
-    .line 176
     invoke-static {p1, p2, p3}, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->roundBytes(JI)Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;
 
     move-result-object v0
 
-    .line 177
-    .local v0, "rounded":Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;
     invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v1
@@ -272,16 +236,12 @@
 
     move-result-object v1
 
-    .line 178
-    .local v1, "locale":Ljava/util/Locale;
     iget v2, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->fractionDigits:I
 
     invoke-static {v1, v2}, Lcom/oneplus/settings/utils/OPFormatter;->getNumberFormatter(Ljava/util/Locale;I)Landroid/icu/text/NumberFormat;
 
     move-result-object v2
 
-    .line 179
-    .local v2, "numberFormatter":Landroid/icu/text/NumberFormat;
     iget v3, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->value:F
 
     float-to-double v3, v3
@@ -290,8 +250,6 @@
 
     move-result-object v3
 
-    .line 181
-    .local v3, "formattedNumber":Ljava/lang/String;
     iget-object v4, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->units:Landroid/icu/util/MeasureUnit;
 
     sget-object v5, Landroid/icu/util/MeasureUnit;->BYTE:Landroid/icu/util/MeasureUnit;
@@ -306,7 +264,6 @@
 
     goto :goto_0
 
-    .line 188
     :cond_0
     iget v4, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->value:F
 
@@ -316,14 +273,10 @@
 
     move-result-object v4
 
-    .line 190
-    .local v4, "formattedMeasure":Ljava/lang/String;
     invoke-static {v4, v3}, Lcom/oneplus/settings/utils/OPFormatter;->deleteFirstFromString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 191
-    .local v5, "numberRemoved":Ljava/lang/String;
     sget-object v6, Lcom/oneplus/settings/utils/OPFormatter;->SPACES_AND_CONTROLS:Landroid/icu/text/UnicodeSetSpanner;
 
     invoke-virtual {v6, v5}, Landroid/icu/text/UnicodeSetSpanner;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -334,11 +287,8 @@
 
     move-result-object v4
 
-    .end local v4    # "formattedMeasure":Ljava/lang/String;
-    .end local v5    # "numberRemoved":Ljava/lang/String;
     goto :goto_1
 
-    .line 183
     :cond_1
     :goto_0
     iget-object v4, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->units:Landroid/icu/util/MeasureUnit;
@@ -347,12 +297,9 @@
 
     move-result-object v4
 
-    .line 191
-    .local v4, "units":Ljava/lang/String;
     :goto_1
     nop
 
-    .line 193
     new-instance v5, Lcom/oneplus/settings/utils/OPFormatter$BytesResult;
 
     iget-wide v6, v0, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->roundedBytes:J
@@ -364,10 +311,7 @@
 
 .method public static formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "sizeBytes"    # J
 
-    .line 100
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Lcom/oneplus/settings/utils/OPFormatter;->formatFileSize(Landroid/content/Context;JI)Ljava/lang/String;
@@ -379,26 +323,18 @@
 
 .method private static formatFileSize(Landroid/content/Context;JI)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "sizeBytes"    # J
-    .param p3, "flags"    # I
 
-    .line 112
     if-nez p0, :cond_0
 
-    .line 113
     const-string v0, ""
 
     return-object v0
 
-    .line 115
     :cond_0
     invoke-static {p1, p2, p3}, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->roundBytes(JI)Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;
 
     move-result-object v0
 
-    .line 116
-    .local v0, "res":Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;
     invoke-static {p0, v0}, Lcom/oneplus/settings/utils/OPFormatter;->formatRoundedBytesResult(Landroid/content/Context;Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;)Ljava/lang/String;
 
     move-result-object v1
@@ -412,11 +348,9 @@
 
 .method public static formatIpAddress(I)Ljava/lang/String;
     .locals 1
-    .param p0, "ipv4Address"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 321
     invoke-static {p0}, Landroid/net/NetworkUtils;->intToInetAddress(I)Ljava/net/InetAddress;
 
     move-result-object v0
@@ -430,20 +364,13 @@
 
 .method private static formatMeasureShort(Ljava/util/Locale;Landroid/icu/text/NumberFormat;FLandroid/icu/util/MeasureUnit;)Ljava/lang/String;
     .locals 3
-    .param p0, "locale"    # Ljava/util/Locale;
-    .param p1, "numberFormatter"    # Landroid/icu/text/NumberFormat;
-    .param p2, "value"    # F
-    .param p3, "units"    # Landroid/icu/util/MeasureUnit;
 
-    .line 152
     sget-object v0, Landroid/icu/text/MeasureFormat$FormatWidth;->SHORT:Landroid/icu/text/MeasureFormat$FormatWidth;
 
     invoke-static {p0, v0, p1}, Landroid/icu/text/MeasureFormat;->getInstance(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;Landroid/icu/text/NumberFormat;)Landroid/icu/text/MeasureFormat;
 
     move-result-object v0
 
-    .line 154
-    .local v0, "measureFormatter":Landroid/icu/text/MeasureFormat;
     new-instance v1, Landroid/icu/util/Measure;
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -461,24 +388,17 @@
 
 .method private static formatRoundedBytesResult(Landroid/content/Context;Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;)Ljava/lang/String;
     .locals 8
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "input"    # Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;
 
-    .line 162
     invoke-static {p0}, Lcom/oneplus/settings/utils/OPFormatter;->localeFromContext(Landroid/content/Context;)Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 163
-    .local v0, "locale":Ljava/util/Locale;
     iget v1, p1, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->fractionDigits:I
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/utils/OPFormatter;->getNumberFormatter(Ljava/util/Locale;I)Landroid/icu/text/NumberFormat;
 
     move-result-object v1
 
-    .line 164
-    .local v1, "numberFormatter":Landroid/icu/text/NumberFormat;
     iget-object v2, p1, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->units:Landroid/icu/util/MeasureUnit;
 
     sget-object v3, Landroid/icu/util/MeasureUnit;->BYTE:Landroid/icu/util/MeasureUnit;
@@ -493,7 +413,6 @@
 
     goto :goto_0
 
-    .line 170
     :cond_0
     iget v2, p1, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->value:F
 
@@ -505,7 +424,6 @@
 
     return-object v2
 
-    .line 166
     :cond_1
     :goto_0
     iget v2, p1, Lcom/oneplus/settings/utils/OPFormatter$RoundedBytesResult;->value:F
@@ -516,8 +434,6 @@
 
     move-result-object v2
 
-    .line 167
-    .local v2, "formattedNumber":Ljava/lang/String;
     const v3, 0x104022e
 
     const/4 v4, 0x2
@@ -530,7 +446,6 @@
 
     const/4 v5, 0x1
 
-    .line 168
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
@@ -543,7 +458,6 @@
 
     aput-object v6, v4, v5
 
-    .line 167
     invoke-virtual {p0, v3, v4}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -553,38 +467,27 @@
 
 .method public static formatShortElapsedTime(Landroid/content/Context;J)Ljava/lang/String;
     .locals 14
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "millis"    # J
 
-    .line 338
     const-wide/16 v0, 0x3e8
 
     div-long v0, p1, v0
 
-    .line 340
-    .local v0, "secondsLong":J
     const/4 v2, 0x0
 
-    .local v2, "days":I
     const/4 v3, 0x0
 
-    .local v3, "hours":I
     const/4 v4, 0x0
 
-    .line 341
-    .local v4, "minutes":I
     const-wide/32 v5, 0x15180
 
     cmp-long v7, v0, v5
 
     if-ltz v7, :cond_0
 
-    .line 342
     div-long v5, v0, v5
 
     long-to-int v2, v5
 
-    .line 343
     const v5, 0x15180
 
     mul-int/2addr v5, v2
@@ -593,7 +496,6 @@
 
     sub-long/2addr v0, v5
 
-    .line 345
     :cond_0
     const-wide/16 v5, 0xe10
 
@@ -601,19 +503,16 @@
 
     if-ltz v7, :cond_1
 
-    .line 346
     div-long v5, v0, v5
 
     long-to-int v3, v5
 
-    .line 347
     mul-int/lit16 v5, v3, 0xe10
 
     int-to-long v5, v5
 
     sub-long/2addr v0, v5
 
-    .line 349
     :cond_1
     const-wide/16 v5, 0x3c
 
@@ -621,50 +520,39 @@
 
     if-ltz v7, :cond_2
 
-    .line 350
     div-long v5, v0, v5
 
     long-to-int v4, v5
 
-    .line 351
     mul-int/lit8 v5, v4, 0x3c
 
     int-to-long v5, v5
 
     sub-long/2addr v0, v5
 
-    .line 353
     :cond_2
     long-to-int v5, v0
 
-    .line 355
-    .local v5, "seconds":I
     invoke-static {p0}, Lcom/oneplus/settings/utils/OPFormatter;->localeFromContext(Landroid/content/Context;)Ljava/util/Locale;
 
     move-result-object v6
 
-    .line 356
-    .local v6, "locale":Ljava/util/Locale;
     sget-object v7, Landroid/icu/text/MeasureFormat$FormatWidth;->SHORT:Landroid/icu/text/MeasureFormat$FormatWidth;
 
     invoke-static {v6, v7}, Landroid/icu/text/MeasureFormat;->getInstance(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;
 
     move-result-object v7
 
-    .line 358
-    .local v7, "measureFormat":Landroid/icu/text/MeasureFormat;
     const/4 v8, 0x2
 
     if-lt v2, v8, :cond_3
 
-    .line 359
     add-int/lit8 v8, v3, 0xc
 
     div-int/lit8 v8, v8, 0x18
 
     add-int/2addr v2, v8
 
-    .line 360
     new-instance v8, Landroid/icu/util/Measure;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -681,7 +569,6 @@
 
     return-object v8
 
-    .line 361
     :cond_3
     const/4 v9, 0x1
 
@@ -689,12 +576,10 @@
 
     if-lez v2, :cond_4
 
-    .line 362
     new-array v8, v8, [Landroid/icu/util/Measure;
 
     new-instance v11, Landroid/icu/util/Measure;
 
-    .line 363
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -707,7 +592,6 @@
 
     new-instance v10, Landroid/icu/util/Measure;
 
-    .line 364
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -718,25 +602,21 @@
 
     aput-object v10, v8, v9
 
-    .line 362
     invoke-virtual {v7, v8}, Landroid/icu/text/MeasureFormat;->formatMeasures([Landroid/icu/util/Measure;)Ljava/lang/String;
 
     move-result-object v8
 
     return-object v8
 
-    .line 365
     :cond_4
     if-lt v3, v8, :cond_5
 
-    .line 366
     add-int/lit8 v8, v4, 0x1e
 
     div-int/lit8 v8, v8, 0x3c
 
     add-int/2addr v3, v8
 
-    .line 367
     new-instance v8, Landroid/icu/util/Measure;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -753,16 +633,13 @@
 
     return-object v8
 
-    .line 368
     :cond_5
     if-lez v3, :cond_6
 
-    .line 369
     new-array v8, v8, [Landroid/icu/util/Measure;
 
     new-instance v11, Landroid/icu/util/Measure;
 
-    .line 370
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -775,7 +652,6 @@
 
     new-instance v10, Landroid/icu/util/Measure;
 
-    .line 371
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -786,25 +662,21 @@
 
     aput-object v10, v8, v9
 
-    .line 369
     invoke-virtual {v7, v8}, Landroid/icu/text/MeasureFormat;->formatMeasures([Landroid/icu/util/Measure;)Ljava/lang/String;
 
     move-result-object v8
 
     return-object v8
 
-    .line 372
     :cond_6
     if-lt v4, v8, :cond_7
 
-    .line 373
     add-int/lit8 v8, v5, 0x1e
 
     div-int/lit8 v8, v8, 0x3c
 
     add-int/2addr v4, v8
 
-    .line 374
     new-instance v8, Landroid/icu/util/Measure;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -821,16 +693,13 @@
 
     return-object v8
 
-    .line 375
     :cond_7
     if-lez v4, :cond_8
 
-    .line 376
     new-array v8, v8, [Landroid/icu/util/Measure;
 
     new-instance v11, Landroid/icu/util/Measure;
 
-    .line 377
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
@@ -843,7 +712,6 @@
 
     new-instance v10, Landroid/icu/util/Measure;
 
-    .line 378
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -854,14 +722,12 @@
 
     aput-object v10, v8, v9
 
-    .line 376
     invoke-virtual {v7, v8}, Landroid/icu/text/MeasureFormat;->formatMeasures([Landroid/icu/util/Measure;)Ljava/lang/String;
 
     move-result-object v8
 
     return-object v8
 
-    .line 380
     :cond_8
     new-instance v8, Landroid/icu/util/Measure;
 
@@ -882,10 +748,7 @@
 
 .method public static formatShortElapsedTimeRoundingUpToMinutes(Landroid/content/Context;J)Ljava/lang/String;
     .locals 8
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "millis"    # J
 
-    .line 393
     const-wide/32 v0, 0xea60
 
     add-long v2, p1, v0
@@ -896,8 +759,6 @@
 
     div-long/2addr v2, v0
 
-    .line 395
-    .local v2, "minutesRoundedUp":J
     const-wide/16 v6, 0x0
 
     cmp-long v6, v2, v6
@@ -910,7 +771,6 @@
 
     goto :goto_0
 
-    .line 402
     :cond_0
     mul-long/2addr v0, v2
 
@@ -920,23 +780,18 @@
 
     return-object v0
 
-    .line 396
     :cond_1
     :goto_0
     invoke-static {p0}, Lcom/oneplus/settings/utils/OPFormatter;->localeFromContext(Landroid/content/Context;)Ljava/util/Locale;
 
     move-result-object v0
 
-    .line 397
-    .local v0, "locale":Ljava/util/Locale;
     sget-object v1, Landroid/icu/text/MeasureFormat$FormatWidth;->SHORT:Landroid/icu/text/MeasureFormat$FormatWidth;
 
     invoke-static {v0, v1}, Landroid/icu/text/MeasureFormat;->getInstance(Ljava/util/Locale;Landroid/icu/text/MeasureFormat$FormatWidth;)Landroid/icu/text/MeasureFormat;
 
     move-result-object v1
 
-    .line 399
-    .local v1, "measureFormat":Landroid/icu/text/MeasureFormat;
     new-instance v4, Landroid/icu/util/Measure;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -956,10 +811,7 @@
 
 .method public static formatShortFileSize(Landroid/content/Context;J)Ljava/lang/String;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "sizeBytes"    # J
 
-    .line 108
     const/4 v0, 0x1
 
     invoke-static {p0, p1, p2, v0}, Lcom/oneplus/settings/utils/OPFormatter;->formatFileSize(Landroid/content/Context;JI)Ljava/lang/String;
@@ -971,52 +823,38 @@
 
 .method private static getNumberFormatter(Ljava/util/Locale;I)Landroid/icu/text/NumberFormat;
     .locals 2
-    .param p0, "locale"    # Ljava/util/Locale;
-    .param p1, "fractionDigits"    # I
 
-    .line 128
     invoke-static {p0}, Landroid/icu/text/NumberFormat;->getInstance(Ljava/util/Locale;)Landroid/icu/text/NumberFormat;
 
     move-result-object v0
 
-    .line 129
-    .local v0, "numberFormatter":Landroid/icu/text/NumberFormat;
     invoke-virtual {v0, p1}, Landroid/icu/text/NumberFormat;->setMinimumFractionDigits(I)V
 
-    .line 130
     invoke-virtual {v0, p1}, Landroid/icu/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    .line 131
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/icu/text/NumberFormat;->setGroupingUsed(Z)V
 
-    .line 132
     instance-of v1, v0, Landroid/icu/text/DecimalFormat;
 
     if-eqz v1, :cond_0
 
-    .line 135
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/icu/text/NumberFormat;->setRoundingMode(I)V
 
-    .line 137
     :cond_0
     return-object v0
 .end method
 
 .method private static getSuffixOverride(Landroid/content/res/Resources;Landroid/icu/util/MeasureUnit;)Ljava/lang/String;
     .locals 1
-    .param p0, "res"    # Landroid/content/res/Resources;
-    .param p1, "unit"    # Landroid/icu/util/MeasureUnit;
 
-    .line 120
     sget-object v0, Landroid/icu/util/MeasureUnit;->BYTE:Landroid/icu/util/MeasureUnit;
 
     if-ne p1, v0, :cond_0
 
-    .line 121
     const v0, 0x10400eb
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -1025,7 +863,6 @@
 
     return-object v0
 
-    .line 123
     :cond_0
     const v0, 0x1040547
 
@@ -1038,9 +875,7 @@
 
 .method private static localeFromContext(Landroid/content/Context;)Ljava/util/Locale;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 66
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0

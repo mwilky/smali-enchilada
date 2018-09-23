@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
-    .line 64
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
     invoke-direct {p0}, Landroid/content/pm/PackageManager$MoveCallback;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onStatusChanged(IIJ)V
     .locals 3
-    .param p1, "moveId"    # I
-    .param p2, "status"    # I
-    .param p3, "estMillis"    # J
 
-    .line 67
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->access$000(Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;)I
@@ -50,7 +44,6 @@
 
     return-void
 
-    .line 69
     :cond_0
     invoke-static {p2}, Landroid/content/pm/PackageManager;->isMoveStatusFinished(I)Z
 
@@ -58,7 +51,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 70
     const-string v0, "StorageSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -77,12 +69,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     const/16 v0, -0x64
 
     if-eq p2, v0, :cond_1
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
@@ -97,10 +87,8 @@
 
     move-result-object v0
 
-    .line 73
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 75
     :cond_1
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
@@ -108,13 +96,11 @@
 
     goto :goto_0
 
-    .line 78
     :cond_2
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;->this$0:Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->setCurrentProgress(I)V
 
-    .line 80
     :goto_0
     return-void
 .end method

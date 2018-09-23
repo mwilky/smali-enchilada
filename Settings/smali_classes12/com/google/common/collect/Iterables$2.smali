@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
 
-    .line 495
     iput-object p1, p0, Lcom/google/common/collect/Iterables$2;->val$inputs:Ljava/lang/Iterable;
 
     invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
@@ -49,7 +48,6 @@
         }
     .end annotation
 
-    .line 498
     iget-object v0, p0, Lcom/google/common/collect/Iterables$2;->val$inputs:Ljava/lang/Iterable;
 
     invoke-static {v0}, Lcom/google/common/collect/Iterables;->access$100(Ljava/lang/Iterable;)Ljava/util/Iterator;

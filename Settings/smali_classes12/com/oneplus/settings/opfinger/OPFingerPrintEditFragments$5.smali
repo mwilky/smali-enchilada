@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;Landroid/hardware/fingerprint/Fingerprint;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;
 
-    .line 308
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;
 
     iput-object p2, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->val$fingerprint:Landroid/hardware/fingerprint/Fingerprint;
@@ -42,13 +40,9 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 312
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 313
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;->access$100(Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;)Landroid/os/Handler;
@@ -59,14 +53,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 314
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;
 
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->val$fingerprint:Landroid/hardware/fingerprint/Fingerprint;
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;->access$400(Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;Landroid/hardware/fingerprint/Fingerprint;)V
 
-    .line 315
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments$5;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;->access$100(Lcom/oneplus/settings/opfinger/OPFingerPrintEditFragments;)Landroid/os/Handler;
@@ -79,6 +71,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 316
     return-void
 .end method

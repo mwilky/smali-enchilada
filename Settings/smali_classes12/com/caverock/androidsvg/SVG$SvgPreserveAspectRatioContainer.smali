@@ -22,14 +22,11 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 1492
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgConditionalContainer;-><init>()V
 
-    .line 1494
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgPreserveAspectRatioContainer;->preserveAspectRatio:Lcom/caverock/androidsvg/PreserveAspectRatio;
 
-    .line 1492
     return-void
 .end method

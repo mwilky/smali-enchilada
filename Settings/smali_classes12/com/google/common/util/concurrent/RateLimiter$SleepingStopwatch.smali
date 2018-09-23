@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 402
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +29,6 @@
 .method static final createFromSystemTimer()Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;
     .locals 1
 
-    .line 413
     new-instance v0, Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch$1;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch$1;-><init>()V

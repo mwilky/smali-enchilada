@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
     .locals 0
 
-    .line 242
     iput-object p1, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$2;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 245
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$2;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/GAServiceProxy;->access$000(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
 
-    .line 246
     return-void
 .end method

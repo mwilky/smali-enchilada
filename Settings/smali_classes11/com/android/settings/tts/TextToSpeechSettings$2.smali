@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/tts/TextToSpeechSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/tts/TextToSpeechSettings;
 
-    .line 248
     iput-object p1, p0, Lcom/android/settings/tts/TextToSpeechSettings$2;->this$0:Lcom/android/settings/tts/TextToSpeechSettings;
 
     invoke-direct {p0}, Landroid/speech/tts/UtteranceProgressListener;-><init>()V
@@ -35,31 +33,24 @@
 # virtual methods
 .method public onDone(Ljava/lang/String;)V
     .locals 0
-    .param p1, "utteranceId"    # Ljava/lang/String;
 
-    .line 255
     return-void
 .end method
 
 .method public onError(Ljava/lang/String;)V
     .locals 2
-    .param p1, "utteranceId"    # Ljava/lang/String;
 
-    .line 259
     const-string v0, "TextToSpeechSettings"
 
     const-string v1, "Error while trying to synthesize sample text"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
     return-void
 .end method
 
 .method public onStart(Ljava/lang/String;)V
     .locals 0
-    .param p1, "utteranceId"    # Ljava/lang/String;
 
-    .line 251
     return-void
 .end method

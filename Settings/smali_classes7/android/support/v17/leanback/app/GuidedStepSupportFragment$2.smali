@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/GuidedStepSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
-    .line 1100
     iput-object p1, p0, Landroid/support/v17/leanback/app/GuidedStepSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
     .locals 2
-    .param p1, "action"    # Landroid/support/v17/leanback/widget/GuidedAction;
 
-    .line 1103
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/GuidedStepSupportFragment;->onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
 
-    .line 1104
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/GuidedStepSupportFragment;->isExpanded()Z
@@ -56,14 +51,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1105
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/GuidedStepSupportFragment;->collapseAction(Z)V
 
     goto :goto_0
 
-    .line 1106
     :cond_0
     invoke-virtual {p1}, Landroid/support/v17/leanback/widget/GuidedAction;->hasSubActions()Z
 
@@ -77,13 +70,11 @@
 
     if-eqz v0, :cond_2
 
-    .line 1107
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/GuidedStepSupportFragment;
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v17/leanback/app/GuidedStepSupportFragment;->expandAction(Landroid/support/v17/leanback/widget/GuidedAction;Z)V
 
-    .line 1109
     :cond_2
     :goto_0
     return-void

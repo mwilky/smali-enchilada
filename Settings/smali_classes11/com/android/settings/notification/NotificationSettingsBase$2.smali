@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/NotificationSettingsBase;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationSettingsBase;
 
-    .line 386
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettingsBase$2;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 389
     invoke-virtual {p2}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
@@ -47,8 +42,6 @@
 
     move-result-object v0
 
-    .line 390
-    .local v0, "packageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$2;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v1, v1, Lcom/android/settings/notification/NotificationSettingsBase;->mPkgInfo:Landroid/content/pm/PackageInfo;
@@ -67,7 +60,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 391
     :cond_0
     invoke-static {}, Lcom/android/settings/notification/NotificationSettingsBase;->access$000()Z
 
@@ -75,7 +67,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 392
     const-string v1, "NotifiSettingsBase"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -98,13 +89,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 395
     :cond_1
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$2;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     invoke-virtual {v1}, Lcom/android/settings/notification/NotificationSettingsBase;->onPackageRemoved()V
 
-    .line 397
     :cond_2
     return-void
 .end method

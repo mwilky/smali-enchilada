@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/DeviceAdminAdd$5;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/DeviceAdminAdd$5;
 
-    .line 397
     iput-object p1, p0, Lcom/android/settings/DeviceAdminAdd$5$2;->this$1:Lcom/android/settings/DeviceAdminAdd$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onResult(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "result"    # Landroid/os/Bundle;
 
-    .line 400
     if-eqz p1, :cond_0
 
-    .line 401
     const-string v0, "android.app.extra.DISABLE_WARNING"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
@@ -52,12 +47,9 @@
 
     goto :goto_0
 
-    .line 403
     :cond_0
     const/4 v0, 0x0
 
-    .line 404
-    .local v0, "msg":Ljava/lang/CharSequence;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/DeviceAdminAdd$5$2;->this$1:Lcom/android/settings/DeviceAdminAdd$5;
 
@@ -65,6 +57,5 @@
 
     invoke-virtual {v1, v0}, Lcom/android/settings/DeviceAdminAdd;->continueRemoveAction(Ljava/lang/CharSequence;)V
 
-    .line 405
     return-void
 .end method

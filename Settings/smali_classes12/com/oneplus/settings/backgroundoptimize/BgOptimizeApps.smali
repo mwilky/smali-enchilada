@@ -19,7 +19,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 71
     new-instance v0, Lcom/oneplus/settings/backgroundoptimize/BgOptimizeApps$1;
 
     invoke-direct {v0}, Lcom/oneplus/settings/backgroundoptimize/BgOptimizeApps$1;-><init>()V
@@ -32,7 +31,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Lcom/android/settings/applications/manageapplications/ManageApplications;-><init>()V
 
     return-void

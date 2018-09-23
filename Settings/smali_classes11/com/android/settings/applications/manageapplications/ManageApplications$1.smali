@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1552
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +30,7 @@
 # virtual methods
 .method public createSummaryProvider(Landroid/app/Activity;Lcom/android/settings/dashboard/SummaryLoader;)Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;
     .locals 2
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 1556
     new-instance v0, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;
 
     const/4 v1, 0x0

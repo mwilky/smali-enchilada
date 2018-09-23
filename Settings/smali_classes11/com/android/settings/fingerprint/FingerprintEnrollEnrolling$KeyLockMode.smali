@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 153
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "NORMAL"
@@ -55,7 +54,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->NORMAL:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 154
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "POWER"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->POWER:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 155
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "POWER_HOME"
@@ -77,7 +74,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->POWER_HOME:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 156
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "HOME"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->HOME:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 157
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "FOOT"
@@ -99,7 +94,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->FOOT:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 158
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "BACK_SWITCH"
@@ -110,7 +104,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->BACK_SWITCH:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 159
     new-instance v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     const-string v1, "BASE"
@@ -121,7 +114,6 @@
 
     sput-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->BASE:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
-    .line 152
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
@@ -167,7 +159,6 @@
         }
     .end annotation
 
-    .line 152
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -175,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 152
     const-class v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +181,6 @@
 .method public static values()[Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
     .locals 1
 
-    .line 152
     sget-object v0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->$VALUES:[Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;
 
     invoke-virtual {v0}, [Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$KeyLockMode;->clone()Ljava/lang/Object;

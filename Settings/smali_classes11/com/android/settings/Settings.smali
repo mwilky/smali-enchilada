@@ -23,7 +23,6 @@
         Lcom/android/settings/Settings$DisplaySizeAdaptionAppListActivity;,
         Lcom/android/settings/Settings$DomainsURLsAppListActivity;,
         Lcom/android/settings/Settings$AllApplicationsActivity;,
-        Lcom/android/settings/Settings$DefaultAssistPickerActivity;,
         Lcom/android/settings/Settings$OPDataSaverActivity;,
         Lcom/android/settings/Settings$OPProductInfoActivity;,
         Lcom/android/settings/Settings$OPPreInstalledAppListActivity;,
@@ -164,7 +163,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void

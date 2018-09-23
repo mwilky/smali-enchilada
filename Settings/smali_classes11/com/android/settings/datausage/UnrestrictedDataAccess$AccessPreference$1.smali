@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
-    .line 328
     iput-object p1, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 332
     iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
     iget-object v0, v0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->this$0:Lcom/android/settings/datausage/UnrestrictedDataAccess;
@@ -56,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/applications/ApplicationsState;->ensureIcon(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
 
-    .line 335
     iget-object v0, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
 
     iget-object v1, p0, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference$1;->this$1:Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;
@@ -69,6 +65,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/datausage/UnrestrictedDataAccess$AccessPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 336
     return-void
 .end method

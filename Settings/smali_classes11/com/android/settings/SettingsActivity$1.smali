@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/SettingsActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/SettingsActivity;
 
-    .line 185
     iput-object p1, p0, Lcom/android/settings/SettingsActivity$1;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 188
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 189
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -53,13 +46,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 190
     invoke-static {p2}, Lcom/android/settings/Utils;->isBatteryPresent(Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 192
-    .local v1, "batteryPresent":Z
     iget-object v2, p0, Lcom/android/settings/SettingsActivity$1;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-static {v2}, Lcom/android/settings/SettingsActivity;->access$000(Lcom/android/settings/SettingsActivity;)Z
@@ -68,18 +58,14 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 193
     iget-object v2, p0, Lcom/android/settings/SettingsActivity$1;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-static {v2, v1}, Lcom/android/settings/SettingsActivity;->access$002(Lcom/android/settings/SettingsActivity;Z)Z
 
-    .line 194
     iget-object v2, p0, Lcom/android/settings/SettingsActivity$1;->this$0:Lcom/android/settings/SettingsActivity;
 
     invoke-static {v2}, Lcom/android/settings/SettingsActivity;->access$100(Lcom/android/settings/SettingsActivity;)V
 
-    .line 197
-    .end local v1    # "batteryPresent":Z
     :cond_0
     return-void
 .end method

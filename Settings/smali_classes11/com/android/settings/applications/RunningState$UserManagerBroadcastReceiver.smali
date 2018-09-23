@@ -24,7 +24,6 @@
 .method private constructor <init>(Lcom/android/settings/applications/RunningState;)V
     .locals 0
 
-    .line 286
     iput-object p1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,10 +33,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/applications/RunningState;Lcom/android/settings/applications/RunningState$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/applications/RunningState;
-    .param p2, "x1"    # Lcom/android/settings/applications/RunningState$1;
 
-    .line 286
     invoke-direct {p0, p1}, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;-><init>(Lcom/android/settings/applications/RunningState;)V
 
     return-void
@@ -48,32 +44,24 @@
 .method public checkUsersChangedLocked()Z
     .locals 2
 
-    .line 305
     iget-boolean v0, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->usersChanged:Z
 
-    .line 306
-    .local v0, "oldValue":Z
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->usersChanged:Z
 
-    .line 307
     return v0
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 291
     iget-object v0, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     iget-object v0, v0, Lcom/android/settings/applications/RunningState;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 292
     :try_start_0
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
@@ -83,28 +71,24 @@
 
     if-eqz v1, :cond_0
 
-    .line 293
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     const/4 v3, 0x0
 
     iput-boolean v3, v1, Lcom/android/settings/applications/RunningState;->mHaveData:Z
 
-    .line 294
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v1, Lcom/android/settings/applications/RunningState;->mBackgroundHandler:Lcom/android/settings/applications/RunningState$BackgroundHandler;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/applications/RunningState$BackgroundHandler;->removeMessages(I)V
 
-    .line 295
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v1, Lcom/android/settings/applications/RunningState;->mBackgroundHandler:Lcom/android/settings/applications/RunningState$BackgroundHandler;
 
     invoke-virtual {v1, v2}, Lcom/android/settings/applications/RunningState$BackgroundHandler;->sendEmptyMessage(I)Z
 
-    .line 296
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v1, Lcom/android/settings/applications/RunningState;->mBackgroundHandler:Lcom/android/settings/applications/RunningState$BackgroundHandler;
@@ -113,7 +97,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/applications/RunningState$BackgroundHandler;->removeMessages(I)V
 
-    .line 297
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->this$0:Lcom/android/settings/applications/RunningState;
 
     iget-object v1, v1, Lcom/android/settings/applications/RunningState;->mBackgroundHandler:Lcom/android/settings/applications/RunningState$BackgroundHandler;
@@ -122,18 +105,14 @@
 
     goto :goto_0
 
-    .line 299
     :cond_0
     iput-boolean v2, p0, Lcom/android/settings/applications/RunningState$UserManagerBroadcastReceiver;->usersChanged:Z
 
-    .line 301
     :goto_0
     monitor-exit v0
 
-    .line 302
     return-void
 
-    .line 301
     :catchall_0
     move-exception v1
 
@@ -146,30 +125,23 @@
 
 .method register(Landroid/content/Context;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 311
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 312
-    .local v0, "filter":Landroid/content/IntentFilter;
     const-string v1, "android.intent.action.USER_STOPPED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 313
     const-string v1, "android.intent.action.USER_STARTED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 314
     const-string v1, "android.intent.action.USER_INFO_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 315
     sget-object v3, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
 
     const/4 v5, 0x0
@@ -184,6 +156,5 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/content/Context;->registerReceiverAsUser(Landroid/content/BroadcastReceiver;Landroid/os/UserHandle;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    .line 316
     return-void
 .end method

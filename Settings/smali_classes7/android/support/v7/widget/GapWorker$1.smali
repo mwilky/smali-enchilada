@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 188
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Landroid/support/v7/widget/GapWorker$Task;Landroid/support/v7/widget/GapWorker$Task;)I
     .locals 5
-    .param p1, "lhs"    # Landroid/support/v7/widget/GapWorker$Task;
-    .param p2, "rhs"    # Landroid/support/v7/widget/GapWorker$Task;
 
-    .line 192
     iget-object v0, p1, Landroid/support/v7/widget/GapWorker$Task;->view:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
@@ -76,7 +72,6 @@
 
     if-eq v0, v3, :cond_3
 
-    .line 193
     iget-object v0, p1, Landroid/support/v7/widget/GapWorker$Task;->view:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_2
@@ -89,7 +84,6 @@
     :goto_2
     return v2
 
-    .line 197
     :cond_3
     iget-boolean v0, p1, Landroid/support/v7/widget/GapWorker$Task;->immediate:Z
 
@@ -97,7 +91,6 @@
 
     if-eq v0, v3, :cond_5
 
-    .line 198
     iget-boolean v0, p1, Landroid/support/v7/widget/GapWorker$Task;->immediate:Z
 
     if-eqz v0, :cond_4
@@ -109,7 +102,6 @@
     :cond_4
     return v2
 
-    .line 202
     :cond_5
     iget v0, p2, Landroid/support/v7/widget/GapWorker$Task;->viewVelocity:I
 
@@ -117,13 +109,10 @@
 
     sub-int/2addr v0, v2
 
-    .line 203
-    .local v0, "deltaViewVelocity":I
     if-eqz v0, :cond_6
 
     return v0
 
-    .line 206
     :cond_6
     iget v2, p1, Landroid/support/v7/widget/GapWorker$Task;->distanceToItem:I
 
@@ -131,13 +120,10 @@
 
     sub-int/2addr v2, v3
 
-    .line 207
-    .local v2, "deltaDistanceToItem":I
     if-eqz v2, :cond_7
 
     return v2
 
-    .line 209
     :cond_7
     return v1
 .end method
@@ -145,7 +131,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 188
     check-cast p1, Landroid/support/v7/widget/GapWorker$Task;
 
     check-cast p2, Landroid/support/v7/widget/GapWorker$Task;

@@ -6,13 +6,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 27
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/appinfo/AppInfoPreferenceControllerBase;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 28
     return-void
 .end method
 
@@ -21,14 +17,12 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 4
 
-    .line 32
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppVersionPreferenceController;->mContext:Landroid/content/Context;
 
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 33
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
     move-result-object v2
@@ -49,8 +43,7 @@
 
     aput-object v2, v1, v3
 
-    .line 32
-    const v2, 0x7f12130d
+    const v2, 0x7f121306
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

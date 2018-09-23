@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 286
     invoke-static {}, Lcom/google/common/primitives/UnsignedBytes;->lexicographicalComparatorJavaImpl()Ljava/util/Comparator;
 
     move-result-object v0
@@ -51,7 +50,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

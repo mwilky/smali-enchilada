@@ -48,46 +48,31 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/tagmanager/CtfeHost;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "containerId"    # Ljava/lang/String;
-    .param p3, "ctfeHost"    # Lcom/google/tagmanager/CtfeHost;
 
-    .line 39
     new-instance v0, Lcom/google/tagmanager/NetworkClientFactory;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NetworkClientFactory;-><init>()V
 
     invoke-direct {p0, p1, p2, v0, p3}, Lcom/google/tagmanager/ResourceLoader;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/tagmanager/NetworkClientFactory;Lcom/google/tagmanager/CtfeHost;)V
 
-    .line 40
     return-void
 .end method
 
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Lcom/google/tagmanager/NetworkClientFactory;Lcom/google/tagmanager/CtfeHost;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "containerId"    # Ljava/lang/String;
-    .param p3, "factory"    # Lcom/google/tagmanager/NetworkClientFactory;
-    .param p4, "ctfeHost"    # Lcom/google/tagmanager/CtfeHost;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     iput-object p1, p0, Lcom/google/tagmanager/ResourceLoader;->mContext:Landroid/content/Context;
 
-    .line 50
     iput-object p3, p0, Lcom/google/tagmanager/ResourceLoader;->mClientFactory:Lcom/google/tagmanager/NetworkClientFactory;
 
-    .line 51
     iput-object p2, p0, Lcom/google/tagmanager/ResourceLoader;->mContainerId:Ljava/lang/String;
 
-    .line 52
     iput-object p4, p0, Lcom/google/tagmanager/ResourceLoader;->mCtfeHost:Lcom/google/tagmanager/CtfeHost;
 
-    .line 53
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -104,65 +89,51 @@
 
     iput-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mDefaultCtfeUrlPathAndQuery:Ljava/lang/String;
 
-    .line 54
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mDefaultCtfeUrlPathAndQuery:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mCtfeUrlPathAndQuery:Ljava/lang/String;
 
-    .line 55
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mPreviousVersion:Ljava/lang/String;
 
-    .line 56
     return-void
 .end method
 
 .method private loadResource()V
     .locals 7
 
-    .line 92
     invoke-direct {p0}, Lcom/google/tagmanager/ResourceLoader;->okToLoad()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 93
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     sget-object v1, Lcom/google/tagmanager/LoadCallback$Failure;->NOT_AVAILABLE:Lcom/google/tagmanager/LoadCallback$Failure;
 
     invoke-interface {v0, v1}, Lcom/google/tagmanager/LoadCallback;->onFailure(Lcom/google/tagmanager/LoadCallback$Failure;)V
 
-    .line 94
     return-void
 
-    .line 97
     :cond_0
     const-string v0, "Start loading resource from network ..."
 
     invoke-static {v0}, Lcom/google/tagmanager/Log;->v(Ljava/lang/String;)V
 
-    .line 99
     invoke-virtual {p0}, Lcom/google/tagmanager/ResourceLoader;->getCtfeUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 100
-    .local v0, "url":Ljava/lang/String;
     iget-object v1, p0, Lcom/google/tagmanager/ResourceLoader;->mClientFactory:Lcom/google/tagmanager/NetworkClientFactory;
 
     invoke-virtual {v1}, Lcom/google/tagmanager/NetworkClientFactory;->createNetworkClient()Lcom/google/tagmanager/NetworkClient;
 
     move-result-object v1
 
-    .line 101
-    .local v1, "networkClient":Lcom/google/tagmanager/NetworkClient;
     const/4 v2, 0x0
 
-    .line 105
-    .local v2, "inputStream":Ljava/io/InputStream;
     :try_start_0
     invoke-interface {v1, v0}, Lcom/google/tagmanager/NetworkClient;->getInputStream(Ljava/lang/String;)Ljava/io/InputStream;
 
@@ -174,20 +145,15 @@
 
     move-object v2, v3
 
-    .line 115
     nop
 
-    .line 119
     :try_start_1
     new-instance v3, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v3}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 120
-    .local v3, "outputStream":Ljava/io/ByteArrayOutputStream;
     invoke-static {v2, v3}, Lcom/google/tagmanager/ResourceUtil;->copyStream(Ljava/io/InputStream;Ljava/io/OutputStream;)V
 
-    .line 121
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v4
@@ -196,8 +162,6 @@
 
     move-result-object v4
 
-    .line 124
-    .local v4, "resource":Lcom/google/analytics/containertag/proto/Serving$SupplementedResource;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -214,12 +178,10 @@
 
     invoke-static {v5}, Lcom/google/tagmanager/Log;->v(Ljava/lang/String;)V
 
-    .line 126
     iget-object v5, v4, Lcom/google/analytics/containertag/proto/Serving$SupplementedResource;->resource:Lcom/google/analytics/containertag/proto/Serving$Resource;
 
     if-nez v5, :cond_1
 
-    .line 127
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -238,7 +200,6 @@
 
     invoke-static {v5}, Lcom/google/tagmanager/Log;->v(Ljava/lang/String;)V
 
-    .line 130
     :cond_1
     iget-object v5, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
@@ -247,31 +208,21 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 135
-    .end local v3    # "outputStream":Ljava/io/ByteArrayOutputStream;
-    .end local v4    # "resource":Lcom/google/analytics/containertag/proto/Serving$SupplementedResource;
     nop
 
-    .line 137
     invoke-interface {v1}, Lcom/google/tagmanager/NetworkClient;->close()V
 
-    .line 138
     nop
 
-    .line 140
     const-string v3, "Load resource from network finished."
 
     invoke-static {v3}, Lcom/google/tagmanager/Log;->v(Ljava/lang/String;)V
 
-    .line 141
     return-void
 
-    .line 131
     :catch_0
     move-exception v3
 
-    .line 132
-    .local v3, "e":Ljava/io/IOException;
     :try_start_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -299,7 +250,6 @@
 
     invoke-static {v4, v3}, Lcom/google/tagmanager/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 133
     iget-object v4, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     sget-object v5, Lcom/google/tagmanager/LoadCallback$Failure;->SERVER_ERROR:Lcom/google/tagmanager/LoadCallback$Failure;
@@ -308,32 +258,19 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 137
-    .end local v0    # "url":Ljava/lang/String;
-    .end local v1    # "networkClient":Lcom/google/tagmanager/NetworkClient;
-    .end local v2    # "inputStream":Ljava/io/InputStream;
-    .end local v3    # "e":Ljava/io/IOException;
-    .end local p0    # "this":Lcom/google/tagmanager/ResourceLoader;
     :goto_0
     invoke-interface {v1}, Lcom/google/tagmanager/NetworkClient;->close()V
 
     return-void
 
-    .restart local v0    # "url":Ljava/lang/String;
-    .restart local v1    # "networkClient":Lcom/google/tagmanager/NetworkClient;
-    .restart local v2    # "inputStream":Ljava/io/InputStream;
-    .restart local p0    # "this":Lcom/google/tagmanager/ResourceLoader;
     :catchall_0
     move-exception v3
 
     goto :goto_1
 
-    .line 111
     :catch_1
     move-exception v3
 
-    .line 112
-    .restart local v3    # "e":Ljava/io/IOException;
     :try_start_3
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -361,7 +298,6 @@
 
     invoke-static {v4, v3}, Lcom/google/tagmanager/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 113
     iget-object v4, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     sget-object v5, Lcom/google/tagmanager/LoadCallback$Failure;->IO_ERROR:Lcom/google/tagmanager/LoadCallback$Failure;
@@ -370,13 +306,9 @@
 
     goto :goto_0
 
-    .line 106
-    .end local v3    # "e":Ljava/io/IOException;
     :catch_2
     move-exception v3
 
-    .line 107
-    .local v3, "e":Ljava/io/FileNotFoundException;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -405,7 +337,6 @@
 
     invoke-static {v4}, Lcom/google/tagmanager/Log;->w(Ljava/lang/String;)V
 
-    .line 109
     iget-object v4, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     sget-object v5, Lcom/google/tagmanager/LoadCallback$Failure;->SERVER_ERROR:Lcom/google/tagmanager/LoadCallback$Failure;
@@ -416,8 +347,6 @@
 
     goto :goto_0
 
-    .line 137
-    .end local v3    # "e":Ljava/io/FileNotFoundException;
     :goto_1
     invoke-interface {v1}, Lcom/google/tagmanager/NetworkClient;->close()V
 
@@ -427,7 +356,6 @@
 .method private okToLoad()Z
     .locals 3
 
-    .line 73
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mContext:Landroid/content/Context;
 
     const-string v1, "connectivity"
@@ -438,14 +366,10 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 75
-    .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 77
-    .local v1, "network":Landroid/net/NetworkInfo;
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -456,20 +380,17 @@
 
     goto :goto_0
 
-    .line 81
     :cond_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 78
     :cond_1
     :goto_0
     const-string v2, "...no network connectivity"
 
     invoke-static {v2}, Lcom/google/tagmanager/Log;->v(Ljava/lang/String;)V
 
-    .line 79
     const/4 v2, 0x0
 
     return v2
@@ -482,7 +403,6 @@
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
-    .line 145
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -507,8 +427,6 @@
 
     move-result-object v0
 
-    .line 146
-    .local v0, "url":Ljava/lang/String;
     iget-object v1, p0, Lcom/google/tagmanager/ResourceLoader;->mPreviousVersion:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -527,7 +445,6 @@
 
     if-nez v1, :cond_0
 
-    .line 147
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -546,7 +463,6 @@
 
     move-result-object v0
 
-    .line 149
     :cond_0
     invoke-static {}, Lcom/google/tagmanager/PreviewManager;->getInstance()Lcom/google/tagmanager/PreviewManager;
 
@@ -564,7 +480,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 151
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -579,7 +494,6 @@
 
     move-result-object v0
 
-    .line 153
     :cond_1
     return-object v0
 .end method
@@ -587,23 +501,18 @@
 .method public run()V
     .locals 2
 
-    .line 60
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     if-eqz v0, :cond_0
 
-    .line 65
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
     invoke-interface {v0}, Lcom/google/tagmanager/LoadCallback;->startLoad()V
 
-    .line 66
     invoke-direct {p0}, Lcom/google/tagmanager/ResourceLoader;->loadResource()V
 
-    .line 67
     return-void
 
-    .line 63
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -616,21 +525,17 @@
 
 .method setCtfeURLPathAndQuery(Ljava/lang/String;)V
     .locals 2
-    .param p1, "urlPathAndQuery"    # Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
-    .line 159
     if-nez p1, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mDefaultCtfeUrlPathAndQuery:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/tagmanager/ResourceLoader;->mCtfeUrlPathAndQuery:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 162
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -648,10 +553,8 @@
 
     invoke-static {v0}, Lcom/google/tagmanager/Log;->d(Ljava/lang/String;)V
 
-    .line 163
     iput-object p1, p0, Lcom/google/tagmanager/ResourceLoader;->mCtfeUrlPathAndQuery:Ljava/lang/String;
 
-    .line 165
     :goto_0
     return-void
 .end method
@@ -667,21 +570,16 @@
         }
     .end annotation
 
-    .line 85
-    .local p1, "callback":Lcom/google/tagmanager/LoadCallback;, "Lcom/google/tagmanager/LoadCallback<Lcom/google/analytics/containertag/proto/Serving$SupplementedResource;>;"
     iput-object p1, p0, Lcom/google/tagmanager/ResourceLoader;->mCallback:Lcom/google/tagmanager/LoadCallback;
 
-    .line 86
     return-void
 .end method
 
 .method setPreviousVersion(Ljava/lang/String;)V
     .locals 2
-    .param p1, "version"    # Ljava/lang/String;
     .annotation build Lcom/google/android/gms/common/util/VisibleForTesting;
     .end annotation
 
-    .line 169
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -698,9 +596,7 @@
 
     invoke-static {v0}, Lcom/google/tagmanager/Log;->d(Ljava/lang/String;)V
 
-    .line 170
     iput-object p1, p0, Lcom/google/tagmanager/ResourceLoader;->mPreviousVersion:Ljava/lang/String;
 
-    .line 171
     return-void
 .end method

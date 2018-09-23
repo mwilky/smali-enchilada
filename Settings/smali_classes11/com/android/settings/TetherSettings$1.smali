@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/TetherSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/TetherSettings;
 
-    .line 328
     iput-object p1, p0, Lcom/android/settings/TetherSettings$1;->this$0:Lcom/android/settings/TetherSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 331
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -46,7 +42,6 @@
 
     goto :goto_0
 
-    .line 333
     :cond_0
     const-string v0, "TetheringSettings"
 
@@ -54,12 +49,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
     iget-object v0, p0, Lcom/android/settings/TetherSettings$1;->this$0:Lcom/android/settings/TetherSettings;
 
     invoke-static {v0}, Lcom/android/settings/TetherSettings;->access$200(Lcom/android/settings/TetherSettings;)V
 
-    .line 337
     :goto_0
     return-void
 .end method

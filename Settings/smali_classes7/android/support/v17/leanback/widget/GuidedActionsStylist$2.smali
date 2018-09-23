@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist;Landroid/support/v17/leanback/widget/GuidedActionAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 774
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$2;->val$guidedActionAdapter:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
@@ -42,15 +40,11 @@
 # virtual methods
 .method public run(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
     .locals 3
-    .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 777
     move-object v0, p1
 
     check-cast v0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
-    .line 778
-    .local v0, "vh":Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
     iget-object v1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$2;->val$guidedActionAdapter:Landroid/support/v17/leanback/widget/GuidedActionAdapter;
 
     iget-object v1, v1, Landroid/support/v17/leanback/widget/GuidedActionAdapter;->mGroup:Landroid/support/v17/leanback/widget/GuidedActionAdapterGroup;
@@ -59,6 +53,5 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v17/leanback/widget/GuidedActionAdapterGroup;->openIme(Landroid/support/v17/leanback/widget/GuidedActionAdapter;Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;)V
 
-    .line 779
     return-void
 .end method

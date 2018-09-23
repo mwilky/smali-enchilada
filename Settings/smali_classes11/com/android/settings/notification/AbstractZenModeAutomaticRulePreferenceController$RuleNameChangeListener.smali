@@ -26,18 +26,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;Lcom/android/settings/notification/ZenRuleInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;
-    .param p2, "ruleInfo"    # Lcom/android/settings/notification/ZenRuleInfo;
 
-    .line 171
     iput-object p1, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->this$0:Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 172
     iput-object p2, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->mRuleInfo:Lcom/android/settings/notification/ZenRuleInfo;
 
-    .line 173
     return-void
 .end method
 
@@ -45,10 +40,7 @@
 # virtual methods
 .method public onOk(Ljava/lang/String;Landroid/app/Fragment;)V
     .locals 10
-    .param p1, "ruleName"    # Ljava/lang/String;
-    .param p2, "parent"    # Landroid/app/Fragment;
 
-    .line 177
     iget-object v0, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->this$0:Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;
 
     iget-object v0, v0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
@@ -67,7 +59,6 @@
 
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 179
     new-instance v0, Landroid/app/AutomaticZenRule;
 
     iget-object v1, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->mRuleInfo:Lcom/android/settings/notification/ZenRuleInfo;
@@ -88,8 +79,6 @@
 
     invoke-direct/range {v4 .. v9}, Landroid/app/AutomaticZenRule;-><init>(Ljava/lang/String;Landroid/content/ComponentName;Landroid/net/Uri;IZ)V
 
-    .line 182
-    .local v0, "rule":Landroid/app/AutomaticZenRule;
     iget-object v1, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->this$0:Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;
 
     iget-object v1, v1, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
@@ -98,11 +87,8 @@
 
     move-result-object v1
 
-    .line 183
-    .local v1, "savedRuleId":Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 184
     iget-object v2, p0, Lcom/android/settings/notification/AbstractZenModeAutomaticRulePreferenceController$RuleNameChangeListener;->mRuleInfo:Lcom/android/settings/notification/ZenRuleInfo;
 
     iget-object v2, v2, Lcom/android/settings/notification/ZenRuleInfo;->settingsAction:Ljava/lang/String;
@@ -115,7 +101,6 @@
 
     invoke-virtual {p2, v2}, Landroid/app/Fragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 187
     :cond_0
     return-void
 .end method

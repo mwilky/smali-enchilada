@@ -75,7 +75,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 308
     new-instance v0, Lcom/android/settings/dashboard/conditional/ConditionManager$1;
 
     invoke-direct {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager$1;-><init>()V
@@ -87,52 +86,41 @@
 
 .method private constructor <init>(Landroid/content/Context;Z)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "loadConditionsNow"    # Z
 
-    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mListeners:Ljava/util/ArrayList;
 
-    .line 63
     iput-object p1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mContext:Landroid/content/Context;
 
-    .line 64
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
-    .line 65
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     if-eqz p2, :cond_0
 
-    .line 66
     const-string v2, "ConditionManager"
 
     const-string v3, "conditions loading synchronously"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 67
     new-instance v2, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;
 
     invoke-direct {v2, p0, v1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;Lcom/android/settings/dashboard/conditional/ConditionManager$1;)V
 
     move-object v1, v2
 
-    .line 68
-    .local v1, "loader":Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;
     new-array v0, v0, [Ljava/lang/Void;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->doInBackground([Ljava/lang/Void;)Ljava/util/ArrayList;
@@ -141,11 +129,8 @@
 
     invoke-virtual {v1, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->onPostExecute(Ljava/util/ArrayList;)V
 
-    .line 69
-    .end local v1    # "loader":Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;
     goto :goto_0
 
-    .line 70
     :cond_0
     const-string v2, "ConditionManager"
 
@@ -153,7 +138,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     new-instance v2, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;
 
     invoke-direct {v2, p0, v1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;Lcom/android/settings/dashboard/conditional/ConditionManager$1;)V
@@ -162,16 +146,13 @@
 
     invoke-virtual {v2, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 73
     :goto_0
     return-void
 .end method
 
 .method static synthetic access$100(Lcom/android/settings/dashboard/conditional/ConditionManager;)Ljava/io/File;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mXmlFile:Ljava/io/File;
 
     return-object v0
@@ -179,10 +160,7 @@
 
 .method static synthetic access$102(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/io/File;)Ljava/io/File;
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
-    .param p1, "x1"    # Ljava/io/File;
 
-    .line 41
     iput-object p1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mXmlFile:Ljava/io/File;
 
     return-object p1
@@ -190,9 +168,7 @@
 
 .method static synthetic access$200(Lcom/android/settings/dashboard/conditional/ConditionManager;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -200,11 +176,7 @@
 
 .method static synthetic access$300(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/io/File;Ljava/util/ArrayList;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
-    .param p1, "x1"    # Ljava/io/File;
-    .param p2, "x2"    # Ljava/util/ArrayList;
 
-    .line 41
     invoke-direct {p0, p1, p2}, Lcom/android/settings/dashboard/conditional/ConditionManager;->readFromXml(Ljava/io/File;Ljava/util/ArrayList;)V
 
     return-void
@@ -212,10 +184,7 @@
 
 .method static synthetic access$400(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/util/ArrayList;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
-    .param p1, "x1"    # Ljava/util/ArrayList;
 
-    .line 41
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addMissingConditions(Ljava/util/ArrayList;)V
 
     return-void
@@ -223,9 +192,7 @@
 
 .method static synthetic access$500(Lcom/android/settings/dashboard/conditional/ConditionManager;)Ljava/util/ArrayList;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     return-object v0
@@ -246,29 +213,20 @@
         }
     .end annotation
 
-    .line 166
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/settings/dashboard/conditional/Condition;>;"
-    .local p2, "conditions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/dashboard/conditional/Condition;>;"
     invoke-direct {p0, p1, p2}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getCondition(Ljava/lang/Class;Ljava/util/List;)Lcom/android/settings/dashboard/conditional/Condition;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 168
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->createCondition(Ljava/lang/Class;)Lcom/android/settings/dashboard/conditional/Condition;
 
     move-result-object v0
 
-    .line 169
-    .local v0, "condition":Lcom/android/settings/dashboard/conditional/Condition;
     if-eqz v0, :cond_0
 
-    .line 170
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 173
-    .end local v0    # "condition":Lcom/android/settings/dashboard/conditional/Condition;
     :cond_0
     return-void
 .end method
@@ -284,68 +242,54 @@
         }
     .end annotation
 
-    .line 149
-    .local p1, "conditions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/dashboard/conditional/Condition;>;"
     const-class v0, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 150
     const-class v0, Lcom/android/settings/dashboard/conditional/HotspotCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 151
     const-class v0, Lcom/android/settings/dashboard/conditional/DndCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 152
     const-class v0, Lcom/android/settings/dashboard/conditional/BatterySaverCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 153
     const-class v0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 154
     const-class v0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 155
     const-class v0, Lcom/android/settings/dashboard/conditional/WorkModeCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 156
     const-class v0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 157
     const-class v0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 158
     const-class v0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 160
     const-class v0, Lcom/android/settings/dashboard/conditional/OPOTACondition;
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->addIfMissing(Ljava/lang/Class;Ljava/util/ArrayList;)V
 
-    .line 162
     sget-object v0, Lcom/android/settings/dashboard/conditional/ConditionManager;->CONDITION_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 163
     return-void
 .end method
 
@@ -360,150 +304,126 @@
         }
     .end annotation
 
-    .line 176
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v0, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;
 
     if-ne v0, p1, :cond_0
 
-    .line 177
     new-instance v0, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/AirplaneModeCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 178
     :cond_0
     const-class v0, Lcom/android/settings/dashboard/conditional/HotspotCondition;
 
     if-ne v0, p1, :cond_1
 
-    .line 179
     new-instance v0, Lcom/android/settings/dashboard/conditional/HotspotCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/HotspotCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 180
     :cond_1
     const-class v0, Lcom/android/settings/dashboard/conditional/DndCondition;
 
     if-ne v0, p1, :cond_2
 
-    .line 181
     new-instance v0, Lcom/android/settings/dashboard/conditional/DndCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/DndCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 182
     :cond_2
     const-class v0, Lcom/android/settings/dashboard/conditional/BatterySaverCondition;
 
     if-ne v0, p1, :cond_3
 
-    .line 183
     new-instance v0, Lcom/android/settings/dashboard/conditional/BatterySaverCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/BatterySaverCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 184
     :cond_3
     const-class v0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;
 
     if-ne v0, p1, :cond_4
 
-    .line 185
     new-instance v0, Lcom/android/settings/dashboard/conditional/CellularDataCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/CellularDataCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 186
     :cond_4
     const-class v0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;
 
     if-ne v0, p1, :cond_5
 
-    .line 187
     new-instance v0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 188
     :cond_5
     const-class v0, Lcom/android/settings/dashboard/conditional/WorkModeCondition;
 
     if-ne v0, p1, :cond_6
 
-    .line 189
     new-instance v0, Lcom/android/settings/dashboard/conditional/WorkModeCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/WorkModeCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 190
     :cond_6
     const-class v0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;
 
     if-ne v0, p1, :cond_7
 
-    .line 191
     new-instance v0, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/NightDisplayCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 192
     :cond_7
     const-class v0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;
 
     if-ne v0, p1, :cond_8
 
-    .line 193
     new-instance v0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 194
     :cond_8
     const-class v0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;
 
     if-ne v0, p1, :cond_9
 
-    .line 195
     new-instance v0, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/RingerVibrateCondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 198
     :cond_9
     const-class v0, Lcom/android/settings/dashboard/conditional/OPOTACondition;
 
     if-ne v0, p1, :cond_a
 
-    .line 199
     new-instance v0, Lcom/android/settings/dashboard/conditional/OPOTACondition;
 
     invoke-direct {v0, p0}, Lcom/android/settings/dashboard/conditional/OPOTACondition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-object v0
 
-    .line 202
     :cond_a
     const-string v0, "ConditionManager"
 
@@ -527,7 +447,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
     const/4 v0, 0x0
 
     return-object v0
@@ -535,9 +454,7 @@
 
 .method public static get(Landroid/content/Context;)Lcom/android/settings/dashboard/conditional/ConditionManager;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 294
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->get(Landroid/content/Context;Z)Lcom/android/settings/dashboard/conditional/ConditionManager;
@@ -549,15 +466,11 @@
 
 .method public static get(Landroid/content/Context;Z)Lcom/android/settings/dashboard/conditional/ConditionManager;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "loadConditionsNow"    # Z
 
-    .line 298
     sget-object v0, Lcom/android/settings/dashboard/conditional/ConditionManager;->sInstance:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     if-nez v0, :cond_0
 
-    .line 299
     new-instance v0, Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -568,7 +481,6 @@
 
     sput-object v0, Lcom/android/settings/dashboard/conditional/ConditionManager;->sInstance:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 301
     :cond_0
     sget-object v0, Lcom/android/settings/dashboard/conditional/ConditionManager;->sInstance:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
@@ -590,22 +502,15 @@
         }
     .end annotation
 
-    .line 215
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "conditions":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/dashboard/conditional/Condition;>;"
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 216
-    .local v0, "N":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 217
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -622,7 +527,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 218
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -631,14 +535,11 @@
 
     return-object v2
 
-    .line 216
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 221
-    .end local v1    # "i":I
     :cond_1
     const/4 v1, 0x0
 
@@ -647,7 +548,6 @@
 
 .method private readFromXml(Ljava/io/File;Ljava/util/ArrayList;)V
     .locals 10
-    .param p1, "xmlFile"    # Ljava/io/File;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -658,36 +558,26 @@
         }
     .end annotation
 
-    .line 85
-    .local p2, "conditions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/dashboard/conditional/Condition;>;"
     :try_start_0
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v0
 
-    .line 86
-    .local v0, "parser":Lorg/xmlpull/v1/XmlPullParser;
     new-instance v1, Ljava/io/FileReader;
 
     invoke-direct {v1, p1}, Ljava/io/FileReader;-><init>(Ljava/io/File;)V
 
-    .line 87
-    .local v1, "in":Ljava/io/FileReader;
     invoke-interface {v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/Reader;)V
 
-    .line 88
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v2
 
-    .line 90
-    .local v2, "state":I
     :goto_0
     const/4 v3, 0x1
 
     if-eq v2, v3, :cond_3
 
-    .line 91
     const-string v3, "c"
 
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -700,13 +590,10 @@
 
     if-eqz v3, :cond_2
 
-    .line 92
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v3
 
-    .line 93
-    .local v3, "depth":I
     const-string v4, ""
 
     const-string v5, "cls"
@@ -715,8 +602,6 @@
 
     move-result-object v4
 
-    .line 94
-    .local v4, "clz":Ljava/lang/String;
     const-string v5, "com.android.settings.dashboard.conditional."
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -725,7 +610,6 @@
 
     if-nez v5, :cond_0
 
-    .line 95
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -742,7 +626,6 @@
 
     move-object v4, v5
 
-    .line 97
     :cond_0
     invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -752,25 +635,18 @@
 
     move-result-object v5
 
-    .line 98
-    .local v5, "condition":Lcom/android/settings/dashboard/conditional/Condition;
     invoke-static {v0}, Landroid/os/PersistableBundle;->restoreFromXml(Lorg/xmlpull/v1/XmlPullParser;)Landroid/os/PersistableBundle;
 
     move-result-object v6
 
-    .line 100
-    .local v6, "bundle":Landroid/os/PersistableBundle;
     if-eqz v5, :cond_1
 
-    .line 101
     invoke-virtual {v5, v6}, Lcom/android/settings/dashboard/conditional/Condition;->restoreState(Landroid/os/PersistableBundle;)V
 
-    .line 102
     invoke-virtual {p2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 104
     :cond_1
     const-string v7, "ConditionManager"
 
@@ -790,7 +666,6 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     :goto_1
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
@@ -798,16 +673,10 @@
 
     if-le v7, v3, :cond_2
 
-    .line 107
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     goto :goto_1
 
-    .line 110
-    .end local v3    # "depth":I
-    .end local v4    # "clz":Ljava/lang/String;
-    .end local v5    # "condition":Lcom/android/settings/dashboard/conditional/Condition;
-    .end local v6    # "bundle":Landroid/os/PersistableBundle;
     :cond_2
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -817,7 +686,6 @@
 
     goto :goto_0
 
-    .line 112
     :cond_3
     invoke-virtual {v1}, Ljava/io/FileReader;->close()V
     :try_end_0
@@ -825,26 +693,17 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 115
-    .end local v0    # "parser":Lorg/xmlpull/v1/XmlPullParser;
-    .end local v1    # "in":Ljava/io/FileReader;
-    .end local v2    # "state":I
     goto :goto_2
 
-    .line 113
     :catch_0
     move-exception v0
 
-    .line 114
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ConditionManager"
 
     const-string v2, "Problem reading condition_state.xml"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 116
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_2
     return-void
 .end method
@@ -852,25 +711,19 @@
 .method private saveToXml()V
     .locals 8
 
-    .line 121
     :try_start_0
     invoke-static {}, Landroid/util/Xml;->newSerializer()Lorg/xmlpull/v1/XmlSerializer;
 
     move-result-object v0
 
-    .line 122
-    .local v0, "serializer":Lorg/xmlpull/v1/XmlSerializer;
     new-instance v1, Ljava/io/FileWriter;
 
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mXmlFile:Ljava/io/File;
 
     invoke-direct {v1, v2}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
 
-    .line 123
-    .local v1, "writer":Ljava/io/FileWriter;
     invoke-interface {v0, v1}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/Writer;)V
 
-    .line 125
     const-string v2, "UTF-8"
 
     const/4 v3, 0x1
@@ -881,35 +734,27 @@
 
     invoke-interface {v0, v2, v3}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 126
     const-string v2, ""
 
     const-string v3, "cs"
 
     invoke-interface {v0, v2, v3}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 128
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 129
-    .local v2, "N":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_1
 
-    .line 130
     new-instance v4, Landroid/os/PersistableBundle;
 
     invoke-direct {v4}, Landroid/os/PersistableBundle;-><init>()V
 
-    .line 131
-    .local v4, "bundle":Landroid/os/PersistableBundle;
     iget-object v5, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -924,14 +769,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 132
     const-string v5, ""
 
     const-string v6, "c"
 
     invoke-interface {v0, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 133
     iget-object v5, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -948,34 +791,25 @@
 
     move-result-object v5
 
-    .line 134
-    .local v5, "clz":Ljava/lang/String;
     const-string v6, ""
 
     const-string v7, "cls"
 
     invoke-interface {v0, v6, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 135
     invoke-virtual {v4, v0}, Landroid/os/PersistableBundle;->saveToXml(Lorg/xmlpull/v1/XmlSerializer;)V
 
-    .line 136
     const-string v6, ""
 
     const-string v7, "c"
 
     invoke-interface {v0, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 129
-    .end local v4    # "bundle":Landroid/os/PersistableBundle;
-    .end local v5    # "clz":Ljava/lang/String;
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 140
-    .end local v3    # "i":I
     :cond_1
     const-string v3, ""
 
@@ -983,35 +817,24 @@
 
     invoke-interface {v0, v3, v4}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 141
     invoke-interface {v0}, Lorg/xmlpull/v1/XmlSerializer;->flush()V
 
-    .line 142
     invoke-virtual {v1}, Ljava/io/FileWriter;->close()V
     :try_end_0
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 145
-    .end local v0    # "serializer":Lorg/xmlpull/v1/XmlSerializer;
-    .end local v1    # "writer":Ljava/io/FileWriter;
-    .end local v2    # "N":I
     goto :goto_1
 
-    .line 143
     :catch_0
     move-exception v0
 
-    .line 144
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ConditionManager"
 
     const-string v2, "Problem writing condition_state.xml"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 146
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_1
     return-void
 .end method
@@ -1020,17 +843,13 @@
 # virtual methods
 .method public addListener(Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;
 
-    .line 249
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 250
     invoke-interface {p1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;->onConditionsChanged()V
 
-    .line 251
     return-void
 .end method
 
@@ -1046,8 +865,6 @@
         }
     .end annotation
 
-    .line 211
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getCondition(Ljava/lang/Class;Ljava/util/List;)Lcom/android/settings/dashboard/conditional/Condition;
@@ -1068,7 +885,6 @@
         }
     .end annotation
 
-    .line 225
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     return-object v0
@@ -1077,7 +893,6 @@
 .method getContext()Landroid/content/Context;
     .locals 1
 
-    .line 207
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -1094,28 +909,21 @@
         }
     .end annotation
 
-    .line 229
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 230
-    .local v0, "conditions":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/dashboard/conditional/Condition;>;"
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 231
-    .local v1, "N":I
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 232
     iget-object v3, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1130,7 +938,6 @@
 
     if-eqz v3, :cond_0
 
-    .line 233
     iget-object v3, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1141,48 +948,37 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 231
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 236
-    .end local v2    # "i":I
     :cond_1
     return-object v0
 .end method
 
 .method public notifyChanged(Lcom/android/settings/dashboard/conditional/Condition;)V
     .locals 3
-    .param p1, "condition"    # Lcom/android/settings/dashboard/conditional/Condition;
 
-    .line 240
     invoke-direct {p0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->saveToXml()V
 
-    .line 241
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     sget-object v1, Lcom/android/settings/dashboard/conditional/ConditionManager;->CONDITION_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 242
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 243
-    .local v0, "N":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 244
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1193,13 +989,10 @@
 
     invoke-interface {v2}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;->onConditionsChanged()V
 
-    .line 243
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 246
-    .end local v1    # "i":I
     :cond_0
     return-void
 .end method
@@ -1207,21 +1000,17 @@
 .method public onPause()V
     .locals 3
 
-    .line 266
     const/4 v0, 0x0
 
-    .local v0, "i":I
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .local v1, "size":I
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 267
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1232,14 +1021,10 @@
 
     invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/Condition;->onPause()V
 
-    .line 266
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 269
-    .end local v0    # "i":I
-    .end local v1    # "size":I
     :cond_0
     return-void
 .end method
@@ -1247,21 +1032,17 @@
 .method public onResume()V
     .locals 3
 
-    .line 259
     const/4 v0, 0x0
 
-    .local v0, "i":I
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .local v1, "size":I
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 260
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1272,14 +1053,10 @@
 
     invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/Condition;->onResume()V
 
-    .line 259
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 262
-    .end local v0    # "i":I
-    .end local v1    # "size":I
     :cond_0
     return-void
 .end method
@@ -1287,22 +1064,17 @@
 .method public refreshAll()V
     .locals 3
 
-    .line 76
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 77
-    .local v0, "N":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 78
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mConditions:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1313,26 +1085,20 @@
 
     invoke-virtual {v2}, Lcom/android/settings/dashboard/conditional/Condition;->refreshState()V
 
-    .line 77
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 80
-    .end local v1    # "i":I
     :cond_0
     return-void
 .end method
 
 .method public remListener(Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionListener;
 
-    .line 254
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager;->mListeners:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 255
     return-void
 .end method

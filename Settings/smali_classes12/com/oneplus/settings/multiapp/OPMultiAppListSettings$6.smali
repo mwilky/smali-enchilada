@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
-    .line 345
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$6;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     iput p2, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$6;->val$position:I
@@ -42,23 +40,18 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 349
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$6;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$1002(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;Z)Z
 
-    .line 350
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$6;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     iget v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$6;->val$position:I
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$1100(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;I)V
 
-    .line 351
     return-void
 .end method

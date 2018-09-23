@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/SettingPref;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/SettingPref;
 
-    .line 96
     iput-object p1, p0, Lcom/android/settings/notification/SettingPref$2;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iput-object p2, p0, Lcom/android/settings/notification/SettingPref$2;->val$context:Landroid/content/Context;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/notification/SettingPref$2;->this$0:Lcom/android/settings/notification/SettingPref;
 
     iget-object v1, p0, Lcom/android/settings/notification/SettingPref$2;->val$context:Landroid/content/Context;

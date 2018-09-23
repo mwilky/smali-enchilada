@@ -38,7 +38,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,9 +45,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/DeviceAdminSettings$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/DeviceAdminSettings$1;
 
-    .line 72
     invoke-direct {p0}, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;-><init>()V
 
     return-void
@@ -58,16 +55,13 @@
 # virtual methods
 .method public compareTo(Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;)I
     .locals 2
-    .param p1, "other"    # Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;
 
-    .line 82
     iget-boolean v0, p0, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;->active:Z
 
     iget-boolean v1, p1, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;->active:Z
 
     if-eq v0, v1, :cond_1
 
-    .line 83
     iget-boolean v0, p0, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;->active:Z
 
     if-eqz v0, :cond_0
@@ -82,7 +76,6 @@
     :goto_0
     return v0
 
-    .line 85
     :cond_1
     iget-object v0, p0, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;->name:Ljava/lang/String;
 
@@ -98,7 +91,6 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 72
     check-cast p1, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;->compareTo(Lcom/android/settings/DeviceAdminSettings$DeviceAdminListItem;)I

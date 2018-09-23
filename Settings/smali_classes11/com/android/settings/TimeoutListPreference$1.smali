@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/TimeoutListPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/TimeoutListPreference;
 
-    .line 62
     iput-object p1, p0, Lcom/android/settings/TimeoutListPreference$1;->this$0:Lcom/android/settings/TimeoutListPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +36,9 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 65
     iget-object v0, p0, Lcom/android/settings/TimeoutListPreference$1;->this$0:Lcom/android/settings/TimeoutListPreference;
 
-    .line 66
     invoke-virtual {v0}, Lcom/android/settings/TimeoutListPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -54,9 +49,7 @@
 
     move-result-object v1
 
-    .line 65
     invoke-static {v0, v1}, Lcom/android/settingslib/RestrictedLockUtils;->sendShowAdminSupportDetailsIntent(Landroid/content/Context;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    .line 67
     return-void
 .end method

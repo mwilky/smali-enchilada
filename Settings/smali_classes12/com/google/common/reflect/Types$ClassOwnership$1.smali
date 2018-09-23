@@ -18,7 +18,6 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    .line 113
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/reflect/Types$ClassOwnership;-><init>(Ljava/lang/String;ILcom/google/common/reflect/Types$1;)V
@@ -43,8 +42,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 117
-    .local p1, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p1}, Ljava/lang/Class;->getEnclosingClass()Ljava/lang/Class;
 
     move-result-object v0

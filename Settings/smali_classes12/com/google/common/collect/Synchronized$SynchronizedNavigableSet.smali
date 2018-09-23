@@ -54,7 +54,7 @@
 # direct methods
 .method constructor <init>(Ljava/util/NavigableSet;Ljava/lang/Object;)V
     .locals 0
-    .param p2, "mutex"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -68,12 +68,8 @@
         }
     .end annotation
 
-    .line 1229
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "delegate":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TE;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;-><init>(Ljava/util/SortedSet;Ljava/lang/Object;)V
 
-    .line 1230
     return-void
 .end method
 
@@ -87,14 +83,10 @@
         }
     .end annotation
 
-    .line 1237
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1238
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -108,7 +100,6 @@
 
     return-object v1
 
-    .line 1239
     :catchall_0
     move-exception v1
 
@@ -122,8 +113,6 @@
 .method bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 1224
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -134,8 +123,6 @@
 .method bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 1224
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -153,8 +140,6 @@
         }
     .end annotation
 
-    .line 1233
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedSortedSet;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -167,8 +152,6 @@
 .method bridge synthetic delegate()Ljava/util/Set;
     .locals 1
 
-    .line 1224
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -179,8 +162,6 @@
 .method bridge synthetic delegate()Ljava/util/SortedSet;
     .locals 1
 
-    .line 1224
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -198,8 +179,6 @@
         }
     .end annotation
 
-    .line 1243
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -221,22 +200,17 @@
         }
     .end annotation
 
-    .line 1249
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1250
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->descendingSet:Ljava/util/NavigableSet;
 
     if-nez v1, :cond_0
 
-    .line 1251
     nop
 
-    .line 1252
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
     move-result-object v1
@@ -251,17 +225,12 @@
 
     move-result-object v1
 
-    .line 1253
-    .local v1, "dS":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TE;>;"
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->descendingSet:Ljava/util/NavigableSet;
 
-    .line 1254
     monitor-exit v0
 
     return-object v1
 
-    .line 1256
-    .end local v1    # "dS":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TE;>;"
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->descendingSet:Ljava/util/NavigableSet;
 
@@ -269,7 +238,6 @@
 
     return-object v1
 
-    .line 1257
     :catchall_0
     move-exception v1
 
@@ -288,14 +256,10 @@
         }
     .end annotation
 
-    .line 1261
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1262
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -309,7 +273,6 @@
 
     return-object v1
 
-    .line 1263
     :catchall_0
     move-exception v1
 
@@ -322,7 +285,6 @@
 
 .method public headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 3
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -331,17 +293,12 @@
         }
     .end annotation
 
-    .line 1267
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1268
     nop
 
-    .line 1269
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -353,7 +310,6 @@
 
     iget-object v2, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
-    .line 1268
     invoke-static {v1, v2}, Lcom/google/common/collect/Synchronized;->navigableSet(Ljava/util/NavigableSet;Ljava/lang/Object;)Ljava/util/NavigableSet;
 
     move-result-object v1
@@ -362,7 +318,6 @@
 
     return-object v1
 
-    .line 1270
     :catchall_0
     move-exception v1
 
@@ -383,9 +338,6 @@
         }
     .end annotation
 
-    .line 1313
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -403,14 +355,10 @@
         }
     .end annotation
 
-    .line 1274
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1275
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -424,7 +372,6 @@
 
     return-object v1
 
-    .line 1276
     :catchall_0
     move-exception v1
 
@@ -443,14 +390,10 @@
         }
     .end annotation
 
-    .line 1280
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1281
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -464,7 +407,6 @@
 
     return-object v1
 
-    .line 1282
     :catchall_0
     move-exception v1
 
@@ -483,13 +425,10 @@
         }
     .end annotation
 
-    .line 1286
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1287
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -503,7 +442,6 @@
 
     return-object v1
 
-    .line 1288
     :catchall_0
     move-exception v1
 
@@ -522,13 +460,10 @@
         }
     .end annotation
 
-    .line 1292
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1293
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -542,7 +477,6 @@
 
     return-object v1
 
-    .line 1294
     :catchall_0
     move-exception v1
 
@@ -555,8 +489,6 @@
 
 .method public subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 3
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;ZTE;Z)",
@@ -565,15 +497,10 @@
         }
     .end annotation
 
-    .line 1299
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p3, "toElement":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1300
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -593,7 +520,6 @@
 
     return-object v1
 
-    .line 1302
     :catchall_0
     move-exception v1
 
@@ -614,10 +540,6 @@
         }
     .end annotation
 
-    .line 1317
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p2, "toElement":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -631,7 +553,6 @@
 
 .method public tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
     .locals 3
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)",
@@ -640,17 +561,12 @@
         }
     .end annotation
 
-    .line 1306
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1307
     nop
 
-    .line 1308
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->delegate()Ljava/util/NavigableSet;
 
@@ -662,7 +578,6 @@
 
     iget-object v2, p0, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->mutex:Ljava/lang/Object;
 
-    .line 1307
     invoke-static {v1, v2}, Lcom/google/common/collect/Synchronized;->navigableSet(Ljava/util/NavigableSet;Ljava/lang/Object;)Ljava/util/NavigableSet;
 
     move-result-object v1
@@ -671,7 +586,6 @@
 
     return-object v1
 
-    .line 1309
     :catchall_0
     move-exception v1
 
@@ -692,9 +606,6 @@
         }
     .end annotation
 
-    .line 1321
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;, "Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/Synchronized$SynchronizedNavigableSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;

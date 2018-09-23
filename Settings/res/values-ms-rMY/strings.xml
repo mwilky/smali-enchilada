@@ -526,8 +526,6 @@ Untuk pergi ke skrin utama pada bila-bila masa, leret ke atas dari pinggir tenga
     <string name="oneplus_quick_clipboard_summary">Pertingkatkan keupayaan untuk salin dan kemudian mencadangkan tindakan seterusnya mengikut salinan</string>
     <string name="oneplus_quick_gestures">Gerak isyarat</string>
     <string name="oneplus_quick_gestures_title">Gerak isyarat pantas</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Aktifkan dengan pantas aplikasi pembantu</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Tekan dan tahan butang kuasa selama 0.5s untuk mengaktifkan aplikasi pembantu dan 3s untuk mematikan kuasa</string>
     <string name="oneplus_quick_turn_on_camera">Hidupkan kamera dengan cepat</string>
     <string name="oneplus_quickpay">Bayar cepat</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Adakah anda pasti anda hendak mengubah tindakan tekan lama butang Utama daripada \"%1$s\" ke \"Bayar Cepat\"?</string>

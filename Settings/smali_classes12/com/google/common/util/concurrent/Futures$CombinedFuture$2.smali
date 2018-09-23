@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/Futures$CombinedFuture;ILcom/google/common/util/concurrent/ListenableFuture;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
-    .line 1683
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;, "Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;"
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     iput p2, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;->val$index:I
@@ -48,8 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 1686
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;, "Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     iget v1, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$2;->val$index:I
@@ -58,6 +53,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->access$400(Lcom/google/common/util/concurrent/Futures$CombinedFuture;ILjava/util/concurrent/Future;)V
 
-    .line 1687
     return-void
 .end method

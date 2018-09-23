@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/OPAlertController$AlertParams;Lcom/oneplus/lib/app/OPAlertController$RecycleListView;Lcom/oneplus/lib/app/OPAlertController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
-    .line 1225
     iput-object p1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iput-object p2, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->val$listView:Lcom/oneplus/lib/app/OPAlertController$RecycleListView;
@@ -46,9 +44,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 3
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,15 +54,12 @@
         }
     .end annotation
 
-    .line 1228
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mCheckedItems:[Z
 
     if-eqz v0, :cond_0
 
-    .line 1229
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mCheckedItems:[Z
@@ -80,7 +72,6 @@
 
     aput-boolean v1, v0, p3
 
-    .line 1231
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
@@ -88,7 +79,6 @@
 
     iget-object v1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$4;->val$dialog:Lcom/oneplus/lib/app/OPAlertController;
 
-    .line 1232
     invoke-static {v1}, Lcom/oneplus/lib/app/OPAlertController;->access$600(Lcom/oneplus/lib/app/OPAlertController;)Landroid/content/DialogInterface;
 
     move-result-object v1
@@ -99,9 +89,7 @@
 
     move-result v2
 
-    .line 1231
     invoke-interface {v0, v1, p3, v2}, Landroid/content/DialogInterface$OnMultiChoiceClickListener;->onClick(Landroid/content/DialogInterface;IZ)V
 
-    .line 1233
     return-void
 .end method

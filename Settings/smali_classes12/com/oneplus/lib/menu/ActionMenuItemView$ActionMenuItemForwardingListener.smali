@@ -22,13 +22,10 @@
 .method public constructor <init>(Lcom/oneplus/lib/menu/ActionMenuItemView;)V
     .locals 0
 
-    .line 293
     iput-object p1, p0, Lcom/oneplus/lib/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Lcom/oneplus/lib/menu/ActionMenuItemView;
 
-    .line 294
     invoke-direct {p0, p1}, Lcom/oneplus/lib/widget/ForwardingListener;-><init>(Landroid/view/View;)V
 
-    .line 295
     return-void
 .end method
 
@@ -37,14 +34,12 @@
 .method public getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 299
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Lcom/oneplus/lib/menu/ActionMenuItemView;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuItemView;->mPopupCallback:Lcom/oneplus/lib/menu/ActionMenuItemView$PopupCallback;
 
     if-eqz v0, :cond_0
 
-    .line 300
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Lcom/oneplus/lib/menu/ActionMenuItemView;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuItemView;->mPopupCallback:Lcom/oneplus/lib/menu/ActionMenuItemView$PopupCallback;
@@ -55,7 +50,6 @@
 
     return-object v0
 
-    .line 302
     :cond_0
     const/4 v0, 0x0
 
@@ -65,7 +59,6 @@
 .method protected onForwardingStarted()Z
     .locals 3
 
-    .line 308
     iget-object v0, p0, Lcom/oneplus/lib/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Lcom/oneplus/lib/menu/ActionMenuItemView;
 
     iget-object v0, v0, Lcom/oneplus/lib/menu/ActionMenuItemView;->mItemInvoker:Lcom/oneplus/lib/menu/MenuBuilder$ItemInvoker;
@@ -88,13 +81,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 309
     invoke-virtual {p0}, Lcom/oneplus/lib/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
 
     move-result-object v0
 
-    .line 310
-    .local v0, "popup":Lcom/oneplus/lib/menu/ShowableListMenu;
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lcom/oneplus/lib/menu/ShowableListMenu;->isShowing()Z
@@ -110,8 +100,6 @@
     :cond_0
     return v1
 
-    .line 312
-    .end local v0    # "popup":Lcom/oneplus/lib/menu/ShowableListMenu;
     :cond_1
     return v1
 .end method

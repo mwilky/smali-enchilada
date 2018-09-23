@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/ViewPager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/ViewPager;
 
-    .line 209
     iput-object p1, p0, Lcom/oneplus/lib/widget/ViewPager$3;->this$0:Lcom/oneplus/lib/widget/ViewPager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,18 +37,15 @@
 .method public run()V
     .locals 2
 
-    .line 211
     iget-object v0, p0, Lcom/oneplus/lib/widget/ViewPager$3;->this$0:Lcom/oneplus/lib/widget/ViewPager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/ViewPager;->access$000(Lcom/oneplus/lib/widget/ViewPager;I)V
 
-    .line 212
     iget-object v0, p0, Lcom/oneplus/lib/widget/ViewPager$3;->this$0:Lcom/oneplus/lib/widget/ViewPager;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/ViewPager;->populate()V
 
-    .line 213
     return-void
 .end method

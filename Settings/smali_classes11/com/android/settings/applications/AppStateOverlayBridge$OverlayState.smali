@@ -34,56 +34,46 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 70
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->DISABLE_PACKAGE_LIST:Ljava/util/List;
 
-    .line 73
     sget-object v0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->DISABLE_PACKAGE_LIST:Ljava/util/List;
 
     const-string v1, "com.android.systemui"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 74
     return-void
 .end method
 
 .method public constructor <init>(Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;)V
     .locals 2
-    .param p1, "permissionState"    # Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;
 
-    .line 77
     iget-object v0, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->packageName:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->userHandle:Landroid/os/UserHandle;
 
     invoke-direct {p0, v0, v1}, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;-><init>(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 78
     iget-object v0, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->packageInfo:Landroid/content/pm/PackageInfo;
 
     iput-object v0, p0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->packageInfo:Landroid/content/pm/PackageInfo;
 
-    .line 79
     iget v0, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->appOpMode:I
 
     iput v0, p0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->appOpMode:I
 
-    .line 80
     iget-boolean v0, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->permissionDeclared:Z
 
     iput-boolean v0, p0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->permissionDeclared:Z
 
-    .line 81
     iget-boolean v0, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->staticPermissionGranted:Z
 
     iput-boolean v0, p0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->staticPermissionGranted:Z
 
-    .line 82
     sget-object v0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->DISABLE_PACKAGE_LIST:Ljava/util/List;
 
     iget-object v1, p1, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->packageName:Ljava/lang/String;
@@ -96,6 +86,5 @@
 
     iput-boolean v0, p0, Lcom/android/settings/applications/AppStateOverlayBridge$OverlayState;->controlEnabled:Z
 
-    .line 83
     return-void
 .end method

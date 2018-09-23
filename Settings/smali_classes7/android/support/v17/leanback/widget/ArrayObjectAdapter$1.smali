@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/ArrayObjectAdapter;Ljava/util/List;Landroid/support/v17/leanback/widget/DiffCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
 
-    .line 250
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->this$0:Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$itemList:Ljava/util/List;
@@ -43,10 +41,7 @@
 # virtual methods
 .method public areContentsTheSame(II)Z
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 269
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$callback:Landroid/support/v17/leanback/widget/DiffCallback;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->this$0:Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
@@ -61,12 +56,10 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$itemList:Ljava/util/List;
 
-    .line 270
     invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 269
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -76,10 +69,7 @@
 
 .method public areItemsTheSame(II)Z
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 263
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$callback:Landroid/support/v17/leanback/widget/DiffCallback;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->this$0:Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
@@ -94,12 +84,10 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$itemList:Ljava/util/List;
 
-    .line 264
     invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 263
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -109,12 +97,9 @@
 
 .method public getChangePayload(II)Ljava/lang/Object;
     .locals 3
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 276
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$callback:Landroid/support/v17/leanback/widget/DiffCallback;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->this$0:Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
@@ -129,12 +114,10 @@
 
     iget-object v2, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$itemList:Ljava/util/List;
 
-    .line 277
     invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 276
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/DiffCallback;->getChangePayload(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -145,7 +128,6 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 258
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->val$itemList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -158,7 +140,6 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 253
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ArrayObjectAdapter$1;->this$0:Landroid/support/v17/leanback/widget/ArrayObjectAdapter;
 
     invoke-static {v0}, Landroid/support/v17/leanback/widget/ArrayObjectAdapter;->access$000(Landroid/support/v17/leanback/widget/ArrayObjectAdapter;)Ljava/util/List;

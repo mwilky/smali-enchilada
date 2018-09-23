@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/OPTextInputLayout;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
-    .line 764
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$3;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     iput-object p2, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$3;->val$error:Ljava/lang/CharSequence;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 767
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$3;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     iget-object v0, v0, Lcom/oneplus/lib/design/widget/OPTextInputLayout;->mErrorView:Landroid/widget/TextView;
@@ -50,7 +46,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 768
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/OPTextInputLayout$3;->this$0:Lcom/oneplus/lib/design/widget/OPTextInputLayout;
 
     iget-object v0, v0, Lcom/oneplus/lib/design/widget/OPTextInputLayout;->mErrorView:Landroid/widget/TextView;
@@ -59,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 769
     return-void
 .end method

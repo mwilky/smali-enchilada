@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/settings/apploader/OPApplicationLoader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
-    .line 574
     iput-object p1, p0, Lcom/oneplus/settings/apploader/OPApplicationLoader$GestureAppComparetor;->this$0:Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/oneplus/settings/better/OPAppModel;Lcom/oneplus/settings/better/OPAppModel;)I
     .locals 2
-    .param p1, "lhs"    # Lcom/oneplus/settings/better/OPAppModel;
-    .param p2, "rhs"    # Lcom/oneplus/settings/better/OPAppModel;
 
-    .line 578
     invoke-virtual {p1}, Lcom/oneplus/settings/better/OPAppModel;->getLabel()Ljava/lang/String;
 
     move-result-object v0
@@ -65,12 +60,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 579
     const/4 v0, 0x0
 
     return v0
 
-    .line 581
     :cond_0
     invoke-virtual {p1}, Lcom/oneplus/settings/better/OPAppModel;->getLabel()Ljava/lang/String;
 
@@ -90,7 +83,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 574
     check-cast p1, Lcom/oneplus/settings/better/OPAppModel;
 
     check-cast p2, Lcom/oneplus/settings/better/OPAppModel;

@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;-><init>()V
 
     return-void
@@ -15,23 +14,19 @@
 
 .method public static isSuggestionComplete(Landroid/content/Context;)Z
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 26
     invoke-static {p0}, Lcom/android/settings/Utils;->hasFingerprintHardware(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 27
     invoke-static {p0}, Lcom/android/settings/fingerprint/FingerprintSuggestionActivity;->isFingerprintEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 28
     invoke-static {p0}, Lcom/android/settings/Utils;->hasFingerprintHardware(Landroid/content/Context;)Z
 
     move-result v0
@@ -40,7 +35,6 @@
 
     goto :goto_0
 
-    .line 31
     :cond_0
     invoke-static {p0}, Lcom/android/settings/Utils;->getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
 
@@ -52,7 +46,6 @@
 
     return v0
 
-    .line 29
     :cond_1
     :goto_0
     const/4 v0, 0x1

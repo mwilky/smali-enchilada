@@ -37,15 +37,10 @@
         }
     .end annotation
 
-    .line 28
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
-    .local p1, "forward":Lcom/google/common/collect/ImmutableSortedMultiset;, "Lcom/google/common/collect/ImmutableSortedMultiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMultiset;-><init>()V
 
-    .line 29
     iput-object p1, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
-    .line 30
     return-void
 .end method
 
@@ -53,13 +48,11 @@
 # virtual methods
 .method public count(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "element"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableSortedMultiset;->count(Ljava/lang/Object;)I
@@ -79,8 +72,6 @@
         }
     .end annotation
 
-    .line 64
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     return-object v0
@@ -89,8 +80,6 @@
 .method public bridge synthetic descendingMultiset()Lcom/google/common/collect/SortedMultiset;
     .locals 1
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->descendingMultiset()Lcom/google/common/collect/ImmutableSortedMultiset;
 
     move-result-object v0
@@ -108,8 +97,6 @@
         }
     .end annotation
 
-    .line 54
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->elementSet()Lcom/google/common/collect/ImmutableSortedSet;
@@ -126,8 +113,6 @@
 .method public bridge synthetic elementSet()Ljava/util/NavigableSet;
     .locals 1
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->elementSet()Lcom/google/common/collect/ImmutableSortedSet;
 
     move-result-object v0
@@ -138,8 +123,6 @@
 .method public bridge synthetic elementSet()Ljava/util/Set;
     .locals 1
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->elementSet()Lcom/google/common/collect/ImmutableSortedSet;
 
     move-result-object v0
@@ -150,8 +133,6 @@
 .method public bridge synthetic elementSet()Ljava/util/SortedSet;
     .locals 1
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->elementSet()Lcom/google/common/collect/ImmutableSortedSet;
 
     move-result-object v0
@@ -169,8 +150,6 @@
         }
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->lastEntry()Lcom/google/common/collect/Multiset$Entry;
@@ -182,7 +161,6 @@
 
 .method getEntry(I)Lcom/google/common/collect/Multiset$Entry;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -191,8 +169,6 @@
         }
     .end annotation
 
-    .line 59
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->entrySet()Lcom/google/common/collect/ImmutableSet;
@@ -218,7 +194,6 @@
 
 .method public headMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
     .locals 1
-    .param p2, "boundType"    # Lcom/google/common/collect/BoundType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -229,9 +204,6 @@
         }
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
-    .local p1, "upperBound":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMultiset;->tailMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
@@ -248,8 +220,6 @@
 .method public bridge synthetic headMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/SortedMultiset;
     .locals 0
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->headMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
 
     move-result-object p1
@@ -260,8 +230,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 79
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->isPartialView()Z
@@ -281,8 +249,6 @@
         }
     .end annotation
 
-    .line 44
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->firstEntry()Lcom/google/common/collect/Multiset$Entry;
@@ -295,8 +261,6 @@
 .method public size()I
     .locals 1
 
-    .line 49
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMultiset;->size()I
@@ -308,7 +272,6 @@
 
 .method public tailMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
     .locals 1
-    .param p2, "boundType"    # Lcom/google/common/collect/BoundType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -319,9 +282,6 @@
         }
     .end annotation
 
-    .line 74
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
-    .local p1, "lowerBound":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->forward:Lcom/google/common/collect/ImmutableSortedMultiset;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMultiset;->headMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
@@ -338,8 +298,6 @@
 .method public bridge synthetic tailMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/SortedMultiset;
     .locals 0
 
-    .line 24
-    .local p0, "this":Lcom/google/common/collect/DescendingImmutableSortedMultiset;, "Lcom/google/common/collect/DescendingImmutableSortedMultiset<TE;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/DescendingImmutableSortedMultiset;->tailMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/ImmutableSortedMultiset;
 
     move-result-object p1

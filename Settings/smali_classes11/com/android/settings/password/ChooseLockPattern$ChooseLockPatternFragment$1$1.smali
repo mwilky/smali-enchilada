@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1;
 
-    .line 285
     iput-object p1, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1$1;->this$1:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 288
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1$1;->this$1:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1;
 
     iget-object v0, v0, Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment$1;->this$0:Lcom/android/settings/password/ChooseLockPattern$ChooseLockPatternFragment;
@@ -52,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->fullScroll(I)Z
 
-    .line 289
     return-void
 .end method

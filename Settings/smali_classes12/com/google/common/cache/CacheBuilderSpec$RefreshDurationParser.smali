@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 468
     invoke-direct {p0}, Lcom/google/common/cache/CacheBuilderSpec$DurationParser;-><init>()V
 
     return-void
@@ -28,11 +27,7 @@
 # virtual methods
 .method protected parseDuration(Lcom/google/common/cache/CacheBuilderSpec;JLjava/util/concurrent/TimeUnit;)V
     .locals 2
-    .param p1, "spec"    # Lcom/google/common/cache/CacheBuilderSpec;
-    .param p2, "duration"    # J
-    .param p4, "unit"    # Ljava/util/concurrent/TimeUnit;
 
-    .line 470
     iget-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->refreshTimeUnit:Ljava/util/concurrent/TimeUnit;
 
     if-nez v0, :cond_0
@@ -49,12 +44,9 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 471
     iput-wide p2, p1, Lcom/google/common/cache/CacheBuilderSpec;->refreshDuration:J
 
-    .line 472
     iput-object p4, p1, Lcom/google/common/cache/CacheBuilderSpec;->refreshTimeUnit:Ljava/util/concurrent/TimeUnit;
 
-    .line 473
     return-void
 .end method

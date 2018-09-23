@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;IZF)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
-    .param p2, "mediaCallType"    # I
-    .param p3, "needToWaitForEventToComplete"    # Z
 
-    .line 879
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$19;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput p4, p0, Landroid/support/v4/media/MediaPlayer2Impl$19;->val$level:F
@@ -42,7 +38,6 @@
 .method process()V
     .locals 2
 
-    .line 882
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$19;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaPlayer2Impl;->access$100(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;
@@ -53,6 +48,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;->setAuxEffectSendLevel(F)V
 
-    .line 883
     return-void
 .end method

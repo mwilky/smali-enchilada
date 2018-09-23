@@ -30,7 +30,6 @@
 .method constructor <init>(Lcom/google/common/collect/ImmutableList;)V
     .locals 0
 
-    .line 1134
     iput-object p1, p0, Lcom/google/common/collect/Sets$CartesianSet$1;->val$axes:Lcom/google/common/collect/ImmutableList;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
@@ -43,7 +42,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 1134
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Sets$CartesianSet$1;->get(I)Ljava/util/List;
 
     move-result-object p1
@@ -53,7 +51,6 @@
 
 .method public get(I)Ljava/util/List;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -62,7 +59,6 @@
         }
     .end annotation
 
-    .line 1143
     iget-object v0, p0, Lcom/google/common/collect/Sets$CartesianSet$1;->val$axes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -81,7 +77,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 1148
     const/4 v0, 0x1
 
     return v0
@@ -90,7 +85,6 @@
 .method public size()I
     .locals 1
 
-    .line 1138
     iget-object v0, p0, Lcom/google/common/collect/Sets$CartesianSet$1;->val$axes:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I

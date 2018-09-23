@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/NotificationStation;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationStation;
 
-    .line 93
     iput-object p1, p0, Lcom/android/settings/notification/NotificationStation$1;->this$0:Lcom/android/settings/notification/NotificationStation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 96
     iget-object v0, p0, Lcom/android/settings/notification/NotificationStation$1;->this$0:Lcom/android/settings/notification/NotificationStation;
 
     invoke-static {v0}, Lcom/android/settings/notification/NotificationStation;->access$000(Lcom/android/settings/notification/NotificationStation;)V
 
-    .line 97
     return-void
 .end method

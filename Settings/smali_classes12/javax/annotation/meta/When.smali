@@ -29,7 +29,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 15
     new-instance v0, Ljavax/annotation/meta/When;
 
     const-string v1, "ALWAYS"
@@ -40,7 +39,6 @@
 
     sput-object v0, Ljavax/annotation/meta/When;->ALWAYS:Ljavax/annotation/meta/When;
 
-    .line 17
     new-instance v0, Ljavax/annotation/meta/When;
 
     const-string v1, "UNKNOWN"
@@ -51,7 +49,6 @@
 
     sput-object v0, Ljavax/annotation/meta/When;->UNKNOWN:Ljavax/annotation/meta/When;
 
-    .line 19
     new-instance v0, Ljavax/annotation/meta/When;
 
     const-string v1, "MAYBE"
@@ -62,7 +59,6 @@
 
     sput-object v0, Ljavax/annotation/meta/When;->MAYBE:Ljavax/annotation/meta/When;
 
-    .line 21
     new-instance v0, Ljavax/annotation/meta/When;
 
     const-string v1, "NEVER"
@@ -73,7 +69,6 @@
 
     sput-object v0, Ljavax/annotation/meta/When;->NEVER:Ljavax/annotation/meta/When;
 
-    .line 13
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljavax/annotation/meta/When;
@@ -107,7 +102,6 @@
         }
     .end annotation
 
-    .line 13
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,9 +109,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Ljavax/annotation/meta/When;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 13
     const-class v0, Ljavax/annotation/meta/When;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -132,7 +124,6 @@
 .method public static values()[Ljavax/annotation/meta/When;
     .locals 1
 
-    .line 13
     sget-object v0, Ljavax/annotation/meta/When;->$VALUES:[Ljavax/annotation/meta/When;
 
     invoke-virtual {v0}, [Ljavax/annotation/meta/When;->clone()Ljava/lang/Object;

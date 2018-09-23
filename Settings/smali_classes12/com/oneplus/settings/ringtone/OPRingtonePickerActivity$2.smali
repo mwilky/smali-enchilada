@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
-    .line 382
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 386
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 387
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -53,7 +46,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 388
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     iget v1, v1, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->mType:I
@@ -64,14 +56,12 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
-    .line 389
     invoke-virtual {v1}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->isMultiSimEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 390
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-static {v1}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->access$000(Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;)Landroid/preference/Preference;
@@ -80,7 +70,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 391
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-static {v1}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->access$000(Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;)Landroid/preference/Preference;
@@ -95,7 +84,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 393
     :cond_0
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
@@ -105,7 +93,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 394
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity$2;->this$0:Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;
 
     invoke-static {v1}, Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;->access$100(Lcom/oneplus/settings/ringtone/OPRingtonePickerActivity;)Landroid/preference/Preference;
@@ -120,7 +107,6 @@
 
     invoke-virtual {v1, v2}, Landroid/preference/Preference;->setEnabled(Z)V
 
-    .line 398
     :cond_1
     return-void
 .end method

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;Landroid/os/storage/VolumeInfo;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;
 
-    .line 450
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->val$vol:Landroid/os/storage/VolumeInfo;
@@ -44,15 +42,13 @@
 
 .method private wasAdminSupportIntentShown(Ljava/lang/String;)Z
     .locals 3
-    .param p1, "restriction"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 460
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;
 
-    .line 461
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -61,16 +57,12 @@
 
     move-result v1
 
-    .line 460
     invoke-static {v0, p1, v1}, Lcom/android/settingslib/RestrictedLockUtils;->checkIfRestrictionEnforced(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     move-result-object v0
 
-    .line 462
-    .local v0, "admin":Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;
 
-    .line 464
     invoke-virtual {v1}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -79,18 +71,14 @@
 
     move-result v2
 
-    .line 463
     invoke-static {v1, p1, v2}, Lcom/android/settingslib/RestrictedLockUtils;->hasBaseUserRestriction(Landroid/content/Context;Ljava/lang/String;I)Z
 
     move-result v1
 
-    .line 465
-    .local v1, "hasBaseUserRestriction":Z
     if-eqz v0, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 466
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;
 
     invoke-virtual {v2}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment;->getActivity()Landroid/app/Activity;
@@ -99,12 +87,10 @@
 
     invoke-static {v2, v0}, Lcom/android/settingslib/RestrictedLockUtils;->sendShowAdminSupportDetailsIntent(Landroid/content/Context;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    .line 468
     const/4 v2, 0x1
 
     return v2
 
-    .line 471
     :cond_0
     const/4 v2, 0x0
 
@@ -115,10 +101,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 476
     const-string v0, "no_physical_media"
 
     invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->wasAdminSupportIntentShown(Ljava/lang/String;)Z
@@ -127,10 +110,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 478
     return-void
 
-    .line 481
     :cond_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->val$vol:Landroid/os/storage/VolumeInfo;
 
@@ -150,17 +131,14 @@
 
     const-string v0, "no_usb_file_transfer"
 
-    .line 482
     invoke-direct {p0, v0}, Lcom/android/settings/deviceinfo/StorageSettings$VolumeUnmountedFragment$1;->wasAdminSupportIntentShown(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 484
     return-void
 
-    .line 487
     :cond_1
     new-instance v0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;
 
@@ -176,6 +154,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 488
     return-void
 .end method

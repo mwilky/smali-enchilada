@@ -18,8 +18,6 @@
 
 .field protected static final GO_TO_FACE_UNLOCK_PAGE:I = 0x5
 
-.field protected static final GO_TO_FINGERPRINT_INTRODUCTION_PAGE:I = 0x6
-
 .field protected static final KEY_FACEUNLOCK_FUNCTIONAL_TERMS_TYPE:I = 0xa
 
 .field protected static final KEY_FINGERPRINT_FUNCTIONAL_TERMS_TYPE:I = 0x8
@@ -46,8 +44,6 @@
 
 .field protected mHasPassword:Z
 
-.field private mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
 .field private mNextButtonClicked:Z
 
 .field private mUserManager:Landroid/os/UserManager;
@@ -57,22 +53,18 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 50
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;-><init>()V
 
-    .line 62
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mNextButtonClicked:Z
 
-    .line 63
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
 
     iput-object v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHandler:Landroid/os/Handler;
 
-    .line 68
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFromSetup:Z
 
     return-void
@@ -80,10 +72,7 @@
 
 .method static synthetic access$002(Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;
-    .param p1, "x1"    # Z
 
-    .line 50
     iput-boolean p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mNextButtonClicked:Z
 
     return p1
@@ -92,13 +81,10 @@
 .method private launchChooseLock()V
     .locals 6
 
-    .line 234
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getChooseLockIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 235
-    .local v0, "intent":Landroid/content/Intent;
     invoke-static {p0}, Lcom/android/settings/Utils;->getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
 
     move-result-object v1
@@ -107,77 +93,61 @@
 
     move-result-wide v1
 
-    .line 236
-    .local v1, "challenge":J
     const-string v3, "minimum_quality"
 
     const/high16 v4, 0x10000
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 238
     const-string v3, "hide_disabled_prefs"
 
     const/4 v4, 0x1
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 239
     const-string v3, "has_challenge"
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 240
     const-string v3, "challenge"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 241
     const-string v3, "for_fingerprint"
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 242
     iget v3, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
     const/16 v5, -0x2710
 
     if-eq v3, v5, :cond_0
 
-    .line 243
     const-string v3, "android.intent.extra.USER_ID"
 
     iget v5, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
     invoke-virtual {v0, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 245
     :cond_0
     invoke-virtual {p0, v0, v4}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 246
     return-void
 .end method
 
 .method private launchFindSensor([B)V
     .locals 3
-    .param p1, "token"    # [B
 
-    .line 249
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getFindSensorIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 250
-    .local v0, "intent":Landroid/content/Intent;
     if-eqz p1, :cond_0
 
-    .line 251
     const-string v1, "hw_auth_token"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 253
     :cond_0
     iget v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
@@ -185,27 +155,23 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 254
     const-string v1, "android.intent.extra.USER_ID"
 
     iget v2, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 256
     :cond_1
     const/4 v1, 0x2
 
     invoke-virtual {p0, v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 257
     return-void
 .end method
 
 .method private updatePasswordQuality()V
     .locals 3
 
-    .line 199
     new-instance v0, Lcom/android/settings/password/ChooseLockSettingsHelper;
 
     invoke-direct {v0, p0}, Lcom/android/settings/password/ChooseLockSettingsHelper;-><init>(Landroid/app/Activity;)V
@@ -218,7 +184,6 @@
 
     iget v2, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
-    .line 200
     invoke-virtual {v1, v2}, Landroid/os/UserManager;->getCredentialOwnerProfile(I)I
 
     move-result v1
@@ -227,8 +192,6 @@
 
     move-result v0
 
-    .line 201
-    .local v0, "passwordQuality":I
     if-eqz v0, :cond_0
 
     const/4 v1, 0x1
@@ -241,7 +204,6 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHasPassword:Z
 
-    .line 202
     return-void
 .end method
 
@@ -250,7 +212,6 @@
 .method protected getChooseLockIntent()Landroid/content/Intent;
     .locals 2
 
-    .line 260
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/settings/password/ChooseLockGeneric;
@@ -263,7 +224,6 @@
 .method protected getFindSensorIntent()Landroid/content/Intent;
     .locals 2
 
-    .line 264
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/android/settings/fingerprint/FingerprintEnrollFindSensor;
@@ -276,7 +236,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 302
     const/16 v0, 0xf3
 
     return v0
@@ -285,7 +244,6 @@
 .method protected getNextButton()Landroid/widget/Button;
     .locals 1
 
-    .line 206
     const v0, 0x7f0a01da
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
@@ -300,10 +258,8 @@
 .method protected initViews()V
     .locals 2
 
-    .line 312
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->initViews()V
 
-    .line 313
     const v0, 0x7f0a0170
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
@@ -312,29 +268,21 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 314
-    .local v0, "description":Landroid/widget/TextView;
     iget-boolean v1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
     if-eqz v1, :cond_0
 
-    .line 315
-    const v1, 0x7f120f8d
+    const v1, 0x7f120f86
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 318
     :cond_0
     return-void
 .end method
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 3
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
 
-    .line 269
     const/4 v0, 0x1
 
     if-ne p2, v0, :cond_0
@@ -346,19 +294,15 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 270
-    .local v1, "isResultFinished":Z
     :goto_0
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_3
 
-    .line 271
     if-nez v1, :cond_1
 
     if-ne p2, v2, :cond_5
 
-    .line 272
     :cond_1
     if-eqz v1, :cond_2
 
@@ -369,78 +313,57 @@
     :cond_2
     move v0, v2
 
-    .line 273
-    .local v0, "result":I
     invoke-virtual {p0, v0, p3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setResult(ILandroid/content/Intent;)V
 
-    .line 274
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->finish()V
 
-    .line 275
     return-void
 
-    .line 277
-    .end local v0    # "result":I
     :cond_3
     if-ne p1, v0, :cond_4
 
-    .line 278
     if-eqz v1, :cond_5
 
-    .line 279
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->updatePasswordQuality()V
 
-    .line 280
     const-string v0, "hw_auth_token"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getByteArrayExtra(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 282
-    .local v0, "token":[B
     invoke-direct {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->launchFindSensor([B)V
 
-    .line 283
     return-void
 
-    .line 285
-    .end local v0    # "token":[B
     :cond_4
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_5
 
-    .line 286
     const v0, 0x7f01004c
 
     const v2, 0x7f01004d
 
     invoke-virtual {p0, v0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->overridePendingTransition(II)V
 
-    .line 288
     :cond_5
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 289
     return-void
 .end method
 
 .method protected onCancelButtonClick()V
     .locals 0
 
-    .line 306
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->finish()V
 
-    .line 307
     return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 293
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
@@ -449,25 +372,20 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 294
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->onCancelButtonClick()V
 
     goto :goto_0
 
-    .line 296
     :cond_0
     invoke-super {p0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onClick(Landroid/view/View;)V
 
-    .line 298
     :goto_0
     return-void
 .end method
 
 .method public onClick(Lcom/android/setupwizardlib/span/LinkSpan;)V
     .locals 6
-    .param p1, "span"    # Lcom/android/setupwizardlib/span/LinkSpan;
 
-    .line 323
     const-string v0, "url"
 
     invoke-virtual {p1}, Lcom/android/setupwizardlib/span/LinkSpan;->getId()Ljava/lang/String;
@@ -480,15 +398,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 324
     const v0, 0x7f120717
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 325
-    .local v0, "url":Ljava/lang/String;
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -501,21 +416,16 @@
 
     move-result-object v1
 
-    .line 326
-    .local v1, "intent":Landroid/content/Intent;
     if-nez v1, :cond_0
 
-    .line 327
     const-string v2, "FingerprintEnrollIntroduction"
 
     const-string v3, "Null help intent."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 328
     return-void
 
-    .line 333
     :cond_0
     const/4 v2, 0x3
 
@@ -524,15 +434,11 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 336
     goto :goto_0
 
-    .line 334
     :catch_0
     move-exception v2
 
-    .line 335
-    .local v2, "e":Landroid/content/ActivityNotFoundException;
     const-string v3, "FingerprintEnrollIntroduction"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -551,10 +457,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 338
-    .end local v0    # "url":Ljava/lang/String;
-    .end local v1    # "intent":Landroid/content/Intent;
-    .end local v2    # "e":Landroid/content/ActivityNotFoundException;
     :cond_1
     :goto_0
     return-void
@@ -562,12 +464,9 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 85
     invoke-super {p0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onCreate(Landroid/os/Bundle;)V
 
-    .line 86
     iget v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
     const/16 v1, 0x20
@@ -590,128 +489,51 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
-    .line 89
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 90
-    const v0, 0x7f0d0163
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
-
-    .line 92
-    const v0, 0x7f0a0393
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/airbnb/lottie/LottieAnimationView;
-
-    iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    .line 93
-    invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/oneplus/settings/utils/OPUtils;->isBlackModeOn(Landroid/content/ContentResolver;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 94
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
+    const v0, 0x7f0d0163
 
-    const-string v2, "op_custom_fingerprint_guide_dark.json"
-
-    invoke-virtual {v0, v2}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
 
     goto :goto_1
 
-    .line 96
     :cond_1
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    const-string v2, "op_custom_fingerprint_guide.json"
-
-    invoke-virtual {v0, v2}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
-
-    .line 98
-    :goto_1
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->loop(Z)V
-
-    .line 99
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
-
-    goto :goto_2
-
-    .line 102
-    :cond_2
     const v0, 0x7f0d009d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setContentView(I)V
 
-    .line 104
-    :goto_2
+    :goto_1
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mFingerprintUnlockDisabledByAdmin:Z
 
-    const v2, 0x7f120f8e
+    const v2, 0x7f120f87
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 105
-    const v0, 0x7f120f8f
-
-    invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
-
-    goto :goto_3
-
-    .line 109
-    :cond_3
-    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportCustomFingerprint()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    .line 110
-    const v0, 0x7f120b12
+    const v0, 0x7f120f88
 
     invoke-virtual {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 112
-    :cond_4
+    :cond_2
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->setHeaderText(I)V
 
-    .line 116
-    :goto_3
+    :goto_2
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
-    .line 117
-    .local v0, "actionBar":Landroid/app/ActionBar;
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
-    .line 119
     invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setDisplayHomeAsUpEnabled(Z)V
 
-    .line 120
     invoke-virtual {v0, v2}, Landroid/app/ActionBar;->setTitle(I)V
 
-    .line 123
-    :cond_5
+    :cond_3
     const v1, 0x7f0a01d7
 
     invoke-virtual {p0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
@@ -720,11 +542,8 @@
 
     check-cast v1, Landroid/widget/Button;
 
-    .line 124
-    .local v1, "cancelButton":Landroid/widget/Button;
     invoke-virtual {v1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 125
     const v2, 0x7f0a01f7
 
     invoke-virtual {p0, v2}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
@@ -733,15 +552,12 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 126
-    .local v2, "functionalTermsButton":Landroid/widget/TextView;
     new-instance v3, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$1;
 
     invoke-direct {v3, p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction$1;-><init>(Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 136
     const v3, 0x7f0a01be
 
     invoke-virtual {p0, v3}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->findViewById(I)Landroid/view/View;
@@ -752,77 +568,42 @@
 
     iput-object v3, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mErrorText:Landroid/widget/TextView;
 
-    .line 138
     invoke-static {p0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserManager:Landroid/os/UserManager;
 
-    .line 141
-    return-void
-.end method
-
-.method protected onDestroy()V
-    .locals 1
-
-    .line 162
-    invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onDestroy()V
-
-    .line 163
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    if-eqz v0, :cond_0
-
-    .line 164
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
-
-    .line 165
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    .line 167
-    :cond_0
     return-void
 .end method
 
 .method protected onNextButtonClick()V
     .locals 4
 
-    .line 212
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mNextButtonClicked:Z
 
     if-eqz v0, :cond_0
 
-    .line 213
     return-void
 
-    .line 215
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mNextButtonClicked:Z
 
-    .line 217
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHasPassword:Z
 
     if-nez v0, :cond_1
 
-    .line 219
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->launchChooseLock()V
 
     goto :goto_0
 
-    .line 222
     :cond_1
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->launchFindSensor([B)V
 
-    .line 225
     :goto_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHandler:Landroid/os/Handler;
 
@@ -834,33 +615,24 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 231
     return-void
 .end method
 
 .method protected onResume()V
     .locals 4
 
-    .line 172
     invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onResume()V
 
-    .line 174
     invoke-direct {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->updatePasswordQuality()V
 
-    .line 176
     invoke-static {p0}, Lcom/android/settings/Utils;->getFingerprintManagerOrNull(Landroid/content/Context;)Landroid/hardware/fingerprint/FingerprintManager;
 
     move-result-object v0
 
-    .line 177
-    .local v0, "fingerprintManager":Landroid/hardware/fingerprint/FingerprintManager;
     const/4 v1, 0x0
 
-    .line 178
-    .local v1, "errorMsg":I
     if-eqz v0, :cond_1
 
-    .line 179
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -871,11 +643,8 @@
 
     move-result v2
 
-    .line 181
-    .local v2, "max":I
     iget v3, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mUserId:I
 
-    .line 182
     invoke-virtual {v0, v3}, Landroid/hardware/fingerprint/FingerprintManager;->getEnrolledFingerprints(I)Ljava/util/List;
 
     move-result-object v3
@@ -884,35 +653,25 @@
 
     move-result v3
 
-    .line 183
-    .local v3, "numEnrolledFingerprints":I
     if-lt v3, v2, :cond_0
 
-    .line 184
     const v1, 0x7f120664
 
-    .line 186
-    .end local v2    # "max":I
-    .end local v3    # "numEnrolledFingerprints":I
     :cond_0
     goto :goto_0
 
-    .line 187
     :cond_1
     const v1, 0x7f120665
 
-    .line 189
     :goto_0
     if-nez v1, :cond_2
 
-    .line 190
     iget-object v2, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mErrorText:Landroid/widget/TextView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getNextButton()Landroid/widget/Button;
 
     move-result-object v2
@@ -923,13 +682,11 @@
 
     goto :goto_1
 
-    .line 193
     :cond_2
     iget-object v2, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mErrorText:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 194
     invoke-virtual {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->getNextButton()Landroid/widget/Button;
 
     move-result-object v2
@@ -938,49 +695,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 196
     :goto_1
-    return-void
-.end method
-
-.method protected onStart()V
-    .locals 1
-
-    .line 146
-    invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onStart()V
-
-    .line 147
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    if-eqz v0, :cond_0
-
-    .line 148
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
-
-    .line 150
-    :cond_0
-    return-void
-.end method
-
-.method protected onStop()V
-    .locals 1
-
-    .line 154
-    invoke-super {p0}, Lcom/android/settings/fingerprint/FingerprintEnrollBase;->onStop()V
-
-    .line 155
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    if-eqz v0, :cond_0
-
-    .line 156
-    iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollIntroduction;->mHowToUseTipsAnimView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->pauseAnimation()V
-
-    .line 158
-    :cond_0
     return-void
 .end method

@@ -162,7 +162,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 16298
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

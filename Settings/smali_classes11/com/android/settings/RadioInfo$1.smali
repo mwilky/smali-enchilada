@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 252
     iput-object p1, p0, Lcom/android/settings/RadioInfo$1;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,26 +33,18 @@
 # virtual methods
 .method public onCapabilitiesChanged(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V
     .locals 3
-    .param p1, "n"    # Landroid/net/Network;
-    .param p2, "nc"    # Landroid/net/NetworkCapabilities;
 
-    .line 254
     invoke-virtual {p2}, Landroid/net/NetworkCapabilities;->getLinkDownstreamBandwidthKbps()I
 
     move-result v0
 
-    .line 255
-    .local v0, "dlbw":I
     invoke-virtual {p2}, Landroid/net/NetworkCapabilities;->getLinkUpstreamBandwidthKbps()I
 
     move-result v1
 
-    .line 256
-    .local v1, "ulbw":I
     iget-object v2, p0, Lcom/android/settings/RadioInfo$1;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v2, v0, v1}, Lcom/android/settings/RadioInfo;->access$000(Lcom/android/settings/RadioInfo;II)V
 
-    .line 257
     return-void
 .end method

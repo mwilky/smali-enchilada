@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;Lcom/google/common/util/concurrent/Monitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;
-    .param p2, "monitor"    # Lcom/google/common/util/concurrent/Monitor;
 
-    .line 454
     iput-object p1, p0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$3;->this$0:Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;
 
     invoke-direct {p0, p2}, Lcom/google/common/util/concurrent/Monitor$Guard;-><init>(Lcom/google/common/util/concurrent/Monitor;)V
@@ -37,7 +34,6 @@
 .method public isSatisfied()Z
     .locals 3
 
-    .line 456
     iget-object v0, p0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState$3;->this$0:Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;
 
     iget-object v0, v0, Lcom/google/common/util/concurrent/ServiceManager$ServiceManagerState;->states:Lcom/google/common/collect/Multiset;

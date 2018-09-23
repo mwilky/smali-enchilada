@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
-    .line 102
     iput-object p1, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 8
 
-    .line 104
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$000(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Landroid/content/Context;
@@ -56,7 +53,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 105
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$000(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Landroid/content/Context;
@@ -65,15 +61,12 @@
 
     const-string v1, "activity"
 
-    .line 106
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 107
-    .local v0, "am":Landroid/app/ActivityManager;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
@@ -90,20 +83,14 @@
 
     iget-object v1, v1, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 108
-    .local v1, "cn":Landroid/content/ComponentName;
     invoke-virtual {v1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 109
-    .local v2, "pkg":Ljava/lang/String;
     invoke-virtual {v1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 110
-    .local v3, "cls":Ljava/lang/String;
     const-string v4, "ReceiverPowerOff"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -122,7 +109,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
     const-string v4, "ReceiverPowerOff"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -141,7 +127,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
     const-string v4, "com.android.incallui"
 
     invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -152,14 +137,12 @@
 
     const-string v4, "com.android.incallui.OppoInCallActivity"
 
-    .line 113
     invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 114
     iget-object v4, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-static {v4}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$300(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Landroid/os/Handler;
@@ -174,7 +157,6 @@
 
     invoke-virtual {v4, v5}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 115
     iget-object v4, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-static {v4}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$300(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Landroid/os/Handler;
@@ -193,7 +175,6 @@
 
     goto :goto_0
 
-    .line 117
     :cond_0
     new-instance v4, Landroid/content/Intent;
 
@@ -205,18 +186,14 @@
 
     invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 118
-    .local v4, "intent":Landroid/content/Intent;
     const-string v5, "android.intent.category.DEFAULT"
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 119
     const/high16 v5, 0x10000000
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 120
     iget-object v5, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
     invoke-static {v5}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$000(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Landroid/content/Context;
@@ -225,16 +202,9 @@
 
     invoke-virtual {v5, v4}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 122
-    .end local v0    # "am":Landroid/app/ActivityManager;
-    .end local v1    # "cn":Landroid/content/ComponentName;
-    .end local v2    # "pkg":Ljava/lang/String;
-    .end local v3    # "cls":Ljava/lang/String;
-    .end local v4    # "intent":Landroid/content/Intent;
     :goto_0
     goto :goto_1
 
-    .line 123
     :cond_1
     const-string v0, "ReceiverPowerOff"
 
@@ -260,7 +230,6 @@
 
     iget-object v2, p0, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff$1;->this$0:Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;
 
-    .line 124
     invoke-static {v2}, Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;->access$100(Lcom/oneplus/settings/timer/timepower/ReceiverPowerOff;)Ljava/lang/String;
 
     move-result-object v2
@@ -271,10 +240,8 @@
 
     move-result-object v1
 
-    .line 123
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
     :goto_1
     return-void
 .end method

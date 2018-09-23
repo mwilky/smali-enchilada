@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 5
-    .param p1, "appEntry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 177
     const/4 v0, 0x0
 
     if-eqz p1, :cond_6
@@ -44,14 +41,11 @@
 
     goto/16 :goto_2
 
-    .line 180
     :cond_0
     iget-object v1, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
 
     check-cast v1, Lcom/oneplus/settings/better/OPAppModel;
 
-    .line 181
-    .local v1, "acm":Lcom/oneplus/settings/better/OPAppModel;
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
 
     move-result v2
@@ -62,7 +56,6 @@
 
     if-eqz v2, :cond_4
 
-    .line 182
     iget-object v2, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -102,7 +95,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 183
     :cond_2
     invoke-static {}, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->access$200()Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptiongeManager;
 
@@ -126,20 +118,16 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 182
     move v0, v4
 
     goto :goto_0
 
-    .line 183
     :cond_3
     nop
 
-    .line 182
     :goto_0
     return v0
 
-    .line 185
     :cond_4
     iget-object v2, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -159,7 +147,6 @@
 
     if-nez v2, :cond_5
 
-    .line 187
     invoke-static {}, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->access$200()Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptiongeManager;
 
     move-result-object v2
@@ -174,21 +161,16 @@
 
     if-ne v2, v4, :cond_5
 
-    .line 185
     move v0, v4
 
     goto :goto_1
 
-    .line 187
     :cond_5
     nop
 
-    .line 185
     :goto_1
     return v0
 
-    .line 178
-    .end local v1    # "acm":Lcom/oneplus/settings/better/OPAppModel;
     :cond_6
     :goto_2
     return v0
@@ -197,6 +179,5 @@
 .method public init()V
     .locals 0
 
-    .line 173
     return-void
 .end method

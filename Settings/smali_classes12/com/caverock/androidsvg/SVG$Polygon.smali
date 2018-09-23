@@ -18,7 +18,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1607
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$PolyLine;-><init>()V
 
     return-void

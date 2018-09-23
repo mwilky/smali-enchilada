@@ -24,7 +24,6 @@
 .method constructor <init>(Landroid/view/View;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 223
     iput-object p1, p0, Lcom/oneplus/lib/menu/EpicenterTranslateClipReveal$1;->val$view:Landroid/view/View;
 
     iput-object p2, p0, Lcom/oneplus/lib/menu/EpicenterTranslateClipReveal$1;->val$terminalClip:Landroid/graphics/Rect;
@@ -38,15 +37,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 226
     iget-object v0, p0, Lcom/oneplus/lib/menu/EpicenterTranslateClipReveal$1;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Lcom/oneplus/lib/menu/EpicenterTranslateClipReveal$1;->val$terminalClip:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 227
     return-void
 .end method

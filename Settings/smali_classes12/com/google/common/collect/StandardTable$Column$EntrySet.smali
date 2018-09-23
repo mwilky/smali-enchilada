@@ -30,8 +30,6 @@
 .method private constructor <init>(Lcom/google/common/collect/StandardTable$Column;)V
     .locals 0
 
-    .line 447
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
@@ -41,11 +39,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/StandardTable$Column;Lcom/google/common/collect/StandardTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/StandardTable$Column;
-    .param p2, "x1"    # Lcom/google/common/collect/StandardTable$1;
 
-    .line 447
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$Column$EntrySet;-><init>(Lcom/google/common/collect/StandardTable$Column;)V
 
     return-void
@@ -56,8 +50,6 @@
 .method public clear()V
     .locals 2
 
-    .line 467
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     invoke-static {}, Lcom/google/common/base/Predicates;->alwaysTrue()Lcom/google/common/base/Predicate;
@@ -66,27 +58,20 @@
 
     invoke-virtual {v0, v1}, Lcom/google/common/collect/StandardTable$Column;->removeFromColumnIf(Lcom/google/common/base/Predicate;)Z
 
-    .line 468
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 471
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     if-eqz v0, :cond_0
 
-    .line 472
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 473
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v1, v1, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -109,8 +94,6 @@
 
     return v1
 
-    .line 475
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -120,8 +103,6 @@
 .method public isEmpty()Z
     .locals 2
 
-    .line 463
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -150,8 +131,6 @@
         }
     .end annotation
 
-    .line 449
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     new-instance v0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;
 
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
@@ -165,21 +144,15 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 479
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     if-eqz v0, :cond_0
 
-    .line 480
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 481
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v1, v1, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -202,8 +175,6 @@
 
     return v1
 
-    .line 483
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -220,9 +191,6 @@
         }
     .end annotation
 
-    .line 487
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
@@ -243,12 +211,8 @@
 .method public size()I
     .locals 4
 
-    .line 453
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.EntrySet;"
     const/4 v0, 0x0
 
-    .line 454
-    .local v0, "size":I
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v1, v1, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -276,8 +240,6 @@
 
     check-cast v2, Ljava/util/Map;
 
-    .line 455
-    .local v2, "map":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$Column$EntrySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v3, v3, Lcom/google/common/collect/StandardTable$Column;->columnKey:Ljava/lang/Object;
@@ -288,15 +250,11 @@
 
     if-eqz v3, :cond_0
 
-    .line 456
     add-int/lit8 v0, v0, 0x1
 
-    .line 458
-    .end local v2    # "map":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     :cond_0
     goto :goto_0
 
-    .line 459
     :cond_1
     return v0
 .end method

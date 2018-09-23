@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/setupwizardlib/items/RecyclerItemAdapter;Lcom/android/setupwizardlib/items/ItemViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/setupwizardlib/items/RecyclerItemAdapter;
 
-    .line 130
     iput-object p1, p0, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$1;->this$0:Lcom/android/setupwizardlib/items/RecyclerItemAdapter;
 
     iput-object p2, p0, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$1;->val$viewHolder:Lcom/android/setupwizardlib/items/ItemViewHolder;
@@ -42,17 +40,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 133
     iget-object v0, p0, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$1;->val$viewHolder:Lcom/android/setupwizardlib/items/ItemViewHolder;
 
     invoke-virtual {v0}, Lcom/android/setupwizardlib/items/ItemViewHolder;->getItem()Lcom/android/setupwizardlib/items/IItem;
 
     move-result-object v0
 
-    .line 134
-    .local v0, "item":Lcom/android/setupwizardlib/items/IItem;
     iget-object v1, p0, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$1;->this$0:Lcom/android/setupwizardlib/items/RecyclerItemAdapter;
 
     invoke-static {v1}, Lcom/android/setupwizardlib/items/RecyclerItemAdapter;->access$000(Lcom/android/setupwizardlib/items/RecyclerItemAdapter;)Lcom/android/setupwizardlib/items/RecyclerItemAdapter$OnItemSelectedListener;
@@ -69,7 +63,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 135
     iget-object v1, p0, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$1;->this$0:Lcom/android/setupwizardlib/items/RecyclerItemAdapter;
 
     invoke-static {v1}, Lcom/android/setupwizardlib/items/RecyclerItemAdapter;->access$000(Lcom/android/setupwizardlib/items/RecyclerItemAdapter;)Lcom/android/setupwizardlib/items/RecyclerItemAdapter$OnItemSelectedListener;
@@ -78,7 +71,6 @@
 
     invoke-interface {v1, v0}, Lcom/android/setupwizardlib/items/RecyclerItemAdapter$OnItemSelectedListener;->onItemSelected(Lcom/android/setupwizardlib/items/IItem;)V
 
-    .line 137
     :cond_0
     return-void
 .end method

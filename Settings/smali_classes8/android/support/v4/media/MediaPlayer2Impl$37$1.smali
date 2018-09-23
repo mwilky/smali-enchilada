@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl$37;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaPlayer2Impl$37;
 
-    .line 1658
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$37$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$37;
 
     iput p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$37$1;->val$percent:I
@@ -42,9 +40,7 @@
 # virtual methods
 .method public notify(Landroid/support/v4/media/MediaPlayer2$EventCallback;)V
     .locals 4
-    .param p1, "cb"    # Landroid/support/v4/media/MediaPlayer2$EventCallback;
 
-    .line 1661
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$37$1;->this$1:Landroid/support/v4/media/MediaPlayer2Impl$37;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$37;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
@@ -63,6 +59,5 @@
 
     invoke-virtual {p1, v0, v1, v3, v2}, Landroid/support/v4/media/MediaPlayer2$EventCallback;->onInfo(Landroid/support/v4/media/MediaPlayer2;Landroid/support/v4/media/DataSourceDesc;II)V
 
-    .line 1663
     return-void
 .end method

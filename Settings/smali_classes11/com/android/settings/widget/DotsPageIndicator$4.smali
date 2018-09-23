@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/DotsPageIndicator;
 
-    .line 611
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$4;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,30 +33,24 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 622
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$4;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$502(Lcom/android/settings/widget/DotsPageIndicator;Z)Z
 
-    .line 623
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 616
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$4;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$502(Lcom/android/settings/widget/DotsPageIndicator;Z)Z
 
-    .line 617
     return-void
 .end method

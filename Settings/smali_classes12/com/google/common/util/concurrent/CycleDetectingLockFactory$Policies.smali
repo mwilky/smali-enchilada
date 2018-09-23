@@ -43,7 +43,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 205
     new-instance v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies$1;
 
     const-string v1, "THROW"
@@ -54,7 +53,6 @@
 
     sput-object v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;->THROW:Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
 
-    .line 218
     new-instance v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies$2;
 
     const-string v1, "WARN"
@@ -65,7 +63,6 @@
 
     sput-object v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;->WARN:Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
 
-    .line 235
     new-instance v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies$3;
 
     const-string v1, "DISABLED"
@@ -76,7 +73,6 @@
 
     sput-object v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;->DISABLED:Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
 
-    .line 197
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
@@ -106,7 +102,6 @@
         }
     .end annotation
 
-    .line 198
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -114,11 +109,7 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/util/concurrent/CycleDetectingLockFactory$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # Lcom/google/common/util/concurrent/CycleDetectingLockFactory$1;
 
-    .line 198
     invoke-direct {p0, p1, p2}, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -126,9 +117,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 197
     const-class v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -143,7 +132,6 @@
 .method public static values()[Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
     .locals 1
 
-    .line 197
     sget-object v0, Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;->$VALUES:[Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;
 
     invoke-virtual {v0}, [Lcom/google/common/util/concurrent/CycleDetectingLockFactory$Policies;->clone()Ljava/lang/Object;

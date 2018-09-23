@@ -27,26 +27,16 @@
 # direct methods
 .method public constructor <init>(Lcom/caverock/androidsvg/SVG$Length;Lcom/caverock/androidsvg/SVG$Length;Lcom/caverock/androidsvg/SVG$Length;Lcom/caverock/androidsvg/SVG$Length;)V
     .locals 0
-    .param p1, "top"    # Lcom/caverock/androidsvg/SVG$Length;
-    .param p2, "right"    # Lcom/caverock/androidsvg/SVG$Length;
-    .param p3, "bottom"    # Lcom/caverock/androidsvg/SVG$Length;
-    .param p4, "left"    # Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1346
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1348
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$CSSClipRect;->top:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1349
     iput-object p2, p0, Lcom/caverock/androidsvg/SVG$CSSClipRect;->right:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1350
     iput-object p3, p0, Lcom/caverock/androidsvg/SVG$CSSClipRect;->bottom:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1351
     iput-object p4, p0, Lcom/caverock/androidsvg/SVG$CSSClipRect;->left:Lcom/caverock/androidsvg/SVG$Length;
 
-    .line 1352
     return-void
 .end method

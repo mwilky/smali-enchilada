@@ -31,15 +31,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 189
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 190
     iput-object p1, p0, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;->mContext:Landroid/content/Context;
 
-    .line 191
     return-void
 .end method
 
@@ -48,7 +44,6 @@
 .method public bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 185
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -60,9 +55,7 @@
 
 .method public varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 10
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 195
     iget-object v0, p0, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/content/pm/ShortcutManager;
@@ -73,22 +66,16 @@
 
     check-cast v0, Landroid/content/pm/ShortcutManager;
 
-    .line 196
-    .local v0, "sm":Landroid/content/pm/ShortcutManager;
     iget-object v1, p0, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 198
-    .local v1, "pm":Landroid/content/pm/PackageManager;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 199
-    .local v2, "updates":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ShortcutInfo;>;"
     invoke-virtual {v0}, Landroid/content/pm/ShortcutManager;->getPinnedShortcuts()Ljava/util/List;
 
     move-result-object v3
@@ -110,8 +97,6 @@
 
     check-cast v4, Landroid/content/pm/ShortcutInfo;
 
-    .line 200
-    .local v4, "info":Landroid/content/pm/ShortcutInfo;
     invoke-virtual {v4}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v5
@@ -124,14 +109,11 @@
 
     if-nez v5, :cond_0
 
-    .line 201
     goto :goto_0
 
-    .line 203
     :cond_0
     nop
 
-    .line 204
     invoke-virtual {v4}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
 
     move-result-object v5
@@ -146,13 +128,10 @@
 
     move-result-object v5
 
-    .line 203
     invoke-static {v5}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v5
 
-    .line 205
-    .local v5, "cn":Landroid/content/ComponentName;
     invoke-static {}, Lcom/android/settings/shortcut/CreateShortcut;->getBaseIntent()Landroid/content/Intent;
 
     move-result-object v6
@@ -167,14 +146,10 @@
 
     move-result-object v6
 
-    .line 206
-    .local v6, "ri":Landroid/content/pm/ResolveInfo;
     if-nez v6, :cond_1
 
-    .line 207
     goto :goto_0
 
-    .line 209
     :cond_1
     new-instance v7, Landroid/content/pm/ShortcutInfo$Builder;
 
@@ -186,7 +161,6 @@
 
     invoke-direct {v7, v8, v9}, Landroid/content/pm/ShortcutInfo$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 210
     invoke-virtual {v6, v1}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
     move-result-object v8
@@ -199,16 +173,10 @@
 
     move-result-object v7
 
-    .line 209
     invoke-interface {v2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 211
-    .end local v4    # "info":Landroid/content/pm/ShortcutInfo;
-    .end local v5    # "cn":Landroid/content/ComponentName;
-    .end local v6    # "ri":Landroid/content/pm/ResolveInfo;
     goto :goto_0
 
-    .line 212
     :cond_2
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
@@ -216,10 +184,8 @@
 
     if-nez v3, :cond_3
 
-    .line 213
     invoke-virtual {v0, v2}, Landroid/content/pm/ShortcutManager;->updateShortcuts(Ljava/util/List;)Z
 
-    .line 215
     :cond_3
     const/4 v3, 0x0
 

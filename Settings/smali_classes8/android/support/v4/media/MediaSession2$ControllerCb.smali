@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1550
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,26 +27,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 1558
     instance-of v0, p1, Landroid/support/v4/media/MediaSession2$ControllerCb;
 
     if-nez v0, :cond_0
 
-    .line 1559
     const/4 v0, 0x0
 
     return v0
 
-    .line 1561
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/media/MediaSession2$ControllerCb;
 
-    .line 1562
-    .local v0, "other":Landroid/support/v4/media/MediaSession2$ControllerCb;
     invoke-virtual {p0}, Landroid/support/v4/media/MediaSession2$ControllerCb;->getId()Landroid/os/IBinder;
 
     move-result-object v1
@@ -71,7 +64,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 1553
     invoke-virtual {p0}, Landroid/support/v4/media/MediaSession2$ControllerCb;->getId()Landroid/os/IBinder;
 
     move-result-object v0

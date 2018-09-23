@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
-    .line 98
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onSetTime(II)Z
     .locals 4
-    .param p1, "hour"    # I
-    .param p2, "minute"    # I
 
-    .line 101
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     iget-boolean v0, v0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mDisableListeners:Z
@@ -52,7 +47,6 @@
 
     return v1
 
-    .line 102
     :cond_0
     invoke-static {p1}, Landroid/service/notification/ZenModeConfig;->isValidHour(I)Z
 
@@ -64,7 +58,6 @@
 
     return v2
 
-    .line 103
     :cond_1
     invoke-static {p2}, Landroid/service/notification/ZenModeConfig;->isValidMinute(I)Z
 
@@ -74,7 +67,6 @@
 
     return v2
 
-    .line 104
     :cond_2
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
@@ -96,10 +88,8 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 105
     return v1
 
-    .line 107
     :cond_3
     sget-boolean v0, Lcom/android/settings/notification/ZenModeRuleSettingsBase;->DEBUG:Z
 
@@ -129,7 +119,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
     :cond_4
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
@@ -139,7 +128,6 @@
 
     iput p1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startHour:I
 
-    .line 109
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->access$100(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)Landroid/service/notification/ZenModeConfig$ScheduleInfo;
@@ -148,7 +136,6 @@
 
     iput p2, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->startMinute:I
 
-    .line 110
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$2;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
@@ -163,6 +150,5 @@
 
     invoke-virtual {v0, v2}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->updateRule(Landroid/net/Uri;)V
 
-    .line 111
     return v1
 .end method

@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 852
     new-instance v0, Lcom/google/common/cache/LocalCache$NullEntry;
 
     const-string v1, "INSTANCE"
@@ -50,7 +49,6 @@
 
     sput-object v0, Lcom/google/common/cache/LocalCache$NullEntry;->INSTANCE:Lcom/google/common/cache/LocalCache$NullEntry;
 
-    .line 851
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/cache/LocalCache$NullEntry;
@@ -72,7 +70,6 @@
         }
     .end annotation
 
-    .line 851
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -80,9 +77,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/cache/LocalCache$NullEntry;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 851
     const-class v0, Lcom/google/common/cache/LocalCache$NullEntry;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -97,7 +92,6 @@
 .method public static values()[Lcom/google/common/cache/LocalCache$NullEntry;
     .locals 1
 
-    .line 851
     sget-object v0, Lcom/google/common/cache/LocalCache$NullEntry;->$VALUES:[Lcom/google/common/cache/LocalCache$NullEntry;
 
     invoke-virtual {v0}, [Lcom/google/common/cache/LocalCache$NullEntry;->clone()Ljava/lang/Object;
@@ -114,7 +108,6 @@
 .method public getAccessTime()J
     .locals 2
 
-    .line 879
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -123,7 +116,6 @@
 .method public getHash()I
     .locals 1
 
-    .line 869
     const/4 v0, 0x0
 
     return v0
@@ -132,7 +124,6 @@
 .method public getKey()Ljava/lang/Object;
     .locals 1
 
-    .line 874
     const/4 v0, 0x0
 
     return-object v0
@@ -150,7 +141,6 @@
         }
     .end annotation
 
-    .line 864
     const/4 v0, 0x0
 
     return-object v0
@@ -168,7 +158,6 @@
         }
     .end annotation
 
-    .line 887
     return-object p0
 .end method
 
@@ -184,7 +173,6 @@
         }
     .end annotation
 
-    .line 911
     return-object p0
 .end method
 
@@ -200,7 +188,6 @@
         }
     .end annotation
 
-    .line 895
     return-object p0
 .end method
 
@@ -216,7 +203,6 @@
         }
     .end annotation
 
-    .line 919
     return-object p0
 .end method
 
@@ -232,7 +218,6 @@
         }
     .end annotation
 
-    .line 856
     const/4 v0, 0x0
 
     return-object v0
@@ -241,7 +226,6 @@
 .method public getWriteTime()J
     .locals 2
 
-    .line 903
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -249,9 +233,7 @@
 
 .method public setAccessTime(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 883
     return-void
 .end method
 
@@ -267,8 +249,6 @@
         }
     .end annotation
 
-    .line 891
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
@@ -284,8 +264,6 @@
         }
     .end annotation
 
-    .line 915
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
@@ -301,8 +279,6 @@
         }
     .end annotation
 
-    .line 899
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
@@ -318,8 +294,6 @@
         }
     .end annotation
 
-    .line 923
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
@@ -335,15 +309,11 @@
         }
     .end annotation
 
-    .line 860
-    .local p1, "valueReference":Lcom/google/common/cache/LocalCache$ValueReference;, "Lcom/google/common/cache/LocalCache$ValueReference<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
 .method public setWriteTime(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 907
     return-void
 .end method

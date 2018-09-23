@@ -21,14 +21,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     iput-object p1, p0, Landroid/support/v17/leanback/util/StateMachine$Event;->mName:Ljava/lang/String;
 
-    .line 62
     return-void
 .end method

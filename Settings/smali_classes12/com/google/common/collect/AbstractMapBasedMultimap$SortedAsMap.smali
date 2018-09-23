@@ -54,15 +54,10 @@
         }
     .end annotation
 
-    .line 1365
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
-    .local p2, "submap":Ljava/util/SortedMap;, "Ljava/util/SortedMap<TK;Ljava/util/Collection<TV;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
 
-    .line 1366
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultimap$AsMap;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;Ljava/util/Map;)V
 
-    .line 1367
     return-void
 .end method
 
@@ -78,8 +73,6 @@
         }
     .end annotation
 
-    .line 1375
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->sortedMap()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -94,8 +87,6 @@
 .method bridge synthetic createKeySet()Ljava/util/Set;
     .locals 1
 
-    .line 1363
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->createKeySet()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -113,8 +104,6 @@
         }
     .end annotation
 
-    .line 1414
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedKeySet;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
@@ -136,8 +125,6 @@
         }
     .end annotation
 
-    .line 1380
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->sortedMap()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -161,9 +148,6 @@
         }
     .end annotation
 
-    .line 1390
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
@@ -184,8 +168,6 @@
 .method public bridge synthetic keySet()Ljava/util/Set;
     .locals 1
 
-    .line 1363
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->keySet()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -203,12 +185,8 @@
         }
     .end annotation
 
-    .line 1408
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->sortedKeySet:Ljava/util/SortedSet;
 
-    .line 1409
-    .local v0, "result":Ljava/util/SortedSet;, "Ljava/util/SortedSet<TK;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->createKeySet()Ljava/util/SortedSet;
@@ -234,8 +212,6 @@
         }
     .end annotation
 
-    .line 1385
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->sortedMap()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -259,8 +235,6 @@
         }
     .end annotation
 
-    .line 1370
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->submap:Ljava/util/Map;
 
     check-cast v0, Ljava/util/SortedMap;
@@ -280,10 +254,6 @@
         }
     .end annotation
 
-    .line 1395
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p2, "toKey":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
@@ -313,9 +283,6 @@
         }
     .end annotation
 
-    .line 1400
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;, "Lcom/google/common/collect/AbstractMapBasedMultimap<TK;TV;>.SortedAsMap;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;
 
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$SortedAsMap;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;

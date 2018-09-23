@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/inputmethod/SpellCheckersSettings;Landroid/view/textservice/SpellCheckerInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
-    .line 250
     iput-object p1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iput-object p2, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->val$sci:Landroid/view/textservice/SpellCheckerInfo;
@@ -42,16 +40,12 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 253
     iget-object v0, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->this$0:Lcom/android/settings/inputmethod/SpellCheckersSettings;
 
     iget-object v1, p0, Lcom/android/settings/inputmethod/SpellCheckersSettings$2;->val$sci:Landroid/view/textservice/SpellCheckerInfo;
 
     invoke-static {v0, v1}, Lcom/android/settings/inputmethod/SpellCheckersSettings;->access$300(Lcom/android/settings/inputmethod/SpellCheckersSettings;Landroid/view/textservice/SpellCheckerInfo;)V
 
-    .line 254
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;C)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/String;
 
-    .line 452
     iput-char p2, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher$FastMatcher;-><init>(Ljava/lang/String;)V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
     .locals 1
-    .param p1, "other"    # Lcom/google/common/base/CharMatcher;
 
-    .line 458
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     invoke-virtual {p1, v0}, Lcom/google/common/base/CharMatcher;->matches(C)Z
@@ -61,9 +57,7 @@
 
 .method public matches(C)Z
     .locals 1
-    .param p1, "c"    # C
 
-    .line 454
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     if-eq p1, v0, :cond_0
@@ -82,7 +76,6 @@
 .method public negate()Lcom/google/common/base/CharMatcher;
     .locals 1
 
-    .line 473
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     invoke-static {v0}, Lcom/google/common/base/CharMatcher$10;->is(C)Lcom/google/common/base/CharMatcher;
@@ -94,9 +87,7 @@
 
 .method public or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
     .locals 1
-    .param p1, "other"    # Lcom/google/common/base/CharMatcher;
 
-    .line 462
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     invoke-virtual {p1, v0}, Lcom/google/common/base/CharMatcher;->matches(C)Z
@@ -118,19 +109,16 @@
 
 .method setBits(Ljava/util/BitSet;)V
     .locals 2
-    .param p1, "table"    # Ljava/util/BitSet;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.util.BitSet"
     .end annotation
 
-    .line 468
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v0}, Ljava/util/BitSet;->set(II)V
 
-    .line 469
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$10;->val$match:C
 
     add-int/lit8 v0, v0, 0x1
@@ -139,6 +127,5 @@
 
     invoke-virtual {p1, v0, v1}, Ljava/util/BitSet;->set(II)V
 
-    .line 470
     return-void
 .end method

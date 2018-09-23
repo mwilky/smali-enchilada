@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/UserSettings;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/UserSettings;
 
-    .line 775
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     iput p2, p0, Lcom/android/settings/users/UserSettings$13;->val$userType:I
@@ -40,25 +38,20 @@
 .method public run()V
     .locals 7
 
-    .line 779
     iget v0, p0, Lcom/android/settings/users/UserSettings$13;->val$userType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 780
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$1800(Lcom/android/settings/users/UserSettings;)Landroid/content/pm/UserInfo;
 
     move-result-object v0
 
-    .local v0, "user":Landroid/content/pm/UserInfo;
     goto :goto_0
 
-    .line 782
-    .end local v0    # "user":Landroid/content/pm/UserInfo;
     :cond_0
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -66,22 +59,17 @@
 
     move-result-object v0
 
-    .line 784
-    .restart local v0    # "user":Landroid/content/pm/UserInfo;
     :goto_0
     if-nez v0, :cond_1
 
-    .line 785
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Lcom/android/settings/users/UserSettings;->access$702(Lcom/android/settings/users/UserSettings;Z)Z
 
-    .line 786
     return-void
 
-    .line 788
     :cond_1
     iget-object v2, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -91,13 +79,11 @@
 
     monitor-enter v2
 
-    .line 789
     :try_start_0
     iget v3, p0, Lcom/android/settings/users/UserSettings$13;->val$userType:I
 
     if-ne v3, v1, :cond_2
 
-    .line 790
     iget-object v3, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v3}, Lcom/android/settings/users/UserSettings;->access$500(Lcom/android/settings/users/UserSettings;)Landroid/os/Handler;
@@ -106,7 +92,6 @@
 
     invoke-virtual {v3, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 793
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v1}, Lcom/android/settings/users/UserSettings;->access$2000(Lcom/android/settings/users/UserSettings;)Lcom/android/settings/users/UserCapabilities;
@@ -117,7 +102,6 @@
 
     if-nez v1, :cond_3
 
-    .line 794
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v1}, Lcom/android/settings/users/UserSettings;->access$500(Lcom/android/settings/users/UserSettings;)Landroid/os/Handler;
@@ -144,7 +128,6 @@
 
     goto :goto_1
 
-    .line 798
     :cond_2
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$13;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -170,15 +153,12 @@
 
     invoke-virtual {v1, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 801
     :cond_3
     :goto_1
     monitor-exit v2
 
-    .line 802
     return-void
 
-    .line 801
     :catchall_0
     move-exception v1
 

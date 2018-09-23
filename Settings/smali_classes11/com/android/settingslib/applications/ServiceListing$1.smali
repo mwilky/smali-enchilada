@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/applications/ServiceListing;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/applications/ServiceListing;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 167
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$1;->this$0:Lcom/android/settingslib/applications/ServiceListing;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,14 +33,10 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 170
     iget-object v0, p0, Lcom/android/settingslib/applications/ServiceListing$1;->this$0:Lcom/android/settingslib/applications/ServiceListing;
 
     invoke-virtual {v0}, Lcom/android/settingslib/applications/ServiceListing;->reload()V
 
-    .line 171
     return-void
 .end method

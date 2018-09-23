@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/sim/SimDialogActivity;ILjava/util/List;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/sim/SimDialogActivity;
 
-    .line 159
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$3;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     iput p2, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$id:I
@@ -50,15 +48,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "value"    # I
 
-    .line 165
     iget v0, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$id:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 183
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -85,7 +79,6 @@
 
     throw v0
 
-    .line 179
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$subInfoList:Ljava/util/List;
 
@@ -95,8 +88,6 @@
 
     check-cast v0, Landroid/telephony/SubscriptionInfo;
 
-    .line 180
-    .local v0, "sir":Landroid/telephony/SubscriptionInfo;
     iget-object v1, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
@@ -105,33 +96,23 @@
 
     invoke-static {v1, v2}, Lcom/android/settings/sim/SimDialogActivity;->access$200(Landroid/content/Context;I)V
 
-    .line 181
     goto :goto_1
 
-    .line 171
-    .end local v0    # "sir":Landroid/telephony/SubscriptionInfo;
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$context:Landroid/content/Context;
 
-    .line 172
     invoke-static {v0}, Landroid/telecom/TelecomManager;->from(Landroid/content/Context;)Landroid/telecom/TelecomManager;
 
     move-result-object v0
 
-    .line 173
-    .local v0, "telecomManager":Landroid/telecom/TelecomManager;
     nop
 
-    .line 174
     invoke-virtual {v0}, Landroid/telecom/TelecomManager;->getCallCapablePhoneAccounts()Ljava/util/List;
 
     move-result-object v1
 
-    .line 175
-    .local v1, "phoneAccountsList":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/PhoneAccountHandle;>;"
     iget-object v2, p0, Lcom/android/settings/sim/SimDialogActivity$3;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
-    .line 176
     const/4 v3, 0x1
 
     if-ge p2, v3, :cond_0
@@ -149,16 +130,11 @@
 
     check-cast v3, Landroid/telecom/PhoneAccountHandle;
 
-    .line 175
     :goto_0
     invoke-static {v2, v3}, Lcom/android/settings/sim/SimDialogActivity;->access$300(Lcom/android/settings/sim/SimDialogActivity;Landroid/telecom/PhoneAccountHandle;)V
 
-    .line 177
     goto :goto_1
 
-    .line 167
-    .end local v0    # "telecomManager":Landroid/telecom/TelecomManager;
-    .end local v1    # "phoneAccountsList":Ljava/util/List;, "Ljava/util/List<Landroid/telecom/PhoneAccountHandle;>;"
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$subInfoList:Ljava/util/List;
 
@@ -168,8 +144,6 @@
 
     check-cast v0, Landroid/telephony/SubscriptionInfo;
 
-    .line 168
-    .local v0, "sir":Landroid/telephony/SubscriptionInfo;
     iget-object v1, p0, Lcom/android/settings/sim/SimDialogActivity$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
@@ -178,17 +152,13 @@
 
     invoke-static {v1, v2}, Lcom/android/settings/sim/SimDialogActivity;->access$100(Landroid/content/Context;I)V
 
-    .line 169
     nop
 
-    .line 187
-    .end local v0    # "sir":Landroid/telephony/SubscriptionInfo;
     :goto_1
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$3;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 188
     return-void
 
     nop

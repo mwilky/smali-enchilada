@@ -33,7 +33,6 @@
 .method constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
-    .line 41
     iput-object p1, p0, Lcom/google/common/util/concurrent/Callables$1;->val$value:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +50,6 @@
         }
     .end annotation
 
-    .line 43
     iget-object v0, p0, Lcom/google/common/util/concurrent/Callables$1;->val$value:Ljava/lang/Object;
 
     return-object v0

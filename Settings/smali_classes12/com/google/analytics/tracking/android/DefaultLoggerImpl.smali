@@ -21,23 +21,18 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
     sget-object v0, Lcom/google/analytics/tracking/android/Logger$LogLevel;->INFO:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     iput-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
-    .line 21
     return-void
 .end method
 
 .method private formatMessage(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 69
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,9 +64,7 @@
 # virtual methods
 .method public error(Ljava/lang/Exception;)V
     .locals 2
-    .param p1, "exception"    # Ljava/lang/Exception;
 
-    .line 53
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ordinal()I
@@ -86,23 +79,19 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 54
     const-string v0, "GAV3"
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 56
     :cond_0
     return-void
 .end method
 
 .method public error(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 46
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ordinal()I
@@ -117,7 +106,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 47
     const-string v0, "GAV3"
 
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->formatMessage(Ljava/lang/String;)Ljava/lang/String;
@@ -126,7 +114,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 49
     :cond_0
     return-void
 .end method
@@ -134,7 +121,6 @@
 .method public getLogLevel()Lcom/google/analytics/tracking/android/Logger$LogLevel;
     .locals 1
 
-    .line 65
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     return-object v0
@@ -142,9 +128,7 @@
 
 .method public info(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 32
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ordinal()I
@@ -159,7 +143,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 33
     const-string v0, "GAV3"
 
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->formatMessage(Ljava/lang/String;)Ljava/lang/String;
@@ -168,27 +151,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 35
     :cond_0
     return-void
 .end method
 
 .method public setLogLevel(Lcom/google/analytics/tracking/android/Logger$LogLevel;)V
     .locals 0
-    .param p1, "level"    # Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
-    .line 60
     iput-object p1, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
-    .line 61
     return-void
 .end method
 
 .method public verbose(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 25
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ordinal()I
@@ -203,7 +180,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 26
     const-string v0, "GAV3"
 
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->formatMessage(Ljava/lang/String;)Ljava/lang/String;
@@ -212,16 +188,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 28
     :cond_0
     return-void
 .end method
 
 .method public warn(Ljava/lang/String;)V
     .locals 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 39
     iget-object v0, p0, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->mLogLevel:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ordinal()I
@@ -236,7 +209,6 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 40
     const-string v0, "GAV3"
 
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/DefaultLoggerImpl;->formatMessage(Ljava/lang/String;)Ljava/lang/String;
@@ -245,7 +217,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
     :cond_0
     return-void
 .end method

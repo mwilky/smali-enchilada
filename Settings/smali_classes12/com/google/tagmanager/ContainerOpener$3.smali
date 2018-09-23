@@ -22,7 +22,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ContainerOpener;)V
     .locals 0
 
-    .line 387
     iput-object p1, p0, Lcom/google/tagmanager/ContainerOpener$3;->this$0:Lcom/google/tagmanager/ContainerOpener;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -35,12 +34,10 @@
 .method public run()V
     .locals 2
 
-    .line 390
     const-string v0, "Timer expired."
 
     invoke-static {v0}, Lcom/google/tagmanager/Log;->i(Ljava/lang/String;)V
 
-    .line 391
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$3;->this$0:Lcom/google/tagmanager/ContainerOpener;
 
     iget-object v1, p0, Lcom/google/tagmanager/ContainerOpener$3;->this$0:Lcom/google/tagmanager/ContainerOpener;
@@ -51,6 +48,5 @@
 
     invoke-static {v0, v1}, Lcom/google/tagmanager/ContainerOpener;->access$000(Lcom/google/tagmanager/ContainerOpener;Lcom/google/tagmanager/Container;)V
 
-    .line 392
     return-void
 .end method

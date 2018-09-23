@@ -38,26 +38,19 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 1376
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgObject;-><init>()V
 
-    .line 1378
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->id:Ljava/lang/String;
 
-    .line 1379
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->spacePreserve:Ljava/lang/Boolean;
 
-    .line 1380
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->baseStyle:Lcom/caverock/androidsvg/SVG$Style;
 
-    .line 1381
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->style:Lcom/caverock/androidsvg/SVG$Style;
 
-    .line 1382
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElementBase;->classNames:Ljava/util/List;
 
-    .line 1376
     return-void
 .end method

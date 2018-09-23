@@ -15,7 +15,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,15 +22,11 @@
 
 .method public static verify(Z)V
     .locals 1
-    .param p0, "expression"    # Z
 
-    .line 97
     if-eqz p0, :cond_0
 
-    .line 100
     return-void
 
-    .line 98
     :cond_0
     new-instance v0, Lcom/google/common/base/VerifyException;
 
@@ -42,23 +37,19 @@
 
 .method public static varargs verify(ZLjava/lang/String;[Ljava/lang/Object;)V
     .locals 2
-    .param p0, "expression"    # Z
-    .param p1, "errorMessageTemplate"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "errorMessageArgs"    # [Ljava/lang/Object;
+    .param p2    # [Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 122
     if-eqz p0, :cond_0
 
-    .line 125
     return-void
 
-    .line 123
     :cond_0
     new-instance v0, Lcom/google/common/base/VerifyException;
 
@@ -85,8 +76,6 @@
         }
     .end annotation
 
-    .line 134
-    .local p0, "reference":Ljava/lang/Object;, "TT;"
     const-string v0, "expected a non-null reference"
 
     const/4 v1, 0x0
@@ -106,11 +95,11 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p1, "errorMessageTemplate"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "errorMessageArgs"    # [Ljava/lang/Object;
+    .param p2    # [Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -126,8 +115,6 @@
         }
     .end annotation
 
-    .line 156
-    .local p0, "reference":Ljava/lang/Object;, "TT;"
     if-eqz p0, :cond_0
 
     const/4 v0, 0x1
@@ -140,6 +127,5 @@
     :goto_0
     invoke-static {v0, p1, p2}, Lcom/google/common/base/Verify;->verify(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 157
     return-object p0
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/notification/OPRingPattern;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/notification/OPRingPattern;
 
-    .line 85
     iput-object p1, p0, Lcom/oneplus/settings/notification/OPRingPattern$1;->this$0:Lcom/oneplus/settings/notification/OPRingPattern;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 88
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -50,8 +45,6 @@
 
     move-result v0
 
-    .line 89
-    .local v0, "val":Z
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPRingPattern$1;->this$0:Lcom/oneplus/settings/notification/OPRingPattern;
 
     invoke-static {v1}, Lcom/oneplus/settings/notification/OPRingPattern;->access$000(Lcom/oneplus/settings/notification/OPRingPattern;)Landroid/content/ContentResolver;
@@ -60,10 +53,8 @@
 
     const-string v2, "vibrate_when_ringing"
 
-    .line 91
     nop
 
-    .line 89
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     move-result v1

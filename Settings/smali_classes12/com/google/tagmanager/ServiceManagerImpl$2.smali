@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ServiceManagerImpl;)V
     .locals 0
 
-    .line 100
     iput-object p1, p0, Lcom/google/tagmanager/ServiceManagerImpl$2;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +36,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 104
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -58,12 +55,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 105
     iget-object v0, p0, Lcom/google/tagmanager/ServiceManagerImpl$2;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-virtual {v0}, Lcom/google/tagmanager/ServiceManagerImpl;->dispatch()V
 
-    .line 106
     iget-object v0, p0, Lcom/google/tagmanager/ServiceManagerImpl$2;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-static {v0}, Lcom/google/tagmanager/ServiceManagerImpl;->access$200(Lcom/google/tagmanager/ServiceManagerImpl;)I
@@ -80,7 +75,6 @@
 
     if-nez v0, :cond_0
 
-    .line 108
     iget-object v0, p0, Lcom/google/tagmanager/ServiceManagerImpl$2;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-static {v0}, Lcom/google/tagmanager/ServiceManagerImpl;->access$400(Lcom/google/tagmanager/ServiceManagerImpl;)Landroid/os/Handler;
@@ -113,7 +107,6 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 112
     :cond_0
     return v1
 .end method

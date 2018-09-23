@@ -12,14 +12,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Lcom/android/settings/development/BluetoothA2dpConfigStore;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
-    .param p3, "store"    # Lcom/android/settings/development/BluetoothA2dpConfigStore;
 
-    .line 34
     invoke-direct {p0, p1, p2, p3}, Lcom/android/settings/development/AbstractBluetoothA2dpPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Lcom/android/settings/development/BluetoothA2dpConfigStore;)V
 
-    .line 35
     return-void
 .end method
 
@@ -27,19 +22,13 @@
 # virtual methods
 .method protected getCurrentA2dpSettingIndex(Landroid/bluetooth/BluetoothCodecConfig;)I
     .locals 3
-    .param p1, "config"    # Landroid/bluetooth/BluetoothCodecConfig;
 
-    .line 87
     invoke-virtual {p1}, Landroid/bluetooth/BluetoothCodecConfig;->getSampleRate()I
 
     move-result v0
 
-    .line 88
-    .local v0, "sampleRate":I
     const/4 v1, 0x0
 
-    .line 89
-    .local v1, "index":I
     const/4 v2, 0x4
 
     if-eq v0, v2, :cond_1
@@ -52,35 +41,26 @@
 
     goto :goto_0
 
-    .line 94
     :pswitch_0
     const/4 v1, 0x2
 
-    .line 95
     goto :goto_0
 
-    .line 91
     :pswitch_1
     const/4 v1, 0x1
 
-    .line 92
     goto :goto_0
 
-    .line 100
     :cond_0
     const/4 v1, 0x4
 
-    .line 101
     goto :goto_0
 
-    .line 97
     :cond_1
     const/4 v1, 0x3
 
-    .line 98
     nop
 
-    .line 108
     :goto_0
     return v1
 
@@ -96,7 +76,6 @@
 .method protected getDefaultIndex()I
     .locals 1
 
-    .line 56
     const/4 v0, 0x0
 
     return v0
@@ -105,7 +84,6 @@
 .method protected getListSummaries()[Ljava/lang/String;
     .locals 2
 
-    .line 50
     iget-object v0, p0, Lcom/android/settings/development/BluetoothAudioSampleRatePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -124,7 +102,6 @@
 .method protected getListValues()[Ljava/lang/String;
     .locals 2
 
-    .line 44
     iget-object v0, p0, Lcom/android/settings/development/BluetoothAudioSampleRatePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -143,7 +120,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 39
     const-string v0, "bluetooth_select_a2dp_sample_rate"
 
     return-object v0
@@ -151,9 +127,7 @@
 
 .method protected writeConfigurationValues(Ljava/lang/Object;)V
     .locals 3
-    .param p1, "newValue"    # Ljava/lang/Object;
 
-    .line 61
     iget-object v0, p0, Lcom/android/settings/development/BluetoothAudioSampleRatePreferenceController;->mPreference:Landroid/support/v7/preference/ListPreference;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -164,58 +138,42 @@
 
     move-result v0
 
-    .line 62
-    .local v0, "index":I
     const/4 v1, 0x0
 
-    .line 63
-    .local v1, "sampleRateValue":I
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 77
     :pswitch_0
     const/16 v1, 0x8
 
-    .line 78
     goto :goto_0
 
-    .line 74
     :pswitch_1
     const/4 v1, 0x4
 
-    .line 75
     goto :goto_0
 
-    .line 71
     :pswitch_2
     const/4 v1, 0x2
 
-    .line 72
     goto :goto_0
 
-    .line 68
     :pswitch_3
     const/4 v1, 0x1
 
-    .line 69
     goto :goto_0
 
-    .line 65
     :pswitch_4
     const/4 v1, 0x0
 
-    .line 66
     nop
 
-    .line 82
     :goto_0
     iget-object v2, p0, Lcom/android/settings/development/BluetoothAudioSampleRatePreferenceController;->mBluetoothA2dpConfigStore:Lcom/android/settings/development/BluetoothA2dpConfigStore;
 
     invoke-virtual {v2, v1}, Lcom/android/settings/development/BluetoothA2dpConfigStore;->setSampleRate(I)V
 
-    .line 83
     return-void
 
     :pswitch_data_0

@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ArrayTable$ArrayMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ArrayTable$ArrayMap;
 
-    .line 229
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1;->this$0:Lcom/google/common/collect/ArrayTable$ArrayMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -52,8 +49,6 @@
         }
     .end annotation
 
-    .line 237
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1;"
     new-instance v0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
     invoke-virtual {p0}, Lcom/google/common/collect/ArrayTable$ArrayMap$1;->size()I
@@ -75,8 +70,6 @@
         }
     .end annotation
 
-    .line 232
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1;->this$0:Lcom/google/common/collect/ArrayTable$ArrayMap;
 
     return-object v0

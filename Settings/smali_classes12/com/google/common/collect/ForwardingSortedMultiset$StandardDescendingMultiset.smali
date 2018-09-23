@@ -28,10 +28,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ForwardingSortedMultiset;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ForwardingSortedMultiset;
 
-    .line 98
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMultiset$StandardDescendingMultiset;, "Lcom/google/common/collect/ForwardingSortedMultiset<TE;>.StandardDescendingMultiset;"
     iput-object p1, p0, Lcom/google/common/collect/ForwardingSortedMultiset$StandardDescendingMultiset;->this$0:Lcom/google/common/collect/ForwardingSortedMultiset;
 
     invoke-direct {p0}, Lcom/google/common/collect/DescendingMultiset;-><init>()V
@@ -51,8 +48,6 @@
         }
     .end annotation
 
-    .line 102
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMultiset$StandardDescendingMultiset;, "Lcom/google/common/collect/ForwardingSortedMultiset<TE;>.StandardDescendingMultiset;"
     iget-object v0, p0, Lcom/google/common/collect/ForwardingSortedMultiset$StandardDescendingMultiset;->this$0:Lcom/google/common/collect/ForwardingSortedMultiset;
 
     return-object v0

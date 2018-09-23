@@ -19,7 +19,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,19 +40,15 @@
 
 .method public setListener(Lcom/android/settings/widget/SwitchWidgetController$OnSwitchChangeListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/settings/widget/SwitchWidgetController$OnSwitchChangeListener;
 
-    .line 62
     iput-object p1, p0, Lcom/android/settings/widget/SwitchWidgetController;->mListener:Lcom/android/settings/widget/SwitchWidgetController$OnSwitchChangeListener;
 
-    .line 63
     return-void
 .end method
 
 .method public setupView()V
     .locals 0
 
-    .line 47
     return-void
 .end method
 
@@ -66,7 +61,6 @@
 .method public teardownView()V
     .locals 0
 
-    .line 53
     return-void
 .end method
 

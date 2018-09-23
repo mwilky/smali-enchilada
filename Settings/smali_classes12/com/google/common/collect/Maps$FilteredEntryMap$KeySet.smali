@@ -28,16 +28,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Maps$FilteredEntryMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Maps$FilteredEntryMap;
 
-    .line 2731
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntryMap;
 
-    .line 2732
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$KeySet;-><init>(Ljava/util/Map;)V
 
-    .line 2733
     return-void
 .end method
 
@@ -51,9 +46,6 @@
         }
     .end annotation
 
-    .line 2744
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
-    .local p1, "keyPredicate":Lcom/google/common/base/Predicate;, "Lcom/google/common/base/Predicate<-TK;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntryMap;
 
     iget-object v0, v0, Lcom/google/common/collect/Maps$FilteredEntryMap;->unfiltered:Ljava/util/Map;
@@ -66,12 +58,10 @@
 
     iget-object v1, v1, Lcom/google/common/collect/Maps$FilteredEntryMap;->predicate:Lcom/google/common/base/Predicate;
 
-    .line 2745
     invoke-static {p1}, Lcom/google/common/collect/Maps;->keyPredicateOnEntries(Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
 
     move-result-object v2
 
-    .line 2744
     invoke-static {v1, v2}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
 
     move-result-object v1
@@ -87,10 +77,7 @@
 # virtual methods
 .method public remove(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 2736
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntryMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Maps$FilteredEntryMap;->containsKey(Ljava/lang/Object;)Z
@@ -99,19 +86,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 2737
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntryMap;
 
     iget-object v0, v0, Lcom/google/common/collect/Maps$FilteredEntryMap;->unfiltered:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2738
     const/4 v0, 0x1
 
     return v0
 
-    .line 2740
     :cond_0
     const/4 v0, 0x0
 
@@ -128,9 +112,6 @@
         }
     .end annotation
 
-    .line 2750
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
@@ -152,9 +133,6 @@
         }
     .end annotation
 
-    .line 2755
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
@@ -173,8 +151,6 @@
 .method public toArray()[Ljava/lang/Object;
     .locals 1
 
-    .line 2760
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -200,9 +176,6 @@
         }
     .end annotation
 
-    .line 2764
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;, "Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>.KeySet;"
-    .local p1, "array":[Ljava/lang/Object;, "[TT;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

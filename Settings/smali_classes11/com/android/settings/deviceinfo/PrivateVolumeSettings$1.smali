@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
-    .line 548
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onDetailsChanged(Lcom/android/settingslib/deviceinfo/StorageMeasurement$MeasurementDetails;)V
     .locals 1
-    .param p1, "details"    # Lcom/android/settingslib/deviceinfo/StorageMeasurement$MeasurementDetails;
 
-    .line 551
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0, p1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$000(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;Lcom/android/settingslib/deviceinfo/StorageMeasurement$MeasurementDetails;)V
 
-    .line 552
     return-void
 .end method

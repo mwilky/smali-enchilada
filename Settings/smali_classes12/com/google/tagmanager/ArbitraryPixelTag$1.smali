@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 45
     iput-object p1, p0, Lcom/google/tagmanager/ArbitraryPixelTag$1;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public get()Lcom/google/tagmanager/HitSender;
     .locals 1
 
-    .line 48
     iget-object v0, p0, Lcom/google/tagmanager/ArbitraryPixelTag$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/google/tagmanager/DelayedHitSender;->getInstance(Landroid/content/Context;)Lcom/google/tagmanager/HitSender;

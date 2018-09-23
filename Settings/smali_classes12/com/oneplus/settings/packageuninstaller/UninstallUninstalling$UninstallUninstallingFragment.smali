@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 169
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 172
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallUninstalling$UninstallUninstallingFragment;->getActivity()Landroid/app/Activity;
@@ -39,13 +36,10 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 174
-    .local v0, "dialogBuilder":Landroid/app/AlertDialog$Builder;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
-    .line 175
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallUninstalling$UninstallUninstallingFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v2
@@ -54,7 +48,6 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 176
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallUninstalling$UninstallUninstallingFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -67,8 +60,7 @@
 
     aput-object v4, v3, v1
 
-    .line 175
-    const v4, 0x7f12121f
+    const v4, 0x7f121218
 
     invoke-virtual {v2, v4, v3}, Landroid/app/Activity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -76,15 +68,11 @@
 
     invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 178
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v2
 
-    .line 179
-    .local v2, "dialog":Landroid/app/Dialog;
     invoke-virtual {v2, v1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 181
     return-object v2
 .end method

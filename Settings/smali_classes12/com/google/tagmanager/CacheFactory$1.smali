@@ -33,8 +33,6 @@
 .method constructor <init>(Lcom/google/tagmanager/CacheFactory;)V
     .locals 0
 
-    .line 30
-    .local p0, "this":Lcom/google/tagmanager/CacheFactory$1;, "Lcom/google/tagmanager/CacheFactory.1;"
     iput-object p1, p0, Lcom/google/tagmanager/CacheFactory$1;->this$0:Lcom/google/tagmanager/CacheFactory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,10 +50,6 @@
         }
     .end annotation
 
-    .line 33
-    .local p0, "this":Lcom/google/tagmanager/CacheFactory$1;, "Lcom/google/tagmanager/CacheFactory.1;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     const/4 v0, 0x1
 
     return v0

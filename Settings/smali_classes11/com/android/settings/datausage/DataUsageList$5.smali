@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/DataUsageList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/DataUsageList;
 
-    .line 599
     iput-object p1, p0, Lcom/android/settings/datausage/DataUsageList$5;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 8
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,8 +46,6 @@
         }
     .end annotation
 
-    .line 604
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$5;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$400(Lcom/android/settings/datausage/DataUsageList;)Landroid/content/Context;
@@ -67,8 +60,6 @@
 
     move-result-object v0
 
-    .line 605
-    .local v0, "section":[J
     new-instance v7, Lcom/android/settings/datausage/CycleAdapter$CycleItem;
 
     iget-object v1, p0, Lcom/android/settings/datausage/DataUsageList$5;->this$0:Lcom/android/settings/datausage/DataUsageList;
@@ -89,8 +80,6 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/android/settings/datausage/CycleAdapter$CycleItem;-><init>(Landroid/content/Context;JJ)V
 
-    .line 615
-    .local v1, "cycle":Lcom/android/settings/datausage/CycleAdapter$CycleItem;
     iget-object v2, p0, Lcom/android/settings/datausage/DataUsageList$5;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v2}, Lcom/android/settings/datausage/DataUsageList;->access$600(Lcom/android/settings/datausage/DataUsageList;)Lcom/android/settings/datausage/ChartDataUsagePreference;
@@ -103,12 +92,10 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Lcom/android/settings/datausage/ChartDataUsagePreference;->setVisibleRange(JJ)V
 
-    .line 617
     iget-object v2, p0, Lcom/android/settings/datausage/DataUsageList$5;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v2}, Lcom/android/settings/datausage/DataUsageList;->access$700(Lcom/android/settings/datausage/DataUsageList;)V
 
-    .line 618
     return-void
 .end method
 
@@ -122,7 +109,5 @@
         }
     .end annotation
 
-    .line 623
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

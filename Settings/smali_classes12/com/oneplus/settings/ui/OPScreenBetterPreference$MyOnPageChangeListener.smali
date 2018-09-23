@@ -24,9 +24,7 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/settings/ui/OPScreenBetterPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
-    .line 109
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,27 +36,19 @@
 # virtual methods
 .method public onPageScrollStateChanged(I)V
     .locals 0
-    .param p1, "arg0"    # I
 
-    .line 147
     return-void
 .end method
 
 .method public onPageScrolled(IFI)V
     .locals 0
-    .param p1, "arg0"    # I
-    .param p2, "arg1"    # F
-    .param p3, "arg2"    # I
 
-    .line 143
     return-void
 .end method
 
 .method public onPageSelected(I)V
     .locals 4
-    .param p1, "arg0"    # I
 
-    .line 112
     const v0, 0x7f0803cf
 
     const v1, 0x7f0803ce
@@ -67,7 +57,6 @@
 
     goto/16 :goto_0
 
-    .line 128
     :pswitch_0
     iget-object v2, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
@@ -91,7 +80,6 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 130
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->access$200(Lcom/oneplus/settings/ui/OPScreenBetterPreference;)Landroid/widget/ImageView;
@@ -116,7 +104,6 @@
 
     goto :goto_0
 
-    .line 120
     :pswitch_1
     iget-object v2, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
@@ -140,7 +127,6 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 122
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->access$100(Lcom/oneplus/settings/ui/OPScreenBetterPreference;)Landroid/widget/ImageView;
@@ -163,7 +149,6 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 124
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->access$300(Lcom/oneplus/settings/ui/OPScreenBetterPreference;)Landroid/widget/ImageView;
@@ -186,10 +171,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 126
     goto :goto_0
 
-    .line 114
     :pswitch_2
     iget-object v2, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
@@ -213,7 +196,6 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 116
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->access$200(Lcom/oneplus/settings/ui/OPScreenBetterPreference;)Landroid/widget/ImageView;
@@ -236,16 +218,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 118
     nop
 
-    .line 135
     :goto_0
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPScreenBetterPreference$MyOnPageChangeListener;->this$0:Lcom/oneplus/settings/ui/OPScreenBetterPreference;
 
     invoke-static {v0, p1}, Lcom/oneplus/settings/ui/OPScreenBetterPreference;->access$402(Lcom/oneplus/settings/ui/OPScreenBetterPreference;I)I
 
-    .line 139
     return-void
 
     nop

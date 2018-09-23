@@ -27,7 +27,6 @@
 .method constructor <init>(Lcom/google/analytics/tracking/android/GAThread;Ljava/util/Map;)V
     .locals 0
 
-    .line 129
     iput-object p1, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
     iput-object p2, p0, Lcom/google/analytics/tracking/android/GAThread$1;->val$hitCopy:Ljava/util/Map;
@@ -42,7 +41,6 @@
 .method public run()V
     .locals 7
 
-    .line 134
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->val$hitCopy:Ljava/util/Map;
 
     const-string v1, "&cid"
@@ -59,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 135
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->val$hitCopy:Ljava/util/Map;
 
     const-string v1, "&cid"
@@ -72,7 +69,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 143
     :cond_0
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
@@ -102,7 +98,6 @@
 
     goto :goto_0
 
-    .line 146
     :cond_1
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
@@ -116,7 +111,6 @@
 
     if-nez v0, :cond_2
 
-    .line 147
     invoke-static {}, Lcom/google/analytics/tracking/android/GAUsage;->getInstance()Lcom/google/analytics/tracking/android/GAUsage;
 
     move-result-object v0
@@ -125,7 +119,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/analytics/tracking/android/GAUsage;->setDisableUsage(Z)V
 
-    .line 148
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->val$hitCopy:Ljava/util/Map;
 
     new-instance v1, Lcom/google/analytics/tracking/android/MapBuilder;
@@ -148,7 +141,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 149
     invoke-static {}, Lcom/google/analytics/tracking/android/GAUsage;->getInstance()Lcom/google/analytics/tracking/android/GAUsage;
 
     move-result-object v0
@@ -157,14 +149,12 @@
 
     invoke-virtual {v0, v1}, Lcom/google/analytics/tracking/android/GAUsage;->setDisableUsage(Z)V
 
-    .line 150
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/google/analytics/tracking/android/GAThread;->access$302(Lcom/google/analytics/tracking/android/GAThread;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 152
     :cond_2
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
@@ -172,15 +162,12 @@
 
     invoke-static {v0, v1}, Lcom/google/analytics/tracking/android/GAThread;->access$400(Lcom/google/analytics/tracking/android/GAThread;Ljava/util/Map;)V
 
-    .line 153
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAThread$1;->val$hitCopy:Ljava/util/Map;
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/HitBuilder;->generateHitParams(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 154
-    .local v0, "wireFormatParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/google/analytics/tracking/android/GAThread$1;->this$0:Lcom/google/analytics/tracking/android/GAThread;
 
     invoke-static {v1}, Lcom/google/analytics/tracking/android/GAThread;->access$700(Lcom/google/analytics/tracking/android/GAThread;)Lcom/google/analytics/tracking/android/ServiceProxy;
@@ -223,11 +210,8 @@
 
     invoke-interface/range {v1 .. v6}, Lcom/google/analytics/tracking/android/ServiceProxy;->putHit(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
 
-    .line 159
     return-void
 
-    .line 144
-    .end local v0    # "wireFormatParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_3
     :goto_0
     return-void

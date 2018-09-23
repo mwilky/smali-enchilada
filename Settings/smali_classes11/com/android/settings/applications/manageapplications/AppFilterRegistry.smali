@@ -65,17 +65,14 @@
 .method private constructor <init>()V
     .locals 7
 
-    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     const/16 v0, 0x15
 
     new-array v0, v0, [Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     iput-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -96,7 +93,6 @@
 
     aput-object v1, v0, v3
 
-    .line 107
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -117,7 +113,6 @@
 
     aput-object v1, v0, v3
 
-    .line 115
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -130,7 +125,6 @@
 
     aput-object v1, v0, v3
 
-    .line 121
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -145,7 +139,6 @@
 
     aput-object v1, v0, v3
 
-    .line 127
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -160,7 +153,6 @@
 
     aput-object v1, v0, v3
 
-    .line 133
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -175,7 +167,6 @@
 
     aput-object v1, v0, v3
 
-    .line 139
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -184,13 +175,12 @@
 
     const/4 v3, 0x6
 
-    const v5, 0x7f121069
+    const v5, 0x7f121062
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
 
     aput-object v1, v0, v3
 
-    .line 145
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -199,13 +189,12 @@
 
     const/4 v3, 0x7
 
-    const v5, 0x7f121068
+    const v5, 0x7f121061
 
     invoke-direct {v1, v2, v3, v5}, Lcom/android/settings/applications/manageapplications/AppFilterItem;-><init>(Lcom/android/settingslib/applications/ApplicationsState$AppFilter;II)V
 
     aput-object v1, v0, v3
 
-    .line 151
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -220,7 +209,6 @@
 
     aput-object v1, v0, v3
 
-    .line 157
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -235,7 +223,6 @@
 
     aput-object v1, v0, v3
 
-    .line 163
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -248,7 +235,6 @@
 
     aput-object v1, v0, v3
 
-    .line 169
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -263,7 +249,6 @@
 
     aput-object v1, v0, v3
 
-    .line 175
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -278,7 +263,6 @@
 
     aput-object v1, v0, v5
 
-    .line 181
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -295,7 +279,6 @@
 
     aput-object v1, v0, v2
 
-    .line 187
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -310,7 +293,6 @@
 
     aput-object v1, v0, v2
 
-    .line 192
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -325,7 +307,6 @@
 
     aput-object v1, v0, v2
 
-    .line 198
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -340,7 +321,6 @@
 
     aput-object v1, v0, v2
 
-    .line 203
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
@@ -357,14 +337,12 @@
 
     aput-object v1, v0, v2
 
-    .line 208
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     new-instance v1, Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     sget-object v2, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->FILTER_APP_FULL_SCREEN:Lcom/android/settingslib/applications/ApplicationsState$AppFilter;
 
-    .line 211
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isSupportScreenCutting()Z
 
     move-result v3
@@ -376,7 +354,7 @@
     goto :goto_0
 
     :cond_0
-    const v3, 0x7f120c4e
+    const v3, 0x7f120c4c
 
     :goto_0
     const/16 v5, 0x12
@@ -387,7 +365,6 @@
 
     aput-object v1, v0, v2
 
-    .line 213
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     const/16 v1, 0x13
@@ -402,7 +379,6 @@
 
     aput-object v2, v0, v1
 
-    .line 218
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     const/16 v1, 0x14
@@ -419,26 +395,22 @@
 
     aput-object v2, v0, v1
 
-    .line 223
     return-void
 .end method
 
 .method public static getInstance()Lcom/android/settings/applications/manageapplications/AppFilterRegistry;
     .locals 1
 
-    .line 226
     sget-object v0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->sRegistry:Lcom/android/settings/applications/manageapplications/AppFilterRegistry;
 
     if-nez v0, :cond_0
 
-    .line 227
     new-instance v0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;
 
     invoke-direct {v0}, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;-><init>()V
 
     sput-object v0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->sRegistry:Lcom/android/settings/applications/manageapplications/AppFilterRegistry;
 
-    .line 229
     :cond_0
     sget-object v0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->sRegistry:Lcom/android/settings/applications/manageapplications/AppFilterRegistry;
 
@@ -449,12 +421,11 @@
 # virtual methods
 .method public get(I)Lcom/android/settings/applications/manageapplications/AppFilterItem;
     .locals 1
-    .param p1, "filterType"    # I
+    .param p1    # I
         .annotation build Lcom/android/settings/applications/manageapplications/AppFilterRegistry$FilterType;
         .end annotation
     .end param
 
-    .line 257
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/AppFilterRegistry;->mFilters:[Lcom/android/settings/applications/manageapplications/AppFilterItem;
 
     aget-object v0, v0, p1
@@ -464,11 +435,9 @@
 
 .method public getDefaultFilterType(I)I
     .locals 1
-    .param p1, "listType"    # I
     .annotation build Lcom/android/settings/applications/manageapplications/AppFilterRegistry$FilterType;
     .end annotation
 
-    .line 234
     const/4 v0, 0x1
 
     if-eq p1, v0, :cond_0
@@ -477,54 +446,45 @@
 
     packed-switch p1, :pswitch_data_1
 
-    .line 252
     const/4 v0, 0x2
 
     return v0
 
-    .line 248
     :pswitch_0
     const/16 v0, 0xf
 
     return v0
 
-    .line 246
     :pswitch_1
     const/16 v0, 0xe
 
     return v0
 
-    .line 244
     :pswitch_2
     const/16 v0, 0xd
 
     return v0
 
-    .line 242
     :pswitch_3
     const/16 v0, 0xc
 
     return v0
 
-    .line 240
     :pswitch_4
     const/16 v0, 0xb
 
     return v0
 
-    .line 238
     :pswitch_5
     const/4 v0, 0x0
 
     return v0
 
-    .line 236
     :pswitch_6
     const/16 v0, 0xa
 
     return v0
 
-    .line 250
     :cond_0
     const/4 v0, 0x6
 

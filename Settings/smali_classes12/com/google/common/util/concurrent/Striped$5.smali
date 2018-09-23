@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 283
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 283
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/Striped$5;->get()Ljava/util/concurrent/locks/ReadWriteLock;
 
     move-result-object v0
@@ -52,7 +50,6 @@
 .method public get()Ljava/util/concurrent/locks/ReadWriteLock;
     .locals 1
 
-    .line 285
     new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V

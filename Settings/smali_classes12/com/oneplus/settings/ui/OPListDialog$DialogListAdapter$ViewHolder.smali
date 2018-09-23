@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter;
 
-    .line 72
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter$ViewHolder;->this$1:Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

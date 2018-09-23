@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/receiver/SettingsReceiver;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/receiver/SettingsReceiver;
 
-    .line 181
     iput-object p1, p0, Lcom/oneplus/settings/receiver/SettingsReceiver$1;->this$0:Lcom/oneplus/settings/receiver/SettingsReceiver;
 
     iput-object p2, p0, Lcom/oneplus/settings/receiver/SettingsReceiver$1;->val$context:Landroid/content/Context;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 185
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
 
     move-result v0
@@ -52,14 +49,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 186
     iget-object v0, p0, Lcom/oneplus/settings/receiver/SettingsReceiver$1;->val$context:Landroid/content/Context;
 
     const-string v2, "com.google.android.gms"
 
     invoke-static {v0, v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->installMultiApp(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 190
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/receiver/SettingsReceiver$1;->val$context:Landroid/content/Context;
 
@@ -67,6 +62,5 @@
 
     invoke-static {v0, v2, v1}, Lcom/oneplus/settings/utils/OPUtils;->installMultiApp(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 193
     return-void
 .end method

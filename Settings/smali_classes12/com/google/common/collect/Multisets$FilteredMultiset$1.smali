@@ -33,10 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multisets$FilteredMultiset;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Multisets$FilteredMultiset;
 
-    .line 299
-    .local p0, "this":Lcom/google/common/collect/Multisets$FilteredMultiset$1;, "Lcom/google/common/collect/Multisets$FilteredMultiset$1;"
     iput-object p1, p0, Lcom/google/common/collect/Multisets$FilteredMultiset$1;->this$0:Lcom/google/common/collect/Multisets$FilteredMultiset;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,9 +53,6 @@
         }
     .end annotation
 
-    .line 302
-    .local p0, "this":Lcom/google/common/collect/Multisets$FilteredMultiset$1;, "Lcom/google/common/collect/Multisets$FilteredMultiset$1;"
-    .local p1, "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$FilteredMultiset$1;->this$0:Lcom/google/common/collect/Multisets$FilteredMultiset;
 
     iget-object v0, v0, Lcom/google/common/collect/Multisets$FilteredMultiset;->predicate:Lcom/google/common/base/Predicate;
@@ -77,8 +71,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 299
-    .local p0, "this":Lcom/google/common/collect/Multisets$FilteredMultiset$1;, "Lcom/google/common/collect/Multisets$FilteredMultiset$1;"
     check-cast p1, Lcom/google/common/collect/Multiset$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$FilteredMultiset$1;->apply(Lcom/google/common/collect/Multiset$Entry;)Z

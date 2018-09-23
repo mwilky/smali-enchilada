@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPListDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPListDialog;
 
-    .line 46
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter;->this$0:Lcom/oneplus/settings/ui/OPListDialog;
 
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
@@ -42,7 +40,6 @@
 .method public getCount()I
     .locals 1
 
-    .line 51
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPListDialog$DialogListAdapter;->this$0:Lcom/oneplus/settings/ui/OPListDialog;
 
     invoke-static {v0}, Lcom/oneplus/settings/ui/OPListDialog;->access$000(Lcom/oneplus/settings/ui/OPListDialog;)[Ljava/lang/String;
@@ -56,9 +53,7 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "position"    # I
 
-    .line 57
     const/4 v0, 0x0
 
     return-object v0
@@ -66,9 +61,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
 
-    .line 63
     int-to-long v0, p1
 
     return-wide v0
@@ -76,10 +69,6 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 0
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 69
     return-object p2
 .end method

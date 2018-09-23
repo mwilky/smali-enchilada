@@ -44,55 +44,43 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 133
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
-    .line 134
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Landroidx/slice/SliceProvider;->mAutoGrantPermissions:[Ljava/lang/String;
 
-    .line 135
     return-void
 .end method
 
 .method public varargs constructor <init>([Ljava/lang/String;)V
     .locals 0
-    .param p1, "autoGrantPermissions"    # [Ljava/lang/String;
+    .param p1    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 129
     invoke-direct {p0}, Landroid/content/ContentProvider;-><init>()V
 
-    .line 130
     iput-object p1, p0, Landroidx/slice/SliceProvider;->mAutoGrantPermissions:[Ljava/lang/String;
 
-    .line 131
     return-void
 .end method
 
 .method public static createPermissionIntent(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)Landroid/app/PendingIntent;
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "sliceUri"    # Landroid/net/Uri;
-    .param p2, "callingPackage"    # Ljava/lang/String;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 230
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 231
-    .local v0, "intent":Landroid/content/Intent;
     new-instance v1, Landroid/content/ComponentName;
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -105,17 +93,14 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 233
     const-string v1, "slice_uri"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 234
     const-string v1, "pkg"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 235
     const-string v1, "provider_pkg"
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -124,7 +109,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 237
     invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v1
@@ -135,15 +119,12 @@
 
     move-result-object v1
 
-    .line 238
     invoke-virtual {v1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 237
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 240
     const/4 v1, 0x0
 
     invoke-static {p0, v1, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
@@ -155,22 +136,16 @@
 
 .method public static createPermissionSlice(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)Landroidx/slice/Slice;
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "sliceUri"    # Landroid/net/Uri;
-    .param p2, "callingPackage"    # Ljava/lang/String;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 208
     new-instance v0, Landroidx/slice/Slice$Builder;
 
     invoke-direct {v0, p1}, Landroidx/slice/Slice$Builder;-><init>(Landroid/net/Uri;)V
 
-    .line 210
-    .local v0, "parent":Landroidx/slice/Slice$Builder;
     new-instance v1, Landroidx/slice/Slice$Builder;
 
     invoke-direct {v1, v0}, Landroidx/slice/Slice$Builder;-><init>(Landroidx/slice/Slice$Builder;)V
@@ -183,12 +158,10 @@
 
     move-result-object v2
 
-    .line 211
     invoke-virtual {v1, v2}, Landroidx/slice/Slice$Builder;->addHints([Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
     move-result-object v1
 
-    .line 212
     invoke-static {p0, p1, p2}, Landroidx/slice/SliceProvider;->createPermissionIntent(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)Landroid/app/PendingIntent;
 
     move-result-object v2
@@ -197,20 +170,16 @@
 
     invoke-direct {v3, v0}, Landroidx/slice/Slice$Builder;-><init>(Landroidx/slice/Slice$Builder;)V
 
-    .line 213
     invoke-virtual {v3}, Landroidx/slice/Slice$Builder;->build()Landroidx/slice/Slice;
 
     move-result-object v3
 
-    .line 212
     const/4 v4, 0x0
 
     invoke-virtual {v1, v2, v3, v4}, Landroidx/slice/Slice$Builder;->addAction(Landroid/app/PendingIntent;Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
     move-result-object v1
 
-    .line 215
-    .local v1, "action":Landroidx/slice/Slice$Builder;
     new-instance v2, Landroidx/slice/Slice$Builder;
 
     invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -229,7 +198,6 @@
 
     invoke-direct {v2, v3}, Landroidx/slice/Slice$Builder;-><init>(Landroid/net/Uri;)V
 
-    .line 216
     invoke-static {p0, p2}, Landroidx/slice/SliceProvider;->getPermissionString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -242,7 +210,6 @@
 
     move-result-object v2
 
-    .line 217
     invoke-virtual {v1}, Landroidx/slice/Slice$Builder;->build()Landroidx/slice/Slice;
 
     move-result-object v3
@@ -251,15 +218,12 @@
 
     move-result-object v2
 
-    .line 218
     invoke-virtual {v2}, Landroidx/slice/Slice$Builder;->build()Landroidx/slice/Slice;
 
     move-result-object v2
 
-    .line 215
     invoke-virtual {v0, v2}, Landroidx/slice/Slice$Builder;->addSubSlice(Landroidx/slice/Slice;)Landroidx/slice/Slice$Builder;
 
-    .line 220
     const-string v2, "permission_request"
 
     filled-new-array {v2}, [Ljava/lang/String;
@@ -285,7 +249,6 @@
         }
     .end annotation
 
-    .line 446
     sget-object v0, Landroidx/slice/SliceProvider;->sClock:Landroidx/slice/Clock;
 
     return-object v0
@@ -308,7 +271,6 @@
         }
     .end annotation
 
-    .line 430
     sget-object v0, Landroidx/slice/SliceProvider;->sSpecs:Ljava/util/Set;
 
     return-object v0
@@ -316,21 +278,16 @@
 
 .method public static getPermissionString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "callingPackage"    # Ljava/lang/String;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 249
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 251
-    .local v0, "pm":Landroid/content/pm/PackageManager;
     :try_start_0
     sget v1, Landroidx/slice/core/R$string;->abc_slices_permission_request:I
 
@@ -338,7 +295,6 @@
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 252
     const/4 v3, 0x0
 
     invoke-virtual {v0, p1, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
@@ -353,7 +309,6 @@
 
     const/4 v3, 0x1
 
-    .line 253
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v4
@@ -364,7 +319,6 @@
 
     aput-object v4, v2, v3
 
-    .line 251
     invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -373,12 +327,9 @@
 
     return-object v1
 
-    .line 254
     :catch_0
     move-exception v1
 
-    .line 256
-    .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Unknown calling app"
@@ -390,17 +341,14 @@
 
 .method public static setClock(Landroidx/slice/Clock;)V
     .locals 0
-    .param p0, "clock"    # Landroidx/slice/Clock;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 438
     sput-object p0, Landroidx/slice/SliceProvider;->sClock:Landroidx/slice/Clock;
 
-    .line 439
     return-void
 .end method
 
@@ -421,11 +369,8 @@
         }
     .end annotation
 
-    .line 422
-    .local p0, "specs":Ljava/util/Set;, "Ljava/util/Set<Landroidx/slice/SliceSpec;>;"
     sput-object p0, Landroidx/slice/SliceProvider;->sSpecs:Ljava/util/Set;
 
-    .line 423
     return-void
 .end method
 
@@ -433,16 +378,15 @@
 # virtual methods
 .method public final bulkInsert(Landroid/net/Uri;[Landroid/content/ContentValues;)I
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "values"    # [Landroid/content/ContentValues;
+    .param p2    # [Landroid/content/ContentValues;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 395
     const/4 v0, 0x0
 
     return v0
@@ -450,11 +394,7 @@
 
 .method public call(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .locals 1
-    .param p1, "method"    # Ljava/lang/String;
-    .param p2, "arg"    # Ljava/lang/String;
-    .param p3, "extras"    # Landroid/os/Bundle;
 
-    .line 198
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mCompat:Landroidx/slice/compat/SliceProviderCompat;
 
     if-eqz v0, :cond_0
@@ -476,7 +416,7 @@
 
 .method public final canonicalize(Landroid/net/Uri;)Landroid/net/Uri;
     .locals 1
-    .param p1, "url"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -487,7 +427,6 @@
         value = 0x13
     .end annotation
 
-    .line 414
     const/4 v0, 0x0
 
     return-object v0
@@ -495,20 +434,19 @@
 
 .method public final delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "selection"    # Ljava/lang/String;
+    .param p2    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "selectionArgs"    # [Ljava/lang/String;
+    .param p3    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 401
     const/4 v0, 0x0
 
     return v0
@@ -528,7 +466,6 @@
         }
     .end annotation
 
-    .line 359
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
     return-object v0
@@ -536,9 +473,7 @@
 
 .method public final getType(Landroid/net/Uri;)Ljava/lang/String;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 193
     const-string v0, "vnd.android.slice"
 
     return-object v0
@@ -552,14 +487,12 @@
         }
     .end annotation
 
-    .line 160
     invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastP()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 161
     new-instance v0, Landroidx/slice/compat/SliceProviderWrapperContainer$SliceProviderWrapper;
 
     iget-object v1, p0, Landroidx/slice/SliceProvider;->mAutoGrantPermissions:[Ljava/lang/String;
@@ -568,7 +501,6 @@
 
     return-object v0
 
-    .line 164
     :cond_0
     const/4 v0, 0x0
 
@@ -577,14 +509,12 @@
 
 .method public handleSlicePinned(Landroid/net/Uri;)V
     .locals 1
-    .param p1, "sliceUri"    # Landroid/net/Uri;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 311
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -593,26 +523,22 @@
 
     if-nez v0, :cond_0
 
-    .line 312
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 314
     :cond_0
     return-void
 .end method
 
 .method public handleSliceUnpinned(Landroid/net/Uri;)V
     .locals 1
-    .param p1, "sliceUri"    # Landroid/net/Uri;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    .line 321
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -621,30 +547,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 322
     iget-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 324
     :cond_0
     return-void
 .end method
 
 .method public final insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "values"    # Landroid/content/ContentValues;
+    .param p2    # Landroid/content/ContentValues;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 390
     const/4 v0, 0x0
 
     return-object v0
@@ -656,20 +579,16 @@
 .method public final onCreate()Z
     .locals 3
 
-    .line 169
     new-instance v0, Ljava/util/ArrayList;
 
-    .line 170
     invoke-virtual {p0}, Landroidx/slice/SliceProvider;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 169
     invoke-static {v1}, Landroidx/slice/SliceManager;->getInstance(Landroid/content/Context;)Landroidx/slice/SliceManager;
 
     move-result-object v1
 
-    .line 170
     invoke-virtual {v1}, Landroidx/slice/SliceManager;->getPinnedSlices()Ljava/util/List;
 
     move-result-object v1
@@ -678,19 +597,16 @@
 
     iput-object v0, p0, Landroidx/slice/SliceProvider;->mPinnedSliceUris:Ljava/util/List;
 
-    .line 171
     invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastP()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 172
     new-instance v0, Landroidx/slice/compat/SliceProviderCompat;
 
     iget-object v1, p0, Landroidx/slice/SliceProvider;->mAutoGrantPermissions:[Ljava/lang/String;
 
-    .line 173
     invoke-virtual {p0, v1}, Landroidx/slice/SliceProvider;->onCreatePermissionManager([Ljava/lang/String;)Landroidx/slice/compat/CompatPermissionManager;
 
     move-result-object v1
@@ -703,7 +619,6 @@
 
     iput-object v0, p0, Landroidx/slice/SliceProvider;->mCompat:Landroidx/slice/compat/SliceProviderCompat;
 
-    .line 175
     :cond_0
     invoke-virtual {p0}, Landroidx/slice/SliceProvider;->onCreateSliceProvider()Z
 
@@ -714,7 +629,6 @@
 
 .method protected onCreatePermissionManager([Ljava/lang/String;)Landroidx/slice/compat/CompatPermissionManager;
     .locals 4
-    .param p1, "autoGrantPermissions"    # [Ljava/lang/String;
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY:Landroid/support/annotation/RestrictTo$Scope;
@@ -724,7 +638,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 186
     new-instance v0, Landroidx/slice/compat/CompatPermissionManager;
 
     invoke-virtual {p0}, Landroidx/slice/SliceProvider;->getContext()Landroid/content/Context;
@@ -753,7 +666,6 @@
 
     move-result-object v2
 
-    .line 187
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v3
@@ -768,7 +680,6 @@
 
 .method public onGetSliceDescendants(Landroid/net/Uri;)Ljava/util/Collection;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -780,7 +691,6 @@
         }
     .end annotation
 
-    .line 350
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -790,11 +700,9 @@
 
 .method public onMapIntentToUri(Landroid/content/Intent;)Landroid/net/Uri;
     .locals 2
-    .param p1, "intent"    # Landroid/content/Intent;
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 335
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This provider has not implemented intent to uri mapping"
@@ -806,35 +714,31 @@
 
 .method public onSlicePinned(Landroid/net/Uri;)V
     .locals 0
-    .param p1, "sliceUri"    # Landroid/net/Uri;
 
-    .line 294
     return-void
 .end method
 
 .method public onSliceUnpinned(Landroid/net/Uri;)V
     .locals 0
-    .param p1, "sliceUri"    # Landroid/net/Uri;
 
-    .line 304
     return-void
 .end method
 
 .method public final query(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "projection"    # [Ljava/lang/String;
+    .param p2    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "queryArgs"    # Landroid/os/Bundle;
+    .param p3    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "cancellationSignal"    # Landroid/os/CancellationSignal;
+    .param p4    # Landroid/os/CancellationSignal;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -845,7 +749,6 @@
         value = 0x1c
     .end annotation
 
-    .line 375
     const/4 v0, 0x0
 
     return-object v0
@@ -853,30 +756,29 @@
 
 .method public final query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "projection"    # [Ljava/lang/String;
+    .param p2    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "selection"    # Ljava/lang/String;
+    .param p3    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "selectionArgs"    # [Ljava/lang/String;
+    .param p4    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p5, "sortOrder"    # Ljava/lang/String;
+    .param p5    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 367
     const/4 v0, 0x0
 
     return-object v0
@@ -884,27 +786,27 @@
 
 .method public final query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "projection"    # [Ljava/lang/String;
+    .param p2    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "selection"    # Ljava/lang/String;
+    .param p3    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "selectionArgs"    # [Ljava/lang/String;
+    .param p4    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p5, "sortOrder"    # Ljava/lang/String;
+    .param p5    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p6, "cancellationSignal"    # Landroid/os/CancellationSignal;
+    .param p6    # Landroid/os/CancellationSignal;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
@@ -915,7 +817,6 @@
         value = 0x10
     .end annotation
 
-    .line 384
     const/4 v0, 0x0
 
     return-object v0
@@ -923,24 +824,23 @@
 
 .method public final update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "values"    # Landroid/content/ContentValues;
+    .param p2    # Landroid/content/ContentValues;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p3, "selection"    # Ljava/lang/String;
+    .param p3    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "selectionArgs"    # [Ljava/lang/String;
+    .param p4    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 407
     const/4 v0, 0x0
 
     return v0

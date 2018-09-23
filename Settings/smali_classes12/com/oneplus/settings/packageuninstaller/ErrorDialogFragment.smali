@@ -13,7 +13,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     return-void
@@ -23,9 +22,7 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 34
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getActivity()Landroid/app/Activity;
@@ -34,7 +31,6 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 35
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -49,7 +45,6 @@
 
     move-result-object v0
 
-    .line 36
     const v1, 0x104000a
 
     const/4 v2, 0x0
@@ -58,8 +53,6 @@
 
     move-result-object v0
 
-    .line 38
-    .local v0, "b":Landroid/app/AlertDialog$Builder;
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -72,7 +65,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 39
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -85,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
-    .line 42
     :cond_0
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
@@ -96,19 +87,15 @@
 
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .line 47
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 48
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->isAdded()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 49
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -117,7 +104,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 50
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -126,7 +112,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/settings/packageuninstaller/UninstallerActivity;->dispatchAborted()V
 
-    .line 53
     :cond_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getActivity()Landroid/app/Activity;
 
@@ -136,14 +121,12 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setResult(I)V
 
-    .line 54
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorDialogFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 56
     :cond_1
     return-void
 .end method

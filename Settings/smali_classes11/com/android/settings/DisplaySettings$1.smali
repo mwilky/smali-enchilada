@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/DisplaySettings;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/DisplaySettings;
 
-    .line 469
     iput-object p1, p0, Lcom/android/settings/DisplaySettings$1;->this$0:Lcom/android/settings/DisplaySettings;
 
     iput-object p2, p0, Lcom/android/settings/DisplaySettings$1;->val$c:Landroid/content/Context;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 472
     move-object v0, p2
 
     check-cast v0, Ljava/lang/String;
@@ -54,14 +49,10 @@
 
     move-result v0
 
-    .line 473
-    .local v0, "i":I
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v1
 
-    .line 474
-    .local v1, "u":I
     iget-object v2, p0, Lcom/android/settings/DisplaySettings$1;->val$c:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -76,14 +67,12 @@
 
     if-nez v2, :cond_0
 
-    .line 477
     const-string v2, "DisplaySettings"
 
     const-string v3, "Could not change setting for vr_display_mode"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 480
     :cond_0
     const/4 v2, 0x1
 

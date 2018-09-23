@@ -24,14 +24,12 @@
 .method private constructor <init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;)V
     .locals 1
 
-    .line 1615
     iput-object p1, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextProcessor;-><init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;Lcom/caverock/androidsvg/SVGAndroidRenderer$TextProcessor;)V
 
-    .line 1617
     const/4 p1, 0x0
 
     iput p1, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;->x:F
@@ -42,7 +40,6 @@
 .method synthetic constructor <init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;)V
     .locals 0
 
-    .line 1615
     invoke-direct {p0, p1}, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;-><init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;)V
 
     return-void
@@ -52,9 +49,7 @@
 # virtual methods
 .method public processText(Ljava/lang/String;)V
     .locals 2
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 1622
     iget v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;->x:F
 
     iget-object v1, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
@@ -73,6 +68,5 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextWidthCalculator;->x:F
 
-    .line 1623
     return-void
 .end method

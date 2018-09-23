@@ -18,15 +18,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
     iput-object p1, p0, Lcom/android/settings/SmqSettings;->mContext:Landroid/content/Context;
 
-    .line 54
     new-instance v0, Lcom/android/settings/DBReadAsyncTask;
 
     iget-object v1, p0, Lcom/android/settings/SmqSettings;->mContext:Landroid/content/Context;
@@ -39,7 +35,6 @@
 
     invoke-virtual {v0, v2}, Lcom/android/settings/DBReadAsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 55
     iget-object v0, p0, Lcom/android/settings/SmqSettings;->mContext:Landroid/content/Context;
 
     const-string v2, "smqpreferences"
@@ -50,7 +45,6 @@
 
     iput-object v0, p0, Lcom/android/settings/SmqSettings;->mSmqPreferences:Landroid/content/SharedPreferences;
 
-    .line 57
     return-void
 .end method
 
@@ -59,7 +53,6 @@
 .method public isShowSmqSettings()Z
     .locals 3
 
-    .line 60
     iget-object v0, p0, Lcom/android/settings/SmqSettings;->mSmqPreferences:Landroid/content/SharedPreferences;
 
     const-string v1, "app_status"
@@ -70,8 +63,6 @@
 
     move-result v0
 
-    .line 61
-    .local v0, "iShowSmq":I
     if-lez v0, :cond_0
 
     const/4 v2, 0x1
@@ -81,7 +72,5 @@
     :cond_0
     move v1, v2
 
-    .line 62
-    .local v1, "showSmq":Z
     return v1
 .end method

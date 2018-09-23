@@ -25,10 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment;ZLjava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment;
-    .param p2, "x0"    # Z
 
-    .line 77
     iput-object p1, p0, Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment$1;->this$0:Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment;
 
     iput-object p3, p0, Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment$1;->val$title:Ljava/lang/String;
@@ -45,7 +42,6 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment$1;->val$key:Ljava/lang/String;
 
     return-object v0
@@ -54,7 +50,6 @@
 .method public loadIcon()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 85
     const/4 v0, 0x0
 
     return-object v0
@@ -63,7 +58,6 @@
 .method public loadLabel()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 80
     iget-object v0, p0, Lcom/android/settings/connecteddevice/usb/UsbDefaultFragment$1;->val$title:Ljava/lang/String;
 
     return-object v0

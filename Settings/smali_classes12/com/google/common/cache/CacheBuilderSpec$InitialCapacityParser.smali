@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 320
     invoke-direct {p0}, Lcom/google/common/cache/CacheBuilderSpec$IntegerParser;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method protected parseInteger(Lcom/google/common/cache/CacheBuilderSpec;I)V
     .locals 5
-    .param p1, "spec"    # Lcom/google/common/cache/CacheBuilderSpec;
-    .param p2, "value"    # I
 
-    .line 323
     iget-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->initialCapacity:Ljava/lang/Integer;
 
     const/4 v1, 0x0
@@ -58,13 +54,11 @@
 
     invoke-static {v0, v3, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 325
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, p1, Lcom/google/common/cache/CacheBuilderSpec;->initialCapacity:Ljava/lang/Integer;
 
-    .line 326
     return-void
 .end method

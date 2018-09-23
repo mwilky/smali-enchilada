@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 95
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 121
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/android/settings/connecteddevice/AdvancedConnectedDeviceDashboardFragment;->access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
@@ -52,7 +49,6 @@
 
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,19 +60,14 @@
         }
     .end annotation
 
-    .line 106
     invoke-super {p0, p1}, Lcom/android/settings/search/BaseSearchIndexProvider;->getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 107
-    .local v0, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 108
-    .local v1, "pm":Landroid/content/pm/PackageManager;
     const-string v2, "android.hardware.nfc"
 
     invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
@@ -85,25 +76,20 @@
 
     if-nez v2, :cond_0
 
-    .line 109
     const-string v2, "android_beam_settings"
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 113
     :cond_0
     const-string v2, "bluetooth_settings"
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 115
     return-object v0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,18 +101,14 @@
         }
     .end annotation
 
-    .line 99
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 100
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f160031
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 101
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

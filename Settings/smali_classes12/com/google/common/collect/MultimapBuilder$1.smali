@@ -30,7 +30,6 @@
 .method constructor <init>(I)V
     .locals 0
 
-    .line 96
     iput p1, p0, Lcom/google/common/collect/MultimapBuilder$1;->val$expectedKeys:I
 
     invoke-direct {p0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;-><init>()V
@@ -56,7 +55,6 @@
         }
     .end annotation
 
-    .line 99
     new-instance v0, Ljava/util/HashMap;
 
     iget v1, p0, Lcom/google/common/collect/MultimapBuilder$1;->val$expectedKeys:I

@@ -18,21 +18,16 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 105
     return-void
 .end method
 
 .method static newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/PolystarShape;
     .locals 22
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
     move-object/from16 v0, p0
 
-    .line 108
     move-object/from16 v1, p1
 
     const-string v2, "nm"
@@ -41,8 +36,6 @@
 
     move-result-object v2
 
-    .line 109
-    .local v2, "name":Ljava/lang/String;
     const-string v3, "sy"
 
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
@@ -53,11 +46,8 @@
 
     move-result-object v14
 
-    .line 110
-    .local v14, "type":Lcom/airbnb/lottie/model/content/PolystarShape$Type;
     const-string v3, "pt"
 
-    .line 111
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -68,11 +58,8 @@
 
     move-result-object v15
 
-    .line 112
-    .local v15, "points":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     const-string v3, "p"
 
-    .line 113
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -81,11 +68,8 @@
 
     move-result-object v16
 
-    .line 114
-    .local v16, "position":Lcom/airbnb/lottie/model/animatable/AnimatableValue;, "Lcom/airbnb/lottie/model/animatable/AnimatableValue<Landroid/graphics/PointF;Landroid/graphics/PointF;>;"
     const-string v3, "r"
 
-    .line 115
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -94,11 +78,8 @@
 
     move-result-object v17
 
-    .line 116
-    .local v17, "rotation":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     const-string v3, "or"
 
-    .line 117
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -107,11 +88,8 @@
 
     move-result-object v18
 
-    .line 118
-    .local v18, "outerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     const-string v3, "os"
 
-    .line 119
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -120,16 +98,12 @@
 
     move-result-object v19
 
-    .line 123
-    .local v19, "outerRoundedness":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     sget-object v3, Lcom/airbnb/lottie/model/content/PolystarShape$Type;->Star:Lcom/airbnb/lottie/model/content/PolystarShape$Type;
 
     if-ne v14, v3, :cond_0
 
-    .line 124
     const-string v3, "ir"
 
-    .line 125
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v3
@@ -138,11 +112,8 @@
 
     move-result-object v3
 
-    .line 126
-    .local v3, "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     const-string v5, "is"
 
-    .line 127
     invoke-virtual {v0, v5}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v5
@@ -151,10 +122,6 @@
 
     move-result-object v4
 
-    .line 130
-    .end local v3    # "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
-    .local v11, "innerRoundedness":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
-    .local v20, "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     :goto_0
     move-object/from16 v20, v3
 
@@ -162,22 +129,13 @@
 
     goto :goto_1
 
-    .line 129
-    .end local v11    # "innerRoundedness":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
-    .end local v20    # "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     :cond_0
     const/4 v3, 0x0
 
-    .line 130
-    .restart local v3    # "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 132
-    .end local v3    # "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
-    .restart local v11    # "innerRoundedness":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
-    .restart local v20    # "innerRadius":Lcom/airbnb/lottie/model/animatable/AnimatableFloatValue;
     :goto_1
     new-instance v21, Lcom/airbnb/lottie/model/content/PolystarShape;
 

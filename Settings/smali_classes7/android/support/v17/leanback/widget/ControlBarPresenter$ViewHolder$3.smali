@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;ILandroid/support/v17/leanback/widget/Presenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;
 
-    .line 159
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;
 
     iput p2, p0, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder$3;->val$position:I
@@ -46,9 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 162
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;->getDisplayedAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
@@ -61,8 +57,6 @@
 
     move-result-object v0
 
-    .line 163
-    .local v0, "item":Ljava/lang/Object;
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;
 
     iget-object v1, v1, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;->this$0:Landroid/support/v17/leanback/widget/ControlBarPresenter;
@@ -71,7 +65,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 164
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;
 
     iget-object v1, v1, Landroid/support/v17/leanback/widget/ControlBarPresenter$ViewHolder;->this$0:Landroid/support/v17/leanback/widget/ControlBarPresenter;
@@ -86,7 +79,6 @@
 
     invoke-interface {v1, v2, v0, v3}, Landroid/support/v17/leanback/widget/ControlBarPresenter$OnControlClickedListener;->onControlClicked(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/ControlBarPresenter$BoundData;)V
 
-    .line 167
     :cond_0
     return-void
 .end method

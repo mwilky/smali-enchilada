@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/RecyclerViewParallax;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/RecyclerViewParallax;
 
-    .line 45
     iput-object p1, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$2;->this$0:Landroid/support/v17/leanback/widget/RecyclerViewParallax;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,10 @@
 # virtual methods
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
-    .param p6, "oldL"    # I
-    .param p7, "oldT"    # I
-    .param p8, "oldR"    # I
-    .param p9, "oldB"    # I
 
-    .line 49
     iget-object v0, p0, Landroid/support/v17/leanback/widget/RecyclerViewParallax$2;->this$0:Landroid/support/v17/leanback/widget/RecyclerViewParallax;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/RecyclerViewParallax;->updateValues()V
 
-    .line 50
     return-void
 .end method

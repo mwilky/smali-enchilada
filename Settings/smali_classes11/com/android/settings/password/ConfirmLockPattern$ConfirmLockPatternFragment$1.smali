@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
 
-    .line 171
     iput-object p1, p0, Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment$1;->this$0:Lcom/android/settings/password/ConfirmLockPattern$ConfirmLockPatternFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public getRowTranslationScale(II)F
     .locals 2
-    .param p1, "row"    # I
-    .param p2, "numRows"    # I
 
-    .line 174
     sub-int v0, p2, p1
 
     int-to-float v0, v0

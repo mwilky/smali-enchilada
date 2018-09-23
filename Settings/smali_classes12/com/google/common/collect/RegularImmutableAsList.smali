@@ -52,25 +52,17 @@
         }
     .end annotation
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
-    .local p1, "delegate":Lcom/google/common/collect/ImmutableCollection;, "Lcom/google/common/collect/ImmutableCollection<TE;>;"
-    .local p2, "delegateList":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<+TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableAsList;-><init>()V
 
-    .line 35
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegate:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 36
     iput-object p2, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegateList:Lcom/google/common/collect/ImmutableList;
 
-    .line 37
     return-void
 .end method
 
 .method constructor <init>(Lcom/google/common/collect/ImmutableCollection;[Ljava/lang/Object;)V
     .locals 1
-    .param p2, "array"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,16 +73,12 @@
         }
     .end annotation
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
-    .local p1, "delegate":Lcom/google/common/collect/ImmutableCollection;, "Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-static {p2}, Lcom/google/common/collect/ImmutableList;->asImmutableList([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Lcom/google/common/collect/RegularImmutableAsList;-><init>(Lcom/google/common/collect/ImmutableCollection;Lcom/google/common/collect/ImmutableList;)V
 
-    .line 41
     return-void
 .end method
 
@@ -98,14 +86,10 @@
 # virtual methods
 .method copyIntoArray([Ljava/lang/Object;I)I
     .locals 1
-    .param p1, "dst"    # [Ljava/lang/Object;
-    .param p2, "offset"    # I
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "not present in emulated superclass"
     .end annotation
 
-    .line 61
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegateList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/ImmutableList;->copyIntoArray([Ljava/lang/Object;I)I
@@ -125,8 +109,6 @@
         }
     .end annotation
 
-    .line 45
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegate:Lcom/google/common/collect/ImmutableCollection;
 
     return-object v0
@@ -142,8 +124,6 @@
         }
     .end annotation
 
-    .line 49
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegateList:Lcom/google/common/collect/ImmutableList;
 
     return-object v0
@@ -151,15 +131,12 @@
 
 .method public get(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TE;"
         }
     .end annotation
 
-    .line 66
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegateList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
@@ -171,7 +148,6 @@
 
 .method public listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -180,8 +156,6 @@
         }
     .end annotation
 
-    .line 55
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableAsList;->delegateList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
@@ -194,8 +168,6 @@
 .method public bridge synthetic listIterator(I)Ljava/util/ListIterator;
     .locals 0
 
-    .line 28
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableAsList;, "Lcom/google/common/collect/RegularImmutableAsList<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableAsList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
 
     move-result-object p1

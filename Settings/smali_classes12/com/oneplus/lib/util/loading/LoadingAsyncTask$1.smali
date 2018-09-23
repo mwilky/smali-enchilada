@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/util/loading/LoadingAsyncTask;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
-    .line 38
-    .local p0, "this":Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;, "Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;"
     iput-object p1, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     invoke-direct {p0}, Lcom/oneplus/lib/util/loading/LoadingHelper;-><init>()V
@@ -36,23 +33,17 @@
 # virtual methods
 .method protected hideProgree(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "progreeView"    # Ljava/lang/Object;
 
-    .line 47
-    .local p0, "this":Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;, "Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;"
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/lib/util/loading/LoadingAsyncTask;->hideProgree(Ljava/lang/Object;)V
 
-    .line 48
     return-void
 .end method
 
 .method protected showProgree()Ljava/lang/Object;
     .locals 1
 
-    .line 42
-    .local p0, "this":Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;, "Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;"
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$1;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/util/loading/LoadingAsyncTask;->showProgree()Ljava/lang/Object;

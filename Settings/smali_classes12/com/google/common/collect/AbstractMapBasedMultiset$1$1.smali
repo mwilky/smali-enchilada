@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/AbstractMapBasedMultiset$1;Ljava/util/Map$Entry;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
-    .line 101
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
     iput-object p2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->val$mapEntry:Ljava/util/Map$Entry;
@@ -48,8 +45,6 @@
 .method public getCount()I
     .locals 3
 
-    .line 108
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->val$mapEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -58,8 +53,6 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 109
-    .local v0, "count":Lcom/google/common/collect/Count;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lcom/google/common/collect/Count;->get()I
@@ -68,7 +61,6 @@
 
     if-nez v1, :cond_1
 
-    .line 110
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
@@ -88,19 +80,14 @@
 
     check-cast v1, Lcom/google/common/collect/Count;
 
-    .line 111
-    .local v1, "frequency":Lcom/google/common/collect/Count;
     if-eqz v1, :cond_1
 
-    .line 112
     invoke-virtual {v1}, Lcom/google/common/collect/Count;->get()I
 
     move-result v2
 
     return v2
 
-    .line 115
-    .end local v1    # "frequency":Lcom/google/common/collect/Count;
     :cond_1
     if-nez v0, :cond_2
 
@@ -125,8 +112,6 @@
         }
     .end annotation
 
-    .line 104
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->val$mapEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;

@@ -7,10 +7,8 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     return-void
 .end method
 
@@ -19,7 +17,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 39
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
@@ -42,7 +39,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 52
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x19
@@ -65,7 +61,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 65
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
@@ -88,7 +83,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 78
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1b
@@ -109,7 +103,6 @@
 .method public static isAtLeastP()Z
     .locals 2
 
-    .line 87
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
@@ -130,7 +123,6 @@
 .method public static isAtLeastQ()Z
     .locals 4
 
-    .line 100
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -145,7 +137,6 @@
 
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
-    .line 101
     invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -156,7 +147,6 @@
 
     sget-object v0, Landroid/os/Build$VERSION;->CODENAME:Ljava/lang/String;
 
-    .line 102
     invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0

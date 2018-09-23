@@ -14,7 +14,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 33
     new-instance v0, Lcom/oneplus/settings/notification/OPVibrationMode$1;
 
     invoke-direct {v0}, Lcom/oneplus/settings/notification/OPVibrationMode$1;-><init>()V
@@ -27,7 +26,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 17
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
     return-void
@@ -38,7 +36,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 29
     const/16 v0, 0x270f
 
     return v0
@@ -46,16 +43,12 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "icicle"    # Landroid/os/Bundle;
 
-    .line 22
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 23
     const v0, 0x7f16009a
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPVibrationMode;->addPreferencesFromResource(I)V
 
-    .line 24
     return-void
 .end method

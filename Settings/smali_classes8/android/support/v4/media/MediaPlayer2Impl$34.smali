@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;Landroid/media/MediaPlayer$OnPreparedListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1594
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -46,9 +44,7 @@
 # virtual methods
 .method public onSeekComplete(Landroid/media/MediaPlayer;)V
     .locals 4
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 1597
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
 
     iget v0, v0, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->mMp2State:I
@@ -59,7 +55,6 @@
 
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
 
-    .line 1598
     invoke-virtual {v0}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;->getDSD()Landroid/support/v4/media/DataSourceDesc;
 
     move-result-object v0
@@ -74,15 +69,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1601
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->val$preparedListener:Landroid/media/MediaPlayer$OnPreparedListener;
 
     invoke-interface {v0, p1}, Landroid/media/MediaPlayer$OnPreparedListener;->onPrepared(Landroid/media/MediaPlayer;)V
 
-    .line 1602
     return-void
 
-    .line 1604
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -92,7 +84,6 @@
 
     monitor-enter v0
 
-    .line 1605
     :try_start_0
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -104,7 +95,6 @@
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1606
     invoke-static {v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$900(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$Task;
 
     move-result-object v1
@@ -119,7 +109,6 @@
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1607
     invoke-static {v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$900(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$Task;
 
     move-result-object v1
@@ -130,7 +119,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 1608
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$900(Landroid/support/v4/media/MediaPlayer2Impl;)Landroid/support/v4/media/MediaPlayer2Impl$Task;
@@ -141,33 +129,27 @@
 
     invoke-static {v1, v2}, Landroid/support/v4/media/MediaPlayer2Impl$Task;->access$1300(Landroid/support/v4/media/MediaPlayer2Impl$Task;I)V
 
-    .line 1609
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v2}, Landroid/support/v4/media/MediaPlayer2Impl;->access$902(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$Task;)Landroid/support/v4/media/MediaPlayer2Impl$Task;
 
-    .line 1610
     iget-object v1, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-static {v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$1400(Landroid/support/v4/media/MediaPlayer2Impl;)V
 
-    .line 1612
     :cond_1
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1613
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaPlayer2Impl;->getCurrentPosition()J
 
     move-result-wide v0
 
-    .line 1614
-    .local v0, "seekPos":J
     iget-object v2, p0, Landroid/support/v4/media/MediaPlayer2Impl$34;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     new-instance v3, Landroid/support/v4/media/MediaPlayer2Impl$34$1;
@@ -176,11 +158,8 @@
 
     invoke-static {v2, v3}, Landroid/support/v4/media/MediaPlayer2Impl;->access$700(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$PlayerEventNotifier;)V
 
-    .line 1622
     return-void
 
-    .line 1612
-    .end local v0    # "seekPos":J
     :catchall_0
     move-exception v1
 

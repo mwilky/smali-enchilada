@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 118
     invoke-static {}, Lcom/google/tagmanager/JoinerMacro$EscapeType;->values()[Lcom/google/tagmanager/JoinerMacro$EscapeType;
 
     move-result-object v0

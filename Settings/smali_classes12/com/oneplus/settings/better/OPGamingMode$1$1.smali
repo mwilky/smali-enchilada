@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/better/OPGamingMode$1;Lcom/oneplus/settings/ui/OPTextViewButtonPreference;Lcom/oneplus/settings/better/OPAppModel;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/settings/better/OPGamingMode$1;
 
-    .line 105
     iput-object p1, p0, Lcom/oneplus/settings/better/OPGamingMode$1$1;->this$1:Lcom/oneplus/settings/better/OPGamingMode$1;
 
     iput-object p2, p0, Lcom/oneplus/settings/better/OPGamingMode$1$1;->val$pref:Lcom/oneplus/settings/ui/OPTextViewButtonPreference;
@@ -46,16 +44,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 109
     iget-object v0, p0, Lcom/oneplus/settings/better/OPGamingMode$1$1;->val$pref:Lcom/oneplus/settings/ui/OPTextViewButtonPreference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPTextViewButtonPreference;->setButtonEnable(Z)V
 
-    .line 110
     iget-object v0, p0, Lcom/oneplus/settings/better/OPGamingMode$1$1;->this$1:Lcom/oneplus/settings/better/OPGamingMode$1;
 
     iget-object v0, v0, Lcom/oneplus/settings/better/OPGamingMode$1;->this$0:Lcom/oneplus/settings/better/OPGamingMode;
@@ -68,7 +63,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceCategory;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 111
     iget-object v0, p0, Lcom/oneplus/settings/better/OPGamingMode$1$1;->this$1:Lcom/oneplus/settings/better/OPGamingMode$1;
 
     iget-object v0, v0, Lcom/oneplus/settings/better/OPGamingMode$1;->this$0:Lcom/oneplus/settings/better/OPGamingMode;
@@ -95,6 +89,5 @@
 
     invoke-virtual {v0, v3, v1, v2, v4}, Landroid/app/AppOpsManager;->setMode(IILjava/lang/String;I)V
 
-    .line 112
     return-void
 .end method

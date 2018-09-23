@@ -17,11 +17,8 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 0
-    .param p1, "item"    # Landroid/view/View;
 
-    .line 366
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 367
     return-void
 .end method

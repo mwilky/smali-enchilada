@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/display/AutoRotatePreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/display/AutoRotatePreferenceController;
 
-    .line 52
     iput-object p1, p0, Lcom/android/settings/display/AutoRotatePreferenceController$1;->this$0:Lcom/android/settings/display/AutoRotatePreferenceController;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
@@ -36,7 +34,6 @@
 .method public onChange()V
     .locals 2
 
-    .line 55
     iget-object v0, p0, Lcom/android/settings/display/AutoRotatePreferenceController$1;->this$0:Lcom/android/settings/display/AutoRotatePreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/display/AutoRotatePreferenceController;->access$000(Lcom/android/settings/display/AutoRotatePreferenceController;)Landroid/support/v7/preference/Preference;
@@ -45,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 56
     iget-object v0, p0, Lcom/android/settings/display/AutoRotatePreferenceController$1;->this$0:Lcom/android/settings/display/AutoRotatePreferenceController;
 
     iget-object v1, p0, Lcom/android/settings/display/AutoRotatePreferenceController$1;->this$0:Lcom/android/settings/display/AutoRotatePreferenceController;
@@ -56,7 +52,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/display/AutoRotatePreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
 
-    .line 58
     :cond_0
     return-void
 .end method

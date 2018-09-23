@@ -10,7 +10,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
 .method public createResult()Lcom/google/tagmanager/ResolvedFunctionCallBuilder;
     .locals 1
 
-    .line 11
     new-instance v0, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;-><init>()V
@@ -32,7 +30,6 @@
 .method public createRulesEvaluation()Lcom/google/tagmanager/RuleEvaluationStepInfoBuilder;
     .locals 1
 
-    .line 16
     new-instance v0, Lcom/google/tagmanager/NoopRuleEvaluationStepInfoBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopRuleEvaluationStepInfoBuilder;-><init>()V

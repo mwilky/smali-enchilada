@@ -48,7 +48,6 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    .line 108
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "px"
@@ -59,7 +58,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->px:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 109
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "em"
@@ -70,7 +68,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->em:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 110
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "ex"
@@ -81,7 +78,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->ex:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 111
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "in"
@@ -92,7 +88,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->in:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 112
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "cm"
@@ -103,7 +98,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->cm:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 113
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "mm"
@@ -114,7 +108,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->mm:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 114
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "pt"
@@ -125,7 +118,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->pt:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 115
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "pc"
@@ -136,7 +128,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->pc:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 116
     new-instance v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     const-string v1, "percent"
@@ -147,7 +138,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 106
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/caverock/androidsvg/SVG$Unit;
@@ -196,7 +186,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 106
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -205,7 +194,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/SVG$Unit;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/SVG$Unit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -220,7 +208,6 @@
 .method public static values()[Lcom/caverock/androidsvg/SVG$Unit;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/SVG$Unit;->ENUM$VALUES:[Lcom/caverock/androidsvg/SVG$Unit;
 
     array-length v1, v0

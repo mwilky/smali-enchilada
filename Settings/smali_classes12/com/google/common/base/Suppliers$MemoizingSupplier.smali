@@ -69,15 +69,10 @@
         }
     .end annotation
 
-    .line 116
-    .local p0, "this":Lcom/google/common/base/Suppliers$MemoizingSupplier;, "Lcom/google/common/base/Suppliers$MemoizingSupplier<TT;>;"
-    .local p1, "delegate":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 117
     iput-object p1, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
 
-    .line 118
     return-void
 .end method
 
@@ -91,44 +86,33 @@
         }
     .end annotation
 
-    .line 122
-    .local p0, "this":Lcom/google/common/base/Suppliers$MemoizingSupplier;, "Lcom/google/common/base/Suppliers$MemoizingSupplier<TT;>;"
     iget-boolean v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
     if-nez v0, :cond_1
 
-    .line 123
     monitor-enter p0
 
-    .line 124
     :try_start_0
     iget-boolean v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
     if-nez v0, :cond_0
 
-    .line 125
     iget-object v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->delegate:Lcom/google/common/base/Supplier;
 
     invoke-interface {v0}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 126
-    .local v0, "t":Ljava/lang/Object;, "TT;"
     iput-object v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->value:Ljava/lang/Object;
 
-    .line 127
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->initialized:Z
 
-    .line 128
     monitor-exit p0
 
     return-object v0
 
-    .line 130
-    .end local v0    # "t":Ljava/lang/Object;, "TT;"
     :cond_0
     monitor-exit p0
 
@@ -143,7 +127,6 @@
 
     throw v0
 
-    .line 132
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;->value:Ljava/lang/Object;
@@ -154,8 +137,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 136
-    .local p0, "this":Lcom/google/common/base/Suppliers$MemoizingSupplier;, "Lcom/google/common/base/Suppliers$MemoizingSupplier<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

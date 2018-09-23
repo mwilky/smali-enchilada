@@ -89,43 +89,32 @@
         }
     .end annotation
 
-    .line 461
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
-    .local p1, "onlyOnLeft":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
-    .local p2, "onlyOnRight":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
-    .local p3, "onBoth":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
-    .local p4, "differences":Ljava/util/Map;, "Ljava/util/Map<TK;Lcom/google/common/collect/MapDifference$ValueDifference<TV;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 462
     invoke-static {p1}, Lcom/google/common/collect/Maps;->access$100(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnLeft:Ljava/util/Map;
 
-    .line 463
     invoke-static {p2}, Lcom/google/common/collect/Maps;->access$100(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnRight:Ljava/util/Map;
 
-    .line 464
     invoke-static {p3}, Lcom/google/common/collect/Maps;->access$100(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onBoth:Ljava/util/Map;
 
-    .line 465
     invoke-static {p4}, Lcom/google/common/collect/Maps;->access$100(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->differences:Ljava/util/Map;
 
-    .line 466
     return-void
 .end method
 
@@ -134,8 +123,6 @@
 .method public areEqual()Z
     .locals 1
 
-    .line 470
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnLeft:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
@@ -183,8 +170,6 @@
         }
     .end annotation
 
-    .line 490
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->differences:Ljava/util/Map;
 
     return-object v0
@@ -200,8 +185,6 @@
         }
     .end annotation
 
-    .line 485
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onBoth:Ljava/util/Map;
 
     return-object v0
@@ -217,8 +200,6 @@
         }
     .end annotation
 
-    .line 475
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnLeft:Ljava/util/Map;
 
     return-object v0
@@ -234,8 +215,6 @@
         }
     .end annotation
 
-    .line 480
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnRight:Ljava/util/Map;
 
     return-object v0
@@ -243,18 +222,13 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 494
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 495
     return v0
 
-    .line 497
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/MapDifference;
 
@@ -262,13 +236,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 498
     move-object v1, p1
 
     check-cast v1, Lcom/google/common/collect/MapDifference;
 
-    .line 499
-    .local v1, "other":Lcom/google/common/collect/MapDifference;, "Lcom/google/common/collect/MapDifference<**>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->entriesOnlyOnLeft()Ljava/util/Map;
 
     move-result-object v3
@@ -283,7 +254,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 500
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->entriesOnlyOnRight()Ljava/util/Map;
 
     move-result-object v3
@@ -298,7 +268,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 501
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->entriesInCommon()Ljava/util/Map;
 
     move-result-object v3
@@ -313,7 +282,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 502
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->entriesDiffering()Ljava/util/Map;
 
     move-result-object v3
@@ -330,15 +298,12 @@
 
     goto :goto_0
 
-    .line 499
     :cond_1
     move v0, v2
 
     :goto_0
     return v0
 
-    .line 504
-    .end local v1    # "other":Lcom/google/common/collect/MapDifference;, "Lcom/google/common/collect/MapDifference<**>;"
     :cond_2
     return v2
 .end method
@@ -346,8 +311,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 508
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -368,7 +331,6 @@
 
     aput-object v1, v0, v2
 
-    .line 509
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->entriesInCommon()Ljava/util/Map;
 
     move-result-object v1
@@ -385,7 +347,6 @@
 
     aput-object v1, v0, v2
 
-    .line 508
     invoke-static {v0}, Lcom/google/common/base/Objects;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
@@ -396,20 +357,16 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 513
-    .local p0, "this":Lcom/google/common/collect/Maps$MapDifferenceImpl;, "Lcom/google/common/collect/Maps$MapDifferenceImpl<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$MapDifferenceImpl;->areEqual()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 514
     const-string v0, "equal"
 
     return-object v0
 
-    .line 517
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -417,8 +374,6 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 518
-    .local v0, "result":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnLeft:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
@@ -427,7 +382,6 @@
 
     if-nez v1, :cond_1
 
-    .line 519
     const-string v1, ": only on left="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -436,7 +390,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 521
     :cond_1
     iget-object v1, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->onlyOnRight:Ljava/util/Map;
 
@@ -446,7 +399,6 @@
 
     if-nez v1, :cond_2
 
-    .line 522
     const-string v1, ": only on right="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -455,7 +407,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 524
     :cond_2
     iget-object v1, p0, Lcom/google/common/collect/Maps$MapDifferenceImpl;->differences:Ljava/util/Map;
 
@@ -465,7 +416,6 @@
 
     if-nez v1, :cond_3
 
-    .line 525
     const-string v1, ": value differences="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -474,7 +424,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 527
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

@@ -36,7 +36,7 @@
     .end annotation
 .end field
 
-.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a040f
+.field static final ID_PRL_VERSION_VALUE:I = 0x7f0a040d
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 .end field
@@ -55,28 +55,21 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;I)V
     .locals 2
-    .param p1, "dialog"    # Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
+    .param p1    # Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "slotId"    # I
 
-    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 71
     iput-object p1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    .line 72
     iput p2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
 
-    .line 73
     invoke-virtual {p1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 74
-    .local v0, "context":Landroid/content/Context;
     const-string v1, "phone"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -87,42 +80,32 @@
 
     iput-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 76
     invoke-direct {p0, v0, p2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getSubscriptionInfo(Landroid/content/Context;I)Landroid/telephony/SubscriptionInfo;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
-    .line 77
     return-void
 .end method
 
 .method private getSubscriptionInfo(Landroid/content/Context;I)Landroid/telephony/SubscriptionInfo;
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "slotId"    # I
 
-    .line 143
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
 
     move-result-object v0
 
-    .line 144
     invoke-virtual {v0}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 145
-    .local v0, "subscriptionInfoList":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 146
     return-object v1
 
-    .line 148
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -141,45 +124,34 @@
 
     check-cast v3, Landroid/telephony/SubscriptionInfo;
 
-    .line 149
-    .local v3, "info":Landroid/telephony/SubscriptionInfo;
     invoke-virtual {v3}, Landroid/telephony/SubscriptionInfo;->getSimSlotIndex()I
 
     move-result v4
 
     if-ne p2, v4, :cond_1
 
-    .line 150
     return-object v3
 
-    .line 152
-    .end local v3    # "info":Landroid/telephony/SubscriptionInfo;
     :cond_1
     goto :goto_0
 
-    .line 153
     :cond_2
     return-object v1
 .end method
 
 .method private static getTextAsDigits(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 5
-    .param p0, "text"    # Ljava/lang/CharSequence;
 
-    .line 56
     invoke-static {p0}, Landroid/text/TextUtils;->isDigitsOnly(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 57
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0, p0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 58
-    .local v0, "spannable":Landroid/text/Spannable;
     new-instance v1, Landroid/text/style/TtsSpan$DigitsBuilder;
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -192,8 +164,6 @@
 
     move-result-object v1
 
-    .line 59
-    .local v1, "span":Landroid/text/style/TtsSpan;
     const/4 v2, 0x0
 
     invoke-interface {v0}, Landroid/text/Spannable;->length()I
@@ -204,12 +174,8 @@
 
     invoke-interface {v0, v1, v2, v3, v4}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
-    .line 60
     move-object p0, v0
 
-    .line 62
-    .end local v0    # "spannable":Landroid/text/Spannable;
-    .end local v1    # "span":Landroid/text/style/TtsSpan;
     :cond_0
     return-object p0
 .end method
@@ -217,7 +183,6 @@
 .method private updateDialogForCdmaPhone()V
     .locals 5
 
-    .line 93
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->getContext()Landroid/content/Context;
@@ -228,81 +193,78 @@
 
     move-result-object v0
 
-    .line 97
-    .local v0, "res":Landroid/content/res/Resources;
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
+
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
+
+    if-eqz v2, :cond_0
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getMeid()Ljava/lang/String;
 
     move-result-object v2
 
+    goto :goto_0
+
+    :cond_0
+    const-string v2, ""
+
+    :goto_0
     const v3, 0x7f0a0310
 
     invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    .line 98
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    .line 99
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    const v2, 0x7f0a0320
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
-    .line 100
-    invoke-virtual {v3}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
+    if-eqz v3, :cond_1
 
-    move-result v3
+    iget-object v3, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 99
-    invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->getCdmaMin(I)Ljava/lang/String;
+    iget-object v4, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
-    move-result-object v2
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
-    goto :goto_0
+    move-result v4
 
-    .line 100
-    :cond_0
-    const-string v2, ""
+    invoke-virtual {v3, v4}, Landroid/telephony/TelephonyManager;->getCdmaMin(I)Ljava/lang/String;
 
-    .line 98
-    :goto_0
-    const v3, 0x7f0a0320
+    move-result-object v3
 
-    invoke-virtual {v1, v3, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
+    goto :goto_1
 
-    .line 103
+    :cond_1
+    const-string v3, ""
+
+    :goto_1
+    invoke-virtual {v1, v2, v3}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
+
     const v1, 0x7f050013
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 104
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     const v2, 0x7f0a031f
 
-    const v3, 0x7f1210aa
+    const v3, 0x7f1210a3
 
-    .line 105
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 104
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    .line 108
-    :cond_1
+    :cond_2
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    const v2, 0x7f0a040f
+    const v2, 0x7f0a040d
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getCdmaPrlVersion()Ljava/lang/String;
 
@@ -310,18 +272,16 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    .line 110
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->isCdmaLteEnabled()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 112
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     const v2, 0x7f0a024f
@@ -330,7 +290,6 @@
 
     iget v4, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
 
-    .line 113
     invoke-virtual {v3, v4}, Landroid/telephony/TelephonyManager;->getImei(I)Ljava/lang/String;
 
     move-result-object v3
@@ -339,10 +298,8 @@
 
     move-result-object v3
 
-    .line 112
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    .line 114
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     const v2, 0x7f0a024e
@@ -351,7 +308,6 @@
 
     iget v4, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
 
-    .line 115
     invoke-virtual {v3, v4}, Landroid/telephony/TelephonyManager;->getDeviceSoftwareVersion(I)Ljava/lang/String;
 
     move-result-object v3
@@ -360,29 +316,29 @@
 
     move-result-object v3
 
-    .line 114
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 118
-    :cond_2
+    :cond_3
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     const v2, 0x7f0a0205
 
     invoke-virtual {v1, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->removeViewFromScreen(I)V
 
-    .line 120
-    :goto_1
+    :goto_2
     return-void
 .end method
 
 .method private updateDialogForGsmPhone()V
-    .locals 3
+    .locals 4
 
-    .line 133
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
+
+    iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
+
+    if-eqz v1, :cond_0
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
@@ -396,39 +352,50 @@
 
     move-result-object v1
 
+    goto :goto_0
+
+    :cond_0
+    const-string v1, ""
+
+    :goto_0
     const v2, 0x7f0a024f
 
     invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
 
-    .line 134
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
-    iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+    const v1, 0x7f0a024e
 
-    iget v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
-    .line 135
-    invoke-virtual {v1, v2}, Landroid/telephony/TelephonyManager;->getDeviceSoftwareVersion(I)Ljava/lang/String;
+    if-eqz v2, :cond_1
 
-    move-result-object v1
+    iget-object v2, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 134
-    invoke-static {v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getTextAsDigits(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    iget v3, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
 
-    move-result-object v1
+    invoke-virtual {v2, v3}, Landroid/telephony/TelephonyManager;->getDeviceSoftwareVersion(I)Ljava/lang/String;
 
-    const v2, 0x7f0a024e
+    move-result-object v2
 
-    invoke-virtual {v0, v2, v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
+    invoke-static {v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->getTextAsDigits(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    .line 139
+    move-result-object v2
+
+    goto :goto_1
+
+    :cond_1
+    const-string v2, ""
+
+    :goto_1
+    invoke-virtual {v0, v1, v2}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->setText(ILjava/lang/CharSequence;)V
+
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mDialog:Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;
 
     const v1, 0x7f0a00de
 
     invoke-virtual {v0, v1}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogFragment;->removeViewFromScreen(I)V
 
-    .line 140
     return-void
 .end method
 
@@ -439,7 +406,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 158
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getCdmaPrlVersion()Ljava/lang/String;
@@ -454,7 +420,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 170
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     const/4 v1, 0x0
@@ -471,7 +436,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 163
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
@@ -500,7 +464,6 @@
 .method public populateImeiInfo()V
     .locals 2
 
-    .line 84
     iget-object v0, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
     iget v1, p0, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->mSlotId:I
@@ -513,16 +476,13 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 86
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->updateDialogForCdmaPhone()V
 
     goto :goto_0
 
-    .line 88
     :cond_0
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/imei/ImeiInfoDialogController;->updateDialogForGsmPhone()V
 
-    .line 90
     :goto_0
     return-void
 .end method

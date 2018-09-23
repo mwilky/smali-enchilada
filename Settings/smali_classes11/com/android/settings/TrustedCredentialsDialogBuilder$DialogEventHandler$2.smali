@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler;
 
-    .line 295
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler$2;->this$0:Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler;
 
     iput-object p2, p0, Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler$2;->val$views:Ljava/util/ArrayList;
@@ -42,9 +40,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 4
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,13 +50,10 @@
         }
     .end annotation
 
-    .line 299
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler$2;->val$views:Ljava/util/ArrayList;
 
@@ -71,7 +63,6 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 300
     iget-object v2, p0, Lcom/android/settings/TrustedCredentialsDialogBuilder$DialogEventHandler$2;->val$views:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -92,13 +83,10 @@
     :goto_1
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 299
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 302
-    .end local v1    # "i":I
     :cond_1
     return-void
 .end method
@@ -113,7 +101,5 @@
         }
     .end annotation
 
-    .line 306
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

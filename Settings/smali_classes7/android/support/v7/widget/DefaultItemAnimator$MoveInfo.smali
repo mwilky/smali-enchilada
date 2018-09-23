@@ -29,30 +29,18 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/RecyclerView$ViewHolder;IIII)V
     .locals 0
-    .param p1, "holder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p2, "fromX"    # I
-    .param p3, "fromY"    # I
-    .param p4, "toX"    # I
-    .param p5, "toY"    # I
 
-    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput-object p1, p0, Landroid/support/v7/widget/DefaultItemAnimator$MoveInfo;->holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 63
     iput p2, p0, Landroid/support/v7/widget/DefaultItemAnimator$MoveInfo;->fromX:I
 
-    .line 64
     iput p3, p0, Landroid/support/v7/widget/DefaultItemAnimator$MoveInfo;->fromY:I
 
-    .line 65
     iput p4, p0, Landroid/support/v7/widget/DefaultItemAnimator$MoveInfo;->toX:I
 
-    .line 66
     iput p5, p0, Landroid/support/v7/widget/DefaultItemAnimator$MoveInfo;->toY:I
 
-    .line 67
     return-void
 .end method

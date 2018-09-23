@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiSettings;
 
-    .line 289
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$3;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +36,16 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
-    .param p1, "reason"    # I
 
-    .line 295
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$3;->this$0:Lcom/android/settings/wifi/WifiSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/WifiSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 296
-    .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_0
 
-    .line 297
-    const v1, 0x7f121412
+    const v1, 0x7f12140b
 
     const/4 v2, 0x0
 
@@ -60,10 +53,8 @@
 
     move-result-object v1
 
-    .line 299
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 301
     :cond_0
     return-void
 .end method
@@ -71,6 +62,5 @@
 .method public onSuccess()V
     .locals 0
 
-    .line 292
     return-void
 .end method

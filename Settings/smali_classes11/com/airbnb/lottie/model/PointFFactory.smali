@@ -25,7 +25,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 12
     new-instance v0, Lcom/airbnb/lottie/model/PointFFactory;
 
     invoke-direct {v0}, Lcom/airbnb/lottie/model/PointFFactory;-><init>()V
@@ -38,10 +37,8 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
     return-void
 .end method
 
@@ -49,15 +46,11 @@
 # virtual methods
 .method public valueFromObject(Ljava/lang/Object;F)Landroid/graphics/PointF;
     .locals 3
-    .param p1, "object"    # Ljava/lang/Object;
-    .param p2, "scale"    # F
 
-    .line 18
     instance-of v0, p1, Lorg/json/JSONArray;
 
     if-eqz v0, :cond_0
 
-    .line 19
     move-object v0, p1
 
     check-cast v0, Lorg/json/JSONArray;
@@ -68,13 +61,11 @@
 
     return-object v0
 
-    .line 20
     :cond_0
     instance-of v0, p1, Lorg/json/JSONObject;
 
     if-eqz v0, :cond_1
 
-    .line 21
     move-object v0, p1
 
     check-cast v0, Lorg/json/JSONObject;
@@ -85,7 +76,6 @@
 
     return-object v0
 
-    .line 23
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -111,7 +101,6 @@
 .method public bridge synthetic valueFromObject(Ljava/lang/Object;F)Ljava/lang/Object;
     .locals 0
 
-    .line 11
     invoke-virtual {p0, p1, p2}, Lcom/airbnb/lottie/model/PointFFactory;->valueFromObject(Ljava/lang/Object;F)Landroid/graphics/PointF;
 
     move-result-object p1

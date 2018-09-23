@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenRuleSelectionDialog;Lcom/android/settings/notification/ZenRuleInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
-    .line 138
     iput-object p1, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$1;->this$0:Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$1;->val$ri:Lcom/android/settings/notification/ZenRuleInfo;
@@ -42,21 +40,17 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 141
     iget-object v0, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$1;->this$0:Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->dismiss()V
 
-    .line 142
     iget-object v0, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$1;->val$ri:Lcom/android/settings/notification/ZenRuleInfo;
 
     iget-boolean v0, v0, Lcom/android/settings/notification/ZenRuleInfo;->isSystem:Z
 
     if-eqz v0, :cond_0
 
-    .line 143
     sget-object v0, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mPositiveClickListener:Lcom/android/settings/notification/ZenRuleSelectionDialog$PositiveClickListener;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$1;->val$ri:Lcom/android/settings/notification/ZenRuleInfo;
@@ -71,7 +65,6 @@
 
     goto :goto_0
 
-    .line 145
     :cond_0
     sget-object v0, Lcom/android/settings/notification/ZenRuleSelectionDialog;->mPositiveClickListener:Lcom/android/settings/notification/ZenRuleSelectionDialog$PositiveClickListener;
 
@@ -85,7 +78,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/settings/notification/ZenRuleSelectionDialog$PositiveClickListener;->onExternalRuleSelected(Lcom/android/settings/notification/ZenRuleInfo;Landroid/app/Fragment;)V
 
-    .line 147
     :goto_0
     return-void
 .end method

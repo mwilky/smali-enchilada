@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/PopupMenu;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/PopupMenu;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 152
     iput-object p1, p0, Lcom/oneplus/lib/widget/PopupMenu$3;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-direct {p0, p2}, Lcom/oneplus/lib/widget/ForwardingListener;-><init>(Landroid/view/View;)V
@@ -37,7 +34,6 @@
 .method public getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 168
     iget-object v0, p0, Lcom/oneplus/lib/widget/PopupMenu$3;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/PopupMenu;->access$200(Lcom/oneplus/lib/widget/PopupMenu;)Lcom/oneplus/lib/menu/MenuPopupHelper;
@@ -54,12 +50,10 @@
 .method protected onForwardingStarted()Z
     .locals 1
 
-    .line 155
     iget-object v0, p0, Lcom/oneplus/lib/widget/PopupMenu$3;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/PopupMenu;->show()V
 
-    .line 156
     const/4 v0, 0x1
 
     return v0
@@ -68,12 +62,10 @@
 .method protected onForwardingStopped()Z
     .locals 1
 
-    .line 161
     iget-object v0, p0, Lcom/oneplus/lib/widget/PopupMenu$3;->this$0:Lcom/oneplus/lib/widget/PopupMenu;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/PopupMenu;->dismiss()V
 
-    .line 162
     const/4 v0, 0x1
 
     return v0

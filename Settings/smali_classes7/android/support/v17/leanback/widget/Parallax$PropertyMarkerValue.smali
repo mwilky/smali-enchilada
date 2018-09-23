@@ -42,15 +42,10 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;, "Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue<TPropertyT;>;"
-    .local p1, "property":Ljava/lang/Object;, "TPropertyT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
     iput-object p1, p0, Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;->mProperty:Ljava/lang/Object;
 
-    .line 89
     return-void
 .end method
 
@@ -64,8 +59,6 @@
         }
     .end annotation
 
-    .line 95
-    .local p0, "this":Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;, "Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue<TPropertyT;>;"
     iget-object v0, p0, Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;->mProperty:Ljava/lang/Object;
 
     return-object v0

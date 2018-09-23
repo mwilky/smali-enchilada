@@ -26,7 +26,6 @@
 .method private constructor <init>(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)V
     .locals 0
 
-    .line 449
     iput-object p1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -36,10 +35,7 @@
 
 .method synthetic constructor <init>(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;Lcom/oneplus/settings/notification/OPSeekBarVolumizer$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
-    .param p2, "x1"    # Lcom/oneplus/settings/notification/OPSeekBarVolumizer$1;
 
-    .line 449
     invoke-direct {p0, p1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;-><init>(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)V
 
     return-void
@@ -49,16 +45,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 454
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_2
 
-    .line 455
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-static {v0}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$200(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)Landroid/widget/SeekBar;
@@ -67,14 +60,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 456
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     invoke-static {v0, v2}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$302(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;I)I
 
-    .line 457
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     iget v2, p1, Landroid/os/Message;->arg2:I
@@ -85,7 +76,6 @@
 
     invoke-static {v0, v2}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$402(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;I)I
 
-    .line 458
     iget v0, p1, Landroid/os/Message;->arg2:I
 
     if-gez v0, :cond_0
@@ -98,8 +88,6 @@
     :goto_0
     move v0, v1
 
-    .line 459
-    .local v0, "muted":Z
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-static {v1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$500(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)Z
@@ -108,12 +96,10 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 460
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-static {v1, v0}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$502(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;Z)Z
 
-    .line 461
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-static {v1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$600(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)Lcom/oneplus/settings/notification/OPSeekBarVolumizer$Callback;
@@ -122,7 +108,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 462
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-static {v1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->access$600(Lcom/oneplus/settings/notification/OPSeekBarVolumizer;)Lcom/oneplus/settings/notification/OPSeekBarVolumizer$Callback;
@@ -143,25 +128,18 @@
 
     invoke-interface {v1, v2, v3}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$Callback;->onMuted(ZZ)V
 
-    .line 465
     :cond_1
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->this$0:Lcom/oneplus/settings/notification/OPSeekBarVolumizer;
 
     invoke-virtual {v1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer;->updateSeekBar()V
 
-    .line 468
-    .end local v0    # "muted":Z
     :cond_2
     return-void
 .end method
 
 .method public postUpdateSlider(IIZ)V
     .locals 2
-    .param p1, "volume"    # I
-    .param p2, "lastAudibleVolume"    # I
-    .param p3, "mute"    # Z
 
-    .line 471
     const/4 v0, 0x1
 
     if-eqz p3, :cond_0
@@ -176,14 +154,11 @@
     :goto_0
     mul-int/2addr v1, p2
 
-    .line 472
-    .local v1, "arg2":I
     invoke-virtual {p0, v0, p1, v1}, Lcom/oneplus/settings/notification/OPSeekBarVolumizer$H;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 473
     return-void
 .end method

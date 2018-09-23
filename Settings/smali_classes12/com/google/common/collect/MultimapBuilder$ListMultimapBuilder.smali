@@ -30,8 +30,6 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 442
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder<TK0;TV0;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/MultimapBuilder;-><init>(Lcom/google/common/collect/MultimapBuilder$1;)V
@@ -63,9 +61,6 @@
         }
     .end annotation
 
-    .line 450
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder<TK0;TV0;>;"
-    .local p1, "multimap":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/MultimapBuilder;->build(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -78,8 +73,6 @@
 .method public bridge synthetic build()Lcom/google/common/collect/Multimap;
     .locals 1
 
-    .line 441
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder<TK0;TV0;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;->build()Lcom/google/common/collect/ListMultimap;
 
     move-result-object v0
@@ -90,8 +83,6 @@
 .method public bridge synthetic build(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/Multimap;
     .locals 0
 
-    .line 441
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder<TK0;TV0;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MultimapBuilder$ListMultimapBuilder;->build(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/ListMultimap;
 
     move-result-object p1

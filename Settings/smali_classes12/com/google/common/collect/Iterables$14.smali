@@ -31,7 +31,6 @@
 .method constructor <init>(Ljava/lang/Iterable;Ljava/util/Comparator;)V
     .locals 0
 
-    .line 1022
     iput-object p1, p0, Lcom/google/common/collect/Iterables$14;->val$iterables:Ljava/lang/Iterable;
 
     iput-object p2, p0, Lcom/google/common/collect/Iterables$14;->val$comparator:Ljava/util/Comparator;
@@ -53,10 +52,8 @@
         }
     .end annotation
 
-    .line 1025
     iget-object v0, p0, Lcom/google/common/collect/Iterables$14;->val$iterables:Ljava/lang/Iterable;
 
-    .line 1026
     invoke-static {}, Lcom/google/common/collect/Iterables;->access$300()Lcom/google/common/base/Function;
 
     move-result-object v1
@@ -67,7 +64,6 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Iterables$14;->val$comparator:Ljava/util/Comparator;
 
-    .line 1025
     invoke-static {v0, v1}, Lcom/google/common/collect/Iterators;->mergeSorted(Ljava/lang/Iterable;Ljava/util/Comparator;)Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0

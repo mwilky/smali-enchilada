@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
-    .line 126
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "v"    # Landroid/widget/TextView;
-    .param p2, "actionId"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 129
     const/4 v0, 0x6
 
     if-ne p2, v0, :cond_1
 
-    .line 131
     invoke-virtual {p1}, Landroid/widget/TextView;->length()I
 
     move-result v0
@@ -72,7 +65,6 @@
 
     if-nez v0, :cond_0
 
-    .line 133
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -89,7 +81,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;->setDeviceName(Ljava/lang/String;)V
 
-    .line 135
     :cond_0
     iget-object v0, p0, Lcom/android/settings/bluetooth/BluetoothNameDialogFragment$1;->this$0:Lcom/android/settings/bluetooth/BluetoothNameDialogFragment;
 
@@ -99,12 +90,10 @@
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    .line 136
     const/4 v0, 0x1
 
     return v0
 
-    .line 138
     :cond_1
     const/4 v0, 0x0
 

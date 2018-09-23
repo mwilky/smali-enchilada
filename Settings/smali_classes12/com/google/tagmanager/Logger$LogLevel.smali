@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 8
 
-    .line 17
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "VERBOSE"
@@ -53,7 +52,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->VERBOSE:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 19
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "DEBUG"
@@ -64,7 +62,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->DEBUG:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 21
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "INFO"
@@ -75,7 +72,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->INFO:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 23
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "WARNING"
@@ -86,7 +82,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->WARNING:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 25
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "ERROR"
@@ -97,7 +92,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->ERROR:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 27
     new-instance v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     const-string v1, "NONE"
@@ -108,7 +102,6 @@
 
     sput-object v0, Lcom/google/tagmanager/Logger$LogLevel;->NONE:Lcom/google/tagmanager/Logger$LogLevel;
 
-    .line 15
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/tagmanager/Logger$LogLevel;
@@ -150,7 +143,6 @@
         }
     .end annotation
 
-    .line 15
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -158,9 +150,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/Logger$LogLevel;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 15
     const-class v0, Lcom/google/tagmanager/Logger$LogLevel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -175,7 +165,6 @@
 .method public static values()[Lcom/google/tagmanager/Logger$LogLevel;
     .locals 1
 
-    .line 15
     sget-object v0, Lcom/google/tagmanager/Logger$LogLevel;->$VALUES:[Lcom/google/tagmanager/Logger$LogLevel;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/Logger$LogLevel;->clone()Ljava/lang/Object;

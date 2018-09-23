@@ -169,7 +169,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 22
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -178,7 +177,6 @@
 
     sput-object v0, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY:[I
 
-    .line 36
     const/16 v0, 0x8
 
     new-array v1, v0, [I
@@ -187,7 +185,6 @@
 
     sput-object v1, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP:[I
 
-    .line 49
     const/16 v1, 0xe
 
     new-array v1, v1, [I
@@ -196,7 +193,6 @@
 
     sput-object v1, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_PATH:[I
 
-    .line 70
     const/4 v1, 0x2
 
     new-array v2, v1, [I
@@ -205,7 +201,6 @@
 
     sput-object v2, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH:[I
 
-    .line 76
     const/4 v2, 0x1
 
     new-array v3, v2, [I
@@ -218,21 +213,18 @@
 
     sput-object v3, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE:[I
 
-    .line 80
     new-array v1, v1, [I
 
     fill-array-data v1, :array_4
 
     sput-object v1, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATED_VECTOR_DRAWABLE_TARGET:[I
 
-    .line 90
     new-array v0, v0, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATOR:[I
 
-    .line 103
     new-array v0, v2, [I
 
     const v1, 0x10102e2
@@ -241,7 +233,6 @@
 
     sput-object v0, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_ANIMATOR_SET:[I
 
-    .line 108
     const/4 v0, 0x4
 
     new-array v1, v0, [I
@@ -250,21 +241,18 @@
 
     sput-object v1, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_PROPERTY_VALUES_HOLDER:[I
 
-    .line 116
     new-array v1, v0, [I
 
     fill-array-data v1, :array_7
 
     sput-object v1, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_KEYFRAME:[I
 
-    .line 124
     new-array v0, v0, [I
 
     fill-array-data v0, :array_8
 
     sput-object v0, Landroid/support/graphics/drawable/AndroidResources;->STYLEABLE_PROPERTY_ANIMATOR:[I
 
-    .line 133
     const/4 v0, 0x5
 
     new-array v0, v0, [I
@@ -379,9 +367,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
     return-void
 .end method

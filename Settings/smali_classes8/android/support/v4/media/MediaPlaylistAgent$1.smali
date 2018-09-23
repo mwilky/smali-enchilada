@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;Ljava/util/List;Landroid/support/v4/media/MediaMetadata2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlaylistAgent;
 
-    .line 165
     iput-object p1, p0, Landroid/support/v4/media/MediaPlaylistAgent$1;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlaylistAgent$1;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 168
     iget-object v0, p0, Landroid/support/v4/media/MediaPlaylistAgent$1;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlaylistAgent$1;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
@@ -62,6 +59,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;->onPlaylistChanged(Landroid/support/v4/media/MediaPlaylistAgent;Ljava/util/List;Landroid/support/v4/media/MediaMetadata2;)V
 
-    .line 170
     return-void
 .end method

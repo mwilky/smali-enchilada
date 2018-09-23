@@ -47,30 +47,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/datausage/AppDataUsage;Landroid/content/Context;IZI)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/AppDataUsage;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "uid"    # I
-    .param p4, "disable"    # Z
-    .param p5, "type"    # I
 
-    .line 591
     iput-object p1, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 592
     iput-object p2, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->mContext:Landroid/content/Context;
 
-    .line 593
     iput p3, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->uid:I
 
-    .line 594
     iput-boolean p4, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->state:Z
 
-    .line 595
     iput p5, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->type:I
 
-    .line 596
     return-void
 .end method
 
@@ -78,9 +67,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
     .locals 8
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 614
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->mContext:Landroid/content/Context;
 
     iget v1, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->uid:I
@@ -89,8 +76,6 @@
 
     move-result-object v0
 
-    .line 615
-    .local v0, "apps":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ApplicationInfo;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -108,14 +93,10 @@
 
     check-cast v2, Landroid/content/pm/ApplicationInfo;
 
-    .line 616
-    .local v2, "appInfo":Landroid/content/pm/ApplicationInfo;
     if-nez v2, :cond_0
 
-    .line 617
     goto :goto_0
 
-    .line 619
     :cond_0
     iget v3, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->type:I
 
@@ -123,11 +104,8 @@
 
     if-nez v3, :cond_1
 
-    .line 620
     iget-boolean v3, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->state:Z
 
-    .line 621
-    .local v3, "mobile":I
     new-instance v5, Lcom/oneplus/settings/utils/OPFirewallRule;
 
     iget-object v6, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -140,8 +118,6 @@
 
     move-object v4, v5
 
-    .line 622
-    .local v4, "rule":Lcom/oneplus/settings/utils/OPFirewallRule;
     iget-object v5, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-virtual {v5}, Lcom/android/settings/datausage/AppDataUsage;->getContext()Landroid/content/Context;
@@ -150,17 +126,11 @@
 
     invoke-static {v5, v4}, Lcom/oneplus/settings/utils/OPFirewallUtils;->addOrUpdateRole(Landroid/content/Context;Lcom/oneplus/settings/utils/OPFirewallRule;)V
 
-    .line 623
-    .end local v3    # "mobile":I
-    .end local v4    # "rule":Lcom/oneplus/settings/utils/OPFirewallRule;
     goto :goto_1
 
-    .line 624
     :cond_1
     iget-boolean v3, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->state:Z
 
-    .line 625
-    .local v3, "wlan":I
     new-instance v5, Lcom/oneplus/settings/utils/OPFirewallRule;
 
     iget-object v6, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
@@ -173,8 +143,6 @@
 
     move-object v4, v5
 
-    .line 626
-    .restart local v4    # "rule":Lcom/oneplus/settings/utils/OPFirewallRule;
     iget-object v5, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-virtual {v5}, Lcom/android/settings/datausage/AppDataUsage;->getContext()Landroid/content/Context;
@@ -183,14 +151,9 @@
 
     invoke-static {v5, v4}, Lcom/oneplus/settings/utils/OPFirewallUtils;->addOrUpdateRole(Landroid/content/Context;Lcom/oneplus/settings/utils/OPFirewallRule;)V
 
-    .line 628
-    .end local v2    # "appInfo":Landroid/content/pm/ApplicationInfo;
-    .end local v3    # "wlan":I
-    .end local v4    # "rule":Lcom/oneplus/settings/utils/OPFirewallRule;
     :goto_1
     goto :goto_0
 
-    .line 629
     :cond_2
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -206,7 +169,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 582
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
@@ -218,17 +180,13 @@
 
 .method protected onPostExecute(Ljava/lang/Integer;)V
     .locals 2
-    .param p1, "result"    # Ljava/lang/Integer;
 
-    .line 634
     invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
-    .line 635
     iget v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->type:I
 
     if-nez v0, :cond_0
 
-    .line 636
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-static {v0}, Lcom/android/settings/datausage/AppDataUsage;->access$1000(Lcom/android/settings/datausage/AppDataUsage;)Landroid/support/v14/preference/SwitchPreference;
@@ -241,7 +199,6 @@
 
     goto :goto_0
 
-    .line 638
     :cond_0
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
@@ -253,18 +210,15 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 640
     :goto_0
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
     if-eqz v0, :cond_1
 
-    .line 641
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/ui/OPProgressDialog;->dismiss()V
 
-    .line 643
     :cond_1
     return-void
 .end method
@@ -272,7 +226,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 582
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->onPostExecute(Ljava/lang/Integer;)V
@@ -283,10 +236,8 @@
 .method protected onPreExecute()V
     .locals 4
 
-    .line 600
     invoke-super {p0}, Landroid/os/AsyncTask;->onPreExecute()V
 
-    .line 601
     new-instance v0, Lcom/oneplus/settings/ui/OPProgressDialog;
 
     iget-object v1, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->mContext:Landroid/content/Context;
@@ -295,12 +246,11 @@
 
     iput-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
-    .line 602
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
     iget-object v1, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f120fd1
+    const v2, 0x7f120fca
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -308,7 +258,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 603
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
     new-instance v1, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask$1;
@@ -319,13 +268,11 @@
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/oneplus/settings/ui/OPProgressDialog;->setTimeOut(JLcom/oneplus/settings/ui/OPProgressDialog$OnTimeOutListener;)V
 
-    .line 609
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$UpdateRuleTask;->progressDialog:Lcom/oneplus/settings/ui/OPProgressDialog;
 
     const-wide/16 v1, 0x3e8
 
     invoke-virtual {v0, v1, v2}, Lcom/oneplus/settings/ui/OPProgressDialog;->showDelay(J)V
 
-    .line 610
     return-void
 .end method

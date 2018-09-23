@@ -31,34 +31,23 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/Parallax$FloatProperty;F)V
     .locals 1
-    .param p1, "property"    # Landroid/support/v17/leanback/widget/Parallax$FloatProperty;
-    .param p2, "value"    # F
 
-    .line 386
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;-><init>(Landroid/support/v17/leanback/widget/Parallax$FloatProperty;FF)V
 
-    .line 387
     return-void
 .end method
 
 .method constructor <init>(Landroid/support/v17/leanback/widget/Parallax$FloatProperty;FF)V
     .locals 0
-    .param p1, "property"    # Landroid/support/v17/leanback/widget/Parallax$FloatProperty;
-    .param p2, "value"    # F
-    .param p3, "fractionOfMax"    # F
 
-    .line 390
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;-><init>(Ljava/lang/Object;)V
 
-    .line 391
     iput p2, p0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;->mValue:F
 
-    .line 392
     iput p3, p0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;->mFactionOfMax:F
 
-    .line 393
     return-void
 .end method
 
@@ -66,9 +55,7 @@
 # virtual methods
 .method final getMarkerValue(Landroid/support/v17/leanback/widget/Parallax;)F
     .locals 3
-    .param p1, "source"    # Landroid/support/v17/leanback/widget/Parallax;
 
-    .line 399
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;->mFactionOfMax:F
 
     const/4 v1, 0x0

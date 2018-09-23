@@ -34,34 +34,23 @@
 # direct methods
 .method private constructor <init>(JLcom/android/settings/datetime/timezone/TimeZoneInfo;Landroid/content/res/Resources;Landroid/icu/text/DateFormat;)V
     .locals 3
-    .param p1, "itemId"    # J
-    .param p3, "timeZoneInfo"    # Lcom/android/settings/datetime/timezone/TimeZoneInfo;
-    .param p4, "resources"    # Landroid/content/res/Resources;
-    .param p5, "timeFormat"    # Landroid/icu/text/DateFormat;
 
-    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 108
     iput-wide p1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mItemId:J
 
-    .line 109
     iput-object p3, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
-    .line 110
     iput-object p4, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mResources:Landroid/content/res/Resources;
 
-    .line 111
     iput-object p5, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeFormat:Landroid/icu/text/DateFormat;
 
-    .line 112
     invoke-static {p3}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->createTitle(Lcom/android/settings/datetime/timezone/TimeZoneInfo;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTitle:Ljava/lang/String;
 
-    .line 113
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -74,19 +63,12 @@
 
     iput-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mSearchKeys:[Ljava/lang/String;
 
-    .line 114
     return-void
 .end method
 
 .method synthetic constructor <init>(JLcom/android/settings/datetime/timezone/TimeZoneInfo;Landroid/content/res/Resources;Landroid/icu/text/DateFormat;Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$1;)V
     .locals 0
-    .param p1, "x0"    # J
-    .param p3, "x1"    # Lcom/android/settings/datetime/timezone/TimeZoneInfo;
-    .param p4, "x2"    # Landroid/content/res/Resources;
-    .param p5, "x3"    # Landroid/icu/text/DateFormat;
-    .param p6, "x4"    # Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$1;
 
-    .line 98
     invoke-direct/range {p0 .. p5}, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;-><init>(JLcom/android/settings/datetime/timezone/TimeZoneInfo;Landroid/content/res/Resources;Landroid/icu/text/DateFormat;)V
 
     return-void
@@ -94,9 +76,7 @@
 
 .method static synthetic access$000(Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;)Lcom/android/settings/datetime/timezone/TimeZoneInfo;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;
 
-    .line 98
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
     return-object v0
@@ -104,23 +84,17 @@
 
 .method private static createTitle(Lcom/android/settings/datetime/timezone/TimeZoneInfo;)Ljava/lang/String;
     .locals 3
-    .param p0, "timeZoneInfo"    # Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
-    .line 117
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getExemplarLocation()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 118
-    .local v0, "name":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 119
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getGenericName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 121
     :cond_0
     if-nez v0, :cond_1
 
@@ -138,25 +112,20 @@
 
     if-eqz v1, :cond_1
 
-    .line 122
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getDaylightName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 124
     :cond_1
     if-nez v0, :cond_2
 
-    .line 125
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getStandardName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 127
     :cond_2
     if-nez v0, :cond_3
 
-    .line 128
     invoke-virtual {p0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getGmtOffset()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -165,7 +134,6 @@
 
     move-result-object v0
 
-    .line 130
     :cond_3
     return-object v0
 .end method
@@ -175,7 +143,6 @@
 .method public getCurrentTime()Ljava/lang/String;
     .locals 2
 
-    .line 166
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeFormat:Landroid/icu/text/DateFormat;
 
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
@@ -198,7 +165,6 @@
 .method public getIconText()Ljava/lang/String;
     .locals 1
 
-    .line 161
     const/4 v0, 0x0
 
     return-object v0
@@ -207,7 +173,6 @@
 .method public getItemId()J
     .locals 2
 
-    .line 171
     iget-wide v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mItemId:J
 
     return-wide v0
@@ -216,7 +181,6 @@
 .method public getSearchKeys()[Ljava/lang/String;
     .locals 1
 
-    .line 176
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mSearchKeys:[Ljava/lang/String;
 
     return-object v0
@@ -225,18 +189,14 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 6
 
-    .line 140
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
     invoke-virtual {v0}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getGenericName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 141
-    .local v0, "name":Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 142
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
     invoke-virtual {v1}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getTimeZone()Landroid/icu/util/TimeZone;
@@ -253,7 +213,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 143
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
     invoke-virtual {v1}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getDaylightName()Ljava/lang/String;
@@ -262,7 +221,6 @@
 
     goto :goto_0
 
-    .line 145
     :cond_0
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
@@ -270,7 +228,6 @@
 
     move-result-object v0
 
-    .line 150
     :cond_1
     :goto_0
     if-eqz v0, :cond_3
@@ -285,11 +242,10 @@
 
     goto :goto_1
 
-    .line 154
     :cond_2
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x7f1215f8
+    const v2, 0x7f1215f1
 
     const/4 v3, 0x2
 
@@ -299,7 +255,6 @@
 
     iget-object v5, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
 
-    .line 155
     invoke-virtual {v5}, Lcom/android/settings/datetime/timezone/TimeZoneInfo;->getGmtOffset()Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -310,14 +265,12 @@
 
     aput-object v0, v3, v4
 
-    .line 154
     invoke-static {v1, v2, v3}, Lcom/android/settings/datetime/timezone/SpannableUtil;->getResourcesText(Landroid/content/res/Resources;I[Ljava/lang/Object;)Landroid/text/Spannable;
 
     move-result-object v1
 
     return-object v1
 
-    .line 151
     :cond_3
     :goto_1
     iget-object v1, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTimeZoneInfo:Lcom/android/settings/datetime/timezone/TimeZoneInfo;
@@ -326,8 +279,6 @@
 
     move-result-object v1
 
-    .line 152
-    .local v1, "gmtOffset":Ljava/lang/CharSequence;
     if-eqz v1, :cond_5
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -360,7 +311,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 135
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/BaseTimeZoneInfoPicker$TimeZoneInfoItem;->mTitle:Ljava/lang/String;
 
     return-object v0

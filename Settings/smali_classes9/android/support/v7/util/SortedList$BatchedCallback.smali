@@ -48,15 +48,10 @@
         }
     .end annotation
 
-    .line 951
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
-    .local p1, "wrappedCallback":Landroid/support/v7/util/SortedList$Callback;, "Landroid/support/v7/util/SortedList$Callback<TT2;>;"
     invoke-direct {p0}, Landroid/support/v7/util/SortedList$Callback;-><init>()V
 
-    .line 952
     iput-object p1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
-    .line 953
     new-instance v0, Landroid/support/v7/util/BatchingListUpdateCallback;
 
     iget-object v1, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
@@ -65,7 +60,6 @@
 
     iput-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
-    .line 954
     return-void
 .end method
 
@@ -79,10 +73,6 @@
         }
     .end annotation
 
-    .line 988
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
-    .local p1, "oldItem":Ljava/lang/Object;, "TT2;"
-    .local p2, "newItem":Ljava/lang/Object;, "TT2;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->areContentsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -100,10 +90,6 @@
         }
     .end annotation
 
-    .line 993
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
-    .local p1, "item1":Ljava/lang/Object;, "TT2;"
-    .local p2, "item2":Ljava/lang/Object;, "TT2;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->areItemsTheSame(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -121,10 +107,6 @@
         }
     .end annotation
 
-    .line 958
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
-    .local p1, "o1":Ljava/lang/Object;, "TT2;"
-    .local p2, "o2":Ljava/lang/Object;, "TT2;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -137,13 +119,10 @@
 .method public dispatchLastEvent()V
     .locals 1
 
-    .line 1007
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     invoke-virtual {v0}, Landroid/support/v7/util/BatchingListUpdateCallback;->dispatchLastEvent()V
 
-    .line 1008
     return-void
 .end method
 
@@ -159,10 +138,6 @@
         }
     .end annotation
 
-    .line 999
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
-    .local p1, "item1":Ljava/lang/Object;, "TT2;"
-    .local p2, "item2":Ljava/lang/Object;, "TT2;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mWrappedCallback:Landroid/support/v7/util/SortedList$Callback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->getChangePayload(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -174,78 +149,52 @@
 
 .method public onChanged(II)V
     .locals 2
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
-    .line 978
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/support/v7/util/BatchingListUpdateCallback;->onChanged(IILjava/lang/Object;)V
 
-    .line 979
     return-void
 .end method
 
 .method public onChanged(IILjava/lang/Object;)V
     .locals 1
-    .param p1, "position"    # I
-    .param p2, "count"    # I
-    .param p3, "payload"    # Ljava/lang/Object;
 
-    .line 983
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v7/util/BatchingListUpdateCallback;->onChanged(IILjava/lang/Object;)V
 
-    .line 984
     return-void
 .end method
 
 .method public onInserted(II)V
     .locals 1
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
-    .line 963
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/BatchingListUpdateCallback;->onInserted(II)V
 
-    .line 964
     return-void
 .end method
 
 .method public onMoved(II)V
     .locals 1
-    .param p1, "fromPosition"    # I
-    .param p2, "toPosition"    # I
 
-    .line 973
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/BatchingListUpdateCallback;->onMoved(II)V
 
-    .line 974
     return-void
 .end method
 
 .method public onRemoved(II)V
     .locals 1
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
-    .line 968
-    .local p0, "this":Landroid/support/v7/util/SortedList$BatchedCallback;, "Landroid/support/v7/util/SortedList$BatchedCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/util/SortedList$BatchedCallback;->mBatchingListUpdateCallback:Landroid/support/v7/util/BatchingListUpdateCallback;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/util/BatchingListUpdateCallback;->onRemoved(II)V
 
-    .line 969
     return-void
 .end method

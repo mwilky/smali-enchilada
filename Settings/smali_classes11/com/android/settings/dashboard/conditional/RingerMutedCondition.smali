@@ -10,15 +10,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
     .locals 2
-    .param p1, "manager"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/AbnormalRingerConditionBase;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
-    .line 35
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 36
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -33,7 +29,6 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mNotificationManager:Landroid/app/NotificationManager;
 
-    .line 37
     return-void
 .end method
 
@@ -42,7 +37,6 @@
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 61
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -61,7 +55,6 @@
 .method public getMetricsConstant()I
     .locals 1
 
-    .line 56
     const/16 v0, 0x558
 
     return v0
@@ -70,7 +63,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 71
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -89,7 +81,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -108,23 +99,18 @@
 .method public refreshState()V
     .locals 5
 
-    .line 41
     const/4 v0, 0x0
 
-    .line 42
-    .local v0, "zen":I
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mNotificationManager:Landroid/app/NotificationManager;
 
     if-eqz v1, :cond_0
 
-    .line 43
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mNotificationManager:Landroid/app/NotificationManager;
 
     invoke-virtual {v1}, Landroid/app/NotificationManager;->getZenMode()I
 
     move-result v0
 
-    .line 45
     :cond_0
     const/4 v1, 0x0
 
@@ -139,12 +125,9 @@
     :cond_1
     move v3, v1
 
-    .line 46
-    .local v3, "zenModeEnabled":Z
     :goto_0
     iget-object v4, p0, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->mAudioManager:Landroid/media/AudioManager;
 
-    .line 47
     invoke-virtual {v4}, Landroid/media/AudioManager;->getRingerModeInternal()I
 
     move-result v4
@@ -155,11 +138,8 @@
 
     nop
 
-    .line 50
-    .local v1, "isSilent":Z
     :cond_2
     invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/conditional/RingerMutedCondition;->setActive(Z)V
 
-    .line 52
     return-void
 .end method

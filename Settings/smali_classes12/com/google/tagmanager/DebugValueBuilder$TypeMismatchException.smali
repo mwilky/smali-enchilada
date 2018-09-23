@@ -17,10 +17,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "operation"    # Ljava/lang/String;
-    .param p2, "t"    # I
 
-    .line 87
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -43,6 +40,5 @@
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 88
     return-void
 .end method

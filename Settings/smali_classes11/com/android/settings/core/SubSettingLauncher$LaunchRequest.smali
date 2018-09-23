@@ -42,10 +42,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 179
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
     const/16 v0, -0x64
 
     iput v0, p0, Lcom/android/settings/core/SubSettingLauncher$LaunchRequest;->sourceMetricsCategory:I

@@ -36,14 +36,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Ordering$ArbitraryOrdering;)V
     .locals 2
-    .param p1, "this$0"    # Lcom/google/common/collect/Ordering$ArbitraryOrdering;
 
-    .line 268
     iput-object p1, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->this$0:Lcom/google/common/collect/Ordering$ArbitraryOrdering;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 269
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -59,9 +56,7 @@
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Integer;
     .locals 1
-    .param p1, "from"    # Ljava/lang/Object;
 
-    .line 272
     iget-object v0, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->counter:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -78,7 +73,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 268
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->apply(Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object p1

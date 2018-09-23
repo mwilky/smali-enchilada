@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/ListRowPresenter;Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/ListRowPresenter;
 
-    .line 451
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$2;->this$0:Landroid/support/v17/leanback/widget/ListRowPresenter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$2;->val$rowViewHolder:Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onUnhandledKey(Landroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 454
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$2;->val$rowViewHolder:Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;->getOnKeyListener()Landroid/view/View$OnKeyListener;
@@ -55,7 +51,6 @@
 
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$2;->val$rowViewHolder:Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;
 
-    .line 455
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;->getOnKeyListener()Landroid/view/View$OnKeyListener;
 
     move-result-object v0
@@ -64,12 +59,10 @@
 
     iget-object v1, v1, Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;->view:Landroid/view/View;
 
-    .line 456
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v2
 
-    .line 455
     invoke-interface {v0, v1, v2, p1}, Landroid/view/View$OnKeyListener;->onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
 
     move-result v0

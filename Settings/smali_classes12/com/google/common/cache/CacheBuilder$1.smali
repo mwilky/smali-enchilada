@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,46 +31,36 @@
 .method public recordEviction()V
     .locals 0
 
-    .line 173
     return-void
 .end method
 
 .method public recordHits(I)V
     .locals 0
-    .param p1, "count"    # I
 
-    .line 161
     return-void
 .end method
 
 .method public recordLoadException(J)V
     .locals 0
-    .param p1, "loadTime"    # J
 
-    .line 170
     return-void
 .end method
 
 .method public recordLoadSuccess(J)V
     .locals 0
-    .param p1, "loadTime"    # J
 
-    .line 167
     return-void
 .end method
 
 .method public recordMisses(I)V
     .locals 0
-    .param p1, "count"    # I
 
-    .line 164
     return-void
 .end method
 
 .method public snapshot()Lcom/google/common/cache/CacheStats;
     .locals 1
 
-    .line 177
     sget-object v0, Lcom/google/common/cache/CacheBuilder;->EMPTY_STATS:Lcom/google/common/cache/CacheStats;
 
     return-object v0

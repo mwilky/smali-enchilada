@@ -35,25 +35,21 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/text/PrecomputedTextCompat$Params;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "params"    # Landroid/support/v4/text/PrecomputedTextCompat$Params;
+    .param p1    # Landroid/support/v4/text/PrecomputedTextCompat$Params;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "cs"    # Ljava/lang/CharSequence;
+    .param p2    # Ljava/lang/CharSequence;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 562
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 563
     iput-object p1, p0, Landroid/support/v4/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mParams:Landroid/support/v4/text/PrecomputedTextCompat$Params;
 
-    .line 564
     iput-object p2, p0, Landroid/support/v4/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mText:Ljava/lang/CharSequence;
 
-    .line 565
     return-void
 .end method
 
@@ -67,7 +63,6 @@
         }
     .end annotation
 
-    .line 569
     iget-object v0, p0, Landroid/support/v4/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mText:Ljava/lang/CharSequence;
 
     iget-object v1, p0, Landroid/support/v4/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->mParams:Landroid/support/v4/text/PrecomputedTextCompat$Params;
@@ -87,7 +82,6 @@
         }
     .end annotation
 
-    .line 557
     invoke-virtual {p0}, Landroid/support/v4/text/PrecomputedTextCompat$PrecomputedTextFutureTask$PrecomputedTextCallback;->call()Landroid/support/v4/text/PrecomputedTextCompat;
 
     move-result-object v0

@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 39
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -21,12 +20,9 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 45
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 47
     invoke-virtual {p0}, Lcom/android/settings/RemoteBugreportActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -39,20 +35,16 @@
 
     move-result v0
 
-    .line 50
-    .local v0, "notificationType":I
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_0
 
-    .line 51
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f120fe8
+    const v2, 0x7f120fe1
 
-    .line 52
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -61,7 +53,6 @@
 
     invoke-direct {v2, p0}, Lcom/android/settings/RemoteBugreportActivity$2;-><init>(Lcom/android/settings/RemoteBugreportActivity;)V
 
-    .line 53
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -72,22 +63,16 @@
 
     invoke-direct {v3, p0}, Lcom/android/settings/RemoteBugreportActivity$1;-><init>(Lcom/android/settings/RemoteBugreportActivity;)V
 
-    .line 59
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 65
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 66
-    .local v1, "dialog":Landroid/app/AlertDialog;
     invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
-    .line 67
-    .end local v1    # "dialog":Landroid/app/AlertDialog;
     goto :goto_2
 
     :cond_0
@@ -101,7 +86,6 @@
 
     goto :goto_0
 
-    .line 107
     :cond_1
     const-string v1, "RemoteBugreportActivity"
 
@@ -123,33 +107,27 @@
 
     goto :goto_2
 
-    .line 70
     :cond_2
     :goto_0
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v2, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v3, 0x7f120fe5
+    const v3, 0x7f120fde
 
-    .line 71
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    .line 73
     if-ne v0, v1, :cond_3
 
-    .line 74
-    const v1, 0x7f120fe3
+    const v1, 0x7f120fdc
 
     goto :goto_1
 
-    .line 75
     :cond_3
-    const v1, 0x7f120fe4
+    const v1, 0x7f120fdd
 
-    .line 72
     :goto_1
     invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
@@ -159,7 +137,6 @@
 
     invoke-direct {v2, p0}, Lcom/android/settings/RemoteBugreportActivity$5;-><init>(Lcom/android/settings/RemoteBugreportActivity;)V
 
-    .line 76
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -170,36 +147,28 @@
 
     invoke-direct {v3, p0}, Lcom/android/settings/RemoteBugreportActivity$4;-><init>(Lcom/android/settings/RemoteBugreportActivity;)V
 
-    .line 82
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    const v2, 0x7f120fe2
+    const v2, 0x7f120fdb
 
     new-instance v3, Lcom/android/settings/RemoteBugreportActivity$3;
 
     invoke-direct {v3, p0}, Lcom/android/settings/RemoteBugreportActivity$3;-><init>(Lcom/android/settings/RemoteBugreportActivity;)V
 
-    .line 93
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 104
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
-    .line 105
-    .restart local v1    # "dialog":Landroid/app/AlertDialog;
     invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
-    .line 106
-    .end local v1    # "dialog":Landroid/app/AlertDialog;
     nop
 
-    .line 109
     :goto_2
     return-void
 .end method

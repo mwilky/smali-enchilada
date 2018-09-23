@@ -26,11 +26,8 @@
         }
     .end annotation
 
-    .line 11
-    .local p1, "keyframes":Ljava/util/List;, "Ljava/util/List<Lcom/airbnb/lottie/animation/Keyframe<Ljava/lang/Float;>;>;"
     invoke-direct {p0, p1}, Lcom/airbnb/lottie/animation/keyframe/KeyframeAnimation;-><init>(Ljava/util/List;)V
 
-    .line 12
     return-void
 .end method
 
@@ -38,7 +35,6 @@
 # virtual methods
 .method getValue(Lcom/airbnb/lottie/animation/Keyframe;F)Ljava/lang/Float;
     .locals 2
-    .param p2, "keyframeProgress"    # F
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,8 +45,6 @@
         }
     .end annotation
 
-    .line 15
-    .local p1, "keyframe":Lcom/airbnb/lottie/animation/Keyframe;, "Lcom/airbnb/lottie/animation/Keyframe<Ljava/lang/Float;>;"
     iget-object v0, p1, Lcom/airbnb/lottie/animation/Keyframe;->startValue:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
@@ -59,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 18
     iget-object v0, p1, Lcom/airbnb/lottie/animation/Keyframe;->startValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Float;
@@ -86,7 +79,6 @@
 
     return-object v0
 
-    .line 16
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -100,7 +92,6 @@
 .method bridge synthetic getValue(Lcom/airbnb/lottie/animation/Keyframe;F)Ljava/lang/Object;
     .locals 0
 
-    .line 8
     invoke-virtual {p0, p1, p2}, Lcom/airbnb/lottie/animation/keyframe/FloatKeyframeAnimation;->getValue(Lcom/airbnb/lottie/animation/Keyframe;F)Ljava/lang/Float;
 
     move-result-object p1

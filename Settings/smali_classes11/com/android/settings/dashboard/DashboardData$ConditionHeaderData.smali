@@ -42,18 +42,14 @@
         }
     .end annotation
 
-    .line 449
-    .local p1, "conditions":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/dashboard/conditional/Condition;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 450
     invoke-static {p1}, Lcom/android/settings/dashboard/DashboardData;->access$900(Ljava/util/List;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;->conditionCount:I
 
-    .line 451
     iget v0, p0, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;->conditionCount:I
 
     const/4 v1, 0x0
@@ -78,22 +74,17 @@
     :goto_0
     iput-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;->title:Ljava/lang/CharSequence;
 
-    .line 452
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;->conditionIcons:Ljava/util/List;
 
-    .line 453
     nop
 
-    .local v1, "i":I
     :goto_1
     move v0, v1
 
-    .end local v1    # "i":I
-    .local v0, "i":I
     if-eqz p1, :cond_1
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -102,15 +93,12 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 454
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/settings/dashboard/conditional/Condition;
 
-    .line 455
-    .local v1, "condition":Lcom/android/settings/dashboard/conditional/Condition;
     iget-object v2, p0, Lcom/android/settings/dashboard/DashboardData$ConditionHeaderData;->conditionIcons:Ljava/util/List;
 
     invoke-virtual {v1}, Lcom/android/settings/dashboard/conditional/Condition;->getIcon()Landroid/graphics/drawable/Drawable;
@@ -119,16 +107,10 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 453
-    .end local v1    # "condition":Lcom/android/settings/dashboard/conditional/Condition;
     add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "i":I
-    .local v1, "i":I
     goto :goto_1
 
-    .line 457
-    .end local v1    # "i":I
     :cond_1
     return-void
 .end method

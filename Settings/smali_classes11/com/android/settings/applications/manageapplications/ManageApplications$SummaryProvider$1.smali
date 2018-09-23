@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;Landroid/content/Context;ILcom/android/settingslib/wrapper/PackageManagerWrapper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "installReason"    # I
-    .param p4, "packageManager"    # Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    .line 1540
     iput-object p1, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider$1;->this$0:Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/settings/applications/InstalledAppCounter;-><init>(Landroid/content/Context;ILcom/android/settingslib/wrapper/PackageManagerWrapper;)V
@@ -38,9 +33,7 @@
 # virtual methods
 .method protected onCountComplete(I)V
     .locals 6
-    .param p1, "num"    # I
 
-    .line 1543
     iget-object v0, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider$1;->this$0:Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;
 
     invoke-static {v0}, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;->access$1700(Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;)Lcom/android/settings/dashboard/SummaryLoader;
@@ -51,7 +44,6 @@
 
     iget-object v2, p0, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider$1;->this$0:Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;
 
-    .line 1544
     invoke-static {v2}, Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;->access$1600(Lcom/android/settings/applications/manageapplications/ManageApplications$SummaryProvider;)Landroid/content/Context;
 
     move-result-object v2
@@ -74,9 +66,7 @@
 
     move-result-object v2
 
-    .line 1543
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 1545
     return-void
 .end method

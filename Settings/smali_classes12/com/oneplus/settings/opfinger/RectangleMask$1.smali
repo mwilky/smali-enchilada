@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 117
     invoke-static {}, Lcom/oneplus/settings/opfinger/RectangleMask$FlipType;->values()[Lcom/oneplus/settings/opfinger/RectangleMask$FlipType;
 
     move-result-object v0
@@ -118,7 +117,6 @@
     :catch_3
     move-exception v4
 
-    .line 76
     :goto_3
     invoke-static {}, Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;->values()[Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
 

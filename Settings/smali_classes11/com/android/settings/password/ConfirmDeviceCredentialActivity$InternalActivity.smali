@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 39
     invoke-direct {p0}, Lcom/android/settings/password/ConfirmDeviceCredentialActivity;-><init>()V
 
     return-void

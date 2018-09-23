@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 90
     const/4 v0, 0x0
 
     filled-new-array {v0, v0}, [I
@@ -45,15 +44,11 @@
 
 .method private constructor <init>([[C)V
     .locals 0
-    .param p1, "replacementArray"    # [[C
 
-    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     iput-object p1, p0, Lcom/google/common/escape/ArrayBasedEscaperMap;->replacementArray:[[C
 
-    .line 65
     return-void
 .end method
 
@@ -70,8 +65,6 @@
         }
     .end annotation
 
-    .line 56
-    .local p0, "replacements":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Character;Ljava/lang/String;>;"
     new-instance v0, Lcom/google/common/escape/ArrayBasedEscaperMap;
 
     invoke-static {p0}, Lcom/google/common/escape/ArrayBasedEscaperMap;->createReplacementArray(Ljava/util/Map;)[[C
@@ -98,23 +91,18 @@
         }
     .end annotation
 
-    .line 77
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Character;Ljava/lang/String;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 78
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 79
     sget-object v0, Lcom/google/common/escape/ArrayBasedEscaperMap;->EMPTY_REPLACEMENT_ARRAY:[[C
 
     return-object v0
 
-    .line 81
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -130,14 +118,10 @@
 
     move-result v0
 
-    .line 82
-    .local v0, "max":C
     add-int/lit8 v1, v0, 0x1
 
     new-array v1, v1, [[C
 
-    .line 83
-    .local v1, "replacements":[[C
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v2
@@ -163,8 +147,6 @@
 
     move-result v3
 
-    .line 84
-    .local v3, "c":C
     invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v4
@@ -181,11 +163,8 @@
 
     aput-object v4, v1, v3
 
-    .line 85
-    .end local v3    # "c":C
     goto :goto_0
 
-    .line 86
     :cond_1
     return-object v1
 .end method
@@ -195,7 +174,6 @@
 .method getReplacementArray()[[C
     .locals 1
 
-    .line 69
     iget-object v0, p0, Lcom/google/common/escape/ArrayBasedEscaperMap;->replacementArray:[[C
 
     return-object v0

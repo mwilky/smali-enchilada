@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 518
     invoke-static {}, Lcom/google/tagmanager/LoadCallback$Failure;->values()[Lcom/google/tagmanager/LoadCallback$Failure;
 
     move-result-object v0

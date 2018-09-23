@@ -45,60 +45,44 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 50
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
     invoke-direct {p0}, Lcom/oneplus/lib/design/widget/ViewOffsetBehavior;-><init>()V
 
-    .line 45
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 47
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
-    .line 50
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 53
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/oneplus/lib/design/widget/ViewOffsetBehavior;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 45
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 47
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
-    .line 54
     return-void
 .end method
 
 .method private ensureVelocityTracker()V
     .locals 1
 
-    .line 284
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
-    .line 285
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 287
     :cond_0
     return-void
 .end method
@@ -113,9 +97,6 @@
         }
     .end annotation
 
-    .line 269
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p1, "view":Landroid/view/View;, "TV;"
     const/4 v0, 0x0
 
     return v0
@@ -123,10 +104,6 @@
 
 .method final fling(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;IIF)Z
     .locals 10
-    .param p1, "coordinatorLayout"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "minOffset"    # I
-    .param p4, "maxOffset"    # I
-    .param p5, "velocityY"    # F
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,30 +112,23 @@
         }
     .end annotation
 
-    .line 232
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "layout":Landroid/view/View;, "TV;"
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mFlingRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 233
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mFlingRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p2, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 234
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mFlingRunnable:Ljava/lang/Runnable;
 
-    .line 237
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
     if-nez v0, :cond_1
 
-    .line 238
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -169,20 +139,17 @@
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
-    .line 241
     :cond_1
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
     const/4 v2, 0x0
 
-    .line 242
     invoke-virtual {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getTopAndBottomOffset()I
 
     move-result v3
 
     const/4 v4, 0x0
 
-    .line 243
     invoke-static {p5}, Ljava/lang/Math;->round(F)I
 
     move-result v5
@@ -191,14 +158,12 @@
 
     const/4 v7, 0x0
 
-    .line 241
     move v8, p3
 
     move v9, p4
 
     invoke-virtual/range {v1 .. v9}, Landroid/support/v4/widget/ScrollerCompat;->fling(IIIIIIII)V
 
-    .line 247
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/ScrollerCompat;->computeScrollOffset()Z
@@ -207,28 +172,23 @@
 
     if-eqz v0, :cond_2
 
-    .line 248
     new-instance v0, Lcom/oneplus/lib/design/widget/HeaderBehavior$FlingRunnable;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/oneplus/lib/design/widget/HeaderBehavior$FlingRunnable;-><init>(Lcom/oneplus/lib/design/widget/HeaderBehavior;Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;)V
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mFlingRunnable:Ljava/lang/Runnable;
 
-    .line 249
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mFlingRunnable:Ljava/lang/Runnable;
 
     invoke-static {p2, v0}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 250
     const/4 v0, 0x1
 
     return v0
 
-    .line 252
     :cond_2
     invoke-virtual {p0, p1, p2}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->onFlingFinished(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;)V
 
-    .line 253
     const/4 v0, 0x0
 
     return v0
@@ -242,9 +202,6 @@
         }
     .end annotation
 
-    .line 276
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p1, "view":Landroid/view/View;, "TV;"
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -262,9 +219,6 @@
         }
     .end annotation
 
-    .line 280
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p1, "view":Landroid/view/View;, "TV;"
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -275,8 +229,6 @@
 .method getTopBottomOffsetForScrollingSibling()I
     .locals 1
 
-    .line 221
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
     invoke-virtual {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getTopAndBottomOffset()I
 
     move-result v0
@@ -286,7 +238,6 @@
 
 .method onFlingFinished(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;)V
     .locals 0
-    .param p1, "parent"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -295,16 +246,11 @@
         }
     .end annotation
 
-    .line 263
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "layout":Landroid/view/View;, "TV;"
     return-void
 .end method
 
 .method public onInterceptTouchEvent(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
-    .param p1, "parent"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "ev"    # Landroid/view/MotionEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -315,14 +261,10 @@
         }
     .end annotation
 
-    .line 58
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     iget v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
     if-gez v0, :cond_0
 
-    .line 59
     invoke-virtual {p1}, Lcom/oneplus/lib/design/widget/CoordinatorLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -337,14 +279,11 @@
 
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
-    .line 62
     :cond_0
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 65
-    .local v0, "action":I
     const/4 v1, 0x2
 
     const/4 v2, 0x1
@@ -355,10 +294,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 66
     return v2
 
-    .line 69
     :cond_1
     invoke-static {p3}, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
 
@@ -372,31 +309,22 @@
 
     goto :goto_0
 
-    .line 83
     :pswitch_0
     iget v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 84
-    .local v1, "activePointerId":I
     if-ne v1, v4, :cond_2
 
-    .line 86
     goto :goto_0
 
-    .line 88
     :cond_2
     invoke-virtual {p3, v1}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
     move-result v3
 
-    .line 89
-    .local v3, "pointerIndex":I
     if-ne v3, v4, :cond_3
 
-    .line 90
     goto :goto_0
 
-    .line 93
     :cond_3
     invoke-virtual {p3, v3}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -404,8 +332,6 @@
 
     float-to-int v4, v4
 
-    .line 94
-    .local v4, "y":I
     iget v5, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
     sub-int v5, v4, v5
@@ -414,69 +340,50 @@
 
     move-result v5
 
-    .line 95
-    .local v5, "yDiff":I
     iget v6, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
     if-le v5, v6, :cond_4
 
-    .line 96
     iput-boolean v2, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
-    .line 97
     iput v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
     goto :goto_0
 
-    .line 104
-    .end local v1    # "activePointerId":I
-    .end local v3    # "pointerIndex":I
-    .end local v4    # "y":I
-    .end local v5    # "yDiff":I
     :pswitch_1
     iput-boolean v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
-    .line 105
     iput v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 106
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v1, :cond_4
 
-    .line 107
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v1}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 108
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto :goto_0
 
-    .line 71
     :pswitch_2
     iput-boolean v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
-    .line 72
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
     float-to-int v1, v1
 
-    .line 73
-    .local v1, "x":I
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 74
-    .local v2, "y":I
     invoke-virtual {p0, p2}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->canDragView(Landroid/view/View;)Z
 
     move-result v4
@@ -489,34 +396,26 @@
 
     if-eqz v4, :cond_4
 
-    .line 75
     iput v2, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
-    .line 76
     invoke-virtual {p3, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v3
 
     iput v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 77
     invoke-direct {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->ensureVelocityTracker()V
 
-    .line 114
-    .end local v1    # "x":I
-    .end local v2    # "y":I
     :cond_4
     :goto_0
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v1, :cond_5
 
-    .line 115
     iget-object v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v1, p3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 118
     :cond_5
     iget-boolean v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
@@ -535,8 +434,6 @@
 
 .method public onTouchEvent(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 11
-    .param p1, "parent"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "ev"    # Landroid/view/MotionEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -547,14 +444,10 @@
         }
     .end annotation
 
-    .line 123
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     iget v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
     if-gez v0, :cond_0
 
-    .line 124
     invoke-virtual {p1}, Lcom/oneplus/lib/design/widget/CoordinatorLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -569,7 +462,6 @@
 
     iput v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
-    .line 127
     :cond_0
     invoke-static {p3}, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
 
@@ -585,7 +477,6 @@
 
     goto/16 :goto_1
 
-    .line 143
     :pswitch_0
     iget v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
@@ -593,14 +484,10 @@
 
     move-result v0
 
-    .line 144
-    .local v0, "activePointerIndex":I
     if-ne v0, v2, :cond_1
 
-    .line 145
     return v3
 
-    .line 148
     :cond_1
     invoke-virtual {p3, v0}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -608,14 +495,10 @@
 
     float-to-int v2, v2
 
-    .line 149
-    .local v2, "y":I
     iget v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
     sub-int/2addr v3, v2
 
-    .line 151
-    .local v3, "dy":I
     iget-boolean v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
     if-nez v4, :cond_3
@@ -628,36 +511,29 @@
 
     if-le v4, v5, :cond_3
 
-    .line 152
     iput-boolean v1, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
-    .line 153
     if-lez v3, :cond_2
 
-    .line 154
     iget v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
     sub-int/2addr v3, v4
 
     goto :goto_0
 
-    .line 156
     :cond_2
     iget v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mTouchSlop:I
 
     add-int/2addr v3, v4
 
-    .line 160
     :cond_3
     :goto_0
     iget-boolean v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
     if-eqz v4, :cond_6
 
-    .line 161
     iput v2, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
-    .line 163
     invoke-virtual {p0, p2}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getMaxDragOffset(Landroid/view/View;)I
 
     move-result v8
@@ -676,28 +552,21 @@
 
     goto :goto_1
 
-    .line 169
-    .end local v0    # "activePointerIndex":I
-    .end local v2    # "y":I
-    .end local v3    # "dy":I
     :pswitch_1
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_4
 
-    .line 170
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 171
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     const/16 v4, 0x3e8
 
     invoke-virtual {v0, v4}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 172
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     iget v4, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
@@ -706,8 +575,6 @@
 
     move-result v0
 
-    .line 174
-    .local v0, "yvel":F
     invoke-virtual {p0, p2}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getScrollRangeForDragFling(Landroid/view/View;)I
 
     move-result v4
@@ -726,33 +593,26 @@
 
     invoke-virtual/range {v5 .. v10}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->fling(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;IIF)Z
 
-    .line 178
-    .end local v0    # "yvel":F
     :cond_4
     :pswitch_2
     iput-boolean v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mIsBeingDragged:Z
 
-    .line 179
     iput v2, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 180
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_6
 
-    .line 181
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    .line 182
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto :goto_1
 
-    .line 129
     :pswitch_3
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
@@ -760,16 +620,12 @@
 
     float-to-int v0, v0
 
-    .line 130
-    .local v0, "x":I
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 132
-    .restart local v2    # "y":I
     invoke-virtual {p1, p2, v0, v2}, Lcom/oneplus/lib/design/widget/CoordinatorLayout;->isPointInChildBounds(Landroid/view/View;II)Z
 
     move-result v4
@@ -782,40 +638,31 @@
 
     if-eqz v4, :cond_5
 
-    .line 133
     iput v2, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mLastMotionY:I
 
-    .line 134
     invoke-virtual {p3, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v3
 
     iput v3, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mActivePointerId:I
 
-    .line 135
     invoke-direct {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->ensureVelocityTracker()V
 
     goto :goto_1
 
-    .line 137
     :cond_5
     return v3
 
-    .line 188
-    .end local v0    # "x":I
-    .end local v2    # "y":I
     :cond_6
     :goto_1
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_7
 
-    .line 189
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/HeaderBehavior;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 192
     :cond_7
     return v1
 
@@ -830,10 +677,6 @@
 
 .method final scroll(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;III)I
     .locals 7
-    .param p1, "coordinatorLayout"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "dy"    # I
-    .param p4, "minOffset"    # I
-    .param p5, "maxOffset"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -842,19 +685,14 @@
         }
     .end annotation
 
-    .line 226
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "header":Landroid/view/View;, "TV;"
     nop
 
-    .line 227
     invoke-virtual {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getTopBottomOffsetForScrollingSibling()I
 
     move-result v0
 
     sub-int v4, v0, p3
 
-    .line 226
     move-object v1, p0
 
     move-object v2, p1
@@ -874,8 +712,6 @@
 
 .method setHeaderTopBottomOffset(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;I)I
     .locals 6
-    .param p1, "parent"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "newOffset"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -884,9 +720,6 @@
         }
     .end annotation
 
-    .line 196
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "header":Landroid/view/View;, "TV;"
     const/high16 v4, -0x80000000
 
     const v5, 0x7fffffff
@@ -908,10 +741,6 @@
 
 .method setHeaderTopBottomOffset(Lcom/oneplus/lib/design/widget/CoordinatorLayout;Landroid/view/View;III)I
     .locals 2
-    .param p1, "parent"    # Lcom/oneplus/lib/design/widget/CoordinatorLayout;
-    .param p3, "newOffset"    # I
-    .param p4, "minOffset"    # I
-    .param p5, "maxOffset"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -920,40 +749,28 @@
         }
     .end annotation
 
-    .line 202
-    .local p0, "this":Lcom/oneplus/lib/design/widget/HeaderBehavior;, "Lcom/oneplus/lib/design/widget/HeaderBehavior<TV;>;"
-    .local p2, "header":Landroid/view/View;, "TV;"
     invoke-virtual {p0}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->getTopAndBottomOffset()I
 
     move-result v0
 
-    .line 203
-    .local v0, "curOffset":I
     const/4 v1, 0x0
 
-    .line 205
-    .local v1, "consumed":I
     if-eqz p4, :cond_0
 
     if-lt v0, p4, :cond_0
 
     if-gt v0, p5, :cond_0
 
-    .line 208
     invoke-static {p3, p4, p5}, Lcom/oneplus/lib/util/MathUtils;->constrain(III)I
 
     move-result p3
 
-    .line 210
     if-eq v0, p3, :cond_0
 
-    .line 211
     invoke-virtual {p0, p3}, Lcom/oneplus/lib/design/widget/HeaderBehavior;->setTopAndBottomOffset(I)Z
 
-    .line 213
     sub-int v1, v0, p3
 
-    .line 217
     :cond_0
     return v1
 .end method

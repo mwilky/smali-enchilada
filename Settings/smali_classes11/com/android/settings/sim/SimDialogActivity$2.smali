@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/sim/SimDialogActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/sim/SimDialogActivity;
 
-    .line 105
     iput-object p1, p0, Lcom/android/settings/sim/SimDialogActivity$2;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
-    .line 108
     iget-object v0, p0, Lcom/android/settings/sim/SimDialogActivity$2;->this$0:Lcom/android/settings/sim/SimDialogActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/sim/SimDialogActivity;->finish()V
 
-    .line 109
     return-void
 .end method

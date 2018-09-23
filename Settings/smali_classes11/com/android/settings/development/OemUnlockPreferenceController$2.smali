@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/development/OemUnlockPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/development/OemUnlockPreferenceController;
 
-    .line 310
     iput-object p1, p0, Lcom/android/settings/development/OemUnlockPreferenceController$2;->this$0:Lcom/android/settings/development/OemUnlockPreferenceController;
 
     invoke-direct {p0}, Lcom/qualcomm/qti/remoteSimlock/IUimRemoteSimlockServiceCallback$Stub;-><init>()V
@@ -35,16 +33,12 @@
 # virtual methods
 .method public uimRemoteSimlockGenerateHMACResponse(II[B)V
     .locals 3
-    .param p1, "token"    # I
-    .param p2, "responseCode"    # I
-    .param p3, "hmacData"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 344
     const-string v0, "OemUnlockPreferenceController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,22 +63,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
     return-void
 .end method
 
 .method public uimRemoteSimlockGetSharedKeyResponse(II[B)V
     .locals 3
-    .param p1, "token"    # I
-    .param p2, "responseCode"    # I
-    .param p3, "encryptedKey"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 339
     const-string v0, "OemUnlockPreferenceController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -109,23 +98,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 340
     return-void
 .end method
 
 .method public uimRemoteSimlockGetSimlockStatusResponse(IIIJ)V
     .locals 3
-    .param p1, "token"    # I
-    .param p2, "responseCode"    # I
-    .param p3, "unlockStatus"    # I
-    .param p4, "unlockTime"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 313
     const-string v0, "OemUnlockPreferenceController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -162,7 +145,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
     const/4 v0, 0x1
 
     if-eqz p3, :cond_1
@@ -171,7 +153,6 @@
 
     goto :goto_0
 
-    .line 317
     :cond_0
     iget-object v0, p0, Lcom/android/settings/development/OemUnlockPreferenceController$2;->this$0:Lcom/android/settings/development/OemUnlockPreferenceController;
 
@@ -181,14 +162,12 @@
 
     goto :goto_1
 
-    .line 315
     :cond_1
     :goto_0
     iget-object v1, p0, Lcom/android/settings/development/OemUnlockPreferenceController$2;->this$0:Lcom/android/settings/development/OemUnlockPreferenceController;
 
     invoke-static {v1, v0}, Lcom/android/settings/development/OemUnlockPreferenceController;->access$202(Lcom/android/settings/development/OemUnlockPreferenceController;Z)Z
 
-    .line 319
     :goto_1
     iget-object v0, p0, Lcom/android/settings/development/OemUnlockPreferenceController$2;->this$0:Lcom/android/settings/development/OemUnlockPreferenceController;
 
@@ -202,23 +181,17 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 324
     return-void
 .end method
 
 .method public uimRemoteSimlockGetVersionResponse(IIII)V
     .locals 3
-    .param p1, "token"    # I
-    .param p2, "responseCode"    # I
-    .param p3, "majorVersion"    # I
-    .param p4, "minorVersion"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 328
     const-string v0, "OemUnlockPreferenceController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -255,22 +228,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 330
     return-void
 .end method
 
 .method public uimRemoteSimlockProcessSimlockDataResponse(II[B)V
     .locals 3
-    .param p1, "token"    # I
-    .param p2, "responseCode"    # I
-    .param p3, "simlockResponse"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 334
     const-string v0, "OemUnlockPreferenceController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -295,6 +263,5 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 335
     return-void
 .end method

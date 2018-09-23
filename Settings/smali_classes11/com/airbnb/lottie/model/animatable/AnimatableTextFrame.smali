@@ -24,7 +24,6 @@
 # direct methods
 .method constructor <init>(Ljava/util/List;Lcom/airbnb/lottie/model/DocumentData;)V
     .locals 0
-    .param p2, "initialValue"    # Lcom/airbnb/lottie/model/DocumentData;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -37,11 +36,8 @@
         }
     .end annotation
 
-    .line 15
-    .local p1, "keyframes":Ljava/util/List;, "Ljava/util/List<Lcom/airbnb/lottie/animation/Keyframe<Lcom/airbnb/lottie/model/DocumentData;>;>;"
     invoke-direct {p0, p1, p2}, Lcom/airbnb/lottie/model/animatable/BaseAnimatableValue;-><init>(Ljava/util/List;Ljava/lang/Object;)V
 
-    .line 16
     return-void
 .end method
 
@@ -50,7 +46,6 @@
 .method public bridge synthetic createAnimation()Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;
     .locals 1
 
-    .line 12
     invoke-virtual {p0}, Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;->createAnimation()Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;
 
     move-result-object v0
@@ -61,7 +56,6 @@
 .method public createAnimation()Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;
     .locals 2
 
-    .line 19
     new-instance v0, Lcom/airbnb/lottie/animation/keyframe/TextKeyframeAnimation;
 
     iget-object v1, p0, Lcom/airbnb/lottie/model/animatable/AnimatableTextFrame;->keyframes:Ljava/util/List;

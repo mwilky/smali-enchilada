@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
-    .line 1001
     iput-object p1, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->this$0:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,9 +37,7 @@
 
 .method static synthetic access$000(Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;
 
-    .line 1001
     invoke-direct {p0}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->notifyAfterTextChanged()V
 
     return-void
@@ -50,17 +46,14 @@
 .method private notifyAfterTextChanged()V
     .locals 3
 
-    .line 1010
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->removeMessages(I)V
 
-    .line 1011
     const-wide/16 v1, 0x64
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1012
     return-void
 .end method
 
@@ -68,9 +61,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1016
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->this$0:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->getActivity()Landroid/app/Activity;
@@ -79,10 +70,8 @@
 
     if-nez v0, :cond_0
 
-    .line 1017
     return-void
 
-    .line 1019
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -90,12 +79,10 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1020
     iget-object v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$TextChangedHandler;->this$0:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;->updateUi()V
 
-    .line 1022
     :cond_1
     return-void
 .end method

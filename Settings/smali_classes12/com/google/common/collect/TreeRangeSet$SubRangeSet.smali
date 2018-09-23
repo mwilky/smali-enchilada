@@ -45,15 +45,10 @@
         }
     .end annotation
 
-    .line 791
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p2, "restriction":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     iput-object p1, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->this$0:Lcom/google/common/collect/TreeRangeSet;
 
-    .line 792
     new-instance v0, Lcom/google/common/collect/TreeRangeSet$SubRangeSetRangesByLowerBound;
 
-    .line 793
     invoke-static {}, Lcom/google/common/collect/Range;->all()Lcom/google/common/collect/Range;
 
     move-result-object v1
@@ -64,13 +59,10 @@
 
     invoke-direct {v0, v1, p2, p1, v2}, Lcom/google/common/collect/TreeRangeSet$SubRangeSetRangesByLowerBound;-><init>(Lcom/google/common/collect/Range;Lcom/google/common/collect/Range;Ljava/util/NavigableMap;Lcom/google/common/collect/TreeRangeSet$1;)V
 
-    .line 792
     invoke-direct {p0, v0, v2}, Lcom/google/common/collect/TreeRangeSet;-><init>(Ljava/util/NavigableMap;Lcom/google/common/collect/TreeRangeSet$1;)V
 
-    .line 794
     iput-object p2, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
-    .line 795
     return-void
 .end method
 
@@ -86,9 +78,6 @@
         }
     .end annotation
 
-    .line 818
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "rangeToAdd":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Range;->encloses(Lcom/google/common/collect/Range;)Z
@@ -113,25 +102,20 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 820
     invoke-super {p0, p1}, Lcom/google/common/collect/TreeRangeSet;->add(Lcom/google/common/collect/Range;)V
 
-    .line 821
     return-void
 .end method
 
 .method public clear()V
     .locals 2
 
-    .line 837
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->this$0:Lcom/google/common/collect/TreeRangeSet;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0, v1}, Lcom/google/common/collect/TreeRangeSet;->remove(Lcom/google/common/collect/Range;)V
 
-    .line 838
     return-void
 .end method
 
@@ -143,9 +127,6 @@
         }
     .end annotation
 
-    .line 832
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "value":Ljava/lang/Comparable;, "TC;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Range;->contains(Ljava/lang/Comparable;)Z
@@ -183,9 +164,6 @@
         }
     .end annotation
 
-    .line 799
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Range;->isEmpty()Z
@@ -204,15 +182,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 800
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->this$0:Lcom/google/common/collect/TreeRangeSet;
 
     invoke-static {v0, p1}, Lcom/google/common/collect/TreeRangeSet;->access$600(Lcom/google/common/collect/TreeRangeSet;Lcom/google/common/collect/Range;)Lcom/google/common/collect/Range;
 
     move-result-object v0
 
-    .line 801
-    .local v0, "enclosing":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     if-eqz v0, :cond_0
 
     iget-object v2, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
@@ -234,8 +209,6 @@
     :cond_0
     return v1
 
-    .line 803
-    .end local v0    # "enclosing":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     :cond_1
     return v1
 .end method
@@ -253,9 +226,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 809
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "value":Ljava/lang/Comparable;, "TC;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Range;->contains(Ljava/lang/Comparable;)Z
@@ -266,10 +236,8 @@
 
     if-nez v0, :cond_0
 
-    .line 810
     return-object v1
 
-    .line 812
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->this$0:Lcom/google/common/collect/TreeRangeSet;
 
@@ -277,8 +245,6 @@
 
     move-result-object v0
 
-    .line 813
-    .local v0, "result":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     if-nez v0, :cond_1
 
     goto :goto_0
@@ -304,9 +270,6 @@
         }
     .end annotation
 
-    .line 825
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "rangeToRemove":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {p1, v0}, Lcom/google/common/collect/Range;->isConnected(Lcom/google/common/collect/Range;)Z
@@ -315,7 +278,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 826
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->this$0:Lcom/google/common/collect/TreeRangeSet;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
@@ -326,7 +288,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/common/collect/TreeRangeSet;->remove(Lcom/google/common/collect/Range;)V
 
-    .line 828
     :cond_0
     return-void
 .end method
@@ -343,9 +304,6 @@
         }
     .end annotation
 
-    .line 842
-    .local p0, "this":Lcom/google/common/collect/TreeRangeSet$SubRangeSet;, "Lcom/google/common/collect/TreeRangeSet<TC;>.SubRangeSet;"
-    .local p1, "view":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
     invoke-virtual {p1, v0}, Lcom/google/common/collect/Range;->encloses(Lcom/google/common/collect/Range;)Z
@@ -354,10 +312,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 843
     return-object p0
 
-    .line 844
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
 
@@ -367,7 +323,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 845
     new-instance v0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;
 
     iget-object v1, p0, Lcom/google/common/collect/TreeRangeSet$SubRangeSet;->restriction:Lcom/google/common/collect/Range;
@@ -380,7 +335,6 @@
 
     return-object v0
 
-    .line 847
     :cond_1
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeSet;->of()Lcom/google/common/collect/ImmutableRangeSet;
 

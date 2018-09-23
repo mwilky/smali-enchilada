@@ -34,7 +34,6 @@
 .method constructor <init>(Lcom/google/common/collect/Maps$EntryTransformer;)V
     .locals 0
 
-    .line 1834
     iput-object p1, p0, Lcom/google/common/collect/Maps$9;->val$transformer:Lcom/google/common/collect/Maps$EntryTransformer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +46,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1834
     check-cast p1, Ljava/util/Map$Entry;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$9;->apply(Ljava/util/Map$Entry;)Ljava/lang/Object;
@@ -67,8 +65,6 @@
         }
     .end annotation
 
-    .line 1837
-    .local p1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV1;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$9;->val$transformer:Lcom/google/common/collect/Maps$EntryTransformer;
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;

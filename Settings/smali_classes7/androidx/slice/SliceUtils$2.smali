@@ -25,7 +25,6 @@
 .method constructor <init>(Landroidx/slice/SliceUtils$SliceActionListener;)V
     .locals 0
 
-    .line 218
     iput-object p1, p0, Landroidx/slice/SliceUtils$2;->val$listener:Landroidx/slice/SliceUtils$SliceActionListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +36,7 @@
 # virtual methods
 .method public onAction(Landroidx/slice/SliceItem;Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "item"    # Landroidx/slice/SliceItem;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "intent"    # Landroid/content/Intent;
 
-    .line 221
     iget-object v0, p0, Landroidx/slice/SliceUtils$2;->val$listener:Landroidx/slice/SliceUtils$SliceActionListener;
 
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
@@ -54,6 +49,5 @@
 
     invoke-interface {v0, v1, p2, p3}, Landroidx/slice/SliceUtils$SliceActionListener;->onSliceAction(Landroid/net/Uri;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 222
     return-void
 .end method

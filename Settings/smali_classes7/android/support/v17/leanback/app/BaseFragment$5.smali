@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BaseFragment;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BaseFragment;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 130
     iput-object p1, p0, Landroid/support/v17/leanback/app/BaseFragment$5;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     invoke-direct {p0, p2}, Landroid/support/v17/leanback/util/StateMachine$Condition;-><init>(Ljava/lang/String;)V
@@ -37,7 +34,6 @@
 .method public canProceed()Z
     .locals 1
 
-    .line 133
     invoke-static {}, Landroid/support/v17/leanback/transition/TransitionHelper;->systemSupportsEntranceTransitions()Z
 
     move-result v0

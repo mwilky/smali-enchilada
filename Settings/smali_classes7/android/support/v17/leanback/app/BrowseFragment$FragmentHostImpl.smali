@@ -27,17 +27,14 @@
 .method constructor <init>(Landroid/support/v17/leanback/app/BrowseFragment;)V
     .locals 0
 
-    .line 318
     iput-object p1, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 316
     const/4 p1, 0x1
 
     iput-boolean p1, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->mShowTitleView:Z
 
-    .line 319
     return-void
 .end method
 
@@ -45,9 +42,7 @@
 # virtual methods
 .method public notifyDataReady(Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;)V
     .locals 2
-    .param p1, "fragmentAdapter"    # Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;
 
-    .line 334
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseFragment;->mMainFragmentAdapter:Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;
@@ -66,7 +61,6 @@
 
     goto :goto_0
 
-    .line 339
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
@@ -74,10 +68,8 @@
 
     if-nez v0, :cond_1
 
-    .line 340
     return-void
 
-    .line 343
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
@@ -89,10 +81,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 344
     return-void
 
-    .line 335
     :cond_2
     :goto_0
     return-void
@@ -100,9 +90,7 @@
 
 .method public notifyViewCreated(Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;)V
     .locals 2
-    .param p1, "fragmentAdapter"    # Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;
 
-    .line 323
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseFragment;->mStateMachine:Landroid/support/v17/leanback/util/StateMachine;
@@ -113,14 +101,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 324
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseFragment;->mIsPageRow:Z
 
     if-nez v0, :cond_0
 
-    .line 326
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseFragment;->mStateMachine:Landroid/support/v17/leanback/util/StateMachine;
@@ -131,19 +117,15 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 328
     :cond_0
     return-void
 .end method
 
 .method public showTitleView(Z)V
     .locals 1
-    .param p1, "show"    # Z
 
-    .line 348
     iput-boolean p1, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->mShowTitleView:Z
 
-    .line 352
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseFragment;->mMainFragmentAdapter:Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentAdapter;
@@ -162,7 +144,6 @@
 
     goto :goto_0
 
-    .line 357
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
@@ -170,19 +151,15 @@
 
     if-nez v0, :cond_1
 
-    .line 358
     return-void
 
-    .line 361
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$FragmentHostImpl;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseFragment;->updateTitleViewVisibility()V
 
-    .line 362
     return-void
 
-    .line 353
     :cond_2
     :goto_0
     return-void

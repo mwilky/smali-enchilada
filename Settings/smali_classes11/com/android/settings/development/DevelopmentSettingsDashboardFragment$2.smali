@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
-    .line 91
     iput-object p1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment$2;->this$0:Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 94
     const-string v0, "DevSettingsDashboard"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,13 +52,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 97
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.bluetooth.a2dp.profile.action.CODEC_CONFIG_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -72,7 +64,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 98
     const-string v1, "android.bluetooth.codec.extra.CODEC_STATUS"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -81,8 +72,6 @@
 
     check-cast v1, Landroid/bluetooth/BluetoothCodecStatus;
 
-    .line 100
-    .local v1, "codecStatus":Landroid/bluetooth/BluetoothCodecStatus;
     const-string v2, "DevSettingsDashboard"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -101,7 +90,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
     iget-object v2, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment$2;->this$0:Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
     invoke-static {v2}, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->access$000(Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;)Ljava/util/List;
@@ -125,26 +113,19 @@
 
     check-cast v3, Lcom/android/settingslib/core/AbstractPreferenceController;
 
-    .line 102
-    .local v3, "controller":Lcom/android/settingslib/core/AbstractPreferenceController;
     instance-of v4, v3, Lcom/android/settings/development/BluetoothServiceConnectionListener;
 
     if-eqz v4, :cond_0
 
-    .line 103
     move-object v4, v3
 
     check-cast v4, Lcom/android/settings/development/BluetoothServiceConnectionListener;
 
     invoke-interface {v4}, Lcom/android/settings/development/BluetoothServiceConnectionListener;->onBluetoothCodecUpdated()V
 
-    .line 105
-    .end local v3    # "controller":Lcom/android/settingslib/core/AbstractPreferenceController;
     :cond_0
     goto :goto_0
 
-    .line 107
-    .end local v1    # "codecStatus":Landroid/bluetooth/BluetoothCodecStatus;
     :cond_1
     return-void
 .end method

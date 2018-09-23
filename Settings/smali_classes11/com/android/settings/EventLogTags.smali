@@ -19,7 +19,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,62 +26,47 @@
 
 .method public static writeExpDetDeviceAdminActivatedByUser(Ljava/lang/String;)V
     .locals 1
-    .param p0, "appSignature"    # Ljava/lang/String;
 
-    .line 33
     const v0, 0x16059
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 34
     return-void
 .end method
 
 .method public static writeExpDetDeviceAdminDeclinedByUser(Ljava/lang/String;)V
     .locals 1
-    .param p0, "appSignature"    # Ljava/lang/String;
 
-    .line 37
     const v0, 0x1605a
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 38
     return-void
 .end method
 
 .method public static writeExpDetDeviceAdminUninstalledByUser(Ljava/lang/String;)V
     .locals 1
-    .param p0, "appSignature"    # Ljava/lang/String;
 
-    .line 41
     const v0, 0x1605b
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 42
     return-void
 .end method
 
 .method public static writeLockScreenType(Ljava/lang/String;)V
     .locals 1
-    .param p0, "type"    # Ljava/lang/String;
 
-    .line 29
     const v0, 0x16058
 
     invoke-static {v0, p0}, Landroid/util/EventLog;->writeEvent(ILjava/lang/String;)I
 
-    .line 30
     return-void
 .end method
 
 .method public static writeSettingsLatency(II)V
     .locals 3
-    .param p0, "action"    # I
-    .param p1, "latency"    # I
 
-    .line 45
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -107,6 +91,5 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 46
     return-void
 .end method

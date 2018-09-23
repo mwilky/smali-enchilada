@@ -31,15 +31,9 @@
 # direct methods
 .method constructor <init>(IIJJ)V
     .locals 6
-    .param p1, "c"    # I
-    .param p2, "d"    # I
-    .param p3, "k0"    # J
-    .param p5, "k1"    # J
 
-    .line 52
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 53
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -58,17 +52,14 @@
 
     new-array v4, v1, [Ljava/lang/Object;
 
-    .line 54
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     aput-object v5, v4, v0
 
-    .line 53
     invoke-static {v2, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 55
     if-lez p2, :cond_1
 
     move v2, v1
@@ -83,29 +74,22 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 56
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     aput-object v4, v1, v0
 
-    .line 55
     invoke-static {v2, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 57
     iput p1, p0, Lcom/google/common/hash/SipHashFunction;->c:I
 
-    .line 58
     iput p2, p0, Lcom/google/common/hash/SipHashFunction;->d:I
 
-    .line 59
     iput-wide p3, p0, Lcom/google/common/hash/SipHashFunction;->k0:J
 
-    .line 60
     iput-wide p5, p0, Lcom/google/common/hash/SipHashFunction;->k1:J
 
-    .line 61
     return-void
 .end method
 
@@ -114,7 +98,6 @@
 .method public bits()I
     .locals 1
 
-    .line 64
     const/16 v0, 0x40
 
     return v0
@@ -122,25 +105,21 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 79
     instance-of v0, p1, Lcom/google/common/hash/SipHashFunction;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 80
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/hash/SipHashFunction;
 
-    .line 81
-    .local v0, "other":Lcom/google/common/hash/SipHashFunction;
     iget v2, p0, Lcom/google/common/hash/SipHashFunction;->c:I
 
     iget v3, v0, Lcom/google/common/hash/SipHashFunction;->c:I
@@ -176,8 +155,6 @@
     :cond_0
     return v1
 
-    .line 86
-    .end local v0    # "other":Lcom/google/common/hash/SipHashFunction;
     :cond_1
     return v1
 .end method
@@ -185,7 +162,6 @@
 .method public hashCode()I
     .locals 4
 
-    .line 91
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -220,7 +196,6 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 8
 
-    .line 68
     new-instance v7, Lcom/google/common/hash/SipHashFunction$SipHasher;
 
     iget v1, p0, Lcom/google/common/hash/SipHashFunction;->c:I
@@ -241,7 +216,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

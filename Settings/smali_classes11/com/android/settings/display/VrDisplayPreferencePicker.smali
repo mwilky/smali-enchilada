@@ -19,7 +19,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32
     invoke-direct {p0}, Lcom/android/settings/widget/RadioButtonPickerFragment;-><init>()V
 
     return-void
@@ -38,19 +37,14 @@
         }
     .end annotation
 
-    .line 48
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 49
-    .local v0, "candidates":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/display/VrDisplayPreferencePicker$VrCandidateInfo;>;"
     invoke-virtual {p0}, Lcom/android/settings/display/VrDisplayPreferencePicker;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 50
-    .local v1, "context":Landroid/content/Context;
     new-instance v2, Lcom/android/settings/display/VrDisplayPreferencePicker$VrCandidateInfo;
 
     const/4 v3, 0x0
@@ -61,7 +55,6 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 51
     new-instance v2, Lcom/android/settings/display/VrDisplayPreferencePicker$VrCandidateInfo;
 
     const/4 v3, 0x1
@@ -72,14 +65,12 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 52
     return-object v0
 .end method
 
 .method protected getDefaultKey()Ljava/lang/String;
     .locals 4
 
-    .line 57
     invoke-virtual {p0}, Lcom/android/settings/display/VrDisplayPreferencePicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -98,8 +89,6 @@
 
     move-result v0
 
-    .line 60
-    .local v0, "current":I
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -120,7 +109,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 43
     const/16 v0, 0x399
 
     return v0
@@ -129,7 +117,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 38
     const v0, 0x7f1600d7
 
     return v0
@@ -137,9 +124,7 @@
 
 .method protected setDefaultKey(Ljava/lang/String;)Z
     .locals 4
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 65
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -148,10 +133,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
     return v1
 
-    .line 68
     :cond_0
     const/4 v0, -0x1
 
@@ -193,10 +176,8 @@
     :goto_0
     packed-switch v0, :pswitch_data_1
 
-    .line 76
     return v1
 
-    .line 73
     :pswitch_2
     invoke-virtual {p0}, Lcom/android/settings/display/VrDisplayPreferencePicker;->getContext()Landroid/content/Context;
 
@@ -216,7 +197,6 @@
 
     return v0
 
-    .line 70
     :pswitch_3
     invoke-virtual {p0}, Lcom/android/settings/display/VrDisplayPreferencePicker;->getContext()Landroid/content/Context;
 

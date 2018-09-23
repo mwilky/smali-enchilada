@@ -32,7 +32,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 54
     const-class v0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -50,15 +49,11 @@
 
 .method constructor <init>(Ljava/lang/Runtime;)V
     .locals 0
-    .param p1, "runtime"    # Ljava/lang/Runtime;
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput-object p1, p0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->runtime:Ljava/lang/Runtime;
 
-    .line 60
     return-void
 .end method
 
@@ -66,10 +61,7 @@
 # virtual methods
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 6
-    .param p1, "t"    # Ljava/lang/Thread;
-    .param p2, "e"    # Ljava/lang/Throwable;
 
-    .line 65
     const/4 v0, 0x1
 
     :try_start_0
@@ -94,27 +86,21 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 72
     :goto_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->runtime:Ljava/lang/Runtime;
 
     invoke-virtual {v1, v0}, Ljava/lang/Runtime;->exit(I)V
 
-    .line 73
     goto :goto_1
 
-    .line 72
     :catchall_0
     move-exception v1
 
     goto :goto_2
 
-    .line 66
     :catch_0
     move-exception v1
 
-    .line 69
-    .local v1, "errorInLogging":Ljava/lang/Throwable;
     :try_start_1
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
@@ -124,7 +110,6 @@
 
     invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 70
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -135,14 +120,11 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .end local v1    # "errorInLogging":Ljava/lang/Throwable;
     goto :goto_0
 
-    .line 74
     :goto_1
     return-void
 
-    .line 72
     :goto_2
     iget-object v2, p0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->runtime:Ljava/lang/Runtime;
 

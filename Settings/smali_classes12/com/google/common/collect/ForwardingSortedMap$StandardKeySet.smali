@@ -31,15 +31,10 @@
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ForwardingSortedMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ForwardingSortedMap;
 
-    .line 105
-    .local p0, "this":Lcom/google/common/collect/ForwardingSortedMap$StandardKeySet;, "Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>.StandardKeySet;"
     iput-object p1, p0, Lcom/google/common/collect/ForwardingSortedMap$StandardKeySet;->this$0:Lcom/google/common/collect/ForwardingSortedMap;
 
-    .line 106
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$SortedKeySet;-><init>(Ljava/util/SortedMap;)V
 
-    .line 107
     return-void
 .end method

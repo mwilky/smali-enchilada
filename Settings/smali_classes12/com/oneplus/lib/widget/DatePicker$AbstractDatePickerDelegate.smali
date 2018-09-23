@@ -42,26 +42,19 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/lib/widget/DatePicker;Landroid/content/Context;)V
     .locals 1
-    .param p1, "delegator"    # Lcom/oneplus/lib/widget/DatePicker;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 566
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 567
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mDelegator:Lcom/oneplus/lib/widget/DatePicker;
 
-    .line 568
     iput-object p2, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mContext:Landroid/content/Context;
 
-    .line 570
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->setCurrentLocale(Ljava/util/Locale;)V
 
-    .line 571
     return-void
 .end method
 
@@ -70,7 +63,6 @@
 .method public getDate()J
     .locals 2
 
-    .line 605
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mCurrentDate:Ljava/util/Calendar;
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
@@ -83,7 +75,6 @@
 .method protected getFormattedCurrentDate()Ljava/lang/String;
     .locals 4
 
-    .line 624
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mCurrentDate:Ljava/util/Calendar;
@@ -103,17 +94,13 @@
 
 .method protected onLocaleChanged(Ljava/util/Locale;)V
     .locals 0
-    .param p1, "locale"    # Ljava/util/Locale;
 
-    .line 616
     return-void
 .end method
 
 .method public onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 2
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
-    .line 620
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v0
@@ -124,45 +111,35 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 621
     return-void
 .end method
 
 .method protected onValidationChanged(Z)V
     .locals 1
-    .param p1, "valid"    # Z
 
-    .line 609
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mValidationCallback:Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;
 
     if-eqz v0, :cond_0
 
-    .line 610
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mValidationCallback:Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;
 
     invoke-interface {v0, p1}, Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;->onValidationChanged(Z)V
 
-    .line 612
     :cond_0
     return-void
 .end method
 
 .method public setAutoFillChangeListener(Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;)V
     .locals 0
-    .param p1, "callback"    # Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;
 
-    .line 587
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mAutoFillChangeListener:Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;
 
-    .line 588
     return-void
 .end method
 
 .method protected setCurrentLocale(Ljava/util/Locale;)V
     .locals 1
-    .param p1, "locale"    # Ljava/util/Locale;
 
-    .line 574
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mCurrentLocale:Ljava/util/Locale;
 
     invoke-virtual {p1, v0}, Ljava/util/Locale;->equals(Ljava/lang/Object;)Z
@@ -171,55 +148,41 @@
 
     if-nez v0, :cond_0
 
-    .line 575
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mCurrentLocale:Ljava/util/Locale;
 
-    .line 576
     invoke-virtual {p0, p1}, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->onLocaleChanged(Ljava/util/Locale;)V
 
-    .line 578
     :cond_0
     return-void
 .end method
 
 .method public setOnDateChangedListener(Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;)V
     .locals 0
-    .param p1, "callback"    # Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;
 
-    .line 582
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mOnDateChangedListener:Lcom/oneplus/lib/widget/DatePicker$OnDateChangedListener;
 
-    .line 583
     return-void
 .end method
 
 .method public setValidationCallback(Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;)V
     .locals 0
-    .param p1, "callback"    # Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;
 
-    .line 592
     iput-object p1, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mValidationCallback:Lcom/oneplus/lib/widget/DatePicker$ValidationCallback;
 
-    .line 593
     return-void
 .end method
 
 .method public updateDate(J)V
     .locals 4
-    .param p1, "date"    # J
 
-    .line 597
     iget-object v0, p0, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->mCurrentLocale:Ljava/util/Locale;
 
     invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/Locale;)Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 598
-    .local v0, "cal":Ljava/util/Calendar;
     invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 599
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
@@ -232,16 +195,13 @@
 
     move-result v2
 
-    .line 600
     const/4 v3, 0x5
 
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v3
 
-    .line 599
     invoke-virtual {p0, v1, v2, v3}, Lcom/oneplus/lib/widget/DatePicker$AbstractDatePickerDelegate;->updateDate(III)V
 
-    .line 601
     return-void
 .end method

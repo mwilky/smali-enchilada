@@ -33,10 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/AbstractService;Ljava/lang/String;Lcom/google/common/util/concurrent/Service$State;Ljava/lang/Throwable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/AbstractService;
-    .param p2, "methodCall"    # Ljava/lang/String;
 
-    .line 482
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractService$9;->this$0:Lcom/google/common/util/concurrent/AbstractService;
 
     iput-object p3, p0, Lcom/google/common/util/concurrent/AbstractService$9;->val$from:Lcom/google/common/util/concurrent/Service$State;
@@ -52,23 +49,19 @@
 # virtual methods
 .method call(Lcom/google/common/util/concurrent/Service$Listener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/google/common/util/concurrent/Service$Listener;
 
-    .line 484
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractService$9;->val$from:Lcom/google/common/util/concurrent/Service$State;
 
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractService$9;->val$cause:Ljava/lang/Throwable;
 
     invoke-virtual {p1, v0, v1}, Lcom/google/common/util/concurrent/Service$Listener;->failed(Lcom/google/common/util/concurrent/Service$State;Ljava/lang/Throwable;)V
 
-    .line 485
     return-void
 .end method
 
 .method bridge synthetic call(Ljava/lang/Object;)V
     .locals 0
 
-    .line 482
     check-cast p1, Lcom/google/common/util/concurrent/Service$Listener;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/AbstractService$9;->call(Lcom/google/common/util/concurrent/Service$Listener;)V

@@ -26,7 +26,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 257
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,9 +33,7 @@
 
 .method synthetic constructor <init>(Lcom/oneplus/lib/preference/PreferenceActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/lib/preference/PreferenceActivity$1;
 
-    .line 257
     invoke-direct {p0}, Lcom/oneplus/lib/preference/PreferenceActivity$HeaderAdapter$HeaderViewHolder;-><init>()V
 
     return-void

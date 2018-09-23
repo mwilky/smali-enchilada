@@ -15,25 +15,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 20
     if-eqz p1, :cond_0
 
-    .line 23
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mContext:Landroid/content/Context;
 
-    .line 24
     return-void
 
-    .line 21
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -46,20 +40,15 @@
 
 .method private getResourceIdForType(Ljava/lang/String;Ljava/lang/String;)I
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "type"    # Ljava/lang/String;
 
-    .line 36
     iget-object v0, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_0
 
-    .line 37
     const/4 v0, 0x0
 
     return v0
 
-    .line 42
     :cond_0
     iget-object v0, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mOverrideResourcePackageName:Ljava/lang/String;
 
@@ -76,8 +65,6 @@
 
     move-result-object v0
 
-    .line 47
-    .local v0, "resourcePackageName":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mContext:Landroid/content/Context;
 
@@ -96,25 +83,19 @@
 # virtual methods
 .method public getBoolean(Ljava/lang/String;)Z
     .locals 3
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 62
     const-string v0, "bool"
 
     invoke-direct {p0, p1, v0}, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->getResourceIdForType(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 63
-    .local v0, "id":I
     if-nez v0, :cond_0
 
-    .line 64
     const/4 v1, 0x0
 
     return v1
 
-    .line 66
     :cond_0
     const-string v1, "true"
 
@@ -133,15 +114,11 @@
 
 .method public getDoubleFromString(Ljava/lang/String;)Ljava/lang/Double;
     .locals 5
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 92
     invoke-virtual {p0, p1}, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 93
-    .local v0, "value":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -150,10 +127,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 94
     return-object v2
 
-    .line 97
     :cond_0
     :try_start_0
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -168,12 +143,9 @@
 
     return-object v1
 
-    .line 98
     :catch_0
     move-exception v1
 
-    .line 99
-    .local v1, "e":Ljava/lang/NumberFormatException;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -190,30 +162,22 @@
 
     invoke-static {v3}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)V
 
-    .line 100
     return-object v2
 .end method
 
 .method public getInt(Ljava/lang/String;I)I
     .locals 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defaultValue"    # I
 
-    .line 72
     const-string v0, "integer"
 
     invoke-direct {p0, p1, v0}, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->getResourceIdForType(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 73
-    .local v0, "id":I
     if-nez v0, :cond_0
 
-    .line 74
     return p2
 
-    .line 77
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mContext:Landroid/content/Context;
@@ -230,12 +194,9 @@
 
     return v1
 
-    .line 78
     :catch_0
     move-exception v1
 
-    .line 79
-    .local v1, "e":Ljava/lang/NumberFormatException;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -258,31 +219,24 @@
 
     invoke-static {v2}, Lcom/google/analytics/tracking/android/Log;->w(Ljava/lang/String;)V
 
-    .line 80
     return p2
 .end method
 
 .method public getString(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 52
     const-string v0, "string"
 
     invoke-direct {p0, p1, v0}, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->getResourceIdForType(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 53
-    .local v0, "id":I
     if-nez v0, :cond_0
 
-    .line 54
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 56
     :cond_0
     iget-object v1, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mContext:Landroid/content/Context;
 
@@ -295,9 +249,7 @@
 
 .method public isBooleanKeyPresent(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 87
     const-string v0, "bool"
 
     invoke-direct {p0, p1, v0}, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->getResourceIdForType(Ljava/lang/String;Ljava/lang/String;)I
@@ -319,11 +271,8 @@
 
 .method public setResourcePackageName(Ljava/lang/String;)V
     .locals 0
-    .param p1, "resourcePackageName"    # Ljava/lang/String;
 
-    .line 106
     iput-object p1, p0, Lcom/google/analytics/tracking/android/ParameterLoaderImpl;->mOverrideResourcePackageName:Ljava/lang/String;
 
-    .line 107
     return-void
 .end method

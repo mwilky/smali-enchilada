@@ -16,7 +16,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 # virtual methods
 .method public getNewWifiCallingSliceHelper(Landroid/content/Context;)Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 46
     new-instance v0, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;
 
     invoke-direct {v0, p1}, Lcom/android/settings/wifi/calling/WifiCallingSliceHelper;-><init>(Landroid/content/Context;)V
@@ -38,14 +35,11 @@
 
 .method public getSliceDataConverter(Landroid/content/Context;)Lcom/android/settings/slices/SliceDataConverter;
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 26
     iget-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSliceDataConverter:Lcom/android/settings/slices/SliceDataConverter;
 
     if-nez v0, :cond_0
 
-    .line 27
     new-instance v0, Lcom/android/settings/slices/SliceDataConverter;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -56,7 +50,6 @@
 
     iput-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSliceDataConverter:Lcom/android/settings/slices/SliceDataConverter;
 
-    .line 29
     :cond_0
     iget-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSliceDataConverter:Lcom/android/settings/slices/SliceDataConverter;
 
@@ -65,21 +58,17 @@
 
 .method public getSliceIndexer(Landroid/content/Context;)Lcom/android/settings/slices/SlicesIndexer;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 18
     iget-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSlicesIndexer:Lcom/android/settings/slices/SlicesIndexer;
 
     if-nez v0, :cond_0
 
-    .line 19
     new-instance v0, Lcom/android/settings/slices/SlicesIndexer;
 
     invoke-direct {v0, p1}, Lcom/android/settings/slices/SlicesIndexer;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSlicesIndexer:Lcom/android/settings/slices/SlicesIndexer;
 
-    .line 21
     :cond_0
     iget-object v0, p0, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->mSlicesIndexer:Lcom/android/settings/slices/SlicesIndexer;
 
@@ -88,34 +77,24 @@
 
 .method public indexSliceData(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 40
     invoke-virtual {p0, p1}, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->getSliceIndexer(Landroid/content/Context;)Lcom/android/settings/slices/SlicesIndexer;
 
     move-result-object v0
 
-    .line 41
-    .local v0, "indexer":Lcom/android/settings/slices/SlicesIndexer;
     invoke-virtual {v0}, Lcom/android/settings/slices/SlicesIndexer;->indexSliceData()V
 
-    .line 42
     return-void
 .end method
 
 .method public indexSliceDataAsync(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 34
     invoke-virtual {p0, p1}, Lcom/android/settings/slices/SlicesFeatureProviderImpl;->getSliceIndexer(Landroid/content/Context;)Lcom/android/settings/slices/SlicesIndexer;
 
     move-result-object v0
 
-    .line 35
-    .local v0, "indexer":Lcom/android/settings/slices/SlicesIndexer;
     invoke-static {v0}, Lcom/android/settingslib/utils/ThreadUtils;->postOnBackgroundThread(Ljava/lang/Runnable;)V
 
-    .line 36
     return-void
 .end method

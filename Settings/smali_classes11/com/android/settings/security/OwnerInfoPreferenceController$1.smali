@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/security/OwnerInfoPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/security/OwnerInfoPreferenceController;
 
-    .line 94
     iput-object p1, p0, Lcom/android/settings/security/OwnerInfoPreferenceController$1;->this$0:Lcom/android/settings/security/OwnerInfoPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 97
     iget-object v0, p0, Lcom/android/settings/security/OwnerInfoPreferenceController$1;->this$0:Lcom/android/settings/security/OwnerInfoPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/security/OwnerInfoPreferenceController;->access$000(Lcom/android/settings/security/OwnerInfoPreferenceController;)Landroid/app/Fragment;
@@ -49,7 +45,6 @@
 
     invoke-static {v0}, Lcom/android/settings/users/OwnerInfoSettings;->show(Landroid/app/Fragment;)V
 
-    .line 98
     const/4 v0, 0x1
 
     return v0

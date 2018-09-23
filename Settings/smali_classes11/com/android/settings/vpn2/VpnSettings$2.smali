@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/vpn2/VpnSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/vpn2/VpnSettings;
 
-    .line 422
     iput-object p1, p0, Lcom/android/settings/vpn2/VpnSettings$2;->this$0:Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 2
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 425
     iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings$2;->this$0:Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-static {v0}, Lcom/android/settings/vpn2/VpnSettings;->access$100(Lcom/android/settings/vpn2/VpnSettings;)Landroid/os/Handler;
@@ -46,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 426
     iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings$2;->this$0:Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-static {v0}, Lcom/android/settings/vpn2/VpnSettings;->access$100(Lcom/android/settings/vpn2/VpnSettings;)Landroid/os/Handler;
@@ -57,16 +52,13 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 428
     :cond_0
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 2
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 432
     iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings$2;->this$0:Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-static {v0}, Lcom/android/settings/vpn2/VpnSettings;->access$100(Lcom/android/settings/vpn2/VpnSettings;)Landroid/os/Handler;
@@ -75,7 +67,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 433
     iget-object v0, p0, Lcom/android/settings/vpn2/VpnSettings$2;->this$0:Lcom/android/settings/vpn2/VpnSettings;
 
     invoke-static {v0}, Lcom/android/settings/vpn2/VpnSettings;->access$100(Lcom/android/settings/vpn2/VpnSettings;)Landroid/os/Handler;
@@ -86,7 +77,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 435
     :cond_0
     return-void
 .end method

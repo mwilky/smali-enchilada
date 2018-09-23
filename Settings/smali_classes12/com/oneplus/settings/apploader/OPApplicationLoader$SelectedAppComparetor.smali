@@ -33,9 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/settings/apploader/OPApplicationLoader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
-    .line 285
     iput-object p1, p0, Lcom/oneplus/settings/apploader/OPApplicationLoader$SelectedAppComparetor;->this$0:Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/oneplus/settings/better/OPAppModel;Lcom/oneplus/settings/better/OPAppModel;)I
     .locals 1
-    .param p1, "lhs"    # Lcom/oneplus/settings/better/OPAppModel;
-    .param p2, "rhs"    # Lcom/oneplus/settings/better/OPAppModel;
 
-    .line 289
     invoke-virtual {p1}, Lcom/oneplus/settings/better/OPAppModel;->isSelected()Z
 
     move-result v0
@@ -63,12 +58,10 @@
 
     if-nez v0, :cond_0
 
-    .line 290
     const/4 v0, -0x1
 
     return v0
 
-    .line 292
     :cond_0
     invoke-virtual {p1}, Lcom/oneplus/settings/better/OPAppModel;->isSelected()Z
 
@@ -82,12 +75,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 293
     const/4 v0, 0x1
 
     return v0
 
-    .line 295
     :cond_1
     const/4 v0, 0x0
 
@@ -97,7 +88,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 285
     check-cast p1, Lcom/oneplus/settings/better/OPAppModel;
 
     check-cast p2, Lcom/oneplus/settings/better/OPAppModel;

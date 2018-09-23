@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
-    .line 476
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;, "Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;"
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;->this$1:Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +44,7 @@
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
     .locals 2
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 484
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;, "Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;->this$1:Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
     iget-object v0, v0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$FallbackFuture;
@@ -65,7 +59,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 485
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;->this$1:Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
     iget-object v0, v0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$FallbackFuture;
@@ -76,7 +69,6 @@
 
     goto :goto_0
 
-    .line 487
     :cond_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;->this$1:Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
@@ -84,7 +76,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/Futures$FallbackFuture;->setException(Ljava/lang/Throwable;)Z
 
-    .line 489
     :goto_0
     return-void
 .end method
@@ -97,15 +88,11 @@
         }
     .end annotation
 
-    .line 479
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;, "Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1$1;->this$1:Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;
 
     iget-object v0, v0, Lcom/google/common/util/concurrent/Futures$FallbackFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$FallbackFuture;
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/Futures$FallbackFuture;->set(Ljava/lang/Object;)Z
 
-    .line 480
     return-void
 .end method

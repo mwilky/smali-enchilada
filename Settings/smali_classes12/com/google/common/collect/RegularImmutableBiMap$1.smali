@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/RegularImmutableBiMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/RegularImmutableBiMap;
 
-    .line 204
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap$1;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMapEntrySet;-><init>()V
@@ -52,8 +49,6 @@
         }
     .end annotation
 
-    .line 217
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     new-instance v0, Lcom/google/common/collect/RegularImmutableAsList;
 
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableBiMap$1;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
@@ -70,8 +65,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 227
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap$1;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     invoke-static {v0}, Lcom/google/common/collect/RegularImmutableBiMap;->access$100(Lcom/google/common/collect/RegularImmutableBiMap;)I
@@ -84,8 +77,6 @@
 .method isHashCodeFast()Z
     .locals 1
 
-    .line 222
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     const/4 v0, 0x1
 
     return v0
@@ -102,8 +93,6 @@
         }
     .end annotation
 
-    .line 212
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableBiMap$1;->asList()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -118,8 +107,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 204
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableBiMap$1;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -137,8 +124,6 @@
         }
     .end annotation
 
-    .line 207
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$1;, "Lcom/google/common/collect/RegularImmutableBiMap$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap$1;->this$0:Lcom/google/common/collect/RegularImmutableBiMap;
 
     return-object v0

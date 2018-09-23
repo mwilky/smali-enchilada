@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multimaps$Keys$1;Ljava/util/Map$Entry;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/Multimaps$Keys$1;
 
-    .line 1527
-    .local p0, "this":Lcom/google/common/collect/Multimaps$Keys$1$1;, "Lcom/google/common/collect/Multimaps$Keys$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->this$1:Lcom/google/common/collect/Multimaps$Keys$1;
 
     iput-object p2, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->val$backingEntry:Ljava/util/Map$Entry;
@@ -48,8 +45,6 @@
 .method public getCount()I
     .locals 1
 
-    .line 1535
-    .local p0, "this":Lcom/google/common/collect/Multimaps$Keys$1$1;, "Lcom/google/common/collect/Multimaps$Keys$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->val$backingEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -73,8 +68,6 @@
         }
     .end annotation
 
-    .line 1530
-    .local p0, "this":Lcom/google/common/collect/Multimaps$Keys$1$1;, "Lcom/google/common/collect/Multimaps$Keys$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->val$backingEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;

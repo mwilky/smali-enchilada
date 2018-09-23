@@ -30,52 +30,39 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 42
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 43
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;->mChildren:Ljava/util/ArrayList;
 
-    .line 44
     return-void
 .end method
 
 .method constructor <init>(Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;Landroid/support/v17/leanback/graphics/CompositeDrawable;Landroid/content/res/Resources;)V
     .locals 5
-    .param p1, "other"    # Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;
-    .param p2, "parent"    # Landroid/support/v17/leanback/graphics/CompositeDrawable;
-    .param p3, "res"    # Landroid/content/res/Resources;
 
-    .line 46
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 47
     iget-object v0, p1, Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;->mChildren:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 48
-    .local v0, "n":I
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v1, p0, Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;->mChildren:Ljava/util/ArrayList;
 
-    .line 49
     const/4 v1, 0x0
 
-    .local v1, "k":I
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 50
     iget-object v2, p0, Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;->mChildren:Ljava/util/ArrayList;
 
     new-instance v3, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;
@@ -92,13 +79,10 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 49
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 52
-    .end local v1    # "k":I
     :cond_0
     return-void
 .end method
@@ -108,7 +92,6 @@
 .method public getChangingConfigurations()I
     .locals 1
 
-    .line 62
     const/4 v0, 0x0
 
     return v0
@@ -119,7 +102,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 57
     new-instance v0, Landroid/support/v17/leanback/graphics/CompositeDrawable;
 
     invoke-direct {v0, p0}, Landroid/support/v17/leanback/graphics/CompositeDrawable;-><init>(Landroid/support/v17/leanback/graphics/CompositeDrawable$CompositeState;)V

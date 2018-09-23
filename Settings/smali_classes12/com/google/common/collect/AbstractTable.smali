@@ -58,8 +58,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 34
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -89,12 +87,8 @@
         }
     .end annotation
 
-    .line 110
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractTable;->cellSet:Ljava/util/Set;
 
-    .line 111
-    .local v0, "result":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->createCellSet()Ljava/util/Set;
@@ -115,8 +109,6 @@
 .method public clear()V
     .locals 1
 
-    .line 85
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->cellSet()Ljava/util/Set;
 
     move-result-object v0
@@ -127,7 +119,6 @@
 
     invoke-static {v0}, Lcom/google/common/collect/Iterators;->clear(Ljava/util/Iterator;)V
 
-    .line 86
     return-void
 .end method
 
@@ -141,8 +132,6 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->columnMap()Ljava/util/Map;
 
     move-result-object v0
@@ -156,17 +145,15 @@
 
 .method public contains(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "rowKey"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "columnKey"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -177,8 +164,6 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 69
-    .local v0, "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     if-eqz v0, :cond_0
 
     invoke-static {v0, p2}, Lcom/google/common/collect/Maps;->safeContainsKey(Ljava/util/Map;Ljava/lang/Object;)Z
@@ -200,13 +185,11 @@
 
 .method public containsColumn(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "columnKey"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->columnMap()Ljava/util/Map;
 
     move-result-object v0
@@ -220,13 +203,11 @@
 
 .method public containsRow(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "rowKey"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 38
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -240,13 +221,11 @@
 
 .method public containsValue(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "value"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -272,25 +251,19 @@
 
     check-cast v1, Ljava/util/Map;
 
-    .line 59
-    .local v1, "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     invoke-interface {v1, p1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 60
     const/4 v0, 0x1
 
     return v0
 
-    .line 62
-    .end local v1    # "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     :cond_0
     goto :goto_0
 
-    .line 63
     :cond_1
     const/4 v0, 0x0
 
@@ -308,8 +281,6 @@
         }
     .end annotation
 
-    .line 115
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     new-instance v0, Lcom/google/common/collect/AbstractTable$CellSet;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/AbstractTable$CellSet;-><init>(Lcom/google/common/collect/AbstractTable;)V
@@ -327,8 +298,6 @@
         }
     .end annotation
 
-    .line 168
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     new-instance v0, Lcom/google/common/collect/AbstractTable$Values;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/AbstractTable$Values;-><init>(Lcom/google/common/collect/AbstractTable;)V
@@ -338,13 +307,11 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 203
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Tables;->equalsImpl(Lcom/google/common/collect/Table;Ljava/lang/Object;)Z
 
     move-result v0
@@ -354,11 +321,11 @@
 
 .method public get(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "rowKey"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "columnKey"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -371,8 +338,6 @@
         }
     .end annotation
 
-    .line 74
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -383,8 +348,6 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 75
-    .local v0, "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -403,8 +366,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 207
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->cellSet()Ljava/util/Set;
 
     move-result-object v0
@@ -419,8 +380,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 80
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->size()I
 
     move-result v0
@@ -446,11 +405,6 @@
         }
     .end annotation
 
-    .line 96
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
-    .local p1, "rowKey":Ljava/lang/Object;, "TR;"
-    .local p2, "columnKey":Ljava/lang/Object;, "TC;"
-    .local p3, "value":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractTable;->row(Ljava/lang/Object;)Ljava/util/Map;
 
     move-result-object v0
@@ -472,9 +426,6 @@
         }
     .end annotation
 
-    .line 101
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
-    .local p1, "table":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<+TR;+TC;+TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/Table;->cellSet()Ljava/util/Set;
 
     move-result-object v0
@@ -496,8 +447,6 @@
 
     check-cast v1, Lcom/google/common/collect/Table$Cell;
 
-    .line 102
-    .local v1, "cell":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<+TR;+TC;+TV;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Table$Cell;->getRowKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -512,22 +461,19 @@
 
     invoke-virtual {p0, v2, v3, v4}, Lcom/google/common/collect/AbstractTable;->put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
-    .end local v1    # "cell":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<+TR;+TC;+TV;>;"
     goto :goto_0
 
-    .line 104
     :cond_0
     return-void
 .end method
 
 .method public remove(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "rowKey"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "columnKey"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -540,8 +486,6 @@
         }
     .end annotation
 
-    .line 90
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -552,8 +496,6 @@
 
     check-cast v0, Ljava/util/Map;
 
-    .line 91
-    .local v0, "row":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -579,8 +521,6 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -595,8 +535,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 214
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->rowMap()Ljava/util/Map;
 
     move-result-object v0
@@ -618,12 +556,8 @@
         }
     .end annotation
 
-    .line 163
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractTable;->values:Ljava/util/Collection;
 
-    .line 164
-    .local v0, "result":Ljava/util/Collection;, "Ljava/util/Collection<TV;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->createValues()Ljava/util/Collection;
@@ -651,8 +585,6 @@
         }
     .end annotation
 
-    .line 172
-    .local p0, "this":Lcom/google/common/collect/AbstractTable;, "Lcom/google/common/collect/AbstractTable<TR;TC;TV;>;"
     new-instance v0, Lcom/google/common/collect/AbstractTable$1;
 
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractTable;->cellSet()Ljava/util/Set;

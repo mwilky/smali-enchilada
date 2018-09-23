@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
-    .line 386
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,15 +33,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 389
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder$2;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;->mPressAnimator:Landroid/animation/Animator;
 
-    .line 390
     return-void
 .end method

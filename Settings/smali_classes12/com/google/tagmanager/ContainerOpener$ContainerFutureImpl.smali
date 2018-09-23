@@ -29,10 +29,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 312
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 315
     new-instance v0, Ljava/util/concurrent/Semaphore;
 
     const/4 v1, 0x0
@@ -46,9 +44,7 @@
 
 .method synthetic constructor <init>(Lcom/google/tagmanager/ContainerOpener$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/tagmanager/ContainerOpener$1;
 
-    .line 312
     invoke-direct {p0}, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;-><init>()V
 
     return-void
@@ -59,17 +55,14 @@
 .method public get()Lcom/google/tagmanager/Container;
     .locals 1
 
-    .line 319
     iget-boolean v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mHaveGotten:Z
 
     if-eqz v0, :cond_0
 
-    .line 320
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mContainer:Lcom/google/tagmanager/Container;
 
     return-object v0
 
-    .line 324
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mContainerIsReady:Ljava/util/concurrent/Semaphore;
@@ -78,20 +71,16 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 327
     goto :goto_0
 
-    .line 325
     :catch_0
     move-exception v0
 
-    .line 328
     :goto_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mHaveGotten:Z
 
-    .line 329
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mContainer:Lcom/google/tagmanager/Container;
 
     return-object v0
@@ -100,7 +89,6 @@
 .method public isDone()Z
     .locals 1
 
-    .line 339
     iget-boolean v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mHaveGotten:Z
 
     if-nez v0, :cond_1
@@ -130,16 +118,12 @@
 
 .method public setContainer(Lcom/google/tagmanager/Container;)V
     .locals 1
-    .param p1, "container"    # Lcom/google/tagmanager/Container;
 
-    .line 333
     iput-object p1, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mContainer:Lcom/google/tagmanager/Container;
 
-    .line 334
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->mContainerIsReady:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 335
     return-void
 .end method

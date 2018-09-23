@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/support/v17/leanback/transition/TransitionEpicenterCallback;)V
     .locals 0
 
-    .line 458
     iput-object p1, p0, Landroid/support/v17/leanback/transition/TransitionHelper$2;->val$callback:Landroid/support/v17/leanback/transition/TransitionEpicenterCallback;
 
     invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
@@ -34,9 +33,7 @@
 # virtual methods
 .method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
     .locals 1
-    .param p1, "transition11"    # Landroid/transition/Transition;
 
-    .line 461
     iget-object v0, p0, Landroid/support/v17/leanback/transition/TransitionHelper$2;->val$callback:Landroid/support/v17/leanback/transition/TransitionEpicenterCallback;
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/transition/TransitionEpicenterCallback;->onGetEpicenter(Ljava/lang/Object;)Landroid/graphics/Rect;

@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 61
     new-instance v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     const-string v1, "NeedToUnlock"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;->NeedToUnlock:Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
-    .line 62
     new-instance v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     const-string v1, "NeedToUnlockWrong"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;->NeedToUnlockWrong:Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
-    .line 63
     new-instance v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     const-string v1, "LockedOut"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;->LockedOut:Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
-    .line 60
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/password/ConfirmLockPattern$Stage;
@@ -99,7 +95,6 @@
         }
     .end annotation
 
-    .line 60
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/password/ConfirmLockPattern$Stage;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 60
     const-class v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,7 +117,6 @@
 .method public static values()[Lcom/android/settings/password/ConfirmLockPattern$Stage;
     .locals 1
 
-    .line 60
     sget-object v0, Lcom/android/settings/password/ConfirmLockPattern$Stage;->$VALUES:[Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/password/ConfirmLockPattern$Stage;->clone()Ljava/lang/Object;

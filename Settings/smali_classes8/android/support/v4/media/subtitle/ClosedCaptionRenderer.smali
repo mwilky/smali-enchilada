@@ -31,15 +31,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 56
     invoke-direct {p0}, Landroid/support/v4/media/subtitle/SubtitleController$Renderer;-><init>()V
 
-    .line 57
     iput-object p1, p0, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer;->mContext:Landroid/content/Context;
 
-    .line 58
     return-void
 .end method
 
@@ -47,17 +43,13 @@
 # virtual methods
 .method public createTrack(Landroid/media/MediaFormat;)Landroid/support/v4/media/subtitle/SubtitleTrack;
     .locals 4
-    .param p1, "format"    # Landroid/media/MediaFormat;
 
-    .line 71
     const-string v0, "mime"
 
     invoke-virtual {p1, v0}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
-    .local v0, "mimeType":Ljava/lang/String;
     const-string v1, "text/cea-608"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -66,12 +58,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 73
     iget-object v1, p0, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer;->mCCWidget:Landroid/support/v4/media/subtitle/ClosedCaptionRenderer$Cea608CCWidget;
 
     if-nez v1, :cond_0
 
-    .line 74
     new-instance v1, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer$Cea608CCWidget;
 
     iget-object v2, p0, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer;->mContext:Landroid/content/Context;
@@ -80,7 +70,6 @@
 
     iput-object v1, p0, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer;->mCCWidget:Landroid/support/v4/media/subtitle/ClosedCaptionRenderer$Cea608CCWidget;
 
-    .line 76
     :cond_0
     new-instance v1, Landroid/support/v4/media/subtitle/ClosedCaptionRenderer$Cea608CaptionTrack;
 
@@ -90,7 +79,6 @@
 
     return-object v1
 
-    .line 78
     :cond_1
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -119,9 +107,7 @@
 
 .method public supports(Landroid/media/MediaFormat;)Z
     .locals 2
-    .param p1, "format"    # Landroid/media/MediaFormat;
 
-    .line 62
     const-string v0, "mime"
 
     invoke-virtual {p1, v0}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
@@ -130,15 +116,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 63
     const-string v0, "mime"
 
     invoke-virtual {p1, v0}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "mimeType":Ljava/lang/String;
     const-string v1, "text/cea-608"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -147,8 +130,6 @@
 
     return v1
 
-    .line 66
-    .end local v0    # "mimeType":Ljava/lang/String;
     :cond_0
     const/4 v0, 0x0
 

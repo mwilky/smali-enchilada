@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
-    .line 914
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;, "Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;"
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->val$outputFuture:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -44,8 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 918
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;, "Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;"
     const/4 v0, 0x0
 
     :try_start_0
@@ -63,27 +58,21 @@
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 930
     :goto_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
     invoke-static {v1, v0}, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;->access$302(Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 931
     goto :goto_1
 
-    .line 930
     :catchall_0
     move-exception v1
 
     goto :goto_2
 
-    .line 925
     :catch_0
     move-exception v1
 
-    .line 927
-    .local v1, "e":Ljava/util/concurrent/ExecutionException;
     :try_start_1
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
@@ -93,19 +82,14 @@
 
     invoke-virtual {v2, v3}, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;->setException(Ljava/lang/Throwable;)Z
 
-    .end local v1    # "e":Ljava/util/concurrent/ExecutionException;
     goto :goto_0
 
-    .line 932
     :goto_1
     return-void
 
-    .line 919
     :catch_1
     move-exception v1
 
-    .line 923
-    .local v1, "e":Ljava/util/concurrent/CancellationException;
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
     const/4 v3, 0x0
@@ -114,16 +98,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 930
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 
     invoke-static {v2, v0}, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;->access$302(Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 924
     return-void
 
-    .line 930
-    .end local v1    # "e":Ljava/util/concurrent/CancellationException;
     :goto_2
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$ChainingListenableFuture;
 

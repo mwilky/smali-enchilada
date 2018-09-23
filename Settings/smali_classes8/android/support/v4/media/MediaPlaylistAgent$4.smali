@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlaylistAgent;Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlaylistAgent;
 
-    .line 228
     iput-object p1, p0, Landroid/support/v4/media/MediaPlaylistAgent$4;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlaylistAgent$4;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
@@ -43,21 +41,17 @@
 .method public run()V
     .locals 3
 
-    .line 231
     iget-object v0, p0, Landroid/support/v4/media/MediaPlaylistAgent$4;->val$callback:Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaPlaylistAgent$4;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
     iget-object v2, p0, Landroid/support/v4/media/MediaPlaylistAgent$4;->this$0:Landroid/support/v4/media/MediaPlaylistAgent;
 
-    .line 232
     invoke-virtual {v2}, Landroid/support/v4/media/MediaPlaylistAgent;->getRepeatMode()I
 
     move-result v2
 
-    .line 231
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaPlaylistAgent$PlaylistEventCallback;->onRepeatModeChanged(Landroid/support/v4/media/MediaPlaylistAgent;I)V
 
-    .line 233
     return-void
 .end method

@@ -65,27 +65,20 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 1410
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgElement;-><init>()V
 
-    .line 1412
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFeatures:Ljava/util/Set;
 
-    .line 1413
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredExtensions:Ljava/lang/String;
 
-    .line 1414
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->systemLanguage:Ljava/util/Set;
 
-    .line 1415
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFormats:Ljava/util/Set;
 
-    .line 1416
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFonts:Ljava/util/Set;
 
-    .line 1410
     return-void
 .end method
 
@@ -94,7 +87,6 @@
 .method public getRequiredExtensions()Ljava/lang/String;
     .locals 1
 
-    .line 1425
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredExtensions:Ljava/lang/String;
 
     return-object v0
@@ -111,7 +103,6 @@
         }
     .end annotation
 
-    .line 1421
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFeatures:Ljava/util/Set;
 
     return-object v0
@@ -128,7 +119,6 @@
         }
     .end annotation
 
-    .line 1437
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFonts:Ljava/util/Set;
 
     return-object v0
@@ -145,7 +135,6 @@
         }
     .end annotation
 
-    .line 1433
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFormats:Ljava/util/Set;
 
     return-object v0
@@ -162,7 +151,6 @@
         }
     .end annotation
 
-    .line 1429
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->systemLanguage:Ljava/util/Set;
 
     return-object v0
@@ -170,9 +158,7 @@
 
 .method public setRequiredExtensions(Ljava/lang/String;)V
     .locals 0
-    .param p1, "extensions"    # Ljava/lang/String;
 
-    .line 1423
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredExtensions:Ljava/lang/String;
 
     return-void
@@ -189,8 +175,6 @@
         }
     .end annotation
 
-    .line 1419
-    .local p1, "features":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFeatures:Ljava/util/Set;
 
     return-void
@@ -207,8 +191,6 @@
         }
     .end annotation
 
-    .line 1435
-    .local p1, "fontNames":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFonts:Ljava/util/Set;
 
     return-void
@@ -225,8 +207,6 @@
         }
     .end annotation
 
-    .line 1431
-    .local p1, "mimeTypes":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->requiredFormats:Ljava/util/Set;
 
     return-void
@@ -243,8 +223,6 @@
         }
     .end annotation
 
-    .line 1427
-    .local p1, "languages":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$SvgConditionalElement;->systemLanguage:Ljava/util/Set;
 
     return-void

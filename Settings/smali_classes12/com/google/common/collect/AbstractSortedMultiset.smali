@@ -51,15 +51,12 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSortedMultiset;-><init>(Ljava/util/Comparator;)V
 
-    .line 44
     return-void
 .end method
 
@@ -73,12 +70,8 @@
         }
     .end annotation
 
-    .line 46
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMultiset;-><init>()V
 
-    .line 47
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -87,7 +80,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractSortedMultiset;->comparator:Ljava/util/Comparator;
 
-    .line 48
     return-void
 .end method
 
@@ -103,8 +95,6 @@
         }
     .end annotation
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractSortedMultiset;->comparator:Ljava/util/Comparator;
 
     return-object v0
@@ -120,8 +110,6 @@
         }
     .end annotation
 
-    .line 125
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/AbstractSortedMultiset$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/AbstractSortedMultiset$1;-><init>(Lcom/google/common/collect/AbstractSortedMultiset;)V
@@ -139,8 +127,6 @@
         }
     .end annotation
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/SortedMultisets$NavigableElementSet;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/SortedMultisets$NavigableElementSet;-><init>(Lcom/google/common/collect/SortedMultiset;)V
@@ -151,8 +137,6 @@
 .method bridge synthetic createElementSet()Ljava/util/Set;
     .locals 1
 
-    .line 36
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->createElementSet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -181,8 +165,6 @@
         }
     .end annotation
 
-    .line 113
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->descendingMultiset()Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0
@@ -204,12 +186,8 @@
         }
     .end annotation
 
-    .line 120
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractSortedMultiset;->descendingMultiset:Lcom/google/common/collect/SortedMultiset;
 
-    .line 121
-    .local v0, "result":Lcom/google/common/collect/SortedMultiset;, "Lcom/google/common/collect/SortedMultiset<TE;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->createDescendingMultiset()Lcom/google/common/collect/SortedMultiset;
@@ -237,8 +215,6 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->elementSet()Ljava/util/Set;
 
     move-result-object v0
@@ -251,8 +227,6 @@
 .method public bridge synthetic elementSet()Ljava/util/Set;
     .locals 1
 
-    .line 36
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->elementSet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -263,8 +237,6 @@
 .method public bridge synthetic elementSet()Ljava/util/SortedSet;
     .locals 1
 
-    .line 36
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->elementSet()Ljava/util/NavigableSet;
 
     move-result-object v0
@@ -282,14 +254,10 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->entryIterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 68
-    .local v0, "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -321,14 +289,10 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->descendingEntryIterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 74
-    .local v0, "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -360,29 +324,22 @@
         }
     .end annotation
 
-    .line 79
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->entryIterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 80
-    .local v0, "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 81
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 82
-    .local v1, "result":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v2
@@ -395,14 +352,10 @@
 
     move-result-object v1
 
-    .line 83
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 84
     return-object v1
 
-    .line 86
-    .end local v1    # "result":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     :cond_0
     const/4 v1, 0x0
 
@@ -419,29 +372,22 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractSortedMultiset;->descendingEntryIterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 92
-    .local v0, "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 93
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 94
-    .local v1, "result":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v2
@@ -454,14 +400,10 @@
 
     move-result-object v1
 
-    .line 95
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 96
     return-object v1
 
-    .line 98
-    .end local v1    # "result":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     :cond_0
     const/4 v1, 0x0
 
@@ -474,12 +416,10 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "fromBoundType"    # Lcom/google/common/collect/BoundType;
     .param p3    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p4, "toBoundType"    # Lcom/google/common/collect/BoundType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;",
@@ -492,16 +432,10 @@
         }
     .end annotation
 
-    .line 105
-    .local p0, "this":Lcom/google/common/collect/AbstractSortedMultiset;, "Lcom/google/common/collect/AbstractSortedMultiset<TE;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p3, "toElement":Ljava/lang/Object;, "TE;"
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 106
     invoke-static {p4}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/AbstractSortedMultiset;->tailMultiset(Ljava/lang/Object;Lcom/google/common/collect/BoundType;)Lcom/google/common/collect/SortedMultiset;
 
     move-result-object v0

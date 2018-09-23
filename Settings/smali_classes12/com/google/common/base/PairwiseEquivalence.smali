@@ -50,12 +50,8 @@
         }
     .end annotation
 
-    .line 32
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
-    .local p1, "elementEquivalence":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<-TT;>;"
     invoke-direct {p0}, Lcom/google/common/base/Equivalence;-><init>()V
 
-    .line 33
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -64,7 +60,6 @@
 
     iput-object v0, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
 
-    .line 34
     return-void
 .end method
 
@@ -82,22 +77,14 @@
         }
     .end annotation
 
-    .line 38
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
-    .local p1, "iterableA":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TT;>;"
-    .local p2, "iterableB":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TT;>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 39
-    .local v0, "iteratorA":Ljava/util/Iterator;, "Ljava/util/Iterator<TT;>;"
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 41
-    .local v1, "iteratorB":Ljava/util/Iterator;, "Ljava/util/Iterator<TT;>;"
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -113,7 +100,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 42
     iget-object v2, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -130,10 +116,8 @@
 
     if-nez v2, :cond_0
 
-    .line 43
     return v3
 
-    .line 47
     :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -158,8 +142,6 @@
 .method protected bridge synthetic doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 0
 
-    .line 26
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
     check-cast p1, Ljava/lang/Iterable;
 
     check-cast p2, Ljava/lang/Iterable;
@@ -181,13 +163,8 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
-    .local p1, "iterable":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TT;>;"
     const v0, 0x13381
 
-    .line 53
-    .local v0, "hash":I
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -203,8 +180,6 @@
 
     move-result-object v2
 
-    .line 54
-    .local v2, "element":Ljava/lang/Object;, "TT;"
     mul-int/lit16 v3, v0, 0x616f
 
     iget-object v4, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
@@ -215,11 +190,8 @@
 
     add-int v0, v3, v4
 
-    .line 55
-    .end local v2    # "element":Ljava/lang/Object;, "TT;"
     goto :goto_0
 
-    .line 56
     :cond_0
     return v0
 .end method
@@ -227,8 +199,6 @@
 .method protected bridge synthetic doHash(Ljava/lang/Object;)I
     .locals 0
 
-    .line 26
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
     check-cast p1, Ljava/lang/Iterable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/base/PairwiseEquivalence;->doHash(Ljava/lang/Iterable;)I
@@ -240,24 +210,19 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 61
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/PairwiseEquivalence;
 
     if-eqz v0, :cond_0
 
-    .line 62
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/PairwiseEquivalence;
 
-    .line 63
-    .local v0, "that":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<*>;"
     iget-object v1, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
 
     iget-object v2, v0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
@@ -268,8 +233,6 @@
 
     return v1
 
-    .line 66
-    .end local v0    # "that":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -279,8 +242,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 71
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/PairwiseEquivalence;->elementEquivalence:Lcom/google/common/base/Equivalence;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -297,8 +258,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 76
-    .local p0, "this":Lcom/google/common/base/PairwiseEquivalence;, "Lcom/google/common/base/PairwiseEquivalence<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

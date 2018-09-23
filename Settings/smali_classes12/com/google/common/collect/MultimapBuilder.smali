@@ -45,8 +45,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 77
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder<TK0;TV0;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,10 +52,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/MultimapBuilder$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/MultimapBuilder$1;
 
-    .line 71
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder<TK0;TV0;>;"
     invoke-direct {p0}, Lcom/google/common/collect/MultimapBuilder;-><init>()V
 
     return-void
@@ -77,11 +72,8 @@
         }
     .end annotation
 
-    .line 178
-    .local p0, "keyClass":Ljava/lang/Class;, "Ljava/lang/Class<TK0;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 179
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$4;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MultimapBuilder$4;-><init>(Ljava/lang/Class;)V
@@ -100,7 +92,6 @@
         }
     .end annotation
 
-    .line 85
     const/16 v0, 0x8
 
     invoke-static {v0}, Lcom/google/common/collect/MultimapBuilder;->hashKeys(I)Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
@@ -112,7 +103,6 @@
 
 .method public static hashKeys(I)Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
     .locals 1
-    .param p0, "expectedKeys"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -122,12 +112,10 @@
         }
     .end annotation
 
-    .line 95
     const-string v0, "expectedKeys"
 
     invoke-static {p0, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 96
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MultimapBuilder$1;-><init>(I)V
@@ -146,7 +134,6 @@
         }
     .end annotation
 
-    .line 113
     const/16 v0, 0x8
 
     invoke-static {v0}, Lcom/google/common/collect/MultimapBuilder;->linkedHashKeys(I)Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
@@ -158,7 +145,6 @@
 
 .method public static linkedHashKeys(I)Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
     .locals 1
-    .param p0, "expectedKeys"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -168,12 +154,10 @@
         }
     .end annotation
 
-    .line 126
     const-string v0, "expectedKeys"
 
     invoke-static {p0, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
 
-    .line 127
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$2;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MultimapBuilder$2;-><init>(I)V
@@ -192,7 +176,6 @@
         }
     .end annotation
 
-    .line 147
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -218,11 +201,8 @@
         }
     .end annotation
 
-    .line 164
-    .local p0, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<TK0;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 165
     new-instance v0, Lcom/google/common/collect/MultimapBuilder$3;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MultimapBuilder$3;-><init>(Ljava/util/Comparator;)V
@@ -254,17 +234,11 @@
         }
     .end annotation
 
-    .line 433
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder;, "Lcom/google/common/collect/MultimapBuilder<TK0;TV0;>;"
-    .local p1, "multimap":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder;->build()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
 
-    .line 434
-    .local v0, "result":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<TK;TV;>;"
     invoke-interface {v0, p1}, Lcom/google/common/collect/Multimap;->putAll(Lcom/google/common/collect/Multimap;)Z
 
-    .line 435
     return-object v0
 .end method

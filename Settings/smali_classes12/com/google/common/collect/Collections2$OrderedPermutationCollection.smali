@@ -60,13 +60,8 @@
         }
     .end annotation
 
-    .line 416
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
-    .local p1, "input":Ljava/lang/Iterable;, "Ljava/lang/Iterable<TE;>;"
-    .local p2, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    .line 417
     invoke-static {p2}, Lcom/google/common/collect/Ordering;->from(Ljava/util/Comparator;)Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -77,10 +72,8 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
-    .line 418
     iput-object p2, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->comparator:Ljava/util/Comparator;
 
-    .line 419
     iget-object v0, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {v0, p2}, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->calculateSize(Ljava/util/List;Ljava/util/Comparator;)I
@@ -89,7 +82,6 @@
 
     iput v0, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->size:I
 
-    .line 420
     return-void
 .end method
 
@@ -107,26 +99,16 @@
         }
     .end annotation
 
-    .line 433
-    .local p0, "sortedInputList":Ljava/util/List;, "Ljava/util/List<TE;>;"
-    .local p1, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TE;>;"
     const-wide/16 v0, 0x1
 
-    .line 434
-    .local v0, "permutations":J
     const/4 v2, 0x1
 
-    .line 435
-    .local v2, "n":I
     const/4 v3, 0x1
 
     move-wide v4, v0
 
     move v0, v3
 
-    .line 436
-    .local v0, "r":I
-    .local v4, "permutations":J
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -136,10 +118,8 @@
 
     if-ge v2, v1, :cond_1
 
-    .line 437
     add-int/lit8 v1, v2, -0x1
 
-    .line 438
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -148,47 +128,35 @@
 
     move-result-object v7
 
-    .line 437
     invoke-interface {p1, v1, v7}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 439
-    .local v1, "comparison":I
     if-gez v1, :cond_0
 
-    .line 441
     invoke-static {v2, v0}, Lcom/google/common/math/LongMath;->binomial(II)J
 
     move-result-wide v7
 
     mul-long/2addr v4, v7
 
-    .line 442
     const/4 v0, 0x0
 
-    .line 443
     invoke-static {v4, v5}, Lcom/google/common/collect/Collections2;->access$000(J)Z
 
     move-result v7
 
     if-nez v7, :cond_0
 
-    .line 444
     return v6
 
-    .line 447
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    .line 448
     add-int/2addr v0, v3
 
-    .line 449
-    .end local v1    # "comparison":I
     goto :goto_0
 
-    .line 450
     :cond_1
     invoke-static {v2, v0}, Lcom/google/common/math/LongMath;->binomial(II)J
 
@@ -196,17 +164,14 @@
 
     mul-long/2addr v4, v7
 
-    .line 451
     invoke-static {v4, v5}, Lcom/google/common/collect/Collections2;->access$000(J)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 452
     return v6
 
-    .line 454
     :cond_2
     long-to-int v1, v4
 
@@ -217,24 +182,19 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 470
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
     instance-of v0, p1, Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 471
     move-object v0, p1
 
     check-cast v0, Ljava/util/List;
 
-    .line 472
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {v1, v0}, Lcom/google/common/collect/Collections2;->access$100(Ljava/util/List;Ljava/util/List;)Z
@@ -243,8 +203,6 @@
 
     return v1
 
-    .line 474
-    .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -254,8 +212,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 462
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -272,8 +228,6 @@
         }
     .end annotation
 
-    .line 466
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
     new-instance v0, Lcom/google/common/collect/Collections2$OrderedPermutationIterator;
 
     iget-object v1, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
@@ -288,8 +242,6 @@
 .method public size()I
     .locals 1
 
-    .line 458
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
     iget v0, p0, Lcom/google/common/collect/Collections2$OrderedPermutationCollection;->size:I
 
     return v0
@@ -298,8 +250,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 478
-    .local p0, "this":Lcom/google/common/collect/Collections2$OrderedPermutationCollection;, "Lcom/google/common/collect/Collections2$OrderedPermutationCollection<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -30,7 +30,6 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/LocalCache;Ljava/util/concurrent/ConcurrentMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/cache/LocalCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,15 +38,10 @@
         }
     .end annotation
 
-    .line 4514
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntrySet;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntrySet;"
-    .local p2, "map":Ljava/util/concurrent/ConcurrentMap;, "Ljava/util/concurrent/ConcurrentMap<**>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$EntrySet;->this$0:Lcom/google/common/cache/LocalCache;
 
-    .line 4515
     invoke-direct {p0, p1, p2}, Lcom/google/common/cache/LocalCache$AbstractCacheSet;-><init>(Lcom/google/common/cache/LocalCache;Ljava/util/concurrent/ConcurrentMap;)V
 
-    .line 4516
     return-void
 .end method
 
@@ -55,39 +49,28 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 6
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 4525
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntrySet;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 4526
     return v1
 
-    .line 4528
     :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 4529
-    .local v0, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 4530
-    .local v2, "key":Ljava/lang/Object;
     if-nez v2, :cond_1
 
-    .line 4531
     return v1
 
-    .line 4533
     :cond_1
     iget-object v3, p0, Lcom/google/common/cache/LocalCache$EntrySet;->this$0:Lcom/google/common/cache/LocalCache;
 
@@ -95,8 +78,6 @@
 
     move-result-object v3
 
-    .line 4535
-    .local v3, "v":Ljava/lang/Object;, "TV;"
     if-eqz v3, :cond_2
 
     iget-object v4, p0, Lcom/google/common/cache/LocalCache$EntrySet;->this$0:Lcom/google/common/cache/LocalCache;
@@ -132,8 +113,6 @@
         }
     .end annotation
 
-    .line 4520
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntrySet;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntrySet;"
     new-instance v0, Lcom/google/common/cache/LocalCache$EntryIterator;
 
     iget-object v1, p0, Lcom/google/common/cache/LocalCache$EntrySet;->this$0:Lcom/google/common/cache/LocalCache;
@@ -145,33 +124,24 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 4540
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntrySet;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntrySet;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 4541
     return v1
 
-    .line 4543
     :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 4544
-    .local v0, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 4545
-    .local v2, "key":Ljava/lang/Object;
     if-eqz v2, :cond_1
 
     iget-object v3, p0, Lcom/google/common/cache/LocalCache$EntrySet;->this$0:Lcom/google/common/cache/LocalCache;

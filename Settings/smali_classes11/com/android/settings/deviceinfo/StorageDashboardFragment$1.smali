@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 221
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 233
     const-class v0, Landroid/os/storage/StorageManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -49,8 +46,6 @@
 
     check-cast v0, Landroid/os/storage/StorageManager;
 
-    .line 234
-    .local v0, "sm":Landroid/os/storage/StorageManager;
     const-class v1, Landroid/os/UserManager;
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -59,21 +54,16 @@
 
     check-cast v1, Landroid/os/UserManager;
 
-    .line 235
-    .local v1, "userManager":Landroid/os/UserManager;
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 236
-    .local v2, "controllers":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/core/AbstractPreferenceController;>;"
     new-instance v3, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreferenceController;
 
     invoke-direct {v3, p1}, Lcom/android/settings/deviceinfo/storage/StorageSummaryDonutPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 237
     new-instance v3, Lcom/android/settings/deviceinfo/storage/StorageItemPreferenceController;
 
     new-instance v4, Lcom/android/settingslib/deviceinfo/StorageManagerVolumeProvider;
@@ -86,21 +76,17 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 239
     invoke-static {p1, v1}, Lcom/android/settings/deviceinfo/storage/SecondaryUserController;->getSecondaryUserControllers(Landroid/content/Context;Landroid/os/UserManager;)Ljava/util/List;
 
     move-result-object v3
 
     invoke-interface {v2, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 241
     return-object v2
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,18 +98,14 @@
         }
     .end annotation
 
-    .line 225
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 226
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f1600bf
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 227
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

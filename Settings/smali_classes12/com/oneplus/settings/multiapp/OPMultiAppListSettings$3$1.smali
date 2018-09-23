@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;
 
-    .line 177
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;
 
     iput p2, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->val$position:I
@@ -42,25 +40,19 @@
 # virtual methods
 .method public finish(Z)V
     .locals 5
-    .param p1, "shown"    # Z
 
-    .line 180
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 181
-    .local v0, "remsg":Landroid/os/Message;
     const/16 v1, 0x58
 
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 182
     iget v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->val$position:I
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 183
     iget-object v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;
 
     iget-object v1, v1, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
@@ -71,7 +63,6 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 184
     iget-object v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;
 
     iget-object v1, v1, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
@@ -92,8 +83,6 @@
 
     move-result v1
 
-    .line 186
-    .local v1, "value":I
     iget-object v2, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;
 
     iget-object v2, v2, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$3;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
@@ -112,6 +101,5 @@
 
     invoke-static {v2, v3, v1, v4}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 188
     return-void
 .end method

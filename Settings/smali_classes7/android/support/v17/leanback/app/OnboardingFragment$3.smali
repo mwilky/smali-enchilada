@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/OnboardingFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/OnboardingFragment;
 
-    .line 367
     iput-object p1, p0, Landroid/support/v17/leanback/app/OnboardingFragment$3;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 370
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$3;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingFragment;->getView()Landroid/view/View;
@@ -52,7 +49,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 371
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$3;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingFragment;->startLogoAnimation()Z
@@ -63,17 +59,14 @@
 
     if-nez v0, :cond_0
 
-    .line 372
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$3;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     iput-boolean v1, v0, Landroid/support/v17/leanback/app/OnboardingFragment;->mLogoAnimationFinished:Z
 
-    .line 373
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$3;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingFragment;->onLogoAnimationFinished()V
 
-    .line 375
     :cond_0
     return v1
 .end method

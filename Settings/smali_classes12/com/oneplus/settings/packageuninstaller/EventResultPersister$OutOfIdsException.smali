@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/packageuninstaller/EventResultPersister;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/packageuninstaller/EventResultPersister;
 
-    .line 352
     iput-object p1, p0, Lcom/oneplus/settings/packageuninstaller/EventResultPersister$OutOfIdsException;->this$0:Lcom/oneplus/settings/packageuninstaller/EventResultPersister;
 
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V

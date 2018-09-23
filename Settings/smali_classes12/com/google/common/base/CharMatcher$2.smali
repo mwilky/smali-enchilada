@@ -17,9 +17,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/String;
 
-    .line 158
     invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -29,9 +27,7 @@
 # virtual methods
 .method public matches(C)Z
     .locals 1
-    .param p1, "c"    # C
 
-    .line 160
     invoke-static {p1}, Ljava/lang/Character;->isDigit(C)Z
 
     move-result v0

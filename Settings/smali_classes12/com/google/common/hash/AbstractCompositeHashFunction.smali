@@ -14,12 +14,9 @@
 # direct methods
 .method varargs constructor <init>([Lcom/google/common/hash/HashFunction;)V
     .locals 3
-    .param p1, "functions"    # [Lcom/google/common/hash/HashFunction;
 
-    .line 33
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 34
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -29,21 +26,15 @@
 
     aget-object v2, p1, v1
 
-    .line 35
-    .local v2, "function":Lcom/google/common/hash/HashFunction;
     invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 34
-    .end local v2    # "function":Lcom/google/common/hash/HashFunction;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 37
     :cond_0
     iput-object p1, p0, Lcom/google/common/hash/AbstractCompositeHashFunction;->functions:[Lcom/google/common/hash/HashFunction;
 
-    .line 38
     return-void
 .end method
 
@@ -55,24 +46,19 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 3
 
-    .line 50
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction;->functions:[Lcom/google/common/hash/HashFunction;
 
     array-length v0, v0
 
     new-array v0, v0, [Lcom/google/common/hash/Hasher;
 
-    .line 51
-    .local v0, "hashers":[Lcom/google/common/hash/Hasher;
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, v0
 
     if-ge v1, v2, :cond_0
 
-    .line 52
     iget-object v2, p0, Lcom/google/common/hash/AbstractCompositeHashFunction;->functions:[Lcom/google/common/hash/HashFunction;
 
     aget-object v2, v2, v1
@@ -83,13 +69,10 @@
 
     aput-object v2, v0, v1
 
-    .line 51
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 54
-    .end local v1    # "i":I
     :cond_0
     new-instance v1, Lcom/google/common/hash/AbstractCompositeHashFunction$1;
 

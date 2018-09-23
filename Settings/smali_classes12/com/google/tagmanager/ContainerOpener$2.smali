@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;)V
     .locals 0
 
-    .line 303
     iput-object p1, p0, Lcom/google/tagmanager/ContainerOpener$2;->val$future:Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,13 +36,10 @@
 # virtual methods
 .method public containerAvailable(Lcom/google/tagmanager/Container;)V
     .locals 1
-    .param p1, "container"    # Lcom/google/tagmanager/Container;
 
-    .line 306
     iget-object v0, p0, Lcom/google/tagmanager/ContainerOpener$2;->val$future:Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;
 
     invoke-virtual {v0, p1}, Lcom/google/tagmanager/ContainerOpener$ContainerFutureImpl;->setContainer(Lcom/google/tagmanager/Container;)V
 
-    .line 307
     return-void
 .end method

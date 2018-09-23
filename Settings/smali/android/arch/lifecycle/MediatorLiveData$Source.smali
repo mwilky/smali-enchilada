@@ -63,24 +63,16 @@
         }
     .end annotation
 
-    .line 135
-    .local p0, "this":Landroid/arch/lifecycle/MediatorLiveData$Source;, "Landroid/arch/lifecycle/MediatorLiveData$Source<TV;>;"
-    .local p1, "liveData":Landroid/arch/lifecycle/LiveData;, "Landroid/arch/lifecycle/LiveData<TV;>;"
-    .local p2, "observer":Landroid/arch/lifecycle/Observer;, "Landroid/arch/lifecycle/Observer<-TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 133
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mVersion:I
 
-    .line 136
     iput-object p1, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mLiveData:Landroid/arch/lifecycle/LiveData;
 
-    .line 137
     iput-object p2, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mObserver:Landroid/arch/lifecycle/Observer;
 
-    .line 138
     return-void
 .end method
 
@@ -98,9 +90,6 @@
         }
     .end annotation
 
-    .line 150
-    .local p0, "this":Landroid/arch/lifecycle/MediatorLiveData$Source;, "Landroid/arch/lifecycle/MediatorLiveData$Source<TV;>;"
-    .local p1, "v":Ljava/lang/Object;, "TV;"
     iget v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mVersion:I
 
     iget-object v1, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mLiveData:Landroid/arch/lifecycle/LiveData;
@@ -111,7 +100,6 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 151
     iget-object v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mLiveData:Landroid/arch/lifecycle/LiveData;
 
     invoke-virtual {v0}, Landroid/arch/lifecycle/LiveData;->getVersion()I
@@ -120,12 +108,10 @@
 
     iput v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mVersion:I
 
-    .line 152
     iget-object v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mObserver:Landroid/arch/lifecycle/Observer;
 
     invoke-interface {v0, p1}, Landroid/arch/lifecycle/Observer;->onChanged(Ljava/lang/Object;)V
 
-    .line 154
     :cond_0
     return-void
 .end method
@@ -133,25 +119,19 @@
 .method plug()V
     .locals 1
 
-    .line 141
-    .local p0, "this":Landroid/arch/lifecycle/MediatorLiveData$Source;, "Landroid/arch/lifecycle/MediatorLiveData$Source<TV;>;"
     iget-object v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mLiveData:Landroid/arch/lifecycle/LiveData;
 
     invoke-virtual {v0, p0}, Landroid/arch/lifecycle/LiveData;->observeForever(Landroid/arch/lifecycle/Observer;)V
 
-    .line 142
     return-void
 .end method
 
 .method unplug()V
     .locals 1
 
-    .line 145
-    .local p0, "this":Landroid/arch/lifecycle/MediatorLiveData$Source;, "Landroid/arch/lifecycle/MediatorLiveData$Source<TV;>;"
     iget-object v0, p0, Landroid/arch/lifecycle/MediatorLiveData$Source;->mLiveData:Landroid/arch/lifecycle/LiveData;
 
     invoke-virtual {v0, p0}, Landroid/arch/lifecycle/LiveData;->removeObserver(Landroid/arch/lifecycle/Observer;)V
 
-    .line 146
     return-void
 .end method

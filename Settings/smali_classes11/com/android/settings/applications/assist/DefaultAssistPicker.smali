@@ -37,7 +37,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 46
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.service.voice.VoiceInteractionService"
@@ -46,7 +45,6 @@
 
     sput-object v0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->ASSIST_SERVICE_PROBE:Landroid/content/Intent;
 
-    .line 48
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.ASSIST"
@@ -61,10 +59,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 43
     invoke-direct {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPickerFragment;-><init>()V
 
-    .line 50
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -77,15 +73,12 @@
 .method private addAssistActivities()V
     .locals 9
 
-    .line 178
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mPm:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
     invoke-virtual {v0}, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 179
-    .local v0, "pm":Landroid/content/pm/PackageManager;
     sget-object v1, Lcom/android/settings/applications/assist/DefaultAssistPicker;->ASSIST_ACTIVITY_PROBE:Landroid/content/Intent;
 
     const/high16 v2, 0x10000
@@ -94,8 +87,6 @@
 
     move-result-object v1
 
-    .line 181
-    .local v1, "activities":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -113,8 +104,6 @@
 
     check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    .line 182
-    .local v3, "resolveInfo":Landroid/content/pm/ResolveInfo;
     iget-object v4, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAvailableAssistants:Ljava/util/List;
 
     new-instance v5, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
@@ -135,11 +124,8 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 185
-    .end local v3    # "resolveInfo":Landroid/content/pm/ResolveInfo;
     goto :goto_0
 
-    .line 186
     :cond_0
     return-void
 .end method
@@ -147,15 +133,12 @@
 .method private addAssistServices()V
     .locals 10
 
-    .line 160
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mPm:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
     invoke-virtual {v0}, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 161
-    .local v0, "pm":Landroid/content/pm/PackageManager;
     sget-object v1, Lcom/android/settings/applications/assist/DefaultAssistPicker;->ASSIST_SERVICE_PROBE:Landroid/content/Intent;
 
     const/16 v2, 0x80
@@ -164,8 +147,6 @@
 
     move-result-object v1
 
-    .line 163
-    .local v1, "services":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -183,26 +164,20 @@
 
     check-cast v3, Landroid/content/pm/ResolveInfo;
 
-    .line 164
-    .local v3, "resolveInfo":Landroid/content/pm/ResolveInfo;
     new-instance v4, Landroid/service/voice/VoiceInteractionServiceInfo;
 
     iget-object v5, v3, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     invoke-direct {v4, v0, v5}, Landroid/service/voice/VoiceInteractionServiceInfo;-><init>(Landroid/content/pm/PackageManager;Landroid/content/pm/ServiceInfo;)V
 
-    .line 166
-    .local v4, "voiceInteractionServiceInfo":Landroid/service/voice/VoiceInteractionServiceInfo;
     invoke-virtual {v4}, Landroid/service/voice/VoiceInteractionServiceInfo;->getSupportsAssist()Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 167
     goto :goto_0
 
-    .line 170
     :cond_0
     iget-object v5, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAvailableAssistants:Ljava/util/List;
 
@@ -224,21 +199,15 @@
 
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 174
-    .end local v3    # "resolveInfo":Landroid/content/pm/ResolveInfo;
-    .end local v4    # "voiceInteractionServiceInfo":Landroid/service/voice/VoiceInteractionServiceInfo;
     goto :goto_0
 
-    .line 175
     :cond_1
     return-void
 .end method
 
 .method private findAssistantByPackageName(Ljava/lang/String;)Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
     .locals 3
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 189
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAvailableAssistants:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -258,8 +227,6 @@
 
     check-cast v1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
 
-    .line 190
-    .local v1, "info":Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
     iget-object v2, v1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
     invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -272,15 +239,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 191
     return-object v1
 
-    .line 193
-    .end local v1    # "info":Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
     :cond_0
     goto :goto_0
 
-    .line 194
     :cond_1
     const/4 v0, 0x0
 
@@ -290,7 +253,6 @@
 .method private getDefaultRecognizer()Ljava/lang/String;
     .locals 4
 
-    .line 232
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mPm:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
     invoke-virtual {v0}, Lcom/android/settingslib/wrapper/PackageManagerWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -309,8 +271,6 @@
 
     move-result-object v0
 
-    .line 235
-    .local v0, "resolveInfo":Landroid/content/pm/ResolveInfo;
     if-eqz v0, :cond_1
 
     iget-object v1, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
@@ -319,7 +279,6 @@
 
     goto :goto_0
 
-    .line 240
     :cond_0
     new-instance v1, Landroid/content/ComponentName;
 
@@ -333,15 +292,12 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 241
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 240
     return-object v1
 
-    .line 236
     :cond_1
     :goto_0
     const-string v1, "DefaultAssistPicker"
@@ -350,7 +306,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 237
     const-string v1, ""
 
     return-object v1
@@ -358,9 +313,7 @@
 
 .method private setAssistActivity(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
     .locals 3
-    .param p1, "activityInfo"    # Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
 
-    .line 223
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -373,15 +326,12 @@
 
     iget-object v2, p1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
-    .line 224
     invoke-virtual {v2}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 223
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 225
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -396,7 +346,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 227
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -407,22 +356,18 @@
 
     const-string v1, "voice_recognition_service"
 
-    .line 228
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getDefaultRecognizer()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 227
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 229
     return-void
 .end method
 
 .method private setAssistNone()V
     .locals 3
 
-    .line 198
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -437,7 +382,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 200
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -452,7 +396,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 202
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -463,57 +406,44 @@
 
     const-string v1, "voice_recognition_service"
 
-    .line 203
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getDefaultRecognizer()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 202
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 204
     return-void
 .end method
 
 .method private setAssistService(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
     .locals 4
-    .param p1, "serviceInfo"    # Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
 
-    .line 207
     iget-object v0, p1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
-    .line 208
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 209
-    .local v0, "serviceComponentName":Ljava/lang/String;
     new-instance v1, Landroid/content/ComponentName;
 
     iget-object v2, p1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
-    .line 210
     invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
     iget-object v3, p1, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->voiceInteractionServiceInfo:Landroid/service/voice/VoiceInteractionServiceInfo;
 
-    .line 211
     invoke-virtual {v3}, Landroid/service/voice/VoiceInteractionServiceInfo;->getRecognitionService()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 212
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 214
-    .local v1, "serviceRecognizerName":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -526,7 +456,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 216
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -539,7 +468,6 @@
 
     invoke-static {v2, v3, v0}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 218
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -552,7 +480,6 @@
 
     invoke-static {v2, v3, v1}, Landroid/provider/Settings$Secure;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 220
     return-void
 .end method
 
@@ -569,30 +496,22 @@
         }
     .end annotation
 
-    .line 77
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAvailableAssistants:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 78
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->addAssistServices()V
 
-    .line 79
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->addAssistActivities()V
 
-    .line 81
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 82
-    .local v0, "packages":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 83
-    .local v1, "candidates":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/applications/DefaultAppInfo;>;"
     iget-object v2, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAvailableAssistants:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -612,30 +531,23 @@
 
     check-cast v3, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
 
-    .line 84
-    .local v3, "info":Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
     iget-object v4, v3, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->component:Landroid/content/ComponentName;
 
     invoke-virtual {v4}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 85
-    .local v4, "packageName":Ljava/lang/String;
     invoke-interface {v0, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 87
     goto :goto_0
 
-    .line 89
     :cond_0
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 90
     new-instance v5, Lcom/android/settingslib/applications/DefaultAppInfo;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
@@ -652,12 +564,8 @@
 
     invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 91
-    .end local v3    # "info":Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
-    .end local v4    # "packageName":Ljava/lang/String;
     goto :goto_0
 
-    .line 92
     :cond_1
     return-object v1
 .end method
@@ -665,7 +573,6 @@
 .method protected bridge synthetic getConfirmationMessage(Lcom/android/settingslib/widget/CandidateInfo;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 43
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getConfirmationMessage(Lcom/android/settingslib/widget/CandidateInfo;)Ljava/lang/String;
 
     move-result-object p1
@@ -675,17 +582,13 @@
 
 .method protected getConfirmationMessage(Lcom/android/settingslib/widget/CandidateInfo;)Ljava/lang/String;
     .locals 5
-    .param p1, "appInfo"    # Lcom/android/settingslib/widget/CandidateInfo;
 
-    .line 106
     if-nez p1, :cond_0
 
-    .line 107
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 109
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
 
@@ -715,7 +618,6 @@
 .method public getCurrentAssist()Landroid/content/ComponentName;
     .locals 2
 
-    .line 156
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAssistUtils:Lcom/android/internal/app/AssistUtils;
 
     iget v1, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mUserId:I
@@ -730,16 +632,12 @@
 .method protected getDefaultKey()Ljava/lang/String;
     .locals 5
 
-    .line 97
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getCurrentAssist()Landroid/content/ComponentName;
 
     move-result-object v0
 
-    .line 98
-    .local v0, "cn":Landroid/content/ComponentName;
     if-eqz v0, :cond_0
 
-    .line 99
     new-instance v1, Lcom/android/settingslib/applications/DefaultAppInfo;
 
     invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
@@ -758,7 +656,6 @@
 
     return-object v1
 
-    .line 101
     :cond_0
     const/4 v1, 0x0
 
@@ -768,7 +665,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 56
     const/16 v0, 0x34b
 
     return v0
@@ -777,7 +673,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 72
     const v0, 0x7f16003c
 
     return v0
@@ -785,225 +680,73 @@
 
 .method public onAttach(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 66
     invoke-super {p0, p1}, Lcom/android/settings/applications/defaultapps/DefaultAppPickerFragment;->onAttach(Landroid/content/Context;)V
 
-    .line 67
     new-instance v0, Lcom/android/internal/app/AssistUtils;
 
     invoke-direct {v0, p1}, Lcom/android/internal/app/AssistUtils;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/settings/applications/assist/DefaultAssistPicker;->mAssistUtils:Lcom/android/internal/app/AssistUtils;
 
-    .line 68
     return-void
 .end method
 
 .method protected setDefaultKey(Ljava/lang/String;)Z
-    .locals 8
-    .param p1, "key"    # Ljava/lang/String;
+    .locals 4
 
-    .line 115
-    invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 116
-    .local v0, "intent":Landroid/content/Intent;
-    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v1
-
-    const-string v2, "assistntapp"
-
-    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 118
-    .local v1, "flag":Ljava/lang/String;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x1
 
-    const/4 v4, 0x1
+    if-eqz v0, :cond_0
 
-    if-eqz v2, :cond_2
-
-    .line 119
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistNone()V
 
-    .line 121
-    const-string v2, "switch"
+    return v1
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    const-string v2, "onClick"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 122
     :cond_0
-    invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const-string v5, "quick_turn_on_voice_assistant"
-
-    invoke-static {v2, v5, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 123
-    const-string v2, "quick_turn_on_voice_assistant"
-
-    const-string v3, "off"
-
-    invoke-static {v2, v3}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 126
-    :cond_1
-    return v4
-
-    .line 128
-    :cond_2
     invoke-static {p1}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+
     move-result-object v2
 
-    .line 129
-    .local v2, "cn":Landroid/content/ComponentName;
-    invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    invoke-direct {p0, v2}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->findAssistantByPackageName(Ljava/lang/String;)Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-direct {p0, v5}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->findAssistantByPackageName(Ljava/lang/String;)Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
+    if-nez v2, :cond_1
 
-    move-result-object v5
-
-    .line 130
-    .local v5, "info":Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;
-    if-nez v5, :cond_5
-
-    .line 131
     invoke-direct {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistNone()V
 
-    .line 133
-    const-string v6, "switch"
+    return v1
 
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_3
-
-    const-string v6, "onClick"
-
-    invoke-virtual {v6, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    .line 134
-    :cond_3
-    invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v6
-
-    const-string v7, "quick_turn_on_voice_assistant"
-
-    invoke-static {v6, v7, v3}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 135
-    const-string v3, "quick_turn_on_voice_assistant"
-
-    const-string v6, "off"
-
-    invoke-static {v3, v6}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 138
-    :cond_4
-    return v4
-
-    .line 141
-    :cond_5
-    invoke-virtual {v5}, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->isVoiceInteractionService()Z
+    :cond_1
+    invoke-virtual {v2}, Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;->isVoiceInteractionService()Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_2
 
-    .line 142
-    invoke-direct {p0, v5}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistService(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
+    invoke-direct {p0, v2}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistService(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
 
     goto :goto_0
 
-    .line 144
-    :cond_6
-    invoke-direct {p0, v5}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistActivity(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
+    :cond_2
+    invoke-direct {p0, v2}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->setAssistActivity(Lcom/android/settings/applications/assist/DefaultAssistPicker$Info;)V
 
-    .line 147
     :goto_0
-    const-string v3, "switch"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    .line 148
-    invoke-virtual {p0}, Lcom/android/settings/applications/assist/DefaultAssistPicker;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    const-string v6, "quick_turn_on_voice_assistant"
-
-    invoke-static {v3, v6, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 149
-    const-string v3, "quick_turn_on_voice_assistant"
-
-    const-string v6, "on"
-
-    invoke-static {v3, v6}, Lcom/oneplus/settings/utils/OPUtils;->sendAppTracker(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 152
-    :cond_7
-    return v4
+    return v1
 .end method
 
 .method protected shouldShowItemNone()Z
     .locals 1
 
-    .line 61
     const/4 v0, 0x1
 
     return v0

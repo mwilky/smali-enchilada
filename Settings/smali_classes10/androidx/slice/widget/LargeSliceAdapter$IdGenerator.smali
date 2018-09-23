@@ -44,22 +44,18 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 284
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 285
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mNextLong:J
 
-    .line 286
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mCurrentIds:Landroid/support/v4/util/ArrayMap;
 
-    .line 287
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
@@ -71,9 +67,7 @@
 
 .method synthetic constructor <init>(Landroidx/slice/widget/LargeSliceAdapter$1;)V
     .locals 0
-    .param p1, "x0"    # Landroidx/slice/widget/LargeSliceAdapter$1;
 
-    .line 284
     invoke-direct {p0}, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;-><init>()V
 
     return-void
@@ -81,9 +75,7 @@
 
 .method private genString(Landroidx/slice/SliceItem;)Ljava/lang/String;
     .locals 2
-    .param p1, "item"    # Landroidx/slice/SliceItem;
 
-    .line 306
     const-string v0, "slice"
 
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
@@ -98,7 +90,6 @@
 
     const-string v0, "action"
 
-    .line 307
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v1
@@ -111,7 +102,6 @@
 
     goto :goto_0
 
-    .line 310
     :cond_0
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->toString()Ljava/lang/String;
 
@@ -119,7 +109,6 @@
 
     return-object v0
 
-    .line 308
     :cond_1
     :goto_0
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
@@ -145,16 +134,11 @@
 # virtual methods
 .method public getId(Landroidx/slice/SliceItem;I)J
     .locals 8
-    .param p1, "item"    # Landroidx/slice/SliceItem;
-    .param p2, "mode"    # I
 
-    .line 290
     invoke-direct {p0, p1}, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->genString(Landroidx/slice/SliceItem;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 291
-    .local v0, "str":Ljava/lang/String;
     const-string v1, "summary"
 
     const/4 v2, 0x0
@@ -163,11 +147,8 @@
 
     move-result-object v1
 
-    .line 292
-    .local v1, "summary":Landroidx/slice/SliceItem;
     if-eqz v1, :cond_0
 
-    .line 293
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -180,7 +161,6 @@
 
     move-result-object v0
 
-    .line 295
     :cond_0
     iget-object v2, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mCurrentIds:Landroid/support/v4/util/ArrayMap;
 
@@ -190,7 +170,6 @@
 
     if-nez v2, :cond_1
 
-    .line 296
     iget-object v2, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mCurrentIds:Landroid/support/v4/util/ArrayMap;
 
     iget-wide v3, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mNextLong:J
@@ -207,7 +186,6 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 298
     :cond_1
     iget-object v2, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mCurrentIds:Landroid/support/v4/util/ArrayMap;
 
@@ -221,8 +199,6 @@
 
     move-result-wide v2
 
-    .line 299
-    .local v2, "id":J
     iget-object v4, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mUsedIds:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v4, v0}, Landroid/support/v4/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -231,8 +207,6 @@
 
     check-cast v4, Ljava/lang/Integer;
 
-    .line 300
-    .local v4, "usedIdIndex":Ljava/lang/Integer;
     if-eqz v4, :cond_2
 
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
@@ -244,8 +218,6 @@
     :cond_2
     const/4 v5, 0x0
 
-    .line 301
-    .local v5, "index":I
     :goto_0
     iget-object v6, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mUsedIds:Landroid/support/v4/util/ArrayMap;
 
@@ -257,7 +229,6 @@
 
     invoke-virtual {v6, v0, v7}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 302
     mul-int/lit16 v6, v5, 0x2710
 
     int-to-long v6, v6
@@ -270,11 +241,9 @@
 .method public resetUsage()V
     .locals 1
 
-    .line 314
     iget-object v0, p0, Landroidx/slice/widget/LargeSliceAdapter$IdGenerator;->mUsedIds:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/support/v4/util/ArrayMap;->clear()V
 
-    .line 315
     return-void
 .end method

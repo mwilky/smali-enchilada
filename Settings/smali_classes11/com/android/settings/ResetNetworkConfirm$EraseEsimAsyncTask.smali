@@ -33,19 +33,13 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 126
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 127
     iput-object p1, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mContext:Landroid/content/Context;
 
-    .line 128
     iput-object p2, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mPackageName:Ljava/lang/String;
 
-    .line 129
     return-void
 .end method
 
@@ -53,9 +47,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
     .locals 2
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 133
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mPackageName:Ljava/lang/String;
@@ -74,7 +66,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 122
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Boolean;
@@ -86,19 +77,16 @@
 
 .method protected onPostExecute(Ljava/lang/Boolean;)V
     .locals 3
-    .param p1, "succeeded"    # Ljava/lang/Boolean;
 
-    .line 138
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 139
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f120ece
+    const v1, 0x7f120ec7
 
     const/4 v2, 0x0
 
@@ -106,12 +94,10 @@
 
     move-result-object v0
 
-    .line 140
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     goto :goto_0
 
-    .line 142
     :cond_0
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -119,16 +105,14 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v1, 0x7f120ecb
+    const v1, 0x7f120ec4
 
-    .line 143
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    const v1, 0x7f120eca
+    const v1, 0x7f120ec3
 
-    .line 144
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
@@ -137,15 +121,12 @@
 
     const/4 v2, 0x0
 
-    .line 145
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 146
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
-    .line 148
     :goto_0
     return-void
 .end method
@@ -153,7 +134,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 122
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/ResetNetworkConfirm$EraseEsimAsyncTask;->onPostExecute(Ljava/lang/Boolean;)V

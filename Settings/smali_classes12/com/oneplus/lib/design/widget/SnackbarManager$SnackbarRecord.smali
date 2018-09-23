@@ -33,23 +33,17 @@
 # direct methods
 .method constructor <init>(ILcom/oneplus/lib/design/widget/SnackbarManager$Callback;)V
     .locals 1
-    .param p1, "duration"    # I
-    .param p2, "callback"    # Lcom/oneplus/lib/design/widget/SnackbarManager$Callback;
 
-    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 176
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/oneplus/lib/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
 
-    .line 177
     iput p1, p0, Lcom/oneplus/lib/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
-    .line 178
     return-void
 .end method
 
@@ -57,9 +51,7 @@
 # virtual methods
 .method isSnackbar(Lcom/oneplus/lib/design/widget/SnackbarManager$Callback;)Z
     .locals 1
-    .param p1, "callback"    # Lcom/oneplus/lib/design/widget/SnackbarManager$Callback;
 
-    .line 181
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;

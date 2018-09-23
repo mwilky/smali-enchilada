@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 26
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void
@@ -18,7 +17,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 4
 
-    .line 30
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -27,8 +25,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 31
-    .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
     const-class v2, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
@@ -43,7 +39,6 @@
 
     const-string v2, "extra_prefs_show_button_bar"
 
-    .line 32
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
@@ -56,14 +51,12 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 33
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
     const-string v2, "extra_prefs_set_next_text"
 
-    .line 34
     const v3, 0x7f120163
 
     invoke-virtual {p0, v3}, Lcom/android/settings/notification/RedactionSettingsStandalone;->getString(I)Ljava/lang/String;
@@ -72,15 +65,12 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 36
     return-object v0
 .end method
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "fragmentName"    # Ljava/lang/String;
 
-    .line 41
     const-class v0, Lcom/android/settings/notification/RedactionInterstitial$RedactionInterstitialFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;

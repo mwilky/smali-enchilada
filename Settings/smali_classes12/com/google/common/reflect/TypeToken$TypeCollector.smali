@@ -55,14 +55,12 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 1069
     new-instance v0, Lcom/google/common/reflect/TypeToken$TypeCollector$1;
 
     invoke-direct {v0}, Lcom/google/common/reflect/TypeToken$TypeCollector$1;-><init>()V
 
     sput-object v0, Lcom/google/common/reflect/TypeToken$TypeCollector;->FOR_GENERIC_TYPE:Lcom/google/common/reflect/TypeToken$TypeCollector;
 
-    .line 1085
     new-instance v0, Lcom/google/common/reflect/TypeToken$TypeCollector$2;
 
     invoke-direct {v0}, Lcom/google/common/reflect/TypeToken$TypeCollector$2;-><init>()V
@@ -75,8 +73,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1067
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -84,10 +80,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/reflect/TypeToken$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/reflect/TypeToken$1;
 
-    .line 1067
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
     invoke-direct {p0}, Lcom/google/common/reflect/TypeToken$TypeCollector;-><init>()V
 
     return-void
@@ -105,28 +98,20 @@
         }
     .end annotation
 
-    .line 1134
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
-    .local p1, "type":Ljava/lang/Object;, "TK;"
-    .local p2, "map":Ljava/util/Map;, "Ljava/util/Map<-TK;Ljava/lang/Integer;>;"
     invoke-interface {p2, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1135
-    .local v0, "existing":Ljava/lang/Integer;
     if-eqz v0, :cond_0
 
-    .line 1137
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     return v1
 
-    .line 1139
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getRawType(Ljava/lang/Object;)Ljava/lang/Class;
 
@@ -138,10 +123,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 1140
     nop
 
-    .line 1141
     const/4 v1, 0x1
 
     goto :goto_0
@@ -149,8 +132,6 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 1142
-    .local v1, "aboveMe":I
     :goto_0
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getInterfaces(Ljava/lang/Object;)Ljava/lang/Iterable;
 
@@ -171,8 +152,6 @@
 
     move-result-object v3
 
-    .line 1143
-    .local v3, "interfaceType":Ljava/lang/Object;, "TK;"
     invoke-direct {p0, v3, p2}, Lcom/google/common/reflect/TypeToken$TypeCollector;->collectTypes(Ljava/lang/Object;Ljava/util/Map;)I
 
     move-result v4
@@ -181,21 +160,15 @@
 
     move-result v1
 
-    .line 1144
-    .end local v3    # "interfaceType":Ljava/lang/Object;, "TK;"
     goto :goto_1
 
-    .line 1145
     :cond_2
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector;->getSuperclass(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1146
-    .local v2, "superclass":Ljava/lang/Object;, "TK;"
     if-eqz v2, :cond_3
 
-    .line 1147
     invoke-direct {p0, v2, p2}, Lcom/google/common/reflect/TypeToken$TypeCollector;->collectTypes(Ljava/lang/Object;Ljava/util/Map;)I
 
     move-result v3
@@ -204,7 +177,6 @@
 
     move-result v1
 
-    .line 1154
     :cond_3
     add-int/lit8 v3, v1, 0x1
 
@@ -214,7 +186,6 @@
 
     invoke-interface {p2, p1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1155
     add-int/lit8 v3, v1, 0x1
 
     return v3
@@ -238,15 +209,10 @@
         }
     .end annotation
 
-    .line 1160
-    .local p0, "map":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
-    .local p1, "valueComparator":Ljava/util/Comparator;, "Ljava/util/Comparator<-TV;>;"
     new-instance v0, Lcom/google/common/reflect/TypeToken$TypeCollector$4;
 
     invoke-direct {v0, p1, p0}, Lcom/google/common/reflect/TypeToken$TypeCollector$4;-><init>(Ljava/util/Comparator;Ljava/util/Map;)V
 
-    .line 1165
-    .local v0, "keyOrdering":Lcom/google/common/collect/Ordering;, "Lcom/google/common/collect/Ordering<TK;>;"
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v1
@@ -270,8 +236,6 @@
         }
     .end annotation
 
-    .line 1103
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
     new-instance v0, Lcom/google/common/reflect/TypeToken$TypeCollector$3;
 
     invoke-direct {v0, p0, p0}, Lcom/google/common/reflect/TypeToken$TypeCollector$3;-><init>(Lcom/google/common/reflect/TypeToken$TypeCollector;Lcom/google/common/reflect/TypeToken$TypeCollector;)V
@@ -291,15 +255,10 @@
         }
     .end annotation
 
-    .line 1125
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
-    .local p1, "types":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TK;>;"
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 1126
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<TK;Ljava/lang/Integer;>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -315,15 +274,10 @@
 
     move-result-object v2
 
-    .line 1127
-    .local v2, "type":Ljava/lang/Object;, "TK;"
     invoke-direct {p0, v2, v0}, Lcom/google/common/reflect/TypeToken$TypeCollector;->collectTypes(Ljava/lang/Object;Ljava/util/Map;)I
 
-    .line 1128
-    .end local v2    # "type":Ljava/lang/Object;, "TK;"
     goto :goto_0
 
-    .line 1129
     :cond_0
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
@@ -350,9 +304,6 @@
         }
     .end annotation
 
-    .line 1120
-    .local p0, "this":Lcom/google/common/reflect/TypeToken$TypeCollector;, "Lcom/google/common/reflect/TypeToken$TypeCollector<TK;>;"
-    .local p1, "type":Ljava/lang/Object;, "TK;"
     invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0

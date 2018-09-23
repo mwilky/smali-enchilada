@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/OnboardingFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/OnboardingFragment;
 
-    .line 232
     iput-object p1, p0, Landroid/support/v17/leanback/app/OnboardingFragment$1;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +36,15 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 235
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$1;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     iget-boolean v0, v0, Landroid/support/v17/leanback/app/OnboardingFragment;->mLogoAnimationFinished:Z
 
     if-nez v0, :cond_0
 
-    .line 237
     return-void
 
-    .line 239
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$1;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
@@ -66,20 +60,17 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 240
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$1;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingFragment;->onFinishFragment()V
 
     goto :goto_0
 
-    .line 242
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/OnboardingFragment$1;->this$0:Landroid/support/v17/leanback/app/OnboardingFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/OnboardingFragment;->moveToNextPage()V
 
-    .line 244
     :goto_0
     return-void
 .end method

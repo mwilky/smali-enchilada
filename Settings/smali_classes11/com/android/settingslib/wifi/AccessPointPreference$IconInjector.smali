@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 362
     iput-object p1, p0, Lcom/android/settingslib/wifi/AccessPointPreference$IconInjector;->mContext:Landroid/content/Context;
 
-    .line 363
     return-void
 .end method
 
@@ -37,9 +33,7 @@
 # virtual methods
 .method public getIcon(I)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1, "level"    # I
 
-    .line 366
     iget-object v0, p0, Lcom/android/settingslib/wifi/AccessPointPreference$IconInjector;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/android/settingslib/Utils;->getWifiIconResource(I)I

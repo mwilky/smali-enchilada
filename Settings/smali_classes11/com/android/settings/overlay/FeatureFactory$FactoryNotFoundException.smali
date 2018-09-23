@@ -17,13 +17,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 1
-    .param p1, "throwable"    # Ljava/lang/Throwable;
 
-    .line 116
     const-string v0, "Unable to create factory. Did you misconfigure Proguard?"
 
     invoke-direct {p0, v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 117
     return-void
 .end method

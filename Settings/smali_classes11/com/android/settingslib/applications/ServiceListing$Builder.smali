@@ -31,15 +31,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 193
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 194
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mContext:Landroid/content/Context;
 
-    .line 195
     return-void
 .end method
 
@@ -48,7 +44,6 @@
 .method public build()Lcom/android/settingslib/applications/ServiceListing;
     .locals 9
 
-    .line 223
     new-instance v8, Lcom/android/settingslib/applications/ServiceListing;
 
     iget-object v1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mContext:Landroid/content/Context;
@@ -74,55 +69,40 @@
 
 .method public setIntentAction(Ljava/lang/String;)Lcom/android/settingslib/applications/ServiceListing$Builder;
     .locals 0
-    .param p1, "intentAction"    # Ljava/lang/String;
 
-    .line 208
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mIntentAction:Ljava/lang/String;
 
-    .line 209
     return-object p0
 .end method
 
 .method public setNoun(Ljava/lang/String;)Lcom/android/settingslib/applications/ServiceListing$Builder;
     .locals 0
-    .param p1, "noun"    # Ljava/lang/String;
 
-    .line 218
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mNoun:Ljava/lang/String;
 
-    .line 219
     return-object p0
 .end method
 
 .method public setPermission(Ljava/lang/String;)Lcom/android/settingslib/applications/ServiceListing$Builder;
     .locals 0
-    .param p1, "permission"    # Ljava/lang/String;
 
-    .line 213
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mPermission:Ljava/lang/String;
 
-    .line 214
     return-object p0
 .end method
 
 .method public setSetting(Ljava/lang/String;)Lcom/android/settingslib/applications/ServiceListing$Builder;
     .locals 0
-    .param p1, "setting"    # Ljava/lang/String;
 
-    .line 203
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mSetting:Ljava/lang/String;
 
-    .line 204
     return-object p0
 .end method
 
 .method public setTag(Ljava/lang/String;)Lcom/android/settingslib/applications/ServiceListing$Builder;
     .locals 0
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 198
     iput-object p1, p0, Lcom/android/settingslib/applications/ServiceListing$Builder;->mTag:Ljava/lang/String;
 
-    .line 199
     return-object p0
 .end method

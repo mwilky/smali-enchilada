@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/analytics/tracking/android/PersistentAnalyticsStore;)V
     .locals 0
 
-    .line 112
     iput-object p1, p0, Lcom/google/analytics/tracking/android/PersistentAnalyticsStore$1;->this$0:Lcom/google/analytics/tracking/android/PersistentAnalyticsStore;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public currentTimeMillis()J
     .locals 2
 
-    .line 115
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0

@@ -2907,8 +2907,6 @@ Za prijelaz na početni zaslon u bilo kojem trenutku, prijeđite prstom od sredi
     <string name="oneplus_quick_clipboard_summary">Poboljšajte mogućnost kopiranja i preporučite sljedeću radnju prema kopiranom sadržaju</string>
     <string name="oneplus_quick_gestures">Geste</string>
     <string name="oneplus_quick_gestures_title">Brze geste</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Brzo aktivirajte aplikaciju pomoćnika</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Držite pritisnutim gumb za uključivanje 0,5 s da biste aktivirali aplikaciju pomoćnika, a 3 s za isključivanje</string>
     <string name="oneplus_quick_turn_on_camera">Brzo uključi fotoaparat</string>
     <string name="oneplus_quickpay">Brzo plaćanje</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Jeste li sigurni da želite promijeniti dugotrajnu akciju pritiskanja gumba Početna s \"%1$s\" na \"Brzo plaćanje\"?</string>

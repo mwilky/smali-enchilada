@@ -23,20 +23,14 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "localeString"    # Ljava/lang/String;
 
-    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 201
     iput-object p2, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->mLocaleString:Ljava/lang/String;
 
-    .line 202
     if-nez p2, :cond_0
 
-    .line 203
-    const v0, 0x7f1212d7
+    const v0, 0x7f1212d0
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -46,7 +40,6 @@
 
     goto :goto_0
 
-    .line 204
     :cond_0
     const-string v0, ""
 
@@ -56,8 +49,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 205
-    const v0, 0x7f1212d2
+    const v0, 0x7f1212cb
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -67,7 +59,6 @@
 
     goto :goto_0
 
-    .line 207
     :cond_1
     invoke-static {p2}, Lcom/android/settings/Utils;->createLocaleFromString(Ljava/lang/String;)Ljava/util/Locale;
 
@@ -79,7 +70,6 @@
 
     iput-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->mDescription:Ljava/lang/String;
 
-    .line 209
     :goto_0
     return-void
 .end method
@@ -89,7 +79,6 @@
 .method public getLocaleString()Ljava/lang/String;
     .locals 1
 
-    .line 215
     iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->mLocaleString:Ljava/lang/String;
 
     return-object v0
@@ -98,7 +87,6 @@
 .method public isMoreLanguages()Z
     .locals 1
 
-    .line 219
     iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->mLocaleString:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -117,7 +105,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 212
     iget-object v0, p0, Lcom/android/settings/inputmethod/UserDictionaryAddWordContents$LocaleRenderer;->mDescription:Ljava/lang/String;
 
     return-object v0

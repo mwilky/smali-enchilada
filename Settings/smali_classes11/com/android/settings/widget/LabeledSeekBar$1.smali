@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/LabeledSeekBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/LabeledSeekBar;
 
-    .line 100
     iput-object p1, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 1
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromUser"    # Z
 
-    .line 117
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -51,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 118
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -60,21 +53,17 @@
 
     invoke-interface {v0, p1, p2, p3}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onProgressChanged(Landroid/widget/SeekBar;IZ)V
 
-    .line 119
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0, p2}, Lcom/android/settings/widget/LabeledSeekBar;->access$100(Lcom/android/settings/widget/LabeledSeekBar;I)V
 
-    .line 121
     :cond_0
     return-void
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 1
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .line 110
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -83,7 +72,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -92,16 +80,13 @@
 
     invoke-interface {v0, p1}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStartTrackingTouch(Landroid/widget/SeekBar;)V
 
-    .line 113
     :cond_0
     return-void
 .end method
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 1
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .line 103
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -110,7 +95,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 104
     iget-object v0, p0, Lcom/android/settings/widget/LabeledSeekBar$1;->this$0:Lcom/android/settings/widget/LabeledSeekBar;
 
     invoke-static {v0}, Lcom/android/settings/widget/LabeledSeekBar;->access$000(Lcom/android/settings/widget/LabeledSeekBar;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
@@ -119,7 +103,6 @@
 
     invoke-interface {v0, p1}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Landroid/widget/SeekBar;)V
 
-    .line 106
     :cond_0
     return-void
 .end method

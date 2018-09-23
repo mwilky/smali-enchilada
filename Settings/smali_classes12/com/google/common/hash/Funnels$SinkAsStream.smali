@@ -21,12 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/hash/PrimitiveSink;)V
     .locals 1
-    .param p1, "sink"    # Lcom/google/common/hash/PrimitiveSink;
 
-    .line 232
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    .line 233
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -35,7 +32,6 @@
 
     iput-object v0, p0, Lcom/google/common/hash/Funnels$SinkAsStream;->sink:Lcom/google/common/hash/PrimitiveSink;
 
-    .line 234
     return-void
 .end method
 
@@ -44,7 +40,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 249
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,43 +65,32 @@
 
 .method public write(I)V
     .locals 2
-    .param p1, "b"    # I
 
-    .line 237
     iget-object v0, p0, Lcom/google/common/hash/Funnels$SinkAsStream;->sink:Lcom/google/common/hash/PrimitiveSink;
 
     int-to-byte v1, p1
 
     invoke-interface {v0, v1}, Lcom/google/common/hash/PrimitiveSink;->putByte(B)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 238
     return-void
 .end method
 
 .method public write([B)V
     .locals 1
-    .param p1, "bytes"    # [B
 
-    .line 241
     iget-object v0, p0, Lcom/google/common/hash/Funnels$SinkAsStream;->sink:Lcom/google/common/hash/PrimitiveSink;
 
     invoke-interface {v0, p1}, Lcom/google/common/hash/PrimitiveSink;->putBytes([B)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 242
     return-void
 .end method
 
 .method public write([BII)V
     .locals 1
-    .param p1, "bytes"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
 
-    .line 245
     iget-object v0, p0, Lcom/google/common/hash/Funnels$SinkAsStream;->sink:Lcom/google/common/hash/PrimitiveSink;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/google/common/hash/PrimitiveSink;->putBytes([BII)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 246
     return-void
 .end method

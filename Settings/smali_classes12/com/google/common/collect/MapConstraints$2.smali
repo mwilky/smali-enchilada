@@ -33,7 +33,6 @@
 .method constructor <init>(Ljava/util/Map$Entry;Lcom/google/common/collect/MapConstraint;)V
     .locals 0
 
-    .line 214
     iput-object p1, p0, Lcom/google/common/collect/MapConstraints$2;->val$entry:Ljava/util/Map$Entry;
 
     iput-object p2, p0, Lcom/google/common/collect/MapConstraints$2;->val$constraint:Lcom/google/common/collect/MapConstraint;
@@ -48,7 +47,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 214
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$2;->delegate()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -68,7 +66,6 @@
         }
     .end annotation
 
-    .line 216
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$2;->val$entry:Ljava/util/Map$Entry;
 
     return-object v0
@@ -77,7 +74,6 @@
 .method public bridge synthetic getValue()Ljava/lang/Object;
     .locals 1
 
-    .line 214
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$2;->getValue()Ljava/util/Collection;
 
     move-result-object v0
@@ -95,10 +91,8 @@
         }
     .end annotation
 
-    .line 219
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$2;->val$entry:Ljava/util/Map$Entry;
 
-    .line 220
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -109,7 +103,6 @@
 
     invoke-direct {v1, p0}, Lcom/google/common/collect/MapConstraints$2$1;-><init>(Lcom/google/common/collect/MapConstraints$2;)V
 
-    .line 219
     invoke-static {v0, v1}, Lcom/google/common/collect/Constraints;->constrainedTypePreservingCollection(Ljava/util/Collection;Lcom/google/common/collect/Constraint;)Ljava/util/Collection;
 
     move-result-object v0

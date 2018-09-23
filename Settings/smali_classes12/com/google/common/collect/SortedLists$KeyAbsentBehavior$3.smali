@@ -18,7 +18,6 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    .line 172
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;-><init>(Ljava/lang/String;ILcom/google/common/collect/SortedLists$1;)V
@@ -30,9 +29,7 @@
 # virtual methods
 .method public resultIndex(I)I
     .locals 1
-    .param p1, "higherIndex"    # I
 
-    .line 175
     not-int v0, p1
 
     return v0

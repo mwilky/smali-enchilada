@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/RunningState;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/RunningState;
 
-    .line 143
     iput-object p1, p0, Lcom/android/settings/applications/RunningState$1;->this$0:Lcom/android/settings/applications/RunningState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/applications/RunningState$MergedItem;Lcom/android/settings/applications/RunningState$MergedItem;)I
     .locals 11
-    .param p1, "lhs"    # Lcom/android/settings/applications/RunningState$MergedItem;
-    .param p2, "rhs"    # Lcom/android/settings/applications/RunningState$MergedItem;
 
-    .line 151
     iget v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mUserId:I
 
     iget v1, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mUserId:I
@@ -61,7 +56,6 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 152
     iget v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mUserId:I
 
     iget-object v1, p0, Lcom/android/settings/applications/RunningState$1;->this$0:Lcom/android/settings/applications/RunningState;
@@ -72,7 +66,6 @@
 
     return v2
 
-    .line 153
     :cond_0
     iget v0, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mUserId:I
 
@@ -84,7 +77,6 @@
 
     return v3
 
-    .line 154
     :cond_1
     iget v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mUserId:I
 
@@ -100,7 +92,6 @@
     :goto_0
     return v2
 
-    .line 156
     :cond_3
     iget-object v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -110,17 +101,14 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 157
     iget-object v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mLabel:Ljava/lang/String;
 
     iget-object v1, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mLabel:Ljava/lang/String;
 
     if-ne v0, v1, :cond_4
 
-    .line 158
     return v4
 
-    .line 160
     :cond_4
     iget-object v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mLabel:Ljava/lang/String;
 
@@ -139,7 +127,6 @@
     :cond_5
     return v2
 
-    .line 162
     :cond_6
     iget-object v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -147,7 +134,6 @@
 
     return v2
 
-    .line 163
     :cond_7
     iget-object v0, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -155,20 +141,15 @@
 
     return v3
 
-    .line 166
     :cond_8
     iget-object v0, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     iget-object v0, v0, Lcom/android/settings/applications/RunningState$ProcessItem;->mRunningProcessInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-    .line 168
-    .local v0, "lhsInfo":Landroid/app/ActivityManager$RunningAppProcessInfo;
     iget-object v1, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
     iget-object v1, v1, Lcom/android/settings/applications/RunningState$ProcessItem;->mRunningProcessInfo:Landroid/app/ActivityManager$RunningAppProcessInfo;
 
-    .line 170
-    .local v1, "rhsInfo":Landroid/app/ActivityManager$RunningAppProcessInfo;
     iget v5, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
     const/16 v6, 0x190
@@ -182,8 +163,6 @@
     :cond_9
     move v5, v4
 
-    .line 172
-    .local v5, "lhsBg":Z
     :goto_1
     iget v7, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->importance:I
 
@@ -196,12 +175,9 @@
     :cond_a
     move v6, v4
 
-    .line 175
-    .local v6, "rhsBg":Z
     :goto_2
     if-eq v5, v6, :cond_c
 
-    .line 176
     if-eqz v5, :cond_b
 
     move v2, v3
@@ -211,7 +187,6 @@
     :cond_b
     return v2
 
-    .line 178
     :cond_c
     iget v7, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->flags:I
 
@@ -226,8 +201,6 @@
     :cond_d
     move v7, v4
 
-    .line 180
-    .local v7, "lhsA":Z
     :goto_3
     iget v8, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->flags:I
 
@@ -242,12 +215,9 @@
     :cond_e
     move v8, v4
 
-    .line 183
-    .local v8, "rhsA":Z
     :goto_4
     if-eq v7, v8, :cond_10
 
-    .line 184
     if-eqz v7, :cond_f
 
     goto :goto_5
@@ -258,7 +228,6 @@
     :goto_5
     return v2
 
-    .line 187
     :cond_10
     iget v9, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lru:I
 
@@ -266,7 +235,6 @@
 
     if-eq v9, v10, :cond_12
 
-    .line 188
     iget v4, v0, Landroid/app/ActivityManager$RunningAppProcessInfo;->lru:I
 
     iget v9, v1, Landroid/app/ActivityManager$RunningAppProcessInfo;->lru:I
@@ -281,7 +249,6 @@
     :goto_6
     return v2
 
-    .line 190
     :cond_12
     iget-object v9, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -293,10 +260,8 @@
 
     if-ne v9, v10, :cond_13
 
-    .line 191
     return v4
 
-    .line 193
     :cond_13
     iget-object v4, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -306,7 +271,6 @@
 
     return v3
 
-    .line 194
     :cond_14
     iget-object v3, p2, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -316,7 +280,6 @@
 
     return v2
 
-    .line 195
     :cond_15
     iget-object v2, p1, Lcom/android/settings/applications/RunningState$MergedItem;->mProcess:Lcom/android/settings/applications/RunningState$ProcessItem;
 
@@ -336,7 +299,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 143
     check-cast p1, Lcom/android/settings/applications/RunningState$MergedItem;
 
     check-cast p2, Lcom/android/settings/applications/RunningState$MergedItem;

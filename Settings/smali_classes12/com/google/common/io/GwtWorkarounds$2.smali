@@ -27,12 +27,10 @@
 .method constructor <init>(Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 72
     iput-object p1, p0, Lcom/google/common/io/GwtWorkarounds$2;->val$chars:Ljava/lang/CharSequence;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
     const/4 p1, 0x0
 
     iput p1, p0, Lcom/google/common/io/GwtWorkarounds$2;->index:I
@@ -45,7 +43,6 @@
 .method public close()V
     .locals 1
 
-    .line 86
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$2;->val$chars:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
@@ -54,14 +51,12 @@
 
     iput v0, p0, Lcom/google/common/io/GwtWorkarounds$2;->index:I
 
-    .line 87
     return-void
 .end method
 
 .method public read()I
     .locals 3
 
-    .line 77
     iget v0, p0, Lcom/google/common/io/GwtWorkarounds$2;->index:I
 
     iget-object v1, p0, Lcom/google/common/io/GwtWorkarounds$2;->val$chars:Ljava/lang/CharSequence;
@@ -72,7 +67,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 78
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$2;->val$chars:Ljava/lang/CharSequence;
 
     iget v1, p0, Lcom/google/common/io/GwtWorkarounds$2;->index:I
@@ -87,7 +81,6 @@
 
     return v0
 
-    .line 80
     :cond_0
     const/4 v0, -0x1
 

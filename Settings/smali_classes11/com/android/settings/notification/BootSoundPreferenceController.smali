@@ -18,12 +18,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 37
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 38
     return-void
 .end method
 
@@ -31,19 +28,15 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 3
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 42
     invoke-super {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 43
     invoke-virtual {p0}, Lcom/android/settings/notification/BootSoundPreferenceController;->isAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 44
     const-string v0, "boot_sounds"
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -52,8 +45,6 @@
 
     check-cast v0, Landroid/support/v14/preference/SwitchPreference;
 
-    .line 45
-    .local v0, "preference":Landroid/support/v14/preference/SwitchPreference;
     const-string v1, "persist.sys.bootanim.play_sound"
 
     const/4 v2, 0x1
@@ -64,8 +55,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 47
-    .end local v0    # "preference":Landroid/support/v14/preference/SwitchPreference;
     :cond_0
     return-void
 .end method
@@ -73,7 +62,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 60
     const-string v0, "boot_sounds"
 
     return-object v0
@@ -81,9 +69,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 51
     const-string v0, "boot_sounds"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -96,13 +82,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 52
     move-object v0, p1
 
     check-cast v0, Landroid/support/v14/preference/SwitchPreference;
 
-    .line 53
-    .local v0, "switchPreference":Landroid/support/v14/preference/SwitchPreference;
     const-string v1, "persist.sys.bootanim.play_sound"
 
     invoke-virtual {v0}, Landroid/support/v14/preference/SwitchPreference;->isChecked()Z
@@ -121,8 +104,6 @@
     :goto_0
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 55
-    .end local v0    # "switchPreference":Landroid/support/v14/preference/SwitchPreference;
     :cond_1
     const/4 v0, 0x0
 
@@ -132,7 +113,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 65
     iget-object v0, p0, Lcom/android/settings/notification/BootSoundPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

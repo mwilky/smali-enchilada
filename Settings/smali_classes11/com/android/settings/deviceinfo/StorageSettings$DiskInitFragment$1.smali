@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;
 
-    .line 526
     iput-object p1, p0, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment$1;->val$context:Landroid/content/Context;
@@ -46,10 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 529
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment$1;->val$context:Landroid/content/Context;
@@ -58,19 +53,15 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 530
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.os.storage.extra.DISK_ID"
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment$1;->val$diskId:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 531
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment$1;->this$0:Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/deviceinfo/StorageSettings$DiskInitFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 532
     return-void
 .end method

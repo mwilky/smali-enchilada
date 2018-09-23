@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
-    .line 802
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$6;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 805
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling$6;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;->access$200(Lcom/android/settings/fingerprint/FingerprintEnrollEnrolling;)Landroid/graphics/drawable/Drawable;
@@ -59,6 +55,5 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 806
     return-void
 .end method

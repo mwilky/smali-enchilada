@@ -18,10 +18,8 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
     return-void
 .end method
 
@@ -30,7 +28,6 @@
 .method public createNegativePredicate()Lcom/google/tagmanager/ResolvedFunctionCallBuilder;
     .locals 1
 
-    .line 16
     new-instance v0, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;-><init>()V
@@ -41,7 +38,6 @@
 .method public createPositivePredicate()Lcom/google/tagmanager/ResolvedFunctionCallBuilder;
     .locals 1
 
-    .line 21
     new-instance v0, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopResolvedFunctionCallBuilder;-><init>()V
@@ -52,7 +48,6 @@
 .method public getAddedMacroFunctions()Lcom/google/tagmanager/ResolvedFunctionCallTranslatorList;
     .locals 1
 
-    .line 26
     new-instance v0, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;
 
     invoke-direct {v0, p0}, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;-><init>(Lcom/google/tagmanager/NoopResolvedRuleBuilder;)V
@@ -63,7 +58,6 @@
 .method public getAddedTagFunctions()Lcom/google/tagmanager/ResolvedFunctionCallTranslatorList;
     .locals 1
 
-    .line 36
     new-instance v0, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;
 
     invoke-direct {v0, p0}, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;-><init>(Lcom/google/tagmanager/NoopResolvedRuleBuilder;)V
@@ -74,7 +68,6 @@
 .method public getRemovedMacroFunctions()Lcom/google/tagmanager/ResolvedFunctionCallTranslatorList;
     .locals 1
 
-    .line 31
     new-instance v0, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;
 
     invoke-direct {v0, p0}, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;-><init>(Lcom/google/tagmanager/NoopResolvedRuleBuilder;)V
@@ -85,7 +78,6 @@
 .method public getRemovedTagFunctions()Lcom/google/tagmanager/ResolvedFunctionCallTranslatorList;
     .locals 1
 
-    .line 41
     new-instance v0, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;
 
     invoke-direct {v0, p0}, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;-><init>(Lcom/google/tagmanager/NoopResolvedRuleBuilder;)V
@@ -95,8 +87,6 @@
 
 .method public setValue(Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
     .locals 0
-    .param p1, "result"    # Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 46
     return-void
 .end method

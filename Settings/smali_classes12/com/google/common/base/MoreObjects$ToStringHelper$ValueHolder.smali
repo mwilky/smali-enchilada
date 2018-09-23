@@ -26,7 +26,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 384
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,9 +33,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/base/MoreObjects$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/base/MoreObjects$1;
 
-    .line 384
     invoke-direct {p0}, Lcom/google/common/base/MoreObjects$ToStringHelper$ValueHolder;-><init>()V
 
     return-void

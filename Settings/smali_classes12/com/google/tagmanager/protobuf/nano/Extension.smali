@@ -47,7 +47,6 @@
 # direct methods
 .method private constructor <init>(ILcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)V
     .locals 1
-    .param p1, "fieldNumber"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -56,29 +55,22 @@
         }
     .end annotation
 
-    .line 49
-    .local p0, "this":Lcom/google/tagmanager/protobuf/nano/Extension;, "Lcom/google/tagmanager/protobuf/nano/Extension<TT;>;"
-    .local p2, "type":Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;, "Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 50
     iput p1, p0, Lcom/google/tagmanager/protobuf/nano/Extension;->fieldNumber:I
 
-    .line 51
     invoke-static {p2}, Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;->access$000(Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/tagmanager/protobuf/nano/Extension;->isRepeatedField:Z
 
-    .line 52
     invoke-static {p2}, Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;->access$100(Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)Ljava/lang/Class;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/tagmanager/protobuf/nano/Extension;->fieldType:Ljava/lang/Class;
 
-    .line 53
     iget-boolean v0, p0, Lcom/google/tagmanager/protobuf/nano/Extension;->isRepeatedField:Z
 
     if-eqz v0, :cond_0
@@ -95,13 +87,11 @@
     :goto_0
     iput-object v0, p0, Lcom/google/tagmanager/protobuf/nano/Extension;->listType:Ljava/lang/Class;
 
-    .line 54
     return-void
 .end method
 
 .method public static create(ILcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)Lcom/google/tagmanager/protobuf/nano/Extension;
     .locals 1
-    .param p0, "fieldNumber"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -114,8 +104,6 @@
         }
     .end annotation
 
-    .line 61
-    .local p1, "type":Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;, "Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral<TT;>;"
     new-instance v0, Lcom/google/tagmanager/protobuf/nano/Extension;
 
     invoke-direct {v0, p0, p1}, Lcom/google/tagmanager/protobuf/nano/Extension;-><init>(ILcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)V
@@ -125,7 +113,6 @@
 
 .method public static createRepeated(ILcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)Lcom/google/tagmanager/protobuf/nano/Extension;
     .locals 1
-    .param p0, "fieldNumber"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -140,8 +127,6 @@
         }
     .end annotation
 
-    .line 69
-    .local p1, "type":Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;, "Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral<Ljava/util/List<TT;>;>;"
     new-instance v0, Lcom/google/tagmanager/protobuf/nano/Extension;
 
     invoke-direct {v0, p0, p1}, Lcom/google/tagmanager/protobuf/nano/Extension;-><init>(ILcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;)V

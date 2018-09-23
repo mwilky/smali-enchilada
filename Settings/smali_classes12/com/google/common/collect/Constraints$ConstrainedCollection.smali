@@ -57,13 +57,8 @@
         }
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/Constraints$ConstrainedCollection;, "Lcom/google/common/collect/Constraints$ConstrainedCollection<TE;>;"
-    .local p1, "delegate":Ljava/util/Collection;, "Ljava/util/Collection<TE;>;"
-    .local p2, "constraint":Lcom/google/common/collect/Constraint;, "Lcom/google/common/collect/Constraint<-TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
-    .line 64
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -72,7 +67,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->delegate:Ljava/util/Collection;
 
-    .line 65
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -81,7 +75,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->constraint:Lcom/google/common/collect/Constraint;
 
-    .line 66
     return-void
 .end method
 
@@ -95,14 +88,10 @@
         }
     .end annotation
 
-    .line 71
-    .local p0, "this":Lcom/google/common/collect/Constraints$ConstrainedCollection;, "Lcom/google/common/collect/Constraints$ConstrainedCollection<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 72
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->delegate:Ljava/util/Collection;
 
     invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
@@ -122,9 +111,6 @@
         }
     .end annotation
 
-    .line 75
-    .local p0, "this":Lcom/google/common/collect/Constraints$ConstrainedCollection;, "Lcom/google/common/collect/Constraints$ConstrainedCollection<TE;>;"
-    .local p1, "elements":Ljava/util/Collection;, "Ljava/util/Collection<+TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->delegate:Ljava/util/Collection;
 
     iget-object v1, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->constraint:Lcom/google/common/collect/Constraint;
@@ -143,8 +129,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/Constraints$ConstrainedCollection;, "Lcom/google/common/collect/Constraints$ConstrainedCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Constraints$ConstrainedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -162,8 +146,6 @@
         }
     .end annotation
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/Constraints$ConstrainedCollection;, "Lcom/google/common/collect/Constraints$ConstrainedCollection<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedCollection;->delegate:Ljava/util/Collection;
 
     return-object v0

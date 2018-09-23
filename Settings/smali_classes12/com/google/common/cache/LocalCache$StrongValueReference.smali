@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 1675
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
-    .local p1, "referent":Ljava/lang/Object;, "TV;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1676
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$StrongValueReference;->referent:Ljava/lang/Object;
 
-    .line 1677
     return-void
 .end method
 
@@ -77,11 +72,6 @@
         }
     .end annotation
 
-    .line 1697
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
@@ -93,8 +83,6 @@
         }
     .end annotation
 
-    .line 1681
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$StrongValueReference;->referent:Ljava/lang/Object;
 
     return-object v0
@@ -110,8 +98,6 @@
         }
     .end annotation
 
-    .line 1691
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -120,8 +106,6 @@
 .method public getWeight()I
     .locals 1
 
-    .line 1686
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -130,8 +114,6 @@
 .method public isActive()Z
     .locals 1
 
-    .line 1707
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -140,8 +122,6 @@
 .method public isLoading()Z
     .locals 1
 
-    .line 1702
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return v0
@@ -155,9 +135,6 @@
         }
     .end annotation
 
-    .line 1716
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     return-void
 .end method
 
@@ -169,8 +146,6 @@
         }
     .end annotation
 
-    .line 1712
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongValueReference;, "Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$StrongValueReference;->get()Ljava/lang/Object;
 
     move-result-object v0

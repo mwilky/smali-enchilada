@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplBase;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaController2ImplBase;
 
-    .line 1125
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplBase$18;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2ImplBase$18;->val$layout:Ljava/util/List;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 1128
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplBase$18;->this$0:Landroid/support/v4/media/MediaController2ImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaController2ImplBase;->access$200(Landroid/support/v4/media/MediaController2ImplBase;)Landroid/support/v4/media/MediaController2$ControllerCallback;
@@ -60,6 +57,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onCustomLayoutChanged(Landroid/support/v4/media/MediaController2;Ljava/util/List;)V
 
-    .line 1129
     return-void
 .end method

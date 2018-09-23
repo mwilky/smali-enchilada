@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/net/MediaType;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/net/MediaType;
 
-    .line 709
     iput-object p1, p0, Lcom/google/common/net/MediaType$2;->this$0:Lcom/google/common/net/MediaType;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +47,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 709
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/google/common/net/MediaType$2;->apply(Ljava/lang/String;)Ljava/lang/String;
@@ -61,9 +58,7 @@
 
 .method public apply(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 711
     invoke-static {}, Lcom/google/common/net/MediaType;->access$000()Lcom/google/common/base/CharMatcher;
 
     move-result-object v0

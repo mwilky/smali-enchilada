@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 40
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/Presenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 41
     sget v0, Landroid/support/v17/leanback/R$id;->actionIcon:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -37,7 +34,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/MediaItemActionPresenter$ViewHolder;->mIcon:Landroid/widget/ImageView;
 
-    .line 42
     return-void
 .end method
 
@@ -46,7 +42,6 @@
 .method public getIcon()Landroid/widget/ImageView;
     .locals 1
 
-    .line 45
     iget-object v0, p0, Landroid/support/v17/leanback/widget/MediaItemActionPresenter$ViewHolder;->mIcon:Landroid/widget/ImageView;
 
     return-object v0

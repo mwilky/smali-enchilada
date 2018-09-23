@@ -26,15 +26,12 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 26
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/GuidedAction;-><init>()V
 
-    .line 129
     const-wide/high16 v0, -0x8000000000000000L
 
     iput-wide v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mMinDate:J
 
-    .line 130
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mMaxDate:J
@@ -47,7 +44,6 @@
 .method public getDate()J
     .locals 2
 
-    .line 149
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mDate:J
 
     return-wide v0
@@ -56,7 +52,6 @@
 .method public getDatePickerFormat()Ljava/lang/String;
     .locals 1
 
-    .line 140
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mDatePickerFormat:Ljava/lang/String;
 
     return-object v0
@@ -65,7 +60,6 @@
 .method public getMaxDate()J
     .locals 2
 
-    .line 176
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mMaxDate:J
 
     return-wide v0
@@ -74,7 +68,6 @@
 .method public getMinDate()J
     .locals 2
 
-    .line 167
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mMinDate:J
 
     return-wide v0
@@ -82,10 +75,7 @@
 
 .method public onRestoreInstanceState(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 2
-    .param p1, "bundle"    # Landroid/os/Bundle;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 186
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->getDate()J
 
     move-result-wide v0
@@ -96,33 +86,25 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->setDate(J)V
 
-    .line 187
     return-void
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 2
-    .param p1, "bundle"    # Landroid/os/Bundle;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 181
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->getDate()J
 
     move-result-wide v0
 
     invoke-virtual {p1, p2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 182
     return-void
 .end method
 
 .method public setDate(J)V
     .locals 0
-    .param p1, "date"    # J
 
-    .line 158
     iput-wide p1, p0, Landroid/support/v17/leanback/widget/GuidedDatePickerAction;->mDate:J
 
-    .line 159
     return-void
 .end method

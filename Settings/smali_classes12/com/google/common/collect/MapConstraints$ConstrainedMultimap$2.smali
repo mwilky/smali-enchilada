@@ -34,10 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;
 
-    .line 474
-    .local p0, "this":Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;, "Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;"
     iput-object p1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;->this$0:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;
 
     iput-object p2, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;->val$key:Ljava/lang/Object;
@@ -57,9 +54,6 @@
         }
     .end annotation
 
-    .line 477
-    .local p0, "this":Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;, "Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$2;->this$0:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;
 
     iget-object v0, v0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->constraint:Lcom/google/common/collect/MapConstraint;
@@ -68,6 +62,5 @@
 
     invoke-interface {v0, v1, p1}, Lcom/google/common/collect/MapConstraint;->checkKeyValue(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 478
     return-object p1
 .end method

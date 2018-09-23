@@ -14,13 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 39
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/appinfo/AppInfoPreferenceControllerBase;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 40
     return-void
 .end method
 
@@ -29,7 +25,6 @@
 .method public getAvailabilityStatus()I
     .locals 2
 
-    .line 48
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -44,10 +39,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 49
     return v1
 
-    .line 52
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mInstallerLabel:Ljava/lang/CharSequence;
 
@@ -63,12 +56,9 @@
 
 .method public setPackageName(Ljava/lang/String;)V
     .locals 2
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 71
     iput-object p1, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mPackageName:Ljava/lang/String;
 
-    .line 72
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mPackageName:Ljava/lang/String;
@@ -79,7 +69,6 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mInstallerPackage:Ljava/lang/String;
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mInstallerPackage:Ljava/lang/String;
@@ -90,15 +79,12 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mInstallerLabel:Ljava/lang/CharSequence;
 
-    .line 74
     return-void
 .end method
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 5
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 57
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mParent:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;->getPackageInfo()Landroid/content/pm/PackageInfo;
@@ -113,17 +99,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 58
     const v0, 0x7f120771
 
     goto :goto_0
 
-    .line 59
     :cond_0
     const v0, 0x7f12013d
 
-    .line 60
-    .local v0, "detailsStringId":I
     :goto_0
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mContext:Landroid/content/Context;
 
@@ -143,7 +125,6 @@
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 62
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/settings/applications/appinfo/AppInstallerInfoPreferenceController;->mInstallerPackage:Ljava/lang/String;
@@ -154,20 +135,15 @@
 
     move-result-object v1
 
-    .line 63
-    .local v1, "intent":Landroid/content/Intent;
     if-eqz v1, :cond_1
 
-    .line 64
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setIntent(Landroid/content/Intent;)V
 
     goto :goto_1
 
-    .line 66
     :cond_1
     invoke-virtual {p1, v4}, Landroid/support/v7/preference/Preference;->setEnabled(Z)V
 
-    .line 68
     :goto_1
     return-void
 .end method

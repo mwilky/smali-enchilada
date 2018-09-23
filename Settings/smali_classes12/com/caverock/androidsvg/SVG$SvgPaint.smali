@@ -21,7 +21,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

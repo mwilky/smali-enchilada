@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/CryptKeeper;Landroid/view/inputmethod/InputMethodManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/CryptKeeper;
 
-    .line 775
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$7;->this$0:Lcom/android/settings/CryptKeeper;
 
     iput-object p2, p0, Lcom/android/settings/CryptKeeper$7;->val$imm:Landroid/view/inputmethod/InputMethodManager;
@@ -42,15 +40,12 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 778
     iget-object v0, p0, Lcom/android/settings/CryptKeeper$7;->val$imm:Landroid/view/inputmethod/InputMethodManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/inputmethod/InputMethodManager;->showInputMethodPicker(Z)V
 
-    .line 779
     return-void
 .end method

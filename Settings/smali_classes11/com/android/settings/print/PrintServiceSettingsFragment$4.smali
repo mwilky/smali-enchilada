@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/print/PrintServiceSettingsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/print/PrintServiceSettingsFragment;
 
-    .line 414
     iput-object p1, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$4;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onQueryTextChange(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "searchString"    # Ljava/lang/String;
 
-    .line 422
     iget-object v0, p0, Lcom/android/settings/print/PrintServiceSettingsFragment$4;->this$0:Lcom/android/settings/print/PrintServiceSettingsFragment;
 
     invoke-static {v0}, Lcom/android/settings/print/PrintServiceSettingsFragment;->access$100(Lcom/android/settings/print/PrintServiceSettingsFragment;)Lcom/android/settings/print/PrintServiceSettingsFragment$PrintersAdapter;
@@ -53,7 +49,6 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/Filter;->filter(Ljava/lang/CharSequence;)V
 
-    .line 423
     const/4 v0, 0x1
 
     return v0
@@ -61,9 +56,7 @@
 
 .method public onQueryTextSubmit(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "query"    # Ljava/lang/String;
 
-    .line 417
     const/4 v0, 0x1
 
     return v0

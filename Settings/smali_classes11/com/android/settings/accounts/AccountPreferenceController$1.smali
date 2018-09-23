@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accounts/AccountPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accounts/AccountPreferenceController;
 
-    .line 576
     iput-object p1, p0, Lcom/android/settings/accounts/AccountPreferenceController$1;->this$0:Lcom/android/settings/accounts/AccountPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/accounts/AccountTypePreference;Lcom/android/settings/accounts/AccountTypePreference;)I
     .locals 3
-    .param p1, "t1"    # Lcom/android/settings/accounts/AccountTypePreference;
-    .param p2, "t2"    # Lcom/android/settings/accounts/AccountTypePreference;
 
-    .line 579
     invoke-virtual {p1}, Lcom/android/settings/accounts/AccountTypePreference;->getSummary()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -71,19 +66,14 @@
 
     move-result v0
 
-    .line 580
-    .local v0, "result":I
     if-eqz v0, :cond_0
 
-    .line 581
     nop
 
-    .line 580
     move v1, v0
 
     goto :goto_0
 
-    .line 581
     :cond_0
     invoke-virtual {p1}, Lcom/android/settings/accounts/AccountTypePreference;->getTitle()Ljava/lang/CharSequence;
 
@@ -105,7 +95,6 @@
 
     move-result v1
 
-    .line 580
     :goto_0
     return v1
 .end method
@@ -113,7 +102,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 576
     check-cast p1, Lcom/android/settings/accounts/AccountTypePreference;
 
     check-cast p2, Lcom/android/settings/accounts/AccountTypePreference;

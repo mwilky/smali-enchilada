@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
 
-    .line 60
     iput-object p1, p0, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel$2;->this$0:Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 63
     iget-object v0, p0, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel$2;->this$0:Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
 
     invoke-static {v0}, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;->access$000(Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;)V
 
-    .line 64
     return-void
 .end method

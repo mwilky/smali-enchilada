@@ -28,20 +28,16 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 153
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->isSystemApp:Z
 
-    .line 157
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->appOpMode:I
 
-    .line 158
     return-void
 .end method
 
@@ -50,19 +46,16 @@
 .method public canInstallApps()Z
     .locals 2
 
-    .line 161
     iget v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->appOpMode:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 
-    .line 162
     iget-boolean v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->permissionGranted:Z
 
     return v0
 
-    .line 164
     :cond_0
     iget v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->appOpMode:I
 
@@ -82,7 +75,6 @@
 .method public isPotentialAppSource()Z
     .locals 3
 
-    .line 170
     iget-boolean v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->isSystemApp:Z
 
     const/4 v1, 0x0
@@ -91,7 +83,6 @@
 
     return v1
 
-    .line 172
     :cond_0
     iget v0, p0, Lcom/android/settings/applications/AppStateInstallAppsBridge$InstallAppsState;->appOpMode:I
 
@@ -119,7 +110,6 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    .line 177
     new-instance v0, Ljava/lang/StringBuilder;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -140,8 +130,6 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 178
-    .local v0, "sb":Ljava/lang/StringBuilder;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,7 +148,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 179
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -179,12 +166,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 180
     const-string v1, "]"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 181
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

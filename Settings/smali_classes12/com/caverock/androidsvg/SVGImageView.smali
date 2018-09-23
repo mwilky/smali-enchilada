@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 45
     const/4 v0, 0x0
 
     sput-object v0, Lcom/caverock/androidsvg/SVGImageView;->setLayerTypeMethod:Ljava/lang/reflect/Method;
@@ -21,12 +20,9 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 58
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 50
     :try_start_0
     const-class v0, Landroid/view/View;
 
@@ -56,29 +52,22 @@
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     goto :goto_0
 
-    .line 52
     :catch_0
     move-exception v0
 
-    .line 59
     :goto_0
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 64
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 50
     :try_start_0
     const-class v1, Landroid/view/View;
 
@@ -106,31 +95,22 @@
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     goto :goto_0
 
-    .line 52
     :catch_0
     move-exception v1
 
-    .line 65
     :goto_0
     invoke-direct {p0, p2, v0}, Lcom/caverock/androidsvg/SVGImageView;->init(Landroid/util/AttributeSet;I)V
 
-    .line 66
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
 
-    .line 71
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 50
     :try_start_0
     const-class v0, Landroid/view/View;
 
@@ -160,27 +140,20 @@
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     goto :goto_0
 
-    .line 52
     :catch_0
     move-exception v0
 
-    .line 72
     :goto_0
     invoke-direct {p0, p2, p3}, Lcom/caverock/androidsvg/SVGImageView;->init(Landroid/util/AttributeSet;I)V
 
-    .line 73
     return-void
 .end method
 
 .method private init(Landroid/util/AttributeSet;I)V
     .locals 5
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
-    .param p2, "defStyle"    # I
 
-    .line 78
     invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGImageView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -189,7 +162,6 @@
 
     move-result-object v0
 
-    .line 79
     sget-object v1, Lcom/caverock/androidsvg/R$styleable;->SVGImageView:[I
 
     const/4 v2, 0x0
@@ -198,11 +170,8 @@
 
     move-result-object v0
 
-    .line 78
     nop
 
-    .line 82
-    .local v0, "a":Landroid/content/res/TypedArray;
     const/4 v1, -0x1
 
     :try_start_0
@@ -210,36 +179,26 @@
 
     move-result v3
 
-    .line 83
-    .local v3, "resourceId":I
     if-eq v3, v1, :cond_0
 
-    .line 84
     invoke-virtual {p0, v3}, Lcom/caverock/androidsvg/SVGImageView;->setImageResource(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 97
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 85
     return-void
 
-    .line 88
     :cond_0
     :try_start_1
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 89
-    .local v1, "url":Ljava/lang/String;
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 90
-    .local v2, "uri":Landroid/net/Uri;
     invoke-direct {p0, v2}, Lcom/caverock/androidsvg/SVGImageView;->internalSetImageURI(Landroid/net/Uri;)Z
 
     move-result v4
@@ -248,51 +207,35 @@
 
     if-eqz v4, :cond_1
 
-    .line 97
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 91
     return-void
 
-    .line 94
     :cond_1
     :try_start_2
     invoke-virtual {p0, v1}, Lcom/caverock/androidsvg/SVGImageView;->setImageAsset(Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 96
-    .end local v1    # "url":Ljava/lang/String;
-    .end local v2    # "uri":Landroid/net/Uri;
-    .end local v3    # "resourceId":I
     nop
 
-    .line 97
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 99
     return-void
 
-    .line 96
     :catchall_0
     move-exception v1
 
-    .line 97
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 98
     throw v1
 .end method
 
 .method private internalSetImageURI(Landroid/net/Uri;)Z
     .locals 5
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 155
     const/4 v0, 0x0
 
-    .line 157
-    .local v0, "is":Ljava/io/InputStream;
     :try_start_0
     invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGImageView;->getContext()Landroid/content/Context;
 
@@ -308,16 +251,12 @@
 
     move-object v0, v1
 
-    .line 158
     invoke-static {v0}, Lcom/caverock/androidsvg/SVG;->getFromInputStream(Ljava/io/InputStream;)Lcom/caverock/androidsvg/SVG;
 
     move-result-object v1
 
-    .line 159
-    .local v1, "svg":Lcom/caverock/androidsvg/SVG;
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVGImageView;->setSoftwareLayerType()V
 
-    .line 160
     new-instance v2, Landroid/graphics/drawable/PictureDrawable;
 
     invoke-virtual {v1}, Lcom/caverock/androidsvg/SVG;->renderToPicture()Landroid/graphics/Picture;
@@ -331,42 +270,32 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 170
     if-eqz v0, :cond_0
 
-    .line 171
     :try_start_1
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 172
     goto :goto_0
 
-    .line 173
     :catch_0
     move-exception v2
 
-    .line 161
     :cond_0
     :goto_0
     const/4 v2, 0x1
 
     return v2
 
-    .line 167
-    .end local v1    # "svg":Lcom/caverock/androidsvg/SVG;
     :catchall_0
     move-exception v1
 
     goto :goto_2
 
-    .line 163
     :catch_1
     move-exception v1
 
-    .line 164
-    .local v1, "e":Ljava/lang/Exception;
     :try_start_2
     const-string v2, "ImageView"
 
@@ -386,51 +315,39 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 170
     if-eqz v0, :cond_1
 
-    .line 171
     :try_start_3
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 172
     goto :goto_1
 
-    .line 173
     :catch_2
     move-exception v2
 
-    .line 165
     :cond_1
     :goto_1
     const/4 v2, 0x0
 
     return v2
 
-    .line 167
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_2
     nop
 
-    .line 170
     if-eqz v0, :cond_2
 
-    .line 171
     :try_start_4
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 172
     goto :goto_3
 
-    .line 173
     :catch_3
     move-exception v2
 
-    .line 174
     :cond_2
     :goto_3
     throw v1
@@ -439,15 +356,12 @@
 .method private setSoftwareLayerType()V
     .locals 5
 
-    .line 183
     sget-object v0, Lcom/caverock/androidsvg/SVGImageView;->setLayerTypeMethod:Ljava/lang/reflect/Method;
 
     if-nez v0, :cond_0
 
-    .line 184
     return-void
 
-    .line 188
     :cond_0
     :try_start_0
     sget-object v0, Lcom/caverock/androidsvg/SVGImageView;->setLayerTypeMethod:Ljava/lang/reflect/Method;
@@ -474,23 +388,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 189
     goto :goto_0
 
-    .line 190
     :catch_0
     move-exception v0
 
-    .line 192
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "SVGImageView"
 
     const-string v2, "Unexpected failure calling setLayerType"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 194
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
@@ -499,9 +407,7 @@
 # virtual methods
 .method public setImageAsset(Ljava/lang/String;)V
     .locals 4
-    .param p1, "filename"    # Ljava/lang/String;
 
-    .line 139
     :try_start_0
     invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGImageView;->getContext()Landroid/content/Context;
 
@@ -515,11 +421,8 @@
 
     move-result-object v0
 
-    .line 140
-    .local v0, "svg":Lcom/caverock/androidsvg/SVG;
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVGImageView;->setSoftwareLayerType()V
 
-    .line 141
     new-instance v1, Landroid/graphics/drawable/PictureDrawable;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG;->renderToPicture()Landroid/graphics/Picture;
@@ -532,16 +435,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
-    .end local v0    # "svg":Lcom/caverock/androidsvg/SVG;
     goto :goto_0
 
-    .line 143
     :catch_0
     move-exception v0
 
-    .line 145
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "SVGImageView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -558,17 +456,13 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 147
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
 
 .method public setImageResource(I)V
     .locals 4
-    .param p1, "resourceId"    # I
 
-    .line 111
     :try_start_0
     invoke-virtual {p0}, Lcom/caverock/androidsvg/SVGImageView;->getContext()Landroid/content/Context;
 
@@ -578,11 +472,8 @@
 
     move-result-object v0
 
-    .line 112
-    .local v0, "svg":Lcom/caverock/androidsvg/SVG;
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVGImageView;->setSoftwareLayerType()V
 
-    .line 113
     new-instance v1, Landroid/graphics/drawable/PictureDrawable;
 
     invoke-virtual {v0}, Lcom/caverock/androidsvg/SVG;->renderToPicture()Landroid/graphics/Picture;
@@ -595,16 +486,11 @@
     :try_end_0
     .catch Lcom/caverock/androidsvg/SVGParseException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 114
-    .end local v0    # "svg":Lcom/caverock/androidsvg/SVG;
     goto :goto_0
 
-    .line 115
     :catch_0
     move-exception v0
 
-    .line 117
-    .local v0, "e":Lcom/caverock/androidsvg/SVGParseException;
     const-string v1, "SVGImageView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -621,19 +507,14 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 119
-    .end local v0    # "e":Lcom/caverock/androidsvg/SVGParseException;
     :goto_0
     return-void
 .end method
 
 .method public setImageURI(Landroid/net/Uri;)V
     .locals 0
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 128
     invoke-direct {p0, p1}, Lcom/caverock/androidsvg/SVGImageView;->internalSetImageURI(Landroid/net/Uri;)Z
 
-    .line 129
     return-void
 .end method

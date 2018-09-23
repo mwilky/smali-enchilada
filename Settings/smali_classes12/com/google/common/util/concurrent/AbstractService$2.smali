@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "methodCall"    # Ljava/lang/String;
 
-    .line 64
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/ListenerCallQueue$Callback;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,19 +35,15 @@
 # virtual methods
 .method call(Lcom/google/common/util/concurrent/Service$Listener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/google/common/util/concurrent/Service$Listener;
 
-    .line 66
     invoke-virtual {p1}, Lcom/google/common/util/concurrent/Service$Listener;->running()V
 
-    .line 67
     return-void
 .end method
 
 .method bridge synthetic call(Ljava/lang/Object;)V
     .locals 0
 
-    .line 64
     check-cast p1, Lcom/google/common/util/concurrent/Service$Listener;
 
     invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/AbstractService$2;->call(Lcom/google/common/util/concurrent/Service$Listener;)V

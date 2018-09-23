@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/util/SortedSet;)V
     .locals 0
 
-    .line 989
     iput-object p1, p0, Lcom/google/common/collect/Maps$4;->val$set:Ljava/util/SortedSet;
 
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingSortedSet;-><init>()V
@@ -47,8 +46,6 @@
         }
     .end annotation
 
-    .line 997
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -66,8 +63,6 @@
         }
     .end annotation
 
-    .line 1002
-    .local p1, "es":Ljava/util/Collection;, "Ljava/util/Collection<+TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -78,7 +73,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 989
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$4;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -89,7 +83,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 989
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$4;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -100,7 +93,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Set;
     .locals 1
 
-    .line 989
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$4;->delegate()Ljava/util/SortedSet;
 
     move-result-object v0
@@ -118,7 +110,6 @@
         }
     .end annotation
 
-    .line 992
     iget-object v0, p0, Lcom/google/common/collect/Maps$4;->val$set:Ljava/util/SortedSet;
 
     return-object v0
@@ -134,8 +125,6 @@
         }
     .end annotation
 
-    .line 1007
-    .local p1, "toElement":Ljava/lang/Object;, "TE;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingSortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
 
     move-result-object v0
@@ -157,9 +146,6 @@
         }
     .end annotation
 
-    .line 1012
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
-    .local p2, "toElement":Ljava/lang/Object;, "TE;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/ForwardingSortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
 
     move-result-object v0
@@ -181,8 +167,6 @@
         }
     .end annotation
 
-    .line 1017
-    .local p1, "fromElement":Ljava/lang/Object;, "TE;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingSortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
 
     move-result-object v0

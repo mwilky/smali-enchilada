@@ -31,7 +31,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,36 +41,26 @@
         }
     .end annotation
 
-    .line 62
-    .local p2, "items":Ljava/util/List;, "Ljava/util/List<Lcom/airbnb/lottie/model/content/ContentModel;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
     iput-object p1, p0, Lcom/airbnb/lottie/model/content/ShapeGroup;->name:Ljava/lang/String;
 
-    .line 64
     iput-object p2, p0, Lcom/airbnb/lottie/model/content/ShapeGroup;->items:Ljava/util/List;
 
-    .line 65
     return-void
 .end method
 
 .method public static shapeItemWithJson(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ContentModel;
     .locals 4
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 24
     const-string v0, "ty"
 
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 26
-    .local v0, "type":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -256,7 +245,6 @@
     :goto_1
     packed-switch v1, :pswitch_data_0
 
-    .line 54
     const-string v1, "LOTTIE"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -275,12 +263,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 56
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 52
     :pswitch_0
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/Repeater$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/Repeater;
 
@@ -288,7 +274,6 @@
 
     return-object v1
 
-    .line 50
     :pswitch_1
     invoke-static {p0}, Lcom/airbnb/lottie/model/content/MergePaths$Factory;->newInstance(Lorg/json/JSONObject;)Lcom/airbnb/lottie/model/content/MergePaths;
 
@@ -296,7 +281,6 @@
 
     return-object v1
 
-    .line 48
     :pswitch_2
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/PolystarShape$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/PolystarShape;
 
@@ -304,7 +288,6 @@
 
     return-object v1
 
-    .line 46
     :pswitch_3
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeTrimPath;
 
@@ -312,7 +295,6 @@
 
     return-object v1
 
-    .line 44
     :pswitch_4
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/RectangleShape$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/RectangleShape;
 
@@ -320,7 +302,6 @@
 
     return-object v1
 
-    .line 42
     :pswitch_5
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/CircleShape$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/CircleShape;
 
@@ -328,7 +309,6 @@
 
     return-object v1
 
-    .line 40
     :pswitch_6
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/ShapePath$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapePath;
 
@@ -336,7 +316,6 @@
 
     return-object v1
 
-    .line 38
     :pswitch_7
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/animatable/AnimatableTransform$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableTransform;
 
@@ -344,7 +323,6 @@
 
     return-object v1
 
-    .line 36
     :pswitch_8
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/GradientFill$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/GradientFill;
 
@@ -352,7 +330,6 @@
 
     return-object v1
 
-    .line 34
     :pswitch_9
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/ShapeFill$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeFill;
 
@@ -360,7 +337,6 @@
 
     return-object v1
 
-    .line 32
     :pswitch_a
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/GradientStroke$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/GradientStroke;
 
@@ -368,7 +344,6 @@
 
     return-object v1
 
-    .line 30
     :pswitch_b
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/ShapeStroke$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeStroke;
 
@@ -376,7 +351,6 @@
 
     return-object v1
 
-    .line 28
     :pswitch_c
     invoke-static {p0, p1}, Lcom/airbnb/lottie/model/content/ShapeGroup$Factory;->access$000(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeGroup;
 
@@ -432,7 +406,6 @@
         }
     .end annotation
 
-    .line 91
     iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeGroup;->items:Ljava/util/List;
 
     return-object v0
@@ -441,7 +414,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 87
     iget-object v0, p0, Lcom/airbnb/lottie/model/content/ShapeGroup;->name:Ljava/lang/String;
 
     return-object v0
@@ -449,10 +421,7 @@
 
 .method public toContent(Lcom/airbnb/lottie/LottieDrawable;Lcom/airbnb/lottie/model/layer/BaseLayer;)Lcom/airbnb/lottie/animation/content/Content;
     .locals 1
-    .param p1, "drawable"    # Lcom/airbnb/lottie/LottieDrawable;
-    .param p2, "layer"    # Lcom/airbnb/lottie/model/layer/BaseLayer;
 
-    .line 95
     new-instance v0, Lcom/airbnb/lottie/animation/content/ContentGroup;
 
     invoke-direct {v0, p1, p2, p0}, Lcom/airbnb/lottie/animation/content/ContentGroup;-><init>(Lcom/airbnb/lottie/LottieDrawable;Lcom/airbnb/lottie/model/layer/BaseLayer;Lcom/airbnb/lottie/model/content/ShapeGroup;)V
@@ -463,7 +432,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 99
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

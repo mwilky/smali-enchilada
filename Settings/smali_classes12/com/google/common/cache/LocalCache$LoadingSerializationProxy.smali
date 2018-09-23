@@ -59,18 +59,13 @@
         }
     .end annotation
 
-    .line 4678
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "cache":Lcom/google/common/cache/LocalCache;, "Lcom/google/common/cache/LocalCache<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/cache/LocalCache$ManualSerializationProxy;-><init>(Lcom/google/common/cache/LocalCache;)V
 
-    .line 4679
     return-void
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .locals 2
-    .param p1, "in"    # Ljava/io/ObjectInputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;,
@@ -78,17 +73,12 @@
         }
     .end annotation
 
-    .line 4682
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 4683
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->recreateCacheBuilder()Lcom/google/common/cache/CacheBuilder;
 
     move-result-object v0
 
-    .line 4684
-    .local v0, "builder":Lcom/google/common/cache/CacheBuilder;, "Lcom/google/common/cache/CacheBuilder<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->loader:Lcom/google/common/cache/CacheLoader;
 
     invoke-virtual {v0, v1}, Lcom/google/common/cache/CacheBuilder;->build(Lcom/google/common/cache/CacheLoader;)Lcom/google/common/cache/LoadingCache;
@@ -97,15 +87,12 @@
 
     iput-object v1, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
-    .line 4685
     return-void
 .end method
 
 .method private readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 4713
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     return-object v0
@@ -121,9 +108,6 @@
         }
     .end annotation
 
-    .line 4704
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/LoadingCache;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -147,9 +131,6 @@
         }
     .end annotation
 
-    .line 4689
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/LoadingCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -177,9 +158,6 @@
         }
     .end annotation
 
-    .line 4699
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "keys":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TK;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/LoadingCache;->getAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMap;
@@ -197,9 +175,6 @@
         }
     .end annotation
 
-    .line 4694
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/LoadingCache;->getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
@@ -217,13 +192,9 @@
         }
     .end annotation
 
-    .line 4709
-    .local p0, "this":Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;, "Lcom/google/common/cache/LocalCache$LoadingSerializationProxy<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LoadingSerializationProxy;->autoDelegate:Lcom/google/common/cache/LoadingCache;
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/LoadingCache;->refresh(Ljava/lang/Object;)V
 
-    .line 4710
     return-void
 .end method

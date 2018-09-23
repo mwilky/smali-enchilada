@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenRulePreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenRulePreference;
 
-    .line 107
     iput-object p1, p0, Lcom/android/settings/notification/ZenRulePreference$2;->this$0:Lcom/android/settings/notification/ZenRulePreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onOk(Ljava/lang/String;)V
     .locals 4
-    .param p1, "id"    # Ljava/lang/String;
 
-    .line 110
     iget-object v0, p0, Lcom/android/settings/notification/ZenRulePreference$2;->this$0:Lcom/android/settings/notification/ZenRulePreference;
 
     iget-object v0, v0, Lcom/android/settings/notification/ZenRulePreference;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
@@ -57,13 +53,11 @@
 
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;I[Landroid/util/Pair;)V
 
-    .line 112
     iget-object v0, p0, Lcom/android/settings/notification/ZenRulePreference$2;->this$0:Lcom/android/settings/notification/ZenRulePreference;
 
     iget-object v0, v0, Lcom/android/settings/notification/ZenRulePreference;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/notification/ZenModeBackend;->removeZenRule(Ljava/lang/String;)Z
 
-    .line 113
     return-void
 .end method

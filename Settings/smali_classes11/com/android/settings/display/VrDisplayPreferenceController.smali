@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 32
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 33
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 43
     const-string v0, "vr_display_pref"
 
     return-object v0
@@ -36,15 +32,12 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 37
     iget-object v0, p0, Lcom/android/settings/display/VrDisplayPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 38
-    .local v0, "pm":Landroid/content/pm/PackageManager;
     const-string v1, "android.hardware.vr.high_performance"
 
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
@@ -56,15 +49,11 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 48
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
-    .line 49
-    .local v0, "currentUser":I
     iget-object v1, p0, Lcom/android/settings/display/VrDisplayPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -79,24 +68,19 @@
 
     move-result v1
 
-    .line 52
-    .local v1, "current":I
     if-nez v1, :cond_0
 
-    .line 53
     const v2, 0x7f12058b
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
     goto :goto_0
 
-    .line 55
     :cond_0
     const v2, 0x7f12058c
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
-    .line 57
     :goto_0
     return-void
 .end method

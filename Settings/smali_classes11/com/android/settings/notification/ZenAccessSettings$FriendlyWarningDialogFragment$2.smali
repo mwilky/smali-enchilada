@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;
 
-    .line 323
     iput-object p1, p0, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment$2;->this$0:Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment$2;->val$pkg:Ljava/lang/String;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
-    .line 325
     iget-object v0, p0, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment$2;->this$0:Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;->getContext()Landroid/content/Context;
@@ -56,7 +51,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/notification/ZenAccessSettings;->access$200(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 326
     iget-object v0, p0, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment$2;->this$0:Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/ZenAccessSettings$FriendlyWarningDialogFragment;->getContext()Landroid/content/Context;
@@ -69,6 +63,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/notification/ZenAccessSettings;->access$100(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    .line 327
     return-void
 .end method

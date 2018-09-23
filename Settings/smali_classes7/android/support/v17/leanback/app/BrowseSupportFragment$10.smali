@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BrowseSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
-    .line 1462
     iput-object p1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$10;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onHeaderClicked(Landroid/support/v17/leanback/widget/RowHeaderPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V
     .locals 2
-    .param p1, "viewHolder"    # Landroid/support/v17/leanback/widget/RowHeaderPresenter$ViewHolder;
-    .param p2, "row"    # Landroid/support/v17/leanback/widget/Row;
 
-    .line 1465
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$10;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mCanShowHeaders:Z
@@ -64,7 +59,6 @@
 
     goto :goto_1
 
-    .line 1468
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$10;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
@@ -84,7 +78,6 @@
 
     goto :goto_0
 
-    .line 1471
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$10;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
@@ -92,7 +85,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->startHeadersTransitionInternal(Z)V
 
-    .line 1472
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$10;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mMainFragment:Landroid/support/v4/app/Fragment;
@@ -103,15 +95,12 @@
 
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 1473
     return-void
 
-    .line 1469
     :cond_2
     :goto_0
     return-void
 
-    .line 1466
     :cond_3
     :goto_1
     return-void

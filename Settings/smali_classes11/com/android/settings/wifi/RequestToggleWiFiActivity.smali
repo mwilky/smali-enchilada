@@ -54,10 +54,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 40
     invoke-direct {p0}, Lcom/android/internal/app/AlertActivity;-><init>()V
 
-    .line 52
     new-instance v0, Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;
 
     const/4 v1, 0x0
@@ -66,19 +64,16 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mReceiver:Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;
 
-    .line 54
     new-instance v0, Lcom/android/settings/wifi/-$$Lambda$RequestToggleWiFiActivity$PwZgoHTFFBr3iYEQbWj0vZPfHpw;
 
     invoke-direct {v0, p0}, Lcom/android/settings/wifi/-$$Lambda$RequestToggleWiFiActivity$PwZgoHTFFBr3iYEQbWj0vZPfHpw;-><init>(Lcom/android/settings/wifi/RequestToggleWiFiActivity;)V
 
     iput-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mTimeoutCommand:Ljava/lang/Runnable;
 
-    .line 63
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 64
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mLastUpdateState:I
 
     return-void
@@ -86,9 +81,7 @@
 
 .method static synthetic access$100(Lcom/android/settings/wifi/RequestToggleWiFiActivity;)Landroid/net/wifi/WifiManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/wifi/RequestToggleWiFiActivity;
 
-    .line 40
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     return-object v0
@@ -96,9 +89,7 @@
 
 .method static synthetic access$200(Lcom/android/settings/wifi/RequestToggleWiFiActivity;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/wifi/RequestToggleWiFiActivity;
 
-    .line 40
     iget v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
     return v0
@@ -107,7 +98,6 @@
 .method public static synthetic lambda$new$0(Lcom/android/settings/wifi/RequestToggleWiFiActivity;)V
     .locals 1
 
-    .line 55
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->isFinishing()Z
 
     move-result v0
@@ -120,10 +110,8 @@
 
     if-nez v0, :cond_0
 
-    .line 56
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 58
     :cond_0
     return-void
 .end method
@@ -131,7 +119,6 @@
 .method private scheduleToggleTimeout()V
     .locals 4
 
-    .line 278
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -146,14 +133,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 279
     return-void
 .end method
 
 .method private unscheduleToggleTimeout()V
     .locals 2
 
-    .line 282
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -166,30 +151,25 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 283
     return-void
 .end method
 
 .method private updateUi()V
     .locals 8
 
-    .line 221
     iget v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mLastUpdateState:I
 
     iget v1, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
     if-ne v0, v1, :cond_0
 
-    .line 222
     return-void
 
-    .line 224
     :cond_0
     iget v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mLastUpdateState:I
 
-    .line 226
     iget v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
     const/4 v1, 0x0
@@ -210,41 +190,34 @@
 
     goto/16 :goto_0
 
-    .line 258
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0, v6, v7, v7, v7}, Lcom/android/internal/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
-    .line 259
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0, v5, v7, v7, v7}, Lcom/android/internal/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
-    .line 260
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    .line 261
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 262
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    .line 263
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 264
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v1, 0x7f1214d4
+    const v1, 0x7f1214cd
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
 
@@ -254,7 +227,6 @@
 
     goto/16 :goto_0
 
-    .line 248
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
@@ -264,12 +236,10 @@
 
     iput-object v4, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    .line 249
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 250
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
@@ -278,15 +248,13 @@
 
     iput-object v3, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    .line 251
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 252
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v3, 0x7f1213b0
+    const v3, 0x7f1213a9
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -300,44 +268,36 @@
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    .line 253
     goto :goto_0
 
-    .line 238
     :pswitch_2
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0, v6, v7, v7, v7}, Lcom/android/internal/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
-    .line 239
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlert:Lcom/android/internal/app/AlertController;
 
     invoke-virtual {v0, v5, v7, v7, v7}, Lcom/android/internal/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
-    .line 240
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    .line 241
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 242
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    .line 243
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object v7, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 244
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v1, 0x7f1214c8
+    const v1, 0x7f1214c1
 
     invoke-virtual {p0, v1}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
 
@@ -345,10 +305,8 @@
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    .line 245
     goto :goto_0
 
-    .line 228
     :pswitch_3
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
@@ -358,12 +316,10 @@
 
     iput-object v4, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonText:Ljava/lang/CharSequence;
 
-    .line 229
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mPositiveButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 230
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     invoke-virtual {p0, v3}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getString(I)Ljava/lang/String;
@@ -372,15 +328,13 @@
 
     iput-object v3, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonText:Ljava/lang/CharSequence;
 
-    .line 231
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
     iput-object p0, v0, Lcom/android/internal/app/AlertController$AlertParams;->mNegativeButtonListener:Landroid/content/DialogInterface$OnClickListener;
 
-    .line 232
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mAlertParams:Lcom/android/internal/app/AlertController$AlertParams;
 
-    const v3, 0x7f1213b1
+    const v3, 0x7f1213aa
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -394,14 +348,11 @@
 
     iput-object v1, v0, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    .line 233
     nop
 
-    .line 268
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setupAlert()V
 
-    .line 269
     return-void
 
     :pswitch_data_0
@@ -418,21 +369,16 @@
 .method public dismiss()V
     .locals 0
 
-    .line 275
     return-void
 .end method
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 108
     packed-switch p2, :pswitch_data_0
 
     goto :goto_1
 
-    .line 110
     :pswitch_0
     iget v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
@@ -446,7 +392,6 @@
 
     goto :goto_0
 
-    .line 119
     :cond_0
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
@@ -454,48 +399,37 @@
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 120
     const/4 v0, 0x4
 
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 121
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
-    .line 122
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->updateUi()V
 
     goto :goto_0
 
-    .line 112
     :cond_1
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 113
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 114
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
-    .line 115
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->updateUi()V
 
-    .line 116
     nop
 
-    .line 126
     :goto_0
     goto :goto_1
 
-    .line 128
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 132
     :goto_1
     return-void
 
@@ -510,12 +444,9 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 68
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 70
     const-class v0, Landroid/net/wifi/WifiManager;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -526,12 +457,10 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
-    .line 72
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setResult(I)V
 
-    .line 74
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -542,21 +471,16 @@
 
     move-result-object v1
 
-    .line 75
-    .local v1, "packageName":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 76
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 77
     return-void
 
-    .line 81
     :cond_0
     :try_start_0
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -567,8 +491,6 @@
 
     move-result-object v2
 
-    .line 83
-    .local v2, "applicationInfo":Landroid/content/pm/ApplicationInfo;
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
@@ -581,11 +503,8 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 88
-    .end local v2    # "applicationInfo":Landroid/content/pm/ApplicationInfo;
     nop
 
-    .line 90
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -594,8 +513,6 @@
 
     move-result-object v2
 
-    .line 91
-    .local v2, "action":Ljava/lang/String;
     const/4 v3, -0x1
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -645,38 +562,28 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 101
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
     goto :goto_2
 
-    .line 97
     :pswitch_0
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 98
     goto :goto_2
 
-    .line 93
     :pswitch_1
     iput v6, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 94
     nop
 
-    .line 104
     :goto_2
     return-void
 
-    .line 84
-    .end local v2    # "action":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 85
-    .local v0, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v2, "RequestToggleWiFiActivity"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -695,10 +602,8 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 87
     return-void
 
     nop
@@ -713,23 +618,18 @@
 .method protected onStart()V
     .locals 3
 
-    .line 136
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onStart()V
 
-    .line 138
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mReceiver:Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;->register()V
 
-    .line 140
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getWifiState()I
 
     move-result v0
 
-    .line 142
-    .local v0, "wifiState":I
     iget v1, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
     const/4 v2, -0x1
@@ -738,13 +638,11 @@
 
     goto :goto_3
 
-    .line 192
     :pswitch_0
     packed-switch v0, :pswitch_data_1
 
     goto :goto_3
 
-    .line 204
     :pswitch_1
     const/4 v1, 0x3
 
@@ -752,121 +650,92 @@
 
     goto :goto_3
 
-    .line 194
     :pswitch_2
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setResult(I)V
 
-    .line 195
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 196
     return-void
 
-    .line 199
     :pswitch_3
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
-    .line 200
     goto :goto_3
 
-    .line 158
     :pswitch_4
     packed-switch v0, :pswitch_data_2
 
     goto :goto_0
 
-    .line 166
     :pswitch_5
     const/4 v1, 0x4
 
     iput v1, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 167
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
     goto :goto_0
 
-    .line 160
     :pswitch_6
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setResult(I)V
 
-    .line 161
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 163
     return-void
 
-    .line 171
     :goto_0
     goto :goto_3
 
-    .line 174
     :pswitch_7
     packed-switch v0, :pswitch_data_3
 
     goto :goto_1
 
-    .line 176
     :pswitch_8
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setResult(I)V
 
-    .line 177
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 178
     return-void
 
-    .line 181
     :pswitch_9
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
-    .line 182
     goto :goto_1
 
-    .line 186
     :pswitch_a
     const/4 v1, 0x1
 
     iput v1, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 189
     :goto_1
     goto :goto_3
 
-    .line 144
     :pswitch_b
     packed-switch v0, :pswitch_data_4
 
     goto :goto_2
 
-    .line 146
     :pswitch_c
     invoke-virtual {p0, v2}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->setResult(I)V
 
-    .line 147
     invoke-virtual {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->finish()V
 
-    .line 148
     return-void
 
-    .line 151
     :pswitch_d
     const/4 v1, 0x2
 
     iput v1, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mState:I
 
-    .line 152
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->scheduleToggleTimeout()V
 
-    .line 155
     :goto_2
     nop
 
-    .line 210
     :goto_3
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->updateUi()V
 
-    .line 211
     return-void
 
     :pswitch_data_0
@@ -909,17 +778,13 @@
 .method protected onStop()V
     .locals 1
 
-    .line 215
     iget-object v0, p0, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->mReceiver:Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;
 
     invoke-virtual {v0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity$StateChangeReceiver;->unregister()V
 
-    .line 216
     invoke-direct {p0}, Lcom/android/settings/wifi/RequestToggleWiFiActivity;->unscheduleToggleTimeout()V
 
-    .line 217
     invoke-super {p0}, Lcom/android/internal/app/AlertActivity;->onStop()V
 
-    .line 218
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
-    .line 339
     iput-object p1, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 359
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 348
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$400(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)Lcom/oneplus/lib/widget/RadialTimePickerView;
@@ -59,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/RadialTimePickerView;->setVisibility(I)V
 
-    .line 349
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$500(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)Landroid/widget/LinearLayout;
@@ -68,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 350
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$600(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)Landroid/view/View;
@@ -79,7 +71,6 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 351
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$200(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)Lcom/oneplus/lib/widget/TextInputTimePickerView;
@@ -88,33 +79,26 @@
 
     invoke-virtual {v0, v2}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->setVisibility(I)V
 
-    .line 352
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$700(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)V
 
-    .line 353
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$302(Lcom/oneplus/lib/widget/TimePickerClockDelegate;Z)Z
 
-    .line 354
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .locals 0
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 364
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 342
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$200(Lcom/oneplus/lib/widget/TimePickerClockDelegate;)Lcom/oneplus/lib/widget/TextInputTimePickerView;
@@ -125,13 +109,11 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/widget/TextInputTimePickerView;->showInputBlock(Z)V
 
-    .line 343
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerClockDelegate$3;->this$0:Lcom/oneplus/lib/widget/TimePickerClockDelegate;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/TimePickerClockDelegate;->access$302(Lcom/oneplus/lib/widget/TimePickerClockDelegate;Z)Z
 
-    .line 344
     return-void
 .end method

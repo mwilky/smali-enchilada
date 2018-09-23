@@ -33,10 +33,7 @@
 # direct methods
 .method private static synthetic $closeResource(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Throwable;
-    .param p1, "x1"    # Ljava/lang/AutoCloseable;
 
-    .line 235
     if-eqz p0, :cond_0
 
     :try_start_0
@@ -62,9 +59,7 @@
 
 .method constructor <init>(Lcom/android/settings/users/EditUserPhotoController;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/EditUserPhotoController;
 
-    .line 228
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$5;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     iput-object p2, p0, Lcom/android/settings/users/EditUserPhotoController$5;->val$pictureUri:Landroid/net/Uri;
@@ -79,7 +74,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 228
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/EditUserPhotoController$5;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -91,9 +85,7 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 7
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 231
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$5;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$300(Lcom/android/settings/users/EditUserPhotoController;)Landroid/content/Context;
@@ -104,8 +96,6 @@
 
     move-result-object v0
 
-    .line 232
-    .local v0, "cr":Landroid/content/ContentResolver;
     const/4 v1, 0x0
 
     :try_start_0
@@ -117,8 +107,6 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 233
-    .local v2, "in":Ljava/io/InputStream;
     :try_start_1
     iget-object v3, p0, Lcom/android/settings/users/EditUserPhotoController$5;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
@@ -133,18 +121,14 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 232
-    .local v3, "out":Ljava/io/OutputStream;
     nop
 
-    .line 234
     :try_start_2
     invoke-static {v2, v3}, Llibcore/io/Streams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)I
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 235
     if-eqz v3, :cond_0
 
     :try_start_3
@@ -153,7 +137,6 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
-    .end local v3    # "out":Ljava/io/OutputStream;
     :cond_0
     if-eqz v2, :cond_1
 
@@ -162,14 +145,9 @@
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 237
-    .end local v2    # "in":Ljava/io/InputStream;
     :cond_1
     goto :goto_2
 
-    .line 235
-    .restart local v2    # "in":Ljava/io/InputStream;
-    .restart local v3    # "out":Ljava/io/OutputStream;
     :catchall_0
     move-exception v4
 
@@ -177,7 +155,6 @@
 
     goto :goto_0
 
-    .line 232
     :catch_0
     move-exception v4
 
@@ -186,7 +163,6 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 235
     :catchall_1
     move-exception v5
 
@@ -208,7 +184,6 @@
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .end local v3    # "out":Ljava/io/OutputStream;
     :catchall_2
     move-exception v3
 
@@ -216,7 +191,6 @@
 
     goto :goto_1
 
-    .line 232
     :catch_1
     move-exception v3
 
@@ -225,7 +199,6 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
-    .line 235
     :catchall_3
     move-exception v4
 
@@ -246,20 +219,15 @@
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_2
 
-    .end local v2    # "in":Ljava/io/InputStream;
     :catch_2
     move-exception v2
 
-    .line 236
-    .local v2, "e":Ljava/io/IOException;
     const-string v3, "EditUserPhotoController"
 
     const-string v4, "Failed to copy photo"
 
     invoke-static {v3, v4, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 238
-    .end local v2    # "e":Ljava/io/IOException;
     :goto_2
     return-object v1
 .end method
@@ -267,7 +235,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 228
     check-cast p1, Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/EditUserPhotoController$5;->onPostExecute(Ljava/lang/Void;)V
@@ -277,9 +244,7 @@
 
 .method protected onPostExecute(Ljava/lang/Void;)V
     .locals 1
-    .param p1, "result"    # Ljava/lang/Void;
 
-    .line 243
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$5;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$500(Lcom/android/settings/users/EditUserPhotoController;)Landroid/app/Fragment;
@@ -294,12 +259,10 @@
 
     return-void
 
-    .line 244
     :cond_0
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$5;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$600(Lcom/android/settings/users/EditUserPhotoController;)V
 
-    .line 245
     return-void
 .end method

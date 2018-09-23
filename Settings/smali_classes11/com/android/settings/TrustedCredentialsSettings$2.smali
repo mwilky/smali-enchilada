@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/TrustedCredentialsSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/TrustedCredentialsSettings;
 
-    .line 941
     iput-object p1, p0, Lcom/android/settings/TrustedCredentialsSettings$2;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "dialogInterface"    # Landroid/content/DialogInterface;
 
-    .line 945
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$2;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/TrustedCredentialsSettings;->getActivity()Landroid/app/Activity;
@@ -55,13 +51,11 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 946
     iget-object v0, p0, Lcom/android/settings/TrustedCredentialsSettings$2;->this$0:Lcom/android/settings/TrustedCredentialsSettings;
 
     const/16 v1, -0x2710
 
     invoke-static {v0, v1}, Lcom/android/settings/TrustedCredentialsSettings;->access$3102(Lcom/android/settings/TrustedCredentialsSettings;I)I
 
-    .line 947
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/location/LocationEnabler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/location/LocationEnabler;
 
-    .line 77
     iput-object p1, p0, Lcom/android/settings/location/LocationEnabler$1;->this$0:Lcom/android/settings/location/LocationEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 80
     const-string v0, "LocationEnabler"
 
     const/4 v1, 0x3
@@ -49,7 +44,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 81
     const-string v0, "LocationEnabler"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,12 +62,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
     :cond_0
     iget-object v0, p0, Lcom/android/settings/location/LocationEnabler$1;->this$0:Lcom/android/settings/location/LocationEnabler;
 
     invoke-virtual {v0}, Lcom/android/settings/location/LocationEnabler;->refreshLocationMode()V
 
-    .line 84
     return-void
 .end method

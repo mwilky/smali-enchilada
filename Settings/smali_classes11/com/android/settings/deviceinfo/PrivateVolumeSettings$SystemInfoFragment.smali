@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 745
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method public static show(Landroid/app/Fragment;)V
     .locals 3
-    .param p0, "parent"    # Landroid/app/Fragment;
 
-    .line 747
     invoke-virtual {p0}, Landroid/app/Fragment;->isAdded()Z
 
     move-result v0
@@ -37,19 +34,15 @@
 
     return-void
 
-    .line 749
     :cond_0
     new-instance v0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;
 
     invoke-direct {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;-><init>()V
 
-    .line 750
-    .local v0, "dialog":Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;
     const/4 v1, 0x0
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;->setTargetFragment(Landroid/app/Fragment;I)V
 
-    .line 751
     invoke-virtual {p0}, Landroid/app/Fragment;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v1
@@ -58,7 +51,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 752
     return-void
 .end method
 
@@ -67,7 +59,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 756
     const/16 v0, 0x235
 
     return v0
@@ -75,9 +66,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 761
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;->getActivity()Landroid/app/Activity;
@@ -86,7 +75,6 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 762
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$SystemInfoFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -101,7 +89,7 @@
 
     aput-object v3, v2, v4
 
-    const v3, 0x7f1210bf
+    const v3, 0x7f1210b8
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -111,7 +99,6 @@
 
     move-result-object v0
 
-    .line 764
     const v1, 0x104000a
 
     const/4 v2, 0x0
@@ -120,11 +107,9 @@
 
     move-result-object v0
 
-    .line 765
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 761
     return-object v0
 .end method

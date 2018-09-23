@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 73
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableListIterator;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 76
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +44,6 @@
 .method public hasPrevious()Z
     .locals 1
 
-    .line 84
     const/4 v0, 0x0
 
     return v0
@@ -55,7 +52,6 @@
 .method public next()Ljava/lang/Object;
     .locals 1
 
-    .line 80
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -66,7 +62,6 @@
 .method public nextIndex()I
     .locals 1
 
-    .line 92
     const/4 v0, 0x0
 
     return v0
@@ -75,7 +70,6 @@
 .method public previous()Ljava/lang/Object;
     .locals 1
 
-    .line 88
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -86,7 +80,6 @@
 .method public previousIndex()I
     .locals 1
 
-    .line 96
     const/4 v0, -0x1
 
     return v0

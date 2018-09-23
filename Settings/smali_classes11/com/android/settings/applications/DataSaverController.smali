@@ -13,14 +13,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     const-string v0, "data_saver"
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/core/BasePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 32
     return-void
 .end method
 
@@ -29,7 +26,6 @@
 .method public getAvailabilityStatus()I
     .locals 2
 
-    .line 36
     iget-object v0, p0, Lcom/android/settings/applications/DataSaverController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -44,16 +40,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 37
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 38
     :cond_0
     const/4 v0, 0x2
 
-    .line 36
     :goto_0
     return v0
 .end method

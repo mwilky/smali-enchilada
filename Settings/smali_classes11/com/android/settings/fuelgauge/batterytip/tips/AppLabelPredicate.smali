@@ -26,15 +26,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
     iput-object p1, p0, Lcom/android/settings/fuelgauge/batterytip/tips/AppLabelPredicate;->mContext:Landroid/content/Context;
 
-    .line 36
     const-class v0, Landroid/app/AppOpsManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -45,7 +41,6 @@
 
     iput-object v0, p0, Lcom/android/settings/fuelgauge/batterytip/tips/AppLabelPredicate;->mAppOpsManager:Landroid/app/AppOpsManager;
 
-    .line 37
     return-void
 .end method
 
@@ -53,9 +48,7 @@
 # virtual methods
 .method public test(Lcom/android/settings/fuelgauge/batterytip/AppInfo;)Z
     .locals 2
-    .param p1, "appInfo"    # Lcom/android/settings/fuelgauge/batterytip/AppInfo;
 
-    .line 42
     iget-object v0, p0, Lcom/android/settings/fuelgauge/batterytip/tips/AppLabelPredicate;->mContext:Landroid/content/Context;
 
     iget-object v1, p1, Lcom/android/settings/fuelgauge/batterytip/AppInfo;->packageName:Ljava/lang/String;
@@ -80,7 +73,6 @@
 .method public bridge synthetic test(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 30
     check-cast p1, Lcom/android/settings/fuelgauge/batterytip/AppInfo;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/fuelgauge/batterytip/tips/AppLabelPredicate;->test(Lcom/android/settings/fuelgauge/batterytip/AppInfo;)Z

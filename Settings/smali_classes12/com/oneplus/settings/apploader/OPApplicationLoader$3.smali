@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/apploader/OPApplicationLoader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
-    .line 129
     iput-object p1, p0, Lcom/oneplus/settings/apploader/OPApplicationLoader$3;->this$0:Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 134
     iget-object v0, p0, Lcom/oneplus/settings/apploader/OPApplicationLoader$3;->this$0:Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
     invoke-static {v0}, Lcom/oneplus/settings/apploader/OPApplicationLoader;->access$100(Lcom/oneplus/settings/apploader/OPApplicationLoader;)Landroid/view/View;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 135
     iget-object v0, p0, Lcom/oneplus/settings/apploader/OPApplicationLoader$3;->this$0:Lcom/oneplus/settings/apploader/OPApplicationLoader;
 
     invoke-static {v0}, Lcom/oneplus/settings/apploader/OPApplicationLoader;->access$100(Lcom/oneplus/settings/apploader/OPApplicationLoader;)Landroid/view/View;
@@ -59,7 +55,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 137
     :cond_0
     return-void
 .end method

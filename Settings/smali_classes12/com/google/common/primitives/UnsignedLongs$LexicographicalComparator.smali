@@ -37,7 +37,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 160
     new-instance v0, Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
 
     const-string v1, "INSTANCE"
@@ -48,7 +47,6 @@
 
     sput-object v0, Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
 
-    .line 159
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
@@ -70,7 +68,6 @@
         }
     .end annotation
 
-    .line 159
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -78,9 +75,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 159
     const-class v0, Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -95,7 +90,6 @@
 .method public static values()[Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
     .locals 1
 
-    .line 159
     sget-object v0, Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;->$VALUES:[Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/UnsignedLongs$LexicographicalComparator;->clone()Ljava/lang/Object;
@@ -112,7 +106,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 159
     check-cast p1, [J
 
     check-cast p2, [J
@@ -126,10 +119,7 @@
 
 .method public compare([J[J)I
     .locals 6
-    .param p1, "left"    # [J
-    .param p2, "right"    # [J
 
-    .line 164
     array-length v0, p1
 
     array-length v1, p2
@@ -138,15 +128,11 @@
 
     move-result v0
 
-    .line 165
-    .local v0, "minLength":I
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 166
     aget-wide v2, p1, v1
 
     aget-wide v4, p2, v1
@@ -155,7 +141,6 @@
 
     if-eqz v2, :cond_0
 
-    .line 167
     aget-wide v2, p1, v1
 
     aget-wide v4, p2, v1
@@ -166,14 +151,11 @@
 
     return v2
 
-    .line 165
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 170
-    .end local v1    # "i":I
     :cond_1
     array-length v1, p1
 

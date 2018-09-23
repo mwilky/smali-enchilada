@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method public hashBytes([B)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # [B
 
-    .line 57
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -48,11 +45,7 @@
 
 .method public hashBytes([BII)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
 
-    .line 61
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -70,9 +63,7 @@
 
 .method public hashInt(I)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # I
 
-    .line 49
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -90,9 +81,7 @@
 
 .method public hashLong(J)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # J
 
-    .line 53
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -121,9 +110,6 @@
         }
     .end annotation
 
-    .line 37
-    .local p1, "instance":Ljava/lang/Object;, "TT;"
-    .local p2, "funnel":Lcom/google/common/hash/Funnel;, "Lcom/google/common/hash/Funnel<-TT;>;"
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -141,10 +127,7 @@
 
 .method public hashString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # Ljava/lang/CharSequence;
-    .param p2, "charset"    # Ljava/nio/charset/Charset;
 
-    .line 45
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -162,9 +145,7 @@
 
 .method public hashUnencodedChars(Ljava/lang/CharSequence;)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "input"    # Ljava/lang/CharSequence;
 
-    .line 41
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -182,9 +163,7 @@
 
 .method public newHasher(I)Lcom/google/common/hash/Hasher;
     .locals 1
-    .param p1, "expectedInputSize"    # I
 
-    .line 65
     if-ltz p1, :cond_0
 
     const/4 v0, 0x1
@@ -197,7 +176,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 66
     invoke-virtual {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;->newHasher()Lcom/google/common/hash/Hasher;
 
     move-result-object v0

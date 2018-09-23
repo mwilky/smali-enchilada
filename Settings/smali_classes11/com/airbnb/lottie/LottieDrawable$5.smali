@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/LottieDrawable;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/LottieDrawable;
 
-    .line 448
     iput-object p1, p0, Lcom/airbnb/lottie/LottieDrawable$5;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     iput p2, p0, Lcom/airbnb/lottie/LottieDrawable$5;->val$minFrame:I
@@ -42,15 +40,12 @@
 # virtual methods
 .method public run(Lcom/airbnb/lottie/LottieComposition;)V
     .locals 2
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 450
     iget-object v0, p0, Lcom/airbnb/lottie/LottieDrawable$5;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     iget v1, p0, Lcom/airbnb/lottie/LottieDrawable$5;->val$minFrame:I
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieDrawable;->setMinFrame(I)V
 
-    .line 451
     return-void
 .end method

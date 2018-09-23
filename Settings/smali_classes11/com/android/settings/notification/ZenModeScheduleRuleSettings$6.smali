@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;Landroid/content/Context;[I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "days"    # [I
 
-    .line 218
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-direct {p0, p2, p3}, Lcom/android/settings/notification/ZenModeScheduleDaysSelection;-><init>(Landroid/content/Context;[I)V
@@ -37,9 +33,7 @@
 # virtual methods
 .method protected onChanged([I)V
     .locals 4
-    .param p1, "days"    # [I
 
-    .line 221
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     iget-boolean v0, v0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->mDisableListeners:Z
@@ -48,7 +42,6 @@
 
     return-void
 
-    .line 222
     :cond_0
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
@@ -66,7 +59,6 @@
 
     return-void
 
-    .line 223
     :cond_1
     sget-boolean v0, Lcom/android/settings/notification/ZenModeRuleSettingsBase;->DEBUG:Z
 
@@ -102,7 +94,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 224
     :cond_2
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
@@ -112,7 +103,6 @@
 
     iput-object p1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->days:[I
 
-    .line 225
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$6;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
@@ -127,6 +117,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->updateRule(Landroid/net/Uri;)V
 
-    .line 226
     return-void
 .end method

@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,8 +27,6 @@
 # virtual methods
 .method public run(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;)V
     .locals 0
-    .param p1, "holder"    # Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
 
-    .line 116
     return-void
 .end method

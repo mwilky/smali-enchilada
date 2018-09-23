@@ -13,12 +13,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 32
     return-void
 .end method
 
@@ -27,7 +24,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 47
     const-string v0, "kernel_version"
 
     return-object v0
@@ -36,7 +32,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 36
     const/4 v0, 0x1
 
     return v0
@@ -44,12 +39,9 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 1
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 41
     invoke-super {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
 
-    .line 42
     iget-object v0, p0, Lcom/android/settings/deviceinfo/KernelVersionPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settingslib/DeviceInfoUtils;->getFormattedKernelVersion(Landroid/content/Context;)Ljava/lang/String;
@@ -58,6 +50,5 @@
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 43
     return-void
 .end method

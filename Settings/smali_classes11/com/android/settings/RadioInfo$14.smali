@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1250
     iput-object p1, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 4
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 1252
     iget-object v0, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$2600(Lcom/android/settings/RadioInfo;)Landroid/telephony/TelephonyManager;
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 1253
-    .local v0, "state":I
     const/4 v1, 0x1
 
     if-eqz v0, :cond_1
@@ -63,7 +57,6 @@
 
     goto :goto_0
 
-    .line 1256
     :cond_0
     iget-object v2, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -75,10 +68,8 @@
 
     invoke-virtual {v2, v3}, Lcom/android/internal/telephony/Phone;->setUserDataEnabled(Z)V
 
-    .line 1257
     goto :goto_0
 
-    .line 1260
     :cond_1
     iget-object v2, p0, Lcom/android/settings/RadioInfo$14;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -88,10 +79,8 @@
 
     invoke-virtual {v2, v1}, Lcom/android/internal/telephony/Phone;->setUserDataEnabled(Z)V
 
-    .line 1261
     nop
 
-    .line 1266
     :goto_0
     return v1
 .end method

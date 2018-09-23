@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 138
     new-instance v0, Lcom/android/settings/accounts/AccountDashboardFragment$1;
 
     invoke-direct {v0}, Lcom/android/settings/accounts/AccountDashboardFragment$1;-><init>()V
@@ -26,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
@@ -36,7 +34,6 @@
 # virtual methods
 .method protected createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,13 +45,10 @@
         }
     .end annotation
 
-    .line 69
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 70
-    .local v0, "controllers":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/core/AbstractPreferenceController;>;"
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountDashboardFragment;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -65,52 +59,42 @@
 
     move-result-object v1
 
-    .line 71
-    .local v1, "authorities":[Ljava/lang/String;
     new-instance v2, Lcom/android/settings/accounts/AccountPreferenceController;
 
     invoke-direct {v2, p1, p0, v1}, Lcom/android/settings/accounts/AccountPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settings/SettingsPreferenceFragment;[Ljava/lang/String;)V
 
-    .line 73
-    .local v2, "accountPrefController":Lcom/android/settings/accounts/AccountPreferenceController;
     invoke-virtual {p0}, Lcom/android/settings/accounts/AccountDashboardFragment;->getLifecycle()Lcom/android/settingslib/core/lifecycle/Lifecycle;
 
     move-result-object v3
 
     invoke-virtual {v3, v2}, Lcom/android/settingslib/core/lifecycle/Lifecycle;->addObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
 
-    .line 74
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 75
     new-instance v3, Lcom/android/settings/users/AutoSyncDataPreferenceController;
 
     invoke-direct {v3, p1, p0}, Lcom/android/settings/users/AutoSyncDataPreferenceController;-><init>(Landroid/content/Context;Landroid/app/Fragment;)V
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 76
     new-instance v3, Lcom/android/settings/users/AutoSyncPersonalDataPreferenceController;
 
     invoke-direct {v3, p1, p0}, Lcom/android/settings/users/AutoSyncPersonalDataPreferenceController;-><init>(Landroid/content/Context;Landroid/app/Fragment;)V
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 77
     new-instance v3, Lcom/android/settings/users/AutoSyncWorkDataPreferenceController;
 
     invoke-direct {v3, p1, p0}, Lcom/android/settings/users/AutoSyncWorkDataPreferenceController;-><init>(Landroid/content/Context;Landroid/app/Fragment;)V
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 78
     return-object v0
 .end method
 
 .method public getHelpResource()I
     .locals 1
 
-    .line 64
     const v0, 0x7f120731
 
     return v0
@@ -119,7 +103,6 @@
 .method protected getLogTag()Ljava/lang/String;
     .locals 1
 
-    .line 54
     const-string v0, "AccountDashboardFrag"
 
     return-object v0
@@ -128,7 +111,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 49
     const/16 v0, 0x8
 
     return v0
@@ -137,7 +119,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 59
     const v0, 0x7f16000d
 
     return v0

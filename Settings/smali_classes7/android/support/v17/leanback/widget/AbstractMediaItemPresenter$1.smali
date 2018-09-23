@@ -35,7 +35,6 @@
 .method constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;IFIFLandroid/view/View;)V
     .locals 0
 
-    .line 645
     iput-object p1, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$lp:Landroid/view/ViewGroup$MarginLayoutParams;
 
     iput p2, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$targetLeft:I
@@ -57,9 +56,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 649
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v0
@@ -68,8 +65,6 @@
 
     sub-float/2addr v1, v0
 
-    .line 650
-    .local v1, "fractionToEnd":F
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$lp:Landroid/view/ViewGroup$MarginLayoutParams;
 
     iget v2, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$targetLeft:I
@@ -88,7 +83,6 @@
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 651
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$lp:Landroid/view/ViewGroup$MarginLayoutParams;
 
     iget v2, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$targetWidth:I
@@ -107,11 +101,9 @@
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    .line 652
     iget-object v0, p0, Landroid/support/v17/leanback/widget/AbstractMediaItemPresenter$1;->val$selectorView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 653
     return-void
 .end method

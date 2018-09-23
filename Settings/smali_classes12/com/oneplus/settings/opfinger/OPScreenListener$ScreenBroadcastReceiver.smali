@@ -24,12 +24,10 @@
 .method private constructor <init>(Lcom/oneplus/settings/opfinger/OPScreenListener;)V
     .locals 0
 
-    .line 22
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->this$0:Lcom/oneplus/settings/opfinger/OPScreenListener;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 23
     const/4 p1, 0x0
 
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->action:Ljava/lang/String;
@@ -39,10 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/oneplus/settings/opfinger/OPScreenListener;Lcom/oneplus/settings/opfinger/OPScreenListener$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/oneplus/settings/opfinger/OPScreenListener;
-    .param p2, "x1"    # Lcom/oneplus/settings/opfinger/OPScreenListener$1;
 
-    .line 22
     invoke-direct {p0, p1}, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;-><init>(Lcom/oneplus/settings/opfinger/OPScreenListener;)V
 
     return-void
@@ -52,17 +47,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 27
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->action:Ljava/lang/String;
 
-    .line 28
     const-string v0, "android.intent.action.SCREEN_ON"
 
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->action:Ljava/lang/String;
@@ -73,7 +64,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 29
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->this$0:Lcom/oneplus/settings/opfinger/OPScreenListener;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/OPScreenListener;->access$100(Lcom/oneplus/settings/opfinger/OPScreenListener;)Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenStateListener;
@@ -84,7 +74,6 @@
 
     goto :goto_0
 
-    .line 30
     :cond_0
     const-string v0, "android.intent.action.SCREEN_OFF"
 
@@ -96,7 +85,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 31
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->this$0:Lcom/oneplus/settings/opfinger/OPScreenListener;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/OPScreenListener;->access$100(Lcom/oneplus/settings/opfinger/OPScreenListener;)Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenStateListener;
@@ -107,7 +95,6 @@
 
     goto :goto_0
 
-    .line 32
     :cond_1
     const-string v0, "android.intent.action.USER_PRESENT"
 
@@ -119,7 +106,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 33
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenBroadcastReceiver;->this$0:Lcom/oneplus/settings/opfinger/OPScreenListener;
 
     invoke-static {v0}, Lcom/oneplus/settings/opfinger/OPScreenListener;->access$100(Lcom/oneplus/settings/opfinger/OPScreenListener;)Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenStateListener;
@@ -128,7 +114,6 @@
 
     invoke-interface {v0}, Lcom/oneplus/settings/opfinger/OPScreenListener$ScreenStateListener;->onUserPresent()V
 
-    .line 35
     :cond_2
     :goto_0
     return-void

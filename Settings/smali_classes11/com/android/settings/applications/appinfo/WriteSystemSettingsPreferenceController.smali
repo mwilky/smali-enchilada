@@ -6,13 +6,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "prefKey"    # Ljava/lang/String;
 
-    .line 33
     invoke-direct {p0, p1, p2}, Lcom/android/settings/applications/appinfo/AppInfoPreferenceControllerBase;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 34
     return-void
 .end method
 
@@ -21,7 +17,6 @@
 .method public getAvailabilityStatus()I
     .locals 6
 
-    .line 42
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/WriteSystemSettingsPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/os/UserManager;->get(Landroid/content/Context;)Landroid/os/UserManager;
@@ -36,10 +31,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 43
     return v1
 
-    .line 47
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/WriteSystemSettingsPreferenceController;->mParent:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
@@ -47,8 +40,6 @@
 
     move-result-object v0
 
-    .line 48
-    .local v0, "packageInfo":Landroid/content/pm/PackageInfo;
     if-eqz v0, :cond_4
 
     iget-object v2, v0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
@@ -57,13 +48,11 @@
 
     goto :goto_1
 
-    .line 51
     :cond_1
     const/4 v2, 0x0
 
     move v3, v2
 
-    .local v3, "i":I
     :goto_0
     iget-object v4, v0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
@@ -71,7 +60,6 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 52
     iget-object v4, v0, Landroid/content/pm/PackageInfo;->requestedPermissions:[Ljava/lang/String;
 
     aget-object v4, v4, v3
@@ -84,21 +72,16 @@
 
     if-eqz v4, :cond_2
 
-    .line 53
     return v2
 
-    .line 51
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 56
-    .end local v3    # "i":I
     :cond_3
     return v1
 
-    .line 49
     :cond_4
     :goto_1
     return v1
@@ -116,7 +99,6 @@
         }
     .end annotation
 
-    .line 61
     const-class v0, Lcom/android/settings/applications/appinfo/WriteSettingsDetails;
 
     return-object v0
@@ -125,7 +107,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/WriteSystemSettingsPreferenceController;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/WriteSystemSettingsPreferenceController;->mParent:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;

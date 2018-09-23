@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 14
     sget-object v0, Lcom/google/analytics/containertag/common/FunctionType;->APP_ID:Lcom/google/analytics/containertag/common/FunctionType;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/FunctionType;->toString()Ljava/lang/String;
@@ -29,9 +28,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 23
     sget-object v0, Lcom/google/tagmanager/AppIdMacro;->ID:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -40,17 +37,14 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/tagmanager/FunctionCallImplementation;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 24
     iput-object p1, p0, Lcom/google/tagmanager/AppIdMacro;->mContext:Landroid/content/Context;
 
-    .line 25
     return-void
 .end method
 
 .method public static getFunctionId()Ljava/lang/String;
     .locals 1
 
-    .line 19
     sget-object v0, Lcom/google/tagmanager/AppIdMacro;->ID:Ljava/lang/String;
 
     return-object v0
@@ -71,8 +65,6 @@
         }
     .end annotation
 
-    .line 32
-    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     iget-object v0, p0, Lcom/google/tagmanager/AppIdMacro;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -89,7 +81,6 @@
 .method public isCacheable()Z
     .locals 1
 
-    .line 28
     const/4 v0, 0x1
 
     return v0

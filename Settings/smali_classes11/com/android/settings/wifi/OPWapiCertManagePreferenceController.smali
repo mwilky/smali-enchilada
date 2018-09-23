@@ -10,12 +10,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 12
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 13
     return-void
 .end method
 
@@ -24,7 +21,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 22
     const-string v0, "wapi_cert_manage"
 
     return-object v0
@@ -33,7 +29,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 17
     const/4 v0, 0x1
 
     new-array v1, v0, [I

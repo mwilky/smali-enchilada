@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/notification/OPNotificationAppList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/notification/OPNotificationAppList;
 
-    .line 261
     iput-object p1, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$4;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 264
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$4;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
 
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPNotificationAppList$4;->this$0:Lcom/oneplus/settings/notification/OPNotificationAppList;
@@ -50,6 +47,5 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/notification/OPNotificationAppList;->access$500(Lcom/oneplus/settings/notification/OPNotificationAppList;Ljava/util/ArrayList;)V
 
-    .line 265
     return-void
 .end method

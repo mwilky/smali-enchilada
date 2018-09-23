@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/widget/RecyclerView;
 
-    .line 345
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 348
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     iget-boolean v0, v0, Landroid/support/v7/widget/RecyclerView;->mFirstLayoutComplete:Z
@@ -56,7 +53,6 @@
 
     goto :goto_0
 
-    .line 352
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -64,15 +60,12 @@
 
     if-nez v0, :cond_1
 
-    .line 353
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->requestLayout()V
 
-    .line 355
     return-void
 
-    .line 357
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
@@ -80,26 +73,21 @@
 
     if-eqz v0, :cond_2
 
-    .line 358
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mLayoutWasDefered:Z
 
-    .line 359
     return-void
 
-    .line 361
     :cond_2
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->this$0:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->consumePendingUpdateOperations()V
 
-    .line 362
     return-void
 
-    .line 350
     :cond_3
     :goto_0
     return-void

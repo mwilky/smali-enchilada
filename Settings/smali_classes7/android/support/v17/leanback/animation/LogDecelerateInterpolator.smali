@@ -25,19 +25,13 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 3
-    .param p1, "base"    # I
-    .param p2, "drift"    # I
 
-    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
     iput p1, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mBase:I
 
-    .line 34
     iput p2, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mDrift:I
 
-    .line 36
     iget v0, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mBase:I
 
     iget v1, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mDrift:I
@@ -52,17 +46,12 @@
 
     iput v2, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mLogScale:F
 
-    .line 37
     return-void
 .end method
 
 .method static computeLog(FII)F
     .locals 4
-    .param p0, "t"    # F
-    .param p1, "base"    # I
-    .param p2, "drift"    # I
 
-    .line 40
     int-to-double v0, p1
 
     neg-float v2, p0
@@ -94,9 +83,7 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 2
-    .param p1, "t"    # F
 
-    .line 45
     iget v0, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mBase:I
 
     iget v1, p0, Landroid/support/v17/leanback/animation/LogDecelerateInterpolator;->mDrift:I

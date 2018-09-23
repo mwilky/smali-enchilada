@@ -27,19 +27,14 @@
         }
     .end annotation
 
-    .line 15
-    .local p1, "mListViews":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 12
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/settings/product/NovicePagerAdapter;->mListViews:Ljava/util/List;
 
-    .line 16
     iput-object p1, p0, Lcom/oneplus/settings/product/NovicePagerAdapter;->mListViews:Ljava/util/List;
 
-    .line 17
     return-void
 .end method
 
@@ -47,11 +42,7 @@
 # virtual methods
 .method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
     .locals 2
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
 
-    .line 23
     :try_start_0
     move-object v0, p1
 
@@ -69,14 +60,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 25
     goto :goto_0
 
-    .line 24
     :catch_0
     move-exception v0
 
-    .line 26
     :goto_0
     return-void
 .end method
@@ -84,12 +72,10 @@
 .method public getCount()I
     .locals 1
 
-    .line 37
     iget-object v0, p0, Lcom/oneplus/settings/product/NovicePagerAdapter;->mListViews:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 38
     iget-object v0, p0, Lcom/oneplus/settings/product/NovicePagerAdapter;->mListViews:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -98,7 +84,6 @@
 
     return v0
 
-    .line 41
     :cond_0
     const/4 v0, 0x0
 
@@ -107,10 +92,7 @@
 
 .method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .locals 3
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
 
-    .line 30
     move-object v0, p1
 
     check-cast v0, Landroid/support/v4/view/ViewPager;
@@ -127,7 +109,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 32
     iget-object v0, p0, Lcom/oneplus/settings/product/NovicePagerAdapter;->mListViews:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -139,10 +120,7 @@
 
 .method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "object"    # Ljava/lang/Object;
 
-    .line 46
     if-ne p1, p2, :cond_0
 
     const/4 v0, 0x1

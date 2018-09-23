@@ -37,20 +37,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/storage/VolumeInfo;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "volume"    # Landroid/os/storage/VolumeInfo;
 
-    .line 355
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 356
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
-    .line 357
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/storage/StorageManager;
@@ -63,14 +58,12 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mStorageManager:Landroid/os/storage/StorageManager;
 
-    .line 358
     invoke-virtual {p2}, Landroid/os/storage/VolumeInfo;->getId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mVolumeId:Ljava/lang/String;
 
-    .line 359
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mStorageManager:Landroid/os/storage/StorageManager;
 
     invoke-virtual {v0, p2}, Landroid/os/storage/StorageManager;->getBestVolumeDescription(Landroid/os/storage/VolumeInfo;)Ljava/lang/String;
@@ -79,7 +72,6 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mDescription:Ljava/lang/String;
 
-    .line 360
     return-void
 .end method
 
@@ -87,9 +79,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Exception;
     .locals 2
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 365
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mStorageManager:Landroid/os/storage/StorageManager;
 
@@ -99,24 +89,19 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 366
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 367
     :catch_0
     move-exception v0
 
-    .line 368
-    .local v0, "e":Ljava/lang/Exception;
     return-object v0
 .end method
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 349
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Exception;
@@ -128,21 +113,18 @@
 
 .method protected onPostExecute(Ljava/lang/Exception;)V
     .locals 6
-    .param p1, "e"    # Ljava/lang/Exception;
 
-    .line 374
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     if-nez p1, :cond_0
 
-    .line 375
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1210e7
+    const v4, 0x7f1210e0
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -158,12 +140,10 @@
 
     move-result-object v0
 
-    .line 376
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     goto :goto_0
 
-    .line 378
     :cond_0
     const-string v2, "StorageSettings"
 
@@ -185,12 +165,11 @@
 
     invoke-static {v2, v3, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 379
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->mContext:Landroid/content/Context;
 
-    const v4, 0x7f1210e6
+    const v4, 0x7f1210df
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -206,10 +185,8 @@
 
     move-result-object v0
 
-    .line 380
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 382
     :goto_0
     return-void
 .end method
@@ -217,7 +194,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 349
     check-cast p1, Ljava/lang/Exception;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/deviceinfo/StorageSettings$MountTask;->onPostExecute(Ljava/lang/Exception;)V

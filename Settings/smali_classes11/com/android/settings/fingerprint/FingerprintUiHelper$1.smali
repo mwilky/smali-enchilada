@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintUiHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
-    .line 125
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintUiHelper$1;->this$0:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 128
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintUiHelper$1;->this$0:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->access$000(Lcom/android/settings/fingerprint/FingerprintUiHelper;)Landroid/widget/TextView;
@@ -50,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 129
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintUiHelper$1;->this$0:Lcom/android/settings/fingerprint/FingerprintUiHelper;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintUiHelper;->access$100(Lcom/android/settings/fingerprint/FingerprintUiHelper;)Landroid/widget/ImageView;
@@ -61,6 +57,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 130
     return-void
 .end method

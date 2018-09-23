@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
-    .line 81
     iput-object p1, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$1;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 2
-    .param p1, "className"    # Landroid/content/ComponentName;
-    .param p2, "service"    # Landroid/os/IBinder;
 
-    .line 84
     const-string v0, "OPFaceUnlockSettings"
 
     const-string v1, "Oneplus face unlock service connected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
     iget-object v0, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$1;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-static {p2}, Lcom/oneplus/faceunlock/internal/IOPFaceSettingService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
@@ -57,7 +51,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;->access$002(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
 
-    .line 87
     iget-object v0, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$1;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;->access$100(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;)Landroid/os/Handler;
@@ -68,28 +61,23 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 88
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .locals 2
-    .param p1, "className"    # Landroid/content/ComponentName;
 
-    .line 91
     const-string v0, "OPFaceUnlockSettings"
 
     const-string v1, "Oneplus face unlock service disconnected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
     iget-object v0, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$1;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;->access$002(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;)Lcom/oneplus/faceunlock/internal/IOPFaceSettingService;
 
-    .line 93
     return-void
 .end method

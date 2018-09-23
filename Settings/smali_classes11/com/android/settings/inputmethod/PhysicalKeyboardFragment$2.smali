@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;
 
-    .line 219
     iput-object p1, p0, Lcom/android/settings/inputmethod/PhysicalKeyboardFragment$2;->this$0:Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 222
     iget-object v0, p0, Lcom/android/settings/inputmethod/PhysicalKeyboardFragment$2;->this$0:Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;
 
     invoke-static {v0}, Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;->access$100(Lcom/android/settings/inputmethod/PhysicalKeyboardFragment;)Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;
@@ -58,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/inputmethod/InputMethodUtils$InputMethodSettings;->setShowImeWithHardKeyboard(Z)V
 
-    .line 223
     const/4 v0, 0x1
 
     return v0

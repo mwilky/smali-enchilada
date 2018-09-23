@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost;Landroid/support/v17/leanback/widget/OnActionClickedListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost;
 
-    .line 59
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost$1;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost;
 
     iput-object p2, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost$1;->val$listener:Landroid/support/v17/leanback/widget/OnActionClickedListener;
@@ -42,17 +40,11 @@
 # virtual methods
 .method public onItemClicked(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V
     .locals 2
-    .param p1, "itemViewHolder"    # Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
-    .param p2, "item"    # Ljava/lang/Object;
-    .param p3, "rowViewHolder"    # Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;
-    .param p4, "row"    # Landroid/support/v17/leanback/widget/Row;
 
-    .line 63
     instance-of v0, p2, Landroid/support/v17/leanback/widget/Action;
 
     if-eqz v0, :cond_0
 
-    .line 64
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost$1;->val$listener:Landroid/support/v17/leanback/widget/OnActionClickedListener;
 
     move-object v1, p2
@@ -61,7 +53,6 @@
 
     invoke-interface {v0, v1}, Landroid/support/v17/leanback/widget/OnActionClickedListener;->onActionClicked(Landroid/support/v17/leanback/widget/Action;)V
 
-    .line 66
     :cond_0
     return-void
 .end method
@@ -69,7 +60,6 @@
 .method public bridge synthetic onItemClicked(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 59
     check-cast p4, Landroid/support/v17/leanback/widget/Row;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/support/v17/leanback/app/PlaybackSupportFragmentGlueHost$1;->onItemClicked(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V

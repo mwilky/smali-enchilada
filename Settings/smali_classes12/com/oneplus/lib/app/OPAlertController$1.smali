@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/OPAlertController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/OPAlertController;
 
-    .line 130
     iput-object p1, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 134
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$000(Lcom/oneplus/lib/app/OPAlertController;)Landroid/widget/Button;
@@ -57,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 135
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$100(Lcom/oneplus/lib/app/OPAlertController;)Landroid/os/Message;
@@ -68,12 +63,9 @@
 
     move-result-object v0
 
-    .local v0, "m":Landroid/os/Message;
     :goto_0
     goto :goto_1
 
-    .line 136
-    .end local v0    # "m":Landroid/os/Message;
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
@@ -91,7 +83,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$300(Lcom/oneplus/lib/app/OPAlertController;)Landroid/os/Message;
@@ -104,7 +95,6 @@
 
     goto :goto_0
 
-    .line 138
     :cond_1
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
@@ -122,7 +112,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 139
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$500(Lcom/oneplus/lib/app/OPAlertController;)Landroid/os/Message;
@@ -135,19 +124,14 @@
 
     goto :goto_0
 
-    .line 141
     :cond_2
     const/4 v0, 0x0
 
-    .line 144
-    .restart local v0    # "m":Landroid/os/Message;
     :goto_1
     if-eqz v0, :cond_3
 
-    .line 145
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 149
     :cond_3
     iget-object v1, p0, Lcom/oneplus/lib/app/OPAlertController$1;->this$0:Lcom/oneplus/lib/app/OPAlertController;
 
@@ -167,9 +151,7 @@
 
     move-result-object v1
 
-    .line 150
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 151
     return-void
 .end method

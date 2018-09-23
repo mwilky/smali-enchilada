@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/PowerUsageSummary;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
-    .line 186
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$3;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,8 +46,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 3
-    .param p1, "id"    # I
-    .param p2, "args"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -62,7 +58,6 @@
         }
     .end annotation
 
-    .line 190
     new-instance v0, Lcom/android/settings/fuelgauge/batterytip/BatteryTipLoader;
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$3;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
@@ -83,7 +78,6 @@
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 186
     check-cast p2, Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/fuelgauge/PowerUsageSummary$3;->onLoadFinished(Landroid/content/Loader;Ljava/util/List;)V
@@ -106,16 +100,12 @@
         }
     .end annotation
 
-    .line 196
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Ljava/util/List<Lcom/android/settings/fuelgauge/batterytip/tips/BatteryTip;>;>;"
-    .local p2, "data":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/fuelgauge/batterytip/tips/BatteryTip;>;"
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageSummary$3;->this$0:Lcom/android/settings/fuelgauge/PowerUsageSummary;
 
     iget-object v0, v0, Lcom/android/settings/fuelgauge/PowerUsageSummary;->mBatteryTipPreferenceController:Lcom/android/settings/fuelgauge/batterytip/BatteryTipPreferenceController;
 
     invoke-virtual {v0, p2}, Lcom/android/settings/fuelgauge/batterytip/BatteryTipPreferenceController;->updateBatteryTips(Ljava/util/List;)V
 
-    .line 197
     return-void
 .end method
 
@@ -131,7 +121,5 @@
         }
     .end annotation
 
-    .line 202
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Ljava/util/List<Lcom/android/settings/fuelgauge/batterytip/tips/BatteryTip;>;>;"
     return-void
 .end method

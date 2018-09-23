@@ -18,19 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 273
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 274
     return-void
 .end method
 
 .method public static createItem(Ljava/lang/Object;J)Ljava/lang/Object;
     .locals 2
-    .param p0, "mediaDescription"    # Ljava/lang/Object;
-    .param p1, "id"    # J
 
-    .line 262
     new-instance v0, Landroid/media/session/MediaSession$QueueItem;
 
     move-object v1, p0
@@ -44,9 +39,7 @@
 
 .method public static getDescription(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p0, "queueItem"    # Ljava/lang/Object;
 
-    .line 266
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/MediaSession$QueueItem;
@@ -60,9 +53,7 @@
 
 .method public static getQueueId(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "queueItem"    # Ljava/lang/Object;
 
-    .line 270
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/MediaSession$QueueItem;

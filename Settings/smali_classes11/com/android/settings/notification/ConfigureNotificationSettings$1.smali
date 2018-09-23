@@ -17,9 +17,7 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 113
     invoke-direct {p0, p1}, Lcom/android/settings/notification/NotificationRingtonePreferenceController;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -30,7 +28,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 116
     const-string v0, "notification_default_ringtone"
 
     return-object v0

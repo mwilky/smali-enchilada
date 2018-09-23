@@ -23,20 +23,13 @@
 # direct methods
 .method public constructor <init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;Landroid/graphics/Path;FF)V
     .locals 0
-    .param p2, "path"    # Landroid/graphics/Path;
-    .param p3, "x"    # F
-    .param p4, "y"    # F
 
-    .line 1578
     iput-object p1, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
-    .line 1579
     invoke-direct {p0, p1, p3, p4}, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;-><init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;FF)V
 
-    .line 1580
     iput-object p2, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->path:Landroid/graphics/Path;
 
-    .line 1581
     return-void
 .end method
 
@@ -44,9 +37,7 @@
 # virtual methods
 .method public processText(Ljava/lang/String;)V
     .locals 7
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 1586
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$1(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Z
@@ -55,7 +46,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1588
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$2(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Lcom/caverock/androidsvg/SVGAndroidRenderer$RendererState;
@@ -66,7 +56,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1589
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$3(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Landroid/graphics/Canvas;
@@ -91,7 +80,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawTextOnPath(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V
 
-    .line 1590
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
@@ -103,7 +91,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1591
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$3(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Landroid/graphics/Canvas;
@@ -128,7 +115,6 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawTextOnPath(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V
 
-    .line 1595
     :cond_1
     iget v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->x:F
 
@@ -148,6 +134,5 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PathTextDrawer;->x:F
 
-    .line 1596
     return-void
 .end method

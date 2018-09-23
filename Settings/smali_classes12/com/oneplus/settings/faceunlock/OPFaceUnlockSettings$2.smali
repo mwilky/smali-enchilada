@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
-    .line 96
     iput-object p1, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$2;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,12 +33,9 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 101
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 102
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x64
@@ -49,16 +44,13 @@
 
     goto :goto_0
 
-    .line 104
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$2;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;->access$200(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;)V
 
-    .line 105
     nop
 
-    .line 109
     :goto_0
     return-void
 .end method

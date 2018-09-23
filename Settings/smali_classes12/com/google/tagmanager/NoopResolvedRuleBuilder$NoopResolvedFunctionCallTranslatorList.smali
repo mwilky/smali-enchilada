@@ -25,7 +25,6 @@
 .method public constructor <init>(Lcom/google/tagmanager/NoopResolvedRuleBuilder;)V
     .locals 0
 
-    .line 52
     iput-object p1, p0, Lcom/google/tagmanager/NoopResolvedRuleBuilder$NoopResolvedFunctionCallTranslatorList;->this$0:Lcom/google/tagmanager/NoopResolvedRuleBuilder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,8 +48,5 @@
         }
     .end annotation
 
-    .line 58
-    .local p1, "functions":Ljava/util/List;, "Ljava/util/List<Lcom/google/tagmanager/ResourceUtil$ExpandedFunctionCall;>;"
-    .local p2, "ruleNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-void
 .end method

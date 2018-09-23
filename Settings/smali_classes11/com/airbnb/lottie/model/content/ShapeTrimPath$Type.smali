@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 15
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     const-string v1, "Simultaneously"
@@ -45,7 +44,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->Simultaneously:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
-    .line 16
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     const-string v1, "Individually"
@@ -56,7 +54,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->Individually:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
-    .line 14
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
@@ -82,7 +79,6 @@
         }
     .end annotation
 
-    .line 14
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -90,12 +86,9 @@
 
 .method static forId(I)Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
     .locals 3
-    .param p0, "id"    # I
 
-    .line 19
     packed-switch p0, :pswitch_data_0
 
-    .line 25
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -116,13 +109,11 @@
 
     throw v0
 
-    .line 23
     :pswitch_0
     sget-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->Individually:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     return-object v0
 
-    .line 21
     :pswitch_1
     sget-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->Simultaneously:Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
@@ -137,9 +128,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 14
     const-class v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -154,7 +143,6 @@
 .method public static values()[Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
     .locals 1
 
-    .line 14
     sget-object v0, Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->$VALUES:[Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/ShapeTrimPath$Type;->clone()Ljava/lang/Object;

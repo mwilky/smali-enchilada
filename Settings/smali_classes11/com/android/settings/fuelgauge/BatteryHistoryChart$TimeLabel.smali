@@ -25,18 +25,11 @@
 # direct methods
 .method constructor <init>(Landroid/text/TextPaint;ILjava/util/Calendar;Z)V
     .locals 2
-    .param p1, "paint"    # Landroid/text/TextPaint;
-    .param p2, "x"    # I
-    .param p3, "cal"    # Ljava/util/Calendar;
-    .param p4, "use24hr"    # Z
 
-    .line 330
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 331
     iput p2, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$TimeLabel;->x:I
 
-    .line 333
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
@@ -50,14 +43,11 @@
     :cond_0
     const-string v1, "ha"
 
-    .line 332
     :goto_0
     invoke-static {v0, v1}, Landroid/text/format/DateFormat;->getBestDateTimePattern(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 334
-    .local v0, "bestFormat":Ljava/lang/String;
     invoke-static {v0, p3}, Landroid/text/format/DateFormat;->format(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -68,7 +58,6 @@
 
     iput-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$TimeLabel;->label:Ljava/lang/String;
 
-    .line 335
     iget-object v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$TimeLabel;->label:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
@@ -79,6 +68,5 @@
 
     iput v1, p0, Lcom/android/settings/fuelgauge/BatteryHistoryChart$TimeLabel;->width:I
 
-    .line 336
     return-void
 .end method

@@ -59,7 +59,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Object;ILcom/google/common/cache/LocalCache$ReferenceEntry;)V
     .locals 1
-    .param p2, "hash"    # I
     .param p3    # Lcom/google/common/cache/LocalCache$ReferenceEntry;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
@@ -72,29 +71,20 @@
         }
     .end annotation
 
-    .line 1067
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p3, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;-><init>()V
 
-    .line 1082
     invoke-static {}, Lcom/google/common/cache/LocalCache;->unset()Lcom/google/common/cache/LocalCache$ValueReference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->valueReference:Lcom/google/common/cache/LocalCache$ValueReference;
 
-    .line 1068
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->key:Ljava/lang/Object;
 
-    .line 1069
     iput p2, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->hash:I
 
-    .line 1070
     iput-object p3, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->next:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1071
     return-void
 .end method
 
@@ -103,8 +93,6 @@
 .method public getHash()I
     .locals 1
 
-    .line 1096
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
     iget v0, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->hash:I
 
     return v0
@@ -118,8 +106,6 @@
         }
     .end annotation
 
-    .line 1075
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->key:Ljava/lang/Object;
 
     return-object v0
@@ -135,8 +121,6 @@
         }
     .end annotation
 
-    .line 1101
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->next:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -152,8 +136,6 @@
         }
     .end annotation
 
-    .line 1086
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->valueReference:Lcom/google/common/cache/LocalCache$ValueReference;
 
     return-object v0
@@ -169,11 +151,7 @@
         }
     .end annotation
 
-    .line 1091
-    .local p0, "this":Lcom/google/common/cache/LocalCache$StrongEntry;, "Lcom/google/common/cache/LocalCache$StrongEntry<TK;TV;>;"
-    .local p1, "valueReference":Lcom/google/common/cache/LocalCache$ValueReference;, "Lcom/google/common/cache/LocalCache$ValueReference<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$StrongEntry;->valueReference:Lcom/google/common/cache/LocalCache$ValueReference;
 
-    .line 1092
     return-void
 .end method

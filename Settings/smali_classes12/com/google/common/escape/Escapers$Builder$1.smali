@@ -23,20 +23,13 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/escape/Escapers$Builder;Ljava/util/Map;CC)V
     .locals 1
-    .param p1, "this$0"    # Lcom/google/common/escape/Escapers$Builder;
-    .param p3, "safeMin"    # C
-    .param p4, "safeMax"    # C
 
-    .line 156
-    .local p2, "replacementMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Character;Ljava/lang/String;>;"
     iput-object p1, p0, Lcom/google/common/escape/Escapers$Builder$1;->this$0:Lcom/google/common/escape/Escapers$Builder;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/google/common/escape/ArrayBasedCharEscaper;-><init>(Ljava/util/Map;CC)V
 
-    .line 157
     nop
 
-    .line 158
     iget-object v0, p0, Lcom/google/common/escape/Escapers$Builder$1;->this$0:Lcom/google/common/escape/Escapers$Builder;
 
     invoke-static {v0}, Lcom/google/common/escape/Escapers$Builder;->access$100(Lcom/google/common/escape/Escapers$Builder;)Ljava/lang/String;
@@ -63,7 +56,6 @@
     :goto_0
     iput-object v0, p0, Lcom/google/common/escape/Escapers$Builder$1;->replacementChars:[C
 
-    .line 157
     return-void
 .end method
 
@@ -71,9 +63,7 @@
 # virtual methods
 .method protected escapeUnsafe(C)[C
     .locals 1
-    .param p1, "c"    # C
 
-    .line 160
     iget-object v0, p0, Lcom/google/common/escape/Escapers$Builder$1;->replacementChars:[C
 
     return-object v0

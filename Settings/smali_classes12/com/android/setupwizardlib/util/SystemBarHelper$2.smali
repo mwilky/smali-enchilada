@@ -25,7 +25,6 @@
 .method constructor <init>(I)V
     .locals 0
 
-    .line 246
     iput p1, p0, Lcom/android/setupwizardlib/util/SystemBarHelper$2;->val$vis:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,13 +36,10 @@
 # virtual methods
 .method public onDecorViewInstalled(Landroid/view/View;)V
     .locals 1
-    .param p1, "decorView"    # Landroid/view/View;
 
-    .line 249
     iget v0, p0, Lcom/android/setupwizardlib/util/SystemBarHelper$2;->val$vis:I
 
     invoke-static {p1, v0}, Lcom/android/setupwizardlib/util/SystemBarHelper;->removeVisibilityFlag(Landroid/view/View;I)V
 
-    .line 250
     return-void
 .end method

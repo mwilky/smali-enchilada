@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/util/loading/LoadingAsyncTask;Ljava/lang/Object;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
-    .line 99
-    .local p0, "this":Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;, "Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;"
     iput-object p1, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     iput-object p2, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;->val$result:Ljava/lang/Object;
@@ -43,10 +40,7 @@
 # virtual methods
 .method public finish(Z)V
     .locals 2
-    .param p1, "shown"    # Z
 
-    .line 102
-    .local p0, "this":Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;, "Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;"
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/util/loading/LoadingAsyncTask;->isCancelled()Z
@@ -55,14 +49,12 @@
 
     if-nez v0, :cond_0
 
-    .line 103
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;->this$0:Lcom/oneplus/lib/util/loading/LoadingAsyncTask;
 
     iget-object v1, p0, Lcom/oneplus/lib/util/loading/LoadingAsyncTask$2;->val$result:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/util/loading/LoadingAsyncTask;->onPostExecuteExtend(Ljava/lang/Object;)V
 
-    .line 105
     :cond_0
     return-void
 .end method

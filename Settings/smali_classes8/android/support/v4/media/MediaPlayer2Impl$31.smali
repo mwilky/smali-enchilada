@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
 
-    .line 1531
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$31;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaPlayer2Impl$31;->val$src:Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSource;
@@ -42,11 +40,7 @@
 # virtual methods
 .method public onInfo(Landroid/media/MediaPlayer;II)Z
     .locals 2
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "what"    # I
-    .param p3, "extra"    # I
 
-    .line 1534
     const/4 v0, 0x3
 
     if-eq p2, v0, :cond_0
@@ -55,7 +49,6 @@
 
     goto :goto_0
 
-    .line 1549
     :pswitch_0
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$31;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -69,7 +62,6 @@
 
     goto :goto_0
 
-    .line 1545
     :pswitch_1
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$31;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -81,10 +73,8 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/support/v4/media/MediaPlayer2Impl$MediaPlayerSourceQueue;->setBufferingState(Landroid/media/MediaPlayer;I)V
 
-    .line 1547
     goto :goto_0
 
-    .line 1536
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$31;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -94,10 +84,8 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$300(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$Mp2EventNotifier;)V
 
-    .line 1543
     nop
 
-    .line 1553
     :goto_0
     const/4 v0, 0x0
 

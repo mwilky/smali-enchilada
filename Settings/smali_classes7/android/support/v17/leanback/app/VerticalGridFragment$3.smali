@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/VerticalGridFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/VerticalGridFragment;
 
-    .line 133
     iput-object p1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$3;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,20 +36,13 @@
 # virtual methods
 .method public onChildLaidOut(Landroid/view/ViewGroup;Landroid/view/View;IJ)V
     .locals 1
-    .param p1, "parent"    # Landroid/view/ViewGroup;
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
-    .line 136
     if-nez p3, :cond_0
 
-    .line 137
     iget-object v0, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$3;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/VerticalGridFragment;->showOrHideTitle()V
 
-    .line 139
     :cond_0
     return-void
 .end method

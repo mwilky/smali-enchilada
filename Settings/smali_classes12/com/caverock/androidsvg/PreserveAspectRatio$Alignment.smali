@@ -50,7 +50,6 @@
 .method static constructor <clinit>()V
     .locals 12
 
-    .line 118
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "None"
@@ -59,10 +58,8 @@
 
     invoke-direct {v0, v1, v2}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 119
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->None:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 120
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMinYMin"
@@ -71,10 +68,8 @@
 
     invoke-direct {v0, v1, v3}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 121
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMinYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 122
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMidYMin"
@@ -83,10 +78,8 @@
 
     invoke-direct {v0, v1, v4}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 123
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMidYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 124
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMaxYMin"
@@ -95,10 +88,8 @@
 
     invoke-direct {v0, v1, v5}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 125
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMaxYMin:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 126
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMinYMid"
@@ -107,10 +98,8 @@
 
     invoke-direct {v0, v1, v6}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 127
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMinYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 128
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMidYMid"
@@ -119,10 +108,8 @@
 
     invoke-direct {v0, v1, v7}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 129
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMidYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 130
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMaxYMid"
@@ -131,10 +118,8 @@
 
     invoke-direct {v0, v1, v8}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 131
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMaxYMid:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 132
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMinYMax"
@@ -143,10 +128,8 @@
 
     invoke-direct {v0, v1, v9}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 133
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMinYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 134
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMidYMax"
@@ -155,10 +138,8 @@
 
     invoke-direct {v0, v1, v10}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 135
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMidYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 136
     new-instance v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     const-string v1, "XMaxYMax"
@@ -167,10 +148,8 @@
 
     invoke-direct {v0, v1, v11}, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;-><init>(Ljava/lang/String;I)V
 
-    .line 137
     sput-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->XMaxYMax:Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
-    .line 116
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
@@ -223,7 +202,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 116
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -232,7 +210,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -247,7 +224,6 @@
 .method public static values()[Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;->ENUM$VALUES:[Lcom/caverock/androidsvg/PreserveAspectRatio$Alignment;
 
     array-length v1, v0

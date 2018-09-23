@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
-    .line 513
     iput-object p1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$3;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 516
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$3;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment$3;->this$0:Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
@@ -56,6 +51,5 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;->access$400(Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;Ljava/lang/String;)V
 
-    .line 517
     return-void
 .end method

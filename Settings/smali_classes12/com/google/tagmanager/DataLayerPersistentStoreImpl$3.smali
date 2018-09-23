@@ -27,7 +27,6 @@
 .method constructor <init>(Lcom/google/tagmanager/DataLayerPersistentStoreImpl;Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;)V
     .locals 0
 
-    .line 87
     iput-object p1, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$3;->this$0:Lcom/google/tagmanager/DataLayerPersistentStoreImpl;
 
     iput-object p2, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$3;->val$callback:Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;
@@ -42,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 90
     iget-object v0, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$3;->val$callback:Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;
 
     iget-object v1, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$3;->this$0:Lcom/google/tagmanager/DataLayerPersistentStoreImpl;
@@ -53,6 +51,5 @@
 
     invoke-interface {v0, v1}, Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;->onKeyValuesLoaded(Ljava/util/List;)V
 
-    .line 91
     return-void
 .end method

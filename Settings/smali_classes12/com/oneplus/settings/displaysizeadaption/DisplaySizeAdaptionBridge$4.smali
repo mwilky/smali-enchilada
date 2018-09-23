@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 5
-    .param p1, "appEntry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 199
     const/4 v0, 0x0
 
     if-eqz p1, :cond_2
@@ -44,14 +41,11 @@
 
     goto :goto_1
 
-    .line 203
     :cond_0
     iget-object v1, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
 
     check-cast v1, Lcom/oneplus/settings/better/OPAppModel;
 
-    .line 204
-    .local v1, "acm":Lcom/oneplus/settings/better/OPAppModel;
     iget-object v2, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -74,7 +68,6 @@
 
     if-nez v2, :cond_1
 
-    .line 206
     invoke-static {}, Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptionBridge;->access$200()Lcom/oneplus/settings/displaysizeadaption/DisplaySizeAdaptiongeManager;
 
     move-result-object v2
@@ -89,21 +82,16 @@
 
     if-nez v2, :cond_1
 
-    .line 204
     move v0, v4
 
     goto :goto_0
 
-    .line 206
     :cond_1
     nop
 
-    .line 204
     :goto_0
     return v0
 
-    .line 200
-    .end local v1    # "acm":Lcom/oneplus/settings/better/OPAppModel;
     :cond_2
     :goto_1
     return v0
@@ -112,6 +100,5 @@
 .method public init()V
     .locals 0
 
-    .line 195
     return-void
 .end method

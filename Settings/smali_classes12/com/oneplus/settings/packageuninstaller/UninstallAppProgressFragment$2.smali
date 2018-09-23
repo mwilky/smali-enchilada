@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;
 
-    .line 65
     iput-object p1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment$2;->this$0:Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,27 +36,21 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 68
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.USER_SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 69
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x50000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 70
     iget-object v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment$2;->this$0:Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;
 
     invoke-virtual {v1, v0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 71
     iget-object v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment$2;->this$0:Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;
 
     invoke-virtual {v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgressFragment;->getActivity()Landroid/app/Activity;
@@ -67,6 +59,5 @@
 
     invoke-virtual {v1}, Landroid/app/Activity;->finish()V
 
-    .line 72
     return-void
 .end method

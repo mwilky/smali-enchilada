@@ -22,19 +22,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "listener"    # Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;
 
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
     iput-object p1, p0, Lcom/android/settings/widget/SummaryUpdater;->mContext:Landroid/content/Context;
 
-    .line 55
     iput-object p2, p0, Lcom/android/settings/widget/SummaryUpdater;->mListener:Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;
 
-    .line 56
     return-void
 .end method
 
@@ -46,13 +40,10 @@
 .method protected notifyChangeIfNeeded()V
     .locals 2
 
-    .line 62
     invoke-virtual {p0}, Lcom/android/settings/widget/SummaryUpdater;->getSummary()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 63
-    .local v0, "summary":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/widget/SummaryUpdater;->mSummary:Ljava/lang/String;
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -61,20 +52,16 @@
 
     if-nez v1, :cond_0
 
-    .line 64
     iput-object v0, p0, Lcom/android/settings/widget/SummaryUpdater;->mSummary:Ljava/lang/String;
 
-    .line 65
     iget-object v1, p0, Lcom/android/settings/widget/SummaryUpdater;->mListener:Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;
 
     if-eqz v1, :cond_0
 
-    .line 66
     iget-object v1, p0, Lcom/android/settings/widget/SummaryUpdater;->mListener:Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;
 
     invoke-interface {v1, v0}, Lcom/android/settings/widget/SummaryUpdater$OnSummaryChangeListener;->onSummaryChanged(Ljava/lang/String;)V
 
-    .line 69
     :cond_0
     return-void
 .end method

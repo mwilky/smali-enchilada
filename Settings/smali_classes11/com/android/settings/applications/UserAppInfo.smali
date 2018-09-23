@@ -12,19 +12,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/pm/UserInfo;Landroid/content/pm/ApplicationInfo;)V
     .locals 0
-    .param p1, "mUserInfo"    # Landroid/content/pm/UserInfo;
-    .param p2, "mAppInfo"    # Landroid/content/pm/ApplicationInfo;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Lcom/android/settings/applications/UserAppInfo;->userInfo:Landroid/content/pm/UserInfo;
 
-    .line 35
     iput-object p2, p0, Lcom/android/settings/applications/UserAppInfo;->appInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 36
     return-void
 .end method
 
@@ -32,17 +26,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .line 40
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 41
     return v0
 
-    .line 43
     :cond_0
     const/4 v1, 0x0
 
@@ -60,14 +50,11 @@
 
     goto :goto_1
 
-    .line 46
     :cond_1
     move-object v2, p1
 
     check-cast v2, Lcom/android/settings/applications/UserAppInfo;
 
-    .line 50
-    .local v2, "that":Lcom/android/settings/applications/UserAppInfo;
     iget-object v3, v2, Lcom/android/settings/applications/UserAppInfo;->userInfo:Landroid/content/pm/UserInfo;
 
     iget v3, v3, Landroid/content/pm/UserInfo;->id:I
@@ -100,8 +87,6 @@
     :goto_0
     return v0
 
-    .line 44
-    .end local v2    # "that":Lcom/android/settings/applications/UserAppInfo;
     :cond_3
     :goto_1
     return v1
@@ -110,7 +95,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 56
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;

@@ -23,19 +23,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/network/TetherPreferenceController;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/settings/network/TetherPreferenceController;
 
-    .line 256
     iput-object p1, p0, Lcom/android/settings/network/TetherPreferenceController$SettingObserver;->this$0:Lcom/android/settings/network/TetherPreferenceController;
 
-    .line 257
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 258
     const-string v0, "airplane_mode_on"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
@@ -44,7 +40,6 @@
 
     iput-object v0, p0, Lcom/android/settings/network/TetherPreferenceController$SettingObserver;->uri:Landroid/net/Uri;
 
-    .line 259
     return-void
 .end method
 
@@ -52,13 +47,9 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 3
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 263
     invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
 
-    .line 264
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController$SettingObserver;->uri:Landroid/net/Uri;
 
     invoke-virtual {v0, p2}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
@@ -67,7 +58,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 265
     iget-object v0, p0, Lcom/android/settings/network/TetherPreferenceController$SettingObserver;->this$0:Lcom/android/settings/network/TetherPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/network/TetherPreferenceController;->access$100(Lcom/android/settings/network/TetherPreferenceController;)Landroid/content/Context;
@@ -95,17 +85,12 @@
     :cond_0
     move v0, v2
 
-    .line 267
-    .local v0, "isAirplaneMode":Z
     if-eqz v0, :cond_1
 
-    .line 271
     iget-object v1, p0, Lcom/android/settings/network/TetherPreferenceController$SettingObserver;->this$0:Lcom/android/settings/network/TetherPreferenceController;
 
     invoke-static {v1}, Lcom/android/settings/network/TetherPreferenceController;->access$200(Lcom/android/settings/network/TetherPreferenceController;)V
 
-    .line 274
-    .end local v0    # "isAirplaneMode":Z
     :cond_1
     return-void
 .end method

@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/utils/VoiceSettingsActivity;Ljava/lang/CharSequence;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/utils/VoiceSettingsActivity;
-    .param p2, "x0"    # Ljava/lang/CharSequence;
-    .param p3, "x1"    # Landroid/os/Bundle;
 
-    .line 64
     iput-object p1, p0, Lcom/android/settings/utils/VoiceSettingsActivity$1;->this$0:Lcom/android/settings/utils/VoiceSettingsActivity;
 
     invoke-direct {p0, p2, p3}, Landroid/app/VoiceInteractor$CompleteVoiceRequest;-><init>(Ljava/lang/CharSequence;Landroid/os/Bundle;)V
@@ -37,13 +33,10 @@
 # virtual methods
 .method public onCompleteResult(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "options"    # Landroid/os/Bundle;
 
-    .line 67
     iget-object v0, p0, Lcom/android/settings/utils/VoiceSettingsActivity$1;->this$0:Lcom/android/settings/utils/VoiceSettingsActivity;
 
     invoke-virtual {v0}, Lcom/android/settings/utils/VoiceSettingsActivity;->finish()V
 
-    .line 68
     return-void
 .end method

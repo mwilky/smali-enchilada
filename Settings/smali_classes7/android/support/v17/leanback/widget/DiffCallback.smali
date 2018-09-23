@@ -18,8 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 37
-    .local p0, "this":Landroid/support/v17/leanback/widget/DiffCallback;, "Landroid/support/v17/leanback/widget/DiffCallback<TValue;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -76,10 +74,6 @@
         }
     .end annotation
 
-    .line 66
-    .local p0, "this":Landroid/support/v17/leanback/widget/DiffCallback;, "Landroid/support/v17/leanback/widget/DiffCallback<TValue;>;"
-    .local p1, "oldItem":Ljava/lang/Object;, "TValue;"
-    .local p2, "newItem":Ljava/lang/Object;, "TValue;"
     const/4 v0, 0x0
 
     return-object v0

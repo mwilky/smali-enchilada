@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
 .method public getPresenters()[Landroid/support/v17/leanback/widget/Presenter;
     .locals 1
 
-    .line 31
     const/4 v0, 0x0
 
     return-object v0

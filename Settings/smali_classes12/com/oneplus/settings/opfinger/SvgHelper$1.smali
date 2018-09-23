@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/opfinger/SvgHelper;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/opfinger/SvgHelper;
 
-    .line 65
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->this$0:Lcom/oneplus/settings/opfinger/SvgHelper;
 
     iput p2, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->val$width:I
@@ -38,7 +36,6 @@
 
     invoke-direct {p0}, Landroid/graphics/Canvas;-><init>()V
 
-    .line 66
     new-instance p2, Landroid/graphics/Matrix;
 
     invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
@@ -52,26 +49,19 @@
 # virtual methods
 .method public drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
     .locals 5
-    .param p1, "path"    # Landroid/graphics/Path;
-    .param p2, "paint"    # Landroid/graphics/Paint;
 
-    .line 80
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    .line 83
-    .local v0, "dst":Landroid/graphics/Path;
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/opfinger/SvgHelper$1;->getMatrix(Landroid/graphics/Matrix;)V
 
-    .line 84
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
 
-    .line 86
     iget-object v1, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->this$0:Lcom/oneplus/settings/opfinger/SvgHelper;
 
     invoke-static {v1}, Lcom/oneplus/settings/opfinger/SvgHelper;->access$100(Lcom/oneplus/settings/opfinger/SvgHelper;)Ljava/util/List;
@@ -94,14 +84,12 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 87
     return-void
 .end method
 
 .method public getHeight()I
     .locals 1
 
-    .line 75
     iget v0, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->val$height:I
 
     return v0
@@ -110,7 +98,6 @@
 .method public getWidth()I
     .locals 1
 
-    .line 70
     iget v0, p0, Lcom/oneplus/settings/opfinger/SvgHelper$1;->val$width:I
 
     return v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
-    .line 133
     iput-object p1, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference$1;->this$0:Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,12 @@
 # virtual methods
 .method public invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
-    .param p1, "proxy"    # Ljava/lang/Object;
-    .param p2, "method"    # Ljava/lang/reflect/Method;
-    .param p3, "args"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Throwable;
         }
     .end annotation
 
-    .line 137
     invoke-virtual {p2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -72,7 +66,6 @@
 
     if-eqz v1, :cond_2
 
-    .line 139
     aget-object v1, p3, v0
 
     check-cast v1, Ljava/lang/Boolean;
@@ -81,8 +74,6 @@
 
     move-result v1
 
-    .line 140
-    .local v1, "consent":Z
     iget-object v2, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference$1;->this$0:Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
     invoke-static {v2}, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;->access$200(Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;)Z
@@ -91,12 +82,10 @@
 
     if-eq v2, v1, :cond_2
 
-    .line 141
     iget-object v2, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference$1;->this$0:Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
     invoke-static {v2, v1}, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;->access$202(Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;Z)Z
 
-    .line 142
     iget-object v2, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference$1;->this$0:Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
     iget-object v3, p0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference$1;->this$0:Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
@@ -127,8 +116,6 @@
     :goto_1
     invoke-static {v2, v0}, Lcom/android/settings/location/DimmableIZatIconPreference;->access$300(Lcom/android/settings/widget/AppPreference;Z)V
 
-    .line 145
-    .end local v1    # "consent":Z
     :cond_2
     const/4 v0, 0x0
 

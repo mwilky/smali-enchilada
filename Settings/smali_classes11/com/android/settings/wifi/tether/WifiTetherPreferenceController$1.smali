@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
-    .line 128
     iput-object p1, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onNumClientsChanged(I)V
     .locals 8
-    .param p1, "numClients"    # I
 
-    .line 137
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
     iget-object v0, v0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
@@ -49,7 +45,6 @@
 
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
-    .line 138
     invoke-static {v0}, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->access$000(Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;)I
 
     move-result v0
@@ -58,7 +53,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 140
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->access$100(Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;)Landroid/net/wifi/WifiManager;
@@ -71,19 +65,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 141
     const-string v0, "Extending Wifi-Coverage: "
 
-    .local v0, "extendWifiSummary":Ljava/lang/String;
     goto :goto_0
 
-    .line 143
-    .end local v0    # "extendWifiSummary":Ljava/lang/String;
     :cond_0
     const-string v0, ""
 
-    .line 147
-    .restart local v0    # "extendWifiSummary":Ljava/lang/String;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
@@ -113,14 +101,12 @@
 
     const/4 v6, 0x0
 
-    .line 149
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     aput-object v7, v5, v6
 
-    .line 147
     invoke-virtual {v3, v4, p1, v5}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -133,27 +119,20 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 151
-    .end local v0    # "extendWifiSummary":Ljava/lang/String;
     :cond_1
     return-void
 .end method
 
 .method public onStateChanged(II)V
     .locals 1
-    .param p1, "state"    # I
-    .param p2, "failureReason"    # I
 
-    .line 131
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
     invoke-static {v0, p1}, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->access$002(Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;I)I
 
-    .line 132
     iget-object v0, p0, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController$1;->this$0:Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/settings/wifi/tether/WifiTetherPreferenceController;->handleWifiApStateChanged(II)V
 
-    .line 133
     return-void
 .end method

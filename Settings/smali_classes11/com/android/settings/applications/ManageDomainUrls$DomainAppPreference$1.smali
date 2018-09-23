@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;
 
-    .line 259
     iput-object p1, p0, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference$1;->this$0:Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 263
     iget-object v0, p0, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference$1;->this$0:Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;
 
     invoke-static {v0}, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;->access$100(Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;)Lcom/android/settingslib/applications/ApplicationsState;
@@ -54,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/applications/ApplicationsState;->ensureIcon(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)V
 
-    .line 266
     iget-object v0, p0, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference$1;->this$0:Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;
 
     iget-object v1, p0, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference$1;->this$0:Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;
@@ -67,6 +63,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/applications/ManageDomainUrls$DomainAppPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 267
     return-void
 .end method

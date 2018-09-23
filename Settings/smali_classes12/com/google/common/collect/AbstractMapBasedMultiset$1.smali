@@ -46,10 +46,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/AbstractMapBasedMultiset;Ljava/util/Iterator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/AbstractMapBasedMultiset;
 
-    .line 89
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->this$0:Lcom/google/common/collect/AbstractMapBasedMultiset;
 
     iput-object p2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->val$backingEntries:Ljava/util/Iterator;
@@ -64,8 +61,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 94
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->val$backingEntries:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -85,8 +80,6 @@
         }
     .end annotation
 
-    .line 99
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->val$backingEntries:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -95,11 +88,8 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 100
-    .local v0, "mapEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TE;Lcom/google/common/collect/Count;>;"
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->toRemove:Ljava/util/Map$Entry;
 
-    .line 101
     new-instance v1, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;-><init>(Lcom/google/common/collect/AbstractMapBasedMultiset$1;Ljava/util/Map$Entry;)V
@@ -110,8 +100,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 89
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->next()Lcom/google/common/collect/Multiset$Entry;
 
     move-result-object v0
@@ -122,8 +110,6 @@
 .method public remove()V
     .locals 3
 
-    .line 122
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultiset$1;, "Lcom/google/common/collect/AbstractMapBasedMultiset$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->toRemove:Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
@@ -140,7 +126,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/collect/CollectPreconditions;->checkRemove(Z)V
 
-    .line 123
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->this$0:Lcom/google/common/collect/AbstractMapBasedMultiset;
 
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->toRemove:Ljava/util/Map$Entry;
@@ -159,16 +144,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$122(Lcom/google/common/collect/AbstractMapBasedMultiset;J)J
 
-    .line 124
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->val$backingEntries:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 125
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->toRemove:Ljava/util/Map$Entry;
 
-    .line 126
     return-void
 .end method

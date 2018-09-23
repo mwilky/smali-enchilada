@@ -27,13 +27,10 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "userId"    # I
 
-    .line 379
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Lcom/android/settings/applications/RunningState$BaseItem;-><init>(ZI)V
 
-    .line 380
     return-void
 .end method

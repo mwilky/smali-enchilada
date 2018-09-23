@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/tether/TetherService;Landroid/bluetooth/BluetoothAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/tether/TetherService;
 
-    .line 234
     iput-object p1, p0, Lcom/android/settings/wifi/tether/TetherService$1;->this$0:Lcom/android/settings/wifi/tether/TetherService;
 
     iput-object p2, p0, Lcom/android/settings/wifi/tether/TetherService$1;->val$adapter:Landroid/bluetooth/BluetoothAdapter;
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
     .locals 2
-    .param p1, "profile"    # I
-    .param p2, "proxy"    # Landroid/bluetooth/BluetoothProfile;
 
-    .line 240
     move-object v0, p2
 
     check-cast v0, Landroid/bluetooth/BluetoothPan;
@@ -54,21 +49,17 @@
 
     invoke-virtual {v0, v1}, Landroid/bluetooth/BluetoothPan;->setBluetoothTethering(Z)V
 
-    .line 241
     iget-object v0, p0, Lcom/android/settings/wifi/tether/TetherService$1;->val$adapter:Landroid/bluetooth/BluetoothAdapter;
 
     const/4 v1, 0x5
 
     invoke-virtual {v0, v1, p2}, Landroid/bluetooth/BluetoothAdapter;->closeProfileProxy(ILandroid/bluetooth/BluetoothProfile;)V
 
-    .line 242
     return-void
 .end method
 
 .method public onServiceDisconnected(I)V
     .locals 0
-    .param p1, "profile"    # I
 
-    .line 236
     return-void
 .end method

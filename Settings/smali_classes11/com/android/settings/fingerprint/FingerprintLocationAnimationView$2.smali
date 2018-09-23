@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;
 
-    .line 133
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->this$0:Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -37,34 +35,27 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 139
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->mCancelled:Z
 
-    .line 140
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 144
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->this$0:Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;->access$102(Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 145
     iget-boolean v0, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->mCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 146
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->this$0:Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;
 
     iget-object v1, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView$2;->this$0:Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;
@@ -77,7 +68,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/settings/fingerprint/FingerprintLocationAnimationView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 148
     :cond_0
     return-void
 .end method

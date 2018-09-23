@@ -71,7 +71,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/LocalCache$ReferenceEntry;)V
     .locals 3
-    .param p3, "hash"    # I
     .param p4    # Lcom/google/common/cache/LocalCache$ReferenceEntry;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
@@ -86,50 +85,38 @@
         }
     .end annotation
 
-    .line 1491
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TK;>;"
-    .local p2, "key":Ljava/lang/Object;, "TK;"
-    .local p4, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/cache/LocalCache$WeakEntry;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/cache/LocalCache$ReferenceEntry;)V
 
-    .line 1496
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->accessTime:J
 
-    .line 1509
     invoke-static {}, Lcom/google/common/cache/LocalCache;->nullEntry()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1522
     invoke-static {}, Lcom/google/common/cache/LocalCache;->nullEntry()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1536
     iput-wide v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->writeTime:J
 
-    .line 1549
     invoke-static {}, Lcom/google/common/cache/LocalCache;->nullEntry()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1562
     invoke-static {}, Lcom/google/common/cache/LocalCache;->nullEntry()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1492
     return-void
 .end method
 
@@ -138,8 +125,6 @@
 .method public getAccessTime()J
     .locals 2
 
-    .line 1500
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-wide v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->accessTime:J
 
     return-wide v0
@@ -155,8 +140,6 @@
         }
     .end annotation
 
-    .line 1513
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -172,8 +155,6 @@
         }
     .end annotation
 
-    .line 1553
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -189,8 +170,6 @@
         }
     .end annotation
 
-    .line 1526
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -206,8 +185,6 @@
         }
     .end annotation
 
-    .line 1566
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     return-object v0
@@ -216,8 +193,6 @@
 .method public getWriteTime()J
     .locals 2
 
-    .line 1540
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iget-wide v0, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->writeTime:J
 
     return-wide v0
@@ -225,13 +200,9 @@
 
 .method public setAccessTime(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 1505
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iput-wide p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->accessTime:J
 
-    .line 1506
     return-void
 .end method
 
@@ -245,12 +216,8 @@
         }
     .end annotation
 
-    .line 1518
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1519
     return-void
 .end method
 
@@ -264,12 +231,8 @@
         }
     .end annotation
 
-    .line 1558
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->nextWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1559
     return-void
 .end method
 
@@ -283,12 +246,8 @@
         }
     .end annotation
 
-    .line 1531
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousAccess:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1532
     return-void
 .end method
 
@@ -302,23 +261,15 @@
         }
     .end annotation
 
-    .line 1571
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->previousWrite:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
-    .line 1572
     return-void
 .end method
 
 .method public setWriteTime(J)V
     .locals 0
-    .param p1, "time"    # J
 
-    .line 1545
-    .local p0, "this":Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;, "Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry<TK;TV;>;"
     iput-wide p1, p0, Lcom/google/common/cache/LocalCache$WeakAccessWriteEntry;->writeTime:J
 
-    .line 1546
     return-void
 .end method

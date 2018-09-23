@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 33
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.telephony.action.EMERGENCY_ASSISTANCE"
@@ -27,35 +26,25 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 37
     invoke-direct {p0, p1}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 38
     return-void
 .end method
 
 .method public static hasEmergencyPreference(Ljava/lang/String;Landroid/content/Context;)Z
     .locals 4
-    .param p0, "pkg"    # Ljava/lang/String;
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 64
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lcom/android/settings/applications/defaultapps/DefaultEmergencyPreferenceController;->QUERY_INTENT:Landroid/content/Intent;
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 65
-    .local v0, "i":Landroid/content/Intent;
     invoke-virtual {v0, p0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 66
     nop
 
-    .line 67
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -66,8 +55,6 @@
 
     move-result-object v1
 
-    .line 68
-    .local v1, "resolveInfos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
     if-eqz v1, :cond_0
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -87,10 +74,8 @@
 .method private isCapable()Z
     .locals 2
 
-    .line 58
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultEmergencyPreferenceController;->mContext:Landroid/content/Context;
 
-    .line 59
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -101,16 +86,12 @@
 
     move-result v0
 
-    .line 58
     return v0
 .end method
 
 .method public static isEmergencyDefault(Ljava/lang/String;Landroid/content/Context;)Z
     .locals 2
-    .param p0, "pkg"    # Ljava/lang/String;
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 72
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -121,8 +102,6 @@
 
     move-result-object v0
 
-    .line 74
-    .local v0, "defaultPackage":Ljava/lang/String;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -147,7 +126,6 @@
 .method protected getDefaultAppInfo()Lcom/android/settingslib/applications/DefaultAppInfo;
     .locals 1
 
-    .line 54
     const/4 v0, 0x0
 
     return-object v0
@@ -156,7 +134,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 49
     const-string v0, "default_emergency_app"
 
     return-object v0
@@ -165,7 +142,6 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 42
     const/4 v0, 0x0
 
     return v0

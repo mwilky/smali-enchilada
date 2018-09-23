@@ -23,24 +23,19 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/assist/AssistContextPreferenceController;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/settings/applications/assist/AssistContextPreferenceController;
 
-    .line 123
     iput-object p1, p0, Lcom/android/settings/applications/assist/AssistContextPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/AssistContextPreferenceController;
 
     invoke-direct {p0}, Lcom/android/settings/applications/assist/AssistSettingObserver;-><init>()V
 
-    .line 125
     const-string v0, "assist_structure_enabled"
 
-    .line 126
     invoke-static {v0}, Landroid/provider/Settings$Secure;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/applications/assist/AssistContextPreferenceController$SettingObserver;->URI:Landroid/net/Uri;
 
-    .line 125
     return-void
 .end method
 
@@ -57,7 +52,6 @@
         }
     .end annotation
 
-    .line 130
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/net/Uri;
@@ -78,11 +72,9 @@
 .method public onSettingChange()V
     .locals 1
 
-    .line 135
     iget-object v0, p0, Lcom/android/settings/applications/assist/AssistContextPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/AssistContextPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/assist/AssistContextPreferenceController;->access$000(Lcom/android/settings/applications/assist/AssistContextPreferenceController;)V
 
-    .line 136
     return-void
 .end method

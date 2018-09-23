@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;
 
-    .line 1397
     iput-object p1, p0, Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver$1;->this$0:Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 1400
     iget-object v0, p0, Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver$1;->this$0:Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;->access$800(Lcom/oneplus/lib/widget/AutoCompleteTextView$PopupDataSetObserver;)Ljava/lang/ref/WeakReference;
@@ -52,27 +49,19 @@
 
     check-cast v0, Lcom/oneplus/lib/widget/AutoCompleteTextView;
 
-    .line 1401
-    .local v0, "textView":Lcom/oneplus/lib/widget/AutoCompleteTextView;
     if-nez v0, :cond_0
 
-    .line 1402
     return-void
 
-    .line 1404
     :cond_0
     invoke-static {v0}, Lcom/oneplus/lib/widget/AutoCompleteTextView;->access$700(Lcom/oneplus/lib/widget/AutoCompleteTextView;)Landroid/widget/ListAdapter;
 
     move-result-object v1
 
-    .line 1405
-    .local v1, "adapter":Landroid/widget/ListAdapter;
     if-nez v1, :cond_1
 
-    .line 1406
     return-void
 
-    .line 1408
     :cond_1
     invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
 
@@ -80,6 +69,5 @@
 
     invoke-static {v0, v2}, Lcom/oneplus/lib/widget/AutoCompleteTextView;->access$900(Lcom/oneplus/lib/widget/AutoCompleteTextView;I)V
 
-    .line 1409
     return-void
 .end method

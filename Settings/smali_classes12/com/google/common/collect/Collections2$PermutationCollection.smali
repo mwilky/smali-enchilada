@@ -47,15 +47,10 @@
         }
     .end annotation
 
-    .line 566
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
-    .local p1, "input":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<TE;>;"
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    .line 567
     iput-object p1, p0, Lcom/google/common/collect/Collections2$PermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
-    .line 568
     return-void
 .end method
 
@@ -63,24 +58,19 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 583
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
     instance-of v0, p1, Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 584
     move-object v0, p1
 
     check-cast v0, Ljava/util/List;
 
-    .line 585
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Collections2$PermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {v1, v0}, Lcom/google/common/collect/Collections2;->access$100(Ljava/util/List;Ljava/util/List;)Z
@@ -89,8 +79,6 @@
 
     return v1
 
-    .line 587
-    .end local v0    # "list":Ljava/util/List;, "Ljava/util/List<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -100,8 +88,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 575
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -118,8 +104,6 @@
         }
     .end annotation
 
-    .line 579
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
     new-instance v0, Lcom/google/common/collect/Collections2$PermutationIterator;
 
     iget-object v1, p0, Lcom/google/common/collect/Collections2$PermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
@@ -132,8 +116,6 @@
 .method public size()I
     .locals 1
 
-    .line 571
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Collections2$PermutationCollection;->inputList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I
@@ -150,8 +132,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 591
-    .local p0, "this":Lcom/google/common/collect/Collections2$PermutationCollection;, "Lcom/google/common/collect/Collections2$PermutationCollection<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

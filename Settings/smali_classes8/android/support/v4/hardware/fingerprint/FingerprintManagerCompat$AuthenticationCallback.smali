@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,33 +27,24 @@
 # virtual methods
 .method public onAuthenticationError(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "errMsgId"    # I
-    .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 271
     return-void
 .end method
 
 .method public onAuthenticationFailed()V
     .locals 0
 
-    .line 291
     return-void
 .end method
 
 .method public onAuthenticationHelp(ILjava/lang/CharSequence;)V
     .locals 0
-    .param p1, "helpMsgId"    # I
-    .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 280
     return-void
 .end method
 
 .method public onAuthenticationSucceeded(Landroid/support/v4/hardware/fingerprint/FingerprintManagerCompat$AuthenticationResult;)V
     .locals 0
-    .param p1, "result"    # Landroid/support/v4/hardware/fingerprint/FingerprintManagerCompat$AuthenticationResult;
 
-    .line 286
     return-void
 .end method

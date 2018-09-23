@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackFragment;
 
-    .line 283
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackFragment$4;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 286
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -50,12 +46,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 287
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackFragment$4;->this$0:Landroid/support/v17/leanback/app/PlaybackFragment;
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/PlaybackFragment;->hideControlsOverlay(Z)V
 
-    .line 289
     :cond_0
     return-void
 .end method

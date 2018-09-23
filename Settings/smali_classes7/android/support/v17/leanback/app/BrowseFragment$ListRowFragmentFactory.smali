@@ -29,7 +29,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 660
     invoke-direct {p0}, Landroid/support/v17/leanback/app/BrowseFragment$FragmentFactory;-><init>()V
 
     return-void
@@ -40,7 +39,6 @@
 .method public bridge synthetic createFragment(Ljava/lang/Object;)Landroid/app/Fragment;
     .locals 0
 
-    .line 659
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/app/BrowseFragment$ListRowFragmentFactory;->createFragment(Ljava/lang/Object;)Landroid/support/v17/leanback/app/RowsFragment;
 
     move-result-object p1
@@ -50,9 +48,7 @@
 
 .method public createFragment(Ljava/lang/Object;)Landroid/support/v17/leanback/app/RowsFragment;
     .locals 1
-    .param p1, "row"    # Ljava/lang/Object;
 
-    .line 663
     new-instance v0, Landroid/support/v17/leanback/app/RowsFragment;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/app/RowsFragment;-><init>()V

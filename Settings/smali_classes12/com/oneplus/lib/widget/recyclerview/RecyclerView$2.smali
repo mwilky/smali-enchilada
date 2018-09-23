@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
-    .line 379
     iput-object p1, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$2;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,21 +37,18 @@
 .method public run()V
     .locals 2
 
-    .line 382
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$2;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->mItemAnimator:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ItemAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 383
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$2;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->mItemAnimator:Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ItemAnimator;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$ItemAnimator;->runPendingAnimations()V
 
-    .line 385
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/recyclerview/RecyclerView$2;->this$0:Lcom/oneplus/lib/widget/recyclerview/RecyclerView;
 
@@ -61,6 +56,5 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/recyclerview/RecyclerView;->access$502(Lcom/oneplus/lib/widget/recyclerview/RecyclerView;Z)Z
 
-    .line 386
     return-void
 .end method

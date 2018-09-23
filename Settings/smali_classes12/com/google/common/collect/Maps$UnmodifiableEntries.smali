@@ -51,15 +51,10 @@
         }
     .end annotation
 
-    .line 1251
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
-    .local p1, "entries":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
-    .line 1252
     iput-object p1, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries;->entries:Ljava/util/Collection;
 
-    .line 1253
     return-void
 .end method
 
@@ -68,8 +63,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 1247
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -88,8 +81,6 @@
         }
     .end annotation
 
-    .line 1256
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries;->entries:Ljava/util/Collection;
 
     return-object v0
@@ -106,14 +97,10 @@
         }
     .end annotation
 
-    .line 1260
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 1261
-    .local v0, "delegate":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;-><init>(Lcom/google/common/collect/Maps$UnmodifiableEntries;Ljava/util/Iterator;)V
@@ -124,8 +111,6 @@
 .method public toArray()[Ljava/lang/Object;
     .locals 1
 
-    .line 1276
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->standardToArray()[Ljava/lang/Object;
 
     move-result-object v0
@@ -143,9 +128,6 @@
         }
     .end annotation
 
-    .line 1280
-    .local p0, "this":Lcom/google/common/collect/Maps$UnmodifiableEntries;, "Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
-    .local p1, "array":[Ljava/lang/Object;, "[TT;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0

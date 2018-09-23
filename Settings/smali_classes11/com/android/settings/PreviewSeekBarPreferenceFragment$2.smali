@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/PreviewSeekBarPreferenceFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/PreviewSeekBarPreferenceFragment;
 
-    .line 130
     iput-object p1, p0, Lcom/android/settings/PreviewSeekBarPreferenceFragment$2;->this$0:Lcom/android/settings/PreviewSeekBarPreferenceFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 133
     iget-object v0, p0, Lcom/android/settings/PreviewSeekBarPreferenceFragment$2;->this$0:Lcom/android/settings/PreviewSeekBarPreferenceFragment;
 
     invoke-static {v0}, Lcom/android/settings/PreviewSeekBarPreferenceFragment;->access$200(Lcom/android/settings/PreviewSeekBarPreferenceFragment;)Lcom/android/settings/widget/LabeledSeekBar;
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 134
-    .local v0, "progress":I
     iget-object v1, p0, Lcom/android/settings/PreviewSeekBarPreferenceFragment$2;->this$0:Lcom/android/settings/PreviewSeekBarPreferenceFragment;
 
     invoke-static {v1}, Lcom/android/settings/PreviewSeekBarPreferenceFragment;->access$200(Lcom/android/settings/PreviewSeekBarPreferenceFragment;)Lcom/android/settings/widget/LabeledSeekBar;
@@ -65,7 +59,6 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 135
     iget-object v1, p0, Lcom/android/settings/PreviewSeekBarPreferenceFragment$2;->this$0:Lcom/android/settings/PreviewSeekBarPreferenceFragment;
 
     invoke-static {v1}, Lcom/android/settings/PreviewSeekBarPreferenceFragment;->access$200(Lcom/android/settings/PreviewSeekBarPreferenceFragment;)Lcom/android/settings/widget/LabeledSeekBar;
@@ -78,7 +71,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/android/settings/widget/LabeledSeekBar;->setProgress(IZ)V
 
-    .line 137
     :cond_0
     return-void
 .end method

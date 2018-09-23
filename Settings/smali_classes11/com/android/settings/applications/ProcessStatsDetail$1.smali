@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/ProcessStatsDetail;Landroid/content/ComponentName;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/ProcessStatsDetail;
 
-    .line 183
     iput-object p1, p0, Lcom/android/settings/applications/ProcessStatsDetail$1;->this$0:Lcom/android/settings/applications/ProcessStatsDetail;
 
     iput-object p2, p0, Lcom/android/settings/applications/ProcessStatsDetail$1;->val$service:Landroid/content/ComponentName;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onCancel(Lcom/android/settings/CancellablePreference;)V
     .locals 3
-    .param p1, "preference"    # Lcom/android/settings/CancellablePreference;
 
-    .line 186
     iget-object v0, p0, Lcom/android/settings/applications/ProcessStatsDetail$1;->this$0:Lcom/android/settings/applications/ProcessStatsDetail;
 
     iget-object v1, p0, Lcom/android/settings/applications/ProcessStatsDetail$1;->val$service:Landroid/content/ComponentName;
@@ -61,6 +57,5 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/settings/applications/ProcessStatsDetail;->access$000(Lcom/android/settings/applications/ProcessStatsDetail;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 187
     return-void
 .end method

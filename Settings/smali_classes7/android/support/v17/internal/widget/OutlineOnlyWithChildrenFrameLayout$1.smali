@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;
 
-    .line 74
     iput-object p1, p0, Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout$1;->this$0:Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 77
     iget-object v0, p0, Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout$1;->this$0:Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;
 
     invoke-virtual {v0}, Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;->getChildCount()I
@@ -47,7 +42,6 @@
 
     if-lez v0, :cond_0
 
-    .line 78
     iget-object v0, p0, Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout$1;->this$0:Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;
 
     invoke-static {v0}, Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;->access$000(Landroid/support/v17/internal/widget/OutlineOnlyWithChildrenFrameLayout;)Landroid/view/ViewOutlineProvider;
@@ -58,13 +52,11 @@
 
     goto :goto_0
 
-    .line 80
     :cond_0
     sget-object v0, Landroid/view/ViewOutlineProvider;->BACKGROUND:Landroid/view/ViewOutlineProvider;
 
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewOutlineProvider;->getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
 
-    .line 82
     :goto_0
     return-void
 .end method

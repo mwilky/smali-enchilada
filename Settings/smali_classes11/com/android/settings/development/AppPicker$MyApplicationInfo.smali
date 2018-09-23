@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/development/AppPicker;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/development/AppPicker;
 
-    .line 86
     iput-object p1, p0, Lcom/android/settings/development/AppPicker$MyApplicationInfo;->this$0:Lcom/android/settings/development/AppPicker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

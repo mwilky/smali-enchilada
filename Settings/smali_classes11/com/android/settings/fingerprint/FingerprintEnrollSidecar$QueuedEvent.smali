@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)V
     .locals 0
 
-    .line 52
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$QueuedEvent;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
-    .param p2, "x1"    # Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;
 
-    .line 52
     invoke-direct {p0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$QueuedEvent;-><init>(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)V
 
     return-void

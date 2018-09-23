@@ -25,9 +25,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/nfc/NfcPaymentPreference$NfcPaymentAdapter;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/nfc/NfcPaymentPreference$NfcPaymentAdapter;
 
-    .line 192
     iput-object p1, p0, Lcom/android/settings/nfc/NfcPaymentPreference$NfcPaymentAdapter$ViewHolder;->this$1:Lcom/android/settings/nfc/NfcPaymentPreference$NfcPaymentAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

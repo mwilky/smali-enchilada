@@ -35,10 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/TreeBasedTable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/TreeBasedTable;
 
-    .line 321
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$1;, "Lcom/google/common/collect/TreeBasedTable$1;"
     iput-object p1, p0, Lcom/google/common/collect/TreeBasedTable$1;->this$0:Lcom/google/common/collect/TreeBasedTable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,8 +48,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 321
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$1;, "Lcom/google/common/collect/TreeBasedTable$1;"
     check-cast p1, Ljava/util/Map;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/TreeBasedTable$1;->apply(Ljava/util/Map;)Ljava/util/Iterator;
@@ -74,9 +69,6 @@
         }
     .end annotation
 
-    .line 324
-    .local p0, "this":Lcom/google/common/collect/TreeBasedTable$1;, "Lcom/google/common/collect/TreeBasedTable$1;"
-    .local p1, "input":Ljava/util/Map;, "Ljava/util/Map<TC;TV;>;"
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0

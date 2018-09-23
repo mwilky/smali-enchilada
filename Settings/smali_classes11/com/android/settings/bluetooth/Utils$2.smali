@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,16 +30,12 @@
 # virtual methods
 .method public onBluetoothManagerInitialized(Landroid/content/Context;Lcom/android/settingslib/bluetooth/LocalBluetoothManager;)V
     .locals 1
-    .param p1, "appContext"    # Landroid/content/Context;
-    .param p2, "bluetoothManager"    # Lcom/android/settingslib/bluetooth/LocalBluetoothManager;
 
-    .line 142
     invoke-static {}, Lcom/android/settings/bluetooth/Utils;->access$000()Lcom/android/settingslib/bluetooth/Utils$ErrorListener;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/android/settingslib/bluetooth/Utils;->setErrorListener(Lcom/android/settingslib/bluetooth/Utils$ErrorListener;)V
 
-    .line 143
     return-void
 .end method

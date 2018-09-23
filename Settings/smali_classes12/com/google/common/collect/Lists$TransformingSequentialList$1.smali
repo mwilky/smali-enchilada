@@ -28,11 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Lists$TransformingSequentialList;Ljava/util/ListIterator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Lists$TransformingSequentialList;
 
-    .line 575
-    .local p0, "this":Lcom/google/common/collect/Lists$TransformingSequentialList$1;, "Lcom/google/common/collect/Lists$TransformingSequentialList$1;"
-    .local p2, "backingIterator":Ljava/util/ListIterator;, "Ljava/util/ListIterator<+TF;>;"
     iput-object p1, p0, Lcom/google/common/collect/Lists$TransformingSequentialList$1;->this$0:Lcom/google/common/collect/Lists$TransformingSequentialList;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedListIterator;-><init>(Ljava/util/ListIterator;)V
@@ -50,9 +46,6 @@
         }
     .end annotation
 
-    .line 578
-    .local p0, "this":Lcom/google/common/collect/Lists$TransformingSequentialList$1;, "Lcom/google/common/collect/Lists$TransformingSequentialList$1;"
-    .local p1, "from":Ljava/lang/Object;, "TF;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$TransformingSequentialList$1;->this$0:Lcom/google/common/collect/Lists$TransformingSequentialList;
 
     iget-object v0, v0, Lcom/google/common/collect/Lists$TransformingSequentialList;->function:Lcom/google/common/base/Function;

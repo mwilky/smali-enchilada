@@ -15,7 +15,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 49
     invoke-direct {p0}, Lcom/android/settings/password/ChooseLockPattern;-><init>()V
 
     return-void
@@ -23,15 +22,11 @@
 
 .method public static modifyIntentForSetup(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/Intent;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "chooseLockPatternIntent"    # Landroid/content/Intent;
 
-    .line 52
     const-class v0, Lcom/android/settings/password/SetupChooseLockPattern;
 
     invoke-virtual {p1, p0, v0}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
-    .line 53
     return-object p1
 .end method
 
@@ -49,7 +44,6 @@
         }
     .end annotation
 
-    .line 90
     const-class v0, Lcom/android/settings/password/SetupChooseLockPattern$SetupChooseLockPatternFragment;
 
     return-object v0
@@ -57,9 +51,7 @@
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "fragmentName"    # Ljava/lang/String;
 
-    .line 58
     const-class v0, Lcom/android/settings/password/SetupChooseLockPattern$SetupChooseLockPatternFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -75,11 +67,7 @@
 
 .method protected onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
     .locals 1
-    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
-    .param p2, "resid"    # I
-    .param p3, "first"    # Z
 
-    .line 63
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockPattern;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -88,21 +76,16 @@
 
     move-result p2
 
-    .line 64
     invoke-super {p0, p1, p2, p3}, Lcom/android/settings/password/ChooseLockPattern;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
 
-    .line 65
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 70
     invoke-super {p0, p1}, Lcom/android/settings/password/ChooseLockPattern;->onCreate(Landroid/os/Bundle;)V
 
-    .line 72
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isO2()Z
 
     move-result v0
@@ -111,7 +94,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 73
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockPattern;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -124,7 +106,6 @@
 
     goto :goto_0
 
-    .line 76
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockPattern;->getWindow()Landroid/view/Window;
 
@@ -138,7 +119,6 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 80
     :goto_0
     invoke-virtual {p0}, Lcom/android/settings/password/SetupChooseLockPattern;->getIntent()Landroid/content/Intent;
 
@@ -146,28 +126,22 @@
 
     const-string v2, "for_fingerprint"
 
-    .line 81
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 82
-    .local v0, "forFingerprint":Z
     if-eqz v0, :cond_1
 
     const v2, 0x7f12088e
 
     goto :goto_1
 
-    .line 83
     :cond_1
     const v2, 0x7f120892
 
-    .line 82
     :goto_1
     invoke-virtual {p0, v2}, Lcom/android/settings/password/SetupChooseLockPattern;->setTitle(I)V
 
-    .line 84
     const v2, 0x7f0a012d
 
     invoke-virtual {p0, v2}, Lcom/android/settings/password/SetupChooseLockPattern;->findViewById(I)Landroid/view/View;
@@ -176,10 +150,7 @@
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    .line 85
-    .local v2, "layout":Landroid/widget/LinearLayout;
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setFitsSystemWindows(Z)V
 
-    .line 86
     return-void
 .end method

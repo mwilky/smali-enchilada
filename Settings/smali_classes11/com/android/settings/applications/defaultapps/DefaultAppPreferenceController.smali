@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 50
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 51
     new-instance v0, Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -37,7 +34,6 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mPackageManager:Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    .line 52
     const-string v0, "user"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -48,23 +44,18 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mUserManager:Landroid/os/UserManager;
 
-    .line 53
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mUserId:I
 
-    .line 54
     return-void
 .end method
 
 .method public static synthetic lambda$mayUpdateGearIcon$0(Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;Landroid/content/Intent;Lcom/android/settings/widget/GearPreference;)V
     .locals 1
-    .param p1, "settingIntent"    # Landroid/content/Intent;
-    .param p2, "p"    # Lcom/android/settings/widget/GearPreference;
 
-    .line 86
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
@@ -74,28 +65,20 @@
 
 .method private mayUpdateGearIcon(Lcom/android/settingslib/applications/DefaultAppInfo;Landroid/support/v7/preference/Preference;)V
     .locals 3
-    .param p1, "app"    # Lcom/android/settingslib/applications/DefaultAppInfo;
-    .param p2, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 78
     instance-of v0, p2, Lcom/android/settings/widget/GearPreference;
 
     if-nez v0, :cond_0
 
-    .line 79
     return-void
 
-    .line 81
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getSettingIntent(Lcom/android/settingslib/applications/DefaultAppInfo;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 82
-    .local v0, "settingIntent":Landroid/content/Intent;
     if-eqz v0, :cond_1
 
-    .line 85
     :try_start_0
     move-object v1, p2
 
@@ -111,20 +94,14 @@
 
     goto :goto_0
 
-    .line 87
     :catch_0
     move-exception v1
 
-    .line 88
-    .local v1, "e":Landroid/content/ActivityNotFoundException;
     invoke-virtual {v1}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    .line 89
-    .end local v1    # "e":Landroid/content/ActivityNotFoundException;
     :goto_0
     goto :goto_1
 
-    .line 92
     :cond_1
     move-object v1, p2
 
@@ -134,7 +111,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/settings/widget/GearPreference;->setOnGearClickListener(Lcom/android/settings/widget/GearPreference$OnGearClickListener;)V
 
-    .line 94
     :goto_1
     return-void
 .end method
@@ -144,7 +120,6 @@
 .method public getDefaultAppIcon()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 107
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->isAvailable()Z
 
     move-result v0
@@ -153,27 +128,21 @@
 
     if-nez v0, :cond_0
 
-    .line 108
     return-object v1
 
-    .line 110
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getDefaultAppInfo()Lcom/android/settingslib/applications/DefaultAppInfo;
 
     move-result-object v0
 
-    .line 111
-    .local v0, "app":Lcom/android/settingslib/applications/DefaultAppInfo;
     if-eqz v0, :cond_1
 
-    .line 112
     invoke-virtual {v0}, Lcom/android/settingslib/applications/DefaultAppInfo;->loadIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     return-object v1
 
-    .line 114
     :cond_1
     return-object v1
 .end method
@@ -184,7 +153,6 @@
 .method public getDefaultAppLabel()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 118
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->isAvailable()Z
 
     move-result v0
@@ -193,36 +161,28 @@
 
     if-nez v0, :cond_0
 
-    .line 119
     return-object v1
 
-    .line 121
     :cond_0
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getDefaultAppInfo()Lcom/android/settingslib/applications/DefaultAppInfo;
 
     move-result-object v0
 
-    .line 122
-    .local v0, "app":Lcom/android/settingslib/applications/DefaultAppInfo;
     if-eqz v0, :cond_1
 
-    .line 123
     invoke-virtual {v0}, Lcom/android/settingslib/applications/DefaultAppInfo;->loadLabel()Ljava/lang/CharSequence;
 
     move-result-object v1
 
     return-object v1
 
-    .line 125
     :cond_1
     return-object v1
 .end method
 
 .method protected getSettingIntent(Lcom/android/settingslib/applications/DefaultAppInfo;)Landroid/content/Intent;
     .locals 1
-    .param p1, "info"    # Lcom/android/settingslib/applications/DefaultAppInfo;
 
-    .line 103
     const/4 v0, 0x0
 
     return-object v0
@@ -230,26 +190,19 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 58
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getDefaultAppInfo()Lcom/android/settingslib/applications/DefaultAppInfo;
 
     move-result-object v0
 
-    .line 59
-    .local v0, "app":Lcom/android/settingslib/applications/DefaultAppInfo;
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getDefaultAppLabel()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 60
-    .local v1, "defaultAppLabel":Ljava/lang/CharSequence;
     instance-of v2, p1, Lcom/android/settingslib/TwoTargetPreference;
 
     if-eqz v2, :cond_0
 
-    .line 64
     move-object v2, p1
 
     check-cast v2, Lcom/android/settingslib/TwoTargetPreference;
@@ -258,7 +211,6 @@
 
     invoke-virtual {v2, v3}, Lcom/android/settingslib/TwoTargetPreference;->setIconSize(I)V
 
-    .line 66
     :cond_0
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -266,10 +218,8 @@
 
     if-nez v2, :cond_1
 
-    .line 67
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 68
     invoke-virtual {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->getDefaultAppIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -278,7 +228,6 @@
 
     goto :goto_0
 
-    .line 70
     :cond_1
     const-string v2, "DefaultAppPrefControl"
 
@@ -286,20 +235,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     const v2, 0x7f12014a
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/Preference;->setSummary(I)V
 
-    .line 72
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/Preference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 74
     :goto_0
     invoke-direct {p0, v0, p1}, Lcom/android/settings/applications/defaultapps/DefaultAppPreferenceController;->mayUpdateGearIcon(Lcom/android/settingslib/applications/DefaultAppInfo;Landroid/support/v7/preference/Preference;)V
 
-    .line 75
     return-void
 .end method

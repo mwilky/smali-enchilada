@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BaseFragment;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BaseFragment;
 
-    .line 282
     iput-object p1, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     iput-object p2, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->val$view:Landroid/view/View;
@@ -43,7 +41,6 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 285
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->val$view:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -52,7 +49,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 286
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     invoke-static {v0}, Landroid/support/v17/leanback/app/FragmentUtil;->getContext(Landroid/app/Fragment;)Landroid/content/Context;
@@ -71,25 +67,21 @@
 
     goto :goto_1
 
-    .line 290
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BaseFragment;->internalCreateEntranceTransition()V
 
-    .line 291
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BaseFragment;->onEntranceTransitionStart()V
 
-    .line 292
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BaseFragment;->mEntranceTransition:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    .line 293
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
     iget-object v1, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
@@ -100,7 +92,6 @@
 
     goto :goto_0
 
-    .line 295
     :cond_1
     iget-object v0, p0, Landroid/support/v17/leanback/app/BaseFragment$6;->this$0:Landroid/support/v17/leanback/app/BaseFragment;
 
@@ -112,13 +103,11 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 297
     :goto_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 288
     :cond_2
     :goto_1
     const/4 v0, 0x1

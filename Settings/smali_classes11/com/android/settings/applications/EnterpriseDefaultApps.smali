@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    .line 28
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "BROWSER"
@@ -54,7 +53,6 @@
 
     const-string v6, "http:"
 
-    .line 29
     const/4 v7, 0x0
 
     invoke-static {v4, v5, v6, v7}, Lcom/android/settings/applications/EnterpriseDefaultApps;->buildIntent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -69,7 +67,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->BROWSER:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 30
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "CALENDAR"
@@ -80,7 +77,6 @@
 
     const-string v6, "vnd.android.cursor.dir/event"
 
-    .line 31
     invoke-static {v4, v7, v7, v6}, Lcom/android/settings/applications/EnterpriseDefaultApps;->buildIntent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v4
@@ -91,7 +87,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->CALENDAR:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 32
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "CAMERA"
@@ -120,7 +115,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->CAMERA:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 35
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "CONTACTS"
@@ -131,7 +125,6 @@
 
     const-string v8, "vnd.android.cursor.dir/contact"
 
-    .line 36
     invoke-static {v6, v7, v7, v8}, Lcom/android/settings/applications/EnterpriseDefaultApps;->buildIntent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v6
@@ -144,7 +137,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->CONTACTS:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 37
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "EMAIL"
@@ -181,7 +173,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->EMAIL:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 40
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "MAP"
@@ -204,7 +195,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->MAP:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 41
     new-instance v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     const-string v1, "PHONE"
@@ -233,7 +223,6 @@
 
     sput-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->PHONE:Lcom/android/settings/applications/EnterpriseDefaultApps;
 
-    .line 27
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/settings/applications/EnterpriseDefaultApps;
@@ -273,7 +262,6 @@
 
 .method private constructor <init>(Ljava/lang/String;I[Landroid/content/Intent;)V
     .locals 0
-    .param p3, "intents"    # [Landroid/content/Intent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -282,63 +270,45 @@
         }
     .end annotation
 
-    .line 44
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 45
     iput-object p3, p0, Lcom/android/settings/applications/EnterpriseDefaultApps;->mIntents:[Landroid/content/Intent;
 
-    .line 46
     return-void
 .end method
 
 .method private static buildIntent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
-    .param p0, "action"    # Ljava/lang/String;
-    .param p1, "category"    # Ljava/lang/String;
-    .param p2, "protocol"    # Ljava/lang/String;
-    .param p3, "type"    # Ljava/lang/String;
 
-    .line 54
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 55
-    .local v0, "intent":Landroid/content/Intent;
     if-eqz p1, :cond_0
 
-    .line 56
     invoke-virtual {v0, p1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 58
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 59
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 61
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 62
     invoke-virtual {v0, p3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 64
     :cond_2
     return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/applications/EnterpriseDefaultApps;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 27
     const-class v0, Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -353,7 +323,6 @@
 .method public static values()[Lcom/android/settings/applications/EnterpriseDefaultApps;
     .locals 1
 
-    .line 27
     sget-object v0, Lcom/android/settings/applications/EnterpriseDefaultApps;->$VALUES:[Lcom/android/settings/applications/EnterpriseDefaultApps;
 
     invoke-virtual {v0}, [Lcom/android/settings/applications/EnterpriseDefaultApps;->clone()Ljava/lang/Object;
@@ -370,7 +339,6 @@
 .method public getIntents()[Landroid/content/Intent;
     .locals 1
 
-    .line 49
     iget-object v0, p0, Lcom/android/settings/applications/EnterpriseDefaultApps;->mIntents:[Landroid/content/Intent;
 
     return-object v0

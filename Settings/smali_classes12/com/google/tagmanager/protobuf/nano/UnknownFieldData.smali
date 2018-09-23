@@ -12,19 +12,13 @@
 # direct methods
 .method constructor <init>(I[B)V
     .locals 0
-    .param p1, "tag"    # I
-    .param p2, "bytes"    # [B
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     iput p1, p0, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->tag:I
 
-    .line 47
     iput-object p2, p0, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->bytes:[B
 
-    .line 48
     return-void
 .end method
 
@@ -32,16 +26,13 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 52
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
     return v0
 
-    .line 53
     :cond_0
     instance-of v1, p1, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;
 
@@ -51,14 +42,11 @@
 
     return v2
 
-    .line 55
     :cond_1
     move-object v1, p1
 
     check-cast v1, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;
 
-    .line 56
-    .local v1, "other":Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;
     iget v3, p0, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->tag:I
 
     iget v4, v1, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->tag:I
@@ -87,11 +75,8 @@
 .method public hashCode()I
     .locals 5
 
-    .line 61
     const/16 v0, 0x11
 
-    .line 62
-    .local v0, "result":I
     const/16 v1, 0x1f
 
     mul-int v2, v1, v0
@@ -100,12 +85,8 @@
 
     add-int/2addr v2, v3
 
-    .line 63
-    .end local v0    # "result":I
-    .local v2, "result":I
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     iget-object v3, p0, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->bytes:[B
 
@@ -113,7 +94,6 @@
 
     if-ge v0, v3, :cond_0
 
-    .line 64
     mul-int v3, v1, v2
 
     iget-object v4, p0, Lcom/google/tagmanager/protobuf/nano/UnknownFieldData;->bytes:[B
@@ -122,13 +102,10 @@
 
     add-int v2, v3, v4
 
-    .line 63
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 66
-    .end local v0    # "i":I
     :cond_0
     return v2
 .end method

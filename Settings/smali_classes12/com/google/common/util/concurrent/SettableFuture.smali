@@ -19,8 +19,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 41
-    .local p0, "this":Lcom/google/common/util/concurrent/SettableFuture;, "Lcom/google/common/util/concurrent/SettableFuture<TV;>;"
     invoke-direct {p0}, Lcom/google/common/util/concurrent/AbstractFuture;-><init>()V
 
     return-void
@@ -38,7 +36,6 @@
         }
     .end annotation
 
-    .line 34
     new-instance v0, Lcom/google/common/util/concurrent/SettableFuture;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/SettableFuture;-><init>()V
@@ -60,9 +57,6 @@
         }
     .end annotation
 
-    .line 53
-    .local p0, "this":Lcom/google/common/util/concurrent/SettableFuture;, "Lcom/google/common/util/concurrent/SettableFuture<TV;>;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     invoke-super {p0, p1}, Lcom/google/common/util/concurrent/AbstractFuture;->set(Ljava/lang/Object;)Z
 
     move-result v0
@@ -72,10 +66,7 @@
 
 .method public setException(Ljava/lang/Throwable;)Z
     .locals 1
-    .param p1, "throwable"    # Ljava/lang/Throwable;
 
-    .line 68
-    .local p0, "this":Lcom/google/common/util/concurrent/SettableFuture;, "Lcom/google/common/util/concurrent/SettableFuture<TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/util/concurrent/AbstractFuture;->setException(Ljava/lang/Throwable;)Z
 
     move-result v0

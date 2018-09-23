@@ -27,7 +27,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1846
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgElementBase;-><init>()V
 
     return-void
@@ -37,14 +36,12 @@
 # virtual methods
 .method public addChild(Lcom/caverock/androidsvg/SVG$SvgObject;)V
     .locals 0
-    .param p1, "elem"    # Lcom/caverock/androidsvg/SVG$SvgObject;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
-    .line 1856
     return-void
 .end method
 
@@ -59,7 +56,6 @@
         }
     .end annotation
 
-    .line 1854
     invoke-static {}, Lcom/caverock/androidsvg/SVG;->access$0()Ljava/util/List;
 
     move-result-object v0

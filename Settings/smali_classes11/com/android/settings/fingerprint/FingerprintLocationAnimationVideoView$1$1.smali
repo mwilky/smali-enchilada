@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintLocationAnimationVideoView$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/fingerprint/FingerprintLocationAnimationVideoView$1;
 
-    .line 83
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintLocationAnimationVideoView$1$1;->this$1:Lcom/android/settings/fingerprint/FingerprintLocationAnimationVideoView$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onPrepared(Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p1, "mediaPlayer"    # Landroid/media/MediaPlayer;
 
-    .line 86
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/media/MediaPlayer;->setLooping(Z)V
 
-    .line 87
     return-void
 .end method

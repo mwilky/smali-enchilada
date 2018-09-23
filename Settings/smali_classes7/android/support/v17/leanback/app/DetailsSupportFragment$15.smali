@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
-    .line 895
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 901
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsSupportFragment;->mVideoSupportFragment:Landroid/support/v4/app/Fragment;
@@ -63,7 +57,6 @@
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsSupportFragment;->mVideoSupportFragment:Landroid/support/v4/app/Fragment;
 
-    .line 902
     invoke-virtual {v0}, Landroid/support/v4/app/Fragment;->getView()Landroid/view/View;
 
     move-result-object v0
@@ -74,7 +67,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 903
     const/4 v0, 0x4
 
     if-eq p2, v0, :cond_0
@@ -83,7 +75,6 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 904
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
@@ -97,7 +88,6 @@
 
     if-lez v0, :cond_1
 
-    .line 905
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsSupportFragment;->getVerticalGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
@@ -106,12 +96,10 @@
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/VerticalGridView;->requestFocus()Z
 
-    .line 906
     const/4 v0, 0x1
 
     return v0
 
-    .line 911
     :cond_1
     const/4 v0, 0x0
 

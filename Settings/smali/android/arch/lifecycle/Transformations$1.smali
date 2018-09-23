@@ -35,7 +35,6 @@
 .method constructor <init>(Landroid/arch/lifecycle/MediatorLiveData;Landroid/arch/core/util/Function;)V
     .locals 0
 
-    .line 67
     iput-object p1, p0, Landroid/arch/lifecycle/Transformations$1;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
 
     iput-object p2, p0, Landroid/arch/lifecycle/Transformations$1;->val$func:Landroid/arch/core/util/Function;
@@ -59,8 +58,6 @@
         }
     .end annotation
 
-    .line 70
-    .local p1, "x":Ljava/lang/Object;, "TX;"
     iget-object v0, p0, Landroid/arch/lifecycle/Transformations$1;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
 
     iget-object v1, p0, Landroid/arch/lifecycle/Transformations$1;->val$func:Landroid/arch/core/util/Function;
@@ -71,6 +68,5 @@
 
     invoke-virtual {v0, v1}, Landroid/arch/lifecycle/MediatorLiveData;->setValue(Ljava/lang/Object;)V
 
-    .line 71
     return-void
 .end method

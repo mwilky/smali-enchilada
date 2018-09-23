@@ -27,13 +27,9 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroid/animation/PropertyValuesHolder;)V
     .locals 3
-    .param p1, "targetObject"    # Ljava/lang/Object;
-    .param p2, "values"    # Landroid/animation/PropertyValuesHolder;
 
-    .line 82
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/ParallaxTarget;-><init>()V
 
-    .line 83
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/animation/PropertyValuesHolder;
@@ -48,7 +44,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ParallaxTarget$PropertyValuesHolderTarget;->mAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 84
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ParallaxTarget$PropertyValuesHolderTarget;->mAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Landroid/view/animation/LinearInterpolator;
@@ -57,14 +52,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 85
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ParallaxTarget$PropertyValuesHolderTarget;->mAnimator:Landroid/animation/ObjectAnimator;
 
     const-wide/32 v1, 0xf4240
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 86
     return-void
 .end method
 
@@ -72,12 +65,9 @@
 # virtual methods
 .method public update(F)V
     .locals 3
-    .param p1, "fraction"    # F
 
-    .line 90
     iput p1, p0, Landroid/support/v17/leanback/widget/ParallaxTarget$PropertyValuesHolderTarget;->mFraction:F
 
-    .line 91
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ParallaxTarget$PropertyValuesHolderTarget;->mAnimator:Landroid/animation/ObjectAnimator;
 
     const v1, 0x49742400    # 1000000.0f
@@ -88,6 +78,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setCurrentPlayTime(J)V
 
-    .line 92
     return-void
 .end method

@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
     .locals 0
 
-    .line 402
     iput-object p1, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$FailedConnectTask;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/google/analytics/tracking/android/GAServiceProxy;Lcom/google/analytics/tracking/android/GAServiceProxy$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/analytics/tracking/android/GAServiceProxy;
-    .param p2, "x1"    # Lcom/google/analytics/tracking/android/GAServiceProxy$1;
 
-    .line 402
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/GAServiceProxy$FailedConnectTask;-><init>(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
 
     return-void
@@ -46,7 +42,6 @@
 .method public run()V
     .locals 2
 
-    .line 405
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$FailedConnectTask;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/GAServiceProxy;->access$400(Lcom/google/analytics/tracking/android/GAServiceProxy;)Lcom/google/analytics/tracking/android/GAServiceProxy$ConnectState;
@@ -57,12 +52,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 406
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$FailedConnectTask;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/GAServiceProxy;->access$500(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
 
-    .line 409
     :cond_0
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1150
     iput-object p1, p0, Lcom/android/settings/RadioInfo$9;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 3
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 1152
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1160
-    .local v0, "intent":Landroid/content/Intent;
     :try_start_0
     const-string v1, "com.android.phone"
 
@@ -56,21 +50,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1162
     iget-object v1, p0, Lcom/android/settings/RadioInfo$9;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/RadioInfo;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1164
     goto :goto_0
 
-    .line 1163
     :catch_0
     move-exception v1
 
-    .line 1166
     :goto_0
     const/4 v1, 0x1
 

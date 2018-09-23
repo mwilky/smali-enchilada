@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/setupwizardlib/TemplateLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/setupwizardlib/TemplateLayout;
 
-    .line 250
     iput-object p1, p0, Lcom/android/setupwizardlib/TemplateLayout$1;->this$0:Lcom/android/setupwizardlib/TemplateLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 253
     iget-object v0, p0, Lcom/android/setupwizardlib/TemplateLayout$1;->this$0:Lcom/android/setupwizardlib/TemplateLayout;
 
     invoke-virtual {v0}, Lcom/android/setupwizardlib/TemplateLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -54,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 254
     iget-object v0, p0, Lcom/android/setupwizardlib/TemplateLayout$1;->this$0:Lcom/android/setupwizardlib/TemplateLayout;
 
     iget-object v1, p0, Lcom/android/setupwizardlib/TemplateLayout$1;->this$0:Lcom/android/setupwizardlib/TemplateLayout;
@@ -65,7 +61,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/setupwizardlib/TemplateLayout;->setXFraction(F)V
 
-    .line 255
     const/4 v0, 0x1
 
     return v0

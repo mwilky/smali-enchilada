@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 86
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -49,7 +48,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 486
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,7 +56,6 @@
 .method static synthetic access$000()I
     .locals 1
 
-    .line 44
     sget v0, Lcom/google/common/hash/Hashing;->GOOD_FAST_HASH_SEED:I
 
     return v0
@@ -66,10 +63,7 @@
 
 .method static synthetic access$100(Lcom/google/common/hash/Hashing$ChecksumType;Ljava/lang/String;)Lcom/google/common/hash/HashFunction;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/hash/Hashing$ChecksumType;
-    .param p1, "x1"    # Ljava/lang/String;
 
-    .line 44
     invoke-static {p0, p1}, Lcom/google/common/hash/Hashing;->checksumHashFunction(Lcom/google/common/hash/Hashing$ChecksumType;Ljava/lang/String;)Lcom/google/common/hash/HashFunction;
 
     move-result-object v0
@@ -80,7 +74,6 @@
 .method public static adler32()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 270
     sget-object v0, Lcom/google/common/hash/Hashing$Adler32Holder;->ADLER_32:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -88,9 +81,7 @@
 
 .method static checkPositiveAndMakeMultipleOf32(I)I
     .locals 2
-    .param p0, "bits"    # I
 
-    .line 408
     if-lez p0, :cond_0
 
     const/4 v0, 0x1
@@ -105,7 +96,6 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 409
     add-int/lit8 v0, p0, 0x1f
 
     and-int/lit8 v0, v0, -0x20
@@ -115,10 +105,7 @@
 
 .method private static checksumHashFunction(Lcom/google/common/hash/Hashing$ChecksumType;Ljava/lang/String;)Lcom/google/common/hash/HashFunction;
     .locals 2
-    .param p0, "type"    # Lcom/google/common/hash/Hashing$ChecksumType;
-    .param p1, "toString"    # Ljava/lang/String;
 
-    .line 279
     new-instance v0, Lcom/google/common/hash/ChecksumHashFunction;
 
     invoke-static {p0}, Lcom/google/common/hash/Hashing$ChecksumType;->access$200(Lcom/google/common/hash/Hashing$ChecksumType;)I
@@ -142,14 +129,10 @@
         }
     .end annotation
 
-    .line 364
-    .local p0, "hashCodes":Ljava/lang/Iterable;, "Ljava/lang/Iterable<Lcom/google/common/hash/HashCode;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 365
-    .local v0, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/hash/HashCode;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -158,7 +141,6 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 366
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -169,14 +151,10 @@
 
     move-result v1
 
-    .line 367
-    .local v1, "bits":I
     div-int/lit8 v2, v1, 0x8
 
     new-array v2, v2, [B
 
-    .line 368
-    .local v2, "resultBytes":[B
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -194,14 +172,10 @@
 
     check-cast v4, Lcom/google/common/hash/HashCode;
 
-    .line 369
-    .local v4, "hashCode":Lcom/google/common/hash/HashCode;
     invoke-virtual {v4}, Lcom/google/common/hash/HashCode;->asBytes()[B
 
     move-result-object v5
 
-    .line 370
-    .local v5, "nextBytes":[B
     array-length v6, v5
 
     array-length v7, v2
@@ -222,20 +196,15 @@
 
     invoke-static {v6, v7}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 372
     nop
 
-    .local v8, "i":I
     :goto_2
     move v6, v8
 
-    .end local v8    # "i":I
-    .local v6, "i":I
     array-length v7, v5
 
     if-ge v6, v7, :cond_1
 
-    .line 373
     aget-byte v7, v2, v6
 
     mul-int/lit8 v7, v7, 0x25
@@ -248,21 +217,13 @@
 
     aput-byte v7, v2, v6
 
-    .line 372
     add-int/lit8 v8, v6, 0x1
 
-    .end local v6    # "i":I
-    .restart local v8    # "i":I
     goto :goto_2
 
-    .line 375
-    .end local v4    # "hashCode":Lcom/google/common/hash/HashCode;
-    .end local v5    # "nextBytes":[B
-    .end local v8    # "i":I
     :cond_1
     goto :goto_0
 
-    .line 376
     :cond_2
     invoke-static {v2}, Lcom/google/common/hash/HashCode;->fromBytesNoCopy([B)Lcom/google/common/hash/HashCode;
 
@@ -283,14 +244,10 @@
         }
     .end annotation
 
-    .line 390
-    .local p0, "hashCodes":Ljava/lang/Iterable;, "Ljava/lang/Iterable<Lcom/google/common/hash/HashCode;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 391
-    .local v0, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/google/common/hash/HashCode;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -299,7 +256,6 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 392
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -314,8 +270,6 @@
 
     new-array v1, v1, [B
 
-    .line 393
-    .local v1, "resultBytes":[B
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -333,14 +287,10 @@
 
     check-cast v3, Lcom/google/common/hash/HashCode;
 
-    .line 394
-    .local v3, "hashCode":Lcom/google/common/hash/HashCode;
     invoke-virtual {v3}, Lcom/google/common/hash/HashCode;->asBytes()[B
 
     move-result-object v4
 
-    .line 395
-    .local v4, "nextBytes":[B
     array-length v5, v4
 
     array-length v6, v1
@@ -361,20 +311,15 @@
 
     invoke-static {v5, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 397
     nop
 
-    .local v7, "i":I
     :goto_2
     move v5, v7
 
-    .end local v7    # "i":I
-    .local v5, "i":I
     array-length v6, v4
 
     if-ge v5, v6, :cond_1
 
-    .line 398
     aget-byte v6, v1, v5
 
     aget-byte v7, v4, v5
@@ -385,21 +330,13 @@
 
     aput-byte v6, v1, v5
 
-    .line 397
     add-int/lit8 v7, v5, 0x1
 
-    .end local v5    # "i":I
-    .restart local v7    # "i":I
     goto :goto_2
 
-    .line 400
-    .end local v3    # "hashCode":Lcom/google/common/hash/HashCode;
-    .end local v4    # "nextBytes":[B
-    .end local v7    # "i":I
     :cond_1
     goto :goto_0
 
-    .line 401
     :cond_2
     invoke-static {v1}, Lcom/google/common/hash/HashCode;->fromBytesNoCopy([B)Lcom/google/common/hash/HashCode;
 
@@ -410,10 +347,7 @@
 
 .method public static consistentHash(JI)I
     .locals 6
-    .param p0, "input"    # J
-    .param p2, "buckets"    # I
 
-    .line 337
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -440,17 +374,12 @@
 
     invoke-static {v2, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 338
     new-instance v1, Lcom/google/common/hash/Hashing$LinearCongruentialGenerator;
 
     invoke-direct {v1, p0, p1}, Lcom/google/common/hash/Hashing$LinearCongruentialGenerator;-><init>(J)V
 
-    .line 339
-    .local v1, "generator":Lcom/google/common/hash/Hashing$LinearCongruentialGenerator;
     nop
 
-    .line 344
-    .local v0, "candidate":I
     :goto_1
     add-int/lit8 v2, v0, 0x1
 
@@ -464,28 +393,21 @@
 
     double-to-int v2, v2
 
-    .line 345
-    .local v2, "next":I
     if-ltz v2, :cond_1
 
     if-ge v2, p2, :cond_1
 
-    .line 346
     move v0, v2
 
     goto :goto_1
 
-    .line 348
     :cond_1
     return v0
 .end method
 
 .method public static consistentHash(Lcom/google/common/hash/HashCode;I)I
     .locals 2
-    .param p0, "hashCode"    # Lcom/google/common/hash/HashCode;
-    .param p1, "buckets"    # I
 
-    .line 320
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode;->padToLong()J
 
     move-result-wide v0
@@ -500,7 +422,6 @@
 .method public static crc32()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 252
     sget-object v0, Lcom/google/common/hash/Hashing$Crc32Holder;->CRC_32:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -509,7 +430,6 @@
 .method public static crc32c()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 235
     sget-object v0, Lcom/google/common/hash/Hashing$Crc32cHolder;->CRC_32_C:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -517,83 +437,62 @@
 
 .method public static goodFastHash(I)Lcom/google/common/hash/HashFunction;
     .locals 6
-    .param p0, "minimumBits"    # I
 
-    .line 61
     invoke-static {p0}, Lcom/google/common/hash/Hashing;->checkPositiveAndMakeMultipleOf32(I)I
 
     move-result v0
 
-    .line 63
-    .local v0, "bits":I
     const/16 v1, 0x20
 
     if-ne v0, v1, :cond_0
 
-    .line 64
     sget-object v1, Lcom/google/common/hash/Hashing$Murmur3_32Holder;->GOOD_FAST_HASH_FUNCTION_32:Lcom/google/common/hash/HashFunction;
 
     return-object v1
 
-    .line 66
     :cond_0
     const/16 v1, 0x80
 
     if-gt v0, v1, :cond_1
 
-    .line 67
     sget-object v1, Lcom/google/common/hash/Hashing$Murmur3_128Holder;->GOOD_FAST_HASH_FUNCTION_128:Lcom/google/common/hash/HashFunction;
 
     return-object v1
 
-    .line 71
     :cond_1
     add-int/lit8 v2, v0, 0x7f
 
     div-int/2addr v2, v1
 
-    .line 72
-    .local v2, "hashFunctionsNeeded":I
     new-array v1, v2, [Lcom/google/common/hash/HashFunction;
 
-    .line 73
-    .local v1, "hashFunctions":[Lcom/google/common/hash/HashFunction;
     const/4 v3, 0x0
 
     sget-object v4, Lcom/google/common/hash/Hashing$Murmur3_128Holder;->GOOD_FAST_HASH_FUNCTION_128:Lcom/google/common/hash/HashFunction;
 
     aput-object v4, v1, v3
 
-    .line 74
     sget v3, Lcom/google/common/hash/Hashing;->GOOD_FAST_HASH_SEED:I
 
-    .line 75
-    .local v3, "seed":I
     const/4 v4, 0x1
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v2, :cond_2
 
-    .line 76
     const v5, 0x596f0ddf
 
     add-int/2addr v3, v5
 
-    .line 77
     invoke-static {v3}, Lcom/google/common/hash/Hashing;->murmur3_128(I)Lcom/google/common/hash/HashFunction;
 
     move-result-object v5
 
     aput-object v5, v1, v4
 
-    .line 75
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 79
-    .end local v4    # "i":I
     :cond_2
     new-instance v4, Lcom/google/common/hash/Hashing$ConcatenatedHashFunction;
 
@@ -605,7 +504,6 @@
 .method public static md5()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 182
     sget-object v0, Lcom/google/common/hash/Hashing$Md5Holder;->MD5:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -614,7 +512,6 @@
 .method public static murmur3_128()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 140
     sget-object v0, Lcom/google/common/hash/Hashing$Murmur3_128Holder;->MURMUR3_128:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -622,9 +519,7 @@
 
 .method public static murmur3_128(I)Lcom/google/common/hash/HashFunction;
     .locals 1
-    .param p0, "seed"    # I
 
-    .line 128
     new-instance v0, Lcom/google/common/hash/Murmur3_128HashFunction;
 
     invoke-direct {v0, p0}, Lcom/google/common/hash/Murmur3_128HashFunction;-><init>(I)V
@@ -635,7 +530,6 @@
 .method public static murmur3_32()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 109
     sget-object v0, Lcom/google/common/hash/Hashing$Murmur3_32Holder;->MURMUR3_32:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -643,9 +537,7 @@
 
 .method public static murmur3_32(I)Lcom/google/common/hash/HashFunction;
     .locals 1
-    .param p0, "seed"    # I
 
-    .line 97
     new-instance v0, Lcom/google/common/hash/Murmur3_32HashFunction;
 
     invoke-direct {v0, p0}, Lcom/google/common/hash/Murmur3_32HashFunction;-><init>(I)V
@@ -656,7 +548,6 @@
 .method public static sha1()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 194
     sget-object v0, Lcom/google/common/hash/Hashing$Sha1Holder;->SHA_1:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -665,7 +556,6 @@
 .method public static sha256()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 207
     sget-object v0, Lcom/google/common/hash/Hashing$Sha256Holder;->SHA_256:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -674,7 +564,6 @@
 .method public static sha512()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 220
     sget-object v0, Lcom/google/common/hash/Hashing$Sha512Holder;->SHA_512:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -683,7 +572,6 @@
 .method public static sipHash24()Lcom/google/common/hash/HashFunction;
     .locals 1
 
-    .line 158
     sget-object v0, Lcom/google/common/hash/Hashing$SipHash24Holder;->SIP_HASH_24:Lcom/google/common/hash/HashFunction;
 
     return-object v0
@@ -691,10 +579,7 @@
 
 .method public static sipHash24(JJ)Lcom/google/common/hash/HashFunction;
     .locals 8
-    .param p0, "k0"    # J
-    .param p2, "k1"    # J
 
-    .line 174
     new-instance v7, Lcom/google/common/hash/SipHashFunction;
 
     const/4 v1, 0x2

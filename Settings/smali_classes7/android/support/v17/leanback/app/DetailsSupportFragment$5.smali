@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsSupportFragment;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsSupportFragment;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 156
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$5;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-direct {p0, p2}, Landroid/support/v17/leanback/util/StateMachine$State;-><init>(Ljava/lang/String;)V
@@ -37,21 +34,18 @@
 .method public run()V
     .locals 2
 
-    .line 159
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$5;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsSupportFragment;->mWaitEnterTransitionTimeout:Landroid/support/v17/leanback/app/DetailsSupportFragment$WaitEnterTransitionTimeout;
 
     if-nez v0, :cond_0
 
-    .line 160
     new-instance v0, Landroid/support/v17/leanback/app/DetailsSupportFragment$WaitEnterTransitionTimeout;
 
     iget-object v1, p0, Landroid/support/v17/leanback/app/DetailsSupportFragment$5;->this$0:Landroid/support/v17/leanback/app/DetailsSupportFragment;
 
     invoke-direct {v0, v1}, Landroid/support/v17/leanback/app/DetailsSupportFragment$WaitEnterTransitionTimeout;-><init>(Landroid/support/v17/leanback/app/DetailsSupportFragment;)V
 
-    .line 162
     :cond_0
     return-void
 .end method

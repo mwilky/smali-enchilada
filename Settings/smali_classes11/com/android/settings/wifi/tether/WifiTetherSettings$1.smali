@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 267
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -26,9 +25,7 @@
 
 .method private isConnManagerEnable(Landroid/content/Context;)Z
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 299
     const-string v0, "wifi"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -37,8 +34,6 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 300
-    .local v0, "mWifiManager":Landroid/net/wifi/WifiManager;
     const-string v1, "com.oneplus.wifiapsettings"
 
     invoke-static {p1, v1}, Lcom/oneplus/settings/utils/OPUtils;->isAppPakExist(Landroid/content/Context;Ljava/lang/String;)Z
@@ -72,7 +67,6 @@
 # virtual methods
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,33 +78,26 @@
         }
     .end annotation
 
-    .line 277
     invoke-super {p0, p1}, Lcom/android/settings/search/BaseSearchIndexProvider;->getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 278
-    .local v0, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0, p1}, Lcom/android/settings/wifi/tether/WifiTetherSettings$1;->isConnManagerEnable(Landroid/content/Context;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 279
     const-string v1, "connected_device_manager"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 281
     :cond_0
     return-object v0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,18 +109,14 @@
         }
     .end annotation
 
-    .line 270
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 271
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f1600e5
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 272
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

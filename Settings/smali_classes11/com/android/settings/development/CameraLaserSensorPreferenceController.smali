@@ -49,35 +49,27 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 50
     invoke-direct {p0, p1}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 51
     return-void
 .end method
 
 .method private isLaserSensorEnabled()Z
     .locals 3
 
-    .line 85
     const-string v0, "persist.camera.stats.disablehaf"
 
-    .line 86
     const/4 v1, 0x0
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 85
     invoke-static {v0, v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 87
-    .local v0, "prop":Ljava/lang/String;
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -94,7 +86,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 60
     const-string v0, "camera_laser_sensor_switch"
 
     return-object v0
@@ -103,7 +94,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 55
     iget-object v0, p0, Lcom/android/settings/development/CameraLaserSensorPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -122,10 +112,8 @@
 .method protected onDeveloperOptionsSwitchDisabled()V
     .locals 2
 
-    .line 79
     invoke-super {p0}, Lcom/android/settingslib/development/DeveloperOptionsPreferenceController;->onDeveloperOptionsSwitchDisabled()V
 
-    .line 80
     const-string v0, "persist.camera.stats.disablehaf"
 
     const/4 v1, 0x2
@@ -136,7 +124,6 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 81
     iget-object v0, p0, Lcom/android/settings/development/CameraLaserSensorPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
     check-cast v0, Landroid/support/v14/preference/SwitchPreference;
@@ -145,16 +132,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 82
     return-void
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 65
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -163,8 +146,6 @@
 
     move-result v0
 
-    .line 66
-    .local v0, "isEnabled":Z
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
@@ -179,13 +160,10 @@
 
     move-result-object v1
 
-    .line 67
-    .local v1, "value":Ljava/lang/String;
     const-string v2, "persist.camera.stats.disablehaf"
 
     invoke-static {v2, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 68
     const/4 v2, 0x1
 
     return v2
@@ -193,21 +171,16 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 73
     invoke-direct {p0}, Lcom/android/settings/development/CameraLaserSensorPreferenceController;->isLaserSensorEnabled()Z
 
     move-result v0
 
-    .line 74
-    .local v0, "enabled":Z
     iget-object v1, p0, Lcom/android/settings/development/CameraLaserSensorPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
     check-cast v1, Landroid/support/v14/preference/SwitchPreference;
 
     invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 75
     return-void
 .end method

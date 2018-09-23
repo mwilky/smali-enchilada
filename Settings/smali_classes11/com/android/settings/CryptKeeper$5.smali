@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/CryptKeeper;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/CryptKeeper;
 
-    .line 609
     iput-object p1, p0, Lcom/android/settings/CryptKeeper$5;->this$0:Lcom/android/settings/CryptKeeper;
 
     iput-boolean p2, p0, Lcom/android/settings/CryptKeeper$5;->val$corrupt:Z
@@ -42,27 +40,21 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 613
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.FACTORY_RESET"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 614
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 615
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 616
     const-string v1, "android.intent.extra.REASON"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -83,11 +75,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 618
     iget-object v1, p0, Lcom/android/settings/CryptKeeper$5;->this$0:Lcom/android/settings/CryptKeeper;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/CryptKeeper;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 619
     return-void
 .end method

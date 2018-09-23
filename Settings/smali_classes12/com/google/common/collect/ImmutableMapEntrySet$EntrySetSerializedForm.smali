@@ -59,15 +59,10 @@
         }
     .end annotation
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;, "Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm<TK;TV;>;"
-    .local p1, "map":Lcom/google/common/collect/ImmutableMap;, "Lcom/google/common/collect/ImmutableMap<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 69
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;->map:Lcom/google/common/collect/ImmutableMap;
 
-    .line 70
     return-void
 .end method
 
@@ -76,8 +71,6 @@
 .method readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 72
-    .local p0, "this":Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;, "Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMapEntrySet$EntrySetSerializedForm;->map:Lcom/google/common/collect/ImmutableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;

@@ -34,8 +34,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 926
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,8 +44,6 @@
 .method public getAccessTime()J
     .locals 1
 
-    .line 954
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -58,8 +54,6 @@
 .method public getHash()I
     .locals 1
 
-    .line 944
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -75,8 +69,6 @@
         }
     .end annotation
 
-    .line 949
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -94,8 +86,6 @@
         }
     .end annotation
 
-    .line 939
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -113,8 +103,6 @@
         }
     .end annotation
 
-    .line 964
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -132,8 +120,6 @@
         }
     .end annotation
 
-    .line 994
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -151,8 +137,6 @@
         }
     .end annotation
 
-    .line 974
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -170,8 +154,6 @@
         }
     .end annotation
 
-    .line 1004
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -189,8 +171,6 @@
         }
     .end annotation
 
-    .line 929
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -201,8 +181,6 @@
 .method public getWriteTime()J
     .locals 1
 
-    .line 984
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -212,10 +190,7 @@
 
 .method public setAccessTime(J)V
     .locals 1
-    .param p1, "time"    # J
 
-    .line 959
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -233,9 +208,6 @@
         }
     .end annotation
 
-    .line 969
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -253,9 +225,6 @@
         }
     .end annotation
 
-    .line 999
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
-    .local p1, "next":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -273,9 +242,6 @@
         }
     .end annotation
 
-    .line 979
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -293,9 +259,6 @@
         }
     .end annotation
 
-    .line 1009
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
-    .local p1, "previous":Lcom/google/common/cache/LocalCache$ReferenceEntry;, "Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -313,9 +276,6 @@
         }
     .end annotation
 
-    .line 934
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
-    .local p1, "valueReference":Lcom/google/common/cache/LocalCache$ValueReference;, "Lcom/google/common/cache/LocalCache$ValueReference<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -325,10 +285,7 @@
 
 .method public setWriteTime(J)V
     .locals 1
-    .param p1, "time"    # J
 
-    .line 989
-    .local p0, "this":Lcom/google/common/cache/LocalCache$AbstractReferenceEntry;, "Lcom/google/common/cache/LocalCache$AbstractReferenceEntry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/SearchSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/SearchSupportFragment;
 
-    .line 232
     iput-object p1, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$5;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public requestAudioPermission()V
     .locals 3
 
-    .line 235
     iget-object v0, p0, Landroid/support/v17/leanback/app/SearchSupportFragment$5;->this$0:Landroid/support/v17/leanback/app/SearchSupportFragment;
 
     const-string v1, "android.permission.RECORD_AUDIO"
@@ -52,6 +49,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/app/SearchSupportFragment;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 237
     return-void
 .end method

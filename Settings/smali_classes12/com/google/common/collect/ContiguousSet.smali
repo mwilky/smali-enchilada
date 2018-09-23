@@ -44,19 +44,14 @@
         }
     .end annotation
 
-    .line 82
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "domain":Lcom/google/common/collect/DiscreteDomain;, "Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/ImmutableSortedSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 83
     iput-object p1, p0, Lcom/google/common/collect/ContiguousSet;->domain:Lcom/google/common/collect/DiscreteDomain;
 
-    .line 84
     return-void
 .end method
 
@@ -75,7 +70,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 182
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -99,19 +93,12 @@
         }
     .end annotation
 
-    .line 54
-    .local p0, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
-    .local p1, "domain":Lcom/google/common/collect/DiscreteDomain;, "Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 55
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
     move-object v0, p0
 
-    .line 58
-    .local v0, "effectiveRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TC;>;"
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Range;->hasLowerBound()Z
 
@@ -119,7 +106,6 @@
 
     if-nez v1, :cond_0
 
-    .line 59
     invoke-virtual {p1}, Lcom/google/common/collect/DiscreteDomain;->minValue()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -134,7 +120,6 @@
 
     move-object v0, v1
 
-    .line 61
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/Range;->hasUpperBound()Z
 
@@ -142,7 +127,6 @@
 
     if-nez v1, :cond_1
 
-    .line 62
     invoke-virtual {p1}, Lcom/google/common/collect/DiscreteDomain;->maxValue()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -159,11 +143,9 @@
 
     move-object v0, v1
 
-    .line 66
     :cond_1
     nop
 
-    .line 69
     invoke-virtual {v0}, Lcom/google/common/collect/Range;->isEmpty()Z
 
     move-result v1
@@ -172,19 +154,16 @@
 
     iget-object v1, p0, Lcom/google/common/collect/Range;->lowerBound:Lcom/google/common/collect/Cut;
 
-    .line 71
     invoke-virtual {v1, p1}, Lcom/google/common/collect/Cut;->leastValueAbove(Lcom/google/common/collect/DiscreteDomain;)Ljava/lang/Comparable;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/google/common/collect/Range;->upperBound:Lcom/google/common/collect/Cut;
 
-    .line 72
     invoke-virtual {v2, p1}, Lcom/google/common/collect/Cut;->greatestValueBelow(Lcom/google/common/collect/DiscreteDomain;)Ljava/lang/Comparable;
 
     move-result-object v2
 
-    .line 70
     invoke-static {v1, v2}, Lcom/google/common/collect/Range;->compareOrThrow(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v1
@@ -202,35 +181,26 @@
     :goto_0
     const/4 v1, 0x1
 
-    .line 74
-    .local v1, "empty":Z
     :goto_1
     if-eqz v1, :cond_4
 
-    .line 75
     new-instance v2, Lcom/google/common/collect/EmptyContiguousSet;
 
     invoke-direct {v2, p1}, Lcom/google/common/collect/EmptyContiguousSet;-><init>(Lcom/google/common/collect/DiscreteDomain;)V
 
     goto :goto_2
 
-    .line 76
     :cond_4
     new-instance v2, Lcom/google/common/collect/RegularContiguousSet;
 
     invoke-direct {v2, v0, p1}, Lcom/google/common/collect/RegularContiguousSet;-><init>(Lcom/google/common/collect/Range;Lcom/google/common/collect/DiscreteDomain;)V
 
-    .line 74
     :goto_2
     return-object v2
 
-    .line 64
-    .end local v1    # "empty":Z
     :catch_0
     move-exception v1
 
-    .line 65
-    .local v1, "e":Ljava/util/NoSuchElementException;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v2, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
@@ -250,9 +220,6 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "toElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -270,7 +237,6 @@
 
 .method public headSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "NavigableSet"
     .end annotation
@@ -283,9 +249,6 @@
         }
     .end annotation
 
-    .line 95
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "toElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -302,8 +265,6 @@
 .method public bridge synthetic headSet(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ContiguousSet;->headSet(Ljava/lang/Comparable;)Lcom/google/common/collect/ContiguousSet;
@@ -319,8 +280,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->headSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -336,8 +295,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->headSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -350,8 +307,6 @@
 .method public bridge synthetic headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ContiguousSet;->headSet(Ljava/lang/Comparable;)Lcom/google/common/collect/ContiguousSet;
@@ -374,8 +329,6 @@
 .method bridge synthetic headSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->headSetImpl(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -430,16 +383,10 @@
         }
     .end annotation
 
-    .line 99
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "fromElement":Ljava/lang/Comparable;, "TC;"
-    .local p2, "toElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 100
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 101
     invoke-virtual {p0}, Lcom/google/common/collect/ContiguousSet;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
@@ -464,7 +411,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 102
     invoke-virtual {p0, p1, v2, p2, v1}, Lcom/google/common/collect/ContiguousSet;->subSetImpl(Ljava/lang/Comparable;ZLjava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
 
     move-result-object v0
@@ -474,8 +420,6 @@
 
 .method public subSet(Ljava/lang/Comparable;ZLjava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
     .locals 1
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "NavigableSet"
     .end annotation
@@ -488,16 +432,10 @@
         }
     .end annotation
 
-    .line 111
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "fromElement":Ljava/lang/Comparable;, "TC;"
-    .local p3, "toElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 113
     invoke-virtual {p0}, Lcom/google/common/collect/ContiguousSet;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
@@ -518,7 +456,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 114
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/common/collect/ContiguousSet;->subSetImpl(Ljava/lang/Comparable;ZLjava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
 
     move-result-object v0
@@ -529,8 +466,6 @@
 .method public bridge synthetic subSet(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -548,8 +483,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p3, Ljava/lang/Comparable;
@@ -567,8 +500,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p3, Ljava/lang/Comparable;
@@ -583,8 +514,6 @@
 .method public bridge synthetic subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p2, Ljava/lang/Comparable;
@@ -609,8 +538,6 @@
 .method bridge synthetic subSetImpl(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     check-cast p3, Ljava/lang/Comparable;
@@ -632,9 +559,6 @@
         }
     .end annotation
 
-    .line 118
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "fromElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -652,7 +576,6 @@
 
 .method public tailSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
     .locals 1
-    .param p2, "inclusive"    # Z
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "NavigableSet"
     .end annotation
@@ -665,9 +588,6 @@
         }
     .end annotation
 
-    .line 126
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
-    .local p1, "fromElement":Ljava/lang/Comparable;, "TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -684,8 +604,6 @@
 .method public bridge synthetic tailSet(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ContiguousSet;->tailSet(Ljava/lang/Comparable;)Lcom/google/common/collect/ContiguousSet;
@@ -701,8 +619,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->tailSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -718,8 +634,6 @@
         value = "NavigableSet"
     .end annotation
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->tailSet(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -732,8 +646,6 @@
 .method public bridge synthetic tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ContiguousSet;->tailSet(Ljava/lang/Comparable;)Lcom/google/common/collect/ContiguousSet;
@@ -756,8 +668,6 @@
 .method bridge synthetic tailSetImpl(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedSet;
     .locals 0
 
-    .line 39
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     check-cast p1, Ljava/lang/Comparable;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ContiguousSet;->tailSetImpl(Ljava/lang/Comparable;Z)Lcom/google/common/collect/ContiguousSet;
@@ -770,8 +680,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 170
-    .local p0, "this":Lcom/google/common/collect/ContiguousSet;, "Lcom/google/common/collect/ContiguousSet<TC;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ContiguousSet;->range()Lcom/google/common/collect/Range;
 
     move-result-object v0

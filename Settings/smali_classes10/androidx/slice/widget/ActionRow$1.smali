@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/widget/ActionRow;Landroidx/slice/SliceItem;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/slice/widget/ActionRow;
 
-    .line 138
     iput-object p1, p0, Landroidx/slice/widget/ActionRow$1;->this$0:Landroidx/slice/widget/ActionRow;
 
     iput-object p2, p0, Landroidx/slice/widget/ActionRow$1;->val$actionItem:Landroidx/slice/SliceItem;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 143
     :try_start_0
     iget-object v0, p0, Landroidx/slice/widget/ActionRow$1;->val$actionItem:Landroidx/slice/SliceItem;
 
@@ -54,19 +50,13 @@
     :try_end_0
     .catch Landroid/app/PendingIntent$CanceledException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 146
     goto :goto_0
 
-    .line 144
     :catch_0
     move-exception v0
 
-    .line 145
-    .local v0, "e":Landroid/app/PendingIntent$CanceledException;
     invoke-virtual {v0}, Landroid/app/PendingIntent$CanceledException;->printStackTrace()V
 
-    .line 147
-    .end local v0    # "e":Landroid/app/PendingIntent$CanceledException;
     :goto_0
     return-void
 .end method

@@ -54,13 +54,8 @@
         }
     .end annotation
 
-    .line 1802
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture<TV;TX;>;"
-    .local p1, "delegate":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<TV;>;"
-    .local p2, "mapper":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-Ljava/lang/Exception;TX;>;"
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/AbstractCheckedFuture;-><init>(Lcom/google/common/util/concurrent/ListenableFuture;)V
 
-    .line 1804
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -69,7 +64,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture;->mapper:Lcom/google/common/base/Function;
 
-    .line 1805
     return-void
 .end method
 
@@ -77,7 +71,6 @@
 # virtual methods
 .method protected mapException(Ljava/lang/Exception;)Ljava/lang/Exception;
     .locals 1
-    .param p1, "e"    # Ljava/lang/Exception;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,8 +79,6 @@
         }
     .end annotation
 
-    .line 1809
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture;, "Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture<TV;TX;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$MappingCheckedFuture;->mapper:Lcom/google/common/base/Function;
 
     invoke-interface {v0, p1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;

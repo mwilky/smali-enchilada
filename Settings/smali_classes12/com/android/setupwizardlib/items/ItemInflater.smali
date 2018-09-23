@@ -22,12 +22,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/setupwizardlib/items/ReflectionInflater;-><init>(Landroid/content/Context;)V
 
-    .line 32
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -54,7 +51,6 @@
 
     invoke-virtual {p0, v0}, Lcom/android/setupwizardlib/items/ItemInflater;->setDefaultPackage(Ljava/lang/String;)V
 
-    .line 33
     return-void
 .end method
 
@@ -62,25 +58,19 @@
 # virtual methods
 .method protected onAddChildItem(Lcom/android/setupwizardlib/items/ItemHierarchy;Lcom/android/setupwizardlib/items/ItemHierarchy;)V
     .locals 3
-    .param p1, "parent"    # Lcom/android/setupwizardlib/items/ItemHierarchy;
-    .param p2, "child"    # Lcom/android/setupwizardlib/items/ItemHierarchy;
 
-    .line 37
     instance-of v0, p1, Lcom/android/setupwizardlib/items/ItemInflater$ItemParent;
 
     if-eqz v0, :cond_0
 
-    .line 38
     move-object v0, p1
 
     check-cast v0, Lcom/android/setupwizardlib/items/ItemInflater$ItemParent;
 
     invoke-interface {v0, p2}, Lcom/android/setupwizardlib/items/ItemInflater$ItemParent;->addChild(Lcom/android/setupwizardlib/items/ItemHierarchy;)V
 
-    .line 42
     return-void
 
-    .line 40
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -106,7 +96,6 @@
 .method protected bridge synthetic onAddChildItem(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 24
     check-cast p1, Lcom/android/setupwizardlib/items/ItemHierarchy;
 
     check-cast p2, Lcom/android/setupwizardlib/items/ItemHierarchy;

@@ -26,7 +26,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 1150
     new-instance v0, Lcom/caverock/androidsvg/SVG$Colour;
 
     const/4 v1, 0x0
@@ -40,15 +39,11 @@
 
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "val"    # I
 
-    .line 1152
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgPaint;-><init>()V
 
-    .line 1154
     iput p1, p0, Lcom/caverock/androidsvg/SVG$Colour;->colour:I
 
-    .line 1155
     return-void
 .end method
 
@@ -57,7 +52,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 1159
     const-string v0, "#%06x"
 
     const/4 v1, 0x1

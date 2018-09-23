@@ -27,10 +27,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 43
     invoke-direct {p0}, Lcom/android/settings/core/InstrumentedFragment;-><init>()V
 
-    .line 101
     new-instance v0, Lcom/android/settings/CryptKeeperConfirm$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/CryptKeeperConfirm$1;-><init>(Lcom/android/settings/CryptKeeperConfirm;)V
@@ -43,7 +41,6 @@
 .method private establishFinalConfirmationState()V
     .locals 2
 
-    .line 153
     iget-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mContentView:Landroid/view/View;
 
     const v1, 0x7f0a01c3
@@ -56,14 +53,12 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mFinalButton:Landroid/widget/Button;
 
-    .line 154
     iget-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mFinalButton:Landroid/widget/Button;
 
     iget-object v1, p0, Lcom/android/settings/CryptKeeperConfirm;->mFinalClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 155
     return-void
 .end method
 
@@ -72,7 +67,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 49
     const/16 v0, 0x21
 
     return v0
@@ -80,12 +74,9 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 159
     invoke-super {p0, p1}, Lcom/android/settings/core/InstrumentedFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 160
     invoke-virtual {p0}, Lcom/android/settings/CryptKeeperConfirm;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -94,17 +85,12 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
 
-    .line 161
     return-void
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 2
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "container"    # Landroid/view/ViewGroup;
-    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 166
     const v0, 0x7f0d0063
 
     const/4 v1, 0x0
@@ -115,10 +101,8 @@
 
     iput-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mContentView:Landroid/view/View;
 
-    .line 167
     invoke-direct {p0}, Lcom/android/settings/CryptKeeperConfirm;->establishFinalConfirmationState()V
 
-    .line 168
     iget-object v0, p0, Lcom/android/settings/CryptKeeperConfirm;->mContentView:Landroid/view/View;
 
     return-object v0

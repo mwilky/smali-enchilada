@@ -10,7 +10,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,8 +19,6 @@
 # virtual methods
 .method public getControllers(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -34,7 +31,6 @@
         }
     .end annotation
 
-    .line 42
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -44,9 +40,7 @@
 
 .method public isSensorAvailable(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 37
     const/4 v0, 0x0
 
     return v0
@@ -54,9 +48,7 @@
 
 .method public isSupported(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 32
     const/4 v0, 0x0
 
     return v0

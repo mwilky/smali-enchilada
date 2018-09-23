@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 277
     new-instance v0, Lcom/google/common/base/Predicates$ObjectPredicate$1;
 
     const-string v1, "ALWAYS_TRUE"
@@ -55,7 +54,6 @@
 
     sput-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->ALWAYS_TRUE:Lcom/google/common/base/Predicates$ObjectPredicate;
 
-    .line 286
     new-instance v0, Lcom/google/common/base/Predicates$ObjectPredicate$2;
 
     const-string v1, "ALWAYS_FALSE"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->ALWAYS_FALSE:Lcom/google/common/base/Predicates$ObjectPredicate;
 
-    .line 295
     new-instance v0, Lcom/google/common/base/Predicates$ObjectPredicate$3;
 
     const-string v1, "IS_NULL"
@@ -77,7 +74,6 @@
 
     sput-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->IS_NULL:Lcom/google/common/base/Predicates$ObjectPredicate;
 
-    .line 304
     new-instance v0, Lcom/google/common/base/Predicates$ObjectPredicate$4;
 
     const-string v1, "NOT_NULL"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->NOT_NULL:Lcom/google/common/base/Predicates$ObjectPredicate;
 
-    .line 275
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/common/base/Predicates$ObjectPredicate;
@@ -122,7 +117,6 @@
         }
     .end annotation
 
-    .line 275
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -130,11 +124,7 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/base/Predicates$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # Lcom/google/common/base/Predicates$1;
 
-    .line 275
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Predicates$ObjectPredicate;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -142,9 +132,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/Predicates$ObjectPredicate;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 275
     const-class v0, Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -159,7 +147,6 @@
 .method public static values()[Lcom/google/common/base/Predicates$ObjectPredicate;
     .locals 1
 
-    .line 275
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->$VALUES:[Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-virtual {v0}, [Lcom/google/common/base/Predicates$ObjectPredicate;->clone()Ljava/lang/Object;
@@ -185,6 +172,5 @@
         }
     .end annotation
 
-    .line 315
     return-object p0
 .end method

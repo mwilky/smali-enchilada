@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/OPEditText;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/OPEditText;
 
-    .line 107
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPEditText$2;->this$0:Lcom/oneplus/lib/widget/OPEditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 111
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 112
-    .local v0, "value":Ljava/lang/Integer;
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPEditText$2;->this$0:Lcom/oneplus/lib/widget/OPEditText;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -57,6 +51,5 @@
 
     invoke-virtual {v1, v2}, Lcom/oneplus/lib/widget/OPEditText;->setHighlightColor(I)V
 
-    .line 113
     return-void
 .end method

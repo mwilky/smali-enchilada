@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 292
     invoke-static {}, Lcom/android/settings/password/ConfirmLockPattern$Stage;->values()[Lcom/android/settings/password/ConfirmLockPattern$Stage;
 
     move-result-object v0

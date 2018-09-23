@@ -51,12 +51,10 @@
 .method constructor <init>(Ljava/util/Iterator;)V
     .locals 0
 
-    .line 532
     iput-object p1, p0, Lcom/google/common/collect/Iterators$5;->val$inputs:Ljava/util/Iterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 533
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object p1
@@ -71,7 +69,6 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 546
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->current:Ljava/util/Iterator;
 
@@ -87,19 +84,16 @@
 
     move v1, v0
 
-    .local v1, "currentHasNext":Z
     if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->val$inputs:Ljava/util/Iterator;
 
-    .line 547
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 548
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->val$inputs:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -112,7 +106,6 @@
 
     goto :goto_0
 
-    .line 550
     :cond_0
     return v1
 .end method
@@ -125,19 +118,16 @@
         }
     .end annotation
 
-    .line 554
     invoke-virtual {p0}, Lcom/google/common/collect/Iterators$5;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 557
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->current:Ljava/util/Iterator;
 
     iput-object v0, p0, Lcom/google/common/collect/Iterators$5;->removeFrom:Ljava/util/Iterator;
 
-    .line 558
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->current:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -146,7 +136,6 @@
 
     return-object v0
 
-    .line 555
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -158,7 +147,6 @@
 .method public remove()V
     .locals 1
 
-    .line 562
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->removeFrom:Ljava/util/Iterator;
 
     if-eqz v0, :cond_0
@@ -173,16 +161,13 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/collect/CollectPreconditions;->checkRemove(Z)V
 
-    .line 563
     iget-object v0, p0, Lcom/google/common/collect/Iterators$5;->removeFrom:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 564
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/Iterators$5;->removeFrom:Ljava/util/Iterator;
 
-    .line 565
     return-void
 .end method

@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 68
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 80
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/android/settings/gestures/AssistGestureSettings;->access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;)Ljava/util/List;
@@ -52,8 +49,6 @@
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,18 +60,14 @@
         }
     .end annotation
 
-    .line 72
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 73
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f16001d
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 74
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;
@@ -94,22 +85,17 @@
 
 .method protected isPageSearchEnabled(Landroid/content/Context;)Z
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 85
     new-instance v0, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;
 
     const-string v1, "gesture_assist_input_summary"
 
     invoke-direct {v0, p1, v1}, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 88
-    .local v0, "controller":Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;->setAssistOnly(Z)Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;
 
-    .line 89
     invoke-virtual {v0}, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;->isAvailable()Z
 
     move-result v1

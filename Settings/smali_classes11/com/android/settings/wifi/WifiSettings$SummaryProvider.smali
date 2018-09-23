@@ -32,19 +32,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/dashboard/SummaryLoader;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 1204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1205
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mContext:Landroid/content/Context;
 
-    .line 1206
     iput-object p2, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 1207
     new-instance v0, Lcom/android/settings/wifi/WifiSummaryUpdater;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mContext:Landroid/content/Context;
@@ -53,7 +47,6 @@
 
     iput-object v0, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mSummaryHelper:Lcom/android/settings/wifi/WifiSummaryUpdater;
 
-    .line 1208
     return-void
 .end method
 
@@ -61,26 +54,20 @@
 # virtual methods
 .method public onSummaryChanged(Ljava/lang/String;)V
     .locals 1
-    .param p1, "summary"    # Ljava/lang/String;
 
-    .line 1218
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 1219
     return-void
 .end method
 
 .method public setListening(Z)V
     .locals 1
-    .param p1, "listening"    # Z
 
-    .line 1213
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSettings$SummaryProvider;->mSummaryHelper:Lcom/android/settings/wifi/WifiSummaryUpdater;
 
     invoke-virtual {v0, p1}, Lcom/android/settings/wifi/WifiSummaryUpdater;->register(Z)V
 
-    .line 1214
     return-void
 .end method

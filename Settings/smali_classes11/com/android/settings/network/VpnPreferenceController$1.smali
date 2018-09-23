@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/network/VpnPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/network/VpnPreferenceController;
 
-    .line 185
     iput-object p1, p0, Lcom/android/settings/network/VpnPreferenceController$1;->this$0:Lcom/android/settings/network/VpnPreferenceController;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,26 +33,20 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 1
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 188
     iget-object v0, p0, Lcom/android/settings/network/VpnPreferenceController$1;->this$0:Lcom/android/settings/network/VpnPreferenceController;
 
     invoke-virtual {v0}, Lcom/android/settings/network/VpnPreferenceController;->updateSummary()V
 
-    .line 189
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 1
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 193
     iget-object v0, p0, Lcom/android/settings/network/VpnPreferenceController$1;->this$0:Lcom/android/settings/network/VpnPreferenceController;
 
     invoke-virtual {v0}, Lcom/android/settings/network/VpnPreferenceController;->updateSummary()V
 
-    .line 194
     return-void
 .end method

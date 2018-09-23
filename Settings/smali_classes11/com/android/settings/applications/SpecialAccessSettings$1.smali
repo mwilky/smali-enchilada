@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 85
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 100
     invoke-static {p1}, Lcom/android/settings/applications/SpecialAccessSettings;->access$000(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -50,8 +47,6 @@
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,26 +58,19 @@
         }
     .end annotation
 
-    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 91
-    .local v0, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/provider/SearchIndexableResource;>;"
     new-instance v1, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v1, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 92
-    .local v1, "sir":Landroid/provider/SearchIndexableResource;
     const v2, 0x7f1600bd
 
     iput v2, v1, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 93
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 94
     return-object v0
 .end method

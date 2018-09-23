@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/RecentAppsPreferenceController;Landroid/content/Context;ILcom/android/settingslib/wrapper/PackageManagerWrapper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/RecentAppsPreferenceController;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "installReason"    # I
-    .param p4, "packageManager"    # Lcom/android/settingslib/wrapper/PackageManagerWrapper;
 
-    .line 150
     iput-object p1, p0, Lcom/android/settings/applications/RecentAppsPreferenceController$1;->this$0:Lcom/android/settings/applications/RecentAppsPreferenceController;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/settings/applications/InstalledAppCounter;-><init>(Landroid/content/Context;ILcom/android/settingslib/wrapper/PackageManagerWrapper;)V
@@ -38,9 +33,7 @@
 # virtual methods
 .method protected onCountComplete(I)V
     .locals 6
-    .param p1, "num"    # I
 
-    .line 153
     iget-object v0, p0, Lcom/android/settings/applications/RecentAppsPreferenceController$1;->this$0:Lcom/android/settings/applications/RecentAppsPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/RecentAppsPreferenceController;->access$000(Lcom/android/settings/applications/RecentAppsPreferenceController;)Z
@@ -53,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 154
     iget-object v0, p0, Lcom/android/settings/applications/RecentAppsPreferenceController$1;->this$0:Lcom/android/settings/applications/RecentAppsPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/RecentAppsPreferenceController;->access$200(Lcom/android/settings/applications/RecentAppsPreferenceController;)Landroid/support/v7/preference/Preference;
@@ -66,7 +58,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f120fa2
+    const v4, 0x7f120f9b
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -84,7 +76,6 @@
 
     goto :goto_0
 
-    .line 156
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/RecentAppsPreferenceController$1;->this$0:Lcom/android/settings/applications/RecentAppsPreferenceController;
 
@@ -114,7 +105,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 158
     iget-object v0, p0, Lcom/android/settings/applications/RecentAppsPreferenceController$1;->this$0:Lcom/android/settings/applications/RecentAppsPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/RecentAppsPreferenceController;->access$200(Lcom/android/settings/applications/RecentAppsPreferenceController;)Landroid/support/v7/preference/Preference;
@@ -125,7 +115,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/Preference;->setIcon(I)V
 
-    .line 161
     :goto_0
     return-void
 .end method

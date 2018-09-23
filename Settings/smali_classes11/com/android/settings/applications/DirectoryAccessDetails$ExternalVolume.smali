@@ -35,22 +35,17 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "uuid"    # Ljava/lang/String;
 
-    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 314
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/settings/applications/DirectoryAccessDetails$ExternalVolume;->children:Ljava/util/List;
 
-    .line 318
     iput-object p1, p0, Lcom/android/settings/applications/DirectoryAccessDetails$ExternalVolume;->uuid:Ljava/lang/String;
 
-    .line 319
     return-void
 .end method
 
@@ -59,7 +54,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 323
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

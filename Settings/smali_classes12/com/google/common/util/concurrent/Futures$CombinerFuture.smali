@@ -50,16 +50,10 @@
         }
     .end annotation
 
-    .line 1056
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinerFuture;, "Lcom/google/common/util/concurrent/Futures$CombinerFuture<TV;>;"
-    .local p1, "callable":Ljava/util/concurrent/Callable;, "Ljava/util/concurrent/Callable<TV;>;"
-    .local p2, "futures":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/util/concurrent/ListenableFuture<*>;>;"
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/ListenableFutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
-    .line 1057
     iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$CombinerFuture;->futures:Lcom/google/common/collect/ImmutableList;
 
-    .line 1058
     return-void
 .end method
 
@@ -67,21 +61,15 @@
 # virtual methods
 .method public cancel(Z)Z
     .locals 3
-    .param p1, "mayInterruptIfRunning"    # Z
 
-    .line 1061
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinerFuture;, "Lcom/google/common/util/concurrent/Futures$CombinerFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinerFuture;->futures:Lcom/google/common/collect/ImmutableList;
 
-    .line 1062
-    .local v0, "futures":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/util/concurrent/ListenableFuture<*>;>;"
     invoke-super {p0, p1}, Lcom/google/common/util/concurrent/ListenableFutureTask;->cancel(Z)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1063
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v1
@@ -99,21 +87,15 @@
 
     check-cast v2, Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 1064
-    .local v2, "future":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<*>;"
     invoke-interface {v2, p1}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    .line 1065
-    .end local v2    # "future":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<*>;"
     goto :goto_0
 
-    .line 1066
     :cond_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 1068
     :cond_1
     const/4 v1, 0x0
 
@@ -123,27 +105,19 @@
 .method protected done()V
     .locals 1
 
-    .line 1072
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinerFuture;, "Lcom/google/common/util/concurrent/Futures$CombinerFuture<TV;>;"
     invoke-super {p0}, Lcom/google/common/util/concurrent/ListenableFutureTask;->done()V
 
-    .line 1073
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinerFuture;->futures:Lcom/google/common/collect/ImmutableList;
 
-    .line 1074
     return-void
 .end method
 
 .method protected setException(Ljava/lang/Throwable;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 1077
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinerFuture;, "Lcom/google/common/util/concurrent/Futures$CombinerFuture<TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/util/concurrent/ListenableFutureTask;->setException(Ljava/lang/Throwable;)V
 
-    .line 1078
     return-void
 .end method

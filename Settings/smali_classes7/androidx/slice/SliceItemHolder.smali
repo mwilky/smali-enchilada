@@ -30,23 +30,16 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Object;Z)V
     .locals 2
-    .param p1, "format"    # Ljava/lang/String;
-    .param p2, "mObj"    # Ljava/lang/Object;
-    .param p3, "isStream"    # Z
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -157,7 +150,6 @@
 
     goto/16 :goto_4
 
-    .line 92
     :pswitch_0
     move-object v0, p2
 
@@ -171,7 +163,6 @@
 
     goto :goto_4
 
-    .line 89
     :pswitch_1
     move-object v0, p2
 
@@ -183,10 +174,8 @@
 
     iput v0, p0, Landroidx/slice/SliceItemHolder;->mInt:I
 
-    .line 90
     goto :goto_4
 
-    .line 85
     :pswitch_2
     instance-of v0, p2, Landroid/text/Spanned;
 
@@ -210,24 +199,19 @@
     :goto_2
     iput-object v0, p0, Landroidx/slice/SliceItemHolder;->mStr:Ljava/lang/String;
 
-    .line 87
     goto :goto_4
 
-    .line 79
     :pswitch_3
     if-nez p3, :cond_2
 
-    .line 82
     move-object v0, p2
 
     check-cast v0, Landroid/os/Parcelable;
 
     iput-object v0, p0, Landroidx/slice/SliceItemHolder;->mParcelable:Landroid/os/Parcelable;
 
-    .line 83
     goto :goto_4
 
-    .line 80
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -237,7 +221,6 @@
 
     throw v0
 
-    .line 76
     :pswitch_4
     move-object v0, p2
 
@@ -245,10 +228,8 @@
 
     iput-object v0, p0, Landroidx/slice/SliceItemHolder;->mVersionedParcelable:Landroidx/versionedparcelable/VersionedParcelable;
 
-    .line 77
     goto :goto_4
 
-    .line 63
     :pswitch_5
     move-object v0, p2
 
@@ -260,10 +241,8 @@
 
     if-eqz v0, :cond_4
 
-    .line 64
     if-nez p3, :cond_3
 
-    .line 67
     move-object v0, p2
 
     check-cast v0, Landroid/support/v4/util/Pair;
@@ -276,7 +255,6 @@
 
     goto :goto_3
 
-    .line 65
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -286,11 +264,9 @@
 
     throw v0
 
-    .line 69
     :cond_4
     if-eqz p3, :cond_5
 
-    .line 72
     :goto_3
     move-object v0, p2
 
@@ -302,10 +278,8 @@
 
     iput-object v0, p0, Landroidx/slice/SliceItemHolder;->mVersionedParcelable:Landroidx/versionedparcelable/VersionedParcelable;
 
-    .line 73
     goto :goto_4
 
-    .line 70
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -315,7 +289,6 @@
 
     throw v0
 
-    .line 95
     :goto_4
     return-void
 
@@ -346,9 +319,7 @@
 # virtual methods
 .method public getObj(Ljava/lang/String;)Ljava/lang/Object;
     .locals 3
-    .param p1, "format"    # Ljava/lang/String;
 
-    .line 101
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -457,7 +428,6 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 116
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -478,7 +448,6 @@
 
     throw v0
 
-    .line 114
     :pswitch_0
     iget-wide v0, p0, Landroidx/slice/SliceItemHolder;->mLong:J
 
@@ -488,7 +457,6 @@
 
     return-object v0
 
-    .line 112
     :pswitch_1
     iget v0, p0, Landroidx/slice/SliceItemHolder;->mInt:I
 
@@ -498,7 +466,6 @@
 
     return-object v0
 
-    .line 110
     :pswitch_2
     iget-object v0, p0, Landroidx/slice/SliceItemHolder;->mStr:Ljava/lang/String;
 
@@ -508,19 +475,16 @@
 
     return-object v0
 
-    .line 108
     :pswitch_3
     iget-object v0, p0, Landroidx/slice/SliceItemHolder;->mParcelable:Landroid/os/Parcelable;
 
     return-object v0
 
-    .line 106
     :pswitch_4
     iget-object v0, p0, Landroidx/slice/SliceItemHolder;->mVersionedParcelable:Landroidx/versionedparcelable/VersionedParcelable;
 
     return-object v0
 
-    .line 103
     :pswitch_5
     new-instance v0, Landroid/support/v4/util/Pair;
 

@@ -17,10 +17,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;)V
     .locals 6
-    .param p3, "wordBoundary"    # Lcom/google/common/base/CharMatcher;
-    .param p4, "wordSeparator"    # Ljava/lang/String;
 
-    .line 76
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -42,9 +39,7 @@
 # virtual methods
 .method normalizeWord(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "word"    # Ljava/lang/String;
 
-    .line 78
     invoke-static {p1}, Lcom/google/common/base/CaseFormat;->access$100(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0

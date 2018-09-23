@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
-    .line 232
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-direct {p0}, Lcom/oneplus/lib/util/loading/LoadingHelper;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method protected hideProgree(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "progreeView"    # Ljava/lang/Object;
 
-    .line 253
     :try_start_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
@@ -57,7 +53,6 @@
 
     goto :goto_0
 
-    .line 257
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
@@ -79,7 +74,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 258
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -90,20 +84,16 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 261
     :cond_1
     goto :goto_1
 
-    .line 254
     :cond_2
     :goto_0
     return-void
 
-    .line 260
     :catch_0
     move-exception v0
 
-    .line 262
     :goto_1
     return-void
 .end method
@@ -111,7 +101,6 @@
 .method protected showProgree()Ljava/lang/Object;
     .locals 3
 
-    .line 236
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->isFinishing()Z
@@ -130,7 +119,6 @@
 
     goto :goto_0
 
-    .line 240
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
@@ -152,7 +140,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 241
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -161,7 +148,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 243
     :cond_1
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
@@ -171,7 +157,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
-    .line 244
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -182,7 +167,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 245
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -191,7 +175,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 246
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -200,7 +183,7 @@
 
     iget-object v1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
-    const v2, 0x7f120b96
+    const v2, 0x7f120b92
 
     invoke-virtual {v1, v2}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->getString(I)Ljava/lang/String;
 
@@ -208,7 +191,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 247
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)Landroid/app/ProgressDialog;
@@ -217,7 +199,6 @@
 
     return-object v0
 
-    .line 237
     :cond_2
     :goto_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$4;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;

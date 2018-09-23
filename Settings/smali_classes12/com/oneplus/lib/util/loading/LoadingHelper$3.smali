@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/util/loading/LoadingHelper;ZLcom/oneplus/lib/util/loading/LoadingHelper$FinishShowCallback;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/util/loading/LoadingHelper;
 
-    .line 112
     iput-object p1, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     iput-boolean p2, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->val$shown:Z
@@ -47,12 +45,10 @@
 .method public run()V
     .locals 2
 
-    .line 116
     iget-boolean v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->val$shown:Z
 
     if-eqz v0, :cond_0
 
-    .line 117
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
 
     iget-object v1, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->this$0:Lcom/oneplus/lib/util/loading/LoadingHelper;
@@ -63,20 +59,17 @@
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/util/loading/LoadingHelper;->hideProgree(Ljava/lang/Object;)V
 
-    .line 120
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->val$callback:Lcom/oneplus/lib/util/loading/LoadingHelper$FinishShowCallback;
 
     if-eqz v0, :cond_1
 
-    .line 121
     iget-object v0, p0, Lcom/oneplus/lib/util/loading/LoadingHelper$3;->val$callback:Lcom/oneplus/lib/util/loading/LoadingHelper$FinishShowCallback;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, v1}, Lcom/oneplus/lib/util/loading/LoadingHelper$FinishShowCallback;->finish(Z)V
 
-    .line 123
     :cond_1
     return-void
 .end method

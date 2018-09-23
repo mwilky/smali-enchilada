@@ -10,10 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "async"    # Z
 
-    .line 27
     const-string v0, "android.permission.RECORD_AUDIO"
 
     filled-new-array {v0}, [Ljava/lang/String;
@@ -22,7 +19,6 @@
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/settings/enterprise/AdminGrantedPermissionsPreferenceControllerBase;-><init>(Landroid/content/Context;Z[Ljava/lang/String;)V
 
-    .line 28
     return-void
 .end method
 
@@ -31,7 +27,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 32
     const-string v0, "enterprise_privacy_number_microphone_access_packages"
 
     return-object v0

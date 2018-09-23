@@ -36,7 +36,7 @@
 # direct methods
 .method constructor <init>(Ljava/util/Queue;Ljava/lang/Object;)V
     .locals 1
-    .param p2, "mutex"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -50,14 +50,10 @@
         }
     .end annotation
 
-    .line 1578
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
-    .local p1, "delegate":Ljava/util/Queue;, "Ljava/util/Queue<TE;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/Synchronized$1;)V
 
-    .line 1579
     return-void
 .end method
 
@@ -66,8 +62,6 @@
 .method bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 1574
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
     move-result-object v0
@@ -78,8 +72,6 @@
 .method bridge synthetic delegate()Ljava/util/Collection;
     .locals 1
 
-    .line 1574
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
     move-result-object v0
@@ -97,8 +89,6 @@
         }
     .end annotation
 
-    .line 1582
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
     move-result-object v0
@@ -116,13 +106,10 @@
         }
     .end annotation
 
-    .line 1587
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1588
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
@@ -136,7 +123,6 @@
 
     return-object v1
 
-    .line 1589
     :catchall_0
     move-exception v1
 
@@ -155,14 +141,10 @@
         }
     .end annotation
 
-    .line 1594
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1595
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
@@ -176,7 +158,6 @@
 
     return v1
 
-    .line 1596
     :catchall_0
     move-exception v1
 
@@ -195,13 +176,10 @@
         }
     .end annotation
 
-    .line 1601
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1602
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
@@ -215,7 +193,6 @@
 
     return-object v1
 
-    .line 1603
     :catchall_0
     move-exception v1
 
@@ -234,13 +211,10 @@
         }
     .end annotation
 
-    .line 1608
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1609
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
@@ -254,7 +228,6 @@
 
     return-object v1
 
-    .line 1610
     :catchall_0
     move-exception v1
 
@@ -273,13 +246,10 @@
         }
     .end annotation
 
-    .line 1615
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedQueue;, "Lcom/google/common/collect/Synchronized$SynchronizedQueue<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1616
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedQueue;->delegate()Ljava/util/Queue;
 
@@ -293,7 +263,6 @@
 
     return-object v1
 
-    .line 1617
     :catchall_0
     move-exception v1
 

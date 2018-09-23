@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;Ljava/util/Map$Entry;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;
 
-    .line 498
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;, "Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;->this$2:Lcom/google/common/collect/StandardTable$Column$EntrySetIterator;
 
     iput-object p2, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;->val$entry:Ljava/util/Map$Entry;
@@ -53,8 +50,6 @@
         }
     .end annotation
 
-    .line 500
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;, "Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -72,8 +67,6 @@
         }
     .end annotation
 
-    .line 503
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;, "Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -103,9 +96,6 @@
         }
     .end annotation
 
-    .line 506
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;, "Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$EntrySetIterator$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;

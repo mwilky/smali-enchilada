@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/UserSettings;
 
-    .line 1020
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$14;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -48,7 +46,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1020
     check-cast p1, [Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/UserSettings$14;->doInBackground([Ljava/util/List;)Ljava/lang/Void;
@@ -70,8 +67,6 @@
         }
     .end annotation
 
-    .line 1028
-    .local p1, "values":[Ljava/util/List;, "[Ljava/util/List<Ljava/lang/Integer;>;"
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
@@ -97,8 +92,6 @@
 
     move-result v1
 
-    .line 1029
-    .local v1, "userId":I
     iget-object v2, p0, Lcom/android/settings/users/UserSettings$14;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v2}, Lcom/android/settings/users/UserSettings;->access$600(Lcom/android/settings/users/UserSettings;)Landroid/os/UserManager;
@@ -109,11 +102,8 @@
 
     move-result-object v2
 
-    .line 1030
-    .local v2, "bitmap":Landroid/graphics/Bitmap;
     if-nez v2, :cond_0
 
-    .line 1031
     iget-object v3, p0, Lcom/android/settings/users/UserSettings$14;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-virtual {v3}, Lcom/android/settings/users/UserSettings;->getContext()Landroid/content/Context;
@@ -128,7 +118,6 @@
 
     move-result-object v2
 
-    .line 1033
     :cond_0
     iget-object v3, p0, Lcom/android/settings/users/UserSettings$14;->this$0:Lcom/android/settings/users/UserSettings;
 
@@ -138,12 +127,8 @@
 
     invoke-virtual {v3, v1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 1034
-    .end local v1    # "userId":I
-    .end local v2    # "bitmap":Landroid/graphics/Bitmap;
     goto :goto_0
 
-    .line 1035
     :cond_1
     const/4 v0, 0x0
 
@@ -153,7 +138,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 1020
     check-cast p1, Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/users/UserSettings$14;->onPostExecute(Ljava/lang/Void;)V
@@ -163,13 +147,10 @@
 
 .method protected onPostExecute(Ljava/lang/Void;)V
     .locals 1
-    .param p1, "result"    # Ljava/lang/Void;
 
-    .line 1023
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$14;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$000(Lcom/android/settings/users/UserSettings;)V
 
-    .line 1024
     return-void
 .end method

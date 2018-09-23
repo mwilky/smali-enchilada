@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/MasterSwitchPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/MasterSwitchPreference;
 
-    .line 79
     iput-object p1, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 82
     iget-object v0, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
     invoke-static {v0}, Lcom/android/settings/widget/MasterSwitchPreference;->access$000(Lcom/android/settings/widget/MasterSwitchPreference;)Lcom/oneplus/lib/widget/button/OPSwitch;
@@ -61,10 +57,8 @@
 
     if-nez v0, :cond_0
 
-    .line 83
     return-void
 
-    .line 85
     :cond_0
     iget-object v0, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/widget/MasterSwitchPreference;->setChecked(Z)V
 
-    .line 86
     iget-object v0, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
     iget-object v1, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
@@ -97,7 +90,6 @@
 
     if-nez v0, :cond_1
 
-    .line 87
     iget-object v0, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
     iget-object v1, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
@@ -112,7 +104,6 @@
 
     goto :goto_0
 
-    .line 89
     :cond_1
     iget-object v0, p0, Lcom/android/settings/widget/MasterSwitchPreference$1;->this$0:Lcom/android/settings/widget/MasterSwitchPreference;
 
@@ -124,7 +115,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/MasterSwitchPreference;->access$200(Lcom/android/settings/widget/MasterSwitchPreference;Z)Z
 
-    .line 91
     :goto_0
     return-void
 .end method

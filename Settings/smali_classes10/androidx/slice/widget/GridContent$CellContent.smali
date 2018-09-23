@@ -47,41 +47,31 @@
 # direct methods
 .method public constructor <init>(Landroidx/slice/SliceItem;)V
     .locals 1
-    .param p1, "cellItem"    # Landroidx/slice/SliceItem;
 
-    .line 325
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 318
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
-    .line 322
     const/4 v0, -0x1
 
     iput v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mImageMode:I
 
-    .line 326
     invoke-virtual {p0, p1}, Landroidx/slice/widget/GridContent$CellContent;->populate(Landroidx/slice/SliceItem;)Z
 
-    .line 327
     return-void
 .end method
 
 .method private isValidCellContent(Landroidx/slice/SliceItem;)Z
     .locals 6
-    .param p1, "cellItem"    # Landroidx/slice/SliceItem;
 
-    .line 406
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 407
-    .local v0, "format":Ljava/lang/String;
     const-string v1, "content_description"
 
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getSubType()Ljava/lang/String;
@@ -108,7 +98,6 @@
 
     move-result-object v1
 
-    .line 408
     invoke-virtual {p1, v1}, Landroidx/slice/SliceItem;->hasAnyHints([Ljava/lang/String;)Z
 
     move-result v1
@@ -126,14 +115,11 @@
     :goto_0
     move v1, v2
 
-    .line 409
-    .local v1, "isNonCellContent":Z
     :goto_1
     if-nez v1, :cond_3
 
     const-string v4, "text"
 
-    .line 410
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -142,7 +128,6 @@
 
     const-string v4, "long"
 
-    .line 411
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -151,7 +136,6 @@
 
     const-string v4, "image"
 
-    .line 412
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -181,7 +165,6 @@
         }
     .end annotation
 
-    .line 399
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     return-object v0
@@ -192,7 +175,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 452
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mContentDescr:Landroidx/slice/SliceItem;
 
     if-eqz v0, :cond_0
@@ -215,7 +197,6 @@
 .method public getContentIntent()Landroidx/slice/SliceItem;
     .locals 1
 
-    .line 392
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mContentIntent:Landroidx/slice/SliceItem;
 
     return-object v0
@@ -224,7 +205,6 @@
 .method public getImageMode()I
     .locals 1
 
-    .line 447
     iget v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mImageMode:I
 
     return v0
@@ -233,7 +213,6 @@
 .method public getTextCount()I
     .locals 1
 
-    .line 433
     iget v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mTextCount:I
 
     return v0
@@ -244,7 +223,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 385
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mTitleItem:Landroidx/slice/SliceItem;
 
     return-object v0
@@ -253,7 +231,6 @@
 .method public hasImage()Z
     .locals 1
 
-    .line 440
     iget-boolean v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mHasImage:Z
 
     return v0
@@ -262,7 +239,6 @@
 .method public isImageOnly()Z
     .locals 4
 
-    .line 426
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -306,7 +282,6 @@
 .method public isValid()Z
     .locals 2
 
-    .line 419
     iget-object v0, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -338,15 +313,11 @@
 
 .method public populate(Landroidx/slice/SliceItem;)Z
     .locals 11
-    .param p1, "cellItem"    # Landroidx/slice/SliceItem;
 
-    .line 333
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 334
-    .local v0, "format":Ljava/lang/String;
     const-string v1, "shortcut"
 
     invoke-virtual {p1, v1}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
@@ -357,7 +328,6 @@
 
     const-string v1, "slice"
 
-    .line 335
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -372,7 +342,6 @@
 
     if-eqz v1, :cond_c
 
-    .line 336
     :cond_0
     invoke-virtual {p1}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
 
@@ -382,8 +351,6 @@
 
     move-result-object v1
 
-    .line 338
-    .local v1, "items":Ljava/util/List;, "Ljava/util/List<Landroidx/slice/SliceItem;>;"
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -414,7 +381,6 @@
 
     const-string v2, "slice"
 
-    .line 339
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -431,7 +397,6 @@
 
     if-eqz v2, :cond_2
 
-    .line 340
     :cond_1
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -441,7 +406,6 @@
 
     iput-object v2, p0, Landroidx/slice/widget/GridContent$CellContent;->mContentIntent:Landroidx/slice/SliceItem;
 
-    .line 341
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -456,7 +420,6 @@
 
     move-result-object v1
 
-    .line 343
     :cond_2
     const-string v2, "action"
 
@@ -466,24 +429,17 @@
 
     if-eqz v2, :cond_3
 
-    .line 344
     iput-object p1, p0, Landroidx/slice/widget/GridContent$CellContent;->mContentIntent:Landroidx/slice/SliceItem;
 
-    .line 346
     :cond_3
     iput v3, p0, Landroidx/slice/widget/GridContent$CellContent;->mTextCount:I
 
-    .line 347
     const/4 v2, 0x0
 
-    .line 348
-    .local v2, "imageCount":I
     move v5, v2
 
     move v2, v3
 
-    .local v2, "i":I
-    .local v5, "imageCount":I
     :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -491,21 +447,16 @@
 
     if-ge v2, v6, :cond_b
 
-    .line 349
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroidx/slice/SliceItem;
 
-    .line 350
-    .local v6, "item":Landroidx/slice/SliceItem;
     invoke-virtual {v6}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 351
-    .local v7, "itemFormat":Ljava/lang/String;
     const-string v8, "content_description"
 
     invoke-virtual {v6}, Landroidx/slice/SliceItem;->getSubType()Ljava/lang/String;
@@ -518,12 +469,10 @@
 
     if-eqz v8, :cond_4
 
-    .line 352
     iput-object v6, p0, Landroidx/slice/widget/GridContent$CellContent;->mContentDescr:Landroidx/slice/SliceItem;
 
     goto :goto_3
 
-    .line 353
     :cond_4
     iget v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mTextCount:I
 
@@ -541,14 +490,12 @@
 
     const-string v8, "long"
 
-    .line 354
     invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
 
     if-eqz v8, :cond_7
 
-    .line 355
     :cond_5
     iget v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mTextCount:I
 
@@ -556,12 +503,10 @@
 
     iput v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mTextCount:I
 
-    .line 356
     iget-object v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 357
     iget-object v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mTitleItem:Landroidx/slice/SliceItem;
 
     if-eqz v8, :cond_6
@@ -570,7 +515,6 @@
 
     const-string v9, "title"
 
-    .line 358
     invoke-virtual {v8, v9}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
 
     move-result v8
@@ -585,13 +529,11 @@
 
     if-eqz v8, :cond_a
 
-    .line 359
     :cond_6
     iput-object v6, p0, Landroidx/slice/widget/GridContent$CellContent;->mTitleItem:Landroidx/slice/SliceItem;
 
     goto :goto_3
 
-    .line 361
     :cond_7
     if-ge v5, v4, :cond_a
 
@@ -607,7 +549,6 @@
 
     if-eqz v8, :cond_a
 
-    .line 362
     const-string v8, "no_tint"
 
     invoke-virtual {v6, v8}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
@@ -616,7 +557,6 @@
 
     if-eqz v8, :cond_9
 
-    .line 363
     const-string v8, "large"
 
     invoke-virtual {v6, v8}, Landroidx/slice/SliceItem;->hasHint(Ljava/lang/String;)Z
@@ -635,35 +575,24 @@
 
     goto :goto_2
 
-    .line 367
     :cond_9
     iput v3, p0, Landroidx/slice/widget/GridContent$CellContent;->mImageMode:I
 
-    .line 369
     :goto_2
     add-int/lit8 v5, v5, 0x1
 
-    .line 370
     iput-boolean v4, p0, Landroidx/slice/widget/GridContent$CellContent;->mHasImage:Z
 
-    .line 371
     iget-object v8, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 348
-    .end local v6    # "item":Landroidx/slice/SliceItem;
-    .end local v7    # "itemFormat":Ljava/lang/String;
     :cond_a
     :goto_3
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 374
-    .end local v1    # "items":Ljava/util/List;, "Ljava/util/List<Landroidx/slice/SliceItem;>;"
-    .end local v2    # "i":I
-    .end local v5    # "imageCount":I
     :cond_b
     goto :goto_4
 
@@ -674,12 +603,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 375
     iget-object v1, p0, Landroidx/slice/widget/GridContent$CellContent;->mCellItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 377
     :cond_d
     :goto_4
     invoke-virtual {p0}, Landroidx/slice/widget/GridContent$CellContent;->isValid()Z

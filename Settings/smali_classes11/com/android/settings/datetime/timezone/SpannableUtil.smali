@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,11 +14,7 @@
 
 .method public static varargs getResourcesText(Landroid/content/res/Resources;I[Ljava/lang/Object;)Landroid/text/Spannable;
     .locals 4
-    .param p0, "res"    # Landroid/content/res/Resources;
-    .param p1, "resId"    # I
-    .param p2, "args"    # [Ljava/lang/Object;
 
-    .line 36
     invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
@@ -34,14 +29,10 @@
 
     move-result-object v0
 
-    .line 37
-    .local v0, "locale":Ljava/util/Locale;
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 38
-    .local v1, "builder":Landroid/text/SpannableStringBuilder;
     new-instance v2, Ljava/util/Formatter;
 
     invoke-direct {v2, v1, v0}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
@@ -52,6 +43,5 @@
 
     invoke-virtual {v2, v3, p2}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
-    .line 39
     return-object v1
 .end method

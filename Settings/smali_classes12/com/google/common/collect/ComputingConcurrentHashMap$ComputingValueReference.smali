@@ -65,25 +65,18 @@
         }
     .end annotation
 
-    .line 291
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
-    .local p1, "computingFunction":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TK;+TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 288
     nop
 
-    .line 289
     invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->unset()Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
-    .line 292
     iput-object p1, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computingFunction:Lcom/google/common/base/Function;
 
-    .line 293
     return-void
 .end method
 
@@ -99,18 +92,13 @@
         }
     .end annotation
 
-    .line 348
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
-    .local p1, "newValue":Lcom/google/common/collect/MapMakerInternalMap$ValueReference;, "Lcom/google/common/collect/MapMakerInternalMap$ValueReference<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->setValueReference(Lcom/google/common/collect/MapMakerInternalMap$ValueReference;)V
 
-    .line 351
     return-void
 .end method
 
 .method compute(Ljava/lang/Object;I)Ljava/lang/Object;
     .locals 2
-    .param p2, "hash"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;I)TV;"
@@ -123,9 +111,6 @@
         }
     .end annotation
 
-    .line 356
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computingFunction:Lcom/google/common/base/Function;
 
@@ -135,37 +120,27 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 360
-    .local v0, "value":Ljava/lang/Object;, "TV;"
     nop
 
-    .line 359
     nop
 
-    .line 362
     new-instance v1, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputedReference;
 
     invoke-direct {v1, v0}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputedReference;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->setValueReference(Lcom/google/common/collect/MapMakerInternalMap$ValueReference;)V
 
-    .line 363
     return-object v0
 
-    .line 357
-    .end local v0    # "value":Ljava/lang/Object;, "TV;"
     :catch_0
     move-exception v0
 
-    .line 358
-    .local v0, "t":Ljava/lang/Throwable;
     new-instance v1, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;
 
     invoke-direct {v1, v0}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;-><init>(Ljava/lang/Throwable;)V
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->setValueReference(Lcom/google/common/collect/MapMakerInternalMap$ValueReference;)V
 
-    .line 359
     new-instance v1, Ljava/util/concurrent/ExecutionException;
 
     invoke-direct {v1, v0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
@@ -191,11 +166,6 @@
         }
     .end annotation
 
-    .line 310
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
-    .local p1, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "entry":Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;, "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
@@ -207,8 +177,6 @@
         }
     .end annotation
 
-    .line 299
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -224,8 +192,6 @@
         }
     .end annotation
 
-    .line 304
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -234,8 +200,6 @@
 .method public isComputingReference()Z
     .locals 1
 
-    .line 315
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -251,12 +215,8 @@
         }
     .end annotation
 
-    .line 367
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
-    .local p1, "valueReference":Lcom/google/common/collect/MapMakerInternalMap$ValueReference;, "Lcom/google/common/collect/MapMakerInternalMap$ValueReference<TK;TV;>;"
     monitor-enter p0
 
-    .line 368
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
@@ -264,20 +224,15 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 369
     iput-object p1, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
-    .line 370
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 372
     :cond_0
     monitor-exit p0
 
-    .line 373
     return-void
 
-    .line 372
     :catchall_0
     move-exception v0
 
@@ -302,29 +257,21 @@
         }
     .end annotation
 
-    .line 323
-    .local p0, "this":Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;, "Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
     sget-object v1, Lcom/google/common/collect/MapMakerInternalMap;->UNSET:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
 
     if-ne v0, v1, :cond_2
 
-    .line 324
     const/4 v0, 0x0
 
-    .line 326
-    .local v0, "interrupted":Z
     :try_start_0
     monitor-enter p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 327
     move v1, v0
 
-    .end local v0    # "interrupted":Z
-    .local v1, "interrupted":Z
     :goto_0
     :try_start_1
     iget-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
@@ -335,39 +282,30 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 329
     :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_2
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 332
     :goto_1
     goto :goto_0
 
-    .line 330
     :catch_0
     move-exception v0
 
-    .line 331
-    .local v0, "ie":Ljava/lang/InterruptedException;
     const/4 v1, 0x1
 
-    .end local v0    # "ie":Ljava/lang/InterruptedException;
     goto :goto_1
 
-    .line 334
     :cond_0
     :try_start_3
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 336
     if-eqz v1, :cond_2
 
-    .line 337
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -376,7 +314,6 @@
 
     goto :goto_3
 
-    .line 334
     :catchall_0
     move-exception v0
 
@@ -390,14 +327,11 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 336
     :catchall_1
     move-exception v0
 
     goto :goto_2
 
-    .end local v1    # "interrupted":Z
-    .local v0, "interrupted":Z
     :catchall_2
     move-exception v1
 
@@ -407,12 +341,9 @@
 
     move-object v0, v3
 
-    .end local v0    # "interrupted":Z
-    .restart local v1    # "interrupted":Z
     :goto_2
     if-eqz v1, :cond_1
 
-    .line 337
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -422,8 +353,6 @@
     :cond_1
     throw v0
 
-    .line 341
-    .end local v1    # "interrupted":Z
     :cond_2
     :goto_3
     iget-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;->computedReference:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;

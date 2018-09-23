@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback;Landroid/support/v4/media/MediaSession2ImplBase;Landroid/support/v4/media/DataSourceDesc;Landroid/support/v4/media/BaseMediaPlayer;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback;
 
-    .line 1283
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->this$0:Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$session:Landroid/support/v4/media/MediaSession2ImplBase;
@@ -55,7 +53,6 @@
 .method public run()V
     .locals 5
 
-    .line 1286
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->this$0:Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$session:Landroid/support/v4/media/MediaSession2ImplBase;
@@ -66,14 +63,10 @@
 
     move-result-object v0
 
-    .line 1287
-    .local v0, "item":Landroid/support/v4/media/MediaItem2;
     if-nez v0, :cond_0
 
-    .line 1288
     return-void
 
-    .line 1290
     :cond_0
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$session:Landroid/support/v4/media/MediaSession2ImplBase;
 
@@ -83,7 +76,6 @@
 
     iget-object v2, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$session:Landroid/support/v4/media/MediaSession2ImplBase;
 
-    .line 1291
     invoke-virtual {v2}, Landroid/support/v4/media/MediaSession2ImplBase;->getInstance()Landroid/support/v4/media/MediaSession2;
 
     move-result-object v2
@@ -92,10 +84,8 @@
 
     iget v4, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$state:I
 
-    .line 1290
     invoke-virtual {v1, v2, v3, v0, v4}, Landroid/support/v4/media/MediaSession2$SessionCallback;->onBufferingStateChanged(Landroid/support/v4/media/MediaSession2;Landroid/support/v4/media/BaseMediaPlayer;Landroid/support/v4/media/MediaItem2;I)V
 
-    .line 1292
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4;->val$session:Landroid/support/v4/media/MediaSession2ImplBase;
 
     new-instance v2, Landroid/support/v4/media/MediaSession2ImplBase$MyPlayerEventCallback$4$1;
@@ -104,6 +94,5 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/media/MediaSession2ImplBase;->notifyToAllControllers(Landroid/support/v4/media/MediaSession2ImplBase$NotifyRunnable;)V
 
-    .line 1299
     return-void
 .end method

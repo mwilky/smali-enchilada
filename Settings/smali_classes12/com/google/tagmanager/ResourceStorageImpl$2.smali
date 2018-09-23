@@ -27,7 +27,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ResourceStorageImpl;Lcom/google/tagmanager/proto/Resource$ResourceWithMetadata;)V
     .locals 0
 
-    .line 119
     iput-object p1, p0, Lcom/google/tagmanager/ResourceStorageImpl$2;->this$0:Lcom/google/tagmanager/ResourceStorageImpl;
 
     iput-object p2, p0, Lcom/google/tagmanager/ResourceStorageImpl$2;->val$resource:Lcom/google/tagmanager/proto/Resource$ResourceWithMetadata;
@@ -42,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 122
     iget-object v0, p0, Lcom/google/tagmanager/ResourceStorageImpl$2;->this$0:Lcom/google/tagmanager/ResourceStorageImpl;
 
     iget-object v1, p0, Lcom/google/tagmanager/ResourceStorageImpl$2;->val$resource:Lcom/google/tagmanager/proto/Resource$ResourceWithMetadata;
 
     invoke-virtual {v0, v1}, Lcom/google/tagmanager/ResourceStorageImpl;->saveResourceToDisk(Lcom/google/tagmanager/proto/Resource$ResourceWithMetadata;)Z
 
-    .line 123
     return-void
 .end method

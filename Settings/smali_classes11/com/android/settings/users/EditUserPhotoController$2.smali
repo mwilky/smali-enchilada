@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/EditUserPhotoController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/EditUserPhotoController;
 
-    .line 154
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$2;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 157
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$2;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$100(Lcom/android/settings/users/EditUserPhotoController;)V
 
-    .line 158
     return-void
 .end method

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,13 +30,8 @@
 # virtual methods
 .method public onShowError(Landroid/content/Context;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "messageResId"    # I
 
-    .line 134
     invoke-static {p1, p2, p3}, Lcom/android/settings/bluetooth/Utils;->showError(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 135
     return-void
 .end method

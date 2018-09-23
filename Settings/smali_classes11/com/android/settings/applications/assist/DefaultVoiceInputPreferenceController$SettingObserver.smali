@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;
 
-    .line 154
     iput-object p1, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;
 
     invoke-direct {p0}, Lcom/android/settings/applications/assist/AssistSettingObserver;-><init>()V
@@ -44,7 +42,6 @@
         }
     .end annotation
 
-    .line 157
     const/4 v0, 0x0
 
     return-object v0
@@ -53,11 +50,9 @@
 .method public onSettingChange()V
     .locals 1
 
-    .line 162
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController$SettingObserver;->this$0:Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;
 
     invoke-static {v0}, Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;->access$000(Lcom/android/settings/applications/assist/DefaultVoiceInputPreferenceController;)V
 
-    .line 163
     return-void
 .end method

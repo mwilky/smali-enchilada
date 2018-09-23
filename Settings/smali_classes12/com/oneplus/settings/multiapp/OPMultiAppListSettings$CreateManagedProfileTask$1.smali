@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
-    .line 478
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
     invoke-direct {p0}, Lcom/oneplus/settings/multiapp/OPDeleteNonRequiredAppsTask$Callback;-><init>()V
@@ -36,7 +34,6 @@
 .method public onError()V
     .locals 3
 
-    .line 507
     const-string v0, "OPMultiAppListSettings"
 
     const-string v1, "Delete non required apps task failed."
@@ -47,28 +44,24 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 508
     const-string v0, "OPMultiAppListSettings"
 
     const-string v1, "onCreate----createProfileForUser--onError"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 509
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
     iget-object v0, v0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$2000(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)V
 
-    .line 511
     return-void
 .end method
 
 .method public onSuccess()V
     .locals 4
 
-    .line 486
     :try_start_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
@@ -76,7 +69,6 @@
 
     invoke-static {v0}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$1500(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;)V
 
-    .line 487
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
     iget-object v0, v0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
@@ -87,7 +79,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 488
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
     iget-object v0, v0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;->this$0:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;
@@ -104,24 +95,18 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 498
     :cond_0
     goto :goto_0
 
-    .line 496
     :catch_0
     move-exception v0
 
-    .line 497
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "OPMultiAppListSettings"
 
     const-string v2, "Provisioning failed"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 499
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
 
@@ -151,6 +136,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$Secure;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 502
     return-void
 .end method

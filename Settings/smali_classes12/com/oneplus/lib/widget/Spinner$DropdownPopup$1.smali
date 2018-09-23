@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/Spinner$DropdownPopup;Lcom/oneplus/lib/widget/Spinner;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
-    .line 641
     iput-object p1, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iput-object p2, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->val$this$0:Lcom/oneplus/lib/widget/Spinner;
@@ -42,9 +40,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 3
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,15 +50,12 @@
         }
     .end annotation
 
-    .line 644
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->this$0:Lcom/oneplus/lib/widget/Spinner;
 
     invoke-virtual {v0, p3}, Lcom/oneplus/lib/widget/Spinner;->setSelection(I)V
 
-    .line 645
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->this$0:Lcom/oneplus/lib/widget/Spinner;
@@ -74,7 +66,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 646
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     iget-object v0, v0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->this$0:Lcom/oneplus/lib/widget/Spinner;
@@ -83,19 +74,16 @@
 
     iget-object v1, v1, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->mAdapter:Landroid/widget/ListAdapter;
 
-    .line 647
     invoke-interface {v1, p3}, Landroid/widget/ListAdapter;->getItemId(I)J
 
     move-result-wide v1
 
     invoke-virtual {v0, p2, p3, v1, v2}, Lcom/oneplus/lib/widget/Spinner;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 649
     :cond_0
     iget-object v0, p0, Lcom/oneplus/lib/widget/Spinner$DropdownPopup$1;->this$1:Lcom/oneplus/lib/widget/Spinner$DropdownPopup;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/Spinner$DropdownPopup;->dismiss()V
 
-    .line 650
     return-void
 .end method

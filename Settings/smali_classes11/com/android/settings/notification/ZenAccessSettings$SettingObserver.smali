@@ -22,10 +22,8 @@
 .method public constructor <init>(Lcom/android/settings/notification/ZenAccessSettings;)V
     .locals 1
 
-    .line 225
     iput-object p1, p0, Lcom/android/settings/notification/ZenAccessSettings$SettingObserver;->this$0:Lcom/android/settings/notification/ZenAccessSettings;
 
-    .line 226
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -36,7 +34,6 @@
 
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 227
     return-void
 .end method
 
@@ -44,14 +41,10 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 1
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 231
     iget-object v0, p0, Lcom/android/settings/notification/ZenAccessSettings$SettingObserver;->this$0:Lcom/android/settings/notification/ZenAccessSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenAccessSettings;->access$000(Lcom/android/settings/notification/ZenAccessSettings;)V
 
-    .line 232
     return-void
 .end method

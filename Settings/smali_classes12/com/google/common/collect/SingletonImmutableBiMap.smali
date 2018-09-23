@@ -58,22 +58,14 @@
         }
     .end annotation
 
-    .line 38
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
-    .local p1, "singleKey":Ljava/lang/Object;, "TK;"
-    .local p2, "singleValue":Ljava/lang/Object;, "TV;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableBiMap;-><init>()V
 
-    .line 39
     invoke-static {p1, p2}, Lcom/google/common/collect/CollectPreconditions;->checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 40
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
-    .line 41
     iput-object p2, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleValue:Ljava/lang/Object;
 
-    .line 42
     return-void
 .end method
 
@@ -87,23 +79,14 @@
         }
     .end annotation
 
-    .line 45
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
-    .local p1, "singleKey":Ljava/lang/Object;, "TK;"
-    .local p2, "singleValue":Ljava/lang/Object;, "TV;"
-    .local p3, "inverse":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TV;TK;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableBiMap;-><init>()V
 
-    .line 46
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
-    .line 47
     iput-object p2, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleValue:Ljava/lang/Object;
 
-    .line 48
     iput-object p3, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->inverse:Lcom/google/common/collect/ImmutableBiMap;
 
-    .line 49
     return-void
 .end method
 
@@ -117,9 +100,6 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
-    .local p1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -130,7 +110,6 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/SingletonImmutableBiMap;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 53
     return-void
 .end method
 
@@ -138,13 +117,11 @@
 # virtual methods
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 65
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -156,13 +133,11 @@
 
 .method public containsValue(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "value"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 69
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleValue:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -183,8 +158,6 @@
         }
     .end annotation
 
-    .line 78
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleValue:Ljava/lang/Object;
@@ -210,8 +183,6 @@
         }
     .end annotation
 
-    .line 83
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableSet;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet;
@@ -223,7 +194,7 @@
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -235,8 +206,6 @@
         }
     .end annotation
 
-    .line 56
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleKey:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -259,8 +228,6 @@
 .method public bridge synthetic inverse()Lcom/google/common/collect/BiMap;
     .locals 1
 
-    .line 31
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
@@ -278,15 +245,10 @@
         }
     .end annotation
 
-    .line 91
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->inverse:Lcom/google/common/collect/ImmutableBiMap;
 
-    .line 92
-    .local v0, "result":Lcom/google/common/collect/ImmutableBiMap;, "Lcom/google/common/collect/ImmutableBiMap<TV;TK;>;"
     if-nez v0, :cond_0
 
-    .line 93
     new-instance v1, Lcom/google/common/collect/SingletonImmutableBiMap;
 
     iget-object v2, p0, Lcom/google/common/collect/SingletonImmutableBiMap;->singleValue:Ljava/lang/Object;
@@ -299,7 +261,6 @@
 
     return-object v1
 
-    .line 96
     :cond_0
     return-object v0
 .end method
@@ -307,8 +268,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     const/4 v0, 0x0
 
     return v0
@@ -317,8 +276,6 @@
 .method public size()I
     .locals 1
 
-    .line 61
-    .local p0, "this":Lcom/google/common/collect/SingletonImmutableBiMap;, "Lcom/google/common/collect/SingletonImmutableBiMap<TK;TV;>;"
     const/4 v0, 0x1
 
     return v0

@@ -10,7 +10,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,9 +19,7 @@
 # virtual methods
 .method public isTextValid(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 28
     invoke-static {p1}, Lcom/android/settings/wifi/WifiUtils;->isSSIDTooLong(Ljava/lang/String;)Z
 
     move-result v0

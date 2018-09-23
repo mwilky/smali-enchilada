@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 37
     new-instance v0, Lcom/google/common/base/AbstractIterator$State;
 
     const-string v1, "READY"
@@ -79,7 +78,6 @@
 
     sput-object v0, Lcom/google/common/base/AbstractIterator$State;->FAILED:Lcom/google/common/base/AbstractIterator$State;
 
-    .line 36
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/common/base/AbstractIterator$State;
@@ -113,7 +111,6 @@
         }
     .end annotation
 
-    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -121,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/base/AbstractIterator$State;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 36
     const-class v0, Lcom/google/common/base/AbstractIterator$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -138,7 +133,6 @@
 .method public static values()[Lcom/google/common/base/AbstractIterator$State;
     .locals 1
 
-    .line 36
     sget-object v0, Lcom/google/common/base/AbstractIterator$State;->$VALUES:[Lcom/google/common/base/AbstractIterator$State;
 
     invoke-virtual {v0}, [Lcom/google/common/base/AbstractIterator$State;->clone()Ljava/lang/Object;

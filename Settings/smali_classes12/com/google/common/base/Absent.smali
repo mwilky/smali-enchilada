@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 33
     new-instance v0, Lcom/google/common/base/Absent;
 
     invoke-direct {v0}, Lcom/google/common/base/Absent;-><init>()V
@@ -49,8 +48,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 40
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     invoke-direct {p0}, Lcom/google/common/base/Optional;-><init>()V
 
     return-void
@@ -59,8 +56,6 @@
 .method private readResolve()Ljava/lang/Object;
     .locals 1
 
-    .line 90
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     sget-object v0, Lcom/google/common/base/Absent;->INSTANCE:Lcom/google/common/base/Absent;
 
     return-object v0
@@ -78,7 +73,6 @@
         }
     .end annotation
 
-    .line 37
     sget-object v0, Lcom/google/common/base/Absent;->INSTANCE:Lcom/google/common/base/Absent;
 
     return-object v0
@@ -96,8 +90,6 @@
         }
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
@@ -107,13 +99,11 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 78
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     if-ne p1, p0, :cond_0
 
     const/4 v0, 0x1
@@ -135,8 +125,6 @@
         }
     .end annotation
 
-    .line 47
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Optional.get() cannot be called on an absent value"
@@ -149,8 +137,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 82
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     const v0, 0x598df91c
 
     return v0
@@ -159,8 +145,6 @@
 .method public isPresent()Z
     .locals 1
 
-    .line 43
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     const/4 v0, 0x0
 
     return v0
@@ -178,9 +162,6 @@
         }
     .end annotation
 
-    .line 56
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
-    .local p1, "secondChoice":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<+TT;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -200,9 +181,6 @@
         }
     .end annotation
 
-    .line 60
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
-    .local p1, "supplier":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<+TT;>;"
     invoke-interface {p1}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -224,9 +202,6 @@
         }
     .end annotation
 
-    .line 51
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
-    .local p1, "defaultValue":Ljava/lang/Object;, "TT;"
     const-string v0, "use Optional.orNull() instead of Optional.or(null)"
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -247,8 +222,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 65
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -257,8 +230,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 86
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
     const-string v0, "Optional.absent()"
 
     return-object v0
@@ -278,12 +249,8 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/base/Absent;, "Lcom/google/common/base/Absent<TT;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TT;TV;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
     invoke-static {}, Lcom/google/common/base/Optional;->absent()Lcom/google/common/base/Optional;
 
     move-result-object v0

@@ -45,10 +45,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;Ljava/util/Iterator;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;
 
-    .line 927
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;, "Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;
 
     iput-object p2, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->val$entryIterator:Ljava/util/Iterator;
@@ -63,8 +60,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 932
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;, "Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->val$entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -82,8 +77,6 @@
         }
     .end annotation
 
-    .line 936
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;, "Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->val$entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -94,7 +87,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->entry:Ljava/util/Map$Entry;
 
-    .line 937
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -107,8 +99,6 @@
 .method public remove()V
     .locals 3
 
-    .line 941
-    .local p0, "this":Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;, "Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->entry:Ljava/util/Map$Entry;
 
     if-eqz v0, :cond_0
@@ -123,7 +113,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/collect/CollectPreconditions;->checkRemove(Z)V
 
-    .line 942
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -132,13 +121,10 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 943
-    .local v0, "collection":Ljava/util/Collection;, "Ljava/util/Collection<TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->val$entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    .line 944
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;
 
     iget-object v1, v1, Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;->this$0:Lcom/google/common/collect/AbstractMapBasedMultimap;
@@ -149,9 +135,7 @@
 
     invoke-static {v1, v2}, Lcom/google/common/collect/AbstractMapBasedMultimap;->access$220(Lcom/google/common/collect/AbstractMapBasedMultimap;I)I
 
-    .line 945
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 946
     return-void
 .end method

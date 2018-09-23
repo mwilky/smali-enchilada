@@ -25,7 +25,6 @@
 .method constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 287
     iput-object p1, p0, Lcom/android/settings/Utils$1;->val$positiveAction:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,14 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 290
     iget-object v0, p0, Lcom/android/settings/Utils$1;->val$positiveAction:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 291
     return-void
 .end method

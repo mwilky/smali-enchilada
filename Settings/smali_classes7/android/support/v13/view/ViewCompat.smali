@@ -12,9 +12,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat;-><init>()V
 
-    .line 30
     return-void
 .end method

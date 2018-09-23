@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/GuidedStepFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/GuidedStepFragment;
 
-    .line 1123
     iput-object p1, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$4;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
     .locals 1
-    .param p1, "action"    # Landroid/support/v17/leanback/widget/GuidedAction;
 
-    .line 1126
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$4;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/GuidedStepFragment;->mActionsStylist:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
@@ -51,10 +47,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1127
     return-void
 
-    .line 1129
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$4;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
@@ -64,12 +58,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 1130
     iget-object v0, p0, Landroid/support/v17/leanback/app/GuidedStepFragment$4;->this$0:Landroid/support/v17/leanback/app/GuidedStepFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/GuidedStepFragment;->collapseSubActions()V
 
-    .line 1132
     :cond_1
     return-void
 .end method

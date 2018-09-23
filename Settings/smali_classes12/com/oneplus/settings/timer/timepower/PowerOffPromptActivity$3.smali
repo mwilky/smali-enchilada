@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
-    .line 205
     iput-object p1, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$3;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,20 +37,16 @@
 .method public run()V
     .locals 8
 
-    .line 207
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$3;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
     const-string v1, "activity"
 
-    .line 208
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/app/ActivityManager;
 
-    .line 209
-    .local v0, "am":Landroid/app/ActivityManager;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
@@ -69,20 +63,14 @@
 
     iget-object v2, v2, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
-    .line 210
-    .local v2, "cn":Landroid/content/ComponentName;
     invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 211
-    .local v3, "pkg":Ljava/lang/String;
     invoke-virtual {v2}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 212
-    .local v4, "cls":Ljava/lang/String;
     const-string v5, "PowerOffPromptActivity"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -101,7 +89,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 213
     const-string v5, "PowerOffPromptActivity"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -120,7 +107,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 214
     const-string v5, "PowerOffPromptActivity"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -145,7 +131,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 215
     const-class v5, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$NewStylePowerOffPromptActivity;
 
     invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -158,7 +143,6 @@
 
     if-nez v5, :cond_0
 
-    .line 216
     iget-object v5, p0, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity$3;->this$0:Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;
 
     invoke-virtual {v5}, Lcom/oneplus/settings/timer/timepower/PowerOffPromptActivity;->getTaskId()I
@@ -167,7 +151,6 @@
 
     invoke-virtual {v0, v5, v1}, Landroid/app/ActivityManager;->moveTaskToFront(II)V
 
-    .line 219
     :cond_0
     return-void
 .end method

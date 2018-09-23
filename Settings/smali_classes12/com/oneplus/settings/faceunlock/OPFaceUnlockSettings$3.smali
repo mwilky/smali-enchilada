@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
-    .line 297
     iput-object p1, p0, Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings$3;->this$0:Lcom/oneplus/settings/faceunlock/OPFaceUnlockSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 301
     return-void
 .end method

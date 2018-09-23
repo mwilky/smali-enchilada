@@ -31,13 +31,9 @@
 # direct methods
 .method private varargs constructor <init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)V
     .locals 1
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "modes"    # [Lcom/google/common/io/FileWriteMode;
 
-    .line 193
     invoke-direct {p0}, Lcom/google/common/io/ByteSink;-><init>()V
 
-    .line 194
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -46,24 +42,18 @@
 
     iput-object v0, p0, Lcom/google/common/io/Files$FileByteSink;->file:Ljava/io/File;
 
-    .line 195
     invoke-static {p2}, Lcom/google/common/collect/ImmutableSet;->copyOf([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/io/Files$FileByteSink;->modes:Lcom/google/common/collect/ImmutableSet;
 
-    .line 196
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;Lcom/google/common/io/Files$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/io/File;
-    .param p2, "x1"    # [Lcom/google/common/io/FileWriteMode;
-    .param p3, "x2"    # Lcom/google/common/io/Files$1;
 
-    .line 188
     invoke-direct {p0, p1, p2}, Lcom/google/common/io/Files$FileByteSink;-><init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)V
 
     return-void
@@ -79,7 +69,6 @@
         }
     .end annotation
 
-    .line 200
     new-instance v0, Ljava/io/FileOutputStream;
 
     iget-object v1, p0, Lcom/google/common/io/Files$FileByteSink;->file:Ljava/io/File;
@@ -105,7 +94,6 @@
         }
     .end annotation
 
-    .line 188
     invoke-virtual {p0}, Lcom/google/common/io/Files$FileByteSink;->openStream()Ljava/io/FileOutputStream;
 
     move-result-object v0
@@ -116,7 +104,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 205
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

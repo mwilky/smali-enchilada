@@ -29,14 +29,10 @@
 .method constructor <init>(Lcom/google/common/collect/StandardTable$Column;)V
     .locals 0
 
-    .line 520
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$KeySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.KeySet;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Column$KeySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
-    .line 521
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$KeySet;-><init>(Ljava/util/Map;)V
 
-    .line 522
     return-void
 .end method
 
@@ -44,10 +40,7 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 525
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$KeySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.KeySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$KeySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -65,10 +58,7 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 529
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$KeySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.KeySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$KeySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$Column;->this$0:Lcom/google/common/collect/StandardTable;
@@ -104,9 +94,6 @@
         }
     .end annotation
 
-    .line 533
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Column$KeySet;, "Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Column.KeySet;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Column$KeySet;->this$1:Lcom/google/common/collect/StandardTable$Column;
 
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;

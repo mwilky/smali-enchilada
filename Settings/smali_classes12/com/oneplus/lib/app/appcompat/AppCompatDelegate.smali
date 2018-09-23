@@ -40,12 +40,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 130
     const/4 v0, -0x1
 
     sput v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sDefaultNightMode:I
 
-    .line 132
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sCompatVectorFromResourcesEnabled:Z
@@ -56,7 +54,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,10 +61,7 @@
 
 .method public static create(Landroid/app/Activity;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;
     .locals 1
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "callback"    # Lcom/oneplus/lib/app/appcompat/AppCompatCallback;
 
-    .line 184
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -81,10 +75,7 @@
 
 .method public static create(Landroid/app/Dialog;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;
     .locals 2
-    .param p0, "dialog"    # Landroid/app/Dialog;
-    .param p1, "callback"    # Lcom/oneplus/lib/app/appcompat/AppCompatCallback;
 
-    .line 193
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -102,68 +93,54 @@
 
 .method private static create(Landroid/content/Context;Landroid/view/Window;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "window"    # Landroid/view/Window;
-    .param p2, "callback"    # Lcom/oneplus/lib/app/appcompat/AppCompatCallback;
 
-    .line 198
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 199
-    .local v0, "sdk":I
     invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastN()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 200
     new-instance v1, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplN;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplN;-><init>(Landroid/content/Context;Landroid/view/Window;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)V
 
     return-object v1
 
-    .line 201
     :cond_0
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_1
 
-    .line 202
     new-instance v1, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV23;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV23;-><init>(Landroid/content/Context;Landroid/view/Window;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)V
 
     return-object v1
 
-    .line 203
     :cond_1
     const/16 v1, 0xe
 
     if-lt v0, v1, :cond_2
 
-    .line 204
     new-instance v1, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV14;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV14;-><init>(Landroid/content/Context;Landroid/view/Window;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)V
 
     return-object v1
 
-    .line 205
     :cond_2
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_3
 
-    .line 206
     new-instance v1, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV11;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV11;-><init>(Landroid/content/Context;Landroid/view/Window;Lcom/oneplus/lib/app/appcompat/AppCompatCallback;)V
 
     return-object v1
 
-    .line 208
     :cond_3
     new-instance v1, Lcom/oneplus/lib/app/appcompat/AppCompatDelegateImplV9;
 
@@ -175,7 +152,6 @@
 .method public static getDefaultNightMode()I
     .locals 1
 
-    .line 490
     sget v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sDefaultNightMode:I
 
     return v0
@@ -184,7 +160,6 @@
 .method public static isCompatVectorFromResourcesEnabled()Z
     .locals 1
 
-    .line 537
     sget-boolean v0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sCompatVectorFromResourcesEnabled:Z
 
     return v0
@@ -192,23 +167,17 @@
 
 .method public static setCompatVectorFromResourcesEnabled(Z)V
     .locals 0
-    .param p0, "enabled"    # Z
 
-    .line 527
     sput-boolean p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sCompatVectorFromResourcesEnabled:Z
 
-    .line 528
     return-void
 .end method
 
 .method public static setDefaultNightMode(I)V
     .locals 2
-    .param p0, "mode"    # I
 
-    .line 470
     packed-switch p0, :pswitch_data_0
 
-    .line 478
     const-string v0, "AppCompatDelegate"
 
     const-string v1, "setDefaultNightMode() called with an unknown mode"
@@ -217,14 +186,11 @@
 
     goto :goto_0
 
-    .line 475
     :pswitch_0
     sput p0, Lcom/oneplus/lib/app/appcompat/AppCompatDelegate;->sDefaultNightMode:I
 
-    .line 476
     nop
 
-    .line 481
     :goto_0
     return-void
 

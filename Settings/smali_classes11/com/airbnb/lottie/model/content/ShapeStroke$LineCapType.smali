@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 23
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     const-string v1, "Butt"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->Butt:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    .line 24
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     const-string v1, "Round"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->Round:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    .line 25
     new-instance v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     const-string v1, "Unknown"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->Unknown:Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
-    .line 22
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
@@ -99,7 +95,6 @@
         }
     .end annotation
 
-    .line 22
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 22
     const-class v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,7 +117,6 @@
 .method public static values()[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
     .locals 1
 
-    .line 22
     sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->$VALUES:[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->clone()Ljava/lang/Object;
@@ -141,7 +133,6 @@
 .method public toPaintCap()Landroid/graphics/Paint$Cap;
     .locals 2
 
-    .line 28
     sget-object v0, Lcom/airbnb/lottie/model/content/ShapeStroke$1;->$SwitchMap$com$airbnb$lottie$model$content$ShapeStroke$LineCapType:[I
 
     invoke-virtual {p0}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->ordinal()I
@@ -152,18 +143,15 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 35
     sget-object v0, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
 
     return-object v0
 
-    .line 32
     :pswitch_0
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     return-object v0
 
-    .line 30
     :pswitch_1
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 

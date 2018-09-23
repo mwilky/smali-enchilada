@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/setupwizardlib/template/RequireScrollMixin;Landroid/view/View$OnClickListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
-    .line 133
     iput-object p1, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     iput-object p2, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->val$listener:Landroid/view/View$OnClickListener;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 136
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     invoke-static {v0}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->access$000(Lcom/android/setupwizardlib/template/RequireScrollMixin;)Z
@@ -53,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     invoke-static {v0}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->access$100(Lcom/android/setupwizardlib/template/RequireScrollMixin;)Lcom/android/setupwizardlib/template/RequireScrollMixin$ScrollHandlingDelegate;
@@ -64,18 +59,15 @@
 
     goto :goto_0
 
-    .line 138
     :cond_0
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->val$listener:Landroid/view/View$OnClickListener;
 
     if-eqz v0, :cond_1
 
-    .line 139
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$1;->val$listener:Landroid/view/View$OnClickListener;
 
     invoke-interface {v0, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 141
     :cond_1
     :goto_0
     return-void

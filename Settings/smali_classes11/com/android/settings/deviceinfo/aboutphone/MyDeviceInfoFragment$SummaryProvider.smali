@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/dashboard/SummaryLoader;)V
     .locals 0
-    .param p1, "summaryLoader"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 226
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 227
     iput-object p1, p0, Lcom/android/settings/deviceinfo/aboutphone/MyDeviceInfoFragment$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 228
     return-void
 .end method
 
@@ -40,12 +36,9 @@
 # virtual methods
 .method public setListening(Z)V
     .locals 2
-    .param p1, "listening"    # Z
 
-    .line 232
     if-eqz p1, :cond_0
 
-    .line 233
     iget-object v0, p0, Lcom/android/settings/deviceinfo/aboutphone/MyDeviceInfoFragment$SummaryProvider;->mSummaryLoader:Lcom/android/settings/dashboard/SummaryLoader;
 
     invoke-static {}, Lcom/android/settings/deviceinfo/DeviceModelPreferenceController;->getDeviceModel()Ljava/lang/String;
@@ -54,7 +47,6 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/android/settings/dashboard/SummaryLoader;->setSummary(Lcom/android/settings/dashboard/SummaryLoader$SummaryProvider;Ljava/lang/CharSequence;)V
 
-    .line 235
     :cond_0
     return-void
 .end method

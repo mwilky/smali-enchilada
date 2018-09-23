@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 191
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,30 +30,24 @@
 # virtual methods
 .method public clearKeysWithPrefix(Ljava/lang/String;)V
     .locals 0
-    .param p1, "keyPrefix"    # Ljava/lang/String;
 
-    .line 203
     return-void
 .end method
 
 .method public loadSaved(Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;)V
     .locals 1
-    .param p1, "callback"    # Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;
 
-    .line 198
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     invoke-interface {p1, v0}, Lcom/google/tagmanager/DataLayer$PersistentStore$Callback;->onKeyValuesLoaded(Ljava/util/List;)V
 
-    .line 199
     return-void
 .end method
 
 .method public saveKeyValues(Ljava/util/List;J)V
     .locals 0
-    .param p2, "lifetimeInMillis"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +57,5 @@
         }
     .end annotation
 
-    .line 194
-    .local p1, "keysAndValues":Ljava/util/List;, "Ljava/util/List<Lcom/google/tagmanager/DataLayer$KeyValue;>;"
     return-void
 .end method

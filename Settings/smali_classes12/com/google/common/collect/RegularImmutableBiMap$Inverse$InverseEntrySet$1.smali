@@ -29,10 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;
 
-    .line 305
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;, "Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;->this$2:Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableAsList;-><init>()V
@@ -53,8 +50,6 @@
         }
     .end annotation
 
-    .line 314
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;, "Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;->this$2:Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;
 
     return-object v0
@@ -63,8 +58,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 305
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;, "Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;->get(I)Ljava/util/Map$Entry;
 
     move-result-object p1
@@ -74,7 +67,6 @@
 
 .method public get(I)Ljava/util/Map$Entry;
     .locals 3
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -83,8 +75,6 @@
         }
     .end annotation
 
-    .line 308
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;, "Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet$1;->this$2:Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;
 
     iget-object v0, v0, Lcom/google/common/collect/RegularImmutableBiMap$Inverse$InverseEntrySet;->this$1:Lcom/google/common/collect/RegularImmutableBiMap$Inverse;
@@ -97,8 +87,6 @@
 
     aget-object v0, v0, p1
 
-    .line 309
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1

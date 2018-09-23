@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/AccessibilitySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accessibility/AccessibilitySettings;
 
-    .line 206
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$3;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0}, Lcom/android/internal/view/RotationPolicy$RotationPolicyListener;-><init>()V
@@ -36,11 +34,9 @@
 .method public onChange()V
     .locals 1
 
-    .line 209
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$3;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$200(Lcom/android/settings/accessibility/AccessibilitySettings;)V
 
-    .line 210
     return-void
 .end method

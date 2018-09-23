@@ -28,15 +28,12 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 387
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 389
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->count:J
 
-    .line 390
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->mean:D
@@ -46,9 +43,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/math/DoubleMath$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/math/DoubleMath$1;
 
-    .line 387
     invoke-direct {p0}, Lcom/google/common/math/DoubleMath$MeanAccumulator;-><init>()V
 
     return-void
@@ -58,16 +53,13 @@
 # virtual methods
 .method add(D)V
     .locals 6
-    .param p1, "value"    # D
 
-    .line 393
     invoke-static {p1, p2}, Lcom/google/common/math/DoubleUtils;->isFinite(D)Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 394
     iget-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->count:J
 
     const-wide/16 v2, 0x1
@@ -76,7 +68,6 @@
 
     iput-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->count:J
 
-    .line 396
     iget-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->mean:D
 
     iget-wide v2, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->mean:D
@@ -93,14 +84,12 @@
 
     iput-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->mean:D
 
-    .line 397
     return-void
 .end method
 
 .method mean()D
     .locals 4
 
-    .line 400
     iget-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->count:J
 
     const-wide/16 v2, 0x0
@@ -121,7 +110,6 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 401
     iget-wide v0, p0, Lcom/google/common/math/DoubleMath$MeanAccumulator;->mean:D
 
     return-wide v0

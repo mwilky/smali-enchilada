@@ -32,12 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableRangeMap;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/Range;Lcom/google/common/collect/ImmutableRangeMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableRangeMap;
 
-    .line 269
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$2;, "Lcom/google/common/collect/ImmutableRangeMap$2;"
-    .local p2, "ranges":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/collect/Range<TK;>;>;"
-    .local p3, "values":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableRangeMap$2;->this$0:Lcom/google/common/collect/ImmutableRangeMap;
 
     iput-object p4, p0, Lcom/google/common/collect/ImmutableRangeMap$2;->val$range:Lcom/google/common/collect/Range;
@@ -63,9 +58,6 @@
         }
     .end annotation
 
-    .line 272
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$2;, "Lcom/google/common/collect/ImmutableRangeMap$2;"
-    .local p1, "subRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$2;->val$range:Lcom/google/common/collect/Range;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Range;->isConnected(Lcom/google/common/collect/Range;)Z
@@ -74,7 +66,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 273
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$2;->val$outer:Lcom/google/common/collect/ImmutableRangeMap;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableRangeMap$2;->val$range:Lcom/google/common/collect/Range;
@@ -89,7 +80,6 @@
 
     return-object v0
 
-    .line 275
     :cond_0
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeMap;->of()Lcom/google/common/collect/ImmutableRangeMap;
 
@@ -101,8 +91,6 @@
 .method public bridge synthetic subRangeMap(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeMap;
     .locals 0
 
-    .line 269
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$2;, "Lcom/google/common/collect/ImmutableRangeMap$2;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableRangeMap$2;->subRangeMap(Lcom/google/common/collect/Range;)Lcom/google/common/collect/ImmutableRangeMap;
 
     move-result-object p1

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/OPButtonsSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/OPButtonsSettings;
 
-    .line 144
     iput-object p1, p0, Lcom/oneplus/settings/OPButtonsSettings$1;->this$0:Lcom/oneplus/settings/OPButtonsSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,24 +33,19 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 148
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 149
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 150
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsSettings$1;->this$0:Lcom/oneplus/settings/OPButtonsSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPButtonsSettings;->access$000(Lcom/oneplus/settings/OPButtonsSettings;)V
 
-    .line 152
     :cond_0
     return-void
 .end method

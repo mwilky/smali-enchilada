@@ -28,8 +28,6 @@
 .method constructor <init>(Ljava/util/Iterator;)V
     .locals 0
 
-    .line 509
-    .local p1, "backingIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<+Ljava/lang/Iterable<+TT;>;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
@@ -40,7 +38,6 @@
 .method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 509
     check-cast p1, Ljava/lang/Iterable;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Iterables$3;->transform(Ljava/lang/Iterable;)Ljava/util/Iterator;
@@ -62,8 +59,6 @@
         }
     .end annotation
 
-    .line 512
-    .local p1, "from":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TT;>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

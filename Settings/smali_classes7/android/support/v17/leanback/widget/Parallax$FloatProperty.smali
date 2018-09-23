@@ -36,18 +36,13 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "index"    # I
 
-    .line 280
     const-class v0, Ljava/lang/Float;
 
     invoke-direct {p0, v0, p1}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .line 281
     iput p2, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
-    .line 282
     return-void
 .end method
 
@@ -55,10 +50,7 @@
 # virtual methods
 .method public final at(FF)Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;
     .locals 1
-    .param p1, "offsetValue"    # F
-    .param p2, "fractionOfMaxParentVisibleSize"    # F
 
-    .line 374
     new-instance v0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;-><init>(Landroid/support/v17/leanback/widget/Parallax$FloatProperty;FF)V
@@ -68,9 +60,7 @@
 
 .method public final atAbsolute(F)Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;
     .locals 2
-    .param p1, "markerValue"    # F
 
-    .line 327
     new-instance v0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;
 
     const/4 v1, 0x0
@@ -82,9 +72,7 @@
 
 .method public final atFraction(F)Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;
     .locals 2
-    .param p1, "fractionOfMaxParentVisibleSize"    # F
 
-    .line 359
     new-instance v0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;
 
     const/4 v1, 0x0
@@ -97,7 +85,6 @@
 .method public final atMax()Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;
     .locals 3
 
-    .line 337
     new-instance v0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;
 
     const/4 v1, 0x0
@@ -112,7 +99,6 @@
 .method public final atMin()Landroid/support/v17/leanback/widget/Parallax$PropertyMarkerValue;
     .locals 2
 
-    .line 346
     new-instance v0, Landroid/support/v17/leanback/widget/Parallax$FloatPropertyMarkerValue;
 
     const/4 v1, 0x0
@@ -124,9 +110,7 @@
 
 .method public final get(Landroid/support/v17/leanback/widget/Parallax;)Ljava/lang/Float;
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
 
-    .line 286
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
     invoke-virtual {p1, v0}, Landroid/support/v17/leanback/widget/Parallax;->getFloatPropertyValue(I)F
@@ -143,7 +127,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 257
     check-cast p1, Landroid/support/v17/leanback/widget/Parallax;
 
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->get(Landroid/support/v17/leanback/widget/Parallax;)Ljava/lang/Float;
@@ -156,7 +139,6 @@
 .method public final getIndex()I
     .locals 1
 
-    .line 298
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
     return v0
@@ -164,9 +146,7 @@
 
 .method public final getValue(Landroid/support/v17/leanback/widget/Parallax;)F
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
 
-    .line 307
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
     invoke-virtual {p1, v0}, Landroid/support/v17/leanback/widget/Parallax;->getFloatPropertyValue(I)F
@@ -178,10 +158,7 @@
 
 .method public final set(Landroid/support/v17/leanback/widget/Parallax;Ljava/lang/Float;)V
     .locals 2
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
-    .param p2, "value"    # Ljava/lang/Float;
 
-    .line 291
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -190,14 +167,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/support/v17/leanback/widget/Parallax;->setFloatPropertyValue(IF)V
 
-    .line 292
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 257
     check-cast p1, Landroid/support/v17/leanback/widget/Parallax;
 
     check-cast p2, Ljava/lang/Float;
@@ -209,14 +184,10 @@
 
 .method public final setValue(Landroid/support/v17/leanback/widget/Parallax;F)V
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
-    .param p2, "value"    # F
 
-    .line 317
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$FloatProperty;->mIndex:I
 
     invoke-virtual {p1, v0, p2}, Landroid/support/v17/leanback/widget/Parallax;->setFloatPropertyValue(IF)V
 
-    .line 318
     return-void
 .end method

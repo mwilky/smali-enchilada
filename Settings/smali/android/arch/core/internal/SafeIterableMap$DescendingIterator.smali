@@ -39,13 +39,8 @@
         }
     .end annotation
 
-    .line 299
-    .local p0, "this":Landroid/arch/core/internal/SafeIterableMap$DescendingIterator;, "Landroid/arch/core/internal/SafeIterableMap$DescendingIterator<TK;TV;>;"
-    .local p1, "start":Landroid/arch/core/internal/SafeIterableMap$Entry;, "Landroid/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
-    .local p2, "expectedEnd":Landroid/arch/core/internal/SafeIterableMap$Entry;, "Landroid/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     invoke-direct {p0, p1, p2}, Landroid/arch/core/internal/SafeIterableMap$ListIterator;-><init>(Landroid/arch/core/internal/SafeIterableMap$Entry;Landroid/arch/core/internal/SafeIterableMap$Entry;)V
 
-    .line 300
     return-void
 .end method
 
@@ -63,9 +58,6 @@
         }
     .end annotation
 
-    .line 309
-    .local p0, "this":Landroid/arch/core/internal/SafeIterableMap$DescendingIterator;, "Landroid/arch/core/internal/SafeIterableMap$DescendingIterator<TK;TV;>;"
-    .local p1, "entry":Landroid/arch/core/internal/SafeIterableMap$Entry;, "Landroid/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget-object v0, p1, Landroid/arch/core/internal/SafeIterableMap$Entry;->mNext:Landroid/arch/core/internal/SafeIterableMap$Entry;
 
     return-object v0
@@ -83,9 +75,6 @@
         }
     .end annotation
 
-    .line 304
-    .local p0, "this":Landroid/arch/core/internal/SafeIterableMap$DescendingIterator;, "Landroid/arch/core/internal/SafeIterableMap$DescendingIterator<TK;TV;>;"
-    .local p1, "entry":Landroid/arch/core/internal/SafeIterableMap$Entry;, "Landroid/arch/core/internal/SafeIterableMap$Entry<TK;TV;>;"
     iget-object v0, p1, Landroid/arch/core/internal/SafeIterableMap$Entry;->mPrevious:Landroid/arch/core/internal/SafeIterableMap$Entry;
 
     return-object v0

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settingslib/wifi/WifiTracker;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settingslib/wifi/WifiTracker;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 242
     iput-object p1, p0, Lcom/android/settingslib/wifi/WifiTracker$1;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-direct {p0, p2}, Landroid/net/wifi/WifiNetworkScoreCache$CacheListener;-><init>(Landroid/os/Handler;)V
@@ -45,8 +42,6 @@
         }
     .end annotation
 
-    .line 245
-    .local p1, "networks":Ljava/util/List;, "Ljava/util/List<Landroid/net/ScoredNetwork;>;"
     iget-object v0, p0, Lcom/android/settingslib/wifi/WifiTracker$1;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v0}, Lcom/android/settingslib/wifi/WifiTracker;->access$000(Lcom/android/settingslib/wifi/WifiTracker;)Z
@@ -57,7 +52,6 @@
 
     return-void
 
-    .line 247
     :cond_0
     const-string v0, "WifiTracker"
 
@@ -69,7 +63,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 248
     const-string v0, "WifiTracker"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -88,12 +81,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 250
     :cond_1
     iget-object v0, p0, Lcom/android/settingslib/wifi/WifiTracker$1;->this$0:Lcom/android/settingslib/wifi/WifiTracker;
 
     invoke-static {v0}, Lcom/android/settingslib/wifi/WifiTracker;->access$100(Lcom/android/settingslib/wifi/WifiTracker;)V
 
-    .line 251
     return-void
 .end method

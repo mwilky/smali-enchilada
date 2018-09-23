@@ -34,10 +34,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
     invoke-static {}, Landroid/icu/text/Collator;->getInstance()Landroid/icu/text/Collator;
 
     move-result-object v0
@@ -49,9 +47,7 @@
 
 .method private nullToEmpty(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "string"    # Ljava/lang/String;
 
-    .line 65
     if-nez p1, :cond_0
 
     const-string v0, ""
@@ -69,13 +65,9 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/wifi/AccessPoint;Lcom/android/settingslib/wifi/AccessPoint;)I
     .locals 3
-    .param p1, "ap1"    # Lcom/android/settingslib/wifi/AccessPoint;
-    .param p2, "ap2"    # Lcom/android/settingslib/wifi/AccessPoint;
 
-    .line 60
     iget-object v0, p0, Lcom/android/settings/wifi/SavedAccessPointsWifiSettings$1;->mCollator:Landroid/icu/text/Collator;
 
-    .line 61
     invoke-virtual {p1}, Lcom/android/settingslib/wifi/AccessPoint;->getConfigName()Ljava/lang/String;
 
     move-result-object v1
@@ -92,7 +84,6 @@
 
     move-result-object v2
 
-    .line 60
     invoke-virtual {v0, v1, v2}, Landroid/icu/text/Collator;->compare(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
@@ -103,7 +94,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 56
     check-cast p1, Lcom/android/settingslib/wifi/AccessPoint;
 
     check-cast p2, Lcom/android/settingslib/wifi/AccessPoint;

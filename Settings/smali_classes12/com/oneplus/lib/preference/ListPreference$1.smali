@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/preference/ListPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/preference/ListPreference;
 
-    .line 255
     iput-object p1, p0, Lcom/oneplus/lib/preference/ListPreference$1;->this$0:Lcom/oneplus/lib/preference/ListPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +36,18 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 257
     iget-object v0, p0, Lcom/oneplus/lib/preference/ListPreference$1;->this$0:Lcom/oneplus/lib/preference/ListPreference;
 
     invoke-static {v0, p2}, Lcom/oneplus/lib/preference/ListPreference;->access$002(Lcom/oneplus/lib/preference/ListPreference;I)I
 
-    .line 263
     iget-object v0, p0, Lcom/oneplus/lib/preference/ListPreference$1;->this$0:Lcom/oneplus/lib/preference/ListPreference;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, p1, v1}, Lcom/oneplus/lib/preference/ListPreference;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 264
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 265
     return-void
 .end method

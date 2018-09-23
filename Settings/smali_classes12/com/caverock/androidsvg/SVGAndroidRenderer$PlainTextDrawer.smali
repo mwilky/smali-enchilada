@@ -25,24 +25,17 @@
 # direct methods
 .method public constructor <init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;FF)V
     .locals 1
-    .param p2, "x"    # F
-    .param p3, "y"    # F
 
-    .line 1364
     iput-object p1, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
-    .line 1363
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer$TextProcessor;-><init>(Lcom/caverock/androidsvg/SVGAndroidRenderer;Lcom/caverock/androidsvg/SVGAndroidRenderer$TextProcessor;)V
 
-    .line 1365
     iput p2, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->x:F
 
-    .line 1366
     iput p3, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->y:F
 
-    .line 1367
     return-void
 .end method
 
@@ -50,9 +43,7 @@
 # virtual methods
 .method public processText(Ljava/lang/String;)V
     .locals 4
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 1372
     const-string v0, "TextSequence render"
 
     const/4 v1, 0x0
@@ -61,7 +52,6 @@
 
     invoke-static {v0, v1}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$0(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 1374
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$1(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Z
@@ -70,7 +60,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1376
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$2(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Lcom/caverock/androidsvg/SVGAndroidRenderer$RendererState;
@@ -81,7 +70,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1377
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$3(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Landroid/graphics/Canvas;
@@ -102,7 +90,6 @@
 
     invoke-virtual {v0, p1, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1378
     :cond_0
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
@@ -114,7 +101,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1379
     iget-object v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->this$0:Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
     invoke-static {v0}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->access$3(Lcom/caverock/androidsvg/SVGAndroidRenderer;)Landroid/graphics/Canvas;
@@ -135,7 +121,6 @@
 
     invoke-virtual {v0, p1, v1, v2, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1383
     :cond_1
     iget v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->x:F
 
@@ -155,6 +140,5 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVGAndroidRenderer$PlainTextDrawer;->x:F
 
-    .line 1384
     return-void
 .end method

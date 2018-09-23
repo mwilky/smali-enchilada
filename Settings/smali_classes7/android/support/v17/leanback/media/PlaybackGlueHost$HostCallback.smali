@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,34 +28,29 @@
 .method public onHostDestroy()V
     .locals 0
 
-    .line 84
     return-void
 .end method
 
 .method public onHostPause()V
     .locals 0
 
-    .line 72
     return-void
 .end method
 
 .method public onHostResume()V
     .locals 0
 
-    .line 78
     return-void
 .end method
 
 .method public onHostStart()V
     .locals 0
 
-    .line 60
     return-void
 .end method
 
 .method public onHostStop()V
     .locals 0
 
-    .line 66
     return-void
 .end method

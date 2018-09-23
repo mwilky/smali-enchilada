@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 67
     new-instance v0, Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
 
     const-string v1, "INSTANCE"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;->INSTANCE:Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
 
-    .line 66
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
@@ -71,7 +69,6 @@
         }
     .end annotation
 
-    .line 66
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -79,9 +76,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 66
     const-class v0, Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -96,7 +91,6 @@
 .method public static values()[Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
     .locals 1
 
-    .line 66
     sget-object v0, Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;->$VALUES:[Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;
 
     invoke-virtual {v0}, [Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;->clone()Ljava/lang/Object;
@@ -112,20 +106,15 @@
 # virtual methods
 .method public funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
-    .param p1, "from"    # Ljava/lang/CharSequence;
-    .param p2, "into"    # Lcom/google/common/hash/PrimitiveSink;
 
-    .line 70
     invoke-interface {p2, p1}, Lcom/google/common/hash/PrimitiveSink;->putUnencodedChars(Ljava/lang/CharSequence;)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 71
     return-void
 .end method
 
 .method public bridge synthetic funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
 
-    .line 66
     check-cast p1, Ljava/lang/CharSequence;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/Funnels$UnencodedCharsFunnel;->funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
@@ -136,7 +125,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 74
     const-string v0, "Funnels.unencodedCharsFunnel()"
 
     return-object v0

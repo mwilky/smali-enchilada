@@ -14,9 +14,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 35
     invoke-direct {p0}, Landroid/support/v4/app/ActivityCompat;-><init>()V
 
-    .line 37
     return-void
 .end method

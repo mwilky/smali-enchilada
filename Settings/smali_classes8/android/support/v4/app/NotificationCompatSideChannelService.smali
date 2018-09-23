@@ -15,10 +15,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 45
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 74
     return-void
 .end method
 
@@ -32,10 +30,7 @@
 
 .method checkPermission(ILjava/lang/String;)V
     .locals 5
-    .param p1, "callingUid"    # I
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 114
     invoke-virtual {p0}, Landroid/support/v4/app/NotificationCompatSideChannelService;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -53,25 +48,19 @@
 
     aget-object v3, v0, v2
 
-    .line 115
-    .local v3, "validPackage":Ljava/lang/String;
     invoke-virtual {v3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 116
     return-void
 
-    .line 114
-    .end local v3    # "validPackage":Ljava/lang/String;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 119
     :cond_1
     new-instance v0, Ljava/lang/SecurityException;
 
@@ -105,9 +94,7 @@
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 48
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -122,17 +109,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 51
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x13
 
     if-le v0, v2, :cond_0
 
-    .line 52
     return-object v1
 
-    .line 54
     :cond_0
     new-instance v0, Landroid/support/v4/app/NotificationCompatSideChannelService$NotificationSideChannelStub;
 
@@ -140,7 +124,6 @@
 
     return-object v0
 
-    .line 56
     :cond_1
     return-object v1
 .end method

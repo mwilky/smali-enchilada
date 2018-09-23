@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;
 
-    .line 433
     iput-object p1, p0, Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader$1;->this$0:Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onPrintJobStateChanged(Landroid/print/PrintJobId;)V
     .locals 1
-    .param p1, "printJobId"    # Landroid/print/PrintJobId;
 
-    .line 436
     iget-object v0, p0, Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader$1;->this$0:Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;
 
     invoke-static {v0}, Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;->access$700(Lcom/android/settings/print/PrintSettingsFragment$PrintJobsLoader;)V
 
-    .line 437
     return-void
 .end method

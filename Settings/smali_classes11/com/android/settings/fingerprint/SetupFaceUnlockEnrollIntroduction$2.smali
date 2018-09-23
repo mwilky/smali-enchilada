@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;
 
-    .line 218
     iput-object p1, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction$2;->this$0:Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,35 +36,28 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 222
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.oem.intent.action.OP_LEGAL"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 223
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "op_legal_notices_type"
 
     const/16 v2, 0xa
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 224
     const-string v1, "key_from_settings"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 225
     iget-object v1, p0, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction$2;->this$0:Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/fingerprint/SetupFaceUnlockEnrollIntroduction;->startActivity(Landroid/content/Intent;)V
 
-    .line 226
     return-void
 .end method

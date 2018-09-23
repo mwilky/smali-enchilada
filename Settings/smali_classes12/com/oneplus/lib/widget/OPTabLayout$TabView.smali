@@ -36,27 +36,19 @@
 # direct methods
 .method public constructor <init>(Lcom/oneplus/lib/widget/OPTabLayout;Landroid/content/Context;Lcom/oneplus/lib/widget/OPTabLayout$Tab;)V
     .locals 4
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/OPTabLayout;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "tab"    # Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
-    .line 1098
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
-    .line 1099
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1100
     iput-object p3, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTab:Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
-    .line 1101
     invoke-static {p1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$200(Lcom/oneplus/lib/widget/OPTabLayout;)I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1102
     invoke-static {p1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$200(Lcom/oneplus/lib/widget/OPTabLayout;)I
 
     move-result v0
@@ -67,7 +59,6 @@
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1104
     :cond_0
     invoke-static {p1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$300(Lcom/oneplus/lib/widget/OPTabLayout;)I
 
@@ -77,7 +68,6 @@
 
     move-result v1
 
-    .line 1105
     invoke-static {p1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$500(Lcom/oneplus/lib/widget/OPTabLayout;)I
 
     move-result v2
@@ -86,40 +76,28 @@
 
     move-result v3
 
-    .line 1104
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setPaddingRelative(IIII)V
 
-    .line 1106
     const/16 v0, 0x11
 
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setGravity(I)V
 
-    .line 1107
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->update()V
 
-    .line 1108
     return-void
 .end method
 
 .method private updateTextAndIcon(Lcom/oneplus/lib/widget/OPTabLayout$Tab;Landroid/widget/TextView;Landroid/widget/ImageView;)V
     .locals 6
-    .param p1, "tab"    # Lcom/oneplus/lib/widget/OPTabLayout$Tab;
-    .param p2, "textView"    # Landroid/widget/TextView;
-    .param p3, "iconView"    # Landroid/widget/ImageView;
 
-    .line 1216
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 1217
-    .local v0, "icon":Landroid/graphics/drawable/Drawable;
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 1219
-    .local v1, "text":Ljava/lang/CharSequence;
     const/16 v2, 0x8
 
     const/4 v3, 0x0
@@ -128,28 +106,21 @@
 
     if-eqz p3, :cond_1
 
-    .line 1220
     if-eqz v0, :cond_0
 
-    .line 1221
     invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1222
     invoke-virtual {p3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1223
     invoke-virtual {p0, v4}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 1225
     :cond_0
     invoke-virtual {p3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1226
     invoke-virtual {p3, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1228
     :goto_0
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getContentDescription()Ljava/lang/CharSequence;
 
@@ -157,7 +128,6 @@
 
     invoke-virtual {p3, v5}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1231
     :cond_1
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -165,39 +135,29 @@
 
     xor-int/lit8 v5, v5, 0x1
 
-    .line 1232
-    .local v5, "hasText":Z
     if-eqz p2, :cond_3
 
-    .line 1233
     if-eqz v5, :cond_2
 
-    .line 1234
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1235
     invoke-virtual {p1}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getContentDescription()Ljava/lang/CharSequence;
 
     move-result-object v2
 
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1236
     invoke-virtual {p2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1237
     invoke-virtual {p0, v4}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 1239
     :cond_2
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1240
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1244
     :cond_3
     :goto_1
     if-nez v5, :cond_4
@@ -212,19 +172,15 @@
 
     if-nez v2, :cond_4
 
-    .line 1245
     invoke-virtual {p0, p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     goto :goto_2
 
-    .line 1247
     :cond_4
     invoke-virtual {p0, v3}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 1248
     invoke-virtual {p0, v4}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->setLongClickable(Z)V
 
-    .line 1250
     :goto_2
     return-void
 .end method
@@ -234,7 +190,6 @@
 .method public getTab()Lcom/oneplus/lib/widget/OPTabLayout$Tab;
     .locals 1
 
-    .line 1273
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTab:Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
     return-object v0
@@ -242,15 +197,12 @@
 
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .locals 1
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xe
     .end annotation
 
-    .line 1129
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 1131
     const-class v0, Landroid/app/ActionBar$Tab;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -259,21 +211,17 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1132
     return-void
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xe
     .end annotation
 
-    .line 1137
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1139
     const-class v0, Landroid/app/ActionBar$Tab;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -282,42 +230,30 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1140
     return-void
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
     .locals 8
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 1254
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 1255
-    .local v0, "screenPos":[I
     invoke-virtual {p0, v0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getLocationOnScreen([I)V
 
-    .line 1257
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 1258
-    .local v1, "context":Landroid/content/Context;
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getWidth()I
 
     move-result v2
 
-    .line 1259
-    .local v2, "width":I
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getHeight()I
 
     move-result v3
 
-    .line 1260
-    .local v3, "height":I
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -328,8 +264,6 @@
 
     iget v4, v4, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 1262
-    .local v4, "screenWidth":I
     iget-object v5, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTab:Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
     invoke-virtual {v5}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getContentDescription()Ljava/lang/CharSequence;
@@ -342,8 +276,6 @@
 
     move-result-object v5
 
-    .line 1265
-    .local v5, "cheatSheet":Landroid/widget/Toast;
     aget v6, v0, v6
 
     div-int/lit8 v7, v2, 0x2
@@ -358,10 +290,8 @@
 
     invoke-virtual {v5, v7, v6, v3}, Landroid/widget/Toast;->setGravity(III)V
 
-    .line 1268
     invoke-virtual {v5}, Landroid/widget/Toast;->show()V
 
-    .line 1269
     const/4 v6, 0x1
 
     return v6
@@ -369,19 +299,13 @@
 
 .method public onMeasure(II)V
     .locals 3
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
 
-    .line 1144
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 1146
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getMeasuredWidth()I
 
     move-result v0
 
-    .line 1147
-    .local v0, "measuredWidth":I
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$700(Lcom/oneplus/lib/widget/OPTabLayout;)I
@@ -398,11 +322,9 @@
 
     if-le v0, v1, :cond_1
 
-    .line 1149
     :cond_0
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
-    .line 1150
     invoke-static {v1}, Lcom/oneplus/lib/widget/OPTabLayout;->access$700(Lcom/oneplus/lib/widget/OPTabLayout;)I
 
     move-result v1
@@ -419,24 +341,19 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 1149
     invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 1152
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 1154
     :cond_1
     return-void
 .end method
 
 .method public setSelected(Z)V
     .locals 2
-    .param p1, "selected"    # Z
 
-    .line 1112
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->isSelected()Z
 
     move-result v0
@@ -450,43 +367,34 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1113
-    .local v0, "changed":Z
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->setSelected(Z)V
 
-    .line 1114
     if-eqz v0, :cond_2
 
     if-eqz p1, :cond_2
 
-    .line 1115
     const/4 v1, 0x4
 
     invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->sendAccessibilityEvent(I)V
 
-    .line 1117
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_1
 
-    .line 1118
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 1120
     :cond_1
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_2
 
-    .line 1121
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 1124
     :cond_2
     return-void
 .end method
@@ -494,77 +402,59 @@
 .method final update()V
     .locals 6
 
-    .line 1157
     iget-object v0, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTab:Lcom/oneplus/lib/widget/OPTabLayout$Tab;
 
-    .line 1158
-    .local v0, "tab":Lcom/oneplus/lib/widget/OPTabLayout$Tab;
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/OPTabLayout$Tab;->getCustomView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 1159
-    .local v1, "custom":Landroid/view/View;
     const/4 v2, 0x0
 
     if-eqz v1, :cond_4
 
-    .line 1160
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
-    .line 1161
-    .local v3, "customParent":Landroid/view/ViewParent;
     if-eq v3, p0, :cond_1
 
-    .line 1162
     if-eqz v3, :cond_0
 
-    .line 1163
     move-object v4, v3
 
     check-cast v4, Landroid/view/ViewGroup;
 
     invoke-virtual {v4, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1165
     :cond_0
     invoke-virtual {p0, v1}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->addView(Landroid/view/View;)V
 
-    .line 1167
     :cond_1
     iput-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomView:Landroid/view/View;
 
-    .line 1168
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     const/16 v5, 0x8
 
     if-eqz v4, :cond_2
 
-    .line 1169
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1171
     :cond_2
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     if-eqz v4, :cond_3
 
-    .line 1172
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1173
     iget-object v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1176
     :cond_3
     const v2, 0x1020014
 
@@ -576,7 +466,6 @@
 
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomTextView:Landroid/widget/TextView;
 
-    .line 1177
     const v2, 0x1020006
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -587,45 +476,35 @@
 
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomIconView:Landroid/widget/ImageView;
 
-    .line 1178
-    .end local v3    # "customParent":Landroid/view/ViewParent;
     goto :goto_0
 
-    .line 1180
     :cond_4
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomView:Landroid/view/View;
 
     if-eqz v3, :cond_5
 
-    .line 1181
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomView:Landroid/view/View;
 
     invoke-virtual {p0, v3}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->removeView(Landroid/view/View;)V
 
-    .line 1182
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomView:Landroid/view/View;
 
-    .line 1184
     :cond_5
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomTextView:Landroid/widget/TextView;
 
-    .line 1185
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomIconView:Landroid/widget/ImageView;
 
-    .line 1188
     :goto_0
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomView:Landroid/view/View;
 
     if-nez v2, :cond_9
 
-    .line 1190
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
     const/4 v3, 0x0
 
     if-nez v2, :cond_6
 
-    .line 1191
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -636,28 +515,21 @@
 
     sget v4, Lcom/oneplus/commonctrl/R$layout;->op_layout_tab_icon:I
 
-    .line 1192
     invoke-virtual {v2, v4, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 1193
-    .local v2, "iconView":Landroid/widget/ImageView;
     invoke-virtual {p0, v2, v3}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->addView(Landroid/view/View;I)V
 
-    .line 1194
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mIconView:Landroid/widget/ImageView;
 
-    .line 1196
-    .end local v2    # "iconView":Landroid/widget/ImageView;
     :cond_6
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     if-nez v2, :cond_7
 
-    .line 1197
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -668,22 +540,16 @@
 
     sget v4, Lcom/oneplus/commonctrl/R$layout;->op_layout_tab_text:I
 
-    .line 1198
     invoke-virtual {v2, v4, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1199
-    .local v2, "textView":Landroid/widget/TextView;
     invoke-virtual {p0, v2}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->addView(Landroid/view/View;)V
 
-    .line 1200
     iput-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
-    .line 1202
-    .end local v2    # "textView":Landroid/widget/TextView;
     :cond_7
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -699,7 +565,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    .line 1203
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
 
     invoke-static {v2}, Lcom/oneplus/lib/widget/OPTabLayout;->access$1000(Lcom/oneplus/lib/widget/OPTabLayout;)Landroid/content/res/ColorStateList;
@@ -708,7 +573,6 @@
 
     if-eqz v2, :cond_8
 
-    .line 1204
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     iget-object v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->this$0:Lcom/oneplus/lib/widget/OPTabLayout;
@@ -719,7 +583,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    .line 1206
     :cond_8
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -729,7 +592,6 @@
 
     goto :goto_1
 
-    .line 1209
     :cond_9
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomTextView:Landroid/widget/TextView;
 
@@ -739,7 +601,6 @@
 
     if-eqz v2, :cond_b
 
-    .line 1210
     :cond_a
     iget-object v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->mCustomTextView:Landroid/widget/TextView;
 
@@ -747,7 +608,6 @@
 
     invoke-direct {p0, v0, v2, v3}, Lcom/oneplus/lib/widget/OPTabLayout$TabView;->updateTextAndIcon(Lcom/oneplus/lib/widget/OPTabLayout$Tab;Landroid/widget/TextView;Landroid/widget/ImageView;)V
 
-    .line 1213
     :cond_b
     :goto_1
     return-void

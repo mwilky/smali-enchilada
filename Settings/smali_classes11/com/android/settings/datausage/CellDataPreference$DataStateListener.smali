@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 208
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -29,7 +28,6 @@
 
     invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 209
     return-void
 .end method
 
@@ -37,22 +35,15 @@
 # virtual methods
 .method public setListener(ZILandroid/content/Context;)V
     .locals 3
-    .param p1, "listening"    # Z
-    .param p2, "subId"    # I
-    .param p3, "context"    # Landroid/content/Context;
 
-    .line 212
     if-eqz p1, :cond_1
 
-    .line 213
     const-string v0, "mobile_data"
 
     invoke-static {v0}, Landroid/provider/Settings$Global;->getUriFor(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 214
-    .local v0, "uri":Landroid/net/Uri;
     invoke-static {}, Landroid/telephony/TelephonyManager;->getDefault()Landroid/telephony/TelephonyManager;
 
     move-result-object v1
@@ -65,7 +56,6 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 215
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,7 +74,6 @@
 
     move-result-object v0
 
-    .line 217
     :cond_0
     invoke-virtual {p3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -94,11 +83,8 @@
 
     invoke-virtual {v1, v0, v2, p0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 218
-    .end local v0    # "uri":Landroid/net/Uri;
     goto :goto_0
 
-    .line 219
     :cond_1
     invoke-virtual {p3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -106,7 +92,6 @@
 
     invoke-virtual {v0, p0}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 221
     :goto_0
     return-void
 .end method

@@ -82,10 +82,8 @@
 .method public constructor <init>()V
     .locals 8
 
-    .line 41
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 102
     const-string v0, "#FF0000FF"
 
     const-string v1, "#FF40FFFF"
@@ -113,13 +111,9 @@
 
 .method private getDialogCode(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "color"    # Ljava/lang/String;
 
-    .line 151
     const-string v0, ""
 
-    .line 153
-    .local v0, "newColor":Ljava/lang/String;
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -241,63 +235,46 @@
 
     goto :goto_2
 
-    .line 176
     :pswitch_0
     const-string v0, "#FFEC407A"
 
-    .line 177
     goto :goto_2
 
-    .line 173
     :pswitch_1
     const-string v0, "#FF9E00F9"
 
-    .line 174
     goto :goto_2
 
-    .line 170
     :pswitch_2
     const-string v0, "#FFFFFF00"
 
-    .line 171
     goto :goto_2
 
-    .line 167
     :pswitch_3
     const-string v0, "#FFFF0000"
 
-    .line 168
     goto :goto_2
 
-    .line 164
     :pswitch_4
     const-string v0, "#FF40FF00"
 
-    .line 165
     goto :goto_2
 
-    .line 161
     :pswitch_5
     const-string v0, "#FFFFAE00"
 
-    .line 162
     goto :goto_2
 
-    .line 158
     :pswitch_6
     const-string v0, "#FF40FFFF"
 
-    .line 159
     goto :goto_2
 
-    .line 155
     :pswitch_7
     const-string v0, "#FF0000FF"
 
-    .line 156
     nop
 
-    .line 182
     :goto_2
     return-object v0
 
@@ -328,13 +305,9 @@
 
 .method private getDriverCode(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "color"    # Ljava/lang/String;
 
-    .line 116
     const-string v0, ""
 
-    .line 118
-    .local v0, "newColor":Ljava/lang/String;
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -456,63 +429,46 @@
 
     goto :goto_2
 
-    .line 141
     :pswitch_0
     const-string v0, "#FFFF0040"
 
-    .line 142
     goto :goto_2
 
-    .line 138
     :pswitch_1
     const-string v0, "#FFFF00FF"
 
-    .line 139
     goto :goto_2
 
-    .line 135
     :pswitch_2
     const-string v0, "#FFFFFF00"
 
-    .line 136
     goto :goto_2
 
-    .line 132
     :pswitch_3
     const-string v0, "#FFFF0000"
 
-    .line 133
     goto :goto_2
 
-    .line 129
     :pswitch_4
     const-string v0, "#FF40FF00"
 
-    .line 130
     goto :goto_2
 
-    .line 126
     :pswitch_5
     const-string v0, "#FFFF4000"
 
-    .line 127
     goto :goto_2
 
-    .line 123
     :pswitch_6
     const-string v0, "#FF40FFFF"
 
-    .line 124
     goto :goto_2
 
-    .line 120
     :pswitch_7
     const-string v0, "#FF0000FF"
 
-    .line 121
     nop
 
-    .line 147
     :goto_2
     return-object v0
 
@@ -546,7 +502,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 287
     const/16 v0, 0x270f
 
     return v0
@@ -554,17 +509,13 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 12
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 187
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 188
     const v0, 0x7f160083
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPLEDSettings;->addPreferencesFromResource(I)V
 
-    .line 190
     const-string v0, "led_settings_global_notification"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPLEDSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -575,21 +526,18 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
-    .line 191
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mDialogColorPalette:[Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColorPalette([Ljava/lang/String;)V
 
-    .line 192
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     const-string v1, "#FF00FF00"
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setDefaultColor(Ljava/lang/String;)V
 
-    .line 195
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -602,18 +550,14 @@
 
     const-string v2, "#FF00FF00"
 
-    .line 196
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 195
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 197
-    .local v0, "notificationColorInt":I
     const-string v1, "#%06X"
 
     const/4 v2, 0x1
@@ -632,15 +576,12 @@
 
     move-result-object v1
 
-    .line 198
-    .local v1, "notificationColorString":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 199
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-direct {p0, v1}, Lcom/oneplus/settings/notification/OPLEDSettings;->getDialogCode(Ljava/lang/String;)Ljava/lang/String;
@@ -649,7 +590,6 @@
 
     invoke-virtual {v3, v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColor(Ljava/lang/String;)V
 
-    .line 201
     :cond_0
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
@@ -657,17 +597,14 @@
 
     invoke-virtual {v3, v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setMessageText(I)V
 
-    .line 202
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v3}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setImageViewVisibility()V
 
-    .line 203
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mGlobalNotificationPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v3, p0}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 205
     const-string v3, "led_settings_battery_full"
 
     invoke-virtual {p0, v3}, Lcom/oneplus/settings/notification/OPLEDSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -678,21 +615,18 @@
 
     iput-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
-    .line 206
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v6, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mDialogColorPalette:[Ljava/lang/String;
 
     invoke-virtual {v3, v6}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColorPalette([Ljava/lang/String;)V
 
-    .line 207
     iget-object v3, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     const-string v6, "#FF00FF00"
 
     invoke-virtual {v3, v6}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setDefaultColor(Ljava/lang/String;)V
 
-    .line 209
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -705,18 +639,14 @@
 
     const-string v7, "#FF00FF00"
 
-    .line 210
     invoke-static {v7}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 209
     invoke-static {v3, v6, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v3
 
-    .line 211
-    .local v3, "batteryFullColorInt":I
     const-string v6, "#%06X"
 
     new-array v7, v2, [Ljava/lang/Object;
@@ -731,15 +661,12 @@
 
     move-result-object v6
 
-    .line 212
-    .local v6, "batteryFullColorString":Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
 
     if-nez v7, :cond_1
 
-    .line 213
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-direct {p0, v6}, Lcom/oneplus/settings/notification/OPLEDSettings;->getDialogCode(Ljava/lang/String;)Ljava/lang/String;
@@ -748,23 +675,19 @@
 
     invoke-virtual {v7, v8}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColor(Ljava/lang/String;)V
 
-    .line 215
     :cond_1
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v7, v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setMessageText(I)V
 
-    .line 216
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v7}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setImageViewVisibility()V
 
-    .line 217
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryFullPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v7, p0}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 219
     const-string v7, "led_settings_battery_charging"
 
     invoke-virtual {p0, v7}, Lcom/oneplus/settings/notification/OPLEDSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -775,21 +698,18 @@
 
     iput-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
-    .line 220
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v8, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mDialogColorPalette:[Ljava/lang/String;
 
     invoke-virtual {v7, v8}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColorPalette([Ljava/lang/String;)V
 
-    .line 221
     iget-object v7, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     const-string v8, "#FEFF0000"
 
     invoke-virtual {v7, v8}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setDefaultColor(Ljava/lang/String;)V
 
-    .line 223
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v7
@@ -802,18 +722,14 @@
 
     const-string v9, "#FEFF0000"
 
-    .line 224
     invoke-static {v9}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v9
 
-    .line 223
     invoke-static {v7, v8, v9}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v7
 
-    .line 225
-    .local v7, "batteryChargingColorInt":I
     const-string v8, "#%06X"
 
     new-array v9, v2, [Ljava/lang/Object;
@@ -828,15 +744,12 @@
 
     move-result-object v8
 
-    .line 226
-    .local v8, "batteryChargingColorString":Ljava/lang/String;
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-nez v9, :cond_2
 
-    .line 227
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-direct {p0, v8}, Lcom/oneplus/settings/notification/OPLEDSettings;->getDialogCode(Ljava/lang/String;)Ljava/lang/String;
@@ -845,23 +758,19 @@
 
     invoke-virtual {v9, v10}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColor(Ljava/lang/String;)V
 
-    .line 229
     :cond_2
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v9, v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setMessageText(I)V
 
-    .line 230
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v9}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setImageViewVisibility()V
 
-    .line 231
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryChargingPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v9, p0}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 233
     const-string v9, "led_settings_battery_low"
 
     invoke-virtual {p0, v9}, Lcom/oneplus/settings/notification/OPLEDSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -872,21 +781,18 @@
 
     iput-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
-    .line 234
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v10, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mDialogColorPalette:[Ljava/lang/String;
 
     invoke-virtual {v9, v10}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColorPalette([Ljava/lang/String;)V
 
-    .line 235
     iget-object v9, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     const-string v10, "#FEFF0000"
 
     invoke-virtual {v9, v10}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setDefaultColor(Ljava/lang/String;)V
 
-    .line 237
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v9
@@ -899,18 +805,14 @@
 
     const-string v11, "#FEFF0000"
 
-    .line 238
     invoke-static {v11}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v11
 
-    .line 237
     invoke-static {v9, v10, v11}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v9
 
-    .line 239
-    .local v9, "batteryLowColorInt":I
     const-string v10, "#%06X"
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -925,15 +827,12 @@
 
     move-result-object v2
 
-    .line 240
-    .local v2, "batteryLowColorString":Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    .line 241
     iget-object v5, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-direct {p0, v2}, Lcom/oneplus/settings/notification/OPLEDSettings;->getDialogCode(Ljava/lang/String;)Ljava/lang/String;
@@ -942,38 +841,29 @@
 
     invoke-virtual {v5, v10}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setColor(Ljava/lang/String;)V
 
-    .line 243
     :cond_3
     iget-object v5, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v5, v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setMessageText(I)V
 
-    .line 244
     iget-object v4, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v4}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setImageViewVisibility()V
 
-    .line 245
     iget-object v4, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v4, p0}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 246
     return-void
 .end method
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 7
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "objValue"    # Ljava/lang/Object;
 
-    .line 250
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 251
-    .local v0, "key":Ljava/lang/String;
     move-object v1, p2
 
     check-cast v1, Ljava/lang/String;
@@ -982,8 +872,6 @@
 
     move-result-object v1
 
-    .line 252
-    .local v1, "color":Ljava/lang/String;
     const/4 v2, 0x1
 
     if-eqz v1, :cond_0
@@ -1001,8 +889,6 @@
     :cond_0
     const/4 v3, 0x0
 
-    .line 253
-    .local v3, "isColor":Z
     :goto_0
     const-string v4, "led_settings_global_notification"
 
@@ -1012,7 +898,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 254
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -1023,7 +908,6 @@
 
     const-string v5, "notification_light_pulse_color"
 
-    .line 256
     if-eqz v3, :cond_1
 
     move-object v6, v1
@@ -1038,10 +922,8 @@
 
     move-result v6
 
-    .line 254
     invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 258
     :cond_2
     const-string v4, "led_settings_battery_full"
 
@@ -1051,7 +933,6 @@
 
     if-eqz v4, :cond_4
 
-    .line 259
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -1062,7 +943,6 @@
 
     const-string v5, "battery_light_full_color"
 
-    .line 261
     if-eqz v3, :cond_3
 
     move-object v6, v1
@@ -1077,10 +957,8 @@
 
     move-result v6
 
-    .line 259
     invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 263
     :cond_4
     const-string v4, "led_settings_battery_charging"
 
@@ -1090,7 +968,6 @@
 
     if-eqz v4, :cond_6
 
-    .line 264
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -1101,7 +978,6 @@
 
     const-string v5, "battery_light_medium_color"
 
-    .line 266
     if-eqz v3, :cond_5
 
     move-object v6, v1
@@ -1116,10 +992,8 @@
 
     move-result v6
 
-    .line 264
     invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 268
     :cond_6
     const-string v4, "led_settings_battery_low"
 
@@ -1129,7 +1003,6 @@
 
     if-eqz v4, :cond_8
 
-    .line 269
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getActivity()Landroid/app/Activity;
 
     move-result-object v4
@@ -1140,7 +1013,6 @@
 
     const-string v5, "battery_light_low_color"
 
-    .line 271
     if-eqz v3, :cond_7
 
     move-object v6, v1
@@ -1155,10 +1027,8 @@
 
     move-result v6
 
-    .line 269
     invoke-static {v4, v5, v6}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 273
     :cond_8
     return v2
 .end method
@@ -1166,15 +1036,12 @@
 .method public onResume()V
     .locals 3
 
-    .line 278
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 279
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     if-eqz v0, :cond_0
 
-    .line 280
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPLEDSettings;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1193,14 +1060,10 @@
 
     move-result-object v0
 
-    .line 281
-    .local v0, "string":Ljava/lang/String;
     iget-object v1, p0, Lcom/oneplus/settings/notification/OPLEDSettings;->mBatteryLowPreference:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-virtual {v1, v0}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    .line 283
-    .end local v0    # "string":Ljava/lang/String;
     :cond_0
     return-void
 .end method

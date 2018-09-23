@@ -57,12 +57,8 @@
         }
     .end annotation
 
-    .line 337
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
-    .local p1, "supplier":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 338
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -71,17 +67,12 @@
 
     iput-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
-    .line 339
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/base/Supplier;Lcom/google/common/base/Functions$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/base/Supplier;
-    .param p2, "x1"    # Lcom/google/common/base/Functions$1;
 
-    .line 333
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Functions$SupplierFunction;-><init>(Lcom/google/common/base/Supplier;)V
 
     return-void
@@ -91,7 +82,7 @@
 # virtual methods
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "input"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -103,8 +94,6 @@
         }
     .end annotation
 
-    .line 342
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
     invoke-interface {v0}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
@@ -116,24 +105,19 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 346
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Functions$SupplierFunction;
 
     if-eqz v0, :cond_0
 
-    .line 347
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/Functions$SupplierFunction;
 
-    .line 348
-    .local v0, "that":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<*>;"
     iget-object v1, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
     iget-object v2, v0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
@@ -144,8 +128,6 @@
 
     return v1
 
-    .line 350
-    .end local v0    # "that":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -155,8 +137,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 354
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -169,8 +149,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 358
-    .local p0, "this":Lcom/google/common/base/Functions$SupplierFunction;, "Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

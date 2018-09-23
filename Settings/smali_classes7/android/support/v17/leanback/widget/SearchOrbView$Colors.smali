@@ -38,60 +38,53 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "color"    # I
+    .param p1    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
 
-    .line 72
     invoke-direct {p0, p1, p1}, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;-><init>(II)V
 
-    .line 73
     return-void
 .end method
 
 .method public constructor <init>(II)V
     .locals 1
-    .param p1, "color"    # I
+    .param p1    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
-    .param p2, "brightColor"    # I
+    .param p2    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
 
-    .line 83
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;-><init>(III)V
 
-    .line 84
     return-void
 .end method
 
 .method public constructor <init>(III)V
     .locals 1
-    .param p1, "color"    # I
+    .param p1    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
-    .param p2, "brightColor"    # I
+    .param p2    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
-    .param p3, "iconColor"    # I
+    .param p3    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
     .end param
 
-    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
     iput p1, p0, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;->color:I
 
-    .line 95
     if-ne p2, p1, :cond_0
 
     invoke-static {p1}, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;->getBrightColor(I)I
@@ -106,22 +99,16 @@
     :goto_0
     iput v0, p0, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;->brightColor:I
 
-    .line 96
     iput p3, p0, Landroid/support/v17/leanback/widget/SearchOrbView$Colors;->iconColor:I
 
-    .line 97
     return-void
 .end method
 
 .method public static getBrightColor(I)I
     .locals 7
-    .param p0, "color"    # I
 
-    .line 121
     const/high16 v0, 0x42190000    # 38.25f
 
-    .line 122
-    .local v0, "brightnessValue":F
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v1
@@ -138,8 +125,6 @@
 
     float-to-int v1, v1
 
-    .line 123
-    .local v1, "red":I
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
@@ -152,8 +137,6 @@
 
     float-to-int v4, v4
 
-    .line 124
-    .local v4, "green":I
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v5
@@ -166,8 +149,6 @@
 
     float-to-int v5, v5
 
-    .line 125
-    .local v5, "blue":I
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v6
@@ -180,8 +161,6 @@
 
     float-to-int v2, v6
 
-    .line 126
-    .local v2, "alpha":I
     invoke-static {v2, v1, v4, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v3

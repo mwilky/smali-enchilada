@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiSummaryUpdater;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiSummaryUpdater;
 
-    .line 64
     iput-object p1, p0, Lcom/android/settings/wifi/WifiSummaryUpdater$1;->this$0:Lcom/android/settings/wifi/WifiSummaryUpdater;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 67
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSummaryUpdater$1;->this$0:Lcom/android/settings/wifi/WifiSummaryUpdater;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiSummaryUpdater;->access$000(Lcom/android/settings/wifi/WifiSummaryUpdater;)Lcom/android/settingslib/wifi/WifiStatusTracker;
@@ -47,11 +42,9 @@
 
     invoke-virtual {v0, p2}, Lcom/android/settingslib/wifi/WifiStatusTracker;->handleBroadcast(Landroid/content/Intent;)V
 
-    .line 68
     iget-object v0, p0, Lcom/android/settings/wifi/WifiSummaryUpdater$1;->this$0:Lcom/android/settings/wifi/WifiSummaryUpdater;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiSummaryUpdater;->access$100(Lcom/android/settings/wifi/WifiSummaryUpdater;)V
 
-    .line 69
     return-void
 .end method

@@ -34,10 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;Lcom/google/common/util/concurrent/ListenableFuture;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;
 
-    .line 1101
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;, "Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;"
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->val$delegate:Lcom/google/common/util/concurrent/ListenableFuture;
@@ -51,10 +48,7 @@
 # virtual methods
 .method public onFailure(Ljava/lang/Throwable;)V
     .locals 2
-    .param p1, "t"    # Ljava/lang/Throwable;
 
-    .line 1109
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;, "Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->val$delegate:Lcom/google/common/util/concurrent/ListenableFuture;
 
     invoke-interface {v0}, Lcom/google/common/util/concurrent/ListenableFuture;->isCancelled()Z
@@ -63,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1110
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;
 
     const/4 v1, 0x0
@@ -72,13 +65,11 @@
 
     goto :goto_0
 
-    .line 1112
     :cond_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;->setException(Ljava/lang/Throwable;)Z
 
-    .line 1114
     :goto_0
     return-void
 .end method
@@ -91,13 +82,9 @@
         }
     .end annotation
 
-    .line 1104
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;, "Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;"
-    .local p1, "result":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;
 
     invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/Futures$NonCancellationPropagatingFuture;->set(Ljava/lang/Object;)Z
 
-    .line 1105
     return-void
 .end method

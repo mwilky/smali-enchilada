@@ -50,15 +50,10 @@
         }
     .end annotation
 
-    .line 115
-    .local p0, "this":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<TE;>;"
-    .local p1, "interner":Lcom/google/common/collect/Interner;, "Lcom/google/common/collect/Interner<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
     iput-object p1, p0, Lcom/google/common/collect/Interners$InternerFunction;->interner:Lcom/google/common/collect/Interner;
 
-    .line 117
     return-void
 .end method
 
@@ -72,9 +67,6 @@
         }
     .end annotation
 
-    .line 120
-    .local p0, "this":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<TE;>;"
-    .local p1, "input":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Interners$InternerFunction;->interner:Lcom/google/common/collect/Interner;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Interner;->intern(Ljava/lang/Object;)Ljava/lang/Object;
@@ -86,21 +78,15 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .line 128
-    .local p0, "this":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<TE;>;"
     instance-of v0, p1, Lcom/google/common/collect/Interners$InternerFunction;
 
     if-eqz v0, :cond_0
 
-    .line 129
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/Interners$InternerFunction;
 
-    .line 130
-    .local v0, "that":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Interners$InternerFunction;->interner:Lcom/google/common/collect/Interner;
 
     iget-object v2, v0, Lcom/google/common/collect/Interners$InternerFunction;->interner:Lcom/google/common/collect/Interner;
@@ -111,8 +97,6 @@
 
     return v1
 
-    .line 133
-    .end local v0    # "that":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -122,8 +106,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 124
-    .local p0, "this":Lcom/google/common/collect/Interners$InternerFunction;, "Lcom/google/common/collect/Interners$InternerFunction<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Interners$InternerFunction;->interner:Lcom/google/common/collect/Interner;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

@@ -40,19 +40,15 @@
         }
     .end annotation
 
-    .line 913
-    .local p1, "objectAndStatic":Lcom/google/tagmanager/ObjectAndStatic;, "Lcom/google/tagmanager/ObjectAndStatic<Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/tagmanager/Runtime$CachedMacro;-><init>(Lcom/google/tagmanager/ObjectAndStatic;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
 
-    .line 914
     return-void
 .end method
 
 .method public constructor <init>(Lcom/google/tagmanager/ObjectAndStatic;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;)V
     .locals 0
-    .param p2, "pushAfterEvaluate"    # Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,17 +60,12 @@
         }
     .end annotation
 
-    .line 916
-    .local p1, "objectAndStatic":Lcom/google/tagmanager/ObjectAndStatic;, "Lcom/google/tagmanager/ObjectAndStatic<Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 917
     iput-object p1, p0, Lcom/google/tagmanager/Runtime$CachedMacro;->mObjectAndStatic:Lcom/google/tagmanager/ObjectAndStatic;
 
-    .line 918
     iput-object p2, p0, Lcom/google/tagmanager/Runtime$CachedMacro;->mPushAfterEvaluate:Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
-    .line 919
     return-void
 .end method
 
@@ -91,7 +82,6 @@
         }
     .end annotation
 
-    .line 922
     iget-object v0, p0, Lcom/google/tagmanager/Runtime$CachedMacro;->mObjectAndStatic:Lcom/google/tagmanager/ObjectAndStatic;
 
     return-object v0
@@ -100,7 +90,6 @@
 .method public getPushAfterEvaluate()Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
     .locals 1
 
-    .line 926
     iget-object v0, p0, Lcom/google/tagmanager/Runtime$CachedMacro;->mPushAfterEvaluate:Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;
 
     return-object v0
@@ -109,7 +98,6 @@
 .method public getSize()I
     .locals 2
 
-    .line 930
     iget-object v0, p0, Lcom/google/tagmanager/Runtime$CachedMacro;->mObjectAndStatic:Lcom/google/tagmanager/ObjectAndStatic;
 
     invoke-virtual {v0}, Lcom/google/tagmanager/ObjectAndStatic;->getObject()Ljava/lang/Object;

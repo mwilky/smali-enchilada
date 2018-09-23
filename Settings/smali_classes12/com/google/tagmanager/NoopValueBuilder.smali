@@ -10,7 +10,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
 .method public createValueMacroEvaluationInfoExtension()Lcom/google/tagmanager/MacroEvaluationInfoBuilder;
     .locals 1
 
-    .line 31
     new-instance v0, Lcom/google/tagmanager/NoopMacroEvaluationInfoBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopMacroEvaluationInfoBuilder;-><init>()V
@@ -31,9 +29,7 @@
 
 .method public getListItem(I)Lcom/google/tagmanager/ValueBuilder;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 11
     new-instance v0, Lcom/google/tagmanager/NoopValueBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopValueBuilder;-><init>()V
@@ -43,9 +39,7 @@
 
 .method public getMapKey(I)Lcom/google/tagmanager/ValueBuilder;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 16
     new-instance v0, Lcom/google/tagmanager/NoopValueBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopValueBuilder;-><init>()V
@@ -55,9 +49,7 @@
 
 .method public getMapValue(I)Lcom/google/tagmanager/ValueBuilder;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 21
     new-instance v0, Lcom/google/tagmanager/NoopValueBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopValueBuilder;-><init>()V
@@ -67,9 +59,7 @@
 
 .method public getTemplateToken(I)Lcom/google/tagmanager/ValueBuilder;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 26
     new-instance v0, Lcom/google/tagmanager/NoopValueBuilder;
 
     invoke-direct {v0}, Lcom/google/tagmanager/NoopValueBuilder;-><init>()V

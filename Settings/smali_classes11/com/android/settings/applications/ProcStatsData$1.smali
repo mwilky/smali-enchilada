@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 454
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/applications/ProcStatsEntry;Lcom/android/settings/applications/ProcStatsEntry;)I
     .locals 7
-    .param p1, "lhs"    # Lcom/android/settings/applications/ProcStatsEntry;
-    .param p2, "rhs"    # Lcom/android/settings/applications/ProcStatsEntry;
 
-    .line 457
     iget-wide v0, p1, Lcom/android/settings/applications/ProcStatsEntry;->mRunWeight:D
 
     iget-wide v2, p2, Lcom/android/settings/applications/ProcStatsEntry;->mRunWeight:D
@@ -54,10 +50,8 @@
 
     if-gez v0, :cond_0
 
-    .line 458
     return v1
 
-    .line 459
     :cond_0
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsEntry;->mRunWeight:D
 
@@ -69,10 +63,8 @@
 
     if-lez v0, :cond_1
 
-    .line 460
     return v2
 
-    .line 461
     :cond_1
     iget-wide v3, p1, Lcom/android/settings/applications/ProcStatsEntry;->mRunDuration:J
 
@@ -82,10 +74,8 @@
 
     if-gez v0, :cond_2
 
-    .line 462
     return v1
 
-    .line 463
     :cond_2
     iget-wide v0, p1, Lcom/android/settings/applications/ProcStatsEntry;->mRunDuration:J
 
@@ -95,10 +85,8 @@
 
     if-lez v0, :cond_3
 
-    .line 464
     return v2
 
-    .line 466
     :cond_3
     const/4 v0, 0x0
 
@@ -108,7 +96,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 454
     check-cast p1, Lcom/android/settings/applications/ProcStatsEntry;
 
     check-cast p2, Lcom/android/settings/applications/ProcStatsEntry;

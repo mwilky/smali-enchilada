@@ -35,9 +35,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/fuelgauge/PowerUsageBase;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/PowerUsageBase;
 
-    .line 111
     iput-object p1, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->this$0:Lcom/android/settings/fuelgauge/PowerUsageBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,8 +47,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 2
-    .param p1, "id"    # I
-    .param p2, "args"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -62,7 +58,6 @@
         }
     .end annotation
 
-    .line 117
     const-string v0, "refresh_type"
 
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
@@ -71,7 +66,6 @@
 
     iput v0, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->mRefreshType:I
 
-    .line 118
     new-instance v0, Lcom/android/settings/fuelgauge/BatteryStatsHelperLoader;
 
     iget-object v1, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->this$0:Lcom/android/settings/fuelgauge/PowerUsageBase;
@@ -87,7 +81,6 @@
 
 .method public onLoadFinished(Landroid/content/Loader;Lcom/android/internal/os/BatteryStatsHelper;)V
     .locals 2
-    .param p2, "statsHelper"    # Lcom/android/internal/os/BatteryStatsHelper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,27 +92,22 @@
         }
     .end annotation
 
-    .line 124
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/internal/os/BatteryStatsHelper;>;"
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->this$0:Lcom/android/settings/fuelgauge/PowerUsageBase;
 
     iput-object p2, v0, Lcom/android/settings/fuelgauge/PowerUsageBase;->mStatsHelper:Lcom/android/internal/os/BatteryStatsHelper;
 
-    .line 125
     iget-object v0, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->this$0:Lcom/android/settings/fuelgauge/PowerUsageBase;
 
     iget v1, p0, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->mRefreshType:I
 
     invoke-virtual {v0, v1}, Lcom/android/settings/fuelgauge/PowerUsageBase;->refreshUi(I)V
 
-    .line 126
     return-void
 .end method
 
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 111
     check-cast p2, Lcom/android/internal/os/BatteryStatsHelper;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/fuelgauge/PowerUsageBase$PowerLoaderCallback;->onLoadFinished(Landroid/content/Loader;Lcom/android/internal/os/BatteryStatsHelper;)V
@@ -138,7 +126,5 @@
         }
     .end annotation
 
-    .line 131
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Lcom/android/internal/os/BatteryStatsHelper;>;"
     return-void
 .end method

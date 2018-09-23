@@ -18,7 +18,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1625
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgConditionalContainer;-><init>()V
 
     return-void
@@ -28,27 +27,22 @@
 # virtual methods
 .method public addChild(Lcom/caverock/androidsvg/SVG$SvgObject;)V
     .locals 3
-    .param p1, "elem"    # Lcom/caverock/androidsvg/SVG$SvgObject;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xml/sax/SAXException;
         }
     .end annotation
 
-    .line 1630
     instance-of v0, p1, Lcom/caverock/androidsvg/SVG$TextChild;
 
     if-eqz v0, :cond_0
 
-    .line 1631
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$TextContainer;->children:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1634
     return-void
 
-    .line 1633
     :cond_0
     new-instance v0, Lorg/xml/sax/SAXException;
 

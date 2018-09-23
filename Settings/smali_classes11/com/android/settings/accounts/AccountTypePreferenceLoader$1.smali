@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accounts/AccountTypePreferenceLoader;Landroid/content/pm/PackageManager;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
-    .line 155
     iput-object p1, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     iput-object p2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->val$pm:Landroid/content/pm/PackageManager;
@@ -46,15 +44,11 @@
 # virtual methods
 .method public onPreferenceClick(Landroid/support/v7/preference/Preference;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 158
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 166
-    .local v0, "prefIntent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     iget-object v2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->val$pm:Landroid/content/pm/PackageManager;
@@ -67,7 +61,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 167
     iget-object v1, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
     invoke-static {v1}, Lcom/android/settings/accounts/AccountTypePreferenceLoader;->access$200(Lcom/android/settings/accounts/AccountTypePreferenceLoader;)Landroid/support/v14/preference/PreferenceFragment;
@@ -80,17 +73,14 @@
 
     iget-object v2, p0, Lcom/android/settings/accounts/AccountTypePreferenceLoader$1;->this$0:Lcom/android/settings/accounts/AccountTypePreferenceLoader;
 
-    .line 168
     invoke-static {v2}, Lcom/android/settings/accounts/AccountTypePreferenceLoader;->access$100(Lcom/android/settings/accounts/AccountTypePreferenceLoader;)Landroid/os/UserHandle;
 
     move-result-object v2
 
-    .line 167
     invoke-virtual {v1, v0, v2}, Landroid/app/Activity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
 
     goto :goto_0
 
-    .line 170
     :cond_0
     const-string v1, "AccountTypePrefLoader"
 
@@ -110,7 +100,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
     :goto_0
     const/4 v1, 0x1
 

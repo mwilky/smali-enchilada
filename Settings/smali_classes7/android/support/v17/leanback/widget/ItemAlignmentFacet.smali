@@ -23,10 +23,8 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
     const/4 v0, 0x1
 
     new-array v0, v0, [Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
@@ -49,7 +47,6 @@
 .method public getAlignmentDefs()[Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
     .locals 1
 
-    .line 207
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet;->mAlignmentDefs:[Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
 
     return-object v0
@@ -58,7 +55,6 @@
 .method public isMultiAlignment()Z
     .locals 2
 
-    .line 190
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet;->mAlignmentDefs:[Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
 
     array-length v0, v0
@@ -78,9 +74,7 @@
 
 .method public setAlignmentDefs([Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;)V
     .locals 2
-    .param p1, "defs"    # [Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
 
-    .line 197
     if-eqz p1, :cond_0
 
     array-length v0, p1
@@ -89,13 +83,10 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 200
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet;->mAlignmentDefs:[Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;
 
-    .line 201
     return-void
 
-    .line 198
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

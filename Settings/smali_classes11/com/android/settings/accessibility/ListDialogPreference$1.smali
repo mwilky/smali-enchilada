@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/ListDialogPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accessibility/ListDialogPreference;
 
-    .line 151
     iput-object p1, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,8 +46,6 @@
         }
     .end annotation
 
-    .line 154
-    .local p1, "adapter":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     long-to-int v1, p4
@@ -67,14 +60,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 155
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
     long-to-int v1, p4
 
     invoke-virtual {v0, v1}, Lcom/android/settings/accessibility/ListDialogPreference;->setValue(I)V
 
-    .line 158
     :cond_0
     iget-object v0, p0, Lcom/android/settings/accessibility/ListDialogPreference$1;->this$0:Lcom/android/settings/accessibility/ListDialogPreference;
 
@@ -82,14 +73,10 @@
 
     move-result-object v0
 
-    .line 159
-    .local v0, "dialog":Landroid/app/Dialog;
     if-eqz v0, :cond_1
 
-    .line 160
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 162
     :cond_1
     return-void
 .end method

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/ListPopupWindow;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/ListPopupWindow;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 1113
     iput-object p1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$1;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-direct {p0, p2}, Lcom/oneplus/lib/widget/ForwardingListener;-><init>(Landroid/view/View;)V
@@ -37,7 +34,6 @@
 .method public bridge synthetic getPopup()Lcom/oneplus/lib/menu/ShowableListMenu;
     .locals 1
 
-    .line 1113
     invoke-virtual {p0}, Lcom/oneplus/lib/widget/ListPopupWindow$1;->getPopup()Lcom/oneplus/lib/widget/ListPopupWindow;
 
     move-result-object v0
@@ -48,7 +44,6 @@
 .method public getPopup()Lcom/oneplus/lib/widget/ListPopupWindow;
     .locals 1
 
-    .line 1116
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$1;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     return-object v0

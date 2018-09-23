@@ -24,12 +24,9 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 1793
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1794
     new-instance v0, Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/content/Context;->getMainLooper()Landroid/os/Looper;
@@ -40,7 +37,6 @@
 
     iput-object v0, p0, Landroid/support/v4/media/MediaSession2$MainHandlerExecutor;->mHandler:Landroid/os/Handler;
 
-    .line 1795
     return-void
 .end method
 
@@ -48,9 +44,7 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 3
-    .param p1, "command"    # Ljava/lang/Runnable;
 
-    .line 1799
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2$MainHandlerExecutor;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
@@ -59,10 +53,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1802
     return-void
 
-    .line 1800
     :cond_0
     new-instance v0, Ljava/util/concurrent/RejectedExecutionException;
 

@@ -25,30 +25,20 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/caverock/androidsvg/CSSParser$AttribOp;Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "op"    # Lcom/caverock/androidsvg/CSSParser$AttribOp;
-    .param p3, "value"    # Ljava/lang/String;
 
-    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/CSSParser$Attrib;->name:Ljava/lang/String;
 
-    .line 84
     iput-object v0, p0, Lcom/caverock/androidsvg/CSSParser$Attrib;->value:Ljava/lang/String;
 
-    .line 88
     iput-object p1, p0, Lcom/caverock/androidsvg/CSSParser$Attrib;->name:Ljava/lang/String;
 
-    .line 89
     iput-object p2, p0, Lcom/caverock/androidsvg/CSSParser$Attrib;->operation:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    .line 90
     iput-object p3, p0, Lcom/caverock/androidsvg/CSSParser$Attrib;->value:Ljava/lang/String;
 
-    .line 91
     return-void
 .end method

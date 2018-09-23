@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public apply(Lcom/google/common/reflect/ClassPath$ClassInfo;)Z
     .locals 2
-    .param p1, "info"    # Lcom/google/common/reflect/ClassPath$ClassInfo;
 
-    .line 64
     invoke-static {p1}, Lcom/google/common/reflect/ClassPath$ClassInfo;->access$000(Lcom/google/common/reflect/ClassPath$ClassInfo;)Ljava/lang/String;
 
     move-result-object v0
@@ -71,7 +68,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 62
     check-cast p1, Lcom/google/common/reflect/ClassPath$ClassInfo;
 
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/ClassPath$1;->apply(Lcom/google/common/reflect/ClassPath$ClassInfo;)Z

@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaLibrarySessionImplBase;Landroid/support/v4/media/MediaSession2$ControllerInfo;Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
-    .line 114
     iput-object p1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->val$controller:Landroid/support/v4/media/MediaSession2$ControllerInfo;
@@ -54,14 +52,12 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 3
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 117
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->val$controller:Landroid/support/v4/media/MediaSession2$ControllerInfo;
@@ -74,12 +70,10 @@
 
     if-nez v0, :cond_1
 
-    .line 118
     sget-boolean v0, Landroid/support/v4/media/MediaSession2ImplBase;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 119
     const-string v0, "MS2ImplBase"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -104,16 +98,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->this$0:Landroid/support/v4/media/MediaLibrarySessionImplBase;
 
     invoke-static {v0}, Landroid/support/v4/media/MediaLibrarySessionImplBase;->access$100(Landroid/support/v4/media/MediaLibrarySessionImplBase;)V
 
-    .line 123
     :cond_0
     return-void
 
-    .line 125
     :cond_1
     iget-object v0, p0, Landroid/support/v4/media/MediaLibrarySessionImplBase$2;->val$parentId:Ljava/lang/String;
 
@@ -123,6 +114,5 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onChildrenChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
 
-    .line 126
     return-void
 .end method

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 1
-    .param p1, "info"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 83
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->extraInfo:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
@@ -52,6 +49,5 @@
 .method public init()V
     .locals 0
 
-    .line 79
     return-void
 .end method

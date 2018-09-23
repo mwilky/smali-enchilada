@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/util/Iterator;)V
     .locals 0
 
-    .line 161
     iput-object p1, p0, Lcom/google/common/collect/Iterators$3;->val$iterator:Ljava/util/Iterator;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
@@ -42,7 +41,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 164
     iget-object v0, p0, Lcom/google/common/collect/Iterators$3;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -60,7 +58,6 @@
         }
     .end annotation
 
-    .line 168
     iget-object v0, p0, Lcom/google/common/collect/Iterators$3;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 1070
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/reflect/TypeToken$TypeCollector;-><init>(Lcom/google/common/reflect/TypeToken$1;)V
@@ -50,8 +49,6 @@
         }
     .end annotation
 
-    .line 1076
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<*>;"
     invoke-virtual {p1}, Lcom/google/common/reflect/TypeToken;->getGenericInterfaces()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -62,7 +59,6 @@
 .method bridge synthetic getInterfaces(Ljava/lang/Object;)Ljava/lang/Iterable;
     .locals 0
 
-    .line 1070
     check-cast p1, Lcom/google/common/reflect/TypeToken;
 
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector$1;->getInterfaces(Lcom/google/common/reflect/TypeToken;)Ljava/lang/Iterable;
@@ -84,8 +80,6 @@
         }
     .end annotation
 
-    .line 1072
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<*>;"
     invoke-virtual {p1}, Lcom/google/common/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object v0
@@ -96,7 +90,6 @@
 .method bridge synthetic getRawType(Ljava/lang/Object;)Ljava/lang/Class;
     .locals 0
 
-    .line 1070
     check-cast p1, Lcom/google/common/reflect/TypeToken;
 
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector$1;->getRawType(Lcom/google/common/reflect/TypeToken;)Ljava/lang/Class;
@@ -121,8 +114,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1081
-    .local p1, "type":Lcom/google/common/reflect/TypeToken;, "Lcom/google/common/reflect/TypeToken<*>;"
     invoke-virtual {p1}, Lcom/google/common/reflect/TypeToken;->getGenericSuperclass()Lcom/google/common/reflect/TypeToken;
 
     move-result-object v0
@@ -135,7 +126,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 1070
     check-cast p1, Lcom/google/common/reflect/TypeToken;
 
     invoke-virtual {p0, p1}, Lcom/google/common/reflect/TypeToken$TypeCollector$1;->getSuperclass(Lcom/google/common/reflect/TypeToken;)Lcom/google/common/reflect/TypeToken;

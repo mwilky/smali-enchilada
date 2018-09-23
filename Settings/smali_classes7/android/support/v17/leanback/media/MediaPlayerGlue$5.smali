@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerGlue;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
-    .line 458
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerGlue$5;->this$0:Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onBufferingUpdate(Landroid/media/MediaPlayer;I)V
     .locals 4
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "percent"    # I
 
-    .line 461
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerGlue$5;->this$0:Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerGlue;->getControlsRow()Landroid/support/v17/leanback/widget/PlaybackControlsRow;
@@ -50,10 +45,8 @@
 
     if-nez v0, :cond_0
 
-    .line 462
     return-void
 
-    .line 464
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerGlue$5;->this$0:Landroid/support/v17/leanback/media/MediaPlayerGlue;
 
@@ -79,6 +72,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setBufferedProgress(I)V
 
-    .line 465
     return-void
 .end method

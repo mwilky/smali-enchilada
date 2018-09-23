@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 15
     invoke-direct {p0}, Lcom/oneplus/settings/defaultapp/apptype/DefaultAppTypeInfo;-><init>()V
 
     return-void
@@ -26,31 +25,24 @@
         }
     .end annotation
 
-    .line 34
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 35
-    .local v0, "filterList":Ljava/util/List;, "Ljava/util/List<Landroid/content/IntentFilter;>;"
     new-instance v1, Landroid/content/IntentFilter;
 
     const-string v2, "android.intent.action.VIEW"
 
     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 36
-    .local v1, "filter":Landroid/content/IntentFilter;
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
 
-    .line 37
     const-string v2, "content"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 39
     :try_start_0
     const-string v2, "image/*"
 
@@ -58,23 +50,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 42
     goto :goto_0
 
-    .line 40
     :catch_0
     move-exception v2
 
-    .line 41
-    .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 43
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_0
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 45
     new-instance v2, Landroid/content/IntentFilter;
 
     const-string v3, "android.intent.action.VIEW"
@@ -83,17 +68,14 @@
 
     move-object v1, v2
 
-    .line 46
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addCategory(Ljava/lang/String;)V
 
-    .line 47
     const-string v2, "file"
 
     invoke-virtual {v1, v2}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
 
-    .line 49
     :try_start_1
     const-string v2, "image/*"
 
@@ -101,23 +83,16 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 52
     goto :goto_1
 
-    .line 50
     :catch_1
     move-exception v2
 
-    .line 51
-    .restart local v2    # "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 53
-    .end local v2    # "e":Ljava/lang/Exception;
     :goto_1
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 55
     return-object v0
 .end method
 
@@ -132,42 +107,32 @@
         }
     .end annotation
 
-    .line 17
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 18
-    .local v0, "intentList":Ljava/util/List;, "Ljava/util/List<Landroid/content/Intent;>;"
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.VIEW"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 19
-    .local v1, "intent":Landroid/content/Intent;
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 20
     const-string v2, "content://"
 
     invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 21
-    .local v2, "uri":Landroid/net/Uri;
     const-string v3, "image/*"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 22
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 24
     new-instance v3, Landroid/content/Intent;
 
     const-string v4, "android.intent.action.VIEW"
@@ -176,27 +141,22 @@
 
     move-object v1, v3
 
-    .line 25
     const-string v3, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 26
     const-string v3, "file://"
 
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    .line 27
     const-string v3, "image/*"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 28
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 30
     return-object v0
 .end method
 
@@ -211,13 +171,10 @@
         }
     .end annotation
 
-    .line 59
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 60
-    .local v0, "matchList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     const/high16 v1, 0x600000
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -226,13 +183,11 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 61
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 62
     return-object v0
 .end method

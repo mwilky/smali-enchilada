@@ -21,20 +21,15 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "bm"    # I
 
-    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 114
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
-    .line 117
     iput p1, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
-    .line 118
     return-void
 .end method
 
@@ -43,7 +38,6 @@
 .method public getBand()I
     .locals 1
 
-    .line 121
     iget v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
     return v0
@@ -52,7 +46,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 125
     iget v0, p0, Lcom/android/settings/BandMode$BandListItem;->mBandMode:I
 
     invoke-static {}, Lcom/android/settings/BandMode;->access$300()[Ljava/lang/String;
@@ -81,7 +74,6 @@
 
     return-object v0
 
-    .line 126
     :cond_0
     invoke-static {}, Lcom/android/settings/BandMode;->access$300()[Ljava/lang/String;
 

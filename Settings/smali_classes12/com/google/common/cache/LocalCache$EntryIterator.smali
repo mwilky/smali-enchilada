@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/LocalCache;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/cache/LocalCache;
 
-    .line 4429
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntryIterator;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntryIterator;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$EntryIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
     invoke-direct {p0, p1}, Lcom/google/common/cache/LocalCache$HashIterator;-><init>(Lcom/google/common/cache/LocalCache;)V
@@ -46,8 +43,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 4429
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntryIterator;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntryIterator;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$EntryIterator;->next()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -65,8 +60,6 @@
         }
     .end annotation
 
-    .line 4433
-    .local p0, "this":Lcom/google/common/cache/LocalCache$EntryIterator;, "Lcom/google/common/cache/LocalCache<TK;TV;>.EntryIterator;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$EntryIterator;->nextEntry()Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     move-result-object v0

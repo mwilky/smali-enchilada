@@ -141,7 +141,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -149,9 +148,7 @@
 
 .method public static contentGroup(I)Ljava/lang/String;
     .locals 1
-    .param p0, "index"    # I
 
-    .line 115
     const-string v0, "&cg"
 
     invoke-static {v0, p0}, Lcom/google/analytics/tracking/android/Fields;->getParam(Ljava/lang/String;I)Ljava/lang/String;
@@ -163,9 +160,7 @@
 
 .method public static customDimension(I)Ljava/lang/String;
     .locals 1
-    .param p0, "index"    # I
 
-    .line 107
     const-string v0, "&cd"
 
     invoke-static {v0, p0}, Lcom/google/analytics/tracking/android/Fields;->getParam(Ljava/lang/String;I)Ljava/lang/String;
@@ -177,9 +172,7 @@
 
 .method public static customMetric(I)Ljava/lang/String;
     .locals 1
-    .param p0, "index"    # I
 
-    .line 111
     const-string v0, "&cm"
 
     invoke-static {v0, p0}, Lcom/google/analytics/tracking/android/Fields;->getParam(Ljava/lang/String;I)Ljava/lang/String;
@@ -191,15 +184,11 @@
 
 .method private static getParam(Ljava/lang/String;I)Ljava/lang/String;
     .locals 2
-    .param p0, "prefix"    # Ljava/lang/String;
-    .param p1, "index"    # I
 
-    .line 119
     const/4 v0, 0x1
 
     if-ge p1, v0, :cond_0
 
-    .line 120
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -226,12 +215,10 @@
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/Log;->e(Ljava/lang/String;)V
 
-    .line 121
     const-string v0, ""
 
     return-object v0
 
-    .line 123
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 

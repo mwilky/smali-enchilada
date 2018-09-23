@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/LottieDrawable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/LottieDrawable;
 
-    .line 72
     iput-object p1, p0, Lcom/airbnb/lottie/LottieDrawable$1;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 74
     iget-object v0, p0, Lcom/airbnb/lottie/LottieDrawable$1;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     invoke-static {v0}, Lcom/airbnb/lottie/LottieDrawable;->access$000(Lcom/airbnb/lottie/LottieDrawable;)Lcom/airbnb/lottie/model/layer/CompositionLayer;
@@ -49,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 75
     iget-object v0, p0, Lcom/airbnb/lottie/LottieDrawable$1;->this$0:Lcom/airbnb/lottie/LottieDrawable;
 
     invoke-static {v0}, Lcom/airbnb/lottie/LottieDrawable;->access$000(Lcom/airbnb/lottie/LottieDrawable;)Lcom/airbnb/lottie/model/layer/CompositionLayer;
@@ -68,7 +63,6 @@
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/model/layer/CompositionLayer;->setProgress(F)V
 
-    .line 77
     :cond_0
     return-void
 .end method

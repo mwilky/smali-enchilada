@@ -13,7 +13,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30
     invoke-direct {p0}, Landroid/support/v17/leanback/app/GuidedStepFragment;-><init>()V
 
     return-void
@@ -23,7 +22,6 @@
 # virtual methods
 .method public onCreateActions(Ljava/util/List;Landroid/os/Bundle;)V
     .locals 3
-    .param p2, "savedInstanceState"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,8 +33,6 @@
         }
     .end annotation
 
-    .line 50
-    .local p1, "actions":Ljava/util/List;, "Ljava/util/List<Landroid/support/v17/leanback/widget/GuidedAction;>;"
     new-instance v0, Landroid/support/v17/leanback/widget/GuidedAction$Builder;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getContext()Landroid/content/Context;
@@ -45,7 +41,6 @@
 
     invoke-direct {v0, v1}, Landroid/support/v17/leanback/widget/GuidedAction$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 51
     const-wide/16 v1, -0x4
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v17/leanback/widget/GuidedAction$Builder;->clickAction(J)Landroid/support/v17/leanback/widget/GuidedAction$BuilderBase;
@@ -54,26 +49,20 @@
 
     check-cast v0, Landroid/support/v17/leanback/widget/GuidedAction$Builder;
 
-    .line 52
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedAction$Builder;->build()Landroid/support/v17/leanback/widget/GuidedAction;
 
     move-result-object v0
 
-    .line 50
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 53
     return-void
 .end method
 
 .method public onCreateGuidance(Landroid/os/Bundle;)Landroid/support/v17/leanback/widget/GuidanceStylist$Guidance;
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 41
     new-instance v0, Landroid/support/v17/leanback/widget/GuidanceStylist$Guidance;
 
-    .line 42
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -88,7 +77,6 @@
 
     move-result-object v1
 
-    .line 43
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v2
@@ -107,22 +95,18 @@
 
     invoke-direct {v0, v1, v2, v3, v3}, Landroid/support/v17/leanback/widget/GuidanceStylist$Guidance;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/graphics/drawable/Drawable;)V
 
-    .line 41
     return-object v0
 .end method
 
 .method public onGuidedActionClicked(Landroid/support/v17/leanback/widget/GuidedAction;)V
     .locals 2
-    .param p1, "action"    # Landroid/support/v17/leanback/widget/GuidedAction;
 
-    .line 57
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->isAdded()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 58
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -131,7 +115,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 59
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -140,7 +123,6 @@
 
     invoke-virtual {v0}, Lcom/oneplus/settings/packageuninstaller/UninstallerActivity;->dispatchAborted()V
 
-    .line 62
     :cond_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getActivity()Landroid/app/Activity;
 
@@ -150,14 +132,12 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setResult(I)V
 
-    .line 63
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/ErrorFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 65
     :cond_1
     return-void
 .end method
@@ -165,7 +145,6 @@
 .method public onProvideTheme()I
     .locals 1
 
-    .line 36
     const v0, 0x7f130426
 
     return v0

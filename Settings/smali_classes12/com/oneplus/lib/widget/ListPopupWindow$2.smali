@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/ListPopupWindow;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/ListPopupWindow;
 
-    .line 1140
     iput-object p1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$2;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,15 +37,12 @@
 .method public run()V
     .locals 2
 
-    .line 1144
     iget-object v0, p0, Lcom/oneplus/lib/widget/ListPopupWindow$2;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1145
-    .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
@@ -56,12 +51,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1146
     iget-object v1, p0, Lcom/oneplus/lib/widget/ListPopupWindow$2;->this$0:Lcom/oneplus/lib/widget/ListPopupWindow;
 
     invoke-virtual {v1}, Lcom/oneplus/lib/widget/ListPopupWindow;->show()V
 
-    .line 1148
     :cond_0
     return-void
 .end method

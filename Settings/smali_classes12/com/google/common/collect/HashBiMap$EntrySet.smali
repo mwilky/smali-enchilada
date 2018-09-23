@@ -29,8 +29,6 @@
 .method private constructor <init>(Lcom/google/common/collect/HashBiMap;)V
     .locals 0
 
-    .line 426
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet;, "Lcom/google/common/collect/HashBiMap<TK;TV;>.EntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/HashBiMap$EntrySet;->this$0:Lcom/google/common/collect/HashBiMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$EntrySet;-><init>()V
@@ -40,11 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/HashBiMap;Lcom/google/common/collect/HashBiMap$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/HashBiMap;
-    .param p2, "x1"    # Lcom/google/common/collect/HashBiMap$1;
 
-    .line 426
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet;, "Lcom/google/common/collect/HashBiMap<TK;TV;>.EntrySet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/HashBiMap$EntrySet;-><init>(Lcom/google/common/collect/HashBiMap;)V
 
     return-void
@@ -63,8 +57,6 @@
         }
     .end annotation
 
-    .line 434
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet;, "Lcom/google/common/collect/HashBiMap<TK;TV;>.EntrySet;"
     new-instance v0, Lcom/google/common/collect/HashBiMap$EntrySet$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/HashBiMap$EntrySet$1;-><init>(Lcom/google/common/collect/HashBiMap$EntrySet;)V
@@ -82,8 +74,6 @@
         }
     .end annotation
 
-    .line 429
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet;, "Lcom/google/common/collect/HashBiMap<TK;TV;>.EntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/HashBiMap$EntrySet;->this$0:Lcom/google/common/collect/HashBiMap;
 
     return-object v0

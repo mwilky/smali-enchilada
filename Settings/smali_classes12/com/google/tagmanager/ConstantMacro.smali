@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 15
     sget-object v0, Lcom/google/analytics/containertag/common/FunctionType;->CONSTANT:Lcom/google/analytics/containertag/common/FunctionType;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/FunctionType;->toString()Ljava/lang/String;
@@ -22,7 +21,6 @@
 
     sput-object v0, Lcom/google/tagmanager/ConstantMacro;->ID:Ljava/lang/String;
 
-    .line 16
     sget-object v0, Lcom/google/analytics/containertag/common/Key;->VALUE:Lcom/google/analytics/containertag/common/Key;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/Key;->toString()Ljava/lang/String;
@@ -37,7 +35,6 @@
 .method public constructor <init>()V
     .locals 4
 
-    .line 23
     sget-object v0, Lcom/google/tagmanager/ConstantMacro;->ID:Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -52,14 +49,12 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/tagmanager/FunctionCallImplementation;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 24
     return-void
 .end method
 
 .method public static getFunctionId()Ljava/lang/String;
     .locals 1
 
-    .line 19
     sget-object v0, Lcom/google/tagmanager/ConstantMacro;->ID:Ljava/lang/String;
 
     return-object v0
@@ -68,7 +63,6 @@
 .method public static getValueKey()Ljava/lang/String;
     .locals 1
 
-    .line 27
     sget-object v0, Lcom/google/tagmanager/ConstantMacro;->VALUE:Ljava/lang/String;
 
     return-object v0
@@ -89,8 +83,6 @@
         }
     .end annotation
 
-    .line 35
-    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     sget-object v0, Lcom/google/tagmanager/ConstantMacro;->VALUE:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -105,7 +97,6 @@
 .method public isCacheable()Z
     .locals 1
 
-    .line 31
     const/4 v0, 0x1
 
     return v0

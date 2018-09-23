@@ -30,11 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/FilteredEntryMultimap$AsMap;Ljava/util/Map;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
-    .line 286
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;"
-    .local p2, "map":Ljava/util/Map;, "Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/Maps$Values;-><init>(Ljava/util/Map;)V
@@ -46,31 +42,25 @@
 # virtual methods
 .method public remove(Ljava/lang/Object;)Z
     .locals 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 289
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;"
     instance-of v0, p1, Ljava/util/Collection;
 
     if-eqz v0, :cond_2
 
-    .line 290
     move-object v0, p1
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 291
-    .local v0, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v1, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     iget-object v1, v1, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;
 
     iget-object v1, v1, Lcom/google/common/collect/FilteredEntryMultimap;->unfiltered:Lcom/google/common/collect/Multimap;
 
-    .line 292
     invoke-interface {v1}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
     move-result-object v1
@@ -83,8 +73,6 @@
 
     move-result-object v1
 
-    .line 293
-    .local v1, "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -92,24 +80,18 @@
 
     if-eqz v2, :cond_2
 
-    .line 294
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 295
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 296
-    .local v3, "key":Ljava/lang/Object;, "TK;"
     nop
 
-    .line 297
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -128,8 +110,6 @@
 
     move-result-object v4
 
-    .line 298
-    .local v4, "collection":Ljava/util/Collection;, "Ljava/util/Collection<TV;>;"
     invoke-interface {v4}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v5
@@ -142,7 +122,6 @@
 
     if-eqz v5, :cond_1
 
-    .line 299
     invoke-interface {v4}, Ljava/util/Collection;->size()I
 
     move-result v5
@@ -159,31 +138,21 @@
 
     if-ne v5, v6, :cond_0
 
-    .line 300
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_1
 
-    .line 302
     :cond_0
     invoke-interface {v4}, Ljava/util/Collection;->clear()V
 
-    .line 304
     :goto_1
     const/4 v5, 0x1
 
     return v5
 
-    .line 306
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
-    .end local v3    # "key":Ljava/lang/Object;, "TK;"
-    .end local v4    # "collection":Ljava/util/Collection;, "Ljava/util/Collection<TV;>;"
     :cond_1
     goto :goto_0
 
-    .line 308
-    .end local v0    # "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
-    .end local v1    # "entryIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     :cond_2
     const/4 v0, 0x0
 
@@ -200,9 +169,6 @@
         }
     .end annotation
 
-    .line 313
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;
@@ -232,9 +198,6 @@
         }
     .end annotation
 
-    .line 318
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;, "Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap$3;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$AsMap;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$AsMap;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;

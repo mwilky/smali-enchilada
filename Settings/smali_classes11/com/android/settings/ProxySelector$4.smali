@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/ProxySelector;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/ProxySelector;
 
-    .line 268
     iput-object p1, p0, Lcom/android/settings/ProxySelector$4;->this$0:Lcom/android/settings/ProxySelector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +36,13 @@
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "hasFocus"    # Z
 
-    .line 270
     if-eqz p2, :cond_0
 
-    .line 271
     move-object v0, p1
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 272
-    .local v0, "textView":Landroid/widget/TextView;
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -59,8 +51,6 @@
 
     invoke-static {v1}, Landroid/text/Selection;->selectAll(Landroid/text/Spannable;)V
 
-    .line 274
-    .end local v0    # "textView":Landroid/widget/TextView;
     :cond_0
     return-void
 .end method

@@ -25,7 +25,6 @@
 .method constructor <init>(Ljava/lang/StringBuilder;)V
     .locals 0
 
-    .line 212
     iput-object p1, p0, Lcom/google/common/io/GwtWorkarounds$6;->val$builder:Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +37,18 @@
 .method public close()V
     .locals 0
 
-    .line 223
     return-void
 .end method
 
 .method public flush()V
     .locals 0
 
-    .line 220
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 227
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$6;->val$builder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -64,13 +60,10 @@
 
 .method public write(C)V
     .locals 1
-    .param p1, "c"    # C
 
-    .line 216
     iget-object v0, p0, Lcom/google/common/io/GwtWorkarounds$6;->val$builder:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 217
     return-void
 .end method

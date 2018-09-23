@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
-    .line 219
     iput-object p1, p0, Lcom/oneplus/lib/util/AnimatorUtils$2;->val$activity:Landroid/app/Activity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -34,23 +33,18 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 222
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 223
     iget-object v0, p0, Lcom/oneplus/lib/util/AnimatorUtils$2;->val$activity:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 224
     iget-object v0, p0, Lcom/oneplus/lib/util/AnimatorUtils$2;->val$activity:Landroid/app/Activity;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    .line 225
     return-void
 .end method

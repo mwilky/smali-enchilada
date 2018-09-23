@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 14
     sget-object v0, Lcom/google/analytics/containertag/common/FunctionType;->SDK_VERSION:Lcom/google/analytics/containertag/common/FunctionType;
 
     invoke-virtual {v0}, Lcom/google/analytics/containertag/common/FunctionType;->toString()Ljava/lang/String;
@@ -26,7 +25,6 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 21
     sget-object v0, Lcom/google/tagmanager/SdkVersionMacro;->ID:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -35,14 +33,12 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/tagmanager/FunctionCallImplementation;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 22
     return-void
 .end method
 
 .method public static getFunctionId()Ljava/lang/String;
     .locals 1
 
-    .line 17
     sget-object v0, Lcom/google/tagmanager/SdkVersionMacro;->ID:Ljava/lang/String;
 
     return-object v0
@@ -63,8 +59,6 @@
         }
     .end annotation
 
-    .line 29
-    .local p1, "parameters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/google/analytics/midtier/proto/containertag/TypeSystem$Value;>;"
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -81,7 +75,6 @@
 .method public isCacheable()Z
     .locals 1
 
-    .line 25
     const/4 v0, 0x1
 
     return v0

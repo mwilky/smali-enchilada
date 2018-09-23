@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/dashboard/SummaryLoader;Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/dashboard/SummaryLoader;
 
-    .line 199
     iput-object p1, p0, Lcom/android/settings/dashboard/SummaryLoader$1;->this$0:Lcom/android/settings/dashboard/SummaryLoader;
 
     iput-object p2, p0, Lcom/android/settings/dashboard/SummaryLoader$1;->val$receiver:Landroid/content/BroadcastReceiver;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 202
     iget-object v0, p0, Lcom/android/settings/dashboard/SummaryLoader$1;->this$0:Lcom/android/settings/dashboard/SummaryLoader;
 
     invoke-static {v0}, Lcom/android/settings/dashboard/SummaryLoader;->access$000(Lcom/android/settings/dashboard/SummaryLoader;)Z
@@ -56,10 +53,8 @@
 
     if-nez v0, :cond_0
 
-    .line 203
     return-void
 
-    .line 205
     :cond_0
     iget-object v0, p0, Lcom/android/settings/dashboard/SummaryLoader$1;->this$0:Lcom/android/settings/dashboard/SummaryLoader;
 
@@ -71,7 +66,6 @@
 
     invoke-virtual {v0, v1}, Landroid/util/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 206
     iget-object v0, p0, Lcom/android/settings/dashboard/SummaryLoader$1;->this$0:Lcom/android/settings/dashboard/SummaryLoader;
 
     invoke-static {v0}, Lcom/android/settings/dashboard/SummaryLoader;->access$200(Lcom/android/settings/dashboard/SummaryLoader;)Landroid/app/Activity;
@@ -84,6 +78,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 207
     return-void
 .end method

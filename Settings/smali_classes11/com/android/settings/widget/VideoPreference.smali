@@ -34,21 +34,15 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 57
     invoke-direct {p0, p1, p2}, Landroid/support/v7/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 53
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/settings/widget/VideoPreference;->mAspectRadio:F
 
-    .line 58
     iput-object p1, p0, Lcom/android/settings/widget/VideoPreference;->mContext:Landroid/content/Context;
 
-    .line 59
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
@@ -61,15 +55,11 @@
 
     move-result-object v0
 
-    .line 64
-    .local v0, "attributes":Landroid/content/res/TypedArray;
     :try_start_0
     invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 66
-    .local v1, "animation":I
     iget-object v3, p0, Lcom/android/settings/widget/VideoPreference;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -82,16 +72,13 @@
 
     if-eqz v3, :cond_0
 
-    .line 67
     const v1, 0x7f110003
 
     goto :goto_0
 
-    .line 69
     :cond_0
     const v1, 0x7f110002
 
-    .line 72
     :goto_0
     new-instance v3, Landroid/net/Uri$Builder;
 
@@ -103,7 +90,6 @@
 
     move-result-object v3
 
-    .line 73
     invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -112,7 +98,6 @@
 
     move-result-object v3
 
-    .line 74
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v4
@@ -121,14 +106,12 @@
 
     move-result-object v3
 
-    .line 75
     invoke-virtual {v3}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPath:Landroid/net/Uri;
 
-    .line 76
     iget-object v3, p0, Lcom/android/settings/widget/VideoPreference;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPath:Landroid/net/Uri;
@@ -139,7 +122,6 @@
 
     iput-object v3, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
-    .line 77
     iget-object v3, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v3, :cond_1
@@ -152,24 +134,20 @@
 
     if-lez v3, :cond_1
 
-    .line 78
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Lcom/android/settings/widget/VideoPreference;->setVisible(Z)V
 
-    .line 79
-    const v4, 0x7f0d02c8
+    const v4, 0x7f0d02c7
 
     invoke-virtual {p0, v4}, Lcom/android/settings/widget/VideoPreference;->setLayoutResource(I)V
 
-    .line 81
     invoke-virtual {v0, v3, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
     iput v2, p0, Lcom/android/settings/widget/VideoPreference;->mPreviewResource:I
 
-    .line 84
     iget-object v2, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     new-instance v4, Lcom/android/settings/widget/-$$Lambda$VideoPreference$dH8H9UsxsQzXI7GaCcZWWDvTxoU;
@@ -178,43 +156,34 @@
 
     invoke-virtual {v2, v4}, Landroid/media/MediaPlayer;->setOnSeekCompleteListener(Landroid/media/MediaPlayer$OnSeekCompleteListener;)V
 
-    .line 86
     iget-object v2, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     sget-object v4, Lcom/android/settings/widget/-$$Lambda$VideoPreference$2crRm1Sj4_bqGlDPLY9cVIbC7CU;->INSTANCE:Lcom/android/settings/widget/-$$Lambda$VideoPreference$2crRm1Sj4_bqGlDPLY9cVIbC7CU;
 
     invoke-virtual {v2, v4}, Landroid/media/MediaPlayer;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    .line 87
     iput-boolean v3, p0, Lcom/android/settings/widget/VideoPreference;->mAnimationAvailable:Z
 
-    .line 88
     invoke-virtual {p0}, Lcom/android/settings/widget/VideoPreference;->updateAspectRatio()V
 
     goto :goto_1
 
-    .line 90
     :cond_1
     invoke-virtual {p0, v2}, Lcom/android/settings/widget/VideoPreference;->setVisible(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .end local v1    # "animation":I
     goto :goto_1
 
-    .line 95
     :catchall_0
     move-exception v1
 
     goto :goto_2
 
-    .line 92
     :catch_0
     move-exception v1
 
-    .line 93
-    .local v1, "e":Ljava/lang/Exception;
     :try_start_1
     const-string v2, "VideoPreference"
 
@@ -224,18 +193,13 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 95
-    .end local v1    # "e":Ljava/lang/Exception;
     :goto_1
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 96
     nop
 
-    .line 97
     return-void
 
-    .line 95
     :goto_2
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -244,9 +208,7 @@
 
 .method static synthetic access$000(Lcom/android/settings/widget/VideoPreference;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/widget/VideoPreference;
 
-    .line 41
     iget-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoReady:Z
 
     return v0
@@ -254,10 +216,7 @@
 
 .method static synthetic access$002(Lcom/android/settings/widget/VideoPreference;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/widget/VideoPreference;
-    .param p1, "x1"    # Z
 
-    .line 41
     iput-boolean p1, p0, Lcom/android/settings/widget/VideoPreference;->mVideoReady:Z
 
     return p1
@@ -265,9 +224,7 @@
 
 .method static synthetic access$100(Lcom/android/settings/widget/VideoPreference;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/widget/VideoPreference;
 
-    .line 41
     iget-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPaused:Z
 
     return v0
@@ -275,9 +232,7 @@
 
 .method public static synthetic lambda$new$0(Lcom/android/settings/widget/VideoPreference;Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 84
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoReady:Z
@@ -287,9 +242,7 @@
 
 .method static synthetic lambda$new$1(Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p0, "mediaPlayer"    # Landroid/media/MediaPlayer;
 
-    .line 86
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/media/MediaPlayer;->setLooping(Z)V
@@ -299,15 +252,11 @@
 
 .method public static synthetic lambda$onBindViewHolder$2(Lcom/android/settings/widget/VideoPreference;Landroid/widget/ImageView;Landroid/view/View;)V
     .locals 2
-    .param p1, "playButton"    # Landroid/widget/ImageView;
-    .param p2, "v"    # Landroid/view/View;
 
-    .line 117
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_1
 
-    .line 118
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->isPlaying()Z
@@ -318,36 +267,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 119
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->pause()V
 
-    .line 120
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 121
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPaused:Z
 
     goto :goto_0
 
-    .line 123
     :cond_0
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->start()V
 
-    .line 124
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 125
     iput-boolean v1, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPaused:Z
 
-    .line 128
     :cond_1
     :goto_0
     return-void
@@ -358,7 +300,6 @@
 .method public isVideoPaused()Z
     .locals 1
 
-    .line 195
     iget-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPaused:Z
 
     return v0
@@ -366,22 +307,17 @@
 
 .method public onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
     .locals 5
-    .param p1, "holder"    # Landroid/support/v7/preference/PreferenceViewHolder;
 
-    .line 101
     invoke-super {p0, p1}, Landroid/support/v7/preference/Preference;->onBindViewHolder(Landroid/support/v7/preference/PreferenceViewHolder;)V
 
-    .line 103
     iget-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mAnimationAvailable:Z
 
     if-nez v0, :cond_0
 
-    .line 104
     return-void
 
-    .line 107
     :cond_0
-    const v0, 0x7f0a05a1
+    const v0, 0x7f0a059f
 
     invoke-virtual {p1, v0}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -389,9 +325,7 @@
 
     check-cast v0, Landroid/view/TextureView;
 
-    .line 108
-    .local v0, "video":Landroid/view/TextureView;
-    const v1, 0x7f0a059e
+    const v1, 0x7f0a059c
 
     invoke-virtual {p1, v1}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -399,9 +333,7 @@
 
     check-cast v1, Landroid/widget/ImageView;
 
-    .line 109
-    .local v1, "imageView":Landroid/widget/ImageView;
-    const v2, 0x7f0a059d
+    const v2, 0x7f0a059b
 
     invoke-virtual {p1, v2}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -409,9 +341,7 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 110
-    .local v2, "playButton":Landroid/widget/ImageView;
-    const v3, 0x7f0a059c
+    const v3, 0x7f0a059a
 
     invoke-virtual {p1, v3}, Landroid/support/v7/preference/PreferenceViewHolder;->findViewById(I)Landroid/view/View;
 
@@ -419,70 +349,57 @@
 
     check-cast v3, Lcom/android/settings/widget/AspectRatioFrameLayout;
 
-    .line 113
-    .local v3, "layout":Lcom/android/settings/widget/AspectRatioFrameLayout;
     iget v4, p0, Lcom/android/settings/widget/VideoPreference;->mPreviewResource:I
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 114
     iget v4, p0, Lcom/android/settings/widget/VideoPreference;->mAspectRadio:F
 
     invoke-virtual {v3, v4}, Lcom/android/settings/widget/AspectRatioFrameLayout;->setAspectRatio(F)V
 
-    .line 116
     new-instance v4, Lcom/android/settings/widget/-$$Lambda$VideoPreference$n3lVCTPDzJxvnNXXv__BWcO0YKM;
 
     invoke-direct {v4, p0, v2}, Lcom/android/settings/widget/-$$Lambda$VideoPreference$n3lVCTPDzJxvnNXXv__BWcO0YKM;-><init>(Lcom/android/settings/widget/VideoPreference;Landroid/widget/ImageView;)V
 
     invoke-virtual {v0, v4}, Landroid/view/TextureView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 130
     new-instance v4, Lcom/android/settings/widget/VideoPreference$1;
 
     invoke-direct {v4, p0, v1, v2}, Lcom/android/settings/widget/VideoPreference$1;-><init>(Lcom/android/settings/widget/VideoPreference;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
 
     invoke-virtual {v0, v4}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
 
-    .line 169
     return-void
 .end method
 
 .method public onDetached()V
     .locals 1
 
-    .line 173
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 174
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 175
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->reset()V
 
-    .line 176
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 178
     :cond_0
     invoke-super {p0}, Landroid/support/v7/preference/Preference;->onDetached()V
 
-    .line 179
     return-void
 .end method
 
 .method public onViewInvisible()V
     .locals 1
 
-    .line 189
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_0
@@ -495,24 +412,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->pause()V
 
-    .line 192
     :cond_0
     return-void
 .end method
 
 .method public onViewVisible(Z)V
     .locals 2
-    .param p1, "videoPaused"    # Z
 
-    .line 182
     iput-boolean p1, p0, Lcom/android/settings/widget/VideoPreference;->mVideoPaused:Z
 
-    .line 183
     iget-boolean v0, p0, Lcom/android/settings/widget/VideoPreference;->mVideoReady:Z
 
     if-eqz v0, :cond_0
@@ -529,14 +441,12 @@
 
     if-nez v0, :cond_0
 
-    .line 184
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/media/MediaPlayer;->seekTo(I)V
 
-    .line 186
     :cond_0
     return-void
 .end method
@@ -546,7 +456,6 @@
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 200
     iget-object v0, p0, Lcom/android/settings/widget/VideoPreference;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->getVideoWidth()I
@@ -567,6 +476,5 @@
 
     iput v0, p0, Lcom/android/settings/widget/VideoPreference;->mAspectRadio:F
 
-    .line 201
     return-void
 .end method

@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/settings/widget/ValidatedEditTextPreference;)V
     .locals 0
 
-    .line 125
     iput-object p1, p0, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;->this$0:Lcom/android/settings/widget/ValidatedEditTextPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/widget/ValidatedEditTextPreference;Lcom/android/settings/widget/ValidatedEditTextPreference$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/widget/ValidatedEditTextPreference;
-    .param p2, "x1"    # Lcom/android/settings/widget/ValidatedEditTextPreference$1;
 
-    .line 125
     invoke-direct {p0, p1}, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;-><init>(Lcom/android/settings/widget/ValidatedEditTextPreference;)V
 
     return-void
@@ -48,17 +44,13 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 4
-    .param p1, "s"    # Landroid/text/Editable;
 
-    .line 136
     iget-object v0, p0, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;->this$0:Lcom/android/settings/widget/ValidatedEditTextPreference;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/ValidatedEditTextPreference;->getEditText()Landroid/widget/EditText;
 
     move-result-object v0
 
-    .line 137
-    .local v0, "editText":Landroid/widget/EditText;
     iget-object v1, p0, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;->this$0:Lcom/android/settings/widget/ValidatedEditTextPreference;
 
     invoke-static {v1}, Lcom/android/settings/widget/ValidatedEditTextPreference;->access$100(Lcom/android/settings/widget/ValidatedEditTextPreference;)Lcom/android/settings/widget/ValidatedEditTextPreference$Validator;
@@ -69,7 +61,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 138
     iget-object v1, p0, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;->this$0:Lcom/android/settings/widget/ValidatedEditTextPreference;
 
     invoke-virtual {v1}, Lcom/android/settings/widget/ValidatedEditTextPreference;->getDialog()Landroid/app/Dialog;
@@ -78,8 +69,6 @@
 
     check-cast v1, Landroid/app/AlertDialog;
 
-    .line 139
-    .local v1, "dialog":Landroid/app/AlertDialog;
     iget-object v2, p0, Lcom/android/settings/widget/ValidatedEditTextPreference$EditTextWatcher;->this$0:Lcom/android/settings/widget/ValidatedEditTextPreference;
 
     invoke-static {v2}, Lcom/android/settings/widget/ValidatedEditTextPreference;->access$100(Lcom/android/settings/widget/ValidatedEditTextPreference;)Lcom/android/settings/widget/ValidatedEditTextPreference$Validator;
@@ -98,8 +87,6 @@
 
     move-result v2
 
-    .line 140
-    .local v2, "valid":Z
     const/4 v3, -0x1
 
     invoke-virtual {v1, v3}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
@@ -108,31 +95,18 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/Button;->setEnabled(Z)V
 
-    .line 142
-    .end local v1    # "dialog":Landroid/app/AlertDialog;
-    .end local v2    # "valid":Z
     :cond_0
     return-void
 .end method
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
-    .line 132
     return-void
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
-    .line 128
     return-void
 .end method

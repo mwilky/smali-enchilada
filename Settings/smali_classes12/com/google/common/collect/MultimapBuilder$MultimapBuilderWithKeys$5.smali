@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;Ljava/util/Comparator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
-    .line 391
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;"
     iput-object p1, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;->this$0:Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
     iput-object p2, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;->val$comparator:Ljava/util/Comparator;
@@ -48,8 +45,6 @@
 .method public bridge synthetic build()Lcom/google/common/collect/Multimap;
     .locals 1
 
-    .line 391
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;->build()Lcom/google/common/collect/SortedSetMultimap;
 
     move-result-object v0
@@ -60,8 +55,6 @@
 .method public bridge synthetic build()Lcom/google/common/collect/SetMultimap;
     .locals 1
 
-    .line 391
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;->build()Lcom/google/common/collect/SortedSetMultimap;
 
     move-result-object v0
@@ -79,11 +72,8 @@
         }
     .end annotation
 
-    .line 394
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;, "Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;"
     iget-object v0, p0, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys$5;->this$0:Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;
 
-    .line 395
     invoke-virtual {v0}, Lcom/google/common/collect/MultimapBuilder$MultimapBuilderWithKeys;->createMap()Ljava/util/Map;
 
     move-result-object v0
@@ -94,7 +84,6 @@
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/MultimapBuilder$TreeSetSupplier;-><init>(Ljava/util/Comparator;)V
 
-    .line 394
     invoke-static {v0, v1}, Lcom/google/common/collect/Multimaps;->newSortedSetMultimap(Ljava/util/Map;Lcom/google/common/base/Supplier;)Lcom/google/common/collect/SortedSetMultimap;
 
     move-result-object v0

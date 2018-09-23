@@ -34,17 +34,13 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ArrayTable$1;I)V
     .locals 1
-    .param p1, "this$1"    # Lcom/google/common/collect/ArrayTable$1;
 
-    .line 560
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$1$1;, "Lcom/google/common/collect/ArrayTable$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
 
     iput p2, p0, Lcom/google/common/collect/ArrayTable$1$1;->val$index:I
 
     invoke-direct {p0}, Lcom/google/common/collect/Tables$AbstractCell;-><init>()V
 
-    .line 561
     iget p2, p0, Lcom/google/common/collect/ArrayTable$1$1;->val$index:I
 
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
@@ -63,7 +59,6 @@
 
     iput p2, p0, Lcom/google/common/collect/ArrayTable$1$1;->rowIndex:I
 
-    .line 562
     iget p2, p0, Lcom/google/common/collect/ArrayTable$1$1;->val$index:I
 
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
@@ -95,8 +90,6 @@
         }
     .end annotation
 
-    .line 569
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$1$1;, "Lcom/google/common/collect/ArrayTable$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$1;->this$0:Lcom/google/common/collect/ArrayTable;
@@ -122,8 +115,6 @@
         }
     .end annotation
 
-    .line 565
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$1$1;, "Lcom/google/common/collect/ArrayTable$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$1;->this$0:Lcom/google/common/collect/ArrayTable;
@@ -149,8 +140,6 @@
         }
     .end annotation
 
-    .line 573
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$1$1;, "Lcom/google/common/collect/ArrayTable$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$1$1;->this$1:Lcom/google/common/collect/ArrayTable$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$1;->this$0:Lcom/google/common/collect/ArrayTable;

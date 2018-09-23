@@ -43,15 +43,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 59
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 68
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
-    .line 82
     new-instance v0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$MessageHandler;
 
     invoke-direct {v0, p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$MessageHandler;-><init>(Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;)V
@@ -63,10 +60,7 @@
 
 .method static synthetic access$000(Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;Landroid/os/Message;)V
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;
-    .param p1, "x1"    # Landroid/os/Message;
 
-    .line 59
     invoke-direct {p0, p1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->handleMessage(Landroid/os/Message;)V
 
     return-void
@@ -74,9 +68,7 @@
 
 .method static synthetic access$200(Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;
 
-    .line 59
     iget-object v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -85,7 +77,6 @@
 .method private getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
     .locals 2
 
-    .line 378
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v0
@@ -103,9 +94,7 @@
 
 .method private handleMessage(Landroid/os/Message;)V
     .locals 13
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 101
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->isFinishing()Z
 
     move-result v0
@@ -120,7 +109,6 @@
 
     goto/16 :goto_c
 
-    .line 105
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -128,14 +116,11 @@
 
     goto/16 :goto_b
 
-    .line 107
     :pswitch_0
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->initView()V
 
-    .line 108
     goto/16 :goto_b
 
-    .line 110
     :pswitch_1
     iget-object v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mHandler:Landroid/os/Handler;
 
@@ -143,43 +128,33 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 112
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_1
 
-    .line 113
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->initView()V
 
-    .line 116
     :cond_1
     iget v0, p1, Landroid/os/Message;->arg1:I
 
     iput v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
-    .line 117
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/String;
 
-    .line 119
-    .local v0, "packageName":Ljava/lang/String;
     iget-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mCallback:Landroid/os/IBinder;
 
     if-eqz v2, :cond_2
 
-    .line 120
     iget-object v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mCallback:Landroid/os/IBinder;
 
-    .line 121
     invoke-static {v1}, Landroid/content/pm/IPackageDeleteObserver2$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IPackageDeleteObserver2;
 
     move-result-object v1
 
-    .line 123
-    .local v1, "observer":Landroid/content/pm/IPackageDeleteObserver2;
     :try_start_0
     iget-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -191,22 +166,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 126
     goto :goto_0
 
-    .line 125
     :catch_0
     move-exception v2
 
-    .line 127
     :goto_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->finish()V
 
-    .line 128
     return-void
 
-    .line 131
-    .end local v1    # "observer":Landroid/content/pm/IPackageDeleteObserver2;
     :cond_2
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getIntent()Landroid/content/Intent;
 
@@ -222,47 +191,37 @@
 
     if-eqz v2, :cond_4
 
-    .line 132
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
-    .line 133
-    .local v2, "result":Landroid/content/Intent;
     const-string v3, "android.intent.extra.INSTALL_RESULT"
 
     iget v4, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
     invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 134
     iget v3, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
     if-ne v3, v1, :cond_3
 
-    .line 135
     const/4 v1, -0x1
 
     nop
 
-    .line 134
     :cond_3
     invoke-virtual {p0, v1, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setResult(ILandroid/content/Intent;)V
 
-    .line 137
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->finish()V
 
-    .line 138
     return-void
 
-    .line 143
-    .end local v2    # "result":Landroid/content/Intent;
     :cond_4
     iget v2, p1, Landroid/os/Message;->arg1:I
 
     const/4 v3, -0x4
 
-    const v5, 0x7f121215
+    const v5, 0x7f12120e
 
     if-eq v2, v3, :cond_b
 
@@ -272,7 +231,6 @@
 
     if-eq v2, v1, :cond_5
 
-    .line 232
     const-string v1, "UninstallAppProgress"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -299,83 +257,60 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 234
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     goto/16 :goto_a
 
-    .line 145
     :cond_5
-    const v2, 0x7f121213
+    const v2, 0x7f12120c
 
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 147
-    .local v2, "statusText":Ljava/lang/String;
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->notifyPackageRemoved()V
 
-    .line 148
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getBaseContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 149
-    .local v3, "ctx":Landroid/content/Context;
     invoke-static {v3, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 150
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setResultAndFinish()V
 
-    .line 151
     return-void
 
-    .line 153
-    .end local v2    # "statusText":Ljava/lang/String;
-    .end local v3    # "ctx":Landroid/content/Context;
     :cond_6
     const-string v2, "user"
 
-    .line 154
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/UserManager;
 
-    .line 155
-    .local v2, "userManager":Landroid/os/UserManager;
     const-string v3, "device_policy"
 
-    .line 156
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v3
 
-    .line 155
     invoke-static {v3}, Landroid/app/admin/IDevicePolicyManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/app/admin/IDevicePolicyManager;
 
     move-result-object v3
 
-    .line 158
-    .local v3, "dpm":Landroid/app/admin/IDevicePolicyManager;
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v5
 
-    .line 159
-    .local v5, "myUserId":I
     const/4 v6, 0x0
 
-    .line 160
-    .local v6, "otherBlockingUser":Landroid/content/pm/UserInfo;
     invoke-virtual {v2}, Landroid/os/UserManager;->getUsers()Ljava/util/List;
 
     move-result-object v7
@@ -397,8 +332,6 @@
 
     check-cast v8, Landroid/content/pm/UserInfo;
 
-    .line 163
-    .local v8, "user":Landroid/content/pm/UserInfo;
     iget v9, v8, Landroid/content/pm/UserInfo;->id:I
 
     invoke-direct {p0, v2, v5, v9}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->isProfileOfOrSame(Landroid/os/UserManager;II)Z
@@ -407,11 +340,8 @@
 
     if-eqz v9, :cond_7
 
-    .end local v8    # "user":Landroid/content/pm/UserInfo;
     goto :goto_1
 
-    .line 166
-    .restart local v8    # "user":Landroid/content/pm/UserInfo;
     :cond_7
     :try_start_1
     iget v9, v8, Landroid/content/pm/UserInfo;->id:I
@@ -424,40 +354,29 @@
 
     if-eqz v9, :cond_8
 
-    .line 167
     move-object v6, v8
 
-    .line 168
     goto :goto_3
 
-    .line 172
     :cond_8
     goto :goto_2
 
-    .line 170
     :catch_1
     move-exception v9
 
-    .line 171
-    .local v9, "e":Landroid/os/RemoteException;
     const-string v10, "UninstallAppProgress"
 
     const-string v11, "Failed to talk to package manager"
 
     invoke-static {v10, v11, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 173
-    .end local v8    # "user":Landroid/content/pm/UserInfo;
-    .end local v9    # "e":Landroid/os/RemoteException;
     :goto_2
     goto :goto_1
 
-    .line 174
     :cond_9
     :goto_3
     if-nez v6, :cond_a
 
-    .line 175
     const-string v4, "UninstallAppProgress"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -480,34 +399,21 @@
 
     invoke-static {v4, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
     move-result-object v4
 
     invoke-interface {v4, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
-    .line 178
-    const v1, 0x7f121217
+    const v1, 0x7f121210
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .end local v2    # "userManager":Landroid/os/UserManager;
-    .end local v3    # "dpm":Landroid/app/admin/IDevicePolicyManager;
-    .end local v5    # "myUserId":I
-    .end local v6    # "otherBlockingUser":Landroid/content/pm/UserInfo;
-    .local v1, "statusText":Ljava/lang/String;
     :goto_4
     goto/16 :goto_a
 
-    .line 181
-    .end local v1    # "statusText":Ljava/lang/String;
-    .restart local v2    # "userManager":Landroid/os/UserManager;
-    .restart local v3    # "dpm":Landroid/app/admin/IDevicePolicyManager;
-    .restart local v5    # "myUserId":I
-    .restart local v6    # "otherBlockingUser":Landroid/content/pm/UserInfo;
     :cond_a
     const-string v7, "UninstallAppProgress"
 
@@ -533,17 +439,14 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 183
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
     move-result-object v7
 
     invoke-interface {v7, v4}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
-    .line 184
-    const v7, 0x7f121218
+    const v7, 0x7f121211
 
-    .line 185
     invoke-virtual {p0, v7}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v7
@@ -554,60 +457,39 @@
 
     aput-object v8, v1, v4
 
-    .line 184
     invoke-static {v7, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 188
-    .restart local v1    # "statusText":Ljava/lang/String;
     goto/16 :goto_a
 
-    .line 191
-    .end local v1    # "statusText":Ljava/lang/String;
-    .end local v2    # "userManager":Landroid/os/UserManager;
-    .end local v3    # "dpm":Landroid/app/admin/IDevicePolicyManager;
-    .end local v5    # "myUserId":I
-    .end local v6    # "otherBlockingUser":Landroid/content/pm/UserInfo;
     :cond_b
     const-string v2, "user"
 
-    .line 192
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/os/UserManager;
 
-    .line 193
-    .restart local v2    # "userManager":Landroid/os/UserManager;
     const-string v3, "package"
 
-    .line 194
     invoke-static {v3}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v3
 
-    .line 193
     invoke-static {v3}, Landroid/content/pm/IPackageManager$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IPackageManager;
 
     move-result-object v3
 
-    .line 195
-    .local v3, "packageManager":Landroid/content/pm/IPackageManager;
     invoke-virtual {v2}, Landroid/os/UserManager;->getUsers()Ljava/util/List;
 
     move-result-object v6
 
-    .line 196
-    .local v6, "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     const/16 v7, -0x2710
 
-    .line 197
-    .local v7, "blockingUserId":I
     move v8, v4
 
-    .local v8, "i":I
     :goto_5
     invoke-interface {v6}, Ljava/util/List;->size()I
 
@@ -615,15 +497,12 @@
 
     if-ge v8, v9, :cond_d
 
-    .line 198
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Landroid/content/pm/UserInfo;
 
-    .line 200
-    .local v9, "user":Landroid/content/pm/UserInfo;
     :try_start_2
     iget v10, v9, Landroid/content/pm/UserInfo;->id:I
 
@@ -633,57 +512,43 @@
 
     if-eqz v10, :cond_c
 
-    .line 202
     iget v10, v9, Landroid/content/pm/UserInfo;->id:I
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_2
 
     move v7, v10
 
-    .line 203
     goto :goto_7
 
-    .line 208
     :cond_c
     goto :goto_6
 
-    .line 205
     :catch_2
     move-exception v10
 
-    .line 207
-    .local v10, "e":Landroid/os/RemoteException;
     const-string v11, "UninstallAppProgress"
 
     const-string v12, "Failed to talk to package manager"
 
     invoke-static {v11, v12, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 197
-    .end local v9    # "user":Landroid/content/pm/UserInfo;
-    .end local v10    # "e":Landroid/os/RemoteException;
     :goto_6
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_5
 
-    .line 210
-    .end local v8    # "i":I
     :cond_d
     :goto_7
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v8
 
-    .line 211
-    .local v8, "myUserId":I
     invoke-direct {p0, v2, v8, v7}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->isProfileOfOrSame(Landroid/os/UserManager;II)Z
 
     move-result v9
 
     if-eqz v9, :cond_e
 
-    .line 212
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
     move-result-object v4
@@ -692,7 +557,6 @@
 
     goto :goto_8
 
-    .line 214
     :cond_e
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
@@ -700,19 +564,16 @@
 
     invoke-interface {v9, v4}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setDeviceManagerButtonVisible(Z)V
 
-    .line 215
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
     move-result-object v4
 
     invoke-interface {v4, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->setUsersButtonVisible(Z)V
 
-    .line 218
     :goto_8
     if-nez v7, :cond_f
 
-    .line 219
-    const v1, 0x7f121210
+    const v1, 0x7f121209
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -720,13 +581,11 @@
 
     goto/16 :goto_4
 
-    .line 220
     :cond_f
     const/16 v1, -0x2710
 
     if-ne v7, v1, :cond_10
 
-    .line 221
     const-string v1, "UninstallAppProgress"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -757,21 +616,18 @@
 
     invoke-static {v1, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 223
     invoke-virtual {p0, v5}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
     goto/16 :goto_4
 
-    .line 225
     :cond_10
     iget-boolean v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAllUsers:Z
 
     if-eqz v1, :cond_11
 
-    .line 226
-    const v1, 0x7f12120a
+    const v1, 0x7f121203
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
@@ -779,45 +635,30 @@
 
     goto :goto_9
 
-    .line 227
     :cond_11
-    const v1, 0x7f121211
+    const v1, 0x7f12120a
 
     invoke-virtual {p0, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 229
-    .restart local v1    # "statusText":Ljava/lang/String;
     :goto_9
     nop
 
-    .line 234
-    .end local v2    # "userManager":Landroid/os/UserManager;
-    .end local v3    # "packageManager":Landroid/content/pm/IPackageManager;
-    .end local v6    # "users":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
-    .end local v7    # "blockingUserId":I
-    .end local v8    # "myUserId":I
     :goto_a
     nop
 
-    .line 237
     invoke-direct {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getProgressFragment()Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;
 
     move-result-object v2
 
     invoke-interface {v2, v1}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$ProgressFragment;->showCompletion(Ljava/lang/CharSequence;)V
 
-    .line 238
     nop
 
-    .line 242
-    .end local v0    # "packageName":Ljava/lang/String;
-    .end local v1    # "statusText":Ljava/lang/String;
     :goto_b
     return-void
 
-    .line 102
     :cond_12
     :goto_c
     return-void
@@ -832,27 +673,21 @@
 .method private initView()V
     .locals 6
 
-    .line 326
     iget-boolean v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mIsViewInitialized:Z
 
     if-eqz v0, :cond_0
 
-    .line 327
     return-void
 
-    .line 329
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mIsViewInitialized:Z
 
-    .line 332
     new-instance v1, Landroid/util/TypedValue;
 
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
-    .line 333
-    .local v1, "attribute":Landroid/util/TypedValue;
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v2
@@ -861,7 +696,6 @@
 
     invoke-virtual {v2, v3, v1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 334
     iget v2, v1, Landroid/util/TypedValue;->type:I
 
     const/16 v3, 0x1c
@@ -874,7 +708,6 @@
 
     if-gt v2, v3, :cond_1
 
-    .line 336
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -889,7 +722,6 @@
 
     goto :goto_0
 
-    .line 338
     :cond_1
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
@@ -901,19 +733,16 @@
 
     iget v4, v1, Landroid/util/TypedValue;->resourceId:I
 
-    .line 339
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v5
 
-    .line 338
     invoke-virtual {v3, v4, v5}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 342
     :goto_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -923,7 +752,6 @@
 
     invoke-virtual {v2, v3, v1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 343
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -932,7 +760,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    .line 345
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v2
@@ -941,7 +768,6 @@
 
     invoke-virtual {v2, v3, v1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 346
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -950,7 +776,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->setStatusBarColor(I)V
 
-    .line 348
     iget-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v2, v2, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -964,22 +789,19 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 349
-    .local v0, "isUpdate":Z
     :goto_1
     if-eqz v0, :cond_3
 
-    const v2, 0x7f12121e
+    const v2, 0x7f121217
 
     goto :goto_2
 
     :cond_3
-    const v2, 0x7f12120f
+    const v2, 0x7f121208
 
     :goto_2
     invoke-virtual {p0, v2}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setTitle(I)V
 
-    .line 351
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getFragmentManager()Landroid/app/FragmentManager;
 
     move-result-object v2
@@ -996,40 +818,29 @@
 
     const-string v5, "progress_fragment"
 
-    .line 352
     invoke-virtual {v2, v3, v4, v5}, Landroid/app/FragmentTransaction;->add(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
     move-result-object v2
 
-    .line 353
     invoke-virtual {v2}, Landroid/app/FragmentTransaction;->commitNowAllowingStateLoss()V
 
-    .line 354
     return-void
 .end method
 
 .method private isProfileOfOrSame(Landroid/os/UserManager;II)Z
     .locals 3
-    .param p1, "userManager"    # Landroid/os/UserManager;
-    .param p2, "userId"    # I
-    .param p3, "profileId"    # I
 
-    .line 245
     const/4 v0, 0x1
 
     if-ne p2, p3, :cond_0
 
-    .line 246
     return v0
 
-    .line 248
     :cond_0
     invoke-virtual {p1, p3}, Landroid/os/UserManager;->getProfileParent(I)Landroid/content/pm/UserInfo;
 
     move-result-object v1
 
-    .line 249
-    .local v1, "parentUser":Landroid/content/pm/UserInfo;
     if-eqz v1, :cond_1
 
     iget v2, v1, Landroid/content/pm/UserInfo;->id:I
@@ -1048,28 +859,22 @@
 .method private notifyPackageRemoved()V
     .locals 2
 
-    .line 371
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "oneplus.settings.intent.action.PACKAGE_REMOVED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 372
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x11000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 373
     const-string v1, "com.android.settings"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 374
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 375
     return-void
 .end method
 
@@ -1077,9 +882,7 @@
 # virtual methods
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
-    .param p1, "ev"    # Landroid/view/KeyEvent;
 
-    .line 358
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -1088,25 +891,21 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 359
     iget v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 361
     const/4 v0, 0x1
 
     return v0
 
-    .line 364
     :cond_0
     iget v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setResult(I)V
 
-    .line 367
     :cond_1
     invoke-super {p0, p1}, Landroid/app/Activity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -1118,7 +917,6 @@
 .method public getAppInfo()Landroid/content/pm/ApplicationInfo;
     .locals 1
 
-    .line 308
     iget-object v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
     return-object v0
@@ -1126,18 +924,13 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
-    .param p1, "icicle"    # Landroid/os/Bundle;
 
-    .line 254
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 256
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 257
-    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "com.android.packageinstaller.applicationInfo"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -1148,7 +941,6 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 258
     const-string v1, "android.content.pm.extra.CALLBACK"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->getIBinderExtra(Ljava/lang/String;)Landroid/os/IBinder;
@@ -1157,31 +949,24 @@
 
     iput-object v1, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mCallback:Landroid/os/IBinder;
 
-    .line 262
     const/4 v1, 0x0
 
     if-eqz p1, :cond_1
 
-    .line 263
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
-    .line 265
     iget-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mCallback:Landroid/os/IBinder;
 
     if-eqz v2, :cond_0
 
-    .line 266
     iget-object v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mCallback:Landroid/os/IBinder;
 
-    .line 267
     invoke-static {v2}, Landroid/content/pm/IPackageDeleteObserver2$Stub;->asInterface(Landroid/os/IBinder;)Landroid/content/pm/IPackageDeleteObserver2;
 
     move-result-object v2
 
-    .line 269
-    .local v2, "observer":Landroid/content/pm/IPackageDeleteObserver2;
     :try_start_0
     iget-object v3, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAppInfo:Landroid/content/pm/ApplicationInfo;
 
@@ -1193,30 +978,22 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 271
     goto :goto_0
 
-    .line 270
     :catch_0
     move-exception v1
 
-    .line 272
     :goto_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->finish()V
 
-    .line 273
-    .end local v2    # "observer":Landroid/content/pm/IPackageDeleteObserver2;
     goto :goto_1
 
-    .line 274
     :cond_0
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setResultAndFinish()V
 
-    .line 277
     :goto_1
     return-void
 
-    .line 280
     :cond_1
     const-string v2, "android.intent.extra.UNINSTALL_ALL_USERS"
 
@@ -1228,7 +1005,6 @@
 
     iput-boolean v2, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAllUsers:Z
 
-    .line 281
     const-string v2, "android.intent.extra.USER"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -1237,16 +1013,12 @@
 
     check-cast v2, Landroid/os/UserHandle;
 
-    .line 282
-    .local v2, "user":Landroid/os/UserHandle;
     if-nez v2, :cond_2
 
-    .line 283
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v2
 
-    .line 286
     :cond_2
     new-instance v4, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$PackageDeleteObserver;
 
@@ -1254,8 +1026,6 @@
 
     move-object v1, v4
 
-    .line 291
-    .local v1, "observer":Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress$PackageDeleteObserver;
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -1266,21 +1036,18 @@
 
     invoke-virtual {v4, v5}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 292
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
     invoke-virtual {v4, v3}, Landroid/view/Window;->setStatusBarColor(I)V
 
-    .line 293
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
     invoke-virtual {v4, v3}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    .line 296
     const/4 v4, 0x2
 
     :try_start_1
@@ -1292,7 +1059,6 @@
 
     iget-object v6, v6, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 297
     iget-boolean v7, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mAllUsers:Z
 
     if-eqz v7, :cond_3
@@ -1306,20 +1072,15 @@
 
     move-result v7
 
-    .line 296
     invoke-virtual {v5, v6, v1, v3, v7}, Landroid/content/pm/PackageManager;->deletePackageAsUser(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;II)V
     :try_end_1
     .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 301
     goto :goto_2
 
-    .line 298
     :catch_1
     move-exception v3
 
-    .line 300
-    .local v3, "e":Ljava/lang/IllegalArgumentException;
     const-string v5, "UninstallAppProgress"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1342,8 +1103,6 @@
 
     invoke-static {v5, v6, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 303
-    .end local v3    # "e":Ljava/lang/IllegalArgumentException;
     :goto_2
     iget-object v3, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mHandler:Landroid/os/Handler;
 
@@ -1357,21 +1116,17 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 305
     return-void
 .end method
 
 .method public setResultAndFinish()V
     .locals 1
 
-    .line 321
     iget v0, p0, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->mResultCode:I
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->setResult(I)V
 
-    .line 322
     invoke-virtual {p0}, Lcom/oneplus/settings/packageuninstaller/UninstallAppProgress;->finish()V
 
-    .line 323
     return-void
 .end method

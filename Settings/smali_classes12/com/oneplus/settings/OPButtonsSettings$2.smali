@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/OPButtonsSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/OPButtonsSettings;
 
-    .line 647
     iput-object p1, p0, Lcom/oneplus/settings/OPButtonsSettings$2;->this$0:Lcom/oneplus/settings/OPButtonsSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 650
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsSettings$2;->this$0:Lcom/oneplus/settings/OPButtonsSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPButtonsSettings;->access$100(Lcom/oneplus/settings/OPButtonsSettings;)Landroid/support/v14/preference/SwitchPreference;
@@ -50,11 +47,9 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setEnabled(Z)V
 
-    .line 651
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsSettings$2;->this$0:Lcom/oneplus/settings/OPButtonsSettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPButtonsSettings;->access$000(Lcom/oneplus/settings/OPButtonsSettings;)V
 
-    .line 652
     return-void
 .end method

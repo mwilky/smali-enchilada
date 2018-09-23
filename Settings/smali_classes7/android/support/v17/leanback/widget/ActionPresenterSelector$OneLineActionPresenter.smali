@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 93
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionPresenter;-><init>()V
 
     return-void
@@ -28,25 +27,17 @@
 # virtual methods
 .method public onBindViewHolder(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;)V
     .locals 4
-    .param p1, "viewHolder"    # Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
-    .param p2, "item"    # Ljava/lang/Object;
 
-    .line 103
     invoke-super {p0, p1, p2}, Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionPresenter;->onBindViewHolder(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;)V
 
-    .line 104
     move-object v0, p1
 
     check-cast v0, Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionViewHolder;
 
-    .line 105
-    .local v0, "vh":Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionViewHolder;
     move-object v1, p2
 
     check-cast v1, Landroid/support/v17/leanback/widget/Action;
 
-    .line 106
-    .local v1, "action":Landroid/support/v17/leanback/widget/Action;
     iget-object v2, v0, Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionViewHolder;->mButton:Landroid/widget/Button;
 
     invoke-virtual {v1}, Landroid/support/v17/leanback/widget/Action;->getLabel1()Ljava/lang/CharSequence;
@@ -55,15 +46,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 107
     return-void
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;)Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
     .locals 3
-    .param p1, "parent"    # Landroid/view/ViewGroup;
 
-    .line 96
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -74,15 +62,12 @@
 
     sget v1, Landroid/support/v17/leanback/R$layout;->lb_action_1_line:I
 
-    .line 97
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 98
-    .local v0, "v":Landroid/view/View;
     new-instance v1, Landroid/support/v17/leanback/widget/ActionPresenterSelector$ActionViewHolder;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getLayoutDirection()I

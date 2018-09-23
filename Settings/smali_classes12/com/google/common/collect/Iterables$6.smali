@@ -31,7 +31,6 @@
 .method constructor <init>(Ljava/lang/Iterable;Lcom/google/common/base/Predicate;)V
     .locals 0
 
-    .line 586
     iput-object p1, p0, Lcom/google/common/collect/Iterables$6;->val$unfiltered:Ljava/lang/Iterable;
 
     iput-object p2, p0, Lcom/google/common/collect/Iterables$6;->val$predicate:Lcom/google/common/base/Predicate;
@@ -53,7 +52,6 @@
         }
     .end annotation
 
-    .line 589
     iget-object v0, p0, Lcom/google/common/collect/Iterables$6;->val$unfiltered:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;

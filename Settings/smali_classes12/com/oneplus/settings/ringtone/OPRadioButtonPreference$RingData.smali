@@ -25,22 +25,14 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "t1"    # Ljava/lang/String;
-    .param p2, "t2"    # Ljava/lang/String;
-    .param p3, "t3"    # Ljava/lang/String;
 
-    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPRadioButtonPreference$RingData;->mData:Ljava/lang/String;
 
-    .line 59
     iput-object p2, p0, Lcom/oneplus/settings/ringtone/OPRadioButtonPreference$RingData;->title:Ljava/lang/String;
 
-    .line 60
     iput-object p3, p0, Lcom/oneplus/settings/ringtone/OPRadioButtonPreference$RingData;->mimetype:Ljava/lang/String;
 
-    .line 61
     return-void
 .end method

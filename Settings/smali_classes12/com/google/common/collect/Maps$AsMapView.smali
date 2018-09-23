@@ -59,13 +59,8 @@
         }
     .end annotation
 
-    .line 763
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
-    .local p1, "set":Ljava/util/Set;, "Ljava/util/Set<TK;>;"
-    .local p2, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Maps$ImprovedAbstractMap;-><init>()V
 
-    .line 764
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,7 +69,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$AsMapView;->set:Ljava/util/Set;
 
-    .line 765
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -83,7 +77,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$AsMapView;->function:Lcom/google/common/base/Function;
 
-    .line 766
     return-void
 .end method
 
@@ -99,8 +92,6 @@
         }
     .end annotation
 
-    .line 760
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$AsMapView;->set:Ljava/util/Set;
 
     return-object v0
@@ -109,27 +100,22 @@
 .method public clear()V
     .locals 1
 
-    .line 812
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
-    .line 813
     return-void
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 785
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0
@@ -152,8 +138,6 @@
         }
     .end annotation
 
-    .line 817
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$AsMapView$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$AsMapView$1;-><init>(Lcom/google/common/collect/Maps$AsMapView;)V
@@ -171,8 +155,6 @@
         }
     .end annotation
 
-    .line 770
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0
@@ -194,8 +176,6 @@
         }
     .end annotation
 
-    .line 775
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$AsMapView;->set:Ljava/util/Set;
 
     iget-object v1, p0, Lcom/google/common/collect/Maps$AsMapView;->function:Lcom/google/common/base/Function;
@@ -209,7 +189,7 @@
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -221,8 +201,6 @@
         }
     .end annotation
 
-    .line 790
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0
@@ -233,11 +211,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 792
     move-object v0, p1
 
-    .line 793
-    .local v0, "k":Ljava/lang/Object;, "TK;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$AsMapView;->function:Lcom/google/common/base/Function;
 
     invoke-interface {v1, v0}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -246,8 +221,6 @@
 
     return-object v1
 
-    .line 795
-    .end local v0    # "k":Ljava/lang/Object;, "TK;"
     :cond_0
     const/4 v0, 0x0
 
@@ -256,7 +229,7 @@
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -268,8 +241,6 @@
         }
     .end annotation
 
-    .line 801
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0
@@ -280,11 +251,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 803
     move-object v0, p1
 
-    .line 804
-    .local v0, "k":Ljava/lang/Object;, "TK;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$AsMapView;->function:Lcom/google/common/base/Function;
 
     invoke-interface {v1, v0}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -293,8 +261,6 @@
 
     return-object v1
 
-    .line 806
-    .end local v0    # "k":Ljava/lang/Object;, "TK;"
     :cond_0
     const/4 v0, 0x0
 
@@ -304,8 +270,6 @@
 .method public size()I
     .locals 1
 
-    .line 780
-    .local p0, "this":Lcom/google/common/collect/Maps$AsMapView;, "Lcom/google/common/collect/Maps$AsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$AsMapView;->backingSet()Ljava/util/Set;
 
     move-result-object v0

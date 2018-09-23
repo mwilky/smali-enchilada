@@ -29,7 +29,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 56
     invoke-direct {p0}, Lcom/google/common/cache/CacheLoader;-><init>()V
 
     return-void
@@ -56,8 +55,6 @@
         }
     .end annotation
 
-    .line 59
-    .local p1, "concreteClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {p1}, Lcom/google/common/eventbus/AnnotatedSubscriberFinder;->access$000(Ljava/lang/Class;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -73,7 +70,6 @@
         }
     .end annotation
 
-    .line 56
     check-cast p1, Ljava/lang/Class;
 
     invoke-virtual {p0, p1}, Lcom/google/common/eventbus/AnnotatedSubscriberFinder$1;->load(Ljava/lang/Class;)Lcom/google/common/collect/ImmutableList;

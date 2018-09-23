@@ -27,8 +27,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingIterator;-><init>()V
 
     return-void
@@ -44,24 +42,18 @@
         }
     .end annotation
 
-    .line 43
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
 
-    .line 44
     return-void
 .end method
 
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 32
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -72,8 +64,6 @@
 .method protected bridge synthetic delegate()Ljava/util/Iterator;
     .locals 1
 
-    .line 32
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -94,8 +84,6 @@
 .method public hasPrevious()Z
     .locals 1
 
-    .line 48
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -110,8 +98,6 @@
 .method public nextIndex()I
     .locals 1
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -131,8 +117,6 @@
         }
     .end annotation
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -147,8 +131,6 @@
 .method public previousIndex()I
     .locals 1
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
@@ -168,15 +150,11 @@
         }
     .end annotation
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/ForwardingListIterator;, "Lcom/google/common/collect/ForwardingListIterator<TE;>;"
-    .local p1, "element":Ljava/lang/Object;, "TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
 
-    .line 69
     return-void
 .end method

@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 46
     invoke-static {}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;->values()[Lcom/airbnb/lottie/model/content/ShapeStroke$LineJoinType;
 
     move-result-object v0
@@ -97,7 +96,6 @@
     :catch_2
     move-exception v3
 
-    .line 28
     :goto_2
     invoke-static {}, Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;->values()[Lcom/airbnb/lottie/model/content/ShapeStroke$LineCapType;
 

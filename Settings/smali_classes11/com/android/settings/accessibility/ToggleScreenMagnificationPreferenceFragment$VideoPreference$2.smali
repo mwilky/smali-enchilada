@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;Landroid/widget/VideoView;IIII)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
-    .line 96
     iput-object p1, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->this$1:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
     iput-object p2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoView:Landroid/widget/VideoView;
@@ -59,7 +57,6 @@
 .method public onGlobalLayout()V
     .locals 4
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->this$1:Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;
 
     invoke-static {v0}, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;->access$200(Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference;)Landroid/widget/ImageView;
@@ -70,8 +67,6 @@
 
     move-result v0
 
-    .line 101
-    .local v0, "backgroundViewWidth":I
     iget-object v1, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoView:Landroid/widget/VideoView;
 
     invoke-virtual {v1}, Landroid/widget/VideoView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -80,8 +75,6 @@
 
     check-cast v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 102
-    .local v1, "videoLp":Landroid/widget/RelativeLayout$LayoutParams;
     iget v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoAssetWidth:I
 
     mul-int/2addr v2, v0
@@ -92,7 +85,6 @@
 
     iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
-    .line 103
     iget v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoAssetHeight:I
 
     mul-int/2addr v2, v0
@@ -103,7 +95,6 @@
 
     iput v2, v1, Landroid/widget/RelativeLayout$LayoutParams;->height:I
 
-    .line 104
     iget v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoAssetMarginTop:I
 
     mul-int/2addr v2, v0
@@ -116,21 +107,17 @@
 
     invoke-virtual {v1, v3, v2, v3, v3}, Landroid/widget/RelativeLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 106
     iget-object v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2, v1}, Landroid/widget/VideoView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 107
     iget-object v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->invalidate()V
 
-    .line 108
     iget-object v2, p0, Lcom/android/settings/accessibility/ToggleScreenMagnificationPreferenceFragment$VideoPreference$2;->val$videoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->start()V
 
-    .line 109
     return-void
 .end method

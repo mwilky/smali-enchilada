@@ -18,13 +18,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settings/notification/NotificationBackend;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "backend"    # Lcom/android/settings/notification/NotificationBackend;
 
-    .line 35
     invoke-direct {p0, p1, p2}, Lcom/android/settings/notification/NotificationPreferenceController;-><init>(Landroid/content/Context;Lcom/android/settings/notification/NotificationBackend;)V
 
-    .line 36
     const-string v0, "vibrator"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -35,7 +31,6 @@
 
     iput-object v0, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mVibrator:Landroid/os/Vibrator;
 
-    .line 37
     return-void
 .end method
 
@@ -44,7 +39,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 41
     const-string v0, "vibrate"
 
     return-object v0
@@ -53,7 +47,6 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 46
     invoke-super {p0}, Lcom/android/settings/notification/NotificationPreferenceController;->isAvailable()Z
 
     move-result v0
@@ -68,7 +61,6 @@
 
     goto :goto_0
 
-    .line 49
     :cond_0
     const/4 v0, 0x3
 
@@ -78,7 +70,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 50
     invoke-virtual {p0}, Lcom/android/settings/notification/VibrationPreferenceController;->isDefaultChannel()Z
 
     move-result v0
@@ -91,7 +82,6 @@
 
     iget-object v0, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mVibrator:Landroid/os/Vibrator;
 
-    .line 52
     invoke-virtual {v0}, Landroid/os/Vibrator;->hasVibrator()Z
 
     move-result v0
@@ -102,11 +92,9 @@
 
     nop
 
-    .line 49
     :cond_1
     return v1
 
-    .line 47
     :cond_2
     :goto_0
     return v1
@@ -114,15 +102,11 @@
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     if-eqz v0, :cond_0
 
-    .line 67
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -131,17 +115,12 @@
 
     move-result v0
 
-    .line 68
-    .local v0, "vibrate":Z
     iget-object v1, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     invoke-virtual {v1, v0}, Landroid/app/NotificationChannel;->enableVibration(Z)V
 
-    .line 69
     invoke-virtual {p0}, Lcom/android/settings/notification/VibrationPreferenceController;->saveChannel()V
 
-    .line 71
-    .end local v0    # "vibrate":Z
     :cond_0
     const/4 v0, 0x1
 
@@ -150,25 +129,19 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 56
     iget-object v0, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     if-eqz v0, :cond_1
 
-    .line 57
     move-object v0, p1
 
     check-cast v0, Lcom/android/settingslib/RestrictedSwitchPreference;
 
-    .line 58
-    .local v0, "pref":Lcom/android/settingslib/RestrictedSwitchPreference;
     iget-object v1, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mAdmin:Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setDisabledByAdmin(Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)V
 
-    .line 59
     invoke-virtual {v0}, Lcom/android/settingslib/RestrictedSwitchPreference;->isDisabledByAdmin()Z
 
     move-result v1
@@ -191,7 +164,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setEnabled(Z)V
 
-    .line 60
     iget-object v1, p0, Lcom/android/settings/notification/VibrationPreferenceController;->mChannel:Landroid/app/NotificationChannel;
 
     invoke-virtual {v1}, Landroid/app/NotificationChannel;->shouldVibrate()Z
@@ -200,8 +172,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settingslib/RestrictedSwitchPreference;->setChecked(Z)V
 
-    .line 62
-    .end local v0    # "pref":Lcom/android/settingslib/RestrictedSwitchPreference;
     :cond_1
     return-void
 .end method

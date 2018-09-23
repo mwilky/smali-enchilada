@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/BillingCyclePreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/BillingCyclePreference;
 
-    .line 96
     iput-object p1, p0, Lcom/android/settings/datausage/BillingCyclePreference$1;->this$0:Lcom/android/settings/datausage/BillingCyclePreference;
 
     invoke-direct {p0}, Lcom/android/settings/datausage/CellDataPreference$DataStateListener;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/datausage/BillingCyclePreference$1;->this$0:Lcom/android/settings/datausage/BillingCyclePreference;
 
     invoke-static {v0}, Lcom/android/settings/datausage/BillingCyclePreference;->access$000(Lcom/android/settings/datausage/BillingCyclePreference;)V
 
-    .line 100
     return-void
 .end method

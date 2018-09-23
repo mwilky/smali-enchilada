@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 263
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
         }
     .end annotation
 
-    .line 306
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -52,17 +50,14 @@
 .method public clear()V
     .locals 0
 
-    .line 297
     return-void
 .end method
 
 .method public get(Ljava/lang/Comparable;)Ljava/lang/Object;
     .locals 1
-    .param p1, "key"    # Ljava/lang/Comparable;
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 267
     const/4 v0, 0x0
 
     return-object v0
@@ -70,7 +65,6 @@
 
 .method public getEntry(Ljava/lang/Comparable;)Ljava/util/Map$Entry;
     .locals 1
-    .param p1, "key"    # Ljava/lang/Comparable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +80,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 273
     const/4 v0, 0x0
 
     return-object v0
@@ -94,13 +87,9 @@
 
 .method public put(Lcom/google/common/collect/Range;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "range"    # Lcom/google/common/collect/Range;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 283
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 284
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -128,9 +117,7 @@
 
 .method public putAll(Lcom/google/common/collect/RangeMap;)V
     .locals 2
-    .param p1, "rangeMap"    # Lcom/google/common/collect/RangeMap;
 
-    .line 290
     invoke-interface {p1}, Lcom/google/common/collect/RangeMap;->asMapOfRanges()Ljava/util/Map;
 
     move-result-object v0
@@ -141,10 +128,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 294
     return-void
 
-    .line 291
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -157,19 +142,15 @@
 
 .method public remove(Lcom/google/common/collect/Range;)V
     .locals 0
-    .param p1, "range"    # Lcom/google/common/collect/Range;
 
-    .line 301
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 302
     return-void
 .end method
 
 .method public span()Lcom/google/common/collect/Range;
     .locals 1
 
-    .line 278
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -179,11 +160,8 @@
 
 .method public subRangeMap(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeMap;
     .locals 0
-    .param p1, "range"    # Lcom/google/common/collect/Range;
 
-    .line 311
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 312
     return-object p0
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;Landroid/content/Intent;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;
 
-    .line 802
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;
 
     iput-object p2, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment$1;->val$intent:Landroid/content/Intent;
@@ -42,16 +40,12 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 805
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment$1;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$OtherInfoFragment$1;->val$intent:Landroid/content/Intent;
 
     invoke-static {v0, v1}, Lcom/android/settings/Utils;->launchIntent(Landroid/app/Fragment;Landroid/content/Intent;)V
 
-    .line 806
     return-void
 .end method

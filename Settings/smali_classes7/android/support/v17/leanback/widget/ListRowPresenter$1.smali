@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/ListRowPresenter;Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/ListRowPresenter;
 
-    .line 444
     iput-object p1, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$1;->this$0:Landroid/support/v17/leanback/widget/ListRowPresenter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$1;->val$rowViewHolder:Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;
@@ -42,12 +40,7 @@
 # virtual methods
 .method public onChildSelected(Landroid/view/ViewGroup;Landroid/view/View;IJ)V
     .locals 3
-    .param p1, "parent"    # Landroid/view/ViewGroup;
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
-    .line 447
     iget-object v0, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$1;->this$0:Landroid/support/v17/leanback/widget/ListRowPresenter;
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/ListRowPresenter$1;->val$rowViewHolder:Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;
@@ -56,6 +49,5 @@
 
     invoke-virtual {v0, v1, p2, v2}, Landroid/support/v17/leanback/widget/ListRowPresenter;->selectChildView(Landroid/support/v17/leanback/widget/ListRowPresenter$ViewHolder;Landroid/view/View;Z)V
 
-    .line 448
     return-void
 .end method

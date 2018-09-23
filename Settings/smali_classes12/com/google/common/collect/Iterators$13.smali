@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/util/Enumeration;)V
     .locals 0
 
-    .line 1101
     iput-object p1, p0, Lcom/google/common/collect/Iterators$13;->val$enumeration:Ljava/util/Enumeration;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
@@ -42,7 +41,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 1104
     iget-object v0, p0, Lcom/google/common/collect/Iterators$13;->val$enumeration:Ljava/util/Enumeration;
 
     invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
@@ -60,7 +58,6 @@
         }
     .end annotation
 
-    .line 1108
     iget-object v0, p0, Lcom/google/common/collect/Iterators$13;->val$enumeration:Ljava/util/Enumeration;
 
     invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;

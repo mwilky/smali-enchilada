@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 194
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method protected isPageSearchEnabled(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 198
     const/4 v0, 0x0
 
     return v0

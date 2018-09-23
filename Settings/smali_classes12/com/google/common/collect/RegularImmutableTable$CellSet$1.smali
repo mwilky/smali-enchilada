@@ -29,10 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/RegularImmutableTable$CellSet;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/RegularImmutableTable$CellSet;
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableTable$CellSet$1;, "Lcom/google/common/collect/RegularImmutableTable$CellSet$1;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableTable$CellSet$1;->this$1:Lcom/google/common/collect/RegularImmutableTable$CellSet;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableAsList;-><init>()V
@@ -53,8 +50,6 @@
         }
     .end annotation
 
-    .line 65
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableTable$CellSet$1;, "Lcom/google/common/collect/RegularImmutableTable$CellSet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableTable$CellSet$1;->this$1:Lcom/google/common/collect/RegularImmutableTable$CellSet;
 
     return-object v0
@@ -62,7 +57,6 @@
 
 .method public get(I)Lcom/google/common/collect/Table$Cell;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -71,8 +65,6 @@
         }
     .end annotation
 
-    .line 60
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableTable$CellSet$1;, "Lcom/google/common/collect/RegularImmutableTable$CellSet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableTable$CellSet$1;->this$1:Lcom/google/common/collect/RegularImmutableTable$CellSet;
 
     iget-object v0, v0, Lcom/google/common/collect/RegularImmutableTable$CellSet;->this$0:Lcom/google/common/collect/RegularImmutableTable;
@@ -87,8 +79,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 57
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableTable$CellSet$1;, "Lcom/google/common/collect/RegularImmutableTable$CellSet$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableTable$CellSet$1;->get(I)Lcom/google/common/collect/Table$Cell;
 
     move-result-object p1

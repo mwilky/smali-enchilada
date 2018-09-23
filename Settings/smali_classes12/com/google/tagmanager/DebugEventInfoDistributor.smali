@@ -17,23 +17,15 @@
 # direct methods
 .method public constructor <init>(Lcom/google/tagmanager/DebugInformationHandler;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p1, "handler"    # Lcom/google/tagmanager/DebugInformationHandler;
-    .param p2, "containerVersion"    # Ljava/lang/String;
-    .param p3, "containerId"    # Ljava/lang/String;
 
-    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
     iput-object p1, p0, Lcom/google/tagmanager/DebugEventInfoDistributor;->handler:Lcom/google/tagmanager/DebugInformationHandler;
 
-    .line 17
     iput-object p2, p0, Lcom/google/tagmanager/DebugEventInfoDistributor;->containerVersion:Ljava/lang/String;
 
-    .line 18
     iput-object p3, p0, Lcom/google/tagmanager/DebugEventInfoDistributor;->containerId:Ljava/lang/String;
 
-    .line 19
     return-void
 .end method
 
@@ -41,9 +33,7 @@
 # virtual methods
 .method public createDataLayerEventEvaluationEventInfo(Ljava/lang/String;)Lcom/google/tagmanager/EventInfoBuilder;
     .locals 7
-    .param p1, "event"    # Ljava/lang/String;
 
-    .line 29
     new-instance v6, Lcom/google/tagmanager/DebugEventInfoBuilder;
 
     iget-object v2, p0, Lcom/google/tagmanager/DebugEventInfoDistributor;->containerVersion:Ljava/lang/String;
@@ -65,9 +55,7 @@
 
 .method public createMacroEvalutionEventInfo(Ljava/lang/String;)Lcom/google/tagmanager/EventInfoBuilder;
     .locals 7
-    .param p1, "key"    # Ljava/lang/String;
 
-    .line 23
     new-instance v6, Lcom/google/tagmanager/DebugEventInfoBuilder;
 
     iget-object v2, p0, Lcom/google/tagmanager/DebugEventInfoDistributor;->containerVersion:Ljava/lang/String;
@@ -90,7 +78,6 @@
 .method public debugMode()Z
     .locals 1
 
-    .line 35
     const/4 v0, 0x1
 
     return v0

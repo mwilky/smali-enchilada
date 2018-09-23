@@ -23,19 +23,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/res/Resources;Ljava/lang/String;)V
     .locals 0
-    .param p1, "resources"    # Landroid/content/res/Resources;
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 145
     iput-object p1, p0, Landroid/support/v17/leanback/system/Settings$Customizations;->mResources:Landroid/content/res/Resources;
 
-    .line 146
     iput-object p2, p0, Landroid/support/v17/leanback/system/Settings$Customizations;->mPackageName:Ljava/lang/String;
 
-    .line 147
     return-void
 .end method
 
@@ -43,10 +37,7 @@
 # virtual methods
 .method public getBoolean(Ljava/lang/String;Z)Z
     .locals 3
-    .param p1, "resourceName"    # Ljava/lang/String;
-    .param p2, "defaultValue"    # Z
 
-    .line 150
     iget-object v0, p0, Landroid/support/v17/leanback/system/Settings$Customizations;->mResources:Landroid/content/res/Resources;
 
     const-string v1, "bool"
@@ -57,8 +48,6 @@
 
     move-result v0
 
-    .line 151
-    .local v0, "resId":I
     if-lez v0, :cond_0
 
     iget-object v1, p0, Landroid/support/v17/leanback/system/Settings$Customizations;->mResources:Landroid/content/res/Resources;

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;IZ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1305
     iput-object p1, p0, Lcom/android/settings/RadioInfo$15;->this$0:Lcom/android/settings/RadioInfo;
 
     iput p2, p0, Lcom/android/settings/RadioInfo$15;->val$configItem:I
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 1308
     :try_start_0
     iget-object v0, p0, Lcom/android/settings/RadioInfo$15;->this$0:Lcom/android/settings/RadioInfo;
 
@@ -61,31 +58,23 @@
 
     iget v1, p0, Lcom/android/settings/RadioInfo$15;->val$configItem:I
 
-    .line 1310
     iget-boolean v2, p0, Lcom/android/settings/RadioInfo$15;->val$state:Z
 
-    .line 1308
     invoke-virtual {v0, v1, v2}, Lcom/android/ims/ImsConfig;->setProvisionedValue(II)I
     :try_end_0
     .catch Lcom/android/ims/ImsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1313
     goto :goto_0
 
-    .line 1311
     :catch_0
     move-exception v0
 
-    .line 1312
-    .local v0, "e":Lcom/android/ims/ImsException;
     const-string v1, "RadioInfo"
 
     const-string v2, "setImsConfigProvisioned() exception:"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1314
-    .end local v0    # "e":Lcom/android/ims/ImsException;
     :goto_0
     return-void
 .end method

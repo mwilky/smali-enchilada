@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
-    .line 75
     iput-object p1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->this$0:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 78
     const-string v0, "android.bluetooth.adapter.action.SCAN_MODE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 79
     const-string v0, "android.bluetooth.adapter.extra.SCAN_MODE"
 
     const/high16 v1, -0x80000000
@@ -60,17 +54,12 @@
 
     move-result v0
 
-    .line 81
-    .local v0, "mode":I
     if-eq v0, v1, :cond_0
 
-    .line 82
     iget-object v1, p0, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler$1;->this$0:Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/bluetooth/BluetoothDiscoverableEnabler;->handleModeChanged(I)V
 
-    .line 85
-    .end local v0    # "mode":I
     :cond_0
     return-void
 .end method

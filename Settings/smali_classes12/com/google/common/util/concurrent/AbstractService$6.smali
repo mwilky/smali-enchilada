@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/AbstractService;Lcom/google/common/util/concurrent/Monitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/AbstractService;
-    .param p2, "monitor"    # Lcom/google/common/util/concurrent/Monitor;
 
-    .line 105
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractService$6;->this$0:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-direct {p0, p2}, Lcom/google/common/util/concurrent/Monitor$Guard;-><init>(Lcom/google/common/util/concurrent/Monitor;)V
@@ -37,7 +34,6 @@
 .method public isSatisfied()Z
     .locals 2
 
-    .line 107
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractService$6;->this$0:Lcom/google/common/util/concurrent/AbstractService;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractService;->state()Lcom/google/common/util/concurrent/Service$State;

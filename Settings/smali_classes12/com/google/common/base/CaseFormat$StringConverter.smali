@@ -40,13 +40,9 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/base/CaseFormat;Lcom/google/common/base/CaseFormat;)V
     .locals 1
-    .param p1, "sourceFormat"    # Lcom/google/common/base/CaseFormat;
-    .param p2, "targetFormat"    # Lcom/google/common/base/CaseFormat;
 
-    .line 168
     invoke-direct {p0}, Lcom/google/common/base/Converter;-><init>()V
 
-    .line 169
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -55,7 +51,6 @@
 
     iput-object v0, p0, Lcom/google/common/base/CaseFormat$StringConverter;->sourceFormat:Lcom/google/common/base/CaseFormat;
 
-    .line 170
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -64,7 +59,6 @@
 
     iput-object v0, p0, Lcom/google/common/base/CaseFormat$StringConverter;->targetFormat:Lcom/google/common/base/CaseFormat;
 
-    .line 171
     return-void
 .end method
 
@@ -73,7 +67,6 @@
 .method protected bridge synthetic doBackward(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 162
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/google/common/base/CaseFormat$StringConverter;->doBackward(Ljava/lang/String;)Ljava/lang/String;
@@ -85,9 +78,7 @@
 
 .method protected doBackward(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "s"    # Ljava/lang/String;
 
-    .line 180
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -110,7 +101,6 @@
 .method protected bridge synthetic doForward(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 162
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/google/common/base/CaseFormat$StringConverter;->doForward(Ljava/lang/String;)Ljava/lang/String;
@@ -122,9 +112,7 @@
 
 .method protected doForward(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p1, "s"    # Ljava/lang/String;
 
-    .line 175
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -146,25 +134,21 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 184
     instance-of v0, p1, Lcom/google/common/base/CaseFormat$StringConverter;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 185
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/CaseFormat$StringConverter;
 
-    .line 186
-    .local v0, "that":Lcom/google/common/base/CaseFormat$StringConverter;
     iget-object v2, p0, Lcom/google/common/base/CaseFormat$StringConverter;->sourceFormat:Lcom/google/common/base/CaseFormat;
 
     iget-object v3, v0, Lcom/google/common/base/CaseFormat$StringConverter;->sourceFormat:Lcom/google/common/base/CaseFormat;
@@ -179,7 +163,6 @@
 
     iget-object v3, v0, Lcom/google/common/base/CaseFormat$StringConverter;->targetFormat:Lcom/google/common/base/CaseFormat;
 
-    .line 187
     invoke-virtual {v2, v3}, Lcom/google/common/base/CaseFormat;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -190,12 +173,9 @@
 
     nop
 
-    .line 186
     :cond_0
     return v1
 
-    .line 189
-    .end local v0    # "that":Lcom/google/common/base/CaseFormat$StringConverter;
     :cond_1
     return v1
 .end method
@@ -203,7 +183,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 193
     iget-object v0, p0, Lcom/google/common/base/CaseFormat$StringConverter;->sourceFormat:Lcom/google/common/base/CaseFormat;
 
     invoke-virtual {v0}, Lcom/google/common/base/CaseFormat;->hashCode()I
@@ -224,7 +203,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 197
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

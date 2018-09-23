@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 336
     new-instance v0, Lcom/android/settings/widget/SwitchBar$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/settings/widget/SwitchBar$SavedState$1;-><init>()V
@@ -48,12 +47,9 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 2
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 316
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 317
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
@@ -68,7 +64,6 @@
 
     iput-boolean v1, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->checked:Z
 
-    .line 318
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -81,16 +76,12 @@
 
     iput-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->visible:Z
 
-    .line 319
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/settings/widget/SwitchBar$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lcom/android/settings/widget/SwitchBar$1;
 
-    .line 304
     invoke-direct {p0, p1}, Lcom/android/settings/widget/SwitchBar$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -98,12 +89,9 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
-    .line 309
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 310
     return-void
 .end method
 
@@ -112,7 +100,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 330
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -121,7 +108,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 331
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -156,19 +142,14 @@
 
     move-result-object v0
 
-    .line 330
     return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 323
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 324
     iget-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->checked:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -177,7 +158,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 325
     iget-boolean v0, p0, Lcom/android/settings/widget/SwitchBar$SavedState;->visible:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -186,6 +166,5 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 326
     return-void
 .end method

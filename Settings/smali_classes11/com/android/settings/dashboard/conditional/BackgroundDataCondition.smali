@@ -6,12 +6,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
     .locals 0
-    .param p1, "manager"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/Condition;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
-    .line 32
     return-void
 .end method
 
@@ -20,7 +17,6 @@
 .method public getActions()[Ljava/lang/CharSequence;
     .locals 3
 
-    .line 56
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/CharSequence;
@@ -47,7 +43,6 @@
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -66,7 +61,6 @@
 .method public getMetricsConstant()I
     .locals 1
 
-    .line 71
     const/16 v0, 0x17a
 
     return v0
@@ -75,7 +69,6 @@
 .method public getSummary()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 51
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -94,7 +87,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 46
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -112,12 +104,9 @@
 
 .method public onActionClick(I)V
     .locals 3
-    .param p1, "index"    # I
 
-    .line 76
     if-nez p1, :cond_0
 
-    .line 77
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -132,13 +121,10 @@
 
     invoke-virtual {v0, v1}, Landroid/net/NetworkPolicyManager;->setRestrictBackground(Z)V
 
-    .line 78
     invoke-virtual {p0, v1}, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->setActive(Z)V
 
-    .line 82
     return-void
 
-    .line 80
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -164,7 +150,6 @@
 .method public onPrimaryClick()V
     .locals 4
 
-    .line 61
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -179,17 +164,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 63
     const-class v0, Lcom/android/settings/Settings$DataUsageSummaryActivity;
 
     goto :goto_0
 
-    .line 64
     :cond_0
     const-class v0, Lcom/android/settings/Settings$DataUsageSummaryLegacyActivity;
 
-    .line 65
-    .local v0, "activityClass":Ljava/lang/Class;
     :goto_0
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
@@ -209,22 +190,18 @@
 
     const/high16 v3, 0x10000000
 
-    .line 66
     invoke-virtual {v2, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     move-result-object v2
 
-    .line 65
     invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 67
     return-void
 .end method
 
 .method public refreshState()V
     .locals 1
 
-    .line 36
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->mManager:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->getContext()Landroid/content/Context;
@@ -241,6 +218,5 @@
 
     invoke-virtual {p0, v0}, Lcom/android/settings/dashboard/conditional/BackgroundDataCondition;->setActive(Z)V
 
-    .line 37
     return-void
 .end method

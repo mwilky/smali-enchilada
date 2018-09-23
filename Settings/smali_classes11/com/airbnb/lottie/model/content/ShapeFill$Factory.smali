@@ -18,55 +18,40 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     return-void
 .end method
 
 .method static newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/content/ShapeFill;
     .locals 17
-    .param p0, "json"    # Lorg/json/JSONObject;
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
     move-object/from16 v0, p0
 
-    .line 37
     move-object/from16 v1, p1
 
     const/4 v2, 0x0
 
-    .line 39
-    .local v2, "color":Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
     const/4 v3, 0x0
 
-    .line 40
-    .local v3, "opacity":Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
     const-string v4, "nm"
 
     invoke-virtual {v0, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 42
-    .local v4, "name":Ljava/lang/String;
     const-string v5, "c"
 
     invoke-virtual {v0, v5}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v12
 
-    .line 43
-    .local v12, "jsonColor":Lorg/json/JSONObject;
     if-eqz v12, :cond_0
 
-    .line 44
     invoke-static {v12, v1}, Lcom/airbnb/lottie/model/animatable/AnimatableColorValue$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableColorValue;
 
     move-result-object v2
 
-    .line 47
     :cond_0
     const-string v5, "o"
 
@@ -74,16 +59,12 @@
 
     move-result-object v13
 
-    .line 48
-    .local v13, "jsonOpacity":Lorg/json/JSONObject;
     if-eqz v13, :cond_1
 
-    .line 49
     invoke-static {v13, v1}, Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue$Factory;->newInstance(Lorg/json/JSONObject;Lcom/airbnb/lottie/LottieComposition;)Lcom/airbnb/lottie/model/animatable/AnimatableIntegerValue;
 
     move-result-object v3
 
-    .line 51
     :cond_1
     const-string v5, "fillEnabled"
 
@@ -91,8 +72,6 @@
 
     move-result v14
 
-    .line 53
-    .local v14, "fillEnabled":Z
     const-string v5, "r"
 
     const/4 v6, 0x1
@@ -101,8 +80,6 @@
 
     move-result v15
 
-    .line 54
-    .local v15, "fillTypeInt":I
     if-ne v15, v6, :cond_2
 
     sget-object v5, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
@@ -117,8 +94,6 @@
 
     goto :goto_0
 
-    .line 56
-    .local v8, "fillType":Landroid/graphics/Path$FillType;
     :goto_1
     new-instance v16, Lcom/airbnb/lottie/model/content/ShapeFill;
 

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsFragment;
 
-    .line 900
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 906
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mVideoFragment:Landroid/app/Fragment;
@@ -63,7 +57,6 @@
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mVideoFragment:Landroid/app/Fragment;
 
-    .line 907
     invoke-virtual {v0}, Landroid/app/Fragment;->getView()Landroid/view/View;
 
     move-result-object v0
@@ -74,7 +67,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 908
     const/4 v0, 0x4
 
     if-eq p2, v0, :cond_0
@@ -83,7 +75,6 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 909
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
@@ -97,7 +88,6 @@
 
     if-lez v0, :cond_1
 
-    .line 910
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$15;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsFragment;->getVerticalGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
@@ -106,12 +96,10 @@
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/VerticalGridView;->requestFocus()Z
 
-    .line 911
     const/4 v0, 0x1
 
     return v0
 
-    .line 916
     :cond_1
     const/4 v0, 0x0
 

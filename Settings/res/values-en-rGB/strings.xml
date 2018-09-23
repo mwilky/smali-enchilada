@@ -2907,8 +2907,6 @@ To go to the home screen at any time, swipe up from the bottom center edge of th
     <string name="oneplus_quick_clipboard_summary">Enhance the ability to copy and then recommend the next action according to the copy</string>
     <string name="oneplus_quick_gestures">Gestures</string>
     <string name="oneplus_quick_gestures_title">Quick gestures</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Quick activate the assistant app</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Hold the power button for 0.5s to activate the assistant app, and 3s to power off</string>
     <string name="oneplus_quick_turn_on_camera">Quickly turn on camera</string>
     <string name="oneplus_quickpay">Quick pay</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Are you sure you want to change the long press action of the Home button from \"%1$s\" to \"Quick Pay\"?</string>

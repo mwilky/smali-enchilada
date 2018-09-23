@@ -26,15 +26,11 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 1673
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgObject;-><init>()V
 
-    .line 1675
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$TextSequence;->text:Ljava/lang/String;
 
-    .line 1676
     return-void
 .end method
 
@@ -43,7 +39,6 @@
 .method public getTextRoot()Lcom/caverock/androidsvg/SVG$TextRoot;
     .locals 1
 
-    .line 1686
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$TextSequence;->textRoot:Lcom/caverock/androidsvg/SVG$TextRoot;
 
     return-object v0
@@ -51,9 +46,7 @@
 
 .method public setTextRoot(Lcom/caverock/androidsvg/SVG$TextRoot;)V
     .locals 0
-    .param p1, "obj"    # Lcom/caverock/androidsvg/SVG$TextRoot;
 
-    .line 1684
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$TextSequence;->textRoot:Lcom/caverock/androidsvg/SVG$TextRoot;
 
     return-void
@@ -62,7 +55,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1680
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 408
     new-instance v0, Lcom/google/common/io/CharSource$EmptyCharSource;
 
     invoke-direct {v0}, Lcom/google/common/io/CharSource$EmptyCharSource;-><init>()V
@@ -35,19 +34,16 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 411
     const-string v0, ""
 
     invoke-direct {p0, v0}, Lcom/google/common/io/CharSource$CharSequenceCharSource;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 412
     return-void
 .end method
 
 .method static synthetic access$000()Lcom/google/common/io/CharSource$EmptyCharSource;
     .locals 1
 
-    .line 406
     sget-object v0, Lcom/google/common/io/CharSource$EmptyCharSource;->INSTANCE:Lcom/google/common/io/CharSource$EmptyCharSource;
 
     return-object v0
@@ -58,7 +54,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 416
     const-string v0, "CharSource.empty()"
 
     return-object v0

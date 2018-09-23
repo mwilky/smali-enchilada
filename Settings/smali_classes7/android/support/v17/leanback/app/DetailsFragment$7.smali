@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsFragment;
 
-    .line 303
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsFragment$7;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/TransitionListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onTransitionCancel(Ljava/lang/Object;)V
     .locals 2
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 315
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$7;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mStateMachine:Landroid/support/v17/leanback/util/StateMachine;
@@ -48,15 +44,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 316
     return-void
 .end method
 
 .method public onTransitionEnd(Ljava/lang/Object;)V
     .locals 2
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 320
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$7;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mStateMachine:Landroid/support/v17/leanback/util/StateMachine;
@@ -67,22 +60,18 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/util/StateMachine;->fireEvent(Landroid/support/v17/leanback/util/StateMachine$Event;)V
 
-    .line 321
     return-void
 .end method
 
 .method public onTransitionStart(Ljava/lang/Object;)V
     .locals 1
-    .param p1, "transition"    # Ljava/lang/Object;
 
-    .line 306
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$7;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mWaitEnterTransitionTimeout:Landroid/support/v17/leanback/app/DetailsFragment$WaitEnterTransitionTimeout;
 
     if-eqz v0, :cond_0
 
-    .line 309
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$7;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/DetailsFragment;->mWaitEnterTransitionTimeout:Landroid/support/v17/leanback/app/DetailsFragment$WaitEnterTransitionTimeout;
@@ -91,7 +80,6 @@
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->clear()V
 
-    .line 311
     :cond_0
     return-void
 .end method

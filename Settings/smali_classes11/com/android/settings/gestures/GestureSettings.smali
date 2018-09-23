@@ -31,7 +31,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 37
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
@@ -39,21 +38,17 @@
 
 .method private getConfig(Landroid/content/Context;)Lcom/android/internal/hardware/AmbientDisplayConfiguration;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 76
     iget-object v0, p0, Lcom/android/settings/gestures/GestureSettings;->mAmbientDisplayConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     if-nez v0, :cond_0
 
-    .line 77
     new-instance v0, Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
     invoke-direct {v0, p1}, Lcom/android/internal/hardware/AmbientDisplayConfiguration;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/settings/gestures/GestureSettings;->mAmbientDisplayConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
-    .line 79
     :cond_0
     iget-object v0, p0, Lcom/android/settings/gestures/GestureSettings;->mAmbientDisplayConfig:Lcom/android/internal/hardware/AmbientDisplayConfiguration;
 
@@ -65,7 +60,6 @@
 .method protected getLogTag()Ljava/lang/String;
     .locals 1
 
-    .line 59
     const-string v0, "GestureSettings"
 
     return-object v0
@@ -74,7 +68,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 54
     const/16 v0, 0x1cb
 
     return v0
@@ -83,7 +76,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 64
     const v0, 0x7f160059
 
     return v0
@@ -91,12 +83,9 @@
 
 .method public onAttach(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 69
     invoke-super {p0, p1}, Lcom/android/settings/dashboard/DashboardFragment;->onAttach(Landroid/content/Context;)V
 
-    .line 70
     const-class v0, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/gestures/GestureSettings;->use(Ljava/lang/Class;)Lcom/android/settingslib/core/AbstractPreferenceController;
@@ -109,7 +98,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;->setAssistOnly(Z)Lcom/android/settings/gestures/AssistGestureSettingsPreferenceController;
 
-    .line 71
     const-class v0, Lcom/android/settings/gestures/PickupGesturePreferenceController;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/gestures/GestureSettings;->use(Ljava/lang/Class;)Lcom/android/settingslib/core/AbstractPreferenceController;
@@ -124,7 +112,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/gestures/PickupGesturePreferenceController;->setConfig(Lcom/android/internal/hardware/AmbientDisplayConfiguration;)Lcom/android/settings/gestures/PickupGesturePreferenceController;
 
-    .line 72
     const-class v0, Lcom/android/settings/gestures/DoubleTapScreenPreferenceController;
 
     invoke-virtual {p0, v0}, Lcom/android/settings/gestures/GestureSettings;->use(Ljava/lang/Class;)Lcom/android/settingslib/core/AbstractPreferenceController;
@@ -139,6 +126,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/gestures/DoubleTapScreenPreferenceController;->setConfig(Lcom/android/internal/hardware/AmbientDisplayConfiguration;)Lcom/android/settings/gestures/DoubleTapScreenPreferenceController;
 
-    .line 73
     return-void
 .end method

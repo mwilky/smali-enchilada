@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 591
     new-instance v0, Lcom/google/common/collect/Tables$1;
 
     invoke-direct {v0}, Lcom/google/common/collect/Tables$1;-><init>()V
@@ -51,7 +50,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +58,6 @@
 .method static synthetic access$000()Lcom/google/common/base/Function;
     .locals 1
 
-    .line 52
     invoke-static {}, Lcom/google/common/collect/Tables;->unmodifiableWrapper()Lcom/google/common/base/Function;
 
     move-result-object v0
@@ -70,7 +67,7 @@
 
 .method static equalsImpl(Lcom/google/common/collect/Table;Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -84,28 +81,21 @@
         }
     .end annotation
 
-    .line 600
-    .local p0, "table":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<***>;"
     if-ne p1, p0, :cond_0
 
-    .line 601
     const/4 v0, 0x1
 
     return v0
 
-    .line 602
     :cond_0
     instance-of v0, p1, Lcom/google/common/collect/Table;
 
     if-eqz v0, :cond_1
 
-    .line 603
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/Table;
 
-    .line 604
-    .local v0, "that":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<***>;"
     invoke-interface {p0}, Lcom/google/common/collect/Table;->cellSet()Ljava/util/Set;
 
     move-result-object v1
@@ -120,8 +110,6 @@
 
     return v1
 
-    .line 606
-    .end local v0    # "that":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<***>;"
     :cond_1
     const/4 v0, 0x0
 
@@ -156,10 +144,6 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "rowKey":Ljava/lang/Object;, "TR;"
-    .local p1, "columnKey":Ljava/lang/Object;, "TC;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/Tables$ImmutableCell;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/common/collect/Tables$ImmutableCell;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
@@ -194,19 +178,14 @@
         }
     .end annotation
 
-    .line 299
-    .local p0, "backingMap":Ljava/util/Map;, "Ljava/util/Map<TR;Ljava/util/Map<TC;TV;>;>;"
-    .local p1, "factory":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<+Ljava/util/Map<TC;TV;>;>;"
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 300
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 302
     new-instance v0, Lcom/google/common/collect/StandardTable;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/StandardTable;-><init>(Ljava/util/Map;Lcom/google/common/base/Supplier;)V
@@ -239,9 +218,6 @@
         }
     .end annotation
 
-    .line 334
-    .local p0, "fromTable":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<TR;TC;TV1;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TV1;TV2;>;"
     new-instance v0, Lcom/google/common/collect/Tables$TransformedTable;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Tables$TransformedTable;-><init>(Lcom/google/common/collect/Table;Lcom/google/common/base/Function;)V
@@ -267,13 +243,10 @@
         }
     .end annotation
 
-    .line 140
-    .local p0, "table":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<TR;TC;TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/Tables$TransposeTable;
 
     if-eqz v0, :cond_0
 
-    .line 141
     move-object v0, p0
 
     check-cast v0, Lcom/google/common/collect/Tables$TransposeTable;
@@ -282,13 +255,11 @@
 
     goto :goto_0
 
-    .line 142
     :cond_0
     new-instance v0, Lcom/google/common/collect/Tables$TransposeTable;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Tables$TransposeTable;-><init>(Lcom/google/common/collect/Table;)V
 
-    .line 140
     :goto_0
     return-object v0
 .end method
@@ -314,8 +285,6 @@
         }
     .end annotation
 
-    .line 557
-    .local p0, "table":Lcom/google/common/collect/RowSortedTable;, "Lcom/google/common/collect/RowSortedTable<TR;+TC;+TV;>;"
     new-instance v0, Lcom/google/common/collect/Tables$UnmodifiableRowSortedMap;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Tables$UnmodifiableRowSortedMap;-><init>(Lcom/google/common/collect/RowSortedTable;)V
@@ -341,8 +310,6 @@
         }
     .end annotation
 
-    .line 455
-    .local p0, "table":Lcom/google/common/collect/Table;, "Lcom/google/common/collect/Table<+TR;+TC;+TV;>;"
     new-instance v0, Lcom/google/common/collect/Tables$UnmodifiableTable;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Tables$UnmodifiableTable;-><init>(Lcom/google/common/collect/Table;)V
@@ -367,7 +334,6 @@
         }
     .end annotation
 
-    .line 588
     sget-object v0, Lcom/google/common/collect/Tables;->UNMODIFIABLE_WRAPPER:Lcom/google/common/base/Function;
 
     return-object v0

@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 807
     invoke-direct {p0}, Lcom/google/common/collect/TreeTraverser;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
 # virtual methods
 .method public children(Ljava/io/File;)Ljava/lang/Iterable;
     .locals 2
-    .param p1, "file"    # Ljava/io/File;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,23 +46,18 @@
         }
     .end annotation
 
-    .line 811
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 812
     invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v0
 
-    .line 813
-    .local v0, "files":[Ljava/io/File;
     if-eqz v0, :cond_0
 
-    .line 814
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -75,8 +68,6 @@
 
     return-object v1
 
-    .line 818
-    .end local v0    # "files":[Ljava/io/File;
     :cond_0
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
@@ -88,7 +79,6 @@
 .method public bridge synthetic children(Ljava/lang/Object;)Ljava/lang/Iterable;
     .locals 0
 
-    .line 807
     check-cast p1, Ljava/io/File;
 
     invoke-virtual {p0, p1}, Lcom/google/common/io/Files$2;->children(Ljava/io/File;)Ljava/lang/Iterable;
@@ -101,7 +91,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 823
     const-string v0, "Files.fileTreeTraverser()"
 
     return-object v0

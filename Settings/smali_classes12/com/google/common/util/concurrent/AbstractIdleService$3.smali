@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/AbstractIdleService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/AbstractIdleService;
 
-    .line 98
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractIdleService$3;->this$0:Lcom/google/common/util/concurrent/AbstractIdleService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
-    .param p1, "command"    # Ljava/lang/Runnable;
 
-    .line 100
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractIdleService$3;->this$0:Lcom/google/common/util/concurrent/AbstractIdleService;
 
     invoke-static {v0}, Lcom/google/common/util/concurrent/AbstractIdleService;->access$000(Lcom/google/common/util/concurrent/AbstractIdleService;)Lcom/google/common/base/Supplier;
@@ -59,6 +55,5 @@
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 101
     return-void
 .end method

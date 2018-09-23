@@ -98,24 +98,18 @@
 .method protected constructor <init>()V
     .locals 2
 
-    .line 616
     const-wide/16 v0, 0x0
 
     invoke-direct {p0, v0, v1}, Landroid/support/v17/leanback/widget/Action;-><init>(J)V
 
-    .line 617
     return-void
 .end method
 
 .method static isPasswordVariant(I)Z
     .locals 2
-    .param p0, "inputType"    # I
 
-    .line 962
     and-int/lit16 v0, p0, 0xff0
 
-    .line 963
-    .local v0, "variation":I
     const/16 v1, 0x80
 
     if-eq v0, v1, :cond_1
@@ -145,10 +139,7 @@
 
 .method private setFlags(II)V
     .locals 2
-    .param p1, "flag"    # I
-    .param p2, "mask"    # I
 
-    .line 620
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     not-int v1, p2
@@ -161,7 +152,6 @@
 
     iput v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
-    .line 621
     return-void
 .end method
 
@@ -170,7 +160,6 @@
 .method public getAutofillHints()[Ljava/lang/String;
     .locals 1
 
-    .line 854
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mAutofillHints:[Ljava/lang/String;
 
     return-object v0
@@ -179,7 +168,6 @@
 .method public getCheckSetId()I
     .locals 1
 
-    .line 806
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mCheckSetId:I
 
     return v0
@@ -188,7 +176,6 @@
 .method public getDescription()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 688
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->getLabel2()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -199,7 +186,6 @@
 .method public getDescriptionEditInputType()I
     .locals 1
 
-    .line 761
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mDescriptionEditInputType:I
 
     return v0
@@ -208,7 +194,6 @@
 .method public getDescriptionInputType()I
     .locals 1
 
-    .line 777
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mDescriptionInputType:I
 
     return v0
@@ -217,7 +202,6 @@
 .method public getEditDescription()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 662
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditDescription:Ljava/lang/CharSequence;
 
     return-object v0
@@ -226,7 +210,6 @@
 .method public getEditInputType()I
     .locals 1
 
-    .line 752
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditInputType:I
 
     return v0
@@ -235,7 +218,6 @@
 .method public getEditTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 645
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditTitle:Ljava/lang/CharSequence;
 
     return-object v0
@@ -244,7 +226,6 @@
 .method public getInputType()I
     .locals 1
 
-    .line 769
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mInputType:I
 
     return v0
@@ -253,7 +234,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 1
 
-    .line 704
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mIntent:Landroid/content/Intent;
 
     return-object v0
@@ -270,7 +250,6 @@
         }
     .end annotation
 
-    .line 889
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mSubActions:Ljava/util/List;
 
     return-object v0
@@ -279,7 +258,6 @@
 .method public getTitle()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 628
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->getLabel1()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -290,7 +268,6 @@
 .method public hasEditableActivatorView()Z
     .locals 2
 
-    .line 744
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditable:I
 
     const/4 v1, 0x3
@@ -311,7 +288,6 @@
 .method public hasMultilineDescription()Z
     .locals 2
 
-    .line 815
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/4 v1, 0x2
@@ -334,7 +310,6 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 863
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/4 v1, 0x4
@@ -357,7 +332,6 @@
 .method public hasSubActions()Z
     .locals 1
 
-    .line 896
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mSubActions:Ljava/util/List;
 
     if-eqz v0, :cond_0
@@ -376,7 +350,6 @@
 .method public hasTextEditable()Z
     .locals 3
 
-    .line 736
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditable:I
 
     const/4 v1, 0x1
@@ -404,7 +377,6 @@
 .method public infoOnly()Z
     .locals 2
 
-    .line 874
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/16 v1, 0x8
@@ -427,7 +399,6 @@
 .method public final isAutoSaveRestoreEnabled()Z
     .locals 2
 
-    .line 912
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/16 v1, 0x40
@@ -450,7 +421,6 @@
 .method public isChecked()Z
     .locals 2
 
-    .line 785
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/4 v1, 0x1
@@ -471,7 +441,6 @@
 .method public isDescriptionEditable()Z
     .locals 2
 
-    .line 728
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditable:I
 
     const/4 v1, 0x2
@@ -492,7 +461,6 @@
 .method public isEditTitleUsed()Z
     .locals 1
 
-    .line 680
     iget-object v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditTitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
@@ -511,7 +479,6 @@
 .method public isEditable()Z
     .locals 2
 
-    .line 720
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditable:I
 
     const/4 v1, 0x1
@@ -530,7 +497,6 @@
 .method public isEnabled()Z
     .locals 2
 
-    .line 823
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/16 v1, 0x10
@@ -553,7 +519,6 @@
 .method public isFocusable()Z
     .locals 2
 
-    .line 839
     iget v0, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mActionFlags:I
 
     const/16 v1, 0x20
@@ -576,7 +541,6 @@
 .method final needAutoSaveDescription()Z
     .locals 1
 
-    .line 973
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->isDescriptionEditable()Z
 
     move-result v0
@@ -607,7 +571,6 @@
 .method final needAutoSaveTitle()Z
     .locals 1
 
-    .line 969
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->isEditable()Z
 
     move-result v0
@@ -637,30 +600,21 @@
 
 .method public onRestoreInstanceState(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 1
-    .param p1, "bundle"    # Landroid/os/Bundle;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 946
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->needAutoSaveTitle()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 947
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 948
-    .local v0, "title":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 949
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 951
-    .end local v0    # "title":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
@@ -671,20 +625,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 952
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 953
-    .local v0, "description":Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 954
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setDescription(Ljava/lang/CharSequence;)V
 
-    .line 956
-    .end local v0    # "description":Ljava/lang/String;
     :cond_2
     goto :goto_0
 
@@ -695,7 +643,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 957
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->isChecked()Z
 
     move-result v0
@@ -706,7 +653,6 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setChecked(Z)V
 
-    .line 959
     :cond_4
     :goto_0
     return-void
@@ -714,10 +660,7 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 1
-    .param p1, "bundle"    # Landroid/os/Bundle;
-    .param p2, "key"    # Ljava/lang/String;
 
-    .line 926
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->needAutoSaveTitle()Z
 
     move-result v0
@@ -730,7 +673,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 927
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -743,7 +685,6 @@
 
     goto :goto_0
 
-    .line 928
     :cond_0
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->needAutoSaveDescription()Z
 
@@ -757,7 +698,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 929
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->getDescription()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -770,7 +710,6 @@
 
     goto :goto_0
 
-    .line 930
     :cond_1
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->getCheckSetId()I
 
@@ -778,14 +717,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 931
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/GuidedAction;->isChecked()Z
 
     move-result v0
 
     invoke-virtual {p1, p2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 933
     :cond_2
     :goto_0
     return-void
@@ -793,55 +730,41 @@
 
 .method public setChecked(Z)V
     .locals 1
-    .param p1, "checked"    # Z
 
-    .line 793
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setFlags(II)V
 
-    .line 794
     return-void
 .end method
 
 .method public setDescription(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/CharSequence;
 
-    .line 696
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/widget/GuidedAction;->setLabel2(Ljava/lang/CharSequence;)V
 
-    .line 697
     return-void
 .end method
 
 .method public setEditDescription(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "editDescription"    # Ljava/lang/CharSequence;
 
-    .line 671
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditDescription:Ljava/lang/CharSequence;
 
-    .line 672
     return-void
 .end method
 
 .method public setEditTitle(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "editTitle"    # Ljava/lang/CharSequence;
 
-    .line 653
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mEditTitle:Ljava/lang/CharSequence;
 
-    .line 654
     return-void
 .end method
 
 .method public setEnabled(Z)V
     .locals 2
-    .param p1, "enabled"    # Z
 
-    .line 831
     const/16 v0, 0x10
 
     if-eqz p1, :cond_0
@@ -856,15 +779,12 @@
     :goto_0
     invoke-direct {p0, v1, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setFlags(II)V
 
-    .line 832
     return-void
 .end method
 
 .method public setFocusable(Z)V
     .locals 2
-    .param p1, "focusable"    # Z
 
-    .line 847
     const/16 v0, 0x20
 
     if-eqz p1, :cond_0
@@ -879,18 +799,14 @@
     :goto_0
     invoke-direct {p0, v1, v0}, Landroid/support/v17/leanback/widget/GuidedAction;->setFlags(II)V
 
-    .line 848
     return-void
 .end method
 
 .method public setIntent(Landroid/content/Intent;)V
     .locals 0
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 712
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mIntent:Landroid/content/Intent;
 
-    .line 713
     return-void
 .end method
 
@@ -905,21 +821,15 @@
         }
     .end annotation
 
-    .line 882
-    .local p1, "actions":Ljava/util/List;, "Ljava/util/List<Landroid/support/v17/leanback/widget/GuidedAction;>;"
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedAction;->mSubActions:Ljava/util/List;
 
-    .line 883
     return-void
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "title"    # Ljava/lang/CharSequence;
 
-    .line 636
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/widget/GuidedAction;->setLabel1(Ljava/lang/CharSequence;)V
 
-    .line 637
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenRuleSelectionDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
-    .line 191
     iput-object p1, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$2;->this$0:Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,8 +45,6 @@
         }
     .end annotation
 
-    .line 194
-    .local p1, "services":Ljava/util/Set;, "Ljava/util/Set<Landroid/content/pm/ServiceInfo;>;"
     invoke-static {}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->access$000()Z
 
     move-result v0
@@ -77,7 +73,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
     :cond_0
     new-instance v0, Ljava/util/TreeSet;
 
@@ -87,8 +82,6 @@
 
     invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    .line 196
-    .local v0, "externalRuleTypes":Ljava/util/Set;, "Ljava/util/Set<Lcom/android/settings/notification/ZenRuleInfo;>;"
     invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -106,8 +99,6 @@
 
     check-cast v2, Landroid/content/pm/ServiceInfo;
 
-    .line 198
-    .local v2, "serviceInfo":Landroid/content/pm/ServiceInfo;
     invoke-static {}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->access$200()Landroid/content/pm/PackageManager;
 
     move-result-object v3
@@ -116,15 +107,12 @@
 
     move-result-object v3
 
-    .line 199
-    .local v3, "ri":Lcom/android/settings/notification/ZenRuleInfo;
     if-eqz v3, :cond_2
 
     iget-object v4, v3, Lcom/android/settings/notification/ZenRuleInfo;->configurationActivity:Landroid/content/ComponentName;
 
     if-eqz v4, :cond_2
 
-    .line 200
     invoke-static {}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->access$300()Landroid/app/NotificationManager;
 
     move-result-object v4
@@ -143,7 +131,6 @@
 
     iget v4, v3, Lcom/android/settings/notification/ZenRuleInfo;->ruleInstanceLimit:I
 
-    .line 202
     invoke-static {}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->access$300()Landroid/app/NotificationManager;
 
     move-result-object v5
@@ -160,22 +147,16 @@
 
     if-lt v4, v5, :cond_2
 
-    .line 203
     :cond_1
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 205
-    .end local v2    # "serviceInfo":Landroid/content/pm/ServiceInfo;
-    .end local v3    # "ri":Lcom/android/settings/notification/ZenRuleInfo;
     :cond_2
     goto :goto_0
 
-    .line 206
     :cond_3
     iget-object v1, p0, Lcom/android/settings/notification/ZenRuleSelectionDialog$2;->this$0:Lcom/android/settings/notification/ZenRuleSelectionDialog;
 
     invoke-static {v1, v0}, Lcom/android/settings/notification/ZenRuleSelectionDialog;->access$400(Lcom/android/settings/notification/ZenRuleSelectionDialog;Ljava/util/Set;)V
 
-    .line 207
     return-void
 .end method

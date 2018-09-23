@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/p2p/WifiP2pSettings$2;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/wifi/p2p/WifiP2pSettings$2;
 
-    .line 234
     iput-object p1, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$2$1;->this$1:Lcom/android/settings/wifi/p2p/WifiP2pSettings$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
-    .param p1, "reason"    # I
 
-    .line 239
     iget-object v0, p0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$2$1;->this$1:Lcom/android/settings/wifi/p2p/WifiP2pSettings$2;
 
     iget-object v0, v0, Lcom/android/settings/wifi/p2p/WifiP2pSettings$2;->this$0:Lcom/android/settings/wifi/p2p/WifiP2pSettings;
@@ -49,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f12145b
+    const v1, 0x7f121454
 
     const/4 v2, 0x1
 
@@ -57,16 +53,13 @@
 
     move-result-object v0
 
-    .line 241
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 242
     return-void
 .end method
 
 .method public onSuccess()V
     .locals 0
 
-    .line 237
     return-void
 .end method

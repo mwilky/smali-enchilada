@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter;Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter;
 
-    .line 360
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$3;->this$0:Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$3;->val$vh:Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onUnhandledKey(Landroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 363
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$3;->val$vh:Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;->getOnKeyListener()Landroid/view/View$OnKeyListener;
@@ -53,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 364
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$3;->val$vh:Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRowPresenter$ViewHolder;->getOnKeyListener()Landroid/view/View$OnKeyListener;
@@ -74,12 +69,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 365
     const/4 v0, 0x1
 
     return v0
 
-    .line 368
     :cond_0
     const/4 v0, 0x0
 

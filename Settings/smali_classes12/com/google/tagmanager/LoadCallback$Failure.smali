@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 11
     new-instance v0, Lcom/google/tagmanager/LoadCallback$Failure;
 
     const-string v1, "NOT_AVAILABLE"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/google/tagmanager/LoadCallback$Failure;->NOT_AVAILABLE:Lcom/google/tagmanager/LoadCallback$Failure;
 
-    .line 12
     new-instance v0, Lcom/google/tagmanager/LoadCallback$Failure;
 
     const-string v1, "IO_ERROR"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/google/tagmanager/LoadCallback$Failure;->IO_ERROR:Lcom/google/tagmanager/LoadCallback$Failure;
 
-    .line 13
     new-instance v0, Lcom/google/tagmanager/LoadCallback$Failure;
 
     const-string v1, "SERVER_ERROR"
@@ -69,7 +66,6 @@
 
     sput-object v0, Lcom/google/tagmanager/LoadCallback$Failure;->SERVER_ERROR:Lcom/google/tagmanager/LoadCallback$Failure;
 
-    .line 10
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/tagmanager/LoadCallback$Failure;
@@ -99,7 +95,6 @@
         }
     .end annotation
 
-    .line 10
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -107,9 +102,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/LoadCallback$Failure;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 10
     const-class v0, Lcom/google/tagmanager/LoadCallback$Failure;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -124,7 +117,6 @@
 .method public static values()[Lcom/google/tagmanager/LoadCallback$Failure;
     .locals 1
 
-    .line 10
     sget-object v0, Lcom/google/tagmanager/LoadCallback$Failure;->$VALUES:[Lcom/google/tagmanager/LoadCallback$Failure;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/LoadCallback$Failure;->clone()Ljava/lang/Object;

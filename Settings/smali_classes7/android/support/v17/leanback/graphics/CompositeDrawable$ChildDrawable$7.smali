@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x1"    # Ljava/lang/String;
 
-    .line 485
-    .local p1, "x0":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Float;>;"
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -39,9 +36,7 @@
 # virtual methods
 .method public get(Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;)Ljava/lang/Float;
     .locals 1
-    .param p1, "obj"    # Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;
 
-    .line 499
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->getBoundsRule()Landroid/support/v17/leanback/graphics/BoundsRule;
 
     move-result-object v0
@@ -50,7 +45,6 @@
 
     if-nez v0, :cond_0
 
-    .line 500
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -59,7 +53,6 @@
 
     return-object v0
 
-    .line 502
     :cond_0
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->getBoundsRule()Landroid/support/v17/leanback/graphics/BoundsRule;
 
@@ -81,7 +74,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 485
     check-cast p1, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;
 
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable$7;->get(Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;)Ljava/lang/Float;
@@ -93,10 +85,7 @@
 
 .method public set(Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;Ljava/lang/Float;)V
     .locals 2
-    .param p1, "obj"    # Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;
-    .param p2, "value"    # Ljava/lang/Float;
 
-    .line 488
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->getBoundsRule()Landroid/support/v17/leanback/graphics/BoundsRule;
 
     move-result-object v0
@@ -105,7 +94,6 @@
 
     if-nez v0, :cond_0
 
-    .line 489
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->getBoundsRule()Landroid/support/v17/leanback/graphics/BoundsRule;
 
     move-result-object v0
@@ -122,7 +110,6 @@
 
     goto :goto_0
 
-    .line 491
     :cond_0
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->getBoundsRule()Landroid/support/v17/leanback/graphics/BoundsRule;
 
@@ -136,18 +123,15 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/graphics/BoundsRule$ValueRule;->setFraction(F)V
 
-    .line 494
     :goto_0
     invoke-virtual {p1}, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;->recomputeBounds()V
 
-    .line 495
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 485
     check-cast p1, Landroid/support/v17/leanback/graphics/CompositeDrawable$ChildDrawable;
 
     check-cast p2, Ljava/lang/Float;

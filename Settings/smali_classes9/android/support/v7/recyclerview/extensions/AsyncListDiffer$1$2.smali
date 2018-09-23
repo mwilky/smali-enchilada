@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;Landroid/support/v7/util/DiffUtil$DiffResult;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;
 
-    .line 276
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;, "Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;"
     iput-object p1, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;->this$1:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;
 
     iput-object p2, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;->val$result:Landroid/support/v7/util/DiffUtil$DiffResult;
@@ -44,8 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 279
-    .local p0, "this":Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;, "Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;"
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;->this$1:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;
 
     iget-object v0, v0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;->this$0:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;
@@ -60,7 +55,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 280
     iget-object v0, p0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1$2;->this$1:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;
 
     iget-object v0, v0, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer$1;->this$0:Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;
@@ -73,7 +67,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;->access$200(Landroid/support/v7/recyclerview/extensions/AsyncListDiffer;Ljava/util/List;Landroid/support/v7/util/DiffUtil$DiffResult;)V
 
-    .line 282
     :cond_0
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;
 
-    .line 488
     iput-object p1, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1$1;->this$2:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public finish(Z)V
     .locals 4
-    .param p1, "shown"    # Z
 
-    .line 491
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1$1;->this$2:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;
 
     iget-object v0, v0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
@@ -59,7 +55,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;->access$1800(Lcom/oneplus/settings/multiapp/OPMultiAppListSettings;I)V
 
-    .line 492
     iget-object v0, p0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1$1;->this$2:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;
 
     iget-object v0, v0, Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask$1;->this$1:Lcom/oneplus/settings/multiapp/OPMultiAppListSettings$CreateManagedProfileTask;
@@ -108,6 +103,5 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 493
     return-void
 .end method

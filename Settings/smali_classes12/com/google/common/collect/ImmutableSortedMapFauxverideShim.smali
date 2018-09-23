@@ -21,8 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 26
-    .local p0, "this":Lcom/google/common/collect/ImmutableSortedMapFauxverideShim;, "Lcom/google/common/collect/ImmutableSortedMapFauxverideShim<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
     return-void
@@ -45,7 +43,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 38
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -70,9 +67,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 51
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -97,11 +91,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 65
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -126,13 +115,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 80
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -157,15 +139,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 95
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
-    .local p6, "k4":Ljava/lang/Object;, "TK;"
-    .local p7, "v4":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -190,17 +163,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 110
-    .local p0, "k1":Ljava/lang/Object;, "TK;"
-    .local p1, "v1":Ljava/lang/Object;, "TV;"
-    .local p2, "k2":Ljava/lang/Object;, "TK;"
-    .local p3, "v2":Ljava/lang/Object;, "TV;"
-    .local p4, "k3":Ljava/lang/Object;, "TK;"
-    .local p5, "v3":Ljava/lang/Object;, "TV;"
-    .local p6, "k4":Ljava/lang/Object;, "TK;"
-    .local p7, "v4":Ljava/lang/Object;, "TV;"
-    .local p8, "k5":Ljava/lang/Object;, "TK;"
-    .local p9, "v5":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

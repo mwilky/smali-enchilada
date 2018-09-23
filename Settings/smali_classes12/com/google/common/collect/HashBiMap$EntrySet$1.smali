@@ -36,10 +36,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/HashBiMap$EntrySet;)V
     .locals 1
-    .param p1, "this$1"    # Lcom/google/common/collect/HashBiMap$EntrySet;
 
-    .line 434
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet$1;, "Lcom/google/common/collect/HashBiMap$EntrySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/HashBiMap$EntrySet$1;->this$1:Lcom/google/common/collect/HashBiMap$EntrySet;
 
     iget-object v0, p1, Lcom/google/common/collect/HashBiMap$EntrySet;->this$0:Lcom/google/common/collect/HashBiMap;
@@ -54,8 +51,6 @@
 .method bridge synthetic output(Lcom/google/common/collect/HashBiMap$BiEntry;)Ljava/lang/Object;
     .locals 0
 
-    .line 434
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet$1;, "Lcom/google/common/collect/HashBiMap$EntrySet$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/HashBiMap$EntrySet$1;->output(Lcom/google/common/collect/HashBiMap$BiEntry;)Ljava/util/Map$Entry;
 
     move-result-object p1
@@ -75,9 +70,6 @@
         }
     .end annotation
 
-    .line 437
-    .local p0, "this":Lcom/google/common/collect/HashBiMap$EntrySet$1;, "Lcom/google/common/collect/HashBiMap$EntrySet$1;"
-    .local p1, "entry":Lcom/google/common/collect/HashBiMap$BiEntry;, "Lcom/google/common/collect/HashBiMap$BiEntry<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/HashBiMap$EntrySet$1$MapEntry;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/HashBiMap$EntrySet$1$MapEntry;-><init>(Lcom/google/common/collect/HashBiMap$EntrySet$1;Lcom/google/common/collect/HashBiMap$BiEntry;)V

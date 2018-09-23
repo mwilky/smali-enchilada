@@ -27,7 +27,6 @@
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
 
-    .line 215
     iput-object p1, p0, Lcom/android/settings/notification/ZenAccessSettings$3;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenAccessSettings$3;->val$pkg:Ljava/lang/String;
@@ -42,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 218
     iget-object v0, p0, Lcom/android/settings/notification/ZenAccessSettings$3;->val$context:Landroid/content/Context;
 
     const-class v1, Landroid/app/NotificationManager;
@@ -53,12 +51,9 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 219
-    .local v0, "mgr":Landroid/app/NotificationManager;
     iget-object v1, p0, Lcom/android/settings/notification/ZenAccessSettings$3;->val$pkg:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->removeAutomaticZenRules(Ljava/lang/String;)Z
 
-    .line 220
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
-    .line 137
     iput-object p1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$1;->this$0:Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
     iput-boolean p2, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$1;->val$hasAlternateButton:Z
@@ -42,14 +40,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 140
     iget-boolean v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$1;->val$hasAlternateButton:Z
 
     if-eqz v0, :cond_0
 
-    .line 141
     iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$1;->this$0:Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
     invoke-virtual {v0}, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->getActivity()Landroid/app/Activity;
@@ -60,7 +55,6 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setResult(I)V
 
-    .line 143
     :cond_0
     iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$1;->this$0:Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
@@ -70,6 +64,5 @@
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 
-    .line 144
     return-void
 .end method

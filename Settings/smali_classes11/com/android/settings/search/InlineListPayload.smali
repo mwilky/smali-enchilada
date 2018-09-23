@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 50
     new-instance v0, Lcom/android/settings/search/InlineListPayload$1;
 
     invoke-direct {v0}, Lcom/android/settings/search/InlineListPayload$1;-><init>()V
@@ -35,28 +34,21 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 25
     invoke-direct {p0, p1}, Lcom/android/settings/search/InlinePayload;-><init>(Landroid/os/Parcel;)V
 
-    .line 26
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/search/InlineListPayload;->mNumOptions:I
 
-    .line 27
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/settings/search/InlineListPayload$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lcom/android/settings/search/InlineListPayload$1;
 
-    .line 11
     invoke-direct {p0, p1}, Lcom/android/settings/search/InlineListPayload;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -64,14 +56,7 @@
 
 .method public constructor <init>(Ljava/lang/String;ILandroid/content/Intent;ZII)V
     .locals 6
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "payloadType"    # I
-    .param p3, "intent"    # Landroid/content/Intent;
-    .param p4, "isDeviceSupported"    # Z
-    .param p5, "numOptions"    # I
-    .param p6, "defaultValue"    # I
 
-    .line 20
     move-object v0, p0
 
     move-object v1, p1
@@ -86,10 +71,8 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/settings/search/InlinePayload;-><init>(Ljava/lang/String;ILandroid/content/Intent;ZI)V
 
-    .line 21
     iput p5, p0, Lcom/android/settings/search/InlineListPayload;->mNumOptions:I
 
-    .line 22
     return-void
 .end method
 
@@ -98,7 +81,6 @@
 .method public getType()I
     .locals 1
 
-    .line 47
     const/4 v0, 0x3
 
     return v0
@@ -106,24 +88,20 @@
 
 .method protected standardizeInput(I)I
     .locals 3
-    .param p1, "input"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/IllegalArgumentException;
         }
     .end annotation
 
-    .line 37
     if-ltz p1, :cond_0
 
     iget v0, p0, Lcom/android/settings/search/InlineListPayload;->mNumOptions:I
 
     if-ge p1, v0, :cond_0
 
-    .line 42
     return p1
 
-    .line 38
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -156,17 +134,12 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 31
     invoke-super {p0, p1, p2}, Lcom/android/settings/search/InlinePayload;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 32
     iget v0, p0, Lcom/android/settings/search/InlineListPayload;->mNumOptions:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 33
     return-void
 .end method

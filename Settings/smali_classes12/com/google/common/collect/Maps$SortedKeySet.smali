@@ -42,12 +42,8 @@
         }
     .end annotation
 
-    .line 3533
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
-    .local p1, "map":Ljava/util/SortedMap;, "Ljava/util/SortedMap<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$KeySet;-><init>(Ljava/util/Map;)V
 
-    .line 3534
     return-void
 .end method
 
@@ -63,8 +59,6 @@
         }
     .end annotation
 
-    .line 3543
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -84,8 +78,6 @@
         }
     .end annotation
 
-    .line 3563
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -107,9 +99,6 @@
         }
     .end annotation
 
-    .line 3553
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
-    .local p1, "toElement":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/Maps$SortedKeySet;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
@@ -133,8 +122,6 @@
         }
     .end annotation
 
-    .line 3568
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -149,8 +136,6 @@
 .method bridge synthetic map()Ljava/util/Map;
     .locals 1
 
-    .line 3531
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
 
     move-result-object v0
@@ -168,8 +153,6 @@
         }
     .end annotation
 
-    .line 3538
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/Maps$KeySet;->map()Ljava/util/Map;
 
     move-result-object v0
@@ -189,10 +172,6 @@
         }
     .end annotation
 
-    .line 3548
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TK;"
-    .local p2, "toElement":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/Maps$SortedKeySet;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;
@@ -218,9 +197,6 @@
         }
     .end annotation
 
-    .line 3558
-    .local p0, "this":Lcom/google/common/collect/Maps$SortedKeySet;, "Lcom/google/common/collect/Maps$SortedKeySet<TK;TV;>;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TK;"
     new-instance v0, Lcom/google/common/collect/Maps$SortedKeySet;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$SortedKeySet;->map()Ljava/util/SortedMap;

@@ -56,7 +56,6 @@
 .method static constructor <clinit>()V
     .locals 25
 
-    .line 258
     new-instance v12, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v1, "Introduction"
@@ -87,7 +86,6 @@
 
     sput-object v12, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->Introduction:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 269
     new-instance v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v14, "NeedToConfirm"
@@ -118,7 +116,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->NeedToConfirm:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 280
     new-instance v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     const-string v2, "ConfirmWrong"
@@ -149,7 +146,6 @@
 
     sput-object v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->ConfirmWrong:Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
-    .line 256
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
@@ -179,60 +175,38 @@
 
 .method private constructor <init>(Ljava/lang/String;IIIIIIIIII)V
     .locals 0
-    .param p3, "hintInAlpha"    # I
-    .param p4, "hintInAlphaForFingerprint"    # I
-    .param p5, "hintInNumeric"    # I
-    .param p6, "hintInNumericForFingerprint"    # I
-    .param p7, "messageInAlpha"    # I
-    .param p8, "messageInAlphaForFingerprint"    # I
-    .param p9, "messageInNumeric"    # I
-    .param p10, "messageInNumericForFingerprint"    # I
-    .param p11, "nextButtonText"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IIIIIIIII)V"
         }
     .end annotation
 
-    .line 295
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 296
     iput p3, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaHint:I
 
-    .line 297
     iput p4, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaHintForFingerprint:I
 
-    .line 298
     iput p5, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->numericHint:I
 
-    .line 299
     iput p6, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->numericHintForFingerprint:I
 
-    .line 300
     iput p7, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaMessage:I
 
-    .line 301
     iput p8, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaMessageForFingerprint:I
 
-    .line 302
     iput p9, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->numericMessage:I
 
-    .line 303
     iput p10, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->numericMessageForFingerprint:I
 
-    .line 304
     iput p11, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->buttonText:I
 
-    .line 305
     return-void
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 256
     const-class v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -247,7 +221,6 @@
 .method public static values()[Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
     .locals 1
 
-    .line 256
     sget-object v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->$VALUES:[Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;
 
     invoke-virtual {v0}, [Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->clone()Ljava/lang/Object;
@@ -263,15 +236,11 @@
 # virtual methods
 .method public getHint(ZZ)I
     .locals 1
-    .param p1, "isAlpha"    # Z
-    .param p2, "isFingerprint"    # Z
     .annotation build Landroid/support/annotation/StringRes;
     .end annotation
 
-    .line 318
     if-eqz p1, :cond_1
 
-    .line 319
     if-eqz p2, :cond_0
 
     iget v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaHintForFingerprint:I
@@ -284,7 +253,6 @@
     :goto_0
     return v0
 
-    .line 321
     :cond_1
     if-eqz p2, :cond_2
 
@@ -301,15 +269,11 @@
 
 .method public getMessage(ZZ)I
     .locals 1
-    .param p1, "isAlpha"    # Z
-    .param p2, "isFingerprint"    # Z
     .annotation build Landroid/support/annotation/StringRes;
     .end annotation
 
-    .line 326
     if-eqz p1, :cond_1
 
-    .line 327
     if-eqz p2, :cond_0
 
     iget v0, p0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment$Stage;->alphaMessageForFingerprint:I
@@ -322,7 +286,6 @@
     :goto_0
     return v0
 
-    .line 329
     :cond_1
     if-eqz p2, :cond_2
 

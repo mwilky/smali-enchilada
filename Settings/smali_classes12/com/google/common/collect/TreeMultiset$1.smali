@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/TreeMultiset;Lcom/google/common/collect/TreeMultiset$AvlNode;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/TreeMultiset;
 
-    .line 335
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset$1;, "Lcom/google/common/collect/TreeMultiset$1;"
     iput-object p1, p0, Lcom/google/common/collect/TreeMultiset$1;->this$0:Lcom/google/common/collect/TreeMultiset;
 
     iput-object p2, p0, Lcom/google/common/collect/TreeMultiset$1;->val$baseEntry:Lcom/google/common/collect/TreeMultiset$AvlNode;
@@ -48,19 +45,14 @@
 .method public getCount()I
     .locals 3
 
-    .line 343
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset$1;, "Lcom/google/common/collect/TreeMultiset$1;"
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset$1;->val$baseEntry:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$AvlNode;->getCount()I
 
     move-result v0
 
-    .line 344
-    .local v0, "result":I
     if-nez v0, :cond_0
 
-    .line 345
     iget-object v1, p0, Lcom/google/common/collect/TreeMultiset$1;->this$0:Lcom/google/common/collect/TreeMultiset;
 
     invoke-virtual {p0}, Lcom/google/common/collect/TreeMultiset$1;->getElement()Ljava/lang/Object;
@@ -73,7 +65,6 @@
 
     return v1
 
-    .line 347
     :cond_0
     return v0
 .end method
@@ -86,8 +77,6 @@
         }
     .end annotation
 
-    .line 338
-    .local p0, "this":Lcom/google/common/collect/TreeMultiset$1;, "Lcom/google/common/collect/TreeMultiset$1;"
     iget-object v0, p0, Lcom/google/common/collect/TreeMultiset$1;->val$baseEntry:Lcom/google/common/collect/TreeMultiset$AvlNode;
 
     invoke-virtual {v0}, Lcom/google/common/collect/TreeMultiset$AvlNode;->getElement()Ljava/lang/Object;

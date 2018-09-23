@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;Landroid/view/View;Landroid/support/v7/widget/ActionMenuPresenter;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
-    .param p2, "src"    # Landroid/view/View;
 
-    .line 652
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
     iput-object p3, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->val$this$0:Landroid/support/v7/widget/ActionMenuPresenter;
@@ -41,7 +38,6 @@
 .method public getPopup()Landroid/support/v7/view/menu/ShowableListMenu;
     .locals 1
 
-    .line 655
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
@@ -50,12 +46,10 @@
 
     if-nez v0, :cond_0
 
-    .line 656
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 659
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
@@ -73,14 +67,12 @@
 .method public onForwardingStarted()Z
     .locals 1
 
-    .line 664
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->showOverflowMenu()Z
 
-    .line 665
     const/4 v0, 0x1
 
     return v0
@@ -89,7 +81,6 @@
 .method public onForwardingStopped()Z
     .locals 1
 
-    .line 673
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
     iget-object v0, v0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
@@ -98,12 +89,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 674
     const/4 v0, 0x0
 
     return v0
 
-    .line 677
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton$1;->this$1:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
@@ -111,7 +100,6 @@
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->hideOverflowMenu()Z
 
-    .line 678
     const/4 v0, 0x1
 
     return v0

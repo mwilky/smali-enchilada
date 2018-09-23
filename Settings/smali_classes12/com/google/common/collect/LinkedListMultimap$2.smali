@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/LinkedListMultimap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/LinkedListMultimap;
 
-    .line 684
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$2;, "Lcom/google/common/collect/LinkedListMultimap$2;"
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
@@ -43,10 +40,7 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
 
-    .line 692
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$2;, "Lcom/google/common/collect/LinkedListMultimap$2;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->containsKey(Ljava/lang/Object;)Z
@@ -66,8 +60,6 @@
         }
     .end annotation
 
-    .line 689
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$2;, "Lcom/google/common/collect/LinkedListMultimap$2;"
     new-instance v0, Lcom/google/common/collect/LinkedListMultimap$DistinctKeyIterator;
 
     iget-object v1, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
@@ -81,10 +73,7 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 696
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$2;, "Lcom/google/common/collect/LinkedListMultimap$2;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
@@ -103,8 +92,6 @@
 .method public size()I
     .locals 1
 
-    .line 686
-    .local p0, "this":Lcom/google/common/collect/LinkedListMultimap$2;, "Lcom/google/common/collect/LinkedListMultimap$2;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
     invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Ljava/util/Map;

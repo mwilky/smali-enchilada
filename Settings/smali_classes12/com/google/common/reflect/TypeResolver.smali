@@ -25,40 +25,30 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     new-instance v0, Lcom/google/common/reflect/TypeResolver$TypeTable;
 
     invoke-direct {v0}, Lcom/google/common/reflect/TypeResolver$TypeTable;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/reflect/TypeResolver;->typeTable:Lcom/google/common/reflect/TypeResolver$TypeTable;
 
-    .line 61
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/common/reflect/TypeResolver$TypeTable;)V
     .locals 0
-    .param p1, "typeTable"    # Lcom/google/common/reflect/TypeResolver$TypeTable;
 
-    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     iput-object p1, p0, Lcom/google/common/reflect/TypeResolver;->typeTable:Lcom/google/common/reflect/TypeResolver$TypeTable;
 
-    .line 65
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/reflect/TypeResolver$TypeTable;Lcom/google/common/reflect/TypeResolver$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/reflect/TypeResolver$TypeTable;
-    .param p2, "x1"    # Lcom/google/common/reflect/TypeResolver$1;
 
-    .line 55
     invoke-direct {p0, p1}, Lcom/google/common/reflect/TypeResolver;-><init>(Lcom/google/common/reflect/TypeResolver$TypeTable;)V
 
     return-void
@@ -66,10 +56,7 @@
 
 .method static synthetic access$000(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p0, "x0"    # Ljava/lang/Class;
-    .param p1, "x1"    # Ljava/lang/Object;
 
-    .line 55
     invoke-static {p0, p1}, Lcom/google/common/reflect/TypeResolver;->expectArgument(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -79,11 +66,7 @@
 
 .method static synthetic access$100(Ljava/util/Map;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)V
     .locals 0
-    .param p0, "x0"    # Ljava/util/Map;
-    .param p1, "x1"    # Ljava/lang/reflect/Type;
-    .param p2, "x2"    # Ljava/lang/reflect/Type;
 
-    .line 55
     invoke-static {p0, p1, p2}, Lcom/google/common/reflect/TypeResolver;->populateTypeMappings(Ljava/util/Map;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)V
 
     return-void
@@ -91,10 +74,7 @@
 
 .method static synthetic access$300(Lcom/google/common/reflect/TypeResolver;[Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/reflect/TypeResolver;
-    .param p1, "x1"    # [Ljava/lang/reflect/Type;
 
-    .line 55
     invoke-direct {p0, p1}, Lcom/google/common/reflect/TypeResolver;->resolveTypes([Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -104,9 +84,7 @@
 
 .method static accordingTo(Ljava/lang/reflect/Type;)Lcom/google/common/reflect/TypeResolver;
     .locals 2
-    .param p0, "type"    # Ljava/lang/reflect/Type;
 
-    .line 68
     new-instance v0, Lcom/google/common/reflect/TypeResolver;
 
     invoke-direct {v0}, Lcom/google/common/reflect/TypeResolver;-><init>()V
@@ -124,7 +102,6 @@
 
 .method private static expectArgument(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
-    .param p1, "arg"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -137,8 +114,6 @@
         }
     .end annotation
 
-    .line 207
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     :try_start_0
     invoke-virtual {p0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -148,12 +123,9 @@
 
     return-object v0
 
-    .line 208
     :catch_0
     move-exception v0
 
-    .line 209
-    .local v0, "e":Ljava/lang/ClassCastException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -183,8 +155,6 @@
 
 .method private static populateTypeMappings(Ljava/util/Map;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)V
     .locals 3
-    .param p1, "from"    # Ljava/lang/reflect/Type;
-    .param p2, "to"    # Ljava/lang/reflect/Type;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,18 +168,14 @@
         }
     .end annotation
 
-    .line 103
-    .local p0, "mappings":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/common/reflect/TypeResolver$TypeVariableKey;Ljava/lang/reflect/Type;>;"
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 104
     return-void
 
-    .line 106
     :cond_0
     new-instance v0, Lcom/google/common/reflect/TypeResolver$1;
 
@@ -223,30 +189,22 @@
 
     aput-object p1, v1, v2
 
-    .line 150
     invoke-virtual {v0, v1}, Lcom/google/common/reflect/TypeResolver$1;->visit([Ljava/lang/reflect/Type;)V
 
-    .line 151
     return-void
 .end method
 
 .method private resolveGenericArrayType(Ljava/lang/reflect/GenericArrayType;)Ljava/lang/reflect/Type;
     .locals 3
-    .param p1, "type"    # Ljava/lang/reflect/GenericArrayType;
 
-    .line 189
     invoke-interface {p1}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 190
-    .local v0, "componentType":Ljava/lang/reflect/Type;
     invoke-virtual {p0, v0}, Lcom/google/common/reflect/TypeResolver;->resolveType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object v1
 
-    .line 191
-    .local v1, "resolvedComponentType":Ljava/lang/reflect/Type;
     invoke-static {v1}, Lcom/google/common/reflect/Types;->newArrayType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object v2
@@ -256,15 +214,11 @@
 
 .method private resolveParameterizedType(Ljava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/ParameterizedType;
     .locals 6
-    .param p1, "type"    # Ljava/lang/reflect/ParameterizedType;
 
-    .line 195
     invoke-interface {p1}, Ljava/lang/reflect/ParameterizedType;->getOwnerType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 196
-    .local v0, "owner":Ljava/lang/reflect/Type;
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -276,8 +230,6 @@
 
     move-result-object v1
 
-    .line 197
-    .local v1, "resolvedOwner":Ljava/lang/reflect/Type;
     :goto_0
     invoke-interface {p1}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
@@ -287,20 +239,14 @@
 
     move-result-object v2
 
-    .line 199
-    .local v2, "resolvedRawType":Ljava/lang/reflect/Type;
     invoke-interface {p1}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object v3
 
-    .line 200
-    .local v3, "args":[Ljava/lang/reflect/Type;
     invoke-direct {p0, v3}, Lcom/google/common/reflect/TypeResolver;->resolveTypes([Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
 
     move-result-object v4
 
-    .line 201
-    .local v4, "resolvedArgs":[Ljava/lang/reflect/Type;
     move-object v5, v2
 
     check-cast v5, Ljava/lang/Class;
@@ -314,24 +260,18 @@
 
 .method private resolveTypes([Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
     .locals 3
-    .param p1, "types"    # [Ljava/lang/reflect/Type;
 
-    .line 174
     array-length v0, p1
 
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
-    .line 175
-    .local v0, "result":[Ljava/lang/reflect/Type;
     const/4 v1, 0x0
 
-    .local v1, "i":I
     :goto_0
     array-length v2, p1
 
     if-ge v1, v2, :cond_0
 
-    .line 176
     aget-object v2, p1, v1
 
     invoke-virtual {p0, v2}, Lcom/google/common/reflect/TypeResolver;->resolveType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
@@ -340,37 +280,27 @@
 
     aput-object v2, v0, v1
 
-    .line 175
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 178
-    .end local v1    # "i":I
     :cond_0
     return-object v0
 .end method
 
 .method private resolveWildcardType(Ljava/lang/reflect/WildcardType;)Ljava/lang/reflect/WildcardType;
     .locals 5
-    .param p1, "type"    # Ljava/lang/reflect/WildcardType;
 
-    .line 182
     invoke-interface {p1}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 183
-    .local v0, "lowerBounds":[Ljava/lang/reflect/Type;
     invoke-interface {p1}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
 
     move-result-object v1
 
-    .line 184
-    .local v1, "upperBounds":[Ljava/lang/reflect/Type;
     new-instance v2, Lcom/google/common/reflect/Types$WildcardTypeImpl;
 
-    .line 185
     invoke-direct {p0, v0}, Lcom/google/common/reflect/TypeResolver;->resolveTypes([Ljava/lang/reflect/Type;)[Ljava/lang/reflect/Type;
 
     move-result-object v3
@@ -381,7 +311,6 @@
 
     invoke-direct {v2, v3, v4}, Lcom/google/common/reflect/Types$WildcardTypeImpl;-><init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
 
-    .line 184
     return-object v2
 .end method
 
@@ -389,17 +318,13 @@
 # virtual methods
 .method public resolveType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
     .locals 2
-    .param p1, "type"    # Ljava/lang/reflect/Type;
 
-    .line 158
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 159
     instance-of v0, p1, Ljava/lang/reflect/TypeVariable;
 
     if-eqz v0, :cond_0
 
-    .line 160
     iget-object v0, p0, Lcom/google/common/reflect/TypeResolver;->typeTable:Lcom/google/common/reflect/TypeResolver$TypeTable;
 
     move-object v1, p1
@@ -412,13 +337,11 @@
 
     return-object v0
 
-    .line 161
     :cond_0
     instance-of v0, p1, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz v0, :cond_1
 
-    .line 162
     move-object v0, p1
 
     check-cast v0, Ljava/lang/reflect/ParameterizedType;
@@ -429,13 +352,11 @@
 
     return-object v0
 
-    .line 163
     :cond_1
     instance-of v0, p1, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v0, :cond_2
 
-    .line 164
     move-object v0, p1
 
     check-cast v0, Ljava/lang/reflect/GenericArrayType;
@@ -446,13 +367,11 @@
 
     return-object v0
 
-    .line 165
     :cond_2
     instance-of v0, p1, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_3
 
-    .line 166
     move-object v0, p1
 
     check-cast v0, Ljava/lang/reflect/WildcardType;
@@ -463,23 +382,17 @@
 
     return-object v0
 
-    .line 169
     :cond_3
     return-object p1
 .end method
 
 .method public where(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Lcom/google/common/reflect/TypeResolver;
     .locals 3
-    .param p1, "formal"    # Ljava/lang/reflect/Type;
-    .param p2, "actual"    # Ljava/lang/reflect/Type;
 
-    .line 91
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 92
-    .local v0, "mappings":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/common/reflect/TypeResolver$TypeVariableKey;Ljava/lang/reflect/Type;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -494,7 +407,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/common/reflect/TypeResolver;->populateTypeMappings(Ljava/util/Map;Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)V
 
-    .line 93
     invoke-virtual {p0, v0}, Lcom/google/common/reflect/TypeResolver;->where(Ljava/util/Map;)Lcom/google/common/reflect/TypeResolver;
 
     move-result-object v1
@@ -516,8 +428,6 @@
         }
     .end annotation
 
-    .line 98
-    .local p1, "mappings":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/common/reflect/TypeResolver$TypeVariableKey;+Ljava/lang/reflect/Type;>;"
     new-instance v0, Lcom/google/common/reflect/TypeResolver;
 
     iget-object v1, p0, Lcom/google/common/reflect/TypeResolver;->typeTable:Lcom/google/common/reflect/TypeResolver$TypeTable;

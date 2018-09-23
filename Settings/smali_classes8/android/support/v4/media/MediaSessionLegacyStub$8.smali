@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSessionLegacyStub;Landroid/support/v4/media/MediaSession2$ControllerInfo;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSessionLegacyStub;
 
-    .line 395
     iput-object p1, p0, Landroid/support/v4/media/MediaSessionLegacyStub$8;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSessionLegacyStub$8;->val$controllerInfo:Landroid/support/v4/media/MediaSession2$ControllerInfo;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 398
     iget-object v0, p0, Landroid/support/v4/media/MediaSessionLegacyStub$8;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaSessionLegacyStub;->mSession:Landroid/support/v4/media/MediaSession2$SupportLibraryImpl;
@@ -54,10 +51,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 399
     return-void
 
-    .line 401
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaSessionLegacyStub$8;->this$0:Landroid/support/v4/media/MediaSessionLegacyStub;
 
@@ -79,6 +74,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/MediaSession2$SessionCallback;->onDisconnected(Landroid/support/v4/media/MediaSession2;Landroid/support/v4/media/MediaSession2$ControllerInfo;)V
 
-    .line 402
     return-void
 .end method

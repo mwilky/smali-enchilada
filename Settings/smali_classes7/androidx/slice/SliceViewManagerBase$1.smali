@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/SliceViewManagerBase;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/slice/SliceViewManagerBase;
 
-    .line 51
     iput-object p1, p0, Landroidx/slice/SliceViewManagerBase$1;->this$0:Landroidx/slice/SliceViewManagerBase;
 
     iput-object p2, p0, Landroidx/slice/SliceViewManagerBase$1;->val$h:Landroid/os/Handler;
@@ -42,16 +40,14 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .locals 1
-    .param p1, "command"    # Ljava/lang/Runnable;
+    .param p1    # Ljava/lang/Runnable;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 54
     iget-object v0, p0, Landroidx/slice/SliceViewManagerBase$1;->val$h:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 55
     return-void
 .end method

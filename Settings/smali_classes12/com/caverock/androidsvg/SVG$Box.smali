@@ -30,38 +30,23 @@
 # direct methods
 .method public constructor <init>(FFFF)V
     .locals 0
-    .param p1, "minX"    # F
-    .param p2, "minY"    # F
-    .param p3, "width"    # F
-    .param p4, "height"    # F
 
-    .line 852
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 854
     iput p1, p0, Lcom/caverock/androidsvg/SVG$Box;->minX:F
 
-    .line 855
     iput p2, p0, Lcom/caverock/androidsvg/SVG$Box;->minY:F
 
-    .line 856
     iput p3, p0, Lcom/caverock/androidsvg/SVG$Box;->width:F
 
-    .line 857
     iput p4, p0, Lcom/caverock/androidsvg/SVG$Box;->height:F
 
-    .line 858
     return-void
 .end method
 
 .method public static fromLimits(FFFF)Lcom/caverock/androidsvg/SVG$Box;
     .locals 3
-    .param p0, "minX"    # F
-    .param p1, "minY"    # F
-    .param p2, "maxX"    # F
-    .param p3, "maxY"    # F
 
-    .line 862
     new-instance v0, Lcom/caverock/androidsvg/SVG$Box;
 
     sub-float v1, p2, p0
@@ -78,7 +63,6 @@
 .method public maxX()F
     .locals 2
 
-    .line 870
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Box;->minX:F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Box;->width:F
@@ -91,7 +75,6 @@
 .method public maxY()F
     .locals 2
 
-    .line 871
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Box;->minY:F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Box;->height:F
@@ -104,7 +87,6 @@
 .method public toRectF()Landroid/graphics/RectF;
     .locals 5
 
-    .line 867
     new-instance v0, Landroid/graphics/RectF;
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Box;->minX:F
@@ -127,7 +109,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 881
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "["
@@ -175,9 +156,7 @@
 
 .method public union(Lcom/caverock/androidsvg/SVG$Box;)V
     .locals 2
-    .param p1, "other"    # Lcom/caverock/androidsvg/SVG$Box;
 
-    .line 875
     iget v0, p1, Lcom/caverock/androidsvg/SVG$Box;->minX:F
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Box;->minX:F
@@ -190,7 +169,6 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Box;->minX:F
 
-    .line 876
     :cond_0
     iget v0, p1, Lcom/caverock/androidsvg/SVG$Box;->minY:F
 
@@ -204,7 +182,6 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Box;->minY:F
 
-    .line 877
     :cond_1
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$Box;->maxX()F
 
@@ -228,7 +205,6 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Box;->width:F
 
-    .line 878
     :cond_2
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVG$Box;->maxY()F
 
@@ -252,7 +228,6 @@
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Box;->height:F
 
-    .line 879
     :cond_3
     return-void
 .end method

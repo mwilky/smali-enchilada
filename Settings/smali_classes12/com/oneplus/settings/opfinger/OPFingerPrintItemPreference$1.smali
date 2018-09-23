@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;
 
-    .line 94
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference$1;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,31 +36,24 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 111
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference$1;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;->access$002(Lcom/oneplus/settings/opfinger/OPFingerPrintItemPreference;Z)Z
 
-    .line 112
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 106
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 100
     return-void
 .end method

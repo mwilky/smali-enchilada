@@ -59,19 +59,14 @@
         }
     .end annotation
 
-    .line 548
-    .local p0, "this":Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;, "Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm<TE;>;"
-    .local p1, "multiset":Lcom/google/common/collect/SortedMultiset;, "Lcom/google/common/collect/SortedMultiset<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 549
     invoke-interface {p1}, Lcom/google/common/collect/SortedMultiset;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->comparator:Ljava/util/Comparator;
 
-    .line 550
     invoke-interface {p1}, Lcom/google/common/collect/SortedMultiset;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -80,22 +75,16 @@
 
     move-result v0
 
-    .line 551
-    .local v0, "n":I
     new-array v1, v0, [Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->elements:[Ljava/lang/Object;
 
-    .line 552
     new-array v1, v0, [I
 
     iput-object v1, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->counts:[I
 
-    .line 553
     const/4 v1, 0x0
 
-    .line 554
-    .local v1, "i":I
     invoke-interface {p1}, Lcom/google/common/collect/SortedMultiset;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -117,8 +106,6 @@
 
     check-cast v3, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 555
-    .local v3, "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     iget-object v4, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->elements:[Ljava/lang/Object;
 
     invoke-interface {v3}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
@@ -127,7 +114,6 @@
 
     aput-object v5, v4, v1
 
-    .line 556
     iget-object v4, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->counts:[I
 
     invoke-interface {v3}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
@@ -136,14 +122,10 @@
 
     aput v5, v4, v1
 
-    .line 557
     add-int/lit8 v1, v1, 0x1
 
-    .line 558
-    .end local v3    # "entry":Lcom/google/common/collect/Multiset$Entry;, "Lcom/google/common/collect/Multiset$Entry<TE;>;"
     goto :goto_0
 
-    .line 559
     :cond_0
     return-void
 .end method
@@ -153,29 +135,21 @@
 .method readResolve()Ljava/lang/Object;
     .locals 5
 
-    .line 562
-    .local p0, "this":Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;, "Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->elements:[Ljava/lang/Object;
 
     array-length v0, v0
 
-    .line 563
-    .local v0, "n":I
     new-instance v1, Lcom/google/common/collect/ImmutableSortedMultiset$Builder;
 
     iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->comparator:Ljava/util/Comparator;
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/ImmutableSortedMultiset$Builder;-><init>(Ljava/util/Comparator;)V
 
-    .line 564
-    .local v1, "builder":Lcom/google/common/collect/ImmutableSortedMultiset$Builder;, "Lcom/google/common/collect/ImmutableSortedMultiset$Builder<TE;>;"
     const/4 v2, 0x0
 
-    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 565
     iget-object v3, p0, Lcom/google/common/collect/ImmutableSortedMultiset$SerializedForm;->elements:[Ljava/lang/Object;
 
     aget-object v3, v3, v2
@@ -186,13 +160,10 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/google/common/collect/ImmutableSortedMultiset$Builder;->addCopies(Ljava/lang/Object;I)Lcom/google/common/collect/ImmutableSortedMultiset$Builder;
 
-    .line 564
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 567
-    .end local v2    # "i":I
     :cond_0
     invoke-virtual {v1}, Lcom/google/common/collect/ImmutableSortedMultiset$Builder;->build()Lcom/google/common/collect/ImmutableSortedMultiset;
 

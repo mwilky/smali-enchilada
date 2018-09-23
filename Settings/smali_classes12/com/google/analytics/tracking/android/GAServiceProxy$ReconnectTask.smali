@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
     .locals 0
 
-    .line 412
     iput-object p1, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$ReconnectTask;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/google/analytics/tracking/android/GAServiceProxy;Lcom/google/analytics/tracking/android/GAServiceProxy$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/analytics/tracking/android/GAServiceProxy;
-    .param p2, "x1"    # Lcom/google/analytics/tracking/android/GAServiceProxy$1;
 
-    .line 412
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/GAServiceProxy$ReconnectTask;-><init>(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
 
     return-void
@@ -46,11 +42,9 @@
 .method public run()V
     .locals 1
 
-    .line 415
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceProxy$ReconnectTask;->this$0:Lcom/google/analytics/tracking/android/GAServiceProxy;
 
     invoke-static {v0}, Lcom/google/analytics/tracking/android/GAServiceProxy;->access$600(Lcom/google/analytics/tracking/android/GAServiceProxy;)V
 
-    .line 416
     return-void
 .end method

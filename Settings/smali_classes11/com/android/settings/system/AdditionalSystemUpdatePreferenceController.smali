@@ -10,14 +10,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 27
     const-string v0, "additional_system_update_settings"
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/core/BasePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 28
     return-void
 .end method
 
@@ -26,7 +23,6 @@
 .method public getAvailabilityStatus()I
     .locals 2
 
-    .line 32
     iget-object v0, p0, Lcom/android/settings/system/AdditionalSystemUpdatePreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -41,16 +37,13 @@
 
     if-eqz v0, :cond_0
 
-    .line 34
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 35
     :cond_0
     const/4 v0, 0x2
 
-    .line 32
     :goto_0
     return v0
 .end method

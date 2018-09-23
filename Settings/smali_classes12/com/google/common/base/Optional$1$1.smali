@@ -39,19 +39,15 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/base/Optional$1;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/google/common/base/Optional$1;
 
-    .line 222
     iput-object p1, p0, Lcom/google/common/base/Optional$1$1;->this$0:Lcom/google/common/base/Optional$1;
 
     invoke-direct {p0}, Lcom/google/common/base/AbstractIterator;-><init>()V
 
-    .line 223
     iget-object v0, p0, Lcom/google/common/base/Optional$1$1;->this$0:Lcom/google/common/base/Optional$1;
 
     iget-object v0, v0, Lcom/google/common/base/Optional$1;->val$optionals:Ljava/lang/Iterable;
 
-    .line 224
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -64,7 +60,6 @@
 
     iput-object v0, p0, Lcom/google/common/base/Optional$1$1;->iterator:Ljava/util/Iterator;
 
-    .line 223
     return-void
 .end method
 
@@ -78,7 +73,6 @@
         }
     .end annotation
 
-    .line 228
     :goto_0
     iget-object v0, p0, Lcom/google/common/base/Optional$1$1;->iterator:Ljava/util/Iterator;
 
@@ -88,7 +82,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 229
     iget-object v0, p0, Lcom/google/common/base/Optional$1$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -97,27 +90,21 @@
 
     check-cast v0, Lcom/google/common/base/Optional;
 
-    .line 230
-    .local v0, "optional":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<+TT;>;"
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->isPresent()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 231
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 233
-    .end local v0    # "optional":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<+TT;>;"
     :cond_0
     goto :goto_0
 
-    .line 234
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/base/Optional$1$1;->endOfData()Ljava/lang/Object;
 

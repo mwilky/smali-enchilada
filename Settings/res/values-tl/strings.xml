@@ -2907,8 +2907,6 @@ Upang pumunta sa home screen kahit anu mang oras, i-swipe pataas mula sa ibabang
     <string name="oneplus_quick_clipboard_summary">Mapahusay ang kakayahan upang kopyahin at pagkatapos ay irerekomenda ang susunod na pagkilos ayon sa pagkopya</string>
     <string name="oneplus_quick_gestures">Mga Galaw</string>
     <string name="oneplus_quick_gestures_title">Mga mabilisang gesture</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Mabilis na i-activate ang assistant app</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Pindutin ang power button nang 0.5s upang i-activate ang assistant app, at 3s para i-off</string>
     <string name="oneplus_quick_turn_on_camera">Mabilisang i-on ang camera</string>
     <string name="oneplus_quickpay">Mabilis na Pagbayad</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Tiyak ka bang nais mong baguhin ang aksyon ng pag-long press ng pindutan ng Home mula sa \"%1$s\" \"Quick Pay\"?</string>

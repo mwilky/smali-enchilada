@@ -13,15 +13,11 @@
 # direct methods
 .method public constructor <init>(Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;)V
     .locals 0
-    .param p1, "dataLayerEvent"    # Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;
 
-    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
     iput-object p1, p0, Lcom/google/tagmanager/DebugDataLayerEventEvaluationInfoBuilder;->dataLayerEvent:Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;
 
-    .line 18
     return-void
 .end method
 
@@ -30,13 +26,10 @@
 .method public createAndAddResult()Lcom/google/tagmanager/ResolvedFunctionCallBuilder;
     .locals 3
 
-    .line 22
     new-instance v0, Lcom/google/analytics/containertag/proto/Debug$ResolvedFunctionCall;
 
     invoke-direct {v0}, Lcom/google/analytics/containertag/proto/Debug$ResolvedFunctionCall;-><init>()V
 
-    .line 23
-    .local v0, "result":Lcom/google/analytics/containertag/proto/Debug$ResolvedFunctionCall;
     iget-object v1, p0, Lcom/google/tagmanager/DebugDataLayerEventEvaluationInfoBuilder;->dataLayerEvent:Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;
 
     iget-object v2, p0, Lcom/google/tagmanager/DebugDataLayerEventEvaluationInfoBuilder;->dataLayerEvent:Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;
@@ -49,7 +42,6 @@
 
     iput-object v2, v1, Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;->results:[Lcom/google/analytics/containertag/proto/Debug$ResolvedFunctionCall;
 
-    .line 24
     new-instance v1, Lcom/google/tagmanager/DebugResolvedFunctionCallBuilder;
 
     invoke-direct {v1, v0}, Lcom/google/tagmanager/DebugResolvedFunctionCallBuilder;-><init>(Lcom/google/analytics/containertag/proto/Debug$ResolvedFunctionCall;)V
@@ -60,7 +52,6 @@
 .method public createRulesEvaluation()Lcom/google/tagmanager/RuleEvaluationStepInfoBuilder;
     .locals 2
 
-    .line 29
     iget-object v0, p0, Lcom/google/tagmanager/DebugDataLayerEventEvaluationInfoBuilder;->dataLayerEvent:Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;
 
     new-instance v1, Lcom/google/analytics/containertag/proto/Debug$RuleEvaluationStepInfo;
@@ -69,7 +60,6 @@
 
     iput-object v1, v0, Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;->rulesEvaluation:Lcom/google/analytics/containertag/proto/Debug$RuleEvaluationStepInfo;
 
-    .line 30
     new-instance v0, Lcom/google/tagmanager/DebugRuleEvaluationStepInfoBuilder;
 
     iget-object v1, p0, Lcom/google/tagmanager/DebugDataLayerEventEvaluationInfoBuilder;->dataLayerEvent:Lcom/google/analytics/containertag/proto/Debug$DataLayerEventEvaluationInfo;

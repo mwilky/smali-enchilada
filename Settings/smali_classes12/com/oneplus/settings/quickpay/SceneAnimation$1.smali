@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/quickpay/SceneAnimation;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/quickpay/SceneAnimation;
 
-    .line 21
     iput-object p1, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 23
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -46,7 +42,6 @@
 
     goto :goto_0
 
-    .line 25
     :pswitch_0
     iget-object v0, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
@@ -64,15 +59,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 26
     goto :goto_0
 
-    .line 29
     :pswitch_1
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 30
-    .local v0, "pFrameNo":I
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
     invoke-static {v2}, Lcom/oneplus/settings/quickpay/SceneAnimation;->access$100(Lcom/oneplus/settings/quickpay/SceneAnimation;)Landroid/widget/ImageView;
@@ -89,7 +80,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 31
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
     invoke-static {v2}, Lcom/oneplus/settings/quickpay/SceneAnimation;->access$200(Lcom/oneplus/settings/quickpay/SceneAnimation;)I
@@ -98,14 +88,12 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 32
     iget-object v2, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
     invoke-static {v2, v1}, Lcom/oneplus/settings/quickpay/SceneAnimation;->access$300(Lcom/oneplus/settings/quickpay/SceneAnimation;I)V
 
     goto :goto_0
 
-    .line 34
     :cond_0
     iget-object v1, p0, Lcom/oneplus/settings/quickpay/SceneAnimation$1;->this$0:Lcom/oneplus/settings/quickpay/SceneAnimation;
 
@@ -113,11 +101,8 @@
 
     invoke-static {v1, v2}, Lcom/oneplus/settings/quickpay/SceneAnimation;->access$300(Lcom/oneplus/settings/quickpay/SceneAnimation;I)V
 
-    .line 35
     nop
 
-    .line 40
-    .end local v0    # "pFrameNo":I
     :goto_0
     return-void
 

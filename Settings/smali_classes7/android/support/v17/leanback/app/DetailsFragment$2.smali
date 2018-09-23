@@ -21,12 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsFragment;Ljava/lang/String;ZZ)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsFragment;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "branchStart"    # Z
-    .param p4, "branchEnd"    # Z
 
-    .line 121
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsFragment$2;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/support/v17/leanback/util/StateMachine$State;-><init>(Ljava/lang/String;ZZ)V
@@ -39,11 +34,9 @@
 .method public run()V
     .locals 1
 
-    .line 124
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$2;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsFragment;->switchToVideoBeforeVideoFragmentCreated()V
 
-    .line 125
     return-void
 .end method

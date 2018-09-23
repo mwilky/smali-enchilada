@@ -50,16 +50,10 @@
         }
     .end annotation
 
-    .line 117
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;, "Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry<TK;TV;>;"
-    .local p1, "contents":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
-    .local p2, "nextInKeyBucket":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableMapEntry;-><init>(Lcom/google/common/collect/ImmutableMapEntry;)V
 
-    .line 118
     iput-object p2, p0, Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;->nextInKeyBucket:Lcom/google/common/collect/ImmutableMapEntry;
 
-    .line 119
     return-void
 .end method
 
@@ -73,17 +67,10 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;, "Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    .local p3, "nextInKeyBucket":Lcom/google/common/collect/ImmutableMapEntry;, "Lcom/google/common/collect/ImmutableMapEntry<TK;TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/ImmutableMapEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 113
     iput-object p3, p0, Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;->nextInKeyBucket:Lcom/google/common/collect/ImmutableMapEntry;
 
-    .line 114
     return-void
 .end method
 
@@ -99,8 +86,6 @@
         }
     .end annotation
 
-    .line 123
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;, "Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;->nextInKeyBucket:Lcom/google/common/collect/ImmutableMapEntry;
 
     return-object v0
@@ -119,8 +104,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 129
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry;, "Lcom/google/common/collect/RegularImmutableMap$NonTerminalMapEntry<TK;TV;>;"
     const/4 v0, 0x0
 
     return-object v0

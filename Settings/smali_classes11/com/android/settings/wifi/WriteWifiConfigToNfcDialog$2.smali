@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
-    .line 187
     iput-object p1, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$2;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog$2;->this$0:Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;->access$100(Lcom/android/settings/wifi/WriteWifiConfigToNfcDialog;)Landroid/widget/ProgressBar;
@@ -50,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 191
     return-void
 .end method

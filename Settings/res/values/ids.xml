@@ -822,7 +822,6 @@
     <item type="id" name="op_finger_enroll_view">false</item>
     <item type="id" name="op_finger_recognition_continue_view">false</item>
     <item type="id" name="op_finger_recognition_view">false</item>
-    <item type="id" name="op_fingerprint_enroll_tips_view">false</item>
     <item type="id" name="op_fingerprint_name">false</item>
     <item type="id" name="op_fullscreen_app_guide">false</item>
     <item type="id" name="op_fullscreen_mode_title_summary">false</item>
@@ -836,7 +835,6 @@
     <item type="id" name="op_hide_notch_image">false</item>
     <item type="id" name="op_hide_notch_mode">false</item>
     <item type="id" name="op_hide_notch_mode_title">false</item>
-    <item type="id" name="op_how_to_use_fingerprint_tips_view">false</item>
     <item type="id" name="op_icon">false</item>
     <item type="id" name="op_lab_feature_communiry_dislike">false</item>
     <item type="id" name="op_lab_feature_communiry_like">false</item>

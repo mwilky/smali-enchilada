@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/UserSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/UserSettings;
 
-    .line 303
     iput-object p1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 4
-    .param p1, "state"    # I
-    .param p2, "incomingNumber"    # Ljava/lang/String;
 
-    .line 308
     invoke-super {p0, p1, p2}, Landroid/telephony/PhoneStateListener;->onCallStateChanged(ILjava/lang/String;)V
 
-    .line 309
     iget-object v0, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v0}, Lcom/android/settings/users/UserSettings;->access$600(Lcom/android/settings/users/UserSettings;)Landroid/os/UserManager;
@@ -52,8 +46,6 @@
 
     move-result v0
 
-    .line 310
-    .local v0, "canSwitchUsers":Z
     iget-object v1, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v1}, Lcom/android/settings/users/UserSettings;->access$600(Lcom/android/settings/users/UserSettings;)Landroid/os/UserManager;
@@ -64,8 +56,6 @@
 
     move-result v1
 
-    .line 311
-    .local v1, "moreUsers":Z
     iget-object v2, p0, Lcom/android/settings/users/UserSettings$3;->this$0:Lcom/android/settings/users/UserSettings;
 
     invoke-static {v2}, Lcom/android/settings/users/UserSettings;->access$800(Lcom/android/settings/users/UserSettings;)Lcom/android/settingslib/RestrictedPreference;
@@ -94,6 +84,5 @@
     :goto_0
     invoke-virtual {v2, v3}, Lcom/android/settingslib/RestrictedPreference;->setEnabled(Z)V
 
-    .line 312
     return-void
 .end method

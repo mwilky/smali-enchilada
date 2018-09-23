@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/OPPhoneControlWaySettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
-    .line 218
     iput-object p1, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;->this$0:Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 221
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;->this$0:Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->access$000(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -50,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 222
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;->this$0:Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->access$100(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -59,7 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 223
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;->this$0:Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->access$200(Lcom/oneplus/settings/OPPhoneControlWaySettings;)Lcom/android/settings/ui/RadioButtonPreference;
@@ -68,11 +63,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/ui/RadioButtonPreference;->setEnabled(Z)V
 
-    .line 224
     iget-object v0, p0, Lcom/oneplus/settings/OPPhoneControlWaySettings$1;->this$0:Lcom/oneplus/settings/OPPhoneControlWaySettings;
 
     invoke-static {v0}, Lcom/oneplus/settings/OPPhoneControlWaySettings;->access$300(Lcom/oneplus/settings/OPPhoneControlWaySettings;)V
 
-    .line 225
     return-void
 .end method

@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 78
     new-instance v0, Lcom/google/tagmanager/TagManager$RefreshMode;
 
     const-string v1, "STANDARD"
@@ -45,7 +44,6 @@
 
     sput-object v0, Lcom/google/tagmanager/TagManager$RefreshMode;->STANDARD:Lcom/google/tagmanager/TagManager$RefreshMode;
 
-    .line 89
     new-instance v0, Lcom/google/tagmanager/TagManager$RefreshMode;
 
     const-string v1, "DEFAULT_CONTAINER"
@@ -56,7 +54,6 @@
 
     sput-object v0, Lcom/google/tagmanager/TagManager$RefreshMode;->DEFAULT_CONTAINER:Lcom/google/tagmanager/TagManager$RefreshMode;
 
-    .line 71
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/tagmanager/TagManager$RefreshMode;
@@ -82,7 +79,6 @@
         }
     .end annotation
 
-    .line 71
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -90,9 +86,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/tagmanager/TagManager$RefreshMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 71
     const-class v0, Lcom/google/tagmanager/TagManager$RefreshMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -107,7 +101,6 @@
 .method public static values()[Lcom/google/tagmanager/TagManager$RefreshMode;
     .locals 1
 
-    .line 71
     sget-object v0, Lcom/google/tagmanager/TagManager$RefreshMode;->$VALUES:[Lcom/google/tagmanager/TagManager$RefreshMode;
 
     invoke-virtual {v0}, [Lcom/google/tagmanager/TagManager$RefreshMode;->clone()Ljava/lang/Object;

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/location/RecentLocationRequestPreferenceController;Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/oneplus/settings/ui/OPButtonPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/location/RecentLocationRequestPreferenceController;
 
-    .line 182
     iput-object p1, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;->this$0:Lcom/android/settings/location/RecentLocationRequestPreferenceController;
 
     iput-object p2, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;->val$appEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
@@ -46,9 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 186
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;->this$0:Lcom/android/settings/location/RecentLocationRequestPreferenceController;
 
     iget-object v1, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;->val$appEntry:Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
@@ -57,13 +53,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/settings/location/RecentLocationRequestPreferenceController;->forceStopPackage(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;Lcom/oneplus/settings/ui/OPButtonPreference;)V
 
-    .line 187
     iget-object v0, p0, Lcom/android/settings/location/RecentLocationRequestPreferenceController$1;->val$pref:Lcom/oneplus/settings/ui/OPButtonPreference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/ui/OPButtonPreference;->setButtonEnable(Z)V
 
-    .line 188
     return-void
 .end method

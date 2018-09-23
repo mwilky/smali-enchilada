@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 308
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/dashboard/conditional/Condition;Lcom/android/settings/dashboard/conditional/Condition;)I
     .locals 4
-    .param p1, "lhs"    # Lcom/android/settings/dashboard/conditional/Condition;
-    .param p2, "rhs"    # Lcom/android/settings/dashboard/conditional/Condition;
 
-    .line 311
     invoke-virtual {p1}, Lcom/android/settings/dashboard/conditional/Condition;->getLastChange()J
 
     move-result-wide v0
@@ -62,7 +58,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 308
     check-cast p1, Lcom/android/settings/dashboard/conditional/Condition;
 
     check-cast p2, Lcom/android/settings/dashboard/conditional/Condition;

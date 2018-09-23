@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/sim/SimPreferenceDialog;Landroid/widget/Spinner;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/sim/SimPreferenceDialog;
 
-    .line 124
     iput-object p1, p0, Lcom/android/settings/sim/SimPreferenceDialog$1;->this$0:Lcom/android/settings/sim/SimPreferenceDialog;
 
     iput-object p2, p0, Lcom/android/settings/sim/SimPreferenceDialog$1;->val$tintSpinner:Landroid/widget/Spinner;
@@ -42,9 +40,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "pos"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,18 +50,14 @@
         }
     .end annotation
 
-    .line 128
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/settings/sim/SimPreferenceDialog$1;->val$tintSpinner:Landroid/widget/Spinner;
 
     invoke-virtual {v0, p3}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 129
     iget-object v0, p0, Lcom/android/settings/sim/SimPreferenceDialog$1;->this$0:Lcom/android/settings/sim/SimPreferenceDialog;
 
     invoke-static {v0, p3}, Lcom/android/settings/sim/SimPreferenceDialog;->access$002(Lcom/android/settings/sim/SimPreferenceDialog;I)I
 
-    .line 130
     return-void
 .end method
 
@@ -80,7 +71,5 @@
         }
     .end annotation
 
-    .line 134
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

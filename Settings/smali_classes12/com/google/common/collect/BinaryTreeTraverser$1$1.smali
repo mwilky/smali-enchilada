@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/BinaryTreeTraverser$1;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/BinaryTreeTraverser$1;
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$1$1;, "Lcom/google/common/collect/BinaryTreeTraverser$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->this$1:Lcom/google/common/collect/BinaryTreeTraverser$1;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
@@ -53,18 +50,14 @@
         }
     .end annotation
 
-    .line 69
-    .local p0, "this":Lcom/google/common/collect/BinaryTreeTraverser$1$1;, "Lcom/google/common/collect/BinaryTreeTraverser$1$1;"
     iget-boolean v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->doneLeft:Z
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 70
     iput-boolean v1, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->doneLeft:Z
 
-    .line 71
     iget-object v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->this$1:Lcom/google/common/collect/BinaryTreeTraverser$1;
 
     iget-object v0, v0, Lcom/google/common/collect/BinaryTreeTraverser$1;->this$0:Lcom/google/common/collect/BinaryTreeTraverser;
@@ -77,32 +70,25 @@
 
     move-result-object v0
 
-    .line 72
-    .local v0, "left":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<TT;>;"
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->isPresent()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 73
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 76
-    .end local v0    # "left":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<TT;>;"
     :cond_0
     iget-boolean v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->doneRight:Z
 
     if-nez v0, :cond_1
 
-    .line 77
     iput-boolean v1, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->doneRight:Z
 
-    .line 78
     iget-object v0, p0, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->this$1:Lcom/google/common/collect/BinaryTreeTraverser$1;
 
     iget-object v0, v0, Lcom/google/common/collect/BinaryTreeTraverser$1;->this$0:Lcom/google/common/collect/BinaryTreeTraverser;
@@ -115,23 +101,18 @@
 
     move-result-object v0
 
-    .line 79
-    .local v0, "right":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<TT;>;"
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->isPresent()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 80
     invoke-virtual {v0}, Lcom/google/common/base/Optional;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     return-object v1
 
-    .line 83
-    .end local v0    # "right":Lcom/google/common/base/Optional;, "Lcom/google/common/base/Optional<TT;>;"
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/collect/BinaryTreeTraverser$1$1;->endOfData()Ljava/lang/Object;
 

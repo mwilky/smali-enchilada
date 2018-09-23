@@ -31,11 +31,8 @@
 .method private constructor <init>(Lcom/google/common/collect/DenseImmutableTable;)V
     .locals 0
 
-    .line 222
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     iput-object p1, p0, Lcom/google/common/collect/DenseImmutableTable$ColumnMap;->this$0:Lcom/google/common/collect/DenseImmutableTable;
 
-    .line 223
     invoke-static {p1}, Lcom/google/common/collect/DenseImmutableTable;->access$500(Lcom/google/common/collect/DenseImmutableTable;)[I
 
     move-result-object p1
@@ -44,17 +41,12 @@
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/DenseImmutableTable$ImmutableArrayMap;-><init>(I)V
 
-    .line 224
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/collect/DenseImmutableTable;Lcom/google/common/collect/DenseImmutableTable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/DenseImmutableTable;
-    .param p2, "x1"    # Lcom/google/common/collect/DenseImmutableTable$1;
 
-    .line 221
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/DenseImmutableTable$ColumnMap;-><init>(Lcom/google/common/collect/DenseImmutableTable;)V
 
     return-void
@@ -65,8 +57,6 @@
 .method bridge synthetic getValue(I)Ljava/lang/Object;
     .locals 0
 
-    .line 221
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/DenseImmutableTable$ColumnMap;->getValue(I)Ljava/util/Map;
 
     move-result-object p1
@@ -76,7 +66,6 @@
 
 .method getValue(I)Ljava/util/Map;
     .locals 2
-    .param p1, "keyIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -85,8 +74,6 @@
         }
     .end annotation
 
-    .line 233
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     new-instance v0, Lcom/google/common/collect/DenseImmutableTable$Column;
 
     iget-object v1, p0, Lcom/google/common/collect/DenseImmutableTable$ColumnMap;->this$0:Lcom/google/common/collect/DenseImmutableTable;
@@ -99,8 +86,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 238
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     const/4 v0, 0x0
 
     return v0
@@ -118,8 +103,6 @@
         }
     .end annotation
 
-    .line 228
-    .local p0, "this":Lcom/google/common/collect/DenseImmutableTable$ColumnMap;, "Lcom/google/common/collect/DenseImmutableTable<TR;TC;TV;>.ColumnMap;"
     iget-object v0, p0, Lcom/google/common/collect/DenseImmutableTable$ColumnMap;->this$0:Lcom/google/common/collect/DenseImmutableTable;
 
     invoke-static {v0}, Lcom/google/common/collect/DenseImmutableTable;->access$300(Lcom/google/common/collect/DenseImmutableTable;)Lcom/google/common/collect/ImmutableMap;

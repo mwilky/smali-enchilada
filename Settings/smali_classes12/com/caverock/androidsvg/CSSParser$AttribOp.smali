@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 74
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     const-string v1, "EXISTS"
@@ -49,7 +48,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EXISTS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    .line 75
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     const-string v1, "EQUALS"
@@ -60,7 +58,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->EQUALS:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    .line 76
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     const-string v1, "INCLUDES"
@@ -71,7 +68,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->INCLUDES:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    .line 77
     new-instance v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     const-string v1, "DASHMATCH"
@@ -82,7 +78,6 @@
 
     sput-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->DASHMATCH:Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
-    .line 72
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/caverock/androidsvg/CSSParser$AttribOp;
@@ -111,7 +106,6 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 72
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -120,7 +114,6 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/caverock/androidsvg/CSSParser$AttribOp;
     .locals 1
 
-    .line 1
     const-class v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -135,7 +128,6 @@
 .method public static values()[Lcom/caverock/androidsvg/CSSParser$AttribOp;
     .locals 4
 
-    .line 1
     sget-object v0, Lcom/caverock/androidsvg/CSSParser$AttribOp;->ENUM$VALUES:[Lcom/caverock/androidsvg/CSSParser$AttribOp;
 
     array-length v1, v0

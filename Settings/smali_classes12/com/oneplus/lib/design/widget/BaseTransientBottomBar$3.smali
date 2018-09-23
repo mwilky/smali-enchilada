@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
-    .line 391
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;"
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;->this$0:Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +36,7 @@
 # virtual methods
 .method public dismiss(I)V
     .locals 5
-    .param p1, "event"    # I
 
-    .line 399
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;"
     sget-object v0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->sHandler:Landroid/os/Handler;
 
     sget-object v1, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->sHandler:Landroid/os/Handler;
@@ -59,15 +53,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 401
     return-void
 .end method
 
 .method public show()V
     .locals 4
 
-    .line 394
-    .local p0, "this":Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;, "Lcom/oneplus/lib/design/widget/BaseTransientBottomBar$3;"
     sget-object v0, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->sHandler:Landroid/os/Handler;
 
     sget-object v1, Lcom/oneplus/lib/design/widget/BaseTransientBottomBar;->sHandler:Landroid/os/Handler;
@@ -82,6 +73,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 395
     return-void
 .end method

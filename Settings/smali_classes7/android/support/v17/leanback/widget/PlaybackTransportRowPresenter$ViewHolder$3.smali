@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
-    .line 272
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     iput-object p2, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$3;->val$this$0:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 275
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$3;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->this$0:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter;->onProgressBarClicked(Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;)V
 
-    .line 276
     return-void
 .end method

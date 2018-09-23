@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/GuidedActionsStylist;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
-    .line 1198
     iput-object p1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$4;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,15 +36,11 @@
 # virtual methods
 .method public run(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
     .locals 4
-    .param p1, "vh"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 1201
     move-object v0, p1
 
     check-cast v0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
 
-    .line 1203
-    .local v0, "avh":Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;->getAction()Landroid/support/v17/leanback/widget/GuidedAction;
 
     move-result-object v1
@@ -57,7 +51,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 1204
     iget-object v1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$4;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     const/4 v2, 0x1
@@ -68,13 +61,11 @@
 
     goto :goto_0
 
-    .line 1206
     :cond_0
     iget-object v1, p0, Landroid/support/v17/leanback/widget/GuidedActionsStylist$4;->this$0:Landroid/support/v17/leanback/widget/GuidedActionsStylist;
 
     invoke-virtual {v1, v0}, Landroid/support/v17/leanback/widget/GuidedActionsStylist;->onUpdateExpandedViewHolder(Landroid/support/v17/leanback/widget/GuidedActionsStylist$ViewHolder;)V
 
-    .line 1208
     :goto_0
     return-void
 .end method

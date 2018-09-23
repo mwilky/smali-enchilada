@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/ServiceManagerImpl;)V
     .locals 0
 
-    .line 52
     iput-object p1, p0, Lcom/google/tagmanager/ServiceManagerImpl$1;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +36,7 @@
 # virtual methods
 .method public reportStoreIsEmpty(Z)V
     .locals 2
-    .param p1, "isEmpty"    # Z
 
-    .line 55
     iget-object v0, p0, Lcom/google/tagmanager/ServiceManagerImpl$1;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
 
     iget-object v1, p0, Lcom/google/tagmanager/ServiceManagerImpl$1;->this$0:Lcom/google/tagmanager/ServiceManagerImpl;
@@ -50,6 +47,5 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/google/tagmanager/ServiceManagerImpl;->updatePowerSaveMode(ZZ)V
 
-    .line 56
     return-void
 .end method

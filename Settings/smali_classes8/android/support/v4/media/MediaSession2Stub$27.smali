@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2Stub;Landroid/os/Bundle;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2Stub;
 
-    .line 690
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2Stub$27;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2Stub$27;->val$mediaItem:Landroid/os/Bundle;
@@ -42,19 +40,16 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerInfo;)V
     .locals 3
-    .param p1, "controller"    # Landroid/support/v4/media/MediaSession2$ControllerInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 693
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$27;->val$mediaItem:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
-    .line 694
     const-string v0, "MediaSession2Stub"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -73,7 +68,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 698
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2Stub$27;->this$0:Landroid/support/v4/media/MediaSession2Stub;
 
@@ -91,6 +85,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/media/MediaSession2;->skipToPlaylistItem(Landroid/support/v4/media/MediaItem2;)V
 
-    .line 699
     return-void
 .end method

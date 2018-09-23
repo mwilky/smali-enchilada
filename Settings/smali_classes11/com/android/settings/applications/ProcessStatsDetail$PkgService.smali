@@ -32,10 +32,8 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 336
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 337
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

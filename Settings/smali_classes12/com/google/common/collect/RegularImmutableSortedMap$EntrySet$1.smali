@@ -38,15 +38,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;)V
     .locals 1
-    .param p1, "this$1"    # Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;, "Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;->this$1:Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableAsList;-><init>()V
 
-    .line 64
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;->this$1:Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;
 
     iget-object v0, v0, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableSortedMap;
@@ -77,8 +73,6 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;, "Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;->this$1:Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet;
 
     return-object v0
@@ -87,8 +81,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;, "Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;->get(I)Ljava/util/Map$Entry;
 
     move-result-object p1
@@ -98,7 +90,6 @@
 
 .method public get(I)Ljava/util/Map$Entry;
     .locals 2
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -107,8 +98,6 @@
         }
     .end annotation
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;, "Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableSortedMap$EntrySet$1;->keyList:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;

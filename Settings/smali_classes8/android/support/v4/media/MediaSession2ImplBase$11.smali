@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2ImplBase;Landroid/support/v4/media/MediaItem2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2ImplBase;
 
-    .line 974
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2ImplBase$11;->this$0:Landroid/support/v4/media/MediaSession2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2ImplBase$11;->val$newCurrentItem:Landroid/support/v4/media/MediaItem2;
@@ -42,18 +40,15 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 1
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 977
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2ImplBase$11;->val$newCurrentItem:Landroid/support/v4/media/MediaItem2;
 
     invoke-virtual {p1, v0}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onCurrentMediaItemChanged(Landroid/support/v4/media/MediaItem2;)V
 
-    .line 978
     return-void
 .end method

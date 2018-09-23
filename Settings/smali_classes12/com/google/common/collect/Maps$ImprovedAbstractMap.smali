@@ -63,8 +63,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 3308
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     return-void
@@ -93,8 +91,6 @@
         }
     .end annotation
 
-    .line 3331
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$KeySet;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$KeySet;-><init>(Ljava/util/Map;)V
@@ -112,8 +108,6 @@
         }
     .end annotation
 
-    .line 3342
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$Values;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$Values;-><init>(Ljava/util/Map;)V
@@ -132,12 +126,8 @@
         }
     .end annotation
 
-    .line 3319
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->entrySet:Ljava/util/Set;
 
-    .line 3320
-    .local v0, "result":Ljava/util/Set;, "Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->createEntrySet()Ljava/util/Set;
@@ -165,12 +155,8 @@
         }
     .end annotation
 
-    .line 3326
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->keySet:Ljava/util/Set;
 
-    .line 3327
-    .local v0, "result":Ljava/util/Set;, "Ljava/util/Set<TK;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->createKeySet()Ljava/util/Set;
@@ -198,12 +184,8 @@
         }
     .end annotation
 
-    .line 3337
-    .local p0, "this":Lcom/google/common/collect/Maps$ImprovedAbstractMap;, "Lcom/google/common/collect/Maps$ImprovedAbstractMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->values:Ljava/util/Collection;
 
-    .line 3338
-    .local v0, "result":Ljava/util/Collection;, "Ljava/util/Collection<TV;>;"
     if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$ImprovedAbstractMap;->createValues()Ljava/util/Collection;

@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -15,9 +14,7 @@
 
 .method public static final bytesDefaultValue(Ljava/lang/String;)[B
     .locals 3
-    .param p0, "bytes"    # Ljava/lang/String;
 
-    .line 93
     :try_start_0
     const-string v0, "ISO-8859-1"
 
@@ -29,12 +26,9 @@
 
     return-object v0
 
-    .line 94
     :catch_0
     move-exception v0
 
-    .line 97
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Java VM does not support a standard character set."
@@ -46,9 +40,7 @@
 
 .method public static final copyFromUtf8(Ljava/lang/String;)[B
     .locals 3
-    .param p0, "text"    # Ljava/lang/String;
 
-    .line 108
     :try_start_0
     const-string v0, "UTF-8"
 
@@ -60,12 +52,9 @@
 
     return-object v0
 
-    .line 109
     :catch_0
     move-exception v0
 
-    .line 110
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     const-string v2, "UTF-8 not supported?"
@@ -77,9 +66,7 @@
 
 .method public static final stringDefaultValue(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0, "bytes"    # Ljava/lang/String;
 
-    .line 74
     :try_start_0
     new-instance v0, Ljava/lang/String;
 
@@ -97,12 +84,9 @@
 
     return-object v0
 
-    .line 75
     :catch_0
     move-exception v0
 
-    .line 78
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Java VM does not support a standard character set."

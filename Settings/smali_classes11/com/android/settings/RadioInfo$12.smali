@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/RadioInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/RadioInfo;
 
-    .line 1207
     iput-object p1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .locals 14
-    .param p1, "item"    # Landroid/view/MenuItem;
 
-    .line 1209
     iget-object v0, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v0}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 1210
-    .local v0, "isImsRegistered":Z
     iget-object v1, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v1}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -63,8 +57,6 @@
 
     move-result v1
 
-    .line 1211
-    .local v1, "availableVolte":Z
     iget-object v2, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v2}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -75,8 +67,6 @@
 
     move-result v2
 
-    .line 1212
-    .local v2, "availableWfc":Z
     iget-object v3, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v3}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -87,8 +77,6 @@
 
     move-result v3
 
-    .line 1213
-    .local v3, "availableVt":Z
     iget-object v4, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-static {v4}, Lcom/android/settings/RadioInfo;->access$3600(Lcom/android/settings/RadioInfo;)Lcom/android/internal/telephony/Phone;
@@ -99,14 +87,11 @@
 
     move-result v4
 
-    .line 1215
-    .local v4, "availableUt":Z
     if-eqz v0, :cond_0
 
-    .line 1216
     iget-object v5, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v6, 0x7f120e9a
+    const v6, 0x7f120e93
 
     invoke-virtual {v5, v6}, Lcom/android/settings/RadioInfo;->getString(I)Ljava/lang/String;
 
@@ -114,42 +99,35 @@
 
     goto :goto_0
 
-    .line 1217
     :cond_0
     iget-object v5, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v6, 0x7f120e99
+    const v6, 0x7f120e92
 
     invoke-virtual {v5, v6}, Lcom/android/settings/RadioInfo;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1219
-    .local v5, "imsRegString":Ljava/lang/String;
     :goto_0
     iget-object v6, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v7, 0x7f120e96
+    const v7, 0x7f120e8f
 
     invoke-virtual {v6, v7}, Lcom/android/settings/RadioInfo;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1220
-    .local v6, "available":Ljava/lang/String;
     iget-object v7, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v8, 0x7f120e97
+    const v8, 0x7f120e90
 
     invoke-virtual {v7, v8}, Lcom/android/settings/RadioInfo;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1223
-    .local v7, "unavailable":Ljava/lang/String;
     iget-object v8, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v9, 0x7f120e98
+    const v9, 0x7f120e91
 
     const/4 v10, 0x5
 
@@ -159,7 +137,6 @@
 
     aput-object v5, v10, v11
 
-    .line 1225
     if-eqz v1, :cond_1
 
     move-object v11, v6
@@ -176,7 +153,6 @@
 
     const/4 v11, 0x2
 
-    .line 1226
     if-eqz v2, :cond_2
 
     move-object v13, v6
@@ -191,7 +167,6 @@
 
     const/4 v11, 0x3
 
-    .line 1227
     if-eqz v3, :cond_3
 
     move-object v13, v6
@@ -206,7 +181,6 @@
 
     const/4 v11, 0x4
 
-    .line 1228
     if-eqz v4, :cond_4
 
     move-object v13, v6
@@ -219,29 +193,24 @@
     :goto_4
     aput-object v13, v10, v11
 
-    .line 1223
     invoke-virtual {v8, v9, v10}, Lcom/android/settings/RadioInfo;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1230
-    .local v8, "imsStatus":Ljava/lang/String;
     new-instance v9, Landroid/app/AlertDialog$Builder;
 
     iget-object v10, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
     invoke-direct {v9, v10}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1231
     invoke-virtual {v9, v8}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v9
 
     iget-object v10, p0, Lcom/android/settings/RadioInfo$12;->this$0:Lcom/android/settings/RadioInfo;
 
-    const v11, 0x7f120e9b
+    const v11, 0x7f120e94
 
-    .line 1232
     invoke-virtual {v10, v11}, Lcom/android/settings/RadioInfo;->getString(I)Ljava/lang/String;
 
     move-result-object v10
@@ -250,15 +219,11 @@
 
     move-result-object v9
 
-    .line 1233
     invoke-virtual {v9}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v9
 
-    .line 1235
-    .local v9, "imsDialog":Landroid/app/AlertDialog;
     invoke-virtual {v9}, Landroid/app/AlertDialog;->show()V
 
-    .line 1237
     return v12
 .end method

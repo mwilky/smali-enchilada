@@ -18,7 +18,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 28
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.SHOW_SAFETY_AND_REGULATORY_INFO"
@@ -32,12 +31,9 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 34
     invoke-direct {p0, p1}, Lcom/android/settingslib/core/AbstractPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 35
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SafetyInfoPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -46,7 +42,6 @@
 
     iput-object v0, p0, Lcom/android/settings/deviceinfo/SafetyInfoPreferenceController;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 36
     return-void
 .end method
 
@@ -55,7 +50,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 45
     const-string v0, "safety_info"
 
     return-object v0
@@ -64,7 +58,6 @@
 .method public isAvailable()Z
     .locals 3
 
-    .line 40
     iget-object v0, p0, Lcom/android/settings/deviceinfo/SafetyInfoPreferenceController;->mPackageManager:Landroid/content/pm/PackageManager;
 
     sget-object v1, Lcom/android/settings/deviceinfo/SafetyInfoPreferenceController;->INTENT_PROBE:Landroid/content/Intent;

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/EditUserPhotoController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/EditUserPhotoController;
 
-    .line 101
     iput-object p1, p0, Lcom/android/settings/users/EditUserPhotoController$1;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 104
     iget-object v0, p0, Lcom/android/settings/users/EditUserPhotoController$1;->this$0:Lcom/android/settings/users/EditUserPhotoController;
 
     invoke-static {v0}, Lcom/android/settings/users/EditUserPhotoController;->access$000(Lcom/android/settings/users/EditUserPhotoController;)V
 
-    .line 105
     return-void
 .end method

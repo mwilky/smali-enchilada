@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableEnumMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableEnumMap;
 
-    .line 100
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2;, "Lcom/google/common/collect/ImmutableEnumMap$2;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumMap$2;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMapEntrySet;-><init>()V
@@ -52,8 +49,6 @@
         }
     .end annotation
 
-    .line 109
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2;, "Lcom/google/common/collect/ImmutableEnumMap$2;"
     new-instance v0, Lcom/google/common/collect/ImmutableEnumMap$2$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableEnumMap$2$1;-><init>(Lcom/google/common/collect/ImmutableEnumMap$2;)V
@@ -64,8 +59,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 100
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2;, "Lcom/google/common/collect/ImmutableEnumMap$2;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableEnumMap$2;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -83,8 +76,6 @@
         }
     .end annotation
 
-    .line 104
-    .local p0, "this":Lcom/google/common/collect/ImmutableEnumMap$2;, "Lcom/google/common/collect/ImmutableEnumMap$2;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumMap$2;->this$0:Lcom/google/common/collect/ImmutableEnumMap;
 
     return-object v0

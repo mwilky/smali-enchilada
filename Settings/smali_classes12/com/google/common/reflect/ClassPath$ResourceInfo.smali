@@ -26,13 +26,9 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V
     .locals 1
-    .param p1, "resourceName"    # Ljava/lang/String;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
-    .line 166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 167
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -41,7 +37,6 @@
 
     iput-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
 
-    .line 168
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -50,16 +45,12 @@
 
     iput-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->loader:Ljava/lang/ClassLoader;
 
-    .line 169
     return-void
 .end method
 
 .method static of(Ljava/lang/String;Ljava/lang/ClassLoader;)Lcom/google/common/reflect/ClassPath$ResourceInfo;
     .locals 1
-    .param p0, "resourceName"    # Ljava/lang/String;
-    .param p1, "loader"    # Ljava/lang/ClassLoader;
 
-    .line 159
     const-string v0, ".class"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -68,14 +59,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 160
     new-instance v0, Lcom/google/common/reflect/ClassPath$ClassInfo;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/reflect/ClassPath$ClassInfo;-><init>(Ljava/lang/String;Ljava/lang/ClassLoader;)V
 
     return-object v0
 
-    .line 162
     :cond_0
     new-instance v0, Lcom/google/common/reflect/ClassPath$ResourceInfo;
 
@@ -88,22 +77,17 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
-    .line 187
     instance-of v0, p1, Lcom/google/common/reflect/ClassPath$ResourceInfo;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 188
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/reflect/ClassPath$ResourceInfo;
 
-    .line 189
-    .local v0, "that":Lcom/google/common/reflect/ClassPath$ResourceInfo;
     iget-object v2, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
 
     iget-object v3, v0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
@@ -127,8 +111,6 @@
     :cond_0
     return v1
 
-    .line 192
-    .end local v0    # "that":Lcom/google/common/reflect/ClassPath$ResourceInfo;
     :cond_1
     return v1
 .end method
@@ -136,7 +118,6 @@
 .method public final getResourceName()Ljava/lang/String;
     .locals 1
 
-    .line 179
     iget-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
 
     return-object v0
@@ -145,7 +126,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 183
     iget-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -158,7 +138,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 197
     iget-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;
 
     return-object v0
@@ -167,7 +146,6 @@
 .method public final url()Ljava/net/URL;
     .locals 5
 
-    .line 173
     iget-object v0, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->loader:Ljava/lang/ClassLoader;
 
     iget-object v1, p0, Lcom/google/common/reflect/ClassPath$ResourceInfo;->resourceName:Ljava/lang/String;

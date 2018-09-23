@@ -35,31 +35,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 17
     invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    .line 18
     const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
     invoke-virtual {p0, p0, v0}, Lcom/google/android/gms/analytics/internal/IAnalyticsService$Stub;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
-    .line 19
     return-void
 .end method
 
 .method public static asInterface(Landroid/os/IBinder;)Lcom/google/android/gms/analytics/internal/IAnalyticsService;
     .locals 2
-    .param p0, "obj"    # Landroid/os/IBinder;
 
-    .line 26
     if-nez p0, :cond_0
 
-    .line 27
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 29
     :cond_0
     const-string v0, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
@@ -67,22 +60,18 @@
 
     move-result-object v0
 
-    .line 30
-    .local v0, "iin":Landroid/os/IInterface;
     if-eqz v0, :cond_1
 
     instance-of v1, v0, Lcom/google/android/gms/analytics/internal/IAnalyticsService;
 
     if-eqz v1, :cond_1
 
-    .line 31
     move-object v1, v0
 
     check-cast v1, Lcom/google/android/gms/analytics/internal/IAnalyticsService;
 
     return-object v1
 
-    .line 33
     :cond_1
     new-instance v1, Lcom/google/android/gms/analytics/internal/IAnalyticsService$Stub$Proxy;
 
@@ -96,16 +85,11 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 0
 
-    .line 37
     return-object p0
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 15
-    .param p1, "code"    # I
-    .param p2, "data"    # Landroid/os/Parcel;
-    .param p3, "reply"    # Landroid/os/Parcel;
-    .param p4, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -116,7 +100,6 @@
 
     move-object/from16 v1, p2
 
-    .line 41
     const v2, 0x5f4e5446
 
     const/4 v3, 0x1
@@ -125,35 +108,28 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 72
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
 
     return v2
 
-    .line 66
     :pswitch_0
     const-string v2, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 67
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/IAnalyticsService$Stub;->clearHits()V
 
-    .line 68
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 69
     return v3
 
-    .line 50
     :pswitch_1
     const-string v2, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    .line 52
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -162,34 +138,24 @@
 
     move-result-object v2
 
-    .line 53
-    .local v2, "cl":Ljava/lang/ClassLoader;
     invoke-virtual {v1, v2}, Landroid/os/Parcel;->readHashMap(Ljava/lang/ClassLoader;)Ljava/util/HashMap;
 
     move-result-object v10
 
-    .line 55
-    .local v10, "_arg0":Ljava/util/Map;
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v11
 
-    .line 57
-    .local v11, "_arg1":J
     invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v13
 
-    .line 59
-    .local v13, "_arg2":Ljava/lang/String;
     sget-object v4, Lcom/google/android/gms/analytics/internal/Command;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-virtual {v1, v4}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v14
 
-    .line 60
-    .local v14, "_arg3":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/analytics/internal/Command;>;"
     move-object v4, p0
 
     move-object v5, v10
@@ -202,18 +168,10 @@
 
     invoke-virtual/range {v4 .. v9}, Lcom/google/android/gms/analytics/internal/IAnalyticsService$Stub;->sendHit(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
 
-    .line 61
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 62
     return v3
 
-    .line 45
-    .end local v2    # "cl":Ljava/lang/ClassLoader;
-    .end local v10    # "_arg0":Ljava/util/Map;
-    .end local v11    # "_arg1":J
-    .end local v13    # "_arg2":Ljava/lang/String;
-    .end local v14    # "_arg3":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/gms/analytics/internal/Command;>;"
     :cond_0
     const-string v2, "com.google.android.gms.analytics.internal.IAnalyticsService"
 
@@ -221,7 +179,6 @@
 
     invoke-virtual {v4, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 46
     return v3
 
     nop

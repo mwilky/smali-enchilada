@@ -49,15 +49,10 @@
         }
     .end annotation
 
-    .line 428
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
-    .local p1, "multimap":Lcom/google/common/collect/ImmutableSetMultimap;, "Lcom/google/common/collect/ImmutableSetMultimap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 429
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;->multimap:Lcom/google/common/collect/ImmutableSetMultimap;
 
-    .line 430
     return-void
 .end method
 
@@ -65,24 +60,19 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 434
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     if-eqz v0, :cond_0
 
-    .line 435
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 436
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;->multimap:Lcom/google/common/collect/ImmutableSetMultimap;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -99,8 +89,6 @@
 
     return v1
 
-    .line 438
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -110,8 +98,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 453
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
     const/4 v0, 0x0
 
     return v0
@@ -128,8 +114,6 @@
         }
     .end annotation
 
-    .line 448
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;->multimap:Lcom/google/common/collect/ImmutableSetMultimap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSetMultimap;->entryIterator()Lcom/google/common/collect/UnmodifiableIterator;
@@ -142,8 +126,6 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
-    .line 425
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -154,8 +136,6 @@
 .method public size()I
     .locals 1
 
-    .line 443
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;, "Lcom/google/common/collect/ImmutableSetMultimap$EntrySet<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSetMultimap$EntrySet;->multimap:Lcom/google/common/collect/ImmutableSetMultimap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSetMultimap;->size()I

@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Lcom/google/common/util/concurrent/AbstractFuture;)V
     .locals 0
 
-    .line 628
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$1;->val$delegateExecutor:Ljava/util/concurrent/Executor;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$1;->val$delegateTask:Ljava/lang/Runnable;
@@ -46,15 +45,12 @@
 .method public run()V
     .locals 3
 
-    .line 630
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    .line 632
-    .local v0, "thrownFromDelegate":Ljava/util/concurrent/atomic/AtomicBoolean;
     :try_start_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/Futures$1;->val$delegateExecutor:Ljava/util/concurrent/Executor;
 
@@ -66,28 +62,21 @@
     :try_end_0
     .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 645
     goto :goto_0
 
-    .line 638
     :catch_0
     move-exception v1
 
-    .line 639
-    .local v1, "e":Ljava/util/concurrent/RejectedExecutionException;
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 641
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$1;->val$outputFuture:Lcom/google/common/util/concurrent/AbstractFuture;
 
     invoke-virtual {v2, v1}, Lcom/google/common/util/concurrent/AbstractFuture;->setException(Ljava/lang/Throwable;)Z
 
-    .line 646
-    .end local v1    # "e":Ljava/util/concurrent/RejectedExecutionException;
     :cond_0
     :goto_0
     return-void

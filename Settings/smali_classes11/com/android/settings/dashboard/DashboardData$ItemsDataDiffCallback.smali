@@ -51,18 +51,12 @@
         }
     .end annotation
 
-    .line 318
-    .local p1, "oldItems":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/dashboard/DashboardData$Item;>;"
-    .local p2, "newItems":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/dashboard/DashboardData$Item;>;"
     invoke-direct {p0}, Landroid/support/v7/util/DiffUtil$Callback;-><init>()V
 
-    .line 319
     iput-object p1, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mOldItems:Ljava/util/List;
 
-    .line 320
     iput-object p2, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mNewItems:Ljava/util/List;
 
-    .line 321
     return-void
 .end method
 
@@ -70,10 +64,7 @@
 # virtual methods
 .method public areContentsTheSame(II)Z
     .locals 2
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 340
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mOldItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -97,10 +88,7 @@
 
 .method public areItemsTheSame(II)Z
     .locals 2
-    .param p1, "oldItemPosition"    # I
-    .param p2, "newItemPosition"    # I
 
-    .line 335
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mOldItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -137,7 +125,6 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 330
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mNewItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -150,7 +137,6 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 325
     iget-object v0, p0, Lcom/android/settings/dashboard/DashboardData$ItemsDataDiffCallback;->mOldItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

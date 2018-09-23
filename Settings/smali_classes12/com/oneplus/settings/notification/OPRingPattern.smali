@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 129
     new-instance v0, Lcom/oneplus/settings/notification/OPRingPattern$2;
 
     invoke-direct {v0}, Lcom/oneplus/settings/notification/OPRingPattern$2;-><init>()V
@@ -47,10 +46,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 29
     invoke-direct {p0}, Lcom/android/settings/SettingsPreferenceFragment;-><init>()V
 
-    .line 36
     new-instance v0, Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;
 
     invoke-direct {v0, p0}, Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;-><init>(Lcom/oneplus/settings/notification/OPRingPattern;)V
@@ -62,9 +59,7 @@
 
 .method static synthetic access$000(Lcom/oneplus/settings/notification/OPRingPattern;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/notification/OPRingPattern;
 
-    .line 29
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -74,9 +69,7 @@
 
 .method static synthetic access$100(Lcom/oneplus/settings/notification/OPRingPattern;)Landroid/content/ContentResolver;
     .locals 1
-    .param p0, "x0"    # Lcom/oneplus/settings/notification/OPRingPattern;
 
-    .line 29
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -86,9 +79,7 @@
 
 .method static synthetic access$200(Lcom/oneplus/settings/notification/OPRingPattern;)V
     .locals 0
-    .param p0, "x0"    # Lcom/oneplus/settings/notification/OPRingPattern;
 
-    .line 29
     invoke-direct {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->updateVibrateWhenRinging()V
 
     return-void
@@ -97,7 +88,6 @@
 .method private initVibrateWhenRinging()V
     .locals 2
 
-    .line 73
     const-string v0, "vibrate_when_ringing"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPRingPattern;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
@@ -108,28 +98,23 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
-    .line 74
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
     if-nez v0, :cond_0
 
-    .line 75
     const-string v0, "OPRingPattern"
 
     const-string v1, "Preference not found: vibrate_when_ringing"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     return-void
 
-    .line 78
     :cond_0
     iget-boolean v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVoiceCapable:Z
 
     if-nez v0, :cond_1
 
-    .line 79
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
     move-result-object v0
@@ -138,15 +123,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/PreferenceScreen;->removePreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 80
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
-    .line 81
     return-void
 
-    .line 83
     :cond_1
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
@@ -154,10 +136,8 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/TwoStatePreference;->setPersistent(Z)V
 
-    .line 84
     invoke-direct {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->updateVibrateWhenRinging()V
 
-    .line 85
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
     new-instance v1, Lcom/oneplus/settings/notification/OPRingPattern$1;
@@ -166,21 +146,18 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/preference/TwoStatePreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 94
     return-void
 .end method
 
 .method private updateVibrateWhenRinging()V
     .locals 4
 
-    .line 97
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 98
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
@@ -205,7 +182,6 @@
     :cond_1
     invoke-virtual {v0, v3}, Landroid/support/v7/preference/TwoStatePreference;->setChecked(Z)V
 
-    .line 100
     return-void
 .end method
 
@@ -214,7 +190,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 69
     const/16 v0, 0x4c
 
     return v0
@@ -222,17 +197,13 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "icicle"    # Landroid/os/Bundle;
 
-    .line 40
     invoke-super {p0, p1}, Lcom/android/settings/SettingsPreferenceFragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 41
     const v0, 0x7f16008e
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/notification/OPRingPattern;->addPreferencesFromResource(I)V
 
-    .line 42
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -243,59 +214,48 @@
 
     iput-boolean v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVoiceCapable:Z
 
-    .line 43
     invoke-direct {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->initVibrateWhenRinging()V
 
-    .line 44
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mSettingsObserver:Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;->register(Z)V
 
-    .line 45
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 2
 
-    .line 63
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onDestroy()V
 
-    .line 64
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mSettingsObserver:Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/settings/notification/OPRingPattern$SettingsObserver;->register(Z)V
 
-    .line 65
     return-void
 .end method
 
 .method public onPause()V
     .locals 0
 
-    .line 58
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onPause()V
 
-    .line 59
     return-void
 .end method
 
 .method public onResume()V
     .locals 4
 
-    .line 49
     invoke-super {p0}, Lcom/android/settings/SettingsPreferenceFragment;->onResume()V
 
-    .line 50
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
     if-eqz v0, :cond_1
 
-    .line 51
     iget-object v0, p0, Lcom/oneplus/settings/notification/OPRingPattern;->mVibrateWhenRinging:Landroid/support/v7/preference/TwoStatePreference;
 
     invoke-virtual {p0}, Lcom/oneplus/settings/notification/OPRingPattern;->getContentResolver()Landroid/content/ContentResolver;
@@ -319,7 +279,6 @@
     :cond_0
     invoke-virtual {v0, v3}, Landroid/support/v7/preference/TwoStatePreference;->setChecked(Z)V
 
-    .line 54
     :cond_1
     return-void
 .end method

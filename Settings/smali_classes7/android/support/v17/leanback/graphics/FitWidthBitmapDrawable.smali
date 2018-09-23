@@ -36,14 +36,12 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 212
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
 
     if-lt v0, v1, :cond_0
 
-    .line 214
     invoke-static {}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->getVerticalOffsetIntProperty()Landroid/util/IntProperty;
 
     move-result-object v0
@@ -52,7 +50,6 @@
 
     goto :goto_0
 
-    .line 217
     :cond_0
     new-instance v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$1;
 
@@ -64,7 +61,6 @@
 
     sput-object v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->PROPERTY_VERTICAL_OFFSET:Landroid/util/Property;
 
-    .line 230
     :goto_0
     return-void
 .end method
@@ -72,55 +68,44 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 76
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 72
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
-    .line 74
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mMutated:Z
 
-    .line 77
     new-instance v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     invoke-direct {v0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
-    .line 78
     return-void
 .end method
 
 .method constructor <init>(Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;)V
     .locals 1
-    .param p1, "state"    # Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
-    .line 80
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 72
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
-    .line 74
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mMutated:Z
 
-    .line 81
     iput-object p1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
-    .line 82
     return-void
 .end method
 
@@ -139,7 +124,6 @@
         }
     .end annotation
 
-    .line 234
     new-instance v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$2;
 
     const-string v1, "verticalOffset"
@@ -152,21 +136,18 @@
 .method private validateSource()Landroid/graphics/Rect;
     .locals 1
 
-    .line 199
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mSource:Landroid/graphics/Rect;
 
     if-nez v0, :cond_0
 
-    .line 200
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mDefaultSource:Landroid/graphics/Rect;
 
     return-object v0
 
-    .line 202
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
@@ -179,29 +160,23 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 7
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 152
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 153
     invoke-virtual {p0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 154
-    .local v0, "bounds":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
     const/4 v2, 0x0
 
     iput v2, v1, Landroid/graphics/Rect;->left:I
 
-    .line 155
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
     iget-object v2, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
@@ -210,7 +185,6 @@
 
     iput v2, v1, Landroid/graphics/Rect;->top:I
 
-    .line 156
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -219,13 +193,10 @@
 
     iput v2, v1, Landroid/graphics/Rect;->right:I
 
-    .line 158
     invoke-direct {p0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->validateSource()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 159
-    .local v1, "source":Landroid/graphics/Rect;
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v2
@@ -240,8 +211,6 @@
 
     div-float/2addr v2, v3
 
-    .line 160
-    .local v2, "scale":F
     iget-object v3, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
 
     iget-object v4, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mDest:Landroid/graphics/Rect;
@@ -262,16 +231,12 @@
 
     iput v4, v3, Landroid/graphics/Rect;->bottom:I
 
-    .line 161
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v3
 
-    .line 162
-    .local v3, "i":I
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 163
     iget-object v4, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v4, v4, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
@@ -284,14 +249,8 @@
 
     invoke-virtual {p1, v4, v1, v5, v6}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 164
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 166
-    .end local v0    # "bounds":Landroid/graphics/Rect;
-    .end local v1    # "source":Landroid/graphics/Rect;
-    .end local v2    # "scale":F
-    .end local v3    # "i":I
     :cond_0
     return-void
 .end method
@@ -299,7 +258,6 @@
 .method public getAlpha()I
     .locals 1
 
-    .line 182
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mPaint:Landroid/graphics/Paint;
@@ -314,7 +272,6 @@
 .method public getBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 115
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
@@ -325,7 +282,6 @@
 .method public getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
     .locals 1
 
-    .line 86
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     return-object v0
@@ -334,13 +290,10 @@
 .method public getOpacity()I
     .locals 3
 
-    .line 193
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 194
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->hasAlpha()Z
@@ -379,7 +332,6 @@
 .method public getSource()Landroid/graphics/Rect;
     .locals 1
 
-    .line 129
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mSource:Landroid/graphics/Rect;
@@ -390,7 +342,6 @@
 .method public getVerticalOffset()I
     .locals 1
 
-    .line 147
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mOffset:I
@@ -401,7 +352,6 @@
 .method public mutate()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 91
     iget-boolean v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mMutated:Z
 
     if-nez v0, :cond_0
@@ -412,7 +362,6 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 92
     new-instance v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
@@ -421,21 +370,17 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
-    .line 93
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mMutated:Z
 
-    .line 95
     :cond_0
     return-object p0
 .end method
 
 .method public setAlpha(I)V
     .locals 2
-    .param p1, "alpha"    # I
 
-    .line 170
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mPaint:Landroid/graphics/Paint;
@@ -444,40 +389,31 @@
 
     move-result v0
 
-    .line 171
-    .local v0, "oldAlpha":I
     if-eq p1, v0, :cond_0
 
-    .line 172
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v1, v1, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 173
     invoke-virtual {p0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->invalidateSelf()V
 
-    .line 175
     :cond_0
     return-void
 .end method
 
 .method public setBitmap(Landroid/graphics/Bitmap;)V
     .locals 4
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 102
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iput-object p1, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 103
     const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 104
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v1, v1, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mDefaultSource:Landroid/graphics/Rect;
@@ -494,7 +430,6 @@
 
     goto :goto_0
 
-    .line 106
     :cond_0
     iget-object v1, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
@@ -502,7 +437,6 @@
 
     invoke-virtual {v1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 108
     :goto_0
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
@@ -510,53 +444,41 @@
 
     iput-object v1, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mSource:Landroid/graphics/Rect;
 
-    .line 109
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
-    .line 187
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iget-object v0, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 188
     invoke-virtual {p0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->invalidateSelf()V
 
-    .line 189
     return-void
 .end method
 
 .method public setSource(Landroid/graphics/Rect;)V
     .locals 1
-    .param p1, "source"    # Landroid/graphics/Rect;
 
-    .line 122
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iput-object p1, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mSource:Landroid/graphics/Rect;
 
-    .line 123
     return-void
 .end method
 
 .method public setVerticalOffset(I)V
     .locals 1
-    .param p1, "offset"    # I
 
-    .line 138
     iget-object v0, p0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->mBitmapState:Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;
 
     iput p1, v0, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable$BitmapState;->mOffset:I
 
-    .line 139
     invoke-virtual {p0}, Landroid/support/v17/leanback/graphics/FitWidthBitmapDrawable;->invalidateSelf()V
 
-    .line 140
     return-void
 .end method

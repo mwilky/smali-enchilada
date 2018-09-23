@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
-    .line 233
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$2;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/PlaybackSeekDataProvider$ResultCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onThumbnailLoaded(Landroid/graphics/Bitmap;I)V
     .locals 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "index"    # I
 
-    .line 236
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$2;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
     iget v0, v0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;->mThumbHeroIndex:I
@@ -57,8 +52,6 @@
 
     sub-int v0, p2, v0
 
-    .line 237
-    .local v0, "childIndex":I
     if-ltz v0, :cond_1
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$2;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
@@ -73,7 +66,6 @@
 
     goto :goto_0
 
-    .line 240
     :cond_0
     iget-object v1, p0, Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder$2;->this$1:Landroid/support/v17/leanback/widget/PlaybackTransportRowPresenter$ViewHolder;
 
@@ -81,10 +73,8 @@
 
     invoke-virtual {v1, v0, p1}, Landroid/support/v17/leanback/widget/ThumbsBar;->setThumbBitmap(ILandroid/graphics/Bitmap;)V
 
-    .line 241
     return-void
 
-    .line 238
     :cond_1
     :goto_0
     return-void

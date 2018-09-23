@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/google/analytics/tracking/android/EasyTracker;)V
     .locals 0
 
-    .line 448
     iput-object p1, p0, Lcom/google/analytics/tracking/android/EasyTracker$NotInForegroundTimerTask;->this$0:Lcom/google/analytics/tracking/android/EasyTracker;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/google/analytics/tracking/android/EasyTracker;Lcom/google/analytics/tracking/android/EasyTracker$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/analytics/tracking/android/EasyTracker;
-    .param p2, "x1"    # Lcom/google/analytics/tracking/android/EasyTracker$1;
 
-    .line 448
     invoke-direct {p0, p1}, Lcom/google/analytics/tracking/android/EasyTracker$NotInForegroundTimerTask;-><init>(Lcom/google/analytics/tracking/android/EasyTracker;)V
 
     return-void
@@ -46,13 +42,11 @@
 .method public run()V
     .locals 2
 
-    .line 451
     iget-object v0, p0, Lcom/google/analytics/tracking/android/EasyTracker$NotInForegroundTimerTask;->this$0:Lcom/google/analytics/tracking/android/EasyTracker;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/google/analytics/tracking/android/EasyTracker;->access$102(Lcom/google/analytics/tracking/android/EasyTracker;Z)Z
 
-    .line 456
     return-void
 .end method

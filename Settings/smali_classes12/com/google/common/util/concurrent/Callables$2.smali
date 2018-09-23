@@ -35,7 +35,6 @@
 .method constructor <init>(Lcom/google/common/base/Supplier;Ljava/util/concurrent/Callable;)V
     .locals 0
 
-    .line 61
     iput-object p1, p0, Lcom/google/common/util/concurrent/Callables$2;->val$nameSupplier:Lcom/google/common/base/Supplier;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/Callables$2;->val$callable:Ljava/util/concurrent/Callable;
@@ -61,19 +60,14 @@
         }
     .end annotation
 
-    .line 63
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "currentThread":Ljava/lang/Thread;
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 65
-    .local v1, "oldName":Ljava/lang/String;
     iget-object v2, p0, Lcom/google/common/util/concurrent/Callables$2;->val$nameSupplier:Lcom/google/common/base/Supplier;
 
     invoke-interface {v2}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
@@ -86,8 +80,6 @@
 
     move-result v2
 
-    .line 67
-    .local v2, "restoreName":Z
     :try_start_0
     iget-object v3, p0, Lcom/google/common/util/concurrent/Callables$2;->val$callable:Ljava/util/concurrent/Callable;
 
@@ -97,23 +89,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 69
     if-eqz v2, :cond_0
 
-    .line 70
     invoke-static {v1, v0}, Lcom/google/common/util/concurrent/Callables;->access$000(Ljava/lang/String;Ljava/lang/Thread;)Z
 
-    .line 67
     :cond_0
     return-object v3
 
-    .line 69
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 70
     invoke-static {v1, v0}, Lcom/google/common/util/concurrent/Callables;->access$000(Ljava/lang/String;Ljava/lang/Thread;)Z
 
     :cond_1

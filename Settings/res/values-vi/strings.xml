@@ -2907,8 +2907,6 @@ Còn %d lượt."</string>
     <string name="oneplus_quick_clipboard_summary">Tăng cường khả năng sao chép và sau đó khuyến nghị hành động tiếp theo theo nội dung sao chép</string>
     <string name="oneplus_quick_gestures">Cử chỉ</string>
     <string name="oneplus_quick_gestures_title">Cử chỉ nhanh</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Kích hoạt nhanh ứng dụng trợ lý</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Giữ nút nguồn trong 0,5 giây để kích hoạt ứng dụng trợ lý, và 3 giây để tắt nguồn</string>
     <string name="oneplus_quick_turn_on_camera">Bật nhanh máy ảnh</string>
     <string name="oneplus_quickpay">Thanh toán nhanh</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Bạn có chắc bạn muốn đổi hành động giữ lâu nút Màn hình chính từ \"%1$s\" sang \"Thanh toán Nhanh\"?</string>

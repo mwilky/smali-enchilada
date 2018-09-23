@@ -21,19 +21,14 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/model/layer/TextLayer;I)V
     .locals 1
-    .param p1, "this$0"    # Lcom/airbnb/lottie/model/layer/TextLayer;
-    .param p2, "x0"    # I
 
-    .line 34
     iput-object p1, p0, Lcom/airbnb/lottie/model/layer/TextLayer$1;->this$0:Lcom/airbnb/lottie/model/layer/TextLayer;
 
     invoke-direct {p0, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 35
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p0, v0}, Lcom/airbnb/lottie/model/layer/TextLayer$1;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 36
     return-void
 .end method

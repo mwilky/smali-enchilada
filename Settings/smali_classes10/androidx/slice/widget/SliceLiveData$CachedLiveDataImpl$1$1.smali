@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;)V
     .locals 0
-    .param p1, "this$1"    # Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;
 
-    .line 139
     iput-object p1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1$1;->this$1:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,12 @@
 # virtual methods
 .method public onSliceAction(Landroid/net/Uri;Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "actionUri"    # Landroid/net/Uri;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "intent"    # Landroid/content/Intent;
 
-    .line 143
     iget-object v0, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1$1;->this$1:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;
 
     iget-object v0, v0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     invoke-static {v0, p1, p2, p3}, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;->access$300(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;Landroid/net/Uri;Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 144
     return-void
 .end method

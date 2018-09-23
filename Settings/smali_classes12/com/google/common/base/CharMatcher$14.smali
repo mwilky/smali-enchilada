@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Lcom/google/common/base/Predicate;)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/String;
 
-    .line 581
     iput-object p2, p0, Lcom/google/common/base/CharMatcher$14;->val$predicate:Lcom/google/common/base/Predicate;
 
     invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher;-><init>(Ljava/lang/String;)V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public apply(Ljava/lang/Character;)Z
     .locals 2
-    .param p1, "character"    # Ljava/lang/Character;
 
-    .line 587
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$14;->val$predicate:Lcom/google/common/base/Predicate;
 
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -54,7 +50,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 581
     check-cast p1, Ljava/lang/Character;
 
     invoke-virtual {p0, p1}, Lcom/google/common/base/CharMatcher$14;->apply(Ljava/lang/Character;)Z
@@ -66,9 +61,7 @@
 
 .method public matches(C)Z
     .locals 2
-    .param p1, "c"    # C
 
-    .line 583
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$14;->val$predicate:Lcom/google/common/base/Predicate;
 
     invoke-static {p1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;

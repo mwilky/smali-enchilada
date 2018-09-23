@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaControllerAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaControllerAdapter;
 
-    .line 51
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaControllerAdapter$1;->this$0:Landroid/support/v17/leanback/media/MediaControllerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 54
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaControllerAdapter$1;->this$0:Landroid/support/v17/leanback/media/MediaControllerAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaControllerAdapter;->getCallback()Landroid/support/v17/leanback/media/PlayerAdapter$Callback;
@@ -50,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/media/PlayerAdapter$Callback;->onCurrentPositionChanged(Landroid/support/v17/leanback/media/PlayerAdapter;)V
 
-    .line 55
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaControllerAdapter$1;->this$0:Landroid/support/v17/leanback/media/MediaControllerAdapter;
 
     invoke-static {v0}, Landroid/support/v17/leanback/media/MediaControllerAdapter;->access$100(Landroid/support/v17/leanback/media/MediaControllerAdapter;)Landroid/os/Handler;
@@ -67,6 +63,5 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 56
     return-void
 .end method

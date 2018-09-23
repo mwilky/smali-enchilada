@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/development/VerifyAppsOverUsbPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/development/VerifyAppsOverUsbPreferenceController;
 
-    .line 56
     iput-object p1, p0, Lcom/android/settings/development/VerifyAppsOverUsbPreferenceController$RestrictedLockUtilsDelegate;->this$0:Lcom/android/settings/development/VerifyAppsOverUsbPreferenceController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public checkIfRestrictionEnforced(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "userRestriction"    # Ljava/lang/String;
-    .param p3, "userId"    # I
 
-    .line 59
     invoke-static {p1, p2, p3}, Lcom/android/settingslib/RestrictedLockUtils;->checkIfRestrictionEnforced(Landroid/content/Context;Ljava/lang/String;I)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     move-result-object v0

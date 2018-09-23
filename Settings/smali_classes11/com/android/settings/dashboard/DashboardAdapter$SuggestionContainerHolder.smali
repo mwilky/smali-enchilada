@@ -21,13 +21,10 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1, "itemView"    # Landroid/view/View;
 
-    .line 508
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/DashboardAdapter$DashboardItemHolder;-><init>(Landroid/view/View;)V
 
-    .line 509
-    const v0, 0x7f0a04f9
+    const v0, 0x7f0a04f7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -37,6 +34,5 @@
 
     iput-object v0, p0, Lcom/android/settings/dashboard/DashboardAdapter$SuggestionContainerHolder;->data:Landroid/support/v7/widget/RecyclerView;
 
-    .line 510
     return-void
 .end method

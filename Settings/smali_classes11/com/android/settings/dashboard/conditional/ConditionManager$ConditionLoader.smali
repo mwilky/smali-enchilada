@@ -33,7 +33,6 @@
 .method private constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
     .locals 0
 
-    .line 271
     iput-object p1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -43,10 +42,7 @@
 
 .method synthetic constructor <init>(Lcom/android/settings/dashboard/conditional/ConditionManager;Lcom/android/settings/dashboard/conditional/ConditionManager$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/dashboard/conditional/ConditionManager;
-    .param p2, "x1"    # Lcom/android/settings/dashboard/conditional/ConditionManager$1;
 
-    .line 271
     invoke-direct {p0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;-><init>(Lcom/android/settings/dashboard/conditional/ConditionManager;)V
 
     return-void
@@ -57,7 +53,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 271
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->doInBackground([Ljava/lang/Void;)Ljava/util/ArrayList;
@@ -69,7 +64,6 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/util/ArrayList;
     .locals 5
-    .param p1, "params"    # [Ljava/lang/Void;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -81,20 +75,16 @@
         }
     .end annotation
 
-    .line 274
     const-string v0, "ConditionManager"
 
     const-string v1, "loading conditions from xml"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 275
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 276
-    .local v0, "conditions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/dashboard/conditional/Condition;>;"
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     new-instance v2, Ljava/io/File;
@@ -115,7 +105,6 @@
 
     invoke-static {v1, v2}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$102(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/io/File;)Ljava/io/File;
 
-    .line 277
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-static {v1}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$100(Lcom/android/settings/dashboard/conditional/ConditionManager;)Ljava/io/File;
@@ -128,7 +117,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 278
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     iget-object v2, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
@@ -139,20 +127,17 @@
 
     invoke-static {v1, v2, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$300(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/io/File;Ljava/util/ArrayList;)V
 
-    .line 280
     :cond_0
     iget-object v1, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-static {v1, v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$400(Lcom/android/settings/dashboard/conditional/ConditionManager;Ljava/util/ArrayList;)V
 
-    .line 281
     return-object v0
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 271
     check-cast p1, Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->onPostExecute(Ljava/util/ArrayList;)V
@@ -171,15 +156,12 @@
         }
     .end annotation
 
-    .line 286
-    .local p1, "conditions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/settings/dashboard/conditional/Condition;>;"
     const-string v0, "ConditionManager"
 
     const-string v1, "conditions loaded from xml, refreshing conditions"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 287
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-static {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$500(Lcom/android/settings/dashboard/conditional/ConditionManager;)Ljava/util/ArrayList;
@@ -188,7 +170,6 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 288
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-static {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->access$500(Lcom/android/settings/dashboard/conditional/ConditionManager;)Ljava/util/ArrayList;
@@ -197,11 +178,9 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 289
     iget-object v0, p0, Lcom/android/settings/dashboard/conditional/ConditionManager$ConditionLoader;->this$0:Lcom/android/settings/dashboard/conditional/ConditionManager;
 
     invoke-virtual {v0}, Lcom/android/settings/dashboard/conditional/ConditionManager;->refreshAll()V
 
-    .line 290
     return-void
 .end method

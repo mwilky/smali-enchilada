@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;IIII)V
     .locals 0
-    .param p1, "this$1"    # Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
 
-    .line 1451
     iput-object p1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->this$1:Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
 
     iput p2, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->val$startLeft:I
@@ -54,22 +52,17 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 5
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 1454
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v0
 
-    .line 1455
-    .local v0, "fraction":F
     iget-object v1, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->this$1:Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;
 
     iget v2, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->val$startLeft:I
 
     iget v3, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->val$targetLeft:I
 
-    .line 1456
     invoke-static {v2, v3, v0}, Lcom/oneplus/lib/widget/OPAnimationUtils;->lerp(IIF)I
 
     move-result v2
@@ -78,14 +71,11 @@
 
     iget v4, p0, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip$1;->val$targetRight:I
 
-    .line 1457
     invoke-static {v3, v4, v0}, Lcom/oneplus/lib/widget/OPAnimationUtils;->lerp(IIF)I
 
     move-result v3
 
-    .line 1455
     invoke-static {v1, v2, v3}, Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;->access$1700(Lcom/oneplus/lib/widget/OPTabLayout$SlidingTabStrip;II)V
 
-    .line 1458
     return-void
 .end method

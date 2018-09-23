@@ -69,19 +69,12 @@
         }
     .end annotation
 
-    .line 61
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<TF;TT;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TF;TT;>;"
-    .local p2, "supplier":Lcom/google/common/base/Supplier;, "Lcom/google/common/base/Supplier<TF;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 62
     iput-object p1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/Function;
 
-    .line 63
     iput-object p2, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->supplier:Lcom/google/common/base/Supplier;
 
-    .line 64
     return-void
 .end method
 
@@ -89,26 +82,21 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 71
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<TF;TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Suppliers$SupplierComposition;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 72
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/Suppliers$SupplierComposition;
 
-    .line 73
-    .local v0, "that":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<**>;"
     iget-object v2, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/Function;
 
     iget-object v3, v0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/Function;
@@ -136,8 +124,6 @@
     :cond_0
     return v1
 
-    .line 75
-    .end local v0    # "that":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<**>;"
     :cond_1
     return v1
 .end method
@@ -150,8 +136,6 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<TF;TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->function:Lcom/google/common/base/Function;
 
     iget-object v1, p0, Lcom/google/common/base/Suppliers$SupplierComposition;->supplier:Lcom/google/common/base/Supplier;
@@ -170,8 +154,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 79
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<TF;TT;>;"
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -198,8 +180,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 83
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierComposition;, "Lcom/google/common/base/Suppliers$SupplierComposition<TF;TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

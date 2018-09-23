@@ -21,14 +21,7 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/notification/EmergencyTonePreferenceController;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/settings/notification/EmergencyTonePreferenceController;
-    .param p2, "type"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "setting"    # Ljava/lang/String;
-    .param p5, "def"    # I
-    .param p6, "values"    # [I
 
-    .line 43
     iput-object p1, p0, Lcom/android/settings/notification/EmergencyTonePreferenceController$1;->this$0:Lcom/android/settings/notification/EmergencyTonePreferenceController;
 
     move-object v0, p0
@@ -52,20 +45,15 @@
 # virtual methods
 .method protected getCaption(Landroid/content/res/Resources;I)Ljava/lang/String;
     .locals 1
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "value"    # I
 
-    .line 59
     packed-switch p2, :pswitch_data_0
 
-    .line 67
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 65
     :pswitch_0
     const v0, 0x7f1205cb
 
@@ -75,7 +63,6 @@
 
     return-object v0
 
-    .line 63
     :pswitch_1
     const v0, 0x7f1205c7
 
@@ -85,7 +72,6 @@
 
     return-object v0
 
-    .line 61
     :pswitch_2
     const v0, 0x7f1205c8
 
@@ -107,15 +93,11 @@
 
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 47
     const-string v0, "phone"
 
-    .line 48
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 51
     const/4 v0, 0x0
 
     return v0

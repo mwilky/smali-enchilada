@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter;
 
-    .line 198
     iput-object p1, p0, Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter$1;->this$0:Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter;
 
     iput-object p2, p0, Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter$1;->val$v:Landroid/view/View;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 203
     iget-object v0, p0, Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter$1;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter$1;->this$0:Lcom/android/settings/widget/HighlightablePreferenceGroupAdapter;
@@ -52,6 +48,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 204
     return-void
 .end method

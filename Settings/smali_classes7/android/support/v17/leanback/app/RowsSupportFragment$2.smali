@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/RowsSupportFragment;Landroid/support/v17/leanback/widget/Presenter$ViewHolderTask;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/RowsSupportFragment;
 
-    .line 517
     iput-object p1, p0, Landroid/support/v17/leanback/app/RowsSupportFragment$2;->this$0:Landroid/support/v17/leanback/app/RowsSupportFragment;
 
     iput-object p2, p0, Landroid/support/v17/leanback/app/RowsSupportFragment$2;->val$rowHolderTask:Landroid/support/v17/leanback/widget/Presenter$ViewHolderTask;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public run(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
     .locals 2
-    .param p1, "rvh"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 520
     iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance v1, Landroid/support/v17/leanback/app/RowsSupportFragment$2$1;
@@ -53,6 +49,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 527
     return-void
 .end method

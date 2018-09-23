@@ -45,11 +45,8 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 47
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     invoke-direct {p0}, Lcom/google/common/util/concurrent/ForwardingListenableFuture;-><init>()V
 
-    .line 44
     new-instance v0, Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;
 
     const/4 v1, 0x0
@@ -58,7 +55,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->nested:Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;
 
-    .line 45
     iget-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->nested:Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;
 
     invoke-static {v0}, Lcom/google/common/util/concurrent/Futures;->dereference(Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;
@@ -67,7 +63,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->dereferenced:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 47
     return-void
 .end method
 
@@ -83,7 +78,6 @@
         }
     .end annotation
 
-    .line 41
     new-instance v0, Lcom/google/common/util/concurrent/AsyncSettableFuture;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/AsyncSettableFuture;-><init>()V
@@ -103,8 +97,6 @@
         }
     .end annotation
 
-    .line 50
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->dereferenced:Lcom/google/common/util/concurrent/ListenableFuture;
 
     return-object v0
@@ -113,8 +105,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AsyncSettableFuture;->delegate()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -125,8 +115,6 @@
 .method protected bridge synthetic delegate()Ljava/util/concurrent/Future;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AsyncSettableFuture;->delegate()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -137,8 +125,6 @@
 .method public isSet()Z
     .locals 1
 
-    .line 88
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->nested:Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;->isDone()Z
@@ -150,10 +136,7 @@
 
 .method public setException(Ljava/lang/Throwable;)Z
     .locals 1
-    .param p1, "exception"    # Ljava/lang/Throwable;
 
-    .line 76
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
     invoke-static {p1}, Lcom/google/common/util/concurrent/Futures;->immediateFailedFuture(Ljava/lang/Throwable;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -175,9 +158,6 @@
         }
     .end annotation
 
-    .line 58
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
-    .local p1, "future":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<+TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AsyncSettableFuture;->nested:Lcom/google/common/util/concurrent/AsyncSettableFuture$NestedFuture;
 
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -205,9 +185,6 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "this":Lcom/google/common/util/concurrent/AsyncSettableFuture;, "Lcom/google/common/util/concurrent/AsyncSettableFuture<TV;>;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     invoke-static {p1}, Lcom/google/common/util/concurrent/Futures;->immediateFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0

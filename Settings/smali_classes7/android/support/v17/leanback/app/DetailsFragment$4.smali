@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/DetailsFragment;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/DetailsFragment;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 153
     iput-object p1, p0, Landroid/support/v17/leanback/app/DetailsFragment$4;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-direct {p0, p2}, Landroid/support/v17/leanback/util/StateMachine$State;-><init>(Ljava/lang/String;)V
@@ -37,7 +34,6 @@
 .method public run()V
     .locals 2
 
-    .line 156
     iget-object v0, p0, Landroid/support/v17/leanback/app/DetailsFragment$4;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/DetailsFragment;->getActivity()Landroid/app/Activity;
@@ -52,14 +48,11 @@
 
     move-result-object v0
 
-    .line 157
-    .local v0, "transition":Ljava/lang/Object;
     iget-object v1, p0, Landroid/support/v17/leanback/app/DetailsFragment$4;->this$0:Landroid/support/v17/leanback/app/DetailsFragment;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/DetailsFragment;->mEnterTransitionListener:Landroid/support/v17/leanback/transition/TransitionListener;
 
     invoke-static {v0, v1}, Landroid/support/v17/leanback/transition/TransitionHelper;->addTransitionListener(Ljava/lang/Object;Landroid/support/v17/leanback/transition/TransitionListener;)V
 
-    .line 158
     return-void
 .end method

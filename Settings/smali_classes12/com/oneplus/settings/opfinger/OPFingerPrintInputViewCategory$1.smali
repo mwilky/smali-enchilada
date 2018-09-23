@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;
 
-    .line 86
     iput-object p1, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$1;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,23 +36,19 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 91
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$1;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;
 
     iget-object v0, v0, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;->mOnOPFingerComfirmListener:Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$OnOPFingerComfirmListener;
 
     if-eqz v0, :cond_0
 
-    .line 92
     iget-object v0, p0, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$1;->this$0:Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;
 
     iget-object v0, v0, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory;->mOnOPFingerComfirmListener:Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$OnOPFingerComfirmListener;
 
     invoke-interface {v0}, Lcom/oneplus/settings/opfinger/OPFingerPrintInputViewCategory$OnOPFingerComfirmListener;->onOPFingerComfirmClick()V
 
-    .line 94
     :cond_0
     return-void
 .end method

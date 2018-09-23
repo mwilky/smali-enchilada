@@ -22,29 +22,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Ljava/lang/String;II[I)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "lifecycle"    # Lcom/android/settingslib/core/lifecycle/Lifecycle;
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "visualEffect"    # I
-    .param p5, "metricsCategory"    # I
-    .param p6, "parentSuppressedEffects"    # [I
 
-    .line 43
     invoke-direct {p0, p1, p3, p2}, Lcom/android/settings/notification/AbstractZenModePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/settingslib/core/lifecycle/Lifecycle;)V
 
-    .line 44
     iput-object p3, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mKey:Ljava/lang/String;
 
-    .line 45
     iput p4, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mEffect:I
 
-    .line 46
     iput p5, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mMetricsCategory:I
 
-    .line 47
     iput-object p6, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mParentSuppressedEffects:[I
 
-    .line 48
     return-void
 .end method
 
@@ -52,22 +40,17 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 0
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 66
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mScreen:Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 67
     invoke-super {p0, p1}, Lcom/android/settings/notification/AbstractZenModePreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 68
     return-void
 .end method
 
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 52
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mKey:Ljava/lang/String;
 
     return-object v0
@@ -76,14 +59,12 @@
 .method public isAvailable()Z
     .locals 2
 
-    .line 57
     iget v0, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mEffect:I
 
     const/16 v1, 0x8
 
     if-ne v0, v1, :cond_0
 
-    .line 58
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -92,15 +73,12 @@
 
     const v1, 0x112007c
 
-    .line 59
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v0
 
-    .line 58
     return v0
 
-    .line 61
     :cond_0
     const/4 v0, 0x1
 
@@ -109,10 +87,7 @@
 
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "newValue"    # Ljava/lang/Object;
 
-    .line 98
     move-object v0, p2
 
     check-cast v0, Ljava/lang/Boolean;
@@ -121,8 +96,6 @@
 
     move-result v0
 
-    .line 100
-    .local v0, "suppressEffect":Z
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mMetricsFeatureProvider:Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;
 
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mContext:Landroid/content/Context;
@@ -131,14 +104,12 @@
 
     invoke-virtual {v1, v2, v3, v0}, Lcom/android/settingslib/core/instrumentation/MetricsFeatureProvider;->action(Landroid/content/Context;IZ)V
 
-    .line 101
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
 
     iget v2, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mEffect:I
 
     invoke-virtual {v1, v2, v0}, Lcom/android/settings/notification/ZenModeBackend;->saveVisualEffectsPolicy(IZ)V
 
-    .line 102
     const/4 v1, 0x1
 
     return v1
@@ -146,12 +117,9 @@
 
 .method public updateState(Landroid/support/v7/preference/Preference;)V
     .locals 8
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 72
     invoke-super {p0, p1}, Lcom/android/settings/notification/AbstractZenModePreferenceController;->updateState(Landroid/support/v7/preference/Preference;)V
 
-    .line 73
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
 
     iget v1, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mEffect:I
@@ -160,19 +128,14 @@
 
     move-result v0
 
-    .line 74
-    .local v0, "suppressed":Z
     const/4 v1, 0x0
 
-    .line 75
-    .local v1, "parentSuppressed":Z
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mParentSuppressedEffects:[I
 
     const/4 v3, 0x0
 
     if-eqz v2, :cond_1
 
-    .line 76
     iget-object v2, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mParentSuppressedEffects:[I
 
     array-length v4, v2
@@ -181,15 +144,11 @@
 
     move v1, v3
 
-    .end local v1    # "parentSuppressed":Z
-    .local v5, "parentSuppressed":Z
     :goto_0
     if-ge v1, v4, :cond_0
 
     aget v6, v2, v1
 
-    .line 77
-    .local v6, "parentEffect":I
     iget-object v7, p0, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->mBackend:Lcom/android/settings/notification/ZenModeBackend;
 
     invoke-virtual {v7, v6}, Lcom/android/settings/notification/ZenModeBackend;->isVisualEffectSuppressed(I)Z
@@ -198,43 +157,34 @@
 
     or-int/2addr v5, v7
 
-    .line 76
-    .end local v6    # "parentEffect":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 80
     :cond_0
     move v1, v5
 
-    .end local v5    # "parentSuppressed":Z
-    .restart local v1    # "parentSuppressed":Z
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 81
     move-object v2, p1
 
     check-cast v2, Landroid/support/v7/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 82
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
     invoke-virtual {p0, p1, v2}, Lcom/android/settings/notification/ZenModeVisEffectPreferenceController;->onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
 
-    .line 83
     move-object v2, p1
 
     check-cast v2, Lcom/android/settings/widget/DisabledCheckBoxPreference;
 
     invoke-virtual {v2, v3}, Lcom/android/settings/widget/DisabledCheckBoxPreference;->enableCheckbox(Z)V
 
-    .line 85
     move-object v2, p1
 
     check-cast v2, Lcom/android/settings/widget/DisabledCheckBoxPreference;
@@ -243,7 +193,6 @@
 
     goto :goto_1
 
-    .line 88
     :cond_2
     move-object v2, p1
 
@@ -253,21 +202,18 @@
 
     invoke-virtual {v2, v3}, Lcom/android/settings/widget/DisabledCheckBoxPreference;->enableCheckbox(Z)V
 
-    .line 90
     move-object v2, p1
 
     check-cast v2, Lcom/android/settings/widget/DisabledCheckBoxPreference;
 
     invoke-virtual {v2, v3}, Lcom/android/settings/widget/DisabledCheckBoxPreference;->setEnabled(Z)V
 
-    .line 92
     move-object v2, p1
 
     check-cast v2, Landroid/support/v7/preference/CheckBoxPreference;
 
     invoke-virtual {v2, v0}, Landroid/support/v7/preference/CheckBoxPreference;->setChecked(Z)V
 
-    .line 94
     :goto_1
     return-void
 .end method

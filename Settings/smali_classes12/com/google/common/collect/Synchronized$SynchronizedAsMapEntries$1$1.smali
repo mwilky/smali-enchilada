@@ -32,10 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;Ljava/util/Map$Entry;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;
 
-    .line 856
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;, "Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->this$1:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;
 
     iput-object p2, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->val$entry:Ljava/util/Map$Entry;
@@ -50,8 +47,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 856
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;, "Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->delegate()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -71,8 +66,6 @@
         }
     .end annotation
 
-    .line 858
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;, "Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->val$entry:Ljava/util/Map$Entry;
 
     return-object v0
@@ -81,8 +74,6 @@
 .method public bridge synthetic getValue()Ljava/lang/Object;
     .locals 1
 
-    .line 856
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;, "Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->getValue()Ljava/util/Collection;
 
     move-result-object v0
@@ -100,8 +91,6 @@
         }
     .end annotation
 
-    .line 861
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;, "Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;

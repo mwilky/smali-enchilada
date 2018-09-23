@@ -526,8 +526,6 @@
     <string name="oneplus_quick_clipboard_summary">நகலெடுப்பதற்கான திறனை மேம்படுத்தவும், பிறகு நகலுக்கேற்ப அடுத்த நடவடிக்கையைப் பிரயோகிக்கவும்</string>
     <string name="oneplus_quick_gestures">குறிப்புணர்விகள்</string>
     <string name="oneplus_quick_gestures_title">துரித சைகைகள்</string>
-    <string name="oneplus_quick_turn_on_assistant_app">அசிஸ்டென்ட் பயன்பாட்டை விரைவாகச் செயல்படுத்துதல்</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">அசிஸ்டென்ட் பயன்பாட்டைச் செயல்படுத்த பவர் பொத்தானை 0.5 நொடி அழுத்திப் பிடிக்கவும், பவர் ஆஃப் செய்ய 3 நொடி அழுத்திப் பிடிக்கவும்</string>
     <string name="oneplus_quick_turn_on_camera">கேமராவை விரைவாக ஆன் செய்</string>
     <string name="oneplus_quickpay">துரித பணமளிப்பு</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">முகப்பு பொத்தானின் நீண்ட பிரஸ்ஸை \"%1$s\" இல் இருந்து \"குயிக் பே\"க்கு மாற்ற வேண்டுமென்பதில் நீங்கள் உறுதியாக உள்ளீர்களா?</string>

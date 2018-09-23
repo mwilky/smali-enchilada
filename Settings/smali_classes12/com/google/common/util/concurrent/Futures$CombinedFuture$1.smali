@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/util/concurrent/Futures$CombinedFuture;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
-    .line 1637
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;, "Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;"
     iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 1641
-    .local p0, "this":Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;, "Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->isCancelled()Z
@@ -50,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1642
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     iget-object v0, v0, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->futures:Lcom/google/common/collect/ImmutableCollection;
@@ -72,8 +66,6 @@
 
     check-cast v1, Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 1643
-    .local v1, "future":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<*>;"
     iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     invoke-virtual {v2}, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->wasInterrupted()Z
@@ -82,11 +74,8 @@
 
     invoke-interface {v1, v2}, Lcom/google/common/util/concurrent/ListenableFuture;->cancel(Z)Z
 
-    .line 1644
-    .end local v1    # "future":Lcom/google/common/util/concurrent/ListenableFuture;, "Lcom/google/common/util/concurrent/ListenableFuture<*>;"
     goto :goto_0
 
-    .line 1648
     :cond_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
@@ -94,16 +83,13 @@
 
     iput-object v1, v0, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->futures:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 1652
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     iput-object v1, v0, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->values:Ljava/util/List;
 
-    .line 1655
     iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$CombinedFuture$1;->this$0:Lcom/google/common/util/concurrent/Futures$CombinedFuture;
 
     iput-object v1, v0, Lcom/google/common/util/concurrent/Futures$CombinedFuture;->combiner:Lcom/google/common/util/concurrent/Futures$FutureCombiner;
 
-    .line 1656
     return-void
 .end method

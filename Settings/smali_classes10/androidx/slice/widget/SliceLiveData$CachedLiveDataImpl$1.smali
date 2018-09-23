@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;Landroid/content/Context;Ljava/io/InputStream;Landroidx/slice/widget/SliceLiveData$OnErrorListener;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
-    .line 134
     iput-object p1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     iput-object p2, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->val$context:Landroid/content/Context;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 4
 
-    .line 138
     :try_start_0
     iget-object v0, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->val$context:Landroid/content/Context;
 
@@ -67,8 +64,6 @@
 
     move-result-object v0
 
-    .line 146
-    .local v0, "s":Landroidx/slice/Slice;
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     new-instance v2, Landroidx/slice/SliceStructure;
@@ -77,7 +72,6 @@
 
     invoke-static {v1, v2}, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;->access$402(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;Landroidx/slice/SliceStructure;)Landroidx/slice/SliceStructure;
 
-    .line 147
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     invoke-virtual {v0}, Landroidx/slice/Slice;->getUri()Landroid/net/Uri;
@@ -86,31 +80,23 @@
 
     invoke-static {v1, v2}, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;->access$502(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 148
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->this$0:Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;
 
     invoke-static {v1, v0}, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;->access$600(Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl;Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 151
-    .end local v0    # "s":Landroidx/slice/Slice;
     goto :goto_0
 
-    .line 149
     :catch_0
     move-exception v0
 
-    .line 150
-    .local v0, "e":Ljava/lang/Exception;
     iget-object v1, p0, Landroidx/slice/widget/SliceLiveData$CachedLiveDataImpl$1;->val$listener:Landroidx/slice/widget/SliceLiveData$OnErrorListener;
 
     const/4 v2, 0x3
 
     invoke-interface {v1, v2, v0}, Landroidx/slice/widget/SliceLiveData$OnErrorListener;->onSliceError(ILjava/lang/Throwable;)V
 
-    .line 152
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

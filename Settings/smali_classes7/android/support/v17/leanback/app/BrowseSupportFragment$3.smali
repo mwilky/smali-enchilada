@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/BrowseSupportFragment;Z)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
-    .line 1031
     iput-object p1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iput-boolean p2, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->val$withHeaders:Z
@@ -43,33 +41,28 @@
 .method public run()V
     .locals 5
 
-    .line 1034
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mHeadersSupportFragment:Landroid/support/v17/leanback/app/HeadersSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/HeadersSupportFragment;->onTransitionPrepare()Z
 
-    .line 1035
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mHeadersSupportFragment:Landroid/support/v17/leanback/app/HeadersSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/HeadersSupportFragment;->onTransitionStart()V
 
-    .line 1036
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->createHeadersTransition()V
 
-    .line 1037
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mBrowseTransitionListener:Landroid/support/v17/leanback/app/BrowseSupportFragment$BrowseTransitionListener;
 
     if-eqz v0, :cond_0
 
-    .line 1038
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-object v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mBrowseTransitionListener:Landroid/support/v17/leanback/app/BrowseSupportFragment$BrowseTransitionListener;
@@ -78,7 +71,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment$BrowseTransitionListener;->onHeadersTransitionStart(Z)V
 
-    .line 1040
     :cond_0
     iget-boolean v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->val$withHeaders:Z
 
@@ -102,19 +94,16 @@
 
     invoke-static {v0, v1}, Landroid/support/v17/leanback/transition/TransitionHelper;->runTransition(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 1042
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     iget-boolean v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mHeadersBackStackEnabled:Z
 
     if-eqz v0, :cond_3
 
-    .line 1043
     iget-boolean v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->val$withHeaders:Z
 
     if-nez v0, :cond_2
 
-    .line 1044
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -129,7 +118,6 @@
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseSupportFragment;->mWithHeadersBackStackName:Ljava/lang/String;
 
-    .line 1045
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
@@ -138,7 +126,6 @@
 
     goto :goto_1
 
-    .line 1047
     :cond_2
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
@@ -146,11 +133,8 @@
 
     iget v0, v0, Landroid/support/v17/leanback/app/BrowseSupportFragment$BackStackListener;->mIndexOfHeadersBackStack:I
 
-    .line 1048
-    .local v0, "index":I
     if-ltz v0, :cond_3
 
-    .line 1049
     iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     invoke-virtual {v1}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -161,8 +145,6 @@
 
     move-result-object v1
 
-    .line 1050
-    .local v1, "entry":Landroid/support/v4/app/FragmentManager$BackStackEntry;
     iget-object v2, p0, Landroid/support/v17/leanback/app/BrowseSupportFragment$3;->this$0:Landroid/support/v17/leanback/app/BrowseSupportFragment;
 
     invoke-virtual {v2}, Landroid/support/v17/leanback/app/BrowseSupportFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -177,9 +159,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/support/v4/app/FragmentManager;->popBackStackImmediate(II)Z
 
-    .line 1055
-    .end local v0    # "index":I
-    .end local v1    # "entry":Landroid/support/v4/app/FragmentManager$BackStackEntry;
     :cond_3
     :goto_1
     return-void

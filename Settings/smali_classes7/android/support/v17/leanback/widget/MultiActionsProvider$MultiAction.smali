@@ -25,20 +25,15 @@
 # direct methods
 .method public constructor <init>(J)V
     .locals 1
-    .param p1, "id"    # J
 
-    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
     iput-wide p1, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mId:J
 
-    .line 45
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
-    .line 46
     return-void
 .end method
 
@@ -47,7 +42,6 @@
 .method public getCurrentDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 98
     iget-object v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
@@ -60,7 +54,6 @@
 .method public getDrawables()[Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 67
     iget-object v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -69,7 +62,6 @@
 .method public getId()J
     .locals 2
 
-    .line 105
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mId:J
 
     return-wide v0
@@ -78,7 +70,6 @@
 .method public getIndex()I
     .locals 1
 
-    .line 91
     iget v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
     return v0
@@ -87,7 +78,6 @@
 .method public incrementIndex()V
     .locals 2
 
-    .line 75
     iget v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
     iget-object v1, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mDrawables:[Landroid/graphics/drawable/Drawable;
@@ -110,18 +100,14 @@
     :goto_0
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->setIndex(I)V
 
-    .line 76
     return-void
 .end method
 
 .method public setDrawables([Landroid/graphics/drawable/Drawable;)V
     .locals 2
-    .param p1, "drawables"    # [Landroid/graphics/drawable/Drawable;
 
-    .line 54
     iput-object p1, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mDrawables:[Landroid/graphics/drawable/Drawable;
 
-    .line 55
     iget v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
     array-length v1, p1
@@ -130,25 +116,20 @@
 
     if-le v0, v1, :cond_0
 
-    .line 56
     array-length v0, p1
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
-    .line 58
     :cond_0
     return-void
 .end method
 
 .method public setIndex(I)V
     .locals 0
-    .param p1, "index"    # I
 
-    .line 83
     iput p1, p0, Landroid/support/v17/leanback/widget/MultiActionsProvider$MultiAction;->mIndex:I
 
-    .line 84
     return-void
 .end method

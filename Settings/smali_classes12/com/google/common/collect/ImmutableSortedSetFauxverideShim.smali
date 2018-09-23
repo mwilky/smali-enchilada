@@ -19,8 +19,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 35
-    .local p0, "this":Lcom/google/common/collect/ImmutableSortedSetFauxverideShim;, "Lcom/google/common/collect/ImmutableSortedSetFauxverideShim<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
     return-void
@@ -41,7 +39,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 46
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -64,8 +61,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 143
-    .local p0, "elements":[Ljava/lang/Object;, "[TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -88,8 +83,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 59
-    .local p0, "element":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -112,9 +105,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 72
-    .local p0, "e1":Ljava/lang/Object;, "TE;"
-    .local p1, "e2":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -137,10 +127,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 85
-    .local p0, "e1":Ljava/lang/Object;, "TE;"
-    .local p1, "e2":Ljava/lang/Object;, "TE;"
-    .local p2, "e3":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -163,11 +149,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 100
-    .local p0, "e1":Ljava/lang/Object;, "TE;"
-    .local p1, "e2":Ljava/lang/Object;, "TE;"
-    .local p2, "e3":Ljava/lang/Object;, "TE;"
-    .local p3, "e4":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -190,12 +171,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 115
-    .local p0, "e1":Ljava/lang/Object;, "TE;"
-    .local p1, "e2":Ljava/lang/Object;, "TE;"
-    .local p2, "e3":Ljava/lang/Object;, "TE;"
-    .local p3, "e4":Ljava/lang/Object;, "TE;"
-    .local p4, "e5":Ljava/lang/Object;, "TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -218,14 +193,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 130
-    .local p0, "e1":Ljava/lang/Object;, "TE;"
-    .local p1, "e2":Ljava/lang/Object;, "TE;"
-    .local p2, "e3":Ljava/lang/Object;, "TE;"
-    .local p3, "e4":Ljava/lang/Object;, "TE;"
-    .local p4, "e5":Ljava/lang/Object;, "TE;"
-    .local p5, "e6":Ljava/lang/Object;, "TE;"
-    .local p6, "remaining":[Ljava/lang/Object;, "[TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

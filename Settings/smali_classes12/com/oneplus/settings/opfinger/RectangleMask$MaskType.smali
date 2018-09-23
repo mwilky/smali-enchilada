@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 30
     new-instance v0, Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
 
     const-string v1, "NormalMask"
@@ -79,7 +78,6 @@
 
     sput-object v0, Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;->TestMask:Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
 
-    .line 29
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
@@ -113,7 +111,6 @@
         }
     .end annotation
 
-    .line 29
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -121,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 29
     const-class v0, Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -138,7 +133,6 @@
 .method public static values()[Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
     .locals 1
 
-    .line 29
     sget-object v0, Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;->$VALUES:[Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;
 
     invoke-virtual {v0}, [Lcom/oneplus/settings/opfinger/RectangleMask$MaskType;->clone()Ljava/lang/Object;

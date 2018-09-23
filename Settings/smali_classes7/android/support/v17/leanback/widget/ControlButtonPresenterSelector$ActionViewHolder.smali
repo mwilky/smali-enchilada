@@ -25,12 +25,9 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 72
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/Presenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 73
     sget v0, Landroid/support/v17/leanback/R$id;->icon:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -41,7 +38,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector$ActionViewHolder;->mIcon:Landroid/widget/ImageView;
 
-    .line 74
     sget v0, Landroid/support/v17/leanback/R$id;->label:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -52,7 +48,6 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector$ActionViewHolder;->mLabel:Landroid/widget/TextView;
 
-    .line 75
     sget v0, Landroid/support/v17/leanback/R$id;->button:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -61,6 +56,5 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/ControlButtonPresenterSelector$ActionViewHolder;->mFocusableView:Landroid/view/View;
 
-    .line 76
     return-void
 .end method

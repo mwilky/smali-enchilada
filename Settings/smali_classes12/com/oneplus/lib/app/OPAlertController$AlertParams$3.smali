@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/app/OPAlertController$AlertParams;Lcom/oneplus/lib/app/OPAlertController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
-    .line 1215
     iput-object p1, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$3;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iput-object p2, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$3;->val$dialog:Lcom/oneplus/lib/app/OPAlertController;
@@ -42,9 +40,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,8 +50,6 @@
         }
     .end annotation
 
-    .line 1218
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$3;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-object v0, v0, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mOnClickListener:Landroid/content/DialogInterface$OnClickListener;
@@ -69,14 +62,12 @@
 
     invoke-interface {v0, v1, p3}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 1219
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$3;->this$0:Lcom/oneplus/lib/app/OPAlertController$AlertParams;
 
     iget-boolean v0, v0, Lcom/oneplus/lib/app/OPAlertController$AlertParams;->mIsSingleChoice:Z
 
     if-nez v0, :cond_0
 
-    .line 1220
     iget-object v0, p0, Lcom/oneplus/lib/app/OPAlertController$AlertParams$3;->val$dialog:Lcom/oneplus/lib/app/OPAlertController;
 
     invoke-static {v0}, Lcom/oneplus/lib/app/OPAlertController;->access$600(Lcom/oneplus/lib/app/OPAlertController;)Landroid/content/DialogInterface;
@@ -85,7 +76,6 @@
 
     invoke-interface {v0}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1222
     :cond_0
     return-void
 .end method

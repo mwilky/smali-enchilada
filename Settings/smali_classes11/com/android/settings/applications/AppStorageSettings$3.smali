@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/applications/AppStorageSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/applications/AppStorageSettings;
 
-    .line 595
     iput-object p1, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 597
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-virtual {v0}, Lcom/android/settings/applications/AppStorageSettings;->getView()Landroid/view/View;
@@ -46,10 +42,8 @@
 
     if-nez v0, :cond_0
 
-    .line 598
     return-void
 
-    .line 600
     :cond_0
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -63,39 +57,32 @@
 
     goto :goto_0
 
-    .line 607
     :cond_1
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-static {v0, v1}, Lcom/android/settings/applications/AppStorageSettings;->access$202(Lcom/android/settings/applications/AppStorageSettings;Z)Z
 
-    .line 609
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-static {v0}, Lcom/android/settings/applications/AppStorageSettings;->access$400(Lcom/android/settings/applications/AppStorageSettings;)V
 
     goto :goto_0
 
-    .line 602
     :cond_2
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-static {v0, v1}, Lcom/android/settings/applications/AppStorageSettings;->access$102(Lcom/android/settings/applications/AppStorageSettings;Z)Z
 
-    .line 603
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-static {v0, v1}, Lcom/android/settings/applications/AppStorageSettings;->access$202(Lcom/android/settings/applications/AppStorageSettings;Z)Z
 
-    .line 604
     iget-object v0, p0, Lcom/android/settings/applications/AppStorageSettings$3;->this$0:Lcom/android/settings/applications/AppStorageSettings;
 
     invoke-static {v0, p1}, Lcom/android/settings/applications/AppStorageSettings;->access$300(Lcom/android/settings/applications/AppStorageSettings;Landroid/os/Message;)V
 
-    .line 605
     nop
 
-    .line 612
     :goto_0
     return-void
 .end method

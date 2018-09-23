@@ -37,7 +37,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 76
     invoke-direct {p0}, Lcom/android/settings/SettingsActivity;-><init>()V
 
     return-void
@@ -57,7 +56,6 @@
         }
     .end annotation
 
-    .line 157
     const-class v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
     return-object v0
@@ -66,7 +64,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 3
 
-    .line 90
     new-instance v0, Landroid/content/Intent;
 
     invoke-super {p0}, Lcom/android/settings/SettingsActivity;->getIntent()Landroid/content/Intent;
@@ -75,8 +72,6 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 91
-    .local v0, "modIntent":Landroid/content/Intent;
     const-string v1, ":settings:show_fragment"
 
     invoke-virtual {p0}, Lcom/android/settings/password/ChooseLockPassword;->getFragmentClass()Ljava/lang/Class;
@@ -89,15 +84,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 92
     return-object v0
 .end method
 
 .method protected isValidFragment(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "fragmentName"    # Ljava/lang/String;
 
-    .line 152
     const-class v0, Lcom/android/settings/password/ChooseLockPassword$ChooseLockPasswordFragment;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -114,7 +106,6 @@
 
     return v0
 
-    .line 153
     :cond_0
     const/4 v0, 0x0
 
@@ -123,49 +114,37 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 162
     invoke-super {p0, p1}, Lcom/android/settings/SettingsActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 163
     invoke-virtual {p0}, Lcom/android/settings/password/ChooseLockPassword;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     const-string v1, "for_fingerprint"
 
-    .line 164
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 165
-    .local v0, "forFingerprint":Z
     if-eqz v0, :cond_0
 
-    .line 166
     const v1, 0x7f12088c
 
     goto :goto_0
 
-    .line 167
     :cond_0
     const v1, 0x7f120892
 
-    .line 165
     :goto_0
     invoke-virtual {p0, v1}, Lcom/android/settings/password/ChooseLockPassword;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 168
-    .local v1, "msg":Ljava/lang/CharSequence;
     invoke-virtual {p0, v1}, Lcom/android/settings/password/ChooseLockPassword;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 169
     const v2, 0x7f0a012d
 
     invoke-virtual {p0, v2}, Lcom/android/settings/password/ChooseLockPassword;->findViewById(I)Landroid/view/View;
@@ -174,12 +153,9 @@
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    .line 171
-    .local v2, "layout":Landroid/widget/LinearLayout;
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setFitsSystemWindows(Z)V
 
-    .line 173
     return-void
 .end method

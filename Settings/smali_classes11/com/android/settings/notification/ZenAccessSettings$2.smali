@@ -29,7 +29,6 @@
 .method constructor <init>(Landroid/content/Context;Ljava/lang/String;Z)V
     .locals 0
 
-    .line 196
     iput-object p1, p0, Lcom/android/settings/notification/ZenAccessSettings$2;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/settings/notification/ZenAccessSettings$2;->val$pkg:Ljava/lang/String;
@@ -46,7 +45,6 @@
 .method public run()V
     .locals 3
 
-    .line 199
     iget-object v0, p0, Lcom/android/settings/notification/ZenAccessSettings$2;->val$context:Landroid/content/Context;
 
     const-class v1, Landroid/app/NotificationManager;
@@ -57,14 +55,11 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 200
-    .local v0, "mgr":Landroid/app/NotificationManager;
     iget-object v1, p0, Lcom/android/settings/notification/ZenAccessSettings$2;->val$pkg:Ljava/lang/String;
 
     iget-boolean v2, p0, Lcom/android/settings/notification/ZenAccessSettings$2;->val$access:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->setNotificationPolicyAccessGranted(Ljava/lang/String;Z)V
 
-    .line 201
     return-void
 .end method

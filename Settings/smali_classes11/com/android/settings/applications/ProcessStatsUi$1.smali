@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 189
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settings/applications/ProcStatsPackageEntry;Lcom/android/settings/applications/ProcStatsPackageEntry;)I
     .locals 6
-    .param p1, "lhs"    # Lcom/android/settings/applications/ProcStatsPackageEntry;
-    .param p2, "rhs"    # Lcom/android/settings/applications/ProcStatsPackageEntry;
 
-    .line 192
     iget-wide v0, p2, Lcom/android/settings/applications/ProcStatsPackageEntry;->mRunWeight:D
 
     iget-wide v2, p2, Lcom/android/settings/applications/ProcStatsPackageEntry;->mBgWeight:D
@@ -52,8 +48,6 @@
 
     move-result-wide v0
 
-    .line 193
-    .local v0, "rhsWeight":D
     iget-wide v2, p1, Lcom/android/settings/applications/ProcStatsPackageEntry;->mRunWeight:D
 
     iget-wide v4, p1, Lcom/android/settings/applications/ProcStatsPackageEntry;->mBgWeight:D
@@ -62,18 +56,14 @@
 
     move-result-wide v2
 
-    .line 194
-    .local v2, "lhsWeight":D
     cmpl-double v4, v2, v0
 
     if-nez v4, :cond_0
 
-    .line 195
     const/4 v4, 0x0
 
     return v4
 
-    .line 197
     :cond_0
     cmpg-double v4, v2, v0
 
@@ -93,7 +83,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 189
     check-cast p1, Lcom/android/settings/applications/ProcStatsPackageEntry;
 
     check-cast p2, Lcom/android/settings/applications/ProcStatsPackageEntry;

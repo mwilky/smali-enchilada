@@ -53,25 +53,16 @@
         }
     .end annotation
 
-    .line 421
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
-    .local p1, "target":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 422
     iput-object p1, p0, Lcom/google/common/base/Predicates$IsEqualToPredicate;->target:Ljava/lang/Object;
 
-    .line 423
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/lang/Object;Lcom/google/common/base/Predicates$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/google/common/base/Predicates$1;
 
-    .line 417
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$IsEqualToPredicate;-><init>(Ljava/lang/Object;)V
 
     return-void
@@ -87,9 +78,6 @@
         }
     .end annotation
 
-    .line 426
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$IsEqualToPredicate;->target:Ljava/lang/Object;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -101,24 +89,19 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 432
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Predicates$IsEqualToPredicate;
 
     if-eqz v0, :cond_0
 
-    .line 433
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/Predicates$IsEqualToPredicate;
 
-    .line 434
-    .local v0, "that":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<*>;"
     iget-object v1, p0, Lcom/google/common/base/Predicates$IsEqualToPredicate;->target:Ljava/lang/Object;
 
     iget-object v2, v0, Lcom/google/common/base/Predicates$IsEqualToPredicate;->target:Ljava/lang/Object;
@@ -129,8 +112,6 @@
 
     return v1
 
-    .line 436
-    .end local v0    # "that":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -140,8 +121,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 429
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$IsEqualToPredicate;->target:Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -154,8 +133,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 439
-    .local p0, "this":Lcom/google/common/base/Predicates$IsEqualToPredicate;, "Lcom/google/common/base/Predicates$IsEqualToPredicate<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

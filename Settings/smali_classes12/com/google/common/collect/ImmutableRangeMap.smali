@@ -73,10 +73,8 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 44
     new-instance v0, Lcom/google/common/collect/ImmutableRangeMap;
 
-    .line 46
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v1
@@ -89,7 +87,6 @@
 
     sput-object v0, Lcom/google/common/collect/ImmutableRangeMap;->EMPTY:Lcom/google/common/collect/ImmutableRangeMap;
 
-    .line 44
     return-void
 .end method
 
@@ -106,27 +103,18 @@
         }
     .end annotation
 
-    .line 157
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "ranges":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/collect/Range<TK;>;>;"
-    .local p2, "values":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 158
     iput-object p1, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
-    .line 159
     iput-object p2, p0, Lcom/google/common/collect/ImmutableRangeMap;->values:Lcom/google/common/collect/ImmutableList;
 
-    .line 160
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/google/common/collect/ImmutableRangeMap;)Lcom/google/common/collect/ImmutableList;
     .locals 1
-    .param p0, "x0"    # Lcom/google/common/collect/ImmutableRangeMap;
 
-    .line 42
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     return-object v0
@@ -146,7 +134,6 @@
         }
     .end annotation
 
-    .line 84
     new-instance v0, Lcom/google/common/collect/ImmutableRangeMap$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableRangeMap$Builder;-><init>()V
@@ -170,27 +157,21 @@
         }
     .end annotation
 
-    .line 67
-    .local p0, "rangeMap":Lcom/google/common/collect/RangeMap;, "Lcom/google/common/collect/RangeMap<TK;+TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/ImmutableRangeMap;
 
     if-eqz v0, :cond_0
 
-    .line 68
     move-object v0, p0
 
     check-cast v0, Lcom/google/common/collect/ImmutableRangeMap;
 
     return-object v0
 
-    .line 70
     :cond_0
     invoke-interface {p0}, Lcom/google/common/collect/RangeMap;->asMapOfRanges()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 71
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/common/collect/Range<TK;>;+TV;>;"
     new-instance v1, Lcom/google/common/collect/ImmutableList$Builder;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -199,8 +180,6 @@
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/ImmutableList$Builder;-><init>(I)V
 
-    .line 72
-    .local v1, "rangesBuilder":Lcom/google/common/collect/ImmutableList$Builder;, "Lcom/google/common/collect/ImmutableList$Builder<Lcom/google/common/collect/Range<TK;>;>;"
     new-instance v2, Lcom/google/common/collect/ImmutableList$Builder;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -209,8 +188,6 @@
 
     invoke-direct {v2, v3}, Lcom/google/common/collect/ImmutableList$Builder;-><init>(I)V
 
-    .line 73
-    .local v2, "valuesBuilder":Lcom/google/common/collect/ImmutableList$Builder;, "Lcom/google/common/collect/ImmutableList$Builder<TV;>;"
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v3
@@ -232,26 +209,20 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 74
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;+TV;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 75
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 76
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;+TV;>;"
     goto :goto_0
 
-    .line 77
     :cond_1
     new-instance v3, Lcom/google/common/collect/ImmutableRangeMap;
 
@@ -282,7 +253,6 @@
         }
     .end annotation
 
-    .line 53
     sget-object v0, Lcom/google/common/collect/ImmutableRangeMap;->EMPTY:Lcom/google/common/collect/ImmutableRangeMap;
 
     return-object v0
@@ -304,9 +274,6 @@
         }
     .end annotation
 
-    .line 61
-    .local p0, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     new-instance v0, Lcom/google/common/collect/ImmutableRangeMap;
 
     invoke-static {p0}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
@@ -335,8 +302,6 @@
         }
     .end annotation
 
-    .line 220
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
@@ -345,14 +310,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 221
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
 
     return-object v0
 
-    .line 223
     :cond_0
     new-instance v0, Lcom/google/common/collect/RegularImmutableSortedSet;
 
@@ -362,8 +325,6 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/common/collect/RegularImmutableSortedSet;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
 
-    .line 225
-    .local v0, "rangeSet":Lcom/google/common/collect/RegularImmutableSortedSet;, "Lcom/google/common/collect/RegularImmutableSortedSet<Lcom/google/common/collect/Range<TK;>;>;"
     new-instance v1, Lcom/google/common/collect/RegularImmutableSortedMap;
 
     iget-object v2, p0, Lcom/google/common/collect/ImmutableRangeMap;->values:Lcom/google/common/collect/ImmutableList;
@@ -376,8 +337,6 @@
 .method public bridge synthetic asMapOfRanges()Ljava/util/Map;
     .locals 1
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableRangeMap;->asMapOfRanges()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -388,8 +347,6 @@
 .method public clear()V
     .locals 1
 
-    .line 210
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -399,24 +356,19 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 288
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     instance-of v0, p1, Lcom/google/common/collect/RangeMap;
 
     if-eqz v0, :cond_0
 
-    .line 289
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/RangeMap;
 
-    .line 290
-    .local v0, "rangeMap":Lcom/google/common/collect/RangeMap;, "Lcom/google/common/collect/RangeMap<**>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableRangeMap;->asMapOfRanges()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v1
@@ -431,8 +383,6 @@
 
     return v1
 
-    .line 292
-    .end local v0    # "rangeMap":Lcom/google/common/collect/RangeMap;, "Lcom/google/common/collect/RangeMap<**>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -450,16 +400,12 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 165
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Comparable;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {}, Lcom/google/common/collect/Range;->lowerBoundFn()Lcom/google/common/base/Function;
 
     move-result-object v1
 
-    .line 166
     invoke-static {p1}, Lcom/google/common/collect/Cut;->belowValue(Ljava/lang/Comparable;)Lcom/google/common/collect/Cut;
 
     move-result-object v2
@@ -468,23 +414,18 @@
 
     sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_LOWER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 165
     invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->binarySearch(Ljava/util/List;Lcom/google/common/base/Function;Ljava/lang/Comparable;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v0
 
-    .line 167
-    .local v0, "index":I
     const/4 v1, 0x0
 
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
-    .line 168
     return-object v1
 
-    .line 170
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
@@ -494,8 +435,6 @@
 
     check-cast v2, Lcom/google/common/collect/Range;
 
-    .line 171
-    .local v2, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     invoke-virtual {v2, p1}, Lcom/google/common/collect/Range;->contains(Ljava/lang/Comparable;)Z
 
     move-result v3
@@ -528,16 +467,12 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 178
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Comparable;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     invoke-static {}, Lcom/google/common/collect/Range;->lowerBoundFn()Lcom/google/common/base/Function;
 
     move-result-object v1
 
-    .line 179
     invoke-static {p1}, Lcom/google/common/collect/Cut;->belowValue(Ljava/lang/Comparable;)Lcom/google/common/collect/Cut;
 
     move-result-object v2
@@ -546,23 +481,18 @@
 
     sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_LOWER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 178
     invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->binarySearch(Ljava/util/List;Lcom/google/common/base/Function;Ljava/lang/Comparable;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v0
 
-    .line 180
-    .local v0, "index":I
     const/4 v1, 0x0
 
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_0
 
-    .line 181
     return-object v1
 
-    .line 183
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
@@ -572,8 +502,6 @@
 
     check-cast v2, Lcom/google/common/collect/Range;
 
-    .line 184
-    .local v2, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     invoke-virtual {v2, p1}, Lcom/google/common/collect/Range;->contains(Ljava/lang/Comparable;)Z
 
     move-result v3
@@ -599,8 +527,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 283
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableRangeMap;->asMapOfRanges()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -622,10 +548,6 @@
         }
     .end annotation
 
-    .line 200
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -643,9 +565,6 @@
         }
     .end annotation
 
-    .line 205
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "rangeMap":Lcom/google/common/collect/RangeMap;, "Lcom/google/common/collect/RangeMap<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -663,9 +582,6 @@
         }
     .end annotation
 
-    .line 215
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -683,8 +599,6 @@
         }
     .end annotation
 
-    .line 190
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->isEmpty()Z
@@ -693,7 +607,6 @@
 
     if-nez v0, :cond_0
 
-    .line 193
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     const/4 v1, 0x0
@@ -704,8 +617,6 @@
 
     check-cast v0, Lcom/google/common/collect/Range;
 
-    .line 194
-    .local v0, "firstRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     iget-object v1, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
     iget-object v2, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
@@ -722,8 +633,6 @@
 
     check-cast v1, Lcom/google/common/collect/Range;
 
-    .line 195
-    .local v1, "lastRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     iget-object v2, v0, Lcom/google/common/collect/Range;->lowerBound:Lcom/google/common/collect/Cut;
 
     iget-object v3, v1, Lcom/google/common/collect/Range;->upperBound:Lcom/google/common/collect/Cut;
@@ -734,9 +643,6 @@
 
     return-object v2
 
-    .line 191
-    .end local v0    # "firstRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
-    .end local v1    # "lastRange":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -757,9 +663,6 @@
         }
     .end annotation
 
-    .line 230
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -772,14 +675,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 231
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeMap;->of()Lcom/google/common/collect/ImmutableRangeMap;
 
     move-result-object v0
 
     return-object v0
 
-    .line 232
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
@@ -801,11 +702,9 @@
 
     goto :goto_0
 
-    .line 235
     :cond_1
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
-    .line 236
     invoke-static {}, Lcom/google/common/collect/Range;->upperBoundFn()Lcom/google/common/base/Function;
 
     move-result-object v1
@@ -816,16 +715,12 @@
 
     sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 235
     invoke-static {v0, v1, v2, v3, v4}, Lcom/google/common/collect/SortedLists;->binarySearch(Ljava/util/List;Lcom/google/common/base/Function;Ljava/lang/Comparable;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v0
 
-    .line 238
-    .local v0, "lowerIndex":I
     iget-object v1, p0, Lcom/google/common/collect/ImmutableRangeMap;->ranges:Lcom/google/common/collect/ImmutableList;
 
-    .line 239
     invoke-static {}, Lcom/google/common/collect/Range;->lowerBoundFn()Lcom/google/common/base/Function;
 
     move-result-object v2
@@ -836,47 +731,33 @@
 
     sget-object v5, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 238
     invoke-static {v1, v2, v3, v4, v5}, Lcom/google/common/collect/SortedLists;->binarySearch(Ljava/util/List;Lcom/google/common/base/Function;Ljava/lang/Comparable;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
 
     move-result v1
 
-    .line 241
-    .local v1, "upperIndex":I
     if-lt v0, v1, :cond_2
 
-    .line 242
     invoke-static {}, Lcom/google/common/collect/ImmutableRangeMap;->of()Lcom/google/common/collect/ImmutableRangeMap;
 
     move-result-object v2
 
     return-object v2
 
-    .line 244
     :cond_2
     move v2, v0
 
-    .line 245
-    .local v2, "off":I
     sub-int v3, v1, v0
 
-    .line 246
-    .local v3, "len":I
     new-instance v6, Lcom/google/common/collect/ImmutableRangeMap$1;
 
     invoke-direct {v6, p0, v3, v2, p1}, Lcom/google/common/collect/ImmutableRangeMap$1;-><init>(Lcom/google/common/collect/ImmutableRangeMap;IILcom/google/common/collect/Range;)V
 
-    .line 267
-    .local v6, "subRanges":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/collect/Range<TK;>;>;"
     move-object v9, p0
 
-    .line 268
-    .local v9, "outer":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     new-instance v10, Lcom/google/common/collect/ImmutableRangeMap$2;
 
     iget-object v4, p0, Lcom/google/common/collect/ImmutableRangeMap;->values:Lcom/google/common/collect/ImmutableList;
 
-    .line 269
     invoke-virtual {v4, v0, v1}, Lcom/google/common/collect/ImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v7
@@ -889,16 +770,8 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/google/common/collect/ImmutableRangeMap$2;-><init>(Lcom/google/common/collect/ImmutableRangeMap;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/ImmutableList;Lcom/google/common/collect/Range;Lcom/google/common/collect/ImmutableRangeMap;)V
 
-    .line 268
     return-object v10
 
-    .line 233
-    .end local v0    # "lowerIndex":I
-    .end local v1    # "upperIndex":I
-    .end local v2    # "off":I
-    .end local v3    # "len":I
-    .end local v6    # "subRanges":Lcom/google/common/collect/ImmutableList;, "Lcom/google/common/collect/ImmutableList<Lcom/google/common/collect/Range<TK;>;>;"
-    .end local v9    # "outer":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     :cond_3
     :goto_0
     return-object p0
@@ -907,8 +780,6 @@
 .method public bridge synthetic subRangeMap(Lcom/google/common/collect/Range;)Lcom/google/common/collect/RangeMap;
     .locals 0
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableRangeMap;->subRangeMap(Lcom/google/common/collect/Range;)Lcom/google/common/collect/ImmutableRangeMap;
 
     move-result-object p1
@@ -919,8 +790,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 297
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap;, "Lcom/google/common/collect/ImmutableRangeMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableRangeMap;->asMapOfRanges()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0

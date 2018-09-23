@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
-    .line 180
     iput-object p1, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-direct {p0}, Landroid/hardware/fingerprint/FingerprintManager$EnrollmentCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onEnrollmentError(ILjava/lang/CharSequence;)V
     .locals 3
-    .param p1, "errMsgId"    # I
-    .param p2, "errString"    # Ljava/lang/CharSequence;
 
-    .line 207
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -47,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 208
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -58,7 +52,6 @@
 
     goto :goto_0
 
-    .line 210
     :cond_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
@@ -74,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 212
     :goto_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
@@ -82,16 +74,12 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$602(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;Z)Z
 
-    .line 213
     return-void
 .end method
 
 .method public onEnrollmentHelp(ILjava/lang/CharSequence;)V
     .locals 3
-    .param p1, "helpMsgId"    # I
-    .param p2, "helpString"    # Ljava/lang/CharSequence;
 
-    .line 198
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -100,7 +88,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 199
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -111,7 +98,6 @@
 
     goto :goto_0
 
-    .line 201
     :cond_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
@@ -127,16 +113,13 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 203
     :goto_0
     return-void
 .end method
 
 .method public onEnrollmentProgress(I)V
     .locals 4
-    .param p1, "remaining"    # I
 
-    .line 184
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$100(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)I
@@ -147,18 +130,15 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 185
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$102(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;I)I
 
-    .line 187
     :cond_0
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0, p1}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$202(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;I)I
 
-    .line 188
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     if-nez p1, :cond_1
@@ -173,7 +153,6 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$302(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;Z)Z
 
-    .line 189
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -182,7 +161,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 190
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
     invoke-static {v0}, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;->access$400(Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;)Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$Listener;
@@ -199,7 +177,6 @@
 
     goto :goto_1
 
-    .line 192
     :cond_2
     iget-object v0, p0, Lcom/android/settings/fingerprint/FingerprintEnrollSidecar$1;->this$0:Lcom/android/settings/fingerprint/FingerprintEnrollSidecar;
 
@@ -221,7 +198,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 194
     :goto_1
     return-void
 .end method

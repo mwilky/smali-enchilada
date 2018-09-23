@@ -25,15 +25,11 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v17/leanback/widget/VerticalGridView;)V
     .locals 0
-    .param p1, "view"    # Landroid/support/v17/leanback/widget/VerticalGridView;
 
-    .line 85
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/Presenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 86
     iput-object p1, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;->mGridView:Landroid/support/v17/leanback/widget/VerticalGridView;
 
-    .line 87
     return-void
 .end method
 
@@ -42,7 +38,6 @@
 .method public getGridView()Landroid/support/v17/leanback/widget/VerticalGridView;
     .locals 1
 
-    .line 90
     iget-object v0, p0, Landroid/support/v17/leanback/widget/VerticalGridPresenter$ViewHolder;->mGridView:Landroid/support/v17/leanback/widget/VerticalGridView;
 
     return-object v0

@@ -31,24 +31,17 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/os/UserHandle;)V
     .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
-    .param p2, "userHandle"    # Landroid/os/UserHandle;
 
-    .line 321
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 322
     iput-object p1, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->packageName:Ljava/lang/String;
 
-    .line 323
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->appOpMode:I
 
-    .line 324
     iput-object p2, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->userHandle:Landroid/os/UserHandle;
 
-    .line 325
     return-void
 .end method
 
@@ -57,19 +50,16 @@
 .method public isPermissible()Z
     .locals 2
 
-    .line 331
     iget v0, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->appOpMode:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_0
 
-    .line 332
     iget-boolean v0, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->staticPermissionGranted:Z
 
     return v0
 
-    .line 334
     :cond_0
     iget v0, p0, Lcom/android/settings/applications/AppStateAppOpsBridge$PermissionState;->appOpMode:I
 

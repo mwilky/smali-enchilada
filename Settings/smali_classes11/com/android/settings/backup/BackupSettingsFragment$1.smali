@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 73
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void

@@ -87,7 +87,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multimap;Ljava/lang/Object;)V
     .locals 0
-    .param p2, "mutex"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -101,12 +101,8 @@
         }
     .end annotation
 
-    .line 528
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "delegate":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<TK;TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedObject;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 529
     return-void
 .end method
 
@@ -124,19 +120,15 @@
         }
     .end annotation
 
-    .line 654
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 655
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->asMap:Ljava/util/Map;
 
     if-nez v1, :cond_0
 
-    .line 656
     new-instance v1, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
@@ -153,7 +145,6 @@
 
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->asMap:Ljava/util/Map;
 
-    .line 658
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->asMap:Ljava/util/Map;
 
@@ -161,7 +152,6 @@
 
     return-object v1
 
-    .line 659
     :catchall_0
     move-exception v1
 
@@ -175,13 +165,10 @@
 .method public clear()V
     .locals 2
 
-    .line 617
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 618
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -189,13 +176,10 @@
 
     invoke-interface {v1}, Lcom/google/common/collect/Multimap;->clear()V
 
-    .line 619
     monitor-exit v0
 
-    .line 620
     return-void
 
-    .line 619
     :catchall_0
     move-exception v1
 
@@ -208,16 +192,11 @@
 
 .method public containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 561
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 562
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -231,7 +210,6 @@
 
     return v1
 
-    .line 563
     :catchall_0
     move-exception v1
 
@@ -244,15 +222,11 @@
 
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
 
-    .line 547
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 548
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -266,7 +240,6 @@
 
     return v1
 
-    .line 549
     :catchall_0
     move-exception v1
 
@@ -279,15 +252,11 @@
 
 .method public containsValue(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "value"    # Ljava/lang/Object;
 
-    .line 554
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 555
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -301,7 +270,6 @@
 
     return v1
 
-    .line 556
     :catchall_0
     move-exception v1
 
@@ -322,8 +290,6 @@
         }
     .end annotation
 
-    .line 524
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedObject;->delegate()Ljava/lang/Object;
 
     move-result-object v0
@@ -336,8 +302,6 @@
 .method bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 514
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -356,19 +320,15 @@
         }
     .end annotation
 
-    .line 644
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 645
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->entries:Ljava/util/Collection;
 
     if-nez v1, :cond_0
 
-    .line 646
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v1
@@ -385,7 +345,6 @@
 
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->entries:Ljava/util/Collection;
 
-    .line 648
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->entries:Ljava/util/Collection;
 
@@ -393,7 +352,6 @@
 
     return-object v1
 
-    .line 649
     :catchall_0
     move-exception v1
 
@@ -406,24 +364,18 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 673
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     if-ne p1, p0, :cond_0
 
-    .line 674
     const/4 v0, 0x1
 
     return v0
 
-    .line 676
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 677
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -437,7 +389,6 @@
 
     return v1
 
-    .line 678
     :catchall_0
     move-exception v1
 
@@ -458,14 +409,10 @@
         }
     .end annotation
 
-    .line 568
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 569
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -485,7 +432,6 @@
 
     return-object v1
 
-    .line 570
     :catchall_0
     move-exception v1
 
@@ -499,13 +445,10 @@
 .method public hashCode()I
     .locals 2
 
-    .line 682
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 683
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -519,7 +462,6 @@
 
     return v1
 
-    .line 684
     :catchall_0
     move-exception v1
 
@@ -533,13 +475,10 @@
 .method public isEmpty()Z
     .locals 2
 
-    .line 540
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 541
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -553,7 +492,6 @@
 
     return v1
 
-    .line 542
     :catchall_0
     move-exception v1
 
@@ -574,19 +512,15 @@
         }
     .end annotation
 
-    .line 624
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 625
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keySet:Ljava/util/Set;
 
     if-nez v1, :cond_0
 
-    .line 626
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v1
@@ -603,7 +537,6 @@
 
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keySet:Ljava/util/Set;
 
-    .line 628
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keySet:Ljava/util/Set;
 
@@ -611,7 +544,6 @@
 
     return-object v1
 
-    .line 629
     :catchall_0
     move-exception v1
 
@@ -632,19 +564,15 @@
         }
     .end annotation
 
-    .line 664
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 665
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keys:Lcom/google/common/collect/Multiset;
 
     if-nez v1, :cond_0
 
-    .line 666
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v1
@@ -661,7 +589,6 @@
 
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keys:Lcom/google/common/collect/Multiset;
 
-    .line 668
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->keys:Lcom/google/common/collect/Multiset;
 
@@ -669,7 +596,6 @@
 
     return-object v1
 
-    .line 669
     :catchall_0
     move-exception v1
 
@@ -688,15 +614,10 @@
         }
     .end annotation
 
-    .line 575
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 576
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -710,7 +631,6 @@
 
     return v1
 
-    .line 577
     :catchall_0
     move-exception v1
 
@@ -731,14 +651,10 @@
         }
     .end annotation
 
-    .line 589
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "multimap":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 590
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -752,7 +668,6 @@
 
     return v1
 
-    .line 591
     :catchall_0
     move-exception v1
 
@@ -773,15 +688,10 @@
         }
     .end annotation
 
-    .line 582
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 583
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -795,7 +705,6 @@
 
     return v1
 
-    .line 584
     :catchall_0
     move-exception v1
 
@@ -808,16 +717,11 @@
 
 .method public remove(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
 
-    .line 603
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 604
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -831,7 +735,6 @@
 
     return v1
 
-    .line 605
     :catchall_0
     move-exception v1
 
@@ -844,7 +747,6 @@
 
 .method public removeAll(Ljava/lang/Object;)Ljava/util/Collection;
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -855,13 +757,10 @@
         }
     .end annotation
 
-    .line 610
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 611
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -875,7 +774,6 @@
 
     return-object v1
 
-    .line 612
     :catchall_0
     move-exception v1
 
@@ -898,15 +796,10 @@
         }
     .end annotation
 
-    .line 596
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 597
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -920,7 +813,6 @@
 
     return-object v1
 
-    .line 598
     :catchall_0
     move-exception v1
 
@@ -934,13 +826,10 @@
 .method public size()I
     .locals 2
 
-    .line 533
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 534
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -954,7 +843,6 @@
 
     return v1
 
-    .line 535
     :catchall_0
     move-exception v1
 
@@ -975,19 +863,15 @@
         }
     .end annotation
 
-    .line 634
-    .local p0, "this":Lcom/google/common/collect/Synchronized$SynchronizedMultimap;, "Lcom/google/common/collect/Synchronized$SynchronizedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->mutex:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 635
     :try_start_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->valuesCollection:Ljava/util/Collection;
 
     if-nez v1, :cond_0
 
-    .line 636
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v1
@@ -1004,7 +888,6 @@
 
     iput-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->valuesCollection:Ljava/util/Collection;
 
-    .line 638
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedMultimap;->valuesCollection:Ljava/util/Collection;
 
@@ -1012,7 +895,6 @@
 
     return-object v1
 
-    .line 639
     :catchall_0
     move-exception v1
 

@@ -56,12 +56,8 @@
         }
     .end annotation
 
-    .line 506
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
-    .local p1, "target":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 507
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -70,17 +66,12 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
-    .line 508
     return-void
 .end method
 
 .method synthetic constructor <init>(Ljava/util/Collection;Lcom/google/common/base/Predicates$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/util/Collection;
-    .param p2, "x1"    # Lcom/google/common/base/Predicates$1;
 
-    .line 503
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InPredicate;-><init>(Ljava/util/Collection;)V
 
     return-void
@@ -100,9 +91,6 @@
         }
     .end annotation
 
-    .line 513
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
     const/4 v0, 0x0
 
     :try_start_0
@@ -117,44 +105,32 @@
 
     return v1
 
-    .line 516
     :catch_0
     move-exception v1
 
-    .line 517
-    .local v1, "e":Ljava/lang/ClassCastException;
     return v0
 
-    .line 514
-    .end local v1    # "e":Ljava/lang/ClassCastException;
     :catch_1
     move-exception v1
 
-    .line 515
-    .local v1, "e":Ljava/lang/NullPointerException;
     return v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 522
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Predicates$InPredicate;
 
     if-eqz v0, :cond_0
 
-    .line 523
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/Predicates$InPredicate;
 
-    .line 524
-    .local v0, "that":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<*>;"
     iget-object v1, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
     iget-object v2, v0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
@@ -165,8 +141,6 @@
 
     return v1
 
-    .line 526
-    .end local v0    # "that":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -176,8 +150,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 530
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->hashCode()I
@@ -190,8 +162,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 534
-    .local p0, "this":Lcom/google/common/base/Predicates$InPredicate;, "Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

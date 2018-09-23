@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/AccessibilitySettings;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accessibility/AccessibilitySettings;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 282
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$5;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,10 +33,7 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
     .locals 3
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 285
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$5;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$400(Lcom/android/settings/accessibility/AccessibilitySettings;)Landroid/support/v14/preference/SwitchPreference;
@@ -48,7 +42,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 286
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilitySettings$5;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$500(Lcom/android/settings/accessibility/AccessibilitySettings;)Landroid/content/ContentResolver;
@@ -72,8 +65,6 @@
     :cond_0
     move v0, v2
 
-    .line 287
-    .local v0, "enabled":Z
     iget-object v1, p0, Lcom/android/settings/accessibility/AccessibilitySettings$5;->this$0:Lcom/android/settings/accessibility/AccessibilitySettings;
 
     invoke-static {v1}, Lcom/android/settings/accessibility/AccessibilitySettings;->access$400(Lcom/android/settings/accessibility/AccessibilitySettings;)Landroid/support/v14/preference/SwitchPreference;
@@ -82,8 +73,6 @@
 
     invoke-virtual {v1, v0}, Landroid/support/v14/preference/SwitchPreference;->setChecked(Z)V
 
-    .line 289
-    .end local v0    # "enabled":Z
     :cond_1
     return-void
 .end method

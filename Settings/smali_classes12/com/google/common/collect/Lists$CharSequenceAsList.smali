@@ -29,15 +29,11 @@
 # direct methods
 .method constructor <init>(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "sequence"    # Ljava/lang/CharSequence;
 
-    .line 760
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 761
     iput-object p1, p0, Lcom/google/common/collect/Lists$CharSequenceAsList;->sequence:Ljava/lang/CharSequence;
 
-    .line 762
     return-void
 .end method
 
@@ -45,16 +41,13 @@
 # virtual methods
 .method public get(I)Ljava/lang/Character;
     .locals 1
-    .param p1, "index"    # I
 
-    .line 765
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$CharSequenceAsList;->size()I
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 766
     iget-object v0, p0, Lcom/google/common/collect/Lists$CharSequenceAsList;->sequence:Ljava/lang/CharSequence;
 
     invoke-interface {v0, p1}, Ljava/lang/CharSequence;->charAt(I)C
@@ -71,7 +64,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 756
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Lists$CharSequenceAsList;->get(I)Ljava/lang/Character;
 
     move-result-object p1
@@ -82,7 +74,6 @@
 .method public size()I
     .locals 1
 
-    .line 770
     iget-object v0, p0, Lcom/google/common/collect/Lists$CharSequenceAsList;->sequence:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I

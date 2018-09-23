@@ -13,10 +13,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 33
     invoke-direct {p0}, Lcom/android/settings/deviceinfo/StorageWizardBase;-><init>()V
 
-    .line 64
     new-instance v0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;
 
     invoke-direct {v0, p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress$1;-><init>(Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;)V
@@ -28,9 +26,7 @@
 
 .method static synthetic access$000(Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
 
-    .line 33
     iget v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mMoveId:I
 
     return v0
@@ -38,10 +34,7 @@
 
 .method static synthetic access$100(Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;I)Ljava/lang/CharSequence;
     .locals 1
-    .param p0, "x0"    # Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;
-    .param p1, "x1"    # I
 
-    .line 33
     invoke-direct {p0, p1}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->moveStatusToMessage(I)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -51,9 +44,7 @@
 
 .method private moveStatusToMessage(I)Ljava/lang/CharSequence;
     .locals 1
-    .param p1, "returnCode"    # I
 
-    .line 84
     const/4 v0, -0x8
 
     if-eq p1, v0, :cond_0
@@ -62,14 +53,12 @@
 
     packed-switch p1, :pswitch_data_0
 
-    .line 99
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 86
     :pswitch_0
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getString(I)Ljava/lang/String;
 
@@ -77,7 +66,6 @@
 
     return-object v0
 
-    .line 90
     :pswitch_1
     const v0, 0x7f1205ad
 
@@ -87,9 +75,8 @@
 
     return-object v0
 
-    .line 96
     :pswitch_2
-    const v0, 0x7f121181
+    const v0, 0x7f12117a
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getString(I)Ljava/lang/String;
 
@@ -97,7 +84,6 @@
 
     return-object v0
 
-    .line 92
     :pswitch_3
     const v0, 0x7f12013a
 
@@ -107,7 +93,6 @@
 
     return-object v0
 
-    .line 94
     :pswitch_4
     const v0, 0x7f12077e
 
@@ -117,7 +102,6 @@
 
     return-object v0
 
-    .line 88
     :cond_0
     const v0, 0x7f120965
 
@@ -143,29 +127,22 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 7
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 38
     invoke-super {p0, p1}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onCreate(Landroid/os/Bundle;)V
 
-    .line 39
     iget-object v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mVolume:Landroid/os/storage/VolumeInfo;
 
     if-nez v0, :cond_0
 
-    .line 40
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->finish()V
 
-    .line 41
     return-void
 
-    .line 43
     :cond_0
-    const v0, 0x7f0d025e
+    const v0, 0x7f0d025d
 
     invoke-virtual {p0, v0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->setContentView(I)V
 
-    .line 45
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -180,7 +157,6 @@
 
     iput v0, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mMoveId:I
 
-    .line 46
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -191,8 +167,6 @@
 
     move-result-object v0
 
-    .line 47
-    .local v0, "appName":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mStorage:Landroid/os/storage/StorageManager;
 
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mVolume:Landroid/os/storage/VolumeInfo;
@@ -201,14 +175,11 @@
 
     move-result-object v1
 
-    .line 49
-    .local v1, "volumeName":Ljava/lang/String;
     const v2, 0x7f08023e
 
     invoke-virtual {p0, v2}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->setIcon(I)V
 
-    .line 50
-    const v2, 0x7f121130
+    const v2, 0x7f121129
 
     const/4 v3, 0x1
 
@@ -220,8 +191,7 @@
 
     invoke-virtual {p0, v2, v4}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->setHeaderText(I[Ljava/lang/CharSequence;)V
 
-    .line 51
-    const v2, 0x7f12112e
+    const v2, 0x7f121127
 
     const/4 v4, 0x2
 
@@ -233,7 +203,6 @@
 
     invoke-virtual {p0, v2, v4}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->setBodyText(I[Ljava/lang/CharSequence;)V
 
-    .line 54
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
@@ -246,7 +215,6 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/pm/PackageManager;->registerMoveCallback(Landroid/content/pm/PackageManager$MoveCallback;Landroid/os/Handler;)V
 
-    .line 55
     iget-object v2, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mCallback:Landroid/content/pm/PackageManager$MoveCallback;
 
     iget v3, p0, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->mMoveId:I
@@ -265,17 +233,14 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/content/pm/PackageManager$MoveCallback;->onStatusChanged(IIJ)V
 
-    .line 56
     return-void
 .end method
 
 .method protected onDestroy()V
     .locals 2
 
-    .line 60
     invoke-super {p0}, Lcom/android/settings/deviceinfo/StorageWizardBase;->onDestroy()V
 
-    .line 61
     invoke-virtual {p0}, Lcom/android/settings/deviceinfo/StorageWizardMoveProgress;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -284,6 +249,5 @@
 
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->unregisterMoveCallback(Landroid/content/pm/PackageManager$MoveCallback;)V
 
-    .line 62
     return-void
 .end method

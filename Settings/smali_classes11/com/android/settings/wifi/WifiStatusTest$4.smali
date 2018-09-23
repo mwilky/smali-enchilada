@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiStatusTest;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiStatusTest;
 
-    .line 313
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$4;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 315
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$4;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->access$1800(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
@@ -54,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 316
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$4;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->access$2000(Lcom/android/settings/wifi/WifiStatusTest;)Landroid/widget/TextView;
@@ -69,6 +65,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 317
     return-void
 .end method

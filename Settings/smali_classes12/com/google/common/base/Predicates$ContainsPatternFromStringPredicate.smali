@@ -25,16 +25,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "string"    # Ljava/lang/String;
 
-    .line 625
     invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/base/Predicates$ContainsPatternPredicate;-><init>(Ljava/util/regex/Pattern;)V
 
-    .line 626
     return-void
 .end method
 
@@ -43,7 +40,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 629
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

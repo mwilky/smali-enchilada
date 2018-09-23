@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
-    .line 77
     iput-object p1, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +36,11 @@
 # virtual methods
 .method public onValueChange(Lcom/oneplus/lib/widget/NumberPicker;II)V
     .locals 2
-    .param p1, "spinner"    # Lcom/oneplus/lib/widget/NumberPicker;
-    .param p2, "oldVal"    # I
-    .param p3, "newVal"    # I
 
-    .line 79
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;->access$000(Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;)V
 
-    .line 80
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
     invoke-virtual {v0}, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;->is24Hour()Z
@@ -56,7 +49,6 @@
 
     if-nez v0, :cond_2
 
-    .line 81
     const/16 v0, 0xc
 
     const/16 v1, 0xb
@@ -70,7 +62,6 @@
 
     if-ne p3, v1, :cond_2
 
-    .line 83
     :cond_1
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
@@ -84,17 +75,14 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;->access$102(Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;Z)Z
 
-    .line 84
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;->access$200(Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;)V
 
-    .line 87
     :cond_2
     iget-object v0, p0, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate$1;->this$0:Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;
 
     invoke-static {v0}, Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;->access$300(Lcom/oneplus/lib/widget/TimePickerSpinnerDelegate;)V
 
-    .line 88
     return-void
 .end method

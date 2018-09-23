@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 164
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 173
     invoke-static {p1}, Lcom/android/settings/deletionhelper/AutomaticStorageManagerSettings;->access$000(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -50,9 +47,7 @@
 
 .method protected isPageSearchEnabled(Landroid/content/Context;)Z
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 167
     const/4 v0, 0x0
 
     return v0

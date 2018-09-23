@@ -33,7 +33,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 40
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->sCache:Ljava/lang/ref/WeakReference;
@@ -43,17 +42,13 @@
 
 .method public constructor <init>(Llibcore/util/CountryZonesFinder;)V
     .locals 1
-    .param p1, "countryZonesFinder"    # Llibcore/util/CountryZonesFinder;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
     iput-object p1, p0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->mCountryZonesFinder:Llibcore/util/CountryZonesFinder;
 
-    .line 58
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->mCountryZonesFinder:Llibcore/util/CountryZonesFinder;
 
     invoke-virtual {v0}, Llibcore/util/CountryZonesFinder;->lookupAllCountryIsoCodes()Ljava/util/List;
@@ -66,7 +61,6 @@
 
     iput-object v0, p0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->mRegionIds:Ljava/util/Set;
 
-    .line 59
     return-void
 .end method
 
@@ -77,7 +71,6 @@
 
     monitor-enter v0
 
-    .line 46
     :try_start_0
     sget-object v1, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->sCache:Ljava/lang/ref/WeakReference;
 
@@ -98,17 +91,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 47
-    .local v1, "data":Lcom/android/settings/datetime/timezone/model/TimeZoneData;
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 48
     monitor-exit v0
 
     return-object v1
 
-    .line 50
     :cond_1
     :try_start_1
     new-instance v2, Lcom/android/settings/datetime/timezone/model/TimeZoneData;
@@ -125,7 +114,6 @@
 
     move-object v1, v2
 
-    .line 51
     new-instance v2, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v2, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -134,13 +122,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 52
     monitor-exit v0
 
     return-object v1
 
-    .line 45
-    .end local v1    # "data":Lcom/android/settings/datetime/timezone/model/TimeZoneData;
     :catchall_0
     move-exception v1
 
@@ -163,8 +148,6 @@
         }
     .end annotation
 
-    .line 88
-    .local p0, "regionIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v0, Ljava/util/HashSet;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -173,8 +156,6 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 89
-    .local v0, "result":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -192,19 +173,14 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 90
-    .local v2, "regionId":Ljava/lang/String;
     invoke-static {v2}, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->normalizeRegionId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 91
-    .end local v2    # "regionId":Ljava/lang/String;
     goto :goto_0
 
-    .line 92
     :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
@@ -215,9 +191,7 @@
 
 .method public static normalizeRegionId(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p0, "regionId"    # Ljava/lang/String;
 
-    .line 97
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -248,7 +222,6 @@
         }
     .end annotation
 
-    .line 62
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->mRegionIds:Ljava/util/Set;
 
     return-object v0
@@ -256,7 +229,6 @@
 
 .method public lookupCountryCodesForZoneId(Ljava/lang/String;)Ljava/util/Set;
     .locals 6
-    .param p1, "tzId"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -268,33 +240,25 @@
         }
     .end annotation
 
-    .line 66
     if-nez p1, :cond_0
 
-    .line 67
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
 
     return-object v0
 
-    .line 69
     :cond_0
     iget-object v0, p0, Lcom/android/settings/datetime/timezone/model/TimeZoneData;->mCountryZonesFinder:Llibcore/util/CountryZonesFinder;
 
-    .line 70
     invoke-virtual {v0, p1}, Llibcore/util/CountryZonesFinder;->lookupCountryTimeZonesForZoneId(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 71
-    .local v0, "countryTimeZones":Ljava/util/List;, "Ljava/util/List<Llibcore/util/CountryTimeZones;>;"
     new-instance v1, Landroid/support/v4/util/ArraySet;
 
     invoke-direct {v1}, Landroid/support/v4/util/ArraySet;-><init>()V
 
-    .line 72
-    .local v1, "regionIds":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -312,14 +276,10 @@
 
     check-cast v3, Llibcore/util/CountryTimeZones;
 
-    .line 73
-    .local v3, "countryTimeZone":Llibcore/util/CountryTimeZones;
     new-instance v4, Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
 
     invoke-direct {v4, v3}, Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;-><init>(Llibcore/util/CountryTimeZones;)V
 
-    .line 74
-    .local v4, "filteredZones":Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
     invoke-virtual {v4}, Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;->getTimeZoneIds()Ljava/util/List;
 
     move-result-object v5
@@ -330,34 +290,26 @@
 
     if-eqz v5, :cond_1
 
-    .line 75
     invoke-virtual {v4}, Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;->getRegionId()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-interface {v1, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 77
-    .end local v3    # "countryTimeZone":Llibcore/util/CountryTimeZones;
-    .end local v4    # "filteredZones":Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
     :cond_1
     goto :goto_0
 
-    .line 78
     :cond_2
     return-object v1
 .end method
 
 .method public lookupCountryTimeZones(Ljava/lang/String;)Lcom/android/settings/datetime/timezone/model/FilteredCountryTimeZones;
     .locals 2
-    .param p1, "regionId"    # Ljava/lang/String;
 
-    .line 82
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 83
     move-object v1, v0
 
     goto :goto_0
@@ -369,8 +321,6 @@
 
     move-result-object v1
 
-    .line 84
-    .local v1, "finder":Llibcore/util/CountryTimeZones;
     :goto_0
     if-nez v1, :cond_1
 

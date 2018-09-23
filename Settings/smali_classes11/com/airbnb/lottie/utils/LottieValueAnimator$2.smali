@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/utils/LottieValueAnimator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/utils/LottieValueAnimator;
 
-    .line 38
     iput-object p1, p0, Lcom/airbnb/lottie/utils/LottieValueAnimator$2;->this$0:Lcom/airbnb/lottie/utils/LottieValueAnimator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 40
     iget-object v0, p0, Lcom/airbnb/lottie/utils/LottieValueAnimator$2;->this$0:Lcom/airbnb/lottie/utils/LottieValueAnimator;
 
     invoke-static {v0}, Lcom/airbnb/lottie/utils/LottieValueAnimator;->access$200(Lcom/airbnb/lottie/utils/LottieValueAnimator;)Z
@@ -49,7 +45,6 @@
 
     if-nez v0, :cond_0
 
-    .line 43
     iget-object v0, p0, Lcom/airbnb/lottie/utils/LottieValueAnimator$2;->this$0:Lcom/airbnb/lottie/utils/LottieValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -64,7 +59,6 @@
 
     invoke-static {v0, v1}, Lcom/airbnb/lottie/utils/LottieValueAnimator;->access$302(Lcom/airbnb/lottie/utils/LottieValueAnimator;F)F
 
-    .line 45
     :cond_0
     return-void
 .end method

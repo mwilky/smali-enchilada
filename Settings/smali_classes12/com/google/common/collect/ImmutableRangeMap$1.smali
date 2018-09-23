@@ -35,10 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableRangeMap;IILcom/google/common/collect/Range;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableRangeMap;
 
-    .line 246
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$1;, "Lcom/google/common/collect/ImmutableRangeMap$1;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->this$0:Lcom/google/common/collect/ImmutableRangeMap;
 
     iput p2, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->val$len:I
@@ -56,7 +53,6 @@
 # virtual methods
 .method public get(I)Lcom/google/common/collect/Range;
     .locals 2
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -65,13 +61,10 @@
         }
     .end annotation
 
-    .line 254
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$1;, "Lcom/google/common/collect/ImmutableRangeMap$1;"
     iget v0, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->val$len:I
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 255
     if-eqz p1, :cond_1
 
     iget v0, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->val$len:I
@@ -82,7 +75,6 @@
 
     goto :goto_0
 
-    .line 258
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->this$0:Lcom/google/common/collect/ImmutableRangeMap;
 
@@ -102,7 +94,6 @@
 
     return-object v0
 
-    .line 256
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->this$0:Lcom/google/common/collect/ImmutableRangeMap;
@@ -133,8 +124,6 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .locals 0
 
-    .line 246
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$1;, "Lcom/google/common/collect/ImmutableRangeMap$1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableRangeMap$1;->get(I)Lcom/google/common/collect/Range;
 
     move-result-object p1
@@ -145,8 +134,6 @@
 .method isPartialView()Z
     .locals 1
 
-    .line 264
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$1;, "Lcom/google/common/collect/ImmutableRangeMap$1;"
     const/4 v0, 0x1
 
     return v0
@@ -155,8 +142,6 @@
 .method public size()I
     .locals 1
 
-    .line 249
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$1;, "Lcom/google/common/collect/ImmutableRangeMap$1;"
     iget v0, p0, Lcom/google/common/collect/ImmutableRangeMap$1;->val$len:I
 
     return v0

@@ -10,15 +10,11 @@
 # direct methods
 .method public constructor <init>(Z)V
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
     iput-boolean p1, p0, Lcom/android/settingslib/widget/CandidateInfo;->enabled:Z
 
-    .line 30
     return-void
 .end method
 

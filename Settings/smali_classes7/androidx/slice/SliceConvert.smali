@@ -13,18 +13,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 153
     return-void
 .end method
 
 .method public static unwrap(Landroidx/slice/Slice;)Landroid/app/slice/Slice;
     .locals 7
-    .param p0, "slice"    # Landroidx/slice/Slice;
 
-    .line 44
     if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Landroidx/slice/Slice;->getUri()Landroid/net/Uri;
@@ -35,11 +31,9 @@
 
     goto/16 :goto_3
 
-    .line 45
     :cond_0
     new-instance v0, Landroid/app/slice/Slice$Builder;
 
-    .line 46
     invoke-virtual {p0}, Landroidx/slice/Slice;->getUri()Landroid/net/Uri;
 
     move-result-object v1
@@ -54,15 +48,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/app/slice/Slice$Builder;-><init>(Landroid/net/Uri;Landroid/app/slice/SliceSpec;)V
 
-    .line 47
-    .local v0, "builder":Landroid/app/slice/Slice$Builder;
     invoke-virtual {p0}, Landroidx/slice/Slice;->getHints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/app/slice/Slice$Builder;->addHints(Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .line 48
     invoke-virtual {p0}, Landroidx/slice/Slice;->getItems()Ljava/util/List;
 
     move-result-object v1
@@ -84,8 +75,6 @@
 
     check-cast v2, Landroidx/slice/SliceItem;
 
-    .line 49
-    .local v2, "item":Landroidx/slice/SliceItem;
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v3
@@ -193,11 +182,8 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .end local v2    # "item":Landroidx/slice/SliceItem;
     goto/16 :goto_2
 
-    .line 70
-    .restart local v2    # "item":Landroidx/slice/SliceItem;
     :pswitch_0
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getLong()J
 
@@ -213,11 +199,8 @@
 
     invoke-virtual {v0, v3, v4, v5, v6}, Landroid/app/slice/Slice$Builder;->addLong(JLjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .end local v2    # "item":Landroidx/slice/SliceItem;
     goto :goto_2
 
-    .line 67
-    .restart local v2    # "item":Landroidx/slice/SliceItem;
     :pswitch_1
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getInt()I
 
@@ -233,10 +216,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/slice/Slice$Builder;->addInt(ILjava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .line 68
     goto :goto_2
 
-    .line 64
     :pswitch_2
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getText()Ljava/lang/CharSequence;
 
@@ -252,10 +233,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .line 65
     goto :goto_2
 
-    .line 61
     :pswitch_3
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getAction()Landroid/app/PendingIntent;
 
@@ -275,10 +254,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/slice/Slice$Builder;->addAction(Landroid/app/PendingIntent;Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;
 
-    .line 62
     goto :goto_2
 
-    .line 57
     :pswitch_4
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getRemoteInput()Landroid/app/RemoteInput;
 
@@ -288,18 +265,14 @@
 
     move-result-object v4
 
-    .line 58
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getHints()Ljava/util/List;
 
     move-result-object v5
 
-    .line 57
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/slice/Slice$Builder;->addRemoteInput(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .line 59
     goto :goto_2
 
-    .line 54
     :pswitch_5
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getIcon()Landroid/support/v4/graphics/drawable/IconCompat;
 
@@ -319,10 +292,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/app/slice/Slice$Builder;->addIcon(Landroid/graphics/drawable/Icon;Ljava/lang/String;Ljava/util/List;)Landroid/app/slice/Slice$Builder;
 
-    .line 55
     goto :goto_2
 
-    .line 51
     :pswitch_6
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getSlice()Landroidx/slice/Slice;
 
@@ -338,15 +309,11 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/app/slice/Slice$Builder;->addSubSlice(Landroid/app/slice/Slice;Ljava/lang/String;)Landroid/app/slice/Slice$Builder;
 
-    .line 52
     nop
 
-    .line 73
-    .end local v2    # "item":Landroidx/slice/SliceItem;
     :goto_2
     goto/16 :goto_0
 
-    .line 74
     :cond_2
     invoke-virtual {v0}, Landroid/app/slice/Slice$Builder;->build()Landroid/app/slice/Slice;
 
@@ -354,8 +321,6 @@
 
     return-object v1
 
-    .line 44
-    .end local v0    # "builder":Landroid/app/slice/Slice$Builder;
     :cond_3
     :goto_3
     const/4 v0, 0x0
@@ -387,16 +352,13 @@
 
 .method private static unwrap(Landroidx/slice/SliceSpec;)Landroid/app/slice/SliceSpec;
     .locals 3
-    .param p0, "spec"    # Landroidx/slice/SliceSpec;
 
-    .line 78
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 79
     :cond_0
     new-instance v0, Landroid/app/slice/SliceSpec;
 
@@ -427,17 +389,12 @@
         }
     .end annotation
 
-    .line 84
-    .local p0, "supportedSpecs":Ljava/util/Set;, "Ljava/util/Set<Landroidx/slice/SliceSpec;>;"
     new-instance v0, Landroid/support/v4/util/ArraySet;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArraySet;-><init>()V
 
-    .line 85
-    .local v0, "ret":Ljava/util/Set;, "Ljava/util/Set<Landroid/app/slice/SliceSpec;>;"
     if-eqz p0, :cond_0
 
-    .line 86
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -455,28 +412,21 @@
 
     check-cast v2, Landroidx/slice/SliceSpec;
 
-    .line 87
-    .local v2, "spec":Landroidx/slice/SliceSpec;
     invoke-static {v2}, Landroidx/slice/SliceConvert;->unwrap(Landroidx/slice/SliceSpec;)Landroid/app/slice/SliceSpec;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 88
-    .end local v2    # "spec":Landroidx/slice/SliceSpec;
     goto :goto_0
 
-    .line 90
     :cond_0
     return-object v0
 .end method
 
 .method public static wrap(Landroid/app/slice/Slice;)Landroidx/slice/Slice;
     .locals 7
-    .param p0, "slice"    # Landroid/app/slice/Slice;
 
-    .line 97
     if-eqz p0, :cond_3
 
     invoke-virtual {p0}, Landroid/app/slice/Slice;->getUri()Landroid/net/Uri;
@@ -487,26 +437,21 @@
 
     goto/16 :goto_3
 
-    .line 98
     :cond_0
     new-instance v0, Landroidx/slice/Slice$Builder;
 
-    .line 99
     invoke-virtual {p0}, Landroid/app/slice/Slice;->getUri()Landroid/net/Uri;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Landroidx/slice/Slice$Builder;-><init>(Landroid/net/Uri;)V
 
-    .line 100
-    .local v0, "builder":Landroidx/slice/Slice$Builder;
     invoke-virtual {p0}, Landroid/app/slice/Slice;->getHints()Ljava/util/List;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/slice/Slice$Builder;->addHints(Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .line 101
     invoke-virtual {p0}, Landroid/app/slice/Slice;->getSpec()Landroid/app/slice/SliceSpec;
 
     move-result-object v1
@@ -517,7 +462,6 @@
 
     invoke-virtual {v0, v1}, Landroidx/slice/Slice$Builder;->setSpec(Landroidx/slice/SliceSpec;)Landroidx/slice/Slice$Builder;
 
-    .line 102
     invoke-virtual {p0}, Landroid/app/slice/Slice;->getItems()Ljava/util/List;
 
     move-result-object v1
@@ -539,8 +483,6 @@
 
     check-cast v2, Landroid/app/slice/SliceItem;
 
-    .line 103
-    .local v2, "item":Landroid/app/slice/SliceItem;
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getFormat()Ljava/lang/String;
 
     move-result-object v3
@@ -648,11 +590,8 @@
     :goto_1
     packed-switch v4, :pswitch_data_0
 
-    .end local v2    # "item":Landroid/app/slice/SliceItem;
     goto/16 :goto_2
 
-    .line 125
-    .restart local v2    # "item":Landroid/app/slice/SliceItem;
     :pswitch_0
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getLong()J
 
@@ -668,11 +607,8 @@
 
     invoke-virtual {v0, v3, v4, v5, v6}, Landroidx/slice/Slice$Builder;->addLong(JLjava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .end local v2    # "item":Landroid/app/slice/SliceItem;
     goto :goto_2
 
-    .line 122
-    .restart local v2    # "item":Landroid/app/slice/SliceItem;
     :pswitch_1
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getInt()I
 
@@ -688,10 +624,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .line 123
     goto :goto_2
 
-    .line 119
     :pswitch_2
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getText()Ljava/lang/CharSequence;
 
@@ -707,10 +641,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroidx/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .line 120
     goto :goto_2
 
-    .line 116
     :pswitch_3
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getAction()Landroid/app/PendingIntent;
 
@@ -730,10 +662,8 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroidx/slice/Slice$Builder;->addAction(Landroid/app/PendingIntent;Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 117
     goto :goto_2
 
-    .line 112
     :pswitch_4
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getRemoteInput()Landroid/app/RemoteInput;
 
@@ -743,18 +673,14 @@
 
     move-result-object v4
 
-    .line 113
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getHints()Ljava/util/List;
 
     move-result-object v5
 
-    .line 112
     invoke-virtual {v0, v3, v4, v5}, Landroidx/slice/Slice$Builder;->addRemoteInput(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .line 114
     goto :goto_2
 
-    .line 108
     :pswitch_5
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getIcon()Landroid/graphics/drawable/Icon;
 
@@ -764,7 +690,6 @@
 
     move-result-object v3
 
-    .line 109
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getSubType()Ljava/lang/String;
 
     move-result-object v4
@@ -773,13 +698,10 @@
 
     move-result-object v5
 
-    .line 108
     invoke-virtual {v0, v3, v4, v5}, Landroidx/slice/Slice$Builder;->addIcon(Landroid/support/v4/graphics/drawable/IconCompat;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
 
-    .line 110
     goto :goto_2
 
-    .line 105
     :pswitch_6
     invoke-virtual {v2}, Landroid/app/slice/SliceItem;->getSlice()Landroid/app/slice/Slice;
 
@@ -795,15 +717,11 @@
 
     invoke-virtual {v0, v3, v4}, Landroidx/slice/Slice$Builder;->addSubSlice(Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 106
     nop
 
-    .line 128
-    .end local v2    # "item":Landroid/app/slice/SliceItem;
     :goto_2
     goto/16 :goto_0
 
-    .line 129
     :cond_2
     invoke-virtual {v0}, Landroidx/slice/Slice$Builder;->build()Landroidx/slice/Slice;
 
@@ -811,8 +729,6 @@
 
     return-object v1
 
-    .line 97
-    .end local v0    # "builder":Landroidx/slice/Slice$Builder;
     :cond_3
     :goto_3
     const/4 v0, 0x0
@@ -846,16 +762,13 @@
 
 .method private static wrap(Landroid/app/slice/SliceSpec;)Landroidx/slice/SliceSpec;
     .locals 3
-    .param p0, "spec"    # Landroid/app/slice/SliceSpec;
 
-    .line 133
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 134
     :cond_0
     new-instance v0, Landroidx/slice/SliceSpec;
 
@@ -892,17 +805,12 @@
         }
     .end annotation
 
-    .line 143
-    .local p0, "supportedSpecs":Ljava/util/Set;, "Ljava/util/Set<Landroid/app/slice/SliceSpec;>;"
     new-instance v0, Landroid/support/v4/util/ArraySet;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArraySet;-><init>()V
 
-    .line 144
-    .local v0, "ret":Ljava/util/Set;, "Ljava/util/Set<Landroidx/slice/SliceSpec;>;"
     if-eqz p0, :cond_0
 
-    .line 145
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -920,19 +828,14 @@
 
     check-cast v2, Landroid/app/slice/SliceSpec;
 
-    .line 146
-    .local v2, "spec":Landroid/app/slice/SliceSpec;
     invoke-static {v2}, Landroidx/slice/SliceConvert;->wrap(Landroid/app/slice/SliceSpec;)Landroidx/slice/SliceSpec;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 147
-    .end local v2    # "spec":Landroid/app/slice/SliceSpec;
     goto :goto_0
 
-    .line 149
     :cond_0
     return-object v0
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;)V
     .locals 0
-    .param p1, "this$2"    # Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;
 
-    .line 957
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1$1;->this$2:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 960
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1$1;->this$2:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$1;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
@@ -62,6 +59,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onDisconnected(Landroid/support/v4/media/MediaController2;)V
 
-    .line 961
     return-void
 .end method

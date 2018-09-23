@@ -23,7 +23,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 31
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.slice.BASIC"
@@ -34,7 +33,6 @@
 
     sput-object v0, Landroidx/slice/SliceSpecs;->BASIC:Landroidx/slice/SliceSpec;
 
-    .line 37
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.slice.LIST"
@@ -43,7 +41,6 @@
 
     sput-object v0, Landroidx/slice/SliceSpecs;->LIST:Landroidx/slice/SliceSpec;
 
-    .line 43
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.slice.MESSAGING"
@@ -58,9 +55,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
     return-void
 .end method

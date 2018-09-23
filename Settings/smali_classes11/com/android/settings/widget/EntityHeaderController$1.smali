@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/EntityHeaderController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/EntityHeaderController;
 
-    .line 292
     iput-object p1, p0, Lcom/android/settings/widget/EntityHeaderController$1;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +36,11 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 7
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 295
     const-class v0, Lcom/android/settings/applications/appinfo/AppInfoDashboardFragment;
 
     iget-object v1, p0, Lcom/android/settings/widget/EntityHeaderController$1;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
-    .line 297
     invoke-static {v1}, Lcom/android/settings/widget/EntityHeaderController;->access$000(Lcom/android/settings/widget/EntityHeaderController;)Ljava/lang/String;
 
     move-result-object v2
@@ -64,18 +59,15 @@
 
     iget-object v1, p0, Lcom/android/settings/widget/EntityHeaderController$1;->this$0:Lcom/android/settings/widget/EntityHeaderController;
 
-    .line 298
     invoke-static {v1}, Lcom/android/settings/widget/EntityHeaderController;->access$300(Lcom/android/settings/widget/EntityHeaderController;)I
 
     move-result v6
 
-    .line 295
     const v1, 0x7f12017e
 
     const/4 v5, 0x0
 
     invoke-static/range {v0 .. v6}, Lcom/android/settings/applications/AppInfoBase;->startAppInfoFragment(Ljava/lang/Class;ILjava/lang/String;ILandroid/app/Fragment;II)V
 
-    .line 299
     return-void
 .end method

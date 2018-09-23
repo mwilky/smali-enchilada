@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/reflect/TypeResolver$TypeTable;Ljava/lang/reflect/TypeVariable;Lcom/google/common/reflect/TypeResolver$TypeTable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/reflect/TypeResolver$TypeTable;
 
-    .line 240
     iput-object p1, p0, Lcom/google/common/reflect/TypeResolver$TypeTable$1;->this$0:Lcom/google/common/reflect/TypeResolver$TypeTable;
 
     iput-object p2, p0, Lcom/google/common/reflect/TypeResolver$TypeTable$1;->val$var:Ljava/lang/reflect/TypeVariable;
@@ -43,7 +41,6 @@
 # virtual methods
 .method public resolveInternal(Ljava/lang/reflect/TypeVariable;Lcom/google/common/reflect/TypeResolver$TypeTable;)Ljava/lang/reflect/Type;
     .locals 2
-    .param p2, "forDependent"    # Lcom/google/common/reflect/TypeResolver$TypeTable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,8 +52,6 @@
         }
     .end annotation
 
-    .line 243
-    .local p1, "intermediateVar":Ljava/lang/reflect/TypeVariable;, "Ljava/lang/reflect/TypeVariable<*>;"
     invoke-interface {p1}, Ljava/lang/reflect/TypeVariable;->getGenericDeclaration()Ljava/lang/reflect/GenericDeclaration;
 
     move-result-object v0
@@ -73,10 +68,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 244
     return-object p1
 
-    .line 246
     :cond_0
     iget-object v0, p0, Lcom/google/common/reflect/TypeResolver$TypeTable$1;->val$unguarded:Lcom/google/common/reflect/TypeResolver$TypeTable;
 

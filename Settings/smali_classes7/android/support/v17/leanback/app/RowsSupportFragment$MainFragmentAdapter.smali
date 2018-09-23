@@ -25,17 +25,13 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v17/leanback/app/RowsSupportFragment;)V
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v17/leanback/app/RowsSupportFragment;
 
-    .line 590
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/app/BrowseSupportFragment$MainFragmentAdapter;-><init>(Landroid/support/v4/app/Fragment;)V
 
-    .line 591
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->setScalingEnabled(Z)V
 
-    .line 592
     return-void
 .end method
 
@@ -44,7 +40,6 @@
 .method public isScrolling()Z
     .locals 1
 
-    .line 596
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -61,7 +56,6 @@
 .method public onTransitionEnd()V
     .locals 1
 
-    .line 626
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -70,14 +64,12 @@
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/RowsSupportFragment;->onTransitionEnd()V
 
-    .line 627
     return-void
 .end method
 
 .method public onTransitionPrepare()Z
     .locals 1
 
-    .line 616
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -94,7 +86,6 @@
 .method public onTransitionStart()V
     .locals 1
 
-    .line 621
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -103,15 +94,12 @@
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/RowsSupportFragment;->onTransitionStart()V
 
-    .line 622
     return-void
 .end method
 
 .method public setAlignment(I)V
     .locals 1
-    .param p1, "windowAlignOffsetFromTop"    # I
 
-    .line 611
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -120,15 +108,12 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setAlignment(I)V
 
-    .line 612
     return-void
 .end method
 
 .method public setEntranceTransitionState(Z)V
     .locals 1
-    .param p1, "state"    # Z
 
-    .line 606
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -137,15 +122,12 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setEntranceTransitionState(Z)V
 
-    .line 607
     return-void
 .end method
 
 .method public setExpand(Z)V
     .locals 1
-    .param p1, "expand"    # Z
 
-    .line 601
     invoke-virtual {p0}, Landroid/support/v17/leanback/app/RowsSupportFragment$MainFragmentAdapter;->getFragment()Landroid/support/v4/app/Fragment;
 
     move-result-object v0
@@ -154,6 +136,5 @@
 
     invoke-virtual {v0, p1}, Landroid/support/v17/leanback/app/RowsSupportFragment;->setExpand(Z)V
 
-    .line 602
     return-void
 .end method

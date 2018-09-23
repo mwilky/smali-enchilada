@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;
 
-    .line 402
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity$3;->this$0:Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,11 @@
 .method public run()V
     .locals 3
 
-    .line 406
     iget-object v0, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity$3;->this$0:Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;
 
     iget-object v1, p0, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity$3;->this$0:Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;
 
-    const v2, 0x7f120b03
+    const v2, 0x7f120b00
 
     invoke-virtual {v1, v2}, Lcom/oneplus/settings/ringtone/OPLocalRingtonePickerActivity;->getString(I)Ljava/lang/String;
 
@@ -56,9 +53,7 @@
 
     move-result-object v0
 
-    .line 407
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 408
     return-void
 .end method

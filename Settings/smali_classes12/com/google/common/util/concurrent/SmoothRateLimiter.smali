@@ -25,26 +25,19 @@
 # direct methods
 .method private constructor <init>(Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;)V
     .locals 2
-    .param p1, "stopwatch"    # Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;
 
-    .line 333
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/RateLimiter;-><init>(Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;)V
 
-    .line 330
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
-    .line 334
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;Lcom/google/common/util/concurrent/SmoothRateLimiter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;
-    .param p2, "x1"    # Lcom/google/common/util/concurrent/SmoothRateLimiter$1;
 
-    .line 24
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/SmoothRateLimiter;-><init>(Lcom/google/common/util/concurrent/RateLimiter$SleepingStopwatch;)V
 
     return-void
@@ -52,16 +45,13 @@
 
 .method private resync(J)V
     .locals 8
-    .param p1, "nowMicros"    # J
 
-    .line 383
     iget-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
     cmp-long v0, p1, v0
 
     if-lez v0, :cond_0
 
-    .line 384
     iget-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->maxPermits:D
 
     iget-wide v2, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
@@ -84,10 +74,8 @@
 
     iput-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
 
-    .line 386
     iput-wide p1, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
-    .line 388
     :cond_0
     return-void
 .end method
@@ -97,7 +85,6 @@
 .method final doGetRate()D
     .locals 4
 
-    .line 348
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1
@@ -120,13 +107,9 @@
 
 .method final doSetRate(DJ)V
     .locals 3
-    .param p1, "permitsPerSecond"    # D
-    .param p3, "nowMicros"    # J
 
-    .line 338
     invoke-direct {p0, p3, p4}, Lcom/google/common/util/concurrent/SmoothRateLimiter;->resync(J)V
 
-    .line 339
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1
@@ -139,22 +122,16 @@
 
     div-double/2addr v0, p1
 
-    .line 340
-    .local v0, "stableIntervalMicros":D
     iput-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->stableIntervalMicros:D
 
-    .line 341
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/google/common/util/concurrent/SmoothRateLimiter;->doSetRate(DD)V
 
-    .line 342
     return-void
 .end method
 
 .method final queryEarliestAvailable(J)J
     .locals 2
-    .param p1, "nowMicros"    # J
 
-    .line 353
     iget-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
     return-wide v0
@@ -162,17 +139,11 @@
 
 .method final reserveEarliestAvailable(IJ)J
     .locals 10
-    .param p1, "requiredPermits"    # I
-    .param p2, "nowMicros"    # J
 
-    .line 358
     invoke-direct {p0, p2, p3}, Lcom/google/common/util/concurrent/SmoothRateLimiter;->resync(J)V
 
-    .line 359
     iget-wide v0, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
-    .line 360
-    .local v0, "returnValue":J
     int-to-double v2, p1
 
     iget-wide v4, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
@@ -181,14 +152,10 @@
 
     move-result-wide v2
 
-    .line 361
-    .local v2, "storedPermitsToSpend":D
     int-to-double v4, p1
 
     sub-double/2addr v4, v2
 
-    .line 363
-    .local v4, "freshPermits":D
     iget-wide v6, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
 
     invoke-virtual {p0, v6, v7, v2, v3}, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermitsToWaitTime(DD)J
@@ -203,22 +170,18 @@
 
     add-long/2addr v6, v8
 
-    .line 366
-    .local v6, "waitMicros":J
     iget-wide v8, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
     add-long/2addr v8, v6
 
     iput-wide v8, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->nextFreeTicketMicros:J
 
-    .line 367
     iget-wide v8, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
 
     sub-double/2addr v8, v2
 
     iput-wide v8, p0, Lcom/google/common/util/concurrent/SmoothRateLimiter;->storedPermits:D
 
-    .line 368
     return-wide v0
 .end method
 

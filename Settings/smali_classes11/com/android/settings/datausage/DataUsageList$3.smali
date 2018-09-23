@@ -31,9 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/DataUsageList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/DataUsageList;
 
-    .line 228
     iput-object p1, p0, Lcom/android/settings/datausage/DataUsageList$3;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -46,7 +44,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 228
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/datausage/DataUsageList$3;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -58,15 +55,12 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 2
-    .param p1, "params"    # [Ljava/lang/Void;
 
-    .line 233
     const-wide/16 v0, 0x7d0
 
     :try_start_0
     invoke-static {v0, v1}, Ljava/lang/Thread;->sleep(J)V
 
-    .line 234
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$3;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     iget-object v0, v0, Lcom/android/settings/datausage/DataUsageList;->services:Lcom/android/settings/datausage/TemplatePreference$NetworkServices;
@@ -80,21 +74,17 @@
 
     goto :goto_0
 
-    .line 236
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 235
     :catch_1
     move-exception v0
 
-    .line 237
     :goto_0
     nop
 
-    .line 238
     :goto_1
     const/4 v0, 0x0
 
@@ -104,7 +94,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 228
     check-cast p1, Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/datausage/DataUsageList$3;->onPostExecute(Ljava/lang/Void;)V
@@ -114,9 +103,7 @@
 
 .method protected onPostExecute(Ljava/lang/Void;)V
     .locals 1
-    .param p1, "result"    # Ljava/lang/Void;
 
-    .line 243
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$3;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-virtual {v0}, Lcom/android/settings/datausage/DataUsageList;->isAdded()Z
@@ -125,12 +112,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 244
     iget-object v0, p0, Lcom/android/settings/datausage/DataUsageList$3;->this$0:Lcom/android/settings/datausage/DataUsageList;
 
     invoke-static {v0}, Lcom/android/settings/datausage/DataUsageList;->access$200(Lcom/android/settings/datausage/DataUsageList;)V
 
-    .line 246
     :cond_0
     return-void
 .end method

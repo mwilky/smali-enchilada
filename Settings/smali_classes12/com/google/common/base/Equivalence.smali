@@ -30,8 +30,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 44
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +46,6 @@
         }
     .end annotation
 
-    .line 306
     sget-object v0, Lcom/google/common/base/Equivalence$Equals;->INSTANCE:Lcom/google/common/base/Equivalence$Equals;
 
     return-object v0
@@ -65,7 +62,6 @@
         }
     .end annotation
 
-    .line 318
     sget-object v0, Lcom/google/common/base/Equivalence$Identity;->INSTANCE:Lcom/google/common/base/Equivalence$Identity;
 
     return-object v0
@@ -105,18 +101,12 @@
         }
     .end annotation
 
-    .line 65
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
-    .local p1, "a":Ljava/lang/Object;, "TT;"
-    .local p2, "b":Ljava/lang/Object;, "TT;"
     if-ne p1, p2, :cond_0
 
-    .line 66
     const/4 v0, 0x1
 
     return v0
 
-    .line 68
     :cond_0
     if-eqz p1, :cond_2
 
@@ -124,7 +114,6 @@
 
     goto :goto_0
 
-    .line 71
     :cond_1
     invoke-virtual {p0, p1, p2}, Lcom/google/common/base/Equivalence;->doEquivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -132,7 +121,6 @@
 
     return v0
 
-    .line 69
     :cond_2
     :goto_0
     const/4 v0, 0x0
@@ -157,9 +145,6 @@
         }
     .end annotation
 
-    .line 255
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
-    .local p1, "target":Ljava/lang/Object;, "TT;"
     new-instance v0, Lcom/google/common/base/Equivalence$EquivalentToPredicate;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/base/Equivalence$EquivalentToPredicate;-><init>(Lcom/google/common/base/Equivalence;Ljava/lang/Object;)V
@@ -179,17 +164,12 @@
         }
     .end annotation
 
-    .line 101
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
     if-nez p1, :cond_0
 
-    .line 102
     const/4 v0, 0x0
 
     return v0
 
-    .line 104
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/common/base/Equivalence;->doHash(Ljava/lang/Object;)I
 
@@ -212,9 +192,6 @@
         }
     .end annotation
 
-    .line 140
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<TF;+TT;>;"
     new-instance v0, Lcom/google/common/base/FunctionalEquivalence;
 
     invoke-direct {v0, p1, p0}, Lcom/google/common/base/FunctionalEquivalence;-><init>(Lcom/google/common/base/Function;Lcom/google/common/base/Equivalence;)V
@@ -237,8 +214,6 @@
         }
     .end annotation
 
-    .line 244
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
     new-instance v0, Lcom/google/common/base/PairwiseEquivalence;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/PairwiseEquivalence;-><init>(Lcom/google/common/base/Equivalence;)V
@@ -260,9 +235,6 @@
         }
     .end annotation
 
-    .line 151
-    .local p0, "this":Lcom/google/common/base/Equivalence;, "Lcom/google/common/base/Equivalence<TT;>;"
-    .local p1, "reference":Ljava/lang/Object;, "TS;"
     new-instance v0, Lcom/google/common/base/Equivalence$Wrapper;
 
     const/4 v1, 0x0

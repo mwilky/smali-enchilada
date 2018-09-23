@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 120
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "NORMAL"
@@ -55,7 +54,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->NORMAL:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 121
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "POWER"
@@ -66,7 +64,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->POWER:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 122
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "POWER_HOME"
@@ -77,7 +74,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->POWER_HOME:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 123
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "HOME"
@@ -88,7 +84,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->HOME:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 124
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "FOOT"
@@ -99,7 +94,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->FOOT:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 125
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "BACK_SWITCH"
@@ -110,7 +104,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->BACK_SWITCH:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 126
     new-instance v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     const-string v1, "BASE"
@@ -121,7 +114,6 @@
 
     sput-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->BASE:Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
-    .line 119
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
@@ -167,7 +159,6 @@
         }
     .end annotation
 
-    .line 119
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -175,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 119
     const-class v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -192,7 +181,6 @@
 .method public static values()[Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
     .locals 1
 
-    .line 119
     sget-object v0, Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->$VALUES:[Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;
 
     invoke-virtual {v0}, [Lcom/oneplus/settings/OPButtonsSettings$KeyLockMode;->clone()Ljava/lang/Object;

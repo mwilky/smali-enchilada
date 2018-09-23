@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 210
     invoke-direct {p0}, Lcom/android/settings/search/BaseSearchIndexProvider;-><init>()V
 
     return-void
@@ -28,7 +27,6 @@
 # virtual methods
 .method public createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +38,6 @@
         }
     .end annotation
 
-    .line 222
     const/4 v0, 0x0
 
     invoke-static {p1, v0, v0, v0}, Lcom/android/settings/notification/ConfigureNotificationSettings;->access$000(Landroid/content/Context;Lcom/android/settingslib/core/lifecycle/Lifecycle;Landroid/app/Application;Landroid/app/Fragment;)Ljava/util/List;
@@ -52,7 +49,6 @@
 
 .method public getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,45 +60,35 @@
         }
     .end annotation
 
-    .line 227
     invoke-super {p0, p1}, Lcom/android/settings/search/BaseSearchIndexProvider;->getNonIndexableKeys(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 228
-    .local v0, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const-string v1, "gesture_swipe_down_fingerprint_notifications"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 229
     const-string v1, "lock_screen_notifications"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 230
     const-string v1, "lock_screen_notifications_profile"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 231
     const-string v1, "lock_screen_notifications_profile_header"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 232
     const-string v1, "zen_mode_notifications"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 233
     return-object v0
 .end method
 
 .method public getXmlResourcesToIndex(Landroid/content/Context;Z)Ljava/util/List;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,18 +100,14 @@
         }
     .end annotation
 
-    .line 214
     new-instance v0, Landroid/provider/SearchIndexableResource;
 
     invoke-direct {v0, p1}, Landroid/provider/SearchIndexableResource;-><init>(Landroid/content/Context;)V
 
-    .line 215
-    .local v0, "sir":Landroid/provider/SearchIndexableResource;
     const v1, 0x7f16002f
 
     iput v1, v0, Landroid/provider/SearchIndexableResource;->xmlResId:I
 
-    .line 216
     const/4 v1, 0x1
 
     new-array v1, v1, [Landroid/provider/SearchIndexableResource;

@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 33
     new-instance v0, Lcom/airbnb/lottie/model/ScaleXY$Factory;
 
     invoke-direct {v0}, Lcom/airbnb/lottie/model/ScaleXY$Factory;-><init>()V
@@ -47,10 +46,8 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
     return-void
 .end method
 
@@ -58,19 +55,13 @@
 # virtual methods
 .method public valueFromObject(Ljava/lang/Object;F)Lcom/airbnb/lottie/model/ScaleXY;
     .locals 7
-    .param p1, "object"    # Ljava/lang/Object;
-    .param p2, "scale"    # F
 
-    .line 39
     move-object v0, p1
 
     check-cast v0, Lorg/json/JSONArray;
 
-    .line 40
-    .local v0, "array":Lorg/json/JSONArray;
     new-instance v1, Lcom/airbnb/lottie/model/ScaleXY;
 
-    .line 41
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     const/4 v4, 0x0
@@ -87,7 +78,6 @@
 
     mul-float/2addr v4, p2
 
-    .line 42
     const/4 v6, 0x1
 
     invoke-virtual {v0, v6, v2, v3}, Lorg/json/JSONArray;->optDouble(ID)D
@@ -102,14 +92,12 @@
 
     invoke-direct {v1, v4, v2}, Lcom/airbnb/lottie/model/ScaleXY;-><init>(FF)V
 
-    .line 40
     return-object v1
 .end method
 
 .method public bridge synthetic valueFromObject(Ljava/lang/Object;F)Ljava/lang/Object;
     .locals 0
 
-    .line 32
     invoke-virtual {p0, p1, p2}, Lcom/airbnb/lottie/model/ScaleXY$Factory;->valueFromObject(Ljava/lang/Object;F)Lcom/airbnb/lottie/model/ScaleXY;
 
     move-result-object p1

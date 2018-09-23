@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 21
     new-instance v0, Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     const-string v1, "VERBOSE"
@@ -79,7 +78,6 @@
 
     sput-object v0, Lcom/google/analytics/tracking/android/Logger$LogLevel;->ERROR:Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
-    .line 20
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/analytics/tracking/android/Logger$LogLevel;
@@ -113,7 +111,6 @@
         }
     .end annotation
 
-    .line 20
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -121,9 +118,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/analytics/tracking/android/Logger$LogLevel;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 20
     const-class v0, Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -138,7 +133,6 @@
 .method public static values()[Lcom/google/analytics/tracking/android/Logger$LogLevel;
     .locals 1
 
-    .line 20
     sget-object v0, Lcom/google/analytics/tracking/android/Logger$LogLevel;->$VALUES:[Lcom/google/analytics/tracking/android/Logger$LogLevel;
 
     invoke-virtual {v0}, [Lcom/google/analytics/tracking/android/Logger$LogLevel;->clone()Ljava/lang/Object;

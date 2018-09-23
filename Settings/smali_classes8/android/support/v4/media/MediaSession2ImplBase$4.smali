@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaSession2ImplBase;Landroid/support/v4/media/SessionCommandGroup2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaSession2ImplBase;
 
-    .line 348
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2ImplBase$4;->this$0:Landroid/support/v4/media/MediaSession2ImplBase;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaSession2ImplBase$4;->val$commands:Landroid/support/v4/media/SessionCommandGroup2;
@@ -42,18 +40,15 @@
 # virtual methods
 .method public run(Landroid/support/v4/media/MediaSession2$ControllerCb;)V
     .locals 1
-    .param p1, "callback"    # Landroid/support/v4/media/MediaSession2$ControllerCb;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 351
     iget-object v0, p0, Landroid/support/v4/media/MediaSession2ImplBase$4;->val$commands:Landroid/support/v4/media/SessionCommandGroup2;
 
     invoke-virtual {p1, v0}, Landroid/support/v4/media/MediaSession2$ControllerCb;->onAllowedCommandsChanged(Landroid/support/v4/media/SessionCommandGroup2;)V
 
-    .line 352
     return-void
 .end method

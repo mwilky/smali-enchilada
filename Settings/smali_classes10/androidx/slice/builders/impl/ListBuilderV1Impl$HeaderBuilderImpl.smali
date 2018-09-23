@@ -32,12 +32,11 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
     .locals 2
-    .param p1, "uri"    # Landroid/net/Uri;
+    .param p1    # Landroid/net/Uri;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 633
     new-instance v0, Landroidx/slice/Slice$Builder;
 
     invoke-direct {v0, p1}, Landroidx/slice/Slice$Builder;-><init>(Landroid/net/Uri;)V
@@ -46,18 +45,16 @@
 
     invoke-direct {p0, v0, v1}, Landroidx/slice/builders/impl/TemplateBuilderImpl;-><init>(Landroidx/slice/Slice$Builder;Landroidx/slice/SliceSpec;)V
 
-    .line 634
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/slice/builders/impl/ListBuilderV1Impl;)V
     .locals 2
-    .param p1, "parent"    # Landroidx/slice/builders/impl/ListBuilderV1Impl;
+    .param p1    # Landroidx/slice/builders/impl/ListBuilderV1Impl;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 627
     invoke-virtual {p1}, Landroidx/slice/builders/impl/ListBuilderV1Impl;->createChildBuilder()Landroidx/slice/Slice$Builder;
 
     move-result-object v0
@@ -66,7 +63,6 @@
 
     invoke-direct {p0, v0, v1}, Landroidx/slice/builders/impl/TemplateBuilderImpl;-><init>(Landroidx/slice/Slice$Builder;Landroidx/slice/SliceSpec;)V
 
-    .line 628
     return-void
 .end method
 
@@ -74,47 +70,38 @@
 # virtual methods
 .method public apply(Landroidx/slice/Slice$Builder;)V
     .locals 3
-    .param p1, "b"    # Landroidx/slice/Slice$Builder;
 
-    .line 640
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mTitleItem:Landroidx/slice/SliceItem;
 
     if-eqz v0, :cond_0
 
-    .line 641
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mTitleItem:Landroidx/slice/SliceItem;
 
     invoke-virtual {p1, v0}, Landroidx/slice/Slice$Builder;->addItem(Landroidx/slice/SliceItem;)Landroidx/slice/Slice$Builder;
 
-    .line 643
     :cond_0
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSubtitleItem:Landroidx/slice/SliceItem;
 
     if-eqz v0, :cond_1
 
-    .line 644
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSubtitleItem:Landroidx/slice/SliceItem;
 
     invoke-virtual {p1, v0}, Landroidx/slice/Slice$Builder;->addItem(Landroidx/slice/SliceItem;)Landroidx/slice/Slice$Builder;
 
-    .line 646
     :cond_1
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSummaryItem:Landroidx/slice/SliceItem;
 
     if-eqz v0, :cond_2
 
-    .line 647
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSummaryItem:Landroidx/slice/SliceItem;
 
     invoke-virtual {p1, v0}, Landroidx/slice/Slice$Builder;->addItem(Landroidx/slice/SliceItem;)Landroidx/slice/Slice$Builder;
 
-    .line 649
     :cond_2
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_3
 
-    .line 650
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
     const-string v1, "content_description"
@@ -125,16 +112,13 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroidx/slice/Slice$Builder;->addText(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 652
     :cond_3
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
     if-eqz v0, :cond_4
 
-    .line 653
     new-instance v0, Landroidx/slice/Slice$Builder;
 
-    .line 654
     invoke-virtual {p0}, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->getBuilder()Landroidx/slice/Slice$Builder;
 
     move-result-object v1
@@ -153,8 +137,6 @@
 
     move-result-object v0
 
-    .line 655
-    .local v0, "sb":Landroidx/slice/Slice$Builder;
     iget-object v1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
     invoke-virtual {v1, v0}, Landroidx/slice/builders/SliceAction;->buildSlice(Landroidx/slice/Slice$Builder;)Landroidx/slice/Slice;
@@ -165,28 +147,21 @@
 
     invoke-virtual {p1, v1, v2}, Landroidx/slice/Slice$Builder;->addSubSlice(Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 657
-    .end local v0    # "sb":Landroidx/slice/Slice$Builder;
     :cond_4
     return-void
 .end method
 
 .method public setContentDescription(Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "description"    # Ljava/lang/CharSequence;
 
-    .line 701
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mContentDescr:Ljava/lang/CharSequence;
 
-    .line 702
     return-void
 .end method
 
 .method public setLayoutDirection(I)V
     .locals 3
-    .param p1, "layoutDirection"    # I
 
-    .line 706
     invoke-virtual {p0}, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->getBuilder()Landroidx/slice/Slice$Builder;
 
     move-result-object v0
@@ -199,27 +174,20 @@
 
     invoke-virtual {v0, p1, v1, v2}, Landroidx/slice/Slice$Builder;->addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
 
-    .line 707
     return-void
 .end method
 
 .method public setPrimaryAction(Landroidx/slice/builders/SliceAction;)V
     .locals 0
-    .param p1, "action"    # Landroidx/slice/builders/SliceAction;
 
-    .line 694
     iput-object p1, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mPrimaryAction:Landroidx/slice/builders/SliceAction;
 
-    .line 695
     return-void
 .end method
 
 .method public setSubtitle(Ljava/lang/CharSequence;Z)V
     .locals 4
-    .param p1, "subtitle"    # Ljava/lang/CharSequence;
-    .param p2, "isLoading"    # Z
 
-    .line 673
     new-instance v0, Landroidx/slice/SliceItem;
 
     const-string v1, "text"
@@ -234,27 +202,21 @@
 
     iput-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSubtitleItem:Landroidx/slice/SliceItem;
 
-    .line 674
     if-eqz p2, :cond_0
 
-    .line 675
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSubtitleItem:Landroidx/slice/SliceItem;
 
     const-string v1, "partial"
 
     invoke-virtual {v0, v1}, Landroidx/slice/SliceItem;->addHint(Ljava/lang/String;)V
 
-    .line 677
     :cond_0
     return-void
 .end method
 
 .method public setSummary(Ljava/lang/CharSequence;Z)V
     .locals 4
-    .param p1, "summarySubtitle"    # Ljava/lang/CharSequence;
-    .param p2, "isLoading"    # Z
 
-    .line 683
     new-instance v0, Landroidx/slice/SliceItem;
 
     const-string v1, "text"
@@ -271,27 +233,21 @@
 
     iput-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSummaryItem:Landroidx/slice/SliceItem;
 
-    .line 685
     if-eqz p2, :cond_0
 
-    .line 686
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mSummaryItem:Landroidx/slice/SliceItem;
 
     const-string v1, "partial"
 
     invoke-virtual {v0, v1}, Landroidx/slice/SliceItem;->addHint(Ljava/lang/String;)V
 
-    .line 688
     :cond_0
     return-void
 .end method
 
 .method public setTitle(Ljava/lang/CharSequence;Z)V
     .locals 4
-    .param p1, "title"    # Ljava/lang/CharSequence;
-    .param p2, "isLoading"    # Z
 
-    .line 663
     new-instance v0, Landroidx/slice/SliceItem;
 
     const-string v1, "text"
@@ -308,17 +264,14 @@
 
     iput-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mTitleItem:Landroidx/slice/SliceItem;
 
-    .line 664
     if-eqz p2, :cond_0
 
-    .line 665
     iget-object v0, p0, Landroidx/slice/builders/impl/ListBuilderV1Impl$HeaderBuilderImpl;->mTitleItem:Landroidx/slice/SliceItem;
 
     const-string v1, "partial"
 
     invoke-virtual {v0, v1}, Landroidx/slice/SliceItem;->addHint(Ljava/lang/String;)V
 
-    .line 667
     :cond_0
     return-void
 .end method

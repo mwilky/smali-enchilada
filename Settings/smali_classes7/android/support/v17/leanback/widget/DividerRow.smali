@@ -7,10 +7,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/Row;-><init>()V
 
-    .line 22
     return-void
 .end method
 
@@ -19,7 +17,6 @@
 .method public final isRenderedAsRowView()Z
     .locals 1
 
-    .line 26
     const/4 v0, 0x0
 
     return v0

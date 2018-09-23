@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;I)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
-    .line 240
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;->this$2:Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
     iput p2, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;->val$index:I
@@ -53,8 +50,6 @@
         }
     .end annotation
 
-    .line 243
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;->this$2:Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;->this$1:Lcom/google/common/collect/ArrayTable$ArrayMap$1;
@@ -78,8 +73,6 @@
         }
     .end annotation
 
-    .line 248
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;->this$2:Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;->this$1:Lcom/google/common/collect/ArrayTable$ArrayMap$1;
@@ -103,9 +96,6 @@
         }
     .end annotation
 
-    .line 253
-    .local p0, "this":Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;, "Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;"
-    .local p1, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1$1;->this$2:Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$ArrayMap$1$1;->this$1:Lcom/google/common/collect/ArrayTable$ArrayMap$1;

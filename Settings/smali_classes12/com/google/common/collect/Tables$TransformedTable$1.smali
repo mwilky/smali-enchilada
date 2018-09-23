@@ -35,10 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Tables$TransformedTable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Tables$TransformedTable;
 
-    .line 390
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$1;, "Lcom/google/common/collect/Tables$TransformedTable$1;"
     iput-object p1, p0, Lcom/google/common/collect/Tables$TransformedTable$1;->this$0:Lcom/google/common/collect/Tables$TransformedTable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,12 +57,8 @@
         }
     .end annotation
 
-    .line 392
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$1;, "Lcom/google/common/collect/Tables$TransformedTable$1;"
-    .local p1, "cell":Lcom/google/common/collect/Table$Cell;, "Lcom/google/common/collect/Table$Cell<TR;TC;TV1;>;"
     nop
 
-    .line 393
     invoke-interface {p1}, Lcom/google/common/collect/Table$Cell;->getRowKey()Ljava/lang/Object;
 
     move-result-object v0
@@ -78,7 +71,6 @@
 
     iget-object v2, v2, Lcom/google/common/collect/Tables$TransformedTable;->function:Lcom/google/common/base/Function;
 
-    .line 394
     invoke-interface {p1}, Lcom/google/common/collect/Table$Cell;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -87,7 +79,6 @@
 
     move-result-object v2
 
-    .line 392
     invoke-static {v0, v1, v2}, Lcom/google/common/collect/Tables;->immutableCell(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/Table$Cell;
 
     move-result-object v0
@@ -98,8 +89,6 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 390
-    .local p0, "this":Lcom/google/common/collect/Tables$TransformedTable$1;, "Lcom/google/common/collect/Tables$TransformedTable$1;"
     check-cast p1, Lcom/google/common/collect/Table$Cell;
 
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Tables$TransformedTable$1;->apply(Lcom/google/common/collect/Table$Cell;)Lcom/google/common/collect/Table$Cell;

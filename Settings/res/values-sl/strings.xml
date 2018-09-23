@@ -2907,8 +2907,6 @@ Poteze lahko izklopite tako, da v nastavitvah omogočite vrstico za krmarjenje."
     <string name="oneplus_quick_clipboard_summary">Izboljšajte možnosti kopiranja in priporočila za naslednje dejanje po kopiranju</string>
     <string name="oneplus_quick_gestures">Poteze</string>
     <string name="oneplus_quick_gestures_title">Hitre poteze</string>
-    <string name="oneplus_quick_turn_on_assistant_app">Hitro aktiviranje aplikacije za pomoč</string>
-    <string name="oneplus_quick_turn_on_assistant_app_summary">Gumb za vklop držite pritisnjem 0,5 sekunde za aktivacijo aplikacije za pomoč in 3 sekunde za izklop</string>
     <string name="oneplus_quick_turn_on_camera">Hiter vklop kamere</string>
     <string name="oneplus_quickpay">Hitro plačilo</string>
     <string name="oneplus_quickpay_confirm_changehomebutton">Res želite spremeniti dejanje pri dolgem pridržanju gumba Domov iz »%1$s« v »Quick Pay«?</string>

@@ -28,7 +28,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1778
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$GradientElement;-><init>()V
 
     return-void

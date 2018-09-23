@@ -69,28 +69,22 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 66
     const-string v0, "\\p{InCombiningDiacriticalMarks}+"
 
-    .line 67
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     sput-object v0, Lcom/android/settings/search/indexing/IndexData;->REMOVE_DIACRITICALS_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 66
     return-void
 .end method
 
 .method private constructor <init>(Lcom/android/settings/search/indexing/IndexData$Builder;)V
     .locals 2
-    .param p1, "builder"    # Lcom/android/settings/search/indexing/IndexData$Builder;
 
-    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 70
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
@@ -101,7 +95,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->locale:Ljava/lang/String;
 
-    .line 71
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$000(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -112,7 +105,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->updatedTitle:Ljava/lang/String;
 
-    .line 72
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$100(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -123,7 +115,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->updatedSummaryOn:Ljava/lang/String;
 
-    .line 73
     sget-object v0, Ljava/util/Locale;->JAPAN:Ljava/util/Locale;
 
     invoke-virtual {v0}, Ljava/util/Locale;->toString()Ljava/lang/String;
@@ -138,7 +129,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 75
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$000(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -149,7 +139,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->normalizedTitle:Ljava/lang/String;
 
-    .line 76
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$100(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -162,7 +151,6 @@
 
     goto :goto_0
 
-    .line 78
     :cond_0
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$000(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
@@ -174,7 +162,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->normalizedTitle:Ljava/lang/String;
 
-    .line 79
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$100(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -185,7 +172,6 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->normalizedSummaryOn:Ljava/lang/String;
 
-    .line 81
     :goto_0
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$200(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
@@ -193,35 +179,30 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->entries:Ljava/lang/String;
 
-    .line 82
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$300(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->className:Ljava/lang/String;
 
-    .line 83
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$400(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->childClassName:Ljava/lang/String;
 
-    .line 84
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$500(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->screenTitle:Ljava/lang/String;
 
-    .line 85
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$600(Lcom/android/settings/search/indexing/IndexData$Builder;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/search/indexing/IndexData;->iconResId:I
 
-    .line 86
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$700(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
@@ -232,56 +213,48 @@
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->spaceDelimitedKeywords:Ljava/lang/String;
 
-    .line 87
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$800(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->intentAction:Ljava/lang/String;
 
-    .line 88
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$900(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->intentTargetPackage:Ljava/lang/String;
 
-    .line 89
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1000(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->intentTargetClass:Ljava/lang/String;
 
-    .line 90
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1100(Lcom/android/settings/search/indexing/IndexData$Builder;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/android/settings/search/indexing/IndexData;->enabled:Z
 
-    .line 91
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1200(Lcom/android/settings/search/indexing/IndexData$Builder;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->key:Ljava/lang/String;
 
-    .line 92
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1300(Lcom/android/settings/search/indexing/IndexData$Builder;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/search/indexing/IndexData;->userId:I
 
-    .line 93
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1400(Lcom/android/settings/search/indexing/IndexData$Builder;)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/settings/search/indexing/IndexData;->payloadType:I
 
-    .line 94
     invoke-static {p1}, Lcom/android/settings/search/indexing/IndexData$Builder;->access$1500(Lcom/android/settings/search/indexing/IndexData$Builder;)Lcom/android/settings/search/ResultPayload;
 
     move-result-object v0
@@ -298,23 +271,18 @@
 
     goto :goto_1
 
-    .line 95
     :cond_1
     const/4 v0, 0x0
 
     :goto_1
     iput-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->payload:[B
 
-    .line 96
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/settings/search/indexing/IndexData$Builder;Lcom/android/settings/search/indexing/IndexData$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/settings/search/indexing/IndexData$Builder;
-    .param p2, "x1"    # Lcom/android/settings/search/indexing/IndexData$1;
 
-    .line 38
     invoke-direct {p0, p1}, Lcom/android/settings/search/indexing/IndexData;-><init>(Lcom/android/settings/search/indexing/IndexData$Builder;)V
 
     return-void
@@ -322,9 +290,7 @@
 
 .method public static normalizeHyphen(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0, "input"    # Ljava/lang/String;
 
-    .line 128
     if-eqz p0, :cond_0
 
     const-string v0, "\u2011"
@@ -346,9 +312,7 @@
 
 .method public static normalizeJapaneseString(Ljava/lang/String;)Ljava/lang/String;
     .locals 7
-    .param p0, "input"    # Ljava/lang/String;
 
-    .line 143
     if-eqz p0, :cond_0
 
     const-string v0, "-"
@@ -364,8 +328,6 @@
     :cond_0
     const-string v0, ""
 
-    .line 144
-    .local v0, "nohyphen":Ljava/lang/String;
     :goto_0
     sget-object v1, Ljava/text/Normalizer$Form;->NFKD:Ljava/text/Normalizer$Form;
 
@@ -373,33 +335,23 @@
 
     move-result-object v1
 
-    .line 145
-    .local v1, "normalized":Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 146
-    .local v2, "sb":Ljava/lang/StringBuffer;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    .line 147
-    .local v3, "length":I
     const/4 v4, 0x0
 
-    .local v4, "i":I
     :goto_1
     if-ge v4, v3, :cond_2
 
-    .line 148
     invoke-virtual {v1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
 
-    .line 150
-    .local v5, "c":C
     const/16 v6, 0x3041
 
     if-lt v5, v6, :cond_1
@@ -408,7 +360,6 @@
 
     if-gt v5, v6, :cond_1
 
-    .line 151
     add-int/lit16 v6, v5, -0x3041
 
     add-int/lit16 v6, v6, 0x30a1
@@ -419,19 +370,14 @@
 
     goto :goto_2
 
-    .line 153
     :cond_1
     invoke-virtual {v2, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
 
-    .line 147
-    .end local v5    # "c":C
     :goto_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 157
-    .end local v4    # "i":I
     :cond_2
     sget-object v4, Lcom/android/settings/search/indexing/IndexData;->REMOVE_DIACRITICALS_PATTERN:Ljava/util/regex/Pattern;
 
@@ -458,9 +404,7 @@
 
 .method public static normalizeKeywords(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0, "input"    # Ljava/lang/String;
 
-    .line 121
     if-eqz p0, :cond_0
 
     const-string v0, "[,]\\s*"
@@ -482,15 +426,11 @@
 
 .method public static normalizeString(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
-    .param p0, "input"    # Ljava/lang/String;
 
-    .line 135
     invoke-static {p0}, Lcom/android/settings/search/indexing/IndexData;->normalizeHyphen(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 136
-    .local v0, "normalizedHypen":Ljava/lang/String;
     if-eqz p0, :cond_0
 
     const-string v1, "-"
@@ -506,8 +446,6 @@
     :cond_0
     const-string v1, ""
 
-    .line 137
-    .local v1, "nohyphen":Ljava/lang/String;
     :goto_0
     sget-object v2, Ljava/text/Normalizer$Form;->NFD:Ljava/text/Normalizer$Form;
 
@@ -515,8 +453,6 @@
 
     move-result-object v2
 
-    .line 139
-    .local v2, "normalized":Ljava/lang/String;
     sget-object v3, Lcom/android/settings/search/indexing/IndexData;->REMOVE_DIACRITICALS_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -541,7 +477,6 @@
 .method public getDocId()I
     .locals 3
 
-    .line 104
     iget-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->key:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -550,7 +485,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 105
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -585,7 +519,6 @@
 
     goto :goto_0
 
-    .line 106
     :cond_0
     iget-object v0, p0, Lcom/android/settings/search/indexing/IndexData;->key:Ljava/lang/String;
 
@@ -593,7 +526,6 @@
 
     move-result v0
 
-    .line 104
     :goto_0
     return v0
 .end method
@@ -601,7 +533,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 111
     new-instance v0, Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/settings/search/indexing/IndexData;->updatedTitle:Ljava/lang/String;
@@ -610,19 +541,15 @@
 
     const-string v1, ": "
 
-    .line 112
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/settings/search/indexing/IndexData;->updatedSummaryOn:Ljava/lang/String;
 
-    .line 113
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 114
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 111
     return-object v0
 .end method

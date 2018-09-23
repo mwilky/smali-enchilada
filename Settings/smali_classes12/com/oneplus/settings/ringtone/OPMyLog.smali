@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,19 +18,13 @@
 
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 13
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .line 16
     const-string v0, "chenhl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -56,17 +49,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 17
     return-void
 .end method
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 3
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "tr"    # Ljava/lang/Throwable;
 
-    .line 20
     const-string v0, "chenhl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -91,6 +79,5 @@
 
     invoke-static {v0, v1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 21
     return-void
 .end method

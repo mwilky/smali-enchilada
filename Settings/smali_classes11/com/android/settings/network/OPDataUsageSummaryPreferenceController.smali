@@ -17,14 +17,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 26
     const-string v0, "data_usage_summary"
 
     invoke-direct {p0, p1, v0}, Lcom/android/settings/core/BasePreferenceController;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 27
     return-void
 .end method
 
@@ -32,12 +29,9 @@
 # virtual methods
 .method public displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
     .locals 1
-    .param p1, "screen"    # Landroid/support/v7/preference/PreferenceScreen;
 
-    .line 36
     invoke-super {p0, p1}, Lcom/android/settings/core/BasePreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 37
     invoke-virtual {p0}, Lcom/android/settings/network/OPDataUsageSummaryPreferenceController;->getPreferenceKey()Ljava/lang/String;
 
     move-result-object v0
@@ -48,14 +42,12 @@
 
     iput-object v0, p0, Lcom/android/settings/network/OPDataUsageSummaryPreferenceController;->mPreference:Landroid/support/v7/preference/Preference;
 
-    .line 38
     return-void
 .end method
 
 .method public getAvailabilityStatus()I
     .locals 1
 
-    .line 31
     const/4 v0, 0x0
 
     return v0
@@ -64,7 +56,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 42
     const-string v0, "data_usage_summary"
 
     return-object v0
@@ -72,9 +63,7 @@
 
 .method public handlePreferenceTreeClick(Landroid/support/v7/preference/Preference;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
 
-    .line 47
     const-string v0, "data_usage_summary"
 
     invoke-virtual {p1}, Landroid/support/v7/preference/Preference;->getKey()Ljava/lang/String;
@@ -87,7 +76,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 49
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -95,34 +83,24 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 50
-    .local v0, "intent":Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/settings/network/OPDataUsageSummaryPreferenceController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 53
-    .end local v0    # "intent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 51
     :catch_0
     move-exception v0
 
-    .line 52
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
     invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
-    .line 54
-    .end local v0    # "e":Landroid/content/ActivityNotFoundException;
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 56
     :cond_0
     const/4 v0, 0x0
 

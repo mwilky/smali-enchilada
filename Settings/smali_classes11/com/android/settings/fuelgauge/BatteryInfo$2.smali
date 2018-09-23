@@ -38,7 +38,6 @@
 .method constructor <init>(Landroid/content/Context;Landroid/os/BatteryStats;ZLcom/android/settings/fuelgauge/BatteryInfo$Callback;)V
     .locals 0
 
-    .line 158
     iput-object p1, p0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$stats:Landroid/os/BatteryStats;
@@ -56,20 +55,15 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/settings/fuelgauge/BatteryInfo;
     .locals 21
-    .param p1, "params"    # [Ljava/lang/Void;
 
     move-object/from16 v0, p0
 
-    .line 161
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 162
-    .local v1, "startTime":J
     iget-object v3, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
-    .line 163
     invoke-static {v3}, Lcom/android/settings/overlay/FeatureFactory;->getFactory(Landroid/content/Context;)Lcom/android/settings/overlay/FeatureFactory;
 
     move-result-object v3
@@ -80,8 +74,6 @@
 
     move-result-object v3
 
-    .line 165
-    .local v3, "provider":Lcom/android/settings/fuelgauge/PowerUsageFeatureProvider;
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v4
@@ -90,8 +82,6 @@
 
     move-result-wide v4
 
-    .line 167
-    .local v4, "elapsedRealtimeUs":J
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
     new-instance v7, Landroid/content/IntentFilter;
@@ -106,11 +96,8 @@
 
     move-result-object v13
 
-    .line 170
-    .local v13, "batteryBroadcast":Landroid/content/Intent;
     const-string v6, "plugged"
 
-    .line 171
     const/4 v7, -0x1
 
     invoke-virtual {v13, v6, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -129,41 +116,32 @@
     :goto_0
     move v14, v6
 
-    .line 173
-    .local v14, "discharging":Z
     if-eqz v14, :cond_1
 
     if-eqz v3, :cond_1
 
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
-    .line 174
     invoke-interface {v3, v6}, Lcom/android/settings/fuelgauge/PowerUsageFeatureProvider;->isEnhancedBatteryPredictionEnabled(Landroid/content/Context;)Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    .line 175
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
     invoke-interface {v3, v6}, Lcom/android/settings/fuelgauge/PowerUsageFeatureProvider;->getEnhancedBatteryPrediction(Landroid/content/Context;)Lcom/android/settings/fuelgauge/Estimate;
 
     move-result-object v15
 
-    .line 176
-    .local v15, "estimate":Lcom/android/settings/fuelgauge/Estimate;
     if-eqz v15, :cond_1
 
-    .line 177
     const-string v6, "BatteryInfo"
 
     const-string v7, "time for enhanced BatteryInfo"
 
-    .line 178
     invoke-static {v6, v7, v1, v2}, Lcom/android/settings/fuelgauge/BatteryUtils;->logRuntime(Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 179
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
     iget-object v8, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$stats:Landroid/os/BatteryStats;
@@ -182,12 +160,9 @@
 
     return-object v6
 
-    .line 183
-    .end local v15    # "estimate":Lcom/android/settings/fuelgauge/Estimate;
     :cond_1
     if-eqz v14, :cond_2
 
-    .line 184
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$stats:Landroid/os/BatteryStats;
 
     invoke-virtual {v6, v4, v5}, Landroid/os/BatteryStats;->computeBatteryTimeRemaining(J)J
@@ -202,11 +177,8 @@
     :goto_1
     move-wide v10, v6
 
-    .line 185
-    .local v10, "prediction":J
     new-instance v6, Lcom/android/settings/fuelgauge/Estimate;
 
-    .line 186
     invoke-static {v10, v11}, Lcom/android/settingslib/utils/PowerUtil;->convertUsToMs(J)J
 
     move-result-wide v16
@@ -221,15 +193,12 @@
 
     move-object v9, v6
 
-    .line 189
-    .local v9, "estimate":Lcom/android/settings/fuelgauge/Estimate;
     const-string v6, "BatteryInfo"
 
     const-string v7, "time for regular BatteryInfo"
 
     invoke-static {v6, v7, v1, v2}, Lcom/android/settings/fuelgauge/BatteryUtils;->logRuntime(Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 190
     iget-object v6, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$context:Landroid/content/Context;
 
     iget-object v8, v0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$stats:Landroid/os/BatteryStats;
@@ -242,8 +211,6 @@
 
     move-wide v10, v4
 
-    .end local v10    # "prediction":J
-    .local v15, "prediction":J
     invoke-static/range {v6 .. v12}, Lcom/android/settings/fuelgauge/BatteryInfo;->getBatteryInfo(Landroid/content/Context;Landroid/content/Intent;Landroid/os/BatteryStats;Lcom/android/settings/fuelgauge/Estimate;JZ)Lcom/android/settings/fuelgauge/BatteryInfo;
 
     move-result-object v6
@@ -254,7 +221,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 158
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/fuelgauge/BatteryInfo$2;->doInBackground([Ljava/lang/Void;)Lcom/android/settings/fuelgauge/BatteryInfo;
@@ -266,34 +232,27 @@
 
 .method protected onPostExecute(Lcom/android/settings/fuelgauge/BatteryInfo;)V
     .locals 4
-    .param p1, "batteryInfo"    # Lcom/android/settings/fuelgauge/BatteryInfo;
 
-    .line 196
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 197
-    .local v0, "startTime":J
     iget-object v2, p0, Lcom/android/settings/fuelgauge/BatteryInfo$2;->val$callback:Lcom/android/settings/fuelgauge/BatteryInfo$Callback;
 
     invoke-interface {v2, p1}, Lcom/android/settings/fuelgauge/BatteryInfo$Callback;->onBatteryInfoLoaded(Lcom/android/settings/fuelgauge/BatteryInfo;)V
 
-    .line 198
     const-string v2, "BatteryInfo"
 
     const-string v3, "time for callback"
 
     invoke-static {v2, v3, v0, v1}, Lcom/android/settings/fuelgauge/BatteryUtils;->logRuntime(Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 199
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 158
     check-cast p1, Lcom/android/settings/fuelgauge/BatteryInfo;
 
     invoke-virtual {p0, p1}, Lcom/android/settings/fuelgauge/BatteryInfo$2;->onPostExecute(Lcom/android/settings/fuelgauge/BatteryInfo;)V

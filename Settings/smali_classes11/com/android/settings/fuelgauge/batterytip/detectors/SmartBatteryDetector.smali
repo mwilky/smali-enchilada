@@ -15,19 +15,13 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;Landroid/content/ContentResolver;)V
     .locals 0
-    .param p1, "policy"    # Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;
-    .param p2, "contentResolver"    # Landroid/content/ContentResolver;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Lcom/android/settings/fuelgauge/batterytip/detectors/SmartBatteryDetector;->mPolicy:Lcom/android/settings/fuelgauge/batterytip/BatteryTipPolicy;
 
-    .line 35
     iput-object p2, p0, Lcom/android/settings/fuelgauge/batterytip/detectors/SmartBatteryDetector;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 36
     return-void
 .end method
 
@@ -36,7 +30,6 @@
 .method public detect()Lcom/android/settings/fuelgauge/batterytip/tips/BatteryTip;
     .locals 3
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/fuelgauge/batterytip/detectors/SmartBatteryDetector;->mContentResolver:Landroid/content/ContentResolver;
 
     const-string v1, "adaptive_battery_management_enabled"
@@ -68,8 +61,6 @@
     :goto_0
     move v0, v2
 
-    .line 45
-    .local v0, "smartBatteryOff":Z
     if-eqz v0, :cond_2
 
     goto :goto_1
@@ -77,8 +68,6 @@
     :cond_2
     const/4 v1, 0x2
 
-    .line 46
-    .local v1, "state":I
     :goto_1
     new-instance v2, Lcom/android/settings/fuelgauge/batterytip/tips/SmartBatteryTip;
 

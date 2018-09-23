@@ -26,18 +26,13 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v17/leanback/app/BrowseFragment;Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentRowsAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/BrowseFragment;
-    .param p2, "fragmentRowsAdapter"    # Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentRowsAdapter;
 
-    .line 1501
     iput-object p1, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1502
     iput-object p2, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->mMainFragmentRowsAdapter:Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentRowsAdapter;
 
-    .line 1503
     return-void
 .end method
 
@@ -45,39 +40,29 @@
 # virtual methods
 .method public onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V
     .locals 2
-    .param p1, "itemViewHolder"    # Landroid/support/v17/leanback/widget/Presenter$ViewHolder;
-    .param p2, "item"    # Ljava/lang/Object;
-    .param p3, "rowViewHolder"    # Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;
-    .param p4, "row"    # Landroid/support/v17/leanback/widget/Row;
 
-    .line 1508
     iget-object v0, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->mMainFragmentRowsAdapter:Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentRowsAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentRowsAdapter;->getSelectedPosition()I
 
     move-result v0
 
-    .line 1510
-    .local v0, "position":I
     iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     invoke-virtual {v1, v0}, Landroid/support/v17/leanback/app/BrowseFragment;->onRowSelected(I)V
 
-    .line 1511
     iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseFragment;->mExternalOnItemViewSelectedListener:Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;
 
     if-eqz v1, :cond_0
 
-    .line 1512
     iget-object v1, p0, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->this$0:Landroid/support/v17/leanback/app/BrowseFragment;
 
     iget-object v1, v1, Landroid/support/v17/leanback/app/BrowseFragment;->mExternalOnItemViewSelectedListener:Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;
 
     invoke-interface {v1, p1, p2, p3, p4}, Landroid/support/v17/leanback/widget/OnItemViewSelectedListener;->onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
 
-    .line 1515
     :cond_0
     return-void
 .end method
@@ -85,7 +70,6 @@
 .method public bridge synthetic onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Ljava/lang/Object;)V
     .locals 0
 
-    .line 1498
     check-cast p4, Landroid/support/v17/leanback/widget/Row;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/support/v17/leanback/app/BrowseFragment$MainFragmentItemViewSelectedListener;->onItemSelected(Landroid/support/v17/leanback/widget/Presenter$ViewHolder;Ljava/lang/Object;Landroid/support/v17/leanback/widget/RowPresenter$ViewHolder;Landroid/support/v17/leanback/widget/Row;)V

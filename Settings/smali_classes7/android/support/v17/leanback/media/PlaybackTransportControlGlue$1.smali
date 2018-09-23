@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/PlaybackTransportControlGlue;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/PlaybackTransportControlGlue;
 
-    .line 141
-    .local p0, "this":Landroid/support/v17/leanback/media/PlaybackTransportControlGlue$1;, "Landroid/support/v17/leanback/media/PlaybackTransportControlGlue$1;"
     iput-object p1, p0, Landroid/support/v17/leanback/media/PlaybackTransportControlGlue$1;->this$0:Landroid/support/v17/leanback/media/PlaybackTransportControlGlue;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/AbstractDetailsDescriptionPresenter;-><init>()V
@@ -36,17 +33,11 @@
 # virtual methods
 .method protected onBindDescription(Landroid/support/v17/leanback/widget/AbstractDetailsDescriptionPresenter$ViewHolder;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "viewHolder"    # Landroid/support/v17/leanback/widget/AbstractDetailsDescriptionPresenter$ViewHolder;
-    .param p2, "obj"    # Ljava/lang/Object;
 
-    .line 145
-    .local p0, "this":Landroid/support/v17/leanback/media/PlaybackTransportControlGlue$1;, "Landroid/support/v17/leanback/media/PlaybackTransportControlGlue$1;"
     move-object v0, p2
 
     check-cast v0, Landroid/support/v17/leanback/media/PlaybackBaseControlGlue;
 
-    .line 146
-    .local v0, "glue":Landroid/support/v17/leanback/media/PlaybackBaseControlGlue;
     invoke-virtual {p1}, Landroid/support/v17/leanback/widget/AbstractDetailsDescriptionPresenter$ViewHolder;->getTitle()Landroid/widget/TextView;
 
     move-result-object v1
@@ -57,7 +48,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 147
     invoke-virtual {p1}, Landroid/support/v17/leanback/widget/AbstractDetailsDescriptionPresenter$ViewHolder;->getSubtitle()Landroid/widget/TextView;
 
     move-result-object v1
@@ -68,6 +58,5 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 148
     return-void
 .end method

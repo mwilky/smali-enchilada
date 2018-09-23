@@ -19,7 +19,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 274
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,20 +26,15 @@
 
 .method public static addAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;)Z
     .locals 1
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 46
     if-nez p1, :cond_0
 
-    .line 47
     const/4 v0, 0x0
 
     return v0
 
-    .line 49
     :cond_0
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;
 
@@ -55,10 +49,7 @@
 
 .method public static addTouchExplorationStateChangeListener(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;)Z
     .locals 3
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
-    .line 165
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -67,13 +58,10 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 166
     if-nez p1, :cond_0
 
-    .line 167
     return v1
 
-    .line 169
     :cond_0
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;
 
@@ -85,15 +73,12 @@
 
     return v0
 
-    .line 172
     :cond_1
     return v1
 .end method
 
 .method public static getEnabledAccessibilityServiceList(Landroid/view/accessibility/AccessibilityManager;I)Ljava/util/List;
     .locals 1
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
-    .param p1, "feedbackTypeFlags"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +93,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 140
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityManager;->getEnabledAccessibilityServiceList(I)Ljava/util/List;
 
     move-result-object v0
@@ -118,7 +102,6 @@
 
 .method public static getInstalledAccessibilityServiceList(Landroid/view/accessibility/AccessibilityManager;)Ljava/util/List;
     .locals 1
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -133,7 +116,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 117
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityManager;->getInstalledAccessibilityServiceList()Ljava/util/List;
 
     move-result-object v0
@@ -143,11 +125,9 @@
 
 .method public static isTouchExplorationEnabled(Landroid/view/accessibility/AccessibilityManager;)Z
     .locals 1
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 153
     invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
     move-result v0
@@ -157,20 +137,15 @@
 
 .method public static removeAccessibilityStateChangeListener(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;)Z
     .locals 1
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListener;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 66
     if-nez p1, :cond_0
 
-    .line 67
     const/4 v0, 0x0
 
     return v0
 
-    .line 69
     :cond_0
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$AccessibilityStateChangeListenerWrapper;
 
@@ -185,10 +160,7 @@
 
 .method public static removeTouchExplorationStateChangeListener(Landroid/view/accessibility/AccessibilityManager;Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;)Z
     .locals 3
-    .param p0, "manager"    # Landroid/view/accessibility/AccessibilityManager;
-    .param p1, "listener"    # Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListener;
 
-    .line 184
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x0
@@ -197,13 +169,10 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 185
     if-nez p1, :cond_0
 
-    .line 186
     return v1
 
-    .line 188
     :cond_0
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityManagerCompat$TouchExplorationStateChangeListenerWrapper;
 
@@ -215,7 +184,6 @@
 
     return v0
 
-    .line 191
     :cond_1
     return v1
 .end method

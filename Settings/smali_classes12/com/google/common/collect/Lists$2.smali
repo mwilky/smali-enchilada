@@ -29,8 +29,6 @@
 .method constructor <init>(Ljava/util/List;)V
     .locals 0
 
-    .line 1019
-    .local p1, "backingList":Ljava/util/List;, "Ljava/util/List<TE;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Lists$AbstractListWrapper;-><init>(Ljava/util/List;)V
 
     return-void
@@ -40,7 +38,6 @@
 # virtual methods
 .method public listIterator(I)Ljava/util/ListIterator;
     .locals 1
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -49,7 +46,6 @@
         }
     .end annotation
 
-    .line 1021
     iget-object v0, p0, Lcom/google/common/collect/Lists$2;->backingList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;

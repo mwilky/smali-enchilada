@@ -57,15 +57,10 @@
         }
     .end annotation
 
-    .line 226
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<TT;>;"
-    .local p1, "instance":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 227
     iput-object p1, p0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
 
-    .line 228
     return-void
 .end method
 
@@ -73,24 +68,19 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "obj"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 235
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Suppliers$SupplierOfInstance;
 
     if-eqz v0, :cond_0
 
-    .line 236
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/base/Suppliers$SupplierOfInstance;
 
-    .line 237
-    .local v0, "that":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<*>;"
     iget-object v1, p0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
 
     iget-object v2, v0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
@@ -101,8 +91,6 @@
 
     return v1
 
-    .line 239
-    .end local v0    # "that":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<*>;"
     :cond_0
     const/4 v0, 0x0
 
@@ -117,8 +105,6 @@
         }
     .end annotation
 
-    .line 231
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Suppliers$SupplierOfInstance;->instance:Ljava/lang/Object;
 
     return-object v0
@@ -127,8 +113,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 243
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<TT;>;"
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -149,8 +133,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 247
-    .local p0, "this":Lcom/google/common/base/Suppliers$SupplierOfInstance;, "Lcom/google/common/base/Suppliers$SupplierOfInstance<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

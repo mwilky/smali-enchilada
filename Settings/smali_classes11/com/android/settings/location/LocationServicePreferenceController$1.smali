@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/location/LocationServicePreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/location/LocationServicePreferenceController;
 
-    .line 111
     iput-object p1, p0, Lcom/android/settings/location/LocationServicePreferenceController$1;->this$0:Lcom/android/settings/location/LocationServicePreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 114
     const-string v0, "LocationServicePrefCtrl"
 
     const/4 v1, 0x3
@@ -49,7 +44,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 115
     const-string v0, "LocationServicePrefCtrl"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,7 +62,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
     :cond_0
     iget-object v0, p0, Lcom/android/settings/location/LocationServicePreferenceController$1;->this$0:Lcom/android/settings/location/LocationServicePreferenceController;
 
@@ -78,6 +71,5 @@
 
     invoke-virtual {v0}, Lcom/android/settings/location/SettingsInjector;->reloadStatusMessages()V
 
-    .line 118
     return-void
 .end method

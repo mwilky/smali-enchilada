@@ -21,14 +21,7 @@
 # direct methods
 .method varargs constructor <init>(Lcom/android/settings/notification/DockingSoundPreferenceController;ILjava/lang/String;Ljava/lang/String;I[I)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/settings/notification/DockingSoundPreferenceController;
-    .param p2, "type"    # I
-    .param p3, "key"    # Ljava/lang/String;
-    .param p4, "setting"    # Ljava/lang/String;
-    .param p5, "def"    # I
-    .param p6, "values"    # [I
 
-    .line 35
     iput-object p1, p0, Lcom/android/settings/notification/DockingSoundPreferenceController$1;->this$0:Lcom/android/settings/notification/DockingSoundPreferenceController;
 
     move-object v0, p0
@@ -52,9 +45,7 @@
 # virtual methods
 .method public isApplicable(Landroid/content/Context;)Z
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 38
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0

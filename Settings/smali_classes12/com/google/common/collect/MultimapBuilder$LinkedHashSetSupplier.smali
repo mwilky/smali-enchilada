@@ -38,13 +38,9 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 1
-    .param p1, "expectedValuesPerKey"    # I
 
-    .line 235
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 236
     const-string v0, "expectedValuesPerKey"
 
     invoke-static {p1, v0}, Lcom/google/common/collect/CollectPreconditions;->checkNonnegative(ILjava/lang/String;)I
@@ -53,7 +49,6 @@
 
     iput v0, p0, Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;->expectedValuesPerKey:I
 
-    .line 237
     return-void
 .end method
 
@@ -62,8 +57,6 @@
 .method public bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    .line 232
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;->get()Ljava/util/Set;
 
     move-result-object v0
@@ -81,8 +74,6 @@
         }
     .end annotation
 
-    .line 241
-    .local p0, "this":Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;, "Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier<TV;>;"
     new-instance v0, Ljava/util/LinkedHashSet;
 
     iget v1, p0, Lcom/google/common/collect/MultimapBuilder$LinkedHashSetSupplier;->expectedValuesPerKey:I

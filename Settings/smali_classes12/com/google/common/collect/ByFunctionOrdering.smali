@@ -62,13 +62,8 @@
         }
     .end annotation
 
-    .line 40
-    .local p0, "this":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
-    .local p1, "function":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<TF;+TT;>;"
-    .local p2, "ordering":Lcom/google/common/collect/Ordering;, "Lcom/google/common/collect/Ordering<TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 41
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -77,7 +72,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/Function;
 
-    .line 42
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +80,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    .line 43
     return-void
 .end method
 
@@ -100,10 +93,6 @@
         }
     .end annotation
 
-    .line 46
-    .local p0, "this":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
-    .local p1, "left":Ljava/lang/Object;, "TF;"
-    .local p2, "right":Ljava/lang/Object;, "TF;"
     iget-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
     iget-object v1, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/Function;
@@ -127,21 +116,17 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 50
-    .local p0, "this":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     const/4 v0, 0x1
 
     if-ne p1, p0, :cond_0
 
-    .line 51
     return v0
 
-    .line 53
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/ByFunctionOrdering;
 
@@ -149,13 +134,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 54
     move-object v1, p1
 
     check-cast v1, Lcom/google/common/collect/ByFunctionOrdering;
 
-    .line 55
-    .local v1, "that":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<**>;"
     iget-object v3, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/Function;
 
     iget-object v4, v1, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/Function;
@@ -170,7 +152,6 @@
 
     iget-object v4, v1, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    .line 56
     invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -179,15 +160,12 @@
 
     goto :goto_0
 
-    .line 55
     :cond_1
     move v0, v2
 
     :goto_0
     return v0
 
-    .line 58
-    .end local v1    # "that":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<**>;"
     :cond_2
     return v2
 .end method
@@ -195,8 +173,6 @@
 .method public hashCode()I
     .locals 3
 
-    .line 62
-    .local p0, "this":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -223,8 +199,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 66
-    .local p0, "this":Lcom/google/common/collect/ByFunctionOrdering;, "Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

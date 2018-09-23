@@ -21,7 +21,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1723
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgViewBoxContainer;-><init>()V
 
     return-void

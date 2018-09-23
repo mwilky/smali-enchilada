@@ -21,10 +21,8 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
     return-void
 .end method
 
@@ -32,9 +30,7 @@
 # virtual methods
 .method public getHere(Landroid/view/View;)F
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 84
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result v0
@@ -54,7 +50,6 @@
         }
     .end annotation
 
-    .line 89
     sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     return-object v0

@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/PreviewPagerAdapter;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/PreviewPagerAdapter;
 
-    .line 83
     iput-object p1, p0, Lcom/android/settings/PreviewPagerAdapter$1;->this$0:Lcom/android/settings/PreviewPagerAdapter;
 
     iput p2, p0, Lcom/android/settings/PreviewPagerAdapter$1;->val$fi:I
@@ -46,17 +44,13 @@
 # virtual methods
 .method public onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
     .locals 3
-    .param p1, "stub"    # Landroid/view/ViewStub;
-    .param p2, "inflated"    # Landroid/view/View;
 
-    .line 86
     invoke-virtual {p1}, Landroid/view/ViewStub;->getVisibility()I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 87
     iget-object v0, p0, Lcom/android/settings/PreviewPagerAdapter$1;->this$0:Lcom/android/settings/PreviewPagerAdapter;
 
     invoke-static {v0}, Lcom/android/settings/PreviewPagerAdapter;->access$000(Lcom/android/settings/PreviewPagerAdapter;)[[Z
@@ -73,6 +67,5 @@
 
     aput-boolean v2, v0, v1
 
-    .line 88
     return-void
 .end method

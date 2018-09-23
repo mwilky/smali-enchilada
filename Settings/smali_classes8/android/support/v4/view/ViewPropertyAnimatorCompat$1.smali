@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/support/v4/view/ViewPropertyAnimatorListener;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 740
     iput-object p1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->this$0:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     iput-object p2, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$listener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
@@ -43,45 +41,36 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 743
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$listener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$view:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationCancel(Landroid/view/View;)V
 
-    .line 744
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 748
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$listener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$view:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
 
-    .line 749
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 753
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$listener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;->val$view:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
 
-    .line 754
     return-void
 .end method

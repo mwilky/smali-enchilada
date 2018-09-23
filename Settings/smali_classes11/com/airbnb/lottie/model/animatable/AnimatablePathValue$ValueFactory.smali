@@ -42,7 +42,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 86
     new-instance v0, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue$ValueFactory;
 
     invoke-direct {v0}, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue$ValueFactory;-><init>()V
@@ -55,17 +54,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
     return-void
 .end method
 
 .method static synthetic access$000()Lcom/airbnb/lottie/model/animatable/AnimatableValue$Factory;
     .locals 1
 
-    .line 85
     sget-object v0, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue$ValueFactory;->INSTANCE:Lcom/airbnb/lottie/model/animatable/AnimatableValue$Factory;
 
     return-object v0
@@ -75,10 +71,7 @@
 # virtual methods
 .method public valueFromObject(Ljava/lang/Object;F)Landroid/graphics/PointF;
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
-    .param p2, "scale"    # F
 
-    .line 92
     move-object v0, p1
 
     check-cast v0, Lorg/json/JSONArray;
@@ -93,7 +86,6 @@
 .method public bridge synthetic valueFromObject(Ljava/lang/Object;F)Ljava/lang/Object;
     .locals 0
 
-    .line 85
     invoke-virtual {p0, p1, p2}, Lcom/airbnb/lottie/model/animatable/AnimatablePathValue$ValueFactory;->valueFromObject(Ljava/lang/Object;F)Landroid/graphics/PointF;
 
     move-result-object p1

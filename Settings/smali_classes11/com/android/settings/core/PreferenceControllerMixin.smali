@@ -13,7 +13,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 70
     const/4 v0, 0x0
 
     return-object v0
@@ -30,13 +29,10 @@
         }
     .end annotation
 
-    .line 41
-    .local p1, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     instance-of v0, p0, Lcom/android/settingslib/core/AbstractPreferenceController;
 
     if-eqz v0, :cond_1
 
-    .line 42
     move-object v0, p0
 
     check-cast v0, Lcom/android/settingslib/core/AbstractPreferenceController;
@@ -47,7 +43,6 @@
 
     if-nez v0, :cond_1
 
-    .line 43
     move-object v0, p0
 
     check-cast v0, Lcom/android/settingslib/core/AbstractPreferenceController;
@@ -56,15 +51,12 @@
 
     move-result-object v0
 
-    .line 44
-    .local v0, "key":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 45
     const-string v1, "PrefControllerMixin"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -75,7 +67,6 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 46
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -86,18 +77,13 @@
 
     move-result-object v2
 
-    .line 45
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
     return-void
 
-    .line 49
     :cond_0
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 52
-    .end local v0    # "key":Ljava/lang/String;
     :cond_1
     return-void
 .end method
@@ -113,7 +99,5 @@
         }
     .end annotation
 
-    .line 60
-    .local p1, "rawData":Ljava/util/List;, "Ljava/util/List<Lcom/android/settings/search/SearchIndexableRaw;>;"
     return-void
 .end method

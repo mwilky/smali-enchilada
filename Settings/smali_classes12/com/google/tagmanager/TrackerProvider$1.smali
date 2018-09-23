@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 88
     invoke-static {}, Lcom/google/tagmanager/Logger$LogLevel;->values()[Lcom/google/tagmanager/Logger$LogLevel;
 
     move-result-object v0

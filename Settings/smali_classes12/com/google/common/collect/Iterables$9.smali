@@ -31,7 +31,6 @@
 .method constructor <init>(Ljava/util/List;I)V
     .locals 0
 
-    .line 850
     iput-object p1, p0, Lcom/google/common/collect/Iterables$9;->val$list:Ljava/util/List;
 
     iput p2, p0, Lcom/google/common/collect/Iterables$9;->val$numberToSkip:I
@@ -53,7 +52,6 @@
         }
     .end annotation
 
-    .line 854
     iget-object v0, p0, Lcom/google/common/collect/Iterables$9;->val$list:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -66,8 +64,6 @@
 
     move-result v0
 
-    .line 855
-    .local v0, "toSkip":I
     iget-object v1, p0, Lcom/google/common/collect/Iterables$9;->val$list:Ljava/util/List;
 
     iget-object v2, p0, Lcom/google/common/collect/Iterables$9;->val$list:Ljava/util/List;

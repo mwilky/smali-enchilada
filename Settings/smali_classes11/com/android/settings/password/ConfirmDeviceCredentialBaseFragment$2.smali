@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
-    .line 371
     iput-object p1, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$2;->this$0:Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 374
     iget-object v0, p0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment$2;->this$0:Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;
 
     iget-object v0, v0, Lcom/android/settings/password/ConfirmDeviceCredentialBaseFragment;->mErrorTextView:Landroid/widget/TextView;
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 375
     return-void
 .end method

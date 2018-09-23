@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 100
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/SlideKitkat$CalculateSlideVertical;-><init>()V
 
     return-void
@@ -28,9 +27,7 @@
 # virtual methods
 .method public getGone(Landroid/view/View;)F
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 103
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result v0

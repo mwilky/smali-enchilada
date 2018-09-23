@@ -18,18 +18,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     return-void
 .end method
 
 .method static newInstance(Lorg/json/JSONObject;)Lcom/airbnb/lottie/LottieImageAsset;
     .locals 7
-    .param p0, "imageJson"    # Lorg/json/JSONObject;
 
-    .line 27
     new-instance v6, Lcom/airbnb/lottie/LottieImageAsset;
 
     const-string v0, "w"
@@ -52,7 +48,6 @@
 
     const-string v0, "p"
 
-    .line 28
     invoke-virtual {p0, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -63,6 +58,5 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/airbnb/lottie/LottieImageAsset;-><init>(IILjava/lang/String;Ljava/lang/String;Lcom/airbnb/lottie/LottieImageAsset$1;)V
 
-    .line 27
     return-object v6
 .end method

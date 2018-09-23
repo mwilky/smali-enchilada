@@ -25,7 +25,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1656
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$TextPositionedContainer;-><init>()V
 
     return-void
@@ -36,7 +35,6 @@
 .method public getTextRoot()Lcom/caverock/androidsvg/SVG$TextRoot;
     .locals 1
 
-    .line 1663
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$TSpan;->textRoot:Lcom/caverock/androidsvg/SVG$TextRoot;
 
     return-object v0
@@ -44,9 +42,7 @@
 
 .method public setTextRoot(Lcom/caverock/androidsvg/SVG$TextRoot;)V
     .locals 0
-    .param p1, "obj"    # Lcom/caverock/androidsvg/SVG$TextRoot;
 
-    .line 1661
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$TSpan;->textRoot:Lcom/caverock/androidsvg/SVG$TextRoot;
 
     return-void

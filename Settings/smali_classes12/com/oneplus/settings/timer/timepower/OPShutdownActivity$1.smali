@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;JJ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
-    .param p2, "x0"    # J
-    .param p4, "x1"    # J
 
-    .line 48
     iput-object p1, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -38,7 +34,6 @@
 .method public onFinish()V
     .locals 2
 
-    .line 67
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$200(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;)Landroid/telephony/TelephonyManager;
@@ -51,21 +46,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 68
     const-string v0, "ShutdownActivity"
 
     const-string v1, "phone is incall, countdown end"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-virtual {v0}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->finish()V
 
     goto :goto_0
 
-    .line 72
     :cond_0
     const-string v0, "ShutdownActivity"
 
@@ -73,26 +65,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 73
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$300(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;)V
 
-    .line 74
     const/4 v0, 0x0
 
     sput-object v0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->sCountDownTimer:Landroid/os/CountDownTimer;
 
-    .line 76
     :goto_0
     return-void
 .end method
 
 .method public onTick(J)V
     .locals 9
-    .param p1, "millisUntilFinished"    # J
 
-    .line 51
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     const-wide/16 v1, 0x3e8
@@ -103,7 +90,6 @@
 
     invoke-static {v0, v3}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$002(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;I)I
 
-    .line 52
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-static {v0}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$000(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;)I
@@ -116,18 +102,16 @@
 
     if-le v0, v4, :cond_0
 
-    .line 53
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     iget-object v5, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
-    const v6, 0x7f120ca8
+    const v6, 0x7f120ca1
 
     new-array v7, v4, [Ljava/lang/Object;
 
     iget-object v8, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
-    .line 54
     invoke-static {v8}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$000(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;)I
 
     move-result v8
@@ -138,7 +122,6 @@
 
     aput-object v8, v7, v3
 
-    .line 53
     invoke-virtual {v5, v6, v7}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -147,19 +130,17 @@
 
     goto :goto_0
 
-    .line 56
     :cond_0
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     iget-object v5, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
-    const v6, 0x7f120ca9
+    const v6, 0x7f120ca2
 
     new-array v7, v4, [Ljava/lang/Object;
 
     iget-object v8, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
-    .line 58
     invoke-static {v8}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$000(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;)I
 
     move-result v8
@@ -170,14 +151,12 @@
 
     aput-object v8, v7, v3
 
-    .line 56
     invoke-virtual {v5, v6, v7}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-static {v0, v3}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->access$102(Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 60
     :goto_0
     const-string v0, "ShutdownActivity"
 
@@ -199,11 +178,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
     iget-object v0, p0, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity$1;->this$0:Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;
 
     invoke-virtual {v0, v4}, Lcom/oneplus/settings/timer/timepower/OPShutdownActivity;->showDialog(I)V
 
-    .line 63
     return-void
 .end method

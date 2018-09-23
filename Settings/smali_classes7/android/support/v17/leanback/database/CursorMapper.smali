@@ -11,7 +11,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -27,22 +26,17 @@
 
 .method public convert(Landroid/database/Cursor;)Ljava/lang/Object;
     .locals 1
-    .param p1, "cursor"    # Landroid/database/Cursor;
 
-    .line 44
     iget-object v0, p0, Landroid/support/v17/leanback/database/CursorMapper;->mCursor:Landroid/database/Cursor;
 
     if-eq p1, v0, :cond_0
 
-    .line 45
     iput-object p1, p0, Landroid/support/v17/leanback/database/CursorMapper;->mCursor:Landroid/database/Cursor;
 
-    .line 46
     iget-object v0, p0, Landroid/support/v17/leanback/database/CursorMapper;->mCursor:Landroid/database/Cursor;
 
     invoke-virtual {p0, v0}, Landroid/support/v17/leanback/database/CursorMapper;->bindColumns(Landroid/database/Cursor;)V
 
-    .line 48
     :cond_0
     iget-object v0, p0, Landroid/support/v17/leanback/database/CursorMapper;->mCursor:Landroid/database/Cursor;
 

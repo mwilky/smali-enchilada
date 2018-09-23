@@ -15,7 +15,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
     return-void
@@ -26,7 +25,6 @@
 .method public bits()I
     .locals 1
 
-    .line 27
     const/16 v0, 0x20
 
     return v0
@@ -35,7 +33,6 @@
 .method public newHasher()Lcom/google/common/hash/Hasher;
     .locals 1
 
-    .line 32
     new-instance v0, Lcom/google/common/hash/Crc32cHashFunction$Crc32cHasher;
 
     invoke-direct {v0}, Lcom/google/common/hash/Crc32cHashFunction$Crc32cHasher;-><init>()V
@@ -46,7 +43,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 37
     const-string v0, "Hashing.crc32c()"
 
     return-object v0

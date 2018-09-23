@@ -21,12 +21,9 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/SharedElementCallback;)V
     .locals 0
-    .param p1, "callback"    # Landroid/support/v4/app/SharedElementCallback;
 
-    .line 624
     invoke-direct {p0, p1}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
 
-    .line 625
     return-void
 .end method
 
@@ -34,7 +31,6 @@
 # virtual methods
 .method public onSharedElementsArrived(Ljava/util/List;Ljava/util/List;Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;)V
     .locals 2
-    .param p3, "listener"    # Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,9 +45,6 @@
         }
     .end annotation
 
-    .line 630
-    .local p1, "sharedElementNames":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    .local p2, "sharedElements":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;->mCallback:Landroid/support/v4/app/SharedElementCallback;
 
     new-instance v1, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl$1;
@@ -60,6 +53,5 @@
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/support/v4/app/SharedElementCallback;->onSharedElementsArrived(Ljava/util/List;Ljava/util/List;Landroid/support/v4/app/SharedElementCallback$OnSharedElementsReadyListener;)V
 
-    .line 637
     return-void
 .end method

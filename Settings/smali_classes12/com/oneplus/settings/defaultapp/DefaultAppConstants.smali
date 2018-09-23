@@ -27,7 +27,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 15
     const-string v0, "op_default_app_camera"
 
     const-string v1, "op_default_app_gallery"
@@ -42,7 +41,6 @@
 
     sput-object v0, Lcom/oneplus/settings/defaultapp/DefaultAppConstants;->DEFAULTAPP_VALUE_LIST_KEY:[Ljava/lang/String;
 
-    .line 16
     const-string v0, "com.oneplus.camera"
 
     const-string v1, "com.oneplus.gallery"
@@ -57,7 +55,6 @@
 
     sput-object v0, Lcom/oneplus/settings/defaultapp/DefaultAppConstants;->DEFAULTAPP_VALUE_LIST_H2OS:[Ljava/lang/String;
 
-    .line 17
     const-string v0, "com.oneplus.camera"
 
     const-string v1, "com.oneplus.gallery"
@@ -78,7 +75,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

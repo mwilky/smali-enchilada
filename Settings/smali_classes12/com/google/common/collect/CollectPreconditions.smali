@@ -12,7 +12,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,19 +19,13 @@
 
 .method static checkEntryNotNull(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 3
-    .param p0, "key"    # Ljava/lang/Object;
-    .param p1, "value"    # Ljava/lang/Object;
 
-    .line 30
     if-eqz p0, :cond_1
 
-    .line 32
     if-eqz p1, :cond_0
 
-    .line 35
     return-void
 
-    .line 33
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -58,7 +51,6 @@
 
     throw v0
 
-    .line 31
     :cond_1
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -83,16 +75,11 @@
 
 .method static checkNonnegative(ILjava/lang/String;)I
     .locals 3
-    .param p0, "value"    # I
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 38
     if-ltz p0, :cond_0
 
-    .line 41
     return p0
 
-    .line 39
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -119,13 +106,10 @@
 
 .method static checkRemove(Z)V
     .locals 1
-    .param p0, "canRemove"    # Z
 
-    .line 49
     const-string v0, "no calls to next() since the last call to remove()"
 
     invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    .line 50
     return-void
 .end method

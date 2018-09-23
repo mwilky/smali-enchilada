@@ -31,7 +31,6 @@
 .method static synthetic $SWITCH_TABLE$com$caverock$androidsvg$SVG$Unit()[I
     .locals 3
 
-    .line 1200
     sget-object v0, Lcom/caverock/androidsvg/SVG$Length;->$SWITCH_TABLE$com$caverock$androidsvg$SVG$Unit:[I
 
     if-eqz v0, :cond_0
@@ -225,58 +224,43 @@
 
 .method public constructor <init>(F)V
     .locals 1
-    .param p1, "value"    # F
 
-    .line 1211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1202
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
-    .line 1203
     sget-object v0, Lcom/caverock/androidsvg/SVG$Unit;->px:Lcom/caverock/androidsvg/SVG$Unit;
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 1213
     iput p1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
-    .line 1214
     sget-object v0, Lcom/caverock/androidsvg/SVG$Unit;->px:Lcom/caverock/androidsvg/SVG$Unit;
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 1215
     return-void
 .end method
 
 .method public constructor <init>(FLcom/caverock/androidsvg/SVG$Unit;)V
     .locals 1
-    .param p1, "value"    # F
-    .param p2, "unit"    # Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 1205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1202
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
-    .line 1203
     sget-object v0, Lcom/caverock/androidsvg/SVG$Unit;->px:Lcom/caverock/androidsvg/SVG$Unit;
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 1207
     iput p1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
-    .line 1208
     iput-object p2, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
-    .line 1209
     return-void
 .end method
 
@@ -285,7 +269,6 @@
 .method public floatValue()F
     .locals 1
 
-    .line 1219
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v0
@@ -293,9 +276,7 @@
 
 .method public floatValue(F)F
     .locals 2
-    .param p1, "dpi"    # F
 
-    .line 1299
     invoke-static {}, Lcom/caverock/androidsvg/SVG$Length;->$SWITCH_TABLE$com$caverock$androidsvg$SVG$Unit()[I
 
     move-result-object v0
@@ -314,12 +295,10 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1317
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v0
 
-    .line 1312
     :pswitch_0
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -331,7 +310,6 @@
 
     return v0
 
-    .line 1310
     :pswitch_1
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -343,7 +321,6 @@
 
     return v0
 
-    .line 1308
     :pswitch_2
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -355,7 +332,6 @@
 
     return v0
 
-    .line 1306
     :pswitch_3
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -367,7 +343,6 @@
 
     return v0
 
-    .line 1304
     :pswitch_4
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -375,7 +350,6 @@
 
     return v0
 
-    .line 1302
     :cond_0
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -393,46 +367,34 @@
 
 .method public floatValue(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
     .locals 9
-    .param p1, "renderer"    # Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
-    .line 1269
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
     sget-object v1, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
 
     if-ne v0, v1, :cond_2
 
-    .line 1271
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->getCurrentViewPortInUserUnits()Lcom/caverock/androidsvg/SVG$Box;
 
     move-result-object v0
 
-    .line 1272
-    .local v0, "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
     if-nez v0, :cond_0
 
-    .line 1273
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v1
 
-    .line 1274
     :cond_0
     iget v1, v0, Lcom/caverock/androidsvg/SVG$Box;->width:F
 
-    .line 1275
-    .local v1, "w":F
     iget v2, v0, Lcom/caverock/androidsvg/SVG$Box;->height:F
 
-    .line 1276
-    .local v2, "h":F
     cmpl-float v3, v1, v2
 
     const/high16 v4, 0x42c80000    # 100.0f
 
     if-nez v3, :cond_1
 
-    .line 1277
     iget v3, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     mul-float/2addr v3, v1
@@ -441,7 +403,6 @@
 
     return v3
 
-    .line 1278
     :cond_1
     mul-float v3, v1, v1
 
@@ -461,8 +422,6 @@
 
     double-to-float v3, v5
 
-    .line 1279
-    .local v3, "n":F
     iget v5, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     mul-float/2addr v5, v3
@@ -471,11 +430,6 @@
 
     return v5
 
-    .line 1281
-    .end local v0    # "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
-    .end local v1    # "w":F
-    .end local v2    # "h":F
-    .end local v3    # "n":F
     :cond_2
     invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVG$Length;->floatValueX(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
 
@@ -486,17 +440,13 @@
 
 .method public floatValue(Lcom/caverock/androidsvg/SVGAndroidRenderer;F)F
     .locals 2
-    .param p1, "renderer"    # Lcom/caverock/androidsvg/SVGAndroidRenderer;
-    .param p2, "max"    # F
 
-    .line 1288
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
     sget-object v1, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
 
     if-ne v0, v1, :cond_0
 
-    .line 1290
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     mul-float/2addr v0, p2
@@ -507,7 +457,6 @@
 
     return v0
 
-    .line 1292
     :cond_0
     invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVG$Length;->floatValueX(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
 
@@ -518,9 +467,7 @@
 
 .method public floatValueX(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
     .locals 3
-    .param p1, "renderer"    # Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
-    .line 1225
     invoke-static {}, Lcom/caverock/androidsvg/SVG$Length;->$SWITCH_TABLE$com$caverock$androidsvg$SVG$Unit()[I
 
     move-result-object v0
@@ -535,27 +482,21 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1249
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v0
 
-    .line 1244
     :pswitch_0
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->getCurrentViewPortInUserUnits()Lcom/caverock/androidsvg/SVG$Box;
 
     move-result-object v0
 
-    .line 1245
-    .local v0, "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
     if-nez v0, :cond_0
 
-    .line 1246
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v1
 
-    .line 1247
     :cond_0
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -569,8 +510,6 @@
 
     return v1
 
-    .line 1242
-    .end local v0    # "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
     :pswitch_1
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -586,7 +525,6 @@
 
     return v0
 
-    .line 1240
     :pswitch_2
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -602,7 +540,6 @@
 
     return v0
 
-    .line 1238
     :pswitch_3
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -618,7 +555,6 @@
 
     return v0
 
-    .line 1236
     :pswitch_4
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -634,7 +570,6 @@
 
     return v0
 
-    .line 1234
     :pswitch_5
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -646,7 +581,6 @@
 
     return v0
 
-    .line 1232
     :pswitch_6
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -658,7 +592,6 @@
 
     return v0
 
-    .line 1230
     :pswitch_7
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -670,7 +603,6 @@
 
     return v0
 
-    .line 1228
     :pswitch_8
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -694,30 +626,23 @@
 
 .method public floatValueY(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
     .locals 3
-    .param p1, "renderer"    # Lcom/caverock/androidsvg/SVGAndroidRenderer;
 
-    .line 1256
     iget-object v0, p0, Lcom/caverock/androidsvg/SVG$Length;->unit:Lcom/caverock/androidsvg/SVG$Unit;
 
     sget-object v1, Lcom/caverock/androidsvg/SVG$Unit;->percent:Lcom/caverock/androidsvg/SVG$Unit;
 
     if-ne v0, v1, :cond_1
 
-    .line 1257
     invoke-virtual {p1}, Lcom/caverock/androidsvg/SVGAndroidRenderer;->getCurrentViewPortInUserUnits()Lcom/caverock/androidsvg/SVG$Box;
 
     move-result-object v0
 
-    .line 1258
-    .local v0, "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
     if-nez v0, :cond_0
 
-    .line 1259
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     return v1
 
-    .line 1260
     :cond_0
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
@@ -731,8 +656,6 @@
 
     return v1
 
-    .line 1262
-    .end local v0    # "viewPortUser":Lcom/caverock/androidsvg/SVG$Box;
     :cond_1
     invoke-virtual {p0, p1}, Lcom/caverock/androidsvg/SVG$Length;->floatValueX(Lcom/caverock/androidsvg/SVGAndroidRenderer;)F
 
@@ -744,7 +667,6 @@
 .method public isNegative()Z
     .locals 2
 
-    .line 1328
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     const/4 v1, 0x0
@@ -766,7 +688,6 @@
 .method public isZero()Z
     .locals 2
 
-    .line 1323
     iget v0, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F
 
     const/4 v1, 0x0
@@ -788,7 +709,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 1334
     new-instance v0, Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/caverock/androidsvg/SVG$Length;->value:F

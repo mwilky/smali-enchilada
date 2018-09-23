@@ -26,7 +26,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1103
     invoke-direct {p0}, Lcom/google/tagmanager/protobuf/nano/Extension$TypeLiteral;-><init>()V
 
     return-void

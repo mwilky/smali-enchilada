@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
-    .line 99
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$7;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onSeekComplete(Landroid/media/MediaPlayer;)V
     .locals 1
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
-    .line 102
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$7;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->onSeekComplete()V
 
-    .line 103
     return-void
 .end method

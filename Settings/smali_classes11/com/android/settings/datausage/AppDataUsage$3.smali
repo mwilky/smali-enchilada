@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/datausage/AppDataUsage;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/datausage/AppDataUsage;
 
-    .line 512
     iput-object p1, p0, Lcom/android/settings/datausage/AppDataUsage$3;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,8 +46,6 @@
 # virtual methods
 .method public onCreateLoader(ILandroid/os/Bundle;)Landroid/content/Loader;
     .locals 4
-    .param p1, "i"    # I
-    .param p2, "bundle"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -62,7 +58,6 @@
         }
     .end annotation
 
-    .line 515
     new-instance v0, Lcom/android/settings/datausage/AppPrefLoader;
 
     iget-object v1, p0, Lcom/android/settings/datausage/AppDataUsage$3;->this$0:Lcom/android/settings/datausage/AppDataUsage;
@@ -103,9 +98,6 @@
         }
     .end annotation
 
-    .line 521
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Landroid/util/ArraySet<Landroid/support/v7/preference/Preference;>;>;"
-    .local p2, "preferences":Landroid/util/ArraySet;, "Landroid/util/ArraySet<Landroid/support/v7/preference/Preference;>;"
     if-eqz p2, :cond_0
 
     iget-object v0, p0, Lcom/android/settings/datausage/AppDataUsage$3;->this$0:Lcom/android/settings/datausage/AppDataUsage;
@@ -116,7 +108,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 522
     invoke-virtual {p2}, Landroid/util/ArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -134,8 +125,6 @@
 
     check-cast v1, Landroid/support/v7/preference/Preference;
 
-    .line 523
-    .local v1, "preference":Landroid/support/v7/preference/Preference;
     iget-object v2, p0, Lcom/android/settings/datausage/AppDataUsage$3;->this$0:Lcom/android/settings/datausage/AppDataUsage;
 
     invoke-static {v2}, Lcom/android/settings/datausage/AppDataUsage;->access$900(Lcom/android/settings/datausage/AppDataUsage;)Landroid/support/v7/preference/PreferenceCategory;
@@ -144,11 +133,8 @@
 
     invoke-virtual {v2, v1}, Landroid/support/v7/preference/PreferenceCategory;->addPreference(Landroid/support/v7/preference/Preference;)Z
 
-    .line 524
-    .end local v1    # "preference":Landroid/support/v7/preference/Preference;
     goto :goto_0
 
-    .line 526
     :cond_0
     return-void
 .end method
@@ -156,7 +142,6 @@
 .method public bridge synthetic onLoadFinished(Landroid/content/Loader;Ljava/lang/Object;)V
     .locals 0
 
-    .line 512
     check-cast p2, Landroid/util/ArraySet;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/settings/datausage/AppDataUsage$3;->onLoadFinished(Landroid/content/Loader;Landroid/util/ArraySet;)V
@@ -176,7 +161,5 @@
         }
     .end annotation
 
-    .line 530
-    .local p1, "loader":Landroid/content/Loader;, "Landroid/content/Loader<Landroid/util/ArraySet<Landroid/support/v7/preference/Preference;>;>;"
     return-void
 .end method

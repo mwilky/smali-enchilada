@@ -21,12 +21,9 @@
 # direct methods
 .method protected constructor <init>([B)V
     .locals 1
-    .param p1, "bytes"    # [B
 
-    .line 494
     invoke-direct {p0}, Lcom/google/common/io/ByteSource;-><init>()V
 
-    .line 495
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -35,7 +32,6 @@
 
     iput-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
-    .line 496
     return-void
 .end method
 
@@ -43,19 +39,16 @@
 # virtual methods
 .method public copyTo(Ljava/io/OutputStream;)J
     .locals 2
-    .param p1, "output"    # Ljava/io/OutputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 525
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 526
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     array-length v0, v0
@@ -67,14 +60,12 @@
 
 .method public hash(Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
     .locals 1
-    .param p1, "hashFunction"    # Lcom/google/common/hash/HashFunction;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 537
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     invoke-interface {p1, v0}, Lcom/google/common/hash/HashFunction;->hashBytes([B)Lcom/google/common/hash/HashCode;
@@ -87,7 +78,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 510
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     array-length v0, v0
@@ -113,7 +103,6 @@
         }
     .end annotation
 
-    .line 505
     invoke-virtual {p0}, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->openStream()Ljava/io/InputStream;
 
     move-result-object v0
@@ -124,7 +113,6 @@
 .method public openStream()Ljava/io/InputStream;
     .locals 2
 
-    .line 500
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     iget-object v1, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
@@ -152,8 +140,6 @@
         }
     .end annotation
 
-    .line 531
-    .local p1, "processor":Lcom/google/common/io/ByteProcessor;, "Lcom/google/common/io/ByteProcessor<TT;>;"
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     iget-object v1, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
@@ -164,7 +150,6 @@
 
     invoke-interface {p1, v0, v2, v1}, Lcom/google/common/io/ByteProcessor;->processBytes([BII)Z
 
-    .line 532
     invoke-interface {p1}, Lcom/google/common/io/ByteProcessor;->getResult()Ljava/lang/Object;
 
     move-result-object v0
@@ -175,7 +160,6 @@
 .method public read()[B
     .locals 1
 
-    .line 520
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     invoke-virtual {v0}, [B->clone()Ljava/lang/Object;
@@ -190,7 +174,6 @@
 .method public size()J
     .locals 2
 
-    .line 515
     iget-object v0, p0, Lcom/google/common/io/ByteSource$ByteArrayByteSource;->bytes:[B
 
     array-length v0, v0
@@ -203,7 +186,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 544
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -212,7 +194,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 545
     invoke-static {}, Lcom/google/common/io/BaseEncoding;->base16()Lcom/google/common/io/BaseEncoding;
 
     move-result-object v1
@@ -241,6 +222,5 @@
 
     move-result-object v0
 
-    .line 544
     return-object v0
 .end method

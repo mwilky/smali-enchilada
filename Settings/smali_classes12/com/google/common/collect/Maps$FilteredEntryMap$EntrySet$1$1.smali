@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1;Ljava/util/Map$Entry;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1;
 
-    .line 2708
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;, "Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;->this$2:Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1;
 
     iput-object p2, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;->val$entry:Ljava/util/Map$Entry;
@@ -48,8 +45,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 2708
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;, "Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;->delegate()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -67,8 +62,6 @@
         }
     .end annotation
 
-    .line 2711
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;, "Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;->val$entry:Ljava/util/Map$Entry;
 
     return-object v0
@@ -82,9 +75,6 @@
         }
     .end annotation
 
-    .line 2716
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;, "Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;"
-    .local p1, "newValue":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1$1;->this$2:Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1;
 
     iget-object v0, v0, Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet$1;->this$1:Lcom/google/common/collect/Maps$FilteredEntryMap$EntrySet;
@@ -101,7 +91,6 @@
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 2717
     invoke-super {p0, p1}, Lcom/google/common/collect/ForwardingMapEntry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0

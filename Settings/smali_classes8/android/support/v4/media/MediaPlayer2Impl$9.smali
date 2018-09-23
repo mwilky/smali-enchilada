@@ -23,11 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaPlayer2Impl;IZLjava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/media/MediaPlayer2Impl;
-    .param p2, "mediaCallType"    # I
-    .param p3, "needToWaitForEventToComplete"    # Z
 
-    .line 433
     iput-object p1, p0, Landroid/support/v4/media/MediaPlayer2Impl$9;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
     iput-object p4, p0, Landroid/support/v4/media/MediaPlayer2Impl$9;->val$dsds:Ljava/util/List;
@@ -42,7 +38,6 @@
 .method process()V
     .locals 3
 
-    .line 436
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$9;->val$dsds:Ljava/util/List;
 
     if-eqz v0, :cond_2
@@ -55,7 +50,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 439
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$9;->val$dsds:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -75,16 +69,10 @@
 
     check-cast v1, Landroid/support/v4/media/DataSourceDesc;
 
-    .line 440
-    .local v1, "dsd":Landroid/support/v4/media/DataSourceDesc;
     if-eqz v1, :cond_0
 
-    .line 444
-    .end local v1    # "dsd":Landroid/support/v4/media/DataSourceDesc;
     goto :goto_0
 
-    .line 441
-    .restart local v1    # "dsd":Landroid/support/v4/media/DataSourceDesc;
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -94,8 +82,6 @@
 
     throw v0
 
-    .line 445
-    .end local v1    # "dsd":Landroid/support/v4/media/DataSourceDesc;
     :cond_1
     iget-object v0, p0, Landroid/support/v4/media/MediaPlayer2Impl$9;->this$0:Landroid/support/v4/media/MediaPlayer2Impl;
 
@@ -113,10 +99,8 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/media/MediaPlayer2Impl;->access$200(Landroid/support/v4/media/MediaPlayer2Impl;Landroid/support/v4/media/MediaPlayer2Impl$DataSourceError;)V
 
-    .line 446
     return-void
 
-    .line 437
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

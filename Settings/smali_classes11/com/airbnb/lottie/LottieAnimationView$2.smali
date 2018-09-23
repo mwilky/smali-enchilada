@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/airbnb/lottie/LottieAnimationView;Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/airbnb/lottie/LottieAnimationView;
 
-    .line 343
     iput-object p1, p0, Lcom/airbnb/lottie/LottieAnimationView$2;->this$0:Lcom/airbnb/lottie/LottieAnimationView;
 
     iput-object p2, p0, Lcom/airbnb/lottie/LottieAnimationView$2;->val$cacheStrategy:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
@@ -46,16 +44,13 @@
 # virtual methods
 .method public onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
     .locals 3
-    .param p1, "composition"    # Lcom/airbnb/lottie/LottieComposition;
 
-    .line 345
     iget-object v0, p0, Lcom/airbnb/lottie/LottieAnimationView$2;->val$cacheStrategy:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     sget-object v1, Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;->Strong:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
     if-ne v0, v1, :cond_0
 
-    .line 346
     invoke-static {}, Lcom/airbnb/lottie/LottieAnimationView;->access$100()Ljava/util/Map;
 
     move-result-object v0
@@ -66,7 +61,6 @@
 
     goto :goto_0
 
-    .line 347
     :cond_0
     iget-object v0, p0, Lcom/airbnb/lottie/LottieAnimationView$2;->val$cacheStrategy:Lcom/airbnb/lottie/LottieAnimationView$CacheStrategy;
 
@@ -74,7 +68,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 348
     invoke-static {}, Lcom/airbnb/lottie/LottieAnimationView;->access$200()Ljava/util/Map;
 
     move-result-object v0
@@ -87,13 +80,11 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 351
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/airbnb/lottie/LottieAnimationView$2;->this$0:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-virtual {v0, p1}, Lcom/airbnb/lottie/LottieAnimationView;->setComposition(Lcom/airbnb/lottie/LottieComposition;)V
 
-    .line 352
     return-void
 .end method

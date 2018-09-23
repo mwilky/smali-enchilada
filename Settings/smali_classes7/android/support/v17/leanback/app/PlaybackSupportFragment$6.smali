@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/PlaybackSupportFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
-    .line 294
     iput-object p1, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onInterceptKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/KeyEvent;
 
-    .line 297
     iget-object v0, p0, Landroid/support/v17/leanback/app/PlaybackSupportFragment$6;->this$0:Landroid/support/v17/leanback/app/PlaybackSupportFragment;
 
     invoke-static {v0, p1}, Landroid/support/v17/leanback/app/PlaybackSupportFragment;->access$200(Landroid/support/v17/leanback/app/PlaybackSupportFragment;Landroid/view/InputEvent;)Z

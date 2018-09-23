@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/media/MediaPlayerAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
-    .line 89
     iput-object p1, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$6;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onError(Landroid/media/MediaPlayer;II)Z
     .locals 7
-    .param p1, "mp"    # Landroid/media/MediaPlayer;
-    .param p2, "what"    # I
-    .param p3, "extra"    # I
 
-    .line 92
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$6;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->getCallback()Landroid/support/v17/leanback/media/PlayerAdapter$Callback;
@@ -61,7 +55,6 @@
 
     new-array v4, v4, [Ljava/lang/Object;
 
-    .line 93
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -82,10 +75,8 @@
 
     move-result-object v2
 
-    .line 92
     invoke-virtual {v0, v1, p2, v2}, Landroid/support/v17/leanback/media/PlayerAdapter$Callback;->onError(Landroid/support/v17/leanback/media/PlayerAdapter;ILjava/lang/String;)V
 
-    .line 94
     iget-object v0, p0, Landroid/support/v17/leanback/media/MediaPlayerAdapter$6;->this$0:Landroid/support/v17/leanback/media/MediaPlayerAdapter;
 
     invoke-virtual {v0, p2, p3}, Landroid/support/v17/leanback/media/MediaPlayerAdapter;->onError(II)Z

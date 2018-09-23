@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
 
-    .line 89
     iput-object p1, p0, Lcom/oneplus/settings/highpowerapp/HighPowerAppModel$3;->this$0:Lcom/oneplus/settings/highpowerapp/HighPowerAppModel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,10 +45,7 @@
 # virtual methods
 .method public compare(Lcom/oneplus/settings/highpowerapp/HighPowerApp;Lcom/oneplus/settings/highpowerapp/HighPowerApp;)I
     .locals 2
-    .param p1, "o1"    # Lcom/oneplus/settings/highpowerapp/HighPowerApp;
-    .param p2, "o2"    # Lcom/oneplus/settings/highpowerapp/HighPowerApp;
 
-    .line 92
     iget-object v0, p1, Lcom/oneplus/settings/highpowerapp/HighPowerApp;->pkgName:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -71,7 +66,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 89
     check-cast p1, Lcom/oneplus/settings/highpowerapp/HighPowerApp;
 
     check-cast p2, Lcom/oneplus/settings/highpowerapp/HighPowerApp;

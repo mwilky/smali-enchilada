@@ -44,21 +44,16 @@
         }
     .end annotation
 
-    .line 87
-    .local p0, "this":Lcom/google/common/collect/TreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/TreeTraverser<TT;>.PreOrderIterator;"
-    .local p2, "root":Ljava/lang/Object;, "TT;"
     iput-object p1, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->this$0:Lcom/google/common/collect/TreeTraverser;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
 
-    .line 88
     new-instance p1, Ljava/util/ArrayDeque;
 
     invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object p1, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
-    .line 89
     iget-object p1, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -71,7 +66,6 @@
 
     invoke-interface {p1, v0}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
 
-    .line 90
     return-void
 .end method
 
@@ -80,8 +74,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 94
-    .local p0, "this":Lcom/google/common/collect/TreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/TreeTraverser<TT;>.PreOrderIterator;"
     iget-object v0, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
@@ -101,8 +93,6 @@
         }
     .end annotation
 
-    .line 99
-    .local p0, "this":Lcom/google/common/collect/TreeTraverser$PreOrderIterator;, "Lcom/google/common/collect/TreeTraverser<TT;>.PreOrderIterator;"
     iget-object v0, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v0}, Ljava/util/Deque;->getLast()Ljava/lang/Object;
@@ -111,8 +101,6 @@
 
     check-cast v0, Ljava/util/Iterator;
 
-    .line 100
-    .local v0, "itr":Ljava/util/Iterator;, "Ljava/util/Iterator<TT;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -121,20 +109,16 @@
 
     move-result-object v1
 
-    .line 101
-    .local v1, "result":Ljava/lang/Object;, "TT;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 102
     iget-object v2, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v2}, Ljava/util/Deque;->removeLast()Ljava/lang/Object;
 
-    .line 104
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->this$0:Lcom/google/common/collect/TreeTraverser;
 
@@ -146,20 +130,16 @@
 
     move-result-object v2
 
-    .line 105
-    .local v2, "childItr":Ljava/util/Iterator;, "Ljava/util/Iterator<TT;>;"
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 106
     iget-object v3, p0, Lcom/google/common/collect/TreeTraverser$PreOrderIterator;->stack:Ljava/util/Deque;
 
     invoke-interface {v3, v2}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
 
-    .line 108
     :cond_1
     return-object v1
 .end method

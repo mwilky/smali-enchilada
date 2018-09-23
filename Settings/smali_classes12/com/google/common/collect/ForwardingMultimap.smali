@@ -28,8 +28,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 42
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
     return-void
@@ -49,8 +47,6 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -65,31 +61,26 @@
 .method public clear()V
     .locals 1
 
-    .line 53
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/google/common/collect/Multimap;->clear()V
 
-    .line 54
     return-void
 .end method
 
 .method public containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "value"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 58
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -103,13 +94,11 @@
 
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 63
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -123,13 +112,11 @@
 
 .method public containsValue(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "value"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 68
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -154,8 +141,6 @@
 .method protected bridge synthetic delegate()Ljava/lang/Object;
     .locals 1
 
-    .line 37
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -174,8 +159,6 @@
         }
     .end annotation
 
-    .line 73
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -189,13 +172,11 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 137
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     if-eq p1, p0, :cond_1
 
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
@@ -237,9 +218,6 @@
         }
     .end annotation
 
-    .line 78
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -254,8 +232,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 141
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -270,8 +246,6 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 83
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -293,8 +267,6 @@
         }
     .end annotation
 
-    .line 93
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -316,8 +288,6 @@
         }
     .end annotation
 
-    .line 88
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -337,10 +307,6 @@
         }
     .end annotation
 
-    .line 98
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -362,9 +328,6 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
-    .local p1, "multimap":Lcom/google/common/collect/Multimap;, "Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -386,10 +349,6 @@
         }
     .end annotation
 
-    .line 103
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -403,17 +362,15 @@
 
 .method public remove(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
-    .param p2, "value"    # Ljava/lang/Object;
+    .param p2    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 113
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -427,7 +384,7 @@
 
 .method public removeAll(Ljava/lang/Object;)Ljava/util/Collection;
     .locals 1
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -441,8 +398,6 @@
         }
     .end annotation
 
-    .line 118
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -466,10 +421,6 @@
         }
     .end annotation
 
-    .line 123
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "values":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -484,8 +435,6 @@
 .method public size()I
     .locals 1
 
-    .line 128
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0
@@ -507,8 +456,6 @@
         }
     .end annotation
 
-    .line 133
-    .local p0, "this":Lcom/google/common/collect/ForwardingMultimap;, "Lcom/google/common/collect/ForwardingMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
     move-result-object v0

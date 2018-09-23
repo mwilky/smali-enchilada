@@ -14,12 +14,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 31
     invoke-direct {p0, p1}, Lcom/android/settings/applications/defaultapps/DefaultBrowserPreferenceController;-><init>(Landroid/content/Context;)V
 
-    .line 32
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserManager:Landroid/os/UserManager;
 
     invoke-static {v0}, Lcom/android/settings/Utils;->getManagedProfile(Landroid/os/UserManager;)Landroid/os/UserHandle;
@@ -28,12 +25,10 @@
 
     iput-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
-    .line 33
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     if-eqz v0, :cond_0
 
-    .line 34
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     invoke-virtual {v0}, Landroid/os/UserHandle;->getIdentifier()I
@@ -42,7 +37,6 @@
 
     iput v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserId:I
 
-    .line 36
     :cond_0
     return-void
 .end method
@@ -52,7 +46,6 @@
 .method public getPreferenceKey()Ljava/lang/String;
     .locals 1
 
-    .line 40
     const-string v0, "work_default_browser"
 
     return-object v0
@@ -61,17 +54,14 @@
 .method public isAvailable()Z
     .locals 1
 
-    .line 45
     iget-object v0, p0, Lcom/android/settings/applications/defaultapps/DefaultWorkBrowserPreferenceController;->mUserHandle:Landroid/os/UserHandle;
 
     if-nez v0, :cond_0
 
-    .line 46
     const/4 v0, 0x0
 
     return v0
 
-    .line 48
     :cond_0
     invoke-super {p0}, Lcom/android/settings/applications/defaultapps/DefaultBrowserPreferenceController;->isAvailable()Z
 

@@ -63,13 +63,8 @@
         }
     .end annotation
 
-    .line 900
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
-    .local p1, "ks":Ljava/util/NavigableSet;, "Ljava/util/NavigableSet<TK;>;"
-    .local p2, "vFunction":Lcom/google/common/base/Function;, "Lcom/google/common/base/Function<-TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractNavigableMap;-><init>()V
 
-    .line 901
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -78,7 +73,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
-    .line 902
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -87,7 +81,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->function:Lcom/google/common/base/Function;
 
-    .line 903
     return-void
 .end method
 
@@ -96,13 +89,10 @@
 .method public clear()V
     .locals 1
 
-    .line 940
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0}, Ljava/util/NavigableSet;->clear()V
 
-    .line 941
     return-void
 .end method
 
@@ -116,8 +106,6 @@
         }
     .end annotation
 
-    .line 923
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0}, Ljava/util/NavigableSet;->comparator()Ljava/util/Comparator;
@@ -138,8 +126,6 @@
         }
     .end annotation
 
-    .line 950
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$NavigableAsMapView;->descendingMap()Ljava/util/NavigableMap;
 
     move-result-object v0
@@ -165,8 +151,6 @@
         }
     .end annotation
 
-    .line 965
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0}, Ljava/util/NavigableSet;->descendingSet()Ljava/util/NavigableSet;
@@ -193,8 +177,6 @@
         }
     .end annotation
 
-    .line 945
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     iget-object v1, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->function:Lcom/google/common/base/Function;
@@ -208,7 +190,7 @@
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "key"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end param
@@ -223,8 +205,6 @@
     .annotation runtime Ljavax/annotation/Nullable;
     .end annotation
 
-    .line 929
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-static {v0, p1}, Lcom/google/common/collect/Collections2;->safeContains(Ljava/util/Collection;Ljava/lang/Object;)Z
@@ -233,11 +213,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 931
     move-object v0, p1
 
-    .line 932
-    .local v0, "k":Ljava/lang/Object;, "TK;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->function:Lcom/google/common/base/Function;
 
     invoke-interface {v1, v0}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -246,8 +223,6 @@
 
     return-object v1
 
-    .line 934
-    .end local v0    # "k":Ljava/lang/Object;, "TK;"
     :cond_0
     const/4 v0, 0x0
 
@@ -256,7 +231,6 @@
 
 .method public headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 2
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -265,9 +239,6 @@
         }
     .end annotation
 
-    .line 913
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
-    .local p1, "toKey":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0, p1, p2}, Ljava/util/NavigableSet;->headSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -293,8 +264,6 @@
         }
     .end annotation
 
-    .line 955
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-static {v0}, Lcom/google/common/collect/Maps;->access$400(Ljava/util/NavigableSet;)Ljava/util/NavigableSet;
@@ -307,8 +276,6 @@
 .method public size()I
     .locals 1
 
-    .line 960
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0}, Ljava/util/NavigableSet;->size()I
@@ -320,8 +287,6 @@
 
 .method public subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 2
-    .param p2, "fromInclusive"    # Z
-    .param p4, "toInclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;ZTK;Z)",
@@ -330,10 +295,6 @@
         }
     .end annotation
 
-    .line 908
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
-    .local p3, "toKey":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/NavigableSet;->subSet(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableSet;
@@ -351,7 +312,6 @@
 
 .method public tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
     .locals 2
-    .param p2, "inclusive"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -360,9 +320,6 @@
         }
     .end annotation
 
-    .line 918
-    .local p0, "this":Lcom/google/common/collect/Maps$NavigableAsMapView;, "Lcom/google/common/collect/Maps$NavigableAsMapView<TK;TV;>;"
-    .local p1, "fromKey":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$NavigableAsMapView;->set:Ljava/util/NavigableSet;
 
     invoke-interface {v0, p1, p2}, Ljava/util/NavigableSet;->tailSet(Ljava/lang/Object;Z)Ljava/util/NavigableSet;

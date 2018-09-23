@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 138
     new-instance v0, Lcom/android/settings/dream/DreamSettings$1;
 
     invoke-direct {v0}, Lcom/android/settings/dream/DreamSettings$1;-><init>()V
@@ -34,7 +33,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
@@ -42,9 +40,7 @@
 
 .method static synthetic access$000(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Landroid/content/Context;
 
-    .line 40
     invoke-static {p0}, Lcom/android/settings/dream/DreamSettings;->buildPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -54,7 +50,6 @@
 
 .method private static buildPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,64 +61,52 @@
         }
     .end annotation
 
-    .line 131
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 132
-    .local v0, "controllers":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/core/AbstractPreferenceController;>;"
     new-instance v1, Lcom/android/settings/dream/CurrentDreamPreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/dream/CurrentDreamPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 133
     new-instance v1, Lcom/android/settings/dream/WhenToDreamPreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/dream/WhenToDreamPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 134
     new-instance v1, Lcom/android/settings/dream/StartNowPreferenceController;
 
     invoke-direct {v1, p0}, Lcom/android/settings/dream/StartNowPreferenceController;-><init>(Landroid/content/Context;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 135
     return-object v0
 .end method
 
 .method static getDreamSettingDescriptionResId(I)I
     .locals 1
-    .param p0, "dreamSetting"    # I
 
-    .line 78
     packed-switch p0, :pswitch_data_0
 
-    .line 87
-    const v0, 0x7f120f46
+    const v0, 0x7f120f3f
 
     return v0
 
-    .line 84
     :pswitch_0
-    const v0, 0x7f120f44
+    const v0, 0x7f120f3d
 
     return v0
 
-    .line 82
     :pswitch_1
-    const v0, 0x7f120f43
+    const v0, 0x7f120f3c
 
     return v0
 
-    .line 80
     :pswitch_2
-    const v0, 0x7f120f48
+    const v0, 0x7f120f41
 
     return v0
 
@@ -139,29 +122,23 @@
 
 .method static getKeyFromSetting(I)Ljava/lang/String;
     .locals 1
-    .param p0, "dreamSetting"    # I
 
-    .line 64
     packed-switch p0, :pswitch_data_0
 
-    .line 73
     const-string v0, "never"
 
     return-object v0
 
-    .line 70
     :pswitch_0
     const-string v0, "either_charging_or_docked"
 
     return-object v0
 
-    .line 68
     :pswitch_1
     const-string v0, "while_docked_only"
 
     return-object v0
 
-    .line 66
     :pswitch_2
     const-string v0, "while_charging_only"
 
@@ -179,9 +156,7 @@
 
 .method static getSettingFromPrefKey(Ljava/lang/String;)I
     .locals 6
-    .param p0, "key"    # Ljava/lang/String;
 
-    .line 50
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -271,18 +246,14 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 59
     return v4
 
-    .line 56
     :pswitch_0
     return v3
 
-    .line 54
     :pswitch_1
     return v2
 
-    .line 52
     :pswitch_2
     return v5
 
@@ -298,20 +269,16 @@
 
 .method static getSummaryTextFromBackend(Lcom/android/settingslib/dream/DreamBackend;Landroid/content/Context;)Ljava/lang/CharSequence;
     .locals 1
-    .param p0, "backend"    # Lcom/android/settingslib/dream/DreamBackend;
-    .param p1, "context"    # Landroid/content/Context;
     .annotation build Landroid/support/annotation/VisibleForTesting;
     .end annotation
 
-    .line 123
     invoke-virtual {p0}, Lcom/android/settingslib/dream/DreamBackend;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 124
-    const v0, 0x7f120f47
+    const v0, 0x7f120f40
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -319,7 +286,6 @@
 
     return-object v0
 
-    .line 126
     :cond_0
     invoke-virtual {p0}, Lcom/android/settingslib/dream/DreamBackend;->getActiveDreamName()Ljava/lang/CharSequence;
 
@@ -330,15 +296,11 @@
 
 .method public static getSummaryTextWithDreamName(Landroid/content/Context;)Ljava/lang/CharSequence;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 117
     invoke-static {p0}, Lcom/android/settingslib/dream/DreamBackend;->getInstance(Landroid/content/Context;)Lcom/android/settingslib/dream/DreamBackend;
 
     move-result-object v0
 
-    .line 118
-    .local v0, "backend":Lcom/android/settingslib/dream/DreamBackend;
     invoke-static {v0, p0}, Lcom/android/settings/dream/DreamSettings;->getSummaryTextFromBackend(Lcom/android/settingslib/dream/DreamBackend;Landroid/content/Context;)Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -350,7 +312,6 @@
 # virtual methods
 .method protected createPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -362,7 +323,6 @@
         }
     .end annotation
 
-    .line 113
     invoke-static {p1}, Lcom/android/settings/dream/DreamSettings;->buildPreferenceControllers(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -373,7 +333,6 @@
 .method public getHelpResource()I
     .locals 1
 
-    .line 103
     const v0, 0x7f120727
 
     return v0
@@ -382,7 +341,6 @@
 .method protected getLogTag()Ljava/lang/String;
     .locals 1
 
-    .line 108
     const-string v0, "DreamSettings"
 
     return-object v0
@@ -391,7 +349,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 93
     const/16 v0, 0x2f
 
     return v0
@@ -400,7 +357,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 98
     const v0, 0x7f160052
 
     return v0

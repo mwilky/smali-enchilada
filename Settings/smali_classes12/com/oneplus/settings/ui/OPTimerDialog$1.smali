@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPTimerDialog;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPTimerDialog;
 
-    .line 72
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPTimerDialog$1;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
 
     iput-object p2, p0, Lcom/oneplus/settings/ui/OPTimerDialog$1;->val$listener:Landroid/content/DialogInterface$OnClickListener;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
-    .line 76
     iget-object v0, p0, Lcom/oneplus/settings/ui/OPTimerDialog$1;->val$listener:Landroid/content/DialogInterface$OnClickListener;
 
     iget-object v1, p0, Lcom/oneplus/settings/ui/OPTimerDialog$1;->this$0:Lcom/oneplus/settings/ui/OPTimerDialog;
@@ -57,6 +53,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
-    .line 77
     return-void
 .end method

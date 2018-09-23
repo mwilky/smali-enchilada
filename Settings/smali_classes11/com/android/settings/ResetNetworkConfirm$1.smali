@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/ResetNetworkConfirm;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/ResetNetworkConfirm;
-    .param p2, "x0"    # Landroid/os/Looper;
 
-    .line 86
     iput-object p1, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -36,19 +33,15 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 89
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 90
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 98
     :pswitch_0
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
@@ -66,7 +59,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 99
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
     invoke-static {v0}, Lcom/android/settings/ResetNetworkConfirm;->access$000(Lcom/android/settings/ResetNetworkConfirm;)Landroid/app/ProgressDialog;
@@ -75,7 +67,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 101
     :cond_0
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
@@ -83,8 +74,6 @@
 
     move-result-object v0
 
-    .line 102
-    .local v0, "activity":Landroid/app/Activity;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
@@ -93,8 +82,7 @@
 
     if-nez v1, :cond_1
 
-    .line 103
-    const v1, 0x7f120ece
+    const v1, 0x7f120ec7
 
     const/4 v2, 0x0
 
@@ -102,13 +90,10 @@
 
     move-result-object v1
 
-    .line 104
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
     goto :goto_0
 
-    .line 92
-    .end local v0    # "activity":Landroid/app/Activity;
     :pswitch_1
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
@@ -140,7 +125,6 @@
 
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
-    .line 93
     invoke-static {v0}, Lcom/android/settings/ResetNetworkConfirm;->access$000(Lcom/android/settings/ResetNetworkConfirm;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -151,7 +135,6 @@
 
     if-nez v0, :cond_1
 
-    .line 94
     iget-object v0, p0, Lcom/android/settings/ResetNetworkConfirm$1;->this$0:Lcom/android/settings/ResetNetworkConfirm;
 
     invoke-static {v0}, Lcom/android/settings/ResetNetworkConfirm;->access$000(Lcom/android/settings/ResetNetworkConfirm;)Landroid/app/ProgressDialog;
@@ -160,7 +143,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
-    .line 110
     :cond_1
     :goto_0
     return-void

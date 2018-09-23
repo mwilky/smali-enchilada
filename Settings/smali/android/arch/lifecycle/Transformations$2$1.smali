@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Landroid/arch/lifecycle/Transformations$2;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/arch/lifecycle/Transformations$2;
 
-    .line 142
     iput-object p1, p0, Landroid/arch/lifecycle/Transformations$2$1;->this$0:Landroid/arch/lifecycle/Transformations$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,14 +54,11 @@
         }
     .end annotation
 
-    .line 145
-    .local p1, "y":Ljava/lang/Object;, "TY;"
     iget-object v0, p0, Landroid/arch/lifecycle/Transformations$2$1;->this$0:Landroid/arch/lifecycle/Transformations$2;
 
     iget-object v0, v0, Landroid/arch/lifecycle/Transformations$2;->val$result:Landroid/arch/lifecycle/MediatorLiveData;
 
     invoke-virtual {v0, p1}, Landroid/arch/lifecycle/MediatorLiveData;->setValue(Ljava/lang/Object;)V
 
-    .line 146
     return-void
 .end method

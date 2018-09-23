@@ -85,15 +85,11 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/MapMakerInternalMap;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/google/common/collect/MapMakerInternalMap;
 
-    .line 3600
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3601
     iget-object v0, p1, Lcom/google/common/collect/MapMakerInternalMap;->segments:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     array-length v0, v0
@@ -102,15 +98,12 @@
 
     iput v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextSegmentIndex:I
 
-    .line 3602
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextTableIndex:I
 
-    .line 3603
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->advance()V
 
-    .line 3604
     return-void
 .end method
 
@@ -119,23 +112,18 @@
 .method final advance()V
     .locals 3
 
-    .line 3610
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextExternal:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
-    .line 3612
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextInChain()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 3613
     return-void
 
-    .line 3616
     :cond_0
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextInTable()Z
 
@@ -143,16 +131,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 3617
     return-void
 
-    .line 3620
     :cond_1
     iget v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextSegmentIndex:I
 
     if-ltz v0, :cond_2
 
-    .line 3621
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
 
     iget-object v0, v0, Lcom/google/common/collect/MapMakerInternalMap;->segments:[Lcom/google/common/collect/MapMakerInternalMap$Segment;
@@ -167,21 +152,18 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentSegment:Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
-    .line 3622
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentSegment:Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     iget v0, v0, Lcom/google/common/collect/MapMakerInternalMap$Segment;->count:I
 
     if-eqz v0, :cond_1
 
-    .line 3623
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentSegment:Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     iget-object v0, v0, Lcom/google/common/collect/MapMakerInternalMap$Segment;->table:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 3624
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
@@ -192,17 +174,14 @@
 
     iput v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextTableIndex:I
 
-    .line 3625
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextInTable()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 3626
     return-void
 
-    .line 3630
     :cond_2
     return-void
 .end method
@@ -217,27 +196,19 @@
         }
     .end annotation
 
-    .line 3666
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
-    .local p1, "entry":Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;, "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     :try_start_0
     invoke-interface {p1}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 3667
-    .local v0, "key":Ljava/lang/Object;, "TK;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
 
     invoke-virtual {v1, p1}, Lcom/google/common/collect/MapMakerInternalMap;->getLiveValue(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 3668
-    .local v1, "value":Ljava/lang/Object;, "TV;"
     if-eqz v1, :cond_0
 
-    .line 3669
     new-instance v2, Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
@@ -248,32 +219,23 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 3670
     const/4 v2, 0x1
 
-    .line 3676
     iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentSegment:Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     invoke-virtual {v3}, Lcom/google/common/collect/MapMakerInternalMap$Segment;->postReadCleanup()V
 
-    .line 3670
     return v2
 
-    .line 3673
     :cond_0
     const/4 v2, 0x0
 
-    .line 3676
     iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentSegment:Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
     invoke-virtual {v3}, Lcom/google/common/collect/MapMakerInternalMap$Segment;->postReadCleanup()V
 
-    .line 3673
     return v2
 
-    .line 3676
-    .end local v0    # "key":Ljava/lang/Object;, "TK;"
-    .end local v1    # "value":Ljava/lang/Object;, "TV;"
     :catchall_0
     move-exception v0
 
@@ -287,8 +249,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 3682
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextExternal:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     if-eqz v0, :cond_0
@@ -322,26 +282,20 @@
         }
     .end annotation
 
-    .line 3686
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextExternal:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     if-eqz v0, :cond_0
 
-    .line 3689
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextExternal:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->lastReturned:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
-    .line 3690
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->advance()V
 
-    .line 3691
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->lastReturned:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     return-object v0
 
-    .line 3687
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -353,13 +307,10 @@
 .method nextInChain()Z
     .locals 1
 
-    .line 3636
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextEntry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     if-eqz v0, :cond_1
 
-    .line 3637
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextEntry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -373,7 +324,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 3638
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextEntry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->advanceTo(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Z
@@ -382,12 +332,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3639
     const/4 v0, 0x1
 
     return v0
 
-    .line 3643
     :cond_1
     const/4 v0, 0x0
 
@@ -397,14 +345,11 @@
 .method nextInTable()Z
     .locals 3
 
-    .line 3650
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     :cond_0
     iget v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextTableIndex:I
 
     if-ltz v0, :cond_2
 
-    .line 3651
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     iget v1, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextTableIndex:I
@@ -423,7 +368,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 3652
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->nextEntry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->advanceTo(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Z
@@ -438,13 +382,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 3653
     :cond_1
     const/4 v0, 0x1
 
     return v0
 
-    .line 3657
     :cond_2
     const/4 v0, 0x0
 
@@ -454,8 +396,6 @@
 .method public remove()V
     .locals 2
 
-    .line 3696
-    .local p0, "this":Lcom/google/common/collect/MapMakerInternalMap$HashIterator;, "Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.HashIterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->lastReturned:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
     if-eqz v0, :cond_0
@@ -470,7 +410,6 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/collect/CollectPreconditions;->checkRemove(Z)V
 
-    .line 3697
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
 
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->lastReturned:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
@@ -481,11 +420,9 @@
 
     invoke-virtual {v0, v1}, Lcom/google/common/collect/MapMakerInternalMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3698
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$HashIterator;->lastReturned:Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 
-    .line 3699
     return-void
 .end method

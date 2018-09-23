@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/wifi/WifiStatusTest;Landroid/os/Handler;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/wifi/WifiStatusTest;
 
-    .line 329
     iput-object p1, p0, Lcom/android/settings/wifi/WifiStatusTest$6;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     iput-object p2, p0, Lcom/android/settings/wifi/WifiStatusTest$6;->val$handler:Landroid/os/Handler;
@@ -44,18 +42,15 @@
 .method public run()V
     .locals 2
 
-    .line 332
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$6;->this$0:Lcom/android/settings/wifi/WifiStatusTest;
 
     invoke-static {v0}, Lcom/android/settings/wifi/WifiStatusTest;->access$2200(Lcom/android/settings/wifi/WifiStatusTest;)V
 
-    .line 333
     iget-object v0, p0, Lcom/android/settings/wifi/WifiStatusTest$6;->val$handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/settings/wifi/WifiStatusTest$6;->val$updatePingResults:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 334
     return-void
 .end method

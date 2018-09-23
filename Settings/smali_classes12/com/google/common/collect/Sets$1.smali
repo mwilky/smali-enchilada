@@ -33,7 +33,6 @@
 .method constructor <init>(Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;)V
     .locals 0
 
-    .line 586
     iput-object p1, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     iput-object p2, p0, Lcom/google/common/collect/Sets$1;->val$set2minus1:Ljava/util/Set;
@@ -51,9 +50,7 @@
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 598
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -95,18 +92,14 @@
         }
     .end annotation
 
-    .line 601
-    .local p1, "set":Ljava/util/Set;, "TS;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 602
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set2:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 603
     return-object p1
 .end method
 
@@ -120,14 +113,12 @@
         }
     .end annotation
 
-    .line 606
     new-instance v0, Lcom/google/common/collect/ImmutableSet$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableSet$Builder;-><init>()V
 
     iget-object v1, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
-    .line 607
     invoke-virtual {v0, v1}, Lcom/google/common/collect/ImmutableSet$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableSet$Builder;
 
     move-result-object v0
@@ -142,14 +133,12 @@
 
     move-result-object v0
 
-    .line 606
     return-object v0
 .end method
 
 .method public isEmpty()Z
     .locals 1
 
-    .line 591
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -187,10 +176,8 @@
         }
     .end annotation
 
-    .line 594
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
-    .line 595
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -205,7 +192,6 @@
 
     move-result-object v0
 
-    .line 594
     invoke-static {v0}, Lcom/google/common/collect/Iterators;->unmodifiableIterator(Ljava/util/Iterator;)Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -216,7 +202,6 @@
 .method public size()I
     .locals 2
 
-    .line 588
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I

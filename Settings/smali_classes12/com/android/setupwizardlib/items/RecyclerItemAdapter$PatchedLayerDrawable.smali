@@ -20,12 +20,9 @@
 # direct methods
 .method constructor <init>([Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1, "layers"    # [Landroid/graphics/drawable/Drawable;
 
-    .line 238
     invoke-direct {p0, p1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
-    .line 239
     return-void
 .end method
 
@@ -33,15 +30,11 @@
 # virtual methods
 .method public getPadding(Landroid/graphics/Rect;)Z
     .locals 2
-    .param p1, "padding"    # Landroid/graphics/Rect;
 
-    .line 243
     invoke-super {p0, p1}, Landroid/graphics/drawable/LayerDrawable;->getPadding(Landroid/graphics/Rect;)Z
 
     move-result v0
 
-    .line 244
-    .local v0, "superHasPadding":Z
     if-eqz v0, :cond_1
 
     iget v1, p1, Landroid/graphics/Rect;->left:I

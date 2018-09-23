@@ -30,10 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/ImmutableMultimap;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/google/common/collect/ImmutableMultimap;
 
-    .line 557
-    .local p0, "this":Lcom/google/common/collect/ImmutableMultimap$1;, "Lcom/google/common/collect/ImmutableMultimap$1;"
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap$1;->this$0:Lcom/google/common/collect/ImmutableMultimap;
 
     const/4 v0, 0x0
@@ -48,8 +45,6 @@
 .method bridge synthetic output(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 557
-    .local p0, "this":Lcom/google/common/collect/ImmutableMultimap$1;, "Lcom/google/common/collect/ImmutableMultimap$1;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap$1;->output(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object p1
@@ -67,10 +62,6 @@
         }
     .end annotation
 
-    .line 560
-    .local p0, "this":Lcom/google/common/collect/ImmutableMultimap$1;, "Lcom/google/common/collect/ImmutableMultimap$1;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-static {p1, p2}, Lcom/google/common/collect/Maps;->immutableEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
     move-result-object v0

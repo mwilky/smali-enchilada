@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
-    .line 140
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$4;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onPreferenceChange(Landroid/support/v7/preference/Preference;Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "preference"    # Landroid/support/v7/preference/Preference;
-    .param p2, "o"    # Ljava/lang/Object;
 
-    .line 143
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$4;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->access$100(Lcom/android/settings/notification/ZenModeScheduleRuleSettings;)Landroid/service/notification/ZenModeConfig$ScheduleInfo;
@@ -58,7 +53,6 @@
 
     iput-boolean v1, v0, Landroid/service/notification/ZenModeConfig$ScheduleInfo;->exitAtAlarm:Z
 
-    .line 144
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$4;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleRuleSettings$4;->this$0:Lcom/android/settings/notification/ZenModeScheduleRuleSettings;
@@ -73,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeScheduleRuleSettings;->updateRule(Landroid/net/Uri;)V
 
-    .line 145
     const/4 v0, 0x1
 
     return v0

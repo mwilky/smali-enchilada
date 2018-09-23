@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/content/IntentSender;)V
     .locals 0
 
-    .line 108
     iput-object p1, p0, Landroid/support/v4/content/pm/ShortcutManagerCompat$1;->val$callback:Landroid/content/IntentSender;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 112
     :try_start_0
     iget-object v0, p0, Landroid/support/v4/content/pm/ShortcutManagerCompat$1;->val$callback:Landroid/content/IntentSender;
 
@@ -55,14 +51,11 @@
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 115
     goto :goto_0
 
-    .line 113
     :catch_0
     move-exception v0
 
-    .line 116
     :goto_0
     return-void
 .end method

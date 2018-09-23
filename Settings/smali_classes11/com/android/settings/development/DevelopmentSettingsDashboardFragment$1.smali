@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
-    .line 80
     iput-object p1, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment$1;->this$0:Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 83
     iget-object v0, p0, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment$1;->this$0:Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;
 
     invoke-static {v0}, Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;->access$000(Lcom/android/settings/development/DevelopmentSettingsDashboardFragment;)Ljava/util/List;
@@ -62,25 +57,19 @@
 
     check-cast v1, Lcom/android/settingslib/core/AbstractPreferenceController;
 
-    .line 84
-    .local v1, "controller":Lcom/android/settingslib/core/AbstractPreferenceController;
     instance-of v2, v1, Lcom/android/settings/development/AdbOnChangeListener;
 
     if-eqz v2, :cond_0
 
-    .line 85
     move-object v2, v1
 
     check-cast v2, Lcom/android/settings/development/AdbOnChangeListener;
 
     invoke-interface {v2}, Lcom/android/settings/development/AdbOnChangeListener;->onAdbSettingChanged()V
 
-    .line 87
-    .end local v1    # "controller":Lcom/android/settingslib/core/AbstractPreferenceController;
     :cond_0
     goto :goto_0
 
-    .line 88
     :cond_1
     return-void
 .end method

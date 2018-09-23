@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/app/VerticalGridFragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/app/VerticalGridFragment;
 
-    .line 199
     iput-object p1, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$4;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +37,11 @@
 .method public run()V
     .locals 2
 
-    .line 202
     iget-object v0, p0, Landroid/support/v17/leanback/app/VerticalGridFragment$4;->this$0:Landroid/support/v17/leanback/app/VerticalGridFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/app/VerticalGridFragment;->setEntranceTransitionState(Z)V
 
-    .line 203
     return-void
 .end method

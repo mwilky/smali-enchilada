@@ -24,27 +24,17 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;F)V
     .locals 0
-    .param p1, "family"    # Ljava/lang/String;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "style"    # Ljava/lang/String;
-    .param p4, "ascent"    # F
 
-    .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13
     iput-object p1, p0, Lcom/airbnb/lottie/model/Font;->family:Ljava/lang/String;
 
-    .line 14
     iput-object p2, p0, Lcom/airbnb/lottie/model/Font;->name:Ljava/lang/String;
 
-    .line 15
     iput-object p3, p0, Lcom/airbnb/lottie/model/Font;->style:Ljava/lang/String;
 
-    .line 16
     iput p4, p0, Lcom/airbnb/lottie/model/Font;->ascent:F
 
-    .line 17
     return-void
 .end method
 
@@ -53,7 +43,6 @@
 .method getAscent()F
     .locals 1
 
-    .line 32
     iget v0, p0, Lcom/airbnb/lottie/model/Font;->ascent:F
 
     return v0
@@ -62,7 +51,6 @@
 .method public getFamily()Ljava/lang/String;
     .locals 1
 
-    .line 20
     iget-object v0, p0, Lcom/airbnb/lottie/model/Font;->family:Ljava/lang/String;
 
     return-object v0
@@ -71,7 +59,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 24
     iget-object v0, p0, Lcom/airbnb/lottie/model/Font;->name:Ljava/lang/String;
 
     return-object v0
@@ -80,7 +67,6 @@
 .method public getStyle()Ljava/lang/String;
     .locals 1
 
-    .line 28
     iget-object v0, p0, Lcom/airbnb/lottie/model/Font;->style:Ljava/lang/String;
 
     return-object v0

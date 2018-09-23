@@ -28,11 +28,7 @@
         }
     .end annotation
 
-    .line 9
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/KeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/KeyframeAnimation<TT;>;"
-    .local p1, "keyframes":Ljava/util/List;, "Ljava/util/List<+Lcom/airbnb/lottie/animation/Keyframe<TT;>;>;"
     invoke-direct {p0, p1}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;-><init>(Ljava/util/List;)V
 
-    .line 10
     return-void
 .end method

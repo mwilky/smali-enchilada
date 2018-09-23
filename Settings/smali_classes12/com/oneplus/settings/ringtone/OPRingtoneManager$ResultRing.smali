@@ -23,18 +23,12 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "t"    # Ljava/lang/String;
-    .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 504
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 505
     iput-object p1, p0, Lcom/oneplus/settings/ringtone/OPRingtoneManager$ResultRing;->title:Ljava/lang/String;
 
-    .line 506
     iput-object p2, p0, Lcom/oneplus/settings/ringtone/OPRingtoneManager$ResultRing;->ringUri:Landroid/net/Uri;
 
-    .line 507
     return-void
 .end method

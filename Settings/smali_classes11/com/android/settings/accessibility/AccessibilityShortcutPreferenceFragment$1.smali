@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 51
     iput-object p1, p0, Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 54
     iget-object v0, p0, Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment$1;->this$0:Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;
 
     invoke-static {v0}, Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;->access$000(Lcom/android/settings/accessibility/AccessibilityShortcutPreferenceFragment;)V
 
-    .line 55
     return-void
 .end method

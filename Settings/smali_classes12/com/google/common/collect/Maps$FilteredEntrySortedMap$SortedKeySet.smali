@@ -33,10 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Maps$FilteredEntrySortedMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
-    .line 2802
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;-><init>(Lcom/google/common/collect/Maps$FilteredEntryMap;)V
@@ -56,8 +53,6 @@
         }
     .end annotation
 
-    .line 2805
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->sortedMap()Ljava/util/SortedMap;
@@ -79,8 +74,6 @@
         }
     .end annotation
 
-    .line 2825
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->firstKey()Ljava/lang/Object;
@@ -100,9 +93,6 @@
         }
     .end annotation
 
-    .line 2815
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
-    .local p1, "toElement":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -126,8 +116,6 @@
         }
     .end annotation
 
-    .line 2830
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->lastKey()Ljava/lang/Object;
@@ -147,10 +135,6 @@
         }
     .end annotation
 
-    .line 2810
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TK;"
-    .local p2, "toElement":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -176,9 +160,6 @@
         }
     .end annotation
 
-    .line 2820
-    .local p0, "this":Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;, "Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>.SortedKeySet;"
-    .local p1, "fromElement":Ljava/lang/Object;, "TK;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap$SortedKeySet;->this$0:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;

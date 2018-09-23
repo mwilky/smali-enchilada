@@ -49,25 +49,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 94
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$Builder;, "Lcom/google/common/collect/ImmutableRangeMap$Builder<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     invoke-static {}, Lcom/google/common/collect/TreeRangeSet;->create()Lcom/google/common/collect/TreeRangeSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->keyRanges:Lcom/google/common/collect/RangeSet;
 
-    .line 96
     invoke-static {}, Lcom/google/common/collect/TreeRangeMap;->create()Lcom/google/common/collect/TreeRangeMap;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->rangeMap:Lcom/google/common/collect/RangeMap;
 
-    .line 97
     return-void
 .end method
 
@@ -83,27 +78,20 @@
         }
     .end annotation
 
-    .line 142
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$Builder;, "Lcom/google/common/collect/ImmutableRangeMap$Builder<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->rangeMap:Lcom/google/common/collect/RangeMap;
 
     invoke-interface {v0}, Lcom/google/common/collect/RangeMap;->asMapOfRanges()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 143
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/common/collect/Range<TK;>;TV;>;"
     new-instance v1, Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 144
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v2
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/ImmutableList$Builder;-><init>(I)V
 
-    .line 145
-    .local v1, "rangesBuilder":Lcom/google/common/collect/ImmutableList$Builder;, "Lcom/google/common/collect/ImmutableList$Builder<Lcom/google/common/collect/Range<TK;>;>;"
     new-instance v2, Lcom/google/common/collect/ImmutableList$Builder;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -112,8 +100,6 @@
 
     invoke-direct {v2, v3}, Lcom/google/common/collect/ImmutableList$Builder;-><init>(I)V
 
-    .line 146
-    .local v2, "valuesBuilder":Lcom/google/common/collect/ImmutableList$Builder;, "Lcom/google/common/collect/ImmutableList$Builder<TV;>;"
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v3
@@ -135,26 +121,20 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 147
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 148
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 149
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
     goto :goto_0
 
-    .line 150
     :cond_0
     new-instance v3, Lcom/google/common/collect/ImmutableRangeMap;
 
@@ -183,16 +163,10 @@
         }
     .end annotation
 
-    .line 106
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$Builder;, "Lcom/google/common/collect/ImmutableRangeMap$Builder<TK;TV;>;"
-    .local p1, "range":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 108
     invoke-virtual {p1}, Lcom/google/common/collect/Range;->isEmpty()Z
 
     move-result v0
@@ -211,7 +185,6 @@
 
     invoke-static {v0, v2, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 109
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->keyRanges:Lcom/google/common/collect/RangeSet;
 
     invoke-interface {v0}, Lcom/google/common/collect/RangeSet;->complement()Lcom/google/common/collect/RangeSet;
@@ -224,7 +197,6 @@
 
     if-nez v0, :cond_2
 
-    .line 111
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->rangeMap:Lcom/google/common/collect/RangeMap;
 
     invoke-interface {v0}, Lcom/google/common/collect/RangeMap;->asMapOfRanges()Ljava/util/Map;
@@ -252,16 +224,12 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 112
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/common/collect/Range;
 
-    .line 113
-    .local v2, "key":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     invoke-virtual {v2, p1}, Lcom/google/common/collect/Range;->isConnected(Lcom/google/common/collect/Range;)Z
 
     move-result v3
@@ -278,13 +246,8 @@
 
     if-eqz v3, :cond_0
 
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
-    .end local v2    # "key":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     goto :goto_1
 
-    .line 114
-    .restart local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
-    .restart local v2    # "key":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -312,25 +275,19 @@
 
     throw v0
 
-    .line 117
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;TV;>;"
-    .end local v2    # "key":Lcom/google/common/collect/Range;, "Lcom/google/common/collect/Range<TK;>;"
     :cond_1
     :goto_1
     goto :goto_0
 
-    .line 119
     :cond_2
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->keyRanges:Lcom/google/common/collect/RangeSet;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/RangeSet;->add(Lcom/google/common/collect/Range;)V
 
-    .line 120
     iget-object v0, p0, Lcom/google/common/collect/ImmutableRangeMap$Builder;->rangeMap:Lcom/google/common/collect/RangeMap;
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/collect/RangeMap;->put(Lcom/google/common/collect/Range;Ljava/lang/Object;)V
 
-    .line 121
     return-object p0
 .end method
 
@@ -346,9 +303,6 @@
         }
     .end annotation
 
-    .line 131
-    .local p0, "this":Lcom/google/common/collect/ImmutableRangeMap$Builder;, "Lcom/google/common/collect/ImmutableRangeMap$Builder<TK;TV;>;"
-    .local p1, "rangeMap":Lcom/google/common/collect/RangeMap;, "Lcom/google/common/collect/RangeMap<TK;+TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/RangeMap;->asMapOfRanges()Ljava/util/Map;
 
     move-result-object v0
@@ -374,8 +328,6 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 132
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;+TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -388,11 +340,8 @@
 
     invoke-virtual {p0, v2, v3}, Lcom/google/common/collect/ImmutableRangeMap$Builder;->put(Lcom/google/common/collect/Range;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableRangeMap$Builder;
 
-    .line 133
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/common/collect/Range<TK;>;+TV;>;"
     goto :goto_0
 
-    .line 134
     :cond_0
     return-object p0
 .end method

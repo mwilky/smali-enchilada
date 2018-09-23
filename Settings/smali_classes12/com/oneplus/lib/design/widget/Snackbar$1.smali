@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/lib/design/widget/Snackbar;Landroid/view/View$OnClickListener;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/lib/design/widget/Snackbar;
 
-    .line 252
     iput-object p1, p0, Lcom/oneplus/lib/design/widget/Snackbar$1;->this$0:Lcom/oneplus/lib/design/widget/Snackbar;
 
     iput-object p2, p0, Lcom/oneplus/lib/design/widget/Snackbar$1;->val$listener:Landroid/view/View$OnClickListener;
@@ -42,20 +40,16 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 255
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/Snackbar$1;->val$listener:Landroid/view/View$OnClickListener;
 
     invoke-interface {v0, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 257
     iget-object v0, p0, Lcom/oneplus/lib/design/widget/Snackbar$1;->this$0:Lcom/oneplus/lib/design/widget/Snackbar;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/oneplus/lib/design/widget/Snackbar;->dispatchDismiss(I)V
 
-    .line 258
     return-void
 .end method

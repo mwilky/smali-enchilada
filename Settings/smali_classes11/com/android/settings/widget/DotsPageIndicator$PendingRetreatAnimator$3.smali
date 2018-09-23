@@ -29,9 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;Lcom/android/settings/widget/DotsPageIndicator;[IFF)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
-    .line 821
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iput-object p2, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->val$this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -51,9 +49,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 836
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -62,43 +58,36 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$1202(Lcom/android/settings/widget/DotsPageIndicator;F)F
 
-    .line 837
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$1302(Lcom/android/settings/widget/DotsPageIndicator;F)F
 
-    .line 838
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/DotsPageIndicator;->postInvalidateOnAnimation()V
 
-    .line 839
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 6
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 824
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-static {v0}, Lcom/android/settings/widget/DotsPageIndicator;->access$1400(Lcom/android/settings/widget/DotsPageIndicator;)V
 
-    .line 825
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-static {v0}, Lcom/android/settings/widget/DotsPageIndicator;->access$1500(Lcom/android/settings/widget/DotsPageIndicator;)V
 
-    .line 827
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->val$dotsToHide:[I
 
     array-length v1, v0
@@ -110,8 +99,6 @@
 
     aget v3, v0, v2
 
-    .line 828
-    .local v3, "dot":I
     iget-object v4, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v4, v4, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -120,13 +107,10 @@
 
     invoke-static {v4, v3, v5}, Lcom/android/settings/widget/DotsPageIndicator;->access$1600(Lcom/android/settings/widget/DotsPageIndicator;IF)V
 
-    .line 827
-    .end local v3    # "dot":I
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 830
     :cond_0
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
@@ -136,7 +120,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$1202(Lcom/android/settings/widget/DotsPageIndicator;F)F
 
-    .line 831
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
@@ -145,13 +128,11 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/widget/DotsPageIndicator;->access$1302(Lcom/android/settings/widget/DotsPageIndicator;F)F
 
-    .line 832
     iget-object v0, p0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator$3;->this$1:Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;
 
     iget-object v0, v0, Lcom/android/settings/widget/DotsPageIndicator$PendingRetreatAnimator;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
     invoke-virtual {v0}, Lcom/android/settings/widget/DotsPageIndicator;->postInvalidateOnAnimation()V
 
-    .line 833
     return-void
 .end method

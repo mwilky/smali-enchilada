@@ -32,15 +32,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     iput-object p1, p0, Lcom/oneplus/settings/OneplusColorManager;->mContext:Landroid/content/Context;
 
-    .line 35
     iget-object v0, p0, Lcom/oneplus/settings/OneplusColorManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -55,12 +51,10 @@
 
     iput-boolean v0, p0, Lcom/oneplus/settings/OneplusColorManager;->isSupportReadingMode:Z
 
-    .line 36
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-nez v0, :cond_0
 
-    .line 37
     new-instance v0, Lcom/oneplus/display/ColorBalanceManager;
 
     iget-object v1, p0, Lcom/oneplus/settings/OneplusColorManager;->mContext:Landroid/content/Context;
@@ -69,28 +63,23 @@
 
     sput-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
-    .line 38
     :cond_0
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/oneplus/settings/OneplusColorManager;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 27
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mOneplusColorManager:Lcom/oneplus/settings/OneplusColorManager;
 
     if-nez v0, :cond_0
 
-    .line 28
     new-instance v0, Lcom/oneplus/settings/OneplusColorManager;
 
     invoke-direct {v0, p0}, Lcom/oneplus/settings/OneplusColorManager;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/oneplus/settings/OneplusColorManager;->mOneplusColorManager:Lcom/oneplus/settings/OneplusColorManager;
 
-    .line 30
     :cond_0
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mOneplusColorManager:Lcom/oneplus/settings/OneplusColorManager;
 
@@ -100,19 +89,16 @@
 .method private saveColorManagerMode()V
     .locals 2
 
-    .line 62
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 63
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->sendMsg(I)V
 
-    .line 64
     :cond_0
     return-void
 .end method
@@ -122,83 +108,70 @@
 .method public closeDciP3()V
     .locals 2
 
-    .line 104
     const-string v0, "sys.dci3p"
 
     const-string v1, "0"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 105
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 106
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 107
     return-void
 .end method
 
 .method public closesRGB()V
     .locals 2
 
-    .line 89
     const-string v0, "sys.srgb"
 
     const-string v1, "0"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 90
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 91
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 92
     return-void
 .end method
 
 .method public releaseColorManager()V
     .locals 0
 
-    .line 141
     return-void
 .end method
 
 .method public resetScreenBetterDisplay()V
     .locals 2
 
-    .line 117
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_1
 
-    .line 118
     iget-boolean v0, p0, Lcom/oneplus/settings/OneplusColorManager;->isSupportReadingMode:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 119
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 120
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/16 v1, 0x2b
@@ -207,17 +180,14 @@
 
     goto :goto_0
 
-    .line 122
     :cond_0
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 124
     :goto_0
     invoke-direct {p0}, Lcom/oneplus/settings/OneplusColorManager;->saveColorManagerMode()V
 
-    .line 126
     :cond_1
     return-void
 .end method
@@ -225,22 +195,18 @@
 .method public restoreScreenBetterDisplay()V
     .locals 3
 
-    .line 70
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 71
     const-string v0, "OneplusColorManager"
 
     const-string v1, "orestoreScreenBetterDisplay"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     iget-object v0, p0, Lcom/oneplus/settings/OneplusColorManager;->mContext:Landroid/content/Context;
 
-    .line 73
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -249,44 +215,35 @@
 
     const/16 v2, 0x2b
 
-    .line 72
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 75
-    .local v0, "screenbettervalue":I
     sget-object v1, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     rsub-int/lit8 v2, v0, 0x64
 
     invoke-virtual {v1, v2}, Lcom/oneplus/display/ColorBalanceManager;->setColorBalance(I)V
 
-    .line 77
-    .end local v0    # "screenbettervalue":I
     :cond_0
     invoke-direct {p0}, Lcom/oneplus/settings/OneplusColorManager;->saveColorManagerMode()V
 
-    .line 78
     return-void
 .end method
 
 .method public revertStatus()V
     .locals 2
 
-    .line 135
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 136
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/16 v1, 0xc
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->sendMsg(I)V
 
-    .line 138
     :cond_0
     return-void
 .end method
@@ -294,28 +251,22 @@
 .method public saveScreenBetter()V
     .locals 0
 
-    .line 66
     invoke-direct {p0}, Lcom/oneplus/settings/OneplusColorManager;->saveColorManagerMode()V
 
-    .line 67
     return-void
 .end method
 
 .method public setActiveMode(I)V
     .locals 1
-    .param p1, "value"    # I
 
-    .line 129
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 130
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 132
     :cond_0
     return-void
 .end method
@@ -323,50 +274,41 @@
 .method public setActivetNightMode()V
     .locals 2
 
-    .line 49
     const-string v0, "sys.srgb"
 
     const-string v1, "1"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 50
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 51
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 52
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 54
     :cond_0
     return-void
 .end method
 
 .method public setColorBalance(I)V
     .locals 1
-    .param p1, "value"    # I
 
-    .line 56
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 57
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/display/ColorBalanceManager;->setColorBalance(I)V
 
-    .line 59
     :cond_0
     return-void
 .end method
@@ -374,24 +316,20 @@
 .method public setDciP3()V
     .locals 2
 
-    .line 95
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 96
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 97
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 100
     :cond_0
     const-string v0, "sys.dci3p"
 
@@ -399,30 +337,24 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 101
     return-void
 .end method
 
 .method public setNightModeLevel(I)V
     .locals 1
-    .param p1, "value"    # I
 
-    .line 110
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 111
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 112
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, p1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 114
     :cond_0
     return-void
 .end method
@@ -430,31 +362,26 @@
 .method public setNotActivetNightMode()V
     .locals 2
 
-    .line 41
     const-string v0, "sys.srgb"
 
     const-string v1, "0"
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 42
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 43
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 44
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 46
     :cond_0
     return-void
 .end method
@@ -462,24 +389,20 @@
 .method public setsRGB()V
     .locals 2
 
-    .line 81
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     if-eqz v0, :cond_0
 
-    .line 82
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setActiveMode(I)V
 
-    .line 83
     sget-object v0, Lcom/oneplus/settings/OneplusColorManager;->mCBM:Lcom/oneplus/display/ColorBalanceManager;
 
     invoke-virtual {v0, v1}, Lcom/oneplus/display/ColorBalanceManager;->setDefaultMode(I)V
 
-    .line 85
     :cond_0
     const-string v0, "sys.srgb"
 
@@ -487,6 +410,5 @@
 
     invoke-static {v0, v1}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 86
     return-void
 .end method

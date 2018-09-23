@@ -36,7 +36,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 113
     new-instance v0, Lcom/google/common/reflect/Types$ClassOwnership$1;
 
     const-string v1, "OWNED_BY_ENCLOSING_CLASS"
@@ -47,7 +46,6 @@
 
     sput-object v0, Lcom/google/common/reflect/Types$ClassOwnership;->OWNED_BY_ENCLOSING_CLASS:Lcom/google/common/reflect/Types$ClassOwnership;
 
-    .line 120
     new-instance v0, Lcom/google/common/reflect/Types$ClassOwnership$2;
 
     const-string v1, "LOCAL_CLASS_HAS_NO_OWNER"
@@ -58,7 +56,6 @@
 
     sput-object v0, Lcom/google/common/reflect/Types$ClassOwnership;->LOCAL_CLASS_HAS_NO_OWNER:Lcom/google/common/reflect/Types$ClassOwnership;
 
-    .line 111
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/common/reflect/Types$ClassOwnership;
@@ -73,7 +70,6 @@
 
     sput-object v0, Lcom/google/common/reflect/Types$ClassOwnership;->$VALUES:[Lcom/google/common/reflect/Types$ClassOwnership;
 
-    .line 134
     invoke-static {}, Lcom/google/common/reflect/Types$ClassOwnership;->detectJvmBehavior()Lcom/google/common/reflect/Types$ClassOwnership;
 
     move-result-object v0
@@ -91,7 +87,6 @@
         }
     .end annotation
 
-    .line 111
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -99,11 +94,7 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/common/reflect/Types$1;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # Lcom/google/common/reflect/Types$1;
 
-    .line 111
     invoke-direct {p0, p1, p2}, Lcom/google/common/reflect/Types$ClassOwnership;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -112,7 +103,6 @@
 .method private static detectJvmBehavior()Lcom/google/common/reflect/Types$ClassOwnership;
     .locals 8
 
-    .line 138
     new-instance v0, Lcom/google/common/reflect/Types$ClassOwnership$3;
 
     invoke-direct {v0}, Lcom/google/common/reflect/Types$ClassOwnership$3;-><init>()V
@@ -121,19 +111,14 @@
 
     move-result-object v0
 
-    .line 139
-    .local v0, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     nop
 
-    .line 140
     invoke-virtual {v0}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/reflect/ParameterizedType;
 
-    .line 141
-    .local v1, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-static {}, Lcom/google/common/reflect/Types$ClassOwnership;->values()[Lcom/google/common/reflect/Types$ClassOwnership;
 
     move-result-object v2
@@ -147,8 +132,6 @@
 
     aget-object v5, v2, v4
 
-    .line 142
-    .local v5, "behavior":Lcom/google/common/reflect/Types$ClassOwnership;
     const-class v6, Lcom/google/common/reflect/Types$ClassOwnership$1LocalClass;
 
     invoke-virtual {v5, v6}, Lcom/google/common/reflect/Types$ClassOwnership;->getOwnerType(Ljava/lang/Class;)Ljava/lang/Class;
@@ -161,17 +144,13 @@
 
     if-ne v6, v7, :cond_0
 
-    .line 143
     return-object v5
 
-    .line 141
-    .end local v5    # "behavior":Lcom/google/common/reflect/Types$ClassOwnership;
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 146
     :cond_1
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -182,9 +161,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/reflect/Types$ClassOwnership;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 111
     const-class v0, Lcom/google/common/reflect/Types$ClassOwnership;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -199,7 +176,6 @@
 .method public static values()[Lcom/google/common/reflect/Types$ClassOwnership;
     .locals 1
 
-    .line 111
     sget-object v0, Lcom/google/common/reflect/Types$ClassOwnership;->$VALUES:[Lcom/google/common/reflect/Types$ClassOwnership;
 
     invoke-virtual {v0}, [Lcom/google/common/reflect/Types$ClassOwnership;->clone()Ljava/lang/Object;

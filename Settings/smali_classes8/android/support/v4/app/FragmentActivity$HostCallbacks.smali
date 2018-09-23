@@ -29,15 +29,11 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v4/app/FragmentActivity;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/app/FragmentActivity;
 
-    .line 983
     iput-object p1, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
-    .line 984
     invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentHostCallback;-><init>(Landroid/support/v4/app/FragmentActivity;)V
 
-    .line 985
     return-void
 .end method
 
@@ -45,40 +41,29 @@
 # virtual methods
 .method public onAttachFragment(Landroid/support/v4/app/Fragment;)V
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
 
-    .line 1057
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentActivity;->onAttachFragment(Landroid/support/v4/app/Fragment;)V
 
-    .line 1058
     return-void
 .end method
 
 .method public onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 1
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "fd"    # Ljava/io/FileDescriptor;
-    .param p3, "writer"    # Ljava/io/PrintWriter;
-    .param p4, "args"    # [Ljava/lang/String;
 
-    .line 989
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/FragmentActivity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 990
     return-void
 .end method
 
 .method public onFindViewById(I)Landroid/view/View;
     .locals 1
-    .param p1, "id"    # I
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 1063
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentActivity;->findViewById(I)Landroid/view/View;
@@ -91,7 +76,6 @@
 .method public onGetHost()Landroid/support/v4/app/FragmentActivity;
     .locals 1
 
-    .line 1004
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     return-object v0
@@ -100,7 +84,6 @@
 .method public bridge synthetic onGetHost()Ljava/lang/Object;
     .locals 1
 
-    .line 982
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->onGetHost()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -111,7 +94,6 @@
 .method public onGetLayoutInflater()Landroid/view/LayoutInflater;
     .locals 2
 
-    .line 999
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
@@ -130,15 +112,12 @@
 .method public onGetWindowAnimations()I
     .locals 2
 
-    .line 1051
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 1052
-    .local v0, "w":Landroid/view/Window;
     if-nez v0, :cond_0
 
     const/4 v1, 0x0
@@ -159,15 +138,12 @@
 .method public onHasView()Z
     .locals 2
 
-    .line 1068
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 1069
-    .local v0, "w":Landroid/view/Window;
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
@@ -190,7 +166,6 @@
 .method public onHasWindowAnimations()Z
     .locals 1
 
-    .line 1046
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
@@ -212,30 +187,25 @@
 
 .method public onRequestPermissionsFromFragment(Landroid/support/v4/app/Fragment;[Ljava/lang/String;I)V
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
+    .param p1    # Landroid/support/v4/app/Fragment;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "permissions"    # [Ljava/lang/String;
+    .param p2    # [Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p3, "requestCode"    # I
 
-    .line 1034
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->requestPermissionsFromFragment(Landroid/support/v4/app/Fragment;[Ljava/lang/String;I)V
 
-    .line 1036
     return-void
 .end method
 
 .method public onShouldSaveFragmentState(Landroid/support/v4/app/Fragment;)Z
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
 
-    .line 994
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->isFinishing()Z
@@ -249,12 +219,11 @@
 
 .method public onShouldShowRequestPermissionRationale(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "permission"    # Ljava/lang/String;
+    .param p1    # Ljava/lang/String;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 1040
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-static {v0, p1}, Landroid/support/v4/app/ActivityCompat;->shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
@@ -266,58 +235,40 @@
 
 .method public onStartActivityFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p2, "intent"    # Landroid/content/Intent;
-    .param p3, "requestCode"    # I
 
-    .line 1014
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->startActivityFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
 
-    .line 1015
     return-void
 .end method
 
 .method public onStartActivityFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
     .locals 1
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p2, "intent"    # Landroid/content/Intent;
-    .param p3, "requestCode"    # I
-    .param p4, "options"    # Landroid/os/Bundle;
+    .param p4    # Landroid/os/Bundle;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
 
-    .line 1020
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/FragmentActivity;->startActivityFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    .line 1021
     return-void
 .end method
 
 .method public onStartIntentSenderFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
     .locals 10
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p2, "intent"    # Landroid/content/IntentSender;
-    .param p3, "requestCode"    # I
-    .param p4, "fillInIntent"    # Landroid/content/Intent;
+    .param p4    # Landroid/content/Intent;
         .annotation build Landroid/support/annotation/Nullable;
         .end annotation
     .end param
-    .param p5, "flagsMask"    # I
-    .param p6, "flagsValues"    # I
-    .param p7, "extraFlags"    # I
-    .param p8, "options"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/content/IntentSender$SendIntentException;
         }
     .end annotation
 
-    .line 1027
     move-object v0, p0
 
     iget-object v1, v0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
@@ -340,18 +291,15 @@
 
     invoke-virtual/range {v1 .. v9}, Landroid/support/v4/app/FragmentActivity;->startIntentSenderFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
-    .line 1029
     return-void
 .end method
 
 .method public onSupportInvalidateOptionsMenu()V
     .locals 1
 
-    .line 1009
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->this$0:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->supportInvalidateOptionsMenu()V
 
-    .line 1010
     return-void
 .end method

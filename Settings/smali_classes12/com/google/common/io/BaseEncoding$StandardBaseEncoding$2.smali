@@ -36,30 +36,23 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;Lcom/google/common/io/GwtWorkarounds$CharInput;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
-    .line 645
     iput-object p1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
     iput-object p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->val$reader:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 646
     const/4 p2, 0x0
 
     iput p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
-    .line 647
     iput p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
-    .line 648
     iput p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->readChars:I
 
-    .line 649
     iput-boolean p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
-    .line 650
     iget-object p2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
     invoke-virtual {p2}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->padding()Lcom/google/common/base/CharMatcher;
@@ -81,12 +74,10 @@
         }
     .end annotation
 
-    .line 688
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->val$reader:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
     invoke-interface {v0}, Lcom/google/common/io/GwtWorkarounds$CharInput;->close()V
 
-    .line 689
     return-void
 .end method
 
@@ -98,7 +89,6 @@
         }
     .end annotation
 
-    .line 655
     :goto_0
     iget-object v0, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->val$reader:Lcom/google/common/io/GwtWorkarounds$CharInput;
 
@@ -106,13 +96,10 @@
 
     move-result v0
 
-    .line 656
-    .local v0, "readChar":I
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_2
 
-    .line 657
     iget-boolean v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
     if-nez v2, :cond_1
@@ -133,7 +120,6 @@
 
     goto :goto_1
 
-    .line 658
     :cond_0
     new-instance v1, Lcom/google/common/io/BaseEncoding$DecodingException;
 
@@ -157,12 +143,10 @@
 
     throw v1
 
-    .line 660
     :cond_1
     :goto_1
     return v1
 
-    .line 662
     :cond_2
     iget v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->readChars:I
 
@@ -172,11 +156,8 @@
 
     iput v1, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->readChars:I
 
-    .line 663
     int-to-char v1, v0
 
-    .line 664
-    .local v1, "ch":C
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->paddingMatcher:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {v3, v1}, Lcom/google/common/base/CharMatcher;->matches(C)Z
@@ -185,7 +166,6 @@
 
     if-eqz v3, :cond_5
 
-    .line 665
     iget-boolean v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
     if-nez v3, :cond_4
@@ -196,7 +176,6 @@
 
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
 
-    .line 666
     invoke-static {v3}, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;->access$000(Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;)Lcom/google/common/io/BaseEncoding$Alphabet;
 
     move-result-object v3
@@ -213,7 +192,6 @@
 
     goto :goto_2
 
-    .line 667
     :cond_3
     new-instance v2, Lcom/google/common/io/BaseEncoding$DecodingException;
 
@@ -237,20 +215,17 @@
 
     throw v2
 
-    .line 669
     :cond_4
     :goto_2
     iput-boolean v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
     goto :goto_3
 
-    .line 670
     :cond_5
     iget-boolean v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->hitPadding:Z
 
     if-nez v2, :cond_7
 
-    .line 674
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -265,7 +240,6 @@
 
     iput v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
-    .line 675
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -282,7 +256,6 @@
 
     iput v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
-    .line 676
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
     iget-object v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->this$0:Lcom/google/common/io/BaseEncoding$StandardBaseEncoding;
@@ -297,21 +270,18 @@
 
     iput v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
-    .line 678
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
     const/16 v3, 0x8
 
     if-lt v2, v3, :cond_6
 
-    .line 679
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
     sub-int/2addr v2, v3
 
     iput v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
 
-    .line 680
     iget v2, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBuffer:I
 
     iget v3, p0, Lcom/google/common/io/BaseEncoding$StandardBaseEncoding$2;->bitBufferLength:I
@@ -322,16 +292,10 @@
 
     return v2
 
-    .line 683
-    .end local v0    # "readChar":I
-    .end local v1    # "ch":C
     :cond_6
     :goto_3
     goto/16 :goto_0
 
-    .line 671
-    .restart local v0    # "readChar":I
-    .restart local v1    # "ch":C
     :cond_7
     new-instance v2, Lcom/google/common/io/BaseEncoding$DecodingException;
 

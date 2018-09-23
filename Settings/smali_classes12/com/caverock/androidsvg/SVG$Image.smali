@@ -35,7 +35,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1816
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgPreserveAspectRatioContainer;-><init>()V
 
     return-void
@@ -45,9 +44,7 @@
 # virtual methods
 .method public setTransform(Landroid/graphics/Matrix;)V
     .locals 0
-    .param p1, "transform"    # Landroid/graphics/Matrix;
 
-    .line 1826
     iput-object p1, p0, Lcom/caverock/androidsvg/SVG$Image;->transform:Landroid/graphics/Matrix;
 
     return-void

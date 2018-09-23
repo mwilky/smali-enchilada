@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 52
     new-instance v0, Lcom/android/settings/accessibility/VibrationSettings$1;
 
     invoke-direct {v0}, Lcom/android/settings/accessibility/VibrationSettings$1;-><init>()V
@@ -26,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 33
     invoke-direct {p0}, Lcom/android/settings/dashboard/DashboardFragment;-><init>()V
 
     return-void
@@ -37,7 +35,6 @@
 .method protected getLogTag()Ljava/lang/String;
     .locals 1
 
-    .line 49
     const-string v0, "VibrationSettings"
 
     return-object v0
@@ -46,7 +43,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 39
     const/16 v0, 0x50c
 
     return v0
@@ -55,7 +51,6 @@
 .method protected getPreferenceScreenResId()I
     .locals 1
 
-    .line 44
     const v0, 0x7f16000a
 
     return v0

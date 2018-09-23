@@ -38,7 +38,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +46,6 @@
 .method static synthetic access$000()Ldalvik/system/DexClassLoader;
     .locals 1
 
-    .line 51
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mLoader:Ldalvik/system/DexClassLoader;
 
     return-object v0
@@ -56,7 +54,6 @@
 .method static synthetic access$100()Ljava/lang/Class;
     .locals 1
 
-    .line 51
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mNotifierClz:Ljava/lang/Class;
 
     return-object v0
@@ -64,10 +61,7 @@
 
 .method static synthetic access$300(Lcom/android/settings/widget/AppPreference;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/settings/widget/AppPreference;
-    .param p1, "x1"    # Z
 
-    .line 51
     invoke-static {p0, p1}, Lcom/android/settings/location/DimmableIZatIconPreference;->dimIcon(Lcom/android/settings/widget/AppPreference;Z)V
 
     return-void
@@ -76,7 +70,6 @@
 .method static synthetic access$400()Ljava/lang/reflect/Method;
     .locals 1
 
-    .line 51
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetXtProxyMethod:Ljava/lang/reflect/Method;
 
     return-object v0
@@ -85,7 +78,6 @@
 .method static synthetic access$500()Ljava/lang/reflect/Method;
     .locals 1
 
-    .line 51
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetConsentMethod:Ljava/lang/reflect/Method;
 
     return-object v0
@@ -93,19 +85,13 @@
 
 .method private static dimIcon(Lcom/android/settings/widget/AppPreference;Z)V
     .locals 3
-    .param p0, "pref"    # Lcom/android/settings/widget/AppPreference;
-    .param p1, "dimmed"    # Z
 
-    .line 120
     invoke-virtual {p0}, Lcom/android/settings/widget/AppPreference;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 121
-    .local v0, "icon":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_1
 
-    .line 122
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -122,27 +108,21 @@
     :goto_0
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 123
     invoke-virtual {p0, v0}, Lcom/android/settings/widget/AppPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 125
     :cond_1
     return-void
 .end method
 
 .method static getAppPreference(Landroid/content/Context;Lcom/android/settings/location/InjectedSetting;)Lcom/android/settings/widget/AppPreference;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "info"    # Lcom/android/settings/location/InjectedSetting;
 
-    .line 202
     invoke-static {p0, p1}, Lcom/android/settings/location/DimmableIZatIconPreference;->isIzatPackage(Landroid/content/Context;Lcom/android/settings/location/InjectedSetting;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 203
     new-instance v0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatAppPreference;
 
     const/4 v1, 0x0
@@ -151,30 +131,24 @@
 
     goto :goto_0
 
-    .line 204
     :cond_0
     new-instance v0, Lcom/android/settings/widget/AppPreference;
 
     invoke-direct {v0, p0}, Lcom/android/settings/widget/AppPreference;-><init>(Landroid/content/Context;)V
 
-    .line 202
     :goto_0
     return-object v0
 .end method
 
 .method static getRestrictedAppPreference(Landroid/content/Context;Lcom/android/settings/location/InjectedSetting;)Lcom/android/settings/widget/RestrictedAppPreference;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "info"    # Lcom/android/settings/location/InjectedSetting;
 
-    .line 208
     invoke-static {p0, p1}, Lcom/android/settings/location/DimmableIZatIconPreference;->isIzatPackage(Landroid/content/Context;Lcom/android/settings/location/InjectedSetting;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 209
     new-instance v0, Lcom/android/settings/location/DimmableIZatIconPreference$IZatRestrictedAppPreference;
 
     iget-object v1, p1, Lcom/android/settings/location/InjectedSetting;->userRestriction:Ljava/lang/String;
@@ -185,7 +159,6 @@
 
     goto :goto_0
 
-    .line 210
     :cond_0
     new-instance v0, Lcom/android/settings/widget/RestrictedAppPreference;
 
@@ -193,17 +166,13 @@
 
     invoke-direct {v0, p0, v1}, Lcom/android/settings/widget/RestrictedAppPreference;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 208
     :goto_0
     return-object v0
 .end method
 
 .method private static isIzatPackage(Landroid/content/Context;Lcom/android/settings/location/InjectedSetting;)Z
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "info"    # Lcom/android/settings/location/InjectedSetting;
 
-    .line 113
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mIzatPackage:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -231,14 +200,11 @@
 
 .method private static load(Landroid/content/Context;)V
     .locals 8
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 62
     sget-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mLoader:Ldalvik/system/DexClassLoader;
 
     if-nez v0, :cond_2
 
-    .line 64
     const/4 v0, 0x0
 
     :try_start_0
@@ -250,13 +216,11 @@
 
     if-nez v1, :cond_1
 
-    .line 65
     :cond_0
     new-instance v1, Ldalvik/system/DexClassLoader;
 
     const-string v2, "/system/framework/izat.xt.srv.jar"
 
-    .line 66
     invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
     move-result-object v3
@@ -265,7 +229,6 @@
 
     move-result-object v3
 
-    .line 68
     invoke-static {}, Ljava/lang/ClassLoader;->getSystemClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v4
@@ -274,7 +237,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mLoader:Ldalvik/system/DexClassLoader;
 
-    .line 69
     const-string v1, "com.qti.izat.XTProxy"
 
     sget-object v2, Lcom/android/settings/location/DimmableIZatIconPreference;->mLoader:Ldalvik/system/DexClassLoader;
@@ -287,7 +249,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
-    .line 72
     const-string v1, "com.qti.izat.XTProxy$Notifier"
 
     sget-object v2, Lcom/android/settings/location/DimmableIZatIconPreference;->mLoader:Ldalvik/system/DexClassLoader;
@@ -298,7 +259,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mNotifierClz:Ljava/lang/Class;
 
-    .line 75
     sget-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
     const-string v2, "IZAT_XT_PACKAGE"
@@ -315,7 +275,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mIzatPackage:Ljava/lang/String;
 
-    .line 76
     sget-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
     const-string v2, "getXTProxy"
@@ -340,7 +299,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetXtProxyMethod:Ljava/lang/reflect/Method;
 
-    .line 79
     sget-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
     const-string v2, "getUserConsent"
@@ -353,7 +311,6 @@
 
     sput-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetConsentMethod:Ljava/lang/reflect/Method;
 
-    .line 80
     sget-object v1, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
     const-string v2, "showIzat"
@@ -382,38 +339,26 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 94
     :cond_1
     goto :goto_0
 
-    .line 84
     :catch_0
     move-exception v1
 
-    .line 87
-    .local v1, "e":Ljava/lang/Throwable;
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mXtProxyClz:Ljava/lang/Class;
 
-    .line 88
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mNotifierClz:Ljava/lang/Class;
 
-    .line 89
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mIzatPackage:Ljava/lang/String;
 
-    .line 90
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetXtProxyMethod:Ljava/lang/reflect/Method;
 
-    .line 91
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mGetConsentMethod:Ljava/lang/reflect/Method;
 
-    .line 92
     sput-object v0, Lcom/android/settings/location/DimmableIZatIconPreference;->mShowIzatMethod:Ljava/lang/reflect/Method;
 
-    .line 93
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 96
-    .end local v1    # "e":Ljava/lang/Throwable;
     :cond_2
     :goto_0
     return-void
@@ -421,25 +366,18 @@
 
 .method static showIzat(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 6
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 99
     invoke-static {p0}, Lcom/android/settings/location/DimmableIZatIconPreference;->load(Landroid/content/Context;)V
 
-    .line 100
     const/4 v0, 0x1
 
     move v1, v0
 
-    .line 102
-    .local v1, "show":Z
     :try_start_0
     sget-object v2, Lcom/android/settings/location/DimmableIZatIconPreference;->mShowIzatMethod:Ljava/lang/reflect/Method;
 
     if-eqz v2, :cond_0
 
-    .line 103
     sget-object v2, Lcom/android/settings/location/DimmableIZatIconPreference;->mShowIzatMethod:Ljava/lang/reflect/Method;
 
     const/4 v3, 0x0
@@ -469,26 +407,16 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/ExceptionInInitializerError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 108
-    .end local v1    # "show":Z
-    .local v0, "show":Z
     move v1, v0
 
-    .end local v0    # "show":Z
-    .restart local v1    # "show":Z
     :cond_0
     goto :goto_0
 
-    .line 105
     :catch_0
     move-exception v0
 
-    .line 107
-    .local v0, "e":Ljava/lang/Throwable;
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 109
-    .end local v0    # "e":Ljava/lang/Throwable;
     :goto_0
     return v1
 .end method

@@ -23,24 +23,20 @@
 # direct methods
 .method constructor <init>(Landroid/content/res/ColorStateList;Landroid/content/res/Configuration;)V
     .locals 0
-    .param p1, "value"    # Landroid/content/res/ColorStateList;
+    .param p1    # Landroid/content/res/ColorStateList;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "configuration"    # Landroid/content/res/Configuration;
+    .param p2    # Landroid/content/res/Configuration;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 165
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 166
     iput-object p1, p0, Lcom/oneplus/lib/app/appcompat/AppCompatResources$ColorStateListCacheEntry;->value:Landroid/content/res/ColorStateList;
 
-    .line 167
     iput-object p2, p0, Lcom/oneplus/lib/app/appcompat/AppCompatResources$ColorStateListCacheEntry;->configuration:Landroid/content/res/Configuration;
 
-    .line 168
     return-void
 .end method

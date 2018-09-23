@@ -35,10 +35,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/StandardTable$Row$RowEntrySet;Ljava/util/Iterator;)V
     .locals 0
-    .param p1, "this$2"    # Lcom/google/common/collect/StandardTable$Row$RowEntrySet;
 
-    .line 355
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;, "Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->this$2:Lcom/google/common/collect/StandardTable$Row$RowEntrySet;
 
     iput-object p2, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->val$iterator:Ljava/util/Iterator;
@@ -53,8 +50,6 @@
 .method public hasNext()Z
     .locals 1
 
-    .line 357
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;, "Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -67,8 +62,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 355
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;, "Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;"
     invoke-virtual {p0}, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->next()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -86,8 +79,6 @@
         }
     .end annotation
 
-    .line 360
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;, "Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -96,8 +87,6 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 361
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TC;TV;>;"
     new-instance v1, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1$1;
 
     invoke-direct {v1, p0, v0}, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1$1;-><init>(Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;Ljava/util/Map$Entry;)V
@@ -108,19 +97,15 @@
 .method public remove()V
     .locals 1
 
-    .line 378
-    .local p0, "this":Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;, "Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 379
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet$1;->this$2:Lcom/google/common/collect/StandardTable$Row$RowEntrySet;
 
     iget-object v0, v0, Lcom/google/common/collect/StandardTable$Row$RowEntrySet;->this$1:Lcom/google/common/collect/StandardTable$Row;
 
     invoke-virtual {v0}, Lcom/google/common/collect/StandardTable$Row;->maintainEmptyInvariant()V
 
-    .line 380
     return-void
 .end method

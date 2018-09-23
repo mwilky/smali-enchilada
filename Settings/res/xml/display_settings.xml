@@ -15,7 +15,6 @@
         </PreferenceScreen>
         <PreferenceScreen android:icon="@drawable/op_ic_settings_app_display_in_fullscreen" android:persistent="false" android:title="@string/oneplus_app_display_fullscreen_title" android:key="oneplus_notch_fullscreen_app" android:summary="@string/oneplus_app_display_fullscreen_summary" settings:keywords="@string/oneplus_search_keyword_fullscreen_app" />
         <com.android.settingslib.RestrictedPreference android:icon="@drawable/op_ic_settings_ambient_display" android:persistent="false" android:title="@string/oneplus_doze_title" android:key="doze" settings:keywords="@string/oneplus_search_keyword_doze" settings:userRestriction="no_ambient_display" />
-        <com.android.settingslib.RestrictedPreference android:icon="@drawable/op_ic_settings_ambient_display" android:persistent="false" android:title="@string/oneplus_doze_title_801" android:key="doze_801" settings:keywords="@string/oneplus_search_keyword_doze" settings:userRestriction="no_ambient_display" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/header_category_custom" android:key="header_category_custom">
         <PreferenceScreen android:persistent="false" android:title="@string/oneplus_app_display_fullscreen_title" android:key="display_size_adaption" android:summary="@string/oneplus_display_size_adaption_summary" settings:keywords="@string/oneplus_search_keyword_fullscreen_app" />

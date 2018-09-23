@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;Landroid/os/HwParcel;)V
     .locals 0
-    .param p1, "this$0"    # Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;
 
-    .line 558
     iput-object p1, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->this$0:Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub;
 
     iput-object p2, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->val$_hidl_reply:Landroid/os/HwParcel;
@@ -42,7 +40,6 @@
 # virtual methods
 .method public onValues(ZLjava/util/ArrayList;)V
     .locals 2
-    .param p1, "result"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -52,29 +49,23 @@
         }
     .end annotation
 
-    .line 561
-    .local p2, "buf":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->val$_hidl_reply:Landroid/os/HwParcel;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/HwParcel;->writeStatus(I)V
 
-    .line 562
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p1}, Landroid/os/HwParcel;->writeBool(Z)V
 
-    .line 563
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0, p2}, Landroid/os/HwParcel;->writeInt8Vector(Ljava/util/ArrayList;)V
 
-    .line 564
     iget-object v0, p0, Lvendor/oneplus/hardware/param/V1_0/IOneplusParam$Stub$2;->val$_hidl_reply:Landroid/os/HwParcel;
 
     invoke-virtual {v0}, Landroid/os/HwParcel;->send()V
 
-    .line 565
     return-void
 .end method

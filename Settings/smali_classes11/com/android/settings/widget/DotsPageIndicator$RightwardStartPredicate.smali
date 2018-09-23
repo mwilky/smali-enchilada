@@ -21,16 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/settings/widget/DotsPageIndicator;F)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/widget/DotsPageIndicator;
-    .param p2, "thresholdValue"    # F
 
-    .line 896
     iput-object p1, p0, Lcom/android/settings/widget/DotsPageIndicator$RightwardStartPredicate;->this$0:Lcom/android/settings/widget/DotsPageIndicator;
 
-    .line 897
     invoke-direct {p0, p1, p2}, Lcom/android/settings/widget/DotsPageIndicator$StartPredicate;-><init>(Lcom/android/settings/widget/DotsPageIndicator;F)V
 
-    .line 898
     return-void
 .end method
 
@@ -38,9 +33,7 @@
 # virtual methods
 .method shouldStart(F)Z
     .locals 1
-    .param p1, "currentValue"    # F
 
-    .line 901
     iget v0, p0, Lcom/android/settings/widget/DotsPageIndicator$RightwardStartPredicate;->thresholdValue:F
 
     cmpl-float v0, p1, v0

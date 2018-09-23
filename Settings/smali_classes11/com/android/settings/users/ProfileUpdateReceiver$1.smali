@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/users/ProfileUpdateReceiver;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/users/ProfileUpdateReceiver;
 
-    .line 39
     iput-object p1, p0, Lcom/android/settings/users/ProfileUpdateReceiver$1;->this$0:Lcom/android/settings/users/ProfileUpdateReceiver;
 
     iput-object p2, p0, Lcom/android/settings/users/ProfileUpdateReceiver$1;->val$context:Landroid/content/Context;
@@ -40,18 +38,15 @@
 .method public run()V
     .locals 2
 
-    .line 41
     iget-object v0, p0, Lcom/android/settings/users/ProfileUpdateReceiver$1;->val$context:Landroid/content/Context;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/users/UserSettings;->copyMeProfilePhoto(Landroid/content/Context;Landroid/content/pm/UserInfo;)V
 
-    .line 42
     iget-object v0, p0, Lcom/android/settings/users/ProfileUpdateReceiver$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/settings/users/ProfileUpdateReceiver;->access$000(Landroid/content/Context;)V
 
-    .line 43
     return-void
 .end method

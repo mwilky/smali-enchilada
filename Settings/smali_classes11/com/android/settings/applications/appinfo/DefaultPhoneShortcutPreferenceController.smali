@@ -10,15 +10,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "packageName"    # Ljava/lang/String;
 
-    .line 27
     const-string v0, "default_phone_app"
 
     invoke-direct {p0, p1, v0, p2}, Lcom/android/settings/applications/appinfo/DefaultAppShortcutPreferenceControllerBase;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 28
     return-void
 .end method
 
@@ -27,7 +23,6 @@
 .method protected hasAppCapability()Z
     .locals 2
 
-    .line 32
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/DefaultPhoneShortcutPreferenceController;->mPackageName:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/DefaultPhoneShortcutPreferenceController;->mContext:Landroid/content/Context;
@@ -42,7 +37,6 @@
 .method protected isDefaultApp()Z
     .locals 2
 
-    .line 37
     iget-object v0, p0, Lcom/android/settings/applications/appinfo/DefaultPhoneShortcutPreferenceController;->mPackageName:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/android/settings/applications/appinfo/DefaultPhoneShortcutPreferenceController;->mContext:Landroid/content/Context;

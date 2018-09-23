@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
-    .line 673
     iput-object p1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-direct {p0}, Landroid/os/storage/StorageEventListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onVolumeRecordChanged(Landroid/os/storage/VolumeRecord;)V
     .locals 3
-    .param p1, "rec"    # Landroid/os/storage/VolumeRecord;
 
-    .line 684
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$100(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)Landroid/os/storage/VolumeInfo;
@@ -58,7 +54,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 685
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     iget-object v1, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
@@ -79,23 +74,17 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$102(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;Landroid/os/storage/VolumeInfo;)Landroid/os/storage/VolumeInfo;
 
-    .line 686
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$200(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)V
 
-    .line 688
     :cond_0
     return-void
 .end method
 
 .method public onVolumeStateChanged(Landroid/os/storage/VolumeInfo;II)V
     .locals 2
-    .param p1, "vol"    # Landroid/os/storage/VolumeInfo;
-    .param p2, "oldState"    # I
-    .param p3, "newState"    # I
 
-    .line 676
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$100(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)Landroid/os/storage/VolumeInfo;
@@ -116,17 +105,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 677
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0, p1}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$102(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;Landroid/os/storage/VolumeInfo;)Landroid/os/storage/VolumeInfo;
 
-    .line 678
     iget-object v0, p0, Lcom/android/settings/deviceinfo/PrivateVolumeSettings$2;->this$0:Lcom/android/settings/deviceinfo/PrivateVolumeSettings;
 
     invoke-static {v0}, Lcom/android/settings/deviceinfo/PrivateVolumeSettings;->access$200(Lcom/android/settings/deviceinfo/PrivateVolumeSettings;)V
 
-    .line 680
     :cond_0
     return-void
 .end method

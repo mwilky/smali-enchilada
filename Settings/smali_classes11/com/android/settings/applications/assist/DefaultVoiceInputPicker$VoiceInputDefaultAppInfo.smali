@@ -21,13 +21,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/settingslib/wrapper/PackageManagerWrapper;ILcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;Z)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pm"    # Lcom/android/settingslib/wrapper/PackageManagerWrapper;
-    .param p3, "userId"    # I
-    .param p4, "info"    # Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
-    .param p5, "enabled"    # Z
 
-    .line 144
     iget-object v4, p4, Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;->componentName:Landroid/content/ComponentName;
 
     const/4 v5, 0x0
@@ -44,10 +38,8 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/android/settingslib/applications/DefaultAppInfo;-><init>(Landroid/content/Context;Lcom/android/settingslib/wrapper/PackageManagerWrapper;ILandroid/content/ComponentName;Ljava/lang/String;Z)V
 
-    .line 145
     iput-object p4, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 
-    .line 146
     return-void
 .end method
 
@@ -56,7 +48,6 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 150
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 
     iget-object v0, v0, Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;->key:Ljava/lang/String;
@@ -67,19 +58,16 @@
 .method public getSettingIntent()Landroid/content/Intent;
     .locals 2
 
-    .line 163
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 
     iget-object v0, v0, Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;->settings:Landroid/content/ComponentName;
 
     if-nez v0, :cond_0
 
-    .line 164
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 166
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
@@ -101,21 +89,18 @@
 .method public loadLabel()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 155
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 
     instance-of v0, v0, Lcom/android/settings/applications/assist/VoiceInputHelper$InteractionInfo;
 
     if-eqz v0, :cond_0
 
-    .line 156
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 
     iget-object v0, v0, Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;->appLabel:Ljava/lang/CharSequence;
 
     return-object v0
 
-    .line 158
     :cond_0
     iget-object v0, p0, Lcom/android/settings/applications/assist/DefaultVoiceInputPicker$VoiceInputDefaultAppInfo;->mInfo:Lcom/android/settings/applications/assist/VoiceInputHelper$BaseInfo;
 

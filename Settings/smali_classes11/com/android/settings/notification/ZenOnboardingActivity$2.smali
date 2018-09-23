@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenOnboardingActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenOnboardingActivity;
 
-    .line 87
     iput-object p1, p0, Lcom/android/settings/notification/ZenOnboardingActivity$2;->this$0:Lcom/android/settings/notification/ZenOnboardingActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 90
     iget-object v0, p0, Lcom/android/settings/notification/ZenOnboardingActivity$2;->this$0:Lcom/android/settings/notification/ZenOnboardingActivity;
 
     iget-object v0, v0, Lcom/android/settings/notification/ZenOnboardingActivity;->mKeepCurrentSettingButton:Landroid/widget/RadioButton;
@@ -49,7 +45,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 91
     iget-object v0, p0, Lcom/android/settings/notification/ZenOnboardingActivity$2;->this$0:Lcom/android/settings/notification/ZenOnboardingActivity;
 
     iget-object v0, v0, Lcom/android/settings/notification/ZenOnboardingActivity;->mNewSettingButton:Landroid/widget/RadioButton;
@@ -58,6 +53,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setChecked(Z)V
 
-    .line 92
     return-void
 .end method

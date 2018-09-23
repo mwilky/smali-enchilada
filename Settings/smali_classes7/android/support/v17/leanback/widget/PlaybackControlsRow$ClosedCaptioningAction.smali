@@ -33,30 +33,23 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 711
     invoke-static {p1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getIconHighlightColor(Landroid/content/Context;)I
 
     move-result v0
 
     invoke-direct {p0, p1, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ClosedCaptioningAction;-><init>(Landroid/content/Context;I)V
 
-    .line 712
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "highlightColor"    # I
 
-    .line 720
     sget v0, Landroid/support/v17/leanback/R$id;->lb_control_closed_captioning:I
 
     invoke-direct {p0, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$MultiAction;-><init>(I)V
 
-    .line 721
     sget v0, Landroid/support/v17/leanback/R$styleable;->lbPlaybackControlsActionIcons_closed_captioning:I
 
     invoke-static {p1, v0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getStyledDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -65,26 +58,20 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 723
-    .local v0, "uncoloredDrawable":Landroid/graphics/drawable/BitmapDrawable;
     const/4 v1, 0x2
 
     new-array v1, v1, [Landroid/graphics/drawable/Drawable;
 
-    .line 724
-    .local v1, "drawables":[Landroid/graphics/drawable/Drawable;
     const/4 v2, 0x0
 
     aput-object v0, v1, v2
 
-    .line 725
     new-instance v3, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 726
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v5
@@ -99,16 +86,12 @@
 
     aput-object v3, v1, v4
 
-    .line 727
     invoke-virtual {p0, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ClosedCaptioningAction;->setDrawables([Landroid/graphics/drawable/Drawable;)V
 
-    .line 729
     array-length v3, v1
 
     new-array v3, v3, [Ljava/lang/String;
 
-    .line 730
-    .local v3, "labels":[Ljava/lang/String;
     sget v5, Landroid/support/v17/leanback/R$string;->lb_playback_controls_closed_captioning_enable:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -117,7 +100,6 @@
 
     aput-object v5, v3, v2
 
-    .line 732
     sget v2, Landroid/support/v17/leanback/R$string;->lb_playback_controls_closed_captioning_disable:I
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -126,9 +108,7 @@
 
     aput-object v2, v3, v4
 
-    .line 734
     invoke-virtual {p0, v3}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$ClosedCaptioningAction;->setLabels([Ljava/lang/String;)V
 
-    .line 735
     return-void
 .end method

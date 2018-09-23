@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/picker/DatePicker;Z)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/picker/DatePicker;
 
-    .line 494
     iput-object p1, p0, Landroid/support/v17/leanback/widget/picker/DatePicker$1;->this$0:Landroid/support/v17/leanback/widget/picker/DatePicker;
 
     iput-boolean p2, p0, Landroid/support/v17/leanback/widget/picker/DatePicker$1;->val$animation:Z
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 497
     iget-object v0, p0, Landroid/support/v17/leanback/widget/picker/DatePicker$1;->this$0:Landroid/support/v17/leanback/widget/picker/DatePicker;
 
     iget-boolean v1, p0, Landroid/support/v17/leanback/widget/picker/DatePicker$1;->val$animation:Z
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/picker/DatePicker;->updateSpinnersImpl(Z)V
 
-    .line 498
     return-void
 .end method

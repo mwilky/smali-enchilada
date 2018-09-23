@@ -33,17 +33,14 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 41
     invoke-direct {p0}, Lcom/android/settings/applications/defaultapps/DefaultAppPickerFragment;-><init>()V
 
-    .line 42
     invoke-virtual {p0}, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->getType()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
 
-    .line 43
     sget-object v0, Lcom/oneplus/settings/SettingsBaseApplication;->mApplication:Landroid/app/Application;
 
     invoke-static {v0}, Lcom/oneplus/settings/defaultapp/DefaultAppLogic;->getInstance(Landroid/content/Context;)Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
@@ -52,7 +49,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
-    .line 44
     iget-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v1, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -63,7 +59,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mAppInfoList:Ljava/util/List;
 
-    .line 45
     iget-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v1, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -76,7 +71,6 @@
 
     iput-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mAppNameInfoList:Ljava/util/List;
 
-    .line 46
     return-void
 .end method
 
@@ -93,19 +87,14 @@
         }
     .end annotation
 
-    .line 95
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 96
-    .local v0, "candidates":Ljava/util/List;, "Ljava/util/List<Lcom/android/settingslib/applications/DefaultAppInfo;>;"
     invoke-virtual {p0}, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 97
-    .local v1, "context":Landroid/content/Context;
     iget-object v2, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mAppNameInfoList:Ljava/util/List;
 
     iget-object v3, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mAppNameInfoList:Ljava/util/List;
@@ -122,21 +111,15 @@
 
     check-cast v2, [Ljava/lang/String;
 
-    .line 98
-    .local v2, "packageNames":[Ljava/lang/String;
     array-length v3, v2
 
-    .line 99
-    .local v3, "count":I
     const/4 v4, 0x0
 
     move v5, v4
 
-    .local v5, "i":I
     :goto_0
     if-ge v5, v3, :cond_0
 
-    .line 101
     :try_start_0
     new-instance v6, Lcom/android/settingslib/applications/DefaultAppInfo;
 
@@ -158,21 +141,16 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 104
     goto :goto_1
 
-    .line 102
     :catch_0
     move-exception v6
 
-    .line 99
     :goto_1
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 106
-    .end local v5    # "i":I
     :cond_0
     return-object v0
 .end method
@@ -180,7 +158,6 @@
 .method protected getDefaultKey()Ljava/lang/String;
     .locals 2
 
-    .line 78
     iget-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v1, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -195,7 +172,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 73
     const/16 v0, 0x270f
 
     return v0
@@ -204,52 +180,38 @@
 .method protected getPreferenceScreenResId()I
     .locals 2
 
-    .line 50
     iget-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/oneplus/settings/defaultapp/DefaultAppUtils;->getKeyTypeInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 51
-    .local v0, "type":I
     const/4 v1, 0x0
 
-    .line 52
-    .local v1, "resId":I
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 63
     :pswitch_0
     const v1, 0x7f160078
 
-    .line 64
     goto :goto_0
 
-    .line 60
     :pswitch_1
     const v1, 0x7f160079
 
-    .line 61
     goto :goto_0
 
-    .line 57
     :pswitch_2
     const v1, 0x7f160077
 
-    .line 58
     goto :goto_0
 
-    .line 54
     :pswitch_3
     const v1, 0x7f160076
 
-    .line 55
     nop
 
-    .line 68
     :goto_0
     return v1
 
@@ -267,9 +229,7 @@
 
 .method protected setDefaultKey(Ljava/lang/String;)Z
     .locals 6
-    .param p1, "packageName"    # Ljava/lang/String;
 
-    .line 83
     iget-object v0, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v1, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -278,8 +238,6 @@
 
     move-result-object v0
 
-    .line 84
-    .local v0, "defaultAppPackageName":Ljava/lang/String;
     iget-object v1, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v2, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -288,8 +246,6 @@
 
     move-result-object v1
 
-    .line 85
-    .local v1, "pmDefaultAppPkg":Ljava/lang/String;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -308,7 +264,6 @@
 
     if-nez v2, :cond_1
 
-    .line 86
     :cond_0
     const-string v2, "BaseDefaultPreference"
 
@@ -340,7 +295,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     iget-object v2, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mLogic:Lcom/oneplus/settings/defaultapp/DefaultAppLogic;
 
     iget-object v3, p0, Lcom/oneplus/settings/defaultapp/view/DefaultBasePicker;->mType:Ljava/lang/String;
@@ -351,12 +305,10 @@
 
     invoke-virtual {v2, v3, v4, v5, p1}, Lcom/oneplus/settings/defaultapp/DefaultAppLogic;->setDefaultAppPosition(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V
 
-    .line 88
     const/4 v2, 0x1
 
     return v2
 
-    .line 90
     :cond_1
     const/4 v2, 0x0
 

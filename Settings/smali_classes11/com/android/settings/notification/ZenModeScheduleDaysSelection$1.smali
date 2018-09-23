@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/notification/ZenModeScheduleDaysSelection;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/ZenModeScheduleDaysSelection;
 
-    .line 63
     iput-object p1, p0, Lcom/android/settings/notification/ZenModeScheduleDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleDaysSelection;
 
     iput p2, p0, Lcom/android/settings/notification/ZenModeScheduleDaysSelection$1;->val$day:I
@@ -42,10 +40,7 @@
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .locals 2
-    .param p1, "buttonView"    # Landroid/widget/CompoundButton;
-    .param p2, "isChecked"    # Z
 
-    .line 66
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleDaysSelection;
 
     invoke-static {v0}, Lcom/android/settings/notification/ZenModeScheduleDaysSelection;->access$000(Lcom/android/settings/notification/ZenModeScheduleDaysSelection;)Landroid/util/SparseBooleanArray;
@@ -56,7 +51,6 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/util/SparseBooleanArray;->put(IZ)V
 
-    .line 67
     iget-object v0, p0, Lcom/android/settings/notification/ZenModeScheduleDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleDaysSelection;
 
     iget-object v1, p0, Lcom/android/settings/notification/ZenModeScheduleDaysSelection$1;->this$0:Lcom/android/settings/notification/ZenModeScheduleDaysSelection;
@@ -67,6 +61,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/notification/ZenModeScheduleDaysSelection;->onChanged([I)V
 
-    .line 68
     return-void
 .end method

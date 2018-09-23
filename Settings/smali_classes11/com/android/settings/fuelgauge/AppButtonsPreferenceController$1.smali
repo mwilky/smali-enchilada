@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
-    .line 581
     iput-object p1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$1;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 584
     invoke-virtual {p0}, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$1;->getResultCode()I
 
     move-result v0
@@ -52,8 +47,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 585
-    .local v0, "enabled":Z
     :goto_0
     const-string v1, "AppButtonsPrefCtl"
 
@@ -87,11 +80,9 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 587
     iget-object v1, p0, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController$1;->this$0:Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;
 
     invoke-virtual {v1, v0}, Lcom/android/settings/fuelgauge/AppButtonsPreferenceController;->updateForceStopButtonInner(Z)V
 
-    .line 588
     return-void
 .end method

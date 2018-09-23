@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/IccLockSettings;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/IccLockSettings;
 
-    .line 564
     iput-object p1, p0, Lcom/android/settings/IccLockSettings$4;->this$0:Lcom/android/settings/IccLockSettings;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public createTabContent(Ljava/lang/String;)Landroid/view/View;
     .locals 2
-    .param p1, "tag"    # Ljava/lang/String;
 
-    .line 567
     new-instance v0, Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/settings/IccLockSettings$4;->this$0:Lcom/android/settings/IccLockSettings;

@@ -22,14 +22,11 @@
 .method protected constructor <init>()V
     .locals 1
 
-    .line 1387
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$SvgElementBase;-><init>()V
 
-    .line 1389
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/caverock/androidsvg/SVG$SvgElement;->boundingBox:Lcom/caverock/androidsvg/SVG$Box;
 
-    .line 1387
     return-void
 .end method

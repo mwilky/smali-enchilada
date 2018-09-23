@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 18
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     const-string v1, "Merge"
@@ -51,7 +50,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Merge:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
-    .line 19
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     const-string v1, "Add"
@@ -62,7 +60,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Add:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
-    .line 20
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     const-string v1, "Subtract"
@@ -73,7 +70,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Subtract:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
-    .line 21
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     const-string v1, "Intersect"
@@ -84,7 +80,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Intersect:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
-    .line 22
     new-instance v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     const-string v1, "ExcludeIntersections"
@@ -95,7 +90,6 @@
 
     sput-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->ExcludeIntersections:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
-    .line 17
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
@@ -133,7 +127,6 @@
         }
     .end annotation
 
-    .line 17
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -141,9 +134,7 @@
 
 .method static synthetic access$000(I)Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
     .locals 1
-    .param p0, "x0"    # I
 
-    .line 17
     invoke-static {p0}, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->forId(I)Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     move-result-object v0
@@ -153,41 +144,33 @@
 
 .method private static forId(I)Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
     .locals 1
-    .param p0, "id"    # I
 
-    .line 25
     packed-switch p0, :pswitch_data_0
 
-    .line 37
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Merge:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     return-object v0
 
-    .line 35
     :pswitch_0
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->ExcludeIntersections:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     return-object v0
 
-    .line 33
     :pswitch_1
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Intersect:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     return-object v0
 
-    .line 31
     :pswitch_2
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Subtract:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     return-object v0
 
-    .line 29
     :pswitch_3
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Add:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     return-object v0
 
-    .line 27
     :pswitch_4
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->Merge:Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
@@ -207,9 +190,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 17
     const-class v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -224,7 +205,6 @@
 .method public static values()[Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
     .locals 1
 
-    .line 17
     sget-object v0, Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->$VALUES:[Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;
 
     invoke-virtual {v0}, [Lcom/airbnb/lottie/model/content/MergePaths$MergePathsMode;->clone()Ljava/lang/Object;

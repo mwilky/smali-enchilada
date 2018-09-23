@@ -34,15 +34,12 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 157
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap;, "Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 158
     return-void
 .end method
 
@@ -58,8 +55,6 @@
         }
     .end annotation
 
-    .line 160
-    .local p0, "this":Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap;, "Lcom/google/common/collect/ImmutableSetMultimap$BuilderMultimap<TK;TV;>;"
     invoke-static {}, Lcom/google/common/collect/Sets;->newLinkedHashSet()Ljava/util/LinkedHashSet;
 
     move-result-object v0

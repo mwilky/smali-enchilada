@@ -28,7 +28,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 1592
     invoke-direct {p0}, Lcom/caverock/androidsvg/SVG$GraphicsElement;-><init>()V
 
     return-void

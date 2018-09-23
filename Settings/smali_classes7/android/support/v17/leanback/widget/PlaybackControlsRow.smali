@@ -48,33 +48,24 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 791
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/Row;-><init>()V
 
-    .line 792
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "item"    # Ljava/lang/Object;
 
-    .line 784
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/Row;-><init>()V
 
-    .line 785
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mItem:Ljava/lang/Object;
 
-    .line 786
     return-void
 .end method
 
 .method static createBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 5
-    .param p0, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p1, "color"    # I
 
-    .line 739
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v0
@@ -85,20 +76,14 @@
 
     move-result-object v0
 
-    .line 740
-    .local v0, "dst":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 741
-    .local v1, "canvas":Landroid/graphics/Canvas;
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 742
-    .local v2, "paint":Landroid/graphics/Paint;
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
@@ -107,26 +92,20 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 743
     const/4 v3, 0x0
 
     invoke-virtual {v1, p0, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 744
     return-object v0
 .end method
 
 .method static getIconHighlightColor(Landroid/content/Context;)I
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 748
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 749
-    .local v0, "outValue":Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -141,12 +120,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 751
     iget v1, v0, Landroid/util/TypedValue;->data:I
 
     return v1
 
-    .line 753
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -163,16 +140,11 @@
 
 .method static getStyledDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "index"    # I
 
-    .line 757
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 758
-    .local v0, "outValue":Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -187,12 +159,10 @@
 
     if-nez v1, :cond_0
 
-    .line 760
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 762
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -206,17 +176,12 @@
 
     move-result-object v1
 
-    .line 764
-    .local v1, "array":Landroid/content/res/TypedArray;
     invoke-virtual {v1, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    .line 765
-    .local v2, "drawable":Landroid/graphics/drawable/Drawable;
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 766
     return-object v2
 .end method
 
@@ -224,9 +189,7 @@
 # virtual methods
 .method public getActionForKeyCode(I)Landroid/support/v17/leanback/widget/Action;
     .locals 2
-    .param p1, "keyCode"    # I
 
-    .line 1055
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getPrimaryActionsAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
 
     move-result-object v0
@@ -235,14 +198,10 @@
 
     move-result-object v0
 
-    .line 1056
-    .local v0, "action":Landroid/support/v17/leanback/widget/Action;
     if-eqz v0, :cond_0
 
-    .line 1057
     return-object v0
 
-    .line 1059
     :cond_0
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getSecondaryActionsAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
 
@@ -257,10 +216,7 @@
 
 .method public getActionForKeyCode(Landroid/support/v17/leanback/widget/ObjectAdapter;I)Landroid/support/v17/leanback/widget/Action;
     .locals 3
-    .param p1, "adapter"    # Landroid/support/v17/leanback/widget/ObjectAdapter;
-    .param p2, "keyCode"    # I
 
-    .line 1066
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mPrimaryActionsAdapter:Landroid/support/v17/leanback/widget/ObjectAdapter;
 
     if-eq p1, v0, :cond_1
@@ -271,7 +227,6 @@
 
     goto :goto_0
 
-    .line 1067
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -281,12 +236,10 @@
 
     throw v0
 
-    .line 1069
     :cond_1
     :goto_0
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_1
     invoke-virtual {p1}, Landroid/support/v17/leanback/widget/ObjectAdapter;->size()I
 
@@ -294,33 +247,25 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 1070
     invoke-virtual {p1, v0}, Landroid/support/v17/leanback/widget/ObjectAdapter;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v17/leanback/widget/Action;
 
-    .line 1071
-    .local v1, "action":Landroid/support/v17/leanback/widget/Action;
     invoke-virtual {v1, p2}, Landroid/support/v17/leanback/widget/Action;->respondsToKeyCode(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1072
     return-object v1
 
-    .line 1069
-    .end local v1    # "action":Landroid/support/v17/leanback/widget/Action;
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1075
-    .end local v0    # "i":I
     :cond_3
     const/4 v0, 0x0
 
@@ -330,7 +275,6 @@
 .method public getBufferedPosition()J
     .locals 2
 
-    .line 1047
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mBufferedProgressMs:J
 
     return-wide v0
@@ -341,7 +285,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1031
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getBufferedPosition()J
 
     move-result-wide v0
@@ -358,7 +301,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1040
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mBufferedProgressMs:J
 
     return-wide v0
@@ -367,7 +309,6 @@
 .method public getCurrentPosition()J
     .locals 2
 
-    .line 988
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mCurrentTimeMs:J
 
     return-wide v0
@@ -378,7 +319,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 972
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getCurrentTimeLong()J
 
     move-result-wide v0
@@ -395,7 +335,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 981
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mCurrentTimeMs:J
 
     return-wide v0
@@ -404,7 +343,6 @@
 .method public getDuration()J
     .locals 2
 
-    .line 926
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mTotalTimeMs:J
 
     return-wide v0
@@ -413,7 +351,6 @@
 .method public final getImageDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 831
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mImageDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -422,7 +359,6 @@
 .method public final getItem()Ljava/lang/Object;
     .locals 1
 
-    .line 798
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mItem:Ljava/lang/Object;
 
     return-object v0
@@ -431,7 +367,6 @@
 .method public final getPrimaryActionsAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
     .locals 1
 
-    .line 856
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mPrimaryActionsAdapter:Landroid/support/v17/leanback/widget/ObjectAdapter;
 
     return-object v0
@@ -440,7 +375,6 @@
 .method public final getSecondaryActionsAdapter()Landroid/support/v17/leanback/widget/ObjectAdapter;
     .locals 1
 
-    .line 863
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mSecondaryActionsAdapter:Landroid/support/v17/leanback/widget/ObjectAdapter;
 
     return-object v0
@@ -451,7 +385,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 909
     invoke-virtual {p0}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->getTotalTimeLong()J
 
     move-result-wide v0
@@ -468,7 +401,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 918
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mTotalTimeMs:J
 
     return-wide v0
@@ -476,159 +408,126 @@
 
 .method public setBufferedPosition(J)V
     .locals 3
-    .param p1, "ms"    # J
 
-    .line 1017
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mBufferedProgressMs:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 1018
     iput-wide p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mBufferedProgressMs:J
 
-    .line 1019
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     if-eqz v0, :cond_0
 
-    .line 1020
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     iget-wide v1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mBufferedProgressMs:J
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;->onBufferedPositionChanged(Landroid/support/v17/leanback/widget/PlaybackControlsRow;J)V
 
-    .line 1023
     :cond_0
     return-void
 .end method
 
 .method public setBufferedProgress(I)V
     .locals 2
-    .param p1, "ms"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 999
     int-to-long v0, p1
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setBufferedPosition(J)V
 
-    .line 1000
     return-void
 .end method
 
 .method public setBufferedProgressLong(J)V
     .locals 0
-    .param p1, "ms"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 1009
     invoke-virtual {p0, p1, p2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setBufferedPosition(J)V
 
-    .line 1010
     return-void
 .end method
 
 .method public setCurrentPosition(J)V
     .locals 3
-    .param p1, "ms"    # J
 
-    .line 957
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mCurrentTimeMs:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 958
     iput-wide p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mCurrentTimeMs:J
 
-    .line 959
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     if-eqz v0, :cond_0
 
-    .line 960
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     iget-wide v1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mCurrentTimeMs:J
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;->onCurrentPositionChanged(Landroid/support/v17/leanback/widget/PlaybackControlsRow;J)V
 
-    .line 963
     :cond_0
     return-void
 .end method
 
 .method public setCurrentTime(I)V
     .locals 2
-    .param p1, "ms"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 937
     int-to-long v0, p1
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setCurrentTimeLong(J)V
 
-    .line 938
     return-void
 .end method
 
 .method public setCurrentTimeLong(J)V
     .locals 0
-    .param p1, "ms"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 947
     invoke-virtual {p0, p1, p2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setCurrentPosition(J)V
 
-    .line 948
     return-void
 .end method
 
 .method public setDuration(J)V
     .locals 3
-    .param p1, "ms"    # J
 
-    .line 894
     iget-wide v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mTotalTimeMs:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 895
     iput-wide p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mTotalTimeMs:J
 
-    .line 896
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     if-eqz v0, :cond_0
 
-    .line 897
     iget-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
     iget-wide v1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mTotalTimeMs:J
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;->onDurationChanged(Landroid/support/v17/leanback/widget/PlaybackControlsRow;J)V
 
-    .line 900
     :cond_0
     return-void
 .end method
 
 .method public final setImageBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "bm"    # Landroid/graphics/Bitmap;
 
-    .line 821
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -639,78 +538,59 @@
 
     iput-object v0, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mImageDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 822
     return-void
 .end method
 
 .method public final setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 809
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mImageDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 810
     return-void
 .end method
 
 .method public setOnPlaybackProgressChangedListener(Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;)V
     .locals 0
-    .param p1, "listener"    # Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
-    .line 1082
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mListener:Landroid/support/v17/leanback/widget/PlaybackControlsRow$OnPlaybackProgressCallback;
 
-    .line 1083
     return-void
 .end method
 
 .method public final setPrimaryActionsAdapter(Landroid/support/v17/leanback/widget/ObjectAdapter;)V
     .locals 0
-    .param p1, "adapter"    # Landroid/support/v17/leanback/widget/ObjectAdapter;
 
-    .line 840
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mPrimaryActionsAdapter:Landroid/support/v17/leanback/widget/ObjectAdapter;
 
-    .line 841
     return-void
 .end method
 
 .method public final setSecondaryActionsAdapter(Landroid/support/v17/leanback/widget/ObjectAdapter;)V
     .locals 0
-    .param p1, "adapter"    # Landroid/support/v17/leanback/widget/ObjectAdapter;
 
-    .line 849
     iput-object p1, p0, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->mSecondaryActionsAdapter:Landroid/support/v17/leanback/widget/ObjectAdapter;
 
-    .line 850
     return-void
 .end method
 
 .method public setTotalTime(I)V
     .locals 2
-    .param p1, "ms"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 874
     int-to-long v0, p1
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setDuration(J)V
 
-    .line 875
     return-void
 .end method
 
 .method public setTotalTimeLong(J)V
     .locals 0
-    .param p1, "ms"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    .line 884
     invoke-virtual {p0, p1, p2}, Landroid/support/v17/leanback/widget/PlaybackControlsRow;->setDuration(J)V
 
-    .line 885
     return-void
 .end method

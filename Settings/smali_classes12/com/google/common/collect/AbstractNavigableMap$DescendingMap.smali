@@ -29,8 +29,6 @@
 .method private constructor <init>(Lcom/google/common/collect/AbstractNavigableMap;)V
     .locals 0
 
-    .line 186
-    .local p0, "this":Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;, "Lcom/google/common/collect/AbstractNavigableMap<TK;TV;>.DescendingMap;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;->this$0:Lcom/google/common/collect/AbstractNavigableMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$DescendingMap;-><init>()V
@@ -40,11 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/google/common/collect/AbstractNavigableMap;Lcom/google/common/collect/AbstractNavigableMap$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/common/collect/AbstractNavigableMap;
-    .param p2, "x1"    # Lcom/google/common/collect/AbstractNavigableMap$1;
 
-    .line 186
-    .local p0, "this":Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;, "Lcom/google/common/collect/AbstractNavigableMap<TK;TV;>.DescendingMap;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;-><init>(Lcom/google/common/collect/AbstractNavigableMap;)V
 
     return-void
@@ -63,8 +57,6 @@
         }
     .end annotation
 
-    .line 194
-    .local p0, "this":Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;, "Lcom/google/common/collect/AbstractNavigableMap<TK;TV;>.DescendingMap;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;->this$0:Lcom/google/common/collect/AbstractNavigableMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/AbstractNavigableMap;->descendingEntryIterator()Ljava/util/Iterator;
@@ -84,8 +76,6 @@
         }
     .end annotation
 
-    .line 189
-    .local p0, "this":Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;, "Lcom/google/common/collect/AbstractNavigableMap<TK;TV;>.DescendingMap;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractNavigableMap$DescendingMap;->this$0:Lcom/google/common/collect/AbstractNavigableMap;
 
     return-object v0

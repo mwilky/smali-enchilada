@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
-    .line 288
     iput-object p1, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onAnimationsFinished()V
     .locals 2
 
-    .line 291
     iget-object v0, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
     invoke-static {v0}, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;->access$200(Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;)Landroid/os/LocaleList;
@@ -68,7 +65,6 @@
 
     goto :goto_0
 
-    .line 296
     :cond_0
     iget-object v0, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
@@ -78,7 +74,6 @@
 
     invoke-static {v0}, Lcom/android/internal/app/LocalePicker;->updateLocales(Landroid/os/LocaleList;)V
 
-    .line 297
     iget-object v0, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
     iget-object v1, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
@@ -89,7 +84,6 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;->access$302(Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;Landroid/os/LocaleList;)Landroid/os/LocaleList;
 
-    .line 298
     new-instance v0, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;
 
     iget-object v1, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
@@ -106,14 +100,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/settings/shortcut/CreateShortcut$ShortcutsUpdateTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 300
     iget-object v0, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;->access$202(Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;Landroid/os/LocaleList;)Landroid/os/LocaleList;
 
-    .line 302
     iget-object v0, p0, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter$3;->this$0:Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
@@ -126,10 +118,8 @@
 
     invoke-static {v0, v1}, Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;->access$502(Lcom/android/settings/localepicker/LocaleDragAndDropAdapter;Ljava/text/NumberFormat;)Ljava/text/NumberFormat;
 
-    .line 303
     return-void
 
-    .line 293
     :cond_1
     :goto_0
     return-void

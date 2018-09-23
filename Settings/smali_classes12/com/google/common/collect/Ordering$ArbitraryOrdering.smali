@@ -42,15 +42,12 @@
 .method constructor <init>()V
     .locals 2
 
-    .line 264
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 265
     new-instance v0, Lcom/google/common/collect/MapMaker;
 
     invoke-direct {v0}, Lcom/google/common/collect/MapMaker;-><init>()V
 
-    .line 267
     invoke-static {v0}, Lcom/google/common/collect/Platform;->tryWeakKeys(Lcom/google/common/collect/MapMaker;)Lcom/google/common/collect/MapMaker;
 
     move-result-object v0
@@ -65,7 +62,6 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->uids:Ljava/util/Map;
 
-    .line 265
     return-void
 .end method
 
@@ -73,52 +69,38 @@
 # virtual methods
 .method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 4
-    .param p1, "left"    # Ljava/lang/Object;
-    .param p2, "right"    # Ljava/lang/Object;
 
-    .line 277
     if-ne p1, p2, :cond_0
 
-    .line 278
     const/4 v0, 0x0
 
     return v0
 
-    .line 279
     :cond_0
     const/4 v0, -0x1
 
     if-nez p1, :cond_1
 
-    .line 280
     return v0
 
-    .line 281
     :cond_1
     const/4 v1, 0x1
 
     if-nez p2, :cond_2
 
-    .line 282
     return v1
 
-    .line 284
     :cond_2
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v2
 
-    .line 285
-    .local v2, "leftCode":I
     invoke-virtual {p0, p2}, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v3
 
-    .line 286
-    .local v3, "rightCode":I
     if-eq v2, v3, :cond_4
 
-    .line 287
     if-ge v2, v3, :cond_3
 
     goto :goto_0
@@ -129,7 +111,6 @@
     :goto_0
     return v0
 
-    .line 291
     :cond_4
     iget-object v0, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->uids:Ljava/util/Map;
 
@@ -151,14 +132,10 @@
 
     move-result v0
 
-    .line 292
-    .local v0, "result":I
     if-eqz v0, :cond_5
 
-    .line 295
     return v0
 
-    .line 293
     :cond_5
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -169,9 +146,7 @@
 
 .method identityHashCode(Ljava/lang/Object;)I
     .locals 1
-    .param p1, "object"    # Ljava/lang/Object;
 
-    .line 311
     invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v0
@@ -182,7 +157,6 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    .line 299
     const-string v0, "Ordering.arbitrary()"
 
     return-object v0

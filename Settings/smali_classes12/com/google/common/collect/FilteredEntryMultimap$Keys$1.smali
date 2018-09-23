@@ -28,10 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/FilteredEntryMultimap$Keys;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
-    .line 362
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
     iput-object p1, p0, Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
     invoke-direct {p0}, Lcom/google/common/collect/Multisets$EntrySet;-><init>()V
@@ -51,9 +48,6 @@
         }
     .end annotation
 
-    .line 380
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
-    .local p1, "predicate":Lcom/google/common/base/Predicate;, "Lcom/google/common/base/Predicate<-Lcom/google/common/collect/Multiset$Entry<TK;>;>;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$Keys;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;
@@ -82,8 +76,6 @@
         }
     .end annotation
 
-    .line 371
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
     invoke-virtual {v0}, Lcom/google/common/collect/FilteredEntryMultimap$Keys;->entryIterator()Ljava/util/Iterator;
@@ -103,8 +95,6 @@
         }
     .end annotation
 
-    .line 366
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
     return-object v0
@@ -120,9 +110,6 @@
         }
     .end annotation
 
-    .line 392
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
@@ -144,9 +131,6 @@
         }
     .end annotation
 
-    .line 397
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Predicates;->in(Ljava/util/Collection;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
@@ -165,8 +149,6 @@
 .method public size()I
     .locals 1
 
-    .line 376
-    .local p0, "this":Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;, "Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;"
     iget-object v0, p0, Lcom/google/common/collect/FilteredEntryMultimap$Keys$1;->this$1:Lcom/google/common/collect/FilteredEntryMultimap$Keys;
 
     iget-object v0, v0, Lcom/google/common/collect/FilteredEntryMultimap$Keys;->this$0:Lcom/google/common/collect/FilteredEntryMultimap;

@@ -31,10 +31,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/common/collect/ForwardingNavigableMap;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/google/common/collect/ForwardingNavigableMap;
 
-    .line 276
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>.StandardDescendingMap;"
     iput-object p1, p0, Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;->this$0:Lcom/google/common/collect/ForwardingNavigableMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/Maps$DescendingMap;-><init>()V
@@ -55,8 +52,6 @@
         }
     .end annotation
 
-    .line 285
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>.StandardDescendingMap;"
     new-instance v0, Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap$1;-><init>(Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;)V
@@ -74,8 +69,6 @@
         }
     .end annotation
 
-    .line 280
-    .local p0, "this":Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;, "Lcom/google/common/collect/ForwardingNavigableMap<TK;TV;>.StandardDescendingMap;"
     iget-object v0, p0, Lcom/google/common/collect/ForwardingNavigableMap$StandardDescendingMap;->this$0:Lcom/google/common/collect/ForwardingNavigableMap;
 
     return-object v0

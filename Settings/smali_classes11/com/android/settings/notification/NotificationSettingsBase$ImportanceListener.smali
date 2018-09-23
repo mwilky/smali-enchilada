@@ -21,9 +21,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/settings/notification/NotificationSettingsBase;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/settings/notification/NotificationSettingsBase;
 
-    .line 414
     iput-object p1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,15 +34,12 @@
 .method protected onImportanceChanged()V
     .locals 9
 
-    .line 416
     iget-object v0, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     invoke-virtual {v0}, Lcom/android/settings/notification/NotificationSettingsBase;->getPreferenceScreen()Landroid/support/v7/preference/PreferenceScreen;
 
     move-result-object v0
 
-    .line 417
-    .local v0, "screen":Landroid/support/v7/preference/PreferenceScreen;
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v1, v1, Lcom/android/settings/notification/NotificationSettingsBase;->mControllers:Ljava/util/List;
@@ -66,25 +61,17 @@
 
     check-cast v2, Lcom/android/settings/notification/NotificationPreferenceController;
 
-    .line 418
-    .local v2, "controller":Lcom/android/settings/notification/NotificationPreferenceController;
     invoke-virtual {v2, v0}, Lcom/android/settings/notification/NotificationPreferenceController;->displayPreference(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 419
-    .end local v2    # "controller":Lcom/android/settings/notification/NotificationPreferenceController;
     goto :goto_0
 
-    .line 420
     :cond_0
     iget-object v1, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     invoke-static {v1}, Lcom/android/settings/notification/NotificationSettingsBase;->access$100(Lcom/android/settings/notification/NotificationSettingsBase;)V
 
-    .line 422
     const/4 v1, 0x0
 
-    .line 423
-    .local v1, "hideDynamicFields":Z
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v2, v2, Lcom/android/settings/notification/NotificationSettingsBase;->mAppRow:Lcom/android/settings/notification/NotificationBackend$AppRow;
@@ -105,7 +92,6 @@
 
     goto :goto_2
 
-    .line 426
     :cond_1
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
@@ -113,7 +99,6 @@
 
     if-eqz v2, :cond_3
 
-    .line 427
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v2, v2, Lcom/android/settings/notification/NotificationSettingsBase;->mChannel:Landroid/app/NotificationChannel;
@@ -136,7 +121,6 @@
 
     goto :goto_3
 
-    .line 428
     :cond_3
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
@@ -144,7 +128,6 @@
 
     if-eqz v2, :cond_5
 
-    .line 429
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v2, v2, Lcom/android/settings/notification/NotificationSettingsBase;->mChannelGroup:Landroid/app/NotificationChannelGroup;
@@ -155,12 +138,10 @@
 
     goto :goto_3
 
-    .line 424
     :cond_4
     :goto_2
     const/4 v1, 0x1
 
-    .line 432
     :cond_5
     :goto_3
     iget-object v2, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
@@ -184,8 +165,6 @@
 
     check-cast v5, Landroid/support/v7/preference/Preference;
 
-    .line 433
-    .local v5, "preference":Landroid/support/v7/preference/Preference;
     iget-object v6, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
 
     iget-object v7, p0, Lcom/android/settings/notification/NotificationSettingsBase$ImportanceListener;->this$0:Lcom/android/settings/notification/NotificationSettingsBase;
@@ -206,11 +185,8 @@
     :goto_5
     invoke-virtual {v6, v7, v5, v8}, Lcom/android/settings/notification/NotificationSettingsBase;->setVisible(Landroid/support/v7/preference/PreferenceGroup;Landroid/support/v7/preference/Preference;Z)V
 
-    .line 434
-    .end local v5    # "preference":Landroid/support/v7/preference/Preference;
     goto :goto_4
 
-    .line 435
     :cond_7
     return-void
 .end method

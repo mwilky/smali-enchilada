@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/analytics/tracking/android/GAServiceManager;)V
     .locals 0
 
-    .line 57
     iput-object p1, p0, Lcom/google/analytics/tracking/android/GAServiceManager$1;->this$0:Lcom/google/analytics/tracking/android/GAServiceManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,9 +36,7 @@
 # virtual methods
 .method public reportStoreIsEmpty(Z)V
     .locals 2
-    .param p1, "isEmpty"    # Z
 
-    .line 60
     iget-object v0, p0, Lcom/google/analytics/tracking/android/GAServiceManager$1;->this$0:Lcom/google/analytics/tracking/android/GAServiceManager;
 
     iget-object v1, p0, Lcom/google/analytics/tracking/android/GAServiceManager$1;->this$0:Lcom/google/analytics/tracking/android/GAServiceManager;
@@ -50,6 +47,5 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/google/analytics/tracking/android/GAServiceManager;->updatePowerSaveMode(ZZ)V
 
-    .line 61
     return-void
 .end method

@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/view/Window;)V
     .locals 0
 
-    .line 310
     iput-object p1, p0, Lcom/android/setupwizardlib/util/SystemBarHelper$3;->val$window:Landroid/view/Window;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +37,11 @@
 .method public run()V
     .locals 2
 
-    .line 313
     iget-object v0, p0, Lcom/android/setupwizardlib/util/SystemBarHelper$3;->val$window:Landroid/view/Window;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 314
     return-void
 .end method

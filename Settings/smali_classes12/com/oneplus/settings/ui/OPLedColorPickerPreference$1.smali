@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/settings/ui/OPLedColorPickerPreference;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
-    .line 350
     iput-object p1, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 354
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 355
-    .local v0, "index":I
     iget-object v1, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     invoke-static {v1}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->access$100(Lcom/oneplus/settings/ui/OPLedColorPickerPreference;)[Ljava/lang/String;
@@ -73,7 +67,6 @@
 
     if-nez v1, :cond_0
 
-    .line 357
     iget-object v1, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v2, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
@@ -86,7 +79,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->setSelection(Ljava/lang/String;I)V
 
-    .line 359
     iget-object v1, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
 
     iget-object v2, p0, Lcom/oneplus/settings/ui/OPLedColorPickerPreference$1;->this$0:Lcom/oneplus/settings/ui/OPLedColorPickerPreference;
@@ -99,7 +91,6 @@
 
     invoke-static {v1, v2}, Lcom/oneplus/settings/ui/OPLedColorPickerPreference;->access$200(Lcom/oneplus/settings/ui/OPLedColorPickerPreference;Ljava/lang/String;)V
 
-    .line 361
     :cond_0
     return-void
 .end method

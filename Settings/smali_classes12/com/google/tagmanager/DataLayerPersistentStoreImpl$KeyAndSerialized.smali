@@ -23,19 +23,13 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;[B)V
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "serialized"    # [B
 
-    .line 517
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 518
     iput-object p1, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$KeyAndSerialized;->mKey:Ljava/lang/String;
 
-    .line 519
     iput-object p2, p0, Lcom/google/tagmanager/DataLayerPersistentStoreImpl$KeyAndSerialized;->mSerialized:[B
 
-    .line 520
     return-void
 .end method
 
@@ -44,7 +38,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 524
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

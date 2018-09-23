@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 201
     invoke-direct {p0}, Lcom/android/settings/core/instrumentation/InstrumentedDialogFragment;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method public getMetricsCategory()I
     .locals 1
 
-    .line 221
     const/16 v0, 0x211
 
     return v0
@@ -37,9 +35,7 @@
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .locals 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
-    .line 204
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lcom/android/settings/CustomListPreference$ConfirmDialogFragment;->getActivity()Landroid/app/Activity;
@@ -48,7 +44,6 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 205
     invoke-virtual {p0}, Lcom/android/settings/CustomListPreference$ConfirmDialogFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v1
@@ -67,14 +62,12 @@
 
     invoke-direct {v1, p0}, Lcom/android/settings/CustomListPreference$ConfirmDialogFragment$1;-><init>(Lcom/android/settings/CustomListPreference$ConfirmDialogFragment;)V
 
-    .line 206
     const v2, 0x104000a
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 215
     const/high16 v1, 0x1040000
 
     const/4 v2, 0x0
@@ -83,11 +76,9 @@
 
     move-result-object v0
 
-    .line 216
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 204
     return-object v0
 .end method

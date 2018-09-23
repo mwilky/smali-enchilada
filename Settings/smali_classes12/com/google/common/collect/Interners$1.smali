@@ -33,7 +33,6 @@
 .method constructor <init>(Ljava/util/concurrent/ConcurrentMap;)V
     .locals 0
 
-    .line 46
     iput-object p1, p0, Lcom/google/common/collect/Interners$1;->val$map:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,8 +50,6 @@
         }
     .end annotation
 
-    .line 48
-    .local p1, "sample":Ljava/lang/Object;, "TE;"
     iget-object v0, p0, Lcom/google/common/collect/Interners$1;->val$map:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -63,8 +60,6 @@
 
     move-result-object v0
 
-    .line 49
-    .local v0, "canonical":Ljava/lang/Object;, "TE;"
     if-nez v0, :cond_0
 
     move-object v1, p1

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/setupwizardlib/template/RequireScrollMixin;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
-    .line 251
     iput-object p1, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$4;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     iput-boolean p2, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$4;->val$scrollNeeded:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 254
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$4;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     invoke-static {v0}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->access$200(Lcom/android/setupwizardlib/template/RequireScrollMixin;)Lcom/android/setupwizardlib/template/RequireScrollMixin$OnRequireScrollStateChangedListener;
@@ -52,7 +49,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 255
     iget-object v0, p0, Lcom/android/setupwizardlib/template/RequireScrollMixin$4;->this$0:Lcom/android/setupwizardlib/template/RequireScrollMixin;
 
     invoke-static {v0}, Lcom/android/setupwizardlib/template/RequireScrollMixin;->access$200(Lcom/android/setupwizardlib/template/RequireScrollMixin;)Lcom/android/setupwizardlib/template/RequireScrollMixin$OnRequireScrollStateChangedListener;
@@ -63,7 +59,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/setupwizardlib/template/RequireScrollMixin$OnRequireScrollStateChangedListener;->onRequireScrollStateChanged(Z)V
 
-    .line 257
     :cond_0
     return-void
 .end method

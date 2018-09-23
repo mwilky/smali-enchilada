@@ -211,7 +211,6 @@
         }
     .end annotation
 
-    .line 370
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -220,7 +219,6 @@
 .method public static final create()Landroid/support/v4/media/MediaPlayer2;
     .locals 1
 
-    .line 363
     new-instance v0, Landroid/support/v4/media/MediaPlayer2Impl;
 
     invoke-direct {v0}, Landroid/support/v4/media/MediaPlayer2Impl;-><init>()V
@@ -334,7 +332,6 @@
 .method public getMaxPlayerVolume()F
     .locals 1
 
-    .line 555
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
@@ -384,12 +381,11 @@
 
 .method public notifyWhenCommandLabelReached(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "label"    # Ljava/lang/Object;
+    .param p1    # Ljava/lang/Object;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    .line 570
     return-void
 .end method
 
@@ -459,14 +455,11 @@
 
 .method public seekTo(J)V
     .locals 1
-    .param p1, "msec"    # J
 
-    .line 441
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/support/v4/media/MediaPlayer2;->seekTo(JI)V
 
-    .line 442
     return-void
 .end method
 

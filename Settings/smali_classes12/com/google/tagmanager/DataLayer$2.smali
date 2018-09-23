@@ -25,7 +25,6 @@
 .method constructor <init>(Lcom/google/tagmanager/DataLayer;)V
     .locals 0
 
-    .line 281
     iput-object p1, p0, Lcom/google/tagmanager/DataLayer$2;->this$0:Lcom/google/tagmanager/DataLayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,13 +45,10 @@
         }
     .end annotation
 
-    .line 284
-    .local p1, "keyValues":Ljava/util/List;, "Ljava/util/List<Lcom/google/tagmanager/DataLayer$KeyValue;>;"
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -66,8 +62,6 @@
 
     check-cast v1, Lcom/google/tagmanager/DataLayer$KeyValue;
 
-    .line 285
-    .local v1, "keyValue":Lcom/google/tagmanager/DataLayer$KeyValue;
     iget-object v2, p0, Lcom/google/tagmanager/DataLayer$2;->this$0:Lcom/google/tagmanager/DataLayer;
 
     iget-object v3, p0, Lcom/google/tagmanager/DataLayer$2;->this$0:Lcom/google/tagmanager/DataLayer;
@@ -82,12 +76,8 @@
 
     invoke-static {v2, v3}, Lcom/google/tagmanager/DataLayer;->access$000(Lcom/google/tagmanager/DataLayer;Ljava/util/Map;)V
 
-    .line 286
-    .end local v1    # "keyValue":Lcom/google/tagmanager/DataLayer$KeyValue;
     goto :goto_0
 
-    .line 287
-    .end local v0    # "i$":Ljava/util/Iterator;
     :cond_0
     iget-object v0, p0, Lcom/google/tagmanager/DataLayer$2;->this$0:Lcom/google/tagmanager/DataLayer;
 
@@ -97,6 +87,5 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 288
     return-void
 .end method

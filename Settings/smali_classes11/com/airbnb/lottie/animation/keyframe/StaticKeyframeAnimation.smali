@@ -36,19 +36,14 @@
         }
     .end annotation
 
-    .line 13
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation<TK;TA;>;"
-    .local p1, "initialValue":Ljava/lang/Object;, "TA;"
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation;-><init>(Ljava/util/List;)V
 
-    .line 14
     iput-object p1, p0, Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;->initialValue:Ljava/lang/Object;
 
-    .line 15
     return-void
 .end method
 
@@ -56,10 +51,7 @@
 # virtual methods
 .method public addUpdateListener(Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation$AnimationListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/airbnb/lottie/animation/keyframe/BaseKeyframeAnimation$AnimationListener;
 
-    .line 23
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation<TK;TA;>;"
     return-void
 .end method
 
@@ -71,8 +63,6 @@
         }
     .end annotation
 
-    .line 26
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation<TK;TA;>;"
     iget-object v0, p0, Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;->initialValue:Ljava/lang/Object;
 
     return-object v0
@@ -80,7 +70,6 @@
 
 .method public getValue(Lcom/airbnb/lottie/animation/Keyframe;F)Ljava/lang/Object;
     .locals 1
-    .param p2, "keyframeProgress"    # F
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,9 +78,6 @@
         }
     .end annotation
 
-    .line 30
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation<TK;TA;>;"
-    .local p1, "keyframe":Lcom/airbnb/lottie/animation/Keyframe;, "Lcom/airbnb/lottie/animation/Keyframe<TK;>;"
     iget-object v0, p0, Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;->initialValue:Ljava/lang/Object;
 
     return-object v0
@@ -99,14 +85,12 @@
 
 .method public setProgress(F)V
     .locals 0
-    .param p1, "progress"    # F
+    .param p1    # F
         .annotation build Landroid/support/annotation/FloatRange;
             from = 0.0
             to = 1.0
         .end annotation
     .end param
 
-    .line 19
-    .local p0, "this":Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation;, "Lcom/airbnb/lottie/animation/keyframe/StaticKeyframeAnimation<TK;TA;>;"
     return-void
 .end method

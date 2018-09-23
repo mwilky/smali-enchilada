@@ -49,7 +49,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 563
     new-instance v0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$1;
 
     invoke-direct {v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem$1;-><init>()V
@@ -61,19 +60,15 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 538
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 539
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
-    .line 540
     sget-object v0, Landroid/support/v4/media/MediaDescriptionCompat;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -84,25 +79,20 @@
 
     iput-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
-    .line 541
     return-void
 .end method
 
 .method public constructor <init>(Landroid/support/v4/media/MediaDescriptionCompat;I)V
     .locals 2
-    .param p1, "description"    # Landroid/support/v4/media/MediaDescriptionCompat;
+    .param p1    # Landroid/support/v4/media/MediaDescriptionCompat;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-    .param p2, "flags"    # I
 
-    .line 524
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 525
     if-eqz p1, :cond_1
 
-    .line 528
     invoke-virtual {p1}, Landroid/support/v4/media/MediaDescriptionCompat;->getMediaId()Ljava/lang/String;
 
     move-result-object v0
@@ -113,16 +103,12 @@
 
     if-nez v0, :cond_0
 
-    .line 531
     iput p2, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
-    .line 532
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
-    .line 533
     return-void
 
-    .line 529
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -132,7 +118,6 @@
 
     throw v0
 
-    .line 526
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -145,9 +130,7 @@
 
 .method public static fromMediaItem(Ljava/lang/Object;)Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
     .locals 3
-    .param p0, "itemObj"    # Ljava/lang/Object;
 
-    .line 487
     if-eqz p0, :cond_1
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -158,37 +141,27 @@
 
     goto :goto_0
 
-    .line 490
     :cond_0
     invoke-static {p0}, Landroid/support/v4/media/MediaBrowserCompatApi21$MediaItem;->getFlags(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 491
-    .local v0, "flags":I
     nop
 
-    .line 493
     invoke-static {p0}, Landroid/support/v4/media/MediaBrowserCompatApi21$MediaItem;->getDescription(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 492
     invoke-static {v1}, Landroid/support/v4/media/MediaDescriptionCompat;->fromMediaDescription(Ljava/lang/Object;)Landroid/support/v4/media/MediaDescriptionCompat;
 
     move-result-object v1
 
-    .line 494
-    .local v1, "description":Landroid/support/v4/media/MediaDescriptionCompat;
     new-instance v2, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
     invoke-direct {v2, v1, v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;-><init>(Landroid/support/v4/media/MediaDescriptionCompat;I)V
 
     return-object v2
 
-    .line 488
-    .end local v0    # "flags":I
-    .end local v1    # "description":Landroid/support/v4/media/MediaDescriptionCompat;
     :cond_1
     :goto_0
     const/4 v0, 0x0
@@ -209,8 +182,6 @@
         }
     .end annotation
 
-    .line 508
-    .local p0, "itemList":Ljava/util/List;, "Ljava/util/List<*>;"
     if-eqz p0, :cond_2
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -221,7 +192,6 @@
 
     goto :goto_1
 
-    .line 511
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -231,8 +201,6 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 512
-    .local v0, "items":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaBrowserCompat$MediaItem;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -248,24 +216,17 @@
 
     move-result-object v2
 
-    .line 513
-    .local v2, "itemObj":Ljava/lang/Object;
     invoke-static {v2}, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->fromMediaItem(Ljava/lang/Object;)Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
     move-result-object v3
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 514
-    .end local v2    # "itemObj":Ljava/lang/Object;
     goto :goto_0
 
-    .line 515
     :cond_1
     return-object v0
 
-    .line 509
-    .end local v0    # "items":Ljava/util/List;, "Ljava/util/List<Landroid/support/v4/media/MediaBrowserCompat$MediaItem;>;"
     :cond_2
     :goto_1
     const/4 v0, 0x0
@@ -278,7 +239,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 545
     const/4 v0, 0x0
 
     return v0
@@ -289,7 +249,6 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    .line 603
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
     return-object v0
@@ -298,7 +257,6 @@
 .method public getFlags()I
     .locals 1
 
-    .line 580
     iget v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
     return v0
@@ -309,7 +267,6 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    .line 611
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/media/MediaDescriptionCompat;->getMediaId()Ljava/lang/String;
@@ -322,7 +279,6 @@
 .method public isBrowsable()Z
     .locals 2
 
-    .line 588
     iget v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
     const/4 v1, 0x1
@@ -343,7 +299,6 @@
 .method public isPlayable()Z
     .locals 1
 
-    .line 596
     iget v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -364,15 +319,12 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 556
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "MediaItem{"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 557
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, "mFlags="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -381,7 +333,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 558
     const-string v1, ", mDescription="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -390,12 +341,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 559
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 560
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -405,19 +354,14 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 550
     iget v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 551
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/MediaDescriptionCompat;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 552
     return-void
 .end method
