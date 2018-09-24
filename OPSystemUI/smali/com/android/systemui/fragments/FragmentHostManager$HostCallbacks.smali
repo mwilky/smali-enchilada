@@ -29,12 +29,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/fragments/FragmentHostManager;)V
     .locals 3
-    .param p1, "this$0"    # Lcom/android/systemui/fragments/FragmentHostManager;
 
-    .line 206
     iput-object p1, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
-    .line 207
     invoke-static {p1}, Lcom/android/systemui/fragments/FragmentHostManager;->access$200(Lcom/android/systemui/fragments/FragmentHostManager;)Landroid/content/Context;
 
     move-result-object v0
@@ -47,7 +44,6 @@
 
     invoke-direct {p0, v0, v1, v2}, Landroid/app/FragmentHostCallback;-><init>(Landroid/content/Context;Landroid/os/Handler;I)V
 
-    .line 208
     return-void
 .end method
 
@@ -55,11 +51,7 @@
 # virtual methods
 .method public instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/app/Fragment;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "arguments"    # Landroid/os/Bundle;
 
-    .line 222
     iget-object v0, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
     invoke-static {v0}, Lcom/android/systemui/fragments/FragmentHostManager;->access$500(Lcom/android/systemui/fragments/FragmentHostManager;)Lcom/android/systemui/fragments/FragmentHostManager$ExtensionFragmentManager;
@@ -75,31 +67,22 @@
 
 .method public onAttachFragment(Landroid/app/Fragment;)V
     .locals 0
-    .param p1, "fragment"    # Landroid/app/Fragment;
 
-    .line 252
     return-void
 .end method
 
 .method public onDump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 1
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "fd"    # Ljava/io/FileDescriptor;
-    .param p3, "writer"    # Ljava/io/PrintWriter;
-    .param p4, "args"    # [Ljava/lang/String;
 
-    .line 217
     iget-object v0, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
     invoke-static {v0, p1, p2, p3, p4}, Lcom/android/systemui/fragments/FragmentHostManager;->access$400(Lcom/android/systemui/fragments/FragmentHostManager;Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 218
     return-void
 .end method
 
 .method public onFindViewById(I)Landroid/view/View;
     .locals 1
-    .param p1, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -108,7 +91,6 @@
         }
     .end annotation
 
-    .line 257
     iget-object v0, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
     invoke-static {v0, p1}, Lcom/android/systemui/fragments/FragmentHostManager;->access$600(Lcom/android/systemui/fragments/FragmentHostManager;I)Landroid/view/View;
@@ -121,7 +103,6 @@
 .method public onGetHost()Lcom/android/systemui/fragments/FragmentHostManager;
     .locals 1
 
-    .line 212
     iget-object v0, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
     return-object v0
@@ -130,7 +111,6 @@
 .method public bridge synthetic onGetHost()Ljava/lang/Object;
     .locals 1
 
-    .line 205
     invoke-virtual {p0}, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->onGetHost()Lcom/android/systemui/fragments/FragmentHostManager;
 
     move-result-object v0
@@ -141,7 +121,6 @@
 .method public onGetLayoutInflater()Landroid/view/LayoutInflater;
     .locals 1
 
-    .line 232
     iget-object v0, p0, Lcom/android/systemui/fragments/FragmentHostManager$HostCallbacks;->this$0:Lcom/android/systemui/fragments/FragmentHostManager;
 
     invoke-static {v0}, Lcom/android/systemui/fragments/FragmentHostManager;->access$200(Lcom/android/systemui/fragments/FragmentHostManager;)Landroid/content/Context;
@@ -158,7 +137,6 @@
 .method public onGetWindowAnimations()I
     .locals 1
 
-    .line 247
     const/4 v0, 0x0
 
     return v0
@@ -167,7 +145,6 @@
 .method public onHasView()Z
     .locals 1
 
-    .line 262
     const/4 v0, 0x1
 
     return v0
@@ -176,7 +153,6 @@
 .method public onHasWindowAnimations()Z
     .locals 1
 
-    .line 242
     const/4 v0, 0x0
 
     return v0
@@ -184,9 +160,7 @@
 
 .method public onShouldSaveFragmentState(Landroid/app/Fragment;)Z
     .locals 1
-    .param p1, "fragment"    # Landroid/app/Fragment;
 
-    .line 227
     const/4 v0, 0x1
 
     return v0
@@ -195,7 +169,6 @@
 .method public onUseFragmentManagerInflaterFactory()Z
     .locals 1
 
-    .line 237
     const/4 v0, 0x1
 
     return v0

@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/support/design/widget/FloatingActionButtonImpl;)V
     .locals 1
 
-    .line 647
     iput-object p1, p0, Landroid/support/design/widget/FloatingActionButtonImpl$ElevateToHoveredFocusedTranslationZAnimation;->this$0:Landroid/support/design/widget/FloatingActionButtonImpl;
 
     const/4 v0, 0x0
@@ -37,7 +36,6 @@
 .method protected getTargetShadowSize()F
     .locals 2
 
-    .line 651
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonImpl$ElevateToHoveredFocusedTranslationZAnimation;->this$0:Landroid/support/design/widget/FloatingActionButtonImpl;
 
     iget v0, v0, Landroid/support/design/widget/FloatingActionButtonImpl;->elevation:F

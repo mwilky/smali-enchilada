@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/doze/DozeTriggers;JILjava/util/function/IntConsumer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/doze/DozeTriggers;
 
-    .line 114
     iput-object p1, p0, Lcom/android/systemui/doze/DozeTriggers$1;->this$0:Lcom/android/systemui/doze/DozeTriggers;
 
     iput-wide p2, p0, Lcom/android/systemui/doze/DozeTriggers$1;->val$start:J
@@ -49,15 +47,11 @@
 # virtual methods
 .method public onProximityResult(I)V
     .locals 7
-    .param p1, "result"    # I
 
-    .line 117
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 118
-    .local v0, "end":J
     iget-object v2, p0, Lcom/android/systemui/doze/DozeTriggers$1;->this$0:Lcom/android/systemui/doze/DozeTriggers;
 
     invoke-static {v2}, Lcom/android/systemui/doze/DozeTriggers;->access$200(Lcom/android/systemui/doze/DozeTriggers;)Landroid/content/Context;
@@ -82,11 +76,9 @@
 
     invoke-static {v2, v3, v4, v5, v6}, Lcom/android/systemui/doze/DozeLog;->traceProximityResult(Landroid/content/Context;ZJI)V
 
-    .line 120
     iget-object v2, p0, Lcom/android/systemui/doze/DozeTriggers$1;->val$callback:Ljava/util/function/IntConsumer;
 
     invoke-interface {v2, p1}, Ljava/util/function/IntConsumer;->accept(I)V
 
-    .line 121
     return-void
 .end method

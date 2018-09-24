@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationContentView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationContentView;
 
-    .line 109
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 114
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     new-instance v1, Lcom/android/systemui/statusbar/NotificationContentView$1$1;
@@ -48,7 +45,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationContentView;->post(Ljava/lang/Runnable;)Z
 
-    .line 120
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$1;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/NotificationContentView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -57,7 +53,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 121
     const/4 v0, 0x1
 
     return v0

@@ -30,7 +30,6 @@
 .method public isCurrentUserSetup()Z
     .locals 1
 
-    .line 28
     invoke-interface {p0}, Lcom/android/systemui/statusbar/policy/DeviceProvisionedController;->getCurrentUser()I
 
     move-result v0

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/BaseTransientBottomBar;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/widget/BaseTransientBottomBar;
 
-    .line 495
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$7;, "Landroid/support/design/widget/BaseTransientBottomBar$7;"
     iput-object p1, p0, Landroid/support/design/widget/BaseTransientBottomBar$7;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -36,24 +33,17 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 504
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$7;, "Landroid/support/design/widget/BaseTransientBottomBar$7;"
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$7;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-virtual {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->onViewShown()V
 
-    .line 505
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 498
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$7;, "Landroid/support/design/widget/BaseTransientBottomBar$7;"
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$7;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-static {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->access$000(Landroid/support/design/widget/BaseTransientBottomBar;)Landroid/support/design/snackbar/ContentViewCallback;
@@ -66,6 +56,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/support/design/snackbar/ContentViewCallback;->animateContentIn(II)V
 
-    .line 500
     return-void
 .end method

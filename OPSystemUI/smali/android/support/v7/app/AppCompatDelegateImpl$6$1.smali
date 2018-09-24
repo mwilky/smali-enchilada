@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/AppCompatDelegateImpl$6;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
-    .line 1000
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImpl$6$1;->this$1:Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 1008
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$6$1;->this$1:Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImpl$6;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
@@ -48,7 +44,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
 
-    .line 1009
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$6$1;->this$1:Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImpl$6;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
@@ -59,22 +54,18 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setListener(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 1010
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$6$1;->this$1:Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImpl$6;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
 
     iput-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImpl;->mFadeAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 1011
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 1003
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImpl$6$1;->this$1:Landroid/support/v7/app/AppCompatDelegateImpl$6;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImpl$6;->this$0:Landroid/support/v7/app/AppCompatDelegateImpl;
@@ -85,6 +76,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setVisibility(I)V
 
-    .line 1004
     return-void
 .end method

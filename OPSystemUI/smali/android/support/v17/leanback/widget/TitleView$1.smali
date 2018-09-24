@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/TitleView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/TitleView;
 
-    .line 42
     iput-object p1, p0, Landroid/support/v17/leanback/widget/TitleView$1;->this$0:Landroid/support/v17/leanback/widget/TitleView;
 
     invoke-direct {p0}, Landroid/support/v17/leanback/widget/TitleViewAdapter;-><init>()V

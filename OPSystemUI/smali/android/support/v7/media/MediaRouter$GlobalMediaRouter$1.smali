@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/media/MediaRouter$GlobalMediaRouter;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/media/MediaRouter$GlobalMediaRouter;
 
-    .line 1995
     iput-object p1, p0, Landroid/support/v7/media/MediaRouter$GlobalMediaRouter$1;->this$0:Landroid/support/v7/media/MediaRouter$GlobalMediaRouter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

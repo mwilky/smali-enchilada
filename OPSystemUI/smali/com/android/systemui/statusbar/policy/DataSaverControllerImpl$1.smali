@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;
 
-    .line 77
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;
 
     invoke-direct {p0}, Landroid/net/NetworkPolicyManager$Listener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onRestrictBackgroundChanged(Z)V
     .locals 2
-    .param p1, "isDataSaving"    # Z
 
-    .line 80
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;->access$100(Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;)Landroid/os/Handler;
@@ -50,6 +46,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 86
     return-void
 .end method

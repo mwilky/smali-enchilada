@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/DozeScrimController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
-    .line 162
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$600(Lcom/android/systemui/statusbar/phone/DozeScrimController;)Landroid/os/Handler;
@@ -54,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 166
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$2;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$400(Lcom/android/systemui/statusbar/phone/DozeScrimController;)Ljava/lang/Runnable;
@@ -63,6 +59,5 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 167
     return-void
 .end method

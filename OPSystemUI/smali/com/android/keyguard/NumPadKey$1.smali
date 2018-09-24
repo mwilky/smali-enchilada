@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/NumPadKey;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/NumPadKey;
 
-    .line 48
     iput-object p1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "thisView"    # Landroid/view/View;
 
-    .line 52
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-static {v0}, Lcom/android/keyguard/NumPadKey;->access$000(Lcom/android/keyguard/NumPadKey;)Lcom/android/keyguard/PasswordTextViewForPin;
@@ -65,7 +61,6 @@
 
     if-lez v0, :cond_1
 
-    .line 54
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-virtual {v0}, Lcom/android/keyguard/NumPadKey;->getRootView()Landroid/view/View;
@@ -82,15 +77,12 @@
 
     move-result-object v0
 
-    .line 55
-    .local v0, "v":Landroid/view/View;
     if-eqz v0, :cond_0
 
     instance-of v1, v0, Lcom/android/keyguard/PasswordTextView;
 
     if-eqz v1, :cond_0
 
-    .line 56
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     move-object v2, v0
@@ -101,7 +93,6 @@
 
     goto :goto_0
 
-    .line 58
     :cond_0
     if-eqz v0, :cond_1
 
@@ -109,7 +100,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 59
     iget-object v1, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     move-object v2, v0
@@ -118,8 +108,6 @@
 
     invoke-static {v1, v2}, Lcom/android/keyguard/NumPadKey;->access$002(Lcom/android/keyguard/NumPadKey;Lcom/android/keyguard/PasswordTextViewForPin;)Lcom/android/keyguard/PasswordTextViewForPin;
 
-    .line 63
-    .end local v0    # "v":Landroid/view/View;
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
@@ -144,7 +132,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 64
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-static {v0}, Lcom/android/keyguard/NumPadKey;->access$100(Lcom/android/keyguard/NumPadKey;)Lcom/android/keyguard/PasswordTextView;
@@ -165,7 +152,6 @@
 
     goto :goto_1
 
-    .line 66
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
@@ -187,7 +173,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 67
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-static {v0}, Lcom/android/keyguard/NumPadKey;->access$000(Lcom/android/keyguard/NumPadKey;)Lcom/android/keyguard/PasswordTextViewForPin;
@@ -206,13 +191,11 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/PasswordTextViewForPin;->append(C)V
 
-    .line 70
     :cond_3
     :goto_1
     iget-object v0, p0, Lcom/android/keyguard/NumPadKey$1;->this$0:Lcom/android/keyguard/NumPadKey;
 
     invoke-virtual {v0}, Lcom/android/keyguard/NumPadKey;->userActivity()V
 
-    .line 71
     return-void
 .end method

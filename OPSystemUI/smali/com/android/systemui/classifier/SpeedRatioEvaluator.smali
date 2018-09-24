@@ -6,13 +6,9 @@
 # direct methods
 .method public static evaluate(F)F
     .locals 7
-    .param p0, "value"    # F
 
-    .line 21
     const/4 v0, 0x0
 
-    .line 22
-    .local v0, "evaluation":F
     const/4 v1, 0x0
 
     cmpl-float v2, p0, v1
@@ -21,7 +17,6 @@
 
     return v1
 
-    .line 23
     :cond_0
     float-to-double v1, p0
 
@@ -35,7 +30,6 @@
 
     add-float/2addr v0, v2
 
-    .line 24
     :cond_1
     float-to-double v3, p0
 
@@ -47,7 +41,6 @@
 
     add-float/2addr v0, v2
 
-    .line 25
     :cond_2
     float-to-double v3, p0
 
@@ -59,7 +52,6 @@
 
     add-float/2addr v0, v2
 
-    .line 26
     :cond_3
     float-to-double v3, p0
 
@@ -71,7 +63,6 @@
 
     add-float/2addr v0, v2
 
-    .line 27
     :cond_4
     return v0
 .end method

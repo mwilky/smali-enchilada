@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "iconResId"    # I
-    .param p3, "messageResId"    # I
 
-    .line 638
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$3;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0, p2, p3}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
@@ -38,7 +34,6 @@
 .method public onPress()V
     .locals 1
 
-    .line 641
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$3;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/internal/util/EmergencyAffordanceManager;
@@ -47,14 +42,12 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/EmergencyAffordanceManager;->performEmergencyCall()V
 
-    .line 642
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 651
     const/4 v0, 0x1
 
     return v0
@@ -63,7 +56,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 646
     const/4 v0, 0x1
 
     return v0

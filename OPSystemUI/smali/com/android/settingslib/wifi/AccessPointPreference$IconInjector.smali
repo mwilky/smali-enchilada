@@ -21,14 +21,10 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 361
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 362
     iput-object p1, p0, Lcom/android/settingslib/wifi/AccessPointPreference$IconInjector;->mContext:Landroid/content/Context;
 
-    .line 363
     return-void
 .end method

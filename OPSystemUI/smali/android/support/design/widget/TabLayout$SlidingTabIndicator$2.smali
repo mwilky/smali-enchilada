@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/TabLayout$SlidingTabIndicator;I)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/design/widget/TabLayout$SlidingTabIndicator;
 
-    .line 2549
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabIndicator;
 
     iput p2, p0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator$2;->val$position:I
@@ -39,22 +37,18 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 2552
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabIndicator;
 
     iget v1, p0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator$2;->val$position:I
 
     iput v1, v0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator;->selectedPosition:I
 
-    .line 2553
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabIndicator;
 
     const/4 v1, 0x0
 
     iput v1, v0, Landroid/support/design/widget/TabLayout$SlidingTabIndicator;->selectionOffset:F
 
-    .line 2554
     return-void
 .end method

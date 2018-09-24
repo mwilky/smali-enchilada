@@ -6,15 +6,11 @@
 # direct methods
 .method public static checkArgument(Z)V
     .locals 1
-    .param p0, "expression"    # Z
 
-    .line 37
     if-eqz p0, :cond_0
 
-    .line 40
     return-void
 
-    .line 38
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -25,16 +21,11 @@
 
 .method public static checkArgument(ZLjava/lang/Object;)V
     .locals 2
-    .param p0, "expression"    # Z
-    .param p1, "errorMessage"    # Ljava/lang/Object;
 
-    .line 51
     if-eqz p0, :cond_0
 
-    .line 54
     return-void
 
-    .line 52
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -49,15 +40,11 @@
 
 .method public static checkArgumentNonnegative(I)I
     .locals 1
-    .param p0, "value"    # I
 
-    .line 188
     if-ltz p0, :cond_0
 
-    .line 192
     return p0
 
-    .line 189
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -76,14 +63,10 @@
         }
     .end annotation
 
-    .line 98
-    .local p0, "reference":Ljava/lang/Object;, "TT;"
     if-eqz p0, :cond_0
 
-    .line 101
     return-object p0
 
-    .line 99
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -94,7 +77,6 @@
 
 .method public static checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .param p1, "errorMessage"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -105,14 +87,10 @@
         }
     .end annotation
 
-    .line 115
-    .local p0, "reference":Ljava/lang/Object;, "TT;"
     if-eqz p0, :cond_0
 
-    .line 118
     return-object p0
 
-    .line 116
     :cond_0
     new-instance v0, Ljava/lang/NullPointerException;
 

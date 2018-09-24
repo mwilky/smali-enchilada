@@ -19,7 +19,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 34
     sget-boolean v0, Landroid/support/v4/media/MediaSessionManager;->DEBUG:Z
 
     sput-boolean v0, Landroid/support/v4/media/MediaSessionManagerImplBase;->DEBUG:Z

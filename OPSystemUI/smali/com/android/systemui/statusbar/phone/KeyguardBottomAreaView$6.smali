@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Landroid/telecom/TelecomManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    .line 678
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$6;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$6;->val$tm:Landroid/telecom/TelecomManager;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 681
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$6;->val$tm:Landroid/telecom/TelecomManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/telecom/TelecomManager;->showInCallScreen(Z)V
 
-    .line 682
     return-void
 .end method

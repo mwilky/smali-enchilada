@@ -24,9 +24,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/systemui/qs/tiles/DataSwitchTile;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
-    .line 283
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,20 +36,15 @@
 # virtual methods
 .method public setVirtualSimstate([I)V
     .locals 5
-    .param p1, "softSimstate"    # [I
 
-    .line 286
     const/4 v0, 0x0
 
-    .line 288
-    .local v0, "exist":Z
     if-eqz p1, :cond_1
 
     array-length v1, p1
 
     if-lez v1, :cond_1
 
-    .line 289
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -61,26 +54,19 @@
 
     aget v3, p1, v2
 
-    .line 290
-    .local v3, "softSimState":I
     sget v4, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->SOFTSIM_DISABLE:I
 
     if-eq v3, v4, :cond_0
 
-    .line 291
     const/4 v0, 0x1
 
-    .line 292
     goto :goto_1
 
-    .line 289
-    .end local v3    # "softSimState":I
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 296
     :cond_1
     :goto_1
     const-string v1, "DataSwitchTile"
@@ -113,16 +99,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$202(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
 
-    .line 298
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$DataSwitchSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
     invoke-virtual {v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->refreshState()V
 
-    .line 299
     return-void
 .end method

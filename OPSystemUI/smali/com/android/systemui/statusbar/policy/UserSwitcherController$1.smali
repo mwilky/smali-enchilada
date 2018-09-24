@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
-    .line 191
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->val$addUsersWhenLocked:Z
@@ -53,7 +51,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 191
     check-cast p1, [Landroid/util/SparseArray;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->doInBackground([Landroid/util/SparseArray;)Ljava/util/ArrayList;
@@ -77,16 +74,12 @@
         }
     .end annotation
 
-    .local p1, "params":[Landroid/util/SparseArray;, "[Landroid/util/SparseArray<Landroid/graphics/Bitmap;>;"
     move-object/from16 v0, p0
 
-    .line 195
     const/4 v1, 0x0
 
     aget-object v2, p1, v1
 
-    .line 196
-    .local v2, "bitmaps":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/graphics/Bitmap;>;"
     iget-object v3, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v3, v3, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUserManager:Landroid/os/UserManager;
@@ -97,16 +90,12 @@
 
     move-result-object v3
 
-    .line 197
-    .local v3, "infos":Ljava/util/List;, "Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     if-nez v3, :cond_0
 
-    .line 198
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 200
     :cond_0
     new-instance v5, Ljava/util/ArrayList;
 
@@ -116,14 +105,10 @@
 
     invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 201
-    .local v5, "records":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;>;"
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v6
 
-    .line 202
-    .local v6, "currentId":I
     iget-object v7, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v7, v7, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUserManager:Landroid/os/UserManager;
@@ -132,16 +117,10 @@
 
     move-result v7
 
-    .line 203
-    .local v7, "canSwitchUsers":Z
     const/4 v8, 0x0
 
-    .line 204
-    .local v8, "currentUserInfo":Landroid/content/pm/UserInfo;
     const/4 v9, 0x0
 
-    .line 206
-    .local v9, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
@@ -150,10 +129,6 @@
 
     move-object v12, v9
 
-    .end local v8    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .end local v9    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v12, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v13, "currentUserInfo":Landroid/content/pm/UserInfo;
     :goto_0
     invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
@@ -169,8 +144,6 @@
 
     check-cast v11, Landroid/content/pm/UserInfo;
 
-    .line 207
-    .local v11, "info":Landroid/content/pm/UserInfo;
     iget v8, v11, Landroid/content/pm/UserInfo;->id:I
 
     if-ne v6, v8, :cond_1
@@ -185,27 +158,17 @@
     :goto_1
     move/from16 v24, v8
 
-    .line 208
-    .local v24, "isCurrent":Z
     if-eqz v24, :cond_2
 
-    .line 209
     move-object v8, v11
 
-    .line 211
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v8    # "currentUserInfo":Landroid/content/pm/UserInfo;
     move-object/from16 v25, v8
 
     goto :goto_2
 
-    .end local v8    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
     :cond_2
     move-object/from16 v25, v13
 
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .local v25, "currentUserInfo":Landroid/content/pm/UserInfo;
     :goto_2
     if-nez v7, :cond_4
 
@@ -222,8 +185,6 @@
     :goto_3
     move/from16 v23, v4
 
-    .line 212
-    .local v23, "switchToEnabled":Z
     :goto_4
     invoke-virtual {v11}, Landroid/content/pm/UserInfo;->isEnabled()Z
 
@@ -231,14 +192,12 @@
 
     if-eqz v8, :cond_8
 
-    .line 213
     invoke-virtual {v11}, Landroid/content/pm/UserInfo;->isGuest()Z
 
     move-result v8
 
     if-eqz v8, :cond_5
 
-    .line 216
     new-instance v16, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     const/4 v10, 0x0
@@ -257,20 +216,14 @@
 
     move v11, v13
 
-    .end local v11    # "info":Landroid/content/pm/UserInfo;
-    .local v1, "info":Landroid/content/pm/UserInfo;
     move-object v13, v12
 
     move/from16 v12, v24
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v13, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     move-object/from16 v26, v13
 
     move v13, v15
 
-    .end local v13    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v26, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     move-object/from16 v27, v14
 
     move/from16 v14, v17
@@ -279,18 +232,10 @@
 
     invoke-direct/range {v8 .. v15}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;-><init>(Landroid/content/pm/UserInfo;Landroid/graphics/Bitmap;ZZZZZ)V
 
-    .line 237
-    .end local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v8, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     move-object v12, v8
 
     goto :goto_7
 
-    .line 219
-    .end local v1    # "info":Landroid/content/pm/UserInfo;
-    .end local v8    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v11    # "info":Landroid/content/pm/UserInfo;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     :cond_5
     move-object v1, v11
 
@@ -298,17 +243,12 @@
 
     move-object/from16 v27, v14
 
-    .end local v11    # "info":Landroid/content/pm/UserInfo;
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v1    # "info":Landroid/content/pm/UserInfo;
-    .restart local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     invoke-virtual {v1}, Landroid/content/pm/UserInfo;->supportsSwitchToByUser()Z
 
     move-result v8
 
     if-eqz v8, :cond_9
 
-    .line 220
     iget v8, v1, Landroid/content/pm/UserInfo;->id:I
 
     invoke-virtual {v2, v8}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -317,11 +257,8 @@
 
     check-cast v8, Landroid/graphics/Bitmap;
 
-    .line 221
-    .local v8, "picture":Landroid/graphics/Bitmap;
     if-nez v8, :cond_6
 
-    .line 222
     iget-object v9, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v9, v9, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUserManager:Landroid/os/UserManager;
@@ -332,10 +269,8 @@
 
     move-result-object v8
 
-    .line 224
     if-eqz v8, :cond_6
 
-    .line 225
     iget-object v9, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v9, v9, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mContext:Landroid/content/Context;
@@ -346,19 +281,14 @@
 
     const v10, 0x7f070315
 
-    .line 226
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v9
 
-    .line 227
-    .local v9, "avatarSize":I
     invoke-static {v8, v9, v9, v4}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v8
 
-    .line 231
-    .end local v9    # "avatarSize":I
     :cond_6
     if-eqz v24, :cond_7
 
@@ -371,8 +301,6 @@
 
     move-result v9
 
-    .line 232
-    .local v9, "index":I
     :goto_5
     new-instance v10, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
@@ -394,30 +322,17 @@
 
     invoke-virtual {v5, v9, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .end local v1    # "info":Landroid/content/pm/UserInfo;
-    .end local v8    # "picture":Landroid/graphics/Bitmap;
-    .end local v9    # "index":I
-    .end local v23    # "switchToEnabled":Z
-    .end local v24    # "isCurrent":Z
     goto :goto_6
 
-    .line 237
-    .end local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     :cond_8
     move-object/from16 v26, v12
 
     move-object/from16 v27, v14
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     :cond_9
     :goto_6
     move-object/from16 v12, v26
 
-    .line 206
-    .end local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     :goto_7
     move-object/from16 v13, v25
 
@@ -427,14 +342,9 @@
 
     goto/16 :goto_0
 
-    .line 243
-    .end local v25    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .local v13, "currentUserInfo":Landroid/content/pm/UserInfo;
     :cond_a
     move-object/from16 v26, v12
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     iget-object v1, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUserManager:Landroid/os/UserManager;
@@ -449,11 +359,8 @@
 
     xor-int/2addr v1, v4
 
-    .line 245
-    .local v1, "systemCanCreateUsers":Z
     if-eqz v13, :cond_c
 
-    .line 246
     invoke-virtual {v13}, Landroid/content/pm/UserInfo;->isAdmin()Z
 
     move-result v8
@@ -477,8 +384,6 @@
     :goto_8
     move/from16 v23, v8
 
-    .line 249
-    .local v23, "currentUserCanCreateUsers":Z
     if-eqz v1, :cond_d
 
     iget-boolean v8, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->val$addUsersWhenLocked:Z
@@ -495,8 +400,6 @@
     :goto_9
     move/from16 v24, v8
 
-    .line 250
-    .local v24, "anyoneCanCreateUsers":Z
     if-nez v23, :cond_f
 
     if-eqz v24, :cond_e
@@ -514,8 +417,6 @@
 
     if-nez v12, :cond_10
 
-    .end local v26    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     move v8, v4
 
     goto :goto_c
@@ -527,8 +428,6 @@
     :goto_c
     move/from16 v25, v8
 
-    .line 252
-    .local v25, "canCreateGuest":Z
     if-nez v23, :cond_11
 
     if-eqz v24, :cond_12
@@ -538,7 +437,6 @@
 
     iget-object v8, v8, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->mUserManager:Landroid/os/UserManager;
 
-    .line 253
     invoke-virtual {v8}, Landroid/os/UserManager;->canAddMoreUsers()Z
 
     move-result v8
@@ -555,14 +453,10 @@
     :goto_d
     move/from16 v26, v8
 
-    .line 254
-    .local v26, "canCreateUser":Z
     iget-boolean v8, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->val$addUsersWhenLocked:Z
 
     xor-int/lit8 v14, v8, 0x1
 
-    .line 256
-    .local v14, "createIsRestricted":Z
     iget-object v4, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$000(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)Z
@@ -571,13 +465,10 @@
 
     if-nez v4, :cond_16
 
-    .line 257
     if-nez v12, :cond_14
 
-    .line 258
     if-eqz v25, :cond_13
 
-    .line 259
     new-instance v4, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     const/4 v9, 0x0
@@ -596,62 +487,36 @@
 
     move v12, v15
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .local v28, "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     move-object/from16 v27, v13
 
     move/from16 v13, v16
 
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .local v27, "currentUserInfo":Landroid/content/pm/UserInfo;
     move v15, v7
 
     invoke-direct/range {v8 .. v15}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;-><init>(Landroid/content/pm/UserInfo;Landroid/graphics/Bitmap;ZZZZZ)V
 
     move-object v12, v4
 
-    .line 262
-    .end local v28    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     iget-object v4, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v4, v12}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$100(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;)V
 
-    .line 263
     invoke-virtual {v5, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
 
-    .line 271
-    .end local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
     :cond_13
     move-object/from16 v27, v13
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v28    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     goto :goto_f
 
-    .line 266
-    .end local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .end local v28    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
     :cond_14
     move-object/from16 v28, v12
 
     move-object/from16 v27, v13
 
-    .end local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v28    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     iget-boolean v4, v12, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;->isCurrent:Z
 
-    .end local v28    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
-    .restart local v12    # "guestRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     if-eqz v4, :cond_15
 
     const/4 v4, 0x0
@@ -663,22 +528,14 @@
 
     move-result v4
 
-    .line 267
-    .local v4, "index":I
     :goto_e
     invoke-virtual {v5, v4, v12}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .end local v4    # "index":I
     goto :goto_f
 
-    .line 271
-    .end local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
     :cond_16
     move-object/from16 v27, v13
 
-    .end local v13    # "currentUserInfo":Landroid/content/pm/UserInfo;
-    .restart local v27    # "currentUserInfo":Landroid/content/pm/UserInfo;
     :goto_f
     iget-object v4, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
@@ -690,7 +547,6 @@
 
     if-eqz v26, :cond_17
 
-    .line 272
     new-instance v4, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
 
     const/16 v16, 0x0
@@ -711,17 +567,12 @@
 
     invoke-direct/range {v15 .. v22}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;-><init>(Landroid/content/pm/UserInfo;Landroid/graphics/Bitmap;ZZZZZ)V
 
-    .line 275
-    .local v4, "addUserRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     iget-object v8, v0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v8, v4}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$100(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;)V
 
-    .line 276
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 279
-    .end local v4    # "addUserRecord":Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;
     :cond_17
     return-object v5
 .end method
@@ -729,7 +580,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 191
     check-cast p1, Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->onPostExecute(Ljava/util/ArrayList;)V
@@ -748,21 +598,16 @@
         }
     .end annotation
 
-    .line 284
-    .local p1, "userRecords":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/policy/UserSwitcherController$UserRecord;>;"
     if-eqz p1, :cond_0
 
-    .line 285
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$202(Lcom/android/systemui/statusbar/policy/UserSwitcherController;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 286
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserSwitcherController$1;->this$0:Lcom/android/systemui/statusbar/policy/UserSwitcherController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/UserSwitcherController;->access$300(Lcom/android/systemui/statusbar/policy/UserSwitcherController;)V
 
-    .line 288
     :cond_0
     return-void
 .end method

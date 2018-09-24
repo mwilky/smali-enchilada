@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/StatusBarIconView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    .line 615
     iput-object p1, p0, Lcom/android/systemui/statusbar/StatusBarIconView$3;->this$0:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,22 +33,18 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 618
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView$3;->this$0:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->access$002(Lcom/android/systemui/statusbar/StatusBarIconView;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 619
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarIconView$3;->this$0:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/StatusBarIconView;->access$102(Lcom/android/systemui/statusbar/StatusBarIconView;I)I
 
-    .line 620
     return-void
 .end method

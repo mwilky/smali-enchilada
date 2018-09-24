@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
-    .line 371
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAvailable(Landroid/net/Network;)V
     .locals 3
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 374
     invoke-static {}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$000()Z
 
     move-result v0
@@ -64,26 +60,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 375
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$100(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
-    .line 376
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
-    .line 377
     return-void
 .end method
 
 .method public onLost(Landroid/net/Network;)V
     .locals 3
-    .param p1, "network"    # Landroid/net/Network;
 
-    .line 383
     invoke-static {}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$000()Z
 
     move-result v0
@@ -110,17 +101,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 384
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$100(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
-    .line 385
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
-    .line 386
     return-void
 .end method

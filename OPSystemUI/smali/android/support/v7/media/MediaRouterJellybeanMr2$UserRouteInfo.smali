@@ -17,16 +17,12 @@
 # direct methods
 .method public static setDescription(Ljava/lang/Object;Ljava/lang/CharSequence;)V
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
-    .param p1, "description"    # Ljava/lang/CharSequence;
 
-    .line 47
     move-object v0, p0
 
     check-cast v0, Landroid/media/MediaRouter$UserRouteInfo;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaRouter$UserRouteInfo;->setDescription(Ljava/lang/CharSequence;)V
 
-    .line 48
     return-void
 .end method

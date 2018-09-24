@@ -29,10 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/QuickStepController;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/QuickStepController;
-    .param p2, "x0"    # Ljava/lang/String;
 
-    .line 128
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->this$0:Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-direct {p0, p2}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
@@ -44,9 +41,7 @@
 # virtual methods
 .method public get(Lcom/android/systemui/statusbar/phone/QuickStepController;)Ljava/lang/Float;
     .locals 1
-    .param p1, "controller"    # Lcom/android/systemui/statusbar/phone/QuickStepController;
 
-    .line 138
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->this$0:Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QuickStepController;->access$300(Lcom/android/systemui/statusbar/phone/QuickStepController;)Landroid/view/View;
@@ -55,7 +50,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->this$0:Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QuickStepController;->access$300(Lcom/android/systemui/statusbar/phone/QuickStepController;)Landroid/view/View;
@@ -72,7 +66,6 @@
 
     return-object v0
 
-    .line 141
     :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -86,7 +79,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 128
     check-cast p1, Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->get(Lcom/android/systemui/statusbar/phone/QuickStepController;)Ljava/lang/Float;
@@ -98,10 +90,7 @@
 
 .method public setValue(Lcom/android/systemui/statusbar/phone/QuickStepController;F)V
     .locals 1
-    .param p1, "controller"    # Lcom/android/systemui/statusbar/phone/QuickStepController;
-    .param p2, "alpha"    # F
 
-    .line 131
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->this$0:Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QuickStepController;->access$300(Lcom/android/systemui/statusbar/phone/QuickStepController;)Landroid/view/View;
@@ -110,7 +99,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 132
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->this$0:Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/QuickStepController;->access$300(Lcom/android/systemui/statusbar/phone/QuickStepController;)Landroid/view/View;
@@ -119,7 +107,6 @@
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 134
     :cond_0
     return-void
 .end method
@@ -127,7 +114,6 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 128
     check-cast p1, Lcom/android/systemui/statusbar/phone/QuickStepController;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/phone/QuickStepController$3;->setValue(Lcom/android/systemui/statusbar/phone/QuickStepController;F)V

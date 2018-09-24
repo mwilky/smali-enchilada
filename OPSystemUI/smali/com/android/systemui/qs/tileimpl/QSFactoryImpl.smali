@@ -13,23 +13,17 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/QSTileHost;)V
     .locals 0
-    .param p1, "host"    # Lcom/android/systemui/qs/QSTileHost;
 
-    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     iput-object p1, p0, Lcom/android/systemui/qs/tileimpl/QSFactoryImpl;->mHost:Lcom/android/systemui/qs/QSTileHost;
 
-    .line 60
     return-void
 .end method
 
 .method private createTileInternal(Ljava/lang/String;)Lcom/android/systemui/qs/tileimpl/QSTileImpl;
     .locals 3
-    .param p1, "tileSpec"    # Ljava/lang/String;
 
-    .line 72
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -357,7 +351,6 @@
     :goto_1
     packed-switch v0, :pswitch_data_0
 
-    .line 128
     const-string v0, "intent("
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -374,7 +367,6 @@
 
     return-object v0
 
-    .line 122
     :pswitch_0
     new-instance v0, Lcom/android/systemui/qs/tiles/OPDndTile;
 
@@ -384,7 +376,6 @@
 
     return-object v0
 
-    .line 119
     :pswitch_1
     new-instance v0, Lcom/android/systemui/qs/tiles/VPNTile;
 
@@ -394,7 +385,6 @@
 
     return-object v0
 
-    .line 117
     :pswitch_2
     new-instance v0, Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
@@ -404,7 +394,6 @@
 
     return-object v0
 
-    .line 115
     :pswitch_3
     new-instance v0, Lcom/android/systemui/qs/tiles/ReadModeTile;
 
@@ -414,7 +403,6 @@
 
     return-object v0
 
-    .line 113
     :pswitch_4
     new-instance v0, Lcom/android/systemui/qs/tiles/GameModeTile;
 
@@ -424,7 +412,6 @@
 
     return-object v0
 
-    .line 111
     :pswitch_5
     new-instance v0, Lcom/android/systemui/qs/tiles/BatterySaverTile;
 
@@ -434,7 +421,6 @@
 
     return-object v0
 
-    .line 109
     :pswitch_6
     new-instance v0, Lcom/android/systemui/qs/tiles/OtgTile;
 
@@ -444,7 +430,6 @@
 
     return-object v0
 
-    .line 106
     :pswitch_7
     new-instance v0, Lcom/android/systemui/qs/tiles/NfcTile;
 
@@ -454,7 +439,6 @@
 
     return-object v0
 
-    .line 104
     :pswitch_8
     new-instance v0, Lcom/android/systemui/qs/tiles/NightDisplayTile;
 
@@ -464,7 +448,6 @@
 
     return-object v0
 
-    .line 102
     :pswitch_9
     new-instance v0, Lcom/android/systemui/qs/tiles/DataSaverTile;
 
@@ -474,7 +457,6 @@
 
     return-object v0
 
-    .line 100
     :pswitch_a
     new-instance v0, Lcom/android/systemui/qs/tiles/BatterySaverTile;
 
@@ -484,7 +466,6 @@
 
     return-object v0
 
-    .line 98
     :pswitch_b
     new-instance v0, Lcom/android/systemui/qs/tiles/UserTile;
 
@@ -494,7 +475,6 @@
 
     return-object v0
 
-    .line 96
     :pswitch_c
     new-instance v0, Lcom/android/systemui/qs/tiles/HotspotTile;
 
@@ -504,7 +484,6 @@
 
     return-object v0
 
-    .line 94
     :pswitch_d
     new-instance v0, Lcom/android/systemui/qs/tiles/CastTile;
 
@@ -514,7 +493,6 @@
 
     return-object v0
 
-    .line 92
     :pswitch_e
     new-instance v0, Lcom/android/systemui/qs/tiles/LocationTile;
 
@@ -524,7 +502,6 @@
 
     return-object v0
 
-    .line 90
     :pswitch_f
     new-instance v0, Lcom/android/systemui/qs/tiles/FlashlightTile;
 
@@ -534,7 +511,6 @@
 
     return-object v0
 
-    .line 88
     :pswitch_10
     new-instance v0, Lcom/android/systemui/qs/tiles/RotationLockTile;
 
@@ -544,7 +520,6 @@
 
     return-object v0
 
-    .line 86
     :pswitch_11
     new-instance v0, Lcom/android/systemui/qs/tiles/WorkModeTile;
 
@@ -554,7 +529,6 @@
 
     return-object v0
 
-    .line 84
     :pswitch_12
     new-instance v0, Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
@@ -564,7 +538,6 @@
 
     return-object v0
 
-    .line 82
     :pswitch_13
     new-instance v0, Lcom/android/systemui/qs/tiles/ColorInversionTile;
 
@@ -574,7 +547,6 @@
 
     return-object v0
 
-    .line 80
     :pswitch_14
     new-instance v0, Lcom/android/systemui/qs/tiles/DndTile;
 
@@ -584,7 +556,6 @@
 
     return-object v0
 
-    .line 78
     :pswitch_15
     new-instance v0, Lcom/android/systemui/qs/tiles/CellularTile;
 
@@ -594,7 +565,6 @@
 
     return-object v0
 
-    .line 76
     :pswitch_16
     new-instance v0, Lcom/android/systemui/qs/tiles/BluetoothTile;
 
@@ -604,7 +574,6 @@
 
     return-object v0
 
-    .line 74
     :pswitch_17
     new-instance v0, Lcom/android/systemui/qs/tiles/WifiTile;
 
@@ -614,7 +583,6 @@
 
     return-object v0
 
-    .line 129
     :cond_1
     const-string v0, "custom("
 
@@ -632,13 +600,11 @@
 
     return-object v0
 
-    .line 132
     :cond_2
     sget-boolean v0, Landroid/os/Build;->IS_DEBUGGABLE:Z
 
     if-eqz v0, :cond_3
 
-    .line 133
     const-string v0, "dbg:mem"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -647,7 +613,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 134
     new-instance v0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryTile;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSFactoryImpl;->mHost:Lcom/android/systemui/qs/QSTileHost;
@@ -656,7 +621,6 @@
 
     return-object v0
 
-    .line 139
     :cond_3
     const-string v0, "QSFactory"
 
@@ -676,7 +640,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 140
     const/4 v0, 0x0
 
     return-object v0
@@ -744,31 +707,22 @@
 # virtual methods
 .method public createTile(Ljava/lang/String;)Lcom/android/systemui/plugins/qs/QSTile;
     .locals 1
-    .param p1, "tileSpec"    # Ljava/lang/String;
 
-    .line 63
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tileimpl/QSFactoryImpl;->createTileInternal(Ljava/lang/String;)Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "tile":Lcom/android/systemui/qs/tileimpl/QSTileImpl;
     if-eqz v0, :cond_0
 
-    .line 65
     invoke-virtual {v0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleStale()V
 
-    .line 67
     :cond_0
     return-object v0
 .end method
 
 .method public createTileView(Lcom/android/systemui/plugins/qs/QSTile;Z)Lcom/android/systemui/plugins/qs/QSTileView;
     .locals 3
-    .param p1, "tile"    # Lcom/android/systemui/plugins/qs/QSTile;
-    .param p2, "collapsedView"    # Z
 
-    .line 145
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tileimpl/QSFactoryImpl;->mHost:Lcom/android/systemui/qs/QSTileHost;
@@ -781,24 +735,18 @@
 
     invoke-direct {v0, v1, v2}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
-    .line 146
-    .local v0, "context":Landroid/content/Context;
     invoke-interface {p1, v0}, Lcom/android/systemui/plugins/qs/QSTile;->createTileView(Landroid/content/Context;)Lcom/android/systemui/plugins/qs/QSIconView;
 
     move-result-object v1
 
-    .line 147
-    .local v1, "icon":Lcom/android/systemui/plugins/qs/QSIconView;
     if-eqz p2, :cond_0
 
-    .line 148
     new-instance v2, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;
 
     invoke-direct {v2, v0, v1, p2}, Lcom/android/systemui/qs/tileimpl/QSTileBaseView;-><init>(Landroid/content/Context;Lcom/android/systemui/plugins/qs/QSIconView;Z)V
 
     return-object v2
 
-    .line 150
     :cond_0
     new-instance v2, Lcom/android/systemui/qs/tileimpl/QSTileView;
 

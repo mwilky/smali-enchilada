@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/screenshot/GlobalScreenshot$2;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/screenshot/GlobalScreenshot$2;
 
-    .line 632
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$2$1;->this$1:Lcom/android/systemui/screenshot/GlobalScreenshot$2;
 
     iput-object p2, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$2$1;->val$rect:Landroid/graphics/Rect;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 5
 
-    .line 634
     iget-object v0, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$2$1;->this$1:Lcom/android/systemui/screenshot/GlobalScreenshot$2;
 
     iget-object v0, v0, Lcom/android/systemui/screenshot/GlobalScreenshot$2;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
@@ -64,6 +61,5 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/systemui/screenshot/GlobalScreenshot;->access$200(Lcom/android/systemui/screenshot/GlobalScreenshot;Ljava/lang/Runnable;ZZLandroid/graphics/Rect;)V
 
-    .line 636
     return-void
 .end method

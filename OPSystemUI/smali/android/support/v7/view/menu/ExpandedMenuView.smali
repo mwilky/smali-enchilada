@@ -20,7 +20,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 42
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -42,31 +41,21 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 53
     const v0, 0x1010074
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 54
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
-    .line 57
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 58
     invoke-virtual {p0, p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 60
     sget-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
 
     const/4 v1, 0x0
@@ -75,22 +64,18 @@
 
     move-result-object v0
 
-    .line 62
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 63
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ExpandedMenuView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 65
     :cond_0
     const/4 v1, 0x1
 
@@ -100,18 +85,15 @@
 
     if-eqz v2, :cond_1
 
-    .line 66
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ExpandedMenuView;->setDivider(Landroid/graphics/drawable/Drawable;)V
 
-    .line 68
     :cond_1
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
-    .line 69
     return-void
 .end method
 
@@ -119,20 +101,15 @@
 # virtual methods
 .method public initialize(Landroid/support/v7/view/menu/MenuBuilder;)V
     .locals 0
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 73
     iput-object p1, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 74
     return-void
 .end method
 
 .method public invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .locals 2
-    .param p1, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
-    .line 86
     iget-object v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
@@ -147,26 +124,18 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 78
     invoke-super {p0}, Landroid/widget/ListView;->onDetachedFromWindow()V
 
-    .line 81
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 82
     return-void
 .end method
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p1, "parent"    # Landroid/widget/AdapterView;
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
-    .line 92
     invoke-virtual {p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -179,6 +148,5 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;->invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
 
-    .line 93
     return-void
 .end method

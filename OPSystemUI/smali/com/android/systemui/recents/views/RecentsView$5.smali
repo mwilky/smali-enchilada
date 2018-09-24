@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/RecentsView;
 
-    .line 789
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$5;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$5;->val$postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 792
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$5;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->access$000(Lcom/android/systemui/recents/views/RecentsView;)Landroid/widget/TextView;
@@ -54,11 +51,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 793
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$5;->val$postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
 
-    .line 794
     return-void
 .end method

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
-    .line 395
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 398
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardAffordanceView$6;->this$0:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->access$600(Lcom/android/systemui/statusbar/KeyguardAffordanceView;)Landroid/view/View;
@@ -48,6 +44,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 399
     return-void
 .end method

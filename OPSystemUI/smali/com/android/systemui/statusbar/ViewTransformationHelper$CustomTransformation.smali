@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 267
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method public customTransformTarget(Lcom/android/systemui/statusbar/notification/TransformState;Lcom/android/systemui/statusbar/notification/TransformState;)Z
     .locals 1
-    .param p1, "ownState"    # Lcom/android/systemui/statusbar/notification/TransformState;
-    .param p2, "otherState"    # Lcom/android/systemui/statusbar/notification/TransformState;
 
-    .line 304
     const/4 v0, 0x0
 
     return v0
@@ -39,10 +35,7 @@
 
 .method public getCustomInterpolator(IZ)Landroid/view/animation/Interpolator;
     .locals 1
-    .param p1, "interpolationType"    # I
-    .param p2, "isFrom"    # Z
 
-    .line 313
     const/4 v0, 0x0
 
     return-object v0
@@ -50,10 +43,7 @@
 
 .method public initTransformation(Lcom/android/systemui/statusbar/notification/TransformState;Lcom/android/systemui/statusbar/notification/TransformState;)Z
     .locals 1
-    .param p1, "ownState"    # Lcom/android/systemui/statusbar/notification/TransformState;
-    .param p2, "otherState"    # Lcom/android/systemui/statusbar/notification/TransformState;
 
-    .line 299
     const/4 v0, 0x0
 
     return v0

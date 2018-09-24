@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 2467
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,9 +39,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 2475
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->readFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
@@ -54,10 +51,7 @@
 
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
-    .line 2470
     invoke-static {p1, p2}, Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;->readFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
 
     move-result-object v0
@@ -68,7 +62,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 0
 
-    .line 2467
     invoke-virtual {p0, p1}, Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
 
     move-result-object p1
@@ -79,7 +72,6 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
     .locals 0
 
-    .line 2467
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
 
     move-result-object p1
@@ -89,9 +81,7 @@
 
 .method public newArray(I)[Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
     .locals 1
-    .param p1, "size"    # I
 
-    .line 2480
     new-array v0, p1, [Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
 
     return-object v0
@@ -100,7 +90,6 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 0
 
-    .line 2467
     invoke-virtual {p0, p1}, Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState$1;->newArray(I)[Landroid/support/v7/app/AppCompatDelegateImpl$PanelFeatureState$SavedState;
 
     move-result-object p1

@@ -12,38 +12,27 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 42
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 37
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mShadowPaint:Landroid/graphics/Paint;
 
-    .line 39
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
-    .line 43
     return-void
 .end method
 
 .method private updatePaint(IIII)V
     .locals 20
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     move-object/from16 v0, p0
 
-    .line 54
     iget-object v1, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -58,8 +47,6 @@
 
     move-result v1
 
-    .line 56
-    .local v1, "startColor":I
     iget-object v3, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -72,11 +59,8 @@
 
     move-result v2
 
-    .line 58
-    .local v2, "endColor":I
     nop
 
-    .line 59
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v3
@@ -91,18 +75,14 @@
 
     div-int/2addr v3, v4
 
-    .line 58
     const/4 v5, 0x0
 
     invoke-static {v3, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v3
 
-    .line 60
-    .local v3, "middleColor":I
     nop
 
-    .line 61
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v6
@@ -127,13 +107,10 @@
 
     float-to-int v6, v6
 
-    .line 60
     invoke-static {v6, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v6
 
-    .line 63
-    .local v6, "quarter":I
     iget v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
     const/4 v8, 0x3
@@ -144,7 +121,6 @@
 
     if-ne v7, v4, :cond_0
 
-    .line 64
     iget-object v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mShadowPaint:Landroid/graphics/Paint;
 
     new-instance v13, Landroid/graphics/LinearGradient;
@@ -201,13 +177,11 @@
 
     goto/16 :goto_0
 
-    .line 68
     :cond_0
     iget v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
     if-ne v7, v9, :cond_1
 
-    .line 69
     iget-object v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mShadowPaint:Landroid/graphics/Paint;
 
     new-instance v13, Landroid/graphics/LinearGradient;
@@ -262,13 +236,11 @@
 
     goto :goto_0
 
-    .line 73
     :cond_1
     iget v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
     if-ne v7, v8, :cond_2
 
-    .line 74
     iget-object v7, v0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mShadowPaint:Landroid/graphics/Paint;
 
     new-instance v13, Landroid/graphics/LinearGradient;
@@ -319,7 +291,6 @@
 
     invoke-virtual {v7, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 79
     :cond_2
     :goto_0
     return-void
@@ -354,7 +325,6 @@
 .method public hasOverlappingRendering()Z
     .locals 1
 
-    .line 97
     const/4 v0, 0x0
 
     return v0
@@ -362,9 +332,7 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 92
     invoke-virtual {p0}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->getWidth()I
 
     move-result v0
@@ -387,48 +355,33 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 93
     return-void
 .end method
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
 
-    .line 83
     invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
 
-    .line 84
     if-eqz p1, :cond_0
 
-    .line 85
     invoke-direct {p0, p2, p3, p4, p5}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->updatePaint(IIII)V
 
-    .line 86
     invoke-virtual {p0}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->invalidate()V
 
-    .line 88
     :cond_0
     return-void
 .end method
 
 .method public setDockSide(I)V
     .locals 4
-    .param p1, "dockSide"    # I
 
-    .line 46
     iget v0, p0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
     if-eq p1, v0, :cond_0
 
-    .line 47
     iput p1, p0, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->mDockSide:I
 
-    .line 48
     invoke-virtual {p0}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->getLeft()I
 
     move-result v0
@@ -447,10 +400,8 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->updatePaint(IIII)V
 
-    .line 49
     invoke-virtual {p0}, Lcom/android/systemui/stackdivider/MinimizedDockShadow;->invalidate()V
 
-    .line 51
     :cond_0
     return-void
 .end method

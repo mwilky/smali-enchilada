@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;Landroid/support/v7/media/MediaRouter$RouteInfo;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteControllerDialog;
 
-    .line 870
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$10;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iput-object p2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$10;->val$route:Landroid/support/v7/media/MediaRouter$RouteInfo;
@@ -43,7 +41,6 @@
 .method public onAnimationEnd()V
     .locals 2
 
-    .line 873
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$10;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mGroupMemberRoutesAnimatingWithBitmap:Ljava/util/Set;
@@ -52,13 +49,11 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 874
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$10;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mVolumeGroupAdapter:Landroid/support/v7/app/MediaRouteControllerDialog$VolumeGroupAdapter;
 
     invoke-virtual {v0}, Landroid/support/v7/app/MediaRouteControllerDialog$VolumeGroupAdapter;->notifyDataSetChanged()V
 
-    .line 875
     return-void
 .end method

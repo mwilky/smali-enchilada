@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;Z)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteControllerDialog;
 
-    .line 592
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iput-boolean p2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->val$animate:Z
@@ -43,7 +41,6 @@
 .method public onGlobalLayout()V
     .locals 2
 
-    .line 595
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mDefaultControlLayout:Landroid/widget/FrameLayout;
@@ -54,14 +51,12 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 596
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-boolean v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mIsGroupListAnimating:Z
 
     if-eqz v0, :cond_0
 
-    .line 597
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const/4 v1, 0x1
@@ -70,7 +65,6 @@
 
     goto :goto_0
 
-    .line 599
     :cond_0
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$6;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/MediaRouteControllerDialog;->updateLayoutHeightInternal(Z)V
 
-    .line 601
     :goto_0
     return-void
 .end method

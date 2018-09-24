@@ -7,7 +7,6 @@
 .method static supportsDynamicShadow()Z
     .locals 2
 
-    .line 24
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15

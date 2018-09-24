@@ -33,9 +33,7 @@
 # virtual methods
 .method isSnackbar(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .locals 1
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
-    .line 182
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;

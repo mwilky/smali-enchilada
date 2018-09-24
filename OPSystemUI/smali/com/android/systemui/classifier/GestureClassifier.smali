@@ -7,7 +7,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 23
     invoke-direct {p0}, Lcom/android/systemui/classifier/Classifier;-><init>()V
 
     return-void

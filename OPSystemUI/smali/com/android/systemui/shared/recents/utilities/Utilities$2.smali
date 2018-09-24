@@ -26,10 +26,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
-    .param p2, "x1"    # Ljava/lang/String;
 
-    .line 66
-    .local p1, "x0":Ljava/lang/Class;, "Ljava/lang/Class<Landroid/graphics/Rect;>;"
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
@@ -39,9 +36,7 @@
 # virtual methods
 .method public get(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
     .locals 1
-    .param p1, "object"    # Landroid/graphics/drawable/Drawable;
 
-    .line 74
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -52,7 +47,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 66
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/shared/recents/utilities/Utilities$2;->get(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Rect;
@@ -64,20 +58,15 @@
 
 .method public set(Landroid/graphics/drawable/Drawable;Landroid/graphics/Rect;)V
     .locals 0
-    .param p1, "object"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "bounds"    # Landroid/graphics/Rect;
 
-    .line 69
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 70
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 66
     check-cast p1, Landroid/graphics/drawable/Drawable;
 
     check-cast p2, Landroid/graphics/Rect;

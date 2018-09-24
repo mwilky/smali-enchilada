@@ -28,36 +28,25 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/recents/RecentsActivity;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsActivity;
-    .param p2, "launchIntent"    # Landroid/content/Intent;
-    .param p3, "opts"    # Landroid/app/ActivityOptions;
 
-    .line 169
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mLaunchIntent:Landroid/content/Intent;
 
-    .line 171
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mOpts:Landroid/app/ActivityOptions;
 
-    .line 172
     return-void
 .end method
 
 .method public static synthetic lambda$run$0(Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;)V
     .locals 5
 
-    .line 178
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->mOpts:Landroid/app/ActivityOptions;
 
-    .line 179
-    .local v0, "opts":Landroid/app/ActivityOptions;
     if-nez v0, :cond_0
 
-    .line 180
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
     const v2, 0x7f0100e3
@@ -68,7 +57,6 @@
 
     move-result-object v0
 
-    .line 183
     :cond_0
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -82,7 +70,6 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/android/systemui/recents/RecentsActivity;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 184
     return-void
 .end method
 
@@ -91,7 +78,6 @@
 .method public run()V
     .locals 7
 
-    .line 177
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
@@ -107,20 +93,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 187
     goto :goto_0
 
-    .line 185
     :catch_0
     move-exception v0
 
-    .line 186
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "RecentsActivity"
 
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsActivity$LaunchHomeRunnable;->this$0:Lcom/android/systemui/recents/RecentsActivity;
 
-    const v3, 0x7f110542
+    const v3, 0x7f110540
 
     const/4 v4, 0x1
 
@@ -138,8 +120,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 188
-    .end local v0    # "e":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method

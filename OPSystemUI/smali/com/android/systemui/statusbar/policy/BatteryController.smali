@@ -31,7 +31,6 @@
 .method public isAodPowerSave()Z
     .locals 1
 
-    .line 47
     invoke-interface {p0}, Lcom/android/systemui/statusbar/policy/BatteryController;->isPowerSave()Z
 
     move-result v0

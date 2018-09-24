@@ -15,17 +15,14 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 27
     const/high16 v0, 0x437a0000    # 250.0f
 
     sput v0, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X1:F
 
-    .line 28
     const/high16 v0, 0x43480000    # 200.0f
 
     sput v0, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X2:F
 
-    .line 29
     sget v0, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X1:F
 
     sget v1, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X2:F
@@ -40,40 +37,30 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 32
     invoke-static {}, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->getAppearPath()Landroid/graphics/Path;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/view/animation/PathInterpolator;-><init>(Landroid/graphics/Path;)V
 
-    .line 33
     return-void
 .end method
 
 .method private static getAppearPath()Landroid/graphics/Path;
     .locals 11
 
-    .line 36
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    .line 37
-    .local v0, "path":Landroid/graphics/Path;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 38
     const/high16 v8, 0x42b40000    # 90.0f
 
-    .line 39
-    .local v8, "y1":F
     const/high16 v9, 0x42a00000    # 80.0f
 
-    .line 40
-    .local v9, "y2":F
     sget v1, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X1:F
 
     const v2, 0x3f4ccccd    # 0.8f
@@ -120,7 +107,6 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 43
     sget v1, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X1:F
 
     sget v2, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X2:F
@@ -161,14 +147,12 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 46
     return-object v0
 .end method
 
 .method public static getFractionUntilOvershoot()F
     .locals 2
 
-    .line 50
     sget v0, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->X1:F
 
     sget v1, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;->XTOT:F

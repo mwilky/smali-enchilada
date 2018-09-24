@@ -24,7 +24,6 @@
 .method getContext()Landroid/content/Context;
     .locals 1
 
-    .line 400
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -33,7 +32,6 @@
 .method getIPackageManager()Landroid/content/pm/IPackageManager;
     .locals 1
 
-    .line 412
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
     move-result-object v0
@@ -44,7 +42,6 @@
 .method getPackageManager()Landroid/content/pm/PackageManager;
     .locals 1
 
-    .line 408
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -57,7 +54,6 @@
 .method getUser()Landroid/os/UserHandle;
     .locals 1
 
-    .line 404
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mUser:Landroid/os/UserHandle;
 
     return-object v0
@@ -66,7 +62,6 @@
 .method getUserManager()Landroid/os/UserManager;
     .locals 2
 
-    .line 416
     iget-object v0, p0, Lcom/android/settingslib/users/AppRestrictionsHelper$Injector;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/os/UserManager;

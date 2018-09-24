@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 29
     new-instance v0, Lcom/android/systemui/shared/system/BackgroundExecutor;
 
     invoke-direct {v0}, Lcom/android/systemui/shared/system/BackgroundExecutor;-><init>()V
@@ -28,10 +27,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
@@ -46,7 +43,6 @@
 .method public static get()Lcom/android/systemui/shared/system/BackgroundExecutor;
     .locals 1
 
-    .line 37
     sget-object v0, Lcom/android/systemui/shared/system/BackgroundExecutor;->sInstance:Lcom/android/systemui/shared/system/BackgroundExecutor;
 
     return-object v0
@@ -56,7 +52,6 @@
 # virtual methods
 .method public submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
     .locals 1
-    .param p1, "runnable"    # Ljava/lang/Runnable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +62,6 @@
         }
     .end annotation
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/shared/system/BackgroundExecutor;->mExecutorService:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v0, p1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;

@@ -29,32 +29,24 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 56
     const/16 v0, 0x64
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;-><init>(II)V
 
-    .line 57
     return-void
 .end method
 
 .method private constructor <init>(II)V
     .locals 3
-    .param p1, "base"    # I
-    .param p2, "drift"    # I
 
-    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
     iput p1, p0, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;->mBase:I
 
-    .line 61
     iput p2, p0, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;->mDrift:I
 
-    .line 62
     iget v0, p0, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;->mBase:I
 
     iget v1, p0, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;->mDrift:I
@@ -69,17 +61,12 @@
 
     iput v2, p0, Lcom/android/systemui/volume/SystemUIInterpolators$LogAccelerateInterpolator;->mLogScale:F
 
-    .line 63
     return-void
 .end method
 
 .method private static computeLog(FII)F
     .locals 4
-    .param p0, "t"    # F
-    .param p1, "base"    # I
-    .param p2, "drift"    # I
 
-    .line 66
     int-to-double v0, p1
 
     neg-float v2, p0
@@ -111,9 +98,7 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 4
-    .param p1, "t"    # F
 
-    .line 71
     const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float v1, v0, p1

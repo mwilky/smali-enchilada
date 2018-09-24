@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
-    .line 340
     iput-object p1, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 343
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->access$300(Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
@@ -60,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 344
     iget-object v0, p0, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView$2;->this$1:Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;->access$300(Lcom/android/systemui/recents/ScreenPinningRequest$RequestWindowView;)Landroid/view/ViewGroup;
@@ -87,7 +83,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 346
     :cond_0
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/stackdivider/Divider;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/stackdivider/Divider;
 
-    .line 113
     iput-object p1, p0, Lcom/android/systemui/stackdivider/Divider$1;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iput-boolean p2, p0, Lcom/android/systemui/stackdivider/Divider$1;->val$visible:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 116
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$1;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$000(Lcom/android/systemui/stackdivider/Divider;)Z
@@ -54,14 +51,12 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 117
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$1;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iget-boolean v1, p0, Lcom/android/systemui/stackdivider/Divider$1;->val$visible:Z
 
     invoke-static {v0, v1}, Lcom/android/systemui/stackdivider/Divider;->access$002(Lcom/android/systemui/stackdivider/Divider;Z)Z
 
-    .line 118
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$1;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$100(Lcom/android/systemui/stackdivider/Divider;)Lcom/android/systemui/stackdivider/DividerView;
@@ -82,7 +77,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Lcom/android/systemui/stackdivider/DividerView;->setVisibility(I)V
 
-    .line 121
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$1;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$100(Lcom/android/systemui/stackdivider/Divider;)Lcom/android/systemui/stackdivider/DividerView;
@@ -103,7 +97,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/stackdivider/DividerView;->setMinimizedDockStack(ZZ)V
 
-    .line 123
     :cond_1
     return-void
 .end method

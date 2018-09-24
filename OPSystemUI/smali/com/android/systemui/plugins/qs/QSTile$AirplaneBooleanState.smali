@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 249
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;-><init>()V
 
     return-void
@@ -41,30 +40,22 @@
 .method public copy()Lcom/android/systemui/plugins/qs/QSTile$State;
     .locals 1
 
-    .line 262
     new-instance v0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;-><init>()V
 
-    .line 263
-    .local v0, "state":Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
-    .line 264
     return-object v0
 .end method
 
 .method public copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
     .locals 3
-    .param p1, "other"    # Lcom/android/systemui/plugins/qs/QSTile$State;
 
-    .line 255
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;
 
-    .line 256
-    .local v0, "o":Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;
     invoke-super {p0, p1}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
     move-result v1
@@ -88,13 +79,10 @@
     :goto_0
     const/4 v1, 0x1
 
-    .line 257
-    .local v1, "changed":Z
     :goto_1
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;->isAirplaneMode:Z
 
     iput-boolean v2, v0, Lcom/android/systemui/plugins/qs/QSTile$AirplaneBooleanState;->isAirplaneMode:Z
 
-    .line 258
     return v1
 .end method

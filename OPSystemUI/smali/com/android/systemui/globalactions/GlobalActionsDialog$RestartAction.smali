@@ -25,26 +25,20 @@
 .method private constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 1
 
-    .line 445
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RestartAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 446
     const p1, 0x10804ca
 
     const v0, 0x1040267
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 
-    .line 447
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "x1"    # Lcom/android/systemui/globalactions/GlobalActionsDialog$1;
 
-    .line 444
     invoke-direct {p0, p1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$RestartAction;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
 
     return-void
@@ -55,7 +49,6 @@
 .method public onLongPress()Z
     .locals 3
 
-    .line 451
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RestartAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
@@ -70,8 +63,6 @@
 
     check-cast v0, Landroid/os/UserManager;
 
-    .line 452
-    .local v0, "um":Landroid/os/UserManager;
     const-string v1, "no_safe_boot"
 
     invoke-virtual {v0, v1}, Landroid/os/UserManager;->hasUserRestriction(Ljava/lang/String;)Z
@@ -80,7 +71,6 @@
 
     if-nez v1, :cond_0
 
-    .line 453
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RestartAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
@@ -91,10 +81,8 @@
 
     invoke-interface {v1, v2}, Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;->reboot(Z)V
 
-    .line 454
     return v2
 
-    .line 456
     :cond_0
     const/4 v1, 0x0
 
@@ -104,7 +92,6 @@
 .method public onPress()V
     .locals 2
 
-    .line 471
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$RestartAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;
@@ -115,14 +102,12 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/GlobalActions$GlobalActionsManager;->reboot(Z)V
 
-    .line 472
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 466
     const/4 v0, 0x1
 
     return v0
@@ -131,7 +116,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 461
     const/4 v0, 0x1
 
     return v0

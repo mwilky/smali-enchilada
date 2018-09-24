@@ -30,11 +30,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 27
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 31
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -49,16 +46,12 @@
 .method final evictAll()V
     .locals 1
 
-    .line 81
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
     invoke-virtual {p0}, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->evictAllCache()V
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->mKeys:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 83
     return-void
 .end method
 
@@ -67,7 +60,6 @@
 
 .method final get(Lcom/android/systemui/shared/recents/model/Task$TaskKey;)Ljava/lang/Object;
     .locals 1
-    .param p1, "key"    # Lcom/android/systemui/shared/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -76,8 +68,6 @@
         }
     .end annotation
 
-    .line 38
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
     iget v0, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->getCacheEntry(I)Ljava/lang/Object;
@@ -89,7 +79,6 @@
 
 .method final getAndInvalidateIfModified(Lcom/android/systemui/shared/recents/model/Task$TaskKey;)Ljava/lang/Object;
     .locals 5
-    .param p1, "key"    # Lcom/android/systemui/shared/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,8 +87,6 @@
         }
     .end annotation
 
-    .line 46
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->mKeys:Landroid/util/SparseArray;
 
     iget v1, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
@@ -110,11 +97,8 @@
 
     check-cast v0, Lcom/android/systemui/shared/recents/model/Task$TaskKey;
 
-    .line 47
-    .local v0, "lastKey":Lcom/android/systemui/shared/recents/model/Task$TaskKey;
     if-eqz v0, :cond_1
 
-    .line 48
     iget v1, v0, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->windowingMode:I
 
     iget v2, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->windowingMode:I
@@ -129,16 +113,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 52
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->remove(Lcom/android/systemui/shared/recents/model/Task$TaskKey;)V
 
-    .line 53
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 58
     :cond_1
     iget v1, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
 
@@ -159,7 +140,6 @@
 
 .method final put(Lcom/android/systemui/shared/recents/model/Task$TaskKey;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "key"    # Lcom/android/systemui/shared/recents/model/Task$TaskKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -168,16 +148,12 @@
         }
     .end annotation
 
-    .line 63
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     if-eqz p1, :cond_1
 
     if-nez p2, :cond_0
 
     goto :goto_0
 
-    .line 67
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->mKeys:Landroid/util/SparseArray;
 
@@ -185,15 +161,12 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 68
     iget v0, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
 
     invoke-virtual {p0, v0, p2}, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->putCacheEntry(ILjava/lang/Object;)V
 
-    .line 69
     return-void
 
-    .line 64
     :cond_1
     :goto_0
     const-string v0, "TaskKeyCache"
@@ -220,7 +193,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
     return-void
 .end method
 
@@ -234,22 +206,17 @@
 
 .method final remove(Lcom/android/systemui/shared/recents/model/Task$TaskKey;)V
     .locals 2
-    .param p1, "key"    # Lcom/android/systemui/shared/recents/model/Task$TaskKey;
 
-    .line 75
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyCache;, "Lcom/android/systemui/shared/recents/model/TaskKeyCache<TV;>;"
     iget v0, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->removeCacheEntry(I)V
 
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyCache;->mKeys:Landroid/util/SparseArray;
 
     iget v1, p1, Lcom/android/systemui/shared/recents/model/Task$TaskKey;->id:I
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 77
     return-void
 .end method
 

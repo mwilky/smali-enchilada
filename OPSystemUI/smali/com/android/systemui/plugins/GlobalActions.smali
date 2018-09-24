@@ -33,7 +33,6 @@
 .method public destroy()V
     .locals 0
 
-    .line 33
     return-void
 .end method
 
@@ -42,9 +41,6 @@
 
 .method public showShutdownUi(ZLjava/lang/String;)V
     .locals 0
-    .param p1, "isReboot"    # Z
-    .param p2, "reason"    # Ljava/lang/String;
 
-    .line 30
     return-void
 .end method

@@ -17,29 +17,24 @@
 # virtual methods
 .method public onConfigChanged(Landroid/content/res/Configuration;)V
     .locals 0
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
-    .line 28
     return-void
 .end method
 
 .method public onDensityOrFontScaleChanged()V
     .locals 0
 
-    .line 29
     return-void
 .end method
 
 .method public onLocaleListChanged()V
     .locals 0
 
-    .line 31
     return-void
 .end method
 
 .method public onOverlayChanged()V
     .locals 0
 
-    .line 30
     return-void
 .end method

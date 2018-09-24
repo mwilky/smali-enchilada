@@ -28,7 +28,6 @@
 .method constructor <init>(IIILandroid/util/Property;)V
     .locals 0
 
-    .line 60
     iput p1, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$startValueTag:I
 
     iput p2, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$endValueTag:I
@@ -47,7 +46,6 @@
 .method public getAnimationEndTag()I
     .locals 1
 
-    .line 68
     iget v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$endValueTag:I
 
     return v0
@@ -56,7 +54,6 @@
 .method public getAnimationStartTag()I
     .locals 1
 
-    .line 63
     iget v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$startValueTag:I
 
     return v0
@@ -65,7 +62,6 @@
 .method public getAnimatorTag()I
     .locals 1
 
-    .line 73
     iget v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$animatorTag:I
 
     return v0
@@ -74,7 +70,6 @@
 .method public getProperty()Landroid/util/Property;
     .locals 1
 
-    .line 78
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$2;->val$property:Landroid/util/Property;
 
     return-object v0

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardUpdateMonitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 849
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 852
     const-string v0, "KeyguardUpdateMonitor"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -52,7 +49,6 @@
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 853
     invoke-static {v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$3300(Lcom/android/keyguard/KeyguardUpdateMonitor;)I
 
     move-result v2
@@ -63,14 +59,11 @@
 
     move-result-object v1
 
-    .line 852
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 854
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$4;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->updateFingerprintListeningState()V
 
-    .line 855
     return-void
 .end method

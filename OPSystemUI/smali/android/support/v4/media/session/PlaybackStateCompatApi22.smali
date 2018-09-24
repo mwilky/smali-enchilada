@@ -6,9 +6,7 @@
 # direct methods
 .method public static getExtras(Ljava/lang/Object;)Landroid/os/Bundle;
     .locals 1
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 29
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;

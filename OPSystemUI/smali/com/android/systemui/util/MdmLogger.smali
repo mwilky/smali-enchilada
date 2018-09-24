@@ -30,27 +30,22 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 17
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->sInstance:Lcom/android/systemui/util/MdmLogger;
 
-    .line 18
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
-    .line 23
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/util/MdmLogger;->sTouchGear:Z
 
-    .line 26
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
-    .line 27
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.AirplaneModeTile"
@@ -59,7 +54,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 28
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.BatterySaverTile"
@@ -68,7 +62,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 29
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.BluetoothTile"
@@ -77,7 +70,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 30
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.CastTile"
@@ -86,7 +78,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 31
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.CellularTile"
@@ -95,7 +86,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 32
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.ColorInversionTile"
@@ -104,7 +94,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 33
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.DataSaverTile"
@@ -113,7 +102,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 34
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.FlashlightTile"
@@ -122,7 +110,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.GameModeTile"
@@ -131,7 +118,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 36
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.HotspotTile"
@@ -140,7 +126,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.LocationTile"
@@ -149,7 +134,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 38
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.NfcTile"
@@ -158,7 +142,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 39
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.NightDisplayTile"
@@ -167,7 +150,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 40
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.ReadModeTile"
@@ -176,7 +158,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 41
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.RotationLockTile"
@@ -185,7 +166,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 42
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.VPNTile"
@@ -194,7 +174,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 43
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.WifiTile"
@@ -203,7 +182,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 44
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.WorkModeTile"
@@ -212,7 +190,6 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 45
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     const-string v1, "Tile.OtgTile"
@@ -221,30 +198,24 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 46
     return-void
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
     new-instance v0, Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     invoke-direct {v0, p1}, Lnet/oneplus/odm/insight/tracker/AppTracker;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
-    .line 50
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
     if-nez v0, :cond_0
 
-    .line 51
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "MdmLogger"
@@ -255,12 +226,10 @@
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
-    .line 52
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 54
     new-instance v0, Landroid/os/Handler;
 
     sget-object v1, Lcom/android/systemui/util/MdmLogger;->sHandlerThread:Landroid/os/HandlerThread;
@@ -273,7 +242,6 @@
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->sHandler:Landroid/os/Handler;
 
-    .line 56
     :cond_0
     return-void
 .end method
@@ -281,7 +249,6 @@
 .method static synthetic access$000()Lnet/oneplus/odm/insight/tracker/AppTracker;
     .locals 1
 
-    .line 13
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->mAppTracker:Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     return-object v0
@@ -289,21 +256,17 @@
 
 .method public static init(Landroid/content/Context;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 59
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sInstance:Lcom/android/systemui/util/MdmLogger;
 
     if-nez v0, :cond_0
 
-    .line 60
     new-instance v0, Lcom/android/systemui/util/MdmLogger;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/util/MdmLogger;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/systemui/util/MdmLogger;->sInstance:Lcom/android/systemui/util/MdmLogger;
 
-    .line 63
     :cond_0
     const-string v0, "MdmLogger"
 
@@ -311,17 +274,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
     return-void
 .end method
 
 .method public static log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "label"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
-    .line 71
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/MdmLogger$1;
@@ -330,17 +288,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 78
     return-void
 .end method
 
 .method public static logQsTile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .param p0, "tileTag"    # Ljava/lang/String;
-    .param p1, "label"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
-    .line 81
     sget-object v0, Lcom/android/systemui/util/MdmLogger;->sTagMap:Ljava/util/Map;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -349,16 +302,12 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 83
-    .local v0, "tag":Ljava/lang/String;
     if-eqz v0, :cond_0
 
-    .line 84
     invoke-static {v0, p1, p2}, Lcom/android/systemui/util/MdmLogger;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 86
     :cond_0
     const-string v1, "MdmLogger"
 
@@ -378,7 +327,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 88
     :goto_0
     return-void
 .end method

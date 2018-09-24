@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/PasswordTextViewForPin;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/PasswordTextViewForPin;
 
-    .line 305
     iput-object p1, p0, Lcom/android/keyguard/PasswordTextViewForPin$1;->this$0:Lcom/android/keyguard/PasswordTextViewForPin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 1
 
-    .line 308
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextViewForPin$1;->this$0:Lcom/android/keyguard/PasswordTextViewForPin;
 
     invoke-static {v0}, Lcom/android/keyguard/PasswordTextViewForPin;->access$000(Lcom/android/keyguard/PasswordTextViewForPin;)Lcom/android/keyguard/PasswordTextViewForPin$UserActivityListener;
@@ -48,6 +45,5 @@
 
     invoke-interface {v0}, Lcom/android/keyguard/PasswordTextViewForPin$UserActivityListener;->onCheckPasswordAndUnlock()V
 
-    .line 309
     return-void
 .end method

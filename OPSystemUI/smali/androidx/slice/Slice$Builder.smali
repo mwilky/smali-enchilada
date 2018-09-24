@@ -43,54 +43,43 @@
 # direct methods
 .method public constructor <init>(Landroid/net/Uri;)V
     .locals 1
-    .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 238
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
-    .line 231
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/Slice$Builder;->mHints:Ljava/util/ArrayList;
 
-    .line 239
     iput-object p1, p0, Landroidx/slice/Slice$Builder;->mUri:Landroid/net/Uri;
 
-    .line 240
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/slice/Slice$Builder;)V
     .locals 2
-    .param p1, "parent"    # Landroidx/slice/Slice$Builder;
 
-    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
-    .line 231
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroidx/slice/Slice$Builder;->mHints:Ljava/util/ArrayList;
 
-    .line 248
     iget-object v0, p1, Landroidx/slice/Slice$Builder;->mUri:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -105,7 +94,6 @@
 
     iget-object v1, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
-    .line 249
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -124,7 +112,6 @@
 
     iput-object v0, p0, Landroidx/slice/Slice$Builder;->mUri:Landroid/net/Uri;
 
-    .line 250
     return-void
 .end method
 
@@ -132,20 +119,13 @@
 # virtual methods
 .method public addAction(Landroid/app/PendingIntent;Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 8
-    .param p1, "action"    # Landroid/app/PendingIntent;
-    .param p2, "s"    # Landroidx/slice/Slice;
-    .param p3, "subType"    # Ljava/lang/String;
 
-    .line 304
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 305
     invoke-static {p2}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 306
     if-eqz p2, :cond_0
 
-    .line 307
     invoke-virtual {p2}, Landroidx/slice/Slice;->getHints()Ljava/util/List;
 
     move-result-object v0
@@ -178,8 +158,6 @@
 
     goto :goto_0
 
-    .line 308
-    .local v6, "hints":[Ljava/lang/String;
     :goto_1
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
@@ -199,7 +177,6 @@
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 309
     return-object p0
 .end method
 
@@ -215,8 +192,6 @@
         }
     .end annotation
 
-    .line 274
-    .local p1, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -238,9 +213,7 @@
 
 .method public varargs addHints([Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 2
-    .param p1, "hints"    # [Ljava/lang/String;
 
-    .line 266
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mHints:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -249,14 +222,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 267
     return-object p0
 .end method
 
 .method public addIcon(Landroid/support/v4/graphics/drawable/IconCompat;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "icon"    # Landroid/support/v4/graphics/drawable/IconCompat;
-    .param p2, "subType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -269,11 +239,8 @@
         }
     .end annotation
 
-    .line 367
-    .local p3, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 368
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
@@ -295,14 +262,9 @@
 
 .method public varargs addIcon(Landroid/support/v4/graphics/drawable/IconCompat;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 3
-    .param p1, "icon"    # Landroid/support/v4/graphics/drawable/IconCompat;
-    .param p2, "subType"    # Ljava/lang/String;
-    .param p3, "hints"    # [Ljava/lang/String;
 
-    .line 355
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 356
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -313,14 +275,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 357
     return-object p0
 .end method
 
 .method public addInt(ILjava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "value"    # I
-    .param p2, "subType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -332,8 +291,6 @@
         }
     .end annotation
 
-    .line 416
-    .local p3, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
@@ -355,11 +312,7 @@
 
 .method public varargs addInt(ILjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 4
-    .param p1, "value"    # I
-    .param p2, "subType"    # Ljava/lang/String;
-    .param p3, "hints"    # [Ljava/lang/String;
 
-    .line 405
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -374,27 +327,21 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 406
     return-object p0
 .end method
 
 .method public addItem(Landroidx/slice/SliceItem;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "item"    # Landroidx/slice/SliceItem;
 
-    .line 469
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 470
     return-object p0
 .end method
 
 .method public addLong(JLjava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "time"    # J
-    .param p3, "subType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -406,8 +353,6 @@
         }
     .end annotation
 
-    .line 437
-    .local p4, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p4}, Ljava/util/List;->size()I
 
     move-result v0
@@ -429,11 +374,7 @@
 
 .method public varargs addLong(JLjava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 4
-    .param p1, "time"    # J
-    .param p3, "subType"    # Ljava/lang/String;
-    .param p4, "hints"    # [Ljava/lang/String;
 
-    .line 426
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -448,14 +389,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 427
     return-object p0
 .end method
 
 .method public addRemoteInput(Landroid/app/RemoteInput;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "remoteInput"    # Landroid/app/RemoteInput;
-    .param p2, "subType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -468,11 +406,8 @@
         }
     .end annotation
 
-    .line 380
-    .local p3, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 381
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
@@ -494,14 +429,9 @@
 
 .method public varargs addRemoteInput(Landroid/app/RemoteInput;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 3
-    .param p1, "remoteInput"    # Landroid/app/RemoteInput;
-    .param p2, "subType"    # Ljava/lang/String;
-    .param p3, "hints"    # [Ljava/lang/String;
 
-    .line 393
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 394
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -512,18 +442,14 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 395
     return-object p0
 .end method
 
 .method public addSubSlice(Landroidx/slice/Slice;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "slice"    # Landroidx/slice/Slice;
 
-    .line 281
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 282
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Landroidx/slice/Slice$Builder;->addSubSlice(Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
@@ -535,13 +461,9 @@
 
 .method public addSubSlice(Landroidx/slice/Slice;Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 5
-    .param p1, "slice"    # Landroidx/slice/Slice;
-    .param p2, "subType"    # Ljava/lang/String;
 
-    .line 291
     invoke-static {p1}, Landroid/support/v4/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 292
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -552,7 +474,6 @@
 
     move-result-object v3
 
-    .line 293
     invoke-virtual {p1}, Landroidx/slice/Slice;->getHints()Ljava/util/List;
 
     move-result-object v4
@@ -563,7 +484,6 @@
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 292
     invoke-interface {v3, v4}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v3
@@ -574,14 +494,11 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 294
     return-object p0
 .end method
 
 .method public addText(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/util/List;)Landroidx/slice/Slice$Builder;
     .locals 1
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "subType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -594,8 +511,6 @@
         }
     .end annotation
 
-    .line 345
-    .local p3, "hints":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p3}, Ljava/util/List;->size()I
 
     move-result v0
@@ -617,11 +532,7 @@
 
 .method public varargs addText(Ljava/lang/CharSequence;Ljava/lang/String;[Ljava/lang/String;)Landroidx/slice/Slice$Builder;
     .locals 3
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "subType"    # Ljava/lang/String;
-    .param p3, "hints"    # [Ljava/lang/String;
 
-    .line 334
     iget-object v0, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
 
     new-instance v1, Landroidx/slice/SliceItem;
@@ -632,14 +543,12 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 335
     return-object p0
 .end method
 
 .method public build()Landroidx/slice/Slice;
     .locals 5
 
-    .line 477
     new-instance v0, Landroidx/slice/Slice;
 
     iget-object v1, p0, Landroidx/slice/Slice$Builder;->mItems:Ljava/util/ArrayList;
@@ -671,11 +580,8 @@
 
 .method public setSpec(Landroidx/slice/SliceSpec;)Landroidx/slice/Slice$Builder;
     .locals 0
-    .param p1, "spec"    # Landroidx/slice/SliceSpec;
 
-    .line 258
     iput-object p1, p0, Landroidx/slice/Slice$Builder;->mSpec:Landroidx/slice/SliceSpec;
 
-    .line 259
     return-object p0
 .end method

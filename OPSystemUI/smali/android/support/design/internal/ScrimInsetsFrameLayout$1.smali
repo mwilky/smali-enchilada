@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/internal/ScrimInsetsFrameLayout;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    .line 68
     iput-object p1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +36,13 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
-    .line 71
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     iget-object v0, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->insets:Landroid/graphics/Rect;
 
     if-nez v0, :cond_0
 
-    .line 72
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -57,41 +51,33 @@
 
     iput-object v1, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->insets:Landroid/graphics/Rect;
 
-    .line 74
     :cond_0
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     iget-object v0, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->insets:Landroid/graphics/Rect;
 
-    .line 75
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
 
     move-result v1
 
-    .line 76
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
 
     move-result v2
 
-    .line 77
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetRight()I
 
     move-result v3
 
-    .line 78
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetBottom()I
 
     move-result v4
 
-    .line 74
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 79
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     invoke-virtual {v0, p2}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->onInsetsChanged(Landroid/support/v4/view/WindowInsetsCompat;)V
 
-    .line 80
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->hasSystemWindowInsets()Z
@@ -120,12 +106,10 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->setWillNotDraw(Z)V
 
-    .line 81
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
 
-    .line 82
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->consumeSystemWindowInsets()Landroid/support/v4/view/WindowInsetsCompat;
 
     move-result-object v0

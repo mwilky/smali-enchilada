@@ -54,9 +54,7 @@
 
 .method public setAodDimmingScrim(F)V
     .locals 0
-    .param p1, "scrimOpacity"    # F
 
-    .line 45
     return-void
 .end method
 

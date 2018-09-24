@@ -1105,8 +1105,6 @@
     <string name="qs_rearrange">重新排列快捷设置</string>
     <string name="qs_status_phone_muted">手机已设为静音</string>
     <string name="qs_status_phone_vibrate">手机已设为振动</string>
-    <string name="quick_launch_exit">退出</string>
-    <string name="quick_launch_exit_hint">松手退出此界面</string>
     <string name="quick_settings">快捷设置</string>
     <string name="quick_settings_bluetooth_detail_empty_text">没有可用的配对设备</string>
     <string name="quick_settings_bluetooth_label">蓝牙</string>

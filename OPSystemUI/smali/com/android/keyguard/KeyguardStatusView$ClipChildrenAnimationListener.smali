@@ -25,12 +25,10 @@
 .method constructor <init>(Lcom/android/keyguard/KeyguardStatusView;)V
     .locals 1
 
-    .line 500
     iput-object p1, p0, Lcom/android/keyguard/KeyguardStatusView$ClipChildrenAnimationListener;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 501
     invoke-static {p1}, Lcom/android/keyguard/KeyguardStatusView;->access$500(Lcom/android/keyguard/KeyguardStatusView;)Lcom/android/keyguard/clock/OPTextClock;
 
     move-result-object p1
@@ -39,7 +37,6 @@
 
     invoke-static {p1, v0, p0}, Lcom/android/internal/widget/ViewClippingUtil;->setClippingDeactivated(Landroid/view/View;ZLcom/android/internal/widget/ViewClippingUtil$ClippingParameters;)V
 
-    .line 503
     return-void
 .end method
 
@@ -47,9 +44,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 507
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$ClipChildrenAnimationListener;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardStatusView;->access$500(Lcom/android/keyguard/KeyguardStatusView;)Lcom/android/keyguard/clock/OPTextClock;
@@ -60,15 +55,12 @@
 
     invoke-static {v0, v1, p0}, Lcom/android/internal/widget/ViewClippingUtil;->setClippingDeactivated(Landroid/view/View;ZLcom/android/internal/widget/ViewClippingUtil$ClippingParameters;)V
 
-    .line 509
     return-void
 .end method
 
 .method public shouldFinish(Landroid/view/View;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 513
     iget-object v0, p0, Lcom/android/keyguard/KeyguardStatusView$ClipChildrenAnimationListener;->this$0:Lcom/android/keyguard/KeyguardStatusView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardStatusView;->getParent()Landroid/view/ViewParent;

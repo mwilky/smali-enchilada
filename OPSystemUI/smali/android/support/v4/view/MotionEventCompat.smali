@@ -6,10 +6,7 @@
 # direct methods
 .method public static isFromSource(Landroid/view/MotionEvent;I)Z
     .locals 1
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "source"    # I
 
-    .line 553
     invoke-virtual {p0}, Landroid/view/MotionEvent;->getSource()I
 
     move-result v0

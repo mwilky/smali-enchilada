@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/customize/QSEditPageManager;Landroid/content/Context;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/customize/QSEditPageManager;
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # I
 
-    .line 71
     iput-object p1, p0, Lcom/android/systemui/qs/customize/QSEditPageManager$1;->this$0:Lcom/android/systemui/qs/customize/QSEditPageManager;
 
     invoke-direct {p0, p2, p3}, Landroid/support/v7/widget/GridLayoutManager;-><init>(Landroid/content/Context;I)V
@@ -38,7 +34,6 @@
 .method public canScrollVertically()Z
     .locals 1
 
-    .line 83
     const/4 v0, 0x0
 
     return v0
@@ -47,13 +42,10 @@
 .method public generateDefaultLayoutParams()Landroid/support/v7/widget/RecyclerView$LayoutParams;
     .locals 3
 
-    .line 74
     invoke-super {p0}, Landroid/support/v7/widget/GridLayoutManager;->generateDefaultLayoutParams()Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     move-result-object v0
 
-    .line 75
-    .local v0, "params":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSEditPageManager$1;->this$0:Lcom/android/systemui/qs/customize/QSEditPageManager;
 
     invoke-static {v1}, Lcom/android/systemui/qs/customize/QSEditPageManager;->access$000(Lcom/android/systemui/qs/customize/QSEditPageManager;)Landroid/content/Context;
@@ -64,7 +56,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f07057a
+    const v2, 0x7f070576
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -72,7 +64,6 @@
 
     iput v1, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->bottomMargin:I
 
-    .line 76
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSEditPageManager$1;->this$0:Lcom/android/systemui/qs/customize/QSEditPageManager;
 
     invoke-static {v1}, Lcom/android/systemui/qs/customize/QSEditPageManager;->access$000(Lcom/android/systemui/qs/customize/QSEditPageManager;)Landroid/content/Context;
@@ -83,7 +74,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070552
+    const v2, 0x7f07054e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -91,7 +82,6 @@
 
     iput v1, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
 
-    .line 77
     iget-object v1, p0, Lcom/android/systemui/qs/customize/QSEditPageManager$1;->this$0:Lcom/android/systemui/qs/customize/QSEditPageManager;
 
     invoke-static {v1}, Lcom/android/systemui/qs/customize/QSEditPageManager;->access$000(Lcom/android/systemui/qs/customize/QSEditPageManager;)Landroid/content/Context;
@@ -108,6 +98,5 @@
 
     iput v1, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
 
-    .line 78
     return-object v0
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;Z)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;
 
-    .line 342
     iput-object p1, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5$1;->this$1:Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;
 
     iput-boolean p2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5$1;->val$finalResult:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 345
     iget-object v0, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5$1;->this$1:Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;
 
     iget-object v0, v0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->val$resultCallback:Ljava/util/function/Consumer;
@@ -56,6 +53,5 @@
 
     invoke-interface {v0, v1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 346
     return-void
 .end method

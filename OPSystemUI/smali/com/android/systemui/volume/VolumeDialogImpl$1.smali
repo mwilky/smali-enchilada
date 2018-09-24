@@ -21,13 +21,9 @@
 # virtual methods
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    .line 888
     invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 889
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     iget-object v1, p0, Lcom/android/systemui/volume/VolumeDialogImpl$1;->val$hintLabel:Ljava/lang/String;
@@ -38,6 +34,5 @@
 
     invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 891
     return-void
 .end method

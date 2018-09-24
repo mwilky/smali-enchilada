@@ -45,13 +45,10 @@
 .method private constructor <init>(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;)V
     .locals 2
 
-    .line 62
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->this$0:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
     new-instance p1, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->this$0:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;
@@ -67,11 +64,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$1;
 
-    .line 62
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;-><init>(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;)V
 
     return-void
@@ -82,8 +75,6 @@
 .method public build()Lcom/android/systemui/statusbar/policy/ExtensionController$Extension;
     .locals 2
 
-    .line 120
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->access$300(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;)Ljava/util/ArrayList;
@@ -98,12 +89,10 @@
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 121
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->access$400(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;)V
 
-    .line 122
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     return-object v0
@@ -121,9 +110,6 @@
         }
     .end annotation
 
-    .line 113
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "callback":Ljava/util/function/Consumer;, "Ljava/util/function/Consumer<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->access$200(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;)Ljava/util/ArrayList;
@@ -132,7 +118,6 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 114
     return-object p0
 .end method
 
@@ -148,20 +133,15 @@
         }
     .end annotation
 
-    .line 92
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "def":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->addDefault(Ljava/util/function/Supplier;)V
 
-    .line 93
     return-object p0
 .end method
 
 .method public withFeature(Ljava/lang/String;Ljava/util/function/Supplier;)Lcom/android/systemui/statusbar/policy/ExtensionController$ExtensionBuilder;
     .locals 1
-    .param p1, "feature"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -173,14 +153,10 @@
         }
     .end annotation
 
-    .line 106
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p2, "supplier":Ljava/util/function/Supplier;, "Ljava/util/function/Supplier<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->addFeature(Ljava/lang/String;Ljava/util/function/Supplier;)V
 
-    .line 107
     return-object p0
 .end method
 
@@ -196,9 +172,6 @@
         }
     .end annotation
 
-    .line 74
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TP;>;"
     invoke-static {p1}, Lcom/android/systemui/plugins/PluginManager;->getAction(Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
@@ -212,7 +185,6 @@
 
 .method public withPlugin(Ljava/lang/Class;Ljava/lang/String;)Lcom/android/systemui/statusbar/policy/ExtensionController$ExtensionBuilder;
     .locals 1
-    .param p2, "action"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<P:TT;>(",
@@ -225,9 +197,6 @@
         }
     .end annotation
 
-    .line 80
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TP;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->withPlugin(Ljava/lang/Class;Ljava/lang/String;Lcom/android/systemui/statusbar/policy/ExtensionController$PluginConverter;)Lcom/android/systemui/statusbar/policy/ExtensionController$ExtensionBuilder;
@@ -239,7 +208,6 @@
 
 .method public withPlugin(Ljava/lang/Class;Ljava/lang/String;Lcom/android/systemui/statusbar/policy/ExtensionController$PluginConverter;)Lcom/android/systemui/statusbar/policy/ExtensionController$ExtensionBuilder;
     .locals 1
-    .param p2, "action"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<P:",
@@ -255,15 +223,10 @@
         }
     .end annotation
 
-    .line 86
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TP;>;"
-    .local p3, "converter":Lcom/android/systemui/statusbar/policy/ExtensionController$PluginConverter;, "Lcom/android/systemui/statusbar/policy/ExtensionController$PluginConverter<TT;TP;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-virtual {v0, p2, p1, p3}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->addPlugin(Ljava/lang/String;Ljava/lang/Class;Lcom/android/systemui/statusbar/policy/ExtensionController$PluginConverter;)V
 
-    .line 87
     return-object p0
 .end method
 
@@ -279,9 +242,6 @@
         }
     .end annotation
 
-    .line 68
-    .local p0, "this":Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;, "Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder<TT;>;"
-    .local p1, "factory":Lcom/android/systemui/statusbar/policy/ExtensionController$TunerFactory;, "Lcom/android/systemui/statusbar/policy/ExtensionController$TunerFactory<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;->mExtension:Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;
 
     invoke-interface {p1}, Lcom/android/systemui/statusbar/policy/ExtensionController$TunerFactory;->keys()[Ljava/lang/String;
@@ -290,6 +250,5 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionImpl;->addTunerFactory(Lcom/android/systemui/statusbar/policy/ExtensionController$TunerFactory;[Ljava/lang/String;)V
 
-    .line 69
     return-object p0
 .end method

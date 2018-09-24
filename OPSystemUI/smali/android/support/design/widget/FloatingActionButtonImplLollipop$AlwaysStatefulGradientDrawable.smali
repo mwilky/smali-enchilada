@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 246
     invoke-direct {p0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     return-void
@@ -29,7 +28,6 @@
 .method public isStateful()Z
     .locals 1
 
-    .line 249
     const/4 v0, 0x1
 
     return v0

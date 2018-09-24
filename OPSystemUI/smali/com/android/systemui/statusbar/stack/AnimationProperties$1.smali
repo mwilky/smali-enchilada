@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/AnimationProperties;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
-    .line 40
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/AnimationProperties$1;->this$0:Lcom/android/systemui/statusbar/stack/AnimationProperties;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/AnimationFilter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public shouldAnimateProperty(Landroid/util/Property;)Z
     .locals 1
-    .param p1, "property"    # Landroid/util/Property;
 
-    .line 43
     const/4 v0, 0x1
 
     return v0

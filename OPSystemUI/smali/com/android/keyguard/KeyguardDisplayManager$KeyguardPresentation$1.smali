@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
-    .line 149
     iput-object p1, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 6
 
-    .line 152
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->access$200(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)I
@@ -76,8 +73,6 @@
 
     add-int/2addr v0, v1
 
-    .line 153
-    .local v0, "x":I
     iget-object v1, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-static {v1}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->access$500(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)I
@@ -114,8 +109,6 @@
 
     add-int/2addr v1, v2
 
-    .line 154
-    .local v1, "y":I
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-static {v2}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->access$400(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)Landroid/view/View;
@@ -126,7 +119,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 155
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-static {v2}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->access$400(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)Landroid/view/View;
@@ -137,7 +129,6 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 156
     iget-object v2, p0, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;
 
     invoke-static {v2}, Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;->access$400(Lcom/android/keyguard/KeyguardDisplayManager$KeyguardPresentation;)Landroid/view/View;
@@ -152,6 +143,5 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 157
     return-void
 .end method

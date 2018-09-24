@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/stackdivider/Divider;ZZJ)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/stackdivider/Divider;
 
-    .line 129
     iput-object p1, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iput-boolean p2, p0, Lcom/android/systemui/stackdivider/Divider$2;->val$isHomeStackResizable:Z
@@ -51,14 +49,12 @@
 .method public run()V
     .locals 5
 
-    .line 132
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iget-boolean v1, p0, Lcom/android/systemui/stackdivider/Divider$2;->val$isHomeStackResizable:Z
 
     invoke-static {v0, v1}, Lcom/android/systemui/stackdivider/Divider;->access$302(Lcom/android/systemui/stackdivider/Divider;Z)Z
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$200(Lcom/android/systemui/stackdivider/Divider;)Z
@@ -69,19 +65,16 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 134
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iget-boolean v1, p0, Lcom/android/systemui/stackdivider/Divider$2;->val$minimized:Z
 
     invoke-static {v0, v1}, Lcom/android/systemui/stackdivider/Divider;->access$202(Lcom/android/systemui/stackdivider/Divider;Z)Z
 
-    .line 135
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$400(Lcom/android/systemui/stackdivider/Divider;)V
 
-    .line 136
     iget-wide v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->val$animDuration:J
 
     const-wide/16 v2, 0x0
@@ -90,7 +83,6 @@
 
     if-lez v0, :cond_0
 
-    .line 137
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$100(Lcom/android/systemui/stackdivider/Divider;)Lcom/android/systemui/stackdivider/DividerView;
@@ -107,7 +99,6 @@
 
     goto :goto_0
 
-    .line 139
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$2;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
@@ -121,7 +112,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/stackdivider/DividerView;->setMinimizedDockStack(ZZ)V
 
-    .line 142
     :cond_1
     :goto_0
     return-void

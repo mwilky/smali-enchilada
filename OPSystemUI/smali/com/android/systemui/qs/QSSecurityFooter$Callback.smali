@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/QSSecurityFooter;)V
     .locals 0
 
-    .line 461
     iput-object p1, p0, Lcom/android/systemui/qs/QSSecurityFooter$Callback;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/QSSecurityFooter;Lcom/android/systemui/qs/QSSecurityFooter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/QSSecurityFooter;
-    .param p2, "x1"    # Lcom/android/systemui/qs/QSSecurityFooter$1;
 
-    .line 461
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/QSSecurityFooter$Callback;-><init>(Lcom/android/systemui/qs/QSSecurityFooter;)V
 
     return-void
@@ -49,11 +45,9 @@
 .method public onStateChanged()V
     .locals 1
 
-    .line 464
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$Callback;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->refreshState()V
 
-    .line 465
     return-void
 .end method

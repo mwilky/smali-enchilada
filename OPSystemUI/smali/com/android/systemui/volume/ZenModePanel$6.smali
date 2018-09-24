@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/ZenModePanel;
 
-    .line 842
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$6;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onManualRuleChanged(Landroid/service/notification/ZenModeConfig$ZenRule;)V
     .locals 2
-    .param p1, "rule"    # Landroid/service/notification/ZenModeConfig$ZenRule;
 
-    .line 845
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$6;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1500(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/volume/ZenModePanel$H;
@@ -55,6 +51,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 846
     return-void
 .end method

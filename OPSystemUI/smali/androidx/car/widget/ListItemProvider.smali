@@ -24,11 +24,8 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28
-    .local p0, "this":Landroidx/car/widget/ListItemProvider;, "Landroidx/car/widget/ListItemProvider<TVH;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
     return-void
 .end method
 

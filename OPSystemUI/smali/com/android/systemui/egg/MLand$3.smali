@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/egg/MLand;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/egg/MLand;
 
-    .line 560
     iput-object p1, p0, Lcom/android/systemui/egg/MLand$3;->this$0:Lcom/android/systemui/egg/MLand;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 563
     iget-object v0, p0, Lcom/android/systemui/egg/MLand$3;->this$0:Lcom/android/systemui/egg/MLand;
 
     invoke-static {v0}, Lcom/android/systemui/egg/MLand;->access$300(Lcom/android/systemui/egg/MLand;)Landroid/view/View;
@@ -50,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 564
     return-void
 .end method

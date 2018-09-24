@@ -9,17 +9,13 @@
 
 .method public applyExpandAnimationParams(Lcom/android/systemui/statusbar/notification/ActivityLaunchAnimator$ExpandAnimationParameters;)V
     .locals 0
-    .param p1, "params"    # Lcom/android/systemui/statusbar/notification/ActivityLaunchAnimator$ExpandAnimationParameters;
 
-    .line 188
     return-void
 .end method
 
 .method public bindRow(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 197
     return-void
 .end method
 
@@ -65,7 +61,6 @@
 .method public onNotificationViewUpdateFinished()V
     .locals 0
 
-    .line 176
     return-void
 .end method
 
@@ -83,9 +78,7 @@
 
 .method public setExpandingNotification(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 190
     return-void
 .end method
 

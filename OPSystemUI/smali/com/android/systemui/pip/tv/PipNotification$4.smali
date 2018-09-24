@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/tv/PipNotification;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/tv/PipNotification;
 
-    .line 131
     iput-object p1, p0, Lcom/android/systemui/pip/tv/PipNotification$4;->this$0:Lcom/android/systemui/pip/tv/PipNotification;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 134
     invoke-static {}, Lcom/android/systemui/pip/tv/PipNotification;->access$700()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 135
     const-string v0, "PipNotification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -72,7 +66,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 137
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -124,7 +117,6 @@
 
     goto :goto_1
 
-    .line 142
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipNotification$4;->this$0:Lcom/android/systemui/pip/tv/PipNotification;
 
@@ -136,7 +128,6 @@
 
     goto :goto_1
 
-    .line 139
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipNotification$4;->this$0:Lcom/android/systemui/pip/tv/PipNotification;
 
@@ -146,10 +137,8 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/tv/PipManager;->showPictureInPictureMenu()V
 
-    .line 140
     nop
 
-    .line 145
     :goto_1
     return-void
 

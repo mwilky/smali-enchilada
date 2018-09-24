@@ -18,7 +18,6 @@
 .method public destroy()V
     .locals 0
 
-    .line 48
     return-void
 .end method
 

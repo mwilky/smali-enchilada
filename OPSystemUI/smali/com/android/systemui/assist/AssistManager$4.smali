@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistManager;Landroid/content/Intent;Landroid/app/ActivityOptions;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistManager;
 
-    .line 237
     iput-object p1, p0, Lcom/android/systemui/assist/AssistManager$4;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     iput-object p2, p0, Lcom/android/systemui/assist/AssistManager$4;->val$intent:Landroid/content/Intent;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 5
 
-    .line 240
     iget-object v0, p0, Lcom/android/systemui/assist/AssistManager$4;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     iget-object v0, v0, Lcom/android/systemui/assist/AssistManager;->mContext:Landroid/content/Context;
@@ -68,6 +65,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->startActivityAsUser(Landroid/content/Intent;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 242
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/ExpandableViewState;Lcom/android/systemui/statusbar/ExpandableView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/ExpandableViewState;
 
-    .line 362
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/ExpandableViewState$3;->this$0:Lcom/android/systemui/statusbar/stack/ExpandableViewState;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/ExpandableViewState$3;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 365
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ExpandableViewState$3;->val$child:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -59,6 +55,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/ExpandableView;->setShadowAlpha(F)V
 
-    .line 366
     return-void
 .end method

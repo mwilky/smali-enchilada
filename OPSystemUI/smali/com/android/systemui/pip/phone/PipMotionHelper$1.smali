@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/phone/PipMotionHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/phone/PipMotionHelper;
 
-    .line 376
     iput-object p1, p0, Lcom/android/systemui/pip/phone/PipMotionHelper$1;->this$0:Lcom/android/systemui/pip/phone/PipMotionHelper;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,13 +33,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 379
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipMotionHelper$1;->this$0:Lcom/android/systemui/pip/phone/PipMotionHelper;
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/phone/PipMotionHelper;->dismissPip()V
 
-    .line 380
     return-void
 .end method

@@ -28,7 +28,6 @@
 .method public close()V
     .locals 1
 
-    .line 140
     :try_start_0
     iget-object v0, p0, Landroid/support/v4/media/MediaController2;->mImpl:Landroid/support/v4/media/MediaController2$SupportLibraryImpl;
 
@@ -36,14 +35,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 143
     goto :goto_0
 
-    .line 141
     :catch_0
     move-exception v0
 
-    .line 144
     :goto_0
     return-void
 .end method

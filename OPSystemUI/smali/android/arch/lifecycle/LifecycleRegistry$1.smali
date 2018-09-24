@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 254
     invoke-static {}, Landroid/arch/lifecycle/Lifecycle$State;->values()[Landroid/arch/lifecycle/Lifecycle$State;
 
     move-result-object v0
@@ -139,7 +138,6 @@
     :catch_4
     move-exception v5
 
-    .line 236
     :goto_4
     invoke-static {}, Landroid/arch/lifecycle/Lifecycle$Event;->values()[Landroid/arch/lifecycle/Lifecycle$Event;
 

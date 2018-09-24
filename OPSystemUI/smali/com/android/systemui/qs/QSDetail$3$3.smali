@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSDetail$3;Z)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/qs/QSDetail$3;
 
-    .line 381
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetail$3$3;->this$1:Lcom/android/systemui/qs/QSDetail$3;
 
     iput-boolean p2, p0, Lcom/android/systemui/qs/QSDetail$3$3;->val$state:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 384
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3$3;->this$1:Lcom/android/systemui/qs/QSDetail$3;
 
     iget-object v0, v0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
@@ -52,6 +49,5 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/QSDetail;->access$600(Lcom/android/systemui/qs/QSDetail;Z)V
 
-    .line 385
     return-void
 .end method

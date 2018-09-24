@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;
 
-    .line 272
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView$3;->this$1:Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 277
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView$3;->this$1:Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarGuide;
@@ -54,7 +51,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 278
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView$3;->this$1:Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/NavigationBarGuide$ContentWindowView;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarGuide;
@@ -71,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/NavigationBarView;->setVisibility(I)V
 
-    .line 281
     :cond_0
     return-void
 .end method

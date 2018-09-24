@@ -53,17 +53,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 30
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/systemui/shared/recents/LockStateController;->sInstance:Lcom/android/systemui/shared/recents/LockStateController;
 
-    .line 42
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/shared/recents/LockStateController;->mReloaded:Z
 
-    .line 43
     sput v0, Lcom/android/systemui/shared/recents/LockStateController;->time:I
 
     return-void
@@ -71,35 +68,27 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
     const-string v0, "LockStateController"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TAG:Ljava/lang/String;
 
-    .line 26
     const-string v0, "tasklockstate"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_STATE:Ljava/lang/String;
 
-    .line 27
     const-string v0, "task_lock_list"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_LIST_KEY:Ljava/lang/String;
 
-    .line 36
     const-string v0, "task_lock_list_with_userid"
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->TASK_LOCK_LIST_KEY_WITH_USERID:Ljava/lang/String;
 
-    .line 46
     iput-object p1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
-    .line 47
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "Recents-LockStateController"
@@ -110,12 +99,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mBGThread:Landroid/os/HandlerThread;
 
-    .line 49
     iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mBGThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 50
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mBGThread:Landroid/os/HandlerThread;
@@ -128,20 +115,16 @@
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mBGThreadHandler:Landroid/os/Handler;
 
-    .line 52
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/shared/recents/LockStateController;->initPackageNameList(Z)V
 
-    .line 53
     return-void
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/shared/recents/LockStateController;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/shared/recents/LockStateController;
 
-    .line 23
     iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -149,17 +132,13 @@
 
 .method private appendUserWithBrace(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # Ljava/lang/String;
 
-    .line 200
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 202
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -185,8 +164,6 @@
 
     move-result-object v0
 
-    .line 203
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -196,17 +173,13 @@
 
 .method private appendUserWithoutBrace(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "userId"    # Ljava/lang/String;
 
-    .line 193
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 195
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -228,8 +201,6 @@
 
     move-result-object v0
 
-    .line 196
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -240,7 +211,6 @@
 .method private buildPkgNameList()V
     .locals 6
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -260,16 +230,12 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 91
-    .local v1, "name":Ljava/lang/String;
     const-string v2, "/"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 92
-    .local v2, "pkgName":[Ljava/lang/String;
     const-string v3, "#"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
@@ -282,8 +248,6 @@
 
     move-result-object v3
 
-    .line 93
-    .local v3, "userId":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -296,7 +260,6 @@
 
     move-result-object v3
 
-    .line 95
     iget-object v4, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedPackageNameListWithUserId:Ljava/util/List;
 
     aget-object v5, v2, v5
@@ -307,34 +270,25 @@
 
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 96
-    .end local v1    # "name":Ljava/lang/String;
-    .end local v2    # "pkgName":[Ljava/lang/String;
-    .end local v3    # "userId":Ljava/lang/String;
     goto :goto_0
 
-    .line 97
     :cond_0
     return-void
 .end method
 
 .method public static getInstance(Landroid/content/Context;)Lcom/android/systemui/shared/recents/LockStateController;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 153
     sget-object v0, Lcom/android/systemui/shared/recents/LockStateController;->sInstance:Lcom/android/systemui/shared/recents/LockStateController;
 
     if-nez v0, :cond_0
 
-    .line 154
     new-instance v0, Lcom/android/systemui/shared/recents/LockStateController;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/shared/recents/LockStateController;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/android/systemui/shared/recents/LockStateController;->sInstance:Lcom/android/systemui/shared/recents/LockStateController;
 
-    .line 156
     :cond_0
     sget-object v0, Lcom/android/systemui/shared/recents/LockStateController;->sInstance:Lcom/android/systemui/shared/recents/LockStateController;
 
@@ -343,56 +297,25 @@
 
 .method private getLockedListFromProvider(I)Z
     .locals 7
-    .param p1, "userId"    # I
 
-    .line 269
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
-    .line 271
-    .local v0, "lockedStr":Ljava/lang/String;
-    :try_start_0
-    iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "com_oneplus_systemui_recent_task_locked_bk"
 
-    const-string v2, "com_oneplus_systemui_recent_task_locked_bk"
+    invoke-static {v0, v1, p1}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-static {v1, v2, p1}, Landroid/provider/Settings$System;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v0, v1
-
-    .line 274
-    goto :goto_0
-
-    .line 272
-    :catch_0
-    move-exception v1
-
-    .line 273
-    .local v1, "e":Ljava/lang/Exception;
-    const-string v2, "LockStateController"
-
-    const-string/jumbo v3, "writeLockedListToProvider error : "
-
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 275
-    .end local v1    # "e":Ljava/lang/Exception;
-    :goto_0
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 276
     return v1
 
-    .line 278
     :cond_0
     const-string v2, "done"
 
@@ -404,13 +327,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 279
     sput-boolean v3, Lcom/android/systemui/shared/recents/LockStateController;->mReloaded:Z
 
-    .line 280
     return v1
 
-    .line 283
     :cond_1
     const-string v2, "\\}"
 
@@ -418,25 +338,19 @@
 
     move-result-object v2
 
-    .line 284
-    .local v2, "keys":[Ljava/lang/String;
     if-eqz v2, :cond_2
 
     array-length v4, v2
 
     if-lez v4, :cond_2
 
-    .line 285
     nop
 
-    .line 285
-    .local v1, "i":I
-    :goto_1
+    :goto_0
     array-length v4, v2
 
     if-ge v1, v4, :cond_2
 
-    .line 287
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -455,20 +369,16 @@
 
     aput-object v4, v2, v1
 
-    .line 288
     iget-object v4, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     aget-object v5, v2, v1
 
     invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 285
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 292
-    .end local v1    # "i":I
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mSp:Landroid/content/SharedPreferences;
 
@@ -476,22 +386,16 @@
 
     move-result-object v1
 
-    .line 293
-    .local v1, "editor":Landroid/content/SharedPreferences$Editor;
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
-    .line 294
     const-string v4, "task_lock_list_with_userid"
 
     iget-object v5, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     invoke-interface {v1, v4, v5}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    .line 295
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 302
-    :try_start_1
     iget-object v4, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -503,40 +407,17 @@
     const-string v6, "done"
 
     invoke-static {v4, v5, v6, p1}, Landroid/provider/Settings$System;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 305
-    goto :goto_2
-
-    .line 303
-    :catch_1
-    move-exception v4
-
-    .line 304
-    .local v4, "e":Ljava/lang/Exception;
-    const-string v5, "LockStateController"
-
-    const-string/jumbo v6, "writeLockedListToProvider error : "
-
-    invoke-static {v5, v6, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 306
-    .end local v4    # "e":Ljava/lang/Exception;
-    :goto_2
     return v3
 .end method
 
 .method private writeToProvider()V
     .locals 3
 
-    .line 216
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 217
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -556,15 +437,10 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 218
-    .local v2, "name":Ljava/lang/String;
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 219
-    .end local v2    # "name":Ljava/lang/String;
     goto :goto_0
 
-    .line 221
     :cond_0
     invoke-static {}, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->getInstance()Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
@@ -574,15 +450,12 @@
 
     move-result v1
 
-    .line 223
-    .local v1, "userId":I
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p0, v2, v1}, Lcom/android/systemui/shared/recents/LockStateController;->writeLockedListToProvider(Ljava/lang/String;I)V
 
-    .line 224
     return-void
 .end method
 
@@ -590,25 +463,17 @@
 # virtual methods
 .method public getTaskLockState(Ljava/lang/String;I)Z
     .locals 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "id"    # I
 
-    .line 138
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 140
-    .local v0, "userId":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 141
-    .local v1, "taskLocked":Z
     iget-object v2, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     if-eqz v2, :cond_0
 
-    .line 142
     iget-object v2, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/shared/recents/LockStateController;->appendUserWithBrace(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -619,16 +484,13 @@
 
     move-result v1
 
-    .line 149
     :cond_0
     return v1
 .end method
 
 .method public initPackageNameList(Z)V
     .locals 7
-    .param p1, "reload"    # Z
 
-    .line 56
     sget-boolean v0, Lcom/android/systemui/shared/recents/LockStateController;->mReloaded:Z
 
     if-eqz v0, :cond_0
@@ -637,7 +499,6 @@
 
     return-void
 
-    .line 57
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
@@ -645,18 +506,14 @@
 
     move-result-object v0
 
-    .line 58
-    .local v0, "pkgName":Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 59
     return-void
 
-    .line 60
     :cond_1
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -672,10 +529,8 @@
 
     if-nez v1, :cond_2
 
-    .line 61
     return-void
 
-    .line 64
     :cond_2
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mContext:Landroid/content/Context;
 
@@ -689,7 +544,6 @@
 
     iput-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mSp:Landroid/content/SharedPreferences;
 
-    .line 65
     iget-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mSp:Landroid/content/SharedPreferences;
 
     const-string v2, "task_lock_list_with_userid"
@@ -704,14 +558,12 @@
 
     iput-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
-    .line 67
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedPackageNameListWithUserId:Ljava/util/List;
 
-    .line 70
     invoke-static {}, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->getInstance()Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
     move-result-object v1
@@ -720,8 +572,6 @@
 
     move-result v1
 
-    .line 71
-    .local v1, "id":I
     const-string v2, "LockStateController"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -772,7 +622,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 73
     iget-object v2, p0, Lcom/android/systemui/shared/recents/LockStateController;->mLockedListWithUserId:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->isEmpty()Z
@@ -783,13 +632,10 @@
 
     if-eqz v2, :cond_4
 
-    .line 74
     invoke-direct {p0, v1}, Lcom/android/systemui/shared/recents/LockStateController;->getLockedListFromProvider(I)Z
 
     move-result v2
 
-    .line 75
-    .local v2, "hasBackup":Z
     const-string v4, "LockStateController"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -808,36 +654,27 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     if-eqz v2, :cond_3
 
-    .line 77
     invoke-direct {p0}, Lcom/android/systemui/shared/recents/LockStateController;->buildPkgNameList()V
 
-    .line 79
-    .end local v2    # "hasBackup":Z
     :cond_3
     goto :goto_0
 
-    .line 80
     :cond_4
     invoke-direct {p0}, Lcom/android/systemui/shared/recents/LockStateController;->buildPkgNameList()V
 
-    .line 81
     sput-boolean v3, Lcom/android/systemui/shared/recents/LockStateController;->mReloaded:Z
 
-    .line 83
     :goto_0
     invoke-direct {p0}, Lcom/android/systemui/shared/recents/LockStateController;->writeToProvider()V
 
-    .line 84
     sget v2, Lcom/android/systemui/shared/recents/LockStateController;->time:I
 
     add-int/2addr v2, v3
 
     sput v2, Lcom/android/systemui/shared/recents/LockStateController;->time:I
 
-    .line 85
     sget v2, Lcom/android/systemui/shared/recents/LockStateController;->time:I
 
     const/4 v4, 0x5
@@ -846,17 +683,13 @@
 
     sput-boolean v3, Lcom/android/systemui/shared/recents/LockStateController;->mReloaded:Z
 
-    .line 87
     :cond_5
     return-void
 .end method
 
 .method public writeLockedListToProvider(Ljava/lang/String;I)V
     .locals 2
-    .param p1, "result"    # Ljava/lang/String;
-    .param p2, "userId"    # I
 
-    .line 228
     iget-object v0, p0, Lcom/android/systemui/shared/recents/LockStateController;->mBGThreadHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/shared/recents/LockStateController$2;
@@ -865,6 +698,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 238
     return-void
 .end method

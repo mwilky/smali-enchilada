@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/Clock;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/Clock;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 132
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-direct {p0, p2}, Lcom/android/systemui/settings/CurrentUserTracker;-><init>(Landroid/content/Context;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onUserSwitched(I)V
     .locals 1
-    .param p1, "newUserId"    # I
 
-    .line 135
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/Clock$1;->this$0:Lcom/android/systemui/statusbar/policy/Clock;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/Clock;->access$002(Lcom/android/systemui/statusbar/policy/Clock;I)I
 
-    .line 136
     return-void
 .end method

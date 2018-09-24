@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/settings/BrightnessController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/settings/BrightnessController;
 
-    .line 242
     iput-object p1, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 245
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$1400(Lcom/android/systemui/settings/BrightnessController;)Z
@@ -50,7 +47,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 247
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$000(Lcom/android/systemui/settings/BrightnessController;)Landroid/content/Context;
@@ -69,8 +65,6 @@
 
     move-result v0
 
-    .line 251
-    .local v0, "automatic":I
     iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     if-eqz v0, :cond_0
@@ -85,7 +79,6 @@
     :goto_0
     invoke-static {v2, v3}, Lcom/android/systemui/settings/BrightnessController;->access$1002(Lcom/android/systemui/settings/BrightnessController;Z)Z
 
-    .line 253
     iget-object v2, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v2}, Lcom/android/systemui/settings/BrightnessController;->access$800(Lcom/android/systemui/settings/BrightnessController;)Landroid/os/Handler;
@@ -104,11 +97,8 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 255
-    .end local v0    # "automatic":I
     goto :goto_1
 
-    .line 257
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
@@ -124,7 +114,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 258
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$3;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$800(Lcom/android/systemui/settings/BrightnessController;)Landroid/os/Handler;
@@ -137,7 +126,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 261
     :goto_1
     return-void
 .end method

@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 227
     new-instance v0, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealScrimColorProperty;
 
     const-string v1, "circularRevealScrimColor"
@@ -54,14 +53,11 @@
 
 .method private constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "name"    # Ljava/lang/String;
 
-    .line 231
     const-class v0, Ljava/lang/Integer;
 
     invoke-direct {p0, v0, p1}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .line 232
     return-void
 .end method
 
@@ -69,9 +65,7 @@
 # virtual methods
 .method public get(Landroid/support/design/circularreveal/CircularRevealWidget;)Ljava/lang/Integer;
     .locals 1
-    .param p1, "object"    # Landroid/support/design/circularreveal/CircularRevealWidget;
 
-    .line 236
     invoke-interface {p1}, Landroid/support/design/circularreveal/CircularRevealWidget;->getCircularRevealScrimColor()I
 
     move-result v0
@@ -86,7 +80,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 225
     check-cast p1, Landroid/support/design/circularreveal/CircularRevealWidget;
 
     invoke-virtual {p0, p1}, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealScrimColorProperty;->get(Landroid/support/design/circularreveal/CircularRevealWidget;)Ljava/lang/Integer;
@@ -98,24 +91,19 @@
 
 .method public set(Landroid/support/design/circularreveal/CircularRevealWidget;Ljava/lang/Integer;)V
     .locals 1
-    .param p1, "object"    # Landroid/support/design/circularreveal/CircularRevealWidget;
-    .param p2, "value"    # Ljava/lang/Integer;
 
-    .line 241
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     invoke-interface {p1, v0}, Landroid/support/design/circularreveal/CircularRevealWidget;->setCircularRevealScrimColor(I)V
 
-    .line 242
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 225
     check-cast p1, Landroid/support/design/circularreveal/CircularRevealWidget;
 
     check-cast p2, Ljava/lang/Integer;

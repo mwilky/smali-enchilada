@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 597
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,34 +37,28 @@
 .method public onCancelled()V
     .locals 0
 
-    .line 612
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar$3;->onFinished()V
 
-    .line 613
     return-void
 .end method
 
 .method public onFinished()V
     .locals 2
 
-    .line 600
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     if-nez v0, :cond_0
 
-    .line 601
     const-string v0, "StatusBar"
 
     const-string v1, "Tried to notify keyguard visibility when mStatusBarKeyguardViewManager was null"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 603
     return-void
 
-    .line 605
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -74,14 +66,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 606
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar$3;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarKeyguardViewManager:Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBarKeyguardViewManager;->onKeyguardFadedAway()V
 
-    .line 608
     :cond_1
     return-void
 .end method

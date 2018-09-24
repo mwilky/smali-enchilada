@@ -45,58 +45,42 @@
 # direct methods
 .method private constructor <init>(I)V
     .locals 1
-    .param p1, "subId"    # I
 
-    .line 756
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$SignalIconState;-><init>(Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$1;)V
 
-    .line 742
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataStrengthId:I
 
-    .line 743
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceStrengthId:I
 
-    .line 744
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataTypeId:I
 
-    .line 745
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceTypeId:I
 
-    .line 749
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->dataConnected:Z
 
-    .line 752
     iput v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->phoneId:I
 
-    .line 757
     iput p1, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
-    .line 759
     if-gez p1, :cond_0
 
-    .line 760
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->showNoSim:Z
 
-    .line 761
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->visible:Z
 
-    .line 764
     :cond_0
     return-void
 .end method
 
 .method synthetic constructor <init>(ILcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$1;
 
-    .line 732
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;-><init>(I)V
 
     return-void
@@ -104,9 +88,7 @@
 
 .method static synthetic access$000(Ljava/util/List;)Ljava/util/List;
     .locals 1
-    .param p0, "x0"    # Ljava/util/List;
 
-    .line 732
     invoke-static {p0}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->copyStates(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
@@ -128,14 +110,10 @@
         }
     .end annotation
 
-    .line 832
-    .local p0, "inStates":Ljava/util/List;, "Ljava/util/List<Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 833
-    .local v0, "outStates":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -153,27 +131,18 @@
 
     check-cast v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
 
-    .line 834
-    .local v2, "state":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     new-instance v3, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
 
     iget v4, v2, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
     invoke-direct {v3, v4}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;-><init>(I)V
 
-    .line 835
-    .local v3, "copy":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     invoke-virtual {v2, v3}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->copyTo(Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;)V
 
-    .line 836
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 837
-    .end local v2    # "state":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
-    .end local v3    # "copy":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     goto :goto_0
 
-    .line 839
     :cond_0
     return-object v0
 .end method
@@ -183,102 +152,80 @@
 .method public copy()Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     .locals 2
 
-    .line 804
     new-instance v0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
 
     iget v1, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
     invoke-direct {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;-><init>(I)V
 
-    .line 805
-    .local v0, "copy":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->copyTo(Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;)V
 
-    .line 806
     return-object v0
 .end method
 
 .method public copyTo(Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;)V
     .locals 1
-    .param p1, "other"    # Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
 
-    .line 810
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$SignalIconState;->copyTo(Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$SignalIconState;)V
 
-    .line 811
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
-    .line 812
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->strengthId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->strengthId:I
 
-    .line 813
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeId:I
 
-    .line 814
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->roaming:Z
 
     iput-boolean v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->roaming:Z
 
-    .line 815
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->needsLeadingPadding:Z
 
     iput-boolean v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->needsLeadingPadding:Z
 
-    .line 816
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeContentDescription:Ljava/lang/String;
 
     iput-object v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeContentDescription:Ljava/lang/String;
 
-    .line 819
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataStrengthId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataStrengthId:I
 
-    .line 820
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceStrengthId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceStrengthId:I
 
-    .line 821
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataTypeId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedDataTypeId:I
 
-    .line 822
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceTypeId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->stackedVoiceTypeId:I
 
-    .line 824
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->dataConnected:Z
 
     iput-boolean v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->dataConnected:Z
 
-    .line 826
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->showNoSim:Z
 
     iput-boolean v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->showNoSim:Z
 
-    .line 827
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->phoneId:I
 
     iput v0, p1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->phoneId:I
 
-    .line 829
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 768
     const/4 v0, 0x0
 
     if-eqz p1, :cond_3
@@ -295,7 +242,6 @@
 
     goto :goto_0
 
-    .line 771
     :cond_0
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$SignalIconState;->equals(Ljava/lang/Object;)Z
 
@@ -303,17 +249,13 @@
 
     if-nez v1, :cond_1
 
-    .line 772
     return v0
 
-    .line 774
     :cond_1
     move-object v1, p1
 
     check-cast v1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
 
-    .line 775
-    .local v1, "that":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     iget v2, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
     iget v3, v1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
@@ -390,7 +332,6 @@
 
     iget-object v3, v1, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->typeContentDescription:Ljava/lang/String;
 
-    .line 792
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -401,12 +342,9 @@
 
     nop
 
-    .line 775
     :cond_2
     return v0
 
-    .line 769
-    .end local v1    # "that":Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;
     :cond_3
     :goto_0
     return v0
@@ -415,12 +353,10 @@
 .method public hashCode()I
     .locals 3
 
-    .line 798
     const/4 v0, 0x7
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 799
     invoke-super {p0}, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$SignalIconState;->hashCode()I
 
     move-result v1
@@ -493,14 +429,12 @@
 
     move-result v0
 
-    .line 798
     return v0
 .end method
 
 .method public isAbsent()Z
     .locals 1
 
-    .line 856
     iget v0, p0, Lcom/android/systemui/statusbar/phone/StatusBarSignalPolicy$MobileIconState;->subId:I
 
     if-gez v0, :cond_0
@@ -519,7 +453,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 843
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

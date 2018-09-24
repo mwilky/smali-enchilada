@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
-    .line 450
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$5;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$5;->val$enabled:Z
@@ -50,7 +48,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 450
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$5;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -62,9 +59,7 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 2
-    .param p1, "args"    # [Ljava/lang/Void;
 
-    .line 453
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl$5;->this$0:Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->access$500(Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)Landroid/net/wifi/WifiManager;
@@ -75,7 +70,6 @@
 
     invoke-virtual {v0, v1}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
 
-    .line 454
     const/4 v0, 0x0
 
     return-object v0

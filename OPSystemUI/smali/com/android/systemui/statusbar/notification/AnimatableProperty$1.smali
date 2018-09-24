@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/BiConsumer;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
 
-    .line 48
     iput-object p2, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->val$getter:Ljava/util/function/Function;
 
     iput-object p3, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->val$setter:Ljava/util/function/BiConsumer;
@@ -53,8 +51,6 @@
         }
     .end annotation
 
-    .line 52
-    .local p1, "object":Landroid/view/View;, "TT;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->val$getter:Ljava/util/function/Function;
 
     invoke-interface {v0, p1}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
@@ -69,7 +65,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 48
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->get(Landroid/view/View;)Ljava/lang/Float;
@@ -81,15 +76,12 @@
 
 .method public setValue(Landroid/view/View;F)V
     .locals 2
-    .param p2, "value"    # F
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;F)V"
         }
     .end annotation
 
-    .line 57
-    .local p1, "object":Landroid/view/View;, "TT;"
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->val$setter:Ljava/util/function/BiConsumer;
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -98,14 +90,12 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/function/BiConsumer;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 58
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 48
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/statusbar/notification/AnimatableProperty$1;->setValue(Landroid/view/View;F)V

@@ -27,9 +27,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;IILandroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteControllerDialog;
 
-    .line 712
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$7;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iput p2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$7;->val$startValue:I
@@ -47,10 +45,7 @@
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .locals 3
-    .param p1, "interpolatedTime"    # F
-    .param p2, "t"    # Landroid/view/animation/Transformation;
 
-    .line 715
     iget v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$7;->val$startValue:I
 
     iget v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$7;->val$startValue:I
@@ -67,12 +62,9 @@
 
     sub-int/2addr v0, v1
 
-    .line 716
-    .local v0, "height":I
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$7;->val$view:Landroid/view/View;
 
     invoke-static {v1, v0}, Landroid/support/v7/app/MediaRouteControllerDialog;->setLayoutHeight(Landroid/view/View;I)V
 
-    .line 717
     return-void
 .end method

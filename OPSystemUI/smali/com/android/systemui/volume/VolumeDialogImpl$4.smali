@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/VolumeDialogImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/VolumeDialogImpl;
 
-    .line 1339
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogImpl$4;->this$0:Lcom/android/systemui/volume/VolumeDialogImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 1342
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl$4;->this$0:Lcom/android/systemui/volume/VolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogImpl;->access$3000(Lcom/android/systemui/volume/VolumeDialogImpl;)Landroid/widget/ImageButton;
@@ -50,7 +47,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setPressed(Z)V
 
-    .line 1343
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogImpl$4;->this$0:Lcom/android/systemui/volume/VolumeDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/volume/VolumeDialogImpl;->access$3000(Lcom/android/systemui/volume/VolumeDialogImpl;)Landroid/widget/ImageButton;
@@ -67,6 +63,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageButton;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
 
-    .line 1344
     return-void
 .end method

@@ -11,14 +11,12 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 42
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_1
 
-    .line 44
     :try_start_0
     const-class v0, Landroid/view/View;
 
@@ -46,7 +44,6 @@
 
     sput-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
-    .line 46
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->isAccessible()Z
@@ -55,31 +52,24 @@
 
     if-nez v0, :cond_0
 
-    .line 47
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 51
     :cond_0
     goto :goto_0
 
-    .line 49
     :catch_0
     move-exception v0
 
-    .line 50
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
     const-string v1, "ViewUtils"
 
     const-string v2, "Could not find method computeFitSystemWindows. Oh well."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :cond_1
     :goto_0
     return-void
@@ -87,16 +77,11 @@
 
 .method public static computeFitSystemWindows(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
     .locals 3
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "inoutInsets"    # Landroid/graphics/Rect;
-    .param p2, "outLocalInsets"    # Landroid/graphics/Rect;
 
-    .line 66
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
 
-    .line 68
     :try_start_0
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
@@ -116,23 +101,17 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 71
     goto :goto_0
 
-    .line 69
     :catch_0
     move-exception v0
 
-    .line 70
-    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "ViewUtils"
 
     const-string v2, "Could not invoke computeFitSystemWindows"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 73
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
     return-void
@@ -140,9 +119,7 @@
 
 .method public static isLayoutRtl(Landroid/view/View;)Z
     .locals 2
-    .param p0, "view"    # Landroid/view/View;
 
-    .line 58
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
     move-result v0
@@ -162,16 +139,13 @@
 
 .method public static makeOptionalFitsSystemWindows(Landroid/view/View;)V
     .locals 4
-    .param p0, "view"    # Landroid/view/View;
 
-    .line 80
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_1
 
-    .line 84
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -187,20 +161,16 @@
 
     move-result-object v0
 
-    .line 85
-    .local v0, "method":Ljava/lang/reflect/Method;
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->isAccessible()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 86
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 88
     :cond_0
     new-array v1, v2, [Ljava/lang/Object;
 
@@ -210,57 +180,42 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .end local v0    # "method":Ljava/lang/reflect/Method;
     goto :goto_0
 
-    .line 93
     :catch_0
     move-exception v0
 
-    .line 94
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     const-string v1, "ViewUtils"
 
     const-string v2, "Could not invoke makeOptionalFitsSystemWindows"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     goto :goto_1
 
-    .line 91
     :catch_1
     move-exception v0
 
-    .line 92
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     const-string v1, "ViewUtils"
 
     const-string v2, "Could not invoke makeOptionalFitsSystemWindows"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     goto :goto_0
 
-    .line 89
     :catch_2
     move-exception v0
 
-    .line 90
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
     const-string v1, "ViewUtils"
 
     const-string v2, "Could not find method makeOptionalFitsSystemWindows. Oh well..."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 95
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :goto_0
     nop
 
-    .line 97
     :cond_1
     :goto_1
     return-void

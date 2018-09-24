@@ -27,11 +27,7 @@
 
 .method public onProfileConnectionStateChanged(Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;II)V
     .locals 0
-    .param p1, "cachedDevice"    # Lcom/android/settingslib/bluetooth/CachedBluetoothDevice;
-    .param p2, "state"    # I
-    .param p3, "bluetoothProfile"    # I
 
-    .line 35
     return-void
 .end method
 

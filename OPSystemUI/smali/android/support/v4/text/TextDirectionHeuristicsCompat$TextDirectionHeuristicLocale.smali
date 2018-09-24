@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 254
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;
 
     invoke-direct {v0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;-><init>()V
@@ -35,12 +34,10 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 245
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;)V
 
-    .line 246
     return-void
 .end method
 
@@ -49,7 +46,6 @@
 .method protected defaultIsRtl()Z
     .locals 2
 
-    .line 250
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
@@ -58,8 +54,6 @@
 
     move-result v0
 
-    .line 251
-    .local v0, "dir":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0

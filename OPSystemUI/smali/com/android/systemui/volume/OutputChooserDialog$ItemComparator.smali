@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 658
     new-instance v0, Lcom/android/systemui/volume/OutputChooserDialog$ItemComparator;
 
     invoke-direct {v0}, Lcom/android/systemui/volume/OutputChooserDialog$ItemComparator;-><init>()V
@@ -47,7 +46,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 657
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,17 +55,13 @@
 # virtual methods
 .method public compare(Lcom/android/systemui/volume/OutputChooserLayout$Item;Lcom/android/systemui/volume/OutputChooserLayout$Item;)I
     .locals 2
-    .param p1, "lhs"    # Lcom/android/systemui/volume/OutputChooserLayout$Item;
-    .param p2, "rhs"    # Lcom/android/systemui/volume/OutputChooserLayout$Item;
 
-    .line 663
     iget-boolean v0, p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;->canDisconnect:Z
 
     iget-boolean v1, p2, Lcom/android/systemui/volume/OutputChooserLayout$Item;->canDisconnect:Z
 
     if-eq v0, v1, :cond_0
 
-    .line 664
     iget-boolean v0, p2, Lcom/android/systemui/volume/OutputChooserLayout$Item;->canDisconnect:Z
 
     iget-boolean v1, p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;->canDisconnect:Z
@@ -78,7 +72,6 @@
 
     return v0
 
-    .line 667
     :cond_0
     iget v0, p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;->deviceType:I
 
@@ -86,7 +79,6 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 668
     iget v0, p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;->deviceType:I
 
     iget v1, p2, Lcom/android/systemui/volume/OutputChooserLayout$Item;->deviceType:I
@@ -97,7 +89,6 @@
 
     return v0
 
-    .line 671
     :cond_1
     iget-object v0, p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;->line1:Ljava/lang/CharSequence;
 
@@ -121,7 +112,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 657
     check-cast p1, Lcom/android/systemui/volume/OutputChooserLayout$Item;
 
     check-cast p2, Lcom/android/systemui/volume/OutputChooserLayout$Item;

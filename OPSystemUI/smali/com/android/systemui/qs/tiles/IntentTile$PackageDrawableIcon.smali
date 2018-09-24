@@ -25,21 +25,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/tiles/IntentTile;Ljava/lang/String;I)V
     .locals 0
-    .param p2, "pkg"    # Ljava/lang/String;
-    .param p3, "resId"    # I
 
-    .line 211
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$Icon;-><init>()V
 
-    .line 212
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
-    .line 213
     iput p3, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mResId:I
 
-    .line 214
     return-void
 .end method
 
@@ -47,9 +41,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 218
     instance-of v0, p1, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
 
     const/4 v1, 0x0
@@ -58,14 +50,11 @@
 
     return v1
 
-    .line 219
     :cond_0
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
 
-    .line 220
-    .local v0, "other":Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;
     iget-object v2, v0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
@@ -92,9 +81,7 @@
 
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 226
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->mPackage:Ljava/lang/String;
 
@@ -114,12 +101,9 @@
 
     return-object v0
 
-    .line 227
     :catch_0
     move-exception v0
 
-    .line 228
-    .local v0, "t":Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile$PackageDrawableIcon;->this$0:Lcom/android/systemui/qs/tiles/IntentTile;
 
     invoke-static {v1}, Lcom/android/systemui/qs/tiles/IntentTile;->access$100(Lcom/android/systemui/qs/tiles/IntentTile;)Ljava/lang/String;
@@ -152,7 +136,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 229
     const/4 v1, 0x0
 
     return-object v1
@@ -161,7 +144,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 235
     const-string v0, "PackageDrawableIcon[pkg=%s,id=0x%08x]"
 
     const/4 v1, 0x2

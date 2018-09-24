@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSSecurityFooter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/QSSecurityFooter;
 
-    .line 443
     iput-object p1, p0, Lcom/android/systemui/qs/QSSecurityFooter$1;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 446
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$1;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->access$300(Lcom/android/systemui/qs/QSSecurityFooter;)Landroid/widget/ImageView;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 447
     return-void
 .end method

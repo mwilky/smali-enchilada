@@ -17,7 +17,6 @@
 # virtual methods
 .method public lookupTimeZoneIdsByCountry(Ljava/lang/String;)Ljava/util/List;
     .locals 1
-    .param p1, "country"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -29,7 +28,6 @@
         }
     .end annotation
 
-    .line 389
     invoke-static {}, Llibcore/util/TimeZoneFinder;->getInstance()Llibcore/util/TimeZoneFinder;
 
     move-result-object v0

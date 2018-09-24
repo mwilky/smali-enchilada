@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/HeadsUpManager;Landroid/os/Handler;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/HeadsUpManager;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 84
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$1;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iput-object p3, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$1;->val$context:Landroid/content/Context;
@@ -40,27 +37,21 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 3
-    .param p1, "selfChange"    # Z
 
-    .line 87
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$1;->val$context:Landroid/content/Context;
 
-    .line 88
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     const-string v1, "heads_up_snooze_length_ms"
 
-    .line 87
     const/4 v2, -0x1
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 89
-    .local v0, "packageSnoozeLengthMs":I
     if-le v0, v2, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$1;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
@@ -69,12 +60,10 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 90
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$1;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iput v0, v1, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mSnoozeLengthMs:I
 
-    .line 93
     :cond_0
     return-void
 .end method

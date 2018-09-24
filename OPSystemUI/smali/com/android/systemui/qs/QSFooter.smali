@@ -6,11 +6,7 @@
 # virtual methods
 .method public disable(IIZ)V
     .locals 0
-    .param p1, "state1"    # I
-    .param p2, "state2"    # I
-    .param p3, "animate"    # Z
 
-    .line 72
     return-void
 .end method
 

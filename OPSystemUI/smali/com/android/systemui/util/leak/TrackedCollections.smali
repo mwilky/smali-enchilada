@@ -29,10 +29,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 34
     new-instance v0, Lcom/android/systemui/util/leak/WeakIdentityHashMap;
 
     invoke-direct {v0}, Lcom/android/systemui/util/leak/WeakIdentityHashMap;-><init>()V
@@ -46,7 +44,6 @@
 # virtual methods
 .method public declared-synchronized dump(Ljava/io/PrintWriter;Ljava/util/function/Predicate;)V
     .locals 4
-    .param p1, "pw"    # Ljava/io/PrintWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,10 +54,8 @@
         }
     .end annotation
 
-    .local p2, "filter":Ljava/util/function/Predicate;, "Ljava/util/function/Predicate<Ljava/util/Collection<*>;>;"
     monitor-enter p0
 
-    .line 96
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedCollections;->mCollections:Lcom/android/systemui/util/leak/WeakIdentityHashMap;
 
@@ -85,8 +80,6 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 97
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/ref/WeakReference<Ljava/util/Collection<*>;>;Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -99,8 +92,6 @@
 
     check-cast v2, Ljava/util/Collection;
 
-    .line 98
-    .local v2, "key":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     if-eqz p2, :cond_0
 
     if-eqz v2, :cond_1
@@ -111,7 +102,6 @@
 
     if-eqz v3, :cond_1
 
-    .line 99
     :cond_0
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -121,38 +111,28 @@
 
     invoke-virtual {v3, p1}, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->dump(Ljava/io/PrintWriter;)V
 
-    .line 100
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 102
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/ref/WeakReference<Ljava/util/Collection<*>;>;Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;>;"
-    .end local v2    # "key":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     :cond_1
     goto :goto_0
 
-    .line 103
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 95
-    .end local p1    # "pw":Ljava/io/PrintWriter;
-    .end local p2    # "filter":Ljava/util/function/Predicate;, "Ljava/util/function/Predicate<Ljava/util/Collection<*>;>;"
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/util/leak/TrackedCollections;
     throw p1
 .end method
 
 .method public declared-synchronized track(Ljava/util/Collection;Ljava/lang/String;)V
     .locals 5
-    .param p2, "tag"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -163,10 +143,8 @@
         }
     .end annotation
 
-    .local p1, "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     monitor-enter p0
 
-    .line 41
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedCollections;->mCollections:Lcom/android/systemui/util/leak/WeakIdentityHashMap;
 
@@ -176,11 +154,8 @@
 
     check-cast v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;
 
-    .line 42
-    .local v0, "collectionState":Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;
     if-nez v0, :cond_0
 
-    .line 43
     new-instance v1, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;
 
     const/4 v2, 0x0
@@ -189,22 +164,18 @@
 
     move-object v0, v1
 
-    .line 44
     iput-object p2, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->tag:Ljava/lang/String;
 
-    .line 45
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->startUptime:J
 
-    .line 46
     iget-object v1, p0, Lcom/android/systemui/util/leak/TrackedCollections;->mCollections:Lcom/android/systemui/util/leak/WeakIdentityHashMap;
 
     invoke-virtual {v1, p1, v0}, Lcom/android/systemui/util/leak/WeakIdentityHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 48
     :cond_0
     iget v1, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->halfwayCount:I
 
@@ -212,7 +183,6 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 49
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -227,12 +197,10 @@
 
     if-lez v1, :cond_1
 
-    .line 50
     iget v1, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->lastCount:I
 
     iput v1, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->halfwayCount:I
 
-    .line 52
     :cond_1
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
@@ -240,7 +208,6 @@
 
     iput v1, v0, Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;->lastCount:I
 
-    .line 53
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
@@ -249,20 +216,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 54
     monitor-exit p0
 
     return-void
 
-    .line 40
-    .end local v0    # "collectionState":Lcom/android/systemui/util/leak/TrackedCollections$CollectionState;
-    .end local p1    # "collection":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
-    .end local p2    # "tag":Ljava/lang/String;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/util/leak/TrackedCollections;
     throw p1
 .end method

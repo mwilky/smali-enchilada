@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/keyboard/KeyboardUI;)V
     .locals 0
 
-    .line 619
     iput-object p1, p0, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothErrorListener;->this$0:Lcom/android/systemui/keyboard/KeyboardUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/keyboard/KeyboardUI;Lcom/android/systemui/keyboard/KeyboardUI$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/keyboard/KeyboardUI;
-    .param p2, "x1"    # Lcom/android/systemui/keyboard/KeyboardUI$1;
 
-    .line 619
     invoke-direct {p0, p1}, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothErrorListener;-><init>(Lcom/android/systemui/keyboard/KeyboardUI;)V
 
     return-void
@@ -48,11 +44,7 @@
 # virtual methods
 .method public onShowError(Landroid/content/Context;Ljava/lang/String;I)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "messageResId"    # I
 
-    .line 621
     iget-object v0, p0, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothErrorListener;->this$0:Lcom/android/systemui/keyboard/KeyboardUI;
 
     invoke-static {v0}, Lcom/android/systemui/keyboard/KeyboardUI;->access$1700(Lcom/android/systemui/keyboard/KeyboardUI;)Lcom/android/systemui/keyboard/KeyboardUI$KeyboardHandler;
@@ -71,9 +63,7 @@
 
     move-result-object v0
 
-    .line 622
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 623
     return-void
 .end method

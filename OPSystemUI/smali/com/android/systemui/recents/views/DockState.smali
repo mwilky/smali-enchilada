@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 25
 
-    .line 71
     new-instance v9, Lcom/android/systemui/recents/views/DockState;
 
     const/4 v1, -0x1
@@ -71,7 +70,6 @@
 
     sput-object v9, Lcom/android/systemui/recents/views/DockState;->NONE:Lcom/android/systemui/recents/views/DockState;
 
-    .line 73
     new-instance v0, Lcom/android/systemui/recents/views/DockState;
 
     new-instance v1, Landroid/graphics/RectF;
@@ -116,7 +114,6 @@
 
     sput-object v0, Lcom/android/systemui/recents/views/DockState;->LEFT:Lcom/android/systemui/recents/views/DockState;
 
-    .line 77
     new-instance v0, Lcom/android/systemui/recents/views/DockState;
 
     new-instance v1, Landroid/graphics/RectF;
@@ -153,7 +150,6 @@
 
     sput-object v0, Lcom/android/systemui/recents/views/DockState;->TOP:Lcom/android/systemui/recents/views/DockState;
 
-    .line 81
     new-instance v0, Lcom/android/systemui/recents/views/DockState;
 
     new-instance v14, Landroid/graphics/RectF;
@@ -186,7 +182,6 @@
 
     sput-object v0, Lcom/android/systemui/recents/views/DockState;->RIGHT:Lcom/android/systemui/recents/views/DockState;
 
-    .line 85
     new-instance v0, Lcom/android/systemui/recents/views/DockState;
 
     new-instance v2, Landroid/graphics/RectF;
@@ -217,7 +212,6 @@
 
     sput-object v0, Lcom/android/systemui/recents/views/DockState;->BOTTOM:Lcom/android/systemui/recents/views/DockState;
 
-    .line 246
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -229,28 +223,16 @@
 
 .method constructor <init>(IIIIILandroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/RectF;)V
     .locals 7
-    .param p1, "dockSide"    # I
-    .param p2, "createMode"    # I
-    .param p3, "dockAreaAlpha"    # I
-    .param p4, "hintTextAlpha"    # I
-    .param p5, "hintTextOrientation"    # I
-    .param p6, "touchArea"    # Landroid/graphics/RectF;
-    .param p7, "dockArea"    # Landroid/graphics/RectF;
-    .param p8, "expandedTouchDockArea"    # Landroid/graphics/RectF;
 
-    .line 258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 259
     iput p1, p0, Lcom/android/systemui/recents/views/DockState;->dockSide:I
 
-    .line 260
     iput p2, p0, Lcom/android/systemui/recents/views/DockState;->createMode:I
 
-    .line 261
     new-instance v6, Lcom/android/systemui/recents/views/DockState$ViewState;
 
-    const v4, 0x7f11053c
+    const v4, 0x7f11053a
 
     const/4 v5, 0x0
 
@@ -266,27 +248,18 @@
 
     iput-object v6, p0, Lcom/android/systemui/recents/views/DockState;->viewState:Lcom/android/systemui/recents/views/DockState$ViewState;
 
-    .line 263
     iput-object p7, p0, Lcom/android/systemui/recents/views/DockState;->dockArea:Landroid/graphics/RectF;
 
-    .line 264
     iput-object p6, p0, Lcom/android/systemui/recents/views/DockState;->touchArea:Landroid/graphics/RectF;
 
-    .line 265
     iput-object p8, p0, Lcom/android/systemui/recents/views/DockState;->expandedTouchDockArea:Landroid/graphics/RectF;
 
-    .line 266
     return-void
 .end method
 
 .method private getMappedRect(Landroid/graphics/RectF;IILandroid/graphics/Rect;)V
     .locals 5
-    .param p1, "bounds"    # Landroid/graphics/RectF;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
-    .param p4, "out"    # Landroid/graphics/Rect;
 
-    .line 348
     iget v0, p1, Landroid/graphics/RectF;->left:F
 
     int-to-float v1, p2
@@ -321,23 +294,18 @@
 
     invoke-virtual {p4, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 350
     return-void
 .end method
 
 .method private updateBoundsWithSystemInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .locals 2
-    .param p1, "bounds"    # Landroid/graphics/Rect;
-    .param p2, "insets"    # Landroid/graphics/Rect;
 
-    .line 336
     iget v0, p0, Lcom/android/systemui/recents/views/DockState;->dockSide:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 337
     iget v0, p1, Landroid/graphics/Rect;->right:I
 
     iget v1, p2, Landroid/graphics/Rect;->left:I
@@ -348,7 +316,6 @@
 
     goto :goto_0
 
-    .line 338
     :cond_0
     iget v0, p0, Lcom/android/systemui/recents/views/DockState;->dockSide:I
 
@@ -356,7 +323,6 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 339
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     iget v1, p2, Landroid/graphics/Rect;->right:I
@@ -365,7 +331,6 @@
 
     iput v0, p1, Landroid/graphics/Rect;->left:I
 
-    .line 341
     :cond_1
     :goto_0
     return-object p1
@@ -375,24 +340,15 @@
 # virtual methods
 .method public acceptsDrop(IIIILandroid/graphics/Rect;Z)Z
     .locals 2
-    .param p1, "x"    # I
-    .param p2, "y"    # I
-    .param p3, "width"    # I
-    .param p4, "height"    # I
-    .param p5, "insets"    # Landroid/graphics/Rect;
-    .param p6, "isCurrentTarget"    # Z
 
-    .line 93
     if-eqz p6, :cond_0
 
-    .line 94
     iget-object v0, p0, Lcom/android/systemui/recents/views/DockState;->expandedTouchDockArea:Landroid/graphics/RectF;
 
     sget-object v1, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v0, p3, p4, v1}, Lcom/android/systemui/recents/views/DockState;->getMappedRect(Landroid/graphics/RectF;IILandroid/graphics/Rect;)V
 
-    .line 95
     sget-object v0, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
@@ -401,7 +357,6 @@
 
     return v0
 
-    .line 97
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/DockState;->touchArea:Landroid/graphics/RectF;
 
@@ -409,12 +364,10 @@
 
     invoke-direct {p0, v0, p3, p4, v1}, Lcom/android/systemui/recents/views/DockState;->getMappedRect(Landroid/graphics/RectF;IILandroid/graphics/Rect;)V
 
-    .line 98
     sget-object v0, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v0, p5}, Lcom/android/systemui/recents/views/DockState;->updateBoundsWithSystemInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
 
-    .line 99
     sget-object v0, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
@@ -426,16 +379,9 @@
 
 .method public getDockedBounds(IIILandroid/graphics/Rect;Landroid/content/res/Resources;)Landroid/graphics/Rect;
     .locals 9
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "dividerSize"    # I
-    .param p4, "insets"    # Landroid/graphics/Rect;
-    .param p5, "res"    # Landroid/content/res/Resources;
 
-    .line 290
     nop
 
-    .line 291
     invoke-virtual {p5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v0
@@ -454,22 +400,16 @@
     :goto_0
     move v0, v1
 
-    .line 292
-    .local v0, "isHorizontalDivision":Z
     invoke-static {v0, p4, p1, p2, p3}, Lcom/android/internal/policy/DockedDividerUtils;->calculateMiddlePosition(ZLandroid/graphics/Rect;III)I
 
     move-result v7
 
-    .line 294
-    .local v7, "position":I
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     move-object v8, v1
 
-    .line 295
-    .local v8, "newWindowBounds":Landroid/graphics/Rect;
     iget v2, p0, Lcom/android/systemui/recents/views/DockState;->dockSide:I
 
     move v1, v7
@@ -484,29 +424,18 @@
 
     invoke-static/range {v1 .. v6}, Lcom/android/internal/policy/DockedDividerUtils;->calculateBoundsForPosition(IILandroid/graphics/Rect;III)V
 
-    .line 297
     return-object v8
 .end method
 
 .method public getDockedTaskStackBounds(Landroid/graphics/Rect;IIILandroid/graphics/Rect;Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;Landroid/content/res/Resources;Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .locals 21
-    .param p1, "displayRect"    # Landroid/graphics/Rect;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
-    .param p4, "dividerSize"    # I
-    .param p5, "insets"    # Landroid/graphics/Rect;
-    .param p6, "layoutAlgorithm"    # Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;
-    .param p7, "res"    # Landroid/content/res/Resources;
-    .param p8, "windowRectOut"    # Landroid/graphics/Rect;
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p5
 
-    .line 308
     nop
 
-    .line 309
     invoke-virtual/range {p7 .. p7}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v2
@@ -527,8 +456,6 @@
     :goto_0
     move v2, v4
 
-    .line 310
-    .local v2, "isHorizontalDivision":Z
     move/from16 v10, p2
 
     move/from16 v11, p3
@@ -539,16 +466,12 @@
 
     move-result v13
 
-    .line 312
-    .local v13, "position":I
     iget v4, v0, Lcom/android/systemui/recents/views/DockState;->dockSide:I
 
-    .line 313
     invoke-static {v4}, Lcom/android/internal/policy/DockedDividerUtils;->invertDockSide(I)I
 
     move-result v5
 
-    .line 312
     move v4, v13
 
     move-object/from16 v6, p8
@@ -561,13 +484,10 @@
 
     invoke-static/range {v4 .. v9}, Lcom/android/internal/policy/DockedDividerUtils;->calculateBoundsForPosition(IILandroid/graphics/Rect;III)V
 
-    .line 317
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 320
-    .local v4, "taskStackBounds":Landroid/graphics/Rect;
     iget-object v5, v0, Lcom/android/systemui/recents/views/DockState;->dockArea:Landroid/graphics/RectF;
 
     iget v5, v5, Landroid/graphics/RectF;->bottom:F
@@ -578,10 +498,8 @@
 
     if-gez v5, :cond_1
 
-    .line 321
     nop
 
-    .line 322
     :goto_1
     move/from16 v17, v3
 
@@ -592,8 +510,6 @@
 
     goto :goto_1
 
-    .line 325
-    .local v17, "top":I
     :goto_2
     const/16 v18, 0x0
 
@@ -611,24 +527,18 @@
 
     invoke-virtual/range {v14 .. v20}, Lcom/android/systemui/recents/views/TaskStackLayoutAlgorithm;->getTaskStackBounds(Landroid/graphics/Rect;Landroid/graphics/Rect;IIILandroid/graphics/Rect;)V
 
-    .line 327
     return-object v4
 .end method
 
 .method public getPreDockedBounds(IILandroid/graphics/Rect;)Landroid/graphics/Rect;
     .locals 2
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "insets"    # Landroid/graphics/Rect;
 
-    .line 279
     iget-object v0, p0, Lcom/android/systemui/recents/views/DockState;->dockArea:Landroid/graphics/RectF;
 
     sget-object v1, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v0, p1, p2, v1}, Lcom/android/systemui/recents/views/DockState;->getMappedRect(Landroid/graphics/RectF;IILandroid/graphics/Rect;)V
 
-    .line 280
     sget-object v0, Lcom/android/systemui/recents/views/DockState;->mTmpRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v0, p3}, Lcom/android/systemui/recents/views/DockState;->updateBoundsWithSystemInsets(Landroid/graphics/Rect;Landroid/graphics/Rect;)Landroid/graphics/Rect;
@@ -640,13 +550,10 @@
 
 .method public update(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 272
     iget-object v0, p0, Lcom/android/systemui/recents/views/DockState;->viewState:Lcom/android/systemui/recents/views/DockState$ViewState;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/recents/views/DockState$ViewState;->update(Landroid/content/Context;)V
 
-    .line 273
     return-void
 .end method

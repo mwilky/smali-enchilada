@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/PagedTileLayout;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/PagedTileLayout;
 
-    .line 341
     iput-object p1, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPager$SimpleOnPageChangeListener;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onPageScrolled(IFI)V
     .locals 3
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
-    .param p3, "positionOffsetPixels"    # I
 
-    .line 355
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$300(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PageIndicator;
@@ -50,7 +44,6 @@
 
     return-void
 
-    .line 356
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
@@ -60,7 +53,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/PagedTileLayout;->access$602(Lcom/android/systemui/qs/PagedTileLayout;F)F
 
-    .line 357
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$300(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PageIndicator;
@@ -75,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/PageIndicator;->setLocation(F)V
 
-    .line 358
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$400(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PagedTileLayout$PageListener;
@@ -84,7 +75,6 @@
 
     if-eqz v0, :cond_3
 
-    .line 359
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$400(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PagedTileLayout$PageListener;
@@ -97,7 +87,6 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
-    .line 360
     invoke-virtual {v2}, Lcom/android/systemui/qs/PagedTileLayout;->isLayoutRtl()Z
 
     move-result v2
@@ -129,25 +118,20 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 359
     :goto_1
     invoke-interface {v0, v1}, Lcom/android/systemui/qs/PagedTileLayout$PageListener;->onPageChanged(Z)V
 
-    .line 362
     :cond_3
     return-void
 .end method
 
 .method public onPageSelected(I)V
     .locals 4
-    .param p1, "position"    # I
 
-    .line 344
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$200(Lcom/android/systemui/qs/PagedTileLayout;)V
 
-    .line 345
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$300(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PageIndicator;
@@ -158,7 +142,6 @@
 
     return-void
 
-    .line 346
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
@@ -168,7 +151,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 347
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$3;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     invoke-static {v0}, Lcom/android/systemui/qs/PagedTileLayout;->access$400(Lcom/android/systemui/qs/PagedTileLayout;)Lcom/android/systemui/qs/PagedTileLayout$PageListener;
@@ -209,18 +191,15 @@
     :cond_1
     goto :goto_1
 
-    .line 348
     :cond_2
     if-nez p1, :cond_3
 
     goto :goto_0
 
-    .line 347
     :cond_3
     :goto_1
     invoke-interface {v0, v2}, Lcom/android/systemui/qs/PagedTileLayout$PageListener;->onPageChanged(Z)V
 
-    .line 350
     :cond_4
     return-void
 .end method

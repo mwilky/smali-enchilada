@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 33
     new-instance v0, Ljava/util/Locale;
 
     const-string v1, ""
@@ -27,9 +26,7 @@
 
 .method private static getLayoutDirectionFromFirstChar(Ljava/util/Locale;)I
     .locals 2
-    .param p0, "locale"    # Ljava/util/Locale;
 
-    .line 119
     invoke-virtual {p0, p0}, Ljava/util/Locale;->getDisplayName(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
@@ -46,10 +43,8 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 126
     return v1
 
-    .line 122
     :pswitch_0
     const/4 v0, 0x1
 
@@ -66,23 +61,19 @@
 
 .method public static getLayoutDirectionFromLocale(Ljava/util/Locale;)I
     .locals 2
-    .param p0, "locale"    # Ljava/util/Locale;
 
-    .line 90
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x11
 
     if-lt v0, v1, :cond_0
 
-    .line 91
     invoke-static {p0}, Landroid/text/TextUtils;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
 
     move-result v0
 
     return v0
 
-    .line 93
     :cond_0
     if-eqz p0, :cond_3
 
@@ -94,13 +85,10 @@
 
     if-nez v0, :cond_3
 
-    .line 94
     invoke-static {p0}, Landroid/support/v4/text/ICUCompat;->maximizeAndGetScript(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 95
-    .local v0, "scriptSubtag":Ljava/lang/String;
     if-nez v0, :cond_1
 
     invoke-static {p0}, Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromFirstChar(Ljava/util/Locale;)I
@@ -109,7 +97,6 @@
 
     return v1
 
-    .line 99
     :cond_1
     const-string v1, "Arab"
 
@@ -121,21 +108,17 @@
 
     const-string v1, "Hebr"
 
-    .line 100
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 101
     :cond_2
     const/4 v1, 0x1
 
     return v1
 
-    .line 104
-    .end local v0    # "scriptSubtag":Ljava/lang/String;
     :cond_3
     const/4 v0, 0x0
 

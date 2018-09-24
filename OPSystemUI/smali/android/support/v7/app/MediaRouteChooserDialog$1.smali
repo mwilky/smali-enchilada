@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteChooserDialog;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteChooserDialog;
 
-    .line 81
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteChooserDialog$1;->this$0:Landroid/support/v7/app/MediaRouteChooserDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 84
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -46,7 +42,6 @@
 
     goto :goto_0
 
-    .line 86
     :cond_0
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteChooserDialog$1;->this$0:Landroid/support/v7/app/MediaRouteChooserDialog;
 
@@ -56,7 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/MediaRouteChooserDialog;->updateRoutes(Ljava/util/List;)V
 
-    .line 89
     :goto_0
     return-void
 .end method

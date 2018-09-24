@@ -14,13 +14,9 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "object"    # Landroid/support/v4/internal/view/SupportMenuItem;
 
-    .line 39
     invoke-direct {p0, p1, p2}, Landroid/support/v7/view/menu/MenuItemWrapperICS;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)V
 
-    .line 40
     return-void
 .end method
 
@@ -28,9 +24,7 @@
 # virtual methods
 .method createActionProviderWrapper(Landroid/view/ActionProvider;)Landroid/support/v7/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
     .locals 2
-    .param p1, "provider"    # Landroid/view/ActionProvider;
 
-    .line 44
     new-instance v0, Landroid/support/v7/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;
 
     iget-object v1, p0, Landroid/support/v7/view/menu/MenuItemWrapperJB;->mContext:Landroid/content/Context;

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistOrbView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistOrbView;
 
-    .line 98
     iput-object p1, p0, Lcom/android/systemui/assist/AssistOrbView$4;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/assist/AssistOrbView$4;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistOrbView;->access$500(Lcom/android/systemui/assist/AssistOrbView;)F
@@ -51,7 +46,6 @@
 
     if-lez v0, :cond_0
 
-    .line 102
     iget-object v0, p0, Lcom/android/systemui/assist/AssistOrbView$4;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistOrbView;->access$600(Lcom/android/systemui/assist/AssistOrbView;)Landroid/graphics/Rect;
@@ -62,11 +56,9 @@
 
     goto :goto_0
 
-    .line 104
     :cond_0
     invoke-virtual {p2}, Landroid/graphics/Outline;->setEmpty()V
 
-    .line 106
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/assist/AssistOrbView$4;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
@@ -76,6 +68,5 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 107
     return-void
 .end method

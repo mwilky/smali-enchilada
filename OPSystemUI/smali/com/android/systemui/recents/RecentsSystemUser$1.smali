@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/RecentsSystemUser;Lcom/android/systemui/recents/IRecentsNonSystemUserCallbacks;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsSystemUser;
 
-    .line 61
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsSystemUser$1;->this$0:Lcom/android/systemui/recents/RecentsSystemUser;
 
     iput-object p2, p0, Lcom/android/systemui/recents/RecentsSystemUser$1;->val$callback:Lcom/android/systemui/recents/IRecentsNonSystemUserCallbacks;
@@ -47,7 +45,6 @@
 .method public binderDied()V
     .locals 3
 
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsSystemUser$1;->this$0:Lcom/android/systemui/recents/RecentsSystemUser;
 
     invoke-static {v0}, Lcom/android/systemui/recents/RecentsSystemUser;->access$000(Lcom/android/systemui/recents/RecentsSystemUser;)Landroid/util/SparseArray;
@@ -68,12 +65,10 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->removeAt(I)V
 
-    .line 65
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 66
     const/4 v1, 0x5
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -86,7 +81,6 @@
 
     iget v1, p0, Lcom/android/systemui/recents/RecentsSystemUser$1;->val$userId:I
 
-    .line 67
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -95,11 +89,9 @@
 
     aput-object v1, v0, v2
 
-    .line 65
     const v1, 0x8cdc
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 68
     return-void
 .end method

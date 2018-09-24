@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;
 
-    .line 45
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText$1;->this$0:Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,25 +33,20 @@
 # virtual methods
 .method public onPhoneStateChanged(I)V
     .locals 1
-    .param p1, "phoneState"    # I
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText$1;->this$0:Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;->update()V
 
-    .line 49
     return-void
 .end method
 
 .method public onRefreshCarrierInfo()V
     .locals 1
 
-    .line 53
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText$1;->this$0:Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/EmergencyCryptkeeperText;->update()V
 
-    .line 54
     return-void
 .end method

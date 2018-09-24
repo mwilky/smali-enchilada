@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/pip/phone/PipTouchHandler;)V
     .locals 0
 
-    .line 142
     iput-object p1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/pip/phone/PipTouchHandler;Lcom/android/systemui/pip/phone/PipTouchHandler$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/pip/phone/PipTouchHandler;
-    .param p2, "x1"    # Lcom/android/systemui/pip/phone/PipTouchHandler$1;
 
-    .line 142
     invoke-direct {p0, p1}, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;-><init>(Lcom/android/systemui/pip/phone/PipTouchHandler;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public onPipDismiss()V
     .locals 3
 
-    .line 163
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$800(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/content/Context;
@@ -58,7 +53,6 @@
 
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 164
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$800(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/content/Context;
 
     move-result-object v1
@@ -73,10 +67,8 @@
 
     move-result-object v1
 
-    .line 163
     invoke-static {v0, v1}, Lcom/android/internal/os/logging/MetricsLoggerWrapper;->logPictureInPictureDismissByTap(Landroid/content/Context;Landroid/util/Pair;)V
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -85,14 +77,12 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/phone/PipMotionHelper;->dismissPip()V
 
-    .line 166
     return-void
 .end method
 
 .method public onPipExpand()V
     .locals 1
 
-    .line 150
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$400(Lcom/android/systemui/pip/phone/PipTouchHandler;)Z
@@ -101,7 +91,6 @@
 
     if-nez v0, :cond_0
 
-    .line 151
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -110,36 +99,29 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/phone/PipMotionHelper;->expandPip()V
 
-    .line 153
     :cond_0
     return-void
 .end method
 
 .method public onPipMenuStateChanged(IZ)V
     .locals 1
-    .param p1, "menuState"    # I
-    .param p2, "resize"    # Z
 
-    .line 145
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0, p1, p2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$300(Lcom/android/systemui/pip/phone/PipTouchHandler;IZ)V
 
-    .line 146
     return-void
 .end method
 
 .method public onPipMinimize()V
     .locals 3
 
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$600(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)V
 
-    .line 158
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -156,14 +138,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/pip/phone/PipMotionHelper;->animateToClosestMinimizedState(Landroid/graphics/Rect;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/graphics/Rect;
 
-    .line 159
     return-void
 .end method
 
 .method public onPipShowMenu()V
     .locals 7
 
-    .line 170
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMenuActivityController;
@@ -182,7 +162,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$PipMenuListener;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 171
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$700(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
 
     move-result-object v4
@@ -193,13 +172,11 @@
 
     move-result v6
 
-    .line 170
     const/4 v2, 0x2
 
     const/4 v5, 0x1
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/systemui/pip/phone/PipMenuActivityController;->showMenu(ILandroid/graphics/Rect;Landroid/graphics/Rect;ZZ)V
 
-    .line 172
     return-void
 .end method

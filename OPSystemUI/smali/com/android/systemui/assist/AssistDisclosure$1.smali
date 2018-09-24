@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistDisclosure;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistDisclosure;
 
-    .line 87
     iput-object p1, p0, Lcom/android/systemui/assist/AssistDisclosure$1;->this$0:Lcom/android/systemui/assist/AssistDisclosure;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/assist/AssistDisclosure$1;->this$0:Lcom/android/systemui/assist/AssistDisclosure;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistDisclosure;->access$000(Lcom/android/systemui/assist/AssistDisclosure;)V
 
-    .line 91
     return-void
 .end method

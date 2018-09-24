@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/KeyboardShortcuts;Ljava/util/List;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/KeyboardShortcuts;
 
-    .line 564
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts$4;->this$0:Lcom/android/systemui/statusbar/KeyboardShortcuts;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts$4;->val$keyboardShortcutGroups:Ljava/util/List;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 567
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts$4;->this$0:Lcom/android/systemui/statusbar/KeyboardShortcuts;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/KeyboardShortcuts$4;->val$keyboardShortcutGroups:Ljava/util/List;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/KeyboardShortcuts;->access$400(Lcom/android/systemui/statusbar/KeyboardShortcuts;Ljava/util/List;)V
 
-    .line 568
     return-void
 .end method

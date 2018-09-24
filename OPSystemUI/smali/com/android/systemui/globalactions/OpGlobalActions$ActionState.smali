@@ -44,7 +44,6 @@
 .method static constructor <clinit>()V
     .locals 9
 
-    .line 95
     new-instance v0, Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
 
     const-string v1, "INIT"
@@ -115,7 +114,6 @@
 
     sput-object v0, Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;->CONFIRMED:Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
 
-    .line 94
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
@@ -161,7 +159,6 @@
         }
     .end annotation
 
-    .line 94
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -169,9 +166,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 94
     const-class v0, Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -186,7 +181,6 @@
 .method public static values()[Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
     .locals 1
 
-    .line 94
     sget-object v0, Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;->$VALUES:[Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;
 
     invoke-virtual {v0}, [Lcom/android/systemui/globalactions/OpGlobalActions$ActionState;->clone()Ljava/lang/Object;

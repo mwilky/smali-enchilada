@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/analytics/DataCollector;Lcom/android/systemui/analytics/SensorLoggerSession;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/analytics/DataCollector;
 
-    .line 180
     iput-object p1, p0, Lcom/android/systemui/analytics/DataCollector$2;->this$0:Lcom/android/systemui/analytics/DataCollector;
 
     iput-object p2, p0, Lcom/android/systemui/analytics/DataCollector$2;->val$currentSession:Lcom/android/systemui/analytics/SensorLoggerSession;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 7
 
-    .line 183
     iget-object v0, p0, Lcom/android/systemui/analytics/DataCollector$2;->val$currentSession:Lcom/android/systemui/analytics/SensorLoggerSession;
 
     invoke-virtual {v0}, Lcom/android/systemui/analytics/SensorLoggerSession;->toProto()Lcom/android/systemui/statusbar/phone/nano/TouchAnalyticsProto$Session;
@@ -54,8 +51,6 @@
 
     move-result-object v0
 
-    .line 184
-    .local v0, "b":[B
     iget-object v1, p0, Lcom/android/systemui/analytics/DataCollector$2;->this$0:Lcom/android/systemui/analytics/DataCollector;
 
     invoke-static {v1}, Lcom/android/systemui/analytics/DataCollector;->access$100(Lcom/android/systemui/analytics/DataCollector;)Landroid/content/Context;
@@ -70,8 +65,6 @@
 
     move-result-object v1
 
-    .line 185
-    .local v1, "dir":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/analytics/DataCollector$2;->val$currentSession:Lcom/android/systemui/analytics/SensorLoggerSession;
 
     invoke-virtual {v2}, Lcom/android/systemui/analytics/SensorLoggerSession;->getResult()I
@@ -82,7 +75,6 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 186
     iget-object v2, p0, Lcom/android/systemui/analytics/DataCollector$2;->this$0:Lcom/android/systemui/analytics/DataCollector;
 
     invoke-static {v2}, Lcom/android/systemui/analytics/DataCollector;->access$200(Lcom/android/systemui/analytics/DataCollector;)Z
@@ -91,10 +83,8 @@
 
     if-nez v2, :cond_0
 
-    .line 187
     return-void
 
-    .line 189
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -112,7 +102,6 @@
 
     goto :goto_0
 
-    .line 191
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -128,17 +117,13 @@
 
     move-result-object v1
 
-    .line 194
     :goto_0
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 195
-    .local v2, "file":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->mkdir()Z
 
-    .line 196
     new-instance v3, Ljava/io/File;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -161,8 +146,6 @@
 
     invoke-direct {v3, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 199
-    .local v3, "touch":Ljava/io/File;
     :try_start_0
     new-instance v4, Ljava/io/FileOutputStream;
 
@@ -172,18 +155,13 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 202
     nop
 
-    .line 203
     return-void
 
-    .line 200
     :catch_0
     move-exception v4
 
-    .line 201
-    .local v4, "e":Ljava/io/IOException;
     new-instance v5, Ljava/lang/RuntimeException;
 
     invoke-direct {v5, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V

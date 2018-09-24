@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSDetail;Lcom/android/systemui/plugins/qs/DetailAdapter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/QSDetail;
 
-    .line 305
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetail$2;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSDetail$2;->val$adapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 308
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$2;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     iget-object v0, v0, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
@@ -55,19 +51,15 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 309
-    .local v0, "checked":Z
     iget-object v1, p0, Lcom/android/systemui/qs/QSDetail$2;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     iget-object v1, v1, Lcom/android/systemui/qs/QSDetail;->mQsDetailHeaderSwitch:Landroid/widget/Switch;
 
     invoke-virtual {v1, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 310
     iget-object v1, p0, Lcom/android/systemui/qs/QSDetail$2;->val$adapter:Lcom/android/systemui/plugins/qs/DetailAdapter;
 
     invoke-interface {v1, v0}, Lcom/android/systemui/plugins/qs/DetailAdapter;->setToggleState(Z)V
 
-    .line 311
     return-void
 .end method

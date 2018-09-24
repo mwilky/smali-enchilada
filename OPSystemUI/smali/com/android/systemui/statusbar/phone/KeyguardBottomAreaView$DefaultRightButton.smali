@@ -27,12 +27,10 @@
 .method private constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
     .locals 0
 
-    .line 964
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 966
     new-instance p1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     invoke-direct {p1}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;-><init>()V
@@ -44,10 +42,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$1;
 
-    .line 964
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;-><init>(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)V
 
     return-void
@@ -58,15 +53,12 @@
 .method public getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
     .locals 7
 
-    .line 970
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->resolveCameraIntent()Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    .line 971
-    .local v0, "resolved":Landroid/content/pm/ResolveInfo;
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$700(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -98,8 +90,6 @@
     :cond_0
     move v1, v2
 
-    .line 973
-    .local v1, "isCameraDisabled":Z
     :goto_0
     iget-object v4, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
@@ -109,7 +99,6 @@
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    .line 974
     invoke-virtual {v5}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -124,7 +113,6 @@
 
     iget-object v5, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    .line 975
     invoke-static {v5}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$1300(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Z
 
     move-result v5
@@ -138,7 +126,6 @@
     :cond_1
     iput-boolean v2, v4, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->isVisible:Z
 
-    .line 977
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
@@ -155,12 +142,10 @@
 
     iput-object v3, v2, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 978
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
-    .line 979
     invoke-static {v3}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$2200(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
 
     move-result-object v3
@@ -173,7 +158,6 @@
 
     iput-object v3, v2, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 980
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     return-object v2
@@ -182,7 +166,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 4
 
-    .line 985
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$2300(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Landroid/content/Context;
@@ -193,22 +176,16 @@
 
     move-result-object v0
 
-    .line 986
-    .local v0, "updateMonitor":Lcom/android/keyguard/KeyguardUpdateMonitor;
     nop
 
-    .line 987
     invoke-static {}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getCurrentUser()I
 
     move-result v1
 
-    .line 986
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->getUserCanSkipBouncer(I)Z
 
     move-result v1
 
-    .line 988
-    .local v1, "canSkipBouncer":Z
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView$DefaultRightButton;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;->access$2400(Lcom/android/systemui/statusbar/phone/KeyguardBottomAreaView;)Lcom/android/internal/widget/LockPatternUtils;
@@ -223,8 +200,6 @@
 
     move-result v2
 
-    .line 989
-    .local v2, "secure":Z
     if-eqz v2, :cond_0
 
     if-nez v1, :cond_0

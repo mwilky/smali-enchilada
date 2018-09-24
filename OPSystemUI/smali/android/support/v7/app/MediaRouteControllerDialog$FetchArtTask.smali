@@ -40,12 +40,10 @@
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;)V
     .locals 4
 
-    .line 1359
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 1360
     iget-object v0, p1, Landroid/support/v7/app/MediaRouteControllerDialog;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
     const/4 v1, 0x0
@@ -63,8 +61,6 @@
 
     move-result-object v0
 
-    .line 1361
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
     :goto_0
     invoke-static {p1, v0}, Landroid/support/v7/app/MediaRouteControllerDialog;->access$300(Landroid/support/v7/app/MediaRouteControllerDialog;Landroid/graphics/Bitmap;)Z
 
@@ -72,21 +68,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 1362
     const-string v2, "MediaRouteCtrlDialog"
 
     const-string v3, "Can\'t fetch the given art bitmap because it\'s already recycled."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1363
     const/4 v0, 0x0
 
-    .line 1365
     :cond_1
     iput-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconBitmap:Landroid/graphics/Bitmap;
 
-    .line 1366
     iget-object v2, p1, Landroid/support/v7/app/MediaRouteControllerDialog;->mDescription:Landroid/support/v4/media/MediaDescriptionCompat;
 
     if-nez v2, :cond_2
@@ -103,20 +95,17 @@
     :goto_1
     iput-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
-    .line 1367
     return-void
 .end method
 
 .method private openInputStreamByScheme(Landroid/net/Uri;)Ljava/io/InputStream;
     .locals 5
-    .param p1, "uri"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 1463
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
     move-result-object v0
@@ -125,12 +114,8 @@
 
     move-result-object v0
 
-    .line 1464
-    .local v0, "scheme":Ljava/lang/String;
     const/4 v1, 0x0
 
-    .line 1465
-    .local v1, "stream":Ljava/io/InputStream;
     const-string v2, "android.resource"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -141,7 +126,6 @@
 
     const-string v2, "content"
 
-    .line 1466
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -150,7 +134,6 @@
 
     const-string v2, "file"
 
-    .line 1467
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -159,7 +142,6 @@
 
     goto :goto_0
 
-    .line 1470
     :cond_0
     new-instance v2, Ljava/net/URL;
 
@@ -169,33 +151,24 @@
 
     invoke-direct {v2, v3}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 1471
-    .local v2, "url":Ljava/net/URL;
     invoke-virtual {v2}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v3
 
-    .line 1472
-    .local v3, "conn":Ljava/net/URLConnection;
     sget v4, Landroid/support/v7/app/MediaRouteControllerDialog;->CONNECTION_TIMEOUT_MILLIS:I
 
     invoke-virtual {v3, v4}, Ljava/net/URLConnection;->setConnectTimeout(I)V
 
-    .line 1473
     sget v4, Landroid/support/v7/app/MediaRouteControllerDialog;->CONNECTION_TIMEOUT_MILLIS:I
 
     invoke-virtual {v3, v4}, Ljava/net/URLConnection;->setReadTimeout(I)V
 
-    .line 1474
     invoke-virtual {v3}, Ljava/net/URLConnection;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v1
 
-    .end local v2    # "url":Ljava/net/URL;
-    .end local v3    # "conn":Ljava/net/URLConnection;
     goto :goto_1
 
-    .line 1468
     :cond_1
     :goto_0
     iget-object v2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
@@ -210,7 +183,6 @@
 
     move-result-object v1
 
-    .line 1476
     :goto_1
     if-nez v1, :cond_2
 
@@ -231,13 +203,9 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Landroid/graphics/Bitmap;
     .locals 10
-    .param p1, "arg"    # [Ljava/lang/Void;
 
-    .line 1385
     const/4 v0, 0x0
 
-    .line 1386
-    .local v0, "art":Landroid/graphics/Bitmap;
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconBitmap:Landroid/graphics/Bitmap;
 
     const/4 v2, 0x0
@@ -248,22 +216,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 1387
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconBitmap:Landroid/graphics/Bitmap;
 
     goto/16 :goto_9
 
-    .line 1388
     :cond_0
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
     if-eqz v1, :cond_b
 
-    .line 1389
     move-object v1, v4
 
-    .line 1391
-    .local v1, "stream":Ljava/io/InputStream;
     :try_start_0
     iget-object v5, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
@@ -275,7 +238,6 @@
 
     if-nez v5, :cond_2
 
-    .line 1392
     const-string v5, "MediaRouteCtrlDialog"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -299,45 +261,34 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_6
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1393
     nop
 
-    .line 1425
     if-eqz v1, :cond_1
 
-    .line 1427
     :try_start_1
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1429
     goto :goto_0
 
-    .line 1428
     :catch_0
     move-exception v2
 
-    .line 1429
     :cond_1
     :goto_0
     return-object v4
 
-    .line 1396
     :cond_2
     :try_start_2
     new-instance v5, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 1397
-    .local v5, "options":Landroid/graphics/BitmapFactory$Options;
     iput-boolean v3, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 1398
     invoke-static {v1, v4, v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 1399
     iget v6, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     if-eqz v6, :cond_8
@@ -351,7 +302,6 @@
 
     goto :goto_5
 
-    .line 1404
     :cond_3
     :try_start_3
     invoke-virtual {v1}, Ljava/io/InputStream;->reset()V
@@ -359,19 +309,14 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 1412
     goto :goto_2
 
-    .line 1405
     :catch_1
     move-exception v6
 
-    .line 1407
-    .local v6, "e":Ljava/io/IOException;
     :try_start_4
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
-    .line 1408
     iget-object v7, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
     invoke-direct {p0, v7}, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->openInputStreamByScheme(Landroid/net/Uri;)Ljava/io/InputStream;
@@ -382,7 +327,6 @@
 
     if-nez v7, :cond_5
 
-    .line 1409
     const-string v7, "MediaRouteCtrlDialog"
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -406,38 +350,29 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_6
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 1410
     nop
 
-    .line 1425
     if-eqz v1, :cond_4
 
-    .line 1427
     :try_start_5
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 1429
     goto :goto_1
 
-    .line 1428
     :catch_2
     move-exception v2
 
-    .line 1429
     :cond_4
     :goto_1
     return-object v4
 
-    .line 1414
-    .end local v6    # "e":Ljava/io/IOException;
     :cond_5
     :goto_2
     :try_start_6
     iput-boolean v2, v5, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 1415
     iget-object v6, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget v7, v5, Landroid/graphics/BitmapFactory$Options;->outWidth:I
@@ -448,14 +383,10 @@
 
     move-result v6
 
-    .line 1416
-    .local v6, "reqHeight":I
     iget v7, v5, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     div-int/2addr v7, v6
 
-    .line 1417
-    .local v7, "ratio":I
     invoke-static {v7}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result v8
@@ -466,7 +397,6 @@
 
     iput v8, v5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 1418
     invoke-virtual {p0}, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->isCancelled()Z
 
     move-result v8
@@ -476,31 +406,24 @@
 
     if-eqz v8, :cond_7
 
-    .line 1419
     nop
 
-    .line 1425
     if-eqz v1, :cond_6
 
-    .line 1427
     :try_start_7
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
 
-    .line 1429
     goto :goto_3
 
-    .line 1428
     :catch_3
     move-exception v2
 
-    .line 1429
     :cond_6
     :goto_3
     return-object v4
 
-    .line 1421
     :cond_7
     :try_start_8
     invoke-static {v1, v4, v5}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -512,70 +435,49 @@
 
     move-object v0, v8
 
-    .line 1425
-    .end local v5    # "options":Landroid/graphics/BitmapFactory$Options;
-    .end local v6    # "reqHeight":I
-    .end local v7    # "ratio":I
     if-eqz v1, :cond_b
 
-    .line 1427
     :try_start_9
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_4
 
-    .line 1429
-    .end local v1    # "stream":Ljava/io/InputStream;
     :goto_4
     goto :goto_9
 
-    .line 1428
-    .restart local v1    # "stream":Ljava/io/InputStream;
     :catch_4
     move-exception v5
 
     goto :goto_4
 
-    .line 1400
-    .restart local v5    # "options":Landroid/graphics/BitmapFactory$Options;
     :cond_8
     :goto_5
     nop
 
-    .line 1425
     if-eqz v1, :cond_9
 
-    .line 1427
     :try_start_a
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_5
 
-    .line 1429
     goto :goto_6
 
-    .line 1428
     :catch_5
     move-exception v2
 
-    .line 1429
     :cond_9
     :goto_6
     return-object v4
 
-    .line 1425
-    .end local v5    # "options":Landroid/graphics/BitmapFactory$Options;
     :catchall_0
     move-exception v2
 
     goto :goto_7
 
-    .line 1422
     :catch_6
     move-exception v5
 
-    .line 1423
-    .local v5, "e":Ljava/io/IOException;
     :try_start_b
     const-string v6, "MediaRouteCtrlDialog"
 
@@ -599,11 +501,8 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_0
 
-    .line 1425
-    .end local v5    # "e":Ljava/io/IOException;
     if-eqz v1, :cond_b
 
-    .line 1427
     :try_start_c
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_c
@@ -611,30 +510,23 @@
 
     goto :goto_4
 
-    .line 1425
     :goto_7
     if-eqz v1, :cond_a
 
-    .line 1427
     :try_start_d
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_7
 
-    .line 1429
     goto :goto_8
 
-    .line 1428
     :catch_7
     move-exception v3
 
-    .line 1429
     :cond_a
     :goto_8
     throw v2
 
-    .line 1433
-    .end local v1    # "stream":Ljava/io/InputStream;
     :cond_b
     :goto_9
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
@@ -645,7 +537,6 @@
 
     if-eqz v1, :cond_c
 
-    .line 1434
     const-string v1, "MediaRouteCtrlDialog"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -664,10 +555,8 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1435
     return-object v4
 
-    .line 1437
     :cond_c
     if-eqz v0, :cond_e
 
@@ -681,7 +570,6 @@
 
     if-ge v1, v4, :cond_e
 
-    .line 1439
     new-instance v1, Landroid/support/v7/graphics/Palette$Builder;
 
     invoke-direct {v1, v0}, Landroid/support/v7/graphics/Palette$Builder;-><init>(Landroid/graphics/Bitmap;)V
@@ -694,8 +582,6 @@
 
     move-result-object v1
 
-    .line 1440
-    .local v1, "palette":Landroid/support/v7/graphics/Palette;
     invoke-virtual {v1}, Landroid/support/v7/graphics/Palette;->getSwatches()Ljava/util/List;
 
     move-result-object v3
@@ -708,7 +594,6 @@
 
     goto :goto_a
 
-    .line 1441
     :cond_d
     invoke-virtual {v1}, Landroid/support/v7/graphics/Palette;->getSwatches()Ljava/util/List;
 
@@ -727,8 +612,6 @@
     :goto_a
     iput v2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mBackgroundColor:I
 
-    .line 1443
-    .end local v1    # "palette":Landroid/support/v7/graphics/Palette;
     :cond_e
     return-object v0
 .end method
@@ -736,7 +619,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1350
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->doInBackground([Ljava/lang/Void;)Landroid/graphics/Bitmap;
@@ -749,7 +631,6 @@
 .method public getIconBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 1370
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconBitmap:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -758,7 +639,6 @@
 .method public getIconUri()Landroid/net/Uri;
     .locals 1
 
-    .line 1374
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
     return-object v0
@@ -766,16 +646,13 @@
 
 .method protected onPostExecute(Landroid/graphics/Bitmap;)V
     .locals 6
-    .param p1, "art"    # Landroid/graphics/Bitmap;
 
-    .line 1448
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mFetchArtTask:Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;
 
-    .line 1449
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconBitmap:Landroid/graphics/Bitmap;
@@ -794,14 +671,12 @@
 
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
-    .line 1450
     invoke-static {v0, v1}, Landroid/support/v4/util/ObjectsCompat;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1451
     :cond_0
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
@@ -809,33 +684,28 @@
 
     iput-object v1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconBitmap:Landroid/graphics/Bitmap;
 
-    .line 1452
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iput-object p1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconLoadedBitmap:Landroid/graphics/Bitmap;
 
-    .line 1453
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mIconUri:Landroid/net/Uri;
 
     iput-object v1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconUri:Landroid/net/Uri;
 
-    .line 1454
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mBackgroundColor:I
 
     iput v1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconBackgroundColor:I
 
-    .line 1455
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mArtIconIsLoaded:Z
 
-    .line 1456
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -844,8 +714,6 @@
 
     sub-long/2addr v2, v4
 
-    .line 1458
-    .local v2, "elapsedTimeMillis":J
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const-wide/16 v4, 0x78
@@ -862,8 +730,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/support/v7/app/MediaRouteControllerDialog;->update(Z)V
 
-    .line 1460
-    .end local v2    # "elapsedTimeMillis":J
     :cond_2
     return-void
 .end method
@@ -871,7 +737,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 1350
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->onPostExecute(Landroid/graphics/Bitmap;)V
@@ -882,18 +747,15 @@
 .method protected onPreExecute()V
     .locals 2
 
-    .line 1379
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->mStartTimeMillis:J
 
-    .line 1380
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$FetchArtTask;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     invoke-virtual {v0}, Landroid/support/v7/app/MediaRouteControllerDialog;->clearLoadedBitmap()V
 
-    .line 1381
     return-void
 .end method

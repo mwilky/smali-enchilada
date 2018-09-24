@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/DozeScrimController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
-    .line 43
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,26 +37,22 @@
 .method public onCancelled()V
     .locals 1
 
-    .line 77
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$900(Lcom/android/systemui/statusbar/phone/DozeScrimController;)V
 
-    .line 78
     return-void
 .end method
 
 .method public onDisplayBlanked()V
     .locals 3
 
-    .line 46
     invoke-static {}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 47
     const-string v0, "DozeScrimController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -83,7 +77,6 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
-    .line 48
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$200(Lcom/android/systemui/statusbar/phone/DozeScrimController;)I
 
     move-result v2
@@ -98,10 +91,8 @@
 
     move-result-object v1
 
-    .line 47
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -111,30 +102,25 @@
 
     if-nez v0, :cond_1
 
-    .line 51
     return-void
 
-    .line 55
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$300(Lcom/android/systemui/statusbar/phone/DozeScrimController;)V
 
-    .line 56
     return-void
 .end method
 
 .method public onFinished()V
     .locals 4
 
-    .line 60
     invoke-static {}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$000()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 61
     const-string v0, "DozeScrimController"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -159,7 +145,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -169,10 +154,8 @@
 
     if-nez v0, :cond_1
 
-    .line 64
     return-void
 
-    .line 66
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
@@ -200,7 +183,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 67
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$600(Lcom/android/systemui/statusbar/phone/DozeScrimController;)Landroid/os/Handler;
@@ -215,7 +197,6 @@
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
-    .line 68
     invoke-static {v2}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$500(Lcom/android/systemui/statusbar/phone/DozeScrimController;)Lcom/android/systemui/statusbar/phone/DozeParameters;
 
     move-result-object v2
@@ -226,16 +207,13 @@
 
     int-to-long v2, v2
 
-    .line 67
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/DozeScrimController$1;->this$0:Lcom/android/systemui/statusbar/phone/DozeScrimController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/phone/DozeScrimController;->access$802(Lcom/android/systemui/statusbar/phone/DozeScrimController;Z)Z
 
-    .line 70
     return-void
 .end method

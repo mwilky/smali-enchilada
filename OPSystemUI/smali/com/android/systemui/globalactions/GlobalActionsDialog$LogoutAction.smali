@@ -22,26 +22,20 @@
 .method private constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 1
 
-    .line 583
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$LogoutAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 584
     const p1, 0x10803b9
 
     const v0, 0x1040264
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 
-    .line 585
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "x1"    # Lcom/android/systemui/globalactions/GlobalActionsDialog$1;
 
-    .line 582
     invoke-direct {p0, p1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$LogoutAction;-><init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
 
     return-void
@@ -50,7 +44,6 @@
 .method public static synthetic lambda$onPress$0(Lcom/android/systemui/globalactions/GlobalActionsDialog$LogoutAction;)V
     .locals 4
 
-    .line 603
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$LogoutAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -60,8 +53,6 @@
 
     iget v0, v0, Landroid/content/pm/UserInfo;->id:I
 
-    .line 604
-    .local v0, "currentUserId":I
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v1
@@ -70,7 +61,6 @@
 
     invoke-interface {v1, v2}, Landroid/app/IActivityManager;->switchUser(I)Z
 
-    .line 605
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v1
@@ -83,16 +73,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 608
-    .end local v0    # "currentUserId":I
     goto :goto_0
 
-    .line 606
     :catch_0
     move-exception v0
 
-    .line 607
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "GlobalActionsDialog"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -111,8 +96,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 609
-    .end local v0    # "re":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -122,7 +105,6 @@
 .method public onPress()V
     .locals 4
 
-    .line 601
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$LogoutAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
@@ -137,14 +119,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 610
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 594
     const/4 v0, 0x0
 
     return v0
@@ -153,7 +133,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 589
     const/4 v0, 0x1
 
     return v0

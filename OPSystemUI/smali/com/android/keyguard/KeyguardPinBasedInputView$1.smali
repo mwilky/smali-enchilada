@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardPinBasedInputView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardPinBasedInputView;
 
-    .line 176
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPinBasedInputView$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public onUserActivity()V
     .locals 1
 
-    .line 179
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPinBasedInputView$1;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardPinBasedInputView;->onUserInput()V
 
-    .line 180
     return-void
 .end method

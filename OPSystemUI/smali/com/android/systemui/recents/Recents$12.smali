@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/Recents;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/Recents;
 
-    .line 934
     iput-object p1, p0, Lcom/android/systemui/recents/Recents$12;->this$0:Lcom/android/systemui/recents/Recents;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 937
     iget-object v0, p0, Lcom/android/systemui/recents/Recents$12;->this$0:Lcom/android/systemui/recents/Recents;
 
     invoke-static {v0}, Lcom/android/systemui/recents/Recents;->access$200(Lcom/android/systemui/recents/Recents;)V
 
-    .line 938
     return-void
 .end method

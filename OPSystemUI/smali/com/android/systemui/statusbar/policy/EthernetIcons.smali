@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 22
     const/4 v0, 0x2
 
     new-array v0, v0, [[I

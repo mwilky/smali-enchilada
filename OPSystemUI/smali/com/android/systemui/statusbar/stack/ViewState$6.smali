@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/ViewState;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/ViewState;
 
-    .line 517
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/ViewState$6;->this$0:Lcom/android/systemui/statusbar/stack/ViewState;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/ViewState$6;->val$child:Landroid/view/View;
@@ -39,31 +37,26 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 520
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ViewState$6;->val$child:Landroid/view/View;
 
     const/4 v1, 0x0
 
-    const v2, 0x7f0a042d
+    const v2, 0x7f0a0428
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 521
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ViewState$6;->val$child:Landroid/view/View;
 
-    const v2, 0x7f0a042c
+    const v2, 0x7f0a0427
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 522
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/ViewState$6;->val$child:Landroid/view/View;
 
-    const v2, 0x7f0a042b
+    const v2, 0x7f0a0426
 
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 523
     return-void
 .end method

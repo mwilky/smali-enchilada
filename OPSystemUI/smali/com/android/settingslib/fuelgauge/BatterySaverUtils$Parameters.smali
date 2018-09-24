@@ -25,15 +25,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
     iput-object p1, p0, Lcom/android/settingslib/fuelgauge/BatterySaverUtils$Parameters;->mContext:Landroid/content/Context;
 
-    .line 69
     iget-object v0, p0, Lcom/android/settingslib/fuelgauge/BatterySaverUtils$Parameters;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -46,30 +42,22 @@
 
     move-result-object v0
 
-    .line 71
-    .local v0, "newValue":Ljava/lang/String;
     new-instance v1, Landroid/util/KeyValueListParser;
 
     const/16 v2, 0x2c
 
     invoke-direct {v1, v2}, Landroid/util/KeyValueListParser;-><init>(C)V
 
-    .line 73
-    .local v1, "parser":Landroid/util/KeyValueListParser;
     :try_start_0
     invoke-virtual {v1, v0}, Landroid/util/KeyValueListParser;->setString(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 76
     goto :goto_0
 
-    .line 74
     :catch_0
     move-exception v2
 
-    .line 75
-    .local v2, "e":Ljava/lang/IllegalArgumentException;
     const-string v3, "BatterySaverUtils"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -88,8 +76,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
-    .end local v2    # "e":Ljava/lang/IllegalArgumentException;
     :goto_0
     const-string v2, "start_nth"
 
@@ -101,7 +87,6 @@
 
     iput v2, p0, Lcom/android/settingslib/fuelgauge/BatterySaverUtils$Parameters;->startNth:I
 
-    .line 78
     const-string v2, "end_nth"
 
     const/16 v3, 0x8
@@ -112,6 +97,5 @@
 
     iput v2, p0, Lcom/android/settingslib/fuelgauge/BatterySaverUtils$Parameters;->endNth:I
 
-    .line 79
     return-void
 .end method

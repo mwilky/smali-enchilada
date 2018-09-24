@@ -21,20 +21,15 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/shared/system/InputConsumerController;Landroid/view/InputChannel;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "inputChannel"    # Landroid/view/InputChannel;
-    .param p3, "looper"    # Landroid/os/Looper;
 
-    .line 65
     iput-object p1, p0, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;->this$0:Lcom/android/systemui/shared/system/InputConsumerController;
 
-    .line 66
     invoke-static {}, Landroid/view/Choreographer;->getSfInstance()Landroid/view/Choreographer;
 
     move-result-object p1
 
     invoke-direct {p0, p2, p3, p1}, Landroid/view/BatchedInputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;Landroid/view/Choreographer;)V
 
-    .line 67
     return-void
 .end method
 
@@ -42,14 +37,9 @@
 # virtual methods
 .method public onInputEvent(Landroid/view/InputEvent;I)V
     .locals 3
-    .param p1, "event"    # Landroid/view/InputEvent;
-    .param p2, "displayId"    # I
 
-    .line 71
     const/4 v0, 0x1
 
-    .line 73
-    .local v0, "handled":Z
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;->this$0:Lcom/android/systemui/shared/system/InputConsumerController;
 
@@ -63,13 +53,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 74
     move-object v1, p1
 
     check-cast v1, Landroid/view/MotionEvent;
 
-    .line 75
-    .local v1, "ev":Landroid/view/MotionEvent;
     iget-object v2, p0, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;->this$0:Lcom/android/systemui/shared/system/InputConsumerController;
 
     invoke-static {v2}, Lcom/android/systemui/shared/system/InputConsumerController;->access$000(Lcom/android/systemui/shared/system/InputConsumerController;)Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;
@@ -84,18 +71,13 @@
 
     move v0, v2
 
-    .line 78
-    .end local v1    # "ev":Landroid/view/MotionEvent;
     :cond_0
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 79
     nop
 
-    .line 80
     return-void
 
-    .line 78
     :catchall_0
     move-exception v1
 

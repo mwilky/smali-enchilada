@@ -6,12 +6,9 @@
 # direct methods
 .method public static toShortString(I)Ljava/lang/String;
     .locals 2
-    .param p0, "x"    # I
 
-    .line 47
     packed-switch p0, :pswitch_data_0
 
-    .line 57
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -28,25 +25,21 @@
 
     return-object v0
 
-    .line 55
     :pswitch_0
     const-string v0, "FS_USRSW"
 
     return-object v0
 
-    .line 51
     :pswitch_1
     const-string v0, "SHD_LCK"
 
     return-object v0
 
-    .line 53
     :pswitch_2
     const-string v0, "KGRD"
 
     return-object v0
 
-    .line 49
     :pswitch_3
     const-string v0, "SHD"
 

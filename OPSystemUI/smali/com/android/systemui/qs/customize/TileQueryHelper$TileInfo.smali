@@ -28,10 +28,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 213
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 218
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/qs/customize/TileQueryHelper$TileInfo;->isVisible:Z

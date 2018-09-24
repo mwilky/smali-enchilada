@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/PagedTileLayout;Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/PagedTileLayout;
 
-    .line 312
     iput-object p1, p0, Lcom/android/systemui/qs/PagedTileLayout$2;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     iput-object p2, p0, Lcom/android/systemui/qs/PagedTileLayout$2;->val$postAnimation:Ljava/lang/Runnable;
@@ -39,20 +37,16 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 315
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$2;->this$0:Lcom/android/systemui/qs/PagedTileLayout;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/PagedTileLayout;->access$102(Lcom/android/systemui/qs/PagedTileLayout;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 316
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$2;->val$postAnimation:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 317
     return-void
 .end method

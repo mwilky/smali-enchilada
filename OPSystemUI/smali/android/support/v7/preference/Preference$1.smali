@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/Preference;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/Preference;
 
-    .line 169
     iput-object p1, p0, Landroid/support/v7/preference/Preference$1;->this$0:Landroid/support/v7/preference/Preference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 172
     iget-object v0, p0, Landroid/support/v7/preference/Preference$1;->this$0:Landroid/support/v7/preference/Preference;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/preference/Preference;->performClick(Landroid/view/View;)V
 
-    .line 173
     return-void
 .end method

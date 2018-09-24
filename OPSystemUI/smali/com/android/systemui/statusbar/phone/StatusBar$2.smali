@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/StatusBar;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/StatusBar;
 
-    .line 552
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 555
     const-class v0, Landroid/app/WallpaperManager;
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
@@ -47,31 +42,23 @@
 
     check-cast v0, Landroid/app/WallpaperManager;
 
-    .line 556
-    .local v0, "wallpaperManager":Landroid/app/WallpaperManager;
     if-nez v0, :cond_0
 
-    .line 557
     const-string v1, "StatusBar"
 
     const-string v2, "WallpaperManager not available"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 558
     return-void
 
-    .line 560
     :cond_0
     invoke-virtual {v0}, Landroid/app/WallpaperManager;->getWallpaperInfo()Landroid/app/WallpaperInfo;
 
     move-result-object v1
 
-    .line 561
-    .local v1, "info":Landroid/app/WallpaperInfo;
     if-eqz v1, :cond_1
 
-    .line 562
     invoke-virtual {v1}, Landroid/app/WallpaperInfo;->getSupportsAmbientMode()Z
 
     move-result v2
@@ -85,8 +72,6 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 564
-    .local v2, "supportsAmbientMode":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
@@ -94,13 +79,11 @@
 
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/phone/StatusBarWindowManager;->setWallpaperSupportsAmbientMode(Z)V
 
-    .line 565
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/StatusBar$2;->this$0:Lcom/android/systemui/statusbar/phone/StatusBar;
 
     iget-object v3, v3, Lcom/android/systemui/statusbar/phone/StatusBar;->mScrimController:Lcom/android/systemui/statusbar/phone/ScrimController;
 
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/phone/ScrimController;->setWallpaperSupportsAmbientMode(Z)V
 
-    .line 566
     return-void
 .end method

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/transformation/FabTransformationBehavior;Landroid/support/design/circularreveal/CircularRevealWidget;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/transformation/FabTransformationBehavior;
 
-    .line 360
     iput-object p1, p0, Landroid/support/design/transformation/FabTransformationBehavior$4;->this$0:Landroid/support/design/transformation/FabTransformationBehavior;
 
     iput-object p2, p0, Landroid/support/design/transformation/FabTransformationBehavior$4;->val$circularRevealChild:Landroid/support/design/circularreveal/CircularRevealWidget;
@@ -39,26 +37,20 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 365
     iget-object v0, p0, Landroid/support/design/transformation/FabTransformationBehavior$4;->val$circularRevealChild:Landroid/support/design/circularreveal/CircularRevealWidget;
 
     invoke-interface {v0}, Landroid/support/design/circularreveal/CircularRevealWidget;->getRevealInfo()Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
     move-result-object v0
 
-    .line 366
-    .local v0, "revealInfo":Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
     const v1, 0x7f7fffff    # Float.MAX_VALUE
 
     iput v1, v0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    .line 367
     iget-object v1, p0, Landroid/support/design/transformation/FabTransformationBehavior$4;->val$circularRevealChild:Landroid/support/design/circularreveal/CircularRevealWidget;
 
     invoke-interface {v1, v0}, Landroid/support/design/circularreveal/CircularRevealWidget;->setRevealInfo(Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;)V
 
-    .line 368
     return-void
 .end method

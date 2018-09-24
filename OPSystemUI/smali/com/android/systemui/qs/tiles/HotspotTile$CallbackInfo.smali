@@ -26,7 +26,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 259
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +36,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 266
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "CallbackInfo["
@@ -46,7 +44,6 @@
 
     const-string v1, "isHotspotEnabled="
 
-    .line 267
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$CallbackInfo;->isHotspotEnabled:Z
@@ -55,7 +52,6 @@
 
     const-string v1, ",numConnectedDevices="
 
-    .line 268
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$CallbackInfo;->numConnectedDevices:I
@@ -64,14 +60,12 @@
 
     const-string v1, ",isDataSaverEnabled="
 
-    .line 269
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$CallbackInfo;->isDataSaverEnabled:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 270
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -80,6 +74,5 @@
 
     move-result-object v0
 
-    .line 266
     return-object v0
 .end method

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationShelf;Lcom/android/systemui/statusbar/StatusBarIconView;Landroid/view/ViewTreeObserver;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationShelf;
 
-    .line 415
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->this$0:Lcom/android/systemui/statusbar/NotificationShelf;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
@@ -51,37 +49,30 @@
 .method public onPreDraw()Z
     .locals 5
 
-    .line 418
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/ViewState;->isAnimatingY(Landroid/view/View;)Z
 
     move-result v0
 
-    .line 419
-    .local v0, "animatingY":Z
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 420
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$observer:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v2, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 421
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->val$icon:Lcom/android/systemui/statusbar/StatusBarIconView;
 
-    const v3, 0x7f0a00d8
+    const v3, 0x7f0a00d7
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v3, v4}, Lcom/android/systemui/statusbar/StatusBarIconView;->setTag(ILjava/lang/Object;)V
 
-    .line 422
     return v1
 
-    .line 424
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationShelf$1;->this$0:Lcom/android/systemui/statusbar/NotificationShelf;
 
@@ -89,6 +80,5 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/NotificationShelf;->access$400(Lcom/android/systemui/statusbar/NotificationShelf;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 
-    .line 425
     return v1
 .end method

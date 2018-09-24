@@ -21,9 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/FooterView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/FooterView;
 
-    .line 94
     iput-object p1, p0, Lcom/android/systemui/statusbar/FooterView$FooterViewState;->this$0:Lcom/android/systemui/statusbar/FooterView;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;-><init>()V
@@ -35,23 +33,17 @@
 # virtual methods
 .method public applyToView(Landroid/view/View;)V
     .locals 5
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 97
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/stack/ExpandableViewState;->applyToView(Landroid/view/View;)V
 
-    .line 98
     instance-of v0, p1, Lcom/android/systemui/statusbar/FooterView;
 
     if-eqz v0, :cond_2
 
-    .line 99
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/statusbar/FooterView;
 
-    .line 100
-    .local v0, "footerView":Lcom/android/systemui/statusbar/FooterView;
     iget v1, p0, Lcom/android/systemui/statusbar/FooterView$FooterViewState;->clipTopAmount:I
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/FooterView$FooterViewState;->this$0:Lcom/android/systemui/statusbar/FooterView;
@@ -73,8 +65,6 @@
     :cond_0
     move v1, v3
 
-    .line 101
-    .local v1, "visible":Z
     :goto_0
     if-eqz v1, :cond_1
 
@@ -91,9 +81,6 @@
     :cond_1
     invoke-virtual {v0, v3}, Lcom/android/systemui/statusbar/FooterView;->setContentVisible(Z)V
 
-    .line 103
-    .end local v0    # "footerView":Lcom/android/systemui/statusbar/FooterView;
-    .end local v1    # "visible":Z
     :cond_2
     return-void
 .end method

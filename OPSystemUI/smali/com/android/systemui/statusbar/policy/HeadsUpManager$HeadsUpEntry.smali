@@ -45,9 +45,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/systemui/statusbar/policy/HeadsUpManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
-    .line 459
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +56,6 @@
 .method private isSticky()Z
     .locals 2
 
-    .line 500
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -82,7 +79,6 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 501
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->hasFullScreenIntent(Lcom/android/systemui/statusbar/NotificationData$Entry;)Z
 
     move-result v0
@@ -100,7 +96,6 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 500
     :goto_1
     return v0
 .end method
@@ -109,9 +104,7 @@
 # virtual methods
 .method public compareTo(Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;)I
     .locals 10
-    .param p1, "o"    # Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;
 
-    .line 506
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -120,8 +113,6 @@
 
     move-result v0
 
-    .line 507
-    .local v0, "isPinned":Z
     iget-object v1, p1, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/NotificationData$Entry;->row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -130,18 +121,14 @@
 
     move-result v1
 
-    .line 508
-    .local v1, "otherPinned":Z
     const/4 v2, -0x1
 
     if-eqz v0, :cond_0
 
     if-nez v1, :cond_0
 
-    .line 509
     return v2
 
-    .line 510
     :cond_0
     const/4 v3, 0x1
 
@@ -149,10 +136,8 @@
 
     if-eqz v1, :cond_1
 
-    .line 511
     return v3
 
-    .line 513
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
@@ -162,8 +147,6 @@
 
     move-result v4
 
-    .line 514
-    .local v4, "selfFullscreen":Z
     iget-object v5, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v6, p1, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
@@ -172,25 +155,19 @@
 
     move-result v5
 
-    .line 515
-    .local v5, "otherFullscreen":Z
     if-eqz v4, :cond_2
 
     if-nez v5, :cond_2
 
-    .line 516
     return v2
 
-    .line 517
     :cond_2
     if-nez v4, :cond_3
 
     if-eqz v5, :cond_3
 
-    .line 518
     return v3
 
-    .line 521
     :cond_3
     iget-boolean v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->remoteInputActive:Z
 
@@ -200,10 +177,8 @@
 
     if-nez v6, :cond_4
 
-    .line 522
     return v2
 
-    .line 523
     :cond_4
     iget-boolean v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->remoteInputActive:Z
 
@@ -213,10 +188,8 @@
 
     if-eqz v6, :cond_5
 
-    .line 524
     return v3
 
-    .line 527
     :cond_5
     iget-wide v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
@@ -230,7 +203,6 @@
 
     goto :goto_0
 
-    .line 528
     :cond_6
     iget-wide v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
@@ -254,11 +226,9 @@
 
     goto :goto_0
 
-    .line 529
     :cond_7
     nop
 
-    .line 527
     :goto_0
     return v2
 .end method
@@ -266,7 +236,6 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 459
     check-cast p1, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->compareTo(Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;)I
@@ -278,27 +247,21 @@
 
 .method public expanded(Z)V
     .locals 0
-    .param p1, "expanded"    # Z
 
-    .line 533
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->expanded:Z
 
-    .line 534
     return-void
 .end method
 
 .method public remove()V
     .locals 2
 
-    .line 560
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->mRemoveHeadsUpRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 561
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->removeAutoRemovalCallbacks()V
 
-    .line 562
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mHandler:Landroid/os/Handler;
@@ -307,7 +270,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 564
     :cond_0
     return-void
 .end method
@@ -315,15 +277,12 @@
 .method public removeAsSoonAsPossible()V
     .locals 6
 
-    .line 550
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->mRemoveHeadsUpRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 551
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->removeAutoRemovalCallbacks()V
 
-    .line 552
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mHandler:Landroid/os/Handler;
@@ -336,17 +295,14 @@
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mClock:Lcom/android/systemui/statusbar/policy/HeadsUpManager$Clock;
 
-    .line 553
     invoke-virtual {v4}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$Clock;->currentTimeMillis()J
 
     move-result-wide v4
 
     sub-long/2addr v2, v4
 
-    .line 552
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 555
     :cond_0
     return-void
 .end method
@@ -354,12 +310,10 @@
 .method public removeAutoRemovalCallbacks()V
     .locals 2
 
-    .line 545
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->mRemoveHeadsUpRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 546
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mHandler:Landroid/os/Handler;
@@ -368,7 +322,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 547
     :cond_0
     return-void
 .end method
@@ -376,54 +329,40 @@
 .method public reset()V
     .locals 2
 
-    .line 537
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 538
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->expanded:Z
 
-    .line 539
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->remoteInputActive:Z
 
-    .line 540
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->removeAutoRemovalCallbacks()V
 
-    .line 541
     iput-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->mRemoveHeadsUpRunnable:Ljava/lang/Runnable;
 
-    .line 542
     return-void
 .end method
 
 .method public setEntry(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
     .locals 1
-    .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 469
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->setEntry(Lcom/android/systemui/statusbar/NotificationData$Entry;Ljava/lang/Runnable;)V
 
-    .line 470
     return-void
 .end method
 
 .method public setEntry(Lcom/android/systemui/statusbar/NotificationData$Entry;Ljava/lang/Runnable;)V
     .locals 4
-    .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
-    .param p2, "removeHeadsUpRunnable"    # Ljava/lang/Runnable;
 
-    .line 474
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->entry:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 475
     iput-object p2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->mRemoveHeadsUpRunnable:Ljava/lang/Runnable;
 
-    .line 478
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mClock:Lcom/android/systemui/statusbar/policy/HeadsUpManager$Clock;
@@ -442,20 +381,16 @@
 
     iput-wide v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
-    .line 479
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->updateEntry(Z)V
 
-    .line 480
     return-void
 .end method
 
 .method public updateEntry(Z)V
     .locals 8
-    .param p1, "updatePostTime"    # Z
 
-    .line 485
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mClock:Lcom/android/systemui/statusbar/policy/HeadsUpManager$Clock;
@@ -464,8 +399,6 @@
 
     move-result-wide v0
 
-    .line 486
-    .local v0, "currentTime":J
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget v2, v2, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mMinimumDisplayTime:I
@@ -476,10 +409,8 @@
 
     iput-wide v2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->earliestRemovaltime:J
 
-    .line 487
     if-eqz p1, :cond_0
 
-    .line 488
     iget-wide v2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
     invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
@@ -488,18 +419,15 @@
 
     iput-wide v2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
-    .line 490
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->removeAutoRemovalCallbacks()V
 
-    .line 492
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->isSticky()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 493
     iget-wide v2, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->postTime:J
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
@@ -510,8 +438,6 @@
 
     add-long/2addr v2, v4
 
-    .line 494
-    .local v2, "finishTime":J
     sub-long v4, v2, v0
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
@@ -524,8 +450,6 @@
 
     move-result-wide v4
 
-    .line 495
-    .local v4, "removeDelay":J
     iget-object v6, p0, Lcom/android/systemui/statusbar/policy/HeadsUpManager$HeadsUpEntry;->this$0:Lcom/android/systemui/statusbar/policy/HeadsUpManager;
 
     iget-object v6, v6, Lcom/android/systemui/statusbar/policy/HeadsUpManager;->mHandler:Landroid/os/Handler;
@@ -534,9 +458,6 @@
 
     invoke-virtual {v6, v7, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 497
-    .end local v2    # "finishTime":J
-    .end local v4    # "removeDelay":J
     :cond_1
     return-void
 .end method

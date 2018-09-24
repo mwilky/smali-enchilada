@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord;
 
-    .line 673
     iput-object p1, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord$1;->this$1:Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 676
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord$1;->this$1:Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaBrowserServiceCompat$ConnectionRecord;->this$0:Landroid/support/v4/media/MediaBrowserServiceCompat;
@@ -56,6 +53,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 677
     return-void
 .end method

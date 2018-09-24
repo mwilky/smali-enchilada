@@ -20,9 +20,6 @@
 
 .method public onFragmentViewDestroyed(Ljava/lang/String;Landroid/app/Fragment;)V
     .locals 0
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "fragment"    # Landroid/app/Fragment;
 
-    .line 193
     return-void
 .end method

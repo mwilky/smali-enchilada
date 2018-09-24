@@ -32,21 +32,18 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 722
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
-    .line 725
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x16
 
     if-le v0, v1, :cond_0
 
-    .line 726
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/telephony/SubscriptionManager;
@@ -55,7 +52,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 727
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/usage/UsageStatsManager;
@@ -64,7 +60,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 729
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -72,7 +67,6 @@
 
     if-le v0, v1, :cond_1
 
-    .line 730
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/appwidget/AppWidgetManager;
@@ -81,7 +75,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 731
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/BatteryManager;
@@ -90,7 +83,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 732
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/camera2/CameraManager;
@@ -99,7 +91,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 733
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/job/JobScheduler;
@@ -108,7 +99,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 734
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/content/pm/LauncherApps;
@@ -117,7 +107,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 735
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/media/projection/MediaProjectionManager;
@@ -126,7 +115,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 736
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/media/session/MediaSessionManager;
@@ -135,7 +123,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 737
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/content/RestrictionsManager;
@@ -144,7 +131,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 738
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/telecom/TelecomManager;
@@ -153,7 +139,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 739
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/media/tv/TvInputManager;
@@ -162,7 +147,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 741
     :cond_1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -170,7 +154,6 @@
 
     if-le v0, v1, :cond_2
 
-    .line 742
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/AppOpsManager;
@@ -179,7 +162,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 743
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/view/accessibility/CaptioningManager;
@@ -188,7 +170,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 744
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/ConsumerIrManager;
@@ -197,7 +178,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 745
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/print/PrintManager;
@@ -206,7 +186,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 747
     :cond_2
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -214,7 +193,6 @@
 
     if-le v0, v1, :cond_3
 
-    .line 748
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/bluetooth/BluetoothManager;
@@ -223,7 +201,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 750
     :cond_3
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -231,7 +208,6 @@
 
     if-le v0, v1, :cond_4
 
-    .line 751
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/display/DisplayManager;
@@ -240,7 +216,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 752
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/UserManager;
@@ -249,7 +224,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 754
     :cond_4
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -257,7 +231,6 @@
 
     if-le v0, v1, :cond_5
 
-    .line 755
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/input/InputManager;
@@ -266,7 +239,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 756
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/media/MediaRouter;
@@ -275,7 +247,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 757
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/net/nsd/NsdManager;
@@ -284,7 +255,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 759
     :cond_5
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
@@ -294,7 +264,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 760
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/accounts/AccountManager;
@@ -303,7 +272,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 761
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/ActivityManager;
@@ -312,7 +280,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 762
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/AlarmManager;
@@ -321,7 +288,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 763
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/media/AudioManager;
@@ -330,7 +296,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 764
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/content/ClipboardManager;
@@ -339,7 +304,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 765
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/net/ConnectivityManager;
@@ -348,7 +312,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 766
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/admin/DevicePolicyManager;
@@ -357,7 +320,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 767
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/DownloadManager;
@@ -366,7 +328,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 768
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/DropBoxManager;
@@ -375,7 +336,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 769
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/view/inputmethod/InputMethodManager;
@@ -384,7 +344,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 770
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/KeyguardManager;
@@ -393,7 +352,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 771
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/view/LayoutInflater;
@@ -402,7 +360,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 772
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/location/LocationManager;
@@ -411,7 +368,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 773
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/nfc/NfcManager;
@@ -420,7 +376,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 774
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/NotificationManager;
@@ -429,7 +384,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 775
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/PowerManager;
@@ -438,7 +392,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 776
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/SearchManager;
@@ -447,7 +400,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 777
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/SensorManager;
@@ -456,7 +408,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 778
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/storage/StorageManager;
@@ -465,7 +416,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 779
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/telephony/TelephonyManager;
@@ -474,7 +424,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 780
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/view/textservice/TextServicesManager;
@@ -483,7 +432,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 781
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/UiModeManager;
@@ -492,7 +440,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 782
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/hardware/usb/UsbManager;
@@ -501,7 +448,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 783
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/os/Vibrator;
@@ -510,7 +456,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 784
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/app/WallpaperManager;
@@ -519,7 +464,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 785
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/net/wifi/p2p/WifiP2pManager;
@@ -528,7 +472,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 786
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/net/wifi/WifiManager;
@@ -537,7 +480,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 787
     sget-object v0, Landroid/support/v4/content/ContextCompat$LegacyServiceMapHolder;->SERVICES:Ljava/util/HashMap;
 
     const-class v1, Landroid/view/WindowManager;
@@ -546,6 +488,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 788
     return-void
 .end method

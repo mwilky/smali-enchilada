@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/SettingsButton;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/SettingsButton;
 
-    .line 170
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/SettingsButton$3;->this$0:Lcom/android/systemui/statusbar/phone/SettingsButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +37,9 @@
 .method public run()V
     .locals 1
 
-    .line 173
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/SettingsButton$3;->this$0:Lcom/android/systemui/statusbar/phone/SettingsButton;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/SettingsButton;->startAccelSpin()V
 
-    .line 174
     return-void
 .end method

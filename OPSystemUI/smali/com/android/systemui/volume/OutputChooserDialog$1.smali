@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/OutputChooserDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/OutputChooserDialog;
 
-    .line 628
     iput-object p1, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 631
     const-string v0, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,7 +46,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 632
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
     if-eqz v0, :cond_0
@@ -64,20 +58,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 633
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->cancel()V
 
-    .line 634
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
     invoke-virtual {v0}, Lcom/android/systemui/volume/OutputChooserDialog;->cleanUp()V
 
     goto :goto_0
 
-    .line 636
     :cond_1
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -91,7 +82,6 @@
 
     if-nez v0, :cond_2
 
-    .line 637
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
@@ -104,7 +94,6 @@
 
     if-eqz v0, :cond_4
 
-    .line 638
     :cond_2
     sget-boolean v0, Lcom/android/systemui/volume/D;->BUG:Z
 
@@ -118,7 +107,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 639
     :cond_3
     iget-object v0, p0, Lcom/android/systemui/volume/OutputChooserDialog$1;->this$0:Lcom/android/systemui/volume/OutputChooserDialog;
 
@@ -126,7 +114,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/volume/OutputChooserDialog;->access$200(Lcom/android/systemui/volume/OutputChooserDialog;Z)V
 
-    .line 642
     :cond_4
     :goto_0
     return-void

@@ -41,10 +41,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 627
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 628
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -59,7 +57,6 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    .line 644
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -68,7 +65,6 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 645
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager$NotificationGroup;->summary:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     if-eqz v1, :cond_0
@@ -85,7 +81,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 646
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager$NotificationGroup;->summary:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     if-eqz v1, :cond_1
@@ -98,7 +93,6 @@
 
     if-eqz v1, :cond_1
 
-    .line 647
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager$NotificationGroup;->summary:Lcom/android/systemui/statusbar/NotificationData$Entry;
 
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/NotificationData$Entry;->getDebugThrowable()Ljava/lang/Throwable;
@@ -111,7 +105,6 @@
 
     goto :goto_1
 
-    .line 648
     :cond_1
     const-string v1, ""
 
@@ -122,8 +115,6 @@
 
     move-result-object v0
 
-    .line 649
-    .local v0, "result":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -146,7 +137,6 @@
 
     move-result-object v0
 
-    .line 650
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager$NotificationGroup;->children:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -170,8 +160,6 @@
 
     check-cast v2, Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 651
-    .local v2, "child":Lcom/android/systemui/statusbar/NotificationData$Entry;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -186,14 +174,12 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 652
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/NotificationData$Entry;->getDebugThrowable()Ljava/lang/Throwable;
 
     move-result-object v4
 
     if-eqz v4, :cond_2
 
-    .line 653
     invoke-virtual {v2}, Lcom/android/systemui/statusbar/NotificationData$Entry;->getDebugThrowable()Ljava/lang/Throwable;
 
     move-result-object v4
@@ -204,7 +190,6 @@
 
     goto :goto_3
 
-    .line 654
     :cond_2
     const-string v4, ""
 
@@ -215,11 +200,8 @@
 
     move-result-object v0
 
-    .line 655
-    .end local v2    # "child":Lcom/android/systemui/statusbar/NotificationData$Entry;
     goto :goto_2
 
-    .line 656
     :cond_3
     return-object v0
 .end method

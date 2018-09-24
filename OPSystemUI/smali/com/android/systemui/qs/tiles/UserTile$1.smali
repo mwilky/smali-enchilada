@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/UserTile;Landroid/util/Pair;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/UserTile;
 
-    .line 92
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/UserTile$1;->this$0:Lcom/android/systemui/qs/tiles/UserTile;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tiles/UserTile$1;->val$p:Landroid/util/Pair;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 95
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/UserTile$1;->val$p:Landroid/util/Pair;
 
     iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;

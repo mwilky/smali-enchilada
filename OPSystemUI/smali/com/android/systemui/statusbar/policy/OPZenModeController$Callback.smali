@@ -17,16 +17,12 @@
 # virtual methods
 .method public onDndChanged(Z)V
     .locals 0
-    .param p1, "enable"    # Z
 
-    .line 26
     return-void
 .end method
 
 .method public onThreeKeyStatus(I)V
     .locals 0
-    .param p1, "threekey"    # I
 
-    .line 25
     return-void
 .end method

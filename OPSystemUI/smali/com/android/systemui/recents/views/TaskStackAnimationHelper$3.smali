@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;FLcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskViewTransform;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
-    .line 589
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$3;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     iput p2, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$3;->val$newScroll:F
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 7
 
-    .line 592
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$3;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackAnimationHelper;->access$000(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;)Lcom/android/systemui/recents/views/TaskStackView;
@@ -62,12 +59,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->bindVisibleTaskViews(F)V
 
-    .line 595
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$3;->val$frontMostTaskView:Lcom/android/systemui/recents/views/TaskView;
 
     if-eqz v0, :cond_0
 
-    .line 596
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$3;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackAnimationHelper;->access$000(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;)Lcom/android/systemui/recents/views/TaskStackView;
@@ -84,17 +79,14 @@
 
     const/16 v5, 0xfa
 
-    .line 597
     invoke-static {}, Lcom/android/systemui/recents/views/TaskStackAnimationHelper;->access$100()Landroid/view/animation/Interpolator;
 
     move-result-object v6
 
     invoke-direct {v3, v4, v5, v6}, Lcom/android/systemui/shared/recents/utilities/AnimationProps;-><init>(IILandroid/view/animation/Interpolator;)V
 
-    .line 596
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/systemui/recents/views/TaskStackView;->updateTaskViewToTransform(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskViewTransform;Lcom/android/systemui/shared/recents/utilities/AnimationProps;)V
 
-    .line 599
     :cond_0
     return-void
 .end method

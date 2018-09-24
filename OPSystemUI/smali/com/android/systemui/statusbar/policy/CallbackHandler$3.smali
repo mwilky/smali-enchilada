@@ -54,11 +54,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/CallbackHandler;Lcom/android/systemui/statusbar/policy/NetworkController$IconState;Lcom/android/systemui/statusbar/policy/NetworkController$IconState;IIZZI[I[ILjava/lang/String;Ljava/lang/String;ZIZZ)V
     .locals 3
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/CallbackHandler;
 
     move-object v0, p0
 
-    .line 184
     move-object v1, p1
 
     iput-object v1, v0, Lcom/android/systemui/statusbar/policy/CallbackHandler$3;->this$0:Lcom/android/systemui/statusbar/policy/CallbackHandler;
@@ -133,7 +131,6 @@
 .method public run()V
     .locals 21
 
-    .line 187
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/systemui/statusbar/policy/CallbackHandler$3;->this$0:Lcom/android/systemui/statusbar/policy/CallbackHandler;
@@ -159,8 +156,6 @@
 
     check-cast v2, Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
 
-    .line 188
-    .local v2, "signalCluster":Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
     iget-object v4, v0, Lcom/android/systemui/statusbar/policy/CallbackHandler$3;->val$statusIcon:Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
 
     iget-object v5, v0, Lcom/android/systemui/statusbar/policy/CallbackHandler$3;->val$qsIcon:Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
@@ -205,16 +200,12 @@
 
     invoke-interface/range {v3 .. v18}, Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;->setMobileDataIndicators(Lcom/android/systemui/statusbar/policy/NetworkController$IconState;Lcom/android/systemui/statusbar/policy/NetworkController$IconState;IIZZI[I[ILjava/lang/String;Ljava/lang/String;ZIZZ)V
 
-    .line 193
-    .end local v2    # "signalCluster":Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
     nop
 
-    .line 187
     move-object/from16 v1, v19
 
     goto :goto_0
 
-    .line 194
     :cond_0
     return-void
 .end method

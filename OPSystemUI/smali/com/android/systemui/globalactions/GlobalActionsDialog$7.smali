@@ -23,12 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;ILandroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/content/pm/UserInfo;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "iconResId"    # I
-    .param p3, "icon"    # Landroid/graphics/drawable/Drawable;
-    .param p4, "message"    # Ljava/lang/CharSequence;
 
-    .line 770
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$7;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     iput-object p5, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$7;->val$user:Landroid/content/pm/UserInfo;
@@ -43,7 +38,6 @@
 .method public onPress()V
     .locals 4
 
-    .line 773
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -57,15 +51,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 776
     goto :goto_0
 
-    .line 774
     :catch_0
     move-exception v0
 
-    .line 775
-    .local v0, "re":Landroid/os/RemoteException;
     const-string v1, "GlobalActionsDialog"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -84,8 +74,6 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 777
-    .end local v0    # "re":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method
@@ -93,7 +81,6 @@
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 784
     const/4 v0, 0x0
 
     return v0
@@ -102,7 +89,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 780
     const/4 v0, 0x1
 
     return v0

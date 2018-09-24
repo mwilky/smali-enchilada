@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/RemoteInputView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/RemoteInputView;
 
-    .line 114
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/RemoteInputView$1;->this$0:Lcom/android/systemui/statusbar/policy/RemoteInputView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,11 +36,7 @@
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 4
-    .param p1, "v"    # Landroid/widget/TextView;
-    .param p2, "actionId"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 117
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -69,12 +63,9 @@
     :cond_1
     move v2, v0
 
-    .line 121
-    .local v2, "isSoftImeEvent":Z
     :goto_0
     if-eqz p3, :cond_2
 
-    .line 122
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v3
@@ -85,7 +76,6 @@
 
     if-eqz v3, :cond_2
 
-    .line 123
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v3
@@ -99,8 +89,6 @@
     :cond_2
     move v3, v0
 
-    .line 125
-    .local v3, "isKeyboardEnterKey":Z
     :goto_1
     if-nez v2, :cond_4
 
@@ -108,11 +96,9 @@
 
     goto :goto_2
 
-    .line 132
     :cond_3
     return v0
 
-    .line 126
     :cond_4
     :goto_2
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/RemoteInputView$1;->this$0:Lcom/android/systemui/statusbar/policy/RemoteInputView;
@@ -127,12 +113,10 @@
 
     if-lez v0, :cond_5
 
-    .line 127
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/RemoteInputView$1;->this$0:Lcom/android/systemui/statusbar/policy/RemoteInputView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/RemoteInputView;->access$100(Lcom/android/systemui/statusbar/policy/RemoteInputView;)V
 
-    .line 130
     :cond_5
     return v1
 .end method

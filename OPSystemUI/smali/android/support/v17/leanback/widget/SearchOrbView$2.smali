@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/SearchOrbView;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v17/leanback/widget/SearchOrbView;
 
-    .line 144
     iput-object p1, p0, Landroid/support/v17/leanback/widget/SearchOrbView$2;->this$0:Landroid/support/v17/leanback/widget/SearchOrbView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 147
     iget-object v0, p0, Landroid/support/v17/leanback/widget/SearchOrbView$2;->this$0:Landroid/support/v17/leanback/widget/SearchOrbView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -49,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v17/leanback/widget/SearchOrbView;->setSearchOrbZ(F)V
 
-    .line 148
     return-void
 .end method

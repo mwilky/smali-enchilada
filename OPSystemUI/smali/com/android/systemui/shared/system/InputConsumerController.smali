@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 42
     const-class v0, Lcom/android/systemui/shared/system/InputConsumerController;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -49,34 +48,25 @@
 
 .method public constructor <init>(Landroid/view/IWindowManager;Ljava/lang/String;)V
     .locals 1
-    .param p1, "windowManager"    # Landroid/view/IWindowManager;
-    .param p2, "name"    # Ljava/lang/String;
 
-    .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
     iput-object p1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mWindowManager:Landroid/view/IWindowManager;
 
-    .line 96
     new-instance v0, Landroid/os/Binder;
 
     invoke-direct {v0}, Landroid/os/Binder;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mToken:Landroid/os/IBinder;
 
-    .line 97
     iput-object p2, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mName:Ljava/lang/String;
 
-    .line 98
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/android/systemui/shared/system/InputConsumerController;)Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/shared/system/InputConsumerController;
 
-    .line 40
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mListener:Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;
 
     return-object v0
@@ -85,7 +75,6 @@
 .method public static getPipInputConsumer()Lcom/android/systemui/shared/system/InputConsumerController;
     .locals 3
 
-    .line 104
     new-instance v0, Lcom/android/systemui/shared/system/InputConsumerController;
 
     invoke-static {}, Landroid/view/WindowManagerGlobal;->getWindowManagerService()Landroid/view/IWindowManager;
@@ -103,10 +92,7 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
     .locals 3
-    .param p1, "pw"    # Ljava/io/PrintWriter;
-    .param p2, "prefix"    # Ljava/lang/String;
 
-    .line 180
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -121,8 +107,6 @@
 
     move-result-object v0
 
-    .line 181
-    .local v0, "innerPrefix":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -139,7 +123,6 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 182
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -170,14 +153,12 @@
 
     invoke-virtual {p1, v1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 183
     return-void
 .end method
 
 .method public isRegistered()Z
     .locals 1
 
-    .line 139
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
     if-eqz v0, :cond_0
@@ -196,18 +177,14 @@
 .method public registerInputConsumer()V
     .locals 4
 
-    .line 146
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
     if-nez v0, :cond_0
 
-    .line 147
     new-instance v0, Landroid/view/InputChannel;
 
     invoke-direct {v0}, Landroid/view/InputChannel;-><init>()V
 
-    .line 149
-    .local v0, "inputChannel":Landroid/view/InputChannel;
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mWindowManager:Landroid/view/IWindowManager;
 
@@ -215,7 +192,6 @@
 
     invoke-interface {v1, v2}, Landroid/view/IWindowManager;->destroyInputConsumer(Ljava/lang/String;)Z
 
-    .line 150
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mWindowManager:Landroid/view/IWindowManager;
 
     iget-object v2, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mToken:Landroid/os/IBinder;
@@ -226,23 +202,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 153
     goto :goto_0
 
-    .line 151
     :catch_0
     move-exception v1
 
-    .line 152
-    .local v1, "e":Landroid/os/RemoteException;
     sget-object v2, Lcom/android/systemui/shared/system/InputConsumerController;->TAG:Ljava/lang/String;
 
     const-string v3, "Failed to create input consumer"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 154
-    .end local v1    # "e":Landroid/os/RemoteException;
     :goto_0
     new-instance v1, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
@@ -254,37 +224,29 @@
 
     iput-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
-    .line 155
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     if-eqz v1, :cond_0
 
-    .line 156
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     const/4 v2, 0x1
 
     invoke-interface {v1, v2}, Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;->onRegistrationChanged(Z)V
 
-    .line 159
-    .end local v0    # "inputChannel":Landroid/view/InputChannel;
     :cond_0
     return-void
 .end method
 
 .method public setRegistrationListener(Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
-    .line 127
     iput-object p1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
-    .line 128
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     if-eqz v0, :cond_1
 
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     iget-object v1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
@@ -301,31 +263,25 @@
     :goto_0
     invoke-interface {v0, v1}, Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;->onRegistrationChanged(Z)V
 
-    .line 131
     :cond_1
     return-void
 .end method
 
 .method public setTouchListener(Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;
 
-    .line 120
     iput-object p1, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mListener:Lcom/android/systemui/shared/system/InputConsumerController$TouchListener;
 
-    .line 121
     return-void
 .end method
 
 .method public unregisterInputConsumer()V
     .locals 3
 
-    .line 165
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 167
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mWindowManager:Landroid/view/IWindowManager;
 
@@ -335,46 +291,36 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 170
     goto :goto_0
 
-    .line 168
     :catch_0
     move-exception v0
 
-    .line 169
-    .local v0, "e":Landroid/os/RemoteException;
     sget-object v1, Lcom/android/systemui/shared/system/InputConsumerController;->TAG:Ljava/lang/String;
 
     const-string v2, "Failed to destroy input consumer"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 171
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
     invoke-virtual {v0}, Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;->dispose()V
 
-    .line 172
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mInputEventReceiver:Lcom/android/systemui/shared/system/InputConsumerController$InputEventReceiver;
 
-    .line 173
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     if-eqz v0, :cond_0
 
-    .line 174
     iget-object v0, p0, Lcom/android/systemui/shared/system/InputConsumerController;->mRegistrationListener:Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/android/systemui/shared/system/InputConsumerController$RegistrationListener;->onRegistrationChanged(Z)V
 
-    .line 177
     :cond_0
     return-void
 .end method

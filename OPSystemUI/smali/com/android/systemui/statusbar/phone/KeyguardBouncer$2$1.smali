@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
 
-    .line 256
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onPreDraw()Z
     .locals 1
 
-    .line 259
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
@@ -52,7 +49,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 260
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2$1;->this$1:Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/phone/KeyguardBouncer$2;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardBouncer;
@@ -61,7 +57,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardHostView;->startAppearAnimation()V
 
-    .line 261
     const/4 v0, 0x1
 
     return v0

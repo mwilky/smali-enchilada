@@ -14,8 +14,6 @@
 # virtual methods
 .method public setPlaybackInfo(Landroid/support/v7/media/RemoteControlClientCompat$PlaybackInfo;)V
     .locals 0
-    .param p1, "info"    # Landroid/support/v7/media/RemoteControlClientCompat$PlaybackInfo;
 
-    .line 60
     return-void
 .end method

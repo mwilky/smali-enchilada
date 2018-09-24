@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/SearchBar$5;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/SearchBar$5;
 
-    .line 273
     iput-object p1, p0, Landroid/support/v17/leanback/widget/SearchBar$5$2;->this$1:Landroid/support/v17/leanback/widget/SearchBar$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 277
     iget-object v0, p0, Landroid/support/v17/leanback/widget/SearchBar$5$2;->this$1:Landroid/support/v17/leanback/widget/SearchBar$5;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/SearchBar$5;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
@@ -54,6 +51,5 @@
 
     invoke-interface {v0, v1}, Landroid/support/v17/leanback/widget/SearchBar$SearchBarListener;->onKeyboardDismiss(Ljava/lang/String;)V
 
-    .line 278
     return-void
 .end method

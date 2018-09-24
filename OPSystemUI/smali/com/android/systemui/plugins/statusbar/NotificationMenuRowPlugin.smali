@@ -78,7 +78,6 @@
 .method public onConfigurationChanged()V
     .locals 0
 
-    .line 116
     return-void
 .end method
 
@@ -87,10 +86,7 @@
 
 .method public onInterceptTouchEvent(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "ev"    # Landroid/view/MotionEvent;
 
-    .line 108
     const/4 v0, 0x0
 
     return v0
@@ -131,7 +127,6 @@
 .method public useDefaultMenuItems()Z
     .locals 1
 
-    .line 112
     const/4 v0, 0x0
 
     return v0

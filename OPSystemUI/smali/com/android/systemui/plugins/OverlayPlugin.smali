@@ -23,7 +23,6 @@
 .method public holdStatusBarOpen()Z
     .locals 1
 
-    .line 29
     const/4 v0, 0x0
 
     return v0
@@ -31,9 +30,7 @@
 
 .method public setCollapseDesired(Z)V
     .locals 0
-    .param p1, "collapseDesired"    # Z
 
-    .line 36
     return-void
 .end method
 

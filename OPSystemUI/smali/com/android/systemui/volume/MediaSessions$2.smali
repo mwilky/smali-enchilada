@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/MediaSessions;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/MediaSessions;
 
-    .line 333
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-direct {p0}, Landroid/media/IRemoteVolumeController$Stub;-><init>()V
@@ -35,15 +33,12 @@
 # virtual methods
 .method public remoteVolumeChanged(Landroid/media/session/ISessionController;I)V
     .locals 3
-    .param p1, "session"    # Landroid/media/session/ISessionController;
-    .param p2, "flags"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 337
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-static {v0}, Lcom/android/systemui/volume/MediaSessions;->access$900(Lcom/android/systemui/volume/MediaSessions;)Lcom/android/systemui/volume/MediaSessions$H;
@@ -60,20 +55,17 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 338
     return-void
 .end method
 
 .method public updateRemoteController(Landroid/media/session/ISessionController;)V
     .locals 2
-    .param p1, "session"    # Landroid/media/session/ISessionController;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 343
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$2;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-static {v0}, Lcom/android/systemui/volume/MediaSessions;->access$900(Lcom/android/systemui/volume/MediaSessions;)Lcom/android/systemui/volume/MediaSessions$H;
@@ -88,6 +80,5 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 344
     return-void
 .end method

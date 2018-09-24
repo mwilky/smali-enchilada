@@ -25,7 +25,6 @@
 .method constructor <init>(Landroid/support/design/widget/FloatingActionButton;)V
     .locals 0
 
-    .line 1175
     iput-object p1, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +37,6 @@
 .method public getRadius()F
     .locals 2
 
-    .line 1179
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     invoke-virtual {v0}, Landroid/support/design/widget/FloatingActionButton;->getSizeDimension()I
@@ -57,7 +55,6 @@
 .method public isCompatPaddingEnabled()Z
     .locals 1
 
-    .line 1196
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     iget-boolean v0, v0, Landroid/support/design/widget/FloatingActionButton;->compatPadding:Z
@@ -67,37 +64,27 @@
 
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "background"    # Landroid/graphics/drawable/Drawable;
 
-    .line 1191
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     invoke-static {v0, p1}, Landroid/support/design/widget/FloatingActionButton;->access$101(Landroid/support/design/widget/FloatingActionButton;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1192
     return-void
 .end method
 
 .method public setShadowPadding(IIII)V
     .locals 5
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
-    .line 1184
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     iget-object v0, v0, Landroid/support/design/widget/FloatingActionButton;->shadowPadding:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1185
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
     iget-object v1, p0, Landroid/support/design/widget/FloatingActionButton$ShadowDelegateImpl;->this$0:Landroid/support/design/widget/FloatingActionButton;
 
-    .line 1186
     invoke-static {v1}, Landroid/support/design/widget/FloatingActionButton;->access$000(Landroid/support/design/widget/FloatingActionButton;)I
 
     move-result v1
@@ -128,9 +115,7 @@
 
     add-int/2addr v4, p4
 
-    .line 1185
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/design/widget/FloatingActionButton;->setPadding(IIII)V
 
-    .line 1187
     return-void
 .end method

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;Landroid/support/v4/media/SessionCommand2;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
-    .line 1129
     iput-object p1, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$11;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iput-object p2, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$11;->val$command:Landroid/support/v4/media/SessionCommand2;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 5
 
-    .line 1132
     iget-object v0, p0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback$11;->this$1:Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;
 
     iget-object v0, v0, Landroid/support/v4/media/MediaController2ImplLegacy$ControllerCompatCallback;->this$0:Landroid/support/v4/media/MediaController2ImplLegacy;
@@ -76,6 +73,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/support/v4/media/MediaController2$ControllerCallback;->onCustomCommand(Landroid/support/v4/media/MediaController2;Landroid/support/v4/media/SessionCommand2;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
 
-    .line 1133
     return-void
 .end method

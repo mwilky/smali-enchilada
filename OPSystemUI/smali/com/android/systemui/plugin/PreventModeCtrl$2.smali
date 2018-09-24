@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/plugin/PreventModeCtrl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/plugin/PreventModeCtrl;
 
-    .line 325
     iput-object p1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$2;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 328
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -51,14 +47,11 @@
 
     move-result v0
 
-    .line 329
-    .local v0, "value":F
     iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$2;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     iget-object v1, v1, Lcom/android/systemui/plugin/PreventModeCtrl;->mPMView:Lcom/android/systemui/plugin/PreventModeView;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/plugin/PreventModeView;->setAlpha(F)V
 
-    .line 330
     return-void
 .end method

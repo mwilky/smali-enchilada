@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
-    .line 160
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,13 +36,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 163
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$3;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$300(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
 
-    .line 164
     return-void
 .end method

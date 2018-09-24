@@ -23,8 +23,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42
-    .local p0, "this":Lcom/google/protobuf/nano/android/ParcelableExtendableMessageNano;, "Lcom/google/protobuf/nano/android/ParcelableExtendableMessageNano<TM;>;"
     invoke-direct {p0}, Lcom/google/protobuf/nano/ExtendableMessageNano;-><init>()V
 
     return-void

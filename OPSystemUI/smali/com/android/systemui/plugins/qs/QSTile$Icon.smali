@@ -26,7 +26,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 86
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,9 +38,7 @@
 
 .method public getInvisibleDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 91
     invoke-virtual {p0, p1}, Lcom/android/systemui/plugins/qs/QSTile$Icon;->getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -52,7 +49,6 @@
 .method public getPadding()I
     .locals 1
 
-    .line 100
     const/4 v0, 0x0
 
     return v0
@@ -61,7 +57,6 @@
 .method public hashCode()I
     .locals 1
 
-    .line 96
     const-class v0, Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

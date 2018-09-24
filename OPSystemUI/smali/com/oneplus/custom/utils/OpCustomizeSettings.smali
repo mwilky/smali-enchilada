@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 16
     const-string v0, "ro.boot.project_name"
 
     invoke-static {v0}, Lcom/oneplus/custom/utils/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -36,7 +35,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,13 +43,10 @@
 .method public static getCustomType()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
     .locals 2
 
-    .line 117
     invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getInstance()Lcom/oneplus/custom/utils/OpCustomizeSettings;
 
     move-result-object v0
 
-    .line 118
-    .local v0, "ocs":Lcom/oneplus/custom/utils/OpCustomizeSettings;
     invoke-virtual {v0}, Lcom/oneplus/custom/utils/OpCustomizeSettings;->getCustomization()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
     move-result-object v1
@@ -62,12 +57,10 @@
 .method private static getInstance()Lcom/oneplus/custom/utils/OpCustomizeSettings;
     .locals 3
 
-    .line 160
     sget-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sOpCustomizeSettings:Lcom/oneplus/custom/utils/OpCustomizeSettings;
 
     if-nez v0, :cond_4
 
-    .line 161
     const-string v0, "OpCustomizeSettings"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -88,7 +81,6 @@
 
     invoke-static {v0, v1}, Lcom/oneplus/custom/utils/MyLog;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 162
     const-string v0, "16859"
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sProjectName:Ljava/lang/String;
@@ -111,7 +103,6 @@
 
     goto :goto_1
 
-    .line 164
     :cond_0
     const-string v0, "17819"
 
@@ -127,7 +118,6 @@
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sProjectName:Ljava/lang/String;
 
-    .line 165
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -138,7 +128,6 @@
 
     sget-object v1, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sProjectName:Ljava/lang/String;
 
-    .line 166
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -147,7 +136,6 @@
 
     goto :goto_0
 
-    .line 169
     :cond_1
     new-instance v0, Lcom/oneplus/custom/utils/OpCustomizeSettings;
 
@@ -157,7 +145,6 @@
 
     goto :goto_2
 
-    .line 167
     :cond_2
     :goto_0
     new-instance v0, Lcom/oneplus/custom/utils/OpCustomizeSettingsG2;
@@ -168,7 +155,6 @@
 
     goto :goto_2
 
-    .line 163
     :cond_3
     :goto_1
     new-instance v0, Lcom/oneplus/custom/utils/OpCustomizeSettingsG1;
@@ -177,7 +163,6 @@
 
     sput-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sOpCustomizeSettings:Lcom/oneplus/custom/utils/OpCustomizeSettings;
 
-    .line 172
     :cond_4
     :goto_2
     sget-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings;->sOpCustomizeSettings:Lcom/oneplus/custom/utils/OpCustomizeSettings;
@@ -190,7 +175,6 @@
 .method protected getCustomization()Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
     .locals 1
 
-    .line 176
     sget-object v0, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->NONE:Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
     return-object v0

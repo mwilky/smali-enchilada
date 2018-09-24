@@ -23,19 +23,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/IKeyguardDismissCallback;Ljava/lang/CharSequence;)V
     .locals 0
-    .param p1, "callback"    # Lcom/android/internal/policy/IKeyguardDismissCallback;
-    .param p2, "message"    # Ljava/lang/CharSequence;
 
-    .line 2573
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2574
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$DismissMessage;->mCallback:Lcom/android/internal/policy/IKeyguardDismissCallback;
 
-    .line 2575
     iput-object p2, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$DismissMessage;->mMessage:Ljava/lang/CharSequence;
 
-    .line 2576
     return-void
 .end method
 
@@ -44,7 +38,6 @@
 .method public getCallback()Lcom/android/internal/policy/IKeyguardDismissCallback;
     .locals 1
 
-    .line 2579
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$DismissMessage;->mCallback:Lcom/android/internal/policy/IKeyguardDismissCallback;
 
     return-object v0
@@ -53,7 +46,6 @@
 .method public getMessage()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 2583
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$DismissMessage;->mMessage:Ljava/lang/CharSequence;
 
     return-object v0

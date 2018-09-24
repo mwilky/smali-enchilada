@@ -35,68 +35,57 @@
 # direct methods
 .method constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 463
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 464
     invoke-virtual {p1}, Landroid/view/View;->getTranslationX()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationX:F
 
-    .line 465
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationY:F
 
-    .line 466
     invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getTranslationZ(Landroid/view/View;)F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationZ:F
 
-    .line 467
     invoke-virtual {p1}, Landroid/view/View;->getScaleX()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mScaleX:F
 
-    .line 468
     invoke-virtual {p1}, Landroid/view/View;->getScaleY()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mScaleY:F
 
-    .line 469
     invoke-virtual {p1}, Landroid/view/View;->getRotationX()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationX:F
 
-    .line 470
     invoke-virtual {p1}, Landroid/view/View;->getRotationY()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationY:F
 
-    .line 471
     invoke-virtual {p1}, Landroid/view/View;->getRotation()F
 
     move-result v0
 
     iput v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationZ:F
 
-    .line 472
     return-void
 .end method
 
@@ -104,26 +93,20 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "that"    # Ljava/lang/Object;
 
-    .line 481
     instance-of v0, p1, Landroid/support/transition/ChangeTransform$Transforms;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 482
     return v1
 
-    .line 484
     :cond_0
     move-object v0, p1
 
     check-cast v0, Landroid/support/transition/ChangeTransform$Transforms;
 
-    .line 485
-    .local v0, "thatTransform":Landroid/support/transition/ChangeTransform$Transforms;
     iget v2, v0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     iget v3, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationX:F
@@ -199,7 +182,6 @@
 .method public hashCode()I
     .locals 6
 
-    .line 497
     iget v0, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     const/4 v1, 0x0
@@ -221,8 +203,6 @@
     :cond_0
     move v0, v2
 
-    .line 498
-    .local v0, "code":I
     :goto_0
     const/16 v3, 0x1f
 
@@ -248,9 +228,6 @@
     :goto_1
     add-int/2addr v4, v5
 
-    .line 499
-    .end local v0    # "code":I
-    .local v4, "code":I
     mul-int v0, v3, v4
 
     iget v5, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationZ:F
@@ -273,9 +250,6 @@
     :goto_2
     add-int/2addr v0, v5
 
-    .line 500
-    .end local v4    # "code":I
-    .restart local v0    # "code":I
     mul-int v4, v3, v0
 
     iget v5, p0, Landroid/support/transition/ChangeTransform$Transforms;->mScaleX:F
@@ -298,9 +272,6 @@
     :goto_3
     add-int/2addr v4, v5
 
-    .line 501
-    .end local v0    # "code":I
-    .restart local v4    # "code":I
     mul-int v0, v3, v4
 
     iget v5, p0, Landroid/support/transition/ChangeTransform$Transforms;->mScaleY:F
@@ -323,9 +294,6 @@
     :goto_4
     add-int/2addr v0, v5
 
-    .line 502
-    .end local v4    # "code":I
-    .restart local v0    # "code":I
     mul-int v4, v3, v0
 
     iget v5, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationX:F
@@ -348,9 +316,6 @@
     :goto_5
     add-int/2addr v4, v5
 
-    .line 503
-    .end local v0    # "code":I
-    .restart local v4    # "code":I
     mul-int v0, v3, v4
 
     iget v5, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationY:F
@@ -373,9 +338,6 @@
     :goto_6
     add-int/2addr v0, v5
 
-    .line 504
-    .end local v4    # "code":I
-    .restart local v0    # "code":I
     mul-int/2addr v3, v0
 
     iget v4, p0, Landroid/support/transition/ChangeTransform$Transforms;->mRotationZ:F
@@ -395,17 +357,12 @@
     :cond_7
     add-int/2addr v3, v2
 
-    .line 505
-    .end local v0    # "code":I
-    .local v3, "code":I
     return v3
 .end method
 
 .method public restore(Landroid/view/View;)V
     .locals 9
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 475
     iget v1, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationX:F
 
     iget v2, p0, Landroid/support/transition/ChangeTransform$Transforms;->mTranslationY:F
@@ -426,6 +383,5 @@
 
     invoke-static/range {v0 .. v8}, Landroid/support/transition/ChangeTransform;->access$200(Landroid/view/View;FFFFFFFF)V
 
-    .line 477
     return-void
 .end method

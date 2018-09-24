@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardDisplayManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardDisplayManager;
 
-    .line 71
     iput-object p1, p0, Lcom/android/keyguard/KeyguardDisplayManager$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager;
 
     invoke-direct {p0}, Landroid/media/MediaRouter$SimpleCallback;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onRoutePresentationDisplayChanged(Landroid/media/MediaRouter;Landroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .line 86
     invoke-static {}, Lcom/android/keyguard/KeyguardDisplayManager;->access$000()Z
 
     move-result v0
@@ -63,7 +58,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager;
 
@@ -75,17 +69,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardDisplayManager;->updateDisplays(Z)V
 
-    .line 88
     return-void
 .end method
 
 .method public onRouteSelected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "type"    # I
-    .param p3, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .line 74
     invoke-static {}, Lcom/android/keyguard/KeyguardDisplayManager;->access$000()Z
 
     move-result v0
@@ -116,7 +105,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager;
 
@@ -128,17 +116,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardDisplayManager;->updateDisplays(Z)V
 
-    .line 76
     return-void
 .end method
 
 .method public onRouteUnselected(Landroid/media/MediaRouter;ILandroid/media/MediaRouter$RouteInfo;)V
     .locals 3
-    .param p1, "router"    # Landroid/media/MediaRouter;
-    .param p2, "type"    # I
-    .param p3, "info"    # Landroid/media/MediaRouter$RouteInfo;
 
-    .line 80
     invoke-static {}, Lcom/android/keyguard/KeyguardDisplayManager;->access$000()Z
 
     move-result v0
@@ -169,7 +152,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardDisplayManager$1;->this$0:Lcom/android/keyguard/KeyguardDisplayManager;
 
@@ -181,6 +163,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/keyguard/KeyguardDisplayManager;->updateDisplays(Z)V
 
-    .line 82
     return-void
 .end method

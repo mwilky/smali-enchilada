@@ -30,20 +30,16 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/media/RemoteControlClientCompat$PlaybackInfo;->volumeHandling:I
 
-    .line 78
     const/4 v0, 0x3
 
     iput v0, p0, Landroid/support/v7/media/RemoteControlClientCompat$PlaybackInfo;->playbackStream:I
 
-    .line 79
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/v7/media/RemoteControlClientCompat$PlaybackInfo;->playbackType:I

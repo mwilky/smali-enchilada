@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/preference/PreferenceGroup;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/preference/PreferenceGroup;
 
-    .line 75
     iput-object p1, p0, Landroid/support/v7/preference/PreferenceGroup$1;->this$0:Landroid/support/v7/preference/PreferenceGroup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +37,8 @@
 .method public run()V
     .locals 1
 
-    .line 78
     monitor-enter p0
 
-    .line 79
     :try_start_0
     iget-object v0, p0, Landroid/support/v7/preference/PreferenceGroup$1;->this$0:Landroid/support/v7/preference/PreferenceGroup;
 
@@ -52,13 +48,10 @@
 
     invoke-virtual {v0}, Landroid/support/v4/util/SimpleArrayMap;->clear()V
 
-    .line 80
     monitor-exit p0
 
-    .line 81
     return-void
 
-    .line 80
     :catchall_0
     move-exception v0
 

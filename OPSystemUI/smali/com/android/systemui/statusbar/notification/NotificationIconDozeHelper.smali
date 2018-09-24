@@ -16,17 +16,13 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "ctx"    # Landroid/content/Context;
 
-    .line 37
     invoke-direct {p0}, Lcom/android/systemui/statusbar/notification/NotificationDozeHelper;-><init>()V
 
-    .line 31
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/systemui/statusbar/notification/NotificationIconDozeHelper;->mImageDarkColor:I
 
-    .line 32
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
@@ -37,12 +33,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationIconDozeHelper;->mImageColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
-    .line 35
     const/high16 v0, -0x1000000
 
     iput v0, p0, Lcom/android/systemui/statusbar/notification/NotificationIconDozeHelper;->mColor:I
 
-    .line 38
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -55,7 +49,6 @@
 
     iput v0, p0, Lcom/android/systemui/statusbar/notification/NotificationIconDozeHelper;->mImageDarkAlpha:I
 
-    .line 39
     return-void
 .end method
 
@@ -63,11 +56,8 @@
 # virtual methods
 .method public setColor(I)V
     .locals 0
-    .param p1, "color"    # I
 
-    .line 42
     iput p1, p0, Lcom/android/systemui/statusbar/notification/NotificationIconDozeHelper;->mColor:I
 
-    .line 43
     return-void
 .end method

@@ -38,7 +38,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +48,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 279
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "CallbackInfo["
@@ -58,7 +56,6 @@
 
     const-string v1, "enabled="
 
-    .line 280
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->enabled:Z
@@ -67,7 +64,6 @@
 
     const-string v1, ",connected="
 
-    .line 281
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->connected:Z
@@ -76,7 +72,6 @@
 
     const-string v1, ",wifiSignalIconId="
 
-    .line 282
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->wifiSignalIconId:I
@@ -85,7 +80,6 @@
 
     const-string v1, ",ssid="
 
-    .line 283
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->ssid:Ljava/lang/String;
@@ -94,7 +88,6 @@
 
     const-string v1, ",activityIn="
 
-    .line 284
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->activityIn:Z
@@ -103,7 +96,6 @@
 
     const-string v1, ",activityOut="
 
-    .line 285
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->activityOut:Z
@@ -112,7 +104,6 @@
 
     const-string v1, ",wifiSignalContentDescription="
 
-    .line 286
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->wifiSignalContentDescription:Ljava/lang/String;
@@ -121,14 +112,12 @@
 
     const-string v1, ",isTransient="
 
-    .line 287
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-boolean v1, p0, Lcom/android/systemui/qs/tiles/WifiTile$CallbackInfo;->isTransient:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 288
     const/16 v1, 0x5d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -137,6 +126,5 @@
 
     move-result-object v0
 
-    .line 279
     return-object v0
 .end method

@@ -6,9 +6,7 @@
 # direct methods
 .method public static isAirplaneModeOn(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 33
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0

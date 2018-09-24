@@ -22,7 +22,6 @@
 .method private constructor <init>(Lcom/android/systemui/plugin/PreventModeCtrl;)V
     .locals 0
 
-    .line 196
     iput-object p1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -32,10 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/plugin/PreventModeCtrl;Lcom/android/systemui/plugin/PreventModeCtrl$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/plugin/PreventModeCtrl;
-    .param p2, "x1"    # Lcom/android/systemui/plugin/PreventModeCtrl$1;
 
-    .line 196
     invoke-direct {p0, p1}, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;-><init>(Lcom/android/systemui/plugin/PreventModeCtrl;)V
 
     return-void
@@ -45,16 +41,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 199
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 207
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
@@ -64,18 +57,15 @@
 
     monitor-enter v0
 
-    .line 208
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     invoke-static {v1}, Lcom/android/systemui/plugin/PreventModeCtrl;->access$600(Lcom/android/systemui/plugin/PreventModeCtrl;)V
 
-    .line 209
     iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     invoke-virtual {v1}, Lcom/android/systemui/plugin/PreventModeCtrl;->stopPreventMode()V
 
-    .line 210
     monitor-exit v0
 
     goto :goto_0
@@ -89,7 +79,6 @@
 
     throw v1
 
-    .line 201
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
@@ -99,19 +88,15 @@
 
     monitor-enter v0
 
-    .line 202
     :try_start_1
     iget-object v1, p0, Lcom/android/systemui/plugin/PreventModeCtrl$ProximityHandler;->this$0:Lcom/android/systemui/plugin/PreventModeCtrl;
 
     invoke-static {v1}, Lcom/android/systemui/plugin/PreventModeCtrl;->access$500(Lcom/android/systemui/plugin/PreventModeCtrl;)V
 
-    .line 203
     monitor-exit v0
 
-    .line 204
     goto :goto_0
 
-    .line 203
     :catchall_1
     move-exception v1
 
@@ -121,7 +106,6 @@
 
     throw v1
 
-    .line 213
     :goto_0
     return-void
 

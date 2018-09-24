@@ -26,14 +26,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/fingerprint/FingerprintDialogView;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
-    .line 233
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 234
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
@@ -45,21 +42,15 @@
 # virtual methods
 .method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "keyCode"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
-    .line 237
     const/4 v0, 0x0
 
     const/4 v1, 0x4
 
     if-eq p2, v1, :cond_0
 
-    .line 238
     return v0
 
-    .line 240
     :cond_0
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -73,12 +64,10 @@
 
     if-nez v1, :cond_1
 
-    .line 241
     iput-boolean v2, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
     goto :goto_0
 
-    .line 242
     :cond_1
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -86,12 +75,10 @@
 
     if-nez v1, :cond_2
 
-    .line 243
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
     goto :goto_0
 
-    .line 244
     :cond_2
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
@@ -103,10 +90,8 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 245
     iput-boolean v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->downPressed:Z
 
-    .line 246
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogView$2;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogView;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogView;->access$300(Lcom/android/systemui/fingerprint/FingerprintDialogView;)Landroid/os/Handler;
@@ -121,7 +106,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 248
     :cond_3
     :goto_0
     return v2

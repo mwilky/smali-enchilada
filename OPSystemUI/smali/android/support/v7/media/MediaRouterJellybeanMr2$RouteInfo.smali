@@ -17,9 +17,7 @@
 # direct methods
 .method public static getDescription(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
 
-    .line 34
     move-object v0, p0
 
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;
@@ -33,9 +31,7 @@
 
 .method public static isConnecting(Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
 
-    .line 38
     move-object v0, p0
 
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;

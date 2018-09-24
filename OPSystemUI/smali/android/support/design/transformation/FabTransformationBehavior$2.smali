@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/transformation/FabTransformationBehavior;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/transformation/FabTransformationBehavior;
 
-    .line 295
     iput-object p1, p0, Landroid/support/design/transformation/FabTransformationBehavior$2;->this$0:Landroid/support/design/transformation/FabTransformationBehavior;
 
     iput-object p2, p0, Landroid/support/design/transformation/FabTransformationBehavior$2;->val$child:Landroid/view/View;
@@ -42,13 +40,10 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 300
     iget-object v0, p0, Landroid/support/design/transformation/FabTransformationBehavior$2;->val$child:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 301
     return-void
 .end method

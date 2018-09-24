@@ -35,7 +35,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 52
     new-instance v0, Lcom/android/systemui/shared/recents/utilities/Utilities$1;
 
     const-string v1, "drawableAlpha"
@@ -44,7 +43,6 @@
 
     sput-object v0, Lcom/android/systemui/shared/recents/utilities/Utilities;->DRAWABLE_ALPHA:Landroid/util/Property;
 
-    .line 65
     new-instance v0, Lcom/android/systemui/shared/recents/utilities/Utilities$2;
 
     const-class v1, Landroid/graphics/Rect;
@@ -55,14 +53,12 @@
 
     sput-object v0, Lcom/android/systemui/shared/recents/utilities/Utilities;->DRAWABLE_RECT:Landroid/util/Property;
 
-    .line 78
     new-instance v0, Lcom/android/systemui/shared/recents/utilities/RectFEvaluator;
 
     invoke-direct {v0}, Lcom/android/systemui/shared/recents/utilities/RectFEvaluator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/shared/recents/utilities/Utilities;->RECTF_EVALUATOR:Lcom/android/systemui/shared/recents/utilities/RectFEvaluator;
 
-    .line 79
     new-instance v0, Landroid/animation/RectEvaluator;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -90,27 +86,19 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "array":[Ljava/lang/Object;, "[TT;"
-    .local p1, "setOut":Landroid/util/ArraySet;, "Landroid/util/ArraySet<TT;>;"
     invoke-virtual {p1}, Landroid/util/ArraySet;->clear()V
 
-    .line 113
     if-eqz p0, :cond_0
 
-    .line 114
     invoke-static {p1, p0}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 116
     :cond_0
     return-object p1
 .end method
 
 .method public static cancelAnimationWithoutCallbacks(Landroid/animation/Animator;)V
     .locals 1
-    .param p0, "animator"    # Landroid/animation/Animator;
 
-    .line 210
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/animation/Animator;->isStarted()Z
@@ -119,24 +107,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 211
     invoke-static {p0}, Lcom/android/systemui/shared/recents/utilities/Utilities;->removeAnimationListenersRecursive(Landroid/animation/Animator;)V
 
-    .line 212
     invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
 
-    .line 214
     :cond_0
     return-void
 .end method
 
 .method public static clamp(FFF)F
     .locals 1
-    .param p0, "value"    # F
-    .param p1, "min"    # F
-    .param p2, "max"    # F
 
-    .line 123
     invoke-static {p2, p0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -150,11 +131,7 @@
 
 .method public static clamp(III)I
     .locals 1
-    .param p0, "value"    # I
-    .param p1, "min"    # I
-    .param p2, "max"    # I
 
-    .line 130
     invoke-static {p2, p0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -168,9 +145,7 @@
 
 .method public static clamp01(F)F
     .locals 2
-    .param p0, "value"    # F
 
-    .line 137
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-static {v0, p0}, Ljava/lang/Math;->min(FF)F
@@ -188,10 +163,7 @@
 
 .method public static computeContrastBetweenColors(II)F
     .locals 17
-    .param p0, "bg"    # I
-    .param p1, "fg"    # I
 
-    .line 175
     invoke-static/range {p0 .. p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -202,8 +174,6 @@
 
     div-float/2addr v0, v1
 
-    .line 176
-    .local v0, "bgR":F
     invoke-static/range {p0 .. p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v2
@@ -212,8 +182,6 @@
 
     div-float/2addr v2, v1
 
-    .line 177
-    .local v2, "bgG":F
     invoke-static/range {p0 .. p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v3
@@ -222,8 +190,6 @@
 
     div-float/2addr v3, v1
 
-    .line 178
-    .local v3, "bgB":F
     const v4, 0x3d20e411    # 0.03928f
 
     cmpg-float v5, v0, v4
@@ -258,7 +224,6 @@
     :goto_0
     move v0, v5
 
-    .line 179
     cmpg-float v5, v2, v4
 
     if-gez v5, :cond_1
@@ -283,7 +248,6 @@
     :goto_1
     move v2, v5
 
-    .line 180
     cmpg-float v5, v3, v4
 
     if-gez v5, :cond_2
@@ -308,7 +272,6 @@
     :goto_2
     move v3, v5
 
-    .line 181
     const v5, 0x3e59b3d0    # 0.2126f
 
     mul-float v11, v5, v0
@@ -325,8 +288,6 @@
 
     add-float/2addr v11, v14
 
-    .line 183
-    .local v11, "bgL":F
     invoke-static/range {p1 .. p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v14
@@ -335,8 +296,6 @@
 
     div-float/2addr v14, v1
 
-    .line 184
-    .local v14, "fgR":F
     invoke-static/range {p1 .. p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v15
@@ -345,8 +304,6 @@
 
     div-float/2addr v15, v1
 
-    .line 185
-    .local v15, "fgG":F
     invoke-static/range {p1 .. p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v13
@@ -355,8 +312,6 @@
 
     div-float/2addr v13, v1
 
-    .line 186
-    .local v13, "fgB":F
     cmpg-float v1, v14, v4
 
     if-gez v1, :cond_3
@@ -376,17 +331,12 @@
 
     float-to-double v12, v1
 
-    .end local v13    # "fgB":F
-    .local v16, "fgB":F
     invoke-static {v12, v13, v6, v7}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v12
 
     double-to-float v1, v12
 
-    .line 187
-    .end local v14    # "fgR":F
-    .local v1, "fgR":F
     :goto_3
     cmpg-float v12, v15, v4
 
@@ -409,9 +359,6 @@
 
     double-to-float v12, v12
 
-    .line 188
-    .end local v15    # "fgG":F
-    .local v12, "fgG":F
     :goto_4
     cmpg-float v4, v16, v4
 
@@ -437,9 +384,6 @@
     :goto_5
     move v4, v13
 
-    .line 189
-    .end local v16    # "fgB":F
-    .local v4, "fgB":F
     mul-float/2addr v5, v1
 
     const v6, 0x3f371759    # 0.7152f
@@ -454,8 +398,6 @@
 
     add-float/2addr v5, v13
 
-    .line 191
-    .local v5, "fgL":F
     const v6, 0x3d4ccccd    # 0.05f
 
     add-float v7, v5, v6
@@ -473,17 +415,13 @@
 
 .method public static dumpRect(Landroid/graphics/Rect;)Ljava/lang/String;
     .locals 2
-    .param p0, "r"    # Landroid/graphics/Rect;
 
-    .line 324
     if-nez p0, :cond_0
 
-    .line 325
     const-string v0, "N:0,0-0,0"
 
     return-object v0
 
-    .line 327
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -526,7 +464,6 @@
 
 .method public static findParent(Landroid/view/View;Ljava/lang/Class;)Landroid/view/View;
     .locals 2
-    .param p0, "v"    # Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -538,18 +475,13 @@
         }
     .end annotation
 
-    .line 87
-    .local p1, "parentClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 88
-    .local v0, "parent":Landroid/view/ViewParent;
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 89
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -560,14 +492,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 90
     move-object v1, v0
 
     check-cast v1, Landroid/view/View;
 
     return-object v1
 
-    .line 92
     :cond_0
     invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
@@ -575,7 +505,6 @@
 
     goto :goto_0
 
-    .line 94
     :cond_1
     const/4 v1, 0x0
 
@@ -584,10 +513,7 @@
 
 .method public static findViewStubById(Landroid/app/Activity;I)Landroid/view/ViewStub;
     .locals 1
-    .param p0, "a"    # Landroid/app/Activity;
-    .param p1, "stubId"    # I
 
-    .line 252
     invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -599,10 +525,7 @@
 
 .method public static findViewStubById(Landroid/view/View;I)Landroid/view/ViewStub;
     .locals 1
-    .param p0, "v"    # Landroid/view/View;
-    .param p1, "stubId"    # I
 
-    .line 245
     invoke-virtual {p0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -614,9 +537,7 @@
 
 .method public static getAppConfiguration(Landroid/content/Context;)Landroid/content/res/Configuration;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 295
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -634,14 +555,9 @@
 
 .method public static getColorWithOverlay(IIF)I
     .locals 5
-    .param p0, "baseColor"    # I
-    .param p1, "overlayColor"    # I
-    .param p2, "overlayAlpha"    # F
 
-    .line 196
     nop
 
-    .line 197
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
@@ -654,7 +570,6 @@
 
     sub-float v2, v1, p2
 
-    .line 198
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v3
@@ -667,7 +582,6 @@
 
     float-to-int v0, v0
 
-    .line 199
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
     move-result v2
@@ -678,7 +592,6 @@
 
     sub-float v3, v1, p2
 
-    .line 200
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v4
@@ -691,7 +604,6 @@
 
     float-to-int v2, v2
 
-    .line 201
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v3
@@ -702,7 +614,6 @@
 
     sub-float/2addr v1, p2
 
-    .line 202
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v4
@@ -715,7 +626,6 @@
 
     float-to-int v1, v3
 
-    .line 196
     invoke-static {v0, v2, v1}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
@@ -725,9 +635,7 @@
 
 .method public static isDescendentAccessibilityFocused(Landroid/view/View;)Z
     .locals 6
-    .param p0, "v"    # Landroid/view/View;
 
-    .line 274
     invoke-virtual {p0}, Landroid/view/View;->isAccessibilityFocused()Z
 
     move-result v0
@@ -736,10 +644,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 275
     return v1
 
-    .line 278
     :cond_0
     instance-of v0, p0, Landroid/view/ViewGroup;
 
@@ -747,26 +653,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 279
     move-object v0, p0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 280
-    .local v0, "vg":Landroid/view/ViewGroup;
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v3
 
-    .line 281
-    .local v3, "childCount":I
     move v4, v2
 
-    .local v4, "i":I
     :goto_0
     if-ge v4, v3, :cond_2
 
-    .line 282
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
@@ -777,30 +676,20 @@
 
     if-eqz v5, :cond_1
 
-    .line 283
     return v1
 
-    .line 281
     :cond_1
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 287
-    .end local v0    # "vg":Landroid/view/ViewGroup;
-    .end local v3    # "childCount":I
-    .end local v4    # "i":I
     :cond_2
     return v2
 .end method
 
 .method public static mapRange(FFF)F
     .locals 1
-    .param p0, "value"    # F
-    .param p1, "min"    # F
-    .param p2, "max"    # F
 
-    .line 147
     sub-float v0, p2, p1
 
     mul-float/2addr v0, p0
@@ -812,14 +701,11 @@
 
 .method public static removeAnimationListenersRecursive(Landroid/animation/Animator;)V
     .locals 3
-    .param p0, "animator"    # Landroid/animation/Animator;
 
-    .line 220
     instance-of v0, p0, Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 221
     move-object v0, p0
 
     check-cast v0, Landroid/animation/AnimatorSet;
@@ -828,19 +714,15 @@
 
     move-result-object v0
 
-    .line 222
-    .local v0, "animators":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/Animator;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    .local v1, "i":I
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 223
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -849,95 +731,72 @@
 
     invoke-static {v2}, Lcom/android/systemui/shared/recents/utilities/Utilities;->removeAnimationListenersRecursive(Landroid/animation/Animator;)V
 
-    .line 222
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 226
-    .end local v0    # "animators":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/animation/Animator;>;"
-    .end local v1    # "i":I
     :cond_0
     invoke-virtual {p0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 227
     return-void
 .end method
 
 .method public static scaleRectAboutCenter(Landroid/graphics/RectF;F)V
     .locals 4
-    .param p0, "r"    # Landroid/graphics/RectF;
-    .param p1, "scale"    # F
 
-    .line 161
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 162
     invoke-virtual {p0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
 
-    .line 163
-    .local v0, "cx":F
     invoke-virtual {p0}, Landroid/graphics/RectF;->centerY()F
 
     move-result v1
 
-    .line 164
-    .local v1, "cy":F
     neg-float v2, v0
 
     neg-float v3, v1
 
     invoke-virtual {p0, v2, v3}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 165
     iget v2, p0, Landroid/graphics/RectF;->left:F
 
     mul-float/2addr v2, p1
 
     iput v2, p0, Landroid/graphics/RectF;->left:F
 
-    .line 166
     iget v2, p0, Landroid/graphics/RectF;->top:F
 
     mul-float/2addr v2, p1
 
     iput v2, p0, Landroid/graphics/RectF;->top:F
 
-    .line 167
     iget v2, p0, Landroid/graphics/RectF;->right:F
 
     mul-float/2addr v2, p1
 
     iput v2, p0, Landroid/graphics/RectF;->right:F
 
-    .line 168
     iget v2, p0, Landroid/graphics/RectF;->bottom:F
 
     mul-float/2addr v2, p1
 
     iput v2, p0, Landroid/graphics/RectF;->bottom:F
 
-    .line 169
     invoke-virtual {p0, v0, v1}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 171
-    .end local v0    # "cx":F
-    .end local v1    # "cy":F
     :cond_0
     return-void
 .end method
 
 .method public static setViewFrameFromTranslation(Landroid/view/View;)V
     .locals 5
-    .param p0, "v"    # Landroid/view/View;
 
-    .line 233
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getLeft()I
@@ -966,8 +825,6 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 234
-    .local v0, "taskViewRect":Landroid/graphics/RectF;
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
     move-result v1
@@ -978,15 +835,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/RectF;->offset(FF)V
 
-    .line 235
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 236
     invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 237
     iget v1, v0, Landroid/graphics/RectF;->left:F
 
     float-to-int v1, v1
@@ -1005,17 +859,12 @@
 
     invoke-virtual {p0, v1, v2, v3, v4}, Landroid/view/View;->setLeftTopRightBottom(IIII)V
 
-    .line 239
     return-void
 .end method
 
 .method public static unmapRange(FFF)F
     .locals 2
-    .param p0, "value"    # F
-    .param p1, "min"    # F
-    .param p2, "max"    # F
 
-    .line 156
     sub-float v0, p0, p1
 
     sub-float v1, p2, p1

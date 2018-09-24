@@ -18,15 +18,11 @@
 # direct methods
 .method public static toLegacyStreamType(Landroid/support/v4/media/AudioAttributesCompatApi21$Wrapper;)I
     .locals 7
-    .param p0, "aaWrap"    # Landroid/support/v4/media/AudioAttributesCompatApi21$Wrapper;
 
-    .line 37
     invoke-virtual {p0}, Landroid/support/v4/media/AudioAttributesCompatApi21$Wrapper;->unwrap()Landroid/media/AudioAttributes;
 
     move-result-object v0
 
-    .line 39
-    .local v0, "aaObject":Landroid/media/AudioAttributes;
     :try_start_0
     sget-object v1, Landroid/support/v4/media/AudioAttributesCompatApi21;->sAudioAttributesToLegacyStreamType:Ljava/lang/reflect/Method;
 
@@ -36,7 +32,6 @@
 
     if-nez v1, :cond_0
 
-    .line 40
     const-class v1, Landroid/media/AudioAttributes;
 
     const-string v4, "toLegacyStreamType"
@@ -53,7 +48,6 @@
 
     sput-object v1, Landroid/support/v4/media/AudioAttributesCompatApi21;->sAudioAttributesToLegacyStreamType:Ljava/lang/reflect/Method;
 
-    .line 43
     :cond_0
     sget-object v1, Landroid/support/v4/media/AudioAttributesCompatApi21;->sAudioAttributesToLegacyStreamType:Ljava/lang/reflect/Method;
 
@@ -67,8 +61,6 @@
 
     move-result-object v1
 
-    .line 45
-    .local v1, "result":Ljava/lang/Object;
     move-object v2, v1
 
     check-cast v2, Ljava/lang/Integer;
@@ -84,20 +76,15 @@
 
     return v2
 
-    .line 46
-    .end local v1    # "result":Ljava/lang/Object;
     :catch_0
     move-exception v1
 
-    .line 48
-    .local v1, "e":Ljava/lang/Exception;
     const-string v2, "AudioAttributesCompat"
 
     const-string v3, "getLegacyStreamType() failed on API21+"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 49
     const/4 v2, -0x1
 
     return v2

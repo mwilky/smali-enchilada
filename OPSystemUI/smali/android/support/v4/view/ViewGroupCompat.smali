@@ -6,23 +6,19 @@
 # direct methods
 .method public static getLayoutMode(Landroid/view/ViewGroup;)I
     .locals 2
-    .param p0, "group"    # Landroid/view/ViewGroup;
 
-    .line 114
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_0
 
-    .line 115
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getLayoutMode()I
 
     move-result v0
 
     return v0
 
-    .line 117
     :cond_0
     const/4 v0, 0x0
 
@@ -31,23 +27,19 @@
 
 .method public static isTransitionGroup(Landroid/view/ViewGroup;)Z
     .locals 2
-    .param p0, "group"    # Landroid/view/ViewGroup;
 
-    .line 157
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 158
     invoke-virtual {p0}, Landroid/view/ViewGroup;->isTransitionGroup()Z
 
     move-result v0
 
     return v0
 
-    .line 160
     :cond_0
     sget v0, Landroid/support/compat/R$id;->tag_transition_group:I
 
@@ -57,8 +49,6 @@
 
     check-cast v0, Ljava/lang/Boolean;
 
-    .line 161
-    .local v0, "explicit":Ljava/lang/Boolean;
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -67,7 +57,6 @@
 
     if-nez v1, :cond_3
 
-    .line 162
     :cond_1
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -75,7 +64,6 @@
 
     if-nez v1, :cond_3
 
-    .line 163
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getTransitionName(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object v1

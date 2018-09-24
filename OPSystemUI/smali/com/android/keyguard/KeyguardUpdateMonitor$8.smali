@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardUpdateMonitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 1250
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Landroid/hardware/fingerprint/FingerprintManager$LockoutResetCallback;-><init>()V
@@ -36,11 +34,9 @@
 .method public onLockoutReset()V
     .locals 1
 
-    .line 1253
     iget-object v0, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$8;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$3400(Lcom/android/keyguard/KeyguardUpdateMonitor;)V
 
-    .line 1254
     return-void
 .end method

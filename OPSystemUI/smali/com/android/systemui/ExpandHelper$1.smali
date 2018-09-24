@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/ExpandHelper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/ExpandHelper;
 
-    .line 112
     iput-object p1, p0, Lcom/android/systemui/ExpandHelper$1;->this$0:Lcom/android/systemui/ExpandHelper;
 
     invoke-direct {p0}, Landroid/view/ScaleGestureDetector$SimpleOnScaleGestureListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 1
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 126
     const/4 v0, 0x1
 
     return v0
@@ -45,9 +41,7 @@
 
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 3
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 117
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$1;->this$0:Lcom/android/systemui/ExpandHelper;
 
     invoke-static {v0}, Lcom/android/systemui/ExpandHelper;->access$000(Lcom/android/systemui/ExpandHelper;)Z
@@ -56,7 +50,6 @@
 
     if-nez v0, :cond_0
 
-    .line 118
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$1;->this$0:Lcom/android/systemui/ExpandHelper;
 
     iget-object v1, p0, Lcom/android/systemui/ExpandHelper$1;->this$0:Lcom/android/systemui/ExpandHelper;
@@ -69,7 +62,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/ExpandHelper;->startExpanding(Lcom/android/systemui/statusbar/ExpandableView;I)Z
 
-    .line 120
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/ExpandHelper$1;->this$0:Lcom/android/systemui/ExpandHelper;
 
@@ -82,8 +74,6 @@
 
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 0
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
-    .line 131
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
-    .line 571
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$7;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 574
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$7;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->access$400(Lcom/android/systemui/statusbar/ActivatableNotificationView;)I
@@ -53,22 +49,17 @@
 
     move-result v1
 
-    .line 575
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result v2
 
-    .line 574
     invoke-static {v0, v1, v2}, Lcom/android/systemui/statusbar/notification/NotificationUtils;->interpolateColors(IIF)I
 
     move-result v0
 
-    .line 576
-    .local v0, "newColor":I
     iget-object v1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$7;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/ActivatableNotificationView;->setBackgroundTintColor(I)V
 
-    .line 577
     return-void
 .end method

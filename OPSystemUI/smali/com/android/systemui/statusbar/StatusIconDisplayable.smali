@@ -16,7 +16,6 @@
 .method public isIconBlocked()Z
     .locals 1
 
-    .line 29
     const/4 v0, 0x0
 
     return v0

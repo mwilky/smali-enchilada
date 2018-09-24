@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroidx/slice/widget/ActionRow;Landroidx/slice/SliceItem;Landroidx/slice/SliceItem;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/slice/widget/ActionRow;
 
-    .line 165
     iput-object p1, p0, Landroidx/slice/widget/ActionRow$2;->this$0:Landroidx/slice/widget/ActionRow;
 
     iput-object p2, p0, Landroidx/slice/widget/ActionRow$2;->val$action:Landroidx/slice/SliceItem;
@@ -46,23 +44,18 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 168
     iget-object v0, p0, Landroidx/slice/widget/ActionRow$2;->this$0:Landroidx/slice/widget/ActionRow;
 
     iget-object v1, p0, Landroidx/slice/widget/ActionRow$2;->val$action:Landroidx/slice/SliceItem;
 
     iget-object v2, p0, Landroidx/slice/widget/ActionRow$2;->val$input:Landroidx/slice/SliceItem;
 
-    .line 169
     invoke-virtual {v2}, Landroidx/slice/SliceItem;->getRemoteInput()Landroid/app/RemoteInput;
 
     move-result-object v2
 
-    .line 168
     invoke-static {v0, p1, v1, v2}, Landroidx/slice/widget/ActionRow;->access$000(Landroidx/slice/widget/ActionRow;Landroid/view/View;Landroidx/slice/SliceItem;Landroid/app/RemoteInput;)Z
 
-    .line 170
     return-void
 .end method

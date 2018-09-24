@@ -24,23 +24,17 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;->mDefaultContext:Landroid/content/Context;
 
-    .line 49
     return-void
 .end method
 
 .method static synthetic access$500(Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;
 
-    .line 37
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;->mDefaultContext:Landroid/content/Context;
 
     return-object v0
@@ -51,7 +45,6 @@
 .method public bridge synthetic newExtension(Ljava/lang/Class;)Lcom/android/systemui/statusbar/policy/ExtensionController$ExtensionBuilder;
     .locals 0
 
-    .line 37
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl;->newExtension(Ljava/lang/Class;)Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;
 
     move-result-object p1
@@ -73,8 +66,6 @@
         }
     .end annotation
 
-    .line 53
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     new-instance v0, Lcom/android/systemui/statusbar/policy/ExtensionControllerImpl$ExtensionBuilder;
 
     const/4 v1, 0x0

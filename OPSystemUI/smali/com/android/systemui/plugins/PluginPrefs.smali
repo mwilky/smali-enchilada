@@ -20,12 +20,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
     const-string v0, "plugin_prefs"
 
     const/4 v1, 0x0
@@ -36,7 +33,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugins/PluginPrefs;->mSharedPrefs:Landroid/content/SharedPreferences;
 
-    .line 41
     new-instance v0, Landroid/util/ArraySet;
 
     iget-object v1, p0, Lcom/android/systemui/plugins/PluginPrefs;->mSharedPrefs:Landroid/content/SharedPreferences;
@@ -53,15 +49,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/plugins/PluginPrefs;->mPluginActions:Ljava/util/Set;
 
-    .line 42
     return-void
 .end method
 
 .method public static hasPlugins(Landroid/content/Context;)Z
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 55
     const-string v0, "plugin_prefs"
 
     const/4 v1, 0x0
@@ -81,9 +74,7 @@
 
 .method public static setHasPlugins(Landroid/content/Context;)V
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
 
-    .line 59
     const-string v0, "plugin_prefs"
 
     const/4 v1, 0x0
@@ -106,7 +97,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 60
     return-void
 .end method
 
@@ -114,11 +104,9 @@
 # virtual methods
 .method public declared-synchronized addAction(Ljava/lang/String;)V
     .locals 3
-    .param p1, "action"    # Ljava/lang/String;
 
     monitor-enter p0
 
-    .line 49
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginPrefs;->mPluginActions:Ljava/util/Set;
 
@@ -128,7 +116,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 50
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginPrefs;->mSharedPrefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -147,20 +134,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 52
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 48
-    .end local p1    # "action":Ljava/lang/String;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/plugins/PluginPrefs;
     throw p1
 .end method
 
@@ -175,7 +158,6 @@
         }
     .end annotation
 
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginPrefs;->mPluginActions:Ljava/util/Set;
 
     return-object v0

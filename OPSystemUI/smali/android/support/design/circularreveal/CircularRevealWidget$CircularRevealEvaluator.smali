@@ -46,7 +46,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 208
     new-instance v0, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealEvaluator;
 
     invoke-direct {v0}, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealEvaluator;-><init>()V
@@ -59,10 +58,8 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 209
     new-instance v0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
     const/4 v1, 0x0
@@ -78,18 +75,13 @@
 # virtual methods
 .method public evaluate(FLandroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;)Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
     .locals 5
-    .param p1, "fraction"    # F
-    .param p2, "startValue"    # Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
-    .param p3, "endValue"    # Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
-    .line 213
     iget-object v0, p0, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealEvaluator;->revealInfo:Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
     iget v1, p2, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
     iget v2, p3, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
-    .line 214
     invoke-static {v1, v2, p1}, Landroid/support/design/math/MathUtils;->lerp(FFF)F
 
     move-result v1
@@ -98,7 +90,6 @@
 
     iget v3, p3, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
 
-    .line 215
     invoke-static {v2, v3, p1}, Landroid/support/design/math/MathUtils;->lerp(FFF)F
 
     move-result v2
@@ -107,15 +98,12 @@
 
     iget v4, p3, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    .line 216
     invoke-static {v3, v4, p1}, Landroid/support/design/math/MathUtils;->lerp(FFF)F
 
     move-result v3
 
-    .line 213
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->set(FFF)V
 
-    .line 217
     iget-object v0, p0, Landroid/support/design/circularreveal/CircularRevealWidget$CircularRevealEvaluator;->revealInfo:Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
     return-object v0
@@ -124,7 +112,6 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 206
     check-cast p2, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
     check-cast p3, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;

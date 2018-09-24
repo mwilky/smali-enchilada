@@ -34,9 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationGutsManager;Lcom/android/systemui/statusbar/ExpandableNotificationRow;Lcom/android/systemui/statusbar/NotificationGuts;IILcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationGutsManager;
 
-    .line 372
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -59,7 +57,6 @@
 .method public run()V
     .locals 9
 
-    .line 375
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getWindowToken()Landroid/os/IBinder;
@@ -68,17 +65,14 @@
 
     if-nez v0, :cond_0
 
-    .line 376
     const-string v0, "NotificationGutsManager"
 
     const-string v1, "Trying to show notification guts in post(), but not attached to window"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 378
     return-void
 
-    .line 380
     :cond_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
@@ -96,19 +90,16 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/android/systemui/statusbar/NotificationGutsManager;->closeAndSaveGuts(ZZZIIZ)V
 
-    .line 383
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->setVisibility(I)V
 
-    .line 385
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/NotificationGutsManager;->mPresenter:Lcom/android/systemui/statusbar/NotificationPresenter;
 
-    .line 386
     invoke-interface {v0}, Lcom/android/systemui/statusbar/NotificationPresenter;->isPresenterLocked()Z
 
     move-result v0
@@ -119,7 +110,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
-    .line 387
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationGutsManager;->access$000(Lcom/android/systemui/statusbar/NotificationGutsManager;)Landroid/view/accessibility/AccessibilityManager;
 
     move-result-object v0
@@ -137,14 +127,11 @@
     :cond_1
     move v7, v1
 
-    .line 389
-    .local v7, "needsFalsingProtection":Z
     :goto_0
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 390
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isBlockingHelperShowing()Z
 
     move-result v0
@@ -163,15 +150,12 @@
 
     invoke-direct {v8, v0}, Lcom/android/systemui/statusbar/-$$Lambda$A0nRQ1BmXNDkvl3KYSKAx5O94nc;-><init>(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
 
-    .line 389
     invoke-virtual/range {v3 .. v8}, Lcom/android/systemui/statusbar/NotificationGuts;->openControls(ZIIZLjava/lang/Runnable;)V
 
-    .line 396
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$row:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->closeRemoteInput()V
 
-    .line 397
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationGutsManager;->access$100(Lcom/android/systemui/statusbar/NotificationGutsManager;)Lcom/android/systemui/statusbar/NotificationListContainer;
@@ -182,20 +166,17 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/systemui/statusbar/NotificationListContainer;->onHeightChanged(Lcom/android/systemui/statusbar/ExpandableView;Z)V
 
-    .line 398
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$guts:Lcom/android/systemui/statusbar/NotificationGuts;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationGutsManager;->access$202(Lcom/android/systemui/statusbar/NotificationGutsManager;Lcom/android/systemui/statusbar/NotificationGuts;)Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 399
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->this$0:Lcom/android/systemui/statusbar/NotificationGutsManager;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationGutsManager$1;->val$menuItem:Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationGutsManager;->access$302(Lcom/android/systemui/statusbar/NotificationGutsManager;Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;)Lcom/android/systemui/plugins/statusbar/NotificationMenuRowPlugin$MenuItem;
 
-    .line 400
     return-void
 .end method

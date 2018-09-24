@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/transformation/ExpandableTransformationBehavior;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/transformation/ExpandableTransformationBehavior;
 
-    .line 78
     iput-object p1, p0, Landroid/support/design/transformation/ExpandableTransformationBehavior$1;->this$0:Landroid/support/design/transformation/ExpandableTransformationBehavior;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,15 +33,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 81
     iget-object v0, p0, Landroid/support/design/transformation/ExpandableTransformationBehavior$1;->this$0:Landroid/support/design/transformation/ExpandableTransformationBehavior;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/support/design/transformation/ExpandableTransformationBehavior;->access$002(Landroid/support/design/transformation/ExpandableTransformationBehavior;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 82
     return-void
 .end method

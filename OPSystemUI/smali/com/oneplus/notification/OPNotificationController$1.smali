@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/oneplus/notification/OPNotificationController;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/oneplus/notification/OPNotificationController;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 241
     iput-object p1, p0, Lcom/oneplus/notification/OPNotificationController$1;->this$0:Lcom/oneplus/notification/OPNotificationController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,9 +33,7 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 4
-    .param p1, "selfChange"    # Z
 
-    .line 244
     iget-object v0, p0, Lcom/oneplus/notification/OPNotificationController$1;->this$0:Lcom/oneplus/notification/OPNotificationController;
 
     invoke-static {v0}, Lcom/oneplus/notification/OPNotificationController;->access$000(Lcom/oneplus/notification/OPNotificationController;)Landroid/content/Context;
@@ -57,26 +52,21 @@
 
     move-result v0
 
-    .line 246
-    .local v0, "mode":I
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 247
     iget-object v2, p0, Lcom/oneplus/notification/OPNotificationController$1;->this$0:Lcom/oneplus/notification/OPNotificationController;
 
     invoke-static {v2, v1}, Lcom/oneplus/notification/OPNotificationController;->access$502(Lcom/oneplus/notification/OPNotificationController;Z)Z
 
     goto :goto_0
 
-    .line 249
     :cond_0
     iget-object v1, p0, Lcom/oneplus/notification/OPNotificationController$1;->this$0:Lcom/oneplus/notification/OPNotificationController;
 
     invoke-static {v1, v2}, Lcom/oneplus/notification/OPNotificationController;->access$502(Lcom/oneplus/notification/OPNotificationController;Z)Z
 
-    .line 251
     :goto_0
     const-string v1, "OPNotificationController"
 
@@ -102,6 +92,5 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 252
     return-void
 .end method

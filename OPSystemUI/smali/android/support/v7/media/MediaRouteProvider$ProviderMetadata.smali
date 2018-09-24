@@ -21,21 +21,15 @@
 # direct methods
 .method constructor <init>(Landroid/content/ComponentName;)V
     .locals 2
-    .param p1, "componentName"    # Landroid/content/ComponentName;
 
-    .line 300
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 301
     if-eqz p1, :cond_0
 
-    .line 304
     iput-object p1, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderMetadata;->mComponentName:Landroid/content/ComponentName;
 
-    .line 305
     return-void
 
-    .line 302
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -51,7 +45,6 @@
 .method public getComponentName()Landroid/content/ComponentName;
     .locals 1
 
-    .line 318
     iget-object v0, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderMetadata;->mComponentName:Landroid/content/ComponentName;
 
     return-object v0
@@ -60,7 +53,6 @@
 .method public getPackageName()Ljava/lang/String;
     .locals 1
 
-    .line 311
     iget-object v0, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderMetadata;->mComponentName:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -73,7 +65,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 323
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,7 +75,6 @@
 
     iget-object v1, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderMetadata;->mComponentName:Landroid/content/ComponentName;
 
-    .line 324
     invoke-virtual {v1}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
 
     move-result-object v1

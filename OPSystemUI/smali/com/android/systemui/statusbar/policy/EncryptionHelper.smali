@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 26
     invoke-static {}, Lcom/android/systemui/statusbar/policy/EncryptionHelper;->isDataEncrypted()Z
 
     move-result v0
@@ -24,15 +23,12 @@
 .method private static isDataEncrypted()Z
     .locals 2
 
-    .line 29
     const-string/jumbo v0, "vold.decrypt"
 
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 30
-    .local v0, "voldState":Ljava/lang/String;
     const-string v1, "1"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

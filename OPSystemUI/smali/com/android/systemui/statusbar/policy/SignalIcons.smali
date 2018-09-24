@@ -15,7 +15,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 23
     const/4 v0, 0x3
 
     new-array v1, v0, [I
@@ -24,14 +23,12 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/SignalIcons;->VOLTE_ICONS:[I
 
-    .line 29
     new-array v1, v0, [I
 
     fill-array-data v1, :array_1
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/SignalIcons;->VOWIFI_ICONS:[I
 
-    .line 35
     new-array v0, v0, [I
 
     fill-array-data v0, :array_2

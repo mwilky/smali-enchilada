@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/shared/system/ActivityManagerWrapper;Lcom/android/systemui/shared/recents/model/Task$TaskKey;Landroid/app/ActivityOptions;Ljava/util/function/Consumer;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
-    .line 331
     iput-object p1, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->this$0:Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
     iput-object p2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->val$taskKey:Lcom/android/systemui/shared/recents/model/Task$TaskKey;
@@ -55,11 +53,8 @@
 .method public run()V
     .locals 4
 
-    .line 334
     const/4 v0, 0x0
 
-    .line 336
-    .local v0, "result":Z
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->this$0:Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
@@ -77,24 +72,18 @@
 
     move v0, v1
 
-    .line 339
     goto :goto_0
 
-    .line 337
     :catch_0
     move-exception v1
 
-    .line 340
     :goto_0
     move v1, v0
 
-    .line 341
-    .local v1, "finalResult":Z
     iget-object v2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->val$resultCallback:Ljava/util/function/Consumer;
 
     if-eqz v2, :cond_0
 
-    .line 342
     iget-object v2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5;->val$resultCallbackHandler:Landroid/os/Handler;
 
     new-instance v3, Lcom/android/systemui/shared/system/ActivityManagerWrapper$5$1;
@@ -103,7 +92,6 @@
 
     invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 349
     :cond_0
     return-void
 .end method

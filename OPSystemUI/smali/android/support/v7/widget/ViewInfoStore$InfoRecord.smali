@@ -38,7 +38,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 305
     new-instance v0, Landroid/support/v4/util/Pools$SimplePool;
 
     const/16 v1, 0x14
@@ -53,17 +52,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 307
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 308
     return-void
 .end method
 
 .method static drainCache()V
     .locals 1
 
-    .line 324
     :goto_0
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
@@ -75,7 +71,6 @@
 
     goto :goto_0
 
-    .line 325
     :cond_0
     return-void
 .end method
@@ -83,7 +78,6 @@
 .method static obtain()Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     .locals 2
 
-    .line 311
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v0}, Landroid/support/v4/util/Pools$Pool;->acquire()Ljava/lang/Object;
@@ -92,8 +86,6 @@
 
     check-cast v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
 
-    .line 312
-    .local v0, "record":Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
     if-nez v0, :cond_0
 
     new-instance v1, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
@@ -111,26 +103,20 @@
 
 .method static recycle(Landroid/support/v7/widget/ViewInfoStore$InfoRecord;)V
     .locals 1
-    .param p0, "record"    # Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
 
-    .line 316
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->flags:I
 
-    .line 317
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->preInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 318
     iput-object v0, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->postInfo:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 319
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->sPool:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v0, p0}, Landroid/support/v4/util/Pools$Pool;->release(Ljava/lang/Object;)Z
 
-    .line 320
     return-void
 .end method

@@ -24,15 +24,11 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v4/view/ViewPager;)V
     .locals 0
-    .param p1, "viewPager"    # Landroid/support/v4/view/ViewPager;
 
-    .line 2766
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2767
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;->viewPager:Landroid/support/v4/view/ViewPager;
 
-    .line 2768
     return-void
 .end method
 
@@ -40,17 +36,13 @@
 # virtual methods
 .method public onTabReselected(Landroid/support/design/widget/TabLayout$Tab;)V
     .locals 0
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
-    .line 2783
     return-void
 .end method
 
 .method public onTabSelected(Landroid/support/design/widget/TabLayout$Tab;)V
     .locals 2
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
-    .line 2772
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;->viewPager:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1}, Landroid/support/design/widget/TabLayout$Tab;->getPosition()I
@@ -59,14 +51,11 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    .line 2773
     return-void
 .end method
 
 .method public onTabUnselected(Landroid/support/design/widget/TabLayout$Tab;)V
     .locals 0
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
-    .line 2778
     return-void
 .end method

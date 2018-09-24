@@ -29,7 +29,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,33 +44,27 @@
         }
     .end annotation
 
-    .line 242
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/systemui/recents/events/EventBus$Event;
 
-    .line 244
-    .local v0, "evt":Lcom/android/systemui/recents/events/EventBus$Event;
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/systemui/recents/events/EventBus$Event;->cancelled:Z
 
-    .line 245
     return-object v0
 .end method
 
 .method onPostDispatch()V
     .locals 0
 
-    .line 238
     return-void
 .end method
 
 .method onPreDispatch()V
     .locals 0
 
-    .line 231
     return-void
 .end method

@@ -36,7 +36,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 210
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;-><init>()V
 
     return-void
@@ -47,30 +46,22 @@
 .method public copy()Lcom/android/systemui/plugins/qs/QSTile$State;
     .locals 1
 
-    .line 241
     new-instance v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/qs/QSTile$SignalState;-><init>()V
 
-    .line 242
-    .local v0, "state":Lcom/android/systemui/plugins/qs/QSTile$SignalState;
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
-    .line 243
     return-object v0
 .end method
 
 .method public copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
     .locals 5
-    .param p1, "other"    # Lcom/android/systemui/plugins/qs/QSTile$State;
 
-    .line 219
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;
 
-    .line 220
-    .local v0, "o":Lcom/android/systemui/plugins/qs/QSTile$SignalState;
     iget-boolean v1, v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityIn:Z
 
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityIn:Z
@@ -110,29 +101,23 @@
     :goto_0
     move v1, v3
 
-    .line 224
-    .local v1, "changed":Z
     :goto_1
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityIn:Z
 
     iput-boolean v2, v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityIn:Z
 
-    .line 225
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityOut:Z
 
     iput-boolean v2, v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->activityOut:Z
 
-    .line 226
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->isOverlayIconWide:Z
 
     iput-boolean v2, v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->isOverlayIconWide:Z
 
-    .line 227
     iget v2, p0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->overlayIconId:I
 
     iput v2, v0, Lcom/android/systemui/plugins/qs/QSTile$SignalState;->overlayIconId:I
 
-    .line 228
     invoke-super {p0, p1}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
     move-result v2
@@ -156,13 +141,10 @@
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 4
 
-    .line 233
     invoke-super {p0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 234
-    .local v0, "rt":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -187,7 +169,6 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 235
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -212,6 +193,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 236
     return-object v0
 .end method

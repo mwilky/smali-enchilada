@@ -18,27 +18,23 @@
 .method public onScreenTurnedOff()V
     .locals 0
 
-    .line 77
     return-void
 .end method
 
 .method public onScreenTurnedOn()V
     .locals 0
 
-    .line 75
     return-void
 .end method
 
 .method public onScreenTurningOff()V
     .locals 0
 
-    .line 76
     return-void
 .end method
 
 .method public onScreenTurningOn()V
     .locals 0
 
-    .line 74
     return-void
 .end method

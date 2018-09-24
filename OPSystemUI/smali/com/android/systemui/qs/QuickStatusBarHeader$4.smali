@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QuickStatusBarHeader;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/QuickStatusBarHeader;
 
-    .line 612
     iput-object p1, p0, Lcom/android/systemui/qs/QuickStatusBarHeader$4;->this$0:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 619
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader$4;->this$0:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->access$600(Lcom/android/systemui/qs/QuickStatusBarHeader;)Landroid/view/View;
@@ -48,7 +44,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 620
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader$4;->this$0:Lcom/android/systemui/qs/QuickStatusBarHeader;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->access$600(Lcom/android/systemui/qs/QuickStatusBarHeader;)Landroid/view/View;
@@ -59,6 +54,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 621
     return-void
 .end method

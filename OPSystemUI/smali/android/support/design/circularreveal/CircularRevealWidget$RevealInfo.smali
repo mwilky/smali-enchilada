@@ -26,7 +26,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,31 +33,21 @@
 
 .method public constructor <init>(FFF)V
     .locals 0
-    .param p1, "centerX"    # F
-    .param p2, "centerY"    # F
-    .param p3, "radius"    # F
 
-    .line 146
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 147
     iput p1, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
-    .line 148
     iput p2, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
 
-    .line 149
     iput p3, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    .line 150
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/support/design/circularreveal/CircularRevealWidget$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/support/design/circularreveal/CircularRevealWidget$1;
 
-    .line 132
     invoke-direct {p0}, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;-><init>()V
 
     return-void
@@ -66,9 +55,7 @@
 
 .method public constructor <init>(Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;)V
     .locals 3
-    .param p1, "other"    # Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
-    .line 153
     iget v0, p1, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
     iget v1, p1, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
@@ -77,7 +64,6 @@
 
     invoke-direct {p0, v0, v1, v2}, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;-><init>(FFF)V
 
-    .line 154
     return-void
 .end method
 
@@ -86,7 +72,6 @@
 .method public isInvalid()Z
     .locals 2
 
-    .line 171
     iget v0, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
     const v1, 0x7f7fffff    # Float.MAX_VALUE
@@ -108,28 +93,19 @@
 
 .method public set(FFF)V
     .locals 0
-    .param p1, "centerX"    # F
-    .param p2, "centerY"    # F
-    .param p3, "radius"    # F
 
-    .line 157
     iput p1, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
-    .line 158
     iput p2, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
 
-    .line 159
     iput p3, p0, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->radius:F
 
-    .line 160
     return-void
 .end method
 
 .method public set(Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;)V
     .locals 3
-    .param p1, "other"    # Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;
 
-    .line 163
     iget v0, p1, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerX:F
 
     iget v1, p1, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->centerY:F
@@ -138,6 +114,5 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/support/design/circularreveal/CircularRevealWidget$RevealInfo;->set(FFF)V
 
-    .line 164
     return-void
 .end method

@@ -15,10 +15,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 39
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 77
     new-instance v0, Lcom/android/systemui/keyguard/KeyguardService$1;
 
     invoke-direct {v0, p0}, Lcom/android/systemui/keyguard/KeyguardService$1;-><init>(Lcom/android/systemui/keyguard/KeyguardService;)V
@@ -30,9 +28,7 @@
 
 .method static synthetic access$000(Lcom/android/systemui/keyguard/KeyguardService;)Lcom/android/systemui/keyguard/KeyguardViewMediator;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/keyguard/KeyguardService;
 
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     return-object v0
@@ -40,9 +36,7 @@
 
 .method static synthetic access$100(Lcom/android/systemui/keyguard/KeyguardService;)Lcom/android/systemui/keyguard/KeyguardLifecyclesDispatcher;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/keyguard/KeyguardService;
 
-    .line 39
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardLifecyclesDispatcher:Lcom/android/systemui/keyguard/KeyguardLifecyclesDispatcher;
 
     return-object v0
@@ -53,7 +47,6 @@
 .method checkPermission()V
     .locals 3
 
-    .line 67
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v0
@@ -64,7 +57,6 @@
 
     return-void
 
-    .line 70
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getBaseContext()Landroid/content/Context;
 
@@ -78,10 +70,8 @@
 
     if-nez v0, :cond_1
 
-    .line 75
     return-void
 
-    .line 71
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -105,7 +95,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
     new-instance v0, Ljava/lang/SecurityException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -141,9 +130,7 @@
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 1
-    .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mBinder:Lcom/android/internal/policy/IKeyguardService$Stub;
 
     return-object v0
@@ -152,7 +139,6 @@
 .method public onCreate()V
     .locals 3
 
-    .line 49
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
@@ -163,7 +149,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 51
     :cond_0
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getApplication()Landroid/app/Application;
 
@@ -173,10 +158,8 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/SystemUIApplication;->startServicesIfNeeded()V
 
-    .line 52
     nop
 
-    .line 53
     invoke-virtual {p0}, Lcom/android/systemui/keyguard/KeyguardService;->getApplication()Landroid/app/Application;
 
     move-result-object v0
@@ -193,12 +176,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardViewMediator:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 54
     new-instance v0, Lcom/android/systemui/keyguard/KeyguardLifecyclesDispatcher;
 
     const-class v1, Lcom/android/systemui/keyguard/ScreenLifecycle;
 
-    .line 55
     invoke-static {v1}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v1
@@ -207,7 +188,6 @@
 
     const-class v2, Lcom/android/systemui/keyguard/WakefulnessLifecycle;
 
-    .line 56
     invoke-static {v2}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
@@ -218,6 +198,5 @@
 
     iput-object v0, p0, Lcom/android/systemui/keyguard/KeyguardService;->mKeyguardLifecyclesDispatcher:Lcom/android/systemui/keyguard/KeyguardLifecyclesDispatcher;
 
-    .line 58
     return-void
 .end method

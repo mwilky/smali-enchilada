@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSDetail$3;Lcom/android/systemui/plugins/qs/DetailAdapter;II)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/qs/QSDetail$3;
 
-    .line 367
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetail$3$2;->this$1:Lcom/android/systemui/qs/QSDetail$3;
 
     iput-object p2, p0, Lcom/android/systemui/qs/QSDetail$3$2;->val$detail:Lcom/android/systemui/plugins/qs/DetailAdapter;
@@ -51,7 +49,6 @@
 .method public run()V
     .locals 5
 
-    .line 370
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3$2;->this$1:Lcom/android/systemui/qs/QSDetail$3;
 
     iget-object v0, v0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
@@ -66,6 +63,5 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/systemui/qs/QSDetail;->handleShowingDetail(Lcom/android/systemui/plugins/qs/DetailAdapter;IIZ)V
 
-    .line 371
     return-void
 .end method

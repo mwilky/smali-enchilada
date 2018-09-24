@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 37
     const-string v0, "MediaSessionManager"
 
     const/4 v1, 0x3
@@ -33,7 +32,6 @@
 
     sput-boolean v0, Landroid/support/v4/media/MediaSessionManager;->DEBUG:Z
 
-    .line 39
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V

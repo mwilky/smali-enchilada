@@ -32,28 +32,22 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mViewId:I
 
-    .line 49
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mFocusViewId:I
 
-    .line 50
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffset:I
 
-    .line 51
     const/high16 v1, 0x42480000    # 50.0f
 
     iput v1, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetPercent:F
 
-    .line 52
     iput-boolean v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mOffsetWithPadding:Z
 
     return-void
@@ -64,7 +58,6 @@
 .method public final getItemAlignmentFocusViewId()I
     .locals 2
 
-    .line 167
     iget v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mFocusViewId:I
 
     const/4 v1, -0x1
@@ -85,7 +78,6 @@
 .method public isAlignedToTextViewBaseLine()Z
     .locals 1
 
-    .line 183
     iget-boolean v0, p0, Landroid/support/v17/leanback/widget/ItemAlignmentFacet$ItemAlignmentDef;->mAlignToBaseline:Z
 
     return v0

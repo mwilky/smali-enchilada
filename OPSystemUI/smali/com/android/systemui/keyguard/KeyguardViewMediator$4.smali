@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/keyguard/KeyguardViewMediator;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
-    .line 1679
     iput-object p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$4;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1682
     const-string v0, "android.intent.action.ACTION_SHUTDOWN"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,12 +46,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1683
     iget-object v0, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$4;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
     monitor-enter v0
 
-    .line 1684
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$4;->this$0:Lcom/android/systemui/keyguard/KeyguardViewMediator;
 
@@ -64,7 +57,6 @@
 
     invoke-static {v1, v2}, Lcom/android/systemui/keyguard/KeyguardViewMediator;->access$1402(Lcom/android/systemui/keyguard/KeyguardViewMediator;Z)Z
 
-    .line 1685
     monitor-exit v0
 
     goto :goto_0
@@ -78,7 +70,6 @@
 
     throw v1
 
-    .line 1687
     :cond_0
     :goto_0
     return-void

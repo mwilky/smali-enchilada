@@ -25,17 +25,14 @@
 .method public constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 1
 
-    .line 518
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BugReportAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 519
     const p1, 0x1080389
 
     const v0, 0x10400ea
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 
-    .line 520
     return-void
 .end method
 
@@ -44,7 +41,6 @@
 .method public getStatus()Ljava/lang/String;
     .locals 4
 
-    .line 575
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BugReportAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
@@ -79,7 +75,6 @@
 .method public onLongPress()Z
     .locals 3
 
-    .line 551
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
     move-result v0
@@ -88,10 +83,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 552
     return v1
 
-    .line 556
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BugReportAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
@@ -104,7 +97,6 @@
 
     invoke-static {v0, v2}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
 
-    .line 557
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
     move-result-object v0
@@ -113,14 +105,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 560
     goto :goto_0
 
-    .line 559
     :catch_0
     move-exception v0
 
-    .line 561
     :goto_0
     return v1
 .end method
@@ -128,17 +117,14 @@
 .method public onPress()V
     .locals 4
 
-    .line 526
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 527
     return-void
 
-    .line 532
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$BugReportAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -154,14 +140,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 545
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 570
     const/4 v0, 0x0
 
     return v0
@@ -170,7 +154,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 565
     const/4 v0, 0x1
 
     return v0

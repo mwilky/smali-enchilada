@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/AutoTileManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
-    .line 100
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +35,6 @@
 .method public static synthetic lambda$onManagedProfileChanged$0(Lcom/android/systemui/statusbar/phone/AutoTileManager$2;)V
     .locals 2
 
-    .line 107
     const-class v0, Lcom/android/systemui/statusbar/phone/ManagedProfileController;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -48,14 +45,12 @@
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
-    .line 108
     invoke-static {v1}, Lcom/android/systemui/statusbar/phone/AutoTileManager;->access$400(Lcom/android/systemui/statusbar/phone/AutoTileManager;)Lcom/android/systemui/statusbar/phone/ManagedProfileController$Callback;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/phone/ManagedProfileController;->removeCallback(Ljava/lang/Object;)V
 
-    .line 107
     return-void
 .end method
 
@@ -64,7 +59,6 @@
 .method public onManagedProfileChanged()V
     .locals 2
 
-    .line 103
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/AutoTileManager;->access$000(Lcom/android/systemui/statusbar/phone/AutoTileManager;)Lcom/android/systemui/qs/AutoAddTracker;
@@ -81,7 +75,6 @@
 
     return-void
 
-    .line 104
     :cond_0
     const-class v0, Lcom/android/systemui/statusbar/phone/ManagedProfileController;
 
@@ -97,7 +90,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 105
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/AutoTileManager;->access$100(Lcom/android/systemui/statusbar/phone/AutoTileManager;)Lcom/android/systemui/qs/QSTileHost;
@@ -108,7 +100,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSTileHost;->addTile(Ljava/lang/String;)V
 
-    .line 106
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/AutoTileManager;->access$000(Lcom/android/systemui/statusbar/phone/AutoTileManager;)Lcom/android/systemui/qs/AutoAddTracker;
@@ -119,7 +110,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/AutoAddTracker;->setTileAdded(Ljava/lang/String;)V
 
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/AutoTileManager$2;->this$0:Lcom/android/systemui/statusbar/phone/AutoTileManager;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/AutoTileManager;->access$200(Lcom/android/systemui/statusbar/phone/AutoTileManager;)Landroid/os/Handler;
@@ -132,7 +122,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 110
     :cond_1
     return-void
 .end method
@@ -140,6 +129,5 @@
 .method public onManagedProfileRemoved()V
     .locals 0
 
-    .line 114
     return-void
 .end method

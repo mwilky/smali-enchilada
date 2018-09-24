@@ -21,9 +21,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;ZII)V
     .locals 2
-    .param p2, "tooNew"    # Z
-    .param p3, "expected"    # I
-    .param p4, "actual"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -32,8 +29,6 @@
         }
     .end annotation
 
-    .line 120
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,25 +57,18 @@
 
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 121
     iput-boolean p2, p0, Lcom/android/systemui/plugins/VersionInfo$InvalidVersionException;->mTooNew:Z
 
-    .line 122
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "str"    # Ljava/lang/String;
-    .param p2, "tooNew"    # Z
 
-    .line 115
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 116
     iput-boolean p2, p0, Lcom/android/systemui/plugins/VersionInfo$InvalidVersionException;->mTooNew:Z
 
-    .line 117
     return-void
 .end method
 
@@ -89,7 +77,6 @@
 .method public isTooNew()Z
     .locals 1
 
-    .line 125
     iget-boolean v0, p0, Lcom/android/systemui/plugins/VersionInfo$InvalidVersionException;->mTooNew:Z
 
     return v0

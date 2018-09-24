@@ -23,7 +23,6 @@
 .method public getSessionToken()Landroid/support/v4/media/session/MediaSessionCompat$Token;
     .locals 1
 
-    .line 692
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat;->mImpl:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
     invoke-interface {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->getSessionToken()Landroid/support/v4/media/session/MediaSessionCompat$Token;
@@ -35,33 +34,25 @@
 
 .method public setPlaybackToLocal(I)V
     .locals 1
-    .param p1, "stream"    # I
 
-    .line 599
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat;->mImpl:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
     invoke-interface {v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setPlaybackToLocal(I)V
 
-    .line 600
     return-void
 .end method
 
 .method public setPlaybackToRemote(Landroid/support/v4/media/VolumeProviderCompat;)V
     .locals 2
-    .param p1, "volumeProvider"    # Landroid/support/v4/media/VolumeProviderCompat;
 
-    .line 618
     if-eqz p1, :cond_0
 
-    .line 621
     iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat;->mImpl:Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;
 
     invoke-interface {v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImpl;->setPlaybackToRemote(Landroid/support/v4/media/VolumeProviderCompat;)V
 
-    .line 622
     return-void
 
-    .line 619
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

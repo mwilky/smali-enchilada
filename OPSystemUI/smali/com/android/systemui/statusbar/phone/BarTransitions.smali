@@ -26,18 +26,13 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;I)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "gradientResourceId"    # I
 
-    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mAlwaysOpaque:Z
 
-    .line 82
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,10 +57,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mTag:Ljava/lang/String;
 
-    .line 83
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mView:Landroid/view/View;
 
-    .line 86
     new-instance v0, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mView:Landroid/view/View;
@@ -78,7 +71,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
-    .line 88
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -89,23 +81,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 89
     :cond_0
     return-void
 .end method
 
 .method public static modeToString(I)Ljava/lang/String;
     .locals 3
-    .param p0, "mode"    # I
 
-    .line 167
     if-nez p0, :cond_0
 
     const-string v0, "MODE_OPAQUE"
 
     return-object v0
 
-    .line 168
     :cond_0
     const/4 v0, 0x1
 
@@ -115,7 +103,6 @@
 
     return-object v0
 
-    .line 169
     :cond_1
     const/4 v0, 0x2
 
@@ -125,7 +112,6 @@
 
     return-object v0
 
-    .line 170
     :cond_2
     const/4 v0, 0x3
 
@@ -135,7 +121,6 @@
 
     return-object v0
 
-    .line 171
     :cond_3
     const/4 v0, 0x4
 
@@ -145,7 +130,6 @@
 
     return-object v0
 
-    .line 172
     :cond_4
     const/4 v0, 0x5
 
@@ -155,7 +139,6 @@
 
     return-object v0
 
-    .line 173
     :cond_5
     const/4 v0, 0x6
 
@@ -165,7 +148,6 @@
 
     return-object v0
 
-    .line 175
     :cond_6
     const/4 v0, 0x7
 
@@ -175,7 +157,6 @@
 
     return-object v0
 
-    .line 178
     :cond_7
     const/16 v0, 0xb
 
@@ -185,7 +166,6 @@
 
     return-object v0
 
-    .line 183
     :cond_8
     const-string v0, "BarTransitions"
 
@@ -205,7 +185,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
     const-string v0, "MODE_UNKNOWN"
 
     return-object v0
@@ -215,11 +194,7 @@
 # virtual methods
 .method protected applyModeBackground(IIZ)V
     .locals 5
-    .param p1, "oldMode"    # I
-    .param p2, "newMode"    # I
-    .param p3, "animate"    # Z
 
-    .line 159
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v0, :cond_0
@@ -234,7 +209,6 @@
 
     const/4 v3, 0x0
 
-    .line 160
     invoke-static {p1}, Lcom/android/systemui/statusbar/phone/BarTransitions;->modeToString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -257,25 +231,21 @@
 
     aput-object v4, v2, v3
 
-    .line 159
     invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 161
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 162
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->applyModeBackground(IIZ)V
 
-    .line 164
     :cond_1
     return-void
 .end method
@@ -283,37 +253,30 @@
 .method public destroy()V
     .locals 2
 
-    .line 200
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 201
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mView:Landroid/view/View;
 
-    .line 202
     iput-object v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
-    .line 203
     return-void
 .end method
 
 .method public finishAnimations()V
     .locals 1
 
-    .line 189
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 190
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->finishAnimation()V
 
-    .line 192
     :cond_0
     return-void
 .end method
@@ -321,12 +284,10 @@
 .method public getColor()I
     .locals 1
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 102
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->getColor()I
@@ -335,7 +296,6 @@
 
     return v0
 
-    .line 104
     :cond_0
     const/4 v0, -0x1
 
@@ -345,7 +305,6 @@
 .method public getMode()I
     .locals 1
 
-    .line 92
     iget v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
     return v0
@@ -354,7 +313,6 @@
 .method public isAlwaysOpaque()Z
     .locals 1
 
-    .line 118
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mAlwaysOpaque:Z
 
     return v0
@@ -362,9 +320,7 @@
 
 .method protected isLightsOut(I)Z
     .locals 1
-    .param p1, "mode"    # I
 
-    .line 195
     const/4 v0, 0x3
 
     if-eq p1, v0, :cond_1
@@ -390,76 +346,53 @@
 
 .method protected onTransition(IIZ)V
     .locals 0
-    .param p1, "oldMode"    # I
-    .param p2, "newMode"    # I
-    .param p3, "animate"    # Z
 
-    .line 155
     invoke-virtual {p0, p1, p2, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions;->applyModeBackground(IIZ)V
 
-    .line 156
     return-void
 .end method
 
 .method public setAutoDim(Z)V
     .locals 0
-    .param p1, "autoDim"    # Z
 
-    .line 97
     return-void
 .end method
 
 .method public transitionTo(IIZ)V
     .locals 2
-    .param p1, "mode"    # I
-    .param p2, "color"    # I
-    .param p3, "animate"    # Z
 
-    .line 123
     const/4 v0, 0x7
 
     if-eq p1, v0, :cond_0
 
-    .line 124
     invoke-virtual {p0, p1, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions;->transitionTo(IZ)V
 
-    .line 125
     return-void
 
-    .line 128
     :cond_0
     iget v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
-    .line 129
-    .local v1, "oldMode":I
     iput v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
-    .line 130
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 131
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mBarBackground:Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;
 
     invoke-static {v0, p2}, Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;->access$002(Lcom/android/systemui/statusbar/phone/BarTransitions$BarBackgroundDrawable;I)I
 
-    .line 134
     :cond_1
     iget v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
     invoke-virtual {p0, v1, v0, p3}, Lcom/android/systemui/statusbar/phone/BarTransitions;->onTransition(IIZ)V
 
-    .line 135
     return-void
 .end method
 
 .method public transitionTo(IZ)V
     .locals 8
-    .param p1, "mode"    # I
-    .param p2, "animate"    # Z
 
-    .line 139
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/BarTransitions;->isAlwaysOpaque()Z
 
     move-result v0
@@ -478,11 +411,9 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 141
     :cond_0
     const/4 p1, 0x0
 
-    .line 143
     :cond_1
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/BarTransitions;->isAlwaysOpaque()Z
 
@@ -494,10 +425,8 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 144
     const/4 p1, 0x3
 
-    .line 146
     :cond_2
     iget v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
@@ -505,15 +434,11 @@
 
     return-void
 
-    .line 147
     :cond_3
     iget v0, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
-    .line 148
-    .local v0, "oldMode":I
     iput p1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
-    .line 149
     sget-boolean v3, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-eqz v3, :cond_4
@@ -528,7 +453,6 @@
 
     const/4 v6, 0x0
 
-    .line 150
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/BarTransitions;->modeToString(I)Ljava/lang/String;
 
     move-result-object v7
@@ -547,19 +471,16 @@
 
     aput-object v2, v5, v1
 
-    .line 149
     invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
     :cond_4
     iget v1, p0, Lcom/android/systemui/statusbar/phone/BarTransitions;->mMode:I
 
     invoke-virtual {p0, v0, v1, p2}, Lcom/android/systemui/statusbar/phone/BarTransitions;->onTransition(IIZ)V
 
-    .line 152
     return-void
 .end method

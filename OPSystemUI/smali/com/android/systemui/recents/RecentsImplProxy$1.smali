@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/RecentsImplProxy;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsImplProxy;
 
-    .line 115
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 120
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -46,12 +42,10 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 157
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
     goto/16 :goto_5
 
-    .line 154
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -65,10 +59,8 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/recents/RecentsImpl;->onShowCurrentUserToast(II)V
 
-    .line 155
     goto/16 :goto_5
 
-    .line 151
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -86,10 +78,8 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsImpl;->onDraggingInRecentsEnded(F)V
 
-    .line 152
     goto/16 :goto_5
 
-    .line 148
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -107,17 +97,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/RecentsImpl;->onDraggingInRecents(F)V
 
-    .line 149
     goto/16 :goto_5
 
-    .line 143
     :pswitch_3
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 144
-    .local v0, "args":Lcom/android/internal/os/SomeArgs;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsImplProxy;->access$000(Lcom/android/systemui/recents/RecentsImplProxy;)Lcom/android/systemui/recents/RecentsImpl;
@@ -136,11 +122,8 @@
 
     invoke-virtual {v1, v3, v4, v2, v5}, Lcom/android/systemui/recents/RecentsImpl;->splitPrimaryTask(IIILandroid/graphics/Rect;)V
 
-    .line 146
     goto/16 :goto_5
 
-    .line 140
-    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_4
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -150,17 +133,13 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsImpl;->onConfigurationChanged()V
 
-    .line 141
     goto/16 :goto_5
 
-    .line 136
     :pswitch_5
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 137
-    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
     invoke-static {v1}, Lcom/android/systemui/recents/RecentsImplProxy;->access$000(Lcom/android/systemui/recents/RecentsImplProxy;)Lcom/android/systemui/recents/RecentsImpl;
@@ -171,11 +150,8 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/RecentsImpl;->toggleRecents(I)V
 
-    .line 138
     goto :goto_5
 
-    .line 133
-    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_6
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -207,17 +183,13 @@
     :goto_1
     invoke-virtual {v0, v3, v1}, Lcom/android/systemui/recents/RecentsImpl;->hideRecents(ZZ)V
 
-    .line 134
     goto :goto_5
 
-    .line 128
     :pswitch_7
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/internal/os/SomeArgs;
 
-    .line 129
-    .restart local v0    # "args":Lcom/android/internal/os/SomeArgs;
     iget-object v3, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
     invoke-static {v3}, Lcom/android/systemui/recents/RecentsImplProxy;->access$000(Lcom/android/systemui/recents/RecentsImplProxy;)Lcom/android/systemui/recents/RecentsImpl;
@@ -262,11 +234,8 @@
 
     invoke-virtual {v3, v4, v5, v1, v2}, Lcom/android/systemui/recents/RecentsImpl;->showRecents(ZZZI)V
 
-    .line 131
     goto :goto_5
 
-    .line 125
-    .end local v0    # "args":Lcom/android/internal/os/SomeArgs;
     :pswitch_8
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -276,10 +245,8 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsImpl;->cancelPreloadingRecents()V
 
-    .line 126
     goto :goto_5
 
-    .line 122
     :pswitch_9
     iget-object v0, p0, Lcom/android/systemui/recents/RecentsImplProxy$1;->this$0:Lcom/android/systemui/recents/RecentsImplProxy;
 
@@ -289,14 +256,11 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/RecentsImpl;->preloadRecents()V
 
-    .line 123
     nop
 
-    .line 159
     :goto_5
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 160
     return-void
 
     :pswitch_data_0

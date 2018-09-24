@@ -29,7 +29,6 @@
 .method public getToggleEnabled()Z
     .locals 1
 
-    .line 32
     const/4 v0, 0x1
 
     return v0
@@ -41,7 +40,6 @@
 .method public hasHeader()Z
     .locals 1
 
-    .line 45
     const/4 v0, 0x1
 
     return v0

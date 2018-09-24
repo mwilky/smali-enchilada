@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackView;
 
-    .line 1821
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$5;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 1823
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$5;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackView;->access$200(Lcom/android/systemui/recents/views/TaskStackView;)Lcom/android/systemui/recents/views/grid/TaskViewFocusFrame;
@@ -46,7 +42,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1825
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$5;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackView;->access$200(Lcom/android/systemui/recents/views/TaskStackView;)Lcom/android/systemui/recents/views/grid/TaskViewFocusFrame;
@@ -55,7 +50,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/grid/TaskViewFocusFrame;->resize()V
 
-    .line 1827
     :cond_0
     return-void
 .end method

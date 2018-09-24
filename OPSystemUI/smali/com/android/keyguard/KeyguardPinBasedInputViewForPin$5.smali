@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
-    .line 243
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPinBasedInputViewForPin$5;->this$0:Lcom/android/keyguard/KeyguardPinBasedInputViewForPin;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,8 +36,6 @@
 # virtual methods
 .method public onTextChanged(Ljava/lang/String;)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/String;
 
-    .line 247
     return-void
 .end method

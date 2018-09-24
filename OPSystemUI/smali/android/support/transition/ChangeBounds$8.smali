@@ -35,9 +35,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/ChangeBounds;Landroid/view/View;Landroid/graphics/Rect;IIII)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/ChangeBounds;
 
-    .line 367
     iput-object p1, p0, Landroid/support/transition/ChangeBounds$8;->this$0:Landroid/support/transition/ChangeBounds;
 
     iput-object p2, p0, Landroid/support/transition/ChangeBounds$8;->val$view:Landroid/view/View;
@@ -61,34 +59,27 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 372
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/transition/ChangeBounds$8;->mIsCanceled:Z
 
-    .line 373
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 377
     iget-boolean v0, p0, Landroid/support/transition/ChangeBounds$8;->mIsCanceled:Z
 
     if-nez v0, :cond_0
 
-    .line 378
     iget-object v0, p0, Landroid/support/transition/ChangeBounds$8;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Landroid/support/transition/ChangeBounds$8;->val$finalClip:Landroid/graphics/Rect;
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setClipBounds(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 379
     iget-object v0, p0, Landroid/support/transition/ChangeBounds$8;->val$view:Landroid/view/View;
 
     iget v1, p0, Landroid/support/transition/ChangeBounds$8;->val$endLeft:I
@@ -101,7 +92,6 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Landroid/support/transition/ViewUtils;->setLeftTopRightBottom(Landroid/view/View;IIII)V
 
-    .line 382
     :cond_0
     return-void
 .end method

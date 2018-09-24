@@ -44,10 +44,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Landroid/content/Context;Lcom/android/systemui/plugins/VersionInfo;)V
     .locals 0
-    .param p1, "pkg"    # Ljava/lang/String;
-    .param p2, "cls"    # Ljava/lang/String;
-    .param p4, "pluginContext"    # Landroid/content/Context;
-    .param p5, "info"    # Lcom/android/systemui/plugins/VersionInfo;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,35 +56,24 @@
         }
     .end annotation
 
-    .line 421
-    .local p0, "this":Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;, "Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo<TT;>;"
-    .local p3, "plugin":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 422
     iput-object p3, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mPlugin:Ljava/lang/Object;
 
-    .line 423
     iput-object p2, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mClass:Ljava/lang/String;
 
-    .line 424
     iput-object p1, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mPackage:Ljava/lang/String;
 
-    .line 425
     iput-object p4, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mPluginContext:Landroid/content/Context;
 
-    .line 426
     iput-object p5, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mVersion:Lcom/android/systemui/plugins/VersionInfo;
 
-    .line 427
     return-void
 .end method
 
 .method static synthetic access$200(Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;)Landroid/content/Context;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;
 
-    .line 413
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mPluginContext:Landroid/content/Context;
 
     return-object v0
@@ -96,9 +81,7 @@
 
 .method static synthetic access$300(Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;
 
-    .line 413
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mClass:Ljava/lang/String;
 
     return-object v0
@@ -106,9 +89,7 @@
 
 .method static synthetic access$400(Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;)Lcom/android/systemui/plugins/VersionInfo;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;
 
-    .line 413
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginInstanceManager$PluginInfo;->mVersion:Lcom/android/systemui/plugins/VersionInfo;
 
     return-object v0

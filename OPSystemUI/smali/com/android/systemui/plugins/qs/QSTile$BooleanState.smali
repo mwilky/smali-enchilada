@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 182
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$State;-><init>()V
 
     return-void
@@ -41,30 +40,22 @@
 .method public copy()Lcom/android/systemui/plugins/qs/QSTile$State;
     .locals 1
 
-    .line 203
     new-instance v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;-><init>()V
 
-    .line 204
-    .local v0, "state":Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
     invoke-virtual {p0, v0}, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
-    .line 205
     return-object v0
 .end method
 
 .method public copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
     .locals 3
-    .param p1, "other"    # Lcom/android/systemui/plugins/qs/QSTile$State;
 
-    .line 188
     move-object v0, p1
 
     check-cast v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
 
-    .line 189
-    .local v0, "o":Lcom/android/systemui/plugins/qs/QSTile$BooleanState;
     invoke-super {p0, p1}, Lcom/android/systemui/plugins/qs/QSTile$State;->copyTo(Lcom/android/systemui/plugins/qs/QSTile$State;)Z
 
     move-result v1
@@ -88,27 +79,21 @@
     :goto_0
     const/4 v1, 0x1
 
-    .line 190
-    .local v1, "changed":Z
     :goto_1
     iget-boolean v2, p0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
     iput-boolean v2, v0, Lcom/android/systemui/plugins/qs/QSTile$BooleanState;->value:Z
 
-    .line 191
     return v1
 .end method
 
 .method protected toStringBuilder()Ljava/lang/StringBuilder;
     .locals 4
 
-    .line 196
     invoke-super {p0}, Lcom/android/systemui/plugins/qs/QSTile$State;->toStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 197
-    .local v0, "rt":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
@@ -133,6 +118,5 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 198
     return-object v0
 .end method

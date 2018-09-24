@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
-    .line 425
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$3;->this$0:Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$3;->val$removedOverflowNumber:Landroid/view/View;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 428
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$3;->this$0:Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$3;->val$removedOverflowNumber:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->removeTransientView(Landroid/view/View;)V
 
-    .line 429
     return-void
 .end method

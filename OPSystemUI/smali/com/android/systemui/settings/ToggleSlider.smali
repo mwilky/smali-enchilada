@@ -17,9 +17,7 @@
 
 .method public setChecked(Z)V
     .locals 0
-    .param p1, "checked"    # Z
 
-    .line 27
     return-void
 .end method
 

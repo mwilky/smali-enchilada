@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 125
     invoke-direct {p0}, Landroid/support/v17/leanback/transition/FadeAndShortSlide$CalculateSlide;-><init>()V
 
     return-void
@@ -28,12 +27,7 @@
 # virtual methods
 .method public getGoneY(Landroid/support/v17/leanback/transition/FadeAndShortSlide;Landroid/view/ViewGroup;Landroid/view/View;[I)F
     .locals 2
-    .param p1, "t"    # Landroid/support/v17/leanback/transition/FadeAndShortSlide;
-    .param p2, "sceneRoot"    # Landroid/view/ViewGroup;
-    .param p3, "view"    # Landroid/view/View;
-    .param p4, "position"    # [I
 
-    .line 128
     invoke-virtual {p3}, Landroid/view/View;->getTranslationY()F
 
     move-result v0

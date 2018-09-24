@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer;
 
-    .line 34
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
@@ -35,12 +33,9 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 37
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 38
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer$1;->this$0:Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/KeyguardPreviewContainer;->getHeight()I
@@ -71,22 +66,18 @@
 
     invoke-virtual {p1, v3, v0, v1, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 39
     const/high16 v0, -0x1000000
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 40
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 41
     return-void
 .end method
 
 .method public getOpacity()I
     .locals 1
 
-    .line 55
     const/4 v0, -0x1
 
     return v0
@@ -94,16 +85,12 @@
 
 .method public setAlpha(I)V
     .locals 0
-    .param p1, "alpha"    # I
 
-    .line 46
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 0
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
-    .line 51
     return-void
 .end method

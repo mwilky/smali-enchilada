@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
-    .line 65
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->val$handler:Landroid/os/Handler;
@@ -38,7 +36,6 @@
 .method public static synthetic lambda$onWallpaperVisibilityChanged$0(Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;)V
     .locals 2
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     const/4 v1, 0x0
@@ -52,20 +49,16 @@
 # virtual methods
 .method public onWallpaperVisibilityChanged(ZI)V
     .locals 2
-    .param p1, "newVisibility"    # Z
-    .param p2, "displayId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .line 69
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->this$0:Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;->access$002(Lcom/android/systemui/statusbar/phone/NavigationBarTransitions;Z)Z
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NavigationBarTransitions$1;->val$handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/statusbar/phone/-$$Lambda$NavigationBarTransitions$1$5foY_Yygo1gW25-mVBRpPSQRb_g;
@@ -74,6 +67,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 74
     return-void
 .end method

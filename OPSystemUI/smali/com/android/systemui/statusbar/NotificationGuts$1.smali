@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationGuts;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationGuts;
 
-    .line 119
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationGuts$1;->this$0:Lcom/android/systemui/statusbar/NotificationGuts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 3
 
-    .line 122
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGuts$1;->this$0:Lcom/android/systemui/statusbar/NotificationGuts;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationGuts;->access$000(Lcom/android/systemui/statusbar/NotificationGuts;)Z
@@ -56,7 +53,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 123
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationGuts$1;->this$0:Lcom/android/systemui/statusbar/NotificationGuts;
 
     const/4 v1, 0x0
@@ -65,7 +61,6 @@
 
     invoke-virtual {v0, v2, v2, v1, v1}, Lcom/android/systemui/statusbar/NotificationGuts;->closeControls(IIZZ)V
 
-    .line 125
     :cond_0
     return-void
 .end method

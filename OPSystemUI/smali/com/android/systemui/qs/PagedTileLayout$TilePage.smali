@@ -17,34 +17,25 @@
 # instance fields
 .field private mMaxRows:I
 
-.field public mQsRows:I
-
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 368
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/qs/TileLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 366
     const/4 v0, 0x3
 
     iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mMaxRows:I
 
-    .line 369
     invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->updateResources()Z
 
-    .line 370
     return-void
 .end method
 
 .method private getRows()I
     .locals 2
 
-    .line 384
     invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -60,8 +51,6 @@
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
-    
-    iget v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
 
     return v0
 .end method
@@ -71,7 +60,6 @@
 .method public isFull()Z
     .locals 3
 
-    .line 392
     iget-object v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mRecords:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -100,15 +88,10 @@
 .method public updateResources()Z
     .locals 5
 
-    .line 374
-    invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->readRenovateMods()V
-    
     invoke-direct {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->getRows()I
 
     move-result v0
 
-    .line 375
-    .local v0, "rows":I
     iget v1, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mMaxRows:I
 
     const/4 v2, 0x0
@@ -124,21 +107,14 @@
     :cond_0
     move v1, v2
 
-    .line 376
-    .local v1, "changed":Z
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 377
     iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mMaxRows:I
 
-    .line 378
     invoke-virtual {p0}, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->requestLayout()V
 
-    .line 380
     :cond_1
-    invoke-super {p0}, Lcom/android/systemui/qs/TileLayout;->readRenovateMods()V
-    
     invoke-super {p0}, Lcom/android/systemui/qs/TileLayout;->updateResources()Z
 
     move-result v4
@@ -158,14 +134,4 @@
 
     :goto_2
     return v2
-.end method
-
-.method public readRenovateMods()V
-    .locals 1
-    
-    sget v0, Lcom/android/mwilky/Renovate;->mQsRows:I
-    
-    iput v0, p0, Lcom/android/systemui/qs/PagedTileLayout$TilePage;->mQsRows:I
-	
-    return-void
 .end method

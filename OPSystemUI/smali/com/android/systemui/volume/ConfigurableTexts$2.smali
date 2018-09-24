@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/ConfigurableTexts;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/ConfigurableTexts;
 
-    .line 85
     iput-object p1, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,10 @@
 .method public run()V
     .locals 5
 
-    .line 88
     const/4 v0, 0x0
 
     move v1, v0
 
-    .local v1, "i":I
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
 
@@ -58,7 +54,6 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 89
     iget-object v2, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
 
     iget-object v3, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
@@ -91,17 +86,13 @@
 
     invoke-static {v2, v3, v4}, Lcom/android/systemui/volume/ConfigurableTexts;->access$000(Lcom/android/systemui/volume/ConfigurableTexts;Landroid/widget/TextView;I)V
 
-    .line 88
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 91
-    .end local v1    # "i":I
     :cond_0
     nop
 
-    .local v0, "i":I
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
 
@@ -115,7 +106,6 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 92
     iget-object v1, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
 
     iget-object v2, p0, Lcom/android/systemui/volume/ConfigurableTexts$2;->this$0:Lcom/android/systemui/volume/ConfigurableTexts;
@@ -148,13 +138,10 @@
 
     invoke-static {v1, v2, v3}, Lcom/android/systemui/volume/ConfigurableTexts;->access$300(Lcom/android/systemui/volume/ConfigurableTexts;Landroid/widget/TextView;I)V
 
-    .line 91
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 94
-    .end local v0    # "i":I
     :cond_1
     return-void
 .end method

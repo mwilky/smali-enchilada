@@ -26,7 +26,6 @@
 .method private constructor <init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
     .locals 0
 
-    .line 136
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,10 +35,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/qs/tiles/LocationTile;Lcom/android/systemui/qs/tiles/LocationTile$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/qs/tiles/LocationTile;
-    .param p2, "x1"    # Lcom/android/systemui/qs/tiles/LocationTile$1;
 
-    .line 136
     invoke-direct {p0, p1}, Lcom/android/systemui/qs/tiles/LocationTile$Callback;-><init>(Lcom/android/systemui/qs/tiles/LocationTile;)V
 
     return-void
@@ -50,24 +46,19 @@
 .method public onKeyguardShowingChanged()V
     .locals 1
 
-    .line 145
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
 
-    .line 146
     return-void
 .end method
 
 .method public onLocationSettingsChanged(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
 
-    .line 140
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/LocationTile$Callback;->this$0:Lcom/android/systemui/qs/tiles/LocationTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/LocationTile;->refreshState()V
 
-    .line 141
     return-void
 .end method

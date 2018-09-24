@@ -28,7 +28,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 754
     invoke-direct {p0}, Lcom/android/systemui/qs/QSPanel$Record;-><init>()V
 
     return-void

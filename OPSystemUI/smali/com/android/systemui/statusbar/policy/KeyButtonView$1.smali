@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/KeyButtonView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
-    .line 95
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 97
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->isPressed()Z
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 99
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->isLongClickable()Z
@@ -59,19 +55,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->performLongClick()Z
 
-    .line 102
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->access$002(Lcom/android/systemui/statusbar/policy/KeyButtonView;Z)Z
 
     goto :goto_0
 
-    .line 103
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
@@ -81,14 +74,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 105
     invoke-static {}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->access$200()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 106
     invoke-static {}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->access$300()Ljava/lang/String;
 
     move-result-object v0
@@ -115,7 +106,6 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
@@ -125,19 +115,16 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->sendEvent(II)V
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->sendAccessibilityEvent(I)V
 
-    .line 111
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/KeyButtonView$1;->this$0:Lcom/android/systemui/statusbar/policy/KeyButtonView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/KeyButtonView;->access$002(Lcom/android/systemui/statusbar/policy/KeyButtonView;Z)Z
 
-    .line 114
     :cond_2
     :goto_0
     return-void

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/TransitionManager$MultiListener;Landroid/support/v4/util/ArrayMap;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/TransitionManager$MultiListener;
 
-    .line 281
     iput-object p1, p0, Landroid/support/transition/TransitionManager$MultiListener$1;->this$0:Landroid/support/transition/TransitionManager$MultiListener;
 
     iput-object p2, p0, Landroid/support/transition/TransitionManager$MultiListener$1;->val$runningTransitions:Landroid/support/v4/util/ArrayMap;
@@ -39,9 +37,7 @@
 # virtual methods
 .method public onTransitionEnd(Landroid/support/transition/Transition;)V
     .locals 2
-    .param p1, "transition"    # Landroid/support/transition/Transition;
 
-    .line 284
     iget-object v0, p0, Landroid/support/transition/TransitionManager$MultiListener$1;->val$runningTransitions:Landroid/support/v4/util/ArrayMap;
 
     iget-object v1, p0, Landroid/support/transition/TransitionManager$MultiListener$1;->this$0:Landroid/support/transition/TransitionManager$MultiListener;
@@ -54,10 +50,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 285
-    .local v0, "currentTransitions":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Landroid/support/transition/Transition;>;"
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 286
     return-void
 .end method

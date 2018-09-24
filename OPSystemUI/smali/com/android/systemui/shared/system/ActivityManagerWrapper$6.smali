@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/shared/system/ActivityManagerWrapper;Ljava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
-    .line 390
     iput-object p1, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$6;->this$0:Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
     iput-object p2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$6;->val$reason:Ljava/lang/String;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 394
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -55,23 +52,17 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 397
     goto :goto_0
 
-    .line 395
     :catch_0
     move-exception v0
 
-    .line 396
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ActivityManagerWrapper"
 
     const-string v2, "Failed to close system windows"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 398
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

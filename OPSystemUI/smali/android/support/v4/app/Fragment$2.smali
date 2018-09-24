@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/Fragment;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/app/Fragment;
 
-    .line 2373
     iput-object p1, p0, Landroid/support/v4/app/Fragment$2;->this$0:Landroid/support/v4/app/Fragment;
 
     invoke-direct {p0}, Landroid/support/v4/app/FragmentContainer;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/Fragment;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "className"    # Ljava/lang/String;
-    .param p3, "arguments"    # Landroid/os/Bundle;
 
-    .line 2390
     iget-object v0, p0, Landroid/support/v4/app/Fragment$2;->this$0:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mHost:Landroid/support/v4/app/FragmentHostCallback;
@@ -53,16 +47,13 @@
 
 .method public onFindViewById(I)Landroid/view/View;
     .locals 2
-    .param p1, "id"    # I
 
-    .line 2377
     iget-object v0, p0, Landroid/support/v4/app/Fragment$2;->this$0:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 2380
     iget-object v0, p0, Landroid/support/v4/app/Fragment$2;->this$0:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
@@ -73,7 +64,6 @@
 
     return-object v0
 
-    .line 2378
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -87,7 +77,6 @@
 .method public onHasView()Z
     .locals 1
 
-    .line 2385
     iget-object v0, p0, Landroid/support/v4/app/Fragment$2;->this$0:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;

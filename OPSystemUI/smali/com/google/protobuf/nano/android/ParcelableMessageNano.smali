@@ -10,7 +10,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 41
     invoke-direct {p0}, Lcom/google/protobuf/nano/MessageNano;-><init>()V
 
     return-void

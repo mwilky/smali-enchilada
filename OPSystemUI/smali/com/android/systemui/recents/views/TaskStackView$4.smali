@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackView;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackView;
 
-    .line 1796
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->val$tasks:Ljava/util/ArrayList;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 1800
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     iget-object v1, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
@@ -60,7 +57,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 1804
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackView;->access$100(Lcom/android/systemui/recents/views/TaskStackView;)Lcom/android/systemui/shared/recents/model/TaskStack;
@@ -71,7 +67,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/shared/recents/model/TaskStack;->removeAllTasks(Z)V
 
-    .line 1805
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->val$tasks:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -80,11 +75,9 @@
 
     sub-int/2addr v0, v1
 
-    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 1806
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v1
@@ -103,13 +96,10 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 1805
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 1809
-    .end local v0    # "i":I
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackView$4;->this$0:Lcom/android/systemui/recents/views/TaskStackView;
 
@@ -121,6 +111,5 @@
 
     invoke-static {v0, v1}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
 
-    .line 1810
     return-void
 .end method

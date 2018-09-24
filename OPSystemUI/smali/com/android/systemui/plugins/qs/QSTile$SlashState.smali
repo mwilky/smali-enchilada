@@ -32,7 +32,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,38 +42,30 @@
 .method public copy()Lcom/android/systemui/plugins/qs/QSTile$SlashState;
     .locals 2
 
-    .line 292
     new-instance v0, Lcom/android/systemui/plugins/qs/QSTile$SlashState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/qs/QSTile$SlashState;-><init>()V
 
-    .line 293
-    .local v0, "state":Lcom/android/systemui/plugins/qs/QSTile$SlashState;
     iget v1, p0, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->rotation:F
 
     iput v1, v0, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->rotation:F
 
-    .line 294
     iget-boolean v1, p0, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->isSlashed:Z
 
     iput-boolean v1, v0, Lcom/android/systemui/plugins/qs/QSTile$SlashState;->isSlashed:Z
 
-    .line 295
     return-object v0
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 282
     const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
     return v0
 
-    .line 284
     :cond_0
     :try_start_0
     move-object v1, p1
@@ -108,19 +99,15 @@
     :cond_1
     return v0
 
-    .line 286
     :catch_0
     move-exception v1
 
-    .line 287
-    .local v1, "e":Ljava/lang/ClassCastException;
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 277
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -17,42 +17,30 @@
 # virtual methods
 .method public onBatteryLevelChanged(IZZ)V
     .locals 0
-    .param p1, "level"    # I
-    .param p2, "pluggedIn"    # Z
-    .param p3, "charging"    # Z
 
-    .line 55
     return-void
 .end method
 
 .method public onBatteryPercentShowChange(Z)V
     .locals 0
-    .param p1, "show"    # Z
 
-    .line 58
     return-void
 .end method
 
 .method public onBatteryStyleChanged(I)V
     .locals 0
-    .param p1, "style"    # I
 
-    .line 60
     return-void
 .end method
 
 .method public onFastChargeChanged(Z)V
     .locals 0
-    .param p1, "fastCharge"    # Z
 
-    .line 59
     return-void
 .end method
 
 .method public onPowerSaveChanged(Z)V
     .locals 0
-    .param p1, "isPowerSave"    # Z
 
-    .line 56
     return-void
 .end method

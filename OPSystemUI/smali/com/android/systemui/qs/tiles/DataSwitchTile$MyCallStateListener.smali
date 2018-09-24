@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/DataSwitchTile;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
-    .line 274
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$MyCallStateListener;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onCallStateChanged(ILjava/lang/String;)V
     .locals 2
-    .param p1, "state"    # I
-    .param p2, "arg1"    # Ljava/lang/String;
 
-    .line 277
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$MyCallStateListener;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/DataSwitchTile$MyCallStateListener;->this$0:Lcom/android/systemui/qs/tiles/DataSwitchTile;
@@ -63,6 +58,5 @@
     :goto_0
     invoke-static {v0, v1}, Lcom/android/systemui/qs/tiles/DataSwitchTile;->access$002(Lcom/android/systemui/qs/tiles/DataSwitchTile;Z)Z
 
-    .line 278
     return-void
 .end method

@@ -14,9 +14,7 @@
 # direct methods
 .method public static getActions(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 45
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -30,9 +28,7 @@
 
 .method public static getActiveQueueItemId(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 61
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -46,9 +42,7 @@
 
 .method public static getBufferedPosition(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 37
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -62,7 +56,6 @@
 
 .method public static getCustomActions(Ljava/lang/Object;)Ljava/util/List;
     .locals 1
-    .param p0, "stateObj"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,7 +67,6 @@
         }
     .end annotation
 
-    .line 57
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -88,9 +80,7 @@
 
 .method public static getErrorMessage(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 49
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -104,9 +94,7 @@
 
 .method public static getLastPositionUpdateTime(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 53
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -120,9 +108,7 @@
 
 .method public static getPlaybackSpeed(Ljava/lang/Object;)F
     .locals 1
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 41
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -136,9 +122,7 @@
 
 .method public static getPosition(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 33
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;
@@ -152,9 +136,7 @@
 
 .method public static getState(Ljava/lang/Object;)I
     .locals 1
-    .param p0, "stateObj"    # Ljava/lang/Object;
 
-    .line 29
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/PlaybackState;

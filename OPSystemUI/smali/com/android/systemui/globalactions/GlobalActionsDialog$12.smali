@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 1306
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 1308
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_1
 
-    .line 1324
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -52,13 +47,11 @@
 
     goto :goto_1
 
-    .line 1320
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
 
-    .line 1321
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
@@ -67,10 +60,8 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;->notifyDataSetChanged()V
 
-    .line 1322
     goto :goto_1
 
-    .line 1310
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -80,7 +71,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 1311
     const-string v0, "dream"
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -91,7 +81,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1312
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
@@ -102,7 +91,6 @@
 
     goto :goto_0
 
-    .line 1314
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -112,7 +100,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;->dismiss()V
 
-    .line 1316
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$12;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -120,7 +107,6 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2102(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ActionsDialog;
 
-    .line 1327
     :cond_1
     :goto_1
     return-void

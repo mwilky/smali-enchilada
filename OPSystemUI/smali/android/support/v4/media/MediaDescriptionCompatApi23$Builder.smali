@@ -17,16 +17,12 @@
 # direct methods
 .method public static setMediaUri(Ljava/lang/Object;Landroid/net/Uri;)V
     .locals 1
-    .param p0, "builderObj"    # Ljava/lang/Object;
-    .param p1, "mediaUri"    # Landroid/net/Uri;
 
-    .line 31
     move-object v0, p0
 
     check-cast v0, Landroid/media/MediaDescription$Builder;
 
     invoke-virtual {v0, p1}, Landroid/media/MediaDescription$Builder;->setMediaUri(Landroid/net/Uri;)Landroid/media/MediaDescription$Builder;
 
-    .line 32
     return-void
 .end method

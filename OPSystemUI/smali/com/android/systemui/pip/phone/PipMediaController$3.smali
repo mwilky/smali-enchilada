@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/phone/PipMediaController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/phone/PipMediaController;
 
-    .line 103
     iput-object p1, p0, Lcom/android/systemui/pip/phone/PipMediaController$3;->this$0:Lcom/android/systemui/pip/phone/PipMediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,12 +45,9 @@
         }
     .end annotation
 
-    .line 106
-    .local p1, "controllers":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/MediaController;>;"
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipMediaController$3;->this$0:Lcom/android/systemui/pip/phone/PipMediaController;
 
     invoke-static {v0, p1}, Lcom/android/systemui/pip/phone/PipMediaController;->access$200(Lcom/android/systemui/pip/phone/PipMediaController;Ljava/util/List;)V
 
-    .line 107
     return-void
 .end method

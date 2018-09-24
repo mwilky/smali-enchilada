@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/PasswordTextView$CharState;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/keyguard/PasswordTextView$CharState;
 
-    .line 441
     iput-object p1, p0, Lcom/android/keyguard/PasswordTextView$CharState$6;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 444
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$6;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,13 +51,11 @@
 
     iput v1, v0, Lcom/android/keyguard/PasswordTextView$CharState;->currentDotSizeFactor:F
 
-    .line 445
     iget-object v0, p0, Lcom/android/keyguard/PasswordTextView$CharState$6;->this$1:Lcom/android/keyguard/PasswordTextView$CharState;
 
     iget-object v0, v0, Lcom/android/keyguard/PasswordTextView$CharState;->this$0:Lcom/android/keyguard/PasswordTextView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/PasswordTextView;->invalidate()V
 
-    .line 446
     return-void
 .end method

@@ -29,9 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationInfo;Landroid/view/View;ZLandroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationInfo;
 
-    .line 402
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->this$0:Lcom/android/systemui/statusbar/NotificationInfo;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->val$prompt:Landroid/view/View;
@@ -42,7 +40,6 @@
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 403
     const/4 p2, 0x0
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->cancelled:Z
@@ -54,27 +51,21 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 407
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->cancelled:Z
 
-    .line 408
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 412
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->cancelled:Z
 
     if-nez v0, :cond_2
 
-    .line 413
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->val$prompt:Landroid/view/View;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->val$showPrompt:Z
@@ -95,7 +86,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 414
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->val$confirmation:Landroid/view/ViewGroup;
 
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationInfo$1;->val$showPrompt:Z
@@ -110,7 +100,6 @@
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 416
     :cond_2
     return-void
 .end method

@@ -21,13 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/GameModeTile;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/GameModeTile;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "handler"    # Landroid/os/Handler;
-    .param p4, "settingName"    # Ljava/lang/String;
-    .param p5, "currentUserOnly"    # Z
 
-    .line 50
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/GameModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/GameModeTile;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lcom/android/systemui/qs/SystemSetting;-><init>(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Z)V
@@ -39,10 +33,7 @@
 # virtual methods
 .method protected handleValueChanged(IZ)V
     .locals 3
-    .param p1, "value"    # I
-    .param p2, "observedChange"    # Z
 
-    .line 53
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/GameModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/GameModeTile;
 
     invoke-static {v0}, Lcom/android/systemui/qs/tiles/GameModeTile;->access$000(Lcom/android/systemui/qs/tiles/GameModeTile;)Ljava/lang/String;
@@ -65,11 +56,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/GameModeTile$1;->this$0:Lcom/android/systemui/qs/tiles/GameModeTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/GameModeTile;->refreshState()V
 
-    .line 55
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/ZenModePanel;Landroid/net/Uri;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/ZenModePanel;
 
-    .line 814
     iput-object p1, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     iput-object p2, p0, Lcom/android/systemui/volume/ZenModePanel$5;->val$realConditionId:Landroid/net/Uri;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 817
     iget-object v0, p0, Lcom/android/systemui/volume/ZenModePanel$5;->this$0:Lcom/android/systemui/volume/ZenModePanel;
 
     invoke-static {v0}, Lcom/android/systemui/volume/ZenModePanel;->access$1400(Lcom/android/systemui/volume/ZenModePanel;)Lcom/android/systemui/statusbar/policy/ZenModeController;
@@ -62,6 +59,5 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/android/systemui/statusbar/policy/ZenModeController;->setZen(ILandroid/net/Uri;Ljava/lang/String;)V
 
-    .line 818
     return-void
 .end method

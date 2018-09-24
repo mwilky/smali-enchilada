@@ -17,13 +17,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/systemui/statusbar/policy/CallbackHandler;Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
     .locals 17
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "callbackHandler"    # Lcom/android/systemui/statusbar/policy/CallbackHandler;
-    .param p3, "networkController"    # Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;
 
     move-object/from16 v6, p0
 
-    .line 32
     const-string v1, "EthernetSignalController"
 
     const/4 v3, 0x3
@@ -38,7 +34,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/statusbar/policy/SignalController;-><init>(Ljava/lang/String;Landroid/content/Context;ILcom/android/systemui/statusbar/policy/CallbackHandler;Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;)V
 
-    .line 34
     iget-object v0, v6, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/SignalController$State;
 
     iget-object v1, v6, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->mLastState:Lcom/android/systemui/statusbar/policy/SignalController$State;
@@ -75,7 +70,6 @@
 
     iput-object v2, v0, Lcom/android/systemui/statusbar/policy/SignalController$State;->iconGroup:Lcom/android/systemui/statusbar/policy/SignalController$IconGroup;
 
-    .line 41
     return-void
 .end method
 
@@ -84,7 +78,6 @@
 .method public cleanState()Lcom/android/systemui/statusbar/policy/SignalController$State;
     .locals 1
 
-    .line 61
     new-instance v0, Lcom/android/systemui/statusbar/policy/SignalController$State;
 
     invoke-direct {v0}, Lcom/android/systemui/statusbar/policy/SignalController$State;-><init>()V
@@ -94,15 +87,11 @@
 
 .method public notifyListeners(Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;)V
     .locals 4
-    .param p1, "callback"    # Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/SignalController$State;
 
     iget-boolean v0, v0, Lcom/android/systemui/statusbar/policy/SignalController$State;->connected:Z
 
-    .line 52
-    .local v0, "ethernetVisible":Z
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->getContentDescription()I
 
     move-result v1
@@ -111,8 +100,6 @@
 
     move-result-object v1
 
-    .line 55
-    .local v1, "contentDescription":Ljava/lang/String;
     new-instance v2, Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->getCurrentIconId()I
@@ -123,16 +110,12 @@
 
     invoke-interface {p1, v2}, Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;->setEthernetIndicators(Lcom/android/systemui/statusbar/policy/NetworkController$IconState;)V
 
-    .line 57
     return-void
 .end method
 
 .method public updateConnectivity(Ljava/util/BitSet;Ljava/util/BitSet;)V
     .locals 2
-    .param p1, "connectedTransports"    # Ljava/util/BitSet;
-    .param p2, "validatedTransports"    # Ljava/util/BitSet;
 
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/SignalController$State;
 
     iget v1, p0, Lcom/android/systemui/statusbar/policy/EthernetSignalController;->mTransportType:I
@@ -143,9 +126,7 @@
 
     iput-boolean v1, v0, Lcom/android/systemui/statusbar/policy/SignalController$State;->connected:Z
 
-    .line 46
     invoke-super {p0, p1, p2}, Lcom/android/systemui/statusbar/policy/SignalController;->updateConnectivity(Ljava/util/BitSet;Ljava/util/BitSet;)V
 
-    .line 47
     return-void
 .end method

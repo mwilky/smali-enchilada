@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/phone/PipMenuActivity;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/phone/PipMenuActivity;
 
-    .line 123
     iput-object p1, p0, Lcom/android/systemui/pip/phone/PipMenuActivity$1;->this$0:Lcom/android/systemui/pip/phone/PipMenuActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 126
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -51,8 +47,6 @@
 
     move-result v0
 
-    .line 127
-    .local v0, "alpha":F
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipMenuActivity$1;->this$0:Lcom/android/systemui/pip/phone/PipMenuActivity;
 
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipMenuActivity;->access$000(Lcom/android/systemui/pip/phone/PipMenuActivity;)Landroid/graphics/drawable/Drawable;
@@ -71,6 +65,5 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 128
     return-void
 .end method

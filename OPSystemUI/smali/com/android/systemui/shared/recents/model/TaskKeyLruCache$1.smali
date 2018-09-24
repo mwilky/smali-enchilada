@@ -29,11 +29,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;
-    .param p2, "x0"    # I
 
-    .line 48
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;, "Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;"
     iput-object p1, p0, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;->this$0:Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;
 
     invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
@@ -45,8 +41,6 @@
 # virtual methods
 .method protected entryRemoved(ZLjava/lang/Integer;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 3
-    .param p1, "evicted"    # Z
-    .param p2, "taskId"    # Ljava/lang/Integer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -55,10 +49,6 @@
         }
     .end annotation
 
-    .line 52
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;, "Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;"
-    .local p3, "oldV":Ljava/lang/Object;, "TV;"
-    .local p4, "newV":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;->this$0:Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;
 
     invoke-static {v0}, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;->access$000(Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;)Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$EvictionCallback;
@@ -67,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 53
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;->this$0:Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;
 
     invoke-static {v0}, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;->access$000(Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;)Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$EvictionCallback;
@@ -90,7 +79,6 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$EvictionCallback;->onEntryEvicted(Lcom/android/systemui/shared/recents/model/Task$TaskKey;)V
 
-    .line 55
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;->this$0:Lcom/android/systemui/shared/recents/model/TaskKeyLruCache;
 
@@ -102,15 +90,12 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 56
     return-void
 .end method
 
 .method protected bridge synthetic entryRemoved(ZLjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 48
-    .local p0, "this":Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;, "Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;"
     check-cast p2, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/systemui/shared/recents/model/TaskKeyLruCache$1;->entryRemoved(ZLjava/lang/Integer;Ljava/lang/Object;Ljava/lang/Object;)V

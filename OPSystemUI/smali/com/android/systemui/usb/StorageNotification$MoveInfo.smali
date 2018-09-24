@@ -30,7 +30,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,9 +37,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/usb/StorageNotification$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/usb/StorageNotification$1;
 
-    .line 63
     invoke-direct {p0}, Lcom/android/systemui/usb/StorageNotification$MoveInfo;-><init>()V
 
     return-void

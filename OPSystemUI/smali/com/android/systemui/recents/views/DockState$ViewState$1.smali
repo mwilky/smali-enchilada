@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/String;
 
-    .line 106
     invoke-direct {p0, p1}, Landroid/util/IntProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,9 +35,7 @@
 # virtual methods
 .method public get(Lcom/android/systemui/recents/views/DockState$ViewState;)Ljava/lang/Integer;
     .locals 1
-    .param p1, "object"    # Lcom/android/systemui/recents/views/DockState$ViewState;
 
-    .line 115
     invoke-static {p1}, Lcom/android/systemui/recents/views/DockState$ViewState;->access$000(Lcom/android/systemui/recents/views/DockState$ViewState;)I
 
     move-result v0
@@ -54,7 +50,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 106
     check-cast p1, Lcom/android/systemui/recents/views/DockState$ViewState;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/recents/views/DockState$ViewState$1;->get(Lcom/android/systemui/recents/views/DockState$ViewState;)Ljava/lang/Integer;
@@ -66,25 +61,19 @@
 
 .method public setValue(Lcom/android/systemui/recents/views/DockState$ViewState;I)V
     .locals 1
-    .param p1, "object"    # Lcom/android/systemui/recents/views/DockState$ViewState;
-    .param p2, "alpha"    # I
 
-    .line 109
     invoke-static {p1, p2}, Lcom/android/systemui/recents/views/DockState$ViewState;->access$002(Lcom/android/systemui/recents/views/DockState$ViewState;I)I
 
-    .line 110
     iget-object v0, p1, Lcom/android/systemui/recents/views/DockState$ViewState;->dockAreaOverlay:Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/ColorDrawable;->invalidateSelf()V
 
-    .line 111
     return-void
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;I)V
     .locals 0
 
-    .line 106
     check-cast p1, Lcom/android/systemui/recents/views/DockState$ViewState;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/recents/views/DockState$ViewState$1;->setValue(Lcom/android/systemui/recents/views/DockState$ViewState;I)V

@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 28
     const-class v0, Lcom/android/systemui/doze/DozePauser;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -36,18 +35,11 @@
 
 .method public constructor <init>(Landroid/os/Handler;Lcom/android/systemui/doze/DozeMachine;Landroid/app/AlarmManager;Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;)V
     .locals 3
-    .param p1, "handler"    # Landroid/os/Handler;
-    .param p2, "machine"    # Lcom/android/systemui/doze/DozeMachine;
-    .param p3, "alarmManager"    # Landroid/app/AlarmManager;
-    .param p4, "policy"    # Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;
 
-    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 35
     iput-object p2, p0, Lcom/android/systemui/doze/DozePauser;->mMachine:Lcom/android/systemui/doze/DozeMachine;
 
-    .line 36
     new-instance v0, Lcom/android/systemui/util/AlarmTimeout;
 
     new-instance v1, Lcom/android/systemui/doze/-$$Lambda$DozePauser$RaYrBg9_HgEkLP8ozxXkVSg4K5c;
@@ -60,10 +52,8 @@
 
     iput-object v0, p0, Lcom/android/systemui/doze/DozePauser;->mPauseTimeout:Lcom/android/systemui/util/AlarmTimeout;
 
-    .line 37
     iput-object p4, p0, Lcom/android/systemui/doze/DozePauser;->mPolicy:Lcom/android/systemui/doze/AlwaysOnDisplayPolicy;
 
-    .line 38
     return-void
 .end method
 
@@ -78,14 +68,12 @@
 .method private onTimeout()V
     .locals 2
 
-    .line 54
     iget-object v0, p0, Lcom/android/systemui/doze/DozePauser;->mMachine:Lcom/android/systemui/doze/DozeMachine;
 
     sget-object v1, Lcom/android/systemui/doze/DozeMachine$State;->DOZE_AOD_PAUSED:Lcom/android/systemui/doze/DozeMachine$State;
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/doze/DozeMachine;->requestState(Lcom/android/systemui/doze/DozeMachine$State;)V
 
-    .line 55
     return-void
 .end method
 
@@ -93,10 +81,7 @@
 # virtual methods
 .method public transitionTo(Lcom/android/systemui/doze/DozeMachine$State;Lcom/android/systemui/doze/DozeMachine$State;)V
     .locals 4
-    .param p1, "oldState"    # Lcom/android/systemui/doze/DozeMachine$State;
-    .param p2, "newState"    # Lcom/android/systemui/doze/DozeMachine$State;
 
-    .line 42
     sget-object v0, Lcom/android/systemui/doze/DozePauser$1;->$SwitchMap$com$android$systemui$doze$DozeMachine$State:[I
 
     invoke-virtual {p2}, Lcom/android/systemui/doze/DozeMachine$State;->ordinal()I
@@ -109,14 +94,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 48
     iget-object v0, p0, Lcom/android/systemui/doze/DozePauser;->mPauseTimeout:Lcom/android/systemui/util/AlarmTimeout;
 
     invoke-virtual {v0}, Lcom/android/systemui/util/AlarmTimeout;->cancel()V
 
     goto :goto_0
 
-    .line 44
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozePauser;->mPauseTimeout:Lcom/android/systemui/util/AlarmTimeout;
 
@@ -126,10 +109,8 @@
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/android/systemui/util/AlarmTimeout;->schedule(JI)V
 
-    .line 46
     nop
 
-    .line 51
     :goto_0
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/KeyguardIndicationController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
-    .line 660
     iput-object p1, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$9;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
-    .line 663
     iget-object v0, p0, Lcom/android/systemui/statusbar/KeyguardIndicationController$9;->this$0:Lcom/android/systemui/statusbar/KeyguardIndicationController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/KeyguardIndicationController;->access$800(Lcom/android/systemui/statusbar/KeyguardIndicationController;)Landroid/widget/FrameLayout;
@@ -59,6 +55,5 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 664
     return-void
 .end method

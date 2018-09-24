@@ -26,9 +26,7 @@
 
 .method public setExpansion(F)V
     .locals 0
-    .param p1, "expansion"    # F
 
-    .line 772
     return-void
 .end method
 

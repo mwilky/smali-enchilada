@@ -17,7 +17,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 35
     const/4 v0, 0x1
 
     new-array v1, v0, [Lcom/android/systemui/recents/views/DockState;
@@ -30,7 +29,6 @@
 
     sput-object v1, Lcom/android/systemui/recents/DockRegion;->PHONE_LANDSCAPE:[Lcom/android/systemui/recents/views/DockState;
 
-    .line 39
     new-array v1, v0, [Lcom/android/systemui/recents/views/DockState;
 
     sget-object v2, Lcom/android/systemui/recents/views/DockState;->TOP:Lcom/android/systemui/recents/views/DockState;
@@ -39,7 +37,6 @@
 
     sput-object v1, Lcom/android/systemui/recents/DockRegion;->PHONE_PORTRAIT:[Lcom/android/systemui/recents/views/DockState;
 
-    .line 43
     const/4 v1, 0x2
 
     new-array v1, v1, [Lcom/android/systemui/recents/views/DockState;
@@ -54,7 +51,6 @@
 
     sput-object v1, Lcom/android/systemui/recents/DockRegion;->TABLET_LANDSCAPE:[Lcom/android/systemui/recents/views/DockState;
 
-    .line 47
     sget-object v0, Lcom/android/systemui/recents/DockRegion;->PHONE_PORTRAIT:[Lcom/android/systemui/recents/views/DockState;
 
     sput-object v0, Lcom/android/systemui/recents/DockRegion;->TABLET_PORTRAIT:[Lcom/android/systemui/recents/views/DockState;

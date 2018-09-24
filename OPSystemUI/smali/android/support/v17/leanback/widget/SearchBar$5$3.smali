@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v17/leanback/widget/SearchBar$5;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v17/leanback/widget/SearchBar$5;
 
-    .line 283
     iput-object p1, p0, Landroid/support/v17/leanback/widget/SearchBar$5$3;->this$1:Landroid/support/v17/leanback/widget/SearchBar$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 287
     iget-object v0, p0, Landroid/support/v17/leanback/widget/SearchBar$5$3;->this$1:Landroid/support/v17/leanback/widget/SearchBar$5;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/SearchBar$5;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
@@ -48,7 +45,6 @@
 
     iput-boolean v1, v0, Landroid/support/v17/leanback/widget/SearchBar;->mAutoStartRecognition:Z
 
-    .line 288
     iget-object v0, p0, Landroid/support/v17/leanback/widget/SearchBar$5$3;->this$1:Landroid/support/v17/leanback/widget/SearchBar$5;
 
     iget-object v0, v0, Landroid/support/v17/leanback/widget/SearchBar$5;->this$0:Landroid/support/v17/leanback/widget/SearchBar;
@@ -57,6 +53,5 @@
 
     invoke-virtual {v0}, Landroid/support/v17/leanback/widget/SpeechOrbView;->requestFocus()Z
 
-    .line 289
     return-void
 .end method

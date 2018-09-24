@@ -32,17 +32,13 @@
 # virtual methods
 .method public getActiveNotifications([Landroid/service/notification/StatusBarNotification;)[Landroid/service/notification/StatusBarNotification;
     .locals 0
-    .param p1, "activeNotifications"    # [Landroid/service/notification/StatusBarNotification;
 
-    .line 42
     return-object p1
 .end method
 
 .method public getCurrentRanking(Landroid/service/notification/NotificationListenerService$RankingMap;)Landroid/service/notification/NotificationListenerService$RankingMap;
     .locals 0
-    .param p1, "currentRanking"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 46
     return-object p1
 .end method
 
@@ -51,10 +47,7 @@
 
 .method public onNotificationPosted(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)Z
     .locals 1
-    .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
-    .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 34
     const/4 v0, 0x0
 
     return v0
@@ -62,10 +55,7 @@
 
 .method public onNotificationRemoved(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/NotificationListenerService$RankingMap;)Z
     .locals 1
-    .param p1, "sbn"    # Landroid/service/notification/StatusBarNotification;
-    .param p2, "rankingMap"    # Landroid/service/notification/NotificationListenerService$RankingMap;
 
-    .line 37
     const/4 v0, 0x0
 
     return v0

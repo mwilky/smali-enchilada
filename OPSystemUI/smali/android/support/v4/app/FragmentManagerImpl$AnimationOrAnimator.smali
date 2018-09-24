@@ -23,26 +23,19 @@
 # direct methods
 .method private constructor <init>(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 3966
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3967
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;->animation:Landroid/view/animation/Animation;
 
-    .line 3968
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;->animator:Landroid/animation/Animator;
 
-    .line 3969
     if-eqz p1, :cond_0
 
-    .line 3972
     return-void
 
-    .line 3970
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -55,10 +48,7 @@
 
 .method synthetic constructor <init>(Landroid/animation/Animator;Landroid/support/v4/app/FragmentManagerImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/animation/Animator;
-    .param p2, "x1"    # Landroid/support/v4/app/FragmentManagerImpl$1;
 
-    .line 3954
     invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;-><init>(Landroid/animation/Animator;)V
 
     return-void
@@ -66,26 +56,19 @@
 
 .method private constructor <init>(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 3958
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3959
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;->animation:Landroid/view/animation/Animation;
 
-    .line 3960
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;->animator:Landroid/animation/Animator;
 
-    .line 3961
     if-eqz p1, :cond_0
 
-    .line 3964
     return-void
 
-    .line 3962
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -98,10 +81,7 @@
 
 .method synthetic constructor <init>(Landroid/view/animation/Animation;Landroid/support/v4/app/FragmentManagerImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/view/animation/Animation;
-    .param p2, "x1"    # Landroid/support/v4/app/FragmentManagerImpl$1;
 
-    .line 3954
     invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentManagerImpl$AnimationOrAnimator;-><init>(Landroid/view/animation/Animation;)V
 
     return-void

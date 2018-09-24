@@ -32,9 +32,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/shared/recents/model/Task;Lcom/android/systemui/recents/views/TaskStackView;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/RecentsView;
 
-    .line 943
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$7;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$7;->val$task:Lcom/android/systemui/shared/recents/model/Task;
@@ -50,9 +48,7 @@
 
 .method public static synthetic lambda$run$0(Lcom/android/systemui/recents/views/RecentsView$7;Lcom/android/systemui/shared/recents/model/Task;)V
     .locals 4
-    .param p1, "task"    # Lcom/android/systemui/shared/recents/model/Task;
 
-    .line 962
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -73,7 +69,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 964
     return-void
 .end method
 
@@ -82,21 +77,17 @@
 .method public run()V
     .locals 5
 
-    .line 948
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$7;->mHandled:Z
 
     if-eqz v0, :cond_0
 
-    .line 949
     return-void
 
-    .line 951
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$7;->mHandled:Z
 
-    .line 955
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -109,7 +100,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 956
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -120,17 +110,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 957
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$7;->val$stackView:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackView;->cancelAllTaskViewAnimations()V
 
-    .line 959
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$7;->val$screenPinningRequested:Z
 
     if-eqz v0, :cond_1
 
-    .line 961
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$7;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->access$200(Lcom/android/systemui/recents/views/RecentsView;)Landroid/os/Handler;
@@ -147,7 +134,6 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 967
     :cond_1
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getConfiguration()Lcom/android/systemui/recents/RecentsConfiguration;
 
@@ -157,7 +143,6 @@
 
     if-nez v0, :cond_2
 
-    .line 969
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -170,7 +155,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 971
     :cond_2
     return-void
 .end method

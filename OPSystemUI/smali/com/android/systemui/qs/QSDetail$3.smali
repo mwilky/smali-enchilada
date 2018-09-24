@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSDetail;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/QSDetail;
 
-    .line 350
     iput-object p1, p0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onScanStateChanged(Z)V
     .locals 2
-    .param p1, "state"    # Z
 
-    .line 381
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     new-instance v1, Lcom/android/systemui/qs/QSDetail$3$3;
@@ -49,17 +45,12 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSDetail;->post(Ljava/lang/Runnable;)Z
 
-    .line 387
     return-void
 .end method
 
 .method public onShowingDetail(Lcom/android/systemui/plugins/qs/DetailAdapter;II)V
     .locals 3
-    .param p1, "detail"    # Lcom/android/systemui/plugins/qs/DetailAdapter;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
 
-    .line 364
     const-string v0, "QSDetail"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -96,7 +87,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 366
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSDetail;->access$400(Lcom/android/systemui/qs/QSDetail;)Z
@@ -113,7 +103,6 @@
 
     if-nez v0, :cond_0
 
-    .line 367
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     new-instance v1, Lcom/android/systemui/qs/QSDetail$3$2;
@@ -124,7 +113,6 @@
 
     goto :goto_0
 
-    .line 374
     :cond_0
     const-string v0, "QSDetail"
 
@@ -162,16 +150,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 377
     :goto_0
     return-void
 .end method
 
 .method public onToggleStateChanged(Z)V
     .locals 2
-    .param p1, "state"    # Z
 
-    .line 353
     iget-object v0, p0, Lcom/android/systemui/qs/QSDetail$3;->this$0:Lcom/android/systemui/qs/QSDetail;
 
     new-instance v1, Lcom/android/systemui/qs/QSDetail$3$1;
@@ -180,6 +165,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/QSDetail;->post(Ljava/lang/Runnable;)Z
 
-    .line 360
     return-void
 .end method

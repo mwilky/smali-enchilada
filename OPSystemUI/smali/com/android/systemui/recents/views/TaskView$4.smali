@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskView;
 
-    .line 227
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskView$4;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskView;->access$000(Lcom/android/systemui/recents/views/TaskView;)Landroid/view/View;
@@ -63,11 +58,9 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    .line 232
     const v0, 0x3eb33333    # 0.35f
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 233
     return-void
 .end method

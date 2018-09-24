@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistOrbView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistOrbView;
 
-    .line 259
     iput-object p1, p0, Lcom/android/systemui/assist/AssistOrbView$6;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 14
 
-    .line 262
     iget-object v0, p0, Lcom/android/systemui/assist/AssistOrbView$6;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     iget-object v1, p0, Lcom/android/systemui/assist/AssistOrbView$6;->this$0:Lcom/android/systemui/assist/AssistOrbView;
@@ -62,7 +59,6 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/systemui/assist/AssistOrbView;->animateCircleSize(FJJLandroid/view/animation/Interpolator;)V
 
-    .line 263
     iget-object v7, p0, Lcom/android/systemui/assist/AssistOrbView$6;->this$0:Lcom/android/systemui/assist/AssistOrbView;
 
     iget-object v0, p0, Lcom/android/systemui/assist/AssistOrbView$6;->this$0:Lcom/android/systemui/assist/AssistOrbView;
@@ -81,6 +77,5 @@
 
     invoke-static/range {v7 .. v13}, Lcom/android/systemui/assist/AssistOrbView;->access$1200(Lcom/android/systemui/assist/AssistOrbView;FJJLandroid/view/animation/Interpolator;)V
 
-    .line 264
     return-void
 .end method

@@ -10,7 +10,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +20,6 @@
 .method public getEstimate()Lcom/android/systemui/power/Estimate;
     .locals 1
 
-    .line 14
     const/4 v0, 0x0
 
     return-object v0
@@ -30,7 +28,6 @@
 .method public getLowWarningThreshold()J
     .locals 2
 
-    .line 19
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -39,7 +36,6 @@
 .method public getSevereWarningThreshold()J
     .locals 2
 
-    .line 24
     const-wide/16 v0, 0x0
 
     return-wide v0
@@ -48,7 +44,6 @@
 .method public isHybridNotificationEnabled()Z
     .locals 1
 
-    .line 9
     const/4 v0, 0x0
 
     return v0

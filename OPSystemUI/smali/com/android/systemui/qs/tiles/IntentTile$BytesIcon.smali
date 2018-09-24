@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>([B)V
     .locals 0
-    .param p1, "bytes"    # [B
 
-    .line 186
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$Icon;-><init>()V
 
-    .line 187
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;->mBytes:[B
 
-    .line 188
     return-void
 .end method
 
@@ -37,9 +33,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 198
     instance-of v0, p1, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;
 
     if-eqz v0, :cond_0
@@ -71,9 +65,7 @@
 
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 192
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;->mBytes:[B
 
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/IntentTile$BytesIcon;->mBytes:[B
@@ -86,8 +78,6 @@
 
     move-result-object v0
 
-    .line 193
-    .local v0, "b":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -102,7 +92,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 203
     const-string v0, "BytesIcon[len=%s]"
 
     const/4 v1, 0x1

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/misc/SystemServicesProxy;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
-    .line 116
     iput-object p1, p0, Lcom/android/systemui/recents/misc/SystemServicesProxy$1;->this$0:Lcom/android/systemui/recents/misc/SystemServicesProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +37,9 @@
 .method public run()V
     .locals 0
 
-    .line 119
     invoke-static {}, Ljava/lang/System;->gc()V
 
-    .line 120
     invoke-static {}, Ljava/lang/System;->runFinalization()V
 
-    .line 121
     return-void
 .end method

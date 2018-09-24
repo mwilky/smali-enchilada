@@ -21,7 +21,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,11 +30,6 @@
 # virtual methods
 .method public createPluginInstanceManager(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/plugins/PluginListener;ZLandroid/os/Looper;Ljava/lang/Class;Lcom/android/systemui/plugins/PluginManagerImpl;)Lcom/android/systemui/plugins/PluginInstanceManager;
     .locals 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p4, "allowMultiple"    # Z
-    .param p5, "looper"    # Landroid/os/Looper;
-    .param p7, "manager"    # Lcom/android/systemui/plugins/PluginManagerImpl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -54,16 +48,12 @@
         }
     .end annotation
 
-    .line 321
-    .local p3, "listener":Lcom/android/systemui/plugins/PluginListener;, "Lcom/android/systemui/plugins/PluginListener<TT;>;"
-    .local p6, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v8, Lcom/android/systemui/plugins/PluginInstanceManager;
 
     new-instance v0, Lcom/android/systemui/plugins/VersionInfo;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/VersionInfo;-><init>()V
 
-    .line 322
     move-object/from16 v9, p6
 
     invoke-virtual {v0, v9}, Lcom/android/systemui/plugins/VersionInfo;->addClass(Ljava/lang/Class;)Lcom/android/systemui/plugins/VersionInfo;
@@ -86,6 +76,5 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/systemui/plugins/PluginInstanceManager;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/systemui/plugins/PluginListener;ZLandroid/os/Looper;Lcom/android/systemui/plugins/VersionInfo;Lcom/android/systemui/plugins/PluginManagerImpl;)V
 
-    .line 321
     return-object v8
 .end method

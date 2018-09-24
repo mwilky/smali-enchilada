@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardPasswordView;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardPasswordView;
 
-    .line 179
     iput-object p1, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     iput p2, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->val$reason:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 182
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardPasswordView;->isShown()Z
@@ -64,7 +61,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 183
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardPasswordView;->access$000(Lcom/android/keyguard/KeyguardPasswordView;)Landroid/widget/TextView;
@@ -73,7 +69,6 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView;->requestFocus()Z
 
-    .line 185
     const-string v0, "KeyguardPasswordView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -94,7 +89,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
     iget v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->val$reason:I
 
     const/4 v1, 0x1
@@ -109,7 +103,6 @@
 
     if-eqz v0, :cond_2
 
-    .line 192
     :cond_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
@@ -119,14 +112,12 @@
 
     if-nez v0, :cond_1
 
-    .line 193
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardPasswordView;->access$300(Lcom/android/keyguard/KeyguardPasswordView;)V
 
     goto :goto_0
 
-    .line 195
     :cond_1
     iget-object v0, p0, Lcom/android/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/keyguard/KeyguardPasswordView;
 
@@ -140,7 +131,6 @@
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardUpdateMonitor;->updateFingerprintListeningState()V
 
-    .line 201
     :cond_2
     :goto_0
     return-void

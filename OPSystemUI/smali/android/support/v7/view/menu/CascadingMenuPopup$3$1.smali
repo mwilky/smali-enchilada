@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/view/menu/CascadingMenuPopup$3;Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;Landroid/view/MenuItem;Landroid/support/v7/view/menu/MenuBuilder;)V
     .locals 0
-    .param p1, "this$1"    # Landroid/support/v7/view/menu/CascadingMenuPopup$3;
 
-    .line 172
     iput-object p1, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->this$1:Landroid/support/v7/view/menu/CascadingMenuPopup$3;
 
     iput-object p2, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;
@@ -51,12 +49,10 @@
 .method public run()V
     .locals 3
 
-    .line 177
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
     if-eqz v0, :cond_0
 
-    .line 180
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->this$1:Landroid/support/v7/view/menu/CascadingMenuPopup$3;
 
     iget-object v0, v0, Landroid/support/v7/view/menu/CascadingMenuPopup$3;->this$0:Landroid/support/v7/view/menu/CascadingMenuPopup;
@@ -65,7 +61,6 @@
 
     iput-boolean v1, v0, Landroid/support/v7/view/menu/CascadingMenuPopup;->mShouldCloseImmediately:Z
 
-    .line 181
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$nextInfo:Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
     iget-object v0, v0, Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;->menu:Landroid/support/v7/view/menu/MenuBuilder;
@@ -74,14 +69,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
 
-    .line 182
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->this$1:Landroid/support/v7/view/menu/CascadingMenuPopup$3;
 
     iget-object v0, v0, Landroid/support/v7/view/menu/CascadingMenuPopup$3;->this$0:Landroid/support/v7/view/menu/CascadingMenuPopup;
 
     iput-boolean v1, v0, Landroid/support/v7/view/menu/CascadingMenuPopup;->mShouldCloseImmediately:Z
 
-    .line 186
     :cond_0
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$item:Landroid/view/MenuItem;
 
@@ -99,7 +92,6 @@
 
     if-eqz v0, :cond_1
 
-    .line 187
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$menu:Landroid/support/v7/view/menu/MenuBuilder;
 
     iget-object v1, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$3$1;->val$item:Landroid/view/MenuItem;
@@ -108,7 +100,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;I)Z
 
-    .line 189
     :cond_1
     return-void
 .end method

@@ -18,23 +18,19 @@
 .method public onDeviceProvisionedChanged()V
     .locals 0
 
-    .line 32
     return-void
 .end method
 
 .method public onUserSetupChanged()V
     .locals 0
 
-    .line 36
     return-void
 .end method
 
 .method public onUserSwitched()V
     .locals 0
 
-    .line 34
     invoke-interface {p0}, Lcom/android/systemui/statusbar/policy/DeviceProvisionedController$DeviceProvisionedListener;->onUserSetupChanged()V
 
-    .line 35
     return-void
 .end method

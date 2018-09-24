@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/tv/PipControlsView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/tv/PipControlsView;
 
-    .line 133
     iput-object p1, p0, Lcom/android/systemui/pip/tv/PipControlsView$4;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 136
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipControlsView$4;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v0}, Lcom/android/systemui/pip/tv/PipControlsView;->access$300(Lcom/android/systemui/pip/tv/PipControlsView;)Lcom/android/systemui/pip/tv/PipManager;
@@ -49,6 +45,5 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/tv/PipManager;->movePipToFullscreen()V
 
-    .line 137
     return-void
 .end method

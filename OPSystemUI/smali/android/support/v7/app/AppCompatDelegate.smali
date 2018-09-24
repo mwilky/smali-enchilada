@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 130
     const/4 v0, -0x1
 
     sput v0, Landroid/support/v7/app/AppCompatDelegate;->sDefaultNightMode:I
@@ -22,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,10 +28,7 @@
 
 .method public static create(Landroid/app/Dialog;Landroid/support/v7/app/AppCompatCallback;)Landroid/support/v7/app/AppCompatDelegate;
     .locals 3
-    .param p0, "dialog"    # Landroid/app/Dialog;
-    .param p1, "callback"    # Landroid/support/v7/app/AppCompatCallback;
 
-    .line 191
     new-instance v0, Landroid/support/v7/app/AppCompatDelegateImpl;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -52,7 +47,6 @@
 .method public static getDefaultNightMode()I
     .locals 1
 
-    .line 475
     sget v0, Landroid/support/v7/app/AppCompatDelegate;->sDefaultNightMode:I
 
     return v0

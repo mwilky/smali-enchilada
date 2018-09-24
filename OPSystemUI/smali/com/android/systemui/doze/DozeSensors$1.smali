@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/doze/DozeSensors;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/doze/DozeSensors;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 183
     iput-object p1, p0, Lcom/android/systemui/doze/DozeSensors$1;->this$0:Lcom/android/systemui/doze/DozeSensors;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,21 +33,15 @@
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;I)V
     .locals 4
-    .param p1, "selfChange"    # Z
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "userId"    # I
 
-    .line 186
     invoke-static {}, Landroid/app/ActivityManager;->getCurrentUser()I
 
     move-result v0
 
     if-eq p3, v0, :cond_0
 
-    .line 187
     return-void
 
-    .line 189
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/doze/DozeSensors$1;->this$0:Lcom/android/systemui/doze/DozeSensors;
 
@@ -67,17 +58,12 @@
 
     aget-object v3, v0, v2
 
-    .line 190
-    .local v3, "s":Lcom/android/systemui/doze/DozeSensors$TriggerSensor;
     invoke-virtual {v3}, Lcom/android/systemui/doze/DozeSensors$TriggerSensor;->updateListener()V
 
-    .line 189
-    .end local v3    # "s":Lcom/android/systemui/doze/DozeSensors$TriggerSensor;
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 192
     :cond_1
     return-void
 .end method

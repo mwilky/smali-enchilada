@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl;
 
-    .line 165
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 3
-    .param p1, "reason"    # I
 
-    .line 173
     invoke-static {}, Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl;->access$000()Z
 
     move-result v0
@@ -65,7 +61,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
     :cond_0
     return-void
 .end method
@@ -73,7 +68,6 @@
 .method public onSuccess()V
     .locals 2
 
-    .line 168
     invoke-static {}, Lcom/android/systemui/statusbar/policy/AccessPointControllerImpl;->access$000()Z
 
     move-result v0
@@ -86,7 +80,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 169
     :cond_0
     return-void
 .end method

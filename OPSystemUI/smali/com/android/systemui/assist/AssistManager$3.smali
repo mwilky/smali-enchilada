@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistManager;
 
-    .line 112
     iput-object p1, p0, Lcom/android/systemui/assist/AssistManager$3;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     invoke-direct {p0}, Lcom/android/internal/app/IVoiceInteractionSessionListener$Stub;-><init>()V
@@ -41,14 +39,12 @@
         }
     .end annotation
 
-    .line 120
     const-string v0, "AssistManager"
 
     const-string v1, "Voice closed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
     return-void
 .end method
 
@@ -60,13 +56,11 @@
         }
     .end annotation
 
-    .line 115
     const-string v0, "AssistManager"
 
     const-string v1, "Voice open"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
     return-void
 .end method

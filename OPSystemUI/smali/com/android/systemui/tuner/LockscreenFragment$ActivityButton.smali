@@ -26,13 +26,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/pm/ActivityInfo;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "info"    # Landroid/content/pm/ActivityInfo;
 
-    .line 385
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 386
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
@@ -51,21 +47,18 @@
 
     iput-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIntent:Landroid/content/Intent;
 
-    .line 387
     new-instance v0, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     invoke-direct {v0}, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
-    .line 388
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->isVisible:Z
 
-    .line 389
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -82,7 +75,6 @@
 
     iput-object v2, v0, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 390
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -95,10 +87,8 @@
 
     iput-object v2, v0, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 391
     nop
 
-    .line 392
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -107,7 +97,6 @@
 
     move-result-object v0
 
-    .line 391
     const/high16 v2, 0x42000000    # 32.0f
 
     invoke-static {v1, v2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
@@ -116,8 +105,6 @@
 
     float-to-int v0, v0
 
-    .line 393
-    .local v0, "size":I
     iget-object v1, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     new-instance v2, Lcom/android/systemui/statusbar/ScalingDrawableWrapper;
@@ -132,7 +119,6 @@
 
     iget-object v5, v5, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 394
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v5
@@ -145,14 +131,12 @@
 
     iput-object v2, v1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 395
     iget-object v1, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     const/4 v2, 0x0
 
     iput-boolean v2, v1, Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;->tint:Z
 
-    .line 396
     return-void
 .end method
 
@@ -161,7 +145,6 @@
 .method public getIcon()Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
     .locals 1
 
-    .line 400
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIconState:Lcom/android/systemui/plugins/IntentButtonProvider$IntentButton$IconState;
 
     return-object v0
@@ -170,7 +153,6 @@
 .method public getIntent()Landroid/content/Intent;
     .locals 1
 
-    .line 405
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$ActivityButton;->mIntent:Landroid/content/Intent;
 
     return-object v0

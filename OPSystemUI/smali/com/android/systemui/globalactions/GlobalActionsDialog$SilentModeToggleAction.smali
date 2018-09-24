@@ -22,10 +22,8 @@
 .method public constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 6
 
-    .line 1157
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$SilentModeToggleAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 1158
     const v1, 0x1080304
 
     const v2, 0x1080303
@@ -40,7 +38,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;-><init>(IIIII)V
 
-    .line 1163
     return-void
 .end method
 
@@ -48,12 +45,9 @@
 # virtual methods
 .method onToggle(Z)V
     .locals 2
-    .param p1, "on"    # Z
 
-    .line 1166
     if-eqz p1, :cond_0
 
-    .line 1167
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$SilentModeToggleAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1700(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/media/AudioManager;
@@ -66,7 +60,6 @@
 
     goto :goto_0
 
-    .line 1169
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$SilentModeToggleAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -78,7 +71,6 @@
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setRingerMode(I)V
 
-    .line 1171
     :goto_0
     return-void
 .end method
@@ -86,7 +78,6 @@
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 1178
     const/4 v0, 0x0
 
     return v0
@@ -95,7 +86,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 1174
     const/4 v0, 0x1
 
     return v0

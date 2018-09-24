@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/analytics/DataCollector;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/analytics/DataCollector;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 76
     iput-object p1, p0, Lcom/android/systemui/analytics/DataCollector$1;->this$0:Lcom/android/systemui/analytics/DataCollector;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 79
     iget-object v0, p0, Lcom/android/systemui/analytics/DataCollector$1;->this$0:Lcom/android/systemui/analytics/DataCollector;
 
     invoke-static {v0}, Lcom/android/systemui/analytics/DataCollector;->access$000(Lcom/android/systemui/analytics/DataCollector;)V
 
-    .line 80
     return-void
 .end method

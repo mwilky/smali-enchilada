@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Lcom/android/systemui/shared/recents/model/Task;Lcom/android/systemui/recents/views/TaskStackView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/RecentsView;
 
-    .line 976
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$8;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/RecentsView$8;->val$task:Lcom/android/systemui/shared/recents/model/Task;
@@ -49,21 +47,17 @@
 .method public run()V
     .locals 3
 
-    .line 981
     iget-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$8;->mHandled:Z
 
     if-eqz v0, :cond_0
 
-    .line 982
     return-void
 
-    .line 984
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/recents/views/RecentsView$8;->mHandled:Z
 
-    .line 988
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -76,7 +70,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 989
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -87,12 +80,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 990
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$8;->val$stackView:Lcom/android/systemui/recents/views/TaskStackView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/TaskStackView;->cancelAllTaskViewAnimations()V
 
-    .line 992
     invoke-static {}, Lcom/android/systemui/recents/Recents;->getConfiguration()Lcom/android/systemui/recents/RecentsConfiguration;
 
     move-result-object v0
@@ -101,7 +92,6 @@
 
     if-nez v0, :cond_1
 
-    .line 994
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -114,7 +104,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 996
     :cond_1
     return-void
 .end method

@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationMenuRow;FZF)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationMenuRow;
 
-    .line 576
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     iput p2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$transX:F
@@ -50,17 +48,13 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 4
-    .param p1, "animation"    # Landroid/animation/ValueAnimator;
 
-    .line 579
     iget v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$transX:F
 
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    .line 581
-    .local v0, "absTrans":F
     iget-boolean v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->val$fromLeft:Z
 
     if-eqz v1, :cond_0
@@ -92,8 +86,6 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 583
-    .local v1, "pastMenu":Z
     :goto_0
     if-eqz v1, :cond_3
 
@@ -105,7 +97,6 @@
 
     if-nez v2, :cond_3
 
-    .line 584
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$1;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -120,7 +111,6 @@
 
     invoke-static {v2, v3}, Lcom/android/systemui/statusbar/NotificationMenuRow;->access$700(Lcom/android/systemui/statusbar/NotificationMenuRow;F)V
 
-    .line 586
     :cond_3
     return-void
 .end method

@@ -6,7 +6,6 @@
 # direct methods
 .method public static getComponent(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -18,8 +17,6 @@
         }
     .end annotation
 
-    .line 27
-    .local p1, "interfaceType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0

@@ -42,20 +42,15 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/util/MapCollections;)V
     .locals 1
-    .param p1, "this$0"    # Landroid/support/v4/util/MapCollections;
 
-    .line 77
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iput-object p1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
-    .line 78
     invoke-virtual {p1}, Landroid/support/v4/util/MapCollections;->colGetSize()I
 
     move-result v0
@@ -64,12 +59,10 @@
 
     iput v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEnd:I
 
-    .line 79
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
-    .line 80
     return-void
 .end method
 
@@ -77,32 +70,24 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 6
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 135
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_2
 
-    .line 139
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 140
     return v1
 
-    .line 142
     :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 143
-    .local v0, "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -123,7 +108,6 @@
 
     if-eqz v2, :cond_1
 
-    .line 144
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -142,21 +126,16 @@
 
     if-eqz v2, :cond_1
 
-    .line 143
     move v1, v3
 
     goto :goto_0
 
-    .line 144
     :cond_1
     nop
 
-    .line 143
     :goto_0
     return v1
 
-    .line 136
-    .end local v0    # "e":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<**>;"
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -175,13 +154,10 @@
         }
     .end annotation
 
-    .line 108
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 112
     iget-object v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
@@ -194,7 +170,6 @@
 
     return-object v0
 
-    .line 109
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -213,13 +188,10 @@
         }
     .end annotation
 
-    .line 117
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 121
     iget-object v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
@@ -232,7 +204,6 @@
 
     return-object v0
 
-    .line 118
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -246,8 +217,6 @@
 .method public hasNext()Z
     .locals 2
 
-    .line 84
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEnd:I
@@ -268,13 +237,10 @@
 .method public hashCode()I
     .locals 5
 
-    .line 149
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_2
 
-    .line 153
     iget-object v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
@@ -285,8 +251,6 @@
 
     move-result-object v0
 
-    .line 154
-    .local v0, "key":Ljava/lang/Object;
     iget-object v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v3, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
@@ -297,22 +261,17 @@
 
     move-result-object v1
 
-    .line 155
-    .local v1, "value":Ljava/lang/Object;
     if-nez v0, :cond_0
 
-    .line 156
     move v3, v2
 
     goto :goto_0
 
-    .line 155
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    .line 156
     :goto_0
     if-nez v1, :cond_1
 
@@ -326,12 +285,8 @@
     :goto_1
     xor-int/2addr v2, v3
 
-    .line 155
     return v2
 
-    .line 150
-    .end local v0    # "key":Ljava/lang/Object;
-    .end local v1    # "value":Ljava/lang/Object;
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -345,8 +300,6 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .locals 1
 
-    .line 72
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     invoke-virtual {p0}, Landroid/support/v4/util/MapCollections$MapIterator;->next()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -364,15 +317,12 @@
         }
     .end annotation
 
-    .line 89
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     invoke-virtual {p0}, Landroid/support/v4/util/MapCollections$MapIterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 90
     iget v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
     const/4 v1, 0x1
@@ -381,13 +331,10 @@
 
     iput v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
-    .line 91
     iput-boolean v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
-    .line 92
     return-object p0
 
-    .line 89
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -399,42 +346,34 @@
 .method public remove()V
     .locals 2
 
-    .line 97
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 100
     iget-object v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
     invoke-virtual {v0, v1}, Landroid/support/v4/util/MapCollections;->colRemoveAt(I)V
 
-    .line 101
     iget v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
 
-    .line 102
     iget v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEnd:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEnd:I
 
-    .line 103
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
-    .line 104
     return-void
 
-    .line 98
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -451,14 +390,10 @@
         }
     .end annotation
 
-    .line 126
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
-    .local p1, "object":Ljava/lang/Object;, "TV;"
     iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mEntryValid:Z
 
     if-eqz v0, :cond_0
 
-    .line 130
     iget-object v0, p0, Landroid/support/v4/util/MapCollections$MapIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$MapIterator;->mIndex:I
@@ -469,7 +404,6 @@
 
     return-object v0
 
-    .line 127
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -483,8 +417,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 161
-    .local p0, "this":Landroid/support/v4/util/MapCollections$MapIterator;, "Landroid/support/v4/util/MapCollections<TK;TV;>.MapIterator;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

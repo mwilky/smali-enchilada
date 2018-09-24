@@ -22,12 +22,10 @@
 .method constructor <init>(Lcom/android/systemui/qs/tiles/BluetoothTile;)V
     .locals 0
 
-    .line 313
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/BluetoothTile$BluetoothConnectedTileIcon;->this$0:Lcom/android/systemui/qs/tiles/BluetoothTile;
 
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$Icon;-><init>()V
 
-    .line 315
     return-void
 .end method
 
@@ -35,9 +33,7 @@
 # virtual methods
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 320
     const v0, 0x7f08032b
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;

@@ -6,6 +6,6 @@
         <FrameLayout android:id="@id/volume_row_slider_frame" android:layout_width="@dimen/op_volume_dialog_slider_width" android:layout_height="@dimen/op_volume_dialog_slider_height" android:layout_marginBottom="@dimen/op_volume_dialog_slider_margin_bottom" android:layoutDirection="rtl">
             <SeekBar android:layout_gravity="center" android:id="@id/volume_row_slider" android:clickable="true" android:layout_width="@dimen/op_volume_dialog_slider_height" android:layout_height="@dimen/op_volume_dialog_slider_width" android:color="#ff2296f3" android:rotation="90.0" android:layoutDirection="rtl" />
         </FrameLayout>
-        <com.android.keyguard.AlphaOptimizedImageButton android:layout_gravity="center" android:id="@id/volume_row_icon" android:background="@drawable/ripple_drawable_20dp" android:layout_width="@dimen/op_volume_dialog_icon_size" android:layout_height="@dimen/op_volume_dialog_icon_size" android:layout_marginBottom="@dimen/op_volume_dialog_row_margin_bottom" android:scaleType="fitCenter" android:soundEffectsEnabled="false" />
+        <com.android.keyguard.AlphaOptimizedImageButton android:layout_gravity="center" android:id="@id/volume_row_icon" android:background="@drawable/ripple_drawable_20dp" android:layout_width="@dimen/op_volume_dialog_icon_size" android:layout_height="@dimen/op_volume_dialog_icon_size" android:layout_marginBottom="@dimen/op_volume_dialog_row_margin_bottom" android:soundEffectsEnabled="false" style="@style/VolumeButtons" />
     </LinearLayout>
 </FrameLayout>

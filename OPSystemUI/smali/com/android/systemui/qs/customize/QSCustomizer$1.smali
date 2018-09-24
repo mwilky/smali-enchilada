@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/customize/QSCustomizer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/customize/QSCustomizer;
 
-    .line 130
     iput-object p1, p0, Lcom/android/systemui/qs/customize/QSCustomizer$1;->this$0:Lcom/android/systemui/qs/customize/QSCustomizer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/qs/customize/QSCustomizer$1;->this$0:Lcom/android/systemui/qs/customize/QSCustomizer;
 
     invoke-virtual {p1}, Landroid/view/View;->getX()F
@@ -73,6 +69,5 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/qs/customize/QSCustomizer;->hide(II)V
 
-    .line 134
     return-void
 .end method

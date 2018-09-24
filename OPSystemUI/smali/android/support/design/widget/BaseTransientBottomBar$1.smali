@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,21 +30,17 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 3
-    .param p1, "message"    # Landroid/os/Message;
 
-    .line 174
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    .line 182
     const/4 v0, 0x0
 
     return v0
 
-    .line 179
     :pswitch_0
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -55,10 +50,8 @@
 
     invoke-virtual {v0, v2}, Landroid/support/design/widget/BaseTransientBottomBar;->hideView(I)V
 
-    .line 180
     return v1
 
-    .line 176
     :pswitch_1
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -66,7 +59,6 @@
 
     invoke-virtual {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->showView()V
 
-    .line 177
     return v1
 
     :pswitch_data_0

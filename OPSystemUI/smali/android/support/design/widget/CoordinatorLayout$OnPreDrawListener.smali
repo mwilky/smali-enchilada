@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/CoordinatorLayout;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/widget/CoordinatorLayout;
 
-    .line 1953
     iput-object p1, p0, Landroid/support/design/widget/CoordinatorLayout$OnPreDrawListener;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +37,12 @@
 .method public onPreDraw()Z
     .locals 2
 
-    .line 1956
     iget-object v0, p0, Landroid/support/design/widget/CoordinatorLayout$OnPreDrawListener;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout;->onChildViewsChanged(I)V
 
-    .line 1957
     const/4 v0, 0x1
 
     return v0

@@ -21,7 +21,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 1594
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,9 +30,7 @@
 # virtual methods
 .method public filterApp(Lcom/android/settingslib/applications/ApplicationsState$AppEntry;)Z
     .locals 2
-    .param p1, "entry"    # Lcom/android/settingslib/applications/ApplicationsState$AppEntry;
 
-    .line 1601
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -48,10 +45,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1602
     return v1
 
-    .line 1603
     :cond_0
     iget-object v0, p1, Lcom/android/settingslib/applications/ApplicationsState$AppEntry;->info:Landroid/content/pm/ApplicationInfo;
 
@@ -63,10 +58,8 @@
 
     if-nez v0, :cond_1
 
-    .line 1604
     return v1
 
-    .line 1606
     :cond_1
     const/4 v0, 0x0
 
@@ -76,6 +69,5 @@
 .method public init()V
     .locals 0
 
-    .line 1597
     return-void
 .end method

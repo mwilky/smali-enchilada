@@ -48,17 +48,14 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 123
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mTargets:Ljava/util/List;
 
-    .line 124
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -70,27 +67,20 @@
 
 .method private add(Ljava/lang/Object;Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;)V
     .locals 1
-    .param p1, "target"    # Ljava/lang/Object;
-    .param p2, "keyframeSet"    # Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;
 
-    .line 142
     iget-object v0, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mTargets:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 143
     iget-object v0, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mValues:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 144
     return-void
 .end method
 
 .method private static getProperty(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;)Landroid/util/Property;
     .locals 2
-    .param p0, "target"    # Ljava/lang/Object;
-    .param p1, "property"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,13 +92,10 @@
         }
     .end annotation
 
-    .line 147
-    .local p2, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     instance-of v0, p0, Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 148
     const/4 v0, -0x1
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -240,61 +227,51 @@
 
     goto :goto_1
 
-    .line 166
     :pswitch_0
     sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     return-object v0
 
-    .line 164
     :pswitch_1
     sget-object v0, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     return-object v0
 
-    .line 162
     :pswitch_2
     sget-object v0, Landroid/view/View;->Y:Landroid/util/Property;
 
     return-object v0
 
-    .line 160
     :pswitch_3
     sget-object v0, Landroid/view/View;->X:Landroid/util/Property;
 
     return-object v0
 
-    .line 158
     :pswitch_4
     sget-object v0, Landroid/view/View;->ROTATION:Landroid/util/Property;
 
     return-object v0
 
-    .line 156
     :pswitch_5
     sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     return-object v0
 
-    .line 154
     :pswitch_6
     sget-object v0, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
 
     return-object v0
 
-    .line 152
     :pswitch_7
     sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     return-object v0
 
-    .line 150
     :pswitch_8
     sget-object v0, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
     return-object v0
 
-    .line 169
     :cond_1
     :goto_1
     instance-of v0, p0, Lcom/android/systemui/qs/TouchAnimator;
@@ -309,14 +286,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 170
     invoke-static {}, Lcom/android/systemui/qs/TouchAnimator;->access$100()Landroid/util/FloatProperty;
 
     move-result-object v0
 
     return-object v0
 
-    .line 172
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -359,11 +334,7 @@
 # virtual methods
 .method public varargs addFloat(Ljava/lang/Object;Ljava/lang/String;[F)Lcom/android/systemui/qs/TouchAnimator$Builder;
     .locals 1
-    .param p1, "target"    # Ljava/lang/Object;
-    .param p2, "property"    # Ljava/lang/String;
-    .param p3, "values"    # [F
 
-    .line 132
     sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
     invoke-static {p1, p2, v0}, Lcom/android/systemui/qs/TouchAnimator$Builder;->getProperty(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;)Landroid/util/Property;
@@ -376,14 +347,12 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/qs/TouchAnimator$Builder;->add(Ljava/lang/Object;Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;)V
 
-    .line 133
     return-object p0
 .end method
 
 .method public build()Lcom/android/systemui/qs/TouchAnimator;
     .locals 9
 
-    .line 196
     new-instance v8, Lcom/android/systemui/qs/TouchAnimator;
 
     iget-object v0, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mTargets:Ljava/util/List;
@@ -404,7 +373,6 @@
 
     iget-object v2, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mValues:Ljava/util/List;
 
-    .line 197
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
@@ -433,50 +401,37 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/systemui/qs/TouchAnimator;-><init>([Ljava/lang/Object;[Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;FFLandroid/view/animation/Interpolator;Lcom/android/systemui/qs/TouchAnimator$Listener;Lcom/android/systemui/qs/TouchAnimator$1;)V
 
-    .line 196
     return-object v8
 .end method
 
 .method public setEndDelay(F)Lcom/android/systemui/qs/TouchAnimator$Builder;
     .locals 0
-    .param p1, "endDelay"    # F
 
-    .line 181
     iput p1, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mEndDelay:F
 
-    .line 182
     return-object p0
 .end method
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)Lcom/android/systemui/qs/TouchAnimator$Builder;
     .locals 0
-    .param p1, "intepolator"    # Landroid/view/animation/Interpolator;
 
-    .line 186
     iput-object p1, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 187
     return-object p0
 .end method
 
 .method public setListener(Lcom/android/systemui/qs/TouchAnimator$Listener;)Lcom/android/systemui/qs/TouchAnimator$Builder;
     .locals 0
-    .param p1, "listener"    # Lcom/android/systemui/qs/TouchAnimator$Listener;
 
-    .line 191
     iput-object p1, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mListener:Lcom/android/systemui/qs/TouchAnimator$Listener;
 
-    .line 192
     return-object p0
 .end method
 
 .method public setStartDelay(F)Lcom/android/systemui/qs/TouchAnimator$Builder;
     .locals 0
-    .param p1, "startDelay"    # F
 
-    .line 176
     iput p1, p0, Lcom/android/systemui/qs/TouchAnimator$Builder;->mStartDelay:F
 
-    .line 177
     return-object p0
 .end method

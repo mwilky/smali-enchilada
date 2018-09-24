@@ -46,12 +46,10 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 31
     const-string v0, "BackgroundTaskLoader"
 
     sput-object v0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->TAG:Ljava/lang/String;
 
-    .line 32
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->DEBUG:Z
@@ -61,30 +59,21 @@
 
 .method public constructor <init>(Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;Lcom/android/systemui/shared/recents/model/IconLoader;Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader$OnIdleChangedListener;)V
     .locals 3
-    .param p1, "loadQueue"    # Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;
-    .param p2, "iconLoader"    # Lcom/android/systemui/shared/recents/model/IconLoader;
-    .param p3, "onIdleChangedListener"    # Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader$OnIdleChangedListener;
 
-    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
     iput-object p1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadQueue:Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;
 
-    .line 52
     iput-object p2, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mIconLoader:Lcom/android/systemui/shared/recents/model/IconLoader;
 
-    .line 53
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mMainThreadHandler:Landroid/os/Handler;
 
-    .line 54
     iput-object p3, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mOnIdleChangedListener:Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader$OnIdleChangedListener;
 
-    .line 55
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "Recents-TaskResourceLoader"
@@ -95,12 +84,10 @@
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 58
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
@@ -113,17 +100,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThreadHandler:Landroid/os/Handler;
 
-    .line 59
     return-void
 .end method
 
 .method static synthetic lambda$processLoadQueueItem$2(Lcom/android/systemui/shared/recents/model/Task;Lcom/android/systemui/shared/recents/model/ThumbnailData;Landroid/graphics/drawable/Drawable;)V
     .locals 0
-    .param p0, "t"    # Lcom/android/systemui/shared/recents/model/Task;
-    .param p1, "thumbnailData"    # Lcom/android/systemui/shared/recents/model/ThumbnailData;
-    .param p2, "icon"    # Landroid/graphics/drawable/Drawable;
 
-    .line 146
     invoke-virtual {p0, p1, p2}, Lcom/android/systemui/shared/recents/model/Task;->notifyTaskDataLoaded(Lcom/android/systemui/shared/recents/model/ThumbnailData;Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -132,7 +114,6 @@
 .method public static synthetic lambda$run$0(Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;)V
     .locals 2
 
-    .line 114
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mOnIdleChangedListener:Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader$OnIdleChangedListener;
 
     const/4 v1, 0x1
@@ -145,7 +126,6 @@
 .method public static synthetic lambda$run$1(Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;)V
     .locals 2
 
-    .line 117
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mOnIdleChangedListener:Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader$OnIdleChangedListener;
 
     const/4 v1, 0x0
@@ -158,26 +138,20 @@
 .method private processLoadQueueItem()V
     .locals 5
 
-    .line 135
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadQueue:Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v0}, Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;->nextTask()Lcom/android/systemui/shared/recents/model/Task;
 
     move-result-object v0
 
-    .line 136
-    .local v0, "t":Lcom/android/systemui/shared/recents/model/Task;
     if-eqz v0, :cond_1
 
-    .line 137
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mIconLoader:Lcom/android/systemui/shared/recents/model/IconLoader;
 
     invoke-virtual {v1, v0}, Lcom/android/systemui/shared/recents/model/IconLoader;->getIcon(Lcom/android/systemui/shared/recents/model/Task;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    .line 138
-    .local v1, "icon":Landroid/graphics/drawable/Drawable;
     sget-boolean v2, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->DEBUG:Z
 
     if-eqz v2, :cond_0
@@ -202,7 +176,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 140
     :cond_0
     invoke-static {}, Lcom/android/systemui/shared/system/ActivityManagerWrapper;->getInstance()Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
@@ -218,13 +191,10 @@
 
     move-result-object v2
 
-    .line 143
-    .local v2, "thumbnailData":Lcom/android/systemui/shared/recents/model/ThumbnailData;
     iget-boolean v3, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mCancelled:Z
 
     if-nez v3, :cond_1
 
-    .line 145
     iget-object v3, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mMainThreadHandler:Landroid/os/Handler;
 
     new-instance v4, Lcom/android/systemui/shared/recents/model/-$$Lambda$BackgroundTaskLoader$mJeiv3P4w5EJwXqKPoDi48s7tFI;
@@ -233,9 +203,6 @@
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 149
-    .end local v1    # "icon":Landroid/graphics/drawable/Drawable;
-    .end local v2    # "thumbnailData":Lcom/android/systemui/shared/recents/model/ThumbnailData;
     :cond_1
     return-void
 .end method
@@ -245,24 +212,20 @@
 .method public run()V
     .locals 3
 
-    .line 91
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mCancelled:Z
 
     if-eqz v0, :cond_1
 
-    .line 94
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mContext:Landroid/content/Context;
 
-    .line 96
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     monitor-enter v0
 
-    .line 98
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
@@ -271,26 +234,19 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 101
     goto :goto_1
 
-    .line 102
     :catchall_0
     move-exception v1
 
     goto :goto_2
 
-    .line 99
     :catch_0
     move-exception v1
 
-    .line 100
-    .local v1, "ie":Ljava/lang/InterruptedException;
     :try_start_1
     invoke-virtual {v1}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    .line 102
-    .end local v1    # "ie":Ljava/lang/InterruptedException;
     :goto_1
     monitor-exit v0
 
@@ -303,11 +259,9 @@
 
     throw v1
 
-    .line 106
     :cond_1
     invoke-direct {p0}, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->processLoadQueueItem()V
 
-    .line 109
     iget-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mCancelled:Z
 
     if-nez v0, :cond_0
@@ -320,18 +274,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadQueue:Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;
 
     monitor-enter v0
 
-    .line 112
     const/4 v1, 0x1
 
     :try_start_2
     iput-boolean v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mWaitingOnLoadQueue:Z
 
-    .line 113
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mMainThreadHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/systemui/shared/recents/model/-$$Lambda$BackgroundTaskLoader$gaMb8n3irXHj3SpODGi50cngupE;
@@ -340,12 +291,10 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 115
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadQueue:Lcom/android/systemui/shared/recents/model/TaskResourceLoadQueue;
 
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V
 
-    .line 116
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mMainThreadHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/android/systemui/shared/recents/model/-$$Lambda$BackgroundTaskLoader$XRsMGIp0x8MAJ36UKSTd3DJ9dTg;
@@ -354,7 +303,6 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 118
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mWaitingOnLoadQueue:Z
@@ -362,26 +310,19 @@
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 121
     goto :goto_3
 
-    .line 122
     :catchall_1
     move-exception v1
 
     goto :goto_4
 
-    .line 119
     :catch_1
     move-exception v1
 
-    .line 120
-    .restart local v1    # "ie":Ljava/lang/InterruptedException;
     :try_start_3
     invoke-virtual {v1}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    .line 122
-    .end local v1    # "ie":Ljava/lang/InterruptedException;
     :goto_3
     monitor-exit v0
 
@@ -397,53 +338,42 @@
 
 .method start(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 63
     iput-object p1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mContext:Landroid/content/Context;
 
-    .line 64
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mCancelled:Z
 
-    .line 65
     iget-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mStarted:Z
 
     if-nez v0, :cond_0
 
-    .line 67
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mStarted:Z
 
-    .line 68
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThreadHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
 
-    .line 71
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     monitor-enter v0
 
-    .line 72
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mLoadThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
-    .line 73
     monitor-exit v0
 
-    .line 75
     :goto_0
     return-void
 
-    .line 73
     :catchall_0
     move-exception v1
 
@@ -457,22 +387,18 @@
 .method stop()V
     .locals 1
 
-    .line 80
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mCancelled:Z
 
-    .line 83
     iget-boolean v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mWaitingOnLoadQueue:Z
 
     if-eqz v0, :cond_0
 
-    .line 84
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/model/BackgroundTaskLoader;->mContext:Landroid/content/Context;
 
-    .line 86
     :cond_0
     return-void
 .end method

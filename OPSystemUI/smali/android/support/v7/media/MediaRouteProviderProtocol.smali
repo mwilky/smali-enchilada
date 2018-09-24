@@ -6,9 +6,7 @@
 # direct methods
 .method public static isValidRemoteMessenger(Landroid/os/Messenger;)Z
     .locals 2
-    .param p0, "messenger"    # Landroid/os/Messenger;
 
-    .line 223
     const/4 v0, 0x0
 
     if-eqz p0, :cond_0
@@ -26,16 +24,11 @@
 
     goto :goto_0
 
-    .line 224
     :catch_0
     move-exception v1
 
-    .line 227
-    .local v1, "ex":Ljava/lang/NullPointerException;
     return v0
 
-    .line 223
-    .end local v1    # "ex":Ljava/lang/NullPointerException;
     :cond_0
     :goto_0
     return v0

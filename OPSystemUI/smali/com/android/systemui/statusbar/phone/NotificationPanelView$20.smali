@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationPanelView;Lcom/android/systemui/statusbar/KeyguardAffordanceView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
-    .line 2162
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;->this$0:Lcom/android/systemui/statusbar/phone/NotificationPanelView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 7
 
-    .line 2165
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/NotificationPanelView$20;->val$icon:Lcom/android/systemui/statusbar/KeyguardAffordanceView;
@@ -62,6 +59,5 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/systemui/statusbar/KeyguardAffordanceView;->setImageAlpha(FZJLandroid/view/animation/Interpolator;Ljava/lang/Runnable;)V
 
-    .line 2168
     return-void
 .end method

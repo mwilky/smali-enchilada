@@ -35,8 +35,6 @@
 # direct methods
 .method constructor <init>(Landroid/arch/lifecycle/LiveData;Landroid/arch/lifecycle/LifecycleOwner;Landroid/arch/lifecycle/Observer;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/arch/lifecycle/LiveData;
-    .param p2, "owner"    # Landroid/arch/lifecycle/LifecycleOwner;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,18 +44,12 @@
         }
     .end annotation
 
-    .line 354
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.LifecycleBoundObserver;"
-    .local p3, "observer":Landroid/arch/lifecycle/Observer;, "Landroid/arch/lifecycle/Observer<-TT;>;"
     iput-object p1, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->this$0:Landroid/arch/lifecycle/LiveData;
 
-    .line 355
     invoke-direct {p0, p1, p3}, Landroid/arch/lifecycle/LiveData$ObserverWrapper;-><init>(Landroid/arch/lifecycle/LiveData;Landroid/arch/lifecycle/Observer;)V
 
-    .line 356
     iput-object p2, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroid/arch/lifecycle/LifecycleOwner;
 
-    .line 357
     return-void
 .end method
 
@@ -66,8 +58,6 @@
 .method detachObserver()V
     .locals 1
 
-    .line 380
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.LifecycleBoundObserver;"
     iget-object v0, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroid/arch/lifecycle/LifecycleOwner;
 
     invoke-interface {v0}, Landroid/arch/lifecycle/LifecycleOwner;->getLifecycle()Landroid/arch/lifecycle/Lifecycle;
@@ -76,16 +66,12 @@
 
     invoke-virtual {v0, p0}, Landroid/arch/lifecycle/Lifecycle;->removeObserver(Landroid/arch/lifecycle/LifecycleObserver;)V
 
-    .line 381
     return-void
 .end method
 
 .method isAttachedTo(Landroid/arch/lifecycle/LifecycleOwner;)Z
     .locals 1
-    .param p1, "owner"    # Landroid/arch/lifecycle/LifecycleOwner;
 
-    .line 375
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.LifecycleBoundObserver;"
     iget-object v0, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroid/arch/lifecycle/LifecycleOwner;
 
     if-ne v0, p1, :cond_0
@@ -103,11 +89,7 @@
 
 .method public onStateChanged(Landroid/arch/lifecycle/LifecycleOwner;Landroid/arch/lifecycle/Lifecycle$Event;)V
     .locals 2
-    .param p1, "source"    # Landroid/arch/lifecycle/LifecycleOwner;
-    .param p2, "event"    # Landroid/arch/lifecycle/Lifecycle$Event;
 
-    .line 366
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.LifecycleBoundObserver;"
     iget-object v0, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroid/arch/lifecycle/LifecycleOwner;
 
     invoke-interface {v0}, Landroid/arch/lifecycle/LifecycleOwner;->getLifecycle()Landroid/arch/lifecycle/Lifecycle;
@@ -122,17 +104,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 367
     iget-object v0, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->this$0:Landroid/arch/lifecycle/LiveData;
 
     iget-object v1, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mObserver:Landroid/arch/lifecycle/Observer;
 
     invoke-virtual {v0, v1}, Landroid/arch/lifecycle/LiveData;->removeObserver(Landroid/arch/lifecycle/Observer;)V
 
-    .line 368
     return-void
 
-    .line 370
     :cond_0
     invoke-virtual {p0}, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->shouldBeActive()Z
 
@@ -140,15 +119,12 @@
 
     invoke-virtual {p0, v0}, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->activeStateChanged(Z)V
 
-    .line 371
     return-void
 .end method
 
 .method shouldBeActive()Z
     .locals 2
 
-    .line 361
-    .local p0, "this":Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;, "Landroid/arch/lifecycle/LiveData<TT;>.LifecycleBoundObserver;"
     iget-object v0, p0, Landroid/arch/lifecycle/LiveData$LifecycleBoundObserver;->mOwner:Landroid/arch/lifecycle/LifecycleOwner;
 
     invoke-interface {v0}, Landroid/arch/lifecycle/LifecycleOwner;->getLifecycle()Landroid/arch/lifecycle/Lifecycle;

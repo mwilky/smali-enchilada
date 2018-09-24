@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/statusbar/NotificationMenuRow;)V
     .locals 0
 
-    .line 551
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/NotificationMenuRow;Lcom/android/systemui/statusbar/NotificationMenuRow$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/NotificationMenuRow;
-    .param p2, "x1"    # Lcom/android/systemui/statusbar/NotificationMenuRow$1;
 
-    .line 551
     invoke-direct {p0, p1}, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;-><init>(Lcom/android/systemui/statusbar/NotificationMenuRow;)V
 
     return-void
@@ -49,7 +45,6 @@
 .method public run()V
     .locals 9
 
-    .line 554
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/NotificationMenuRow;->access$100(Lcom/android/systemui/statusbar/NotificationMenuRow;)F
@@ -60,16 +55,12 @@
 
     move-result v0
 
-    .line 555
-    .local v0, "absTransX":F
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/NotificationMenuRow;->access$200(Lcom/android/systemui/statusbar/NotificationMenuRow;)F
 
     move-result v1
 
-    .line 556
-    .local v1, "bounceBackToMenuWidth":F
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->access$300(Lcom/android/systemui/statusbar/NotificationMenuRow;)Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -86,8 +77,6 @@
 
     mul-float/2addr v2, v3
 
-    .line 557
-    .local v2, "notiThreshold":F
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-virtual {v3}, Lcom/android/systemui/statusbar/NotificationMenuRow;->isMenuVisible()Z
@@ -121,12 +110,10 @@
 
     if-gez v3, :cond_1
 
-    .line 560
     iget-object v3, p0, Lcom/android/systemui/statusbar/NotificationMenuRow$CheckForDrag;->this$0:Lcom/android/systemui/statusbar/NotificationMenuRow;
 
     invoke-static {v3, v2}, Lcom/android/systemui/statusbar/NotificationMenuRow;->access$500(Lcom/android/systemui/statusbar/NotificationMenuRow;F)V
 
-    .line 562
     :cond_1
     return-void
 .end method

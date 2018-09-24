@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;F)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
-    .line 493
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$2;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     iput p2, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$2;->val$newScroll:F
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 496
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$2;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/TaskStackAnimationHelper;->access$000(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;)Lcom/android/systemui/recents/views/TaskStackView;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskStackView;->bindVisibleTaskViews(F)V
 
-    .line 497
     return-void
 .end method

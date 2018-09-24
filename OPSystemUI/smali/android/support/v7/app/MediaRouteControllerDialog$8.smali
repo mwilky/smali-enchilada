@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;Ljava/util/Map;Ljava/util/Map;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteControllerDialog;
 
-    .line 786
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$8;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iput-object p2, p0, Landroid/support/v7/app/MediaRouteControllerDialog$8;->val$previousRouteBoundMap:Ljava/util/Map;
@@ -47,7 +45,6 @@
 .method public onGlobalLayout()V
     .locals 3
 
-    .line 789
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$8;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mVolumeGroupList:Landroid/support/v7/app/OverlayListView;
@@ -58,7 +55,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 790
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$8;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$8;->val$previousRouteBoundMap:Ljava/util/Map;
@@ -67,6 +63,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/app/MediaRouteControllerDialog;->animateGroupListItemsInternal(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 791
     return-void
 .end method

@@ -32,7 +32,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,18 +39,13 @@
 
 .method public static create(Landroid/content/Context;Ljava/lang/String;)Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
     .locals 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "value"    # Ljava/lang/String;
 
-    .line 138
     const-string v0, "::"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 140
-    .local v0, "sp":[Ljava/lang/String;
     :try_start_0
     new-instance v1, Lcom/android/systemui/tuner/ShortcutParser;
 
@@ -69,12 +63,10 @@
 
     invoke-direct {v1, p0, v2}, Lcom/android/systemui/tuner/ShortcutParser;-><init>(Landroid/content/Context;Landroid/content/ComponentName;)V
 
-    .line 141
     invoke-virtual {v1}, Lcom/android/systemui/tuner/ShortcutParser;->getShortcuts()Ljava/util/List;
 
     move-result-object v1
 
-    .line 140
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -92,8 +84,6 @@
 
     check-cast v2, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
 
-    .line 142
-    .local v2, "shortcut":Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
     iget-object v3, v2, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->id:Ljava/lang/String;
 
     const/4 v4, 0x2
@@ -108,23 +98,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 143
     return-object v2
 
-    .line 145
-    .end local v2    # "shortcut":Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
     :cond_0
     goto :goto_0
 
-    .line 147
     :cond_1
     goto :goto_1
 
-    .line 146
     :catch_0
     move-exception v1
 
-    .line 148
     :goto_1
     const/4 v1, 0x0
 
@@ -136,38 +120,30 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 153
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 154
-    .local v0, "builder":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->pkg:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 155
     const-string v1, "::"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 156
     iget-object v1, p0, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 157
     const-string v1, "::"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 158
     iget-object v1, p0, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->id:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 159
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1

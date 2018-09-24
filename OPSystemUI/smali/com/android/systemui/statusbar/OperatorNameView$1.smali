@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/OperatorNameView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/OperatorNameView;
 
-    .line 52
     iput-object p1, p0, Lcom/android/systemui/statusbar/OperatorNameView$1;->this$0:Lcom/android/systemui/statusbar/OperatorNameView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -36,11 +34,9 @@
 .method public onRefreshCarrierInfo()V
     .locals 1
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/statusbar/OperatorNameView$1;->this$0:Lcom/android/systemui/statusbar/OperatorNameView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/OperatorNameView;->access$000(Lcom/android/systemui/statusbar/OperatorNameView;)V
 
-    .line 56
     return-void
 .end method

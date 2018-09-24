@@ -6,11 +6,7 @@
 # direct methods
 .method public static writeSysuiLockscreenGesture(III)V
     .locals 3
-    .param p0, "type"    # I
-    .param p1, "lengthdp"    # I
-    .param p2, "velocitydp"    # I
 
-    .line 78
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -43,20 +39,12 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 79
     return-void
 .end method
 
 .method public static writeSysuiStatusBarState(IIIIII)V
     .locals 3
-    .param p0, "state"    # I
-    .param p1, "keyguardshowing"    # I
-    .param p2, "keyguardoccluded"    # I
-    .param p3, "bouncershowing"    # I
-    .param p4, "secure"    # I
-    .param p5, "currentlyinsecure"    # I
 
-    .line 66
     const/4 v0, 0x6
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -113,6 +101,5 @@
 
     invoke-static {v1, v0}, Landroid/util/EventLog;->writeEvent(I[Ljava/lang/Object;)I
 
-    .line 67
     return-void
 .end method

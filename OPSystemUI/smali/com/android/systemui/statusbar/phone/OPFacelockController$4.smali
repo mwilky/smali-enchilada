@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/OPFacelockController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
-    .line 388
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$4;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 1
 
-    .line 391
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/OPFacelockController$4;->this$0:Lcom/android/systemui/statusbar/phone/OPFacelockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/OPFacelockController;->access$1600(Lcom/android/systemui/statusbar/phone/OPFacelockController;)Lcom/android/systemui/statusbar/phone/StatusBar;
@@ -48,6 +45,5 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/phone/StatusBar;->startFacelockFailAnimation()V
 
-    .line 392
     return-void
 .end method

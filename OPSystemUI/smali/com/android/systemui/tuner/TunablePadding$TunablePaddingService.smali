@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,15 +27,9 @@
 # virtual methods
 .method public add(Landroid/view/View;Ljava/lang/String;II)Lcom/android/systemui/tuner/TunablePadding;
     .locals 7
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "defaultSize"    # I
-    .param p4, "flags"    # I
 
-    .line 73
     if-eqz p1, :cond_0
 
-    .line 76
     new-instance v6, Lcom/android/systemui/tuner/TunablePadding;
 
     const/4 v5, 0x0
@@ -55,7 +48,6 @@
 
     return-object v6
 
-    .line 74
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

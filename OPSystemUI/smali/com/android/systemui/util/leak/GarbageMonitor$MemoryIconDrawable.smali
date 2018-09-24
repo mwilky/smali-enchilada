@@ -29,19 +29,15 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 227
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 224
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 228
     const v0, 0x7f080287
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -54,7 +50,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 229
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -67,7 +62,6 @@
 
     iput v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->dp:F
 
-    .line 230
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->paint:Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -78,7 +72,6 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 231
     return-void
 .end method
 
@@ -86,14 +79,11 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 12
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
-    .line 249
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 251
     iget-wide v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->limit:J
 
     const-wide/16 v2, 0x0
@@ -108,7 +98,6 @@
 
     if-lez v0, :cond_0
 
-    .line 252
     iget-wide v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->pss:J
 
     long-to-float v0, v0
@@ -125,14 +114,10 @@
 
     move-result v0
 
-    .line 254
-    .local v0, "frac":F
     invoke-virtual {p0}, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    .line 255
-    .local v2, "bounds":Landroid/graphics/Rect;
     iget v3, v2, Landroid/graphics/Rect;->left:I
 
     int-to-float v3, v3
@@ -159,7 +144,6 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 257
     const/4 v7, 0x0
 
     iget v3, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->dp:F
@@ -190,9 +174,6 @@
 
     invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 259
-    .end local v0    # "frac":F
-    .end local v2    # "bounds":Landroid/graphics/Rect;
     :cond_0
     return-void
 .end method
@@ -200,7 +181,6 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 269
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -213,7 +193,6 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 274
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -226,7 +205,6 @@
 .method public getOpacity()I
     .locals 1
 
-    .line 308
     const/4 v0, -0x3
 
     return v0
@@ -234,142 +212,106 @@
 
 .method public setAlpha(I)V
     .locals 1
-    .param p1, "i"    # I
 
-    .line 279
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 280
     return-void
 .end method
 
 .method public setBounds(IIII)V
     .locals 1
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
-    .line 263
     invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 264
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 265
     return-void
 .end method
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
-    .line 284
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 285
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 286
     return-void
 .end method
 
 .method public setLimit(J)V
     .locals 2
-    .param p1, "limit"    # J
 
-    .line 241
     iget-wide v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->limit:J
 
     cmp-long v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 242
     iput-wide p1, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->limit:J
 
-    .line 243
     invoke-virtual {p0}, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->invalidateSelf()V
 
-    .line 245
     :cond_0
     return-void
 .end method
 
 .method public setPss(J)V
     .locals 2
-    .param p1, "pss"    # J
 
-    .line 234
     iget-wide v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->pss:J
 
     cmp-long v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 235
     iput-wide p1, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->pss:J
 
-    .line 236
     invoke-virtual {p0}, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->invalidateSelf()V
 
-    .line 238
     :cond_0
     return-void
 .end method
 
 .method public setTint(I)V
     .locals 1
-    .param p1, "tint"    # I
 
-    .line 290
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 291
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 292
     return-void
 .end method
 
 .method public setTintList(Landroid/content/res/ColorStateList;)V
     .locals 1
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
-    .line 296
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 297
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 298
     return-void
 .end method
 
 .method public setTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .locals 1
-    .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
-    .line 302
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 303
     iget-object v0, p0, Lcom/android/systemui/util/leak/GarbageMonitor$MemoryIconDrawable;->baseIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 304
     return-void
 .end method

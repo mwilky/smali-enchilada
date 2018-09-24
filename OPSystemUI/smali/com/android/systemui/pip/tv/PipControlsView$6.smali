@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/tv/PipControlsView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/pip/tv/PipControlsView;
 
-    .line 154
     iput-object p1, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 5
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 157
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v0}, Lcom/android/systemui/pip/tv/PipControlsView;->access$500(Lcom/android/systemui/pip/tv/PipControlsView;)Landroid/media/session/MediaController;
@@ -63,7 +59,6 @@
 
     goto :goto_1
 
-    .line 160
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
@@ -79,8 +74,6 @@
 
     move-result-wide v0
 
-    .line 161
-    .local v0, "actions":J
     iget-object v2, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v2}, Lcom/android/systemui/pip/tv/PipControlsView;->access$500(Lcom/android/systemui/pip/tv/PipControlsView;)Landroid/media/session/MediaController;
@@ -95,8 +88,6 @@
 
     move-result v2
 
-    .line 162
-    .local v2, "state":I
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v3}, Lcom/android/systemui/pip/tv/PipControlsView;->access$300(Lcom/android/systemui/pip/tv/PipControlsView;)Lcom/android/systemui/pip/tv/PipManager;
@@ -111,7 +102,6 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 163
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v3}, Lcom/android/systemui/pip/tv/PipControlsView;->access$500(Lcom/android/systemui/pip/tv/PipControlsView;)Landroid/media/session/MediaController;
@@ -126,7 +116,6 @@
 
     goto :goto_0
 
-    .line 164
     :cond_1
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
@@ -140,7 +129,6 @@
 
     if-nez v3, :cond_2
 
-    .line 165
     iget-object v3, p0, Lcom/android/systemui/pip/tv/PipControlsView$6;->this$0:Lcom/android/systemui/pip/tv/PipControlsView;
 
     invoke-static {v3}, Lcom/android/systemui/pip/tv/PipControlsView;->access$500(Lcom/android/systemui/pip/tv/PipControlsView;)Landroid/media/session/MediaController;
@@ -153,14 +141,10 @@
 
     invoke-virtual {v3}, Landroid/media/session/MediaController$TransportControls;->pause()V
 
-    .line 168
     :cond_2
     :goto_0
     return-void
 
-    .line 158
-    .end local v0    # "actions":J
-    .end local v2    # "state":I
     :cond_3
     :goto_1
     return-void

@@ -36,7 +36,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,9 +43,7 @@
 
 .method synthetic constructor <init>(Lcom/google/android/flexbox/FlexboxHelper$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/android/flexbox/FlexboxHelper$1;
 
-    .line 1984
     invoke-direct {p0}, Lcom/google/android/flexbox/FlexboxHelper$Order;-><init>()V
 
     return-void
@@ -56,16 +53,13 @@
 # virtual methods
 .method public compareTo(Lcom/google/android/flexbox/FlexboxHelper$Order;)I
     .locals 2
-    .param p1, "another"    # Lcom/google/android/flexbox/FlexboxHelper$Order;
 
-    .line 1994
     iget v0, p0, Lcom/google/android/flexbox/FlexboxHelper$Order;->order:I
 
     iget v1, p1, Lcom/google/android/flexbox/FlexboxHelper$Order;->order:I
 
     if-eq v0, v1, :cond_0
 
-    .line 1995
     iget v0, p0, Lcom/google/android/flexbox/FlexboxHelper$Order;->order:I
 
     iget v1, p1, Lcom/google/android/flexbox/FlexboxHelper$Order;->order:I
@@ -74,7 +68,6 @@
 
     return v0
 
-    .line 1997
     :cond_0
     iget v0, p0, Lcom/google/android/flexbox/FlexboxHelper$Order;->index:I
 
@@ -88,7 +81,6 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 0
 
-    .line 1984
     check-cast p1, Lcom/google/android/flexbox/FlexboxHelper$Order;
 
     invoke-virtual {p0, p1}, Lcom/google/android/flexbox/FlexboxHelper$Order;->compareTo(Lcom/google/android/flexbox/FlexboxHelper$Order;)I
@@ -101,7 +93,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 2002
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

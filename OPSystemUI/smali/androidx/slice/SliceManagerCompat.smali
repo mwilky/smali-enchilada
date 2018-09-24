@@ -10,15 +10,11 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 38
     invoke-direct {p0}, Landroidx/slice/SliceManager;-><init>()V
 
-    .line 39
     iput-object p1, p0, Landroidx/slice/SliceManagerCompat;->mContext:Landroid/content/Context;
 
-    .line 40
     return-void
 .end method
 
@@ -35,7 +31,6 @@
         }
     .end annotation
 
-    .line 67
     iget-object v0, p0, Landroidx/slice/SliceManagerCompat;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroidx/slice/compat/SliceProviderCompat;->getPinnedSlices(Landroid/content/Context;)Ljava/util/List;

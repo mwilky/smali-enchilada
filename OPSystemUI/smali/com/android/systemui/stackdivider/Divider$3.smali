@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/stackdivider/Divider;Z)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/stackdivider/Divider;
 
-    .line 147
     iput-object p1, p0, Lcom/android/systemui/stackdivider/Divider$3;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     iput-boolean p2, p0, Lcom/android/systemui/stackdivider/Divider$3;->val$exists:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 150
     iget-object v0, p0, Lcom/android/systemui/stackdivider/Divider$3;->this$0:Lcom/android/systemui/stackdivider/Divider;
 
     invoke-static {v0}, Lcom/android/systemui/stackdivider/Divider;->access$500(Lcom/android/systemui/stackdivider/Divider;)Lcom/android/systemui/stackdivider/ForcedResizableInfoActivityController;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/stackdivider/ForcedResizableInfoActivityController;->notifyDockedStackExistsChanged(Z)V
 
-    .line 151
     return-void
 .end method

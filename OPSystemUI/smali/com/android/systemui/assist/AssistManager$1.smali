@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/assist/AssistManager;
 
-    .line 67
     iput-object p1, p0, Lcom/android/systemui/assist/AssistManager$1;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     invoke-direct {p0}, Lcom/android/internal/app/IVoiceInteractionSessionShowCallback$Stub;-><init>()V
@@ -41,7 +39,6 @@
         }
     .end annotation
 
-    .line 71
     iget-object v0, p0, Lcom/android/systemui/assist/AssistManager$1;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistManager;->access$100(Lcom/android/systemui/assist/AssistManager;)Lcom/android/systemui/assist/AssistOrbContainer;
@@ -56,7 +53,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/assist/AssistOrbContainer;->post(Ljava/lang/Runnable;)Z
 
-    .line 72
     return-void
 .end method
 
@@ -68,7 +64,6 @@
         }
     .end annotation
 
-    .line 76
     iget-object v0, p0, Lcom/android/systemui/assist/AssistManager$1;->this$0:Lcom/android/systemui/assist/AssistManager;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistManager;->access$100(Lcom/android/systemui/assist/AssistManager;)Lcom/android/systemui/assist/AssistOrbContainer;
@@ -83,6 +78,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/assist/AssistOrbContainer;->post(Ljava/lang/Runnable;)Z
 
-    .line 77
     return-void
 .end method

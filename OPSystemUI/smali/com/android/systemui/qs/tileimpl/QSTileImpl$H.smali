@@ -21,19 +21,13 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Landroid/os/Looper;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tileimpl/QSTileImpl;
-    .param p2, "looper"    # Landroid/os/Looper;
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 504
-    .local p0, "this":Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;, "Lcom/android/systemui/qs/tileimpl/QSTileImpl<TTState;>.H;"
     iput-object p1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
-    .line 505
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 506
     return-void
 .end method
 
@@ -41,22 +35,15 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 9
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 510
-    .local p0, "this":Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;, "Lcom/android/systemui/qs/tileimpl/QSTileImpl<TTState;>.H;"
     const/4 v0, 0x0
 
-    .line 512
-    .local v0, "name":Ljava/lang/String;
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
     move-wide v3, v1
 
-    .line 516
-    .local v1, "start":J
     :try_start_0
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -64,12 +51,10 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 517
     const-string v3, "handleAddCallback"
 
     move-object v0, v3
 
-    .line 518
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -80,7 +65,6 @@
 
     goto/16 :goto_4
 
-    .line 519
     :cond_0
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -88,19 +72,16 @@
 
     if-ne v3, v5, :cond_1
 
-    .line 520
     const-string v3, "handleRemoveCallbacks"
 
     move-object v0, v3
 
-    .line 521
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-static {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->access$100(Lcom/android/systemui/qs/tileimpl/QSTileImpl;)V
 
     goto/16 :goto_4
 
-    .line 522
     :cond_1
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -108,12 +89,10 @@
 
     if-ne v3, v5, :cond_2
 
-    .line 523
     const-string v3, "handleRemoveCallback"
 
     move-object v0, v3
 
-    .line 524
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -124,7 +103,6 @@
 
     goto/16 :goto_4
 
-    .line 525
     :cond_2
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -134,12 +112,10 @@
 
     if-ne v3, v5, :cond_4
 
-    .line 526
     const-string v3, "handleClick"
 
     move-object v0, v3
 
-    .line 528
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v3, v3, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
@@ -150,7 +126,6 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/systemui/util/MdmLogger;->logQsTile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 530
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v3, v3, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mState:Lcom/android/systemui/plugins/qs/QSTile$State;
@@ -159,25 +134,20 @@
 
     if-eqz v3, :cond_3
 
-    .line 531
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v3, v3, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
 
     iget-object v4, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
-    .line 532
     invoke-static {v4}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->access$300(Lcom/android/systemui/qs/tileimpl/QSTileImpl;)Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;
 
     move-result-object v4
 
-    .line 531
     invoke-static {v3, v4}, Lcom/android/settingslib/RestrictedLockUtils;->getShowAdminSupportDetailsIntent(Landroid/content/Context;Lcom/android/settingslib/RestrictedLockUtils$EnforcedAdmin;)Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 533
-    .local v3, "intent":Landroid/content/Intent;
     const-class v4, Lcom/android/systemui/plugins/ActivityStarter;
 
     invoke-static {v4}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -188,11 +158,8 @@
 
     invoke-interface {v4, v3, v6}, Lcom/android/systemui/plugins/ActivityStarter;->postStartActivityDismissingKeyguard(Landroid/content/Intent;I)V
 
-    .line 535
-    .end local v3    # "intent":Landroid/content/Intent;
     goto/16 :goto_4
 
-    .line 536
     :cond_3
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
@@ -200,7 +167,6 @@
 
     goto/16 :goto_4
 
-    .line 538
     :cond_4
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -208,12 +174,10 @@
 
     if-ne v3, v5, :cond_5
 
-    .line 539
     const-string v3, "handleSecondaryClick"
 
     move-object v0, v3
 
-    .line 541
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v3, v3, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
@@ -224,14 +188,12 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/systemui/util/MdmLogger;->logQsTile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 543
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-virtual {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleSecondaryClick()V
 
     goto/16 :goto_4
 
-    .line 544
     :cond_5
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -239,12 +201,10 @@
 
     if-ne v3, v5, :cond_6
 
-    .line 545
     const-string v3, "handleLongClick"
 
     move-object v0, v3
 
-    .line 547
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v3, v3, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
@@ -255,14 +215,12 @@
 
     invoke-static {v3, v4, v5}, Lcom/android/systemui/util/MdmLogger;->logQsTile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 549
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-virtual {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleLongClick()V
 
     goto/16 :goto_4
 
-    .line 550
     :cond_6
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -270,12 +228,10 @@
 
     if-ne v3, v5, :cond_7
 
-    .line 551
     const-string v3, "handleRefreshState"
 
     move-object v0, v3
 
-    .line 552
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v4, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -284,7 +240,6 @@
 
     goto/16 :goto_4
 
-    .line 553
     :cond_7
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -292,12 +247,10 @@
 
     if-ne v3, v5, :cond_9
 
-    .line 554
     const-string v3, "handleShowDetail"
 
     move-object v0, v3
 
-    .line 555
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget v5, p1, Landroid/os/Message;->arg1:I
@@ -314,7 +267,6 @@
 
     goto/16 :goto_4
 
-    .line 556
     :cond_9
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -322,12 +274,10 @@
 
     if-ne v3, v5, :cond_a
 
-    .line 557
     const-string v3, "handleUserSwitch"
 
     move-object v0, v3
 
-    .line 558
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget v4, p1, Landroid/os/Message;->arg1:I
@@ -336,7 +286,6 @@
 
     goto/16 :goto_4
 
-    .line 559
     :cond_a
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -344,12 +293,10 @@
 
     if-ne v3, v5, :cond_c
 
-    .line 560
     const-string v3, "handleToggleStateChanged"
 
     move-object v0, v3
 
-    .line 561
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget v5, p1, Landroid/os/Message;->arg1:I
@@ -364,7 +311,6 @@
     :goto_1
     invoke-static {v3, v4}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->access$500(Lcom/android/systemui/qs/tileimpl/QSTileImpl;Z)V
 
-    .line 563
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     const/4 v4, 0x0
@@ -373,7 +319,6 @@
 
     goto :goto_4
 
-    .line 565
     :cond_c
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -381,12 +326,10 @@
 
     if-ne v3, v5, :cond_e
 
-    .line 566
     const-string v3, "handleScanStateChanged"
 
     move-object v0, v3
 
-    .line 567
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget v5, p1, Landroid/os/Message;->arg1:I
@@ -403,7 +346,6 @@
 
     goto :goto_4
 
-    .line 568
     :cond_e
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -411,19 +353,16 @@
 
     if-ne v3, v5, :cond_f
 
-    .line 569
     const-string v3, "handleDestroy"
 
     move-object v0, v3
 
-    .line 570
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-virtual {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleDestroy()V
 
     goto :goto_4
 
-    .line 571
     :cond_f
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -431,19 +370,16 @@
 
     if-ne v3, v5, :cond_10
 
-    .line 572
     const-string v3, "handleClearState"
 
     move-object v0, v3
 
-    .line 573
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-virtual {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleClearState()V
 
     goto :goto_4
 
-    .line 574
     :cond_10
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -451,12 +387,10 @@
 
     if-ne v3, v5, :cond_12
 
-    .line 575
     const-string v3, "handleSetListeningInternal"
 
     move-object v0, v3
 
-    .line 576
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -475,7 +409,6 @@
 
     goto :goto_4
 
-    .line 577
     :cond_12
     iget v3, p1, Landroid/os/Message;->what:I
 
@@ -483,21 +416,17 @@
 
     if-ne v3, v4, :cond_13
 
-    .line 578
     const-string v3, "handleStale"
 
     move-object v0, v3
 
-    .line 579
     iget-object v3, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     invoke-virtual {v3}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->handleStale()V
 
-    .line 587
     :goto_4
     goto :goto_5
 
-    .line 581
     :cond_13
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
@@ -523,12 +452,9 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 583
     :catch_0
     move-exception v3
 
-    .line 584
-    .local v3, "t":Ljava/lang/Throwable;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -543,31 +469,23 @@
 
     move-result-object v4
 
-    .line 585
-    .local v4, "error":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v5, v5, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->TAG:Ljava/lang/String;
 
     invoke-static {v5, v4, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 586
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
     iget-object v5, v5, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mHost:Lcom/android/systemui/qs/QSHost;
 
     invoke-interface {v5, v4, v3}, Lcom/android/systemui/qs/QSHost;->warn(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 590
-    .end local v3    # "t":Ljava/lang/Throwable;
-    .end local v4    # "error":Ljava/lang/String;
     :goto_5
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 592
-    .local v3, "end":J
     sget-boolean v5, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
     if-nez v5, :cond_14
@@ -580,7 +498,6 @@
 
     if-ltz v5, :cond_15
 
-    .line 593
     :cond_14
     iget-object v5, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$H;->this$0:Lcom/android/systemui/qs/tileimpl/QSTileImpl;
 
@@ -614,7 +531,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 597
     :cond_15
     return-void
 .end method

@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 457
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;)I
     .locals 2
-    .param p1, "lhs"    # Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;
-    .param p2, "rhs"    # Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;
 
-    .line 460
     invoke-virtual {p2}, Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;->getVolume()I
 
     move-result v0
@@ -60,7 +56,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 457
     check-cast p1, Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;
 
     check-cast p2, Landroid/support/v7/graphics/ColorCutQuantizer$Vbox;

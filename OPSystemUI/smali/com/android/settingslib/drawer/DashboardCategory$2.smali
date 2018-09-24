@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 208
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/settingslib/drawer/Tile;Lcom/android/settingslib/drawer/Tile;)I
     .locals 2
-    .param p1, "lhs"    # Lcom/android/settingslib/drawer/Tile;
-    .param p2, "rhs"    # Lcom/android/settingslib/drawer/Tile;
 
-    .line 211
     iget v0, p2, Lcom/android/settingslib/drawer/Tile;->priority:I
 
     iget v1, p1, Lcom/android/settingslib/drawer/Tile;->priority:I
@@ -56,7 +52,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 208
     check-cast p1, Lcom/android/settingslib/drawer/Tile;
 
     check-cast p2, Lcom/android/settingslib/drawer/Tile;

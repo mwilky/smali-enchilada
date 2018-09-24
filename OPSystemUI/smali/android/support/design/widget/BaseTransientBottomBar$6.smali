@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/BaseTransientBottomBar;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/widget/BaseTransientBottomBar;
 
-    .line 465
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$6;, "Landroid/support/design/widget/BaseTransientBottomBar$6;"
     iput-object p1, p0, Landroid/support/design/widget/BaseTransientBottomBar$6;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +36,7 @@
 # virtual methods
 .method public onLayoutChange(Landroid/view/View;IIII)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
 
-    .line 468
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$6;, "Landroid/support/design/widget/BaseTransientBottomBar$6;"
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$6;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     iget-object v0, v0, Landroid/support/design/widget/BaseTransientBottomBar;->view:Landroid/support/design/widget/BaseTransientBottomBar$SnackbarBaseLayout;
@@ -55,7 +45,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/design/widget/BaseTransientBottomBar$SnackbarBaseLayout;->setOnLayoutChangeListener(Landroid/support/design/widget/BaseTransientBottomBar$OnLayoutChangeListener;)V
 
-    .line 470
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$6;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-virtual {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->shouldAnimate()Z
@@ -64,20 +53,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 472
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$6;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-virtual {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->animateViewIn()V
 
     goto :goto_0
 
-    .line 475
     :cond_0
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$6;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-virtual {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->onViewShown()V
 
-    .line 477
     :goto_0
     return-void
 .end method

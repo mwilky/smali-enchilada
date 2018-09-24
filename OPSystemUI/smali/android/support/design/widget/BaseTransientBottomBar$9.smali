@@ -23,10 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/BaseTransientBottomBar;I)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/widget/BaseTransientBottomBar;
 
-    .line 534
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$9;, "Landroid/support/design/widget/BaseTransientBottomBar$9;"
     iput-object p1, p0, Landroid/support/design/widget/BaseTransientBottomBar$9;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     iput p2, p0, Landroid/support/design/widget/BaseTransientBottomBar$9;->val$event:I
@@ -40,26 +37,19 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 542
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$9;, "Landroid/support/design/widget/BaseTransientBottomBar$9;"
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$9;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     iget v1, p0, Landroid/support/design/widget/BaseTransientBottomBar$9;->val$event:I
 
     invoke-virtual {v0, v1}, Landroid/support/design/widget/BaseTransientBottomBar;->onViewHidden(I)V
 
-    .line 543
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
-    .line 537
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$9;, "Landroid/support/design/widget/BaseTransientBottomBar$9;"
     iget-object v0, p0, Landroid/support/design/widget/BaseTransientBottomBar$9;->this$0:Landroid/support/design/widget/BaseTransientBottomBar;
 
     invoke-static {v0}, Landroid/support/design/widget/BaseTransientBottomBar;->access$000(Landroid/support/design/widget/BaseTransientBottomBar;)Landroid/support/design/snackbar/ContentViewCallback;
@@ -72,6 +62,5 @@
 
     invoke-interface {v0, v1, v2}, Landroid/support/design/snackbar/ContentViewCallback;->animateContentOut(II)V
 
-    .line 538
     return-void
 .end method

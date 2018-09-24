@@ -17,9 +17,7 @@
 # virtual methods
 .method public dump(Ljava/io/PrintWriter;)V
     .locals 0
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
-    .line 355
     return-void
 .end method
 

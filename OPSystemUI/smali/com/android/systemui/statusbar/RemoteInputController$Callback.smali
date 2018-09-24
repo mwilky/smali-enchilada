@@ -17,16 +17,12 @@
 # virtual methods
 .method public onRemoteInputActive(Z)V
     .locals 0
-    .param p1, "active"    # Z
 
-    .line 278
     return-void
 .end method
 
 .method public onRemoteInputSent(Lcom/android/systemui/statusbar/NotificationData$Entry;)V
     .locals 0
-    .param p1, "entry"    # Lcom/android/systemui/statusbar/NotificationData$Entry;
 
-    .line 280
     return-void
 .end method

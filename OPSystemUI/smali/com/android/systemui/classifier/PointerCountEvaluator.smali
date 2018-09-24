@@ -6,9 +6,7 @@
 # direct methods
 .method public static evaluate(I)F
     .locals 2
-    .param p0, "value"    # I
 
-    .line 21
     add-int/lit8 v0, p0, -0x1
 
     add-int/lit8 v1, p0, -0x1

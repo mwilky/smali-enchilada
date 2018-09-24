@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/TransitionSet;Landroid/support/transition/Transition;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/TransitionSet;
 
-    .line 491
     iput-object p1, p0, Landroid/support/transition/TransitionSet$1;->this$0:Landroid/support/transition/TransitionSet;
 
     iput-object p2, p0, Landroid/support/transition/TransitionSet$1;->val$nextTransition:Landroid/support/transition/Transition;
@@ -39,16 +37,12 @@
 # virtual methods
 .method public onTransitionEnd(Landroid/support/transition/Transition;)V
     .locals 1
-    .param p1, "transition"    # Landroid/support/transition/Transition;
 
-    .line 494
     iget-object v0, p0, Landroid/support/transition/TransitionSet$1;->val$nextTransition:Landroid/support/transition/Transition;
 
     invoke-virtual {v0}, Landroid/support/transition/Transition;->runAnimators()V
 
-    .line 495
     invoke-virtual {p1, p0}, Landroid/support/transition/Transition;->removeListener(Landroid/support/transition/Transition$TransitionListener;)Landroid/support/transition/Transition;
 
-    .line 496
     return-void
 .end method

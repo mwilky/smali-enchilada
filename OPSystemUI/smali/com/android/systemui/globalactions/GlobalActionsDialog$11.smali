@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;Landroid/os/Handler;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 1294
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$11;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onChange(Z)V
     .locals 1
-    .param p1, "selfChange"    # Z
 
-    .line 1297
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$11;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$2000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
 
-    .line 1298
     return-void
 .end method

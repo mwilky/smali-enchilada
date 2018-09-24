@@ -23,19 +23,12 @@
 # direct methods
 .method public constructor <init>(III)V
     .locals 0
-    .param p1, "row"    # I
-    .param p2, "offset"    # I
-    .param p3, "size"    # I
 
-    .line 58
     invoke-direct {p0, p1}, Landroid/support/v17/leanback/widget/Grid$Location;-><init>(I)V
 
-    .line 59
     iput p2, p0, Landroid/support/v17/leanback/widget/StaggeredGrid$Location;->offset:I
 
-    .line 60
     iput p3, p0, Landroid/support/v17/leanback/widget/StaggeredGrid$Location;->size:I
 
-    .line 61
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/external/TileLifecycleManager;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/external/TileLifecycleManager;
 
-    .line 262
     iput-object p1, p0, Lcom/android/systemui/qs/external/TileLifecycleManager$1;->this$0:Lcom/android/systemui/qs/external/TileLifecycleManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 265
     iget-object v0, p0, Lcom/android/systemui/qs/external/TileLifecycleManager$1;->this$0:Lcom/android/systemui/qs/external/TileLifecycleManager;
 
     invoke-static {v0}, Lcom/android/systemui/qs/external/TileLifecycleManager;->access$000(Lcom/android/systemui/qs/external/TileLifecycleManager;)Z
@@ -48,14 +45,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 267
     iget-object v0, p0, Lcom/android/systemui/qs/external/TileLifecycleManager$1;->this$0:Lcom/android/systemui/qs/external/TileLifecycleManager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/qs/external/TileLifecycleManager;->setBindService(Z)V
 
-    .line 269
     :cond_0
     return-void
 .end method

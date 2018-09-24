@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/ChangeClipBounds;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/ChangeClipBounds;
 
-    .line 112
     iput-object p1, p0, Landroid/support/transition/ChangeClipBounds$1;->this$0:Landroid/support/transition/ChangeClipBounds;
 
     iput-object p2, p0, Landroid/support/transition/ChangeClipBounds$1;->val$endView:Landroid/view/View;
@@ -39,15 +37,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 115
     iget-object v0, p0, Landroid/support/transition/ChangeClipBounds$1;->val$endView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setClipBounds(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 116
     return-void
 .end method

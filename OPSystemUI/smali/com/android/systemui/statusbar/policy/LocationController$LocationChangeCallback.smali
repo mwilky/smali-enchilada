@@ -17,16 +17,12 @@
 # virtual methods
 .method public onLocationActiveChanged(Z)V
     .locals 0
-    .param p1, "active"    # Z
 
-    .line 34
     return-void
 .end method
 
 .method public onLocationSettingsChanged(Z)V
     .locals 0
-    .param p1, "locationEnabled"    # Z
 
-    .line 42
     return-void
 .end method

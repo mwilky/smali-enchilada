@@ -18,7 +18,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 67
     invoke-direct {p0}, Lcom/android/systemui/statusbar/notification/AnimatableProperty;-><init>()V
 
     return-void
@@ -29,8 +28,7 @@
 .method public getAnimationEndTag()I
     .locals 1
 
-    .line 76
-    const v0, 0x7f0a0364
+    const v0, 0x7f0a0361
 
     return v0
 .end method
@@ -38,8 +36,7 @@
 .method public getAnimationStartTag()I
     .locals 1
 
-    .line 71
-    const v0, 0x7f0a0365
+    const v0, 0x7f0a0362
 
     return v0
 .end method
@@ -47,8 +44,7 @@
 .method public getAnimatorTag()I
     .locals 1
 
-    .line 81
-    const v0, 0x7f0a0366
+    const v0, 0x7f0a0363
 
     return v0
 .end method
@@ -56,7 +52,6 @@
 .method public getProperty()Landroid/util/Property;
     .locals 1
 
-    .line 86
     sget-object v0, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     return-object v0

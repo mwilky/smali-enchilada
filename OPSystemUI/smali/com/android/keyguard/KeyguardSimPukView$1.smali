@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardSimPukView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardSimPukView;
 
-    .line 71
     iput-object p1, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,11 +33,7 @@
 # virtual methods
 .method public onSimStateChanged(IILcom/android/internal/telephony/IccCardConstants$State;)V
     .locals 3
-    .param p1, "subId"    # I
-    .param p2, "slotId"    # I
-    .param p3, "simState"    # Lcom/android/internal/telephony/IccCardConstants$State;
 
-    .line 74
     const-string v0, "KeyguardSimPukView"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -98,7 +92,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardSimPukView;->access$100(Lcom/android/keyguard/KeyguardSimPukView;)I
@@ -109,7 +102,6 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 78
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-static {v0}, Lcom/android/keyguard/KeyguardSimPukView;->access$200(Lcom/android/keyguard/KeyguardSimPukView;)I
@@ -118,18 +110,15 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 79
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardSimPukView;->access$302(Lcom/android/keyguard/KeyguardSimPukView;Z)Z
 
     goto :goto_0
 
-    .line 81
     :cond_0
     return-void
 
-    .line 87
     :cond_1
     :goto_0
     sget-object v0, Lcom/android/keyguard/KeyguardSimPukView$4;->$SwitchMap$com$android$internal$telephony$IccCardConstants$State:[I
@@ -142,14 +131,12 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 116
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimPukView;->resetState()V
 
     goto :goto_1
 
-    .line 98
     :pswitch_0
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
@@ -163,21 +150,18 @@
 
     invoke-virtual {v0, p1}, Lcom/android/keyguard/KeyguardUpdateMonitor;->reportSimUnlocked(I)V
 
-    .line 101
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     if-eqz v0, :cond_2
 
-    .line 103
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
 
     invoke-interface {v0}, Lcom/android/keyguard/KeyguardSecurityCallback;->userActivity()V
 
-    .line 105
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     iget-object v0, v0, Lcom/android/keyguard/KeyguardSimPukView;->mCallback:Lcom/android/keyguard/KeyguardSecurityCallback;
@@ -188,21 +172,17 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/keyguard/KeyguardSecurityCallback;->dismiss(ZI)V
 
-    .line 108
     :cond_2
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-static {v0, v1}, Lcom/android/keyguard/KeyguardSimPukView;->access$302(Lcom/android/keyguard/KeyguardSimPukView;Z)Z
 
-    .line 111
     iget-object v0, p0, Lcom/android/keyguard/KeyguardSimPukView$1;->this$0:Lcom/android/keyguard/KeyguardSimPukView;
 
     invoke-virtual {v0}, Lcom/android/keyguard/KeyguardSimPukView;->resetState()V
 
-    .line 113
     nop
 
-    .line 118
     :goto_1
     return-void
 

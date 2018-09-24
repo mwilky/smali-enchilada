@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;Z)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;
 
-    .line 80
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1$1;->this$1:Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1$1;->val$isDataSaving:Z
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1$1;->this$1:Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;
 
     iget-object v0, v0, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl$1;->this$0:Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;
@@ -52,6 +49,5 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;->access$000(Lcom/android/systemui/statusbar/policy/DataSaverControllerImpl;Z)V
 
-    .line 84
     return-void
 .end method

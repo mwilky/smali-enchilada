@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/SmartReplyView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/SmartReplyView;
 
-    .line 230
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView$1;->this$0:Lcom/android/systemui/statusbar/policy/SmartReplyView;
 
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
@@ -35,13 +33,9 @@
 # virtual methods
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    .line 232
     invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 233
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SmartReplyView$1;->this$0:Lcom/android/systemui/statusbar/policy/SmartReplyView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/SmartReplyView;->getResources()Landroid/content/res/Resources;
@@ -54,8 +48,6 @@
 
     move-result-object v0
 
-    .line 234
-    .local v0, "label":Ljava/lang/String;
     new-instance v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v2, 0x10
@@ -64,6 +56,5 @@
 
     invoke-virtual {p2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 235
     return-void
 .end method

@@ -40,9 +40,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/CallbackHandler;ZLcom/android/systemui/statusbar/policy/NetworkController$IconState;Lcom/android/systemui/statusbar/policy/NetworkController$IconState;ZZLjava/lang/String;ZLjava/lang/String;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/CallbackHandler;
 
-    .line 145
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/CallbackHandler$1;->this$0:Lcom/android/systemui/statusbar/policy/CallbackHandler;
 
     iput-boolean p2, p0, Lcom/android/systemui/statusbar/policy/CallbackHandler$1;->val$enabled:Z
@@ -71,7 +69,6 @@
 .method public run()V
     .locals 11
 
-    .line 148
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/CallbackHandler$1;->this$0:Lcom/android/systemui/statusbar/policy/CallbackHandler;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/CallbackHandler;->access$000(Lcom/android/systemui/statusbar/policy/CallbackHandler;)Ljava/util/ArrayList;
@@ -95,8 +92,6 @@
 
     check-cast v1, Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
 
-    .line 149
-    .local v1, "callback":Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
     iget-boolean v3, p0, Lcom/android/systemui/statusbar/policy/CallbackHandler$1;->val$enabled:Z
 
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/CallbackHandler$1;->val$statusIcon:Lcom/android/systemui/statusbar/policy/NetworkController$IconState;
@@ -117,11 +112,8 @@
 
     invoke-interface/range {v2 .. v10}, Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;->setWifiIndicators(ZLcom/android/systemui/statusbar/policy/NetworkController$IconState;Lcom/android/systemui/statusbar/policy/NetworkController$IconState;ZZLjava/lang/String;ZLjava/lang/String;)V
 
-    .line 151
-    .end local v1    # "callback":Lcom/android/systemui/statusbar/policy/NetworkController$SignalCallback;
     goto :goto_0
 
-    .line 152
     :cond_0
     return-void
 .end method

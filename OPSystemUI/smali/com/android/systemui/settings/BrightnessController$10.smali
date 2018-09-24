@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/settings/BrightnessController;Ljava/lang/String;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/settings/BrightnessController;
 
-    .line 521
     iput-object p1, p0, Lcom/android/systemui/settings/BrightnessController$10;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     iput-object p2, p0, Lcom/android/systemui/settings/BrightnessController$10;->val$setting:Ljava/lang/String;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 4
 
-    .line 523
     iget-object v0, p0, Lcom/android/systemui/settings/BrightnessController$10;->this$0:Lcom/android/systemui/settings/BrightnessController;
 
     invoke-static {v0}, Lcom/android/systemui/settings/BrightnessController;->access$000(Lcom/android/systemui/settings/BrightnessController;)Landroid/content/Context;
@@ -66,6 +63,5 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
 
-    .line 525
     return-void
 .end method

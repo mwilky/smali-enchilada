@@ -30,7 +30,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 324
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +39,7 @@
 # virtual methods
 .method public compare(Lcom/android/systemui/qs/external/TileServiceManager;Lcom/android/systemui/qs/external/TileServiceManager;)I
     .locals 2
-    .param p1, "left"    # Lcom/android/systemui/qs/external/TileServiceManager;
-    .param p2, "right"    # Lcom/android/systemui/qs/external/TileServiceManager;
 
-    .line 327
     invoke-virtual {p1}, Lcom/android/systemui/qs/external/TileServiceManager;->getBindPriority()I
 
     move-result v0
@@ -64,7 +60,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 324
     check-cast p1, Lcom/android/systemui/qs/external/TileServiceManager;
 
     check-cast p2, Lcom/android/systemui/qs/external/TileServiceManager;

@@ -23,15 +23,11 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 2
-    .param p1, "size"    # I
 
-    .line 206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 207
     iput p1, p0, Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;->mSize:I
 
-    .line 208
     add-int/lit8 v0, p1, -0x1
 
     int-to-float v0, v0
@@ -42,16 +38,12 @@
 
     iput v1, p0, Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;->mFrameWidth:F
 
-    .line 209
     return-void
 .end method
 
 .method public static varargs ofFloat(Landroid/util/Property;[F)Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;
     .locals 1
-    .param p0, "property"    # Landroid/util/Property;
-    .param p1, "values"    # [F
 
-    .line 224
     new-instance v0, Lcom/android/systemui/qs/TouchAnimator$FloatKeyframeSet;
 
     invoke-direct {v0, p0, p1}, Lcom/android/systemui/qs/TouchAnimator$FloatKeyframeSet;-><init>(Landroid/util/Property;[F)V
@@ -66,10 +58,7 @@
 
 .method setValue(FLjava/lang/Object;)V
     .locals 3
-    .param p1, "fraction"    # F
-    .param p2, "target"    # Ljava/lang/Object;
 
-    .line 212
     iget v0, p0, Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;->mFrameWidth:F
 
     div-float v0, p1, v0
@@ -92,8 +81,6 @@
 
     move-result v0
 
-    .line 213
-    .local v0, "i":I
     iget v1, p0, Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;->mFrameWidth:F
 
     add-int/lit8 v2, v0, -0x1
@@ -108,10 +95,7 @@
 
     div-float/2addr v1, v2
 
-    .line 214
-    .local v1, "amount":F
     invoke-virtual {p0, v0, v1, p2}, Lcom/android/systemui/qs/TouchAnimator$KeyframeSet;->interpolate(IFLjava/lang/Object;)V
 
-    .line 215
     return-void
 .end method

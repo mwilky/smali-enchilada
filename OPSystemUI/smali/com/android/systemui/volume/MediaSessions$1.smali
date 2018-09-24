@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/MediaSessions;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/volume/MediaSessions;
 
-    .line 326
     iput-object p1, p0, Lcom/android/systemui/volume/MediaSessions$1;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,12 +45,9 @@
         }
     .end annotation
 
-    .line 329
-    .local p1, "controllers":Ljava/util/List;, "Ljava/util/List<Landroid/media/session/MediaController;>;"
     iget-object v0, p0, Lcom/android/systemui/volume/MediaSessions$1;->this$0:Lcom/android/systemui/volume/MediaSessions;
 
     invoke-virtual {v0, p1}, Lcom/android/systemui/volume/MediaSessions;->onActiveSessionsUpdatedH(Ljava/util/List;)V
 
-    .line 330
     return-void
 .end method

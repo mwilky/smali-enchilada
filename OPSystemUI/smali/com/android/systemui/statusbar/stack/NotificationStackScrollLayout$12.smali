@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
-    .line 4255
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->this$0:Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->val$changedRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
@@ -43,11 +41,9 @@
 .method public run()V
     .locals 1
 
-    .line 4258
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout$12;->val$changedRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->onFinishedExpansionChange()V
 
-    .line 4259
     return-void
 .end method

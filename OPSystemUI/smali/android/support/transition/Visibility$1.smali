@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/Visibility;Landroid/support/transition/ViewGroupOverlayImpl;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/Visibility;
 
-    .line 408
     iput-object p1, p0, Landroid/support/transition/Visibility$1;->this$0:Landroid/support/transition/Visibility;
 
     iput-object p2, p0, Landroid/support/transition/Visibility$1;->val$overlay:Landroid/support/transition/ViewGroupOverlayImpl;
@@ -43,15 +41,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 411
     iget-object v0, p0, Landroid/support/transition/Visibility$1;->val$overlay:Landroid/support/transition/ViewGroupOverlayImpl;
 
     iget-object v1, p0, Landroid/support/transition/Visibility$1;->val$finalOverlayView:Landroid/view/View;
 
     invoke-interface {v0, v1}, Landroid/support/transition/ViewGroupOverlayImpl;->remove(Landroid/view/View;)V
 
-    .line 412
     return-void
 .end method

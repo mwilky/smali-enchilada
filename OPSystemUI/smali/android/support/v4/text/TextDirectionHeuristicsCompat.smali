@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 33
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     const/4 v1, 0x0
@@ -45,7 +44,6 @@
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-    .line 39
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     const/4 v3, 0x1
@@ -54,7 +52,6 @@
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-    .line 47
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
@@ -63,7 +60,6 @@
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-    .line 55
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
@@ -72,7 +68,6 @@
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-    .line 62
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->INSTANCE_RTL:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
@@ -81,7 +76,6 @@
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->ANYRTL_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-    .line 68
     sget-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;
 
     sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->LOCALE:Landroid/support/v4/text/TextDirectionHeuristicCompat;
@@ -91,23 +85,18 @@
 
 .method static isRtlText(I)I
     .locals 1
-    .param p0, "directionality"    # I
 
-    .line 79
     packed-switch p0, :pswitch_data_0
 
-    .line 86
     const/4 v0, 0x2
 
     return v0
 
-    .line 84
     :pswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 81
     :pswitch_1
     const/4 v0, 0x1
 
@@ -125,25 +114,20 @@
 
 .method static isRtlTextOrFormat(I)I
     .locals 1
-    .param p0, "directionality"    # I
 
-    .line 91
     packed-switch p0, :pswitch_data_0
 
     packed-switch p0, :pswitch_data_1
 
-    .line 102
     const/4 v0, 0x2
 
     return v0
 
-    .line 100
     :pswitch_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 95
     :pswitch_1
     const/4 v0, 0x1
 

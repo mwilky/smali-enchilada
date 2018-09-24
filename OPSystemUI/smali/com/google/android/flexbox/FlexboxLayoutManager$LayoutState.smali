@@ -40,15 +40,12 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 2891
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2931
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mItemDirection:I
 
-    .line 2933
     iput v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mLayoutDirection:I
 
     return-void
@@ -56,9 +53,7 @@
 
 .method synthetic constructor <init>(Lcom/google/android/flexbox/FlexboxLayoutManager$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$1;
 
-    .line 2891
     invoke-direct {p0}, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;-><init>()V
 
     return-void
@@ -66,9 +61,7 @@
 
 .method static synthetic access$1000(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mOffset:I
 
     return v0
@@ -76,10 +69,7 @@
 
 .method static synthetic access$1002(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mOffset:I
 
     return p1
@@ -87,9 +77,7 @@
 
 .method static synthetic access$1100(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mInfinite:Z
 
     return v0
@@ -97,10 +85,7 @@
 
 .method static synthetic access$1102(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # Z
 
-    .line 2891
     iput-boolean p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mInfinite:Z
 
     return p1
@@ -108,9 +93,7 @@
 
 .method static synthetic access$1200(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mAvailable:I
 
     return v0
@@ -118,10 +101,7 @@
 
 .method static synthetic access$1202(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mAvailable:I
 
     return p1
@@ -129,9 +109,7 @@
 
 .method static synthetic access$1500(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mFlexLinePosition:I
 
     return v0
@@ -139,10 +117,7 @@
 
 .method static synthetic access$1502(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mFlexLinePosition:I
 
     return p1
@@ -150,9 +125,7 @@
 
 .method static synthetic access$1508(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 2
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mFlexLinePosition:I
 
     add-int/lit8 v1, v0, 0x1
@@ -164,9 +137,7 @@
 
 .method static synthetic access$1510(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 2
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mFlexLinePosition:I
 
     add-int/lit8 v1, v0, -0x1
@@ -178,9 +149,7 @@
 
 .method static synthetic access$2000(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mScrollingOffset:I
 
     return v0
@@ -188,10 +157,7 @@
 
 .method static synthetic access$2002(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mScrollingOffset:I
 
     return p1
@@ -199,11 +165,7 @@
 
 .method static synthetic access$2100(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;Landroid/support/v7/widget/RecyclerView$State;Ljava/util/List;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # Landroid/support/v7/widget/RecyclerView$State;
-    .param p2, "x2"    # Ljava/util/List;
 
-    .line 2891
     invoke-direct {p0, p1, p2}, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->hasMore(Landroid/support/v7/widget/RecyclerView$State;Ljava/util/List;)Z
 
     move-result v0
@@ -213,9 +175,7 @@
 
 .method static synthetic access$2200(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mPosition:I
 
     return v0
@@ -223,10 +183,7 @@
 
 .method static synthetic access$2202(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mPosition:I
 
     return p1
@@ -234,9 +191,7 @@
 
 .method static synthetic access$2300(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mLayoutDirection:I
 
     return v0
@@ -244,10 +199,7 @@
 
 .method static synthetic access$2302(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mLayoutDirection:I
 
     return p1
@@ -255,9 +207,7 @@
 
 .method static synthetic access$2500(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)I
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mItemDirection:I
 
     return v0
@@ -265,10 +215,7 @@
 
 .method static synthetic access$2502(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mItemDirection:I
 
     return p1
@@ -276,10 +223,7 @@
 
 .method static synthetic access$2702(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # I
 
-    .line 2891
     iput p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mLastScrollDelta:I
 
     return p1
@@ -287,9 +231,7 @@
 
 .method static synthetic access$500(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
 
-    .line 2891
     iget-boolean v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mShouldRecycle:Z
 
     return v0
@@ -297,10 +239,7 @@
 
 .method static synthetic access$502(Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;
-    .param p1, "x1"    # Z
 
-    .line 2891
     iput-boolean p1, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mShouldRecycle:Z
 
     return p1
@@ -308,7 +247,6 @@
 
 .method private hasMore(Landroid/support/v7/widget/RecyclerView$State;Ljava/util/List;)Z
     .locals 2
-    .param p1, "state"    # Landroid/support/v7/widget/RecyclerView$State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -319,8 +257,6 @@
         }
     .end annotation
 
-    .line 2941
-    .local p2, "flexLines":Ljava/util/List;, "Ljava/util/List<Lcom/google/android/flexbox/FlexLine;>;"
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mPosition:I
 
     if-ltz v0, :cond_0
@@ -339,7 +275,6 @@
 
     iget v0, p0, Lcom/google/android/flexbox/FlexboxLayoutManager$LayoutState;->mFlexLinePosition:I
 
-    .line 2942
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v1
@@ -353,7 +288,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2941
     :goto_0
     return v0
 .end method
@@ -363,7 +297,6 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 2947
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

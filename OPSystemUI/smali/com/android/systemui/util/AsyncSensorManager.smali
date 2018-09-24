@@ -27,12 +27,9 @@
 # direct methods
 .method public constructor <init>(Landroid/hardware/SensorManager;)V
     .locals 2
-    .param p1, "inner"    # Landroid/hardware/SensorManager;
 
-    .line 52
     invoke-direct {p0}, Landroid/hardware/SensorManager;-><init>()V
 
-    .line 49
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "async_sensor"
@@ -41,15 +38,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandlerThread:Landroid/os/HandlerThread;
 
-    .line 53
     iput-object p1, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
-    .line 54
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 55
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandlerThread:Landroid/os/HandlerThread;
@@ -62,7 +56,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     const/4 v1, -0x1
@@ -73,16 +66,12 @@
 
     iput-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mSensorCache:Ljava/util/List;
 
-    .line 57
     return-void
 .end method
 
 .method public static synthetic lambda$cancelTriggerSensorImpl$4(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)V
     .locals 3
-    .param p1, "listener"    # Landroid/hardware/TriggerEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 128
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/hardware/SensorManager;->cancelTriggerSensor(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z
@@ -91,7 +80,6 @@
 
     if-nez v0, :cond_0
 
-    .line 129
     const-string v0, "AsyncSensorManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -120,17 +108,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
     :cond_0
     return-void
 .end method
 
 .method public static synthetic lambda$registerDynamicSensorCallbackImpl$1(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/SensorManager$DynamicSensorCallback;Landroid/os/Handler;)V
     .locals 1
-    .param p1, "callback"    # Landroid/hardware/SensorManager$DynamicSensorCallback;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 104
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/hardware/SensorManager;->registerDynamicSensorCallback(Landroid/hardware/SensorManager$DynamicSensorCallback;Landroid/os/Handler;)V
@@ -140,13 +124,7 @@
 
 .method public static synthetic lambda$registerListenerImpl$0(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;IILandroid/os/Handler;)V
     .locals 6
-    .param p1, "listener"    # Landroid/hardware/SensorEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
-    .param p3, "delayUs"    # I
-    .param p4, "maxReportLatencyUs"    # I
-    .param p5, "handler"    # Landroid/os/Handler;
 
-    .line 73
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     move-object v1, p1
@@ -165,7 +143,6 @@
 
     if-nez v0, :cond_0
 
-    .line 74
     const-string v0, "AsyncSensorManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -194,17 +171,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
     :cond_0
     return-void
 .end method
 
 .method public static synthetic lambda$requestTriggerSensorImpl$3(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)V
     .locals 3
-    .param p1, "listener"    # Landroid/hardware/TriggerEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 115
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/hardware/SensorManager;->requestTriggerSensor(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z
@@ -213,7 +186,6 @@
 
     if-nez v0, :cond_0
 
-    .line 116
     const-string v0, "AsyncSensorManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -242,16 +214,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
     :cond_0
     return-void
 .end method
 
 .method public static synthetic lambda$setOperationParameterImpl$5(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/SensorAdditionalInfo;)V
     .locals 1
-    .param p1, "parameter"    # Landroid/hardware/SensorAdditionalInfo;
 
-    .line 148
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1}, Landroid/hardware/SensorManager;->setOperationParameter(Landroid/hardware/SensorAdditionalInfo;)Z
@@ -261,9 +230,7 @@
 
 .method public static synthetic lambda$unregisterDynamicSensorCallbackImpl$2(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/SensorManager$DynamicSensorCallback;)V
     .locals 1
-    .param p1, "callback"    # Landroid/hardware/SensorManager$DynamicSensorCallback;
 
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1}, Landroid/hardware/SensorManager;->unregisterDynamicSensorCallback(Landroid/hardware/SensorManager$DynamicSensorCallback;)V
@@ -273,26 +240,20 @@
 
 .method public static synthetic lambda$unregisterListenerImpl$6(Lcom/android/systemui/util/AsyncSensorManager;Landroid/hardware/Sensor;Landroid/hardware/SensorEventListener;)V
     .locals 1
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "listener"    # Landroid/hardware/SensorEventListener;
 
-    .line 155
     if-nez p1, :cond_0
 
-    .line 156
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
     goto :goto_0
 
-    .line 158
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p2, p1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
-    .line 160
     :goto_0
     return-void
 .end method
@@ -301,14 +262,9 @@
 # virtual methods
 .method protected cancelTriggerSensorImpl(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;Z)Z
     .locals 2
-    .param p1, "listener"    # Landroid/hardware/TriggerEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
-    .param p3, "disable"    # Z
 
-    .line 125
     invoke-static {p3}, Lcom/android/internal/util/Preconditions;->checkArgument(Z)V
 
-    .line 127
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$ssfdtdJfSGgmlHJqcz8km7BLSQE;
@@ -317,7 +273,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 132
     const/4 v0, 0x1
 
     return v0
@@ -325,11 +280,7 @@
 
 .method protected configureDirectChannelImpl(Landroid/hardware/SensorDirectChannel;Landroid/hardware/Sensor;I)I
     .locals 2
-    .param p1, "channel"    # Landroid/hardware/SensorDirectChannel;
-    .param p2, "s"    # Landroid/hardware/Sensor;
-    .param p3, "rate"    # I
 
-    .line 98
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -341,10 +292,7 @@
 
 .method protected createDirectChannelImpl(Landroid/os/MemoryFile;Landroid/hardware/HardwareBuffer;)Landroid/hardware/SensorDirectChannel;
     .locals 2
-    .param p1, "memoryFile"    # Landroid/os/MemoryFile;
-    .param p2, "hardwareBuffer"    # Landroid/hardware/HardwareBuffer;
 
-    .line 88
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -356,9 +304,7 @@
 
 .method protected destroyDirectChannelImpl(Landroid/hardware/SensorDirectChannel;)V
     .locals 2
-    .param p1, "channel"    # Landroid/hardware/SensorDirectChannel;
 
-    .line 93
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -370,9 +316,7 @@
 
 .method protected flushImpl(Landroid/hardware/SensorEventListener;)Z
     .locals 1
-    .param p1, "listener"    # Landroid/hardware/SensorEventListener;
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p1}, Landroid/hardware/SensorManager;->flush(Landroid/hardware/SensorEventListener;)Z
@@ -385,17 +329,6 @@
 .method protected getActiveSensorListImpl()Ljava/lang/String;
     .locals 1
 
-    .line 165
-    const-string v0, ""
-
-    return-object v0
-.end method
-
-.method protected getActiveSensorListImplByHandle(I)Ljava/lang/String;
-    .locals 1
-    .param p1, "handle"    # I
-
-    .line 172
     const-string v0, ""
 
     return-object v0
@@ -412,7 +345,6 @@
         }
     .end annotation
 
-    .line 66
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mInner:Landroid/hardware/SensorManager;
 
     const/4 v1, -0x1
@@ -435,7 +367,6 @@
         }
     .end annotation
 
-    .line 61
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mSensorCache:Ljava/util/List;
 
     return-object v0
@@ -443,9 +374,7 @@
 
 .method protected initDataInjectionImpl(Z)Z
     .locals 2
-    .param p1, "enable"    # Z
 
-    .line 137
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -457,12 +386,7 @@
 
 .method protected injectSensorDataImpl(Landroid/hardware/Sensor;[FIJ)Z
     .locals 2
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "values"    # [F
-    .param p3, "accuracy"    # I
-    .param p4, "timestamp"    # J
 
-    .line 143
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "not implemented"
@@ -474,10 +398,7 @@
 
 .method protected registerDynamicSensorCallbackImpl(Landroid/hardware/SensorManager$DynamicSensorCallback;Landroid/os/Handler;)V
     .locals 2
-    .param p1, "callback"    # Landroid/hardware/SensorManager$DynamicSensorCallback;
-    .param p2, "handler"    # Landroid/os/Handler;
 
-    .line 104
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$Hwm7wwA6xT-rLeZcpNr7J2BNQWE;
@@ -486,20 +407,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 105
     return-void
 .end method
 
 .method protected registerListenerImpl(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;II)Z
     .locals 9
-    .param p1, "listener"    # Landroid/hardware/SensorEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
-    .param p3, "delayUs"    # I
-    .param p4, "handler"    # Landroid/os/Handler;
-    .param p5, "maxReportLatencyUs"    # I
-    .param p6, "reservedFlags"    # I
 
-    .line 72
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v8, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$d7xLBI7qZK784-fy2ffbXtJPEGA;
@@ -522,7 +435,6 @@
 
     invoke-virtual {v0, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 77
     const/4 v0, 0x1
 
     return v0
@@ -530,10 +442,7 @@
 
 .method protected requestTriggerSensorImpl(Landroid/hardware/TriggerEventListener;Landroid/hardware/Sensor;)Z
     .locals 2
-    .param p1, "listener"    # Landroid/hardware/TriggerEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 114
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$q1TQFoUPad2_Ye0DbYS5yACL5CU;
@@ -542,7 +451,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 119
     const/4 v0, 0x1
 
     return v0
@@ -550,9 +458,7 @@
 
 .method protected setOperationParameterImpl(Landroid/hardware/SensorAdditionalInfo;)Z
     .locals 2
-    .param p1, "parameter"    # Landroid/hardware/SensorAdditionalInfo;
 
-    .line 148
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$yWyG4VnNvYVS3_A55eZfq00QEBQ;
@@ -561,7 +467,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 149
     const/4 v0, 0x1
 
     return v0
@@ -569,9 +474,7 @@
 
 .method protected unregisterDynamicSensorCallbackImpl(Landroid/hardware/SensorManager$DynamicSensorCallback;)V
     .locals 2
-    .param p1, "callback"    # Landroid/hardware/SensorManager$DynamicSensorCallback;
 
-    .line 109
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$ioH8tBFNQaFrSnUQEwQdi_ri4K0;
@@ -580,16 +483,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 110
     return-void
 .end method
 
 .method protected unregisterListenerImpl(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
     .locals 2
-    .param p1, "listener"    # Landroid/hardware/SensorEventListener;
-    .param p2, "sensor"    # Landroid/hardware/Sensor;
 
-    .line 154
     iget-object v0, p0, Lcom/android/systemui/util/AsyncSensorManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/systemui/util/-$$Lambda$AsyncSensorManager$-X62bKcCGUmPVwchbYAj2vQKUTg;
@@ -598,6 +497,5 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 161
     return-void
 .end method

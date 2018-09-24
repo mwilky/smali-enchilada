@@ -27,7 +27,6 @@
         }
     .end annotation
 
-    .line 234
     iget-object v0, p0, Lcom/android/systemui/globalactions/OpGlobalActionEntryAnimations;->mAdvShowAnimSets:Ljava/util/ArrayList;
 
     return-object v0

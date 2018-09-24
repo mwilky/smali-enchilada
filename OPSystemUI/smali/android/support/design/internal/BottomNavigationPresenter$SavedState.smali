@@ -37,7 +37,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 140
     new-instance v0, Landroid/support/design/internal/BottomNavigationPresenter$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/design/internal/BottomNavigationPresenter$SavedState$1;-><init>()V
@@ -50,7 +49,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,19 +56,15 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
 
-    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 127
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/design/internal/BottomNavigationPresenter$SavedState;->selectedItemId:I
 
-    .line 128
     return-void
 .end method
 
@@ -79,7 +73,6 @@
 .method public describeContents()I
     .locals 1
 
-    .line 132
     const/4 v0, 0x0
 
     return v0
@@ -87,14 +80,10 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
-    .line 137
     iget v0, p0, Landroid/support/design/internal/BottomNavigationPresenter$SavedState;->selectedItemId:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 138
     return-void
 .end method

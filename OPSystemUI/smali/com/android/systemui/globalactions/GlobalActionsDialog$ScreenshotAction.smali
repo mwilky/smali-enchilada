@@ -22,17 +22,14 @@
 .method public constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 1
 
-    .line 477
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$ScreenshotAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 478
     const p1, 0x10804cc
 
     const v0, 0x1040268
 
     invoke-direct {p0, p1, v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
 
-    .line 479
     return-void
 .end method
 
@@ -41,7 +38,6 @@
 .method public onPress()V
     .locals 4
 
-    .line 487
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$ScreenshotAction;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
@@ -56,14 +52,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 503
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 512
     const/4 v0, 0x0
 
     return v0
@@ -72,7 +66,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 507
     const/4 v0, 0x1
 
     return v0

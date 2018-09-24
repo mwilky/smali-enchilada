@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/QSSecurityFooter;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/QSSecurityFooter;
 
-    .line 450
     iput-object p1, p0, Lcom/android/systemui/qs/QSSecurityFooter$2;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 4
 
-    .line 453
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$2;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->access$400(Lcom/android/systemui/qs/QSSecurityFooter;)Ljava/lang/CharSequence;
@@ -48,7 +45,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 454
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$2;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->access$500(Lcom/android/systemui/qs/QSSecurityFooter;)Landroid/widget/TextView;
@@ -63,7 +59,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 456
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$2;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
@@ -93,7 +88,6 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 457
     iget-object v0, p0, Lcom/android/systemui/qs/QSSecurityFooter$2;->this$0:Lcom/android/systemui/qs/QSSecurityFooter;
 
     invoke-static {v0}, Lcom/android/systemui/qs/QSSecurityFooter;->access$800(Lcom/android/systemui/qs/QSSecurityFooter;)Landroid/view/View;
@@ -124,7 +118,6 @@
     :goto_1
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 458
     :cond_3
     return-void
 .end method

@@ -38,7 +38,6 @@
 .method constructor <init>(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 0
 
-    .line 140
     iput-object p1, p0, Landroidx/slice/core/SliceQuery$3;->val$format:Ljava/lang/String;
 
     iput-object p2, p0, Landroidx/slice/core/SliceQuery$3;->val$hints:[Ljava/lang/String;
@@ -54,9 +53,7 @@
 # virtual methods
 .method public filter(Landroidx/slice/SliceItem;)Z
     .locals 1
-    .param p1, "item"    # Landroidx/slice/SliceItem;
 
-    .line 143
     iget-object v0, p0, Landroidx/slice/core/SliceQuery$3;->val$format:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroidx/slice/core/SliceQuery;->access$000(Landroidx/slice/SliceItem;Ljava/lang/String;)Z
@@ -67,7 +64,6 @@
 
     iget-object v0, p0, Landroidx/slice/core/SliceQuery$3;->val$hints:[Ljava/lang/String;
 
-    .line 144
     invoke-static {p1, v0}, Landroidx/slice/core/SliceQuery;->hasHints(Landroidx/slice/SliceItem;[Ljava/lang/String;)Z
 
     move-result v0
@@ -96,7 +92,6 @@
 .method public bridge synthetic filter(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 140
     check-cast p1, Landroidx/slice/SliceItem;
 
     invoke-virtual {p0, p1}, Landroidx/slice/core/SliceQuery$3;->filter(Landroidx/slice/SliceItem;)Z

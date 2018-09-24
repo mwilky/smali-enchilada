@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/screenshot/GlobalScreenshot;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/screenshot/GlobalScreenshot;
 
-    .line 815
     iput-object p1, p0, Lcom/android/systemui/screenshot/GlobalScreenshot$12;->this$0:Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 7
-    .param p1, "x"    # F
 
-    .line 818
     const v0, 0x3f5c4771
 
     cmpg-float v1, p1, v0
@@ -49,7 +45,6 @@
 
     if-gez v1, :cond_0
 
-    .line 820
     const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
 
     div-float v0, p1, v0
@@ -70,7 +65,6 @@
 
     return v0
 
-    .line 822
     :cond_0
     return v2
 .end method

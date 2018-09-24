@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroidx/car/moderator/SpeedBumpController;)V
     .locals 0
-    .param p1, "this$0"    # Landroidx/car/moderator/SpeedBumpController;
 
-    .line 199
     iput-object p1, p0, Landroidx/car/moderator/SpeedBumpController$1;->this$0:Landroidx/car/moderator/SpeedBumpController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,9 +34,7 @@
 
 .method static synthetic lambda$onAnimationEnd$32(Landroidx/car/moderator/SpeedBumpController;)V
     .locals 0
-    .param p0, "rec$"    # Landroidx/car/moderator/SpeedBumpController;
 
-    .line 209
     invoke-static {p0}, Landroidx/car/moderator/SpeedBumpController;->access$300(Landroidx/car/moderator/SpeedBumpController;)V
 
     return-void
@@ -48,9 +44,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 5
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 209
     iget-object v0, p0, Landroidx/car/moderator/SpeedBumpController$1;->this$0:Landroidx/car/moderator/SpeedBumpController;
 
     invoke-static {v0}, Landroidx/car/moderator/SpeedBumpController;->access$200(Landroidx/car/moderator/SpeedBumpController;)Landroid/os/Handler;
@@ -65,33 +59,26 @@
 
     iget-object v1, p0, Landroidx/car/moderator/SpeedBumpController$1;->this$0:Landroidx/car/moderator/SpeedBumpController;
 
-    .line 210
     invoke-static {v1}, Landroidx/car/moderator/SpeedBumpController;->access$100(Landroidx/car/moderator/SpeedBumpController;)I
 
     move-result v1
 
     int-to-long v3, v1
 
-    .line 209
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 211
     return-void
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 214
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 202
     iget-object v0, p0, Landroidx/car/moderator/SpeedBumpController$1;->this$0:Landroidx/car/moderator/SpeedBumpController;
 
     invoke-static {v0}, Landroidx/car/moderator/SpeedBumpController;->access$000(Landroidx/car/moderator/SpeedBumpController;)Landroid/view/View;
@@ -102,6 +89,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 203
     return-void
 .end method

@@ -64,9 +64,7 @@
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
-    .line 78
     invoke-interface {p0}, Lcom/android/systemui/plugins/qs/QS;->isCustomizing()Z
 
     move-result v0
@@ -85,9 +83,7 @@
 
 .method public setHasNotifications(Z)V
     .locals 0
-    .param p1, "hasNotifications"    # Z
 
-    .line 67
     return-void
 .end method
 

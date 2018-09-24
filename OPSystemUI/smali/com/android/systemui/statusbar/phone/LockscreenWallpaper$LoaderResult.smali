@@ -23,26 +23,19 @@
 # direct methods
 .method constructor <init>(ZLandroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "success"    # Z
-    .param p2, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 216
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 217
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;->success:Z
 
-    .line 218
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;->bitmap:Landroid/graphics/Bitmap;
 
-    .line 219
     return-void
 .end method
 
 .method static fail()Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;
     .locals 3
 
-    .line 226
     new-instance v0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;
 
     const/4 v1, 0x0
@@ -56,9 +49,7 @@
 
 .method static success(Landroid/graphics/Bitmap;)Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;
     .locals 2
-    .param p0, "b"    # Landroid/graphics/Bitmap;
 
-    .line 222
     new-instance v0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$LoaderResult;
 
     const/4 v1, 0x1

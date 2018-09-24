@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
-    .line 407
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$1;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$1;->val$tv:Lcom/android/systemui/recents/views/TaskView;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 410
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$1;->val$tv:Lcom/android/systemui/recents/views/TaskView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/views/TaskView;->setClipViewInStack(Z)V
 
-    .line 411
     return-void
 .end method

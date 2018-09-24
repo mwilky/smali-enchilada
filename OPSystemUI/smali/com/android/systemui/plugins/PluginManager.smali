@@ -23,8 +23,6 @@
         }
     .end annotation
 
-    .line 44
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TP;>;"
     const-class v0, Lcom/android/systemui/plugins/annotations/ProvidesInterface;
 
     invoke-virtual {p0, v0}, Ljava/lang/Class;->getDeclaredAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
@@ -33,11 +31,8 @@
 
     check-cast v0, Lcom/android/systemui/plugins/annotations/ProvidesInterface;
 
-    .line 45
-    .local v0, "info":Lcom/android/systemui/plugins/annotations/ProvidesInterface;
     if-eqz v0, :cond_1
 
-    .line 48
     invoke-interface {v0}, Lcom/android/systemui/plugins/annotations/ProvidesInterface;->action()Ljava/lang/String;
 
     move-result-object v1
@@ -48,14 +43,12 @@
 
     if-nez v1, :cond_0
 
-    .line 51
     invoke-interface {v0}, Lcom/android/systemui/plugins/annotations/ProvidesInterface;->action()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 49
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -77,7 +70,6 @@
 
     throw v1
 
-    .line 46
     :cond_1
     new-instance v1, Ljava/lang/RuntimeException;
 

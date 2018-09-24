@@ -25,23 +25,15 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
     .locals 0
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "avatar"    # Landroid/graphics/drawable/Drawable;
-    .param p3, "userAccount"    # Ljava/lang/String;
 
-    .line 224
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 225
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mName:Ljava/lang/String;
 
-    .line 226
     iput-object p2, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mAvatar:Landroid/graphics/drawable/Drawable;
 
-    .line 227
     iput-object p3, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mUserAccount:Ljava/lang/String;
 
-    .line 228
     return-void
 .end method
 
@@ -50,7 +42,6 @@
 .method public getAvatar()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 235
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mAvatar:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -59,7 +50,6 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 231
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mName:Ljava/lang/String;
 
     return-object v0
@@ -68,7 +58,6 @@
 .method public getUserAccount()Ljava/lang/String;
     .locals 1
 
-    .line 239
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/UserInfoControllerImpl$UserInfoQueryResult;->mUserAccount:Ljava/lang/String;
 
     return-object v0

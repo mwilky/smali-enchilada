@@ -22,25 +22,19 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/plugins/PluginManager;)V
     .locals 1
-    .param p1, "manager"    # Lcom/android/systemui/plugins/PluginManager;
 
-    .line 27
     invoke-direct {p0}, Lcom/android/systemui/plugins/PluginDependency$DependencyProvider;-><init>()V
 
-    .line 24
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
-    .line 28
     iput-object p1, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mManager:Lcom/android/systemui/plugins/PluginManager;
 
-    .line 29
     sput-object p0, Lcom/android/systemui/plugins/PluginDependency;->sProvider:Lcom/android/systemui/plugins/PluginDependency$DependencyProvider;
 
-    .line 30
     return-void
 .end method
 
@@ -58,15 +52,12 @@
         }
     .end annotation
 
-    .line 33
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-static {p1}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/plugins/PluginDependencyProvider;->allowPluginDependency(Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 34
     return-void
 .end method
 
@@ -82,26 +73,19 @@
         }
     .end annotation
 
-    .line 37
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "obj":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 38
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 39
     monitor-exit v0
 
-    .line 40
     return-void
 
-    .line 39
     :catchall_0
     move-exception v1
 
@@ -114,7 +98,6 @@
 
 .method get(Lcom/android/systemui/plugins/Plugin;Ljava/lang/Class;)Ljava/lang/Object;
     .locals 4
-    .param p1, "p"    # Lcom/android/systemui/plugins/Plugin;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -126,8 +109,6 @@
         }
     .end annotation
 
-    .line 44
-    .local p2, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mManager:Lcom/android/systemui/plugins/PluginManager;
 
     invoke-interface {v0, p1, p2}, Lcom/android/systemui/plugins/PluginManager;->dependsOn(Lcom/android/systemui/plugins/Plugin;Ljava/lang/Class;)Z
@@ -136,12 +117,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 47
     iget-object v0, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
     monitor-enter v0
 
-    .line 48
     :try_start_0
     iget-object v1, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
@@ -151,7 +130,6 @@
 
     if-eqz v1, :cond_0
 
-    .line 51
     iget-object v1, p0, Lcom/android/systemui/plugins/PluginDependencyProvider;->mDependencies:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -162,7 +140,6 @@
 
     return-object v1
 
-    .line 49
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -184,7 +161,6 @@
 
     throw v1
 
-    .line 52
     :catchall_0
     move-exception v1
 
@@ -194,7 +170,6 @@
 
     throw v1
 
-    .line 45
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

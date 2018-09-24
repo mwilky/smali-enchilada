@@ -17,16 +17,12 @@
 # virtual methods
 .method public onSpeedChange(Ljava/lang/String;)V
     .locals 0
-    .param p1, "speed"    # Ljava/lang/String;
 
-    .line 22
     return-void
 .end method
 
 .method public onSpeedShow(Z)V
     .locals 0
-    .param p1, "show"    # Z
 
-    .line 23
     return-void
 .end method

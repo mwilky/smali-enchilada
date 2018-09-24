@@ -25,7 +25,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +32,6 @@
 
 .method public static get(Lcom/android/systemui/plugins/Plugin;Ljava/lang/Class;)Ljava/lang/Object;
     .locals 1
-    .param p0, "p"    # Lcom/android/systemui/plugins/Plugin;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -45,8 +43,6 @@
         }
     .end annotation
 
-    .line 25
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     sget-object v0, Lcom/android/systemui/plugins/PluginDependency;->sProvider:Lcom/android/systemui/plugins/PluginDependency$DependencyProvider;
 
     invoke-virtual {v0, p0, p1}, Lcom/android/systemui/plugins/PluginDependency$DependencyProvider;->get(Lcom/android/systemui/plugins/Plugin;Ljava/lang/Class;)Ljava/lang/Object;

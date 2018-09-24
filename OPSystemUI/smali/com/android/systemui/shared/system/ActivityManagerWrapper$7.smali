@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/shared/system/ActivityManagerWrapper;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
-    .line 406
     iput-object p1, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$7;->this$0:Lcom/android/systemui/shared/system/ActivityManagerWrapper;
 
     iput p2, p0, Lcom/android/systemui/shared/system/ActivityManagerWrapper$7;->val$taskId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 4
 
-    .line 410
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManager;->getService()Landroid/app/IActivityManager;
 
@@ -55,15 +52,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 413
     goto :goto_0
 
-    .line 411
     :catch_0
     move-exception v0
 
-    .line 412
-    .local v0, "e":Landroid/os/RemoteException;
     const-string v1, "ActivityManagerWrapper"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -84,8 +77,6 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 414
-    .end local v0    # "e":Landroid/os/RemoteException;
     :goto_0
     return-void
 .end method

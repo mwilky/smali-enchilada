@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 30
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -48,7 +47,6 @@
 
     sput-object v0, Landroid/support/transition/Styleable;->TRANSITION_TARGET:[I
 
-    .line 55
     const/4 v0, 0x3
 
     new-array v1, v0, [I
@@ -57,7 +55,6 @@
 
     sput-object v1, Landroid/support/transition/Styleable;->TRANSITION_MANAGER:[I
 
-    .line 71
     const/4 v1, 0x4
 
     new-array v1, v1, [I
@@ -66,7 +63,6 @@
 
     sput-object v1, Landroid/support/transition/Styleable;->TRANSITION:[I
 
-    .line 90
     const/4 v1, 0x1
 
     new-array v2, v1, [I
@@ -79,7 +75,6 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->CHANGE_BOUNDS:[I
 
-    .line 100
     new-array v2, v1, [I
 
     const v4, 0x101047c
@@ -88,7 +83,6 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->VISIBILITY_TRANSITION:[I
 
-    .line 110
     new-array v2, v1, [I
 
     const v4, 0x10103e1
@@ -97,7 +91,6 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->FADE:[I
 
-    .line 120
     const/4 v2, 0x2
 
     new-array v2, v2, [I
@@ -106,7 +99,6 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->CHANGE_TRANSFORM:[I
 
-    .line 133
     new-array v2, v1, [I
 
     const v4, 0x1010430
@@ -115,7 +107,6 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->SLIDE:[I
 
-    .line 143
     new-array v2, v1, [I
 
     const v4, 0x10103e0
@@ -124,14 +115,12 @@
 
     sput-object v2, Landroid/support/transition/Styleable;->TRANSITION_SET:[I
 
-    .line 153
     new-array v0, v0, [I
 
     fill-array-data v0, :array_4
 
     sput-object v0, Landroid/support/transition/Styleable;->ARC_MOTION:[I
 
-    .line 169
     new-array v0, v1, [I
 
     const v1, 0x10104ca

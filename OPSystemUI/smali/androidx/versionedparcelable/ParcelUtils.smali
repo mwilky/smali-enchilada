@@ -6,7 +6,6 @@
 # direct methods
 .method public static fromParcelable(Landroid/os/Parcelable;)Landroidx/versionedparcelable/VersionedParcelable;
     .locals 2
-    .param p0, "p"    # Landroid/os/Parcelable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T::",
@@ -17,12 +16,10 @@
         }
     .end annotation
 
-    .line 48
     instance-of v0, p0, Landroidx/versionedparcelable/ParcelImpl;
 
     if-eqz v0, :cond_0
 
-    .line 51
     move-object v0, p0
 
     check-cast v0, Landroidx/versionedparcelable/ParcelImpl;
@@ -33,7 +30,6 @@
 
     return-object v0
 
-    .line 49
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -46,9 +42,7 @@
 
 .method public static toParcelable(Landroidx/versionedparcelable/VersionedParcelable;)Landroid/os/Parcelable;
     .locals 1
-    .param p0, "obj"    # Landroidx/versionedparcelable/VersionedParcelable;
 
-    .line 40
     new-instance v0, Landroidx/versionedparcelable/ParcelImpl;
 
     invoke-direct {v0, p0}, Landroidx/versionedparcelable/ParcelImpl;-><init>(Landroidx/versionedparcelable/VersionedParcelable;)V

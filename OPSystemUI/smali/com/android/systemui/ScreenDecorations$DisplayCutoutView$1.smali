@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;I)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;
 
-    .line 590
     iput-object p1, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView$1;->this$0:Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;
 
     iput p2, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView$1;->val$displayId:I
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 593
     iget v0, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView$1;->val$displayId:I
 
     iget-object v1, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView$1;->this$0:Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;
@@ -58,12 +55,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 594
     iget-object v0, p0, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView$1;->this$0:Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;
 
     invoke-static {v0}, Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;->access$400(Lcom/android/systemui/ScreenDecorations$DisplayCutoutView;)V
 
-    .line 596
     :cond_0
     return-void
 .end method

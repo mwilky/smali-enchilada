@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/doze/DozeUi;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/doze/DozeUi;
 
-    .line 55
     iput-object p1, p0, Lcom/android/systemui/doze/DozeUi$1;->this$0:Lcom/android/systemui/doze/DozeUi;
 
     invoke-direct {p0}, Lcom/android/keyguard/KeyguardUpdateMonitorCallback;-><init>()V
@@ -35,18 +33,14 @@
 # virtual methods
 .method public onKeyguardVisibilityChanged(Z)V
     .locals 1
-    .param p1, "showing"    # Z
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/doze/DozeUi$1;->this$0:Lcom/android/systemui/doze/DozeUi;
 
     invoke-static {v0, p1}, Lcom/android/systemui/doze/DozeUi;->access$002(Lcom/android/systemui/doze/DozeUi;Z)Z
 
-    .line 60
     iget-object v0, p0, Lcom/android/systemui/doze/DozeUi$1;->this$0:Lcom/android/systemui/doze/DozeUi;
 
     invoke-static {v0}, Lcom/android/systemui/doze/DozeUi;->access$100(Lcom/android/systemui/doze/DozeUi;)V
 
-    .line 61
     return-void
 .end method

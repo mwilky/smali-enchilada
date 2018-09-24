@@ -22,7 +22,6 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 302
     invoke-direct {p0}, Lcom/android/systemui/recents/events/EventBus$Event;-><init>()V
 
     return-void
@@ -38,7 +37,6 @@
         }
     .end annotation
 
-    .line 312
     new-instance v0, Ljava/lang/CloneNotSupportedException;
 
     invoke-direct {v0}, Ljava/lang/CloneNotSupportedException;-><init>()V
@@ -49,16 +47,13 @@
 .method onPostDispatch()V
     .locals 1
 
-    .line 306
     invoke-super {p0}, Lcom/android/systemui/recents/events/EventBus$Event;->onPostDispatch()V
 
-    .line 307
     iget v0, p0, Lcom/android/systemui/recents/events/EventBus$ReusableEvent;->mDispatchCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/systemui/recents/events/EventBus$ReusableEvent;->mDispatchCount:I
 
-    .line 308
     return-void
 .end method

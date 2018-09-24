@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/transition/Transition;Landroid/support/v4/util/ArrayMap;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/transition/Transition;
 
-    .line 895
     iput-object p1, p0, Landroid/support/transition/Transition$2;->this$0:Landroid/support/transition/Transition;
 
     iput-object p2, p0, Landroid/support/transition/Transition$2;->val$runningAnimators:Landroid/support/v4/util/ArrayMap;
@@ -39,14 +37,11 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 903
     iget-object v0, p0, Landroid/support/transition/Transition$2;->val$runningAnimators:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 904
     iget-object v0, p0, Landroid/support/transition/Transition$2;->this$0:Landroid/support/transition/Transition;
 
     invoke-static {v0}, Landroid/support/transition/Transition;->access$000(Landroid/support/transition/Transition;)Ljava/util/ArrayList;
@@ -55,15 +50,12 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 905
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 898
     iget-object v0, p0, Landroid/support/transition/Transition$2;->this$0:Landroid/support/transition/Transition;
 
     invoke-static {v0}, Landroid/support/transition/Transition;->access$000(Landroid/support/transition/Transition;)Ljava/util/ArrayList;
@@ -72,6 +64,5 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 899
     return-void
 .end method

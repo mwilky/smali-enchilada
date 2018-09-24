@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/SystemUIService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/SystemUIService;
 
-    .line 74
     iput-object p1, p0, Lcom/android/systemui/SystemUIService$1;->this$0:Lcom/android/systemui/SystemUIService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onLimitReached(I)V
     .locals 3
-    .param p1, "uid"    # I
 
-    .line 77
     const-string v0, "SystemUIService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -57,7 +53,6 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 79
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v2
@@ -68,9 +63,7 @@
 
     move-result-object v1
 
-    .line 77
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
     return-void
 .end method

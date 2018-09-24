@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 635
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -46,27 +45,21 @@
 
 .method private constructor <init>(I)V
     .locals 0
-    .param p1, "resId"    # I
 
-    .line 639
     invoke-direct {p0}, Lcom/android/systemui/plugins/qs/QSTile$Icon;-><init>()V
 
-    .line 640
     iput p1, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->mResId:I
 
-    .line 641
     return-void
 .end method
 
 .method public static declared-synchronized get(I)Lcom/android/systemui/plugins/qs/QSTile$Icon;
     .locals 3
-    .param p0, "resId"    # I
 
     const-class v0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;
 
     monitor-enter v0
 
-    .line 647
     :try_start_0
     sget-object v1, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->ICONS:Landroid/util/SparseArray;
 
@@ -76,33 +69,25 @@
 
     check-cast v1, Lcom/android/systemui/plugins/qs/QSTile$Icon;
 
-    .line 648
-    .local v1, "icon":Lcom/android/systemui/plugins/qs/QSTile$Icon;
     if-nez v1, :cond_0
 
-    .line 649
     new-instance v2, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;
 
     invoke-direct {v2, p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;-><init>(I)V
 
     move-object v1, v2
 
-    .line 650
     sget-object v2, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->ICONS:Landroid/util/SparseArray;
 
     invoke-virtual {v2, p0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 652
     :cond_0
     monitor-exit v0
 
     return-object v1
 
-    .line 646
-    .end local v1    # "icon":Lcom/android/systemui/plugins/qs/QSTile$Icon;
-    .end local p0    # "resId":I
     :catchall_0
     move-exception p0
 
@@ -115,9 +100,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
-    .param p1, "o"    # Ljava/lang/Object;
 
-    .line 667
     instance-of v0, p1, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;
 
     if-eqz v0, :cond_0
@@ -145,9 +128,7 @@
 
 .method public getDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 657
     iget v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->mResId:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -159,9 +140,7 @@
 
 .method public getInvisibleDrawable(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
 
-    .line 662
     iget v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl$ResourceIcon;->mResId:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -174,7 +153,6 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    .line 672
     const-string v0, "ResourceIcon[resId=0x%08x]"
 
     const/4 v1, 0x1

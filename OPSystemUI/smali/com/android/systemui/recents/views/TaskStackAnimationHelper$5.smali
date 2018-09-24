@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskStackAnimationHelper;Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
-    .line 674
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$5;->this$0:Lcom/android/systemui/recents/views/TaskStackAnimationHelper;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$5;->val$postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
@@ -39,13 +37,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 677
     iget-object v0, p0, Lcom/android/systemui/recents/views/TaskStackAnimationHelper$5;->val$postAnimationTrigger:Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/misc/ReferenceCountedTrigger;->decrement()V
 
-    .line 678
     return-void
 .end method

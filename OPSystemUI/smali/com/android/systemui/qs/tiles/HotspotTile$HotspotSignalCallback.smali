@@ -24,9 +24,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/systemui/qs/tiles/HotspotTile;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/HotspotTile;
 
-    .line 275
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotspotSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,20 +36,15 @@
 # virtual methods
 .method public setVirtualSimstate([I)V
     .locals 5
-    .param p1, "softSimstate"    # [I
 
-    .line 278
     const/4 v0, 0x0
 
-    .line 280
-    .local v0, "exist":Z
     if-eqz p1, :cond_1
 
     array-length v1, p1
 
     if-lez v1, :cond_1
 
-    .line 281
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -61,26 +54,19 @@
 
     aget v3, p1, v2
 
-    .line 283
-    .local v3, "softsimState":I
     sget v4, Lcom/android/systemui/statusbar/policy/NetworkControllerImpl;->SOFTSIM_ENABLE_PILOT:I
 
     if-ne v3, v4, :cond_0
 
-    .line 284
     const/4 v0, 0x1
 
-    .line 285
     goto :goto_1
 
-    .line 281
-    .end local v3    # "softsimState":I
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 290
     :cond_1
     :goto_1
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotspotSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
@@ -117,16 +103,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 291
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotspotSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-static {v1, v0}, Lcom/android/systemui/qs/tiles/HotspotTile;->access$402(Lcom/android/systemui/qs/tiles/HotspotTile;Z)Z
 
-    .line 292
     iget-object v1, p0, Lcom/android/systemui/qs/tiles/HotspotTile$HotspotSignalCallback;->this$0:Lcom/android/systemui/qs/tiles/HotspotTile;
 
     invoke-virtual {v1}, Lcom/android/systemui/qs/tiles/HotspotTile;->refreshState()V
 
-    .line 293
     return-void
 .end method

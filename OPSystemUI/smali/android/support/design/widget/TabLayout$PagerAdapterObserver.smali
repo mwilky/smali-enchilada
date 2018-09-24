@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/support/design/widget/TabLayout;)V
     .locals 0
 
-    .line 2787
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -35,23 +34,19 @@
 .method public onChanged()V
     .locals 1
 
-    .line 2791
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
 
-    .line 2792
     return-void
 .end method
 
 .method public onInvalidated()V
     .locals 1
 
-    .line 2796
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
 
-    .line 2797
     return-void
 .end method

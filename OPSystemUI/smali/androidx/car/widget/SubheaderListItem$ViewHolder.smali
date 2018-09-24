@@ -21,12 +21,9 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
-    .param p1, "itemView"    # Landroid/view/View;
 
-    .line 195
     invoke-direct {p0, p1}, Landroidx/car/widget/ListItem$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 196
     sget v0, Landroidx/car/R$id;->text:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -37,7 +34,6 @@
 
     iput-object v0, p0, Landroidx/car/widget/SubheaderListItem$ViewHolder;->mText:Landroid/widget/TextView;
 
-    .line 197
     return-void
 .end method
 
@@ -45,9 +41,7 @@
 # virtual methods
 .method protected applyUxRestrictions(Landroid/car/drivingstate/CarUxRestrictions;)V
     .locals 2
-    .param p1, "restrictions"    # Landroid/car/drivingstate/CarUxRestrictions;
 
-    .line 208
     iget-object v0, p0, Landroidx/car/widget/SubheaderListItem$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -60,14 +54,12 @@
 
     invoke-static {v0, p1, v1}, Landroidx/car/utils/CarUxRestrictionsUtils;->apply(Landroid/content/Context;Landroid/car/drivingstate/CarUxRestrictions;Landroid/widget/TextView;)V
 
-    .line 209
     return-void
 .end method
 
 .method public getText()Landroid/widget/TextView;
     .locals 1
 
-    .line 213
     iget-object v0, p0, Landroidx/car/widget/SubheaderListItem$ViewHolder;->mText:Landroid/widget/TextView;
 
     return-object v0

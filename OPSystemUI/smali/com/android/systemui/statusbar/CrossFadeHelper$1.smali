@@ -27,7 +27,6 @@
 .method constructor <init>(Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 0
 
-    .line 42
     iput-object p1, p0, Lcom/android/systemui/statusbar/CrossFadeHelper$1;->val$endRunnable:Ljava/lang/Runnable;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/CrossFadeHelper$1;->val$view:Landroid/view/View;
@@ -42,17 +41,14 @@
 .method public run()V
     .locals 2
 
-    .line 45
     iget-object v0, p0, Lcom/android/systemui/statusbar/CrossFadeHelper$1;->val$endRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 46
     iget-object v0, p0, Lcom/android/systemui/statusbar/CrossFadeHelper$1;->val$endRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 48
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/CrossFadeHelper$1;->val$view:Landroid/view/View;
 
@@ -60,6 +56,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 49
     return-void
 .end method

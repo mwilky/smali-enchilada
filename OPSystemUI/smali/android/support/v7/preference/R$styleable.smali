@@ -584,7 +584,6 @@
 .method static constructor <clinit>()V
     .locals 17
 
-    .line 29955
     const/16 v0, 0x22
 
     new-array v0, v0, [I
@@ -593,7 +592,6 @@
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->ActionBar:[I
 
-    .line 30467
     const/4 v0, 0x1
 
     new-array v1, v0, [I
@@ -606,7 +604,6 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ActionBarLayout:[I
 
-    .line 30510
     new-array v1, v0, [I
 
     const v3, 0x101013f
@@ -615,12 +612,10 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ActionMenuItemView:[I
 
-    .line 30526
     new-array v1, v2, [I
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ActionMenuView:[I
 
-    .line 30551
     const/4 v1, 0x7
 
     new-array v3, v1, [I
@@ -629,7 +624,6 @@
 
     sput-object v3, Landroid/support/v7/preference/R$styleable;->ActionMode:[I
 
-    .line 30664
     const/4 v3, 0x2
 
     new-array v4, v3, [I
@@ -638,7 +632,6 @@
 
     sput-object v4, Landroid/support/v7/preference/R$styleable;->ActivityChooserView:[I
 
-    .line 30720
     const/16 v4, 0x8
 
     new-array v5, v4, [I
@@ -647,7 +640,6 @@
 
     sput-object v5, Landroid/support/v7/preference/R$styleable;->AlertDialog:[I
 
-    .line 30830
     new-array v5, v0, [I
 
     const v6, 0x7f0401c6
@@ -656,7 +648,6 @@
 
     sput-object v5, Landroid/support/v7/preference/R$styleable;->AnimatedImageView:[I
 
-    .line 30862
     const/4 v5, 0x5
 
     new-array v6, v5, [I
@@ -665,21 +656,18 @@
 
     sput-object v6, Landroid/support/v7/preference/R$styleable;->AppBarLayout:[I
 
-    .line 30938
     new-array v6, v3, [I
 
     fill-array-data v6, :array_5
 
     sput-object v6, Landroid/support/v7/preference/R$styleable;->AppBarLayoutStates:[I
 
-    .line 30974
     new-array v6, v3, [I
 
     fill-array-data v6, :array_6
 
     sput-object v6, Landroid/support/v7/preference/R$styleable;->AppBarLayout_Layout:[I
 
-    .line 31026
     const/4 v6, 0x4
 
     new-array v7, v6, [I
@@ -688,21 +676,18 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AppCompatImageView:[I
 
-    .line 31114
     new-array v7, v6, [I
 
     fill-array-data v7, :array_8
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AppCompatSeekBar:[I
 
-    .line 31204
     new-array v7, v1, [I
 
     fill-array-data v7, :array_9
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AppCompatTextHelper:[I
 
-    .line 31343
     const/16 v7, 0xb
 
     new-array v7, v7, [I
@@ -711,7 +696,6 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AppCompatTextView:[I
 
-    .line 31779
     const/16 v7, 0x7a
 
     new-array v7, v7, [I
@@ -720,7 +704,6 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AppCompatTheme:[I
 
-    .line 33487
     new-array v7, v0, [I
 
     const v8, 0x10100f2
@@ -729,21 +712,18 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AutoReinflateContainer:[I
 
-    .line 33516
     new-array v7, v3, [I
 
     fill-array-data v7, :array_c
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->AutoSizingList:[I
 
-    .line 33559
     new-array v7, v3, [I
 
     fill-array-data v7, :array_d
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->BackgroundStyle:[I
 
-    .line 33598
     new-array v7, v0, [I
 
     const v8, 0x7f040187
@@ -752,7 +732,6 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->BatteryMeterView:[I
 
-    .line 33633
     const/4 v7, 0x6
 
     new-array v8, v7, [I
@@ -761,7 +740,6 @@
 
     sput-object v8, Landroid/support/v7/preference/R$styleable;->BottomAppBar:[I
 
-    .line 33744
     const/16 v8, 0xa
 
     new-array v9, v8, [I
@@ -770,14 +748,12 @@
 
     sput-object v9, Landroid/support/v7/preference/R$styleable;->BottomNavigationView:[I
 
-    .line 33892
     new-array v9, v6, [I
 
     fill-array-data v9, :array_10
 
     sput-object v9, Landroid/support/v7/preference/R$styleable;->BottomSheetBehavior_Layout:[I
 
-    .line 33958
     new-array v9, v0, [I
 
     const v10, 0x7f040041
@@ -786,21 +762,18 @@
 
     sput-object v9, Landroid/support/v7/preference/R$styleable;->ButtonBarLayout:[I
 
-    .line 34002
     new-array v9, v8, [I
 
     fill-array-data v9, :array_11
 
     sput-object v9, Landroid/support/v7/preference/R$styleable;->CarFacetButton:[I
 
-    .line 34140
     new-array v9, v7, [I
 
     fill-array-data v9, :array_12
 
     sput-object v9, Landroid/support/v7/preference/R$styleable;->CarNavigationButton:[I
 
-    .line 34245
     const/16 v9, 0xd
 
     new-array v10, v9, [I
@@ -809,7 +782,6 @@
 
     sput-object v10, Landroid/support/v7/preference/R$styleable;->CarTheme:[I
 
-    .line 34455
     const/16 v10, 0xe
 
     new-array v11, v10, [I
@@ -818,7 +790,6 @@
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->CardView:[I
 
-    .line 34658
     new-array v11, v0, [I
 
     const v12, 0x7f04003d
@@ -827,14 +798,12 @@
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->CarrierText:[I
 
-    .line 34694
     new-array v11, v7, [I
 
     fill-array-data v11, :array_15
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->CheckBoxPreference:[I
 
-    .line 34831
     const/16 v11, 0x1c
 
     new-array v11, v11, [I
@@ -843,14 +812,12 @@
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->ChipDrawable:[I
 
-    .line 35197
     new-array v11, v7, [I
 
     fill-array-data v11, :array_17
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->ChipGroup:[I
 
-    .line 35283
     new-array v11, v0, [I
 
     const v12, 0x7f0400be
@@ -859,14 +826,12 @@
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->ClickThroughToolbar:[I
 
-    .line 35311
     new-array v11, v3, [I
 
     fill-array-data v11, :array_18
 
     sput-object v11, Landroid/support/v7/preference/R$styleable;->Clock:[I
 
-    .line 35383
     const/16 v11, 0x10
 
     new-array v12, v11, [I
@@ -875,14 +840,12 @@
 
     sput-object v12, Landroid/support/v7/preference/R$styleable;->CollapsingToolbarLayout:[I
 
-    .line 35617
     new-array v12, v3, [I
 
     fill-array-data v12, :array_1a
 
     sput-object v12, Landroid/support/v7/preference/R$styleable;->CollapsingToolbarLayout_Layout:[I
 
-    .line 35662
     const/4 v12, 0x3
 
     new-array v13, v12, [I
@@ -891,7 +854,6 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->ColorStateListItem:[I
 
-    .line 35707
     new-array v13, v0, [I
 
     const v14, 0x7f0400f0
@@ -900,28 +862,24 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->ColumnCardView:[I
 
-    .line 35736
     new-array v13, v12, [I
 
     fill-array-data v13, :array_1c
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->CompoundButton:[I
 
-    .line 35804
     new-array v13, v3, [I
 
     fill-array-data v13, :array_1d
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->CoordinatorLayout:[I
 
-    .line 35866
     new-array v13, v1, [I
 
     fill-array-data v13, :array_1e
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->CoordinatorLayout_Layout:[I
 
-    .line 36076
     const/16 v13, 0x16
 
     new-array v13, v13, [I
@@ -930,7 +888,6 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DatePicker:[I
 
-    .line 36391
     new-array v13, v0, [I
 
     const v14, 0x7f04010b
@@ -939,49 +896,42 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DateView:[I
 
-    .line 36423
     new-array v13, v5, [I
 
     fill-array-data v13, :array_20
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DeadZone:[I
 
-    .line 36501
     new-array v13, v3, [I
 
     fill-array-data v13, :array_21
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DesignTheme:[I
 
-    .line 36563
     new-array v13, v9, [I
 
     fill-array-data v13, :array_22
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DialogPreference:[I
 
-    .line 36741
     new-array v13, v4, [I
 
     fill-array-data v13, :array_23
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DrawerArrowDrawable:[I
 
-    .line 36877
     new-array v13, v4, [I
 
     fill-array-data v13, :array_24
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->DrawerArrowToggle:[I
 
-    .line 37003
     new-array v13, v12, [I
 
     fill-array-data v13, :array_25
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->EpicenterTranslateClipReveal:[I
 
-    .line 37073
     const/16 v13, 0xb
 
     new-array v13, v13, [I
@@ -990,21 +940,18 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FlexboxLayout:[I
 
-    .line 37298
     new-array v13, v8, [I
 
     fill-array-data v13, :array_27
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FlexboxLayout_Layout:[I
 
-    .line 37460
     new-array v13, v9, [I
 
     fill-array-data v13, :array_28
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FloatingActionButton:[I
 
-    .line 37658
     new-array v13, v0, [I
 
     const v14, 0x7f04005b
@@ -1013,63 +960,54 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FloatingActionButton_Behavior_Layout:[I
 
-    .line 37692
     new-array v13, v7, [I
 
     fill-array-data v13, :array_29
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FontFamily:[I
 
-    .line 37828
     new-array v13, v8, [I
 
     fill-array-data v13, :array_2a
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->FontFamilyFont:[I
 
-    .line 37979
     new-array v13, v12, [I
 
     fill-array-data v13, :array_2b
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->ForegroundLinearLayout:[I
 
-    .line 38061
     new-array v13, v1, [I
 
     fill-array-data v13, :array_2c
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->GridLayout:[I
 
-    .line 38219
     new-array v13, v10, [I
 
     fill-array-data v13, :array_2d
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->GridLayout_Layout:[I
 
-    .line 38470
     new-array v13, v12, [I
 
     fill-array-data v13, :array_2e
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->HybridNotificationTheme:[I
 
-    .line 38526
     new-array v13, v6, [I
 
     fill-array-data v13, :array_2f
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->KeyButtonView:[I
 
-    .line 38584
     new-array v13, v3, [I
 
     fill-array-data v13, :array_30
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->KeyguardSecurityViewFlipper_Layout:[I
 
-    .line 38738
     const/16 v13, 0x33
 
     new-array v13, v13, [I
@@ -1078,7 +1016,6 @@
 
     sput-object v13, Landroid/support/v7/preference/R$styleable;->LeanbackGuidedStepTheme:[I
 
-    .line 39499
     const/16 v13, 0x9
 
     new-array v14, v13, [I
@@ -1087,7 +1024,6 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->LeanbackOnboardingTheme:[I
 
-    .line 39771
     const/16 v14, 0x40
 
     new-array v14, v14, [I
@@ -1096,42 +1032,36 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->LeanbackTheme:[I
 
-    .line 40660
     new-array v14, v13, [I
 
     fill-array-data v14, :array_34
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->LinearLayoutCompat:[I
 
-    .line 40830
     new-array v14, v6, [I
 
     fill-array-data v14, :array_35
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    .line 40934
     new-array v14, v6, [I
 
     fill-array-data v14, :array_36
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->ListItem:[I
 
-    .line 41001
     new-array v14, v3, [I
 
     fill-array-data v14, :array_37
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->ListPopupWindow:[I
 
-    .line 41050
     new-array v14, v6, [I
 
     fill-array-data v14, :array_38
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->ListPreference:[I
 
-    .line 41161
     const/16 v14, 0x17
 
     new-array v15, v14, [I
@@ -1140,14 +1070,12 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MaterialButton:[I
 
-    .line 41519
     new-array v15, v3, [I
 
     fill-array-data v15, :array_3a
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MaterialCardView:[I
 
-    .line 41661
     const/16 v15, 0x35
 
     new-array v15, v15, [I
@@ -1156,42 +1084,36 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MaterialComponentsTheme:[I
 
-    .line 42313
     new-array v15, v6, [I
 
     fill-array-data v15, :array_3c
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MediaRouteButton:[I
 
-    .line 42391
     new-array v15, v7, [I
 
     fill-array-data v15, :array_3d
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MenuGroup:[I
 
-    .line 42538
     new-array v15, v14, [I
 
     fill-array-data v15, :array_3e
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MenuItem:[I
 
-    .line 42917
     new-array v15, v8, [I
 
     fill-array-data v15, :array_3f
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MenuView:[I
 
-    .line 43071
     new-array v15, v6, [I
 
     fill-array-data v15, :array_40
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->MultiSelectListPreference:[I
 
-    .line 43160
     const/16 v15, 0xc
 
     new-array v15, v15, [I
@@ -1200,7 +1122,6 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->NavigationView:[I
 
-    .line 43324
     new-array v15, v0, [I
 
     const v16, 0x7f0401fe
@@ -1209,21 +1130,18 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->NotificationLinearLayout:[I
 
-    .line 43353
     new-array v15, v3, [I
 
     fill-array-data v15, :array_42
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->NumPadKey:[I
 
-    .line 43412
     new-array v15, v9, [I
 
     fill-array-data v15, :array_43
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->NumberPicker:[I
 
-    .line 43600
     new-array v15, v0, [I
 
     const v16, 0x10100b3
@@ -1232,21 +1150,18 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPActionBarLayout:[I
 
-    .line 43651
     new-array v15, v5, [I
 
     fill-array-data v15, :array_44
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPAlertDialog:[I
 
-    .line 43742
     new-array v15, v13, [I
 
     fill-array-data v15, :array_45
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPAutoCompleteTextView:[I
 
-    .line 43940
     new-array v15, v0, [I
 
     const v16, 0x7f0402d9
@@ -1255,63 +1170,54 @@
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPButtonBarLayout:[I
 
-    .line 43978
     new-array v15, v1, [I
 
     fill-array-data v15, :array_46
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPCalendarView:[I
 
-    .line 44079
     new-array v15, v12, [I
 
     fill-array-data v15, :array_47
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPColorStateListItem:[I
 
-    .line 44130
     new-array v15, v5, [I
 
     fill-array-data v15, :array_48
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPCompoundbutton:[I
 
-    .line 44218
     new-array v15, v6, [I
 
     fill-array-data v15, :array_49
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPEditText:[I
 
-    .line 44308
     new-array v15, v13, [I
 
     fill-array-data v15, :array_4a
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPFloatingActionButton:[I
 
-    .line 44479
     new-array v15, v3, [I
 
     fill-array-data v15, :array_4b
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPListView:[I
 
-    .line 44533
     new-array v15, v7, [I
 
     fill-array-data v15, :array_4c
 
     sput-object v15, Landroid/support/v7/preference/R$styleable;->OPMenuGroup:[I
 
-    .line 44680
     new-array v14, v14, [I
 
     fill-array-data v14, :array_4d
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPMenuItem:[I
 
-    .line 45077
     const/16 v14, 0x1a
 
     new-array v14, v14, [I
@@ -1320,28 +1226,24 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPProgressBar:[I
 
-    .line 45464
     new-array v14, v3, [I
 
     fill-array-data v14, :array_4f
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPRadioGroup:[I
 
-    .line 45506
     new-array v14, v3, [I
 
     fill-array-data v14, :array_50
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPRectangleFloatingActionButton:[I
 
-    .line 45557
     new-array v14, v1, [I
 
     fill-array-data v14, :array_51
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPSeekBar:[I
 
-    .line 45667
     new-array v14, v0, [I
 
     const v15, 0x10101a8
@@ -1350,14 +1252,12 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPSwitch:[I
 
-    .line 45698
     new-array v14, v12, [I
 
     fill-array-data v14, :array_52
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPSwitchFloatingActionButton:[I
 
-    .line 45786
     const/16 v14, 0x11
 
     new-array v14, v14, [I
@@ -1366,21 +1266,18 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPTabLayout:[I
 
-    .line 46033
     new-array v14, v12, [I
 
     fill-array-data v14, :array_54
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPTextAppearance:[I
 
-    .line 46115
     new-array v14, v11, [I
 
     fill-array-data v14, :array_55
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPTextInputLayout:[I
 
-    .line 46335
     new-array v14, v0, [I
 
     const v15, 0x10100f2
@@ -1389,14 +1286,12 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPToast:[I
 
-    .line 46379
     new-array v14, v8, [I
 
     fill-array-data v14, :array_56
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OPViewDrawableStates:[I
 
-    .line 46595
     const/16 v14, 0x33
 
     new-array v14, v14, [I
@@ -1405,28 +1300,24 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OneplusTheme:[I
 
-    .line 47313
     new-array v14, v12, [I
 
     fill-array-data v14, :array_58
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpAppBarLayout:[I
 
-    .line 47372
     new-array v14, v3, [I
 
     fill-array-data v14, :array_59
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpAppBarLayoutStates:[I
 
-    .line 47412
     new-array v14, v3, [I
 
     fill-array-data v14, :array_5a
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpAppBarLayout_Layout:[I
 
-    .line 47507
     const/16 v14, 0x11
 
     new-array v14, v14, [I
@@ -1435,28 +1326,24 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpCollapsingToolbarLayout:[I
 
-    .line 47784
     new-array v14, v3, [I
 
     fill-array-data v14, :array_5c
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpCollapsingToolbarLayout_Layout:[I
 
-    .line 47831
     new-array v14, v3, [I
 
     fill-array-data v14, :array_5d
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpCoordinatorLayout:[I
 
-    .line 47890
     new-array v14, v1, [I
 
     fill-array-data v14, :array_5e
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpCoordinatorLayout_Layout:[I
 
-    .line 48056
     new-array v14, v0, [I
 
     const v15, 0x7f0402dc
@@ -1465,7 +1352,6 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpFloatingActionButton_Behavior_Layout:[I
 
-    .line 48081
     new-array v14, v0, [I
 
     const v15, 0x7f0402dd
@@ -1474,14 +1360,12 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpScrollingViewBehavior_Layout:[I
 
-    .line 48119
     new-array v14, v7, [I
 
     fill-array-data v14, :array_5f
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->OpTextAppearance:[I
 
-    .line 48242
     const/16 v14, 0x14
 
     new-array v14, v14, [I
@@ -1490,21 +1374,18 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PagedListView:[I
 
-    .line 48573
     new-array v14, v1, [I
 
     fill-array-data v14, :array_61
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PagingIndicator:[I
 
-    .line 48687
     new-array v14, v5, [I
 
     fill-array-data v14, :array_62
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PasswordTextView:[I
 
-    .line 48781
     new-array v14, v0, [I
 
     const v15, 0x7f040453
@@ -1513,14 +1394,12 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PluginInflateContainer:[I
 
-    .line 48809
     new-array v14, v12, [I
 
     fill-array-data v14, :array_63
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PopupWindow:[I
 
-    .line 48861
     new-array v14, v0, [I
 
     const v15, 0x7f0403c4
@@ -1529,7 +1408,6 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 48960
     const/16 v14, 0x24
 
     new-array v14, v14, [I
@@ -1538,49 +1416,42 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->Preference:[I
 
-    .line 49407
     new-array v14, v12, [I
 
     fill-array-data v14, :array_65
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceActivity:[I
 
-    .line 49465
     new-array v14, v6, [I
 
     fill-array-data v14, :array_66
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceFragment:[I
 
-    .line 49539
     new-array v14, v6, [I
 
     fill-array-data v14, :array_67
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceFragmentCompat:[I
 
-    .line 49612
     new-array v14, v12, [I
 
     fill-array-data v14, :array_68
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceGroup:[I
 
-    .line 49681
     new-array v14, v1, [I
 
     fill-array-data v14, :array_69
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceHeader:[I
 
-    .line 49783
     new-array v14, v6, [I
 
     fill-array-data v14, :array_6a
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceImageView:[I
 
-    .line 49923
     const/16 v14, 0x26
 
     new-array v14, v14, [I
@@ -1589,28 +1460,24 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PreferenceTheme:[I
 
-    .line 50445
     new-array v14, v12, [I
 
     fill-array-data v14, :array_6c
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->PseudoGridView:[I
 
-    .line 50498
     new-array v14, v12, [I
 
     fill-array-data v14, :array_6d
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RecentsPanelView:[I
 
-    .line 50551
     new-array v14, v3, [I
 
     fill-array-data v14, :array_6e
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RecycleListView:[I
 
-    .line 50621
     const/16 v14, 0xf
 
     new-array v14, v14, [I
@@ -1619,28 +1486,24 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RecyclerView:[I
 
-    .line 50829
     new-array v14, v3, [I
 
     fill-array-data v14, :array_70
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RestrictedPreference:[I
 
-    .line 50869
     new-array v14, v3, [I
 
     fill-array-data v14, :array_71
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RestrictedSwitchPreference:[I
 
-    .line 50914
     new-array v14, v12, [I
 
     fill-array-data v14, :array_72
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->RingtonePreference:[I
 
-    .line 50970
     new-array v14, v0, [I
 
     const v15, 0x7f0401fd
@@ -1649,7 +1512,6 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->ScrimInsetsFrameLayout:[I
 
-    .line 50999
     new-array v14, v0, [I
 
     const v15, 0x7f04005e
@@ -1658,7 +1520,6 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->ScrollingViewBehavior_Layout:[I
 
-    .line 51083
     const/16 v14, 0x1d
 
     new-array v14, v14, [I
@@ -1667,42 +1528,36 @@
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->SearchView:[I
 
-    .line 51549
     new-array v14, v7, [I
 
     fill-array-data v14, :array_74
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->SeekBarPreference:[I
 
-    .line 51660
     new-array v14, v10, [I
 
     fill-array-data v14, :array_75
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->SliceView:[I
 
-    .line 51879
     new-array v14, v6, [I
 
     fill-array-data v14, :array_76
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->SmartReplyView:[I
 
-    .line 51951
     new-array v14, v6, [I
 
     fill-array-data v14, :array_77
 
     sput-object v14, Landroid/support/v7/preference/R$styleable;->SnackbarLayout:[I
 
-    .line 52033
     new-array v7, v7, [I
 
     fill-array-data v7, :array_78
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->Spinner:[I
 
-    .line 52139
     new-array v7, v0, [I
 
     const v14, 0x7f0401f0
@@ -1711,35 +1566,30 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->StatusBarWindowView_Layout:[I
 
-    .line 52189
     new-array v7, v10, [I
 
     fill-array-data v7, :array_79
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->SwitchCompat:[I
 
-    .line 52429
     new-array v7, v8, [I
 
     fill-array-data v7, :array_7a
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->SwitchPreference:[I
 
-    .line 52577
     new-array v7, v8, [I
 
     fill-array-data v7, :array_7b
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->SwitchPreferenceCompat:[I
 
-    .line 52709
     new-array v7, v12, [I
 
     fill-array-data v7, :array_7c
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TabItem:[I
 
-    .line 52803
     const/16 v7, 0x18
 
     new-array v7, v7, [I
@@ -1748,21 +1598,18 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TabLayout:[I
 
-    .line 53138
     new-array v7, v12, [I
 
     fill-array-data v7, :array_7e
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TemperatureView:[I
 
-    .line 53204
     new-array v7, v9, [I
 
     fill-array-data v7, :array_7f
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TextAppearance:[I
 
-    .line 53454
     const/16 v7, 0x21
 
     new-array v7, v7, [I
@@ -1771,7 +1618,6 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TextInputLayout:[I
 
-    .line 53876
     new-array v7, v0, [I
 
     const v8, 0x7f040152
@@ -1780,14 +1626,12 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->ThemeEnforcement:[I
 
-    .line 53932
     new-array v7, v11, [I
 
     fill-array-data v7, :array_81
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TimePicker:[I
 
-    .line 54171
     new-array v7, v0, [I
 
     const v8, 0x7f0403fe
@@ -1796,14 +1640,12 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->ToggleSliderView:[I
 
-    .line 54202
     new-array v7, v12, [I
 
     fill-array-data v7, :array_82
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TonedIcon:[I
 
-    .line 54327
     const/16 v7, 0x28
 
     new-array v7, v7, [I
@@ -1812,56 +1654,48 @@
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->Toolbar:[I
 
-    .line 54907
     new-array v7, v3, [I
 
     fill-array-data v7, :array_84
 
     sput-object v7, Landroid/support/v7/preference/R$styleable;->TunerSwitch:[I
 
-    .line 54953
     new-array v1, v1, [I
 
     fill-array-data v1, :array_85
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->UserAvatarView:[I
 
-    .line 55059
     new-array v1, v3, [I
 
     fill-array-data v1, :array_86
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->UserDetailItemView:[I
 
-    .line 55101
     new-array v1, v5, [I
 
     fill-array-data v1, :array_87
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->View:[I
 
-    .line 55200
     new-array v1, v12, [I
 
     fill-array-data v1, :array_88
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ViewBackgroundHelper:[I
 
-    .line 55270
     new-array v1, v3, [I
 
     fill-array-data v1, :array_89
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ViewOnePlus:[I
 
-    .line 55312
     new-array v1, v12, [I
 
     fill-array-data v1, :array_8a
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->ViewStubCompat:[I
 
-    .line 55366
     new-array v1, v0, [I
 
     const v7, 0x7f0403c7
@@ -1870,7 +1704,6 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->WifiEncryptionState:[I
 
-    .line 55390
     new-array v1, v0, [I
 
     const v7, 0x7f0403c8
@@ -1879,7 +1712,6 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->WifiEncryptionStateOwe:[I
 
-    .line 55414
     new-array v1, v0, [I
 
     const v7, 0x7f0403c9
@@ -1888,7 +1720,6 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->WifiEncryptionStateSae:[I
 
-    .line 55438
     new-array v1, v0, [I
 
     const v7, 0x7f0403ca
@@ -1897,7 +1728,6 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->WifiMeteredState:[I
 
-    .line 55462
     new-array v1, v0, [I
 
     const v7, 0x7f0403cb
@@ -1906,26 +1736,22 @@
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->WifiSavedState:[I
 
-    .line 55475
     new-array v1, v2, [I
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->carVolumeItems:[I
 
-    .line 55490
     new-array v1, v3, [I
 
     fill-array-data v1, :array_8b
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->carVolumeItems_item:[I
 
-    .line 55566
     new-array v1, v4, [I
 
     fill-array-data v1, :array_8c
 
     sput-object v1, Landroid/support/v7/preference/R$styleable;->lbBaseCardView:[I
 
-    .line 55713
     new-array v0, v0, [I
 
     const v1, 0x7f04023c
@@ -1934,70 +1760,60 @@
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbBaseCardView_Layout:[I
 
-    .line 55767
     new-array v0, v13, [I
 
     fill-array-data v0, :array_8d
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbBaseGridView:[I
 
-    .line 55920
     new-array v0, v12, [I
 
     fill-array-data v0, :array_8e
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbDatePicker:[I
 
-    .line 55967
     new-array v0, v3, [I
 
     fill-array-data v0, :array_8f
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbHorizontalGridView:[I
 
-    .line 56015
     new-array v0, v3, [I
 
     fill-array-data v0, :array_90
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbImageCardView:[I
 
-    .line 56096
     new-array v0, v11, [I
 
     fill-array-data v0, :array_91
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbPlaybackControlsActionIcons:[I
 
-    .line 56313
     new-array v0, v5, [I
 
     fill-array-data v0, :array_92
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbResizingTextView:[I
 
-    .line 56404
     new-array v0, v6, [I
 
     fill-array-data v0, :array_93
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbSearchOrbView:[I
 
-    .line 56485
     new-array v0, v6, [I
 
     fill-array-data v0, :array_94
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbSlide:[I
 
-    .line 56553
     new-array v0, v3, [I
 
     fill-array-data v0, :array_95
 
     sput-object v0, Landroid/support/v7/preference/R$styleable;->lbTimePicker:[I
 
-    .line 56592
     new-array v0, v3, [I
 
     fill-array-data v0, :array_96

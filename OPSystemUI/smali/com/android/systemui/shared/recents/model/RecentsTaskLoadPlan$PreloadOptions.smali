@@ -22,10 +22,8 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/shared/recents/model/RecentsTaskLoadPlan$PreloadOptions;->loadTitles:Z

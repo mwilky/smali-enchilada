@@ -24,9 +24,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/qs/customize/QSCustomizer;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/customize/QSCustomizer;
 
-    .line 200
     iput-object p1, p0, Lcom/android/systemui/qs/customize/QSCustomizer$EmptyDragListener;->this$0:Lcom/android/systemui/qs/customize/QSCustomizer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +36,7 @@
 # virtual methods
 .method public onDrag(Landroid/view/View;Landroid/view/DragEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/DragEvent;
 
-    .line 203
     const/4 v0, 0x1
 
     return v0

@@ -27,21 +27,17 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/pip/phone/PipTouchHandler;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 576
     iput-object p1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-direct {p0}, Lcom/android/systemui/pip/phone/PipTouchGesture;-><init>()V
 
-    .line 579
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartPosition:Landroid/graphics/Point;
 
-    .line 580
     new-instance v0, Landroid/graphics/PointF;
 
     invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
@@ -55,19 +51,15 @@
 # virtual methods
 .method public onDown(Lcom/android/systemui/pip/phone/PipTouchState;)V
     .locals 6
-    .param p1, "touchState"    # Lcom/android/systemui/pip/phone/PipTouchState;
 
-    .line 584
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->isUserInteracting()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 585
     return-void
 
-    .line 588
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -79,15 +71,12 @@
 
     move-result-object v0
 
-    .line 589
-    .local v0, "bounds":Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mDelta:Landroid/graphics/PointF;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2, v2}, Landroid/graphics/PointF;->set(FF)V
 
-    .line 590
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartPosition:Landroid/graphics/Point;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -96,7 +85,6 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Point;->set(II)V
 
-    .line 591
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     iget-object v2, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
@@ -125,12 +113,10 @@
     :goto_0
     iput-boolean v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartedOnLeft:Z
 
-    .line 592
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v1, v4}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1202(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)Z
 
-    .line 593
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->getDownTouchPosition()Landroid/graphics/PointF;
@@ -160,7 +146,6 @@
     :cond_2
     invoke-static {v1, v3}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1302(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)Z
 
-    .line 597
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1400(Lcom/android/systemui/pip/phone/PipTouchHandler;)I
@@ -177,7 +162,6 @@
 
     if-nez v1, :cond_3
 
-    .line 598
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMenuActivityController;
@@ -186,7 +170,6 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/pip/phone/PipMenuActivityController;->pokeMenu()V
 
-    .line 602
     :cond_3
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -196,7 +179,6 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/pip/phone/PipDismissViewController;->createDismissTarget()V
 
-    .line 603
     iget-object v1, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1600(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/os/Handler;
@@ -213,15 +195,12 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 605
     return-void
 .end method
 
 .method onMove(Lcom/android/systemui/pip/phone/PipTouchState;)Z
     .locals 12
-    .param p1, "touchState"    # Lcom/android/systemui/pip/phone/PipTouchState;
 
-    .line 609
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->isUserInteracting()Z
 
     move-result v0
@@ -230,10 +209,8 @@
 
     if-nez v0, :cond_0
 
-    .line 610
     return v1
 
-    .line 613
     :cond_0
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->startedDragging()Z
 
@@ -241,14 +218,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 614
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     const/high16 v2, -0x40800000    # -1.0f
 
     invoke-static {v0, v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1702(Lcom/android/systemui/pip/phone/PipTouchHandler;F)F
 
-    .line 617
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1600(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/os/Handler;
@@ -263,7 +238,6 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 618
     iget-object v0, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v0}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipDismissViewController;
@@ -272,7 +246,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/pip/phone/PipDismissViewController;->showDismissTarget()V
 
-    .line 622
     :cond_1
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->isDragging()Z
 
@@ -280,13 +253,10 @@
 
     if-eqz v0, :cond_8
 
-    .line 624
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->getLastTouchDelta()Landroid/graphics/PointF;
 
     move-result-object v0
 
-    .line 625
-    .local v0, "lastDelta":Landroid/graphics/PointF;
     iget-object v2, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartPosition:Landroid/graphics/Point;
 
     iget v2, v2, Landroid/graphics/Point;->x:I
@@ -299,8 +269,6 @@
 
     add-float/2addr v2, v3
 
-    .line 626
-    .local v2, "lastX":F
     iget-object v3, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartPosition:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->y:I
@@ -313,23 +281,16 @@
 
     add-float/2addr v3, v4
 
-    .line 627
-    .local v3, "lastY":F
     iget v4, v0, Landroid/graphics/PointF;->x:F
 
     add-float/2addr v4, v2
 
-    .line 628
-    .local v4, "left":F
     iget v5, v0, Landroid/graphics/PointF;->y:F
 
     add-float/2addr v5, v3
 
-    .line 629
-    .local v5, "top":F
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->allowDraggingOffscreen()Z
 
-    .line 630
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$700(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
@@ -358,7 +319,6 @@
 
     move-result v4
 
-    .line 634
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$700(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
@@ -373,7 +333,6 @@
 
     move-result v5
 
-    .line 640
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mDelta:Landroid/graphics/PointF;
 
     iget v7, v6, Landroid/graphics/PointF;->x:F
@@ -384,7 +343,6 @@
 
     iput v7, v6, Landroid/graphics/PointF;->x:F
 
-    .line 641
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mDelta:Landroid/graphics/PointF;
 
     iget v7, v6, Landroid/graphics/PointF;->y:F
@@ -395,7 +353,6 @@
 
     iput v7, v6, Landroid/graphics/PointF;->y:F
 
-    .line 643
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1800(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
@@ -414,7 +371,6 @@
 
     invoke-virtual {v6, v7}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 644
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1800(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
@@ -427,7 +383,6 @@
 
     invoke-virtual {v6, v7, v8}, Landroid/graphics/Rect;->offsetTo(II)V
 
-    .line 645
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -442,18 +397,14 @@
 
     invoke-virtual {v6, v7}, Lcom/android/systemui/pip/phone/PipMotionHelper;->movePip(Landroid/graphics/Rect;)V
 
-    .line 648
     iget-object v6, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$200(Lcom/android/systemui/pip/phone/PipTouchHandler;)V
 
-    .line 651
     invoke-virtual {p1}, Lcom/android/systemui/pip/phone/PipTouchState;->getLastTouchPosition()Landroid/graphics/PointF;
 
     move-result-object v6
 
-    .line 652
-    .local v6, "curPos":Landroid/graphics/PointF;
     iget-object v7, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1200(Lcom/android/systemui/pip/phone/PipTouchHandler;)Z
@@ -464,14 +415,12 @@
 
     if-eqz v7, :cond_5
 
-    .line 654
     iget-object v7, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     iget-boolean v9, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartedOnLeft:Z
 
     if-eqz v9, :cond_3
 
-    .line 655
     iget v9, v6, Landroid/graphics/PointF;->x:F
 
     iget-object v10, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
@@ -500,23 +449,19 @@
 
     if-gtz v9, :cond_2
 
-    .line 654
     :goto_0
     move v9, v8
 
     goto :goto_2
 
-    .line 655
     :cond_2
     nop
 
-    .line 654
     :goto_1
     move v9, v1
 
     goto :goto_2
 
-    .line 656
     :cond_3
     iget v9, v6, Landroid/graphics/PointF;->x:F
 
@@ -539,11 +484,9 @@
     :cond_4
     goto :goto_1
 
-    .line 654
     :goto_2
     invoke-static {v7, v9}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1202(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)Z
 
-    .line 658
     :cond_5
     iget-object v7, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -553,7 +496,6 @@
 
     if-eqz v7, :cond_7
 
-    .line 660
     iget-object v7, p0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     iget v9, v6, Landroid/graphics/PointF;->y:F
@@ -579,33 +521,22 @@
     :cond_6
     invoke-static {v7, v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1302(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)Z
 
-    .line 662
     :cond_7
     return v8
 
-    .line 664
-    .end local v0    # "lastDelta":Landroid/graphics/PointF;
-    .end local v2    # "lastX":F
-    .end local v3    # "lastY":F
-    .end local v4    # "left":F
-    .end local v5    # "top":F
-    .end local v6    # "curPos":Landroid/graphics/PointF;
     :cond_8
     return v1
 .end method
 
 .method public onUp(Lcom/android/systemui/pip/phone/PipTouchState;)Z
     .locals 18
-    .param p1, "touchState"    # Lcom/android/systemui/pip/phone/PipTouchState;
 
     move-object/from16 v0, p0
 
-    .line 672
     iget-object v1, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v1}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1900(Lcom/android/systemui/pip/phone/PipTouchHandler;)V
 
-    .line 675
     invoke-virtual/range {p1 .. p1}, Lcom/android/systemui/pip/phone/PipTouchState;->isUserInteracting()Z
 
     move-result v1
@@ -614,17 +545,13 @@
 
     if-nez v1, :cond_0
 
-    .line 676
     return v2
 
-    .line 679
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lcom/android/systemui/pip/phone/PipTouchState;->getVelocity()Landroid/graphics/PointF;
 
     move-result-object v1
 
-    .line 680
-    .local v1, "vel":Landroid/graphics/PointF;
     iget v3, v1, Landroid/graphics/PointF;->x:F
 
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
@@ -650,8 +577,6 @@
     :cond_1
     move v3, v2
 
-    .line 681
-    .local v3, "isHorizontal":Z
     :goto_0
     iget v5, v1, Landroid/graphics/PointF;->x:F
 
@@ -661,8 +586,6 @@
 
     move-result v5
 
-    .line 682
-    .local v5, "velocity":F
     iget-object v6, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v6}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$2000(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/statusbar/FlingAnimationUtils;
@@ -684,13 +607,9 @@
     :cond_2
     move v6, v2
 
-    .line 683
-    .local v6, "isFling":Z
     :goto_1
     const/4 v15, 0x0
 
-    .line 687
-    .local v15, "isUpWithinDimiss":Z
     const/4 v7, 0x0
 
     if-eqz v6, :cond_4
@@ -705,7 +624,6 @@
 
     iget-object v8, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 688
     invoke-static {v8}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1300(Lcom/android/systemui/pip/phone/PipTouchHandler;)Z
 
     move-result v8
@@ -725,8 +643,6 @@
     :goto_2
     move/from16 v16, v8
 
-    .line 691
-    .local v16, "isFlingToBot":Z
     iget-object v8, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v8}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -743,7 +659,6 @@
 
     goto/16 :goto_8
 
-    .line 700
     :cond_5
     invoke-virtual/range {p1 .. p1}, Lcom/android/systemui/pip/phone/PipTouchState;->isDragging()Z
 
@@ -751,7 +666,6 @@
 
     if-eqz v8, :cond_b
 
-    .line 701
     if-eqz v6, :cond_7
 
     if-eqz v3, :cond_7
@@ -794,8 +708,6 @@
     :goto_4
     move/from16 v17, v7
 
-    .line 718
-    .local v17, "isFlingToEdge":Z
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$400(Lcom/android/systemui/pip/phone/PipTouchHandler;)Z
@@ -804,17 +716,13 @@
 
     if-eqz v7, :cond_8
 
-    .line 721
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7, v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$600(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)V
 
-    .line 724
     :cond_8
     const/4 v2, 0x0
 
-    .line 725
-    .local v2, "postAnimationCallback":Landroid/animation/AnimatorListenerAdapter;
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1400(Lcom/android/systemui/pip/phone/PipTouchHandler;)I
@@ -823,7 +731,6 @@
 
     if-eqz v7, :cond_9
 
-    .line 728
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMenuActivityController;
@@ -848,7 +755,6 @@
 
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 729
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$700(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
 
     move-result-object v11
@@ -861,12 +767,10 @@
 
     move-result v13
 
-    .line 728
     invoke-virtual/range {v8 .. v13}, Lcom/android/systemui/pip/phone/PipMenuActivityController;->showMenu(ILandroid/graphics/Rect;Landroid/graphics/Rect;ZZ)V
 
     goto :goto_5
 
-    .line 733
     :cond_9
     new-instance v7, Lcom/android/systemui/pip/phone/PipTouchHandler$3$1;
 
@@ -874,11 +778,9 @@
 
     move-object v2, v7
 
-    .line 741
     :goto_5
     if-eqz v6, :cond_a
 
-    .line 742
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -897,14 +799,12 @@
 
     iget-object v8, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 743
     invoke-static {v8}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$2100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     move-result-object v12
 
     iget-object v14, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->mStartPosition:Landroid/graphics/Point;
 
-    .line 742
     move v8, v5
 
     move-object v13, v2
@@ -913,7 +813,6 @@
 
     goto :goto_6
 
-    .line 746
     :cond_a
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -935,9 +834,6 @@
 
     invoke-virtual {v7, v8, v9, v2}, Lcom/android/systemui/pip/phone/PipMotionHelper;->animateToClosestSnapTarget(Landroid/graphics/Rect;Landroid/animation/ValueAnimator$AnimatorUpdateListener;Landroid/animation/Animator$AnimatorListener;)Landroid/graphics/Rect;
 
-    .line 749
-    .end local v2    # "postAnimationCallback":Landroid/animation/AnimatorListenerAdapter;
-    .end local v17    # "isFlingToEdge":Z
     :goto_6
     goto/16 :goto_7
 
@@ -950,7 +846,6 @@
 
     if-eqz v7, :cond_c
 
-    .line 751
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -967,14 +862,12 @@
 
     invoke-virtual {v7, v8, v9, v9}, Lcom/android/systemui/pip/phone/PipMotionHelper;->animateToClosestSnapTarget(Landroid/graphics/Rect;Landroid/animation/ValueAnimator$AnimatorUpdateListener;Landroid/animation/Animator$AnimatorListener;)Landroid/graphics/Rect;
 
-    .line 753
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v7, v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$600(Lcom/android/systemui/pip/phone/PipTouchHandler;Z)V
 
     goto :goto_7
 
-    .line 754
     :cond_c
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -986,7 +879,6 @@
 
     if-eq v2, v7, :cond_f
 
-    .line 755
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$2200(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipTouchState;
@@ -999,7 +891,6 @@
 
     if-eqz v2, :cond_d
 
-    .line 757
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -1010,7 +901,6 @@
 
     goto :goto_7
 
-    .line 758
     :cond_d
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -1024,7 +914,6 @@
 
     if-nez v2, :cond_e
 
-    .line 761
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$1100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMenuActivityController;
@@ -1045,7 +934,6 @@
 
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 762
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$700(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/graphics/Rect;
 
     move-result-object v10
@@ -1058,12 +946,10 @@
 
     move-result v12
 
-    .line 761
     invoke-virtual/range {v7 .. v12}, Lcom/android/systemui/pip/phone/PipMenuActivityController;->showMenu(ILandroid/graphics/Rect;Landroid/graphics/Rect;ZZ)V
 
     goto :goto_7
 
-    .line 767
     :cond_e
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -1075,7 +961,6 @@
 
     goto :goto_7
 
-    .line 770
     :cond_f
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
@@ -1085,7 +970,6 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/pip/phone/PipMenuActivityController;->hideMenu()V
 
-    .line 771
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -1094,11 +978,9 @@
 
     invoke-virtual {v2}, Lcom/android/systemui/pip/phone/PipMotionHelper;->expandPip()V
 
-    .line 773
     :goto_7
     return v4
 
-    .line 692
     :cond_10
     :goto_8
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
@@ -1109,7 +991,6 @@
 
     iget-object v7, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 693
     invoke-static {v7}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$800(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/content/Context;
 
     move-result-object v7
@@ -1124,10 +1005,8 @@
 
     move-result-object v7
 
-    .line 692
     invoke-static {v2, v7}, Lcom/android/internal/os/logging/MetricsLoggerWrapper;->logPictureInPictureDismissByDrag(Landroid/content/Context;Landroid/util/Pair;)V
 
-    .line 694
     iget-object v2, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
     invoke-static {v2}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$500(Lcom/android/systemui/pip/phone/PipTouchHandler;)Lcom/android/systemui/pip/phone/PipMotionHelper;
@@ -1150,14 +1029,11 @@
 
     iget-object v10, v0, Lcom/android/systemui/pip/phone/PipTouchHandler$3;->this$0:Lcom/android/systemui/pip/phone/PipTouchHandler;
 
-    .line 695
     invoke-static {v10}, Lcom/android/systemui/pip/phone/PipTouchHandler;->access$2100(Lcom/android/systemui/pip/phone/PipTouchHandler;)Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     move-result-object v10
 
-    .line 694
     invoke-virtual {v2, v7, v8, v9, v10}, Lcom/android/systemui/pip/phone/PipMotionHelper;->animateDismiss(Landroid/graphics/Rect;FFLandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/graphics/Rect;
 
-    .line 696
     return v4
 .end method

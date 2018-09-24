@@ -7,7 +7,6 @@
 .method public static isAtLeastP()Z
     .locals 2
 
-    .line 87
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c

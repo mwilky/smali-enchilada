@@ -30,7 +30,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1475
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +40,6 @@
 .method public build()Landroid/support/v4/media/MediaSession2$CommandButton;
     .locals 8
 
-    .line 1545
     new-instance v7, Landroid/support/v4/media/MediaSession2$CommandButton;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mCommand:Landroid/support/v4/media/SessionCommand2;
@@ -65,55 +63,40 @@
 
 .method public setCommand(Landroid/support/v4/media/SessionCommand2;)Landroid/support/v4/media/MediaSession2$CommandButton$Builder;
     .locals 0
-    .param p1, "command"    # Landroid/support/v4/media/SessionCommand2;
 
-    .line 1489
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mCommand:Landroid/support/v4/media/SessionCommand2;
 
-    .line 1490
     return-object p0
 .end method
 
 .method public setDisplayName(Ljava/lang/String;)Landroid/support/v4/media/MediaSession2$CommandButton$Builder;
     .locals 0
-    .param p1, "displayName"    # Ljava/lang/String;
 
-    .line 1513
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mDisplayName:Ljava/lang/String;
 
-    .line 1514
     return-object p0
 .end method
 
 .method public setEnabled(Z)Landroid/support/v4/media/MediaSession2$CommandButton$Builder;
     .locals 0
-    .param p1, "enabled"    # Z
 
-    .line 1525
     iput-boolean p1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mEnabled:Z
 
-    .line 1526
     return-object p0
 .end method
 
 .method public setExtras(Landroid/os/Bundle;)Landroid/support/v4/media/MediaSession2$CommandButton$Builder;
     .locals 0
-    .param p1, "extras"    # Landroid/os/Bundle;
 
-    .line 1535
     iput-object p1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mExtras:Landroid/os/Bundle;
 
-    .line 1536
     return-object p0
 .end method
 
 .method public setIconResId(I)Landroid/support/v4/media/MediaSession2$CommandButton$Builder;
     .locals 0
-    .param p1, "resId"    # I
 
-    .line 1503
     iput p1, p0, Landroid/support/v4/media/MediaSession2$CommandButton$Builder;->mIconResId:I
 
-    .line 1504
     return-object p0
 .end method

@@ -22,12 +22,10 @@
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;)V
     .locals 0
 
-    .line 1133
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     invoke-direct {p0}, Landroid/support/v7/media/MediaRouter$Callback;-><init>()V
 
-    .line 1134
     return-void
 .end method
 
@@ -35,42 +33,31 @@
 # virtual methods
 .method public onRouteChanged(Landroid/support/v7/media/MediaRouter;Landroid/support/v7/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1, "router"    # Landroid/support/v7/media/MediaRouter;
-    .param p2, "route"    # Landroid/support/v7/media/MediaRouter$RouteInfo;
 
-    .line 1143
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/MediaRouteControllerDialog;->update(Z)V
 
-    .line 1144
     return-void
 .end method
 
 .method public onRouteUnselected(Landroid/support/v7/media/MediaRouter;Landroid/support/v7/media/MediaRouter$RouteInfo;)V
     .locals 2
-    .param p1, "router"    # Landroid/support/v7/media/MediaRouter;
-    .param p2, "route"    # Landroid/support/v7/media/MediaRouter$RouteInfo;
 
-    .line 1138
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/MediaRouteControllerDialog;->update(Z)V
 
-    .line 1139
     return-void
 .end method
 
 .method public onRouteVolumeChanged(Landroid/support/v7/media/MediaRouter;Landroid/support/v7/media/MediaRouter$RouteInfo;)V
     .locals 5
-    .param p1, "router"    # Landroid/support/v7/media/MediaRouter;
-    .param p2, "route"    # Landroid/support/v7/media/MediaRouter$RouteInfo;
 
-    .line 1148
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$MediaRouterCallback;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mVolumeSliderMap:Ljava/util/Map;
@@ -81,19 +68,14 @@
 
     check-cast v0, Landroid/widget/SeekBar;
 
-    .line 1149
-    .local v0, "volumeSlider":Landroid/widget/SeekBar;
     invoke-virtual {p2}, Landroid/support/v7/media/MediaRouter$RouteInfo;->getVolume()I
 
     move-result v1
 
-    .line 1150
-    .local v1, "volume":I
     sget-boolean v2, Landroid/support/v7/app/MediaRouteControllerDialog;->DEBUG:Z
 
     if-eqz v2, :cond_0
 
-    .line 1151
     const-string v2, "MediaRouteCtrlDialog"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -112,7 +94,6 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1153
     :cond_0
     if-eqz v0, :cond_1
 
@@ -122,10 +103,8 @@
 
     if-eq v2, p2, :cond_1
 
-    .line 1154
     invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 1156
     :cond_1
     return-void
 .end method

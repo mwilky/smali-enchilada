@@ -33,8 +33,5 @@
         }
     .end annotation
 
-    .line 37
-    .local p0, "this":Lcom/android/systemui/plugins/PluginListener;, "Lcom/android/systemui/plugins/PluginListener<TT;>;"
-    .local p1, "plugin":Lcom/android/systemui/plugins/Plugin;, "TT;"
     return-void
 .end method

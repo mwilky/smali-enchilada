@@ -18,7 +18,6 @@
 .method public doInflateSynchronous()Z
     .locals 1
 
-    .line 553
     const/4 v0, 0x0
 
     return v0

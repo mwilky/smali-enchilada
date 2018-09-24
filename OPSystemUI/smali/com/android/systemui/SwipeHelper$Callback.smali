@@ -20,9 +20,7 @@
 
 .method public canChildBeDragged(Landroid/view/View;)Z
     .locals 1
-    .param p1, "animView"    # Landroid/view/View;
 
-    .line 732
     const/4 v0, 0x1
 
     return v0

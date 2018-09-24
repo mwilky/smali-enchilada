@@ -18,7 +18,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 248
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,8 +36,6 @@
 
 .method public toggleExpando(Lcom/android/systemui/tuner/LockscreenFragment$Adapter;)V
     .locals 0
-    .param p1, "adapter"    # Lcom/android/systemui/tuner/LockscreenFragment$Adapter;
 
-    .line 258
     return-void
 .end method

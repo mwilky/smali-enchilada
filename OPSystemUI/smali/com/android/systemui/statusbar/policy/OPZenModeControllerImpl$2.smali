@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;Landroid/content/Context;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 81
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;
 
     invoke-direct {p0, p2}, Lcom/android/systemui/settings/CurrentUserTracker;-><init>(Landroid/content/Context;)V
@@ -36,13 +33,10 @@
 # virtual methods
 .method public onUserSwitched(I)V
     .locals 1
-    .param p1, "newUserId"    # I
 
-    .line 84
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl$2;->this$0:Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/OPZenModeControllerImpl;I)V
 
-    .line 85
     return-void
 .end method

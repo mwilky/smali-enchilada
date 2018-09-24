@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/egg/MLand$Pop;Lcom/android/systemui/egg/MLand;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/egg/MLand$Pop;
 
-    .line 1254
     iput-object p1, p0, Lcom/android/systemui/egg/MLand$Pop$1;->this$1:Lcom/android/systemui/egg/MLand$Pop;
 
     iput-object p2, p0, Lcom/android/systemui/egg/MLand$Pop$1;->val$this$0:Lcom/android/systemui/egg/MLand;
@@ -39,10 +37,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 1257
     iget-object v0, p0, Lcom/android/systemui/egg/MLand$Pop$1;->this$1:Lcom/android/systemui/egg/MLand$Pop;
 
     invoke-virtual {v0}, Lcom/android/systemui/egg/MLand$Pop;->getWidth()I
@@ -61,8 +56,6 @@
 
     float-to-int v0, v0
 
-    .line 1258
-    .local v0, "pad":I
     iget-object v1, p0, Lcom/android/systemui/egg/MLand$Pop$1;->this$1:Lcom/android/systemui/egg/MLand$Pop;
 
     invoke-virtual {v1}, Lcom/android/systemui/egg/MLand$Pop;->getWidth()I
@@ -81,6 +74,5 @@
 
     invoke-virtual {p2, v0, v0, v1, v2}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    .line 1259
     return-void
 .end method

@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 43
     const-string v0, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     const-string v1, "android.net.conn.CONNECTIVITY_CHANGE"

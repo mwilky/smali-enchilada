@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
-    .line 660
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$4;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onFinishedWakingUp()V
     .locals 1
 
-    .line 663
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$4;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->access$300(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)Z
@@ -48,12 +45,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 664
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$4;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->access$400(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
 
-    .line 666
     :cond_0
     return-void
 .end method

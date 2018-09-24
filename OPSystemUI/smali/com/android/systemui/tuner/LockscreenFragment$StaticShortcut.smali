@@ -24,7 +24,6 @@
 .method public getDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 181
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$StaticShortcut;->mShortcut:Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
 
     iget-object v0, v0, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->icon:Landroid/graphics/drawable/Icon;
@@ -41,7 +40,6 @@
 .method public getExpando()Ljava/lang/Boolean;
     .locals 1
 
-    .line 196
     const/4 v0, 0x0
 
     return-object v0
@@ -50,7 +48,6 @@
 .method public getLabel()Ljava/lang/String;
     .locals 1
 
-    .line 186
     iget-object v0, p0, Lcom/android/systemui/tuner/LockscreenFragment$StaticShortcut;->mShortcut:Lcom/android/systemui/tuner/ShortcutParser$Shortcut;
 
     iget-object v0, v0, Lcom/android/systemui/tuner/ShortcutParser$Shortcut;->label:Ljava/lang/String;

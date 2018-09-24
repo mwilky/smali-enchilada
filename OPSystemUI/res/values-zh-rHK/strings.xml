@@ -1100,8 +1100,6 @@
     <string name="qs_rearrange">重新排列快速設定</string>
     <string name="qs_status_phone_muted">手機已設為靜音</string>
     <string name="qs_status_phone_vibrate">手機已設為震動</string>
-    <string name="quick_launch_exit">退出</string>
-    <string name="quick_launch_exit_hint">鬆手退出此界面</string>
     <string name="quick_settings">快速設定</string>
     <string name="quick_settings_bluetooth_detail_empty_text">找不到配對的裝置</string>
     <string name="quick_settings_bluetooth_label">藍牙</string>

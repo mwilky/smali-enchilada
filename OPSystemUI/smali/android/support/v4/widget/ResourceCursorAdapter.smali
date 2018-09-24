@@ -14,11 +14,7 @@
 # virtual methods
 .method public newDropDownView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "cursor"    # Landroid/database/Cursor;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 117
     iget-object v0, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     iget v1, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mDropDownLayout:I
@@ -34,11 +30,7 @@
 
 .method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "cursor"    # Landroid/database/Cursor;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 112
     iget-object v0, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mInflater:Landroid/view/LayoutInflater;
 
     iget v1, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->mLayout:I

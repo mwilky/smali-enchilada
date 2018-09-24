@@ -38,36 +38,29 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/util/leak/TrackedCollections;)V
     .locals 1
-    .param p1, "trackedCollections"    # Lcom/android/systemui/util/leak/TrackedCollections;
 
-    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
 
-    .line 38
     new-instance v0, Ljava/lang/ref/ReferenceQueue;
 
     invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mRefQueue:Ljava/lang/ref/ReferenceQueue;
 
-    .line 42
     iput-object p1, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mTrackedCollections:Lcom/android/systemui/util/leak/TrackedCollections;
 
-    .line 43
     return-void
 .end method
 
 .method private cleanUp()V
     .locals 2
 
-    .line 56
     :goto_0
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mRefQueue:Ljava/lang/ref/ReferenceQueue;
 
@@ -77,27 +70,21 @@
 
     move-object v1, v0
 
-    .local v1, "ref":Ljava/lang/ref/Reference;, "Ljava/lang/ref/Reference<*>;"
     if-eqz v0, :cond_0
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 59
     :cond_0
     return-void
 .end method
 
 .method private isOld(JJ)Z
     .locals 2
-    .param p1, "createdUptimeMillis"    # J
-    .param p3, "now"    # J
 
-    .line 124
     const-wide/32 v0, 0xea60
 
     add-long/2addr v0, p1
@@ -124,21 +111,15 @@
 
     monitor-enter p0
 
-    .line 110
     :try_start_0
     invoke-direct {p0}, Lcom/android/systemui/util/leak/TrackedGarbage;->cleanUp()V
 
-    .line 112
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 114
-    .local v0, "now":J
     const/4 v2, 0x0
 
-    .line 115
-    .local v2, "result":I
     iget-object v3, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
 
     invoke-virtual {v3}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
@@ -158,8 +139,6 @@
 
     check-cast v4, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
 
-    .line 116
-    .local v4, "ref":Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
     invoke-static {v4}, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;->access$100(Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;)J
 
     move-result-wide v5
@@ -172,61 +151,44 @@
 
     if-eqz v5, :cond_0
 
-    .line 117
     add-int/lit8 v2, v2, 0x1
 
-    .line 119
-    .end local v4    # "ref":Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
     :cond_0
     goto :goto_0
 
-    .line 120
     :cond_1
     monitor-exit p0
 
     return v2
 
-    .line 109
-    .end local v0    # "now":J
-    .end local v2    # "result":I
     :catchall_0
     move-exception v0
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/util/leak/TrackedGarbage;
     throw v0
 .end method
 
 .method public declared-synchronized dump(Ljava/io/PrintWriter;)V
     .locals 10
-    .param p1, "pw"    # Ljava/io/PrintWriter;
 
     monitor-enter p0
 
-    .line 85
     :try_start_0
     invoke-direct {p0}, Lcom/android/systemui/util/leak/TrackedGarbage;->cleanUp()V
 
-    .line 87
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 89
-    .local v0, "now":J
     new-instance v2, Landroid/util/ArrayMap;
 
     invoke-direct {v2}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 90
-    .local v2, "acc":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
     new-instance v3, Landroid/util/ArrayMap;
 
     invoke-direct {v3}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 91
-    .local v3, "accOld":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
     iget-object v4, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
 
     invoke-virtual {v4}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
@@ -248,8 +210,6 @@
 
     check-cast v5, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
 
-    .line 92
-    .local v5, "ref":Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
     invoke-static {v5}, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;->access$000(Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;)Ljava/lang/Class;
 
     move-result-object v7
@@ -280,7 +240,6 @@
 
     invoke-virtual {v2, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 93
     invoke-static {v5}, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;->access$100(Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;)J
 
     move-result-wide v7
@@ -291,7 +250,6 @@
 
     if-eqz v7, :cond_0
 
-    .line 94
     invoke-static {v5}, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;->access$000(Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;)Ljava/lang/Class;
 
     move-result-object v7
@@ -322,12 +280,9 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
-    .end local v5    # "ref":Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
     :cond_0
     goto :goto_0
 
-    .line 98
     :cond_1
     invoke-virtual {v2}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
@@ -350,8 +305,6 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 99
-    .local v5, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v7
@@ -364,24 +317,20 @@
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 100
     const-string v7, ": "
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 101
     invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v7
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 102
     const-string v7, " total, "
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 103
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v7
@@ -396,51 +345,37 @@
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 104
     const-string v7, " old"
 
     invoke-virtual {p1, v7}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 105
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 106
-    .end local v5    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
     goto :goto_1
 
-    .line 107
     :cond_2
     monitor-exit p0
 
     return-void
 
-    .line 84
-    .end local v0    # "now":J
-    .end local v2    # "acc":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
-    .end local v3    # "accOld":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/Class<*>;Ljava/lang/Integer;>;"
-    .end local p1    # "pw":Ljava/io/PrintWriter;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/util/leak/TrackedGarbage;
     throw p1
 .end method
 
 .method public declared-synchronized track(Ljava/lang/Object;)V
     .locals 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     monitor-enter p0
 
-    .line 49
     :try_start_0
     invoke-direct {p0}, Lcom/android/systemui/util/leak/TrackedGarbage;->cleanUp()V
 
-    .line 50
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
 
     new-instance v1, Lcom/android/systemui/util/leak/TrackedGarbage$LeakReference;
@@ -451,7 +386,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mTrackedCollections:Lcom/android/systemui/util/leak/TrackedCollections;
 
     iget-object v1, p0, Lcom/android/systemui/util/leak/TrackedGarbage;->mGarbage:Ljava/util/HashSet;
@@ -462,18 +396,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 52
     monitor-exit p0
 
     return-void
 
-    .line 48
-    .end local p1    # "o":Ljava/lang/Object;
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
-    .end local p0    # "this":Lcom/android/systemui/util/leak/TrackedGarbage;
     throw p1
 .end method

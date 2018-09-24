@@ -22,7 +22,6 @@
 .method constructor <init>(Landroid/support/design/widget/FloatingActionButtonImpl;)V
     .locals 1
 
-    .line 665
     iput-object p1, p0, Landroid/support/design/widget/FloatingActionButtonImpl$DisabledElevationAnimation;->this$0:Landroid/support/design/widget/FloatingActionButtonImpl;
 
     const/4 v0, 0x0
@@ -37,7 +36,6 @@
 .method protected getTargetShadowSize()F
     .locals 1
 
-    .line 669
     const/4 v0, 0x0
 
     return v0

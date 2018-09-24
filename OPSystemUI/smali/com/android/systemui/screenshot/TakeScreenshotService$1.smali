@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/screenshot/TakeScreenshotService;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/screenshot/TakeScreenshotService;
 
-    .line 35
     iput-object p1, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->this$0:Lcom/android/systemui/screenshot/TakeScreenshotService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,19 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 7
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 38
     iget-object v0, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
-    .line 39
-    .local v0, "callback":Landroid/os/Messenger;
     new-instance v1, Lcom/android/systemui/screenshot/TakeScreenshotService$1$1;
 
     invoke-direct {v1, p0, v0}, Lcom/android/systemui/screenshot/TakeScreenshotService$1$1;-><init>(Lcom/android/systemui/screenshot/TakeScreenshotService$1;Landroid/os/Messenger;)V
 
-    .line 53
-    .local v1, "finisher":Ljava/lang/Runnable;
     iget-object v2, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->this$0:Lcom/android/systemui/screenshot/TakeScreenshotService;
 
     const-class v3, Landroid/os/UserManager;
@@ -64,20 +56,16 @@
 
     if-nez v2, :cond_0
 
-    .line 54
     const-string v2, "TakeScreenshotService"
 
     const-string v3, "Skipping screenshot because storage is locked!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 55
     invoke-virtual {p0, v1}, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->post(Ljava/lang/Runnable;)Z
 
-    .line 56
     return-void
 
-    .line 59
     :cond_0
     invoke-static {}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -85,7 +73,6 @@
 
     if-nez v2, :cond_1
 
-    .line 60
     new-instance v2, Lcom/android/systemui/screenshot/GlobalScreenshot;
 
     iget-object v3, p0, Lcom/android/systemui/screenshot/TakeScreenshotService$1;->this$0:Lcom/android/systemui/screenshot/TakeScreenshotService;
@@ -94,7 +81,6 @@
 
     invoke-static {v2}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$002(Lcom/android/systemui/screenshot/GlobalScreenshot;)Lcom/android/systemui/screenshot/GlobalScreenshot;
 
-    .line 63
     :cond_1
     iget v2, p1, Landroid/os/Message;->what:I
 
@@ -104,7 +90,6 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 71
     const-string v2, "TakeScreenshotService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -127,7 +112,6 @@
 
     goto :goto_2
 
-    .line 68
     :pswitch_0
     invoke-static {}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -156,10 +140,8 @@
     :cond_3
     invoke-virtual {v2, v1, v5, v3}, Lcom/android/systemui/screenshot/GlobalScreenshot;->takeScreenshotPartial(Ljava/lang/Runnable;ZZ)V
 
-    .line 69
     goto :goto_2
 
-    .line 65
     :pswitch_1
     invoke-static {}, Lcom/android/systemui/screenshot/TakeScreenshotService;->access$000()Lcom/android/systemui/screenshot/GlobalScreenshot;
 
@@ -188,10 +170,8 @@
     :cond_5
     invoke-virtual {v2, v1, v5, v3}, Lcom/android/systemui/screenshot/GlobalScreenshot;->takeScreenshot(Ljava/lang/Runnable;ZZ)V
 
-    .line 66
     nop
 
-    .line 73
     :goto_2
     return-void
 

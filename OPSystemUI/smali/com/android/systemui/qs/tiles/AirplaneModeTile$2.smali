@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tiles/AirplaneModeTile;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
-    .line 140
     iput-object p1, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 143
     const-string v0, "android.intent.action.AIRPLANE_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -51,12 +46,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 144
     iget-object v0, p0, Lcom/android/systemui/qs/tiles/AirplaneModeTile$2;->this$0:Lcom/android/systemui/qs/tiles/AirplaneModeTile;
 
     invoke-virtual {v0}, Lcom/android/systemui/qs/tiles/AirplaneModeTile;->refreshState()V
 
-    .line 146
     :cond_0
     return-void
 .end method

@@ -21,14 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;IIIII)V
     .locals 6
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "enabledIconResId"    # I
-    .param p3, "disabledIconResid"    # I
-    .param p4, "message"    # I
-    .param p5, "enabledStatusMessageResId"    # I
-    .param p6, "disabledStatusMessageResId"    # I
 
-    .line 277
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     move-object v0, p0
@@ -52,9 +45,7 @@
 # virtual methods
 .method protected changeStateFromPress(Z)V
     .locals 2
-    .param p1, "buttonOn"    # Z
 
-    .line 295
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
@@ -65,23 +56,19 @@
 
     return-void
 
-    .line 298
     :cond_0
     const-string v0, "ril.cdma.inecmmode"
 
-    .line 299
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 298
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 300
     if-eqz p1, :cond_1
 
     sget-object v0, Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;->TurningOn:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
@@ -94,23 +81,19 @@
     :goto_0
     iput-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->mState:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
 
-    .line 301
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->mState:Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
 
     invoke-static {v0, v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$402(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
 
-    .line 303
     :cond_2
     return-void
 .end method
 
 .method onToggle(Z)V
     .locals 3
-    .param p1, "on"    # Z
 
-    .line 280
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
@@ -121,26 +104,22 @@
 
     const-string v0, "ril.cdma.inecmmode"
 
-    .line 281
     invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 280
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 282
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$102(Lcom/android/systemui/globalactions/GlobalActionsDialog;Z)Z
 
-    .line 284
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.android.internal.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS"
@@ -149,13 +128,10 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 286
-    .local v0, "ecmDialogIntent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 287
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
@@ -164,17 +140,13 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 288
-    .end local v0    # "ecmDialogIntent":Landroid/content/Intent;
     goto :goto_0
 
-    .line 289
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$1;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0, p1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$300(Lcom/android/systemui/globalactions/GlobalActionsDialog;Z)V
 
-    .line 291
     :goto_0
     return-void
 .end method
@@ -182,7 +154,6 @@
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 310
     const/4 v0, 0x0
 
     return v0
@@ -191,7 +162,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 306
     const/4 v0, 0x1
 
     return v0

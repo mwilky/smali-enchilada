@@ -6,21 +6,17 @@
 # direct methods
 .method public static obtain(Landroid/content/Context;)Lcom/android/systemui/statusbar/phone/VelocityTrackerInterface;
     .locals 4
-    .param p0, "ctx"    # Landroid/content/Context;
 
-    .line 32
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f110666
+    const v1, 0x7f110664
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 33
-    .local v0, "tracker":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -68,7 +64,6 @@
     :goto_1
     packed-switch v1, :pswitch_data_0
 
-    .line 39
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -89,7 +84,6 @@
 
     throw v1
 
-    .line 37
     :pswitch_0
     invoke-static {}, Lcom/android/systemui/statusbar/phone/PlatformVelocityTracker;->obtain()Lcom/android/systemui/statusbar/phone/PlatformVelocityTracker;
 
@@ -97,7 +91,6 @@
 
     return-object v1
 
-    .line 35
     :pswitch_1
     invoke-static {}, Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker;->obtain()Lcom/android/systemui/statusbar/phone/NoisyVelocityTracker;
 

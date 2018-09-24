@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/events/EventBus;Lcom/android/systemui/recents/events/EventBus$Event;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/events/EventBus;
 
-    .line 848
     iput-object p1, p0, Lcom/android/systemui/recents/events/EventBus$5;->this$0:Lcom/android/systemui/recents/events/EventBus;
 
     iput-object p2, p0, Lcom/android/systemui/recents/events/EventBus$5;->val$event:Lcom/android/systemui/recents/events/EventBus$Event;
@@ -43,11 +41,9 @@
 .method public run()V
     .locals 1
 
-    .line 851
     iget-object v0, p0, Lcom/android/systemui/recents/events/EventBus$5;->val$event:Lcom/android/systemui/recents/events/EventBus$Event;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/events/EventBus$Event;->onPostDispatch()V
 
-    .line 852
     return-void
 .end method

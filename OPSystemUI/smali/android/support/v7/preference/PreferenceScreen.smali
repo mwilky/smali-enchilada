@@ -10,10 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 90
     sget v0, Landroid/support/v7/preference/R$attr;->preferenceScreenStyle:I
 
     const v1, 0x101008b
@@ -24,12 +21,10 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/preference/PreferenceGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 82
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/preference/PreferenceScreen;->mShouldUseGeneratedIds:Z
 
-    .line 92
     return-void
 .end method
 
@@ -38,7 +33,6 @@
 .method protected isOnSameScreenAsChildren()Z
     .locals 1
 
-    .line 108
     const/4 v0, 0x0
 
     return v0
@@ -47,7 +41,6 @@
 .method protected onClick()V
     .locals 1
 
-    .line 96
     invoke-virtual {p0}, Landroid/support/v7/preference/PreferenceScreen;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -68,11 +61,9 @@
 
     goto :goto_0
 
-    .line 99
     :cond_0
     nop
 
-    .line 100
     invoke-virtual {p0}, Landroid/support/v7/preference/PreferenceScreen;->getPreferenceManager()Landroid/support/v7/preference/PreferenceManager;
 
     move-result-object v0
@@ -81,19 +72,13 @@
 
     move-result-object v0
 
-    .line 101
-    .local v0, "listener":Landroid/support/v7/preference/PreferenceManager$OnNavigateToScreenListener;
     if-eqz v0, :cond_1
 
-    .line 102
     invoke-interface {v0, p0}, Landroid/support/v7/preference/PreferenceManager$OnNavigateToScreenListener;->onNavigateToScreen(Landroid/support/v7/preference/PreferenceScreen;)V
 
-    .line 104
     :cond_1
     return-void
 
-    .line 97
-    .end local v0    # "listener":Landroid/support/v7/preference/PreferenceManager$OnNavigateToScreenListener;
     :cond_2
     :goto_0
     return-void
@@ -102,7 +87,6 @@
 .method public shouldUseGeneratedIds()Z
     .locals 1
 
-    .line 117
     iget-boolean v0, p0, Landroid/support/v7/preference/PreferenceScreen;->mShouldUseGeneratedIds:Z
 
     return v0

@@ -21,23 +21,17 @@
 # direct methods
 .method constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "background"    # Landroid/graphics/Bitmap;
 
-    .line 301
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 302
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable$ConstantState;->mBackground:Landroid/graphics/Bitmap;
 
-    .line 303
     return-void
 .end method
 
 .method static synthetic access$500(Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable$ConstantState;)Landroid/graphics/Bitmap;
     .locals 1
-    .param p0, "x0"    # Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable$ConstantState;
 
-    .line 297
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable$ConstantState;->mBackground:Landroid/graphics/Bitmap;
 
     return-object v0
@@ -48,7 +42,6 @@
 .method public getChangingConfigurations()I
     .locals 1
 
-    .line 318
     const/4 v0, 0x0
 
     return v0
@@ -57,7 +50,6 @@
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 307
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable$ConstantState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
@@ -69,9 +61,7 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .locals 2
-    .param p1, "res"    # Landroid/content/res/Resources;
 
-    .line 312
     new-instance v0, Lcom/android/systemui/statusbar/phone/LockscreenWallpaper$WallpaperDrawable;
 
     const/4 v1, 0x0

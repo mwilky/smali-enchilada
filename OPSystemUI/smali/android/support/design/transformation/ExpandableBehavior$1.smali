@@ -30,9 +30,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/transformation/ExpandableBehavior;Landroid/view/View;ILandroid/support/design/expandable/ExpandableWidget;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/design/transformation/ExpandableBehavior;
 
-    .line 96
     iput-object p1, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->this$0:Landroid/support/design/transformation/ExpandableBehavior;
 
     iput-object p2, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->val$child:Landroid/view/View;
@@ -51,7 +49,6 @@
 .method public onPreDraw()Z
     .locals 5
 
-    .line 99
     iget-object v0, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->val$child:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -60,7 +57,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 101
     iget-object v0, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->this$0:Landroid/support/design/transformation/ExpandableBehavior;
 
     invoke-static {v0}, Landroid/support/design/transformation/ExpandableBehavior;->access$000(Landroid/support/design/transformation/ExpandableBehavior;)I
@@ -73,7 +69,6 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 102
     iget-object v0, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->this$0:Landroid/support/design/transformation/ExpandableBehavior;
 
     iget-object v1, p0, Landroid/support/design/transformation/ExpandableBehavior$1;->val$dep:Landroid/support/design/expandable/ExpandableWidget;
@@ -90,7 +85,6 @@
 
     invoke-virtual {v0, v1, v3, v4, v2}, Landroid/support/design/transformation/ExpandableBehavior;->onExpandedStateChange(Landroid/view/View;Landroid/view/View;ZZ)Z
 
-    .line 104
     :cond_0
     return v2
 .end method

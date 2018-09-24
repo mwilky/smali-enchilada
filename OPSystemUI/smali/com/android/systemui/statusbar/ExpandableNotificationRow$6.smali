@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 2344
     iput-object p1, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$6;->this$0:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$6;->val$hiddenView:Landroid/view/View;
@@ -43,13 +41,11 @@
 .method public run()V
     .locals 2
 
-    .line 2347
     iget-object v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow$6;->val$hiddenView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2348
     return-void
 .end method

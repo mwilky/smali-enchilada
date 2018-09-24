@@ -84,9 +84,7 @@
 
 .method public populate(Landroid/metrics/LogMaker;)Landroid/metrics/LogMaker;
     .locals 0
-    .param p1, "logMaker"    # Landroid/metrics/LogMaker;
 
-    .line 72
     return-object p1
 .end method
 

@@ -18,13 +18,11 @@
 .method public onHighlightHintInfoChange()V
     .locals 0
 
-    .line 26
     return-void
 .end method
 
 .method public onHighlightHintStateChange()V
     .locals 0
 
-    .line 24
     return-void
 .end method

@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/TaskView;Lcom/android/systemui/recents/views/TaskView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/TaskView;
 
-    .line 399
     iput-object p1, p0, Lcom/android/systemui/recents/views/TaskView$5;->this$0:Lcom/android/systemui/recents/views/TaskView;
 
     iput-object p2, p0, Lcom/android/systemui/recents/views/TaskView$5;->val$tv:Lcom/android/systemui/recents/views/TaskView;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 7
 
-    .line 402
     invoke-static {}, Lcom/android/systemui/recents/events/EventBus;->getDefault()Lcom/android/systemui/recents/events/EventBus;
 
     move-result-object v0
@@ -70,6 +67,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/recents/events/EventBus;->send(Lcom/android/systemui/recents/events/EventBus$Event;)V
 
-    .line 405
     return-void
 .end method

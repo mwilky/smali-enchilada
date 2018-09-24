@@ -20,45 +20,35 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;I)V
     .locals 1
-    .param p1, "source"    # Landroid/view/View;
-    .param p2, "cornerRadius"    # I
 
-    .line 42
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
-    .line 36
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
-    .line 37
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
-    .line 38
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mLastClipBounds:Landroid/graphics/Rect;
 
-    .line 40
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mAlpha:F
 
-    .line 43
     iput-object p1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 44
     iput p2, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mCornerRadius:I
 
-    .line 45
     return-void
 .end method
 
@@ -67,7 +57,6 @@
 .method public getAlpha()F
     .locals 1
 
-    .line 85
     iget v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mAlpha:F
 
     return v0
@@ -76,7 +65,6 @@
 .method public getClipBounds()Landroid/graphics/Rect;
     .locals 1
 
-    .line 122
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     return-object v0
@@ -84,10 +72,7 @@
 
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 7
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 57
     iget v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mAlpha:F
 
     const v1, 0x3dcccccd    # 0.1f
@@ -100,12 +85,10 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 58
     iget v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mCornerRadius:I
 
     if-lez v0, :cond_0
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -116,7 +99,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 60
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -129,7 +111,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 61
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -144,14 +125,12 @@
 
     int-to-float v6, v0
 
-    .line 59
     move-object v1, p2
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
     goto :goto_0
 
-    .line 64
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
@@ -163,7 +142,6 @@
 
     iget-object v2, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 65
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
@@ -176,7 +154,6 @@
 
     iget-object v3, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 66
     invoke-virtual {v3}, Landroid/view/View;->getHeight()I
 
     move-result v3
@@ -187,10 +164,8 @@
 
     sub-int/2addr v3, v4
 
-    .line 64
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 68
     :goto_0
     return-void
 .end method
@@ -198,25 +173,20 @@
 .method public reset()V
     .locals 2
 
-    .line 51
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 52
     invoke-virtual {p0}, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->updateClipBounds()V
 
-    .line 53
     return-void
 .end method
 
 .method public setAlpha(F)V
     .locals 1
-    .param p1, "alpha"    # F
 
-    .line 74
     iget v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mAlpha:F
 
     invoke-static {p1, v0}, Ljava/lang/Float;->compare(FF)I
@@ -225,39 +195,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 75
     iput p1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mAlpha:F
 
-    .line 77
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidateOutline()V
 
-    .line 79
     :cond_0
     return-void
 .end method
 
 .method public setClipBottom(I)V
     .locals 1
-    .param p1, "bottom"    # I
 
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
 
     iput p1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 108
     invoke-virtual {p0}, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->updateClipBounds()V
 
-    .line 109
     return-void
 .end method
 
 .method protected updateClipBounds()V
     .locals 7
 
-    .line 126
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipRect:Landroid/graphics/Rect;
@@ -280,7 +242,6 @@
 
     iget-object v4, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 127
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
 
     move-result v4
@@ -297,7 +258,6 @@
 
     iget-object v5, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
-    .line 128
     invoke-virtual {v5}, Landroid/view/View;->getHeight()I
 
     move-result v5
@@ -312,10 +272,8 @@
 
     sub-int/2addr v5, v2
 
-    .line 126
     invoke-virtual {v0, v1, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 129
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mLastClipBounds:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
@@ -326,26 +284,22 @@
 
     if-nez v0, :cond_0
 
-    .line 130
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 132
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mSourceView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidateOutline()V
 
-    .line 133
     iget-object v0, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mLastClipBounds:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/android/systemui/shared/recents/view/AnimateableViewBounds;->mClipBounds:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 135
     :cond_0
     return-void
 .end method

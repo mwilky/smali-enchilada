@@ -33,9 +33,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
-    .line 397
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -45,9 +43,7 @@
 
 .method public static synthetic lambda$doInBackground$0(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;[Ljava/lang/Integer;)V
     .locals 4
-    .param p1, "userId"    # [Ljava/lang/Integer;
 
-    .line 410
     new-instance v0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
@@ -73,7 +69,6 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Integer;)Landroid/util/Pair;
     .locals 8
-    .param p1, "userId"    # [Ljava/lang/Integer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -86,7 +81,6 @@
         }
     .end annotation
 
-    .line 401
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -100,7 +94,6 @@
 
     aget-object v3, p1, v1
 
-    .line 402
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -109,7 +102,6 @@
 
     move-result-object v3
 
-    .line 401
     invoke-static {v2, v3}, Landroid/security/KeyChain;->bindAsUser(Landroid/content/Context;Landroid/os/UserHandle;)Landroid/security/KeyChain$KeyChainConnection;
 
     move-result-object v2
@@ -118,8 +110,6 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 403
-    .local v2, "conn":Landroid/security/KeyChain$KeyChainConnection;
     :try_start_1
     invoke-virtual {v2}, Landroid/security/KeyChain$KeyChainConnection;->getService()Landroid/security/IKeyChainService;
 
@@ -139,8 +129,6 @@
 
     xor-int/lit8 v3, v3, 0x1
 
-    .line 404
-    .local v3, "hasCACerts":Z
     new-instance v4, Landroid/util/Pair;
 
     aget-object v5, p1, v1
@@ -154,7 +142,6 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 405
     if-eqz v2, :cond_0
 
     :try_start_2
@@ -164,12 +151,9 @@
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/AssertionError; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 404
     :cond_0
     return-object v4
 
-    .line 405
-    .end local v3    # "hasCACerts":Z
     :catchall_0
     move-exception v3
 
@@ -177,7 +161,6 @@
 
     goto :goto_0
 
-    .line 401
     :catch_0
     move-exception v3
 
@@ -186,7 +169,6 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 405
     :catchall_1
     move-exception v4
 
@@ -230,12 +212,9 @@
     .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_5} :catch_2
     .catch Ljava/lang/AssertionError; {:try_start_5 .. :try_end_5} :catch_2
 
-    .end local v2    # "conn":Landroid/security/KeyChain$KeyChainConnection;
     :catch_2
     move-exception v2
 
-    .line 407
-    .local v2, "e":Ljava/lang/Throwable;
     invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v3
@@ -250,7 +229,6 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
     :cond_3
     new-instance v3, Landroid/os/Handler;
 
@@ -272,7 +250,6 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 412
     new-instance v3, Landroid/util/Pair;
 
     aget-object v1, p1, v1
@@ -285,7 +262,6 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 397
     check-cast p1, [Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->doInBackground([Ljava/lang/Integer;)Landroid/util/Pair;
@@ -307,8 +283,6 @@
         }
     .end annotation
 
-    .line 418
-    .local p1, "result":Landroid/util/Pair;, "Landroid/util/Pair<Ljava/lang/Integer;Ljava/lang/Boolean;>;"
     invoke-static {}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$000()Z
 
     move-result v0
@@ -333,13 +307,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
     :cond_0
     iget-object v0, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    .line 420
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$500(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)Landroid/util/ArrayMap;
@@ -356,12 +328,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 421
     iget-object v0, p0, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->this$0:Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;->access$200(Lcom/android/systemui/statusbar/policy/SecurityControllerImpl;)V
 
-    .line 423
     :cond_1
     return-void
 .end method
@@ -369,7 +339,6 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 397
     check-cast p1, Landroid/util/Pair;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/policy/SecurityControllerImpl$CACertLoader;->onPostExecute(Landroid/util/Pair;)V

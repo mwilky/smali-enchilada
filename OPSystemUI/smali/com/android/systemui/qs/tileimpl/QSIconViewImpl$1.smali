@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;Landroid/graphics/drawable/Animatable2;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;
 
-    .line 128
     iput-object p1, p0, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl$1;->this$0:Lcom/android/systemui/qs/tileimpl/QSIconViewImpl;
 
     iput-object p2, p0, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl$1;->val$a:Landroid/graphics/drawable/Animatable2;
@@ -39,13 +37,10 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
-    .line 131
     iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSIconViewImpl$1;->val$a:Landroid/graphics/drawable/Animatable2;
 
     invoke-interface {v0}, Landroid/graphics/drawable/Animatable2;->start()V
 
-    .line 132
     return-void
 .end method

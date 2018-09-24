@@ -33,9 +33,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/events/EventBus;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/events/EventBus;
 
-    .line 684
     iput-object p1, p0, Lcom/android/systemui/recents/events/EventBus$3;->this$0:Lcom/android/systemui/recents/events/EventBus;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,9 +55,6 @@
         }
     .end annotation
 
-    .line 687
-    .local p1, "o1":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "o2":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
@@ -78,7 +73,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 684
     check-cast p1, Ljava/lang/Class;
 
     check-cast p2, Ljava/lang/Class;

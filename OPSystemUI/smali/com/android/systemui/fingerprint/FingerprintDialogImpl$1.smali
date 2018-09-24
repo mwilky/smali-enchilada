@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
-    .line 107
     iput-object p1, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 110
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
@@ -46,7 +42,6 @@
 
     goto :goto_0
 
-    .line 146
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -54,16 +49,13 @@
 
     goto :goto_0
 
-    .line 143
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$1000(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 144
     goto :goto_0
 
-    .line 140
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -73,46 +65,36 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$900(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;II)V
 
-    .line 141
     goto :goto_0
 
-    .line 136
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$800(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 137
     goto :goto_0
 
-    .line 133
     :pswitch_4
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$700(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 134
     goto :goto_0
 
-    .line 130
     :pswitch_5
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$600(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 131
     goto :goto_0
 
-    .line 127
     :pswitch_6
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$500(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 128
     goto :goto_0
 
-    .line 124
     :pswitch_7
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -126,10 +108,8 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$400(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Z)V
 
-    .line 125
     goto :goto_0
 
-    .line 121
     :pswitch_8
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -139,10 +119,8 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$300(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)V
 
-    .line 122
     goto :goto_0
 
-    .line 118
     :pswitch_9
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -152,19 +130,15 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$200(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Ljava/lang/String;)V
 
-    .line 119
     goto :goto_0
 
-    .line 115
     :pswitch_a
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
     invoke-static {v0}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$100(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;)V
 
-    .line 116
     goto :goto_0
 
-    .line 112
     :pswitch_b
     iget-object v0, p0, Lcom/android/systemui/fingerprint/FingerprintDialogImpl$1;->this$0:Lcom/android/systemui/fingerprint/FingerprintDialogImpl;
 
@@ -174,10 +148,8 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/fingerprint/FingerprintDialogImpl;->access$000(Lcom/android/systemui/fingerprint/FingerprintDialogImpl;Lcom/android/internal/os/SomeArgs;)V
 
-    .line 113
     nop
 
-    .line 150
     :goto_0
     return-void
 

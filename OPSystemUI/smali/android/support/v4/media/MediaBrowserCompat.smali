@@ -30,7 +30,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 109
     const-string v0, "MediaBrowserCompat"
 
     const/4 v1, 0x3
@@ -49,11 +48,9 @@
 .method public disconnect()V
     .locals 1
 
-    .line 217
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat;->mImpl:Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImpl;
 
     invoke-interface {v0}, Landroid/support/v4/media/MediaBrowserCompat$MediaBrowserImpl;->disconnect()V
 
-    .line 218
     return-void
 .end method

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/car/hvac/HvacController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
-    .line 102
     iput-object p1, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +35,6 @@
 .method public static synthetic lambda$binderDied$0(Lcom/android/systemui/statusbar/car/hvac/HvacController$2;)V
     .locals 1
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/car/hvac/HvacController;->access$200(Lcom/android/systemui/statusbar/car/hvac/HvacController;)Landroid/car/Car;
@@ -54,14 +51,12 @@
 .method public binderDied()V
     .locals 4
 
-    .line 105
     const-string v0, "HvacController"
 
     const-string v1, "Death of HVAC triggering a restart"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 106
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/car/hvac/HvacController;->access$200(Lcom/android/systemui/statusbar/car/hvac/HvacController;)Landroid/car/Car;
@@ -70,7 +65,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/car/hvac/HvacController;->access$200(Lcom/android/systemui/statusbar/car/hvac/HvacController;)Landroid/car/Car;
@@ -79,13 +73,11 @@
 
     invoke-virtual {v0}, Landroid/car/Car;->disconnect()V
 
-    .line 109
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/car/hvac/HvacController;->access$500(Lcom/android/systemui/statusbar/car/hvac/HvacController;)V
 
-    .line 110
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/hvac/HvacController$2;->this$0:Lcom/android/systemui/statusbar/car/hvac/HvacController;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/car/hvac/HvacController;->access$600(Lcom/android/systemui/statusbar/car/hvac/HvacController;)Landroid/os/Handler;
@@ -100,6 +92,5 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 111
     return-void
 .end method

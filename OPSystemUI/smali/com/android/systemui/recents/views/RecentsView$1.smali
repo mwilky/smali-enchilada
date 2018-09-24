@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/RecentsView;
 
-    .line 589
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,15 +37,12 @@
 .method public run()V
     .locals 6
 
-    .line 593
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-virtual {v0}, Lcom/android/systemui/recents/views/RecentsView;->getStackActionButtonBoundsFromStackLayout()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 594
-    .local v0, "buttonBounds":Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/android/systemui/recents/views/RecentsView$1;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-static {v1}, Lcom/android/systemui/recents/views/RecentsView;->access$000(Lcom/android/systemui/recents/views/RecentsView;)Landroid/widget/TextView;
@@ -64,6 +59,5 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/widget/TextView;->setLeftTopRightBottom(IIII)V
 
-    .line 596
     return-void
 .end method

@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher;
 
-    .line 127
     iput-object p1, p0, Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher$1;->this$0:Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher$1;->val$view:Landroid/view/View;
@@ -39,15 +37,12 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 130
     iget-object v0, p0, Lcom/android/systemui/statusbar/car/FullscreenUserSwitcher$1;->val$view:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 131
     return-void
 .end method

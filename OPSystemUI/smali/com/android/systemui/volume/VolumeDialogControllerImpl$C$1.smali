@@ -28,9 +28,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;Ljava/util/Map$Entry;I)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
 
-    .line 840
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C$1;->this$1:Lcom/android/systemui/volume/VolumeDialogControllerImpl$C;
 
     iput-object p2, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C$1;->val$entry:Ljava/util/Map$Entry;
@@ -47,7 +45,6 @@
 .method public run()V
     .locals 2
 
-    .line 843
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$C$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -60,6 +57,5 @@
 
     invoke-interface {v0, v1}, Lcom/android/systemui/plugins/VolumeDialogController$Callbacks;->onShowRequested(I)V
 
-    .line 844
     return-void
 .end method

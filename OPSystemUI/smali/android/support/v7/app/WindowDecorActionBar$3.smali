@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/WindowDecorActionBar;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/WindowDecorActionBar;
 
-    .line 161
     iput-object p1, p0, Landroid/support/v7/app/WindowDecorActionBar$3;->this$0:Landroid/support/v7/app/WindowDecorActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
 
-    .line 164
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$3;->this$0:Landroid/support/v7/app/WindowDecorActionBar;
 
     iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->mContainerView:Landroid/support/v7/widget/ActionBarContainer;
@@ -49,14 +45,11 @@
 
     move-result-object v0
 
-    .line 165
-    .local v0, "parent":Landroid/view/ViewParent;
     move-object v1, v0
 
     check-cast v1, Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    .line 166
     return-void
 .end method

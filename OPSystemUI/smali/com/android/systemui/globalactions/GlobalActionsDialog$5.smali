@@ -21,11 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;II)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
-    .param p2, "iconResId"    # I
-    .param p3, "messageResId"    # I
 
-    .line 680
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$5;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0, p2, p3}, Lcom/android/systemui/globalactions/GlobalActionsDialog$SinglePressAction;-><init>(II)V
@@ -38,20 +34,16 @@
 .method public onPress()V
     .locals 2
 
-    .line 683
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VOICE_ASSIST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 684
-    .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x14000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 685
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$5;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$200(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/content/Context;
@@ -60,14 +52,12 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 686
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .line 695
     const/4 v0, 0x1
 
     return v0
@@ -76,7 +66,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .line 690
     const/4 v0, 0x1
 
     return v0

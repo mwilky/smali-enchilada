@@ -17,9 +17,7 @@
 # direct methods
 .method public static getDescription(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p0, "queueItem"    # Ljava/lang/Object;
 
-    .line 266
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/MediaSession$QueueItem;
@@ -33,9 +31,7 @@
 
 .method public static getQueueId(Ljava/lang/Object;)J
     .locals 2
-    .param p0, "queueItem"    # Ljava/lang/Object;
 
-    .line 270
     move-object v0, p0
 
     check-cast v0, Landroid/media/session/MediaSession$QueueItem;

@@ -21,7 +21,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 17
     const/4 v0, 0x5
 
     new-array v1, v0, [I
@@ -30,7 +29,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->PHONE_SIGNAL_STRENGTH_FOUR_BAR:[I
 
-    .line 26
     const/4 v1, 0x6
 
     new-array v1, v1, [I
@@ -39,7 +37,6 @@
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->PHONE_SIGNAL_STRENGTH_FIVE_BAR:[I
 
-    .line 35
     invoke-static {}, Lcom/android/systemui/util/OPUtils;->isSupportFiveBar()Z
 
     move-result v1
@@ -56,21 +53,18 @@
     :goto_0
     sput-object v1, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->PHONE_SIGNAL_STRENGTH:[I
 
-    .line 38
     new-array v1, v0, [I
 
     fill-array-data v1, :array_2
 
     sput-object v1, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->DATA_CONNECTION_STRENGTH:[I
 
-    .line 46
     new-array v0, v0, [I
 
     fill-array-data v0, :array_3
 
     sput-object v0, Lcom/android/systemui/statusbar/policy/AccessibilityContentDescriptions;->WIFI_CONNECTION_STRENGTH:[I
 
-    .line 56
     const/4 v0, 0x2
 
     new-array v0, v0, [I

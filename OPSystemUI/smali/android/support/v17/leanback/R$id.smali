@@ -21,52 +21,52 @@
 
 .field public static final bar3:I = 0x7f0a007c
 
-.field public static final description:I = 0x7f0a00f6
+.field public static final description:I = 0x7f0a00f5
 
-.field public static final guidance_breadcrumb:I = 0x7f0a0167
+.field public static final guidance_breadcrumb:I = 0x7f0a0166
 
-.field public static final guidance_description:I = 0x7f0a0169
+.field public static final guidance_description:I = 0x7f0a0168
 
-.field public static final guidance_icon:I = 0x7f0a016a
+.field public static final guidance_icon:I = 0x7f0a0169
 
-.field public static final guidance_title:I = 0x7f0a016b
+.field public static final guidance_title:I = 0x7f0a016a
 
-.field public static final guidedactions_sub_list:I = 0x7f0a017b
+.field public static final guidedactions_sub_list:I = 0x7f0a017a
 
-.field public static final icon:I = 0x7f0a0197
+.field public static final icon:I = 0x7f0a0195
 
-.field public static final info_field:I = 0x7f0a01ac
+.field public static final info_field:I = 0x7f0a01a9
 
-.field public static final lb_parallax_source:I = 0x7f0a0200
+.field public static final lb_parallax_source:I = 0x7f0a01fd
 
-.field public static final lb_row_container_header_dock:I = 0x7f0a0202
+.field public static final lb_row_container_header_dock:I = 0x7f0a01ff
 
-.field public static final lb_search_bar_badge:I = 0x7f0a0204
+.field public static final lb_search_bar_badge:I = 0x7f0a0201
 
-.field public static final lb_search_bar_items:I = 0x7f0a0205
+.field public static final lb_search_bar_items:I = 0x7f0a0202
 
-.field public static final lb_search_bar_speech_orb:I = 0x7f0a0206
+.field public static final lb_search_bar_speech_orb:I = 0x7f0a0203
 
-.field public static final lb_search_text_editor:I = 0x7f0a0208
+.field public static final lb_search_text_editor:I = 0x7f0a0205
 
-.field public static final lb_slide_transition_value:I = 0x7f0a020c
+.field public static final lb_slide_transition_value:I = 0x7f0a0209
 
-.field public static final main_image:I = 0x7f0a0229
+.field public static final main_image:I = 0x7f0a0226
 
-.field public static final picker:I = 0x7f0a02f3
+.field public static final picker:I = 0x7f0a02f0
 
-.field public static final playback_progress:I = 0x7f0a0303
+.field public static final playback_progress:I = 0x7f0a0300
 
-.field public static final row_content:I = 0x7f0a035a
+.field public static final row_content:I = 0x7f0a0357
 
-.field public static final search_orb:I = 0x7f0a0393
+.field public static final search_orb:I = 0x7f0a0390
 
-.field public static final title:I = 0x7f0a0405
+.field public static final title:I = 0x7f0a0402
 
-.field public static final title_badge:I = 0x7f0a0407
+.field public static final title_badge:I = 0x7f0a0404
 
-.field public static final title_orb:I = 0x7f0a0409
+.field public static final title_orb:I = 0x7f0a0406
 
-.field public static final title_text:I = 0x7f0a040b
+.field public static final title_text:I = 0x7f0a0408
 
-.field public static final transitionPosition:I = 0x7f0a0425
+.field public static final transitionPosition:I = 0x7f0a0420

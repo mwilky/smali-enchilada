@@ -36,9 +36,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/FragmentTransitionCompat21;Ljava/lang/Object;Ljava/util/ArrayList;Ljava/lang/Object;Ljava/util/ArrayList;Ljava/lang/Object;Ljava/util/ArrayList;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v4/app/FragmentTransitionCompat21;
 
-    .line 215
     iput-object p1, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->this$0:Landroid/support/v4/app/FragmentTransitionCompat21;
 
     iput-object p2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$enterTransition:Ljava/lang/Object;
@@ -62,48 +60,37 @@
 # virtual methods
 .method public onTransitionCancel(Landroid/transition/Transition;)V
     .locals 0
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 235
     return-void
 .end method
 
 .method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 0
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 231
     return-void
 .end method
 
 .method public onTransitionPause(Landroid/transition/Transition;)V
     .locals 0
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 239
     return-void
 .end method
 
 .method public onTransitionResume(Landroid/transition/Transition;)V
     .locals 0
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 243
     return-void
 .end method
 
 .method public onTransitionStart(Landroid/transition/Transition;)V
     .locals 4
-    .param p1, "transition"    # Landroid/transition/Transition;
 
-    .line 218
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$enterTransition:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 219
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->this$0:Landroid/support/v4/app/FragmentTransitionCompat21;
 
     iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$enterTransition:Ljava/lang/Object;
@@ -112,13 +99,11 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/support/v4/app/FragmentTransitionCompat21;->replaceTargets(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 221
     :cond_0
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$exitTransition:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    .line 222
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->this$0:Landroid/support/v4/app/FragmentTransitionCompat21;
 
     iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$exitTransition:Ljava/lang/Object;
@@ -127,13 +112,11 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/support/v4/app/FragmentTransitionCompat21;->replaceTargets(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 224
     :cond_1
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$sharedElementTransition:Ljava/lang/Object;
 
     if-eqz v0, :cond_2
 
-    .line 225
     iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->this$0:Landroid/support/v4/app/FragmentTransitionCompat21;
 
     iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$3;->val$sharedElementTransition:Ljava/lang/Object;
@@ -142,7 +125,6 @@
 
     invoke-virtual {v0, v2, v3, v1}, Landroid/support/v4/app/FragmentTransitionCompat21;->replaceTargets(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 227
     :cond_2
     return-void
 .end method

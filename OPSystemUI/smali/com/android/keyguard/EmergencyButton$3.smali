@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/EmergencyButton;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/EmergencyButton;
 
-    .line 133
     iput-object p1, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,9 +36,7 @@
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 136
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-static {v0}, Lcom/android/keyguard/EmergencyButton;->access$200(Lcom/android/keyguard/EmergencyButton;)Z
@@ -51,7 +47,6 @@
 
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
-    .line 137
     invoke-static {v0}, Lcom/android/keyguard/EmergencyButton;->access$300(Lcom/android/keyguard/EmergencyButton;)Lcom/android/internal/util/EmergencyAffordanceManager;
 
     move-result-object v0
@@ -62,7 +57,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 138
     iget-object v0, p0, Lcom/android/keyguard/EmergencyButton$3;->this$0:Lcom/android/keyguard/EmergencyButton;
 
     invoke-static {v0}, Lcom/android/keyguard/EmergencyButton;->access$300(Lcom/android/keyguard/EmergencyButton;)Lcom/android/internal/util/EmergencyAffordanceManager;
@@ -71,12 +65,10 @@
 
     invoke-virtual {v0}, Lcom/android/internal/util/EmergencyAffordanceManager;->performEmergencyCall()V
 
-    .line 139
     const/4 v0, 0x1
 
     return v0
 
-    .line 141
     :cond_0
     const/4 v0, 0x0
 

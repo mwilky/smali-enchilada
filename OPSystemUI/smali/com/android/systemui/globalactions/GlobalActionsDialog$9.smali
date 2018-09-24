@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 1274
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -35,9 +33,7 @@
 # virtual methods
 .method public onServiceStateChanged(Landroid/telephony/ServiceState;)V
     .locals 3
-    .param p1, "serviceState"    # Landroid/telephony/ServiceState;
 
-    .line 1277
     iget-object v0, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v0}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
@@ -48,7 +44,6 @@
 
     return-void
 
-    .line 1278
     :cond_0
     invoke-virtual {p1}, Landroid/telephony/ServiceState;->getState()I
 
@@ -65,8 +60,6 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 1279
-    .local v0, "inAirplaneMode":Z
     :goto_0
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
@@ -82,7 +75,6 @@
     :goto_1
     invoke-static {v1, v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$402(Lcom/android/systemui/globalactions/GlobalActionsDialog;Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;
 
-    .line 1280
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1800(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;
@@ -97,7 +89,6 @@
 
     invoke-virtual {v1, v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction;->updateState(Lcom/android/systemui/globalactions/GlobalActionsDialog$ToggleAction$State;)V
 
-    .line 1281
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$9;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1900(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;
@@ -106,6 +97,5 @@
 
     invoke-virtual {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog$MyAdapter;->notifyDataSetChanged()V
 
-    .line 1282
     return-void
 .end method

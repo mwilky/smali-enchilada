@@ -18,27 +18,23 @@
 .method public onFinishedGoingToSleep()V
     .locals 0
 
-    .line 90
     return-void
 .end method
 
 .method public onFinishedWakingUp()V
     .locals 0
 
-    .line 88
     return-void
 .end method
 
 .method public onStartedGoingToSleep()V
     .locals 0
 
-    .line 89
     return-void
 .end method
 
 .method public onStartedWakingUp()V
     .locals 0
 
-    .line 87
     return-void
 .end method

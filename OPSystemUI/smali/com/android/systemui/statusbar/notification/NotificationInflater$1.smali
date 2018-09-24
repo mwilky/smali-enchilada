@@ -22,7 +22,6 @@
 .method constructor <init>(Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;)V
     .locals 0
 
-    .line 206
     iput-object p1, p0, Lcom/android/systemui/statusbar/notification/NotificationInflater$1;->val$result:Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/notification/NotificationInflater$ApplyCallback;-><init>()V
@@ -35,7 +34,6 @@
 .method public getRemoteView()Landroid/widget/RemoteViews;
     .locals 1
 
-    .line 214
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationInflater$1;->val$result:Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;->access$200(Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;)Landroid/widget/RemoteViews;
@@ -47,13 +45,10 @@
 
 .method public setResultView(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
 
-    .line 209
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/NotificationInflater$1;->val$result:Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;
 
     invoke-static {v0, p1}, Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;->access$902(Lcom/android/systemui/statusbar/notification/NotificationInflater$InflationProgress;Landroid/view/View;)Landroid/view/View;
 
-    .line 210
     return-void
 .end method

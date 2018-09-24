@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 31
     new-instance v0, Landroid/support/v7/app/MediaRouteDialogFactory;
 
     invoke-direct {v0}, Landroid/support/v7/app/MediaRouteDialogFactory;-><init>()V
@@ -24,17 +23,14 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
     return-void
 .end method
 
 .method public static getDefault()Landroid/support/v7/app/MediaRouteDialogFactory;
     .locals 1
 
-    .line 46
     sget-object v0, Landroid/support/v7/app/MediaRouteDialogFactory;->sDefault:Landroid/support/v7/app/MediaRouteDialogFactory;
 
     return-object v0
@@ -45,7 +41,6 @@
 .method public onCreateChooserDialogFragment()Landroid/support/v7/app/MediaRouteChooserDialogFragment;
     .locals 1
 
-    .line 59
     new-instance v0, Landroid/support/v7/app/MediaRouteChooserDialogFragment;
 
     invoke-direct {v0}, Landroid/support/v7/app/MediaRouteChooserDialogFragment;-><init>()V
@@ -56,7 +51,6 @@
 .method public onCreateControllerDialogFragment()Landroid/support/v7/app/MediaRouteControllerDialogFragment;
     .locals 1
 
-    .line 72
     new-instance v0, Landroid/support/v7/app/MediaRouteControllerDialogFragment;
 
     invoke-direct {v0}, Landroid/support/v7/app/MediaRouteControllerDialogFragment;-><init>()V

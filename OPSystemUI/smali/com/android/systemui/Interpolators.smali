@@ -39,7 +39,6 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 33
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3e4ccccd    # 0.2f
@@ -54,28 +53,24 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->FAST_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 34
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     invoke-direct {v0, v2, v4, v3, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->FAST_OUT_LINEAR_IN:Landroid/view/animation/Interpolator;
 
-    .line 35
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     invoke-direct {v0, v4, v4, v1, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->LINEAR_OUT_SLOW_IN:Landroid/view/animation/Interpolator;
 
-    .line 36
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     invoke-direct {v0, v2, v4, v3, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->ALPHA_IN:Landroid/view/animation/Interpolator;
 
-    .line 37
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3f4ccccd    # 0.8f
@@ -84,28 +79,24 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->ALPHA_OUT:Landroid/view/animation/Interpolator;
 
-    .line 38
     new-instance v0, Landroid/view/animation/LinearInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->LINEAR:Landroid/view/animation/Interpolator;
 
-    .line 39
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->ACCELERATE:Landroid/view/animation/Interpolator;
 
-    .line 40
     new-instance v0, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->ACCELERATE_DECELERATE:Landroid/view/animation/Interpolator;
 
-    .line 41
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v5, 0x40200000    # 2.5f
@@ -114,7 +105,6 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->DECELERATE_QUINT:Landroid/view/animation/Interpolator;
 
-    .line 42
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3f19999a    # 0.6f
@@ -123,14 +113,12 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->CUSTOM_40_40:Landroid/view/animation/Interpolator;
 
-    .line 43
     new-instance v0, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;
 
     invoke-direct {v0}, Lcom/android/systemui/statusbar/stack/HeadsUpAppearInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->HEADS_UP_APPEAR:Landroid/view/animation/Interpolator;
 
-    .line 44
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3fb33333    # 1.4f
@@ -139,7 +127,6 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->ICON_OVERSHOT:Landroid/view/animation/Interpolator;
 
-    .line 45
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3e99999a    # 0.3f
@@ -150,14 +137,12 @@
 
     sput-object v0, Lcom/android/systemui/Interpolators;->PANEL_CLOSE_ACCELERATED:Landroid/view/animation/Interpolator;
 
-    .line 47
     new-instance v0, Landroid/view/animation/BounceInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/BounceInterpolator;-><init>()V
 
     sput-object v0, Lcom/android/systemui/Interpolators;->BOUNCE:Landroid/view/animation/Interpolator;
 
-    .line 52
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v2, 0x3dcccccd    # 0.1f

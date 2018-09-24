@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/keyguard/KeyguardUpdateMonitor;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/keyguard/KeyguardUpdateMonitor;
 
-    .line 1561
     iput-object p1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,39 +36,29 @@
 # virtual methods
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "accuracy"    # I
 
-    .line 1582
     return-void
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 4
-    .param p1, "event"    # Landroid/hardware/SensorEvent;
 
-    .line 1565
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
     array-length v0, v0
 
     if-nez v0, :cond_0
 
-    .line 1566
     const-string v0, "KeyguardUpdateMonitor"
 
     const-string v1, "Event has no values!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1567
     const/4 v0, 0x0
 
-    .local v0, "pocketState":I
     goto :goto_1
 
-    .line 1570
-    .end local v0    # "pocketState":I
     :cond_0
     const-string v0, "KeyguardUpdateMonitor"
 
@@ -112,7 +100,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1571
     iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
     aget v0, v0, v3
@@ -132,8 +119,6 @@
     :cond_1
     move v0, v3
 
-    .line 1572
-    .local v0, "isNear":Z
     if-eqz v0, :cond_2
 
     goto :goto_0
@@ -141,12 +126,9 @@
     :cond_2
     const/4 v1, 0x2
 
-    .end local v0    # "isNear":Z
     :goto_0
     move v0, v1
 
-    .line 1575
-    .local v0, "pocketState":I
     :goto_1
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
@@ -156,7 +138,6 @@
 
     if-eq v1, v0, :cond_3
 
-    .line 1576
     iget-object v1, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
 
     iget-object v2, p0, Lcom/android/keyguard/KeyguardUpdateMonitor$10;->this$0:Lcom/android/keyguard/KeyguardUpdateMonitor;
@@ -167,7 +148,6 @@
 
     invoke-static {v1, v0, v2}, Lcom/android/keyguard/KeyguardUpdateMonitor;->access$4700(Lcom/android/keyguard/KeyguardUpdateMonitor;IZ)V
 
-    .line 1578
     :cond_3
     return-void
 .end method

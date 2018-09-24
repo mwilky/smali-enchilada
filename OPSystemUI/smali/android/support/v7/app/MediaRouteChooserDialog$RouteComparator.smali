@@ -34,7 +34,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 385
     new-instance v0, Landroid/support/v7/app/MediaRouteChooserDialog$RouteComparator;
 
     invoke-direct {v0}, Landroid/support/v7/app/MediaRouteChooserDialog$RouteComparator;-><init>()V
@@ -47,7 +46,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 384
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,10 +55,7 @@
 # virtual methods
 .method public compare(Landroid/support/v7/media/MediaRouter$RouteInfo;Landroid/support/v7/media/MediaRouter$RouteInfo;)I
     .locals 2
-    .param p1, "lhs"    # Landroid/support/v7/media/MediaRouter$RouteInfo;
-    .param p2, "rhs"    # Landroid/support/v7/media/MediaRouter$RouteInfo;
 
-    .line 389
     invoke-virtual {p1}, Landroid/support/v7/media/MediaRouter$RouteInfo;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -79,7 +74,6 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 384
     check-cast p1, Landroid/support/v7/media/MediaRouter$RouteInfo;
 
     check-cast p2, Landroid/support/v7/media/MediaRouter$RouteInfo;

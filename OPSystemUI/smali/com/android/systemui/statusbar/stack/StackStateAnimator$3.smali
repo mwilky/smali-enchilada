@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/StackStateAnimator;Lcom/android/systemui/statusbar/ExpandableView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
-    .line 414
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->this$0:Lcom/android/systemui/statusbar/stack/StackStateAnimator;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->val$changingView:Lcom/android/systemui/statusbar/ExpandableView;
@@ -43,11 +41,9 @@
 .method public run()V
     .locals 1
 
-    .line 417
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/StackStateAnimator$3;->val$changingView:Lcom/android/systemui/statusbar/ExpandableView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/stack/StackStateAnimator;->removeTransientView(Lcom/android/systemui/statusbar/ExpandableView;)V
 
-    .line 418
     return-void
 .end method

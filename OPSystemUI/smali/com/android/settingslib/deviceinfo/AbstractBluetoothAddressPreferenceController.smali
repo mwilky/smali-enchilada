@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 39
     const-string v0, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     filled-new-array {v0}, [Ljava/lang/String;

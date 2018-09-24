@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/plugin/RippleView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/plugin/RippleView;
 
-    .line 50
     iput-object p1, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,17 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 4
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 54
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 55
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-virtual {v0}, Lcom/android/systemui/plugin/RippleView;->invalidate()V
 
-    .line 56
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0}, Lcom/android/systemui/plugin/RippleView;->access$000(Lcom/android/systemui/plugin/RippleView;)Z
@@ -54,12 +48,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 57
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0}, Lcom/android/systemui/plugin/RippleView;->access$108(Lcom/android/systemui/plugin/RippleView;)I
 
-    .line 58
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0}, Lcom/android/systemui/plugin/RippleView;->access$100(Lcom/android/systemui/plugin/RippleView;)I
@@ -86,18 +78,15 @@
 
     if-lez v0, :cond_0
 
-    .line 59
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/plugin/RippleView;->access$102(Lcom/android/systemui/plugin/RippleView;I)I
 
-    .line 61
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0}, Lcom/android/systemui/plugin/RippleView;->access$308(Lcom/android/systemui/plugin/RippleView;)I
 
-    .line 62
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0}, Lcom/android/systemui/plugin/RippleView;->access$300(Lcom/android/systemui/plugin/RippleView;)I
@@ -122,12 +111,10 @@
 
     if-lez v0, :cond_1
 
-    .line 63
     iget-object v0, p0, Lcom/android/systemui/plugin/RippleView$1;->this$0:Lcom/android/systemui/plugin/RippleView;
 
     invoke-static {v0, v1}, Lcom/android/systemui/plugin/RippleView;->access$302(Lcom/android/systemui/plugin/RippleView;I)I
 
-    .line 65
     :cond_1
     sget v0, Lcom/android/systemui/plugin/RippleView;->MESSAGE_DELAY:I
 
@@ -135,7 +122,6 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/android/systemui/plugin/RippleView$1;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 67
     :cond_2
     return-void
 .end method

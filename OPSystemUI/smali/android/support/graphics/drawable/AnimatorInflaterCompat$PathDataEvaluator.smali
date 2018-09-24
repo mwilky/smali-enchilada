@@ -35,18 +35,14 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 166
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 167
     return-void
 .end method
 
 .method synthetic constructor <init>(Landroid/support/graphics/drawable/AnimatorInflaterCompat$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/support/graphics/drawable/AnimatorInflaterCompat$1;
 
-    .line 157
     invoke-direct {p0}, Landroid/support/graphics/drawable/AnimatorInflaterCompat$PathDataEvaluator;-><init>()V
 
     return-void
@@ -57,7 +53,6 @@
 .method public bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 157
     check-cast p2, [Landroid/support/v4/graphics/PathParser$PathDataNode;
 
     check-cast p3, [Landroid/support/v4/graphics/PathParser$PathDataNode;
@@ -71,18 +66,13 @@
 
 .method public evaluate(F[Landroid/support/v4/graphics/PathParser$PathDataNode;[Landroid/support/v4/graphics/PathParser$PathDataNode;)[Landroid/support/v4/graphics/PathParser$PathDataNode;
     .locals 4
-    .param p1, "fraction"    # F
-    .param p2, "startPathData"    # [Landroid/support/v4/graphics/PathParser$PathDataNode;
-    .param p3, "endPathData"    # [Landroid/support/v4/graphics/PathParser$PathDataNode;
 
-    .line 185
     invoke-static {p2, p3}, Landroid/support/v4/graphics/PathParser;->canMorph([Landroid/support/v4/graphics/PathParser$PathDataNode;[Landroid/support/v4/graphics/PathParser$PathDataNode;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 190
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatorInflaterCompat$PathDataEvaluator;->mNodeArray:[Landroid/support/v4/graphics/PathParser$PathDataNode;
 
     if-eqz v0, :cond_0
@@ -95,7 +85,6 @@
 
     if-nez v0, :cond_1
 
-    .line 191
     :cond_0
     invoke-static {p2}, Landroid/support/v4/graphics/PathParser;->deepCopyNodes([Landroid/support/v4/graphics/PathParser$PathDataNode;)[Landroid/support/v4/graphics/PathParser$PathDataNode;
 
@@ -103,17 +92,14 @@
 
     iput-object v0, p0, Landroid/support/graphics/drawable/AnimatorInflaterCompat$PathDataEvaluator;->mNodeArray:[Landroid/support/v4/graphics/PathParser$PathDataNode;
 
-    .line 194
     :cond_1
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_0
     array-length v1, p2
 
     if-ge v0, v1, :cond_2
 
-    .line 195
     iget-object v1, p0, Landroid/support/graphics/drawable/AnimatorInflaterCompat$PathDataEvaluator;->mNodeArray:[Landroid/support/v4/graphics/PathParser$PathDataNode;
 
     aget-object v1, v1, v0
@@ -124,19 +110,15 @@
 
     invoke-virtual {v1, v2, v3, p1}, Landroid/support/v4/graphics/PathParser$PathDataNode;->interpolatePathDataNode(Landroid/support/v4/graphics/PathParser$PathDataNode;Landroid/support/v4/graphics/PathParser$PathDataNode;F)V
 
-    .line 194
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 199
-    .end local v0    # "i":I
     :cond_2
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatorInflaterCompat$PathDataEvaluator;->mNodeArray:[Landroid/support/v4/graphics/PathParser$PathDataNode;
 
     return-object v0
 
-    .line 186
     :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/globalactions/GlobalActionsDialog;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 1253
     iput-object p1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$8;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1255
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1256
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -57,7 +50,6 @@
 
     const-string v1, "android.intent.action.SCREEN_OFF"
 
-    .line 1257
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -66,7 +58,6 @@
 
     goto :goto_0
 
-    .line 1262
     :cond_0
     const-string v1, "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
 
@@ -76,7 +67,6 @@
 
     if-eqz v1, :cond_3
 
-    .line 1265
     const-string v1, "PHONE_IN_ECM_STATE"
 
     invoke-virtual {p2, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -87,19 +77,16 @@
 
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$8;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
-    .line 1266
     invoke-static {v1}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$100(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 1267
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$8;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v1, v2}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$102(Lcom/android/systemui/globalactions/GlobalActionsDialog;Z)Z
 
-    .line 1268
     iget-object v1, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$8;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     const/4 v2, 0x1
@@ -108,7 +95,6 @@
 
     goto :goto_1
 
-    .line 1258
     :cond_1
     :goto_0
     const-string v1, "reason"
@@ -117,8 +103,6 @@
 
     move-result-object v1
 
-    .line 1259
-    .local v1, "reason":Ljava/lang/String;
     const-string v3, "globalactions"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -127,7 +111,6 @@
 
     if-nez v3, :cond_2
 
-    .line 1260
     iget-object v3, p0, Lcom/android/systemui/globalactions/GlobalActionsDialog$8;->this$0:Lcom/android/systemui/globalactions/GlobalActionsDialog;
 
     invoke-static {v3}, Lcom/android/systemui/globalactions/GlobalActionsDialog;->access$1000(Lcom/android/systemui/globalactions/GlobalActionsDialog;)Landroid/os/Handler;
@@ -146,12 +129,9 @@
 
     invoke-virtual {v3, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 1262
-    .end local v1    # "reason":Ljava/lang/String;
     :cond_2
     nop
 
-    .line 1271
     :cond_3
     :goto_1
     return-void

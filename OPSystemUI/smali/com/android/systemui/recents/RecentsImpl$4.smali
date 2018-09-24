@@ -27,10 +27,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/RecentsImpl;Landroid/os/Handler;Landroid/graphics/RectF;Lcom/android/systemui/shared/recents/model/Task;Lcom/android/systemui/recents/views/TaskViewTransform;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/RecentsImpl;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 911
     iput-object p1, p0, Lcom/android/systemui/recents/RecentsImpl$4;->this$0:Lcom/android/systemui/recents/RecentsImpl;
 
     iput-object p3, p0, Lcom/android/systemui/recents/RecentsImpl$4;->val$toTaskRect:Landroid/graphics/RectF;
@@ -57,18 +54,14 @@
         }
     .end annotation
 
-    .line 914
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 915
-    .local v0, "rect":Landroid/graphics/Rect;
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsImpl$4;->val$toTaskRect:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v0}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
 
-    .line 916
     iget-object v1, p0, Lcom/android/systemui/recents/RecentsImpl$4;->this$0:Lcom/android/systemui/recents/RecentsImpl;
 
     iget-object v2, p0, Lcom/android/systemui/recents/RecentsImpl$4;->val$toTask:Lcom/android/systemui/shared/recents/model/Task;
@@ -79,8 +72,6 @@
 
     move-result-object v1
 
-    .line 917
-    .local v1, "thumbnail":Landroid/graphics/Bitmap;
     const/4 v2, 0x1
 
     new-array v2, v2, [Lcom/android/systemui/shared/recents/view/AppTransitionAnimationSpecCompat;

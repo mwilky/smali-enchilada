@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/LockIcon;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/LockIcon;
 
-    .line 274
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->this$0:Lcom/android/systemui/statusbar/phone/LockIcon;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->val$v:Landroid/view/View;
@@ -42,9 +40,7 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 282
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->this$0:Lcom/android/systemui/statusbar/phone/LockIcon;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/LockIcon;->access$000(Lcom/android/systemui/statusbar/phone/LockIcon;)Landroid/content/Context;
@@ -63,7 +59,6 @@
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->this$0:Lcom/android/systemui/statusbar/phone/LockIcon;
 
-    .line 283
     invoke-static {v0}, Lcom/android/systemui/statusbar/phone/LockIcon;->access$100(Lcom/android/systemui/statusbar/phone/LockIcon;)Landroid/view/animation/Animation;
 
     move-result-object v0
@@ -72,7 +67,6 @@
 
     goto :goto_0
 
-    .line 287
     :cond_0
     sget-boolean v0, Landroid/os/Build;->DEBUG_ONEPLUS:Z
 
@@ -84,7 +78,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 288
     :cond_1
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->this$0:Lcom/android/systemui/statusbar/phone/LockIcon;
 
@@ -94,7 +87,6 @@
 
     invoke-virtual {v0, p0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 289
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->val$v:Landroid/view/View;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/LockIcon$1;->this$0:Lcom/android/systemui/statusbar/phone/LockIcon;
@@ -105,10 +97,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 290
     return-void
 
-    .line 284
     :cond_2
     :goto_0
     return-void
@@ -116,16 +106,12 @@
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 279
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
-    .line 276
     return-void
 .end method

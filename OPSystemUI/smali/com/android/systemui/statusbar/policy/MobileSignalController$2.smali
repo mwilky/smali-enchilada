@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
-    .line 1083
     iput-object p1, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,16 +33,11 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 1086
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1087
-    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.SIM_STATE_CHANGED"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -55,17 +48,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 1088
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mSubscriptionInfo:Landroid/telephony/SubscriptionInfo;
 
     if-nez v1, :cond_0
 
-    .line 1089
     return-void
 
-    .line 1092
     :cond_0
     const-string v1, "slot"
 
@@ -73,8 +63,6 @@
 
     move-result v1
 
-    .line 1093
-    .local v1, "slotId":I
     const-string v2, "subscription"
 
     const/4 v3, -0x1
@@ -83,21 +71,16 @@
 
     move-result v2
 
-    .line 1095
-    .local v2, "subId":I
     const-string v3, "ss"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1096
-    .local v3, "state":Ljava/lang/String;
     sget-boolean v4, Lcom/android/systemui/statusbar/policy/SignalController;->DEBUG:Z
 
     if-eqz v4, :cond_1
 
-    .line 1097
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     iget-object v4, v4, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mTag:Ljava/lang/String;
@@ -130,7 +113,6 @@
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
-    .line 1101
     invoke-virtual {v6}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->getSimSlotIndex()I
 
     move-result v6
@@ -141,10 +123,8 @@
 
     move-result-object v5
 
-    .line 1097
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1103
     :cond_1
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
@@ -164,7 +144,6 @@
 
     if-ne v4, v2, :cond_3
 
-    .line 1104
     :cond_2
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
@@ -174,24 +153,17 @@
 
     iput-object v3, v4, Lcom/android/systemui/statusbar/policy/MobileSignalController$MobileState;->simstate:Ljava/lang/String;
 
-    .line 1105
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->access$100(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
 
-    .line 1106
     iget-object v4, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     invoke-static {v4}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->access$000(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
 
-    .line 1108
-    .end local v1    # "slotId":I
-    .end local v2    # "subId":I
-    .end local v3    # "state":Ljava/lang/String;
     :cond_3
     goto :goto_0
 
-    .line 1110
     :cond_4
     const-string v1, "android.intent.action.PHONE_STATE"
 
@@ -201,24 +173,18 @@
 
     if-eqz v1, :cond_5
 
-    .line 1111
     const-string v1, "state"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1112
-    .local v1, "state":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     invoke-static {v2, v1}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->access$200(Lcom/android/systemui/statusbar/policy/MobileSignalController;Ljava/lang/String;)V
 
-    .line 1113
-    .end local v1    # "state":Ljava/lang/String;
     goto :goto_0
 
-    .line 1116
     :cond_5
     const-string v1, "android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"
 
@@ -228,7 +194,6 @@
 
     if-eqz v1, :cond_7
 
-    .line 1117
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     iget-object v1, v1, Lcom/android/systemui/statusbar/policy/MobileSignalController;->mCurrentState:Lcom/android/systemui/statusbar/policy/SignalController$State;
@@ -256,12 +221,10 @@
     :cond_6
     iput-boolean v2, v1, Lcom/android/systemui/statusbar/policy/MobileSignalController$MobileState;->isDefaultDataSubId:Z
 
-    .line 1118
     iget-object v1, p0, Lcom/android/systemui/statusbar/policy/MobileSignalController$2;->this$0:Lcom/android/systemui/statusbar/policy/MobileSignalController;
 
     invoke-static {v1}, Lcom/android/systemui/statusbar/policy/MobileSignalController;->access$000(Lcom/android/systemui/statusbar/policy/MobileSignalController;)V
 
-    .line 1121
     :cond_7
     :goto_0
     return-void

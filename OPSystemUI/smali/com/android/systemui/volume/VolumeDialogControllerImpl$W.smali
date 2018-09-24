@@ -21,15 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/volume/VolumeDialogControllerImpl;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
 
-    .line 798
     iput-object p1, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
-    .line 799
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 800
     return-void
 .end method
 
@@ -37,9 +33,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 804
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -50,7 +44,6 @@
 
     goto/16 :goto_0
 
-    .line 819
     :pswitch_0
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -62,7 +55,6 @@
 
     goto/16 :goto_0
 
-    .line 818
     :pswitch_1
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -72,7 +64,6 @@
 
     goto/16 :goto_0
 
-    .line 817
     :pswitch_2
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -80,7 +71,6 @@
 
     goto/16 :goto_0
 
-    .line 816
     :pswitch_3
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -97,7 +87,6 @@
 
     goto/16 :goto_0
 
-    .line 815
     :pswitch_4
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -107,7 +96,6 @@
 
     goto/16 :goto_0
 
-    .line 814
     :pswitch_5
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -119,7 +107,6 @@
 
     goto :goto_0
 
-    .line 813
     :pswitch_6
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -129,7 +116,6 @@
 
     goto :goto_0
 
-    .line 812
     :pswitch_7
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -141,7 +127,6 @@
 
     goto :goto_0
 
-    .line 811
     :pswitch_8
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -160,7 +145,6 @@
 
     goto :goto_0
 
-    .line 810
     :pswitch_9
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -172,7 +156,6 @@
 
     goto :goto_0
 
-    .line 809
     :pswitch_a
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -182,7 +165,6 @@
 
     goto :goto_0
 
-    .line 808
     :pswitch_b
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -201,7 +183,6 @@
 
     goto :goto_0
 
-    .line 807
     :pswitch_c
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -209,7 +190,6 @@
 
     goto :goto_0
 
-    .line 806
     :pswitch_d
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -219,7 +199,6 @@
 
     goto :goto_0
 
-    .line 805
     :pswitch_e
     iget-object v0, p0, Lcom/android/systemui/volume/VolumeDialogControllerImpl$W;->this$0:Lcom/android/systemui/volume/VolumeDialogControllerImpl;
 
@@ -229,7 +208,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/systemui/volume/VolumeDialogControllerImpl;->onVolumeChangedW(II)Z
 
-    .line 822
     :goto_0
     return-void
 

@@ -21,9 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/notification/FakeShadowView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/notification/FakeShadowView;
 
-    .line 61
     iput-object p1, p0, Lcom/android/systemui/statusbar/notification/FakeShadowView$1;->this$0:Lcom/android/systemui/statusbar/notification/FakeShadowView;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,10 +33,7 @@
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "outline"    # Landroid/graphics/Outline;
 
-    .line 64
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/FakeShadowView$1;->this$0:Lcom/android/systemui/statusbar/notification/FakeShadowView;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/notification/FakeShadowView;->getWidth()I
@@ -59,7 +54,6 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    .line 65
     iget-object v0, p0, Lcom/android/systemui/statusbar/notification/FakeShadowView$1;->this$0:Lcom/android/systemui/statusbar/notification/FakeShadowView;
 
     invoke-static {v0}, Lcom/android/systemui/statusbar/notification/FakeShadowView;->access$100(Lcom/android/systemui/statusbar/notification/FakeShadowView;)F
@@ -68,6 +62,5 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Outline;->setAlpha(F)V
 
-    .line 66
     return-void
 .end method

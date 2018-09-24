@@ -35,51 +35,33 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/ExpandableNotificationRow;ILcom/android/systemui/statusbar/NotificationHeaderUtil$DataExtractor;Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;Lcom/android/systemui/statusbar/NotificationHeaderUtil$ResultApplicator;)V
     .locals 0
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-    .param p2, "id"    # I
-    .param p3, "extractor"    # Lcom/android/systemui/statusbar/NotificationHeaderUtil$DataExtractor;
-    .param p4, "comparator"    # Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;
-    .param p5, "applicator"    # Lcom/android/systemui/statusbar/NotificationHeaderUtil$ResultApplicator;
 
-    .line 254
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 255
     iput p2, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mId:I
 
-    .line 256
     iput-object p3, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mExtractor:Lcom/android/systemui/statusbar/NotificationHeaderUtil$DataExtractor;
 
-    .line 257
     iput-object p5, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApplicator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ResultApplicator;
 
-    .line 258
     iput-object p4, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mComparator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;
 
-    .line 259
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mParentRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 260
     return-void
 .end method
 
 .method private applyToView(ZLandroid/view/View;)V
     .locals 2
-    .param p1, "apply"    # Z
-    .param p2, "parent"    # Landroid/view/View;
 
-    .line 298
     if-eqz p2, :cond_0
 
-    .line 299
     iget v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mId:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 300
-    .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_0
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mComparator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;
@@ -90,23 +72,17 @@
 
     if-nez v1, :cond_0
 
-    .line 301
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApplicator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ResultApplicator;
 
     invoke-interface {v1, v0, p1}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$ResultApplicator;->apply(Landroid/view/View;Z)V
 
-    .line 304
-    .end local v0    # "view":Landroid/view/View;
     :cond_0
     return-void
 .end method
 
 .method public static forTextView(Lcom/android/systemui/statusbar/ExpandableNotificationRow;I)Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;
     .locals 7
-    .param p0, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-    .param p1, "id"    # I
 
-    .line 249
     new-instance v6, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;
 
     invoke-static {}, Lcom/android/systemui/statusbar/NotificationHeaderUtil;->access$300()Lcom/android/systemui/statusbar/NotificationHeaderUtil$TextViewComparator;
@@ -134,23 +110,17 @@
 # virtual methods
 .method public apply(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 1
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 283
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->apply(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Z)V
 
-    .line 284
     return-void
 .end method
 
 .method public apply(Lcom/android/systemui/statusbar/ExpandableNotificationRow;Z)V
     .locals 2
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
-    .param p2, "reset"    # Z
 
-    .line 287
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApply:Z
 
     if-eqz v0, :cond_0
@@ -164,8 +134,6 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 288
-    .local v0, "apply":Z
     :goto_0
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->isSummaryWithChildren()Z
 
@@ -173,17 +141,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 289
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getNotificationHeader()Landroid/view/NotificationHeaderView;
 
     move-result-object v1
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->applyToView(ZLandroid/view/View;)V
 
-    .line 290
     return-void
 
-    .line 292
     :cond_1
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getPrivateLayout()Lcom/android/systemui/statusbar/NotificationContentView;
 
@@ -195,7 +160,6 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->applyToView(ZLandroid/view/View;)V
 
-    .line 293
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getPrivateLayout()Lcom/android/systemui/statusbar/NotificationContentView;
 
     move-result-object v1
@@ -206,7 +170,6 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->applyToView(ZLandroid/view/View;)V
 
-    .line 294
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getPrivateLayout()Lcom/android/systemui/statusbar/NotificationContentView;
 
     move-result-object v1
@@ -217,36 +180,27 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->applyToView(ZLandroid/view/View;)V
 
-    .line 295
     return-void
 .end method
 
 .method public compareToHeader(Lcom/android/systemui/statusbar/ExpandableNotificationRow;)V
     .locals 6
-    .param p1, "row"    # Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
-    .line 268
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApply:Z
 
     if-nez v0, :cond_0
 
-    .line 269
     return-void
 
-    .line 271
     :cond_0
     invoke-virtual {p1}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getContractedNotificationHeader()Landroid/view/NotificationHeaderView;
 
     move-result-object v0
 
-    .line 272
-    .local v0, "header":Landroid/view/NotificationHeaderView;
     if-nez v0, :cond_1
 
-    .line 275
     return-void
 
-    .line 277
     :cond_1
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mExtractor:Lcom/android/systemui/statusbar/NotificationHeaderUtil$DataExtractor;
 
@@ -263,8 +217,6 @@
 
     move-result-object v1
 
-    .line 278
-    .local v1, "childData":Ljava/lang/Object;
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mComparator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;
 
@@ -284,14 +236,12 @@
 
     iput-boolean v2, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApply:Z
 
-    .line 280
     return-void
 .end method
 
 .method public init()V
     .locals 2
 
-    .line 263
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mParentRow:Lcom/android/systemui/statusbar/ExpandableNotificationRow;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->getNotificationHeader()Landroid/view/NotificationHeaderView;
@@ -306,7 +256,6 @@
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mParentView:Landroid/view/View;
 
-    .line 264
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mExtractor:Lcom/android/systemui/statusbar/NotificationHeaderUtil$DataExtractor;
 
     if-nez v0, :cond_0
@@ -327,7 +276,6 @@
     :goto_0
     iput-object v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mParentData:Ljava/lang/Object;
 
-    .line 265
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mComparator:Lcom/android/systemui/statusbar/NotificationHeaderUtil$ViewComparator;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mParentView:Landroid/view/View;
@@ -340,6 +288,5 @@
 
     iput-boolean v0, p0, Lcom/android/systemui/statusbar/NotificationHeaderUtil$HeaderProcessor;->mApply:Z
 
-    .line 266
     return-void
 .end method

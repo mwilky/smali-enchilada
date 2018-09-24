@@ -17,9 +17,7 @@
 # direct methods
 .method public static getDeviceType(Ljava/lang/Object;)I
     .locals 1
-    .param p0, "routeObj"    # Ljava/lang/Object;
 
-    .line 25
     move-object v0, p0
 
     check-cast v0, Landroid/media/MediaRouter$RouteInfo;

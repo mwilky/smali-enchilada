@@ -23,9 +23,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/ActivatableNotificationView;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
-    .line 615
     iput-object p1, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$9;->this$0:Lcom/android/systemui/statusbar/ActivatableNotificationView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$9;->val$background:Landroid/view/View;
@@ -39,15 +37,12 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 2
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 619
     iget-object v0, p0, Lcom/android/systemui/statusbar/ActivatableNotificationView$9;->val$background:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 620
     return-void
 .end method

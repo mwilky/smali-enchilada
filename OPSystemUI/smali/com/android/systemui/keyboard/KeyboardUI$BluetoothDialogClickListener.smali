@@ -25,7 +25,6 @@
 .method private constructor <init>(Lcom/android/systemui/keyboard/KeyboardUI;)V
     .locals 0
 
-    .line 514
     iput-object p1, p0, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothDialogClickListener;->this$0:Lcom/android/systemui/keyboard/KeyboardUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/keyboard/KeyboardUI;Lcom/android/systemui/keyboard/KeyboardUI$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/keyboard/KeyboardUI;
-    .param p2, "x1"    # Lcom/android/systemui/keyboard/KeyboardUI$1;
 
-    .line 514
     invoke-direct {p0, p1}, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothDialogClickListener;-><init>(Lcom/android/systemui/keyboard/KeyboardUI;)V
 
     return-void
@@ -48,10 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 4
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 517
     const/4 v0, 0x0
 
     const/4 v1, -0x1
@@ -65,8 +58,6 @@
     :cond_0
     move v1, v0
 
-    .line 518
-    .local v1, "enable":I
     :goto_0
     iget-object v2, p0, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothDialogClickListener;->this$0:Lcom/android/systemui/keyboard/KeyboardUI;
 
@@ -82,13 +73,11 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 519
     iget-object v0, p0, Lcom/android/systemui/keyboard/KeyboardUI$BluetoothDialogClickListener;->this$0:Lcom/android/systemui/keyboard/KeyboardUI;
 
     const/4 v2, 0x0
 
     invoke-static {v0, v2}, Lcom/android/systemui/keyboard/KeyboardUI;->access$302(Lcom/android/systemui/keyboard/KeyboardUI;Lcom/android/systemui/keyboard/BluetoothDialog;)Lcom/android/systemui/keyboard/BluetoothDialog;
 
-    .line 520
     return-void
 .end method

@@ -6,9 +6,7 @@
 # direct methods
 .method private static convertDpToPixel(F)I
     .locals 1
-    .param p0, "dp"    # F
 
-    .line 81
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -29,7 +27,6 @@
 .method public static getQuickScrubTouchSlopPx()I
     .locals 1
 
-    .line 45
     const/high16 v0, 0x41c00000    # 24.0f
 
     invoke-static {v0}, Lcom/android/systemui/shared/system/NavigationBarCompat;->convertDpToPixel(F)I
@@ -42,7 +39,6 @@
 .method public static getQuickStepTouchSlopPx()I
     .locals 1
 
-    .line 41
     const/high16 v0, 0x41c00000    # 24.0f
 
     invoke-static {v0}, Lcom/android/systemui/shared/system/NavigationBarCompat;->convertDpToPixel(F)I

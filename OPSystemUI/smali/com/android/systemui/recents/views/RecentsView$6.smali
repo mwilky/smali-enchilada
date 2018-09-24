@@ -31,10 +31,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/recents/views/RecentsView;Landroid/os/Handler;Lcom/android/systemui/shared/recents/model/Task;Lcom/android/systemui/recents/views/TaskStackView;IILandroid/graphics/Rect;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/recents/views/RecentsView;
-    .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 936
     iput-object p1, p0, Lcom/android/systemui/recents/views/RecentsView$6;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     iput-object p3, p0, Lcom/android/systemui/recents/views/RecentsView$6;->val$task:Lcom/android/systemui/shared/recents/model/Task;
@@ -65,7 +62,6 @@
         }
     .end annotation
 
-    .line 939
     iget-object v0, p0, Lcom/android/systemui/recents/views/RecentsView$6;->this$0:Lcom/android/systemui/recents/views/RecentsView;
 
     invoke-static {v0}, Lcom/android/systemui/recents/views/RecentsView;->access$100(Lcom/android/systemui/recents/views/RecentsView;)Lcom/android/systemui/recents/views/RecentsTransitionComposer;

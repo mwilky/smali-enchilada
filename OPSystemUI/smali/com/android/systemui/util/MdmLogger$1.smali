@@ -29,7 +29,6 @@
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 71
     iput-object p1, p0, Lcom/android/systemui/util/MdmLogger$1;->val$label:Ljava/lang/String;
 
     iput-object p2, p0, Lcom/android/systemui/util/MdmLogger$1;->val$value:Ljava/lang/String;
@@ -46,20 +45,16 @@
 .method public run()V
     .locals 3
 
-    .line 73
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 74
-    .local v0, "mdmData":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v1, p0, Lcom/android/systemui/util/MdmLogger$1;->val$label:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/android/systemui/util/MdmLogger$1;->val$value:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 75
     invoke-static {}, Lcom/android/systemui/util/MdmLogger;->access$000()Lnet/oneplus/odm/insight/tracker/AppTracker;
 
     move-result-object v1
@@ -68,6 +63,5 @@
 
     invoke-virtual {v1, v2, v0}, Lnet/oneplus/odm/insight/tracker/AppTracker;->onEvent(Ljava/lang/String;Ljava/util/Map;)V
 
-    .line 76
     return-void
 .end method

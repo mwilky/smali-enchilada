@@ -20,9 +20,7 @@
 
 .method public setCarMode(Z)V
     .locals 0
-    .param p1, "carMode"    # Z
 
-    .line 50
     return-void
 .end method
 

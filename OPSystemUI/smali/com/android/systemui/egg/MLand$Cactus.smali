@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
     .locals 1
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 1402
     iput-object p1, p0, Lcom/android/systemui/egg/MLand$Cactus;->this$0:Lcom/android/systemui/egg/MLand;
 
-    .line 1403
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/egg/MLand$Building;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    .line 1405
     sget-object p1, Lcom/android/systemui/egg/MLand;->CACTI:[I
 
     invoke-static {p1}, Lcom/android/systemui/egg/MLand;->pick([I)I
@@ -38,7 +34,6 @@
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/egg/MLand$Cactus;->setBackgroundResource(I)V
 
-    .line 1406
     invoke-static {}, Lcom/android/systemui/egg/MLand;->access$1000()Lcom/android/systemui/egg/MLand$Params;
 
     move-result-object p1
@@ -63,6 +58,5 @@
 
     iput p1, p0, Lcom/android/systemui/egg/MLand$Cactus;->w:I
 
-    .line 1407
     return-void
 .end method

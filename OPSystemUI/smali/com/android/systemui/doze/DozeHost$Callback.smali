@@ -18,14 +18,11 @@
 .method public onNotificationHeadsUp()V
     .locals 0
 
-    .line 51
     return-void
 .end method
 
 .method public onPowerSaveChanged(Z)V
     .locals 0
-    .param p1, "active"    # Z
 
-    .line 52
     return-void
 .end method

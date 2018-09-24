@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 22
     const-string/jumbo v0, "volume"
 
     const/4 v1, 0x3

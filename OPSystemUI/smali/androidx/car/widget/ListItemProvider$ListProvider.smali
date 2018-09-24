@@ -47,15 +47,10 @@
         }
     .end annotation
 
-    .line 48
-    .local p0, "this":Landroidx/car/widget/ListItemProvider$ListProvider;, "Landroidx/car/widget/ListItemProvider$ListProvider<TVH;>;"
-    .local p1, "items":Ljava/util/List;, "Ljava/util/List<Landroidx/car/widget/ListItem<TVH;>;>;"
     invoke-direct {p0}, Landroidx/car/widget/ListItemProvider;-><init>()V
 
-    .line 49
     iput-object p1, p0, Landroidx/car/widget/ListItemProvider$ListProvider;->mItems:Ljava/util/List;
 
-    .line 50
     return-void
 .end method
 
@@ -63,7 +58,6 @@
 # virtual methods
 .method public get(I)Landroidx/car/widget/ListItem;
     .locals 1
-    .param p1, "position"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -72,8 +66,6 @@
         }
     .end annotation
 
-    .line 54
-    .local p0, "this":Landroidx/car/widget/ListItemProvider$ListProvider;, "Landroidx/car/widget/ListItemProvider$ListProvider<TVH;>;"
     iget-object v0, p0, Landroidx/car/widget/ListItemProvider$ListProvider;->mItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -88,8 +80,6 @@
 .method public size()I
     .locals 1
 
-    .line 59
-    .local p0, "this":Landroidx/car/widget/ListItemProvider$ListProvider;, "Landroidx/car/widget/ListItemProvider$ListProvider<TVH;>;"
     iget-object v0, p0, Landroidx/car/widget/ListItemProvider$ListProvider;->mItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

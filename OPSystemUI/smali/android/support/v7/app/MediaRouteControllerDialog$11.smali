@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/MediaRouteControllerDialog;)V
     .locals 0
-    .param p1, "this$0"    # Landroid/support/v7/app/MediaRouteControllerDialog;
 
-    .line 887
     iput-object p1, p0, Landroid/support/v7/app/MediaRouteControllerDialog$11;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public onGlobalLayout()V
     .locals 1
 
-    .line 890
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$11;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     iget-object v0, v0, Landroid/support/v7/app/MediaRouteControllerDialog;->mVolumeGroupList:Landroid/support/v7/app/OverlayListView;
@@ -50,11 +47,9 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 891
     iget-object v0, p0, Landroid/support/v7/app/MediaRouteControllerDialog$11;->this$0:Landroid/support/v7/app/MediaRouteControllerDialog;
 
     invoke-virtual {v0}, Landroid/support/v7/app/MediaRouteControllerDialog;->startGroupListFadeInAnimationInternal()V
 
-    .line 892
     return-void
 .end method

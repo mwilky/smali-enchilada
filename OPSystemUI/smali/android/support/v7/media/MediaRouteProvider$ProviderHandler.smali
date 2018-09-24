@@ -22,12 +22,10 @@
 .method constructor <init>(Landroid/support/v7/media/MediaRouteProvider;)V
     .locals 0
 
-    .line 435
     iput-object p1, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderHandler;->this$0:Landroid/support/v7/media/MediaRouteProvider;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 436
     return-void
 .end method
 
@@ -35,16 +33,13 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
 
-    .line 440
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
-    .line 445
     :pswitch_0
     iget-object v0, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderHandler;->this$0:Landroid/support/v7/media/MediaRouteProvider;
 
@@ -52,16 +47,13 @@
 
     goto :goto_0
 
-    .line 442
     :pswitch_1
     iget-object v0, p0, Landroid/support/v7/media/MediaRouteProvider$ProviderHandler;->this$0:Landroid/support/v7/media/MediaRouteProvider;
 
     invoke-virtual {v0}, Landroid/support/v7/media/MediaRouteProvider;->deliverDescriptorChanged()V
 
-    .line 443
     nop
 
-    .line 448
     :goto_0
     return-void
 

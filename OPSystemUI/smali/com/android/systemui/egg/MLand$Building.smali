@@ -21,15 +21,11 @@
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
     .locals 1
-    .param p2, "context"    # Landroid/content/Context;
 
-    .line 1392
     iput-object p1, p0, Lcom/android/systemui/egg/MLand$Building;->this$0:Lcom/android/systemui/egg/MLand;
 
-    .line 1393
     invoke-direct {p0, p1, p2}, Lcom/android/systemui/egg/MLand$Scenery;-><init>(Lcom/android/systemui/egg/MLand;Landroid/content/Context;)V
 
-    .line 1395
     invoke-static {}, Lcom/android/systemui/egg/MLand;->access$1000()Lcom/android/systemui/egg/MLand$Params;
 
     move-result-object p1
@@ -48,11 +44,9 @@
 
     iput p1, p0, Lcom/android/systemui/egg/MLand$Building;->w:I
 
-    .line 1396
     const/4 p1, 0x0
 
     iput p1, p0, Lcom/android/systemui/egg/MLand$Building;->h:I
 
-    .line 1397
     return-void
 .end method

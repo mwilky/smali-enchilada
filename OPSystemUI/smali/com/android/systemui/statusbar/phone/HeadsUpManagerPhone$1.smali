@@ -43,14 +43,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;)V
     .locals 1
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;
 
-    .line 77
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->this$0:Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
@@ -65,7 +62,6 @@
 .method public acquire()Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;
     .locals 2
 
-    .line 82
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->mPoolObjects:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -74,7 +70,6 @@
 
     if-nez v0, :cond_0
 
-    .line 83
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->mPoolObjects:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -85,7 +80,6 @@
 
     return-object v0
 
-    .line 85
     :cond_0
     new-instance v0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;
 
@@ -99,7 +93,6 @@
 .method public bridge synthetic acquire()Ljava/lang/Object;
     .locals 1
 
-    .line 77
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->acquire()Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;
 
     move-result-object v0
@@ -109,14 +102,11 @@
 
 .method public release(Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;)Z
     .locals 1
-    .param p1, "instance"    # Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;
 
-    .line 90
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->mPoolObjects:Ljava/util/Stack;
 
     invoke-virtual {v0, p1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 91
     const/4 v0, 0x1
 
     return v0
@@ -125,7 +115,6 @@
 .method public bridge synthetic release(Ljava/lang/Object;)Z
     .locals 0
 
-    .line 77
     check-cast p1, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;
 
     invoke-virtual {p0, p1}, Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$1;->release(Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone$HeadsUpEntryPhone;)Z

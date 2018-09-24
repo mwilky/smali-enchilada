@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/NotificationContentView;Lcom/android/systemui/statusbar/TransformableView;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/NotificationContentView;
 
-    .line 953
     iput-object p1, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->val$hiddenView:Lcom/android/systemui/statusbar/TransformableView;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 3
 
-    .line 956
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->val$hiddenView:Lcom/android/systemui/statusbar/TransformableView;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
@@ -60,14 +57,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 957
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->val$hiddenView:Lcom/android/systemui/statusbar/TransformableView;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/TransformableView;->setVisible(Z)V
 
-    .line 959
     :cond_0
     iget-object v0, p0, Lcom/android/systemui/statusbar/NotificationContentView$2;->this$0:Lcom/android/systemui/statusbar/NotificationContentView;
 
@@ -75,6 +70,5 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/statusbar/NotificationContentView;->access$302(Lcom/android/systemui/statusbar/NotificationContentView;I)I
 
-    .line 960
     return-void
 .end method

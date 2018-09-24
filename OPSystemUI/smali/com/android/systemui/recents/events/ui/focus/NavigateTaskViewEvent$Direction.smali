@@ -40,7 +40,6 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 27
     new-instance v0, Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
 
     const-string v1, "UNDEFINED"
@@ -91,7 +90,6 @@
 
     sput-object v0, Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;->RIGHT:Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
 
-    .line 26
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
@@ -129,7 +127,6 @@
         }
     .end annotation
 
-    .line 26
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -137,9 +134,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
     .locals 1
-    .param p0, "name"    # Ljava/lang/String;
 
-    .line 26
     const-class v0, Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -154,7 +149,6 @@
 .method public static values()[Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
     .locals 1
 
-    .line 26
     sget-object v0, Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;->$VALUES:[Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;
 
     invoke-virtual {v0}, [Lcom/android/systemui/recents/events/ui/focus/NavigateTaskViewEvent$Direction;->clone()Ljava/lang/Object;

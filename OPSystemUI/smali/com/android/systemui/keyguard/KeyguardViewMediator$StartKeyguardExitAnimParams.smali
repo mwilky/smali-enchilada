@@ -23,29 +23,19 @@
 # direct methods
 .method private constructor <init>(JJ)V
     .locals 0
-    .param p1, "startTime"    # J
-    .param p3, "fadeoutDuration"    # J
 
-    .line 2470
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2471
     iput-wide p1, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;->startTime:J
 
-    .line 2472
     iput-wide p3, p0, Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;->fadeoutDuration:J
 
-    .line 2473
     return-void
 .end method
 
 .method synthetic constructor <init>(JJLcom/android/systemui/keyguard/KeyguardViewMediator$1;)V
     .locals 0
-    .param p1, "x0"    # J
-    .param p3, "x1"    # J
-    .param p5, "x2"    # Lcom/android/systemui/keyguard/KeyguardViewMediator$1;
 
-    .line 2465
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/systemui/keyguard/KeyguardViewMediator$StartKeyguardExitAnimParams;-><init>(JJ)V
 
     return-void

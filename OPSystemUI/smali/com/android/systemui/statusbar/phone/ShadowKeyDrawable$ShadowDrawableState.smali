@@ -40,7 +40,6 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 179
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
     return-void
@@ -48,9 +47,7 @@
 
 .method synthetic constructor <init>(Lcom/android/systemui/statusbar/phone/ShadowKeyDrawable$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/systemui/statusbar/phone/ShadowKeyDrawable$1;
 
-    .line 179
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/ShadowKeyDrawable$ShadowDrawableState;-><init>()V
 
     return-void
@@ -61,7 +58,6 @@
 .method public canApplyTheme()Z
     .locals 1
 
-    .line 204
     const/4 v0, 0x1
 
     return v0
@@ -70,7 +66,6 @@
 .method public getChangingConfigurations()I
     .locals 1
 
-    .line 199
     iget v0, p0, Lcom/android/systemui/statusbar/phone/ShadowKeyDrawable$ShadowDrawableState;->mChangingConfigurations:I
 
     return v0
@@ -79,7 +74,6 @@
 .method public newDrawable()Landroid/graphics/drawable/Drawable;
     .locals 2
 
-    .line 194
     new-instance v0, Lcom/android/systemui/statusbar/phone/ShadowKeyDrawable;
 
     const/4 v1, 0x0

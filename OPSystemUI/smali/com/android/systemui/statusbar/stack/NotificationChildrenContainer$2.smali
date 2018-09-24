@@ -26,9 +26,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;Landroid/view/View;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
-    .line 288
     iput-object p1, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$2;->this$0:Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
     iput-object p2, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$2;->val$divider:Landroid/view/View;
@@ -43,7 +41,6 @@
 .method public run()V
     .locals 2
 
-    .line 291
     iget-object v0, p0, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer$2;->this$0:Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;
 
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/stack/NotificationChildrenContainer;->getOverlay()Landroid/view/ViewGroupOverlay;
@@ -54,6 +51,5 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroupOverlay;->remove(Landroid/view/View;)V
 
-    .line 292
     return-void
 .end method

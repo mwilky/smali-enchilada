@@ -6,13 +6,9 @@
 # direct methods
 .method public static evaluate(F)F
     .locals 7
-    .param p0, "value"    # F
 
-    .line 25
     const/4 v0, 0x0
 
-    .line 26
-    .local v0, "evaluation":F
     float-to-double v1, p0
 
     const-wide v3, 0x3fb70a3d70a3d70aL    # 0.09
@@ -25,7 +21,6 @@
 
     add-float/2addr v0, v2
 
-    .line 27
     :cond_0
     float-to-double v3, p0
 
@@ -37,7 +32,6 @@
 
     add-float/2addr v0, v2
 
-    .line 28
     :cond_1
     float-to-double v3, p0
 
@@ -49,7 +43,6 @@
 
     add-float/2addr v0, v2
 
-    .line 29
     :cond_2
     float-to-double v3, p0
 
@@ -61,7 +54,6 @@
 
     add-float/2addr v0, v2
 
-    .line 30
     :cond_3
     float-to-double v3, p0
 
@@ -73,7 +65,6 @@
 
     add-float/2addr v0, v2
 
-    .line 31
     :cond_4
     float-to-double v3, p0
 
@@ -85,7 +76,6 @@
 
     add-float/2addr v0, v2
 
-    .line 32
     :cond_5
     return v0
 .end method

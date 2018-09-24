@@ -25,9 +25,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView;Lcom/android/systemui/assist/AssistDisclosure;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView;
 
-    .line 126
     iput-object p1, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->this$1:Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView;
 
     iput-object p2, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->val$this$0:Lcom/android/systemui/assist/AssistDisclosure;
@@ -41,47 +39,37 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 136
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->mCancelled:Z
 
-    .line 137
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 141
     iget-boolean v0, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->mCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 142
     iget-object v0, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->this$1:Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView;
 
     iget-object v0, v0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView;->this$0:Lcom/android/systemui/assist/AssistDisclosure;
 
     invoke-static {v0}, Lcom/android/systemui/assist/AssistDisclosure;->access$100(Lcom/android/systemui/assist/AssistDisclosure;)V
 
-    .line 144
     :cond_0
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
-    .param p1, "animation"    # Landroid/animation/Animator;
 
-    .line 131
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/systemui/assist/AssistDisclosure$AssistDisclosureView$1;->mCancelled:Z
 
-    .line 132
     return-void
 .end method

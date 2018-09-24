@@ -19,7 +19,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 26
     new-instance v0, Landroid/util/Pools$SimplePool;
 
     const/16 v1, 0x28
@@ -34,7 +33,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 24
     invoke-direct {p0}, Lcom/android/systemui/statusbar/notification/TransformState;-><init>()V
 
     return-void
@@ -43,7 +41,6 @@
 .method public static obtain()Lcom/android/systemui/statusbar/notification/ProgressTransformState;
     .locals 2
 
-    .line 38
     sget-object v0, Lcom/android/systemui/statusbar/notification/ProgressTransformState;->sInstancePool:Landroid/util/Pools$SimplePool;
 
     invoke-virtual {v0}, Landroid/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
@@ -52,14 +49,10 @@
 
     check-cast v0, Lcom/android/systemui/statusbar/notification/ProgressTransformState;
 
-    .line 39
-    .local v0, "instance":Lcom/android/systemui/statusbar/notification/ProgressTransformState;
     if-eqz v0, :cond_0
 
-    .line 40
     return-object v0
 
-    .line 42
     :cond_0
     new-instance v1, Lcom/android/systemui/statusbar/notification/ProgressTransformState;
 
@@ -73,33 +66,26 @@
 .method public recycle()V
     .locals 1
 
-    .line 47
     invoke-super {p0}, Lcom/android/systemui/statusbar/notification/TransformState;->recycle()V
 
-    .line 48
     sget-object v0, Lcom/android/systemui/statusbar/notification/ProgressTransformState;->sInstancePool:Landroid/util/Pools$SimplePool;
 
     invoke-virtual {v0, p0}, Landroid/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
 
-    .line 49
     return-void
 .end method
 
 .method protected sameAs(Lcom/android/systemui/statusbar/notification/TransformState;)Z
     .locals 1
-    .param p1, "otherState"    # Lcom/android/systemui/statusbar/notification/TransformState;
 
-    .line 31
     instance-of v0, p1, Lcom/android/systemui/statusbar/notification/ProgressTransformState;
 
     if-eqz v0, :cond_0
 
-    .line 32
     const/4 v0, 0x1
 
     return v0
 
-    .line 34
     :cond_0
     invoke-super {p0, p1}, Lcom/android/systemui/statusbar/notification/TransformState;->sameAs(Lcom/android/systemui/statusbar/notification/TransformState;)Z
 

@@ -22,7 +22,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 153
     invoke-static {}, Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;->values()[Lcom/oneplus/custom/utils/OpCustomizeSettings$CUSTOM_TYPE;
 
     move-result-object v0

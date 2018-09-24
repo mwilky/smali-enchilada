@@ -31,7 +31,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 59
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.app.slice.BASIC"
@@ -42,7 +41,6 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->OLD_BASIC:Landroidx/slice/SliceSpec;
 
-    .line 65
     new-instance v0, Landroidx/slice/SliceSpec;
 
     const-string v1, "androidx.app.slice.LIST"
@@ -51,7 +49,6 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->OLD_LIST:Landroidx/slice/SliceSpec;
 
-    .line 71
     new-instance v0, Landroid/support/v4/util/ArraySet;
 
     const/4 v1, 0x4
@@ -80,7 +77,6 @@
 
     aput-object v2, v1, v3
 
-    .line 72
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -89,14 +85,11 @@
 
     sput-object v0, Landroidx/slice/widget/SliceLiveData;->SUPPORTED_SPECS:Ljava/util/Set;
 
-    .line 71
     return-void
 .end method
 
 .method public static fromUri(Landroid/content/Context;Landroid/net/Uri;)Landroid/arch/lifecycle/LiveData;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "uri"    # Landroid/net/Uri;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,7 +102,6 @@
         }
     .end annotation
 
-    .line 79
     new-instance v0, Landroidx/slice/widget/SliceLiveData$SliceLiveDataImpl;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;

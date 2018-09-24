@@ -13,7 +13,6 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 42
     const-string v0, "android.net.conn.CONNECTIVITY_CHANGE"
 
     const-string v1, "android.net.wifi.LINK_CONFIGURATION_CHANGED"

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;)V
     .locals 0
-    .param p1, "this$1"    # Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;
 
-    .line 240
     iput-object p1, p0, Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener$1;->this$1:Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 242
     iget-object v0, p0, Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener$1;->this$1:Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;
 
     invoke-static {}, Lcom/android/systemui/qs/customize/QSEditTileAdapter;->access$800()I
@@ -48,6 +45,5 @@
 
     invoke-static {v0, v1}, Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;->access$900(Lcom/android/systemui/qs/customize/QSEditTileAdapter$DragListener;I)V
 
-    .line 243
     return-void
 .end method

@@ -11,7 +11,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 24
     new-instance v0, Landroid/support/transition/MatrixUtils$1;
 
     invoke-direct {v0}, Landroid/support/transition/MatrixUtils$1;-><init>()V

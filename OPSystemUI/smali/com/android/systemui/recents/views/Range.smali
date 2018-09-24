@@ -18,23 +18,17 @@
 # direct methods
 .method public constructor <init>(FF)V
     .locals 0
-    .param p1, "relMin"    # F
-    .param p2, "relMax"    # F
 
-    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
     iput p1, p0, Lcom/android/systemui/recents/views/Range;->relativeMin:F
 
     iput p1, p0, Lcom/android/systemui/recents/views/Range;->min:F
 
-    .line 62
     iput p2, p0, Lcom/android/systemui/recents/views/Range;->relativeMax:F
 
     iput p2, p0, Lcom/android/systemui/recents/views/Range;->max:F
 
-    .line 63
     return-void
 .end method
 
@@ -42,16 +36,13 @@
 # virtual methods
 .method public getAbsoluteX(F)F
     .locals 2
-    .param p1, "normX"    # F
 
-    .line 92
     const/high16 v0, 0x3f000000    # 0.5f
 
     cmpg-float v1, p1, v0
 
     if-gez v1, :cond_0
 
-    .line 93
     sub-float v1, p1, v0
 
     div-float/2addr v1, v0
@@ -64,7 +55,6 @@
 
     return v1
 
-    .line 95
     :cond_0
     sub-float v1, p1, v0
 
@@ -79,9 +69,7 @@
 
 .method public getNormalizedX(F)F
     .locals 3
-    .param p1, "x"    # F
 
-    .line 80
     iget v0, p0, Lcom/android/systemui/recents/views/Range;->origin:F
 
     cmpg-float v0, p1, v0
@@ -90,7 +78,6 @@
 
     if-gez v0, :cond_0
 
-    .line 81
     iget v0, p0, Lcom/android/systemui/recents/views/Range;->origin:F
 
     sub-float v0, p1, v0
@@ -107,7 +94,6 @@
 
     return v1
 
-    .line 83
     :cond_0
     iget v0, p0, Lcom/android/systemui/recents/views/Range;->origin:F
 
@@ -126,9 +112,7 @@
 
 .method public isInRange(F)Z
     .locals 4
-    .param p1, "absX"    # F
 
-    .line 103
     float-to-double v0, p1
 
     iget v2, p0, Lcom/android/systemui/recents/views/Range;->min:F
@@ -170,25 +154,20 @@
 
 .method public offset(F)V
     .locals 1
-    .param p1, "x"    # F
 
-    .line 69
     iput p1, p0, Lcom/android/systemui/recents/views/Range;->origin:F
 
-    .line 70
     iget v0, p0, Lcom/android/systemui/recents/views/Range;->relativeMin:F
 
     add-float/2addr v0, p1
 
     iput v0, p0, Lcom/android/systemui/recents/views/Range;->min:F
 
-    .line 71
     iget v0, p0, Lcom/android/systemui/recents/views/Range;->relativeMax:F
 
     add-float/2addr v0, p1
 
     iput v0, p0, Lcom/android/systemui/recents/views/Range;->max:F
 
-    .line 72
     return-void
 .end method

@@ -27,7 +27,6 @@
 .method constructor <init>(Landroid/content/Context;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 95
     iput-object p1, p0, Lcom/android/systemui/tuner/TunerService$1;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/systemui/tuner/TunerService$1;->val$onDisabled:Ljava/lang/Runnable;
@@ -41,10 +40,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
-    .line 99
     iget-object v0, p0, Lcom/android/systemui/tuner/TunerService$1;->val$context:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -55,14 +51,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 101
     iget-object v0, p0, Lcom/android/systemui/tuner/TunerService$1;->val$context:Landroid/content/Context;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/systemui/tuner/TunerService;->setTunerEnabled(Landroid/content/Context;Z)V
 
-    .line 103
     iget-object v0, p0, Lcom/android/systemui/tuner/TunerService$1;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -73,17 +67,14 @@
 
     invoke-static {v0, v2, v1}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 105
     iget-object v0, p0, Lcom/android/systemui/tuner/TunerService$1;->val$onDisabled:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 106
     iget-object v0, p0, Lcom/android/systemui/tuner/TunerService$1;->val$onDisabled:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 108
     :cond_0
     return-void
 .end method

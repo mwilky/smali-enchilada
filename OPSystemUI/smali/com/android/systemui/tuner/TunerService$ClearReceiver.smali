@@ -18,7 +18,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 79
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -28,10 +27,7 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 82
     const-string v0, "com.android.systemui.action.CLEAR_TUNER"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -44,7 +40,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 83
     const-class v0, Lcom/android/systemui/tuner/TunerService;
 
     invoke-static {v0}, Lcom/android/systemui/Dependency;->get(Ljava/lang/Class;)Ljava/lang/Object;
@@ -55,7 +50,6 @@
 
     invoke-virtual {v0}, Lcom/android/systemui/tuner/TunerService;->clearAll()V
 
-    .line 85
     :cond_0
     return-void
 .end method

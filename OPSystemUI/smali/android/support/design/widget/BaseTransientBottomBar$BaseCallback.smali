@@ -27,8 +27,6 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 66
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback;, "Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback<TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,16 +36,12 @@
 # virtual methods
 .method public onDismissed(Ljava/lang/Object;I)V
     .locals 0
-    .param p2, "event"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TB;I)V"
         }
     .end annotation
 
-    .line 102
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback;, "Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback<TB;>;"
-    .local p1, "transientBottomBar":Ljava/lang/Object;, "TB;"
     return-void
 .end method
 
@@ -59,8 +53,5 @@
         }
     .end annotation
 
-    .line 112
-    .local p0, "this":Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback;, "Landroid/support/design/widget/BaseTransientBottomBar$BaseCallback<TB;>;"
-    .local p1, "transientBottomBar":Ljava/lang/Object;, "TB;"
     return-void
 .end method

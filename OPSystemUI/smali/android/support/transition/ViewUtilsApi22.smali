@@ -13,7 +13,6 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 29
     invoke-direct {p0}, Landroid/support/transition/ViewUtilsApi21;-><init>()V
 
     return-void
@@ -27,12 +26,10 @@
         }
     .end annotation
 
-    .line 52
     sget-boolean v0, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethodFetched:Z
 
     if-nez v0, :cond_0
 
-    .line 54
     const/4 v0, 0x1
 
     :try_start_0
@@ -72,34 +69,26 @@
 
     sput-object v1, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethod:Ljava/lang/reflect/Method;
 
-    .line 56
     sget-object v1, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 59
     goto :goto_0
 
-    .line 57
     :catch_0
     move-exception v1
 
-    .line 58
-    .local v1, "e":Ljava/lang/NoSuchMethodException;
     const-string v2, "ViewUtilsApi22"
 
     const-string v3, "Failed to retrieve setLeftTopRightBottom method"
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 60
-    .end local v1    # "e":Ljava/lang/NoSuchMethodException;
     :goto_0
     sput-boolean v0, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethodFetched:Z
 
-    .line 62
     :cond_0
     return-void
 .end method
@@ -108,21 +97,13 @@
 # virtual methods
 .method public setLeftTopRightBottom(Landroid/view/View;IIII)V
     .locals 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
 
-    .line 38
     invoke-direct {p0}, Landroid/support/transition/ViewUtilsApi22;->fetchSetLeftTopRightBottomMethod()V
 
-    .line 39
     sget-object v0, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethod:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
 
-    .line 41
     :try_start_0
     sget-object v0, Landroid/support/transition/ViewUtilsApi22;->sSetLeftTopRightBottomMethod:Ljava/lang/reflect/Method;
 
@@ -169,12 +150,9 @@
 
     goto :goto_0
 
-    .line 44
     :catch_0
     move-exception v0
 
-    .line 45
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
@@ -185,16 +163,12 @@
 
     throw v1
 
-    .line 42
-    .end local v0    # "e":Ljava/lang/reflect/InvocationTargetException;
     :catch_1
     move-exception v0
 
-    .line 46
     :goto_0
     nop
 
-    .line 48
     :cond_0
     return-void
 .end method

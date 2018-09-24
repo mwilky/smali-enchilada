@@ -24,7 +24,6 @@
 .method static constructor <clinit>()V
     .locals 11
 
-    .line 470
     invoke-static {}, Lcom/android/internal/telephony/IccCardConstants$State;->values()[Lcom/android/internal/telephony/IccCardConstants$State;
 
     move-result-object v0
@@ -223,7 +222,6 @@
     :catch_8
     move-exception v9
 
-    .line 389
     :goto_8
     invoke-static {}, Lcom/android/keyguard/CarrierText$StatusMode;->values()[Lcom/android/keyguard/CarrierText$StatusMode;
 

@@ -113,54 +113,54 @@
 
 .field public static final preference_summary_default_combination:I = 0x7f110492
 
-.field public static final speed_label_fast:I = 0x7f1105b3
+.field public static final speed_label_fast:I = 0x7f1105b1
 
-.field public static final speed_label_okay:I = 0x7f1105b5
+.field public static final speed_label_okay:I = 0x7f1105b3
 
-.field public static final speed_label_slow:I = 0x7f1105b6
+.field public static final speed_label_slow:I = 0x7f1105b4
 
-.field public static final speed_label_very_fast:I = 0x7f1105b7
+.field public static final speed_label_very_fast:I = 0x7f1105b5
 
-.field public static final wifi_ap_unable_to_handle_new_sta:I = 0x7f11069c
+.field public static final wifi_ap_unable_to_handle_new_sta:I = 0x7f11069a
 
-.field public static final wifi_auth_password_wrong:I = 0x7f11069d
+.field public static final wifi_auth_password_wrong:I = 0x7f11069b
 
-.field public static final wifi_check_password_try_again:I = 0x7f1106a1
+.field public static final wifi_check_password_try_again:I = 0x7f11069f
 
-.field public static final wifi_connected_no_internet:I = 0x7f1106a4
+.field public static final wifi_connected_no_internet:I = 0x7f1106a2
 
-.field public static final wifi_disabled_by_recommendation_provider:I = 0x7f1106a7
+.field public static final wifi_disabled_by_recommendation_provider:I = 0x7f1106a5
 
-.field public static final wifi_disabled_generic:I = 0x7f1106a8
+.field public static final wifi_disabled_generic:I = 0x7f1106a6
 
-.field public static final wifi_disabled_network_failure:I = 0x7f1106a9
+.field public static final wifi_disabled_network_failure:I = 0x7f1106a7
 
-.field public static final wifi_disabled_password_failure:I = 0x7f1106aa
+.field public static final wifi_disabled_password_failure:I = 0x7f1106a8
 
-.field public static final wifi_fail_to_scan:I = 0x7f1106b0
+.field public static final wifi_fail_to_scan:I = 0x7f1106ae
 
-.field public static final wifi_metered_label:I = 0x7f1106b5
+.field public static final wifi_metered_label:I = 0x7f1106b3
 
-.field public static final wifi_no_internet:I = 0x7f1106b7
+.field public static final wifi_no_internet:I = 0x7f1106b5
 
-.field public static final wifi_no_internet_no_reconnect:I = 0x7f1106b8
+.field public static final wifi_no_internet_no_reconnect:I = 0x7f1106b6
 
-.field public static final wifi_not_in_range:I = 0x7f1106b9
+.field public static final wifi_not_in_range:I = 0x7f1106b7
 
-.field public static final wifi_remembered:I = 0x7f1106ba
+.field public static final wifi_remembered:I = 0x7f1106b8
 
-.field public static final wifi_status_no_internet:I = 0x7f1106d6
+.field public static final wifi_status_no_internet:I = 0x7f1106d4
 
-.field public static final wifi_status_sign_in_required:I = 0x7f1106d7
+.field public static final wifi_status_sign_in_required:I = 0x7f1106d5
 
-.field public static final wifi_unmetered_label:I = 0x7f1106d8
+.field public static final wifi_unmetered_label:I = 0x7f1106d6
 
-.field public static final zen_alarm_warning:I = 0x7f1106e3
+.field public static final zen_alarm_warning:I = 0x7f1106e1
 
-.field public static final zen_alarm_warning_indef:I = 0x7f1106e4
+.field public static final zen_alarm_warning_indef:I = 0x7f1106e2
 
-.field public static final zen_mode_duration_always_prompt_title:I = 0x7f1106ea
+.field public static final zen_mode_duration_always_prompt_title:I = 0x7f1106e8
 
-.field public static final zen_mode_enable_dialog_turn_on:I = 0x7f1106ec
+.field public static final zen_mode_enable_dialog_turn_on:I = 0x7f1106ea
 
-.field public static final zen_mode_settings_turn_on_dialog_title:I = 0x7f1106ee
+.field public static final zen_mode_settings_turn_on_dialog_title:I = 0x7f1106ec

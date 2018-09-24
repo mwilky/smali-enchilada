@@ -17,10 +17,7 @@
 # direct methods
 .method public constructor <init>(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
     .locals 2
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "parent"    # Landroid/view/ViewGroup;
 
-    .line 316
     sget v0, Landroid/support/design/internal/R$layout;->design_navigation_item_subheader:I
 
     const/4 v1, 0x0
@@ -31,6 +28,5 @@
 
     invoke-direct {p0, v0}, Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 317
     return-void
 .end method

@@ -30,9 +30,7 @@
 # virtual methods
 .method public final get(Landroid/support/v17/leanback/widget/Parallax;)Ljava/lang/Integer;
     .locals 1
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
 
-    .line 133
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$IntProperty;->mIndex:I
 
     invoke-virtual {p1, v0}, Landroid/support/v17/leanback/widget/Parallax;->getIntPropertyValue(I)I
@@ -49,7 +47,6 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 104
     check-cast p1, Landroid/support/v17/leanback/widget/Parallax;
 
     invoke-virtual {p0, p1}, Landroid/support/v17/leanback/widget/Parallax$IntProperty;->get(Landroid/support/v17/leanback/widget/Parallax;)Ljava/lang/Integer;
@@ -62,7 +59,6 @@
 .method public final getIndex()I
     .locals 1
 
-    .line 145
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$IntProperty;->mIndex:I
 
     return v0
@@ -70,10 +66,7 @@
 
 .method public final set(Landroid/support/v17/leanback/widget/Parallax;Ljava/lang/Integer;)V
     .locals 2
-    .param p1, "object"    # Landroid/support/v17/leanback/widget/Parallax;
-    .param p2, "value"    # Ljava/lang/Integer;
 
-    .line 138
     iget v0, p0, Landroid/support/v17/leanback/widget/Parallax$IntProperty;->mIndex:I
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -82,14 +75,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/support/v17/leanback/widget/Parallax;->setIntPropertyValue(II)V
 
-    .line 139
     return-void
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 104
     check-cast p1, Landroid/support/v17/leanback/widget/Parallax;
 
     check-cast p2, Ljava/lang/Integer;

@@ -24,9 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;)V
     .locals 0
-    .param p1, "this$0"    # Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
-    .line 530
     iput-object p1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$2;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +37,6 @@
 .method public run()V
     .locals 2
 
-    .line 533
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$2;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController$2;->this$0:Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;
@@ -50,6 +47,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/FingerprintUnlockController;->onFingerprintAuthenticated(I)V
 
-    .line 534
     return-void
 .end method
