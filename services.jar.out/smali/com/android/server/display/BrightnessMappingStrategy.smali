@@ -149,6 +149,7 @@
     :cond_stock
     const v6, 0x107003f
 
+    :goto_skip
     invoke-virtual {p0, v6}, Landroid/content/res/Resources;->getIntArray(I)[I
 
     move-result-object v6
