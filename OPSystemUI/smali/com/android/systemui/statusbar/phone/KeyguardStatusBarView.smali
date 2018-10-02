@@ -10,13 +10,15 @@
 
 
 # instance fields
+.field public mCarrierLabelTextColor:I
+
 .field private mBatteryCharging:Z
 
 .field private mBatteryController:Lcom/android/systemui/statusbar/policy/BatteryController;
 
 .field private mBatteryListening:Z
 
-.field private mBatteryView:Lcom/android/systemui/BatteryMeterView;
+.field public mBatteryView:Lcom/android/systemui/BatteryMeterView;
 
 .field private mCarrierLabel:Landroid/widget/TextView;
 
@@ -940,6 +942,8 @@
     check-cast v0, Landroid/widget/TextView;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setCarrierTextColor()V
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mSystemIconsContainer:Landroid/view/View;
 
@@ -1178,10 +1182,6 @@
     const v1, -0x333334
 
     :cond_2
-    iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
-
-    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
     iget-object v3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryView:Lcom/android/systemui/BatteryMeterView;
 
     invoke-virtual {v3, v1}, Lcom/android/systemui/BatteryMeterView;->setFillColor(I)V
@@ -1344,5 +1344,29 @@
     :goto_1
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
+    return-void
+.end method
+
+.method public readRenovateMods()V
+    .locals 1
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mCarrierTextColorOP:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabelTextColor:I
+	
+    return-void
+.end method
+
+.method public setCarrierTextColor()V
+    .locals 2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->readRenovateMods()V
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabel:Landroid/widget/TextView;
+    
+	iget v1, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mCarrierLabelTextColor:I
+	
+	invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+	
     return-void
 .end method
