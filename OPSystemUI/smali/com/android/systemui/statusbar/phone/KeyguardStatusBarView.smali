@@ -455,8 +455,10 @@
     return-void
 .end method
 
-.method private updateVisibilities()V
-    .locals 0
+.method public updateVisibilities()V
+    .locals 1
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setLockscreenStatusbarVisibility()V
 
     return-void
 .end method
@@ -589,7 +591,7 @@
 
     iput-boolean p3, p0, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->mBatteryCharging:Z
 
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     :cond_0
     return-void
@@ -897,6 +899,8 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->setLockscreenStatusbarVisibility()V
 
     return-void
 .end method
@@ -1090,7 +1094,7 @@
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->animateNextLayoutChange()V
 
     :cond_0
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateLayoutConsideringCutout()Z
 
@@ -1160,7 +1164,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateVisibilities()V
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/phone/KeyguardStatusBarView;->updateSystemIconsLayoutParams()V
 
@@ -1189,5 +1193,23 @@
 	
 	invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 	
+    return-void
+.end method
+
+.method public setLockscreenStatusbarVisibility()V
+    .locals 2
+    
+    sget-boolean v0, Lcom/android/mwilky/Renovate;->mHideLockscreenStatusbar:Z
+    
+    if-nez v0, :cond_hidden
+
+	goto :goto_exit
+    
+    :cond_hidden
+    const v1, 0x8
+    
+    invoke-virtual {p0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+	
+    :goto_exit
     return-void
 .end method
