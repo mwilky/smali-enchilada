@@ -8,6 +8,10 @@
 
 
 # instance fields
+.field public mSignalIconColor:I
+
+.field public mDarkIconColor:I
+
 .field private mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
 
 .field private mIn:Landroid/widget/ImageView;
@@ -418,6 +422,12 @@
     move-result v0
 
     iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileTypeOverlapPlus:I
+    
+     const/4 v0, 0x0
+    
+    int-to-float v0, v0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->updateViews(F)V
 
     return-void
 .end method
@@ -1186,44 +1196,111 @@
 
 .method public onDarkChanged(Landroid/graphics/Rect;FI)V
     .locals 3
+	
+	float-to-int v2, p2
 
-    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileDrawable:Lcom/android/settingslib/graph/SignalDrawable;
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
 
-    invoke-virtual {v0, p2}, Lcom/android/settingslib/graph/SignalDrawable;->setDarkIntensity(F)V
+    if-nez v2, :cond_0 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
 
-    invoke-static {p1, p0, p3}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
-
-    move-result v0
-
+    :cond_0
     invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
-
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileInOut:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_01 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_01
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataStrengthView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_02 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_02
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataTypeView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_03 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_03
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceStrengthView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_04 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_04
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_05 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_05
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_06 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_06
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
@@ -1425,4 +1502,145 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public updateViews(F)V
+	.locals 3
+	
+	float-to-int v2, p1
+	
+	invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarMobileView;->readRenovateMods()V
+	
+	iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileType:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_0 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_0
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobileInOut:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_01 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_01
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataStrengthView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_02 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_02
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedDataTypeView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_03 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_03
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceStrengthView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_04 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_04
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mStackedVoiceTypeView:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_05 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_05
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+    iget-object v1, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mMobile:Landroid/widget/ImageView;
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I #dark color
+
+    if-nez v2, :cond_06 #set to grey if dark intensity is 1
+    
+    iget v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I #custom color
+
+    :cond_06
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+	
+	return-void
+.end method
+
+.method public readRenovateMods()V
+    .locals 1
+	
+	sget v0, Lcom/android/mwilky/Renovate;->mSignalIconColorOP:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSignalIconColor:I
+	
+	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mDarkIconColor:I
+    
+    return-void
+.end method
+
+.method public getLockscreenIconColors()I
+    .locals 2
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarMobileView;->mSlot:Ljava/lang/String;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getStatusbarColorFromSlotNameOP(Ljava/lang/String;)I
+    
+    move-result v0
+
+    return v0
 .end method
