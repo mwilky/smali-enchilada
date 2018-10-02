@@ -29,3 +29,9 @@
 
 .method public abstract setVisibleState(I)V
 .end method
+
+.method public abstract getLockscreenIconColors()I
+.end method
+
+.method public abstract updateLockscreenColors()V
+.end method
