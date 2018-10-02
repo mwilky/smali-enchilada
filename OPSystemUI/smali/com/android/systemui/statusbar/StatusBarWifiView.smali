@@ -8,6 +8,10 @@
 
 
 # instance fields
+.field public mWifiIconColor:I
+
+.field public mDarkIconColor:I
+
 .field private mAirplaneSpacer:Landroid/view/View;
 
 .field private mDarkContext:Landroid/view/ContextThemeWrapper;
@@ -141,7 +145,7 @@
 .end method
 
 .method private applyColors()V
-    .locals 5
+    .locals 7
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mRect:Landroid/graphics/Rect;
 
@@ -153,17 +157,25 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mRect:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
+    
+    float-to-int v5, v1
 
-    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mTint:I
+    invoke-static {}, Lcom/android/systemui/statusbar/phone/StatusBar;->isCameraNotchIgnoring()Z
 
-    iput v1, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIntensity:F
+    move-result v6
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIcon:Landroid/widget/ImageView;
 
-    invoke-static {v0, p0, v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
+    if-nez v6, :cond_notch
 
-    move-result v4
+    iget v4, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
 
+    if-nez v5, :cond_mw #set to grey if dark intensity is 1
+    
+    :cond_notch
+    iget v4, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
+
+    :cond_mw
     invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v4
@@ -172,10 +184,16 @@
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiActivity:Landroid/widget/ImageView;
 
-    invoke-static {v0, p0, v2}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->getTint(Landroid/graphics/Rect;Landroid/view/View;I)I
+    if-nez v6, :cond_notch2
 
-    move-result v4
+    iget v4, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I #dark color
 
+    if-nez v5, :cond_01 #set to grey if dark intensity is 1
+    
+    :cond_notch2
+    iget v4, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I #custom color
+
+    :cond_01
     invoke-static {v4}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object v4
@@ -183,6 +201,8 @@
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
 
     iget-object v3, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDotView:Lcom/android/systemui/statusbar/StatusBarIconView;
+    
+    iget v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mTint:I
 
     invoke-virtual {v3, v2}, Lcom/android/systemui/statusbar/StatusBarIconView;->setDecorColor(I)V
 
@@ -357,6 +377,12 @@
     iput-object v2, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mInoutContainer:Landroid/view/View;
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->initDotView()V
+    
+    const/4 v0, 0x0
+    
+    int-to-float v0, v0
+
+    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->updateViews(F)V
 
     return-void
 .end method
@@ -1042,4 +1068,40 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public updateViews(F)V
+	.locals 1
+	
+	invoke-virtual {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->readRenovateMods()V
+	
+	invoke-direct {p0}, Lcom/android/systemui/statusbar/StatusBarWifiView;->applyColors()V
+	
+	return-void
+.end method
+
+.method public readRenovateMods()V
+    .locals 1
+    
+    sget v0, Lcom/android/mwilky/Renovate;->mWifiIconColorOP:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mWifiIconColor:I
+	
+	sget v0, Lcom/android/mwilky/Renovate;->mDarkIconColor:I
+    
+	iput v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mDarkIconColor:I
+	
+    return-void
+.end method
+
+.method public getLockscreenIconColors()I
+    .locals 2
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/StatusBarWifiView;->mSlot:Ljava/lang/String;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->getStatusbarColorFromSlotNameOP(Ljava/lang/String;)I
+    
+    move-result v0
+
+    return v0
 .end method
