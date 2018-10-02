@@ -1537,6 +1537,8 @@
     check-cast v3, Lcom/android/systemui/statusbar/policy/Clock;
 
     iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setIconColors()V
 
     iget-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
 
@@ -1934,5 +1936,27 @@
 
     invoke-virtual {p0, v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->post(Ljava/lang/Runnable;)Z
 
+    return-void
+.end method
+
+.method public setIconColors()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    
+    if-eqz v0, :cond_exit
+    
+    sget v1, Lcom/android/mwilky/Renovate;->mClockColorOP:I
+    
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_exit
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
+    
+    if-eqz v0, :cond_exit2
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->setExpandedColors()V
+
+    :cond_exit2
     return-void
 .end method
