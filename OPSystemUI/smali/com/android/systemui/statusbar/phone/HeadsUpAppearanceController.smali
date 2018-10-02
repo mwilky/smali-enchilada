@@ -18,7 +18,7 @@
 
 .field private final mHeadsUpManager:Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;
 
-.field private final mHeadsUpStatusBarView:Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
+.field public final mHeadsUpStatusBarView:Lcom/android/systemui/statusbar/HeadsUpStatusBarView;
 
 .field private mIsExpanded:Z
 
@@ -828,4 +828,10 @@
     invoke-virtual {v1, v0}, Lcom/android/systemui/statusbar/HeadsUpStatusBarView;->setPanelTranslation(F)V
 
     return-void
+.end method
+
+.method public updateViews(F)V
+	.locals 0
+	
+	return-void
 .end method
