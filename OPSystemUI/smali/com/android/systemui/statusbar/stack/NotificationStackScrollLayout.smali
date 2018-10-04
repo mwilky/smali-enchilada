@@ -8064,7 +8064,7 @@
 .end method
 
 .method private updateBackgroundDimming()V
-    .locals 6
+    .locals 7
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mShouldDrawNotificationBackground:Z
 
@@ -8098,9 +8098,19 @@
     invoke-virtual {v1}, Lcom/android/systemui/statusbar/phone/ScrimController;->getBackgroundColor()I
 
     move-result v1
+    
+    sget-boolean v6, Lcom/android/mwilky/Renovate;->mExtendedTheming:Z
+    
+    if-eqz v6, :cond_stock
+    
+    sget v2, Lcom/android/mwilky/Renovate;->mOPNotificationShadeBackgroundColor:I
+    
+    goto :goto_custom
 
+    :cond_stock
     iget v2, p0, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->mBgColor:I
 
+    :goto_custom
     invoke-static {v1, v2, v0}, Landroid/support/v4/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v2

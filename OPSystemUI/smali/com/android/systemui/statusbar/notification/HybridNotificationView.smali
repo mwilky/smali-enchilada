@@ -203,6 +203,8 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2, v1}, Lcom/android/systemui/statusbar/ViewTransformationHelper;->addTransformedView(ILandroid/view/View;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->updateTextColors()V
 
     return-void
 .end method
@@ -267,4 +269,40 @@
     invoke-virtual {v0, p1, p2}, Lcom/android/systemui/statusbar/ViewTransformationHelper;->transformTo(Lcom/android/systemui/statusbar/TransformableView;Ljava/lang/Runnable;)V
 
     return-void
+.end method
+
+.method public updateTextColors()V
+	.locals 3
+	
+	sget-boolean v2, Lcom/android/mwilky/Renovate;->mExtendedTheming:Z
+	
+	iget-object v0, p0, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->mTitleView:Landroid/widget/TextView;
+	
+	if-eqz v0, :cond_exit
+	
+	const v1, -0x22000000
+	
+	if-eqz v2, :cond_stock
+	
+	sget v1, Lcom/android/mwilky/Renovate;->mOPNotificationTextColor:I
+	
+	:cond_stock
+	invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+	:cond_exit
+	iget-object v0, p0, Lcom/android/systemui/statusbar/notification/HybridNotificationView;->mTextView:Landroid/widget/TextView;
+	
+	if-eqz v0, :cond_exit2
+	
+	const v1, -0x76000000
+	
+	if-eqz v2, :cond_stock2
+	
+	sget v1, Lcom/android/mwilky/Renovate;->mOPNotificationTextColor:I
+	
+	:cond_stock2
+	invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+	
+	:cond_exit2
+	return-void
 .end method
