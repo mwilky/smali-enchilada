@@ -15,6 +15,10 @@
 
 
 # static fields
+.field public static mExtendedTheming:Z
+
+.field public static mOPNotificationTextColor:I
+
 .field public static final EXTRA_REBUILD_BIG_CONTENT_VIEW_ACTION_COUNT:Ljava/lang/String; = "android.rebuild.bigViewActionCount"
 
 .field public static final EXTRA_REBUILD_CONTENT_VIEW_ACTION_COUNT:Ljava/lang/String; = "android.rebuild.contentViewActionCount"
@@ -61,7 +65,7 @@
 
 .field private mColorUtil:Lcom/android/internal/util/NotificationColorUtil;
 
-.field private mContext:Landroid/content/Context;
+.field public mContext:Landroid/content/Context;
 
 .field private mForegroundColor:I
 
@@ -493,6 +497,12 @@
 
     :cond_a
     :goto_1
+    iget-object v0, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Landroid/app/Notification$Builder;->isExtendedTheming(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Landroid/app/Notification$Builder;->getAccentColor(Landroid/content/Context;)V
+    
     return-void
 .end method
 
@@ -2495,11 +2505,28 @@
     return-object v1
 .end method
 
-.method private ensureColors()V
+.method public ensureColors()V
     .locals 17
 
     move-object/from16 v0, p0
+    
+    invoke-direct {v0}, Landroid/app/Notification$Builder;->isColorized()Z
+    
+    move-result v1
+    
+    if-nez v1, :cond_stock
+    
+    sget-boolean v1, Landroid/app/Notification$Builder;->mExtendedTheming:Z
+    
+    if-eqz v1, :cond_stock
+    
+    sget v1, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+    
+    iput v1, v0, Landroid/app/Notification$Builder;->mPrimaryTextColor:I
+    
+    iput v1, v0, Landroid/app/Notification$Builder;->mSecondaryTextColor:I
 
+    :cond_stock
     invoke-direct/range {p0 .. p0}, Landroid/app/Notification$Builder;->getBackgroundColor()I
 
     move-result v1
@@ -4199,6 +4226,10 @@
 
 .method private processTextSpans(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 1
+    
+    sget-boolean v0, Landroid/app/Notification$Builder;->mExtendedTheming:Z
+    
+    if-nez v0, :cond_clear
 
     invoke-direct {p0}, Landroid/app/Notification$Builder;->hasForegroundColor()Z
 
@@ -4206,6 +4237,7 @@
 
     if-eqz v0, :cond_0
 
+    :cond_clear
     invoke-static {p1}, Lcom/android/internal/util/NotificationColorUtil;->clearColorSpans(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -4480,7 +4512,7 @@
 .method private setTextViewColorPrimary(Landroid/widget/RemoteViews;I)V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     iget v0, p0, Landroid/app/Notification$Builder;->mPrimaryTextColor:I
 
@@ -4492,7 +4524,7 @@
 .method private setTextViewColorSecondary(Landroid/widget/RemoteViews;I)V
     .locals 1
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     iget v0, p0, Landroid/app/Notification$Builder;->mSecondaryTextColor:I
 
@@ -5400,7 +5432,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     iget v0, p0, Landroid/app/Notification$Builder;->mPrimaryTextColor:I
 
@@ -5412,7 +5444,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     iget v0, p0, Landroid/app/Notification$Builder;->mSecondaryTextColor:I
 
@@ -5892,7 +5924,7 @@
 
     if-nez v1, :cond_1
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     iget-object v1, p0, Landroid/app/Notification$Builder;->mContext:Landroid/content/Context;
 
@@ -6167,7 +6199,7 @@
 
     iput v0, p0, Landroid/app/Notification$Builder;->mTextColorsAreForBackground:I
 
-    invoke-direct {p0}, Landroid/app/Notification$Builder;->ensureColors()V
+    invoke-virtual {p0}, Landroid/app/Notification$Builder;->ensureColors()V
 
     return-void
 .end method
@@ -7236,4 +7268,185 @@
 
     :goto_4
     return v1
+.end method
+
+.method public static getAccentColor(Landroid/content/Context;)V
+    .registers 11
+    .param p0, "Context"    # Landroid/content/Context;
+
+    .line 20
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 21
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;
+    const-string v1, "oem_black_mode_accent_color"
+
+    invoke-static {v0, v1}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 22
+    .local v1, "HexColorBlack":Ljava/lang/String;
+    const-string v2, "oem_white_mode_accent_color"
+
+    invoke-static {v0, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 23
+    .local v2, "HexColorWhite":Ljava/lang/String;
+    const-string v3, "oem_black_mode"
+
+    const/4 v4, 0x2
+
+    invoke-static {v0, v3, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+
+    .line 24
+    .local v3, "theme":I
+    const-string v5, "oem_special_theme"
+
+    const/4 v6, 0x0
+
+    invoke-static {v0, v5, v6}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v5
+
+    .line 25
+    .local v5, "specialTheme":I
+    const/4 v6, 0x1
+
+    if-ne v5, v6, :cond_27
+
+    .line 26
+    const v4, -0x43fd3
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    goto :goto_6a
+
+    .line 27
+    :cond_27
+    const/16 v7, 0x10
+
+    const/16 v8, 0xb
+
+    if-ne v3, v6, :cond_48
+
+    .line 28
+    const-string v9, "oem_black_mode_accent_color_index"
+
+    invoke-static {v0, v9, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v4
+
+    if-ne v4, v8, :cond_3c
+
+    .line 29
+    invoke-static/range {v1 .. v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v4
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    goto :goto_6a
+
+    .line 31
+    :cond_3c
+    invoke-virtual {v1, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 32
+    invoke-static {v1, v7}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+
+    move-result-wide v6
+
+    long-to-int v4, v6
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    goto :goto_6a
+
+    .line 34
+    :cond_48
+    if-nez v3, :cond_65
+
+    .line 35
+    const-string v9, "oem_white_mode_accent_color_index"
+
+    invoke-static {v0, v9, v4}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v4
+
+    if-ne v4, v8, :cond_59
+
+    .line 36
+    invoke-static/range {v2 .. v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v4
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    goto :goto_6a
+
+    .line 38
+    :cond_59
+    invoke-virtual {v2, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 39
+    invoke-static {v2, v7}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+
+    move-result-wide v6
+
+    long-to-int v4, v6
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    goto :goto_6a
+
+    .line 41
+    :cond_65
+    if-ne v3, v4, :cond_6a
+
+    .line 42
+    const/4 v4, -0x1
+
+    sput v4, Landroid/app/Notification$Builder;->mOPNotificationTextColor:I
+
+    .line 44
+    :cond_6a
+    :goto_6a
+    return-void
+.end method
+
+.method public static isExtendedTheming(Landroid/content/Context;)V
+    .registers 5
+    .param p0, "Context"    # Landroid/content/Context;
+
+    .line 683
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 685
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;
+    const-string v1, "tweaks_extended_theming"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+    
+    sput-boolean v1, Landroid/app/Notification$Builder;->mExtendedTheming:Z
+    
+    sput-boolean v1, Lcom/android/internal/util/NotificationColorUtil;->mExtendedTheming:Z
+    
+    return-void
 .end method
