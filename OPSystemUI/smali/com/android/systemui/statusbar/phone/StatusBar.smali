@@ -21744,6 +21744,8 @@
     invoke-static {v1}, Landroid/app/Notification$Builder;->getAccentColor(Landroid/content/Context;)V
     
     invoke-virtual {v0}, Landroid/app/Notification$Builder;->ensureColors()V
+    
+    invoke-static {v1}, Landroid/app/Notification$Builder;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
 
 	return-void
 .end method
