@@ -19,6 +19,8 @@
 
 .field public static mOPNotificationTextColor:I
 
+.field public static mOPNotificationBackgroundColor:I
+
 .field public static final EXTRA_REBUILD_BIG_CONTENT_VIEW_ACTION_COUNT:Ljava/lang/String; = "android.rebuild.bigViewActionCount"
 
 .field public static final EXTRA_REBUILD_CONTENT_VIEW_ACTION_COUNT:Ljava/lang/String; = "android.rebuild.contentViewActionCount"
@@ -502,6 +504,8 @@
     invoke-static {v0}, Landroid/app/Notification$Builder;->isExtendedTheming(Landroid/content/Context;)V
     
     invoke-static {v0}, Landroid/app/Notification$Builder;->getAccentColor(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Landroid/app/Notification$Builder;->setNotifBackgroundColorForTheme(Landroid/content/Context;)V
     
     return-void
 .end method
@@ -3148,7 +3152,16 @@
 
 .method private getBackgroundColor()I
     .locals 2
+    
+    sget-boolean v0, Landroid/app/Notification$Builder;->mExtendedTheming:Z
+    
+    if-eqz v0, :cond_stock
+    
+    sget v0, Landroid/app/Notification$Builder;->mOPNotificationBackgroundColor:I
 
+    goto :goto_return
+    
+    :cond_stock
     invoke-direct {p0}, Landroid/app/Notification$Builder;->isColorized()Z
 
     move-result v0
@@ -3176,6 +3189,7 @@
     :cond_1
     const/4 v0, 0x0
 
+    :goto_return
     return v0
 .end method
 
@@ -6190,7 +6204,14 @@
 
 .method public setColorPalette(II)V
     .locals 1
+    
+    sget-boolean v0, Landroid/app/Notification$Builder;->mExtendedTheming:Z
+    
+    if-eqz v0, :cond_stock
+    
+    sget p1, Landroid/app/Notification$Builder;->mOPNotificationBackgroundColor:I
 
+    :cond_stock
     iput p1, p0, Landroid/app/Notification$Builder;->mBackgroundColor:I
 
     iput p2, p0, Landroid/app/Notification$Builder;->mForegroundColor:I
@@ -7448,5 +7469,50 @@
     
     sput-boolean v1, Lcom/android/internal/util/NotificationColorUtil;->mExtendedTheming:Z
     
+    return-void
+.end method
+
+.method public static setNotifBackgroundColorForTheme(Landroid/content/Context;)V
+    .registers 5
+    .param p0, "Context"    # Landroid/content/Context;
+
+    .line 683
+    invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    .line 685
+    .local v0, "ContentResolver":Landroid/content/ContentResolver;    
+    const-string v1, "oem_black_mode"
+
+    const/4 v2, 0x2
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v1
+
+    .line 686
+    .local v1, "theme":I
+    if-eqz v1, :cond_1c
+
+    .line 687
+    const v2, -0xE2E2E3
+
+    sput v2, Landroid/app/Notification$Builder;->mOPNotificationBackgroundColor:I
+
+    goto :goto_2a
+
+    .line 689
+    :cond_1c
+    const v2, 0x10600e7
+    
+    invoke-virtual {p0, v2}, Landroid/content/Context;->getColor(I)I
+    
+    move-result v2
+    
+    sput v2, Landroid/app/Notification$Builder;->mOPNotificationBackgroundColor:I
+
+    .line 692
+    :goto_2a
     return-void
 .end method

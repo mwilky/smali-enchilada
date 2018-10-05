@@ -1160,7 +1160,6 @@
 
     if-eqz v0, :cond_0
 
-    :cond_dark
     const v1, 0x10600f6
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getColor(I)I
@@ -1199,7 +1198,6 @@
 
     if-eqz v0, :cond_0
 
-    :cond_dark
     const v1, 0x10600f9
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getColor(I)I
