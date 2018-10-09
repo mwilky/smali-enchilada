@@ -18,6 +18,8 @@
 
 
 # instance fields
+.field mClockPosition:I
+
 .field private mDarkIconColor:I
 
 .field private mBatteryPercentColor:I
@@ -775,6 +777,8 @@
     invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->scaleBatteryMeterViews()V
 
     invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->updateBatteryMeterVisibility()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
 
     return-void
 .end method
@@ -1095,6 +1099,8 @@
     invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->updateBatteryMeterVisibility()V
 
     invoke-direct {p0}, Lcom/android/systemui/BatteryMeterView;->updateShowPercent()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
 
     return-void
 .end method
@@ -1308,6 +1314,10 @@
     
 	iput v0, p0, Lcom/android/systemui/BatteryMeterView;->mDarkIconColor:I
 	
+	sget v0, Lcom/android/mwilky/Renovate;->mClockPosition:I
+	
+	iput v0, p0, Lcom/android/systemui/BatteryMeterView;->mClockPosition:I
+	
     return-void
 .end method
 
@@ -1429,5 +1439,29 @@
     invoke-virtual {v2, v1}, Lcom/android/systemui/BatteryDashChargeView;->setIconTint(I)V
     
     :cond_exitdash
+    return-void
+.end method
+
+.method public batteryPosition()V
+    .locals 2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/BatteryMeterView;->readRenovateMods()V
+	
+	const/4 v0, 0x1
+	
+	iget v1, p0, Lcom/android/systemui/BatteryMeterView;->mClockPosition:I
+	
+	if-eq v0, v1, :cond_hide
+	
+	const v0, 0x0
+	
+	goto :goto_mw
+	
+	:cond_hide
+	const v0, 0x8
+	
+	:goto_mw	
+	invoke-virtual {p0, v0}, Lcom/android/systemui/BatteryMeterView;->setVisibility(I)V
+	
     return-void
 .end method
