@@ -16926,6 +16926,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setDoubleTapStatusbarSleep(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setLockQsInLockscreen(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setStatusbarViews(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -21837,4 +21839,138 @@
 
     return-void
 .end method
->>>>>>> a5e6f3b4b... KeyguardStatusView: option to remove lockscreen clock, data and charging info
+
+.method updateClockView()V
+    .locals 2
+    
+    const-string v0, "clock"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+    
+    if-eqz v0, :cond_right
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/Clock;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->setTag()V
+    
+    :cond_right
+    const-string v0, "clock_right"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+    
+    if-eqz v0, :cond_exit
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
+    
+    :cond_exit
+	const-string v0, "header"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setClockPosition()V
+    
+    return-void
+.end method
+
+.method updateBatteryView()V
+    .locals 2
+    
+    const-string v0, "battery"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+    
+    if-eqz v0, :cond_left
+
+    check-cast v0, Lcom/android/systemui/BatteryMeterView;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
+    
+    :cond_left
+    const-string v0, "battery_left"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+    
+    if-eqz v0, :cond_exit
+
+    check-cast v0, Lcom/android/systemui/BatteryMeterViewLeft;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterViewLeft;->batteryPosition()V
+    
+    :cond_exit
+    const-string v0, "header"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStatusBarWindow:Lcom/android/systemui/statusbar/phone/StatusBarWindowView;
+
+    invoke-virtual {v0, v1}, Lcom/android/systemui/statusbar/phone/StatusBarWindowView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/qs/QuickStatusBarHeader;
+    
+    invoke-virtual {v0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBatteryPosition()V
+    
+    return-void
+.end method
+>>>>>>> 2334c9eb4... OPSystemUI: added option for left or right clock
