@@ -10,6 +10,8 @@
 # instance fields
 .field private final mClockView:Landroid/view/View;
 
+.field private final mLeftBatteryView:Landroid/view/View;
+
 .field private final mDarkIconDispatcher:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
 .field private mExpandFraction:F
@@ -62,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;Landroid/view/View;)V
-    .locals 8
+    .locals 9
 
     nop
 
@@ -101,6 +103,18 @@
     invoke-virtual {p3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
+    
+    const-string v0, "battery_left"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {p3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
 
     move-object v1, p0
 
@@ -108,12 +122,12 @@
 
     move-object v3, p2
 
-    invoke-direct/range {v1 .. v7}, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;-><init>(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;Lcom/android/systemui/statusbar/HeadsUpStatusBarView;Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/view/View;)V
+    invoke-direct/range {v1 .. v8}, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;-><init>(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;Lcom/android/systemui/statusbar/HeadsUpStatusBarView;Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/view/View;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;Lcom/android/systemui/statusbar/HeadsUpStatusBarView;Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/view/View;)V
+.method public constructor <init>(Lcom/android/systemui/statusbar/phone/NotificationIconAreaController;Lcom/android/systemui/statusbar/phone/HeadsUpManagerPhone;Lcom/android/systemui/statusbar/HeadsUpStatusBarView;Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;Lcom/android/systemui/statusbar/phone/NotificationPanelView;Landroid/view/View;Landroid/view/View;)V
     .locals 2
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
@@ -191,6 +205,8 @@
     invoke-virtual {v0, p0}, Lcom/android/systemui/statusbar/stack/NotificationStackScrollLayout;->setHeadsUpAppearanceController(Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;)V
 
     iput-object p6, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+    
+    iput-object p7, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;
 
     const-class v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;
 
@@ -296,10 +312,19 @@
 .end method
 
 .method public static synthetic lambda$setShown$2(Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;)V
-    .locals 2
-
+    .locals 4
+    
+    const/4 v2, 0x1
+	
+	sget v3, Lcom/android/mwilky/Renovate;->mClockPosition:I
+    
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+    
+    if-ne v2, v3, :cond_mw
+	
+	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
+    :cond_mw
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
@@ -328,7 +353,11 @@
 .end method
 
 .method private setShown(Z)V
-    .locals 7
+    .locals 9
+    
+    const/4 v7, 0x1
+	
+	sget v8, Lcom/android/mwilky/Renovate;->mClockPosition:I
 
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mShown:Z
 
@@ -337,7 +366,18 @@
     iput-boolean p1, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mShown:Z
 
     const v0, 0x7f0a00c3
+    
+    if-ne v7, v8, :cond_mwmw
+    
+    const-string v0, "battery_left_visible_tag"
 
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    :cond_mwmw
     const/4 v1, 0x1
 
     const/16 v2, 0x64
@@ -361,7 +401,12 @@
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+	
+	if-ne v7, v8, :cond_mw
+	
+	iget-object v2, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
+    :cond_mw
     invoke-virtual {v2, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -373,7 +418,12 @@
     if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+    
+    if-ne v7, v8, :cond_mw2
+	
+	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
+    :cond_mw2
     new-instance v1, Lcom/android/systemui/statusbar/phone/-$$Lambda$HeadsUpAppearanceController$iMPD_c-MpkAUOLIdQAujzNCdyYQ;
 
     invoke-direct {v1, p0}, Lcom/android/systemui/statusbar/phone/-$$Lambda$HeadsUpAppearanceController$iMPD_c-MpkAUOLIdQAujzNCdyYQ;-><init>(Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;)V
@@ -388,7 +438,12 @@
     move-result-object v1
 
     iget-object v6, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+    
+    if-ne v7, v8, :cond_mw3
+	
+	iget-object v6, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
+    :cond_mw3
     invoke-virtual {v6, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -400,7 +455,12 @@
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mClockView:Landroid/view/View;
+    
+    if-ne v7, v8, :cond_mw4
+	
+	iget-object v0, p0, Lcom/android/systemui/statusbar/phone/HeadsUpAppearanceController;->mLeftBatteryView:Landroid/view/View;	
 
+    :cond_mw4
     invoke-static {v0, v4, v5, v2}, Lcom/android/systemui/statusbar/CrossFadeHelper;->fadeIn(Landroid/view/View;JI)V
 
     :cond_1
