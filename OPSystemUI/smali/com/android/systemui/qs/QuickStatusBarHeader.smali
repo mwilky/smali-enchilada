@@ -15,7 +15,11 @@
 
 .field private mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
+.field private mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+
 .field private mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+
+.field private mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
 
 .field private mDateView:Lcom/android/systemui/statusbar/policy/DateView;
 
@@ -1519,6 +1523,33 @@
     check-cast v4, Lcom/android/systemui/BatteryMeterView;
 
     iput-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
+    
+    const-string v0, "battery_left"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v4
+    
+    invoke-virtual {p0, v4}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/systemui/BatteryMeterViewLeft;
+
+    iput-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+    
+    iget-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+    
+    if-eqz v4, :cond_mw
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v4, v5}, Lcom/android/systemui/BatteryMeterView;->setForceShowPercent(Z)V
+    
+    :cond_mw
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setBatteryPosition()V
 
     iget-object v4, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
 
@@ -1538,7 +1569,25 @@
 
     iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
     
+    const-string v0, "clock_right"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    invoke-virtual {p0, v1}, Lcom/android/systemui/qs/QuickStatusBarHeader;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/android/systemui/statusbar/policy/ClockRight;
+
+    iput-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
     invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setIconColors()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/QuickStatusBarHeader;->setClockPosition()V
 
     iget-object v3, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
 
@@ -1951,6 +2000,15 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_exit
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    if-eqz v0, :cond_exit4
+    
+    sget v1, Lcom/android/mwilky/Renovate;->mClockColorOP:I
+    
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_exit4
     iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
     
     if-eqz v0, :cond_exit2
@@ -1958,5 +2016,52 @@
     invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->setExpandedColors()V
 
     :cond_exit2
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+    
+    if-eqz v0, :cond_exit3
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->setExpandedColors()V
+
+    :cond_exit3
+    return-void
+.end method
+
+.method public setClockPosition()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mClockView:Lcom/android/systemui/statusbar/policy/Clock;
+    
+    if-eqz v0, :cond_right
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
+    
+    :cond_right
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mRightClockView:Lcom/android/systemui/statusbar/policy/ClockRight;
+    
+    if-eqz v0, :cond_exit
+    
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/ClockRight;->updateClockVisibility()V
+    
+    :cond_exit
+    return-void
+.end method
+
+.method public setBatteryPosition()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mBatteryMeterView:Lcom/android/systemui/BatteryMeterView;
+    
+    if-eqz v0, :cond_left
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterView;->batteryPosition()V
+    
+    :cond_left
+    iget-object v0, p0, Lcom/android/systemui/qs/QuickStatusBarHeader;->mLeftBatteryMeterView:Lcom/android/systemui/BatteryMeterViewLeft;
+    
+    if-eqz v0, :cond_exit
+    
+    invoke-virtual {v0}, Lcom/android/systemui/BatteryMeterViewLeft;->batteryPosition()V
+    
+    :cond_exit
     return-void
 .end method
