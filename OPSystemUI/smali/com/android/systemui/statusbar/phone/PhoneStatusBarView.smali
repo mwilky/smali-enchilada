@@ -25,6 +25,8 @@
 
 .field private mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
+.field private mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
+
 .field private mCutoutSideNudge:I
 
 .field private mCutoutSpace:Landroid/view/View;
@@ -858,6 +860,10 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
+    
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->addDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->getResources()Landroid/content/res/Resources;
 
@@ -940,6 +946,10 @@
     iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
+    
+    iget-object v1, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
+
+    invoke-interface {v0, v1}, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher;->removeDarkReceiver(Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;)V
 
     const/4 v0, 0x0
 
@@ -986,6 +996,22 @@
     check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBattery:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
+    
+    const-string v0, "battery_left"
+
+    const-string v1, "id"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+    
+    invoke-virtual {p0, v1}, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->findViewById(I)Landroid/view/View;
+    
+    move-result-object v0
+
+    check-cast v0, Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
+
+    iput-object v0, p0, Lcom/android/systemui/statusbar/phone/PhoneStatusBarView;->mBatteryLeft:Lcom/android/systemui/statusbar/policy/DarkIconDispatcher$DarkReceiver;
 
     const v0, 0x7f0a00e7
 
