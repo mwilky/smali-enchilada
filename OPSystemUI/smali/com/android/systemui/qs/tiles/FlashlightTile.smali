@@ -121,6 +121,8 @@
 
 .method protected handleClick()V
     .locals 2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
 
