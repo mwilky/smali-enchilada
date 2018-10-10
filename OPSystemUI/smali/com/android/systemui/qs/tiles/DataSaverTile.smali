@@ -64,6 +64,8 @@
 
 .method public static synthetic lambda$handleClick$0(Lcom/android/systemui/qs/tiles/DataSaverTile;Landroid/content/DialogInterface;I)V
     .locals 0
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-direct {p0}, Lcom/android/systemui/qs/tiles/DataSaverTile;->toggleDataSaver()V
 

@@ -418,6 +418,8 @@
 
 .method protected handleClick()V
     .locals 2
+    
+    invoke-virtual {p0}, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->setVibrateTweak()V
 
     invoke-virtual {p0}, Lcom/android/systemui/qs/tiles/CellularTile;->getState()Lcom/android/systemui/plugins/qs/QSTile$State;
 
