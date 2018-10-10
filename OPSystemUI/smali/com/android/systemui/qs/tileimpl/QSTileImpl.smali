@@ -33,6 +33,8 @@
 
 
 # instance fields
+.field public mVibrator:Landroid/os/Vibrator;
+
 .field protected final TAG:Ljava/lang/String;
 
 .field private mAnnounceNextStateChange:Z
@@ -218,6 +220,18 @@
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
+    
+    iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mContext:Landroid/content/Context;
+    
+    const-string v1, "vibrator"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Vibrator;
+    
+    iput-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
 
     return-void
 .end method
@@ -1489,5 +1503,22 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
+    return-void
+.end method
+
+.method public setVibrateTweak()V
+	.locals 3
+	
+	sget-boolean v0, Lcom/android/mwilky/Renovate;->mQsVibration:Z
+	
+	if-eqz v0, :cond_stock
+
+	iget-object v0, p0, Lcom/android/systemui/qs/tileimpl/QSTileImpl;->mVibrator:Landroid/os/Vibrator;
+	
+    const-wide/16 v1, 0x64
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
+    
+    :cond_stock
     return-void
 .end method
