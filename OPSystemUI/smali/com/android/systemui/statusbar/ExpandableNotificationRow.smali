@@ -4919,8 +4919,15 @@
 .end method
 
 .method public isUserExpanded()Z
-    .locals 1
-
+    .locals 2
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mExpandedNotifications:Z
+    
+    if-eqz v1, :cond_stock
+    
+    return v1
+    
+    :cond_stock
     iget-boolean v0, p0, Lcom/android/systemui/statusbar/ExpandableNotificationRow;->mUserExpanded:Z
 
     return v0
