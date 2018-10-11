@@ -913,7 +913,7 @@
 
     move-object v6, v14
 
-    sget-object v14, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    sget-object v14, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v15, 0x64
 
@@ -975,7 +975,7 @@
 
     const-string v0, "mime_type"
 
-    const-string v2, "image/jpeg"
+    const-string v2, "image/png"
 
     invoke-virtual {v8, v0, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
