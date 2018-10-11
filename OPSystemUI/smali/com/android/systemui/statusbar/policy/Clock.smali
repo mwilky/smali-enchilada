@@ -1256,29 +1256,8 @@
     iput-boolean v1, p0, Lcom/android/systemui/statusbar/policy/Clock;->mShowSeconds:Z
 
     invoke-direct {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
-
-    goto :goto_1
-
-    :cond_1
-    goto :goto_1
-    
-    invoke-static {p2}, Lcom/android/systemui/statusbar/phone/StatusBarIconController;->getIconBlacklist(Ljava/lang/String;)Landroid/util/ArraySet;
-
-    move-result-object v0
-
-    const-string v2, "clock"
-
-    invoke-virtual {v0, v2}, Landroid/util/ArraySet;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    xor-int/2addr v0, v1
-
-    invoke-virtual {p0, v0}, Lcom/android/systemui/statusbar/policy/Clock;->setClockVisibleByUser(Z)V
-
-    invoke-virtual {p0}, Lcom/android/systemui/statusbar/policy/Clock;->updateClockVisibility()V
 	
-    :goto_1
+    :cond_1
     return-void
 .end method
 
