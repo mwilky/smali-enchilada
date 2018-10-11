@@ -19037,6 +19037,10 @@
 
 .method public updateMediaMetaData(ZZ)V
     .locals 17
+    
+    sget-boolean v1, Lcom/android/mwilky/Renovate;->mHideLockscreenAlbumArt:Z
+    
+    if-nez v1, :cond_mw
 
     move-object/from16 v0, p0
 
@@ -19052,6 +19056,7 @@
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
+    :cond_mw
     return-void
 
     :cond_0
