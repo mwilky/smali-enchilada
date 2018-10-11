@@ -340,8 +340,6 @@
     iput-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mQuickTurnOnVoiceAssistant:Landroid/support/v14/preference/SwitchPreference;
 
     iget-object v0, p0, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->mQuickTurnOnVoiceAssistant:Landroid/support/v14/preference/SwitchPreference;
-    
-    if-eqz v0, :cond_mw
 
     invoke-virtual {v0, p0}, Landroid/support/v14/preference/SwitchPreference;->setOnPreferenceChangeListener(Landroid/support/v7/preference/Preference$OnPreferenceChangeListener;)V
 
@@ -351,9 +349,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v14/preference/SwitchPreference;->setVisible(Z)V
 
-    :cond_mw
-    const/4 v1, 0x0
-    
     const-string v0, "op_fingerprint_long_press_camera_shot"
 
     invoke-virtual {p0, v0}, Lcom/oneplus/settings/OPButtonsAndGesturesSettings;->findPreference(Ljava/lang/CharSequence;)Landroid/support/v7/preference/Preference;
